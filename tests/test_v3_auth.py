@@ -1740,14 +1740,9 @@ class TestTrustAuth(TestAuthInfo):
                  self.user_id, expected_status=200,
                  token=trust_token)
 
-        auth_data = self.build_authentication_request(
-            user_id=self.trustee_user['id'],
-            password=self.trustee_user['password'])
-
         self.assertValidUserResponse(
             self.patch('/users/%s' % self.trustee_user['id'],
                        body={'user': {'password': uuid.uuid4().hex}},
-                       auth=auth_data,
                        expected_status=200))
 
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
