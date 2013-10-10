@@ -13,8 +13,13 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+from keystone.common import config
 from keystone.common import wsgi
 from keystone.token import controllers
+from keystone.token import provider
+
+
+CONF = config.CONF
 
 
 class Router(wsgi.ComposableRouter):
@@ -45,13 +50,14 @@ class Router(wsgi.ComposableRouter):
                        action='endpoints',
                        conditions=dict(method=['GET']))
 
-        # Certificates used to verify auth tokens
-        mapper.connect('/certificates/ca',
-                       controller=token_controller,
-                       action='ca_cert',
-                       conditions=dict(method=['GET']))
+        if CONF.token.provider == provider.PKI_PROVIDER:
+            # Certificates used to verify auth tokens
+            mapper.connect('/certificates/ca',
+                           controller=token_controller,
+                           action='ca_cert',
+                           conditions=dict(method=['GET']))
 
-        mapper.connect('/certificates/signing',
-                       controller=token_controller,
-                       action='signing_cert',
-                       conditions=dict(method=['GET']))
+            mapper.connect('/certificates/signing',
+                           controller=token_controller,
+                           action='signing_cert',
+                           conditions=dict(method=['GET']))
