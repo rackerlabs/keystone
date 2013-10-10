@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//urs\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2230,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-10T15:44:17Z",
+      "side": 0,
+      "message": "previously this test was using the trustee\u0027s credentials to modify the trustee\u0027s password. policy.json now disallows that, so by not specifying an auth parameter here, the test framework defaults to admin privileges, satisfying the new policy.json",
+      "revId": "8ba9898f4271ed61b3080ec479b43e6fc1984345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
