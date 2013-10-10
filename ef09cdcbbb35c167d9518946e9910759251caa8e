@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//ukw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-10-10T16:03:59Z",
+      "side": 1,
+      "message": "Can we make this warning more specific to DB2 as done on line 207 for MY SQL?",
+      "revId": "ef09cdcbbb35c167d9518946e9910759251caa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
