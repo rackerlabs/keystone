@@ -34,6 +34,57 @@
       "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//tJw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-10T22:48:52Z",
+      "side": 1,
+      "message": "when testing against None (or any singleton) should be using assertIs (or assertIsNone) rather than assertEqual.\n\nit might be better to use a mock for this... I see we use mox in test_backend_ldap.",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//tLY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-10T22:48:52Z",
+      "side": 1,
+      "message": "looks like exp_host is always None, so suggest remove it.",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//tLA\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-10T22:48:52Z",
+      "side": 1,
+      "message": "some tests return something?",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
