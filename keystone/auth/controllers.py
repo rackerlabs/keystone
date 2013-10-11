@@ -320,8 +320,24 @@ class Auth(controller.V3Controller):
             user_ref = self.identity_api.get_user(auth_context['user_id'])
             default_project_id = user_ref.get('default_project_id')
             if default_project_id:
-                auth_info.set_scope(domain_id=None,
-                                    project_id=default_project_id)
+                try:
+                    # make sure default project is legit
+                    default_project_ref = self.identity_api.get_project(
+                        default_project_id)
+                    default_project_domain_ref = self.identity_api.get_domain(
+                        default_project_ref['domain_id'])
+                    if (default_project_ref.get('enabled') and
+                            default_project_domain_ref.get('enabled')):
+                        auth_info.set_scope(domain_id=None,
+                                            project_id=default_project_id)
+                except (exception.ProjectNotFound, exception.DomainNotFound):
+                    # default project is either not found or disabled, will
+                    # issue unscoped token instead
+                    msg = _('User %(user_id)s has invalid default project'
+                            ' %(project_id)s.')
+                    LOG.warning(msg, {'user_id': user_ref['id'],
+                                      'project_id': default_project_id})
+                    pass
         except exception.UserNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
