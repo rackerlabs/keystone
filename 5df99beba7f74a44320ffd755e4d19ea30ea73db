@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//si4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-11T02:53:02Z",
+      "side": 1,
+      "message": "I\u0027ll change to assertIs, but I\u0027m using stub because it was used by other tests in this file. if you still want me to fix this, i can, but i\u0027d prefer to do it in another patch.",
+      "parentUuid": "AAAATH//tJw\u003d",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//tLY\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 5
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//sjY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-11T02:53:02Z",
+      "side": 1,
+      "message": "okay, will fix by removing host in these tests",
+      "parentUuid": "AAAATH//tLY\u003d",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//tLA\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 5
@@ -82,6 +118,24 @@
       "writtenOn": "2013-10-10T22:48:52Z",
       "side": 1,
       "message": "some tests return something?",
+      "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//sjM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-11T02:53:02Z",
+      "side": 1,
+      "message": "I use the resulting ref in the update and delete tests; there are probably other ways of doing this",
+      "parentUuid": "AAAATH//tLA\u003d",
       "revId": "5df99beba7f74a44320ffd755e4d19ea30ea73db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
