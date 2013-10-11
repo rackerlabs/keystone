@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//qUU\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-10-11T15:41:11Z",
+      "side": 1,
+      "message": "can we rephrase line #523 to make it more generic \n\"A decorator to specify a function is deprecated\"",
+      "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//qW4\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
