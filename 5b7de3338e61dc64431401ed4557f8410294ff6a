@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//sFc\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-11T06:46:57Z",
+      "side": 1,
+      "message": "@gyee, @Brant, yes, this is handled with the \"external\" config option (see https://github.com/openstack/keystone/blob/master/keystone/common/config.py#L252 )",
+      "parentUuid": "AAAATH//tB8\u003d",
+      "revId": "5b7de3338e61dc64431401ed4557f8410294ff6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//1lE\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 1
