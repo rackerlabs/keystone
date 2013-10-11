@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//qUA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-11T15:42:53Z",
+      "side": 1,
+      "message": "Commenting on this from Brant\u0027s comment in patch one. We will still need to support the old option but just flag it as deprecated in favor of the new.",
+      "revId": "257924954de69c44f28b204daeba70e11aab1617",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
