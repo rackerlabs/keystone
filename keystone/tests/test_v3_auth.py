@@ -1240,28 +1240,6 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.assertEqual(r.result['token']['project']['id'],
                          self.project['id'])
 
-    def test_default_project_id_scoped_token_with_user_id_401(self):
-        # create a second project to work with
-        ref = self.new_project_ref(domain_id=self.domain['id'])
-        del ref['id']
-        r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
-
-        # set the user's preferred project without having authz on that project
-        body = {'user': {'default_project_id': project['id']}}
-        r = self.patch('/users/%(user_id)s' % {
-            'user_id': self.user['id']},
-            body=body)
-        self.assertValidUserResponse(r)
-
-        # attempt to authenticate without requesting a project
-        # the default_project_id should be the assumed scope of the request,
-        # and fail because the user doesn't have explicit authz on that scope
-        auth_data = self.build_authentication_request(
-            user_id=self.user['id'],
-            password=self.user['password'])
-        self.post('/auth/tokens', body=auth_data, expected_status=401)
-
     def test_project_id_scoped_token_with_user_id_401(self):
         project_id = uuid.uuid4().hex
         project = self.new_project_ref(domain_id=self.domain_id)
@@ -1776,6 +1754,85 @@ class TestAuthJSON(test_v3.RestfulTestCase):
             password='password')
 
         self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+    def test_disabled_default_project_result_in_unscoped_token(self):
+        # create a disabled project to work with
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref['enabled'] = False
+        r = self.post('/projects', body={'project': ref})
+        project = self.assertValidProjectResponse(r, ref)
+
+        # assign a role to user for the new project
+        self.identity_api.add_role_to_user_and_project(self.user['id'],
+                                                       project['id'],
+                                                       self.role_id)
+
+        # set the user's preferred project
+        body = {'user': {'default_project_id': project['id']}}
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body=body)
+        self.assertValidUserResponse(r)
+
+        # attempt to authenticate without requesting a project
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidUnscopedTokenResponse(r)
+
+    def test_disabled_default_project_domain_result_in_unscoped_token(self):
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        domain = self.assertValidDomainResponse(r, domain_ref)
+
+        project_ref = self.new_project_ref(domain_id=domain['id'])
+        r = self.post('/projects', body={'project': project_ref})
+        project = self.assertValidProjectResponse(r, project_ref)
+
+        # assign a role to user for the new project
+        self.identity_api.add_role_to_user_and_project(self.user['id'],
+                                                       project['id'],
+                                                       self.role_id)
+
+        # set the user's preferred project
+        body = {'user': {'default_project_id': project['id']}}
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body=body)
+        self.assertValidUserResponse(r)
+
+        # now disable the project domain
+        body = {'domain': {'enabled': False}}
+        r = self.patch('/domains/%(domain_id)s' % {'domain_id': domain['id']},
+                       body=body)
+        self.assertValidDomainResponse(r)
+
+        # attempt to authenticate without requesting a project
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidUnscopedTokenResponse(r)
+
+    def test_no_access_to_default_project_result_in_unscoped_token(self):
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': ref})
+        project = self.assertValidProjectResponse(r, ref)
+
+        # set the user's preferred project
+        body = {'user': {'default_project_id': project['id']}}
+        r = self.patch('/users/%(user_id)s' % {
+            'user_id': self.user['id']},
+            body=body)
+        self.assertValidUserResponse(r)
+
+        # attempt to authenticate without requesting a project
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidUnscopedTokenResponse(r)
 
 
 class TestAuthXML(TestAuthJSON):
