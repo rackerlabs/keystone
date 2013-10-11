@@ -16,6 +16,24 @@
       "revId": "679d2ac23ba9c50ab8dbc3faae42de3fd2573a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//zto\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-10-11T01:22:57Z",
+      "side": 1,
+      "message": "Pls check the keystoneclient.common.cms._ensure_subprocess. In this method, it will check whether the os module is patched.",
+      "parentUuid": "AAAATH//zzA\u003d",
+      "revId": "679d2ac23ba9c50ab8dbc3faae42de3fd2573a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
