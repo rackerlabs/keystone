@@ -21,12 +21,15 @@ from keystone.contrib.s3 import core as s3_core
 from keystone.contrib.stats import core as stats_core
 from keystone.contrib.user_crud import core as user_crud_core
 from keystone.identity import core as identity_core
-from keystone import service
 
 
 class TestSingularPlural(object):
     def test_keyword_arg_condition_or_methods(self):
         """Raise if we see a keyword arg called 'condition' or 'methods'."""
+        # NOTE(Jeffrey4l): import the service lazily, so that the
+        # service.DRIVERS isn't initialised during the nosetest loading
+        # all the testcases.
+        from keystone import service
         modules = [admin_crud_core, s3_core, stats_core,
                    user_crud_core, identity_core, service]
         for module in modules:
