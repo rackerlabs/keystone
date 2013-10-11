@@ -320,13 +320,43 @@ class Auth(controller.V3Controller):
         # fill in default_project_id if it is available
         try:
             user_ref = self.identity_api.get_user(auth_context['user_id'])
-            default_project_id = user_ref.get('default_project_id')
-            if default_project_id:
-                auth_info.set_scope(domain_id=None,
-                                    project_id=default_project_id)
         except exception.UserNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
+
+        default_project_id = user_ref.get('default_project_id')
+        if default_project_id:
+            try:
+                # make sure default project is enabled
+                default_project_ref = self.assignment_api.get_project(
+                    default_project_id)
+                default_project_domain_ref = self.assignment_api.get_domain(
+                    default_project_ref['domain_id'])
+                if (default_project_ref.get('enabled', True) and
+                        default_project_domain_ref.get('enabled', True)):
+                    if self.assignment_api.get_roles_for_user_and_project(
+                            user_ref['id'], default_project_id):
+                        auth_info.set_scope(domain_id=None,
+                                            project_id=default_project_id)
+                    else:
+                        msg = _("User %(user_id)s doesn't have access to"
+                                " default project %(project_id)s.")
+                        LOG.warning(msg,
+                                    {'user_id': user_ref['id'],
+                                     'project_id': default_project_id})
+                else:
+                    msg = _("User %(user_id)s''s default project"
+                            " %(project_id)s is disabled.")
+                    LOG.warning(msg,
+                                {'user_id': user_ref['id'],
+                                 'project_id': default_project_id})
+            except (exception.ProjectNotFound, exception.DomainNotFound):
+                # default project is either not found or disabled, will
+                # issue unscoped token instead
+                msg = _("User %(user_id)s's default project"
+                        " %(project_id)s not found.")
+                LOG.warning(msg, {'user_id': user_ref['id'],
+                                  'project_id': default_project_id})
 
     def authenticate(self, context, auth_info, auth_context):
         """Authenticate user."""
