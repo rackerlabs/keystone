@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//qX0\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-11T15:30:16Z",
+      "side": 1,
+      "message": "users*",
+      "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//qW4\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-11T15:30:16Z",
+      "side": 1,
+      "message": "Here we might be able to be a little more explicit in the variable naming, changing \u0027when\u0027 to \u0027release\u0027 and \u0027in_favor_of\u0027 to \u0027replacement\u0027.. or something similar.",
+      "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//qWI\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-11T15:30:16Z",
+      "side": 1,
+      "message": "(NIT): Suggest using DeprecatedDecoratorTestCase to match one of the conventions in this test module.",
+      "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
