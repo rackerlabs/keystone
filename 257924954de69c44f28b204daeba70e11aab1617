@@ -16,6 +16,24 @@
       "revId": "257924954de69c44f28b204daeba70e11aab1617",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//omY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6116
+      },
+      "writtenOn": "2013-10-12T00:48:57Z",
+      "side": 1,
+      "message": "sorry, not really understand you.... I think I have changed to support that already, isn\u0027t it ?",
+      "parentUuid": "AAAATH//qUA\u003d",
+      "revId": "257924954de69c44f28b204daeba70e11aab1617",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
