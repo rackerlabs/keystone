@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//jTM\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T16:24:49Z",
+      "side": 1,
+      "message": "I don\u0027t believe that os.path.devnull exists in Python 2.6.  os.devnull should so you should be able to a less elegant, but workable solution.",
+      "revId": "ad123e9c05a2aa7d11dbfde8580ead776330efb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
