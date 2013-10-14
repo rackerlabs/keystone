@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//kYI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T12:56:36Z",
+      "side": 1,
+      "message": "This is true by default.  In my patch to add testr support I copied what a few other projects had done to keep the output the same.",
+      "parentUuid": "AAAAS3//e1Y\u003d",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//e1Q\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 5
@@ -81,6 +99,24 @@
       "writtenOn": "2013-09-26T00:18:20Z",
       "side": 1,
       "message": "tox keystone.tests.test_sql_upgrade\n\notherwise I get \"NameError: name \u0027_\u0027 is not defined\"",
+      "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kX4\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T12:56:36Z",
+      "side": 1,
+      "message": "I believe I fixed this in my testr patch.",
+      "parentUuid": "AAAAS3//e1I\u003d",
       "revId": "7c925deb8ffa30de2b9f423d88ea64fc5974d9c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
