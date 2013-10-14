@@ -288,6 +288,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
         self.assertValidListLinks(resp.result.get('links'))
 
     def test_get_role_in_access_token(self):
+        print "<<<<<<<<<<<<<<<>TESTE<>>>>>>>>>>>>>>>>>>>>>>>>>"
         self.test_oauth_flow()
         url = ('/users/%(id)s/OS-OAUTH1/access_tokens/%(key)s/roles/%(role)s'
                % {'id': self.user_id, 'key': self.access_token.key,
@@ -507,9 +508,9 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         credentials = urlparse.parse_qs(content.result)
         request_key = credentials.get('oauth_token')[0]
 
-        self.identity_api.remove_role_from_user_and_project(self.user_id,
-                                                            self.project_id,
-                                                            self.role_id)
+        self.assignment_api.remove_role_from_user_and_project(self.user_id,
+                                                              self.project_id,
+                                                              self.role_id)
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
         self.admin_request(path=url, method='PUT',
