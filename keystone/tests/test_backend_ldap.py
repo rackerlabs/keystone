@@ -216,6 +216,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_multi_group_grants_on_project_domain(self):
         self.skipTest('Blocked by bug 1101287')
 
+    def test_create_update_delete_unicode_project(self):
+        unicode_project_name = u'name \u540d\u5b57'
+        project = {'id': uuid.uuid4().hex,
+                   'name': unicode_project_name,
+                   'description': 'updated project info',
+                   'domain_id': CONF.identity.default_domain_id}
+        self.assignment_api.create_project(project['id'], project)
+        self.assignment_api.update_project(project['id'], project)
+        self.assignment_api.delete_project(project['id'])
+
     def test_list_group_members_missing_entry(self):
         """List group members with deleted user.
 
