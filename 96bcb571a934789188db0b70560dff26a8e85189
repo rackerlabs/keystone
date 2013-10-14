@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//kNw\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T13:35:59Z",
+      "side": 1,
+      "message": "why not encode everything this way? i.e. drop the str(s)\n\nafaik, if s is just ascii, both of these produce the same value:\n\n  \u003e\u003e\u003e str(\u0027abc123\u0027) \u003d\u003d \u0027abc123\u0027.encode(\u0027utf-8\u0027)\n  True",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
