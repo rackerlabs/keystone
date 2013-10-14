@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//jRY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-14T16:29:00Z",
+      "side": 1,
+      "message": "We might be able to elaborate on this, just saying that a check is being added to enable the certificates in a particular case.",
+      "revId": "cd0c90ae3ccf11c0ef58ca1a94c5db8db823f56c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jSg\u003d",
+        "filename": "keystone/token/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-14T16:29:00Z",
+      "side": 1,
+      "message": "Can we add a new unit tests to test these cases?",
+      "revId": "cd0c90ae3ccf11c0ef58ca1a94c5db8db823f56c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
