@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//kdI\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-10-14T12:47:59Z",
+      "side": 1,
+      "message": "it\u0027s the \"with_trust_info\" parameter, used to specify whether we want credentials and the associated trust infos (token id, trust id) or not. I chose this approach to have minimal impact on the existing mechanisms.",
+      "parentUuid": "AAAASn//bnw\u003d",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//bqE\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-04T20:11:33Z",
       "side": 1,
       "message": "sigh... blob is not intended to be a complex object",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//keA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-10-14T12:47:59Z",
+      "side": 1,
+      "message": "I thought it\u0027d be more convenient (as it doesn\u0027t involve a schema change) to store this optional info in the blob, I can rework on this if preferred",
+      "parentUuid": "AAAASn//bqE\u003d",
       "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//kcY\u003d",
+        "filename": "keystone/contrib/ec2/routers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-10-14T12:47:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//br4\u003d",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//brM\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-04T20:03:21Z",
       "side": 1,
       "message": "change path...keep extension name the same",
+      "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kcU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-10-14T12:47:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//brM\u003d",
       "revId": "6fbcabf84c161ea5c4bbd1fa8bb4b4e873d2bd49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
