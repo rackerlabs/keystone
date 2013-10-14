@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//juU\u003d",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-14T15:15:26Z",
+      "side": 0,
+      "message": "how come this line was removed? I don\u0027t think it needs to be removed since it isn\u0027t necessary for the change.",
+      "revId": "8ba9898f4271ed61b3080ec479b43e6fc1984345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
