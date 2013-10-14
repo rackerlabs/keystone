@@ -124,6 +124,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//j1E\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "this test defines a description, which can also be done in test_backend (this looks like a copy/paste discrepancy)",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//j0w\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "LDAP can\u0027t create domains, which the other test does. if test_backend takes the approach of simply using the default domain, then there doesn\u0027t need to be a test override at all (and i don\u0027t think any relevant coverage would be impacted)",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//kBI\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -135,6 +169,24 @@
       "writtenOn": "2013-10-14T14:22:21Z",
       "side": 1,
       "message": "suggest use positional parameter for tenant_name since it\u0027s positional.\n\n(applies to all these calls to tenants)",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jzg\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kBI\u003d",
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//jzU\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kDk\u003d",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//kDQ\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -169,6 +239,24 @@
       "writtenOn": "2013-10-14T14:22:21Z",
       "side": 1,
       "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jzQ\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kDQ\u003d",
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//jy4\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kDM\u003d",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//kDU\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -203,6 +309,24 @@
       "writtenOn": "2013-10-14T14:22:21Z",
       "side": 1,
       "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jy0\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kDU\u003d",
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -226,6 +350,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//jyw\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kCw\u003d",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//kCk\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -237,6 +379,24 @@
       "writtenOn": "2013-10-14T14:22:21Z",
       "side": 1,
       "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jyc\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kCk\u003d",
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -260,6 +420,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//jyk\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kCg\u003d",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//kBc\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -277,6 +455,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//jyo\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//kBc\u003d",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//kCM\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 3
@@ -288,6 +484,24 @@
       "writtenOn": "2013-10-14T14:22:21Z",
       "side": 1,
       "message": "I think this is checking for empty list... suggest use assertEqual(..., [])",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jyY\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T15:14:32Z",
+      "side": 1,
+      "message": "not true -- it\u0027s specifically testing that the deleted tenant does not appear in a list() response, which doesn\u0027t say anything about tenants from test fixtures",
+      "parentUuid": "AAAATH//kCM\u003d",
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
