@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATH//iUE\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-14T20:52:21Z",
+      "side": 1,
+      "message": "This is likely going to be a problem.  My understanding is that EC2 credentials should be long-lived (not tied to the token\u0027s life span).  Right now, your credential will cease to function and raise a TokenNotFound error after 86400 seconds (by default).  In theory, tokens should be able to have extremely short life-spans (~300seconds or less), which would make your keypair invalid almost as soon as it was issued.\n\nBased upon IRC conversations with shardy, this seems to be an incorrect assumption and will require a separate mechanism to issue a new, valid, and properly limited in trust scope at this point.\n\nI would think that the keypair should last until explicitly revoked, not tied to the nearly ephemeral token.",
+      "revId": "b89620b087dc9b36a5f096dc3470be7491f07f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//iXg\u003d",
         "filename": "keystone/contrib/ec2/routers.py",
         "patchSetId": 11
