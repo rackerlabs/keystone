@@ -18,6 +18,10 @@
 import os
 import shutil
 
+import mock
+from testtools import matchers
+
+from keystone.common.environment import subprocess
 from keystone.common import openssl
 from keystone import exception
 from keystone import tests
@@ -97,3 +101,27 @@ class CertSetupTestCase(tests.TestCase):
         except OSError:
             pass
         super(CertSetupTestCase, self).tearDown()
+
+
+class TestExecCommand(tests.TestCase):
+
+    @mock.patch('keystone.common.openssl.environment.subprocess')
+    def test_running_a_successful_command(self, mock_subprocess):
+        mock_subprocess.Popen().poll.return_value = 0
+
+        ssl = openssl.ConfigureSSL(None, None)
+        ssl.exec_command('this command exits with a 0 status code')
+
+    @mock.patch('keystone.common.openssl.environment.subprocess')
+    def test_running_an_invalid_command(self, mock_subprocess):
+        output = 'this is the output string'
+        mock_subprocess.CalledProcessError = subprocess.CalledProcessError
+        mock_subprocess.Popen().communicate.return_value = (output, '')
+        mock_subprocess.Popen().poll.return_value = 1
+
+        cmd = 'this command exits with a 1 status code and included output'
+        ssl = openssl.ConfigureSSL(None, None)
+        e = self.assertRaises(subprocess.CalledProcessError,
+                              ssl.exec_command,
+                              cmd)
+        self.assertThat(e.output, matchers.Equals(output))
