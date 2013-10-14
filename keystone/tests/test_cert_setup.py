@@ -16,6 +16,10 @@
 import os
 import shutil
 
+import mock
+from testtools import matchers
+
+from keystone.common import environment
 from keystone.common import openssl
 from keystone import exception
 from keystone import tests
@@ -135,3 +139,27 @@ class CertSetupTestCase(rest.RestfulTestCase):
         for path in ['/v2.0/certificates/signing', '/v2.0/certificates/ca']:
             self.request(self.public_app, path, method='GET',
                          expected_status=500)
+
+
+class TestExecCommand(tests.TestCase):
+
+    @mock.patch('keystone.common.openssl.environment.subprocess.Popen')
+    def test_running_a_successful_command(self, mock_Popen):
+        mock_Popen().poll.return_value = 0
+
+        ssl = openssl.ConfigureSSL('keystone_user', 'keystone_group')
+        ssl.exec_command(['this command exits with a 0 status code'])
+
+    @mock.patch('keystone.common.openssl.environment.subprocess.Popen')
+    def test_running_an_invalid_command(self, mock_Popen):
+        output = 'this is the output string'
+
+        mock_Popen().communicate.return_value = (output, '')
+        mock_Popen().poll.return_value = 1
+
+        cmd = ['command exits with 1 status code and included output']
+        ssl = openssl.ConfigureSSL('keystone_user', 'keystone_group')
+        e = self.assertRaises(environment.subprocess.CalledProcessError,
+                              ssl.exec_command,
+                              cmd)
+        self.assertThat(e.output, matchers.Equals(output))
