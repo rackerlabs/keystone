@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//jk4\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T15:39:12Z",
+      "side": 1,
+      "message": "I do like in_favor_of better, but if it\u0027s a blocker I could change it too.",
+      "parentUuid": "AAAATH//qW4\u003d",
+      "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//qWI\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 5
@@ -64,6 +82,24 @@
       "writtenOn": "2013-10-11T15:30:16Z",
       "side": 1,
       "message": "(NIT): Suggest using DeprecatedDecoratorTestCase to match one of the conventions in this test module.",
+      "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jkg\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T15:39:12Z",
+      "side": 1,
+      "message": "I chose this name because it is not testing the deprecated decorator.  It\u0027s testing the deprecation functionality including  both decorators.",
+      "parentUuid": "AAAATH//qWI\u003d",
       "revId": "5a2033c6ad23512e6ab2dab320c9ff2fa1894758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
