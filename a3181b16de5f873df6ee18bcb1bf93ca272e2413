@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//h7U\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-10-14T22:32:30Z",
+      "side": 1,
+      "message": "Use the python warnings module for deprecation warnings http://docs.python.org/2/library/warnings.html and then elsewhere in the project use captureWarnings to handle the logging http://docs.python.org/2/library/logging.html#logging.captureWarnings",
+      "revId": "a3181b16de5f873df6ee18bcb1bf93ca272e2413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//iSQ\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 7
