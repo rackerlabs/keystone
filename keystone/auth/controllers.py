@@ -14,7 +14,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -49,6 +48,7 @@ def get_auth_method(method_name):
     return AUTH_METHODS[method_name]
 
 
+@dependency.requires('assignment_api')
 class AuthInfo(object):
     """Encapsulation of "auth" request."""
 
@@ -115,10 +115,10 @@ class AuthInfo(object):
                     raise exception.ValidationError(attribute='domain',
                                                     target='project')
                 domain_ref = self._lookup_domain(project_info['domain'])
-                project_ref = self.identity_api.get_project_by_name(
+                project_ref = self.assignment_api.get_project_by_name(
                     project_name, domain_ref['id'])
             else:
-                project_ref = self.identity_api.get_project(project_id)
+                project_ref = self.assignment_api.get_project(project_id)
         except exception.ProjectNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
