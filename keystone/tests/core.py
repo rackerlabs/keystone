@@ -337,7 +337,8 @@ class TestCase(NoModule, testtools.TestCase):
         if hasattr(self, 'identity_api'):
             for domain in fixtures.DOMAINS:
                 try:
-                    rv = self.identity_api.create_domain(domain['id'], domain)
+                    rv = self.assignment_api.create_domain(domain['id'],
+                                                           domain)
                 except exception.Conflict:
                     rv = self.identity_api.get_domain(domain['id'])
                 except exception.NotImplemented:
@@ -349,15 +350,15 @@ class TestCase(NoModule, testtools.TestCase):
                     rv = self.assignment_api.create_project(
                         tenant['id'], tenant)
                 except exception.Conflict:
-                    rv = self.identity_api.get_project(tenant['id'])
+                    rv = self.assignment_api.get_project(tenant['id'])
                     pass
                 setattr(self, 'tenant_%s' % tenant['id'], rv)
 
             for role in fixtures.ROLES:
                 try:
-                    rv = self.identity_api.create_role(role['id'], role)
+                    rv = self.assignment_api.create_role(role['id'], role)
                 except exception.Conflict:
-                    rv = self.identity_api.get_role(role['id'])
+                    rv = self.assignment_api.get_role(role['id'])
                     pass
                 setattr(self, 'role_%s' % role['id'], rv)
 
@@ -371,8 +372,8 @@ class TestCase(NoModule, testtools.TestCase):
                     pass
                 for tenant_id in tenants:
                     try:
-                        self.identity_api.add_user_to_project(tenant_id,
-                                                              user['id'])
+                        self.assignment_api.add_user_to_project(tenant_id,
+                                                                user['id'])
                     except exception.Conflict:
                         pass
                 setattr(self, 'user_%s' % user['id'], user_copy)
