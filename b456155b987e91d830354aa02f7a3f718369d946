@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//jKs\u003d",
+        "filename": "tools/colorizer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-14T16:55:15Z",
+      "side": 1,
+      "message": "This doesn\u0027t return true, it returns curses.tigetnum if it doesn\u0027t return False, documentation should be updated.",
+      "revId": "b456155b987e91d830354aa02f7a3f718369d946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jLI\u003d",
+        "filename": "tools/colorizer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-14T16:55:15Z",
+      "side": 1,
+      "message": "We should make this a method decorator.\n\nhttp://docs.python.org/2/library/functions.html#classmethod",
+      "revId": "b456155b987e91d830354aa02f7a3f718369d946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jKc\u003d",
+        "filename": "tools/colorizer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-14T16:55:15Z",
+      "side": 1,
+      "message": "This will need to be refactored for Keystone, along with all the occurrences in this module.",
+      "revId": "b456155b987e91d830354aa02f7a3f718369d946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
