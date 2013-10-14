@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//j3U\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-10-14T14:55:50Z",
+      "side": 1,
+      "message": "Should this be the default?  That way people upgrading from Grizzly to Havana would get the same functionality unless they wanted to explicitly change it?",
+      "revId": "5d90266f4f7fa03c1378f45a9956cece105bfae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
