@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//iSA\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-14T20:59:44Z",
+      "side": 1,
+      "message": "Is the use of % correct with LOG?  This seems like an artifact of the use of warning.warn where you couldn\u0027t use \u0027,\u0027 to separate the replacement dict with.\n\nSince this is being used for more than simple debugging, this should be fixed to use the correct style.",
+      "revId": "a3181b16de5f873df6ee18bcb1bf93ca272e2413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//iSQ\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-14T20:59:44Z",
+      "side": 1,
+      "message": "(NIT): suggest adding in a test for a method/function that does more than return  with a custom method (similar to something on line 165), this would ensure that code is executed with the custom message (and you could validate the output is as expected).",
+      "revId": "a3181b16de5f873df6ee18bcb1bf93ca272e2413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
