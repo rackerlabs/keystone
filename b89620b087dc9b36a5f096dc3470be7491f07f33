@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//iXg\u003d",
+        "filename": "keystone/contrib/ec2/routers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-14T20:41:19Z",
+      "side": 1,
+      "message": "I don\u0027t think this requires a separate API.  I think that you should be using the existing API to create the credential, above on line 32",
+      "revId": "b89620b087dc9b36a5f096dc3470be7491f07f33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
