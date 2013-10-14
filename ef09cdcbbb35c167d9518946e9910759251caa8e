@@ -16,6 +16,24 @@
       "revId": "ef09cdcbbb35c167d9518946e9910759251caa8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jc8\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T15:56:26Z",
+      "side": 1,
+      "message": "That is a very good point.  I was keeping with the original intent...in this case maybe blindly.",
+      "parentUuid": "AAAATH//ukw\u003d",
+      "revId": "ef09cdcbbb35c167d9518946e9910759251caa8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
