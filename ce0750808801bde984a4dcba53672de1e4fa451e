@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//iX0\u003d",
+        "filename": ".testr.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T20:50:52Z",
+      "side": 1,
+      "message": "would appreciate a bug reference here that subsequent changes can be tracked against",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//iXo\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T20:50:52Z",
+      "side": 1,
+      "message": "this makes a lot more sense now that we have keystone.tests",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//iVU\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T20:50:52Z",
+      "side": 1,
+      "message": "delete?",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//iVQ\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T20:50:52Z",
+      "side": 1,
+      "message": "ha",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//iUg\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-14T20:50:52Z",
+      "side": 1,
+      "message": "delete?",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
