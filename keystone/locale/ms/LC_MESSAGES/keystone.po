@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-10-01 06:13+0000\n"
+"POT-Creation-Date: 2013-10-14 06:00+0000\n"
 "PO-Revision-Date: 2013-07-29 22:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Malay "
@@ -737,9 +737,14 @@ msgid "Global engine callback raised."
 msgstr ""
 
 #: keystone/common/sql/core.py:207
-#: keystone/openstack/common/db/sqlalchemy/session.py:614
+#: keystone/openstack/common/db/sqlalchemy/session.py:616
 #, python-format
 msgid "Got mysql server has gone away: %s"
+msgstr ""
+
+#: keystone/common/sql/core.py:222
+#, python-format
+msgid "Got database server has gone away: %s"
 msgstr ""
 
 #: keystone/common/sql/migration.py:57
@@ -832,6 +837,32 @@ msgstr ""
 msgid "Access token not found"
 msgstr ""
 
+#: keystone/identity/controllers.py:63
+#, python-format
+msgid "Authentication failed: %s"
+msgstr ""
+
+#: keystone/identity/controllers.py:94 keystone/identity/controllers.py:198
+#: keystone/identity/controllers.py:330
+msgid "Name field is required and cannot be empty"
+msgstr ""
+
+#: keystone/identity/controllers.py:145
+msgid "Marker could not be found"
+msgstr ""
+
+#: keystone/identity/controllers.py:156
+msgid "Invalid limit value"
+msgstr ""
+
+#: keystone/identity/controllers.py:201
+msgid "Enabled field must be a boolean"
+msgstr ""
+
+#: keystone/identity/controllers.py:225
+msgid "Enabled field should be a boolean"
+msgstr ""
+
 #: keystone/identity/controllers.py:264
 #, python-format
 msgid "Unable to remove user %(user)s from %(tenant)s."
@@ -840,6 +871,14 @@ msgstr ""
 #: keystone/identity/controllers.py:283
 #, python-format
 msgid "Unable to add user %(user)s to %(tenant)s."
+msgstr ""
+
+#: keystone/identity/controllers.py:873
+msgid "Specify a domain or project, not both"
+msgstr ""
+
+#: keystone/identity/controllers.py:878
+msgid "Specify a user or group, not both"
 msgstr ""
 
 #: keystone/identity/controllers.py:1107
@@ -1146,11 +1185,11 @@ msgstr ""
 msgid "Upgrade DB using Essex release first."
 msgstr ""
 
-#: keystone/openstack/common/db/sqlalchemy/session.py:551
+#: keystone/openstack/common/db/sqlalchemy/session.py:553
 msgid "DB exception wrapped."
 msgstr ""
 
-#: keystone/openstack/common/db/sqlalchemy/session.py:694
+#: keystone/openstack/common/db/sqlalchemy/session.py:696
 #, python-format
 msgid "SQL connection failed. %s attempts left."
 msgstr ""
@@ -1644,7 +1683,7 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:126
+#: keystone/tests/core.py:131
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
