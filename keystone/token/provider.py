@@ -121,7 +121,7 @@ class Manager(manager.Manager):
         self._is_valid_token(token)
         return token
 
-    def validate_v3_token(self, token_id):
+    def validate_v3_token(self, token_id, include_catalog=True):
         unique_id = self.token_api.unique_id(token_id)
         # NOTE(morganfainberg): Ensure we never use the long-form token_id
         # (PKI) as part of the cache_key.
@@ -166,8 +166,10 @@ class Manager(manager.Manager):
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=CONF.token.cache_time)
-    def _validate_v3_token(self, token_id):
-        return self.driver.validate_v3_token(token_id)
+    def _validate_v3_token(self, token_id, include_catalog=True):
+        return self.driver.validate_v3_token(
+            token_id,
+            include_catalog=include_catalog)
 
     def _is_valid_token(self, token):
          # Verify the token has not expired.
@@ -312,13 +314,13 @@ class Provider(object):
         """
         raise exception.NotImplemented()
 
-    def validate_v3_token(self, token_id):
+    def validate_v3_token(self, token_id, include_catalog=True):
         """Validate the given V3 token and return the token_data.
 
         :param token_id: identity of the token
         :type token_id: string
-        :param belongs_to: project_id token belongs to
-        :type belongs_to: string
+        :param nocatalog: opt-out of service catalog
+        :type nocatalog: boolean
         :returns: token data
         :raises: keystone.exception.TokenNotFound
         """

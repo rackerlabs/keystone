@@ -552,7 +552,7 @@ class Provider(token.provider.Provider):
             LOG.exception(_('Failed to validate token'))
             raise exception.TokenNotFound(e)
 
-    def validate_v3_token(self, token_id):
+    def validate_v3_token(self, token_id, include_catalog=True):
         try:
             token_ref = self._verify_token(token_id)
             token_data = self._validate_v3_token_ref(token_ref)
