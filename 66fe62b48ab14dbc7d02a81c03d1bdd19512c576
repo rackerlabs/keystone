@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//j5Y\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-10-14T14:52:03Z",
+      "side": 1,
+      "message": "...or raise...",
+      "revId": "66fe62b48ab14dbc7d02a81c03d1bdd19512c576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
