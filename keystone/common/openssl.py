@@ -17,7 +17,7 @@
 
 import os
 
-from keystone.common import environment
+from keystone.common.environment import subprocess
 from keystone.common import utils
 from keystone import config
 from keystone.openstack.common import log as logging
@@ -62,9 +62,9 @@ class BaseCertificateConfigure(object):
 
         try:
             # OpenSSL 1.0 and newer support default_md = default, olders do not
-            openssl_ver = environment.subprocess.Popen(
+            openssl_ver = subprocess.Popen(
                 ['openssl', 'version'],
-                stdout=environment.subprocess.PIPE).stdout.read()
+                stdout=subprocess.PIPE).stdout.read()
             if "OpenSSL 0." in openssl_ver:
                 self.ssl_dictionary['default_md'] = 'sha1'
         except OSError:
@@ -74,8 +74,18 @@ class BaseCertificateConfigure(object):
 
     def exec_command(self, command):
         to_exec = command % self.ssl_dictionary
-        LOG.info(to_exec)
-        environment.subprocess.check_call(to_exec.rsplit(' '))
+        LOG.info(_('running command - %s'), to_exec)
+        to_exec = to_exec.split(' ')
+
+        process = subprocess.Popen(to_exec, stdout=subprocess.PIPE,
+                                   stderr=subprocess.STDOUT)
+        output = process.communicate()[0]
+        retcode = process.poll()
+        if retcode:
+            LOG.error(_('command exited with %(retcode)s - %(output)s'),
+                      {'retcode': retcode, 'output': output})
+            raise subprocess.CalledProcessError(
+                retcode, to_exec[0], output=output)
 
     def build_ssl_config_file(self):
         utils.make_dirs(os.path.dirname(self.ssl_config_file_name),
