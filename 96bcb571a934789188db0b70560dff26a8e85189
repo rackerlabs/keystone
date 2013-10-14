@@ -34,6 +34,227 @@
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kFg\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "change \"is wrap of\" to \"wraps\"",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kFU\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "this last sentence doesn\u0027t make sense to me. Suggest remove it, or add more information.",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kFk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "suggest add a comment why need to override.",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kBI\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "suggest use positional parameter for tenant_name since it\u0027s positional.\n\n(applies to all these calls to tenants)",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kDk\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kDQ\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kDM\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "add a comment why need to do this.",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kDU\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kCw\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kCk\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kCg\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "should use assertIs for testing singleton",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kBc\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "this is a positional parameter so suggest use client.tenants.delete(tenant.id)",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kCM\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-14T14:22:21Z",
+      "side": 1,
+      "message": "I think this is checking for empty list... suggest use assertEqual(..., [])",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
