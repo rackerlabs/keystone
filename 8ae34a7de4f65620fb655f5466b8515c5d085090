@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//jOw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-14T16:39:57Z",
+      "side": 1,
+      "message": "I would rather see %s in the message and have the params be passed in like: LOG.warning(msg, user_ref[\u0027id\u0027], default_project_id)\n\nThis way the interpolation only happens if the message will be logged.",
+      "revId": "8ae34a7de4f65620fb655f5466b8515c5d085090",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
