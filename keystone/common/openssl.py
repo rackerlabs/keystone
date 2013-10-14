@@ -75,7 +75,10 @@ class BaseCertificateConfigure(object):
     def exec_command(self, command):
         to_exec = command % self.ssl_dictionary
         LOG.info(to_exec)
-        environment.subprocess.check_call(to_exec.rsplit(' '))
+        with open(os.path.devnull) as null_dev:
+            environment.subprocess.check_call(to_exec.rsplit(' '),
+                                              stdout=null_dev,
+                                              stderr=null_dev)
 
     def build_ssl_config_file(self):
         utils.make_dirs(os.path.dirname(self.ssl_config_file_name),
