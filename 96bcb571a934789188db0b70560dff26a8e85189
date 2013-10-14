@@ -16,6 +16,24 @@
       "revId": "96bcb571a934789188db0b70560dff26a8e85189",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//kK4\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-14T13:39:55Z",
+      "side": 1,
+      "message": "S could be any type, int, dict, etc.  this function is used to do the stringification to ensure we can make a cache key.",
+      "parentUuid": "AAAATH//kNw\u003d",
+      "revId": "96bcb571a934789188db0b70560dff26a8e85189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
