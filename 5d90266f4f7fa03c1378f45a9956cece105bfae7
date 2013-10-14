@@ -16,6 +16,23 @@
       "revId": "5d90266f4f7fa03c1378f45a9956cece105bfae7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//jrY\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-14T15:26:40Z",
+      "side": 1,
+      "message": "do we want to double check to make sure username agrees with REMOTE_USER so there\u0027s no potential security problem?\n\nif user_ref[\u0027name\u0027] !\u003d REMOTE_USER:\n    # we may have a potential problem",
+      "revId": "5d90266f4f7fa03c1378f45a9956cece105bfae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
