@@ -512,6 +512,29 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'user': user})
         self.assertValidUserResponse(r, user)
 
+    def test_change_own_attributes_disallowed_by_policy(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+
+        self.patch(
+            '/users/%s' % self.user['id'],
+            body={'user': {'name': uuid.uuid4().hex}},
+            auth=auth_data,
+            expected_status=403)
+
+        self.patch(
+            '/users/%s' % self.user['id'],
+            body={'user': {'password': uuid.uuid4().hex}},
+            auth=auth_data,
+            expected_status=403)
+
+        self.patch(
+            '/users/%s' % self.user['id'],
+            body={'user': {'default_project_id': uuid.uuid4().hex}},
+            auth=auth_data,
+            expected_status=403)
+
     def test_delete_user(self):
         """Call ``DELETE /users/{user_id}``.
 
