@@ -74,8 +74,23 @@ class BaseCertificateConfigure(object):
 
     def exec_command(self, command):
         to_exec = command % self.ssl_dictionary
-        LOG.info(to_exec)
-        environment.subprocess.check_call(to_exec.rsplit(' '))
+        LOG.info(_('running command - %s'), to_exec)
+        to_exec = to_exec.split(' ')
+
+        process = environment.subprocess.Popen(
+            to_exec,
+            stdout=environment.subprocess.PIPE,
+            stderr=environment.subprocess.STDOUT)
+        output = process.communicate()[0]
+        retcode = process.poll()
+        if retcode:
+            LOG.error(_('command exited with %(retcode)s - %(output)s'),
+                      {'retcode': retcode, 'output': output})
+            e = environment.subprocess.CalledProcessError(retcode, to_exec[0])
+            # NOTE(Jeffrey4l): Python 2.6 compatibility:
+            # CalledProcessError did not have output keyword argument
+            e.output = output
+            raise e
 
     def build_ssl_config_file(self):
         utils.make_dirs(os.path.dirname(self.ssl_config_file_name),
