@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//f08\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T12:58:40Z",
+      "side": 1,
+      "message": "this (an external import) should be before imports from keystone (local imports)\n\n  import from stdlib\n\n  import from external packages\n\n  import from local package",
+      "revId": "058a7d742b178e1e9ed15a61b9e5633a3abaeac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//fwA\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T12:58:40Z",
+      "side": 1,
+      "message": "this should be in a second group of imports between stdlib and local package imports",
+      "revId": "058a7d742b178e1e9ed15a61b9e5633a3abaeac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//fv0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T12:58:40Z",
+      "side": 1,
+      "message": "same as last file",
+      "revId": "058a7d742b178e1e9ed15a61b9e5633a3abaeac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//fvw\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T12:58:40Z",
+      "side": 1,
+      "message": "same as last file",
+      "revId": "058a7d742b178e1e9ed15a61b9e5633a3abaeac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//fvs\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T12:58:40Z",
+      "side": 1,
+      "message": "same as last file",
+      "revId": "058a7d742b178e1e9ed15a61b9e5633a3abaeac5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
