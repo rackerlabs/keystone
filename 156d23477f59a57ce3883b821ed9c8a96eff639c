@@ -16,6 +16,24 @@
       "revId": "156d23477f59a57ce3883b821ed9c8a96eff639c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ez0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-15T16:25:04Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "AAAATH//hgc\u003d",
+      "revId": "156d23477f59a57ce3883b821ed9c8a96eff639c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
