@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//hgc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T01:09:10Z",
+      "side": 1,
+      "message": "If the user has lost all roles on the project (theoretically possible in v3), this would end up causing an Unauthorized.  Should we verify they have roles and set unscoped token if they don\u0027t?\n\nThis exception would come from http://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/providers/uuid.py#n209 via http://git.openstack.org/cgit/openstack/keystone/tree/keystone/token/providers/uuid.py#n257",
+      "revId": "156d23477f59a57ce3883b821ed9c8a96eff639c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
