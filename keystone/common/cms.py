@@ -1,7 +1,5 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
-# Copyright 2013 OpenStack Foundation
-#
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
 #    a copy of the License at
@@ -16,32 +14,55 @@
 
 import hashlib
 
-from keystone.common import environment
-from keystone.openstack.common import log as logging
+import logging
 
 
+subprocess = None
 LOG = logging.getLogger(__name__)
 PKI_ANS1_PREFIX = 'MII'
 
 
+def _ensure_subprocess():
+    # NOTE(vish): late loading subprocess so we can
+    #             use the green version if we are in
+    #             eventlet.
+    global subprocess
+    if not subprocess:
+        try:
+            from eventlet import patcher
+            if patcher.already_patched.get('os'):
+                from eventlet.green import subprocess
+            else:
+                import subprocess
+        except ImportError:
+            import subprocess  # noqa
+
+
 def cms_verify(formatted, signing_cert_file_name, ca_file_name):
-    """Verifies the signature of the contents IAW CMS syntax."""
-    process = environment.subprocess.Popen(["openssl", "cms", "-verify",
-                                            "-certfile",
-                                            signing_cert_file_name,
-                                            "-CAfile", ca_file_name,
-                                            "-inform", "PEM",
-                                            "-nosmimecap", "-nodetach",
-                                            "-nocerts", "-noattr"],
-                                           stdin=environment.subprocess.PIPE,
-                                           stdout=environment.subprocess.PIPE,
-                                           stderr=environment.subprocess.PIPE)
+    """Verifies the signature of the contents IAW CMS syntax.
+
+    :raises: subprocess.CalledProcessError
+    """
+    _ensure_subprocess()
+    process = subprocess.Popen(["openssl", "cms", "-verify",
+                                "-certfile", signing_cert_file_name,
+                                "-CAfile", ca_file_name,
+                                "-inform", "PEM",
+                                "-nosmimecap", "-nodetach",
+                                "-nocerts", "-noattr"],
+                               stdin=subprocess.PIPE,
+                               stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
     output, err = process.communicate(formatted)
     retcode = process.poll()
     if retcode:
-        LOG.error(_('Verify error: %s') % err)
-        raise environment.subprocess.CalledProcessError(retcode,
-                                                        "openssl", output=err)
+        # Do not log errors, as some happen in the positive thread
+        # instead, catch them in the calling code and log them there.
+        # NOTE(dmllr): Python 2.6 compatibility:
+        # CalledProcessError did not have output keyword argument
+        e = subprocess.CalledProcessError(retcode, "openssl")
+        e.output = err
+        raise e
     return output
 
 
@@ -114,29 +135,26 @@ def is_ans1_token(token):
 
 
 def cms_sign_text(text, signing_cert_file_name, signing_key_file_name):
-    """Uses OpenSSL to sign a document
+    """Uses OpenSSL to sign a document.
+
     Produces a Base64 encoding of a DER formatted CMS Document
     http://en.wikipedia.org/wiki/Cryptographic_Message_Syntax
     """
-    process = environment.subprocess.Popen(["openssl", "cms", "-sign",
-                                            "-signer", signing_cert_file_name,
-                                            "-inkey", signing_key_file_name,
-                                            "-outform", "PEM",
-                                            "-nosmimecap", "-nodetach",
-                                            "-nocerts", "-noattr"],
-                                           stdin=environment.subprocess.PIPE,
-                                           stdout=environment.subprocess.PIPE,
-                                           stderr=environment.subprocess.PIPE)
+    _ensure_subprocess()
+    process = subprocess.Popen(["openssl", "cms", "-sign",
+                                "-signer", signing_cert_file_name,
+                                "-inkey", signing_key_file_name,
+                                "-outform", "PEM",
+                                "-nosmimecap", "-nodetach",
+                                "-nocerts", "-noattr"],
+                               stdin=subprocess.PIPE,
+                               stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
     output, err = process.communicate(text)
     retcode = process.poll()
     if retcode or "Error" in err:
-        if retcode == 3:
-            LOG.error(_("Signing error: Unable to load certificate - "
-                      "ensure you've configured PKI with "
-                      "'keystone-manage pki_setup'"))
-        else:
-            LOG.error(_('Signing error: %s') % err)
-        raise environment.subprocess.CalledProcessError(retcode, "openssl")
+        LOG.error('Signing error: %s' % err)
+        raise subprocess.CalledProcessError(retcode, "openssl")
     return output
 
 
