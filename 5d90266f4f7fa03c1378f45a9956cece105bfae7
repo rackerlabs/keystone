@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//gto\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-15T07:35:04Z",
+      "side": 1,
+      "message": "Yes, this was one of my doubts",
+      "parentUuid": "AAAATH//j3U\u003d",
+      "revId": "5d90266f4f7fa03c1378f45a9956cece105bfae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//jrY\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-14T15:26:40Z",
       "side": 1,
       "message": "do we want to double check to make sure username agrees with REMOTE_USER so there\u0027s no potential security problem?\n\nif user_ref[\u0027name\u0027] !\u003d REMOTE_USER:\n    # we may have a potential problem",
+      "revId": "5d90266f4f7fa03c1378f45a9956cece105bfae7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//gtw\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-15T07:35:04Z",
+      "side": 1,
+      "message": "Good point",
+      "parentUuid": "AAAATH//jrY\u003d",
       "revId": "5d90266f4f7fa03c1378f45a9956cece105bfae7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
