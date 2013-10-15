@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//hHo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2013-10-15T05:12:31Z",
+      "side": 1,
+      "message": "What is the advantage of this blueprint?  If the  the query string goes to driver then it reduces  a DB call to get a catalog.   But here we are doing mere filtering, which the middleware itself can do it\n\nIt will be better if we pass the parameter to the driver and let the driver do the filtering",
+      "revId": "12fd6face7cca85396eaac9340868dacb4d75c57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
