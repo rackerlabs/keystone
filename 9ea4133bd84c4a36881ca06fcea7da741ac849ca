@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//dBs\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T23:32:54Z",
+      "side": 1,
+      "message": "can this be made private? i\u0027d much rather encourage the self-documenting decorator below\n\nif we need to occasionally deprecate things without an \"in_favor_of\", then i think that should be a separate method, to the effect of deprecated_without_being_superseded() \u003c-- i have no idea how to name that concisely.",
+      "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
