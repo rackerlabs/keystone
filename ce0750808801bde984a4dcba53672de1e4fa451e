@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//f4g\u003d",
+        "filename": ".testr.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-15T12:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//iX0\u003d",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//iXo\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-14T20:50:52Z",
       "side": 1,
       "message": "delete?",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//f38\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-15T12:29:27Z",
+      "side": 1,
+      "message": "I think so.  I left it in because I was going to spend time trying to recreate, but if run_tests.sh is deprecated then it probably isn\u0027t worth it.",
+      "parentUuid": "AAAATH//iVU\u003d",
       "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//f3E\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-15T12:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//hn4\u003d",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//iUg\u003d",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -117,6 +171,24 @@
       "side": 1,
       "message": "Agree, recommend deleting commented out code unless it is relevant that it should stay (e.g. used again in the future w/ comment as to why)",
       "parentUuid": "AAAATH//iUg\u003d",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//f2Q\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-15T12:29:27Z",
+      "side": 1,
+      "message": "This was just an oversight when using \u0027git add -p\u0027.  I was using it for testing.  Removed.",
+      "parentUuid": "AAAATH//hn0\u003d",
       "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
