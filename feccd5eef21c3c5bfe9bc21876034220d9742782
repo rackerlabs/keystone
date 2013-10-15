@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//hno\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "This likely should include a blueprint and/or bug reference.",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hnc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "This should be handled with the @dependancy decorator if possible.  Example: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/controller.py#n205",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hnU\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/controller.py#n205\n\nThe V3Controller inherits the V2Controller.  You should remove any duplicated elements from this list that are also seen on the common controller(s).",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hkw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "This appears to be an assigment call, not an identity call.  This should be converted to assignment_api.  http://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/core.py#n539",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hko\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "This appears to be an assignment call, not an identity call.  This should be converted to assignment_api.\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/core.py#n542",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hkk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "Same comment as line 481",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hkY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "This appears to be an assignment call, not an identity call.  It should be converted to assignment_api.\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/identity/core.py#n536",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hi8\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "Do we need to also check for assignment_api here?",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hi4\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 1,
+      "message": "This is an assignment method.",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//hjM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 0,
+      "message": "Any reason this was not changed/removed.",
+      "revId": "8ba9898f4271ed61b3080ec479b43e6fc1984345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hjI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 0,
+      "message": "Same as line 535",
+      "revId": "8ba9898f4271ed61b3080ec479b43e6fc1984345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hjE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:51:16Z",
+      "side": 0,
+      "message": "Same as line 535",
+      "revId": "8ba9898f4271ed61b3080ec479b43e6fc1984345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
