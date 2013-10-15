@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//dGk\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:10:52Z",
+      "side": 1,
+      "message": "(NIT): you could use super here.",
+      "revId": "8c1899cc8f1cdfd0781388a5450595468ec7de08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dGo\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:10:52Z",
+      "side": 1,
+      "message": "(NIT): you could use super here.",
+      "revId": "8c1899cc8f1cdfd0781388a5450595468ec7de08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
