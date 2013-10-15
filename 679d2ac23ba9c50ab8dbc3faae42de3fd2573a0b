@@ -34,6 +34,23 @@
       "revId": "679d2ac23ba9c50ab8dbc3faae42de3fd2573a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hhs\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-15T01:03:46Z",
+      "side": 1,
+      "message": "keystoneclient imports should all be in a separate section before this one since it\u0027s not in keystone. See https://github.com/openstack-dev/hacking/blob/master/doc/source/index.rst#imports",
+      "revId": "679d2ac23ba9c50ab8dbc3faae42de3fd2573a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
