@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//dYg\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-15T22:01:14Z",
+      "side": 1,
+      "message": "what\u0027s the difference between admin in the case and \u0027cloud_admin\u0027 in line 3? They look pretty much the same. Can we consolidate the two?",
+      "revId": "cbbedf44249ac00566cc0459e493c16f2d5c5162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
