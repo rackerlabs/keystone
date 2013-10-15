@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//hn4\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:23:52Z",
+      "side": 1,
+      "message": "Recommend providing a place to \"learn\" about using Tox in this message.",
+      "parentUuid": "AAAATH//iVQ\u003d",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//iUg\u003d",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -81,6 +99,24 @@
       "writtenOn": "2013-10-14T20:50:52Z",
       "side": 1,
       "message": "delete?",
+      "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//hn0\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T00:23:52Z",
+      "side": 1,
+      "message": "Agree, recommend deleting commented out code unless it is relevant that it should stay (e.g. used again in the future w/ comment as to why)",
+      "parentUuid": "AAAATH//iUg\u003d",
       "revId": "ce0750808801bde984a4dcba53672de1e4fa451e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
