@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//dkc\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-15T21:15:55Z",
+      "side": 1,
+      "message": "use assertIs when comparing a singleton.",
+      "revId": "2ea3f76548273fb1d3fead5605fed31024312c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dkg\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-15T21:15:55Z",
+      "side": 1,
+      "message": "use assertIs when comparing a singleton.",
+      "revId": "2ea3f76548273fb1d3fead5605fed31024312c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
