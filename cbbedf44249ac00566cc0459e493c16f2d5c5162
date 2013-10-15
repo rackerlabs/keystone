@@ -34,6 +34,24 @@
       "revId": "cbbedf44249ac00566cc0459e493c16f2d5c5162",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dPA\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-15T22:38:34Z",
+      "side": 1,
+      "message": "yeah, looks like they are different. One is for system domain and the other is for local domain.",
+      "parentUuid": "AAAATH//dRs\u003d",
+      "revId": "cbbedf44249ac00566cc0459e493c16f2d5c5162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
