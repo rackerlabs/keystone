@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//fbg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-15T13:58:28Z",
+      "side": 1,
+      "message": "_(i18n)",
+      "revId": "6a17209884721889c66cc06df579d3d672cb236f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
