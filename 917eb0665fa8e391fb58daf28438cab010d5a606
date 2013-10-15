@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dO0\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "does this also need to strip out newlines?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dNc\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "(NIT) I personally think constants should be all caps (easy to identity they are a constant in the code that way when used)",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IOI\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -47,6 +81,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Follow docstring convention specified in keystone/HACKING.rst\n\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\n\nmainly \"\"\" instead of \u0027\u0027\u0027\n\nThis applies for all instances in this module.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dSc\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "(NIT): You should also include a period at the end of the first line of the docstring. (other docstrings should be updated similarly)",
+      "parentUuid": "AAAAS3//IOI\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +122,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dQo\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "This seems suboptimal.  Are we planning on eventually supporting a bunch of random base64 alphabets?  Going with a boolean here instead of a string makes more sense in the context of 2 possibilities.  It also eliminates the need to raise the ValueError",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dP0\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "(SEE note on line 78).  If this is kept, used _() around the string for localization",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//INQ\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -81,6 +167,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "is sans supposed to be sanitizes?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dR4\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "@ldbragst, sans \u003d without (borrowed from french)",
+      "parentUuid": "AAAAS3//INQ\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +225,92 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dOs\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "parentUuid": "AAAAS3//IMs\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dOk\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dOg\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dOc\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dOY\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.\n\n(NIT): Use \u0027 consistently instead of \". [This should probably be changed throughout the file for strings]",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//F5o\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -155,6 +345,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dOM\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dN8\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//F6w\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -166,6 +390,23 @@
       "writtenOn": "2013-10-04T15:32:41Z",
       "side": 1,
       "message": "Can\u0027t this and the function above be implemented with textwrap?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dNw\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "spurious \u0027 at the end of the line.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -200,6 +441,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "utilities",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dG8\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "See my other comment about constants.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +515,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dLg\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IJM\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -268,6 +543,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Same comment here as above.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dLc\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +600,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dHk\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IIc\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -319,6 +628,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Use common logging.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dHo\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -342,6 +668,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//dHg\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IHo\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -353,6 +696,23 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "(NIT): suggest renaming variable \u0027b\u0027 to \u0027block\u0027. helps readability.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//dHc\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-15T23:08:45Z",
+      "side": 1,
+      "message": "Wrap strings in _() for localization.",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
