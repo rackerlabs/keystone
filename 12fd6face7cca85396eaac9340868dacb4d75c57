@@ -16,6 +16,24 @@
       "revId": "12fd6face7cca85396eaac9340868dacb4d75c57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//e2E\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-15T16:13:35Z",
+      "side": 1,
+      "message": "The advantage is to avoid to send a big token back when the catalog is not needed, it is in the response size.",
+      "parentUuid": "AAAATH//hHo\u003d",
+      "revId": "12fd6face7cca85396eaac9340868dacb4d75c57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
