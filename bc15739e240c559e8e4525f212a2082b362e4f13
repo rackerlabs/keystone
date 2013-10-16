@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//ZD8\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T19:28:04Z",
+      "side": 1,
+      "message": "these aren\u0027t singletons, are they? As long as it passes, I guess it\u0027s OK.",
+      "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZDg\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T19:28:04Z",
+      "side": 1,
+      "message": "why is group_ref a member variable? change it to not be one.\n\nThis comment applies to all these refs.",
+      "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZCs\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T19:28:04Z",
+      "side": 1,
+      "message": "seems easier to just group_ref \u003d self.new_group_ref(domain_id\u003dself.domain_id) than to do the test again.",
+      "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
