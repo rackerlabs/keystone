@@ -16,6 +16,24 @@
       "revId": "ad123e9c05a2aa7d11dbfde8580ead776330efb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ha8\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-10-16T01:31:59Z",
+      "side": 1,
+      "message": "I doesn\u0027t found the resource about os.path.devnull. But I found [1] there is os.devnull exist from python 2.4. I will change to this variable. \n\nPS: New discovery, the os.devnull come from os.path.devnull [2]. So no change is needed.\n\n[1] http://stackoverflow.com/questions/2929899/cross-platform-dev-null-in-python\n\n[2] http://svn.python.org/projects/python/trunk/Lib/os.py",
+      "parentUuid": "AAAATH//jTM\u003d",
+      "revId": "ad123e9c05a2aa7d11dbfde8580ead776330efb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
