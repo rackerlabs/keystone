@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//a2Q\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-16T13:04:40Z",
+      "side": 1,
+      "message": "What about a like to the Keystone developer page on docs.openstack.org?",
+      "revId": "5b2009c6a6cdd7a6a3bc8051ac3c39fd9690a7e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
