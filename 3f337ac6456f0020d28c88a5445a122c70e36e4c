@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//YAc\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-16T23:46:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAATH//YCE\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//YCM\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 4
@@ -64,6 +82,41 @@
       "writtenOn": "2013-10-16T23:40:11Z",
       "side": 1,
       "message": "why is this an abstractmethod? seems like it\u0027s ok to use the default impl and not overrride.",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YBE\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-16T23:46:28Z",
+      "side": 1,
+      "message": "The comment on line 275 covers the intention of this method.  It should be defined on the subclassed drivers and if no changes made, super() used.  In the case the driver needs to do something different, the implementation can be different.\n\nAlternatively, removing the TODO on line 275 and assuming this shouldn\u0027t be abstract is valid as well.",
+      "parentUuid": "AAAATH//YCM\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YAo\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-16T23:46:28Z",
+      "side": 1,
+      "message": "This comment should be removed regardless if this is kept abstract or not (see Brant\u0027s comment on line 249)",
       "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
