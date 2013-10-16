@@ -33,6 +33,24 @@
       "revId": "db19ce755b4d18be4d880bc958862c0cda71b83d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//cZo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-10-16T03:36:11Z",
+      "side": 1,
+      "message": "These are only default values though. If you are deploying a real server you would create your own keys and put them somewhere that made sense to your installation. The only place that creates these keys is running pki_setup which a) i don\u0027t think you should use in a real deployment and b) means that the only child certificate is the token signing cert so there isn\u0027t really a difference in required security.",
+      "parentUuid": "AAAATH//7F8\u003d",
+      "revId": "db19ce755b4d18be4d880bc958862c0cda71b83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
