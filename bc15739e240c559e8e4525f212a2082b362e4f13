@@ -50,6 +50,24 @@
       "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Y+A\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-16T19:35:12Z",
+      "side": 1,
+      "message": "I do this because, if I do as you suggested, then i\u0027d have to re-init the notification to compare again; the create will will signal the fake notify again.",
+      "parentUuid": "AAAATH//ZCs\u003d",
+      "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
