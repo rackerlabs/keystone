@@ -16,6 +16,24 @@
       "revId": "5b2009c6a6cdd7a6a3bc8051ac3c39fd9690a7e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Zno\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9051
+      },
+      "writtenOn": "2013-10-16T17:09:09Z",
+      "side": 1,
+      "message": "This guide refers to the way code needs to be developed rather than understand keystone. This is in line with other guides like cinder. E.g.http://git.openstack.org/cgit/openstack/cinder/tree/HACKING.rst\n\nBut if there is anything specific that keystone is doing, and is not present in the openstack hacking guide, then we can add that info.",
+      "parentUuid": "AAAATH//a2Q\u003d",
+      "revId": "5b2009c6a6cdd7a6a3bc8051ac3c39fd9690a7e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
