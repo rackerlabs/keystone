@@ -16,6 +16,24 @@
       "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//cLw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-16T06:04:59Z",
+      "side": 1,
+      "message": "Sure. This can be made private.  I can then get rid of the code that allows it to function with or without the argument.  Are you thinking that a bare deprecated would never be used?\n\nIf we end up needing that new usecase the existing decorator below can be change to default in_favor_of to None and use that to drive the error message.",
+      "parentUuid": "AAAATH//dBs\u003d",
+      "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
