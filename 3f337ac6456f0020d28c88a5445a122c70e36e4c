@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//YCY\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T23:40:11Z",
+      "side": 1,
+      "message": "could use *args, **kwargs?",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YCc\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T23:40:11Z",
+      "side": 1,
+      "message": "suggest change to user_id since this is a positional parameter",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YCE\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T23:40:11Z",
+      "side": 1,
+      "message": "could use super implementation ?",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YCM\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T23:40:11Z",
+      "side": 1,
+      "message": "why is this an abstractmethod? seems like it\u0027s ok to use the default impl and not overrride.",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
