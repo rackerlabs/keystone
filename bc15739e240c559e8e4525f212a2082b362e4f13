@@ -68,6 +68,24 @@
       "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Yxk\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-16T20:09:20Z",
+      "side": 1,
+      "message": "how about, rather than do asserts in fake_notify(), change fake_notify() to save the values it\u0027s called with in self.xxxs, and then have a self._assertLastNotify( \u003cthe expected values\u003e ) (where expected values are from the current calls to save_expected_values).\n\nThen could get rid of the self.save_expected_values and self.assertTrue(self.send_notification_called) calls in each test",
+      "parentUuid": "AAAATH//Y+A\u003d",
+      "revId": "bc15739e240c559e8e4525f212a2082b362e4f13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
