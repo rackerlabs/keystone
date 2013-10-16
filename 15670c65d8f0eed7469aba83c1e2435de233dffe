@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//ZQA\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-16T18:45:21Z",
+      "side": 0,
+      "message": "this is not reflected on docs.openstack.org, but probably should be?",
+      "revId": "15670c65d8f0eed7469aba83c1e2435de233dffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZQY\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-16T18:45:21Z",
+      "side": 0,
+      "message": "keystone specific?",
+      "revId": "15670c65d8f0eed7469aba83c1e2435de233dffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
