@@ -52,3 +52,29 @@ class ExampleDriver(object):
 
         """
         raise exception.NotImplemented()
+
+    def add_message(self, message_id, message_type, timestamp):
+        """Add message if testing event notificaitons
+
+        :message_id: resource id from event payload
+        :type data: uuid
+        :message_type: event type
+        :type data: string
+        :timestamp: message timestamp
+        :type data: string
+        :raises: keystone.exception,
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()
+
+    def remove_message(self, message_id):
+        """Remove message if testing event notificaitons
+
+        :message_id: resource id from event payload
+        :type data: uuid
+        :raises: keystone.exception,
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()

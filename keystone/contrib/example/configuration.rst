@@ -29,3 +29,5 @@ Please describe here in details how to enable your extension:
 
 
     ./bin/keystone-manage db_sync --extension example
+
+4. Optional: subscribe to notification events
