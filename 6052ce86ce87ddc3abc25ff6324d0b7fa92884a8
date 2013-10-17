@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Vjc\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-17T15:29:08Z",
+      "side": 1,
+      "message": "Fair point. Done.",
+      "parentUuid": "AAAATH//Vpc\u003d",
+      "revId": "6052ce86ce87ddc3abc25ff6324d0b7fa92884a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//VqY\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//VjQ\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-17T15:29:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//VqY\u003d",
+      "revId": "6052ce86ce87ddc3abc25ff6324d0b7fa92884a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//Voo\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-17T15:19:58Z",
       "side": 1,
       "message": "change \"pointed by\" to \"from\"",
+      "revId": "6052ce86ce87ddc3abc25ff6324d0b7fa92884a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VjM\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-17T15:29:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//Voo\u003d",
       "revId": "6052ce86ce87ddc3abc25ff6324d0b7fa92884a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
