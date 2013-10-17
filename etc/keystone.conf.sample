@@ -143,6 +143,11 @@
 # AMQP exchange to connect to if using RabbitMQ or Qpid
 # control_exchange = openstack
 
+[extension_notifications]
+# List of extensions that are enrolled in notifications for status change
+# during the creation, update and deletion of Keystone main entities.
+# extensions = keystone.contrib.example.controllers.ExampleV3Controller
+
 [sql]
 # The SQLAlchemy connection string used to connect to the database
 # connection = sqlite:///keystone.db

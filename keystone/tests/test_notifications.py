@@ -17,6 +17,7 @@
 import uuid
 
 from keystone import notifications
+from keystone.contrib.example import controllers as example_extension
 from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common.notifier import api as notifier_api
 from keystone import tests
@@ -250,3 +251,26 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assertLastNotify(user_ref['id'], 'updated', 'user')
+
+class NotificationsForExtensions(test_v3.RestfulTestCase):
+
+    EXTENSION_NAME = 'example_extension'
+    EXTENSION_TO_ADD = 'example_extension'
+
+    def setUp(self):
+        super(NotificationsForExtensions, self).setUp()
+
+    def tearDown(self):
+        super(NotificationsForExtensions, self).tearDown()
+
+    def test_notification_received(self):
+        example_controller = example_extension.ExampleV3Controller()
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        self.assertEqual(example_extension.message_received_count, 1)
+        #test = False
+        #if example_controller.get_number_messages() > 0:
+        #    test = True
+        #self.assertTrue(test)
+        #self.assignment_api.delete_project(project_ref['id'])
+        #self.assertTrue(example_controller.get_number_messages() > 1)
