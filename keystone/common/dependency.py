@@ -26,6 +26,9 @@ See also:
     https://en.wikipedia.org/wiki/Dependency_injection
 """
 
+from keystone.common import extensions_notifier
+
+
 REGISTRY = {}
 
 _future_dependencies = {}
@@ -64,10 +67,30 @@ def provider(name):
     """
     def wrapper(cls):
         def wrapped(init):
+            def __register_event_notifications(self):
+                for event in getattr(self, 'notification_subscriptions', {}):
+                    if not isinstance(event, dict):
+                        msg = _('notification_subscriptions must be a dict')
+                        raise ValueError(msg)
+                    for resource_type in event:
+                        # Make sure we register the provider for each event it
+                        # cares to be notified about.
+                        callbacks = event[resource_type]
+                        if not callbacks:
+                            continue
+                        if not hasattr(callbacks, '__iter__'):
+                            # ensure the callback information is a list
+                            # allowing multiple callbacks to exist
+                            callbacks = [callbacks]
+                        extensions_notifier.register(event,
+                                                     resource_type,
+                                                     callbacks)
+
             def __wrapped_init__(self, *args, **kwargs):
                 """Initialize the wrapped object and add it to the registry."""
                 init(self, *args, **kwargs)
                 REGISTRY[name] = self
+                __register_event_notifications(self)
 
                 resolve_future_dependencies(name)
 
