@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//V7w\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "It\u0027s not really the API, is it? Suggest \"Pre-Havana Keystone\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V7s\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change to \"In the Havana release\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V7U\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change \"set in\" to \"add `external` to\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V7I\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "remove \"So far\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V7E\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change \"has check\" to \"has checked\"\n\nchange \"make sure user\" to \"make sure the user\" \n\nchange \"the one specify\" to \"the one specified\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V5o\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change \"considered the\" to \"considered\" (remove the)",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V24\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "Seems strange to add something new that\u0027s deprecated.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VzQ\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "Variables should be all uppercase according to PEP8. Change to remote_user\n\napplies elsewhere.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V4w\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change \"thge\" to \"the\"\n\nchange \"bahaviour\" to \"behavior\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V4k\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change \"has check\" to \"has checked\"\n\nchange \"make sure user\" to \"make sure the user\"\n\nchange \"one specify\" to \"one specified\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V3w\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "might as well just raise Exception here since the caller converts it to Unauthorized anyways.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V3s\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "might as well just raise Exception here since the caller converts it to Unauthorized anyways.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//V0E\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "this change is going to break anybody that changed their code to work with ExternalDefault as it was shipped with Havana. Not sure that we can change it.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VzA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "Why would the default be something that\u0027s deprecated?",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Vvo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change the name so doesn\u0027t mask the list builtin. Change to config_files or something.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Vvk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:09:42Z",
+      "side": 1,
+      "message": "change the name so doesn\u0027t mask the list builtin. Change to config_files or something.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
