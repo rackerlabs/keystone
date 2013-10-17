@@ -15,12 +15,16 @@
 #   under the License.
 
 """Notifications module for OpenStack Identity Service resources"""
-
 from keystone.openstack.common import log
 from keystone.openstack.common.notifier import api as notifier_api
 
 
 LOG = log.getLogger(__name__)
+# NOTE(gyee): actions that can be notified. One must update this list whenever
+# a new action is supported.
+ACTIONS = set(['created', 'deleted', 'updated'])
+# resource types that can be notified
+RESOURCE_TYPES = set()
 
 
 class ManagerNotificationWrapper(object):
@@ -33,8 +37,11 @@ class ManagerNotificationWrapper(object):
     :param host: host of the resource (optional)
     """
     def __init__(self, operation, resource_type, host=None):
+        global RESOURCE_TYPES
+
         self.operation = operation
         self.resource_type = resource_type
+        RESOURCE_TYPES.add(resource_type)
         self.host = host
 
     def __call__(self, f):

@@ -16,6 +16,7 @@
 
 import uuid
 
+from keystone.common import extensions_notifier
 from keystone import notifications
 from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common.notifier import api as notifier_api
@@ -250,3 +251,48 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assertLastNotify(user_ref['id'], 'updated', 'user')
+
+
+class NotificationsForExampleExtensions(test_v3.RestfulTestCase):
+
+    def setUp(self):
+        super(NotificationsForExampleExtensions, self).setUp()
+        extensions_notifier.subscribers = {}
+        self.has_been_notified = False
+
+    def _project_deleted_notification(self, context, message):
+        self.has_been_notified = True
+
+    def _project_created_notification(self, context, message):
+        self.has_been_notified = True
+
+    def test_notification_received(self):
+        extensions_notifier.register('created',
+                                     'project',
+                                     self._project_created_notification)
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        self.assertTrue(self.has_been_notified)
+
+    def test_notification_method_not_callable(self):
+        fake_method = None
+        extensions_notifier.subscribers = {}
+        extensions_notifier.register('updated',
+                                     'project',
+                                     [fake_method])
+        subscribers = extensions_notifier.subscribers
+        self.assertNotIn('updated', subscribers)
+
+    def test_notification_event_not_valid(self):
+        self.assertRaises(ValueError,
+                          extensions_notifier.register,
+                          uuid.uuid4().hex,
+                          'project',
+                          self._project_deleted_notification)
+
+    def test_resource_type_not_valid(self):
+        self.assertRaises(ValueError,
+                          extensions_notifier.register,
+                          'removed',
+                          uuid.uuid4().hex,
+                          self._project_deleted_notification)

@@ -44,6 +44,8 @@ Extension code base in the `keystone/contrib/example` folder.
   file, these should be kept disabled as default and have their own element.
 - If configuration changes are required/introduced in the `keystone-paste.ini`,
   the new filter must be declared.
+- If the configuration is listening to core notifications, the events list and
+  corresponding callbacks must be declared in the ``core.py`` file.
 
 
 `keystone.conf.sample` File
@@ -78,6 +80,18 @@ Example::
 In case the Extension is overriding or re-implementing an existing portion of
 Keystone the required change should be commented in the `configuration.rst` but
 not placed in the `keystone.conf.sample` file to avoid unecessary confusion.
+
+In case the Extension requires to be notified of changes in the main Keystone
+entities, the Extension notifier must be activated.
+
+Example::
+
+    # === Notification Options ===
+
+    # Notifications can be sent when users or projects are created, updated or
+    ...
+    # Keystone Extensions Notification Driver (not enabled by default)
+    notification_driver = keystone.common.extensions_notifier
 
 
 `keystone-paste.ini` File
@@ -241,3 +255,71 @@ must be executed.
 Example::
 
      ./bin/keystone-manage db_sync --extension example
+
+
+Event Notifications
+-------------------
+
+Extensions can subscribe to Keystone (Identity) event notifications.
+Extensions must provide the list of events of interest and the corresponding
+callbacks. Events are fired upon successful creation, modification, and
+deletion of the following Keystone resources:
+
+* ``group``
+* ``project``
+* ``role``
+* ``user``
+
+The extension's ``Manager`` class must contain the
+``notification_subscriptions`` attribute. It is a dictionary listing as keys
+those events that are of interest and the values should be the respective
+callbacks. Notification subscription registration is done via the
+dependency injection mechanism. During dependency provider registration, the
+``dependency.provider`` decorator looks for the ``notification_subscriptions``
+class attribute. If it exist the notification callbacks are registered
+accordingly. Needless to say, in order to subscript event notifications, the
+extension's ``Manager`` class must also be a dependency provider.
+
+Example:
+
+.. code:: python
+    @dependency.provider('example_api')
+    class ExampleManager(manager.Manager):
+        """Example Manager.
+
+        See :mod:`keystone.common.manager.Manager` for more details on
+        how this dynamically calls the backend.
+
+        """
+
+        notification_subscriptions = {}
+
+        def __init__(self):
+            # Register the notification callback for when projects are
+            # deleted. This information is used when the @dependency.provider
+            # decorator acts on the class.
+            self.notification_subscriptions.setdefault('deleted', {})
+            self.notification_subscriptions['deleted'].setdefault(
+                'project', [])
+            self.notification_subscriptions['deleted']['project'].append(
+                self.project_deleted_notification)
+            super(ExampleManager, self).__init__(
+                'keystone.contrib.example.core.ExampleDriver')
+
+        def project_deleted_notification(self, context, message):
+            # cleanup data related to the deleted project here
+
+Callbacks must be expecting the following parameters:
+
+* ``context`` - the session context
+* ``message`` - the notification message
+
+Example:
+
+.. code:: python
+      def project_deleted_notification(self, context, message)
+
+
+Events in Keystone follow this format: ``identity.<resource>.<operation>``
+where the operations are ``created``, ``updated`` and ``deleted``. Please refer
+to the :doc:`event_notifications` for more information on notifications.

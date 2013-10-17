@@ -35,8 +35,39 @@ class ExampleManager(manager.Manager):
 
     """
 
+    notification_subscriptions = {}
+
     def __init__(self):
-        super(ExampleManager, self).__init__(CONF.ExampleDriver.driver)
+        # Register the notification callback for when projects are deleted.
+        # This information is used when the @dependency.provider decorator acts
+        # on the class.
+        self.notification_subscriptions.setdefault('deleted', {})
+        self.notification_subscriptions['deleted'].setdefault('project', [])
+        self.notification_subscriptions['deleted']['project'].append(
+            self.project_deleted_notification)
+        # Register the notification callback for when projects are created.
+        # This information is used when the @dependency.provider decorator acts
+        # on the class.
+        self.notification_subscriptions.setdefault('created', {})
+        self.notification_subscriptions['created'].setdefault('project', [])
+        self.notification_subscriptions['created']['project'].append(
+            self.project_created_notification)
+        super(ExampleManager, self).__init__(
+            'keystone.contrib.example.core.ExampleDriver')
+
+    def project_deleted_notification(self, context, message):
+        # The code below is merely an example.
+        msg = _('Received message id: %(message_id)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message_id': message.get('message_id'),
+                       'message_type': message.get('event_type')})
+
+    def project_created_notification(self, context, message):
+        # The code below is merely an example.
+        msg = _('Received message id: %(message_id)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message_id': message.get('message_id'),
+                       'message_type': message.get('event_type')})
 
 
 class ExampleDriver(object):
