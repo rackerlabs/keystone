@@ -100,7 +100,7 @@
 # Logging driver example (not enabled by default)
 # notification_driver = keystone.openstack.common.notifier.log_notifier
 # RPC driver example (not enabled by default)
-# notification_driver = keystone.openstack.common.notifier.rpc_notifier
+notification_driver = keystone.common.extensions_notifier
 
 # Default notification level for outgoing notifications
 # default_notification_level = INFO
