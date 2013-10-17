@@ -16,6 +16,8 @@
 
 import uuid
 
+from keystone.common import dependency
+from keystone.common import extensions_notifier
 from keystone import notifications
 from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common.notifier import api as notifier_api
@@ -250,3 +252,84 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assertLastNotify(user_ref['id'], 'updated', 'user')
+
+
+class TestEventCallbacks(test_v3.RestfulTestCase):
+
+    def setUp(self):
+        super(TestEventCallbacks, self).setUp()
+        extensions_notifier.SUBSCRIBERS = {}
+        self.has_been_called = False
+
+    def _project_deleted_callback(self, context, message):
+        self.has_been_called = True
+
+    def _project_created_callback(self, context, message):
+        self.has_been_called = True
+
+    def test_notification_received(self):
+        extensions_notifier.register('created',
+                                     'project',
+                                     self._project_created_callback)
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        self.assertTrue(self.has_been_called)
+
+    def test_notification_method_not_callable(self):
+        fake_method = None
+        extensions_notifier.SUBSCRIBERS = {}
+        extensions_notifier.register('updated',
+                                     'project',
+                                     [fake_method])
+        # Since fake_method is not callable, it will be logged as a warning.
+        # No exception will be thrown.
+        self.assertNotIn('updated', extensions_notifier.SUBSCRIBERS)
+
+    def test_notification_event_not_valid(self):
+        self.assertRaises(extensions_notifier.InvalidEventError,
+                          extensions_notifier.register,
+                          uuid.uuid4().hex,
+                          'project',
+                          self._project_deleted_callback)
+
+    def test_resource_type_not_valid(self):
+        self.assertRaises(extensions_notifier.InvalidResourceTypeError,
+                          extensions_notifier.register,
+                          'deleted',
+                          uuid.uuid4().hex,
+                          self._project_deleted_callback)
+
+    def test_provider_even_callbacks_subscription(self):
+        @dependency.provider('foo_api')
+        class Foo:
+            def __init__(self):
+                self.event_callbacks = {
+                    'created': {
+                        'project': [self.foo_callback]}}
+
+            def foo_callback(self, context, message):
+                pass
+
+        extensions_notifier.SUBSCRIBERS = {}
+        Foo()
+        self.assertIn('created', extensions_notifier.SUBSCRIBERS)
+
+    def test_invalid_event_callbacks(self):
+        @dependency.provider('foo_api')
+        class Foo:
+            def __init__(self):
+                self.event_callbacks = 'bogus'
+
+        extensions_notifier.SUBSCRIBERS = {}
+        self.assertRaises(dependency.InvalidEventCallbacksError,
+                          Foo)
+
+    def test_invalid_event_callbacks_event(self):
+        @dependency.provider('foo_api')
+        class Foo:
+            def __init__(self):
+                self.event_callbacks = {'created': 'bogus'}
+
+        extensions_notifier.SUBSCRIBERS = {}
+        self.assertRaises(dependency.InvalidEventCallbacksError,
+                          Foo)

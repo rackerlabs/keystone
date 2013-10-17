@@ -36,7 +36,42 @@ class ExampleManager(manager.Manager):
     """
 
     def __init__(self):
-        super(ExampleManager, self).__init__(CONF.ExampleDriver.driver)
+        # The following is an example of event callbacks. In this setup,
+        # ExampleManager's data model is depended on project's data model.
+        # It must create additional aggregates when a new project is created,
+        # and it must cleanup data related to the project whenever a project
+        # has been deleted.
+        #
+        # In this example, the project_deleted_callback will be involved
+        # whenever a project has been deleted. Similarily, the
+        # project_created_callback wil be invoked whenever a new project is
+        # created.
+
+        # This information is used when the @dependency.provider decorator acts
+        # on the class.
+        self.event_callbacks = {
+            'deleted': {
+                'project': [
+                    self.project_deleted_callback]},
+            'created': {
+                'project': [
+                    self.project_created_callback]}}
+        super(ExampleManager, self).__init__(
+            'keystone.contrib.example.core.ExampleDriver')
+
+    def project_deleted_callback(self, context, message):
+        # The code below is merely an example.
+        msg = _('Received message id: %(message_id)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message_id': message.get('message_id'),
+                       'message_type': message.get('event_type')})
+
+    def project_created_callback(self, context, message):
+        # The code below is merely an example.
+        msg = _('Received message id: %(message_id)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message_id': message.get('message_id'),
+                       'message_type': message.get('event_type')})
 
 
 class ExampleDriver(object):
