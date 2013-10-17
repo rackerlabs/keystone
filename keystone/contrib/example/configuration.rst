@@ -29,3 +29,36 @@ Please describe here in details how to enable your extension:
 
 
     ./bin/keystone-manage db_sync --extension example
+
+4. Optional: subscribe to ``resources`` notification events
+   ``Resources`` in Keystone that produce notifications are:
+
+
+    - ``group``
+    - ``project``
+    - ``role``
+    - ``user``
+
+
+   In order to subscribe to event notifications, the extension must provide the list of events it is interested in and their corresponding callbacks.
+   In the ``routers.py`` file the following dictionary has to be created:
+
+
+.. code:: python
+       subscribed_events = {
+          'identity.project.deleted': controllers.ExampleV3Controller.project_deleted_notification,
+          'identity.project.created': controllers.ExampleV3Controller.project_created_notification
+       }
+
+
+   where the key represents the identity event of interest and the value is the callback.
+   Events in Keystone follow this format: identity.<resource>.<operation> where the
+   operations are ``created``, ``updated`` and ``deleted``.
+
+
+Lastly the extension has to register the dictionary of events with the
+``extension_notifier`` notification driver:
+
+
+.. code:: python
+       extensions_notifier.register(subscribed_events)
