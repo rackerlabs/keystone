@@ -17,6 +17,12 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.openstack.common import log as logging
+
+
+LOG = logging.getLogger(__name__)
+
+message_received_count = 0
 
 
 @dependency.requires('example_api')
@@ -26,3 +32,25 @@ class ExampleV3Controller(controller.V3Controller):
     def example_get(self, context):
         """Description of the controller logic."""
         self.example_api.do_something(context)
+
+    @classmethod
+    def project_deleted_notification(self, context, message):
+        """The code below is merely an example."""
+        global message_received_count
+        message_received_count += 1
+        msg = _('Received message id: %(message)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message': message.get('message_id'),
+                       'message_type': message.get('event_type'),
+                       'messages': str(message_received_count)})
+
+    @classmethod
+    def project_created_notification(self, context, message):
+        """The code below is merely an example."""
+        global message_received_count
+        message_received_count += 1
+        msg = _('Received message id: %(message)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message': message.get('message_id'),
+                       'message_type': message.get('event_type'),
+                       'messages': str(message_received_count)})
