@@ -51,6 +51,24 @@
       "revId": "db19ce755b4d18be4d880bc958862c0cda71b83d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//T4k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T22:22:56Z",
+      "side": 1,
+      "message": "I changed my mind about this. I believe this is used when you do a \"keystone-manage ssl_setup\", so we should keep it around.",
+      "parentUuid": "AAAATH//cZo\u003d",
+      "revId": "db19ce755b4d18be4d880bc958862c0cda71b83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
