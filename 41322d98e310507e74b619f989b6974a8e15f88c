@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//T88\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T22:06:32Z",
+      "side": 1,
+      "message": "the way it is now follows the OpenStack hacking guidelines.",
+      "parentUuid": "AAAATH//VTo\u003d",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//VUA\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 7
@@ -47,6 +65,41 @@
       "writtenOn": "2013-10-17T16:06:05Z",
       "side": 1,
       "message": "I am not seeing any of the subclasses raise Unauthorized.",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//T9E\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T22:06:32Z",
+      "side": 1,
+      "message": "also, if the _authenticate can raise Unauthorized, then seems like the caller would re-raise it instead of eating it and raising a new Unauthorized (at line 51)",
+      "parentUuid": "AAAATH//VRo\u003d",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//T8s\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T22:06:32Z",
+      "side": 1,
+      "message": "The old names should be left as deprecated otherwise will break upgrades.\n\nAlternatively, don\u0027t rename these classes.",
       "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
