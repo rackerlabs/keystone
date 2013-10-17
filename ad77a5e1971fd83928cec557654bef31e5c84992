@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Vaw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-17T15:42:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//VgQ\u003d",
+      "revId": "ad77a5e1971fd83928cec557654bef31e5c84992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//VgE\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-17T15:34:59Z",
       "side": 1,
       "message": "will need to import abc, too?",
+      "revId": "ad77a5e1971fd83928cec557654bef31e5c84992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Va0\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-17T15:42:31Z",
+      "side": 1,
+      "message": "fast fingers :-(",
+      "parentUuid": "AAAATH//VgE\u003d",
       "revId": "ad77a5e1971fd83928cec557654bef31e5c84992",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
