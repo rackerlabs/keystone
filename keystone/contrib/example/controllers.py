@@ -15,14 +15,27 @@
 # under the License.
 
 
+from keystone.contrib import controllers
 from keystone.common import controller
 from keystone.common import dependency
 
 
 @dependency.requires('example_api')
-class ExampleV3Controller(controller.V3Controller):
+class ExampleV3Controller(controllers.ExtensionV3Controller):
+
+    def __init__(self):
+        super(ExampleV3Controller, self).__init__()
+        self.subscribed_events = { 'identity.project.deleted': 'removeProject',
+                                   'identity.project.created': 'viewProject',
+                                   'identity.project.updated': 'viewProject' }
 
     @controller.protected()
     def example_get(self, context):
         """Description of the controller logic."""
         self.example_api.do_something(context)
+
+    def removeProject(self, context, message):
+        print '========= ExampleV3Controller removeProject: %s ========\n' % message
+
+    def viewProject(self, context, message):
+        print '========= ExampleV3Controller viewProject: %s ========\n' % message
