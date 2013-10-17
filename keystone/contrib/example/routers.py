@@ -14,8 +14,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import extensions_notifier
 from keystone.common import wsgi
 from keystone.contrib.example import controllers
+
+
+subscribed_events = {
+    'identity.project.deleted':
+    controllers.ExampleV3Controller.project_deleted_notification,
+    'identity.project.created':
+    controllers.ExampleV3Controller.project_created_notification
+}
+extensions_notifier.register(subscribed_events)
 
 
 class ExampleRouter(wsgi.ExtensionRouter):
