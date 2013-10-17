@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//Vdc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:38:19Z",
+      "side": 1,
+      "message": "group_ref doesn\u0027t need to be a member, remove self.",
+      "revId": "25205ed504b07791c541b048e71e45b12684fcbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VdM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-17T15:38:19Z",
+      "side": 1,
+      "message": "project_ref doesn\u0027t need to be a member.\n\nThis comment applies to all these tests.",
+      "revId": "25205ed504b07791c541b048e71e45b12684fcbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
