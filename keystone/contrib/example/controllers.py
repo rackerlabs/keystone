@@ -17,6 +17,10 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.openstack.common import log as logging
+
+
+LOG = logging.getLogger(__name__)
 
 
 @dependency.requires('example_api')
