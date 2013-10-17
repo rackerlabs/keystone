@@ -25,6 +25,8 @@ from keystone.openstack.common import log as logging
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
+message_received_count = 0
+
 
 @dependency.provider('example_api')
 class ExampleManager(manager.Manager):
@@ -36,7 +38,28 @@ class ExampleManager(manager.Manager):
     """
 
     def __init__(self):
-        super(ExampleManager, self).__init__(CONF.ExampleDriver.driver)
+        super(ExampleManager, self).__init__(
+            'keystone.contrib.example.core.ExampleDriver')
+
+    def project_deleted_notification(self, context, message):
+        """The code below is merely an example."""
+        global message_received_count
+        message_received_count += 1
+        msg = _('Received message id: %(message_id)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message_id': message.get('message_id'),
+                       'message_type': message.get('event_type'),
+                       'messages': str(message_received_count)})
+
+    def project_created_notification(self, context, message):
+        """The code below is merely an example."""
+        global message_received_count
+        message_received_count += 1
+        msg = _('Received message id: %(message_id)s of type %(message_type)s'
+                ' as received message number %(messages)s')
+        LOG.info(msg, {'message_id': message.get('message_id'),
+                       'message_type': message.get('event_type'),
+                       'messages': str(message_received_count)})
 
 
 class ExampleDriver(object):
