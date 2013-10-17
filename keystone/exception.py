@@ -17,6 +17,11 @@
 from keystone.common import config
 from keystone.openstack.common import log as logging
 
+# check whether _ was set globally or not
+try:
+    _
+except NameError:
+    from keystone.openstack.common.gettextutils import _
 
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
