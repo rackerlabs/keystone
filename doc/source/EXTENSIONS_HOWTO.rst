@@ -44,6 +44,8 @@ Extension code base in the `keystone/contrib/example` folder.
   file, these should be kept disabled as default and have their own element.
 - If configuration changes are required/introduced in the `keystone-paste.ini`,
   the new filter must be declared.
+- If the configuration is listening to core notifications the events list and
+  corresponding callbacks must be declared in the ``__init__.py`` file.
 
 
 `keystone.conf.sample` File
@@ -78,6 +80,18 @@ Example::
 In case the Extension is overriding or re-implementing an existing portion of
 Keystone the required change should be commented in the `configuration.rst` but
 not placed in the `keystone.conf.sample` file to avoid unecessary confusion.
+
+In case the Extension requires to be notified of changes in the main Keystone
+entities the Extension notifier must be activated.
+
+Example::
+
+    # === Notification Options ===
+
+    # Notifications can be sent when users or projects are created, updated or
+    ...
+    # Keystone Extensions Notification Driver (not enabled by default)
+    notification_driver = keystone.common.extensions_notifier
 
 
 `keystone-paste.ini` File
@@ -241,3 +255,47 @@ must be executed.
 Example::
 
      ./bin/keystone-manage db_sync --extension example
+
+
+Event Notifications
+-------------------
+
+Extensions can subscribe to Keystone (Identity) event notifications.
+Extensions must provide the list of events of interest and the corresponding
+callbacks. Events are fired by: ``creating``, ``updating`` and ``deleting``
+the following Keystone resources:
+
+
+    - ``group``
+    - ``project``
+    - ``role``
+    - ``user``
+
+
+In the ``routers.py`` file add a dictionary listing as keys those events that are
+of interest and the values should be the respective callbacks.
+
+Example:
+
+.. code:: python
+       from keystone.contrib.example import controllers
+       from keystone.common import extensions_notifier
+
+
+       subscribed_events = {
+          'identity.project.deleted': controllers.project_deleted_notification,
+          'identity.project.created': controllers.project_created_notification
+       }
+
+
+Events in Keystone follow this format: identity.<resource>.<operation> where the
+operations are ``created``, ``updated`` and ``deleted``. Please refers to the
+event_notifications.rst file for more information on notifications.
+
+Lastly the extension has to register the dictionary of events with the
+``extension_notifier`` notification driver.
+
+Example:
+
+.. code:: python
+       extensions_notifier.register(subscribed_events)
