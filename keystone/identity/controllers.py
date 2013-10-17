@@ -761,6 +761,29 @@ class UserV3(controller.V3Controller):
     def delete_user(self, context, user_id):
         return self._delete_user(context, user_id)
 
+    @controller.protected()
+    def change_password(self, context, user_id, user):
+        original_password = user.get('original_password')
+
+        if original_password is None:
+            raise exception.ValidationError(target='user',
+                                            attribute='original password')
+
+        try:
+            self.identity_api.authenticate(
+                user_id=user_id,
+                password=original_password)
+        except AssertionError:
+            raise exception.Unauthorized()
+
+        update_dict = {'password': user['password'], 'id': user_id}
+
+        admin_context = copy.copy(context)
+        admin_context['is_admin'] = True
+        self.update_user(admin_context, user_id, update_dict)
+
+        return
+
 
 class GroupV3(controller.V3Controller):
     collection_name = 'groups'
