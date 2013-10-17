@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//VAU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-17T17:06:15Z",
+      "side": 1,
+      "message": "Is it more confusing to have this in here knowing that it\u0027s unnecessary or it is better because it tells the programmer explicitly that I do want to return?",
+      "revId": "dfa16958829100bfb84a58663295ceb053314b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
