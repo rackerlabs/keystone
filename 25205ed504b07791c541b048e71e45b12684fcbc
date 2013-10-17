@@ -33,6 +33,24 @@
       "revId": "25205ed504b07791c541b048e71e45b12684fcbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VMM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-17T16:19:19Z",
+      "side": 1,
+      "message": "whoops, yes, you are correct",
+      "parentUuid": "AAAATH//VdM\u003d",
+      "revId": "25205ed504b07791c541b048e71e45b12684fcbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
