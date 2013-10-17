@@ -16,6 +16,7 @@
 
 import uuid
 
+from keystone.common import extensions_notifier
 from keystone import notifications
 from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common.notifier import api as notifier_api
@@ -250,3 +251,61 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assertLastNotify(user_ref['id'], 'updated', 'user')
+
+
+class NotificationsForExampleExtensions(test_v3.RestfulTestCase):
+
+    callback_performed = False
+
+    def _subscribe_for_test(self):
+        subscribed_events = {
+            'identity.project.created':
+            NotificationsForExampleExtensions.project_created_notification
+        }
+        extensions_notifier.register(subscribed_events)
+
+    def _subscribe_not_callable(self):
+        subscribed_events = {
+            'identity.project.updated':
+            NotificationsForExampleExtensions.callback_performed
+        }
+        extensions_notifier.register(subscribed_events)
+
+    def _subscribe_non_valid_message_type(self):
+        subscribed_events = {
+            'identity.project.removed':
+            NotificationsForExampleExtensions.project_deleted_notification
+        }
+        extensions_notifier.register(subscribed_events)
+
+    @classmethod
+    def project_deleted_notification(self, context, message):
+        """The code below is merely an example."""
+        global callback_performed
+        callback_performed = True
+
+    @classmethod
+    def project_created_notification(self, context, message):
+        """The code below is merely an example."""
+        global callback_performed
+        callback_performed = True
+
+    def test_notification_received(self):
+        global callback_performed
+        self._subscribe_for_test()
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        self.assertTrue(callback_performed)
+        callback_performed = False
+        self.assignment_api.delete_project(project_ref['id'])
+        self.assertFalse(callback_performed)
+
+    def test_notification_method_not_callable(self):
+        self._subscribe_not_callable()
+        subscribers = extensions_notifier.subscribers
+        self.assertFalse(subscribers.has_key('identity.project.updated'))
+
+    def test_notification_event_not_valid(self):
+        self._subscribe_non_valid_message_type()
+        subscribers = extensions_notifier.subscribers
+        self.assertFalse(subscribers.has_key('identity.project.removed'))
