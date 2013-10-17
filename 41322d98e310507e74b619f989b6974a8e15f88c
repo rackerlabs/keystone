@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//VTo\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-17T16:06:05Z",
+      "side": 1,
+      "message": "may want to get rid of the extra line",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VUA\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-17T16:06:05Z",
+      "side": 1,
+      "message": "single quote. user_ref[\u0027name\u0027]",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VRo\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-17T16:06:05Z",
+      "side": 1,
+      "message": "I am not seeing any of the subclasses raise Unauthorized.",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
