@@ -170,6 +170,15 @@ class AuthBadRequests(AuthTest):
                           self.controller.authenticate,
                           {}, body_dict)
 
+    def test_authenticate_without_tenant_infos(self):
+        """Verify sending without 'tenantId' or 'tenantName'
+         raises the right exception.
+         """
+        body_dict = _build_user_auth(username='FOO', password='foo2')
+        self.assertRaises(exception.ValidationError,
+                          self.controller.authenticate,
+                          {}, body_dict)
+
     def test_authenticate_token_too_large(self):
         """Verify sending large 'token' raises the right exception."""
         body_dict = _build_user_auth(token={'id': '0' * 8193})

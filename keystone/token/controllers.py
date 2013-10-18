@@ -319,6 +319,11 @@ class Auth(controller.V2Controller):
 
         Returns a valid tenant_id if it exists, or None if not specified.
         """
+        if ("tenantId" not in auth and "tenantName" not in auth):
+            raise exception.ValidationError(
+                attribute='tenantId or tenantName',
+                target='auth')
+
         tenant_id = auth.get('tenantId', None)
         if tenant_id and len(tenant_id) > CONF.max_param_size:
             raise exception.ValidationSizeError(attribute='tenantId',
