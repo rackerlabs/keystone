@@ -34,6 +34,24 @@
       "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//RIE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-18T17:58:39Z",
+      "side": 1,
+      "message": "My preference is to be explicit in startup actions, so I\u0027d prefer it wasn\u0027t in keystone.__init__. Also, the keystone.tests does its own gettext.install() which is different than keystone server\u0027s.\n\nExternal users of this module could do gettextutils.install() just like keystone-all and keystone/httpd do to get the _ builtin.",
+      "parentUuid": "AAAATH//SG4\u003d",
+      "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
