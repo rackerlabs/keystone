@@ -52,6 +52,24 @@
       "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//RHM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-18T18:07:44Z",
+      "side": 1,
+      "message": "IMO, injecting this from keystone-all and keystone/httpd is way less explicit than doing it from within keystone\u0027s codebase.\n\nAs Brant pointed out in IRC, the conditional (if-statement or try/except) doesn\u0027t appear to be necessary. I think my conditional in the first comment here will always return true, anyway.",
+      "parentUuid": "AAAATH//RIE\u003d",
+      "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
