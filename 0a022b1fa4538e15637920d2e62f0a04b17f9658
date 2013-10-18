@@ -16,6 +16,24 @@
       "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//SG4\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-18T13:13:57Z",
+      "side": 1,
+      "message": "Additionally, bin/keystone-all uses gettextutils.install() -- I\u0027m probably overlooking something, but don\u0027t know of a reason why that couldn\u0027t be moved to keystone.__init__ itself",
+      "parentUuid": "AAAATH//SLg\u003d",
+      "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
