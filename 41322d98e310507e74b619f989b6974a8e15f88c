@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//S/Q\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T07:35:51Z",
+      "side": 1,
+      "message": "Indeed there is no need to raise anything here, since the caller would capture the exception and raise a proper Unauthorized.",
+      "parentUuid": "AAAATH//T9E\u003d",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//T8s\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 7
@@ -100,6 +118,24 @@
       "writtenOn": "2013-10-17T22:06:32Z",
       "side": 1,
       "message": "The old names should be left as deprecated otherwise will break upgrades.\n\nAlternatively, don\u0027t rename these classes.",
+      "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//S/M\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T07:35:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//T8s\u003d",
       "revId": "41322d98e310507e74b619f989b6974a8e15f88c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
