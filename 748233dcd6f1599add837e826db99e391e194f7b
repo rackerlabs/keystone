@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Vfk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "It is specific to V3. V2 uses a different controller and approach: https://github.com/openstack/keystone/blob/master/keystone/token/controllers.py#L89",
+      "parentUuid": "AAAATH//V7w\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//V7s\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-17T15:09:42Z",
       "side": 1,
       "message": "change \"set in\" to \"add `external` to\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Vfc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//V7U\u003d",
       "revId": "748233dcd6f1599add837e826db99e391e194f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Vf0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Arg, too much copy and paste.\n\nDone.",
+      "parentUuid": "AAAATH//V7E\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//V5o\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 9
@@ -98,6 +152,24 @@
       "writtenOn": "2013-10-17T15:09:42Z",
       "side": 1,
       "message": "change \"considered the\" to \"considered\" (remove the)",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VfU\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//V5o\u003d",
       "revId": "748233dcd6f1599add837e826db99e391e194f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Ve0\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Yes. However, in the other reviews it was suggested to add also this plugin to preserve the old grizzly behaviour. Without it, external authentication won\u0027t work as expected for Grizzly users.",
+      "parentUuid": "AAAATH//V24\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//VzQ\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 9
@@ -132,6 +222,24 @@
       "writtenOn": "2013-10-17T15:09:42Z",
       "side": 1,
       "message": "Variables should be all uppercase according to PEP8. Change to remote_user\n\napplies elsewhere.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VZA\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//VzQ\u003d",
       "revId": "748233dcd6f1599add837e826db99e391e194f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//VYY\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//V4w\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//V4k\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 9
@@ -166,6 +292,24 @@
       "writtenOn": "2013-10-17T15:09:42Z",
       "side": 1,
       "message": "change \"has check\" to \"has checked\"\n\nchange \"make sure user\" to \"make sure the user\"\n\nchange \"one specify\" to \"one specified\"",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//VYI\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//V4k\u003d",
       "revId": "748233dcd6f1599add837e826db99e391e194f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//S8o\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//V3w\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//V3s\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 9
@@ -200,6 +362,24 @@
       "writtenOn": "2013-10-17T15:09:42Z",
       "side": 1,
       "message": "might as well just raise Exception here since the caller converts it to Unauthorized anyways.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//S8g\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//V3s\u003d",
       "revId": "748233dcd6f1599add837e826db99e391e194f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +403,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Vcw\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right to an extent.\n\nWithout this change somebody with users containing an \"@\" in their usernames (emails, X.509 cert DNs) and not using domains (i.e. relying on the default domain) won\u0027t be able to use external authentication at all, since the usernames will be wrong.\n\nIf we decide to split REMOTE_USER by the \"@\" anyway we should: 1) force the external plugins to append a \"@domain\" (even if domain is empty\" to the REMOTE_USER and 2) behave the same way ExternalDomain does (i.e. getting the rightmost \"@\") but discarding the domain information in favor of the default domain.\n\nFor example, with the havana code this valid DN: \"/DC\u003dfoo/O\u003dbar/CN\u003dBazonk Smith (bazonk@example.org)\" will be translated into \"/DC\u003dfoo/O\u003dbar/CN\u003dBazonk Smith (bazonk\"",
+      "parentUuid": "AAAATH//V0E\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//VzA\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 9
@@ -240,6 +438,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//VX0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "ISee other comments in the reviews (\"I think we should make this havana rc potential if there is time and make the depreciated version the default....\"). IMO it should be set to \"Default\" and put a warning in the release notes.",
+      "parentUuid": "AAAATH//VzA\u003d",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//Vvo\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 9
@@ -251,6 +467,24 @@
       "writtenOn": "2013-10-17T15:09:42Z",
       "side": 1,
       "message": "change the name so doesn\u0027t mask the list builtin. Change to config_files or something.",
+      "revId": "748233dcd6f1599add837e826db99e391e194f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//S7M\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-18T08:03:08Z",
+      "side": 1,
+      "message": "It is like that since it is a copy from the other tests\u0027s structure. Should I adjust it in the other tests also?",
+      "parentUuid": "AAAATH//Vvo\u003d",
       "revId": "748233dcd6f1599add837e826db99e391e194f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
