@@ -70,6 +70,24 @@
       "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Qv0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-18T21:07:51Z",
+      "side": 1,
+      "message": "Turns out that when you do the import _ it will override the builtin, and it\u0027s different, so the test for making sure _ creates a Message using lazy translation for static messages fails.",
+      "parentUuid": "AAAATH//RHM\u003d",
+      "revId": "0a022b1fa4538e15637920d2e62f0a04b17f9658",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
