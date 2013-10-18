@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//SFs\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-18T13:23:19Z",
+      "side": 1,
+      "message": "According to the documentation[1] this can be a little dangerous.  I don\u0027t have a ton of experience using subprocess beyond trivail script so I can\u0027t offer too much here.\n\nIf I was writing this I may use check_output (redirecting stderr to stdout).  This way you could do something like:\n\ntry:\n    check_call(..., stderr\u003dSTDOUT)\nexcept CalledProcessError as e:\n    LOG.error(\u0027SSL command failed: %s\u0027, e.output)\n    raise",
+      "revId": "f3abe5966cb199b0ff3003be6c89b864904f48fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
