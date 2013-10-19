@@ -213,6 +213,7 @@ class Application(BaseApplication):
         context['query_string'] = dict(req.params.iteritems())
         context['headers'] = dict(req.headers.iteritems())
         context['path'] = req.environ['PATH_INFO']
+        context['environment'] = req.environ
         params = req.environ.get(PARAMS_ENV, {})
 
         for name in ['REMOTE_USER', 'AUTH_TYPE']:

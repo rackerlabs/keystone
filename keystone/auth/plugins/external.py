@@ -31,7 +31,8 @@ class ExternalDefault(object):
         username from the REMOTE_USER environment variable.
         """
         try:
-            REMOTE_USER = context['REMOTE_USER']
+            REMOTE_USER = context['environment']['REMOTE_USER']
+
         except KeyError:
             msg = _('No authenticated user')
             raise exception.Unauthorized(msg)
@@ -62,7 +63,7 @@ class ExternalDomain(object):
         domain name.
         """
         try:
-            REMOTE_USER = context['REMOTE_USER']
+            REMOTE_USER = context['environment']['REMOTE_USER']
         except KeyError:
             msg = _('No authenticated user')
             raise exception.Unauthorized(msg)
