@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-10-01 06:13+0000\n"
+"POT-Creation-Date: 2013-10-19 06:00+0000\n"
 "PO-Revision-Date: 2013-05-17 16:06+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Vietnamese (Viet Nam) "
@@ -198,13 +198,13 @@ msgstr ""
 msgid "Failed to send %(res_id)s %(event_type)s notification"
 msgstr ""
 
-#: keystone/assignment/core.py:221
+#: keystone/assignment/core.py:224
 #, python-format
 msgid "Creating the default role %s because it does not exist."
 msgstr ""
 
-#: keystone/assignment/core.py:656 keystone/identity/core.py:244
-#: keystone/identity/core.py:256
+#: keystone/assignment/core.py:691 keystone/identity/core.py:246
+#: keystone/identity/core.py:258
 #, python-format
 msgid "Expected dict or list: %s"
 msgstr ""
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Cannot remove role that has not been granted, %s"
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:409
+#: keystone/assignment/backends/ldap.py:434
 #, python-format
 msgid "Role %s not found"
 msgstr ""
@@ -277,26 +277,26 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr ""
 
-#: keystone/catalog/core.py:38
+#: keystone/catalog/core.py:42
 #, python-format
 msgid "Malformed endpoint %(url)s - unknown key %(keyerror)s"
 msgstr ""
 
-#: keystone/catalog/core.py:43
+#: keystone/catalog/core.py:47
 #, python-format
 msgid ""
 "Malformed endpoint %(url)s - unknown key %(keyerror)s(are you missing "
 "brackets ?)"
 msgstr ""
 
-#: keystone/catalog/core.py:49
+#: keystone/catalog/core.py:53
 #, python-format
 msgid ""
 "Malformed endpoint %s - incomplete format                   (are you "
 "missing a type notifier ?)"
 msgstr ""
 
-#: keystone/catalog/backends/templated.py:106
+#: keystone/catalog/backends/templated.py:107
 #, python-format
 msgid "Unable to open template file %s"
 msgstr ""
@@ -439,53 +439,53 @@ msgstr ""
 msgid "The resource could not be found."
 msgstr ""
 
-#: keystone/common/cache/core.py:46
+#: keystone/common/cache/core.py:50
 #, python-format
 msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
 msgstr ""
 
-#: keystone/common/cache/core.py:52
+#: keystone/common/cache/core.py:56
 #, python-format
 msgid "CACHE_GET_MULTI: \"%(keys)s\" Values: \"%(values)s\""
 msgstr ""
 
-#: keystone/common/cache/core.py:57
+#: keystone/common/cache/core.py:61
 #, python-format
 msgid "CACHE_SET: Key: \"%(key)s\" Value: \"%(value)s\""
 msgstr ""
 
-#: keystone/common/cache/core.py:62
+#: keystone/common/cache/core.py:66
 #, python-format
 msgid "CACHE_SET_MULTI: \"%s\""
 msgstr ""
 
-#: keystone/common/cache/core.py:67
+#: keystone/common/cache/core.py:71
 #, python-format
 msgid "CACHE_DELETE: \"%s\""
 msgstr ""
 
-#: keystone/common/cache/core.py:70
+#: keystone/common/cache/core.py:74
 #, python-format
 msgid "CACHE_DELETE_MULTI: \"%s\""
 msgstr ""
 
-#: keystone/common/cache/core.py:88
+#: keystone/common/cache/core.py:92
 #, python-format
 msgid ""
 "Unable to build cache config-key. Expected format \"<argname>:<value>\". "
 "Skipping unknown format: %s"
 msgstr ""
 
-#: keystone/common/cache/core.py:96
+#: keystone/common/cache/core.py:100
 #, python-format
 msgid "Keystone Cache Config: %s"
 msgstr ""
 
-#: keystone/common/cache/core.py:111
+#: keystone/common/cache/core.py:115
 msgid "region not type dogpile.cache.CacheRegion"
 msgstr ""
 
-#: keystone/common/cache/core.py:144
+#: keystone/common/cache/core.py:148
 #, python-format
 msgid "Adding cache-proxy '%s' to backend."
 msgstr ""
@@ -737,9 +737,13 @@ msgid "Global engine callback raised."
 msgstr ""
 
 #: keystone/common/sql/core.py:207
-#: keystone/openstack/common/db/sqlalchemy/session.py:614
 #, python-format
-msgid "Got mysql server has gone away: %s"
+msgid "MySQL server has gone away: %s"
+msgstr ""
+
+#: keystone/common/sql/core.py:222
+#, python-format
+msgid "DB2 server has gone away: %s"
 msgstr ""
 
 #: keystone/common/sql/migration.py:57
@@ -832,6 +836,32 @@ msgstr ""
 msgid "Access token not found"
 msgstr ""
 
+#: keystone/identity/controllers.py:63
+#, python-format
+msgid "Authentication failed: %s"
+msgstr ""
+
+#: keystone/identity/controllers.py:94 keystone/identity/controllers.py:198
+#: keystone/identity/controllers.py:330
+msgid "Name field is required and cannot be empty"
+msgstr ""
+
+#: keystone/identity/controllers.py:145
+msgid "Marker could not be found"
+msgstr ""
+
+#: keystone/identity/controllers.py:156
+msgid "Invalid limit value"
+msgstr ""
+
+#: keystone/identity/controllers.py:201
+msgid "Enabled field must be a boolean"
+msgstr ""
+
+#: keystone/identity/controllers.py:225
+msgid "Enabled field should be a boolean"
+msgstr ""
+
 #: keystone/identity/controllers.py:264
 #, python-format
 msgid "Unable to remove user %(user)s from %(tenant)s."
@@ -842,6 +872,14 @@ msgstr ""
 msgid "Unable to add user %(user)s to %(tenant)s."
 msgstr ""
 
+#: keystone/identity/controllers.py:873
+msgid "Specify a domain or project, not both"
+msgstr ""
+
+#: keystone/identity/controllers.py:878
+msgid "Specify a user or group, not both"
+msgstr ""
+
 #: keystone/identity/controllers.py:1107
 #, python-format
 msgid ""
@@ -849,22 +887,22 @@ msgid ""
 "%(role)s"
 msgstr ""
 
-#: keystone/identity/core.py:92
+#: keystone/identity/core.py:94
 #, python-format
 msgid "Invalid domain name (%s) found in config file name"
 msgstr ""
 
-#: keystone/identity/core.py:117
+#: keystone/identity/core.py:119
 #, python-format
 msgid "Unable to locate domain config directory: %s"
 msgstr ""
 
-#: keystone/identity/core.py:130
+#: keystone/identity/core.py:132
 #, python-format
 msgid "Ignoring file (%s) while scanning domain config directory"
 msgstr ""
 
-#: keystone/identity/core.py:171
+#: keystone/identity/core.py:173
 msgid ""
 "Running an experimental and unsupported configuration "
 "(domain_specific_drivers_enabled = True); this will result in known "
@@ -1146,11 +1184,16 @@ msgstr ""
 msgid "Upgrade DB using Essex release first."
 msgstr ""
 
-#: keystone/openstack/common/db/sqlalchemy/session.py:551
+#: keystone/openstack/common/db/sqlalchemy/session.py:553
 msgid "DB exception wrapped."
 msgstr ""
 
-#: keystone/openstack/common/db/sqlalchemy/session.py:694
+#: keystone/openstack/common/db/sqlalchemy/session.py:616
+#, python-format
+msgid "Got mysql server has gone away: %s"
+msgstr ""
+
+#: keystone/openstack/common/db/sqlalchemy/session.py:696
 #, python-format
 msgid "SQL connection failed. %s attempts left."
 msgstr ""
@@ -1644,7 +1687,7 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:126
+#: keystone/tests/core.py:130
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
