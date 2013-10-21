@@ -364,13 +364,12 @@ Example (using the above cacheable_function)::
 Building the Documentation
 ==========================
 
-The documentation is all generated with Sphinx from within the docs directory.
-To generate the full set of HTML documentation::
+The documentation is all generated with Sphinx uning the tox command.  To create HTML docs::
 
-    cd docs
-    make autodoc
-    make html
-    make man
+    $ tox -e docs
 
-the results are in the docs/build/html and docs/build/man directories
-respectively.
+To create man pages::
+
+    $ tox -e docs -- man
+
+The results are in the docs/build/html and docs/build/man directories respectively.
