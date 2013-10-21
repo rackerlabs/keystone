@@ -34,6 +34,24 @@
       "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Lts\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-21T20:26:37Z",
+      "side": 1,
+      "message": "yes, it doesn\u0027t have to be private necessarily, but my point was that the bare method should never be used.\n\nthe release indicating when something was deprecated (and therefore dictates when it\u0027s allowed to be removed, via release+2) should *always* be provided. otherwise, users are left in the dark.\n\n  old_method() is deprecated as of Icehouse in favor of new_method() and may be removed in the \"K\" release.\n\nbut there may not always be a new_method()... i\u0027m tempted to say we should be super explicit about the consequences of not providing an in_favor_of though:\n\n  old_method() is deprecated as of Icehouse and may be removed in the \"K\" release. It will not be superseded.\n\nthe \"K\" bit is sort of a nice-to-have (sort of a reminder / threat, but you can fairly easily generate that based on the name of the release it\u0027s being deprecated in:\n\n  release_plus_two \u003d chr(ord(release[0]) + 2).upper()\n\nor just use constants for release names, e.g.\n\n  deprecated(as_of\u003dICEHOUSE)\n\nand then do the computation however you want (you\u0027d also be able trivially start rendering a real name for \"K\" when a name was chosen..). that would also discourage antipatterns like:\n\n  deprecated(\u0027when \u003cbug-number\u003e is fixed\u0027)",
+      "parentUuid": "AAAATH//cLw\u003d",
+      "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
