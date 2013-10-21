@@ -20,6 +20,10 @@ import os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('../..'))
 
+# NOTE(dstanek): adds _ to the builtins so keystone modules can be imported
+from keystone.openstack.common import gettextutils
+gettextutils.install('keystone')
+
 # -- General configuration ----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
