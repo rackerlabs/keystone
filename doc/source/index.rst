@@ -49,7 +49,6 @@ Getting Started
 
 Man Pages
 =========
-
 .. toctree::
     :maxdepth: 1
 
@@ -74,7 +73,7 @@ Code Documentation
 .. toctree::
    :maxdepth: 1
 
-   api/autoindex
+   api/modules
 
 Indices and tables
 ==================
