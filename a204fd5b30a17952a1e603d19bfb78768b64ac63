@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//LgU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T21:27:32Z",
+      "side": 1,
+      "message": "This should never happen, either a bare request w/o generation is received or a request with a specific generation number is received. In no case a different generation number (or a new  one bu tonly if none was requested) should be returned.",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
