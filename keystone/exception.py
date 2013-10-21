@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone.common import config
+from keystone.common.gettext import _
 from keystone.openstack.common import log as logging
 
 
