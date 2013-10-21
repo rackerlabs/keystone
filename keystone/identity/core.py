@@ -121,16 +121,16 @@ class DomainConfigs(dict):
             return
 
         for r, d, f in os.walk(conf_dir):
-            for file in f:
-                if file.startswith('keystone.') and file.endswith('.conf'):
-                    names = file.split('.')
+            for filename in f:
+                if filename.startswith('keystone.') and filename.endswith('.conf'):
+                    names = filename.split('.')
                     if len(names) == 3:
                         self._load_config(assignment_api,
-                                          [os.path.join(r, file)],
+                                          [os.path.join(r, filename)],
                                           names[1])
                     else:
                         msg = (_('Ignoring file (%s) while scanning domain '
-                                 'config directory') % file)
+                                 'config directory') % filename)
                         LOG.debug(msg)
 
     def get_domain_driver(self, domain_id):
