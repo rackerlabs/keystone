@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//NRk\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "I do not agree with splitting here.\nThe key stored in the database is encrypted and signed with the master key, and this enc and sig are the encypted version of the key and the signature on the same key. These are not independent values that make sense to ever set or get separately. By storing them this way people may think they are the actual service keys, they are not.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NQU\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "there was a @sql.handle_conflicts(type\u003d\u0027kds_keys\u0027) here, it is missing in this version.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NQc\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "See above.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NOY\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "The key was a json structure with a subtype of key_v1 so future upgrades could be handled, what happened to it ?",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NNo\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "Here there was a check to verify the lenght of the key we got from the file.\nIt\u0027s missing now.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NNU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "This comment is misleading, this function returns an encrypted (with the master key) keyblock, and the signature used to verify the encrypted key.\n\nWhat is returned are not keys.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NMo\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "I am against splitting the signature from the encrypted key in the driver, but if you must do it then please use names like \u0027enckey, enckey_sig\u0027 or similar here.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NMU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "As above, if you must split please use enckey_sig, enckey \u003d self._encrypt...",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NJ0\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "This error message seem unclear to me, shouldn\u0027t you return \u0027Invalid target\u0027 here ?\nAlso it would be more readbale if you did this check first so you do not have to indent all the target key retrieval code.\n\nIf generation is not None:\n    raise except....",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NJI\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "add empty line after you generated the rndkey or it will seem these 3 lines are all about generating the random.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NI8\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "\"generate generate\", also the comment is quite cryptic, what are you trying to say ?",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NKY\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "I am not sure this is the proper way to handle _get_target(), if someone gives you a target of foo:bar you should return back an error not (\u0027foo\u0027, None)",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NHU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "If you must split change this to:\n:returns tuple(string, string): encrypted_key_signature, encrypted_key",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NGk\u003d",
+        "filename": "keystone/contrib/kds/migrate_repo/versions/001_kds_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "Why 2 tables ?\nWhat\u0027s the value ?",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NGE\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "It may be a good idea to gerate (and print to reproduce runs) random keys at every test run ?",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//NGM\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-21T14:01:40Z",
+      "side": 1,
+      "message": "Please use a *big* value ( at least 64bits) so that people are not truicked into believing they can use arbitrary small data by reading the code.\n\nActually generating (and printing in order to reproduce in case of errors)  a real random nonce at every test run is probably a good idea.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
