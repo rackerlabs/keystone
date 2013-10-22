@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//Hjw\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-22T22:31:32Z",
+      "side": 0,
+      "message": "I didn\u0027t see a response to Dolph\u0027s comment on patchset 3.  I know why you made this a hard requirement, but it will be a bit surprising for non-LDAP deployments.  If it is possible to avoid making LDAP a hard requirement, it would be better.",
+      "revId": "573ba459f942d436305e14cc1592afaf7cd98f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
