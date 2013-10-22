@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//LDU\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T00:40:03Z",
+      "side": 1,
+      "message": "combine these except blocks into one?\n\n  except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):",
+      "revId": "17f2d49ebd3d215f99d90111324f8af68214e129",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
