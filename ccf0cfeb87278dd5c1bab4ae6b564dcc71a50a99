@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//JrI\u003d",
+        "filename": "keystone/common/gettext.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T12:58:10Z",
+      "side": 1,
+      "message": "steal",
+      "revId": "ccf0cfeb87278dd5c1bab4ae6b564dcc71a50a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//JrM\u003d",
+        "filename": "keystone/common/gettext.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T12:58:10Z",
+      "side": 1,
+      "message": "what\u0027s the point of the first two lines?",
+      "revId": "ccf0cfeb87278dd5c1bab4ae6b564dcc71a50a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//JrU\u003d",
+        "filename": "keystone/common/gettext.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T12:58:10Z",
+      "side": 1,
+      "message": "i hope this isn\u0027t the most elegant way of getting this reference?",
+      "revId": "ccf0cfeb87278dd5c1bab4ae6b564dcc71a50a99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
