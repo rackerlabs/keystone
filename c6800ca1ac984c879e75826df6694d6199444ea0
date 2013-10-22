@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//JVc\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-10-22T14:35:01Z",
+      "side": 1,
+      "message": "The changes seem fine. Not sure if the method name is correct though. The code is clearly trying to remove a role assignment, but the method name is \u0027delete_user\u0027.\n\nMay want to fix the method name at some point.",
+      "revId": "c6800ca1ac984c879e75826df6694d6199444ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
