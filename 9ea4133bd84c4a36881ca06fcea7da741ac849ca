@@ -52,6 +52,24 @@
       "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Iig\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-22T17:46:21Z",
+      "side": 1,
+      "message": "++ To this.  We should actually always indicate when the deprecation will happen.  If we don\u0027t, I\u0027d be inclined to say we\u0027ve done a bad job in letting something be marked as deprecated.",
+      "parentUuid": "AAAATH//Lts\u003d",
+      "revId": "9ea4133bd84c4a36881ca06fcea7da741ac849ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
