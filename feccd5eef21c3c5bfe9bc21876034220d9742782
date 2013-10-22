@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//f58\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-22T11:50:39Z",
+      "side": 1,
+      "message": "This domain calls were not removed because dolphm said that another person was already working on some new feature that is using those methods, so he may change the calls or i should wait until he commits that so i change without breaking the new feature.",
+      "parentUuid": "AAAATH//hko\u003d",
+      "revId": "feccd5eef21c3c5bfe9bc21876034220d9742782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//hkk\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
