@@ -33,6 +33,24 @@
       "revId": "633e760845fe169bae88f0c0df77ba19f308da1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//JTE\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-22T14:46:04Z",
+      "side": 1,
+      "message": "I didn\u0027t have the lambda at first, but then it caused the mock to not work. The mock is at line 643.\n\nSo if I just used \n\n common_ldap.register_handler(\u0027fake://\u0027, fakeldap.FakeLdap)\n\nthen fakeldap.FakeLdap couldn\u0027t be overridden by the mock because it was already resolved here. Putting it in a function call makes it so that fakeldap.FakeLdap is resolved later and resolves to the mock.",
+      "parentUuid": "AAAATH//JTg\u003d",
+      "revId": "633e760845fe169bae88f0c0df77ba19f308da1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
