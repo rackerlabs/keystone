@@ -19,7 +19,7 @@ import uuid
 from keystone import notifications
 from keystone.openstack.common.notifier import api as notifier_api
 from keystone import tests
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
 EXP_RESOURCE_TYPE = uuid.uuid4().hex
@@ -148,7 +148,7 @@ class NotificationsTestCase(tests.TestCase):
                                          host=host)
 
 
-class NotificationsForEntities(test_v3.RestfulTestCase):
+class NotificationsForEntities(utils.RestfulTestCase):
     def setUp(self):
         super(NotificationsForEntities, self).setUp()
 

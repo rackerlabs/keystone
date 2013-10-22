@@ -19,7 +19,7 @@ import uuid
 from keystone.common import controller
 from keystone import exception
 from keystone import tests
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
 def _build_role_assignment_url_and_entity(
@@ -74,7 +74,7 @@ def _build_role_assignment_url_and_entity(
     return (url, entity)
 
 
-class IdentityTestCase(test_v3.RestfulTestCase):
+class IdentityTestCase(utils.RestfulTestCase):
     """Test domains, projects, users, groups, & role CRUD."""
 
     def setUp(self):
@@ -1140,7 +1140,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                                                 link_url=gp1_url)
 
 
-class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
+class IdentityInheritanceTestCase(utils.RestfulTestCase):
     """Test inheritance crud and its effects."""
 
     def setUp(self):
@@ -1563,7 +1563,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
 
 
-class IdentityInheritanceDisabledTestCase(test_v3.RestfulTestCase):
+class IdentityInheritanceDisabledTestCase(utils.RestfulTestCase):
     """Test inheritance crud and its effects."""
 
     def setUp(self):

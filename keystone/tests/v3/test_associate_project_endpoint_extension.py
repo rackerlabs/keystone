@@ -21,10 +21,10 @@ from keystone.common.sql import migration
 from keystone import contrib
 from keystone.openstack.common import importutils
 from keystone import tests
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
-class TestExtensionCase(test_v3.RestfulTestCase):
+class TestExtensionCase(utils.RestfulTestCase):
 
     EXTENSION_NAME = 'endpoint_filter'
     EXTENSION_TO_ADD = 'endpoint_filter_extension'

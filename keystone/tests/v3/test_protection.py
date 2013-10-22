@@ -23,14 +23,14 @@ from keystone import exception
 from keystone.openstack.common import jsonutils
 from keystone.policy.backends import rules
 from keystone import tests
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-class IdentityTestProtectedCase(test_v3.RestfulTestCase):
+class IdentityTestProtectedCase(utils.RestfulTestCase):
     """Test policy enforcement on the v3 Identity API."""
 
     def setUp(self):
@@ -49,7 +49,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         the default domain.
 
         """
-        # Ensure that test_v3.RestfulTestCase doesn't load its own
+        # Ensure that utils.RestfulTestCase doesn't load its own
         # sample data, which would make checking the results of our
         # tests harder
         super(IdentityTestProtectedCase, self).setUp(load_sample_data=False)
@@ -386,7 +386,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assertIn(self.domainA['id'], id_list)
 
 
-class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
+class IdentityTestv3CloudPolicySample(utils.RestfulTestCase):
     """Test policy enforcement of the sample v3 cloud policy file."""
 
     def setUp(self):
@@ -404,7 +404,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         file to make sure the sample is valid and that we correctly enforce it.
 
         """
-        # Ensure that test_v3.RestfulTestCase doesn't load its own
+        # Ensure that utils.RestfulTestCase doesn't load its own
         # sample data, which would make checking the results of our
         # tests harder
         super(IdentityTestv3CloudPolicySample, self).setUp(

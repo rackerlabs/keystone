@@ -26,13 +26,13 @@ from keystone import contrib
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone.openstack.common import importutils
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
 CONF = config.CONF
 
 
-class OAuth1Tests(test_v3.RestfulTestCase):
+class OAuth1Tests(utils.RestfulTestCase):
 
     EXTENSION_NAME = 'oauth1'
     EXTENSION_TO_ADD = 'oauth_extension'

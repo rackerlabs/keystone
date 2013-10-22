@@ -16,10 +16,10 @@
 
 import uuid
 
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
-class PolicyTestCase(test_v3.RestfulTestCase):
+class PolicyTestCase(utils.RestfulTestCase):
     """Test policy CRUD."""
 
     def setUp(self):

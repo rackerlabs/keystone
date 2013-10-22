@@ -20,15 +20,15 @@ from keystone.common import cms
 from keystone import config
 from keystone import exception
 from keystone import tests
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
 CONF = config.CONF
 
 
-class TestAuthInfo(test_v3.RestfulTestCase):
+class TestAuthInfo(utils.RestfulTestCase):
     # TDOD(henry-nash) These tests are somewhat inefficient, since by
-    # using the test_v3.RestfulTestCase class to gain access to the auth
+    # using the utils.RestfulTestCase class to gain access to the auth
     # building helper functions, they cause backend databases and fixtures
     # to be loaded unnecessarily.  Separating out the helper functions from
     # this base class would improve efficiency (Bug #1134836)
@@ -94,7 +94,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
                           method_name)
 
 
-class TestPKITokenAPIs(test_v3.RestfulTestCase):
+class TestPKITokenAPIs(utils.RestfulTestCase):
     def config_files(self):
         conf_files = super(TestPKITokenAPIs, self).config_files()
         conf_files.append(tests.testsdir('test_pki_token_provider.conf'))
@@ -351,7 +351,7 @@ class TestUUIDTokenAPIs(TestPKITokenAPIs):
         pass
 
 
-class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
+class TestTokenRevokeSelfAndAdmin(utils.RestfulTestCase):
     """Test token revoke using v3 Identity API by token owner and admin."""
     def setUp(self):
         """Setup for Test Cases.
@@ -463,7 +463,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                   token=adminA_token)
 
 
-class TestTokenRevoking(test_v3.RestfulTestCase):
+class TestTokenRevoking(utils.RestfulTestCase):
     """Test token revocation on the v3 Identity API."""
 
     def setUp(self):
@@ -1068,7 +1068,7 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
         self.head(role_path, expected_status=404)
 
 
-class TestAuthExternalDisabled(test_v3.RestfulTestCase):
+class TestAuthExternalDisabled(utils.RestfulTestCase):
     def config_files(self):
         list = self._config_file_list[:]
         list.append(tests.testsdir('auth_plugin_external_disabled.conf'))
@@ -1088,7 +1088,7 @@ class TestAuthExternalDisabled(test_v3.RestfulTestCase):
                           auth_context)
 
 
-class TestAuthExternalDomain(test_v3.RestfulTestCase):
+class TestAuthExternalDomain(utils.RestfulTestCase):
     content_type = 'json'
 
     def config_files(self):
@@ -1139,7 +1139,7 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         self.assertEqual(token['bind']['kerberos'], self.user['name'])
 
 
-class TestAuthJSON(test_v3.RestfulTestCase):
+class TestAuthJSON(utils.RestfulTestCase):
     content_type = 'json'
 
     def test_unscoped_token_with_user_id(self):
@@ -1782,7 +1782,7 @@ class TestAuthXML(TestAuthJSON):
     content_type = 'xml'
 
 
-class TestTrustOptional(test_v3.RestfulTestCase):
+class TestTrustOptional(utils.RestfulTestCase):
     def setUp(self, *args, **kwargs):
         self.opt_in_group('trust', enabled=False)
         super(TestTrustOptional, self).setUp(*args, **kwargs)
@@ -2000,7 +2000,7 @@ class TestTrustAuth(TestAuthInfo):
     def test_v3_v2_intermix_project_not_in_default_domaini_failed(self):
         # create a trustee in default domain to delegate stuff to
         trustee_user_id = uuid.uuid4().hex
-        trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        trustee_user = self.new_user_ref(domain_id=utils.DEFAULT_DOMAIN_ID)
         trustee_user['id'] = trustee_user_id
         self.identity_api.create_user(trustee_user_id, trustee_user)
 
@@ -2040,7 +2040,7 @@ class TestTrustAuth(TestAuthInfo):
     def test_v3_v2_intermix(self):
         # create a trustee in default domain to delegate stuff to
         trustee_user_id = uuid.uuid4().hex
-        trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        trustee_user = self.new_user_ref(domain_id=utils.DEFAULT_DOMAIN_ID)
         trustee_user['id'] = trustee_user_id
         self.identity_api.create_user(trustee_user_id, trustee_user)
 

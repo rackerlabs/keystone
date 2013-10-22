@@ -14,10 +14,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from keystone.tests import test_v3
+from keystone.tests.v3 import utils
 
 
-class CatalogTestCase(test_v3.RestfulTestCase):
+class CatalogTestCase(utils.RestfulTestCase):
     """Test service & endpoint CRUD."""
 
     def setUp(self):
