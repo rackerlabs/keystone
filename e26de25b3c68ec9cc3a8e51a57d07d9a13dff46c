@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//JpA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T13:12:07Z",
+      "side": 1,
+      "message": "id shouldn\u0027t be required here",
+      "revId": "e26de25b3c68ec9cc3a8e51a57d07d9a13dff46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//JpE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T13:12:07Z",
+      "side": 1,
+      "message": "rather than faking context, refactor the bulk of update_user() into a private shared method?",
+      "revId": "e26de25b3c68ec9cc3a8e51a57d07d9a13dff46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Jo8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T13:12:07Z",
+      "side": 1,
+      "message": "remove/unnecessary",
+      "revId": "e26de25b3c68ec9cc3a8e51a57d07d9a13dff46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//JoU\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-22T13:12:07Z",
+      "side": 1,
+      "message": "default expected_status to 201?",
+      "revId": "e26de25b3c68ec9cc3a8e51a57d07d9a13dff46c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
