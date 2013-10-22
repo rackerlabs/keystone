@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Ifk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-22T17:58:10Z",
+      "side": 1,
+      "message": "I changed handler to not be a factory. Done.",
+      "parentUuid": "AAAATH//JT4\u003d",
+      "revId": "633e760845fe169bae88f0c0df77ba19f308da1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//JTg\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Can you just patch keystone.common.ldap.core:_HANDLERS in your test?",
       "parentUuid": "AAAATH//JTE\u003d",
+      "revId": "633e760845fe169bae88f0c0df77ba19f308da1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//IfY\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-22T17:58:10Z",
+      "side": 1,
+      "message": "Good idea. Done.",
+      "parentUuid": "AAAATH//JC0\u003d",
       "revId": "633e760845fe169bae88f0c0df77ba19f308da1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
