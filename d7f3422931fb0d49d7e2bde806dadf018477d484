@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//K+Q\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-22T01:55:41Z",
+      "side": 1,
+      "message": "Should this be more specific and check that the return is a XMLMismatch ?",
+      "revId": "d7f3422931fb0d49d7e2bde806dadf018477d484",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
