@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATX//8NM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:14:50Z",
+      "side": 1,
+      "message": "Should be Closes-Bug. https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "1357fe66ee36878dc23b3f2c57aac8d0ce12689a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
