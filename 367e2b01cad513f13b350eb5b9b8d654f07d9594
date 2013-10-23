@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8vo\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "No, it inherits from V2",
+      "parentUuid": "AAAATX//8y8\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8yk\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8u4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATX//8yk\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8yA\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -64,6 +100,24 @@
       "writtenOn": "2013-10-23T19:34:37Z",
       "side": 1,
       "message": "typo - change These to The.\nAnd as much as I enjoy blaming dolph for things, see if you can get the actual reason :)",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8qM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "Sorry, i confused dolphm with ayoung, here is the log of my conversation with him:\n\n\u003cayoung\u003e tellesnobrega, so...that is exactly what I was just dicussing. I would say htat, for now, leave that one alone\n[16:31] nermina [~Nermina@108-237-86-105.lightspeed.gnvlsc.sbcglobal.net] has quit [Client Quit]\n\n[16:31] \u0026lt;ayoung\u0026gt; what we have is a feature we are not quite ready to advertise\n[16:32] \u0026lt;tellesnobrega\u0026gt; ok\n\n[16:32] \u0026lt;ayoung\u0026gt; bascially, say you have a large company with Mergers and Acquisitions that went on such that you have 3 LDAP servers. You also have a bunch of cusotmers using your cloud, and you have a policy where each custiomer gets their own domain\n\n[16:33] \u003cayoung\u003e we want to be able to have each LDAP server supported in its own domain as well\n\n[16:33] \u0026lt;ayoung\u0026gt; so...henrynash made that happen\n\n[16:33] \u0026lt;ayoung\u0026gt; what we have as a problem is a two things around userids\n\n[16:33] \u0026lt;ayoung\u0026gt; one is to figure, based on the user id, which domain are they in\n\n[16:33] \u0026lt;ayoung\u0026gt; in the old scheme we did not have this problem\n\n\n[16:34] \u0026lt;ayoung\u0026gt; in the old scheme either all of the domains were in SQL...and the userids were unique enoght that we could link from uuserid to domain or\n\n[16:34] \u0026lt;ayoung\u0026gt; we had LDAP and only a single domain\n\n[16:34] \u0026lt;tellesnobrega\u0026gt; im already done with the removing of the other methods, how should i act on the bug, can it be marked as done?\n\n[16:35] \u0026lt;ayoung\u0026gt; the call you are tripping over is where it tries to figure out which backend to call.\n\n[16:35] \u0026lt;ayoung\u0026gt; We might be able to drop it, but I\u0027ll have to look more closely into it\n\n\n[16:35] \u003cayoung\u003e in general, we don\u0027t want to have the assignments backend \"validate\" calls into Identity...for federation, we won\u0027t jhave al;l the data we need...but that is future looking\n\n[16:35] \u003cayoung\u003e tellesnobrega, lyncos sorry, got a meeting now...back in a few",
+      "parentUuid": "AAAATX//8yA\u003d",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +169,24 @@
       "writtenOn": "2013-10-23T19:34:37Z",
       "side": 1,
       "message": "no backslashes :O",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8so\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "How i can change this?\ncombined_role_list \u003d self.assignment_api.get_roles_for_user_and_project( \nis \u003e 80 columns",
+      "parentUuid": "AAAATX//8xg\u003d",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +261,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8sE\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "How can i change this\nself.metadata_foobar \u003d assignment_api.add_role_to_user_and_project( \nis \u003e 80 columns",
+      "parentUuid": "AAAATX//8xI\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8xE\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 4
@@ -217,6 +307,24 @@
       "writtenOn": "2013-10-23T19:35:38Z",
       "side": 1,
       "message": "same",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8r8\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "How can i change this\nself.metadata_foobar \u003d assignment_api.add_role_to_user_and_project( \nis \u003e 80 columns",
+      "parentUuid": "AAAATX//8xE\u003d",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +365,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8r0\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "How can i change this\nself.metadata_foobar \u003d assignment_api.add_role_to_user_and_project( \nis \u003e 80 columns",
+      "parentUuid": "AAAATX//8xA\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8wo\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 4
@@ -291,6 +417,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8rs\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATX//8wo\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8wI\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
@@ -319,6 +463,24 @@
       "writtenOn": "2013-10-23T19:35:38Z",
       "side": 1,
       "message": "same",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8rU\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2013-10-23T19:55:20Z",
+      "side": 1,
+      "message": "How can i do that\nself.assignment_api.get_roles_for_user_and_project(\nis \u003e 80 columns",
+      "parentUuid": "AAAATX//8wI\u003d",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
