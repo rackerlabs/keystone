@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//HMY\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-23T01:38:33Z",
+      "side": 1,
+      "message": "strings should be translatable with _()",
+      "revId": "9f0e4d9639da2d0b0f2666b8eeee6d3a26475950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//HME\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-23T01:38:33Z",
+      "side": 1,
+      "message": "same as line 555",
+      "revId": "9f0e4d9639da2d0b0f2666b8eeee6d3a26475950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//HL0\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-23T01:38:33Z",
+      "side": 1,
+      "message": "we might need an alternative to +2 releases (maybe less for internal API changes if that is agreed on, or more in some cases).  2 should be the default for sure.",
+      "revId": "9f0e4d9639da2d0b0f2666b8eeee6d3a26475950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//HLw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-23T01:38:33Z",
+      "side": 1,
+      "message": "as discussed on IRC, a TODO to note what happens when we hit the Y release... y+2 is ???",
+      "revId": "9f0e4d9639da2d0b0f2666b8eeee6d3a26475950",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
