@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATX//8Zk\u003d",
+        "filename": ".mailmap",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-23T21:02:10Z",
+      "side": 1,
+      "message": "why was this line added - or rather, committed?",
+      "revId": "2f228564130a4e406fc760b9b83d29ede6360b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
