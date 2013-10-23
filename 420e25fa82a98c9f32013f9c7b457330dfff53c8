@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATX//89M\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T18:43:17Z",
+      "side": 1,
+      "message": "HAVANA?",
+      "revId": "420e25fa82a98c9f32013f9c7b457330dfff53c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
