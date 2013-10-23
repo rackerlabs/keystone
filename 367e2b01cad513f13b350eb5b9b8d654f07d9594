@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8yc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "backslash continuations should be avoided in favor of line breaking on parens:\n\n  self.assignment_api.add_user_to_project(\n      default_project_id, user_id)",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8yA\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -47,6 +64,23 @@
       "writtenOn": "2013-10-23T19:34:37Z",
       "side": 1,
       "message": "typo - change These to The.\nAnd as much as I enjoy blaming dolph for things, see if you can get the actual reason :)",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8yI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "i have no idea what feature i could have been talking about!\n\nif we can identify it, it should either be linked here, or the methods removed (happy to see that happen in a separate patch)",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8xY\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8xc\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -121,6 +172,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8xU\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8xE\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 4
@@ -132,6 +200,23 @@
       "writtenOn": "2013-10-23T19:34:37Z",
       "side": 1,
       "message": "here too",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8xQ\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "same",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +240,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8xM\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8wo\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 4
@@ -172,6 +274,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8ws\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8wI\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
@@ -183,6 +302,23 @@
       "writtenOn": "2013-10-23T19:34:37Z",
       "side": 1,
       "message": "backslash again",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8v4\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-23T19:35:38Z",
+      "side": 1,
+      "message": "same",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
