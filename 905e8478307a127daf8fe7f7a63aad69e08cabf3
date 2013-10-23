@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//794\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-23T23:45:58Z",
+      "side": 1,
+      "message": "When building the docs it needs to have the packages installed.  I would imagine because it is parsing the Python source.  I\u0027ll look into this again.",
+      "parentUuid": "AAAATX//8GE\u003d",
+      "revId": "905e8478307a127daf8fe7f7a63aad69e08cabf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8GA\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-23T23:02:55Z",
       "side": 1,
       "message": "https://github.com/openstack/keystone/blob/master/doc/README.rst says that you do \u0027python setup.py build_sphinx\u0027, not this. Why the difference?",
+      "revId": "905e8478307a127daf8fe7f7a63aad69e08cabf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8Ak\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-23T23:45:58Z",
+      "side": 1,
+      "message": "Those commands come from developing.rst.  If we still want to build API docs we\u0027ll still have to run \u0027make autodoc\u0027.  I think we want to generate this documentation.  It may not be very good now, but if we don\u0027t have it published somewhere there won\u0027t be much incentive to make it better.  Do we still want API docs?",
+      "parentUuid": "AAAATX//8GA\u003d",
       "revId": "905e8478307a127daf8fe7f7a63aad69e08cabf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
