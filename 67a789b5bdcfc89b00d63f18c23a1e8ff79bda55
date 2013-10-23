@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATX//8JU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "change \"Theses\" to \"These\"",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8JM\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "change \"used\" to \"users\"",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//R4A\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 10
@@ -13,6 +47,91 @@
       "writtenOn": "2013-10-18T14:10:21Z",
       "side": 1,
       "message": "great docstr",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8JE\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "change \"users\" to \"user\"",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8H0\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "suggest use user[\u0027username\u0027] here since it should be there. (Same comment applies throughout (e.g., line 912).",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8HM\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "would be nice if could pass in a tuple and get back a tuple so don\u0027t have to duplicate the long function name.",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8HI\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 934,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "suggest use random name (uuid)",
+      "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8HA\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T22:58:05Z",
+      "side": 1,
+      "message": "suggest use random strings for names.",
       "revId": "67a789b5bdcfc89b00d63f18c23a1e8ff79bda55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
