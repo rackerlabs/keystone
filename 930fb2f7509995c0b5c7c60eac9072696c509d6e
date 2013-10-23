@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATX//8F4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "Add DocImpact tag to the commit message.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8Fg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "switch to assignment_api.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8FY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "switch to assignment_api.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8FU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "should be default_project_ref.get(\u0027enabled\u0027, True) ?",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8FQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "should be default_project_domain_ref.get(\u0027enabled\u0027, True) ?",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8FE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "switch to assignment_api.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8E0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "change \"have no access to\" to \"doesn\u0027t have access to\"",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8Fs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "would be better to use \" (double quotes) for string here. \u0027\u0027 might work in BASIC, but doesn\u0027t work in Python.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8Fo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "would be better to use \" (double quotes) for string here. \u0027\u0027 might work in Pascal, but doesn\u0027t work in Python.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8Ec\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "change \"no found\" to \"not found\"",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8EQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "remove this since doesn\u0027t do anything.",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8D8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-23T23:13:51Z",
+      "side": 1,
+      "message": "the exception scope seems too large now... should it be limited to just line 320?",
+      "revId": "930fb2f7509995c0b5c7c60eac9072696c509d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
