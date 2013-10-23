@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATX//8aU\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-23T20:58:00Z",
+      "side": 1,
+      "message": "can we compare it with the CONF.endpoint value like you do in the other file?",
+      "revId": "0cc3d549918e5a0a8ae1929e0d48cc8689b23374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
