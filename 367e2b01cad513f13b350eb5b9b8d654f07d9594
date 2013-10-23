@@ -193,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//8nM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-23T20:05:36Z",
+      "side": 1,
+      "message": "change the name of \u0027combined_role_list\u0027?",
+      "parentUuid": "AAAATX//8so\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATX//8xY\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -273,6 +291,24 @@
       "side": 1,
       "message": "How can i change this\nself.metadata_foobar \u003d assignment_api.add_role_to_user_and_project( \nis \u003e 80 columns",
       "parentUuid": "AAAATX//8xI\u003d",
+      "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//8ms\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-23T20:05:36Z",
+      "side": 1,
+      "message": "same, change \u0027metadata_foobar\u0027 to something else",
+      "parentUuid": "AAAATX//8sE\u003d",
       "revId": "367e2b01cad513f13b350eb5b9b8d654f07d9594",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
