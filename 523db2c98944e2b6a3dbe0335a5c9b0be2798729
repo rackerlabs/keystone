@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//9OU\u003d",
+        "filename": "EXTENSIONS_HOWTO.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-24T16:38:53Z",
+      "side": 1,
+      "message": "Yes. This will be the section for your extension. I kept the name \"example\" because of the real example extension present in the code, so hopefully people can follow the changes throughout.",
+      "parentUuid": "AAAATn//9R0\u003d",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9S0\u003d",
         "filename": "EXTENSIONS_HOWTO.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-24T16:19:35Z",
       "side": 1,
       "message": "what -\u003e what is ?",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9OA\u003d",
+        "filename": "EXTENSIONS_HOWTO.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-24T16:38:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//9S0\u003d",
       "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//9Ng\u003d",
+        "filename": "EXTENSIONS_HOWTO.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-24T16:38:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//9R4\u003d",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9RQ\u003d",
         "filename": "keystone/contrib/example/configuration.rst",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//9LI\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-24T16:38:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//9RQ\u003d",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9Q4\u003d",
         "filename": "keystone/contrib/example/configuration.rst",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2013-10-24T16:19:35Z",
       "side": 1,
       "message": "Should \u0027example\u0027 be something more descriptive of the extension being added? Like \u0027my_new_extension\u0027?",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9K4\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-24T16:38:53Z",
+      "side": 1,
+      "message": "Since this is the config.rst file inside the example extension it should have a section name that reflects the extension name.",
+      "parentUuid": "AAAATn//9Q4\u003d",
       "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
