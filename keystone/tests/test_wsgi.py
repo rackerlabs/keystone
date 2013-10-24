@@ -24,6 +24,7 @@ from keystone import exception
 from keystone.openstack.common import gettextutils
 from keystone.openstack.common import jsonutils
 from keystone import tests
+from keystone.tests import fixtures
 
 
 class FakeApp(wsgi.Application):
@@ -223,6 +224,9 @@ class LocalizedResponseTest(tests.TestCase):
     def setUp(self):
         super(LocalizedResponseTest, self).setUp()
         gettextutils._AVAILABLE_LANGUAGES.clear()
+
+        fixture = self.useFixture(fixtures.StuboutFixture())
+        self.stubs = fixture.stubs
 
     def tearDown(self):
         gettextutils._AVAILABLE_LANGUAGES.clear()
