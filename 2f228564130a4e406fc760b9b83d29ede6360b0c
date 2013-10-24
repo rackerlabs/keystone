@@ -16,6 +16,24 @@
       "revId": "2f228564130a4e406fc760b9b83d29ede6360b0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn///+w\u003d",
+        "filename": ".mailmap",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6835
+      },
+      "writtenOn": "2013-10-24T01:31:50Z",
+      "side": 1,
+      "message": "This line is useful for some tools like stackalysis, and it is always a very small and non-functional commit so I add this here to avoid another tiny commit",
+      "parentUuid": "AAAATX//8Zk\u003d",
+      "revId": "2f228564130a4e406fc760b9b83d29ede6360b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
