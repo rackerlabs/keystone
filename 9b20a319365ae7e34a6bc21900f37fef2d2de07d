@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//9O0\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 13
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "No one else can set a key?  Ever?",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9LM\u003d",
+        "filename": "keystone/contrib/kds/__init__.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "Only import core.  Add \n# flake8: noqa \nafter the core import",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//NRk\u003d",
         "filename": "keystone/contrib/kds/backends/sql.py",
         "patchSetId": 13
@@ -13,6 +47,24 @@
       "writtenOn": "2013-10-21T14:01:40Z",
       "side": 1,
       "message": "I do not agree with splitting here.\nThe key stored in the database is encrypted and signed with the master key, and this enc and sig are the encypted version of the key and the signature on the same key. These are not independent values that make sense to ever set or get separately. By storing them this way people may think they are the actual service keys, they are not.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9RM\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "The names should reflect the relationship.  enc_key is the key, just in encrypted form, so calling that column value or encrypted is correct.  the other column should be \"signature\".  Lets not get cryptic on the naming:  spell things out so they are as self documenting as possible, but remember that these are all attributes of the same entity.  A key doesn\u0027t have a \"key\" attribute.",
+      "parentUuid": "AAAATH//NRk\u003d",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +122,57 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//9PA\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "@protected.  Even if the default policy is to provide all users access, if the decorator is missing we can\u0027t modify the policy afterwards.  All controller functions should be @protected",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9TM\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "remove this comment.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9S8\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "Make this the API doc describing this extension, not just the API doc",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//NNo\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 13
@@ -115,6 +218,24 @@
       "writtenOn": "2013-10-21T14:01:40Z",
       "side": 1,
       "message": "I am against splitting the signature from the encrypted key in the driver, but if you must do it then please use names like \u0027enckey, enckey_sig\u0027 or similar here.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9SQ\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "I\u0027d like to store them as distinct fields in the Database for normalization reasons, but I agree that they should be as clearly linked and described as possible.",
+      "parentUuid": "AAAATH//NMo\u003d",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +344,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//9L4\u003d",
+        "filename": "keystone/contrib/kds/migrate_repo/versions/001_kds_table.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "please add a test in migrations for each table.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//NGk\u003d",
         "filename": "keystone/contrib/kds/migrate_repo/versions/001_kds_table.py",
         "patchSetId": 13
@@ -234,6 +372,40 @@
       "writtenOn": "2013-10-21T14:01:40Z",
       "side": 1,
       "message": "Why 2 tables ?\nWhat\u0027s the value ?",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9MI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "See how oauth is registered using the pipeline.  Only core modules should be reflected here.  Extensions get registered upon (python) import.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9N0\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "uuid4 is used for most data like this.",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -268,6 +440,57 @@
       "writtenOn": "2013-10-21T14:01:40Z",
       "side": 1,
       "message": "Please use a *big* value ( at least 64bits) so that people are not truicked into believing they can use arbitrary small data by reading the code.\n\nActually generating (and printing in order to reproduce in case of errors)  a real random nonce at every test run is probably a good idea.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9NU\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "replace home.local with something gerneted using uuid4.  Assume that you will end up running on a dirty database, and you don\u0027t want to conflict with pre-existing data.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9NQ\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "replace test.key with something from uuid4",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9NE\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:39:17Z",
+      "side": 1,
+      "message": "uuid4",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
