@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//9Kc\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:44:24Z",
+      "side": 1,
+      "message": "as in the other patch, lets think about who needs to be able to add a key, or create a group.",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9KU\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:44:24Z",
+      "side": 1,
+      "message": "table names are singular in Keystone",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9KY\u003d",
+        "filename": "keystone/contrib/kds/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:44:24Z",
+      "side": 1,
+      "message": "reflect these changes in the migrations tests.",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9KA\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:44:24Z",
+      "side": 1,
+      "message": "protect with a forgiving default policy",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//LgU\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 11
@@ -13,6 +81,23 @@
       "writtenOn": "2013-10-21T21:27:32Z",
       "side": 1,
       "message": "This should never happen, either a bare request w/o generation is received or a request with a specific generation number is received. In no case a different generation number (or a new  one bu tonly if none was requested) should be returned.",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9Jw\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-24T16:44:24Z",
+      "side": 1,
+      "message": "same comment as on the KDS tests:  auto generate the data so you don\u0027t have a conflict with an earlier broken run",
       "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
