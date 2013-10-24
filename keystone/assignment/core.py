@@ -269,14 +269,20 @@ class Manager(manager.Manager):
     def get_domain_by_name(self, domain_name):
         return self.driver.get_domain_by_name(domain_name)
 
-    def create_domain(self, domain_id, domain):
+    def create_domain(self, domain_id, domain_ref):
+        domain = domain_ref.copy()
+        domain.setdefault('enabled', True)
+        domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.create_domain(domain_id, domain)
         if SHOULD_CACHE(ret):
             self.get_domain.set(ret, self, domain_id)
             self.get_domain_by_name.set(ret, self, ret['name'])
         return ret
 
-    def update_domain(self, domain_id, domain):
+    def update_domain(self, domain_id, domain_ref):
+        domain = domain_ref.copy()
+        if 'enabled' in domain:
+            domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, ret['name'])
