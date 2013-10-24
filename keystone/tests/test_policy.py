@@ -24,6 +24,7 @@ from keystone import exception
 from keystone.openstack.common import policy as common_policy
 from keystone.policy.backends import rules
 from keystone import tests
+from keystone.tests import fixtures
 
 
 CONF = config.CONF
@@ -80,6 +81,9 @@ class PolicyTestCase(tests.TestCase):
         self._set_rules()
         self.credentials = {}
         self.target = {}
+
+        fixture = self.useFixture(fixtures.StuboutFixture())
+        self.stubs = fixture.stubs
 
     def _set_rules(self):
         these_rules = common_policy.Rules(
