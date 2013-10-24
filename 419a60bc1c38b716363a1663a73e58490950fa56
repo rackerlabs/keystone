@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//8iI\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-24T19:41:27Z",
+      "side": 1,
+      "message": "I don\u0027t think this one and the next are going to be generated anymore so could be removed.",
+      "revId": "419a60bc1c38b716363a1663a73e58490950fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//8fE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-24T19:41:27Z",
+      "side": 1,
+      "message": "update to say that this also fixes the problem where the docs weren\u0027t built on the docs web site.",
+      "revId": "419a60bc1c38b716363a1663a73e58490950fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//8iw\u003d",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-24T19:41:27Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "419a60bc1c38b716363a1663a73e58490950fa56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
