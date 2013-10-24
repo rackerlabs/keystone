@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//9DQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2013-10-24T17:09:00Z",
+      "side": 1,
+      "message": "What does valid mean? Is a number that is syntactically correct valid? Or must it be for a key that has already been issued? Or of a key that is live now? Or the next generation number to be issued? Please define valid",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9C4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2013-10-24T17:09:00Z",
+      "side": 1,
+      "message": "and what if it does not exist (not yet created)? Or what if it had existed but has now timed out?",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9Kc\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 11
