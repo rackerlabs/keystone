@@ -1780,23 +1780,30 @@ class IdentityTests(object):
                           'fake1',
                           user)
 
-    def test_update_project_invalid_enabled_type_string(self):
-            project = {'id': uuid.uuid4().hex,
-                       'name': uuid.uuid4().hex,
-                       'enabled': True,
-                       'domain_id': DEFAULT_DOMAIN_ID}
-            self.assignment_api.create_project(project['id'], project)
-            project_ref = self.assignment_api.get_project(project['id'])
-            self.assertEqual(project_ref['enabled'], True)
+    def test_update_project_invalid_enabled_type(self):
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(project['id'], project)
+        project_ref = self.assignment_api.get_project(project['id'])
+        self.assertEqual(project_ref['enabled'], True)
 
-            # Strings are not valid boolean values
-            project['enabled'] = "false"
-            self.assertRaises(exception.ValidationError,
-                              self.assignment_api.update_project,
-                              project['id'],
-                              project)
+        # Strings are not valid boolean values.
+        project['enabled'] = "false"
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.update_project,
+                          project['id'],
+                          project)
 
-    def test_create_project_invalid_enabled_type_string(self):
+        # Integers are not valid boolean values.
+        project['enabled'] = 0
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.update_project,
+                          project['id'],
+                          project)
+
+    def test_create_project_invalid_enabled_type(self):
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
@@ -1807,7 +1814,14 @@ class IdentityTests(object):
                           project['id'],
                           project)
 
-    def test_create_user_invalid_enabled_type_string(self):
+        # Integers are not valid boolean type.
+        project['enabled'] = 1
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.create_project,
+                          project['id'],
+                          project)
+
+    def test_create_user_invalid_enabled_type(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
                 'domain_id': DEFAULT_DOMAIN_ID,
@@ -1818,6 +1832,71 @@ class IdentityTests(object):
                           self.identity_api.create_user,
                           user['id'],
                           user)
+
+        # Integers are not valid boolean values.
+        user['enabled'] = 1
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.create_user,
+                          user['id'],
+                          user)
+
+    def test_update_user_invalid_enabled_type(self):
+        user = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex,
+                'enabled': True}
+        self.identity_api.create_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertEqual(user_ref['enabled'], True)
+
+        # Strings are not valid boolean values.
+        user['enabled'] = "false"
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_user,
+                          user['id'],
+                          user)
+
+        # Integers are not valid boolean values.
+        user['enabled'] = 0
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_user,
+                          user['id'],
+                          user)
+
+    def test_create_domain_invalid_enabled_type(self):
+        domain = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  # invalid string value
+                  'enabled': 'true'}
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.create_domain,
+                          domain['id'],
+                          domain)
+
+        # Integers are not valid boolean values.
+        domain['enabled'] = 1
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.create_domain,
+                          domain['id'],
+                          domain)
+
+    def test_update_domain_invalid_enabled_type(self):
+        domain = self.identity_api.get_domain(DEFAULT_DOMAIN_ID)
+
+        # Strings are not valid boolean values.
+        domain['enabled'] = 'false'
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.update_domain,
+                          domain['id'],
+                          domain)
+
+        # Integers are not valid boolean values.
+        domain['enabled'] = 0
+        self.assertRaises(exception.ValidationError,
+                          self.assignment_api.update_domain,
+                          domain['id'],
+                          domain)
 
     def test_update_user_long_name_fails(self):
         user = {'id': 'fake1', 'name': 'fake1',
@@ -2007,18 +2086,6 @@ class IdentityTests(object):
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(user_ref['enabled'], True)
 
-        # Integers are valid Python's booleans. Explicitly test it.
-        user['enabled'] = 0
-        self.identity_api.update_user('fake1', user)
-        user_ref = self.identity_api.get_user('fake1')
-        self.assertEqual(user_ref['enabled'], False)
-
-        # Any integers other than 0 are interpreted as True
-        user['enabled'] = -42
-        self.identity_api.update_user('fake1', user)
-        user_ref = self.identity_api.get_user('fake1')
-        self.assertEqual(user_ref['enabled'], True)
-
     def test_update_user_name(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
@@ -2052,6 +2119,13 @@ class IdentityTests(object):
 
         # Strings are not valid boolean values
         user['enabled'] = "false"
+        self.assertRaises(exception.ValidationError,
+                          self.identity_api.update_user,
+                          'fake1',
+                          user)
+
+        # Integers are not valid boolean values.
+        user['enabled'] = 0
         self.assertRaises(exception.ValidationError,
                           self.identity_api.update_user,
                           'fake1',

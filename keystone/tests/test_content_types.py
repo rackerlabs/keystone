@@ -316,7 +316,7 @@ class CoreApiTests(object):
                 'user': {
                     'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex,
-                    # In JSON, 0|1 are not booleans
+                    # In JSON, 0|1 are not booleans.
                     'enabled': 0,
                 },
             },
@@ -347,7 +347,7 @@ class CoreApiTests(object):
             path=path,
             body={
                 'user': {
-                    # In JSON, 0|1 are not booleans
+                    # In JSON, 0|1 are not booleans.
                     'enabled': 1,
                 },
             },
@@ -1386,7 +1386,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
         self.assertValidTenant(r.result['tenant'])
         self.assertEqual(r.result['tenant'].get('description'), "")
 
-    def test_create_project_invalid_enabled_type_string(self):
+    def test_create_project_invalid_enabled_type(self):
         # Forbidden usage of string for 'enabled' field in JSON and XML
         token = self.get_scoped_token()
 
@@ -1404,7 +1404,21 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             expected_status=400)
         self.assertValidErrorResponse(r)
 
-    def test_update_project_invalid_enabled_type_string(self):
+        r = self.admin_request(
+            method='POST',
+            path='/v2.0/tenants',
+            body={
+                'tenant': {
+                    'name': uuid.uuid4().hex,
+                    # In JSON, 0|1 are not booleans.
+                    'enabled': 0,
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
+    def test_update_project_invalid_enabled_type(self):
         # Forbidden usage of string for 'enabled' field in JSON and XML
         token = self.get_scoped_token()
 
@@ -1419,6 +1433,19 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
                 'tenant': {
                     # In XML, only "true|false" are converted to boolean.
                     'enabled': "False",
+                },
+            },
+            token=token,
+            expected_status=400)
+        self.assertValidErrorResponse(r)
+
+        r = self.admin_request(
+            method='PUT',
+            path=path,
+            body={
+                'tenant': {
+                    # In JSON, 0|1 are not booleans.
+                    'enabled': 0,
                 },
             },
             token=token,
