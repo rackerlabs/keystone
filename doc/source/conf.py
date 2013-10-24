@@ -255,3 +255,5 @@ intersphinx_mapping = {'python': ('http://docs.python.org/', None),
                        'nova': ('http://nova.openstack.org', None),
                        'swift': ('http://swift.openstack.org', None),
                        'glance': ('http://glance.openstack.org', None)}
+
+__builtins__['_'] = lambda x: x
