@@ -13,12 +13,15 @@ python-ldap==2.3.13
 # Testing
 # computes code coverage percentages
 coverage
+# fixture stubbing
+fixtures>=0.3.14
 # mock object framework
 mox
 # required to build documentation
 Sphinx>=1.1.2
 # test wsgi apps without starting an http server
 webtest
+
 
 extras
 discover
