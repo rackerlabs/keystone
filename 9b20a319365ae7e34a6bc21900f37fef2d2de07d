@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//8vI\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 13
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:26:42Z",
+      "side": 1,
+      "message": "I\u0027d say \u0027admin\u0027 shouldn;t either, only infrastructure administrators should",
+      "parentUuid": "AAAATn//9O0\u003d",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9LM\u003d",
         "filename": "keystone/contrib/kds/__init__.py",
         "patchSetId": 13
@@ -139,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//8u8\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:26:42Z",
+      "side": 1,
+      "message": "No *keystone user* can ever use this interface, so it makes no sense to add @protected here",
+      "parentUuid": "AAAATn//9PA\u003d",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9TM\u003d",
         "filename": "keystone/contrib/kds/core.py",
         "patchSetId": 13
@@ -236,6 +272,24 @@
       "side": 1,
       "message": "I\u0027d like to store them as distinct fields in the Database for normalization reasons, but I agree that they should be as clearly linked and described as possible.",
       "parentUuid": "AAAATH//NMo\u003d",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//8tU\u003d",
+        "filename": "keystone/contrib/kds/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:26:42Z",
+      "side": 1,
+      "message": "Ok let me try to be clearer, splitting them makes no sense at all, the fact you are even seeing 2 parts here is because you are looking into the sausage maker and you see 2 bits of meat, but this is just an effect of the primitives used. If tomorrow we decide to use something like AES GCM, your ouput will not be divided in 2 parts at all as AES-GCM poroduces directly authenticated encryption.\nSo splitting this stuff in 2 fields (even within a json rapresentation) really makes no sense, and should not be done, you should consider their concatenation an opaque blob called \u0027encrypted_key\u0027 and only the function that encrypts/decrypts it knows how to handle the sausage, nothing else should!",
+      "parentUuid": "AAAATn//9SQ\u003d",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -457,6 +511,24 @@
       "writtenOn": "2013-10-24T16:39:17Z",
       "side": 1,
       "message": "replace home.local with something gerneted using uuid4.  Assume that you will end up running on a dirty database, and you don\u0027t want to conflict with pre-existing data.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//8sw\u003d",
+        "filename": "keystone/tests/test_kds.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:26:42Z",
+      "side": 1,
+      "message": "Not necessary, a set_key replaces whatever was there before in any case, so we do not care about conflicts I think.",
+      "parentUuid": "AAAATn//9NU\u003d",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
