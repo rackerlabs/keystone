@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//9R0\u003d",
+        "filename": "EXTENSIONS_HOWTO.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-24T16:19:35Z",
+      "side": 1,
+      "message": "Is \u0027example\u0027 here intended to be the \u0027extension\u0027 being added? Like \u0027my_extention\u0027 above?",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9S0\u003d",
+        "filename": "EXTENSIONS_HOWTO.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-24T16:19:35Z",
+      "side": 1,
+      "message": "what -\u003e what is ?",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9R4\u003d",
+        "filename": "EXTENSIONS_HOWTO.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-24T16:19:35Z",
+      "side": 1,
+      "message": "separate \u0027attributes\u0027 and \u0027a\u0027",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9RQ\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-24T16:19:35Z",
+      "side": 1,
+      "message": "Newly added file with a copyright from previous year? This *might* only need the 2013, not entirely sure but thought I\u0027d comment.",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//9Q4\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-24T16:19:35Z",
+      "side": 1,
+      "message": "Should \u0027example\u0027 be something more descriptive of the extension being added? Like \u0027my_new_extension\u0027?",
+      "revId": "523db2c98944e2b6a3dbe0335a5c9b0be2798729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
