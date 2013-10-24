@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//+sE\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-24T10:54:10Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "1d54f6c948602180840ce387bbba8536204d3959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//+rk\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-24T10:54:10Z",
+      "side": 1,
+      "message": "missing whitespace after colon",
+      "revId": "1d54f6c948602180840ce387bbba8536204d3959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//+sA\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-24T10:54:10Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "1d54f6c948602180840ce387bbba8536204d3959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//+r4\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-24T10:54:10Z",
+      "side": 1,
+      "message": "extra whitespace",
+      "revId": "1d54f6c948602180840ce387bbba8536204d3959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
