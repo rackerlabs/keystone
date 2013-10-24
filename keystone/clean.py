@@ -44,9 +44,8 @@ def check_type(property_name, value, expected_type, display_expected_type):
 
 
 def check_enabled(property_name, enabled):
-    # Allow int and it's subclass bool
-    check_type('%s enabled' % property_name, enabled, int, 'boolean')
-    return bool(enabled)
+    check_type('%s enabled' % property_name, enabled, bool, 'boolean')
+    return enabled
 
 
 def check_name(property_name, name, min_length=1, max_length=64):
@@ -59,6 +58,10 @@ def check_name(property_name, name, min_length=1, max_length=64):
 
 def domain_name(name):
     return check_name('Domain', name)
+
+
+def domain_enabled(enabled):
+    return check_enabled('Domain', enabled)
 
 
 def project_name(name):
