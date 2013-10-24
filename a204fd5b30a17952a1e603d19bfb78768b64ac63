@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//8wc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:16:26Z",
+      "side": 1,
+      "message": "Valid means a previously returned generation number, which is not expired.\nGeneration numbers are returned in the ticket after creation when a client requests a ticket for a group name.",
+      "parentUuid": "AAAATn//9DQ\u003d",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9C4\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//8wE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:16:26Z",
+      "side": 1,
+      "message": "If it does not exist (never created or already garbage collected) or it is expired you get an error.",
+      "parentUuid": "AAAATn//9C4\u003d",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9Kc\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-24T16:44:24Z",
       "side": 1,
       "message": "as in the other patch, lets think about who needs to be able to add a key, or create a group.",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//8v8\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:16:26Z",
+      "side": 1,
+      "message": "Cloud infrastructure admins only.",
+      "parentUuid": "AAAATn//9Kc\u003d",
       "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +152,24 @@
       "writtenOn": "2013-10-24T16:44:24Z",
       "side": 1,
       "message": "protect with a forgiving default policy",
+      "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//8xM\u003d",
+        "filename": "keystone/contrib/kds/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-10-24T18:16:26Z",
+      "side": 1,
+      "message": "forgiving ?",
+      "parentUuid": "AAAATn//9KA\u003d",
       "revId": "a204fd5b30a17952a1e603d19bfb78768b64ac63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
