@@ -538,21 +538,6 @@ class CoreApiTests(object):
             expected_status=400)
         self.assertValidErrorResponse(r)
 
-        r = self.admin_request(
-            method='POST',
-            path='/v2.0/users',
-            body={
-                'user': {
-                    'name': uuid.uuid4().hex,
-                    'password': uuid.uuid4().hex,
-                    # In JSON, 0|1 are not booleans
-                    'enabled': 0,
-                },
-            },
-            token=token,
-            expected_status=400)
-        self.assertValidErrorResponse(r)
-
         # Test UPDATE request
         path = '/v2.0/users/%(user_id)s' % {
                'user_id': self.user_foo['id'],
@@ -565,19 +550,6 @@ class CoreApiTests(object):
                 'user': {
                     # In XML, only "true|false" are converted to boolean.
                     'enabled': "False",
-                },
-            },
-            token=token,
-            expected_status=400)
-        self.assertValidErrorResponse(r)
-
-        r = self.admin_request(
-            method='PUT',
-            path=path,
-            body={
-                'user': {
-                    # In JSON, 0|1 are not booleans
-                    'enabled': 1,
                 },
             },
             token=token,
