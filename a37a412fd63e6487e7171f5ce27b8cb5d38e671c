@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//8uM\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5971
+      },
+      "writtenOn": "2013-10-24T18:21:49Z",
+      "side": 1,
+      "message": "Fabio, \n\nShould the following be part of the template \n\ndef __init__(self):\n        super(Manager, self).__init__(CONF.ExampleDriver.driver)",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//88c\u003d",
         "filename": "keystone/contrib/example/core.py",
         "patchSetId": 5
