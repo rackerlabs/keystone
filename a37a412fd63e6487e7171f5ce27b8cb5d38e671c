@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//31k\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-25T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//87A\u003d",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//86o\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-24T17:37:00Z",
       "side": 1,
       "message": "nit: change element to section",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//31Q\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-25T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//86o\u003d",
       "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//304\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-25T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//87o\u003d",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//88g\u003d",
         "filename": "keystone/contrib/example/core.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-24T17:37:00Z",
       "side": 1,
       "message": "class ExampleManager",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//3zs\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-25T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//88g\u003d",
       "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//3v4\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-25T21:22:22Z",
+      "side": 1,
+      "message": "Thanks, good suggestion!\nDone",
+      "parentUuid": "AAAATn//8uM\u003d",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//88c\u003d",
         "filename": "keystone/contrib/example/core.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2013-10-24T17:37:00Z",
       "side": 1,
       "message": "class ExampleDriver",
+      "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//3zw\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-25T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//88c\u003d",
       "revId": "a37a412fd63e6487e7171f5ce27b8cb5d38e671c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
