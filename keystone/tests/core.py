@@ -15,6 +15,7 @@
 # under the License.
 
 import errno
+import functools
 import os
 import re
 import shutil
@@ -28,6 +29,7 @@ import mox
 from paste import deploy
 import stubout
 import testtools
+from testtools import testcase
 
 
 from keystone.openstack.common import gettextutils
@@ -172,6 +174,27 @@ def remove_generated_paste_config(extension_name):
 
 def teardown_test_database():
     sql.core.set_global_engine(None)
+
+
+def skip_if_cache_disabled(*sections):
+    # NOTE(morganfainberg): this should specify any sections that the cache
+    # specific tests rely on (e.g. assignment) in a list.  These will be used
+    # to determine if the cache is enabled globally and subsequently check to
+    # see if cache has been explicitly disabled for the "section".  If cache
+    # is disabled in any dependant sections, skip the test.
+    def wrapper(f):
+        @functools.wraps(f)
+        def inner(*args, **kwargs):
+            if not CONF.cache.enabled:
+                raise testcase.TestSkipped('Cache globally disabled.')
+            for s in sections:
+                conf_sec = getattr(CONF, s, None)
+                if conf_sec is not None:
+                    if not getattr(conf_sec, 'caching', True):
+                        raise testcase.TestSkipped('%s caching disabled.' % s)
+            return f(*args, **kwargs)
+        return inner
+    return wrapper
 
 
 class TestClient(object):
