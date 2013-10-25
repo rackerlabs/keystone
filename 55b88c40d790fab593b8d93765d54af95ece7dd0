@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//7UM\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T04:51:25Z",
+      "side": 1,
+      "message": "2012 -\u003e 2013, all or most files you\u0027ve added",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//7UQ\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T04:51:25Z",
+      "side": 1,
+      "message": "i believe we try to avoid the use of backslashes",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//7Ug\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T04:51:25Z",
+      "side": 1,
+      "message": "Trust?",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//7Uc\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T04:51:25Z",
+      "side": 1,
+      "message": "Nice doc\u0027ing here",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//7UY\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T04:51:25Z",
+      "side": 1,
+      "message": "shouldn\u0027t deletes status be 204?",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
