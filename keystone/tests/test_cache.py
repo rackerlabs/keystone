@@ -106,12 +106,29 @@ class CacheRegionTest(tests.TestCase):
         def cacheable_function(value):
             return value
 
-        setattr(CONF.cache, 'caching', False)
+        # Test should_cache_fn for globally enabled caching, no section caching
+        self.opt_in_group('cache', enabled=True)
+        cacheable_function(test_value)
+        cached_value = cacheable_function(test_value)
+        self.assertTrue(cached_value.cached)
+
+        # Test should_cache_fn for globally disabled caching, no section
+        # caching
+        self.opt_in_group('cache', enabled=False)
         cacheable_function(test_value)
         cached_value = cacheable_function(test_value)
         self.assertFalse(cached_value.cached)
 
-        setattr(CONF.cache, 'caching', True)
+        # Test should_cache_fn for globally disabled caching, section caching
+        # enabled
+        self.opt_in_group('cache', enabled=False, caching=True)
+        cacheable_function(test_value)
+        cached_value = cacheable_function(test_value)
+        self.assertFalse(cached_value.cached)
+
+        # Test should_cache_fn for globally enabled caching, section caching
+        # enabled
+        self.opt_in_group('cache', enabled=True, caching=True)
         cacheable_function(test_value)
         cached_value = cacheable_function(test_value)
         self.assertTrue(cached_value.cached)
