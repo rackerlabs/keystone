@@ -782,6 +782,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
                           self.identity_api.get_project,
                           project['id'])
 
+    @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
         # NOTE(morganfainberg): LDAP implementation does not currently support
         # updating project names.  This method override provides a different

@@ -106,11 +106,19 @@ class CacheRegionTest(tests.TestCase):
         def cacheable_function(value):
             return value
 
+        setattr(CONF.cache, 'enabled', True)
         setattr(CONF.cache, 'caching', False)
         cacheable_function(test_value)
         cached_value = cacheable_function(test_value)
         self.assertFalse(cached_value.cached)
 
+        setattr(CONF.cache, 'enabled', False)
+        setattr(CONF.cache, 'caching', True)
+        cacheable_function(test_value)
+        cached_value = cacheable_function(test_value)
+        self.assertFalse(cached_value.cached)
+
+        setattr(CONF.cache, 'enabled', True)
         setattr(CONF.cache, 'caching', True)
         cacheable_function(test_value)
         cached_value = cacheable_function(test_value)

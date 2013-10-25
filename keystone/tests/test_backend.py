@@ -2491,6 +2491,7 @@ class IdentityTests(object):
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(len(user_projects), 3)
 
+    @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -2537,6 +2538,7 @@ class IdentityTests(object):
                           self.assignment_api.get_domain,
                           domain_id)
 
+    @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -2589,6 +2591,7 @@ class IdentityTests(object):
                           self.assignment_api.get_project,
                           project_id)
 
+    @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_role_crud(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         role_id = role['id']
@@ -2916,6 +2919,7 @@ class TokenTests(object):
         self.assertEqual(len(tokens), 1)
         self.assertIn(token_id, tokens)
 
+    @tests.skip_if_cache_disabled('token')
     def test_revocation_list_cache(self):
         expire_time = timeutils.utcnow() + datetime.timedelta(minutes=10)
         token_id = uuid.uuid4().hex
