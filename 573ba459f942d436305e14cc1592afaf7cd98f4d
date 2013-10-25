@@ -16,6 +16,24 @@
       "revId": "573ba459f942d436305e14cc1592afaf7cd98f4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATX//+A8\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:35Z",
+      "side": 0,
+      "message": "Hmm... I did reply, are you sure you can\u0027t see the reply?\n\nAnyway the basic issue boils down like this. Parsing DN\u0027s from strings and forming DN\u0027s from constituent components is non-trivial. The fundamental danger is it looks trivial for simple DN\u0027s which account for the majority of DN\u0027s. But as soon as you start allowing DN\u0027s to be built from user input or contain internationalized names many of the trivial assumptions fall apart. You really want a library which knows how to do this correctly and I don\u0027t believe in re-implementing complex logic that is already implemented in standard libraries and proven to be correct though years of field use. That\u0027s why this was built on top of the LDAP library, it\u0027s the principle of code reuse and building from common libraries.\n\nI don\u0027t see how \"linking\" against a standard library to provide essential logic would or should be considered a bad thing.\n\nFWIW I\u0027m also a developer on IPA (an identity management system) and we learned the hard way you really have to handle DN\u0027s with special code and not try to do obvious simple string operations on a DN because that fails in a number of cases. We have a DN python object (from a dedicated dn Python module) that wraps the Python LDAP dn operations. The DN object permits all sorts of editing operations on an DN, forming DN\u0027s from components, etc. that preserves RFC 4514 DN syntax. That module may be overkill for current OpenStack requirements. I mention it only to illustrate how important it is to correctly handle DN\u0027s. It was a hard lesson for us because we had hundreds of places that were trying to manipulate DN strings directly instead of using a DN object or a library dedicated to DN manipulation. It took 5-6 man months to fix all that code. I don\u0027t want to see the same mistake get repeated in OpenStack.",
+      "parentUuid": "AAAATH//Hjw\u003d",
+      "revId": "573ba459f942d436305e14cc1592afaf7cd98f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
