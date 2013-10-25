@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//4i0\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-25T18:03:47Z",
+      "side": 1,
+      "message": "I prefer to be explicit, so it is clear what the API of the driver actually is.",
+      "parentUuid": "AAAATH//YCY\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//YCc\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-16T23:40:11Z",
       "side": 1,
       "message": "suggest change to user_id since this is a positional parameter",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//4ik\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-25T18:03:47Z",
+      "side": 1,
+      "message": "It doesn\u0027t really make any difference in the way the parent method is called.",
+      "parentUuid": "AAAATH//YCc\u003d",
       "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//4iI\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-25T18:03:47Z",
+      "side": 1,
+      "message": "Again, I\u0027d prefer to be explicit. That way the base class behavior can change to a no-op at some point in the future, and someone modifying this driver can see exactly what is not being implemented.",
+      "parentUuid": "AAAATH//YAc\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//YCM\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 4
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//4hY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-25T18:03:47Z",
+      "side": 1,
+      "message": "Right. Drivers must provide this feature. The base class implementation is correct, but it is very likely it could be optimized in drivers that know how the database works.",
+      "parentUuid": "AAAATH//YBE\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//YAo\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 4
@@ -117,6 +189,24 @@
       "writtenOn": "2013-10-16T23:46:28Z",
       "side": 1,
       "message": "This comment should be removed regardless if this is kept abstract or not (see Brant\u0027s comment on line 249)",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//4h4\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-25T18:03:47Z",
+      "side": 1,
+      "message": "OK, that seems unrelated to the rest of the changes, though?",
+      "parentUuid": "AAAATH//YAo\u003d",
       "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
