@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//6WI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:25:53Z",
+      "side": 1,
+      "message": "Yes, to DocImpact, no to SecurityImpact because there is no security implications, this is just following RFC\u0027s\n\nAlso python-ldap was removed from the testing requirement in the last patch, I didn\u0027t realize the requirements were a non-intersecting set.",
+      "parentUuid": "AAAASX//6tQ\u003d",
+      "revId": "2e605e98dc51f50aaf49e5ee83ed948119ca89e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASX//6n4\u003d",
         "filename": "keystone/tests/test_dn_conv.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-23T19:24:35Z",
       "side": 1,
       "message": "Is this needed if you\u0027re running these tests from ./run_tests.py?",
+      "revId": "2e605e98dc51f50aaf49e5ee83ed948119ca89e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6XA\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:25:53Z",
+      "side": 1,
+      "message": "No it\u0027s not needed, it was used during my initial development, it doesn\u0027t hurt, but it\u0027s probably not consistent with all the other tests, I\u0027ll remove it",
+      "parentUuid": "AAAASX//6n4\u003d",
       "revId": "2e605e98dc51f50aaf49e5ee83ed948119ca89e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
