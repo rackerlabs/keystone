@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//as4\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:27:20Z",
+      "side": 1,
+      "message": "I moved logic into separate method and added more unit tests to cover it. I could not call the method from inside the dictionary initialization as you suggested because it would violate either the line length rule or the indentation rule. Using a local variable solves that problem.",
+      "parentUuid": "AAAASn//g5w\u003d",
+      "revId": "5bd18bc9b1612f7b709724dc527f8a53021456a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//g4U\u003d",
         "filename": "keystone/tests/test_dn_conv.py",
         "patchSetId": 4
