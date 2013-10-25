@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//7UA\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 13
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T05:00:13Z",
+      "side": 1,
+      "message": "why is this being added to the pipeline by default? please remove, if it\u0027s needed for testing, it can be done dynamically",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//9O0\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 13
@@ -443,6 +460,24 @@
       "writtenOn": "2013-10-24T16:39:17Z",
       "side": 1,
       "message": "See how oauth is registered using the pipeline.  Only core modules should be reflected here.  Extensions get registered upon (python) import.",
+      "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//7T4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-25T05:00:13Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAATn//9MI\u003d",
       "revId": "9b20a319365ae7e34a6bc21900f37fef2d2de07d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
