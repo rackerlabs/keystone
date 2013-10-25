@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//IYw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//FzY\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IOc\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "In the interest of future planning and possibly moving this to Oslo, it might be helpful to have this whole change contained within a directory specific to base64 operations. This will be helpful because then in Oslo it can be treated as a module as well (e.g. see the openstack/common/rpc/* or openstack/common/notifier/* modules for examples). Then when that times comes it would be easier to just move a directory instead of moving several modules underneath /keystone/common/. \n\nThis might also be helpful if we want to move InvalidBase64Error to its own module (/keystone/common/base64utils/exceptions.py for instance, making it easier to add new exceptions if/when this all develops. This makes things easier to find and reference when they are all in one place, and also follow structure similar to other openstack projects. \n\nJust a couple thoughts.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//INI\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "I don\u0027t see the value in moving these to a subdirectory with the intent of moving to oslo, most of the simple oslo common utilities are currently contained in single files, e.g.\n\nauthutils.py\ncliutils.py\nexcutils.py\nfileutils.py\nfuncutils.py\ngettextutils.py\nimportutils.py\njsonutils.py\nlockutils.py\nnetwork_utils.py\nprocessutils.py\nsslutils.py\nstrutils.py\ntimeutils.py\nuuidutils.py\nxmlutils.py\n\nI do notice I have an underscore in my filenames which is not consistent with the olso common naming, I\u0027ll fix that.",
+      "parentUuid": "AAAAS3//IOc\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Ud4\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "It does. From the Python re module doc: When the UNICODE flag is not specified, it (\\s)  matches any whitespace character, this is equivalent to the set [ \\t\\n\\r\\f\\v]. Note, it is not necessary to use the re.MULTILINE flag here either since there are no ^ or $ anchors in the regexp.",
+      "parentUuid": "AAAATH//dO0\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dNc\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-15T23:08:45Z",
       "side": 1,
       "message": "(NIT) I personally think constants should be all caps (easy to identity they are a constant in the code that way when used)",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//UXo\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "(NIT) I guess that depends on your definition of a constant. Are module scoped objects created at run time constants? I generally don\u0027t think of these as constants because they\u0027re actually variables that can be assigned to and whose value is the result of executing code (function call). Maybe too many years of C coding has coloured my definition of a constant. Technically Python doesn\u0027t have any constants. If you mean a constant is any variable which you\u0027re not supposed to modify then yes, they\u0027re constants. If these were simple values (e.g. a string or an integer value) as opposed to the result of a function call I\u0027d be much more comfortable calling them a constant, but these are actually function call results.\n\nIf you still feel strongly these identifiers should be all caps I\u0027ll change it.",
+      "parentUuid": "AAAATH//dNc\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//UU8\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IOI\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//UU4\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dSc\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//INs\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -116,6 +224,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Document param alphabet with it default value.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LhI\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//INs\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Lew\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "There are 8 different alphabets, we\u0027re currently only interested in 2. But if the parameter was a boolean allowing only a selection of 2 of the possible 8 then the API is not extensible. API\u0027s which are not designed to be extensible create problems later because they demand an API change to accommodate future needs. It\u0027s better to permit future needs without changing the API.",
+      "parentUuid": "AAAATH//dQo\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dP0\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -150,6 +294,24 @@
       "writtenOn": "2013-10-15T23:08:45Z",
       "side": 1,
       "message": "(SEE note on line 78).  If this is kept, used _() around the string for localization",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LaE\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dP0\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LeM\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "http://dictionary.reference.com/browse/sans?s\u003dt\n\nsans means without, given you didn\u0027t know what sans meant I\u0027ve changed it to without",
+      "parentUuid": "AAAAS3//INQ\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//INA\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -202,6 +382,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "How do I know what characters those will be? Should a doc be linked here to official documentation?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Lc0\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done\n\nAlthough many of the doc strings reference RFC-4648 I noticed the RFC was missing the the module doc string, I added the RFC in the module doc string, that should be sufficient to point anyone looking for clarification to find the definitions.",
+      "parentUuid": "AAAAS3//INA\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +441,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LaQ\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dOs\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Lbs\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Sorry, I disagree. Places where exceptions are raised are not where logging should occur. Where the exception is caught is right place to log the error. Also this module is designed to eventually be a common module in oslo hence there shouldn\u0027t be anything Keystone specific in it.",
+      "parentUuid": "AAAAS3//IMs\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dOk\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -254,6 +488,24 @@
       "writtenOn": "2013-10-15T23:08:45Z",
       "side": 1,
       "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LaA\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dOk\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +529,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LZ8\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dOg\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dOc\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -288,6 +558,24 @@
       "writtenOn": "2013-10-15T23:08:45Z",
       "side": 1,
       "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LZ0\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dOc\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -311,6 +599,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LY0\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dOY\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//F5o\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -322,6 +628,24 @@
       "writtenOn": "2013-10-04T15:32:41Z",
       "side": 1,
       "message": "Can\u0027t this be implemented with str.rstrip?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LYg\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "No, rstrip() does not respect the base64 padding rules. This module is meant to do things correctly and not take short-cuts such as just blindly stripping any number of trailing pad characters.",
+      "parentUuid": "AAAAS3//F5o\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -345,6 +669,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LYY\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "see above, changed \u0027sans\u0027 to \u0027without\u0027",
+      "parentUuid": "AAAAS3//IMM\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dOM\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -356,6 +698,24 @@
       "writtenOn": "2013-10-15T23:08:45Z",
       "side": 1,
       "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LYQ\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dOM\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -379,6 +739,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LYM\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dN8\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//F6w\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -390,6 +768,24 @@
       "writtenOn": "2013-10-04T15:32:41Z",
       "side": 1,
       "message": "Can\u0027t this and the function above be implemented with textwrap?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LWw\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "textwrap was explicitly not used. textwrap is overkill, it has way more functionality than is needed much of which has to be disabled to produce the output we need (e.g. break_long_words, break_on_hyphens). If textwrap is ever changed this function may no longer function correctly for it\u0027s intended purpose. It\u0027s better to assure we produce exactly what is required (and do it more efficiently)",
+      "parentUuid": "AAAAS3//F6w\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -413,6 +809,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LWs\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dNw\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//ILY\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -424,6 +838,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "as follows",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LNc\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//ILY\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -447,6 +879,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LNY\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IKk\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dG8\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -464,6 +914,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LNQ\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dG8\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IKA\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -475,6 +943,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "(NIT): In the interest of object oriented naming, this might make sense to be named \u0027PEMParser\u0027",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LM8\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "But it\u0027s not a class implementing parsing, rather it\u0027s a result object",
+      "parentUuid": "AAAAS3//IKA\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -532,6 +1018,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LMo\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dLg\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LMs\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IJY\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IJM\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -566,6 +1088,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LMk\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IJM\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LMg\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dLc\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IIs\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -577,6 +1135,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Follow docstring convention specified in keystone/HACKING.rst\n\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\n\nmainly \"\"\" instead of \u0027\u0027\u0027\n\nThis applies to all instances in this module",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LMc\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IIs\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -617,6 +1193,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LMA\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dHk\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LME\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "You don\u0027t log where the exception is raised you log where it\u0027s caught. Plus this module is meant for Oslo common code, we don\u0027t want anything Keystone specific in it.",
+      "parentUuid": "AAAAS3//IIg\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IIc\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -651,6 +1263,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LL4\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dHo\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LL8\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "AAAAS3//IIc\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IH4\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -662,6 +1310,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "probably don\u0027t need to explicitly say \u0027string\u0027 in the docstring, example given in: \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#docstrings\n\nThis applies for all occurrences in this module.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LLw\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IH4\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -685,6 +1351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LLo\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dHg\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IHo\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -702,6 +1386,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LLU\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IHo\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dHc\u003d",
         "filename": "keystone/common/pem_utils.py",
         "patchSetId": 1
@@ -713,6 +1415,24 @@
       "writtenOn": "2013-10-15T23:08:45Z",
       "side": 1,
       "message": "Wrap strings in _() for localization.",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LLI\u003d",
+        "filename": "keystone/common/pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//dHc\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -753,6 +1473,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LKo\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "I\u0027m trying not to make this Keystone specific so it can eventually be moved to Oslo",
+      "parentUuid": "AAAAS3//IG4\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IG8\u003d",
         "filename": "keystone/tests/test_base64_utils.py",
         "patchSetId": 1
@@ -764,6 +1502,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Can we make the test case name a little more descriptive? Here we are testing base64_utils.is_valid_base64 so why not dedicate this test case to that?",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LKE\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "renamed to test_valid_base64",
+      "parentUuid": "AAAAS3//IG8\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -787,6 +1543,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LKI\u003d",
+        "filename": "keystone/tests/test_base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "renamed to test_valid_base64",
+      "parentUuid": "AAAAS3//IFU\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//F1A\u003d",
         "filename": "keystone/tests/test_pem_utils.py",
         "patchSetId": 1
@@ -804,6 +1578,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//LJ8\u003d",
+        "filename": "keystone/tests/test_pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Trying not to make this Keystone specific so it can be moved to Oslo",
+      "parentUuid": "AAAAS3//F1A\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IHQ\u003d",
         "filename": "keystone/tests/test_pem_utils.py",
         "patchSetId": 1
@@ -815,6 +1607,24 @@
       "writtenOn": "2013-10-03T20:59:45Z",
       "side": 1,
       "message": "Follow docstring conventions defined in keystone/HACKING.rst",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//LJ4\u003d",
+        "filename": "keystone/tests/test_pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:17:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//IHQ\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
