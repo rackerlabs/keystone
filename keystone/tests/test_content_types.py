@@ -108,13 +108,11 @@ class CoreApiTests(object):
 
     def test_public_extensions(self):
         r = self.public_request(path='/v2.0/extensions')
-        self.assertValidExtensionListResponse(r,
-                                              extension.PUBLIC_EXTENSIONS)
+        self.assertValidExtensionListResponse(r, extension.PUBLIC_EXTENSIONS)
 
     def test_admin_extensions(self):
         r = self.admin_request(path='/v2.0/extensions')
-        self.assertValidExtensionListResponse(r,
-                                              extension.ADMIN_EXTENSIONS)
+        self.assertValidExtensionListResponse(r, extension.ADMIN_EXTENSIONS)
 
     def test_admin_extensions_404(self):
         self.admin_request(path='/v2.0/extensions/invalid-extension',
@@ -126,8 +124,7 @@ class CoreApiTests(object):
 
     def test_admin_osksadm_extension(self):
         r = self.admin_request(path='/v2.0/extensions/OS-KSADM')
-        self.assertValidExtensionResponse(r,
-                                          extension.ADMIN_EXTENSIONS)
+        self.assertValidExtensionResponse(r, extension.ADMIN_EXTENSIONS)
 
     def test_authenticate(self):
         r = self.public_request(
@@ -745,7 +742,20 @@ class LegacyV2UsernameTests(object):
         self.assertEqual(user.get('username'), 'new_username')
 
 
-class JsonTestCase(rest.RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
+class RestfulTestCase(rest.RestfulTestCase):
+
+    def setUp(self):
+        super(RestfulTestCase, self).setUp()
+
+        # TODO(termie): add an admin user to the fixtures and use that user
+        # override the fixtures, for now
+        self.metadata_foobar = self.identity_api.add_role_to_user_and_project(
+            self.user_foo['id'],
+            self.tenant_bar['id'],
+            self.role_admin['id'])
+
+
+class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
     content_type = 'json'
 
     def _get_user_id(self, r):
@@ -1084,7 +1094,7 @@ class JsonTestCase(rest.RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             expected_status=200)
 
 
-class XmlTestCase(rest.RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
+class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
     xmlns = 'http://docs.openstack.org/identity/api/v2.0'
     content_type = 'xml'
 
