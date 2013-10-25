@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//3rc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-25T21:50:11Z",
+      "side": 1,
+      "message": "Extra whitespace?",
+      "revId": "0d11552e2333b0e6c000c2714a470cf9e11e1370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
