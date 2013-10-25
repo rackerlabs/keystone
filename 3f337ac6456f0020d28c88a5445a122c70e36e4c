@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//4gs\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-25T18:06:25Z",
+      "side": 1,
+      "message": "That is fair enough.",
+      "parentUuid": "AAAATn//4iI\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//YCM\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 4
@@ -207,6 +225,24 @@
       "side": 1,
       "message": "OK, that seems unrelated to the rest of the changes, though?",
       "parentUuid": "AAAATH//YAo\u003d",
+      "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//4g0\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-25T18:06:25Z",
+      "side": 1,
+      "message": "The SQL driver is the only one with a more efficient implementation, this is just saying it should be implemented on the other drivers as i read it, meaning this resolves the TODO.  efficiency or not, making this abstract is solved and \"virtual method\" is no longer relevant.",
+      "parentUuid": "AAAATn//4h4\u003d",
       "revId": "3f337ac6456f0020d28c88a5445a122c70e36e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
