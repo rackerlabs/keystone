@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//43U\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-25T17:02:25Z",
+      "side": 1,
+      "message": "No need.  This just a NIT and personal style.",
+      "parentUuid": "AAAATH//UXo\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//IOI\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
@@ -277,6 +295,24 @@
       "side": 1,
       "message": "There are 8 different alphabets, we\u0027re currently only interested in 2. But if the parameter was a boolean allowing only a selection of 2 of the possible 8 then the API is not extensible. API\u0027s which are not designed to be extensible create problems later because they demand an API change to accommodate future needs. It\u0027s better to permit future needs without changing the API.",
       "parentUuid": "AAAATH//dQo\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//42E\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-25T17:02:25Z",
+      "side": 1,
+      "message": "That is fair enough, then I would recommend making \"decoder\" the variable name and let the developer pass in a method reference that will be used to validate the base64.  You could provide a convenience attribute for base64 and urlsafe_b64decode (e.g. is_valid_base64(text, decoder\u003dbase64utils.urlsafe_decoder).  \n\nUsing an arbitrary string here feels like the wrong approach overall, since it requires logic changes for each new \"alphabet\" we want to support.\n\nThis would make the first if-block here a simple \"if iscallable\" check and raise a value error if the decoder isn\u0027t \"callable\".",
+      "parentUuid": "AAAATH//Lew\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1590,6 +1626,24 @@
       "side": 1,
       "message": "Trying not to make this Keystone specific so it can be moved to Oslo",
       "parentUuid": "AAAAS3//F1A\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//41U\u003d",
+        "filename": "keystone/tests/test_pem_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-25T17:02:25Z",
+      "side": 1,
+      "message": "(preference, no need to change) I would make this keystone specific, since it is keystone specific, and when you move it to OSLO make the minor changes to make it non-keystone specific.  We will need to import from a different location once it\u0027s in oslo in either case.",
+      "parentUuid": "AAAATH//LJ8\u003d",
       "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
