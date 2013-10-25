@@ -16,6 +16,24 @@
       "revId": "f3abe5966cb199b0ff3003be6c89b864904f48fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//6I0\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-10-25T12:40:51Z",
+      "side": 1,
+      "message": "Yes. According the document, using PIPE to check_all may be dangerous. But your solution didn\u0027t solve the stdout problem. \n\nI will use another way to fix this.",
+      "parentUuid": "AAAATH//SFs\u003d",
+      "revId": "f3abe5966cb199b0ff3003be6c89b864904f48fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
