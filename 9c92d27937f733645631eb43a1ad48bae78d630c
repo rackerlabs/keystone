@@ -16,6 +16,24 @@
       "revId": "9c92d27937f733645631eb43a1ad48bae78d630c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//1bw\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 0,
+      "message": "As I said in response to your other comment, I\u0027m not aware of any other Python library which provides sophisticated DN parsing and assembly. I understand your point about requiring python-ldap might seem surprising but a couple of things to remember. We are supporting LDAP as a backend, LDAP has both client and server side components, this is a client side only, DN\u0027s are used in many RFC\u0027s for different purposes (LDAP being just one, just consider their presence in X509) but DN code almost exclusively appears in LDAP libraries. Bottom line, various RFC\u0027s co-mingle LDAP entities in non-LDAP contexts, given that is it any surprise you might need an LDAP library for non-LDAP purposes?",
+      "parentUuid": "AAAASX//1kY\u003d",
+      "revId": "9c92d27937f733645631eb43a1ad48bae78d630c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

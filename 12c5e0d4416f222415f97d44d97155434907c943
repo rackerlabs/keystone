@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1Oc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//1/c\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//1+8\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-28T22:12:49Z",
       "side": 1,
       "message": "change \"it\u0027s\" to \"its\" . This applies throughout this file. it\u0027s \u003d it is",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1NU\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//1+8\u003d",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1NQ\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//1+k\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//1+g\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-28T22:12:49Z",
       "side": 1,
       "message": "remove a with",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1NM\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//1+g\u003d",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//1gI\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "\"this module\" is a bit ambiguous to me, do you mean ldap.dn or dn_conv?\n\nThe only Python module I\u0027m aware of that does dn parsing and assembly (handling quoting, encoding, etc). is ldap.dn. With respect to dn_conv, I know of no library which operates on OpenSSL format DN\u0027s.\n\nThe closest thing I\u0027m aware of some of the very low level API\u0027s in the OpenSSL C library which I think can be cobbled together to produce an OpenSSL format to RFC format conversion utility, but not a conversion in the opposite direction. Plus there are no Python bindings for these API\u0027s. So short answer is I\u0027m not aware of any accepted library that does everything.",
+      "parentUuid": "AAAASX//1lM\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//1+Q\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2013-08-28T22:12:49Z",
       "side": 1,
       "message": "suggest change 247-250 to\n\n  return _openssl_dn_re.search(dn)",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1Mc\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "The result of a regular expression search is either a match object or None if not found. We want to return a boolean therefore I don\u0027t think the suggested change is correct.",
+      "parentUuid": "AAAASn//1+Q\u003d",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1Kw\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//17s\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//1+I\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -132,6 +258,24 @@
       "writtenOn": "2013-08-28T22:12:49Z",
       "side": 1,
       "message": "this needs \"param boolean\" like line 256",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1Lw\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//1+I\u003d",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASX//1fA\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "What\u0027s useful about a ldap.DECODING_ERROR? Just one more oddball exception calling code needs to be aware of and catch. It seems useful to convert this to a standard exception, one that says the value provided is bogus. I know there is some discussion concerning when exceptions are remapped and different opinions on that topic. I\u0027m not wed to which exception is raised but thought a ValueError was friendlier.",
+      "parentUuid": "AAAASX//1lo\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//17I\u003d",
         "filename": "keystone/common/dn_conv.py",
         "patchSetId": 3
@@ -183,6 +345,24 @@
       "writtenOn": "2013-08-28T22:12:49Z",
       "side": 1,
       "message": "I don\u0027t see any test that verifies this part.",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1Hc\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//17I\u003d",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1Ok\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//19c\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//17g\u003d",
         "filename": "keystone/tests/test_dn_conv.py",
         "patchSetId": 3
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//1OA\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//17g\u003d",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//17c\u003d",
         "filename": "keystone/tests/test_dn_conv.py",
         "patchSetId": 3
@@ -234,6 +450,24 @@
       "writtenOn": "2013-08-28T22:12:49Z",
       "side": 1,
       "message": "use multivalue_rdn\u003dTrue since it\u0027s a named parameter.",
+      "revId": "12c5e0d4416f222415f97d44d97155434907c943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1N8\u003d",
+        "filename": "keystone/tests/test_dn_conv.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-25T16:26:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//17c\u003d",
       "revId": "12c5e0d4416f222415f97d44d97155434907c943",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
