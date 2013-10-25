@@ -783,6 +783,8 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
                           project['id'])
 
     def test_cache_layer_project_crud(self):
+        if not CONF.cache.enabled:
+            self.skipTest('Caching is disabled.')
         # NOTE(morganfainberg): LDAP implementation does not currently support
         # updating project names.  This method override provides a different
         # update test.

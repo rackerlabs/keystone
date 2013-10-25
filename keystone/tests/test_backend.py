@@ -2492,6 +2492,8 @@ class IdentityTests(object):
         self.assertEqual(len(user_projects), 3)
 
     def test_cache_layer_domain_crud(self):
+        if not CONF.cache.enabled:
+            self.skipTest('Caching is disabled.')
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
         domain_id = domain['id']
@@ -2538,6 +2540,8 @@ class IdentityTests(object):
                           domain_id)
 
     def test_cache_layer_project_crud(self):
+        if not CONF.cache.enabled:
+            self.skipTest('Caching is disabled.')
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -2590,6 +2594,8 @@ class IdentityTests(object):
                           project_id)
 
     def test_cache_layer_role_crud(self):
+        if not CONF.cache.enabled:
+            self.skipTest('Caching is disabled.')
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         role_id = role['id']
         # Create role
@@ -2917,6 +2923,8 @@ class TokenTests(object):
         self.assertIn(token_id, tokens)
 
     def test_revocation_list_cache(self):
+        if not CONF.cache.enabled:
+            self.skipTest('Caching is disabled.')
         expire_time = timeutils.utcnow() + datetime.timedelta(minutes=10)
         token_id = uuid.uuid4().hex
         token_data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
