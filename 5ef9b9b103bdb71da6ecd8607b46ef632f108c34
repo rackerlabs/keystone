@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//29w\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-10-26T19:41:10Z",
+      "side": 1,
+      "message": "Is there a good reason why you changed the testing value from 1 to 0?  1 should have been just fine correct?",
+      "revId": "5ef9b9b103bdb71da6ecd8607b46ef632f108c34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
