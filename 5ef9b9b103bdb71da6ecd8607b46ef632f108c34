@@ -16,6 +16,24 @@
       "revId": "5ef9b9b103bdb71da6ecd8607b46ef632f108c34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//2jQ\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-10-27T10:07:51Z",
+      "side": 1,
+      "message": "Nothing special i just wanted to keep it consistent, i.e. between create and update, and the string test tested \u0027enabled\u0027: \u0027False\u0027 so it looked to me that \u0027enabled\u0027: 0 is also appropriate.\n\nBut i can change it if it\u0027s required.",
+      "parentUuid": "AAAATn//29w\u003d",
+      "revId": "5ef9b9b103bdb71da6ecd8607b46ef632f108c34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
