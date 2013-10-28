@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//zaE\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-28T20:03:49Z",
+      "side": 1,
+      "message": "Check: http://docs-draft.openstack.org/46/53046/7/check/gate-keystone-docs/a17d7d4/doc/build/html/EXTENSIONS_HOWTO.html make sure this looks like you expect it to.  It seems a little off on rendering (the \\ turn into just indents?)",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//zbA\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-28T20:03:49Z",
+      "side": 1,
+      "message": "Suggest adding a description of what a \"backend\" is.",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//za0\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-28T20:03:49Z",
+      "side": 1,
+      "message": "suggest being more specific about what \"data\" is. (e.g. make the summary a little more expressive based upon the migrate_repo info below.  don\u0027t add a ton more info here.)  \"data structures\" might be sufficient (based upon description below).",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//zdo\u003d",
+        "filename": "keystone/contrib/example/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-28T20:03:49Z",
+      "side": 1,
+      "message": "(NIT) suggest removing this line.  I don\u0027t think we should encourage new extensions to have this comment in them.",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
