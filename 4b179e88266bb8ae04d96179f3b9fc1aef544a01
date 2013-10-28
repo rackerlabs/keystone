@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//0BM\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-28T16:31:38Z",
+      "side": 1,
+      "message": "suggest change user to remote_user_name",
+      "revId": "4b179e88266bb8ae04d96179f3b9fc1aef544a01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//0BY\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-28T16:31:38Z",
+      "side": 1,
+      "message": "give a name to the None parameter so that reviewers know what it is..\n\n no_context \u003d None\n auth_info \u003d auth.controllers.AuthInfo(no_context, auth_data)\n\nAlternatively, could pass in context instead. Looks like it wouldn\u0027t have any effect.",
+      "revId": "4b179e88266bb8ae04d96179f3b9fc1aef544a01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
