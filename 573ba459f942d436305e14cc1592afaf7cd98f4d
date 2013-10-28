@@ -34,6 +34,24 @@
       "revId": "573ba459f942d436305e14cc1592afaf7cd98f4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//z1k\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-28T17:33:20Z",
+      "side": 0,
+      "message": "That is enough justification for this change if we\u0027re going to use this semantic.  I\u0027m content to lift the -1 here.  Thanks for detailing the reasoning.\n\nFWIW, ldap is not really a python \"standard\" library and often needs to be installed in addition to the base installation.  We just want to be careful about adding in hard dependencies unless it\u0027s truely needed.  Keeping to the concept of least surprise for our users.",
+      "parentUuid": "AAAATX//+A8\u003d",
+      "revId": "573ba459f942d436305e14cc1592afaf7cd98f4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
