@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1fw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//47I\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//47E\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "change to Default",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1fs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//47E\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1fo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//46o\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//46c\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "change to external.Domain",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1fk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//46c\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1fg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "I know, but the only thing that could be split up is the \"DeprecatedGrizzly\", and I didn\u0027t want to make a separate change for a deprecated thing... However, I\u0027ve no problem in splitting it up if you think it is necessary.",
+      "parentUuid": "AAAATn//46I\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//45M\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "suggest change \"you have to explicitly add `external` to the list of enabled authentication\" to \"`external` must be in the list of enabled authentication methods\"\n\nyou don\u0027t really have to add it explicitly since the default includes external.",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1eI\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Yes, indeed.",
+      "parentUuid": "AAAATn//45M\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1eU\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//45s\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//448\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -132,6 +258,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "Suggest remove first sentence.",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1eA\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//448\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1d4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//44w\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//48Y\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -166,6 +328,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "this should be keystone.auth.plugins.external.DeprecatedGrizzly ?",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1d0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Arg! yes :-(",
+      "parentUuid": "AAAATn//48Y\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1ds\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "AAAATn//48U\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//48Q\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -200,6 +398,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "this should be keystone.auth.plugins.external.Domain ?",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1dk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "AAAATn//48Q\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1dg\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//48E\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//47w\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -234,6 +468,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "change \"rely on\" to \"always use\"",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1dY\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//47w\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1dU\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//47o\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//47k\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -268,6 +538,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "this should be keystone.auth.plugins.external.Domain ?",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1cs\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//47k\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1cw\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//43s\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//43c\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 14
@@ -302,6 +608,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "should be keystone.auth.plugins.external.Default",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1c0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//43c\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1fM\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "I will change the message, but I think that the exception should be raised anyway: this was the behavior in Grizzly.",
+      "parentUuid": "AAAATn//43A\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//424\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 14
@@ -336,6 +678,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "why this change? revert it.",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1gk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//424\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1e0\u003d",
+        "filename": "keystone/tests/auth_plugin_external_default.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//42k\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//42g\u003d",
         "filename": "keystone/tests/auth_plugin_external_deprecated.conf",
         "patchSetId": 14
@@ -376,6 +754,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//1eg\u003d",
+        "filename": "keystone/tests/auth_plugin_external_deprecated.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//42g\u003d",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//42c\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 14
@@ -387,6 +783,24 @@
       "writtenOn": "2013-10-25T16:56:37Z",
       "side": 1,
       "message": "there\u0027s a lot of duplicated code here that should be consolidated into a function, see lines 1100-1107",
+      "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//1gI\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-28T10:16:53Z",
+      "side": 1,
+      "message": "Done in https://review.openstack.org/#/c/54080/",
+      "parentUuid": "AAAATn//42c\u003d",
       "revId": "ea30f0a74bf732215cee33435ceba6d67482979e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
