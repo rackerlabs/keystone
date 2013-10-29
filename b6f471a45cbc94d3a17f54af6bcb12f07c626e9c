@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//u+I\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:39:02Z",
+      "side": 1,
+      "message": "I don\u0027t see where this function kills the servers.",
+      "revId": "b6f471a45cbc94d3a17f54af6bcb12f07c626e9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//u88\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:39:02Z",
+      "side": 1,
+      "message": "should be expected_status",
+      "revId": "b6f471a45cbc94d3a17f54af6bcb12f07c626e9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
