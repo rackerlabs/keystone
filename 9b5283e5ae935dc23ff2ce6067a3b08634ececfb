@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//yq8\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-29T00:16:36Z",
+      "side": 1,
+      "message": "I escaped the \\ so now it show it. I hope this is better.",
+      "parentUuid": "AAAATn//zaE\u003d",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//zbA\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-28T20:03:49Z",
       "side": 1,
       "message": "Suggest adding a description of what a \"backend\" is.",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ysA\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-29T00:16:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//zbA\u003d",
       "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//ysU\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-29T00:16:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//za0\u003d",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//zdo\u003d",
         "filename": "keystone/contrib/example/__init__.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-28T20:03:49Z",
       "side": 1,
       "message": "(NIT) suggest removing this line.  I don\u0027t think we should encourage new extensions to have this comment in them.",
+      "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//yr8\u003d",
+        "filename": "keystone/contrib/example/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-29T00:16:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//zdo\u003d",
       "revId": "9b5283e5ae935dc23ff2ce6067a3b08634ececfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
