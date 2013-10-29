@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//u04\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T19:19:34Z",
+      "side": 1,
+      "message": "I deleted this comment.  It was in the original class I moved.",
+      "parentUuid": "AAAATn//u+I\u003d",
+      "revId": "b6f471a45cbc94d3a17f54af6bcb12f07c626e9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//u88\u003d",
         "filename": "keystone/tests/rest.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-29T18:39:02Z",
       "side": 1,
       "message": "should be expected_status",
+      "revId": "b6f471a45cbc94d3a17f54af6bcb12f07c626e9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//u0Q\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T19:19:34Z",
+      "side": 1,
+      "message": "Fixed.  This was also a carry over from the class I moved.",
+      "parentUuid": "AAAATn//u88\u003d",
       "revId": "b6f471a45cbc94d3a17f54af6bcb12f07c626e9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
