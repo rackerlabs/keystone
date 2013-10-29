@@ -16,6 +16,24 @@
       "revId": "9a0f7408b89f325bd0198d308a6f617f832b2a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//vCk\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-10-29T18:24:45Z",
+      "side": 1,
+      "message": "It does help a little during development. Driver authors won\u0027t even be able to run their code until they define all of the abstract methods in the concrete class. Leaving the raise statements here means new drivers (or new methods on existing drivers) can just call super() and see an error at the point where a method is called, which allows the tests to run and report errors/failures.",
+      "parentUuid": "AAAATn//vhA\u003d",
+      "revId": "9a0f7408b89f325bd0198d308a6f617f832b2a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
