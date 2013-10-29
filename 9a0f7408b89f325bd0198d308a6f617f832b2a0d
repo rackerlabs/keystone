@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//vhA\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-10-29T16:36:01Z",
+      "side": 1,
+      "message": "Why keep the raise statement ? The same apply for all the other methods below that are decorated now with abc.abstractmethod.",
+      "revId": "9a0f7408b89f325bd0198d308a6f617f832b2a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
