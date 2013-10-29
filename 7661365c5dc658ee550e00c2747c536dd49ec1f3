@@ -16,6 +16,24 @@
       "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//u/A\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-29T18:33:48Z",
+      "side": 1,
+      "message": "String needs to be in _() for translation.  This is elegant.",
+      "parentUuid": "AAAATn//zek\u003d",
+      "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
