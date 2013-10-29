@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Code-Review+1: Qin Zhao <chaochin@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 29 Oct 2013 11:13:00 +0000
+Reviewed-on: https://review.openstack.org/53146
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
