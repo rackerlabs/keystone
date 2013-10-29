@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//uzM\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T19:16:28Z",
+      "side": 1,
+      "message": "Once I got to the point that load_backends was only being called once per test I started seeing the test that uses this config fail.  I think that this config was previously not actually being used by the test because of the goofy setup.  I needed this changed to make my changes pass.\n\nI initially thought about making a commit before this one for only this change.  I ended up not doing that because I didn\u0027t have a failing test and I try to only make changes that make failing tests pass.  I can go have and add a single line commit if you like.",
+      "parentUuid": "AAAATn//u7k\u003d",
+      "revId": "3039b7c1852a241cf13afbaa85fa27751f7cd2a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//u64\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-29T18:43:59Z",
       "side": 1,
       "message": "now this is duplicated... I thought the goal was to remove duplication.",
+      "revId": "3039b7c1852a241cf13afbaa85fa27751f7cd2a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//uyE\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T19:16:28Z",
+      "side": 1,
+      "message": "This is only a step towards where I would like to go.  The step was to fix the setup issue with these test.  I have another patch I\u0027m working on that removes both blocks and adds an admin user to use during the tests.",
+      "parentUuid": "AAAATn//u64\u003d",
       "revId": "3039b7c1852a241cf13afbaa85fa27751f7cd2a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
