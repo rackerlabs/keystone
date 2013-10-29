@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//vCE\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:33:44Z",
+      "side": 1,
+      "message": "this doesn\u0027t need to be in setUp for every test. Move it to after line 82.",
+      "revId": "ab39cd2dc6a11763c4e2a26f9bf57da0d74db918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//vBc\u003d",
+        "filename": "keystone/tests/fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:33:44Z",
+      "side": 1,
+      "message": "Docs would be nice. (sample usage)",
+      "revId": "ab39cd2dc6a11763c4e2a26f9bf57da0d74db918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//vBY\u003d",
+        "filename": "keystone/tests/fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:33:44Z",
+      "side": 1,
+      "message": "Docs would be nice.",
+      "revId": "ab39cd2dc6a11763c4e2a26f9bf57da0d74db918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//vA0\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:33:44Z",
+      "side": 1,
+      "message": "do we need this since not importing fixtures?",
+      "revId": "ab39cd2dc6a11763c4e2a26f9bf57da0d74db918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
