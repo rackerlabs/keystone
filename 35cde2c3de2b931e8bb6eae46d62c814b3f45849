@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//uXs\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-29T21:23:15Z",
+      "side": 1,
+      "message": "(NIT): outdated copyright for newly added file.",
+      "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//uXY\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-29T21:23:15Z",
+      "side": 1,
+      "message": "Just out of curiosity, how come the naming convention of this method doesn\u0027t match the one on line168?\n\nI suppose it came from the copy and was already there, should this be noted and fixed in a separate commit?",
+      "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
