@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//yY8\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-29T03:07:32Z",
+      "side": 1,
+      "message": "nit: I think you described this better in line 45, \"implementing a filter\" sounds funny to me (imo).",
+      "revId": "0af9defd8013cca60270ab246ab8513df98b1833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//yZU\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-29T03:07:32Z",
+      "side": 1,
+      "message": "nit: I think this last sentence is a bit redundant, or at least the part that describes the import anyway.",
+      "revId": "0af9defd8013cca60270ab246ab8513df98b1833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//yZc\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-29T03:07:32Z",
+      "side": 1,
+      "message": "nit: ... *it* is mandatory to define ...",
+      "revId": "0af9defd8013cca60270ab246ab8513df98b1833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
