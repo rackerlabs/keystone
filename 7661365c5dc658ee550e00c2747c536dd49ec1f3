@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//zek\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-29T15:30:19Z",
+      "side": 1,
+      "message": "this whole thing could be simplified quite a bit with a try/except, but i like how trivially this illustrates the issue",
+      "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
