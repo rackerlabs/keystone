@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//ubY\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T20:58:24Z",
+      "side": 1,
+      "message": "No need to str() this.",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ubU\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T20:58:24Z",
+      "side": 1,
+      "message": "or this.",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ubo\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T20:58:24Z",
+      "side": 1,
+      "message": "If you change %(key)s to %(key)r you will not have to explicitly repr.  This will delay turing the object into a string until is actually has to be logged.  This goes for anything you are repr-ing below.",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//uco\u003d",
+        "filename": "keystone/openstack/common/db/sqlalchemy/test_migrations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T20:58:24Z",
+      "side": 1,
+      "message": "I think this will cause a Type error.  The logging methods take (msg, *args) or (msg, dict) as parameters.  I don\u0027t think it will like (msg, tuple).  Yep:\n\n \u003e\u003e\u003e logging.error(\u0027hi %s %s\u0027, \u0027a\u0027, \u0027b\u0027) \n ERROR:root:hi a b\n \u003e\u003e\u003e logging.error(\u0027hi %s %s\u0027, (\u0027a\u0027, \u0027b\u0027))\n Traceback (most recent call last):\n [snip]\n TypeError: not enough arguments for format string\n Logged from file \u003cstdin\u003e, line 1",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ud8\u003d",
+        "filename": "keystone/openstack/common/rpc/amqp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T20:58:24Z",
+      "side": 1,
+      "message": "You don\u0027t even need to str() here.  %s will do that automatically.",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//udw\u003d",
+        "filename": "keystone/openstack/common/rpc/amqp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-29T20:58:24Z",
+      "side": 1,
+      "message": "Remove the parens around unique_id.",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
