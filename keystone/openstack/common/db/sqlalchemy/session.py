@@ -694,7 +694,7 @@ def create_engine(sql_connection, sqlite_fk=False):
             remaining = 'infinite'
         while True:
             msg = _('SQL connection failed. %s attempts left.')
-            LOG.warn(msg % remaining)
+            LOG.warn(msg, remaining)
             if remaining != 'infinite':
                 remaining -= 1
             time.sleep(CONF.database.retry_interval)

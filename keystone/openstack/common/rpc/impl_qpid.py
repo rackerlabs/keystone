@@ -431,9 +431,9 @@ class Connection(object):
                 self.connection.open()
             except qpid_exceptions.ConnectionError as e:
                 msg_dict = dict(e=e, delay=delay)
-                msg = _("Unable to connect to AMQP server: %(e)s. "
-                        "Sleeping %(delay)s seconds") % msg_dict
-                LOG.error(msg)
+                LOG.error(_("Unable to connect to AMQP server: %(e)s. "
+                            "Sleeping %(delay)s seconds"),
+                          msg_dict)
                 time.sleep(delay)
                 delay = min(2 * delay, 60)
             else:
@@ -490,7 +490,7 @@ class Connection(object):
         def _connect_error(exc):
             log_info = {'topic': topic, 'err_str': str(exc)}
             LOG.error(_("Failed to declare consumer for topic '%(topic)s': "
-                      "%(err_str)s") % log_info)
+                      "%(err_str)s"), log_info)
 
         def _declare_consumer():
             consumer = consumer_cls(self.conf, self.session, topic, callback)
@@ -504,11 +504,11 @@ class Connection(object):
 
         def _error_callback(exc):
             if isinstance(exc, qpid_exceptions.Empty):
-                LOG.debug(_('Timed out waiting for RPC response: %s') %
+                LOG.debug(_('Timed out waiting for RPC response: %s'),
                           str(exc))
                 raise rpc_common.Timeout()
             else:
-                LOG.exception(_('Failed to consume message from queue: %s') %
+                LOG.exception(_('Failed to consume message from queue: %s'),
                               str(exc))
 
         def _consume():
@@ -544,7 +544,7 @@ class Connection(object):
         def _connect_error(exc):
             log_info = {'topic': topic, 'err_str': str(exc)}
             LOG.exception(_("Failed to publish message to topic "
-                          "'%(topic)s': %(err_str)s") % log_info)
+                          "'%(topic)s': %(err_str)s"), log_info)
 
         def _publisher_send():
             publisher = cls(self.conf, self.session, topic)

@@ -46,7 +46,7 @@ class Service(service.Service):
         super(Service, self).start()
 
         self.conn = rpc.create_connection(new=True)
-        LOG.debug(_("Creating Consumer connection for Service %s") %
+        LOG.debug(_("Creating Consumer connection for Service %s"),
                   self.topic)
 
         dispatcher = rpc_dispatcher.RpcDispatcher([self.manager],

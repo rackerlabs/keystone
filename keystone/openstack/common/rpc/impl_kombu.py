@@ -500,7 +500,7 @@ class Connection(object):
         """
         if self.connection:
             LOG.info(_("Reconnecting to AMQP server on "
-                     "%(hostname)s:%(port)d") % params)
+                     "%(hostname)s:%(port)d"), params)
             try:
                 self.connection.release()
             except self.connection_errors:
@@ -521,7 +521,7 @@ class Connection(object):
             self.channel._new_queue('ae.undeliver')
         for consumer in self.consumers:
             consumer.reconnect(self.channel)
-        LOG.info(_('Connected to AMQP server on %(hostname)s:%(port)d') %
+        LOG.info(_('Connected to AMQP server on %(hostname)s:%(port)d'),
                  params)
 
     def reconnect(self):
@@ -574,7 +574,7 @@ class Connection(object):
             log_info['sleep_time'] = sleep_time
             LOG.error(_('AMQP server on %(hostname)s:%(port)d is '
                         'unreachable: %(err_str)s. Trying again in '
-                        '%(sleep_time)d seconds.') % log_info)
+                        '%(sleep_time)d seconds.'), log_info)
             time.sleep(sleep_time)
 
     def ensure(self, error_callback, method, *args, **kwargs):
@@ -627,7 +627,7 @@ class Connection(object):
         def _connect_error(exc):
             log_info = {'topic': topic, 'err_str': str(exc)}
             LOG.error(_("Failed to declare consumer for topic '%(topic)s': "
-                      "%(err_str)s") % log_info)
+                      "%(err_str)s"), log_info)
 
         def _declare_consumer():
             consumer = consumer_cls(self.conf, self.channel, topic, callback,
@@ -644,11 +644,11 @@ class Connection(object):
 
         def _error_callback(exc):
             if isinstance(exc, socket.timeout):
-                LOG.debug(_('Timed out waiting for RPC response: %s') %
+                LOG.debug(_('Timed out waiting for RPC response: %s'),
                           str(exc))
                 raise rpc_common.Timeout()
             else:
-                LOG.exception(_('Failed to consume message from queue: %s') %
+                LOG.exception(_('Failed to consume message from queue: %s'),
                               str(exc))
                 info['do_consume'] = True
 
@@ -688,7 +688,7 @@ class Connection(object):
         def _error_callback(exc):
             log_info = {'topic': topic, 'err_str': str(exc)}
             LOG.exception(_("Failed to publish message to topic "
-                          "'%(topic)s': %(err_str)s") % log_info)
+                          "'%(topic)s': %(err_str)s"), log_info)
 
         def _publish():
             publisher = cls(self.conf, self.channel, topic, **kwargs)

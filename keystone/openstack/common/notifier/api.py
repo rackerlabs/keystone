@@ -144,8 +144,8 @@ def notify(context, publisher_id, event_type, priority, payload):
         except Exception as e:
             LOG.exception(_("Problem '%(e)s' attempting to "
                             "send to notification system. "
-                            "Payload=%(payload)s")
-                          % dict(e=e, payload=payload))
+                            "Payload=%(payload)s"),
+                          dict(e=e, payload=payload))
 
 
 _drivers = None
@@ -162,7 +162,7 @@ def _get_drivers():
                 _drivers[notification_driver] = driver
             except ImportError:
                 LOG.exception(_("Failed to load notifier %s. "
-                                "These notifications will not be sent.") %
+                                "These notifications will not be sent."),
                               notification_driver)
     return _drivers.values()
 

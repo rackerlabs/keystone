@@ -202,7 +202,7 @@ class ReplyProxy(ConnectionContext):
             LOG.warn(_('No calling threads waiting for msg_id : %(msg_id)s'
                        ', message : %(data)s'), {'msg_id': msg_id,
                                                  'data': message_data})
-            LOG.warn(_('_call_waiters: %s') % str(self._call_waiters))
+            LOG.warn(_('_call_waiters: %s'), str(self._call_waiters))
         else:
             waiter.put(message_data)
 
@@ -211,7 +211,7 @@ class ReplyProxy(ConnectionContext):
         if self._num_call_waiters > self._num_call_waiters_wrn_threshhold:
             LOG.warn(_('Number of call waiters is greater than warning '
                        'threshhold: %d. There could be a MulticallProxyWaiter '
-                       'leak.') % self._num_call_waiters_wrn_threshhold)
+                       'leak.'), self._num_call_waiters_wrn_threshhold)
             self._num_call_waiters_wrn_threshhold *= 2
         self._call_waiters[msg_id] = waiter
 
@@ -338,7 +338,7 @@ def _add_unique_id(msg):
     """Add unique_id for checking duplicate messages."""
     unique_id = uuid.uuid4().hex
     msg.update({UNIQUE_ID: unique_id})
-    LOG.debug(_('UNIQUE_ID is %s.') % (unique_id))
+    LOG.debug(_('UNIQUE_ID is %s.'), (unique_id))
 
 
 class _ThreadPoolWithWait(object):
@@ -418,7 +418,7 @@ class ProxyCallback(_ThreadPoolWithWait):
         version = message_data.get('version')
         namespace = message_data.get('namespace')
         if not method:
-            LOG.warn(_('no method for message: %s') % message_data)
+            LOG.warn(_('no method for message: %s'), message_data)
             ctxt.reply(_('No method for message: %s') % message_data,
                        connection_pool=self.connection_pool)
             return
@@ -447,7 +447,7 @@ class ProxyCallback(_ThreadPoolWithWait):
             # This final None tells multicall that it is done.
             ctxt.reply(ending=True, connection_pool=self.connection_pool)
         except rpc_common.ClientException as e:
-            LOG.debug(_('Expected exception during message handling (%s)') %
+            LOG.debug(_('Expected exception during message handling (%s)'),
                       e._exc_info[1])
             ctxt.reply(None, e._exc_info,
                        connection_pool=self.connection_pool,
@@ -532,7 +532,7 @@ def multicall(conf, context, topic, msg, timeout, connection_pool):
     LOG.debug(_('Making synchronous call on %s ...'), topic)
     msg_id = uuid.uuid4().hex
     msg.update({'_msg_id': msg_id})
-    LOG.debug(_('MSG_ID is %s') % (msg_id))
+    LOG.debug(_('MSG_ID is %s'), msg_id)
     _add_unique_id(msg)
     pack_context(msg, context)
 
