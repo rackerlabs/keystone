@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//u7k\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:43:59Z",
+      "side": 1,
+      "message": "why this change? seems like should be a separate commit.",
+      "revId": "3039b7c1852a241cf13afbaa85fa27751f7cd2a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//u64\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:43:59Z",
+      "side": 1,
+      "message": "now this is duplicated... I thought the goal was to remove duplication.",
+      "revId": "3039b7c1852a241cf13afbaa85fa27751f7cd2a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

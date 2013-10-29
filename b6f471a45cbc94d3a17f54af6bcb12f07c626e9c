@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//u7E\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-29T18:43:59Z",
+      "side": 0,
+      "message": "whitespace cleanup should be done separately, see https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits",
+      "revId": "b6f471a45cbc94d3a17f54af6bcb12f07c626e9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
