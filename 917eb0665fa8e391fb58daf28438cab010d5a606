@@ -319,6 +319,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//uZ4\u003d",
+        "filename": "keystone/common/base64_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-29T21:13:42Z",
+      "side": 1,
+      "message": "I don\u0027t want to pass the decoder into the function for several reasons\n\n1) using the decoder to check for validity is an internal implementation detail\n\n2) there is no way to know if an externally provided decoder behaves as the validator expects.\n\n3) if the only thing is_valid_base64() does is attempt to decode the input and check for exceptions there isn\u0027t much point in having a validator function, the same thing can be trivially done by the caller.\n\nFWIW I did discover a condition where the Python base64 decoders do not raise an exception on invalid input, instead you get back a zero length result, is_valid_base64() did not check that condition.\n\nTo address your concerns about the alphabet parameter, I split is_valid_base64() into 2 independent functions, is_valid_base64() and is_valid_base64url(). This is consistent with the rest of the module which handles the url variants independently, in hind-sight for consistency it should have been done this way previously.\n\nI also rewrote the is_valid_base64() function so as not to attempt decoding as the validity test. Instead it now strips whitespace, checks for the presence of any non-alphabet characters and validates the correct padding, all without invoking any base64 module functions, this should be more robust because we\u0027re not depending on decoder behaviour and it more closely follows the RFC. The unit test was updated to reflect this change.",
+      "parentUuid": "AAAATn//42E\u003d",
+      "revId": "917eb0665fa8e391fb58daf28438cab010d5a606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//dP0\u003d",
         "filename": "keystone/common/base64_utils.py",
         "patchSetId": 1
