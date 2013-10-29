@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//uU8\u003d",
+        "filename": "keystone/openstack/common/db/sqlalchemy/test_migrations.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-29T21:33:38Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be changing these here, these will have to be changed in Oslo-incubator first before syncing them with Keystone. This will have to be the workflow for anything touching /keystone/openstack/common/* code.",
+      "revId": "329c0e6a8eab45a42ffea77fdffeabf1e3116200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//uco\u003d",
         "filename": "keystone/openstack/common/db/sqlalchemy/test_migrations.py",
         "patchSetId": 1
