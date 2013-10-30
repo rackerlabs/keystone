@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//rZg\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-30T14:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//7UM\u003d",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//7UQ\u003d",
         "filename": "keystone/quota/backends/sql.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-25T04:51:25Z",
       "side": 1,
       "message": "i believe we try to avoid the use of backslashes",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//rZc\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-30T14:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//7UQ\u003d",
       "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//rZU\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-30T14:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//7Ug\u003d",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//7Uc\u003d",
         "filename": "keystone/quota/core.py",
         "patchSetId": 4
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//rZM\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-30T14:47:23Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "AAAATn//7Uc\u003d",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//7UY\u003d",
         "filename": "keystone/tests/test_v3_quota.py",
         "patchSetId": 4
@@ -81,6 +153,24 @@
       "writtenOn": "2013-10-25T04:51:25Z",
       "side": 1,
       "message": "shouldn\u0027t deletes status be 204?",
+      "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//rZI\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-30T14:47:23Z",
+      "side": 1,
+      "message": "Since we are returning an entity, it returns 200.",
+      "parentUuid": "AAAATn//7UY\u003d",
       "revId": "55b88c40d790fab593b8d93765d54af95ece7dd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
