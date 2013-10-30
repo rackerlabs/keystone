@@ -16,6 +16,24 @@
       "revId": "a8f2b338b1564b0c353a149f6c89077448d2034f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//paQ\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-10-30T22:40:33Z",
+      "side": 1,
+      "message": "FWIW this simply moved the line unaltered from test-requirements to requirements. It perplexed me as to why it was fixed on a specific version in test-requirments, I agree it seems like it should have been \u003e\u003d, I will change it.",
+      "parentUuid": "AAAATn//psw\u003d",
+      "revId": "a8f2b338b1564b0c353a149f6c89077448d2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
