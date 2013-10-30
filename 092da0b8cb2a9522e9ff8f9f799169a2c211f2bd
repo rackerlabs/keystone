@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//pz4\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-30T20:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//qY0\u003d",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qWg\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-30T18:32:04Z",
       "side": 1,
       "message": "Suggest minor rephrase to indicate SQL is not a required backend.  e.g. \"If a SQL backend is provided, in the `sql.py`...\"",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pzw\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-30T20:17:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//qWg\u003d",
       "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
