@@ -240,6 +240,11 @@ class User(controller.V2Controller):
             # Make sure the new project actually exists before we perform the
             # user update.
             self.assignment_api.get_project(default_project_id)
+        elif ('tenantId' not in old_user_ref and
+                default_project_id is not None):
+            # Make sure the new project actually exists before we perform the
+            # user update
+            self.assignment_api.get_project(default_project_id)
 
         user_ref = self.identity_api.v3_to_v2_user(
             self.identity_api.update_user(user_id, user))
