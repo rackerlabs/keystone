@@ -98,6 +98,10 @@ class Assignment(sql.Base, assignment.Driver):
             self._get_domain(session, domain_id)
         if project_id:
             self._get_project(session, project_id)
+        if user_id:
+            self.identity_api.get_user(user_id)
+        if group_id:
+            self.identity_api.get_group(group_id)
 
         if project_id and inherited_to_projects:
             msg = _('Inherited roles can only be assigned to domains')

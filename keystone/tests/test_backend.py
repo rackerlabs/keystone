@@ -2678,20 +2678,22 @@ class IdentityTests(object):
         self.assertEqual(updated_user['arbitrary_attr'], new_attr_value)
 
     def test_create_grant_no_user(self):
-        # If call create_grant with a user that doesn't exist, doesn't fail.
-        # The behavior is different depending on the backend, see bug #1239476.
-        self.assignment_api.create_grant(
-            self.role_other['id'],
-            user_id=uuid.uuid4().hex,
-            project_id=self.tenant_bar['id'])
+        # If call create_grant with a user that doesn't exist, raises
+        # UserNotFound.
+        self.assertRaises(exception.UserNotFound,
+                          self.assignment_api.create_grant,
+                          self.role_other['id'],
+                          user_id=uuid.uuid4().hex,
+                          project_id=self.tenant_bar['id'])
 
     def test_create_grant_no_group(self):
-        # If call create_grant with a group that doesn't exist, doesn't fail.
-        # The behavior is different depending on the backend, see bug #1239476.
-        self.assignment_api.create_grant(
-            self.role_other['id'],
-            group_id=uuid.uuid4().hex,
-            project_id=self.tenant_bar['id'])
+        # If call create_grant with a group that doesn't exist, raises
+        # GroupNotFound
+        self.assertRaises(exception.GroupNotFound,
+                          self.assignment_api.create_grant,
+                          self.role_other['id'],
+                          group_id=uuid.uuid4().hex,
+                          project_id=self.tenant_bar['id'])
 
 
 class TokenTests(object):
