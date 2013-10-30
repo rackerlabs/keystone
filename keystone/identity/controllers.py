@@ -229,16 +229,11 @@ class User(controller.V2Controller):
         default_project_id = user.pop('tenantId', None)
         if default_project_id is not None:
             user['default_project_id'] = default_project_id
+            # Make sure the new project actually exists before moving on
+            self.assignment_api.get_project(default_project_id)
 
         old_user_ref = self.identity_api.v3_to_v2_user(
             self.identity_api.get_user(user_id))
-
-        if ('tenantId' in old_user_ref and
-                old_user_ref['tenantId'] != default_project_id and
-                default_project_id is not None):
-            # Make sure the new project actually exists before we perform the
-            # user update.
-            self.assignment_api.get_project(default_project_id)
 
         user_ref = self.identity_api.v3_to_v2_user(
             self.identity_api.update_user(user_id, user))
