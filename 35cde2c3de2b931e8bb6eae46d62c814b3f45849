@@ -69,6 +69,24 @@
       "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//p2I\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T20:01:16Z",
+      "side": 1,
+      "message": "I\u0027m just making a comment about the convention used in the method name, camelCase vs method_name.",
+      "parentUuid": "AAAATn//uUk\u003d",
+      "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
