@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//psw\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-10-30T20:41:53Z",
+      "side": 1,
+      "message": "Should be \u003e\u003d",
+      "revId": "a8f2b338b1564b0c353a149f6c89077448d2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
