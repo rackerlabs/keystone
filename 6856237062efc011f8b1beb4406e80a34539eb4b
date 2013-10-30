@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//qEk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T19:03:36Z",
+      "side": 1,
+      "message": "These are duplicates of configuration options in nova.conf. What happens when they are inconsistent, the nova.conf says one thing and the keystone.conf nova section says another for quotas? How is that planning on being managed?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qXo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/035_add_quota_tables.py",
         "patchSetId": 6
