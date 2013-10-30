@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//uU0\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-30T13:29:28Z",
+      "side": 1,
+      "message": "Yep that did come from the existing file.  I\u0027ll get it updated.",
+      "parentUuid": "AAAATn//uXs\u003d",
+      "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//uXY\u003d",
         "filename": "keystone/tests/rest.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-29T21:23:15Z",
       "side": 1,
       "message": "Just out of curiosity, how come the naming convention of this method doesn\u0027t match the one on line168?\n\nI suppose it came from the copy and was already there, should this be noted and fixed in a separate commit?",
+      "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//uUk\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-30T13:29:28Z",
+      "side": 1,
+      "message": "I don\u0027t follow.  Line 168 has the restful_request method.\n\nIn any event I\u0027ve started a patch that turns all the assert methods from this class into proper matchers.",
+      "parentUuid": "AAAATn//uXY\u003d",
       "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
