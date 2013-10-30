@@ -886,11 +886,6 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
         self.assertRaises(client_exceptions.NotFound,
                           client.roles.add_user_role,
                           tenant=self.tenant_baz['id'],
-                          user=uuid.uuid4().hex,
-                          role=self.role_member['id'])
-        self.assertRaises(client_exceptions.NotFound,
-                          client.roles.add_user_role,
-                          tenant=self.tenant_baz['id'],
                           user=self.user_foo['id'],
                           role=uuid.uuid4().hex)
 

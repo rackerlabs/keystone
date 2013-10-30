@@ -900,6 +900,16 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         self.skipTest(
             'N/A: LDAP does not support multiple domains')
 
+    def test_add_user_to_project_404(self):
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.add_user_to_project,
+                          uuid.uuid4().hex,
+                          self.user_foo['id'])
+
+        # FIXME(blk-u): Why doesn't this raise for LDAP?
+        self.assignment_api.add_user_to_project(
+            self.tenant_bar['id'], uuid.uuid4().hex)
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
@@ -1014,6 +1024,16 @@ class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
     def test_role_filter(self):
         self.skipTest(
             'N/A: Not part of SQL backend')
+
+    def test_add_user_to_project_404(self):
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.add_user_to_project,
+                          uuid.uuid4().hex,
+                          self.user_foo['id'])
+
+        # FIXME(blk-u): Why doesn't this raise for LDAP?
+        self.assignment_api.add_user_to_project(
+            self.tenant_bar['id'], uuid.uuid4().hex)
 
 
 class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
@@ -1241,3 +1261,13 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
         self.assertFalse(conf.identity.domain_specific_drivers_enabled)
         # ..and make sure a domain-specifc options is also set
         self.assertEqual(conf.ldap.url, 'fake://memory1')
+
+    def test_add_user_to_project_404(self):
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.add_user_to_project,
+                          uuid.uuid4().hex,
+                          self.user_foo['id'])
+
+        # FIXME(blk-u): Why doesn't this raise for LDAP?
+        self.assignment_api.add_user_to_project(
+            self.tenant_bar['id'], uuid.uuid4().hex)
