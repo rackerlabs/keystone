@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//qZk\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Remove trailing whitespace",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qYg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "I wonder if this should use \u0027compute\u0027 instead of the code name Nova? Same goes for \u0027cinder\u0027 and \u0027neutron\u0027 below. Thoughts?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qXo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/035_add_quota_tables.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Invalid copyright given this file is being created in 2013.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qXw\u003d",
+        "filename": "keystone/quota/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Invalid copyright notice since this is a new file being created in 2013.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qXA\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "iexists? typo?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qSg\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Just out of curiosity, why use two underscores here? In what case would we be worried about the naming conflict?\n\n\nhttp://www.python.org/dev/peps/pep-0008/#method-names-and-instance-variables",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qTY\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "(NIT): indent id, quota, and key all on the same level for easier readability.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qTU\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Same comment as above",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qTI\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Same comment as above",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qR4\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "(NIT): It would be helpful to follow the convention for inline comments: \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#todo-vs-fixme",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qRk\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Missing this in method signature. Should probably update either the doc strings or the method signature so that both are consistent.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qRg\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Missing this in method signature. Should probably update either the doc strings or the method signature so that both are consistent.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qRc\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T18:15:48Z",
+      "side": 1,
+      "message": "Missing this in method signature. Should probably update either the doc strings or the method signature so that both are consistent.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
