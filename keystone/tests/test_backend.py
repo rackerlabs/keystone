@@ -712,23 +712,19 @@ class IdentityTests(object):
                           uuid.uuid4().hex)
 
     def test_add_role_to_user_and_project_404(self):
-        self.assertRaises(exception.UserNotFound,
-                          self.assignment_api.add_role_to_user_and_project,
-                          uuid.uuid4().hex,
-                          self.tenant_bar['id'],
-                          self.role_admin['id'])
-
-        self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.add_role_to_user_and_project,
-                          self.user_foo['id'],
-                          uuid.uuid4().hex,
-                          self.role_admin['id'])
-
         self.assertRaises(exception.RoleNotFound,
                           self.assignment_api.add_role_to_user_and_project,
                           self.user_foo['id'],
                           self.tenant_bar['id'],
                           uuid.uuid4().hex)
+
+    def test_add_role_to_user_and_project_no_user(self):
+        self.identity_api.add_role_to_user_and_project(
+            uuid.uuid4().hex, self.tenant_bar['id'], self.role_admin['id'])
+
+    def test_add_role_to_user_and_project_no_group(self):
+        self.identity_api.add_role_to_user_and_project(
+            self.user_foo['id'], uuid.uuid4().hex, self.role_admin['id'])
 
     def test_remove_role_from_user_and_project(self):
         self.assignment_api.add_role_to_user_and_project(

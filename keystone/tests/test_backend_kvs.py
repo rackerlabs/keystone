@@ -75,6 +75,21 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
             exception.GroupNotFound,
             super(KvsIdentity, self).test_delete_group_grant_no_group)
 
+    def test_add_role_to_user_and_project_no_user(self):
+        # FIXME(blk-u): The kvs backend needs work to allow this to be
+        # consistent with SQL backend.
+        self.assertRaises(
+            exception.UserNotFound,
+            super(KvsIdentity, self).test_add_role_to_user_and_project_no_user)
+
+    def test_add_role_to_user_and_project_no_group(self):
+        # FIXME(blk-u): The kvs backend needs work to allow this to be
+        # consistent with SQL backend.
+        self.assertRaises(
+            exception.ProjectNotFound,
+            (super(KvsIdentity, self).
+             test_add_role_to_user_and_project_no_group))
+
 
 class KvsToken(tests.TestCase, test_backend.TokenTests):
     def setUp(self):

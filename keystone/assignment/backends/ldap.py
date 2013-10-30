@@ -34,7 +34,6 @@ CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
 
-@dependency.requires('identity_api')
 class Assignment(assignment.Driver):
     def __init__(self):
         super(Assignment, self).__init__()
@@ -84,7 +83,6 @@ class Assignment(assignment.Driver):
                       domain_id=None, group_id=None):
 
         def _get_roles_for_just_user_and_project(user_id, tenant_id):
-            self.identity_api.get_user(user_id)
             self.get_project(tenant_id)
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
@@ -112,7 +110,6 @@ class Assignment(assignment.Driver):
         # NOTE(henry-nash): The LDAP backend is being deprecated, so no
         # support is provided for projects that the user has a role on solely
         # by virtue of group membership.
-        self.identity_api.get_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
         associations = (self.role.list_project_roles_for_user
                         (user_dn, self.project.tree_dn))
@@ -138,7 +135,6 @@ class Assignment(assignment.Driver):
                                  self.project._id_to_dn(tenant_id))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
         self.get_project(tenant_id)
         self.get_role(role_id)
         user_dn = self.user._id_to_dn(user_id)
