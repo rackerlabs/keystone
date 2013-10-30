@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//p10\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-30T20:01:48Z",
+      "side": 1,
+      "message": "Make comment in response to patch set 3",
+      "revId": "40c0fcbc2fc019e7b0a70ae94ad8627df506f3f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
