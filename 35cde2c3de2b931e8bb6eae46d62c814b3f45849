@@ -87,6 +87,24 @@
       "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//p1E\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-30T20:09:21Z",
+      "side": 1,
+      "message": "Ah I see. That was already there. Likely they were trying to make the unittest/testtools convention of having assert* methods like assertEqual/assertThat/etc.",
+      "parentUuid": "AAAATn//p2I\u003d",
+      "revId": "35cde2c3de2b931e8bb6eae46d62c814b3f45849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
