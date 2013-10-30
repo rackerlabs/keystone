@@ -423,9 +423,7 @@ class Driver(object):
         specified as inherited to owned projects (this requires
         the OS-INHERIT extension to be enabled).
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound,
-                 keystone.exception.ProjectNotFound,
+        :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.DomainNotFound,
                  keystone.exception.ProjectNotFound,
                  keystone.exception.RoleNotFound
