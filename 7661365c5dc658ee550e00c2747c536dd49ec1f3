@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//t8Y\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-30T00:57:12Z",
+      "side": 1,
+      "message": "This is a verification the user exists and the group exists.  in the case that the user/group doesn\u0027t exist this would raise a NotFound error.  Generally this is the accepted syntax/method for doing so.",
+      "parentUuid": "AAAATn//uag\u003d",
+      "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//uaM\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-29T21:08:27Z",
       "side": 1,
       "message": "Can\u0027t this whole things be boiled down to something like:\n\n  found \u003d any(x[\u0027id\u0027] \u003d\u003d user_id for x in user_refs)",
+      "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t8I\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-30T00:57:12Z",
+      "side": 1,
+      "message": "It could, the question becomes if it is more readable split out like this.  I could go either way on it.",
+      "parentUuid": "AAAATn//uaM\u003d",
       "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
