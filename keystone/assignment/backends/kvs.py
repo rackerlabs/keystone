@@ -108,7 +108,6 @@ class Assignment(kvs.Base, assignment.Driver):
         return [self.get_project(x) for x in user_ref.get('tenants', [])]
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
         self.get_project(tenant_id)
         self.get_role(role_id)
         try:
@@ -257,12 +256,16 @@ class Assignment(kvs.Base, assignment.Driver):
         if user_id:
             if tenant_id:
                 self.db.set('metadata-%s-%s' % (tenant_id, user_id), metadata)
-                user_ref = self._get_user(user_id)
-                tenants = set(user_ref.get('tenants', []))
-                if tenant_id not in tenants:
-                    tenants.add(tenant_id)
-                    user_ref['tenants'] = list(tenants)
-                    self.identity_api.update_user(user_id, user_ref)
+                try:
+                    user_ref = self._get_user(user_id)
+                    tenants = set(user_ref.get('tenants', []))
+                    if tenant_id not in tenants:
+                        tenants.add(tenant_id)
+                        user_ref['tenants'] = list(tenants)
+                        self.identity_api.update_user(user_id, user_ref)
+                except exception.UserNotFound:
+                    # If user doesn't exist then don't update them.
+                    pass
             else:
                 self.db.set('metadata-%s-%s' % (domain_id, user_id), metadata)
         else:
