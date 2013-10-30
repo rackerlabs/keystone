@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//sOQ\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "These two aren\u0027t used anywhere",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sNc\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "Are these comment-separators really needed?  They look weird to me.",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sT8\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "Why do all this, instead of just trying to decode text, then returning false if we catch an exception?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sTw\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "Same, why not just try urlsafe_b64decode-ing?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sZM\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "typo s/safter/safer",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sYc\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "This is hardly a base64 specific function, so does it make sense to expose it as a top-level interface of this utility module?  Seems like something you want to use internally as a private helper in a utility class to me..",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sTE\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "This sounds like a fantastic way to take some malformed, corrupted or otherwise incorrect input, and produce seemingly valid but totally meaningless decoded output to me..",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sNU\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "Do you actually need all these one-line functions, or could you have one function which takes an argument?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sME\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "Seeing all these base64_foo functions makes me wonder if this would be better as a utility class, which you initialize with text.\n\nI mean, as written this is going to lead to horrible base64-naming-overload and needlessly long lines:\n\nfrom keystone.common import base64utils\n\nbase64utils.base64url_to_base64(\"blah\")",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//sL8\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-10-30T11:50:51Z",
+      "side": 1,
+      "message": "Do you really need to wrap something as common and non-base64-specific as quote/unquote?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
