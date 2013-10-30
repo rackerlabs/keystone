@@ -103,6 +103,24 @@
       "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//py0\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-10-30T20:18:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//qMM\u003d",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
