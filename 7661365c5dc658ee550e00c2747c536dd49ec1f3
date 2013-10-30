@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//rk8\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-30T14:07:21Z",
+      "side": 1,
+      "message": "I don\u0027t think get_group is needed at all because list_users_in_group already checks. We would just need to make sure there is a test case for it.\n\nget_user isn\u0027t strictly needed, but it is probably a good idea since it prevents getting the list in many cases, which i assume is a slower operation. That\u0027s assuming that passing in invalid user_ids is the common case.",
+      "parentUuid": "AAAATn//t8Y\u003d",
+      "revId": "7661365c5dc658ee550e00c2747c536dd49ec1f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//uaM\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 3
