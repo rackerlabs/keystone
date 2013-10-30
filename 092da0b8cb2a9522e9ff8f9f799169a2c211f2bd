@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//qYw\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-30T18:32:04Z",
+      "side": 1,
+      "message": "++ Good Description of backends.  Much clearer.",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qY0\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-30T18:32:04Z",
+      "side": 1,
+      "message": "represent should be \"represents\"",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qWg\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-30T18:32:04Z",
+      "side": 1,
+      "message": "Suggest minor rephrase to indicate SQL is not a required backend.  e.g. \"If a SQL backend is provided, in the `sql.py`...\"",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//qMM\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-30T18:32:04Z",
+      "side": 1,
+      "message": "I don\u0027t believe we are storing in separate databases, but adding new tables to the already existing keystone database.  The idea is to isolate the need for these migrations (and tables) if the extension is not being used.",
+      "revId": "092da0b8cb2a9522e9ff8f9f799169a2c211f2bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
