@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//pEM\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-10-31T01:09:57Z",
+      "side": 1,
+      "message": "makes it possible",
+      "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pDs\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-10-31T01:09:57Z",
+      "side": 1,
+      "message": "This isn\u0027t really correct. When using the V3 API you can configure external authentication but this isn\u0027t the same as saying the Havana release. When using the v2 api which is still available, and unfortunately probably the more widely used in Havana, you are still unable to configure external authentication.\n\nAlso as Havana is released now, everything that is documented below here that you are adding like DeprecatedGrizzly won\u0027t be available till icehouse.",
+      "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pDk\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-10-31T01:09:57Z",
+      "side": 1,
+      "message": "you should explain what REMOTE_USER is before mentioning it all through here.",
+      "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
