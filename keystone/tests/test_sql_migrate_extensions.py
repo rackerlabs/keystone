@@ -140,14 +140,14 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
 class FederationExtension(test_sql_upgrade.SqlMigrateBase):
     """Test class for ensuring the Federation SQL."""
 
+    def repo_package(self):
+        return federation
+
     def __init__(self, *args, **kwargs):
         super(FederationExtension, self).__init__(*args, **kwargs)
         self.identity_provider = 'identity_provider'
         self.federation_protocol = 'federation_protocol'
         self.mapping = 'mapping'
-
-    def repo_package(self):
-        return federation
 
     def test_upgrade(self):
         self.assertTableDoesNotExist(self.identity_provider)
