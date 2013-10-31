@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//oEs\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-31T08:38:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//pEM\u003d",
+      "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//pDs\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 17
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//oD0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-31T08:38:01Z",
+      "side": 1,
+      "message": "Indeed, this was like this in my original submission for the documentation (https://review.openstack.org/#/c/50362/5/doc/source/external-auth.rst)\n\nAs for the second paragraph, the implementation for V3 that exists right now is unusable with usernames containing an \"@\" (X509 cert subjects, emails, LDAP dns, etc) so maybe this should be backported to Havana.",
+      "parentUuid": "AAAATn//pDs\u003d",
+      "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//pDk\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 17
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-31T01:09:57Z",
       "side": 1,
       "message": "you should explain what REMOTE_USER is before mentioning it all through here.",
+      "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oDs\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-10-31T08:38:01Z",
+      "side": 1,
+      "message": "I do agree.",
+      "parentUuid": "AAAATn//pDk\u003d",
       "revId": "dbeb1d3895f58fb6fddd89127b6361e9c88b3a0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
