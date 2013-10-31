@@ -279,7 +279,7 @@ class Manager(manager.Manager):
         if driver:
             return driver
         else:
-            self.get_domain(domain_id)
+            self.assignment_api.get_domain(domain_id)
             return self.driver
 
     def _get_domain_conf(self, domain_id):
@@ -452,25 +452,6 @@ class Manager(manager.Manager):
     def check_user_in_group(self, user_id, group_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         return driver.check_user_in_group(user_id, group_id)
-
-    # TODO(henry-nash, ayoung) The following cross calls to the assignment
-    # API should be removed, with the controller and tests making the correct
-    # calls direct to assignment.
-
-    # NOTE(tellesmvn):The following 4 methods where not removed since ayoung
-    # told me not to because someone else is working on a new feature involving
-    # these methods where the idea is to identify in which domain the user is
-    def get_domain_by_name(self, domain_name):
-        return self.assignment_api.get_domain_by_name(domain_name)
-
-    def get_domain(self, domain_id):
-        return self.assignment_api.get_domain(domain_id)
-
-    def update_domain(self, domain_id, domain):
-        return self.assignment_api.update_domain(domain_id, domain)
-
-    def list_domains(self):
-        return self.assignment_api.list_domains()
 
 
 @six.add_metaclass(abc.ABCMeta)

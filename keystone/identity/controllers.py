@@ -22,6 +22,7 @@ import urlparse
 import uuid
 
 from keystone.common import controller
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
@@ -605,6 +606,11 @@ class DomainV3(controller.V3Controller):
         self._delete_domain_contents(context, domain_id)
         return self.assignment_api.delete_domain(domain_id)
 
+    # NOTE(morganfainberg): I don't see this method being used anywhere except
+    # incorrectly to "get_domain_by_name" in the token controller(s). I marked
+    # it as deprecated in the off-chance someone somewhere is _actually_ using
+    # it.
+    @utils.deprecated('I', remove_in=1)
     def _get_domain_by_name(self, context, domain_name):
         """Get the domain via its unique name.
 
