@@ -16,6 +16,24 @@
       "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//o18\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2013-10-31T03:12:31Z",
+      "side": 0,
+      "message": "Unnecessary white-spacing that was noticed in passing",
+      "parentUuid": "AAAATn//o2Q\u003d",
+      "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
