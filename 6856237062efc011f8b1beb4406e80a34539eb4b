@@ -602,6 +602,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lzU\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T19:02:02Z",
+      "side": 1,
+      "message": "OK, if only the domain quota methods are going to be surfaced, then prefix the others with an underscore please.",
+      "parentUuid": "AAAATn//mNc\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qRk\u003d",
         "filename": "keystone/quota/core.py",
         "patchSetId": 6
@@ -756,6 +774,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lyo\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T19:02:02Z",
+      "side": 1,
+      "message": "it\u0027s probably fine as-is, we can continue to proceed with this work seeing as you have implemented a lot of it, and BP first-class-regions is not done yet. \n\nif your code gets in first, then we\u0027ll have to fix after the region code gets in, no point in holding up your stuff.",
+      "parentUuid": "AAAATn//mXM\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//opU\u003d",
         "filename": "keystone/tests/test_v3_quota.py",
         "patchSetId": 6
@@ -802,6 +838,24 @@
       "side": 1,
       "message": "The numbers would be saved as is. 0 prohibits any kind of resource utilization and any negative value is the same as unlimited.\nThe DB field expects a integer, so a string through exception.",
       "parentUuid": "AAAATn//opE\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lyU\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T19:02:02Z",
+      "side": 1,
+      "message": "Cool, is 0 a valid a use case? If not, can we throw an exception for that?",
+      "parentUuid": "AAAATn//mWs\u003d",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
