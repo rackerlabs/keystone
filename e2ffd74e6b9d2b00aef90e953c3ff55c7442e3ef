@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//pDA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-31T01:15:38Z",
+      "side": 1,
+      "message": "This will cause all updates to a user to fail if the default_project has been removed. even if a user isn\u0027t changing the default project id.  do we really want to force a default_project_id update if the project no longer exists?  If the project doesn\u0027t exist (or the user has no access to the project) the token should be unscoped.  This is likely the wrong change.\n\nThe correct solution probably is to add an elif case at line 241 that looks like (or make the already complex if-statement on line 235 handle this case):\n\nelif (\u0027tenantId\u0027 not in old_user_ref and default_project_id is not None):\n    # Make sure the new project actually exists before we perform the \n    # user update\n    self.assignment_api.get_project(default_project_id)",
+      "revId": "e2ffd74e6b9d2b00aef90e953c3ff55c7442e3ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
