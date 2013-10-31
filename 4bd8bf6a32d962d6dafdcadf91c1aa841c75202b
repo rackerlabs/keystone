@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//lTQ\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-10-31T23:00:12Z",
+      "side": 1,
+      "message": "This one looks like it\u0027s might need the same kind of treatment that you gave in https://review.openstack.org/#/c/54804",
+      "revId": "4bd8bf6a32d962d6dafdcadf91c1aa841c75202b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
