@@ -15,11 +15,12 @@
 # under the License.
 
 import datetime
+import os
 import random
 import uuid
 
 from keystone.common import sql
-from keystone.common.sql import migration
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.contrib.oauth1 import core
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -83,7 +84,13 @@ class AccessToken(sql.ModelBase, sql.DictBase):
 
 class OAuth1(sql.Base):
     def db_sync(self):
-        migration.db_sync()
+        migration.db_sync(
+                os.path.abspath(
+                    os.path.join(os.path.dirname( __file__ ),
+                    '..',
+                    'migrate_repo')
+                    )
+                )
 
     def _get_consumer(self, session, consumer_id):
         consumer_ref = session.query(Consumer).get(consumer_id)

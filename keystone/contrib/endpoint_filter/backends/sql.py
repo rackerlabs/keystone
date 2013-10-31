@@ -13,9 +13,10 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import os
 
 from keystone.common import sql
-from keystone.common.sql import migration
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone import exception
 
 
@@ -35,7 +36,13 @@ class EndpointFilter(sql.Base):
     # Internal interface to manage the database
 
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        migration.db_sync(
+                os.path.abspath(
+                    os.path.join(os.path.dirname( __file__ ),
+                    '..',
+                    'migrate_repo')
+                    ),
+                version=version)
 
     @sql.handle_conflicts(conflict_type='project_endpoint')
     def add_endpoint_to_project(self, endpoint_id, project_id):

@@ -234,11 +234,11 @@ def db_version(abs_path, init_version):
     :param version:  Initial database version
     """
     repository = _find_migrate_repo(abs_path)
+    engine = get_engine()
     try:
-        return versioning_api.db_version(get_engine(), repository)
+        return versioning_api.db_version(engine, repository)
     except versioning_exceptions.DatabaseNotControlledError:
         meta = sqlalchemy.MetaData()
-        engine = get_engine()
         meta.reflect(bind=engine)
         tables = meta.tables
         if len(tables) == 0:
