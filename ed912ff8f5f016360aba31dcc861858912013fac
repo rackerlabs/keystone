@@ -34,6 +34,24 @@
       "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//o1Y\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T03:15:35Z",
+      "side": 0,
+      "message": "doesn\u0027t seem like it messed up the final doc: http://docs-draft.openstack.org/32/54632/1/check/gate-keystone-docs/d27c25e/doc/build/html/configuration.html",
+      "parentUuid": "AAAATn//o2Q\u003d",
+      "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
