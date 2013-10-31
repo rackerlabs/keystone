@@ -63,15 +63,19 @@
 # syslog facility to receive log lines
 # syslog_log_facility = LOG_USER
 
-# If this option is specified, the logging configuration file specified is
-# used and overrides any other logging options specified. Please see the
-# Python logging module documentation for details on logging configuration
-# files.
-# log_config = logging.conf
+# The name of logging configuration file. It does not disable
+# existing loggers, but just appends specified logging
+# configuration to any other existing logging options. Please
+# see the Python logging module documentation for details on
+# logging configuration files. (string value)
+#log_config_append=<None>
 
-# A logging.Formatter log message format string which may use any of the
-# available logging.LogRecord attributes.
-# log_format = %(asctime)s %(levelname)8s [%(name)s] %(message)s
+# DEPRECATED. A logging.Formatter log message format string
+# which may use any of the available logging.LogRecord
+# attributes. This option is deprecated.  Please use
+# logging_context_format_string and
+# logging_default_format_string instead. (string value)
+#log_format=<None>
 
 # Format string for %(asctime)s in log records.
 # log_date_format = %Y-%m-%d %H:%M:%S
