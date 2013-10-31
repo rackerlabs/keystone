@@ -54,6 +54,7 @@ from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
@@ -146,7 +147,11 @@ def setup_database():
         if os.path.exists(db):
             os.unlink(db)
         if not os.path.exists(pristine):
-            sql.migration.db_sync()
+            abs_path = os.path.abspath(os.path.join(
+                os.path.dirname(sql.__file__),
+                'migrate_repo')
+            )
+            migration.db_sync(abs_path=abs_path)
             shutil.copyfile(db, pristine)
         else:
             shutil.copyfile(pristine, db)
