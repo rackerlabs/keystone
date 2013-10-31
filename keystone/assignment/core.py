@@ -69,7 +69,7 @@ class Manager(manager.Manager):
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
-        ret = self.driver.create_project(tenant_id, tenant_ref)
+        ret = self.driver.create_project(tenant_id, tenant)
         if SHOULD_CACHE(ret):
             self.get_project.set(ret, self, tenant_id)
             self.get_project_by_name.set(ret, self, ret['name'],
