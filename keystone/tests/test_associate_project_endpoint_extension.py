@@ -17,8 +17,8 @@
 import os
 import uuid
 
-from keystone.common.sql import migration
 from keystone import contrib
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone import tests
 from keystone.tests import test_v3
@@ -39,8 +39,8 @@ class TestExtensionCase(test_v3.RestfulTestCase):
         package = importutils.import_module(package_name)
         self.repo_path = os.path.abspath(
             os.path.dirname(package.__file__))
-        migration.db_version_control(version=None, repo_path=self.repo_path)
-        migration.db_sync(version=None, repo_path=self.repo_path)
+        migration.db_version_control(version=None, abs_path=self.repo_path)
+        migration.db_sync(version=None, abs_path=self.repo_path)
 
     def setUp(self):
         super(TestExtensionCase, self).setUp()
