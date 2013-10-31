@@ -14,13 +14,14 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import os
 
 from keystone import catalog
 from keystone.catalog import core
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 
 
 CONF = config.CONF
@@ -52,7 +53,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 
 class Catalog(sql.Base, catalog.Driver):
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        migration.db_sync(sql.find_path_to_migrate_repo(sql), version=version)
 
     # Services
     def list_services(self):

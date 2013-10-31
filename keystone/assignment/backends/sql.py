@@ -18,9 +18,9 @@ from keystone import assignment
 from keystone import clean
 from keystone.common import dependency
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 
 
 CONF = config.CONF
@@ -31,7 +31,7 @@ class Assignment(sql.Base, assignment.Driver):
 
     # Internal interface to manage the database
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        migration.db_sync(sql.find_path_to_migrate_repo(sql), version=version)
 
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)

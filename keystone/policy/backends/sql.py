@@ -13,10 +13,9 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.policy.backends import rules
 
 
@@ -32,7 +31,7 @@ class PolicyModel(sql.ModelBase, sql.DictBase):
 class Policy(sql.Base, rules.Policy):
     # Internal interface to manage the database
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        migration.db_sync(sql.find_path_to_migrate_repo(sql), version=version)
 
     @sql.handle_conflicts(conflict_type='policy')
     def create_policy(self, policy_id, policy):
