@@ -16,6 +16,24 @@
       "revId": "013b74ff7a7ca613e18a2ef95c850cc214db3ca2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//mn0\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-10-31T15:24:37Z",
+      "side": 0,
+      "message": "With this change it actually does get used.  Previously load_backend was called over and over again it the test likely ran with the wrong config.\n\nIt was a tangled mess and I didn\u0027t want to take the time to see what it was actually doing.",
+      "parentUuid": "AAAATn//msM\u003d",
+      "revId": "013b74ff7a7ca613e18a2ef95c850cc214db3ca2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
