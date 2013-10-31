@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//pJQ\u003d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-10-31T00:35:12Z",
+      "side": 1,
+      "message": "self.opt_in_group(\u0027cache\u0027, enabled\u003dTrue, caching\u003dFalse)\n\nand below",
+      "revId": "0cd90889eb3e23a480312659cd19e68d11c3afc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
