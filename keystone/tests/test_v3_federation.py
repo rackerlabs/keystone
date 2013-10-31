@@ -16,9 +16,10 @@
 import random
 import uuid
 
-from keystone.common.sql import migration
+from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import contrib
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -43,8 +44,9 @@ class FederationTests(test_v3.RestfulTestCase):
         super(FederationTests, self).setup_database()
         package_name = '.'.join((contrib.__name__, self.EXTENSION_NAME))
         package = importutils.import_module(package_name)
-        migration.db_version_control(package=package)
-        migration.db_sync(package=package)
+        abs_path = migration_helpers.find_migrate_repo(package)
+        migration.db_version_control(abs_path)
+        migration.db_sync(abs_path)
 
 
 class FederatedIdentityProviderTests(FederationTests):
