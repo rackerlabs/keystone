@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//oXE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T07:06:24Z",
+      "side": 1,
+      "message": "nit: 2 blank spaces between \u0027have\u0027 and \u0027access\u0027",
+      "revId": "080f70d86a9741b8f5d1859399c5a16e4001580e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oVo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T07:06:24Z",
+      "side": 1,
+      "message": "isn\u0027t this stanza already done in create_new_default_project_for_user?",
+      "revId": "080f70d86a9741b8f5d1859399c5a16e4001580e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
