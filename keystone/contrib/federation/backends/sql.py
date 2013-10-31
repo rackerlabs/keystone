@@ -15,9 +15,9 @@
 # under the License.
 
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone.contrib.federation import core
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common import jsonutils
 
