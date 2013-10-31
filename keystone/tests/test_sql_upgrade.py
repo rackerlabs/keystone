@@ -38,12 +38,13 @@ import uuid
 from migrate.versioning import api as versioning_api
 import sqlalchemy
 
-from keystone.common.sql import migration
+from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
 from keystone import config
 from keystone import credential
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone import tests
 from keystone.tests import default_fixtures
@@ -62,12 +63,12 @@ class SqlMigrateBase(tests.TestCase):
                          tests.dirs.tests('test_overrides.conf'),
                          tests.dirs.tests('backend_sql.conf')]
 
+    def repo_package(self):
+        return sql
+
     #override this to specify the complete list of configuration files
     def config_files(self):
         return self._config_file_list
-
-    def repo_package(self):
-        return None
 
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
@@ -158,8 +159,8 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('user')
 
     def test_start_version_0(self):
-        version = migration.db_version()
-        self.assertEqual(version, 0, "DB is at version 0")
+        version = migration.db_version(self.repo_path, 0)
+        self.assertEqual(version, 0, "DB is not at version 0")
 
     def test_two_steps_forward_one_step_back(self):
         """You should be able to cleanly undo and re-apply all upgrades.
