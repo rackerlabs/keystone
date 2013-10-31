@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//ma4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T16:22:43Z",
+      "side": 1,
+      "message": "I\u0027m going to look into why this isn\u0027t sufficient and line 57 is needed. I won\u0027t hold up the patch for it.",
+      "revId": "bb1ac459a46a5e7829cd4c14e43291ac68c32a52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
