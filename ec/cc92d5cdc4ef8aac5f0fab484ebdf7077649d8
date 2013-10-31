@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: nachiappan-veerappan-nachiappan <nachiappan.veerappan-nachiappan@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 31 Oct 2013 01:20:51 +0000
+Reviewed-on: https://review.openstack.org/53046
+Project: openstack/keystone
+Branch: refs/heads/master
