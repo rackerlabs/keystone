@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//me8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-31T17:24:18Z",
+      "side": 1,
+      "message": "In code we import nova, cinder,  we instantiate glanceclient, in conf files we refer to keystone - so I concluded that  nova, cinder and neutron follows the pattern I observed throughout openstack projects.",
+      "parentUuid": "AAAATn//qYg\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qEk\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-30T19:03:36Z",
       "side": 1,
       "message": "These are duplicates of configuration options in nova.conf. What happens when they are inconsistent, the nova.conf says one thing and the keystone.conf nova section says another for quotas? How is that planning on being managed?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//meI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-31T17:24:18Z",
+      "side": 1,
+      "message": "We identified the use case to enforce domain quotas on the same resources that already have project quotas enforced on them. For lack of information we were unable to identify suitable  default values for domain quotas, because of it was decided to use the same values of their counterparts. But this apply only for domain quotas, this is not a substitute for project quotas of Nova, Cinder and Neutron.",
+      "parentUuid": "AAAATn//qEk\u003d",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -548,6 +584,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//mNc\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-31T17:24:18Z",
+      "side": 1,
+      "message": "Those methods were designed to be serve any kind of quota, e.g per project, per domain. Right now, we decided to not alter the per project quotas and implement only domain quotas, which are new. That\u0027s why there is only domain quota methods in our Driver.",
+      "parentUuid": "AAAATn//oow\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qRk\u003d",
         "filename": "keystone/quota/core.py",
         "patchSetId": 6
@@ -684,6 +738,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//mXM\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-31T17:24:18Z",
+      "side": 1,
+      "message": "Yes, we couldn\u0027t find any means to guarantee 100% certainty on region name while BP first-class-regions is not ready. What do you suggest?",
+      "parentUuid": "AAAATn//odo\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//opU\u003d",
         "filename": "keystone/tests/test_v3_quota.py",
         "patchSetId": 6
@@ -712,6 +784,24 @@
       "writtenOn": "2013-10-31T06:35:40Z",
       "side": 1,
       "message": "what would happen is instances is 0 or a negative value? or a string for that matter",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//mWs\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2013-10-31T17:24:18Z",
+      "side": 1,
+      "message": "The numbers would be saved as is. 0 prohibits any kind of resource utilization and any negative value is the same as unlimited.\nThe DB field expects a integer, so a string through exception.",
+      "parentUuid": "AAAATn//opE\u003d",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
