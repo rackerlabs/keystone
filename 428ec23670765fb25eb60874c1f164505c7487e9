@@ -16,6 +16,24 @@
       "revId": "428ec23670765fb25eb60874c1f164505c7487e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//l6Q\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T18:28:27Z",
+      "side": 1,
+      "message": "I wish it worked that way, but --load-list takes a filename (I also tried - to read from stdin and that wasn\u0027t supported)",
+      "parentUuid": "AAAATn//mCo\u003d",
+      "revId": "428ec23670765fb25eb60874c1f164505c7487e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
