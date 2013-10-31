@@ -105,5 +105,7 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
         os.path.dirname(package.__file__), repo_name))
     if os.path.isdir(path):
         return path
-    raise exception.Error(message=_("The migration repository path at %s "
-                          "doesn't exist or isn't a directory.") % path)
+    raise exception.MigrationNotProvided(message=_(
+        "The migration repository path at %s doesn't"
+        " exist or isn't a directory."
+    ) % path)
