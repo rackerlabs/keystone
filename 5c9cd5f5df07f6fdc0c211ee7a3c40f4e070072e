@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//nJg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "change \"assingment_api\" to \"assignment_api\"",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nJY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "change \"assingment_api\" to \"assignment_api\"",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nJU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nJE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "add NOTE(tellesmvn): so that we know who ayoung was talking to.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nI0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "revert this change",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nIY\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1240,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nIU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nIQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3369,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nII\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nIE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3454,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nIA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3471,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nHU\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:09:41Z",
+      "side": 1,
+      "message": "should be assignment_api.",
+      "revId": "5c9cd5f5df07f6fdc0c211ee7a3c40f4e070072e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
