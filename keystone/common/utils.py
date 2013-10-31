@@ -515,3 +515,9 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def find_path_to_migrate_repo(module, repo_name='migrate_repo'):
+    path = os.path.abspath(os.path.join(
+        os.path.dirname(module.__file__), repo_name))
+    return path if os.path.isdir(path) else None

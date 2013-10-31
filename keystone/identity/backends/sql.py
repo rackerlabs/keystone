@@ -16,10 +16,10 @@
 
 from keystone.common import dependency
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.db.sqlalchemy import migration
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -77,7 +77,8 @@ class Identity(sql.Base, identity.Driver):
 
     # Internal interface to manage the database
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        migration.db_sync(
+            utils.find_path_to_migrate_repo(sql), version=version)
 
     def _check_password(self, password, user_ref):
         """Check the specified password against the data store.
