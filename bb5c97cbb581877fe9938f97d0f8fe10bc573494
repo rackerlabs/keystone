@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//mpk\u003d",
+        "filename": "openstack-common.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T15:17:59Z",
+      "side": 1,
+      "message": "these should be left in alphabetical order (move before 8)",
+      "revId": "bb5c97cbb581877fe9938f97d0f8fe10bc573494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
