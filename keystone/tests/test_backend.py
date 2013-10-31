@@ -19,6 +19,8 @@ import datetime
 import hashlib
 import uuid
 
+from testtools import matchers
+
 from keystone.catalog import core
 from keystone import config
 from keystone import exception
@@ -1803,6 +1805,30 @@ class IdentityTests(object):
                           self.assignment_api.create_project,
                           project['id'],
                           project)
+
+    def test_project_create_using_enabled_as_int(self):
+        """Test case based on Bug #1199652."""
+        project_ref = {'id': uuid.uuid4().hex,
+                       'name': uuid.uuid4().hex,
+                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'enabled': 100}
+
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        new_project_ref = self.assignment_api.get_project(project_ref['id'])
+        self.assertThat(new_project_ref['enabled'], matchers.Is(True))
+
+    def test_project_update_using_enabled_as_int(self):
+        """Test case based on Bug #1199652."""
+        project_ref = {'id': uuid.uuid4().hex,
+                       'name': uuid.uuid4().hex,
+                       'enabled': True,
+                       'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+
+        project_ref['enabled'] = 100
+        self.assignment_api.update_project(project_ref['id'], project_ref)
+        new_project_ref = self.assignment_api.get_project(project_ref['id'])
+        self.assertThat(new_project_ref['enabled'], matchers.Is(True))
 
     def test_create_user_invalid_enabled_type_string(self):
         user = {'id': uuid.uuid4().hex,
