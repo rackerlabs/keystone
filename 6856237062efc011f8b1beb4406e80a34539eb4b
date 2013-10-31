@@ -70,6 +70,41 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//owM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/035_add_quota_tables.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "Should also be OpenStack Foundation",
+      "parentUuid": "AAAATn//qXo\u003d",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ooA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/035_add_quota_tables.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "suggest writing h_quota as quota_history, i had no idea what it was until i got to the sql file",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qXw\u003d",
         "filename": "keystone/quota/__init__.py",
         "patchSetId": 6
@@ -81,6 +116,74 @@
       "writtenOn": "2013-10-30T18:15:48Z",
       "side": 1,
       "message": "Invalid copyright notice since this is a new file being created in 2013.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//odY\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "openstack foundation, not llc",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ock\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "i\u0027m not seeing \"get_only_query\" used outside of this function, which should be private to this class?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ocg\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "drop ()\u0027s if not needed",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ocQ\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "shouldn\u0027t these already be string?",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +241,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//odQ\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "nit: if you use uuid.uuid4().hex, you\u0027ll get a string back and won\u0027t have the need to call str(), follows the usual keystone syntax this way",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qTU\u003d",
         "filename": "keystone/quota/backends/sql.py",
         "patchSetId": 6
@@ -172,6 +292,159 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//ooY\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "can you rename this one to just get_quota?\n\nSo, in the end it is:\n\nget/delete/update_quota \n\nand  \n\nget/delete/update_domain_quota_by_services.... \n\nthe inconsistency is throwing me off",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//okw\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "s/service_list/services",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ok0\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "s/child/child_data",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oos\u003d",
+        "filename": "keystone/quota/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "should this be delete_domain_quota_by_services(... ?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oeI\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "why pass in context and domain_id if not being used?\n\nwhy is this called cloud_admin_info, it\u0027s just returning the admin role\n\nwhy are we just passing this to set_domain_quota, it almost seems random?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oe0\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "also a comment here would be super awesome",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oe8\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "there is a lot of repetition in these if statements.\n\ncan we make a list/array and go through it instead?\n\nall_services \u003d [\u0027nova\u0027, \u0027cinder\u0027, neutron\u0027]\nfor all_service\n   if all_service in services\n       temp_dict \u003d dict()\n   ...\n\nsomething like that?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//omI\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "lines 95 and 96 are pointless as the backends will raise exceptions if domain is not found, same goes for lines 120,121 and so forth",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oeM\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "again, this can be condensed, in the same fashion as line 59.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qR4\u003d",
         "filename": "keystone/quota/controllers.py",
         "patchSetId": 6
@@ -183,6 +456,40 @@
       "writtenOn": "2013-10-30T18:15:48Z",
       "side": 1,
       "message": "(NIT): It would be helpful to follow the convention for inline comments: \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#todo-vs-fixme",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//opY\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "i\u0027m confused as to why we are returning content on a delete, i\u0027m not aware of any other keystone operation that does this.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oow\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "So, in the SQL backend implementation, you also expose \n\nset_quota(self, resource_name, ceiling, child_data, parent_data, created_by)\ndelete_quota(self, services, child, deleted_by):\nand \nget_quota_by_services(self, services, child_data)",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +513,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//opA\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "also mention the return type",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qRg\u003d",
         "filename": "keystone/quota/core.py",
         "patchSetId": 6
@@ -223,6 +547,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//oo8\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "also mention the return type",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//qRc\u003d",
         "filename": "keystone/quota/core.py",
         "patchSetId": 6
@@ -234,6 +575,74 @@
       "writtenOn": "2013-10-30T18:15:48Z",
       "side": 1,
       "message": "Missing this in method signature. Should probably update either the doc strings or the method signature so that both are consistent.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//oo4\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "also mention the return type",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//odo\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "can region name be anything?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//opU\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "this line, and lines 27 and 51 are the same, suggest creating a function _add_to_domain()...",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//opE\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T06:35:40Z",
+      "side": 1,
+      "message": "what would happen is instances is 0 or a negative value? or a string for that matter",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
