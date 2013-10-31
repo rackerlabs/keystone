@@ -16,6 +16,40 @@
       "revId": "bb1ac459a46a5e7829cd4c14e43291ac68c32a52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//mFw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T17:33:58Z",
+      "side": 1,
+      "message": "nit: should be a space between : and The ...",
+      "revId": "bb1ac459a46a5e7829cd4c14e43291ac68c32a52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//mGQ\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-10-31T17:33:58Z",
+      "side": 1,
+      "message": "nit: could remove these variables if un-used",
+      "revId": "bb1ac459a46a5e7829cd4c14e43291ac68c32a52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
