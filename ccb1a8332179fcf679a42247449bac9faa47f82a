@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//pLk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "adding \t@dependency.requires(\u0027assignment_api\u0027) at line 52 should give you this already.",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pLg\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "Add assignment_api since it\u0027s used.",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pLM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "Add a NOTE(tellesmvn) before this.\n\nAlso, should this be 4 methods and not 3 methods?",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pK8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "revert this change!",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pK0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "revert this change.",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pKo\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pKk\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pKg\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "need to revert all these!",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pKQ\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "revert!",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pKM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pKI\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "if md_foobar isn\u0027t used then suggest remove the member.",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pJ0\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "as far as I can tell, assignment_api isn\u0027t used here, so remove it.",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pJo\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "keep these in alphabetical order (put assignment_api first)",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pJk\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "alphabetize",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pJg\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T00:32:26Z",
+      "side": 1,
+      "message": "this should have \u0027assignment_api\u0027 added.",
+      "revId": "ccb1a8332179fcf679a42247449bac9faa47f82a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
