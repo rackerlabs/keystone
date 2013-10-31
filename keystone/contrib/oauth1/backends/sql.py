@@ -16,12 +16,14 @@
 
 import datetime
 import random
+import sys
 import uuid
 
 from keystone.common import sql
-from keystone.common.sql import migration
+from keystone.common import utils
 from keystone.contrib.oauth1 import core
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
@@ -84,7 +86,8 @@ class AccessToken(sql.ModelBase, sql.DictBase):
 
 class OAuth1(sql.Base):
     def db_sync(self):
-        migration.db_sync()
+        migration.db_sync(
+            utils.find_migrate_repo(sys.modules[__name__]))
 
     def _get_consumer(self, session, consumer_id):
         consumer_ref = session.query(Consumer).get(consumer_id)
