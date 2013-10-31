@@ -39,7 +39,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
         auth_data = {'identity': {}}
         auth_data['identity']['token'] = {'id': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo,
+                          auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -48,7 +48,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
         auth_data['abc'] = {'test': 'test'}
         auth_data = {'identity': auth_data}
         self.assertRaises(exception.AuthMethodNotSupported,
-                          auth.controllers.AuthInfo,
+                          auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -56,7 +56,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
         auth_data = {'methods': ['password']}
         auth_data = {'identity': auth_data}
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo,
+                          auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -66,7 +66,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
             password='test',
             project_name='abc')['auth']
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo,
+                          auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -77,7 +77,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
             project_name='test',
             domain_name='test')['auth']
         self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo,
+                          auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
@@ -86,7 +86,7 @@ class TestAuthInfo(test_v3.RestfulTestCase):
             user_id='test',
             password='test')['auth']
         context = None
-        auth_info = auth.controllers.AuthInfo(context, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(context, auth_data)
 
         method_name = uuid.uuid4().hex
         self.assertRaises(exception.ValidationError,
@@ -1089,7 +1089,7 @@ class TestAuthExternalDisabled(test_v3.RestfulTestCase):
         api = auth.controllers.Auth()
         context = {'REMOTE_USER': '%s@%s' % (self.user['name'],
                                              self.domain['id'])}
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.assertRaises(exception.Unauthorized,
                           api.authenticate,
@@ -1111,7 +1111,7 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         api = auth.controllers.Auth()
         context = {'REMOTE_USER': '%s@%s' %
                    (self.user['name'], self.domain['name'])}
-        auth_info = auth.controllers.AuthInfo(context, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(context, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
@@ -1122,7 +1122,7 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         self.identity_api.update_user(self.user['id'], user)
         context = {'REMOTE_USER': '%s@%s' %
                    (user['name'], self.domain['name'])}
-        auth_info = auth.controllers.AuthInfo(context, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(context, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
@@ -1632,7 +1632,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         api = auth.controllers.Auth()
         auth_data = self.build_authentication_request()['auth']
         context = {'REMOTE_USER': self.default_domain_user['name']}
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'],
@@ -1642,7 +1642,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request()['auth']
         api = auth.controllers.Auth()
         context = {'REMOTE_USER': self.user['name']}
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.assertRaises(exception.Unauthorized,
                           api.authenticate,
@@ -1659,7 +1659,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
             password=self.user['password'])['auth']
         api = auth.controllers.Auth()
         context = {'REMOTE_USER': self.default_domain_user['name']}
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         api.authenticate(context, auth_info, auth_context)
 
@@ -1674,7 +1674,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data['identity']['external'] = {}
         api = auth.controllers.Auth()
         context = {}
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.assertRaises(exception.Unauthorized,
                           api.authenticate,
@@ -1690,7 +1690,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
             password='badpassword')['auth']
         api = auth.controllers.Auth()
         context = {'REMOTE_USER': self.default_domain_user['name']}
-        auth_info = auth.controllers.AuthInfo(None, auth_data)
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
         self.assertRaises(exception.Unauthorized,
                           api.authenticate,
