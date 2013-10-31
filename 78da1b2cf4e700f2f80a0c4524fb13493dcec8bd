@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//oKM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-10-31T08:04:21Z",
+      "side": 1,
+      "message": "I realise this was already a \"bug\", but ProjectNotFound is in here twice....",
+      "revId": "78da1b2cf4e700f2f80a0c4524fb13493dcec8bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
