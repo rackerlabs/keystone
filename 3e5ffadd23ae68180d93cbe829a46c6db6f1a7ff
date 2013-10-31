@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//nDU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:32:50Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "3e5ffadd23ae68180d93cbe829a46c6db6f1a7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nDQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:32:50Z",
+      "side": 1,
+      "message": "add NOTE(tellesmvn): so that we know who ayoung was talking to.",
+      "revId": "3e5ffadd23ae68180d93cbe829a46c6db6f1a7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nDA\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:32:50Z",
+      "side": 1,
+      "message": "change to assignment_api",
+      "revId": "3e5ffadd23ae68180d93cbe829a46c6db6f1a7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nC8\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T13:32:50Z",
+      "side": 1,
+      "message": "should be assignment_api.",
+      "revId": "3e5ffadd23ae68180d93cbe829a46c6db6f1a7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
