@@ -59,6 +59,7 @@ from keystone.contrib import oauth1
 from keystone import credential
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
@@ -152,7 +153,11 @@ def setup_test_database():
         if os.path.exists(db):
             os.unlink(db)
         if not os.path.exists(pristine):
-            sql.migration.db_sync()
+            abs_path = os.path.abspath(os.path.join(
+                os.path.dirname(sql.__file__),
+                'migrate_repo')
+            )
+            migration.db_sync(abs_path=abs_path)
             shutil.copyfile(db, pristine)
         else:
             shutil.copyfile(pristine, db)

@@ -13,10 +13,11 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import os
 
 from keystone.common import dependency
 from keystone.common import sql
-from keystone.common.sql import migration
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
@@ -77,7 +78,10 @@ class Identity(sql.Base, identity.Driver):
 
     # Internal interface to manage the database
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        abs_path = os.path.abspath(
+                os.path.join(os.path.dirname(sql.__file__)),
+                'migrate_repo')
+        migration.db_sync(abs_path=abs_path, version=version)
 
     def _check_password(self, password, user_ref):
         """Check the specified password against the data store.

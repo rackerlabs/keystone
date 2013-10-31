@@ -20,7 +20,7 @@ import urlparse
 import uuid
 
 from keystone.common import cms
-from keystone.common.sql import migration
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone import config
 from keystone import contrib
 from keystone.contrib import oauth1
@@ -43,8 +43,8 @@ class OAuth1Tests(test_v3.RestfulTestCase):
                                                self.EXTENSION_NAME)
         package = importutils.import_module(package_name)
         self.repo_path = os.path.abspath(os.path.dirname(package.__file__))
-        migration.db_version_control(version=None, repo_path=self.repo_path)
-        migration.db_sync(version=None, repo_path=self.repo_path)
+        migration.db_version_control(version=None, abs_path=self.repo_path)
+        migration.db_sync(version=None, abs_path=self.repo_path)
 
     def setUp(self):
         super(OAuth1Tests, self).setUp()

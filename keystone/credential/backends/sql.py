@@ -13,9 +13,10 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import os
 
 from keystone.common import sql
-from keystone.common.sql import migration
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone import credential
 from keystone import exception
 
@@ -35,7 +36,10 @@ class CredentialModel(sql.ModelBase, sql.DictBase):
 class Credential(sql.Base, credential.Driver):
     # Internal interface to manage the database
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        abs_path = os.path.abspath(
+                os.path.join(os.path.dirname(sql.__file__)),
+                'migrate_repo')
+        migration.db_sync(abs_path=abs_path, version=version)
 
     # credential crud
 
