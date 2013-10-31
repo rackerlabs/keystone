@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//l2k\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-31T18:47:47Z",
+      "side": 1,
+      "message": "\"Leverated\" sounds a lot like a real word, but I don\u0027t think it is. \"handled by\" would suffice, I think",
+      "revId": "55d023119cfbc17b070549e87a71349c4ebeb59d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//l2U\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-31T18:47:47Z",
+      "side": 1,
+      "message": "Remove duplicated \"In\"\n\nReplace \"Keystone API\" with \"Identity API\"",
+      "revId": "55d023119cfbc17b070549e87a71349c4ebeb59d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//l2A\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-10-31T18:47:47Z",
+      "side": 1,
+      "message": "Is this actually the default or just the sample? Either way, refer to how to configure it, don\u0027t duplicate keystone.config",
+      "revId": "55d023119cfbc17b070549e87a71349c4ebeb59d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
