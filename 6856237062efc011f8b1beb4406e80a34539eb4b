@@ -360,6 +360,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//nBE\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-31T13:42:49Z",
+      "side": 1,
+      "message": "Along with Steve\u0027s other comments, this should be Foundation. thanks for catching steve!",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//oeI\u003d",
         "filename": "keystone/quota/controllers.py",
         "patchSetId": 6
@@ -405,6 +422,24 @@
       "writtenOn": "2013-10-31T06:35:40Z",
       "side": 1,
       "message": "there is a lot of repetition in these if statements.\n\ncan we make a list/array and go through it instead?\n\nall_services \u003d [\u0027nova\u0027, \u0027cinder\u0027, neutron\u0027]\nfor all_service\n   if all_service in services\n       temp_dict \u003d dict()\n   ...\n\nsomething like that?",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nAo\u003d",
+        "filename": "keystone/quota/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-31T13:42:49Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAATn//oe8\u003d",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -473,6 +508,23 @@
       "writtenOn": "2013-10-31T06:35:40Z",
       "side": 1,
       "message": "i\u0027m confused as to why we are returning content on a delete, i\u0027m not aware of any other keystone operation that does this.",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nAM\u003d",
+        "filename": "keystone/quota/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-31T13:42:49Z",
+      "side": 1,
+      "message": "Replace LLC with Foundation",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -592,6 +644,23 @@
       "writtenOn": "2013-10-31T06:35:40Z",
       "side": 1,
       "message": "also mention the return type",
+      "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//nAI\u003d",
+        "filename": "keystone/tests/test_v3_quota.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-10-31T13:42:49Z",
+      "side": 1,
+      "message": "Same as previous comments.",
       "revId": "6856237062efc011f8b1beb4406e80a34539eb4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
