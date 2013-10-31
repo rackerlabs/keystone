@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//mkw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-10-31T15:35:53Z",
+      "side": 1,
+      "message": "seems like we have a lot of duplicated code... consider\n\n self._usesStubout(stubs\u003dTrue)",
+      "revId": "f87250c7261b977adbfab70876b076248f1965f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
