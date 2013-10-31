@@ -41,8 +41,7 @@ from keystone.tests import test_sql_upgrade
 
 
 class SqlUpgradeExampleExtension(test_sql_upgrade.SqlMigrateBase):
-    def repo_package(self):
-        return example
+    repo_package = example
 
     def test_upgrade(self):
         self.assertTableDoesNotExist('example')
@@ -57,8 +56,7 @@ class SqlUpgradeExampleExtension(test_sql_upgrade.SqlMigrateBase):
 
 
 class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
-    def repo_package(self):
-        return oauth1
+    repo_package = oauth1
 
     def test_upgrade(self):
         self.assertTableDoesNotExist('consumer')
@@ -119,8 +117,7 @@ class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
 
 
 class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
-    def repo_package(self):
-        return endpoint_filter
+    repo_package = endpoint_filter
 
     def test_upgrade(self):
         self.assertTableDoesNotExist('project_endpoint')
