@@ -177,7 +177,7 @@ class Assignment(assignment.Driver):
 
     def delete_project(self, tenant_id):
         if self.project.subtree_delete_enabled:
-            self.project.deleteTree(id)
+            self.project.deleteTree(tenant_id)
         else:
             tenant_dn = self.project._id_to_dn(tenant_id)
             self.role.roles_delete_subtree_by_project(tenant_dn)
