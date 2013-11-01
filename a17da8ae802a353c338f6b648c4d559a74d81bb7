@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//iNU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-01T20:17:50Z",
+      "side": 1,
+      "message": "I\u0027d suggest changing the title to: Deleting project with allow_subtree results in exception",
+      "revId": "a17da8ae802a353c338f6b648c4d559a74d81bb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//iN4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-01T20:17:50Z",
+      "side": 1,
+      "message": "change this line to:\nfixes bug: #1247032\nand insert a blank line before this too.",
+      "revId": "a17da8ae802a353c338f6b648c4d559a74d81bb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
