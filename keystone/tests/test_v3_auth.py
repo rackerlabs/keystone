@@ -2238,3 +2238,7 @@ class TestTrustAuth(TestAuthInfo):
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
                  self.user_id, expected_status=401,
                  token=trust_token)
+
+
+class TestTrustAuthXML(TestTrustAuth):
+    content_type = 'xml'
