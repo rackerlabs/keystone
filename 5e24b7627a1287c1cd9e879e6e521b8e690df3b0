@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//kxA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-01T03:38:20Z",
+      "side": 0,
+      "message": "++ on this, nice to finally move these out",
+      "revId": "5e24b7627a1287c1cd9e879e6e521b8e690df3b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//kwk\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-01T03:38:20Z",
+      "side": 0,
+      "message": "just did a quick search, and this was the only place where _get_domain_by_name was being used, so I think you can completely remove that funciton from identity/controllers.py",
+      "revId": "5e24b7627a1287c1cd9e879e6e521b8e690df3b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
