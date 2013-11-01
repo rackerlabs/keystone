@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//kuA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-01T04:00:30Z",
+      "side": 1,
+      "message": "In my opinion the two conditions can combinated.As:\nif (default_project_id is not None and old_user_ref[\u0027tenantId\u0027] !\u003d default_project_id):",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
