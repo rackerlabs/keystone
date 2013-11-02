@@ -156,14 +156,7 @@ class RestfulTestCase(test_content_types.RestfulTestCase):
                 self.endpoint_id,
                 self.endpoint.copy())
 
-        self.public_server = self.serveapp(app_conf, name='main')
-        self.admin_server = self.serveapp(app_conf, name='admin')
-
     def tearDown(self):
-        self.public_server.kill()
-        self.admin_server.kill()
-        self.public_server = None
-        self.admin_server = None
         self.teardown_database()
         self.remove_generated_paste_config()
         # need to reset the plug-ins
