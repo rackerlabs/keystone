@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//djw\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T15:09:23Z",
+      "side": 1,
+      "message": "Oh wait, I see you\u0027ve ignored my previous comment about just trying the decode and catching the error.  I\u0027m still not clear what benefit this indirect approach has, other than being slower and less obvious, clarification would be appreciated :)",
+      "parentUuid": "AAAATn//dms\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dmo\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 4
