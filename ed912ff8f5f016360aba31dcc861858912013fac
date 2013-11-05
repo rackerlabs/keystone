@@ -52,6 +52,24 @@
       "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dCk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-05T19:52:15Z",
+      "side": 0,
+      "message": "I think the blank line should be put back.  It looks like sections in this document are separated by 2 blank lines.",
+      "parentUuid": "AAAATn//o18\u003d",
+      "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
