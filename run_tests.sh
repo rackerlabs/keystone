@@ -31,6 +31,7 @@ function usage {
   echo "  -8, --8                  Just run flake8, don't show PEP8 text for each error"
   echo "  -P, --no-pep8            Don't run flake8"
   echo "  -c, --coverage           Generate coverage report"
+  echo "  -d, --debug              Run tests with testtools instead of testr. This allows you to use the debugger."
   echo "  -h, --help               Print this usage message"
   echo ""
   echo "Note: with no options specified, the script will try to run the tests in a virtual environment,"
@@ -52,6 +53,7 @@ function process_option {
     -8|--8) short_flake8=1;;
     -P|--no-pep8) no_flake8=1;;
     -c|--coverage) coverage=1;;
+    -d|--debug) debug=1;;
     -*) testropts="$testropts $1";;
     *) testrargs="$testrargs $1"
   esac
@@ -63,12 +65,13 @@ always_venv=0
 never_venv=0
 force=0
 testrargs=
-testropts=--subunit
+testropts=
 wrapper=""
 just_flake8=0
 short_flake8=0
 no_flake8=0
 coverage=0
+debug=0
 recreate_db=1
 update=0
 
@@ -92,8 +95,22 @@ function cleanup_test_db {
 }
 
 function run_tests {
-  set -e
-  echo ${wrapper}
+  if [ $debug -eq 1 ]; then
+    if [ "$testropts" = "" ] && [ "$testrargs" = "" ]; then
+      # Default to running all tests if specific test is not
+      # provided.
+      testrargs="discover ./keystone/tests"
+    fi
+    ${wrapper} python -m testtools.run $testropts $testrargs
+
+    # Short circuit because all of the testr and coverage stuff
+    # below does not make sense when running testtools.run for
+    # debugging purposes.
+    return
+  fi
+
+  testropts="--subunit $testropts"
+
   ${wrapper} $TESTRTESTS --testr-args="$testropts $testrargs" | \
       ${wrapper} subunit-2to1 | \
       ${wrapper} tools/colorizer.py
