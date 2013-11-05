@@ -16,6 +16,23 @@
       "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//c+4\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-05T20:47:42Z",
+      "side": 1,
+      "message": "Seems like this could (should?) be converted into a doc comment.",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
