@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//dnE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "If the target for this code is oslo, why not just propose it there then sync it into keystone when it\u0027s merged?  That is the normal workflow IME",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dm8\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "These are still unused, arent\u0027 they?",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dms\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "Why is this needed. won\u0027t the try/catch do the same thing?",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dmo\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "Likewise",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dmk\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "I maintain, this sort of interface redefinition is pointless obfuscation, it\u0027s not providing any useful abtraction IMHO.",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dnw\u003d",
+        "filename": "keystone/common/pemutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "I think this should be self._pem_type, also the test and initial assignment is pointless, just do:\n\nself._pem_type \u003d pem_type\n\nOr you could get rid of all the getter/setter bloat and just access pem_type directly and use a property for the header lookup, as suggested below",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dnc\u003d",
+        "filename": "keystone/common/pemutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-05T14:52:32Z",
+      "side": 1,
+      "message": "Why not get rid of all the bloat here, and just return PEM_TYPE_TO_HEADER.get(self.pem_type), and not bother with the property/setter stuff at all, it\u0027s only a dict lookup so personally I see no need for the additional code here",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
