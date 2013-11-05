@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//eXk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-11-05T08:08:09Z",
+      "side": 1,
+      "message": "nit: This line is redundant, because we have this information at line 15",
+      "revId": "caaf0ae407b32b6d491ff5e84413cc1b87a901c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
