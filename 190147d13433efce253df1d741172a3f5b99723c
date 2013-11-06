@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//a/M\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "Do we not use this method? This couldn\u0027t have worked before.",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//a/I\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "...or this one?",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//a+8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "++ Love it!",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//a+s\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "Keeping filter here?",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//a+Q\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "filter here too.",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//a90\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "Looks like you need another space here to get it to line up.",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//a88\u003d",
+        "filename": "keystone/openstack/common/db/sqlalchemy/session.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T16:18:25Z",
+      "side": 1,
+      "message": "Missed one, but I don\u0027t think you want to change this file here.  It should be changed in oslo first and pulled in once it merges.",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
