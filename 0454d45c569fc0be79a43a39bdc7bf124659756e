@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//bCU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-06T15:32:50Z",
+      "side": 1,
+      "message": "Is there any reason not to remove the reference to log_format and replace it with logging_context_format_string instead?  I see so reason to show the use of a deprecated option.",
+      "revId": "0454d45c569fc0be79a43a39bdc7bf124659756e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
