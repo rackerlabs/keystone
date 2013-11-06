@@ -104,6 +104,24 @@
       "revId": "09decb0b14ec623734ac9e8c9e7d1b07e3389dbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//bAQ\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-11-06T15:53:25Z",
+      "side": 1,
+      "message": "The same question was asked in \"Patch set 2\" :) but i will re-answer here:\n\n\"\"\"\nNothing special i just wanted to keep it consistent, i.e. between create and update, and the string test tested \u0027enabled\u0027: \u0027False\u0027 so it looked to me that \u0027enabled\u0027: 0 is also appropriate.\n\nBut i can change it if it\u0027s required.\n\"\"\"",
+      "parentUuid": "AAAATn//bBA\u003d",
+      "revId": "09decb0b14ec623734ac9e8c9e7d1b07e3389dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
