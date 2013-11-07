@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//YZs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-07T17:15:43Z",
+      "side": 1,
+      "message": "Fix*?\n\nSuggest adding or modifying the commit title to include that this is a sync from Oslo, and in the description add that this fixes case XYZ because we are syncing with Oslo.",
+      "revId": "03ad1d553a4a06ac1b80d2f328b95421b6880d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//YZk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-07T17:15:43Z",
+      "side": 1,
+      "message": "(NOTE): A separate commit should be pushed up for review once this lands documenting this case in keystone.conf.sample.",
+      "revId": "03ad1d553a4a06ac1b80d2f328b95421b6880d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
