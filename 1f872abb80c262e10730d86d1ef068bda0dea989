@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lPc\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "No they aren\u0027t, but their compliment is. Users of the module may find it useful so why not make it available? One of the frustrations I had with the Python core base64 module was lack of access to seemingly useful items I thought it should have defined (especially with respect to alphabet definitions). Given that experience I see value in allowing a utility module to export potentially useful items even if the module itself does not make use of them.",
+      "parentUuid": "AAAATn//sOQ\u003d",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//sNc\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-30T11:50:51Z",
       "side": 1,
       "message": "Are these comment-separators really needed?  They look weird to me.",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lWs\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "They\u0027re there to divide the file into logical sections. I\u0027m happy to remove them.",
+      "parentUuid": "AAAATn//sNc\u003d",
       "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lWQ\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "Your excellent suggestion of attempting to decode and catching an error is exactly how this was originally coded (please see prior submissions and review comments). During further testing I discovered the stock decoders didn\u0027t always raise an exception, instead they returned a zero length result. I could have also tested for zero length results as well as raised exceptions, but one wonders how reliable the decoders are and what corner cases they might miss, thus I concluded this was a more reliable and robust test and possibly more efficient than doing a full decode.",
+      "parentUuid": "AAAATn//sT8\u003d",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//sTw\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2013-10-30T11:50:51Z",
       "side": 1,
       "message": "Same, why not just try urlsafe_b64decode-ing?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lWI\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "see above, exact same reason.",
+      "parentUuid": "AAAATn//sTw\u003d",
       "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lWA\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "Good catch, thank you, fixed.",
+      "parentUuid": "AAAATn//sZM\u003d",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//sYc\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2013-10-30T11:50:51Z",
       "side": 1,
       "message": "This is hardly a base64 specific function, so does it make sense to expose it as a top-level interface of this utility module?  Seems like something you want to use internally as a private helper in a utility class to me..",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lVE\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "This function has been renamed to filter_formatting().\n\nBase64 text is often formatted. It\u0027s also often the case we need to work with just the alphabet characters. It\u0027s useful for the module to include such a utility because it\u0027s used so frequently.  It is often useful in the context of working with base64 data and PEM formatted data. Transforming from PEM based CMS signatures to OpenStack token ID\u0027s is one such use.",
+      "parentUuid": "AAAATn//sYc\u003d",
       "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lUQ\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "After considering this I\u0027ve come to agree with you these functions do not serve a useful purpose and can be abused. They pre-dated the inclusion of the filter_whitespace() function (now called filter_formatting()). The filter_formatting() is really the correct filter, you are right one should not strip non-formatting characters, as such I\u0027ve removed these two filter functions.",
+      "parentUuid": "AAAATn//sTE\u003d",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//sNU\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 3
@@ -132,6 +258,24 @@
       "writtenOn": "2013-10-30T11:50:51Z",
       "side": 1,
       "message": "Do you actually need all these one-line functions, or could you have one function which takes an argument?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lTs\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "Argh ..., everyone one has their own opinion, I just got done modifying a previous submission that used a function argument because the reviewer thought using a function argument was a bad idea and was quite emphatic about not using a function argument for this purpose.",
+      "parentUuid": "AAAATn//sNU\u003d",
       "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//lSw\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "I understand your suggestion for encapsulating this in a class, in fact I did consider that. In actual practice using these functions (including those in pemutils) it seemed easier to have a toolbox of functions that could be applied to any Python basestring rather than having to serialize into and out of a class object as different \"transforms\" are applied.\n\nI have sympathy for your observation concerning long names, I suppose the \u0027base64\u0027 components of the identifiers could be shortened to \u0027b64\u0027. I\u0027d be happy to make that change if you like.",
+      "parentUuid": "AAAATn//sME\u003d",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//sL8\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 3
@@ -166,6 +328,24 @@
       "writtenOn": "2013-10-30T11:50:51Z",
       "side": 1,
       "message": "Do you really need to wrap something as common and non-base64-specific as quote/unquote?",
+      "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lQ4\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:26:32Z",
+      "side": 1,
+      "message": "The idea is not to require a user of the module from having to know specific escaping rules and which Python function provides the matching semantics and where to find it. Also these functions do some extra validation to catch any mangled text helping to assure the text is valid. I just noticed the decode function omitted the validation and the next submission fixes that omission. It\u0027s also appropriate to have the API be symmetric offering both encode and decode operations.\n\nFWIW urllib.unquote() is actually overkill if one follows the rules because of the constrained set of characters in base64url context, so these functions could have implemented differently.",
+      "parentUuid": "AAAATn//sL8\u003d",
       "revId": "1f872abb80c262e10730d86d1ef068bda0dea989",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
