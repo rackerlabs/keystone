@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Yo4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-07T16:05:22Z",
+      "side": 1,
+      "message": "Well FWIW, that is not the way the openstack process works in my experience - getting the patch reviewed and into keystone involves pretty much the exact same amount of effort as getting it into oslo, so it may as well just go into oslo, if that\u0027s where you hope it will end up, IMHO.  \n\nThis also has the advantage of ensuring the interfaces are acceptable to the oslo folks now, rather than having churn on the keystone side if you end up needing to change them as a result of the oslo review process.",
+      "parentUuid": "AAAATn//dZs\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dm8\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 4
