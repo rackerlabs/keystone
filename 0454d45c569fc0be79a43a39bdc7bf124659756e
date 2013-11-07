@@ -16,6 +16,24 @@
       "revId": "0454d45c569fc0be79a43a39bdc7bf124659756e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ZhI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-11-07T08:37:26Z",
+      "side": 1,
+      "message": "We need set deprecated option log_format with  defalut value None. \nIf it isn\u0027t None, this will override new options logging_context_format_string. see \nhttps://github.com/openstack/oslo-incubator/blob/master/openstack/common/log.py#L443\n\nThis is the commit   https://github.com/openstack/oslo-incubator/commit/060c0967dbd539fe2a218c22a5b385294e13959f\n\n\nI noticed there is no option  logging_context_format_string and logging_default_format_string in this sample file .\n\nIt seems Keystone doesn\u0027t have check_update.sh like Nova,\ntools/config/check_uptodate.sh\n\nThis is a check example  http://logs.openstack.org/60/54660/2/check/gate-nova-pep8/2303b1f/console.html.gz",
+      "parentUuid": "AAAATn//bCU\u003d",
+      "revId": "0454d45c569fc0be79a43a39bdc7bf124659756e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
