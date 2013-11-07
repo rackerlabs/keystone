@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Ybo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-07T17:01:07Z",
+      "side": 1,
+      "message": "(NIT): here instead of listing the commits that are being sync\u0027d over, can we list the reason why we are syncing log.py from Oslo? The changes and history can be viewed easily enough using Git, but understanding why we need what\u0027s in Oslo is really nice to have in a commit message on syncs.",
+      "revId": "d59a75edee3030ae9a218f0cb48f4f94897f68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
