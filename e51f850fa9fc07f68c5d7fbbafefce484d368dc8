@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//YYs\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-07T17:24:54Z",
+      "side": 1,
+      "message": "Would it be possible to return a proper code depending on the status of the above command?",
+      "revId": "e51f850fa9fc07f68c5d7fbbafefce484d368dc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
