@@ -276,7 +276,7 @@ class Assignment(assignment.Driver):
         raise exception.NotImplemented()
 
     def list_role_assignments(self):
-        raise exception.NotImplemented()
+        return self.role.list_role_assignments()
 
 
 # TODO(termie): turn this into a data object and move logic to driver
@@ -551,3 +551,32 @@ class RoleApi(common_ldap.BaseLdap):
         finally:
             conn.unbind_s()
         super(RoleApi, self).delete(id)
+
+    def list_role_assignments(self):
+        conn = self.get_connection()
+        query = '(objectClass=%s)' % self.object_class
+        replace_arg = self.DEFAULT_OU[:2].upper() + self.DEFAULT_OU[2:] + ','
+        root = self.tree_dn.replace(replace_arg, '')
+        try:
+            objects = conn.search_s(root, ldap.SCOPE_SUBTREE, query)
+        except ldap.NO_SUCH_OBJECT:
+            return []
+        assignment_list = []
+        prj = ProjectApi(CONF)
+        default_ou_project = prj.DEFAULT_OU[:2].upper() + prj.DEFAULT_OU[2:]
+        for object_dn, attrs in objects:
+            if self.member_attribute in attrs:
+                role_id = self._dn_to_id(object_dn)
+                tenant_id = ldap.dn.str2dn(object_dn)[1][0][1]
+                user_dns = attrs[self.member_attribute]
+                for user_dn in user_dns:
+                    user_id = self._dn_to_id(user_dn)
+                    if default_ou_project in user_dn:
+                        assignment_list.append({'group_id': user_id,
+                                                'project_id': tenant_id,
+                                                'role_id': role_id})
+                    else:
+                        assignment_list.append({'user_id': user_id,
+                                                'project_id': tenant_id,
+                                                'role_id': role_id})
+        return assignment_list
