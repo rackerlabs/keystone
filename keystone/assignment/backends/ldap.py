@@ -276,7 +276,7 @@ class Assignment(assignment.Driver):
         raise exception.NotImplemented()
 
     def list_role_assignments(self):
-        raise exception.NotImplemented()
+        return self.role.list_role_assignments(self.project.tree_dn)
 
 
 # TODO(termie): turn this into a data object and move logic to driver
@@ -551,3 +551,27 @@ class RoleApi(common_ldap.BaseLdap):
         finally:
             conn.unbind_s()
         super(RoleApi, self).delete(id)
+
+    def list_role_assignments(self, project_tree_dn):
+        conn = self.get_connection()
+        query = '(objectClass=%s)' % (self.object_class)
+        try:
+            roles = conn.search_s(project_tree_dn,
+                                  ldap.SCOPE_SUBTREE,
+                                  query)
+        except ldap.NO_SUCH_OBJECT:
+            return []
+        finally:
+            conn.unbind_s()
+
+        res = []
+        for role_dn, role in roles:
+            tenant = ldap.dn.str2dn(role_dn)
+            tenant.pop(0)
+            tenant_dn = ldap.dn.dn2str(tenant)
+            for user_dn in role[self.member_attribute]:
+                res.append(UserRoleAssociation(
+                           user_dn=user_dn,
+                           role_dn=role_dn,
+                           tenant_dn=tenant_dn))
+        return res
