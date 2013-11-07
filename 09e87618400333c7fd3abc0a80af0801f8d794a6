@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//dZs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "Because we need it in keystone now. Further delays due to procedural hurdles is not helping the project.",
+      "parentUuid": "AAAATn//dnE\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dm8\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-05T14:52:32Z",
       "side": 1,
       "message": "These are still unused, arent\u0027 they?",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dCI\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "I answered you previously but you didn\u0027t see that response because I inadvertently failed to publish the comment. Please see my earlier reply.",
+      "parentUuid": "AAAATn//dm8\u003d",
       "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//alQ\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "I answered you previously but you didn\u0027t see that response because I inadvertently failed to publish the comment. Please see my earlier reply.",
+      "parentUuid": "AAAATn//djw\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dmo\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 4
@@ -82,6 +136,24 @@
       "writtenOn": "2013-11-05T14:52:32Z",
       "side": 1,
       "message": "Likewise",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dCA\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "I answered you previously but you didn\u0027t see that response because I inadvertently failed to publish the comment. Please see my earlier reply.",
+      "parentUuid": "AAAATn//dmo\u003d",
       "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//akY\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "base64url_percent_encode() above does a validation check on the input text. Thank you for calling attention to the fact an equivalent check was omitted from the decode operation.  The API should be symmetric providing both encode and decode. The idea behind these \"helper\" functions is to utilize the context in which the operation is occurring. In this case it\u0027s not just any text being encoded/decoded, rather it\u0027s base64 that has to meet certain specific criteria. Also the helper functions frees the user of the module from having to research the specific escape mechanism as defined in the RFC and locate the appropriate function in another unrelated Python module.",
+      "parentUuid": "AAAATn//dmk\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dnw\u003d",
         "filename": "keystone/common/pemutils.py",
         "patchSetId": 4
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//afM\u003d",
+        "filename": "keystone/common/pemutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "The tests for None prior to assignment are necessary for the constructor to function correctly, otherwise one of the properties can be left in an inconsistent state with the value None. This can easily be seen by removing the conditional and running the unit test.\n\nThe reason why there are two properties is because there isn\u0027t a 1 to 1 relationship between the pem type and the pem header. Historically several headers have been used and which are now deprecated and map onto other pem types. The pem type is the canonical information. Given a heading one needs to know what the type is. If you\u0027re producing standardized pem files you should format according to the canonical pem type. If you drop the information about the original parsed heading you lose the information about what appeared in the original pem block (for instance you may want to issue a deprecation warning). Thus both the type and heading are related and need to be maintained, if you change one you must change the other or you\u0027\u0027ll get an inconsistent representation.\n\nIt could be slightly simplified if setting the type was prohibited. In practice it\u0027s unlikely one would need to set the type during parsing. The type and header both have a setter and getter, that\u0027s 4 methods. If one removes the type setter it reduces the code from 4 methods to 3 methods with a corresponding loss of symmetric generality, I\u0027m not seeing the huge win in that.\n\nA good question to ask is why the parse result isn\u0027t just a named tuple. The reason why it\u0027s own class as opposed to a named tuple is there has to be logic for mapping between the header and the type, if this wasn\u0027t it\u0027s own class then that logic would have to factored out into utility functions and independently applied. It\u0027s better to have this logic encapsulated in a class where setting an attribute automatically updates matching properties and no additional logic needs to be invoked.\n\nFWIW the list of pem headers in the module is only a subset of possible headers (the ones in common use outside of OpenSSL). If it\u0027s ever necessary to augment the set of headers (not necessarily the types) it\u0027s really best to have this encapsulated in one place. That\u0027s the reason why it\u0027s done the way it is.",
+      "parentUuid": "AAAATn//dnw\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dnc\u003d",
         "filename": "keystone/common/pemutils.py",
         "patchSetId": 4
@@ -133,6 +241,24 @@
       "writtenOn": "2013-11-05T14:52:32Z",
       "side": 1,
       "message": "Why not get rid of all the bloat here, and just return PEM_TYPE_TO_HEADER.get(self.pem_type), and not bother with the property/setter stuff at all, it\u0027s only a dict lookup so personally I see no need for the additional code here",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//afI\u003d",
+        "filename": "keystone/common/pemutils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2013-11-07T00:28:17Z",
+      "side": 1,
+      "message": "see my comments above.",
+      "parentUuid": "AAAATn//dnc\u003d",
       "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
