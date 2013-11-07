@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Yds\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-07T16:54:23Z",
+      "side": 1,
+      "message": "+1, once code is in Oslo, syncs to the projects tend to go rather smooth since the code has already been blessed. Chances are this might not be a clean copy paste from Keystone to Oslo, there will probably be revisions to get this patch into Oslo. So committing this once to Oslo before Keystone will more than likely result in less work cleaning up the initial implementation in Keystone if it were merged here first, less technical debt.",
+      "parentUuid": "AAAATn//Yo4\u003d",
+      "revId": "09e87618400333c7fd3abc0a80af0801f8d794a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dm8\u003d",
         "filename": "keystone/common/base64utils.py",
         "patchSetId": 4
