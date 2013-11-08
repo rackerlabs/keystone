@@ -78,13 +78,13 @@ class Tenant(controller.V2Controller):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         ref = self.assignment_api.get_project(tenant_id)
-        return {'tenant': self.filter_domain_id(ref)}
+        return {'tenant': self._check_description(self.filter_domain_id(ref))}
 
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
         ref = self.assignment_api.get_project_by_name(
             tenant_name, DEFAULT_DOMAIN_ID)
-        return {'tenant': self.filter_domain_id(ref)}
+        return {'tenant': self._check_description(self.filter_domain_id(ref))}
 
     # CRUD Extension
     def create_project(self, context, tenant):
@@ -162,9 +162,15 @@ class Tenant(controller.V2Controller):
         for x in tenant_refs:
             if 'enabled' not in x:
                 x['enabled'] = True
+            self._check_description(x)
         o = {'tenants': tenant_refs,
              'tenants_links': []}
         return o
+
+    def _check_description(self, tenant):
+        if 'description' not in tenant or not tenant['description']:
+            tenant['description'] = ''
+        return tenant
 
 
 class User(controller.V2Controller):
