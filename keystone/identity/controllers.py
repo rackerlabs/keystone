@@ -162,6 +162,8 @@ class Tenant(controller.V2Controller):
         for x in tenant_refs:
             if 'enabled' not in x:
                 x['enabled'] = True
+            if x['description'] is None:
+                x['description'] = ''
         o = {'tenants': tenant_refs,
              'tenants_links': []}
         return o

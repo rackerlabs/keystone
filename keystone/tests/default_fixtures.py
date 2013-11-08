@@ -52,6 +52,12 @@ TENANTS = [
         'description': 'description',
         'enabled': True,
         'domain_id': DEFAULT_DOMAIN_ID
+    }, {
+        'id': 'foo',
+        'name': 'FOO',
+        'description': None,
+        'enabled': True,
+        'domain_id': DEFAULT_DOMAIN_ID
     }
 ]
 
