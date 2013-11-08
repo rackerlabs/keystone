@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//XHo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7476
+      },
+      "writtenOn": "2013-11-08T07:38:35Z",
+      "side": 1,
+      "message": "if not tenant.get(\u0027description\u0027):\n    tenant[\u0027descripton\u0027] \u003d \u0027\u0027\n\n???",
+      "revId": "22b48188cf3dfa716ba9fc40c1ac49987e62cc5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
