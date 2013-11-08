@@ -131,7 +131,7 @@
 
 # Modules of exceptions that are permitted to be recreated upon receiving
 # exception data from an rpc call.
-# allowed_rpc_exception_modules = keystone.openstack.common.exception,nova.exception,cinder.exception,exceptions
+# allowed_rpc_exception_modules = nova.exception,cinder.exception,exceptions
 
 # If True, use a fake RabbitMQ provider
 # fake_rabbit = False
