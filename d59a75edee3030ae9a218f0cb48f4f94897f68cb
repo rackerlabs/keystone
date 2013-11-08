@@ -69,6 +69,24 @@
       "revId": "d59a75edee3030ae9a218f0cb48f4f94897f68cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//XHQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-11-08T07:43:05Z",
+      "side": 1,
+      "message": "Lance ,\nDo you mean submit  a patch for change of keystone.conf.sample  ?\nor Just submit the  options  changed in  this commit ?",
+      "parentUuid": "AAAATn//XKE\u003d",
+      "revId": "d59a75edee3030ae9a218f0cb48f4f94897f68cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
