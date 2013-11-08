@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//XmI\u003d",
+        "filename": "examples/pki/cms/auth_token_unscoped.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-08T03:36:11Z",
+      "side": 1,
+      "message": "should there be a space after the comma between the 2 roles?\n\n\"role1\"},{\"name\"\n\n\n\"role1\"}, {\"name\"",
+      "revId": "3f179e439107b6bde08361664bfa225e7726afd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
