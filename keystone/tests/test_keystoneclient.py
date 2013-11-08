@@ -391,6 +391,23 @@ class KeystoneClientTests(object):
         tenants = client.tenants.list()
         self.assertEqual(len(tenants), len(default_fixtures.TENANTS))
 
+    def test_tenant_with_description(self):
+        admin_client = self.get_client(admin=True)
+        tenant_name = uuid.uuid4().hex
+        tenant_ref = admin_client.tenants.create(
+            tenant_name=tenant_name,
+            description=None,
+            enabled=True)
+        tenants = admin_client.tenants.list()
+        for tenant in tenants:
+            self.assertIsNotNone(tenant.description)
+
+        tenant = admin_client.tenants.get(tenant_ref.id)
+        self.assertEqual(tenant.description, '')
+
+        tenant = admin_client
+        admin_client.tenants.delete(tenant_ref.id)
+
     def test_invalid_password(self):
         from keystoneclient import exceptions as client_exceptions
 
@@ -925,7 +942,8 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
         for i in range(2):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
-                      'domain_id': DEFAULT_DOMAIN_ID}
+                      'domain_id': DEFAULT_DOMAIN_ID,
+                      'description': 'description'}
             self.assignment_api.create_project(tenant_id, tenant)
             self.assignment_api.add_user_to_project(tenant_id,
                                                     self.user_foo['id'])
@@ -952,7 +970,8 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
         for i in range(2):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
-                      'domain_id': DEFAULT_DOMAIN_ID}
+                      'domain_id': DEFAULT_DOMAIN_ID,
+                      'description': 'description'}
             self.assignment_api.create_project(tenant_id, tenant)
             self.assignment_api.add_user_to_project(tenant_id,
                                                     self.user_foo['id'])
