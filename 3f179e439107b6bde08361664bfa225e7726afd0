@@ -16,6 +16,24 @@
       "revId": "3f179e439107b6bde08361664bfa225e7726afd0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//XXs\u003d",
+        "filename": "examples/pki/cms/auth_token_unscoped.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9259
+      },
+      "writtenOn": "2013-11-08T05:57:10Z",
+      "side": 1,
+      "message": "that would match the existing style -- it\u0027s not a parse issue, though.  It looks pretty clear that someone copy/pasted reasonable-looking but invalid JSON inside the \"roles\" collection, which presumably was generated empty by some tool.",
+      "parentUuid": "AAAATn//XmI\u003d",
+      "revId": "3f179e439107b6bde08361664bfa225e7726afd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
