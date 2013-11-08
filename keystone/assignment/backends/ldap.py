@@ -552,7 +552,7 @@ class RoleApi(common_ldap.BaseLdap):
             conn.unbind_s()
         super(RoleApi, self).delete(id)
 
-    def list_role_assignments():
+    def list_role_assignments(self):
         conn = self.get_connection()
         query = '(objectClass=%s)' % self.object_class
         replaceArg1 = self.DEFAULT_OU[:2].upper() + self.DEFAULT_OU[2:] + ","
