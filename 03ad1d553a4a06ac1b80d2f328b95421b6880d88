@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//XuU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-11-08T02:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//YZs\u003d",
+      "revId": "03ad1d553a4a06ac1b80d2f328b95421b6880d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//YZk\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-07T17:15:43Z",
       "side": 1,
       "message": "(NOTE): A separate commit should be pushed up for review once this lands documenting this case in keystone.conf.sample.",
+      "revId": "03ad1d553a4a06ac1b80d2f328b95421b6880d88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//XuQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-11-08T02:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//YZk\u003d",
       "revId": "03ad1d553a4a06ac1b80d2f328b95421b6880d88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
