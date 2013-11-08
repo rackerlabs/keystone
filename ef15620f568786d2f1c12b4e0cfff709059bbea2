@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//WwM\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-08T11:36:25Z",
+      "side": 1,
+      "message": "I\u0027d better not use camelcase for this variable. Also, Why the \"1\"?\n\nAlso, use single quotes (\u0027) instead of double quotes (\"): https://github.com/openstack/keystone/blob/master/HACKING.rst",
+      "revId": "ef15620f568786d2f1c12b4e0cfff709059bbea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Wxo\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-08T11:36:25Z",
+      "side": 1,
+      "message": "What is \"raiz\"? I think that you should change it to \"root\" ;-)",
+      "revId": "ef15620f568786d2f1c12b4e0cfff709059bbea2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
