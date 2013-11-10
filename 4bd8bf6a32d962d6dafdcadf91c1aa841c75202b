@@ -34,6 +34,24 @@
       "revId": "4bd8bf6a32d962d6dafdcadf91c1aa841c75202b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Uqo\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-10T23:13:20Z",
+      "side": 1,
+      "message": "Sounds good.  Will clear -1 then.",
+      "parentUuid": "AAAATn//UsE\u003d",
+      "revId": "4bd8bf6a32d962d6dafdcadf91c1aa841c75202b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
