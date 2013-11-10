@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Uno\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:51:45Z",
+      "side": 1,
+      "message": "Add a DocImpact.",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ung\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:51:45Z",
+      "side": 1,
+      "message": "suggest don\u0027t return ref since modifying the ref passed in (remove this line)",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Unc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:51:45Z",
+      "side": 1,
+      "message": "suggest don\u0027t return ref since modifying the ref passed in (remove this line)",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ums\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:51:45Z",
+      "side": 1,
+      "message": "we shouldn\u0027t need to keep adding normalize calls. Have a single function to normalize user properties that handles both domain_id and username.",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Umo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:51:45Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Umk\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:51:45Z",
+      "side": 1,
+      "message": "suggest change .get() to [] since will then validate that name and username exist on the dict. (this comment applies throughout these changes)",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
