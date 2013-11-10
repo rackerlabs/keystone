@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//Uog\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:39:12Z",
+      "side": 1,
+      "message": "change \"Throw\" to \"Return\"",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UoM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:39:12Z",
+      "side": 1,
+      "message": "Use\n\n Closes-Bug: #1246473\n\nSee https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//kuA\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 3
@@ -30,6 +64,23 @@
       "writtenOn": "2013-11-01T06:32:30Z",
       "side": 1,
       "message": "Sorry.I made a mistake.",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Uos\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T23:39:12Z",
+      "side": 1,
+      "message": "Combine the \"if\" and \"elif\" here so that don\u0027t have to duplicate the code at 242 \u0026 247.\n\ne.g., from 237:\n\n if ((\u0027tenantId\u0027 in old_user_ref and\n       old_user_ref[\u0027tenantId\u0027] !\u003d default_project_id and\n       default_project_id is not None) or\n     (\u0027tenantId\u0027 not in old_user_ref and\n      default_project_id is not None)):\n  self.assignment_api.get_project(default_project_id)\n\nAlso, add a comment to explain what situation this is handling.",
       "revId": "03a762586ef39fa9245b9a452e969179c2771690",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
