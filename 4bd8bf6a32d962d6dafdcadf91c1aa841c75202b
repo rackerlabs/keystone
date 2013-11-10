@@ -16,6 +16,24 @@
       "revId": "4bd8bf6a32d962d6dafdcadf91c1aa841c75202b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UsE\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-10T22:46:29Z",
+      "side": 1,
+      "message": "I submitted the change to UserAuthInfo in a separate commit: https://review.openstack.org/55767",
+      "parentUuid": "AAAATn//lTQ\u003d",
+      "revId": "4bd8bf6a32d962d6dafdcadf91c1aa841c75202b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
