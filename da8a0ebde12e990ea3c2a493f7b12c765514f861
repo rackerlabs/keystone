@@ -16,6 +16,24 @@
       "revId": "da8a0ebde12e990ea3c2a493f7b12c765514f861",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//T8w\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-11T07:15:52Z",
+      "side": 1,
+      "message": "...or maybe its just working with Brant has this effect :-)",
+      "parentUuid": "AAAATn//UTo\u003d",
+      "revId": "da8a0ebde12e990ea3c2a493f7b12c765514f861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
