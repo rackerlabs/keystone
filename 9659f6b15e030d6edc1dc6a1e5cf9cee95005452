@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Rp8\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-11T21:22:06Z",
+      "side": 1,
+      "message": "Do we have a test case for the positive path? If not this might be a good time to add one.",
+      "revId": "9659f6b15e030d6edc1dc6a1e5cf9cee95005452",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
