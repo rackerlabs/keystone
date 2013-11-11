@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//R9I\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-11-11T19:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//Uog\u003d",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//UoM\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-10T23:39:12Z",
       "side": 1,
       "message": "Use\n\n Closes-Bug: #1246473\n\nSee https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//R9E\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-11-11T19:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//UoM\u003d",
       "revId": "03a762586ef39fa9245b9a452e969179c2771690",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +135,24 @@
       "side": 1,
       "message": "This one one of the options i provided for a previous patchset.  The only downside to merging the if-statements is that it makes an ugly/almost unreadable if-statement worse.  It does remove a minor amount of duplicated code.\n\nThis is a fair request to make.",
       "parentUuid": "AAAATn//Uos\u003d",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//R88\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-11-11T19:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//Ufc\u003d",
       "revId": "03a762586ef39fa9245b9a452e969179c2771690",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
