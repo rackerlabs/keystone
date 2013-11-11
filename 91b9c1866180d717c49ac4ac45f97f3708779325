@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Uh0\u003d",
+        "filename": "keystone/tests/fixtures/appserver.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:50:28Z",
+      "side": 1,
+      "message": "doesn\u0027t look like you can use the default name, so suggest make it a required parameter. Also, suggest have constants for the name (either ADMIN or MAIN)",
+      "revId": "91b9c1866180d717c49ac4ac45f97f3708779325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Uik\u003d",
+        "filename": "keystone/tests/fixtures/appserver.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:50:28Z",
+      "side": 1,
+      "message": "should cert_required default to False?",
+      "revId": "91b9c1866180d717c49ac4ac45f97f3708779325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UiE\u003d",
+        "filename": "keystone/tests/fixtures/appserver.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:50:28Z",
+      "side": 1,
+      "message": "suggest remove comment since might add new tests that need to know the port and then would have to update this comment.",
+      "revId": "91b9c1866180d717c49ac4ac45f97f3708779325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Uh4\u003d",
+        "filename": "keystone/tests/fixtures/appserver.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:50:28Z",
+      "side": 1,
+      "message": "should also set self.server \u003d None like the old cleanup code did?",
+      "revId": "91b9c1866180d717c49ac4ac45f97f3708779325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
