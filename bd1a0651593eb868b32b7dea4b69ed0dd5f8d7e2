@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//zuI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-11T21:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//0Ak\u003d",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//z/0\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//zq8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-11T21:36:13Z",
+      "side": 1,
+      "message": "Removed.  I actually didn\u0027t add it.  It was removed by Morgan in dda19c3 and I think git put it back when I rebased onto master.",
+      "parentUuid": "AAAATH//z/0\u003d",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//z/A\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-09T14:15:46Z",
       "side": 1,
       "message": "new_username \u003d uuid.uuid4().hex :)",
+      "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//zts\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-11T21:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//z/A\u003d",
       "revId": "bd1a0651593eb868b32b7dea4b69ed0dd5f8d7e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
