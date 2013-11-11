@@ -16,6 +16,23 @@
       "revId": "2065b1c8e0706461eff33980abd3c6e421d91054",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//RaQ\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-11T23:23:42Z",
+      "side": 1,
+      "message": "We should have test for both the scenarios, with/without description.",
+      "revId": "2065b1c8e0706461eff33980abd3c6e421d91054",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
