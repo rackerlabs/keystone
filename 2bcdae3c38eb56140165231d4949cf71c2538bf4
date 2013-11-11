@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Rqs\u003d",
+        "filename": "keystone/tests/fixtures/appserver.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-11T21:20:13Z",
+      "side": 1,
+      "message": "(NIT): either*",
+      "revId": "2bcdae3c38eb56140165231d4949cf71c2538bf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
