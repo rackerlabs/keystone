@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Ujk\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-11T00:36:23Z",
+      "side": 1,
+      "message": "There is a patch by Brant that solves this issue:\nhttps://review.openstack.org/#/c/55767/\n\nI\u0027ll make this patchset dependant on his to catch that change.",
+      "parentUuid": "AAAATn//jDk\u003d",
+      "revId": "9a93532037dee9c51340ebe9f0f438f4c326ca04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//kwc\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Ujg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-11T00:36:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//jCc\u003d",
+      "revId": "9a93532037dee9c51340ebe9f0f438f4c326ca04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//jAI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "writtenOn": "2013-11-01T15:42:01Z",
       "side": 1,
       "message": "Is this just here to raise an exception if the domain doesn\u0027t exist?  It would be nice to be able to get rid of the circular dependency between identity and assignment.",
+      "revId": "9a93532037dee9c51340ebe9f0f438f4c326ca04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UjQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-11T00:36:23Z",
+      "side": 1,
+      "message": "That is correct.  I\u0027d like to make that kind of change a separate patchset so we can chase down all circular dependancies instead of catching them as a side-effect of other patches.",
+      "parentUuid": "AAAATn//jAI\u003d",
       "revId": "9a93532037dee9c51340ebe9f0f438f4c326ca04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
