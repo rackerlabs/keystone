@@ -70,6 +70,24 @@
       "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dCU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2013-11-11T22:54:57Z",
+      "side": 0,
+      "message": "This is not correct, in fact it is rather consistent. If the whitespacing is truly a gating issue, I\u0027ll submit an additional patchset that cleans the formatting up properly.",
+      "parentUuid": "AAAATn//dCk\u003d",
+      "revId": "ed912ff8f5f016360aba31dcc861858912013fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
