@@ -84,6 +84,24 @@
       "revId": "03a762586ef39fa9245b9a452e969179c2771690",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ufc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-11T01:12:21Z",
+      "side": 1,
+      "message": "This one one of the options i provided for a previous patchset.  The only downside to merging the if-statements is that it makes an ugly/almost unreadable if-statement worse.  It does remove a minor amount of duplicated code.\n\nThis is a fair request to make.",
+      "parentUuid": "AAAATn//Uos\u003d",
+      "revId": "03a762586ef39fa9245b9a452e969179c2771690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
