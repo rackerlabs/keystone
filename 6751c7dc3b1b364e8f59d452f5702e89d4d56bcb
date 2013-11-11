@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//R0E\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-11T20:21:38Z",
+      "side": 0,
+      "message": "These two sentences now disappear forever as the content is not covered in docs.openstack.org/developer/hacking.  It\u0027s not the most impressive content on testingthat these sentences point to but its a shame to lose the reference",
+      "revId": "6751c7dc3b1b364e8f59d452f5702e89d4d56bcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
