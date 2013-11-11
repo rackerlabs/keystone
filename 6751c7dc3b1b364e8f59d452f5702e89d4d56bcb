@@ -16,6 +16,24 @@
       "revId": "6751c7dc3b1b364e8f59d452f5702e89d4d56bcb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//RzQ\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-11-11T20:29:41Z",
+      "side": 0,
+      "message": "this refers to a file in nova/testing/README.rst, not sure why keystone is point to that.\n\nwhen moving things to  docs.openstack.org/developer/hacking this line was omitted because it was nova specific.  If we want this testing information perhaps we should find a better home for it then just pointing to the nova repo",
+      "parentUuid": "AAAATn//R0E\u003d",
+      "revId": "6751c7dc3b1b364e8f59d452f5702e89d4d56bcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
