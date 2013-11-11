@@ -16,6 +16,24 @@
       "revId": "fc3df3e5fcb5bfd3746118ccbe9b5f2584a5f9b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//SNE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-11T18:00:18Z",
+      "side": 1,
+      "message": "Done. I even missed that when proof reading. Thanks!",
+      "parentUuid": "AAAATn//Ui8\u003d",
+      "revId": "fc3df3e5fcb5bfd3746118ccbe9b5f2584a5f9b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
