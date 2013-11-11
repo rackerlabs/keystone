@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//UaA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-11-11T02:41:38Z",
+      "side": 1,
+      "message": "Brant,\nThere are some patches merged  in oslo-incubator after my submit this patch for keystone.  will sync the latest code from oslo-incubator.",
+      "parentUuid": "AAAATn//Ups\u003d",
+      "revId": "793a5abce1bb66a91bb1bf6bef508b2bb9017391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//Up0\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-10T23:24:05Z",
       "side": 1,
       "message": "please don\u0027t waste your time creating this list of changes. Remove it.",
+      "revId": "793a5abce1bb66a91bb1bf6bef508b2bb9017391",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UaU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-11-11T02:41:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//Up0\u003d",
       "revId": "793a5abce1bb66a91bb1bf6bef508b2bb9017391",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
