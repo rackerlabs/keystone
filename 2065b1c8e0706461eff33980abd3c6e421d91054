@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Rg4\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-11T22:07:02Z",
+      "side": 1,
+      "message": "Here we are testing \u0027with\u0027 a description but we are passing None in the tenants.create? Should this test case be testing \u0027with\u0027 description and a separate test case testing the negative path \u0027without\u0027 description?",
+      "revId": "2065b1c8e0706461eff33980abd3c6e421d91054",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
