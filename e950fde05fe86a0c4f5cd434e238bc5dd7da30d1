@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//UlA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:21:50Z",
+      "side": 1,
+      "message": "Should be Closes-Bug",
+      "revId": "e950fde05fe86a0c4f5cd434e238bc5dd7da30d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ukk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:21:50Z",
+      "side": 1,
+      "message": "add a comment why can return here.",
+      "revId": "e950fde05fe86a0c4f5cd434e238bc5dd7da30d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ukg\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:21:50Z",
+      "side": 1,
+      "message": "add a docstring for when this should be raised.",
+      "revId": "e950fde05fe86a0c4f5cd434e238bc5dd7da30d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ukc\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:21:50Z",
+      "side": 1,
+      "message": "change \"redundant\" to \"not allowed\"? (redudant means it\u0027s already given?)",
+      "revId": "e950fde05fe86a0c4f5cd434e238bc5dd7da30d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UkM\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:21:50Z",
+      "side": 1,
+      "message": "Remove duplication in these different parts by using a function.\n\nAlso, suggest split up into different test functions.",
+      "revId": "e950fde05fe86a0c4f5cd434e238bc5dd7da30d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//UkE\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-11T00:21:50Z",
+      "side": 1,
+      "message": "should also be able to check that extra_params and missing_required_params are being set correctly.",
+      "revId": "e950fde05fe86a0c4f5cd434e238bc5dd7da30d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
