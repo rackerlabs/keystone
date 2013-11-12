@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//P4M\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T09:46:20Z",
+      "side": 1,
+      "message": "This line is intended to put the \"OU\" part in uppercase, isn\u0027t it? I am not an LDAP expert, but what if DEFAULT_OU\u003d\"ou\u003dsubgroup,ou\u003dgroup\"?",
+      "revId": "d8e48e0aaf29971816e9aaefe1c5f01189a49ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//P34\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T09:46:20Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "d8e48e0aaf29971816e9aaefe1c5f01189a49ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
