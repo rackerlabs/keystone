@@ -1308,3 +1308,45 @@ tls_cacertfile and tls_cacertdir are set then tls_cacertfile will be
 used and tls_cacertdir is ignored.  Furthermore, valid options for
 tls_req_cert are demand, never, and allow.  These correspond to the
 standard options permitted by the TLS_REQCERT TLS option.
+
+Read Only LDAP
+--------------
+
+Many IT environments typically have directories accessed by LDAP
+that only contains user and group information and is also read only.
+With previous versions of Keystone, these types of directories were
+problematic because Keystone would attempt to store via LDAP its assignment
+entities such as projects, roles, role assignments, and domains in
+the directory as well and this is not possible if the directory is read only
+or is only intended to store user and group information.
+
+Keystone now provides an option whereby these types of
+directories can be easily integrated as it now enables its identity
+entities (which comprises users, groups, and group assignments) to be
+served out of directories and assignments (which comprises projects, roles,
+role assignments, and domains) to be served from the Keystone SQL backend.
+To enable this option, you must have the following keystone.conf options set::
+
+  [identity]
+  driver = keystone.identity.backends.ldap.Identity
+
+  [assignment]
+  driver = keystone.assignment.backends.sql.Assignment
+
+In the above scenario, the existing LDAP configuration in keystone.conf
+is still valid.  However, the LDAP configuration values for entities that
+are now in the assignment backend (e.g. projects, roles, role assignments,
+and domains) will be ignored. Futhermore, if there is an LDAP Identity,
+and no assignment backend is specified, the assignment backend will default to
+LDAP. Although this may seem counterintuitive, it is provided for backwards
+compatibility. Nonetheless, the explicit option will always override the
+implicit option, so specifying the options as shown above will always be
+correct.  Finally, it is also worth noting that whether or not the LDAP
+accessible directory is to be considered read only is still configured
+as described in a previous section above by setting values such as the
+following in the ldap configuration section::
+
+  [ldap]
+  user_allow_create = False
+  user_allow_update = False
+  user_allow_delete = False
