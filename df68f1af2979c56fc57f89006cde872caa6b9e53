@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//P1w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T09:56:49Z",
+      "side": 1,
+      "message": "Could you add a better commit message? It is not clear to me what this change is doing. See  https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "df68f1af2979c56fc57f89006cde872caa6b9e53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dQc\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2013-11-05T17:27:08Z",
       "side": 1,
       "message": "Can you add a blank line above line 8?  Also you may want to rewrite \u0027bug 1247830\u0027 as \u0027Closes-Bug: #1247830\u0027.  See https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "df68f1af2979c56fc57f89006cde872caa6b9e53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//P1s\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T09:56:49Z",
+      "side": 1,
+      "message": "Is there a unit test for this?",
       "revId": "df68f1af2979c56fc57f89006cde872caa6b9e53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
