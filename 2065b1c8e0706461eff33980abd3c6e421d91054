@@ -33,6 +33,24 @@
       "revId": "2065b1c8e0706461eff33980abd3c6e421d91054",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//RCk\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-11-12T01:48:32Z",
+      "side": 1,
+      "message": "Actually, in the test method, the scenario whitout description is tested. See #399 line. \n\nBut yes, the method name is confused. I have separate these two case.",
+      "parentUuid": "AAAATn//RaQ\u003d",
+      "revId": "2065b1c8e0706461eff33980abd3c6e421d91054",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
