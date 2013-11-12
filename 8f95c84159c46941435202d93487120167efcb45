@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//OfM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-12T16:06:25Z",
+      "side": 1,
+      "message": "(NIT): Add a link to the rule mentioned? \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#general\n\nGuideline #6",
+      "revId": "8f95c84159c46941435202d93487120167efcb45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
