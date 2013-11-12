@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//P8M\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T11:14:12Z",
+      "side": 1,
+      "message": "Yes, indeed it seems this was broken.",
+      "parentUuid": "AAAATn//a/M\u003d",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//a/I\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-06T16:18:25Z",
       "side": 1,
       "message": "...or this one?",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//P78\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T11:14:12Z",
+      "side": 1,
+      "message": "Yes, this is weird. I will check the coverage for this code.",
+      "parentUuid": "AAAATn//a/I\u003d",
       "revId": "190147d13433efce253df1d741172a3f5b99723c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//P7M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T11:14:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//a+s\u003d",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//a+Q\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2013-11-06T16:18:25Z",
       "side": 1,
       "message": "filter here too.",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//P7I\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T11:14:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//a+Q\u003d",
       "revId": "190147d13433efce253df1d741172a3f5b99723c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +187,24 @@
       "writtenOn": "2013-11-06T16:18:25Z",
       "side": 1,
       "message": "Missed one, but I don\u0027t think you want to change this file here.  It should be changed in oslo first and pulled in once it merges.",
+      "revId": "190147d13433efce253df1d741172a3f5b99723c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//P7A\u003d",
+        "filename": "keystone/openstack/common/db/sqlalchemy/session.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T11:14:12Z",
+      "side": 1,
+      "message": "Yes, I didn\u0027t change it here.",
+      "parentUuid": "AAAATn//a88\u003d",
       "revId": "190147d13433efce253df1d741172a3f5b99723c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
