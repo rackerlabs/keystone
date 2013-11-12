@@ -21,7 +21,7 @@ import sqlalchemy as sql
 import sqlalchemy.engine.url
 from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
-import sqlalchemy.orm
+import sqlalchemy.orm.attributes
 from sqlalchemy.orm.attributes import InstrumentedAttribute
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
@@ -58,6 +58,7 @@ Text = sql.Text
 UniqueConstraint = sql.UniqueConstraint
 relationship = sql.orm.relationship
 joinedload = sql.orm.joinedload
+flag_modified = sql.orm.attributes.flag_modified
 
 
 def initialize_decorator(init):
