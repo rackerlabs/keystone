@@ -1308,3 +1308,25 @@ tls_cacertfile and tls_cacertdir are set then tls_cacertfile will be
 used and tls_cacertdir is ignored.  Furthermore, valid options for
 tls_req_cert are demand, never, and allow.  These correspond to the
 standard options permitted by the TLS_REQCERT TLS option.
+
+Read Only LDAP
+--------------
+
+Keystone now provides an option whereby you can use your LDAP in
+read only mode which is a common scenario in many IT environments.
+When used in this fashion, identity (which comprises users, groups,
+and group assignments) is served out of LDAP and assignments (which
+comprises projects, roles, role assignments, and domains) is served
+out of the Keystone SQL backend.  To enable this option, you must have
+the following keystone.conf options set::
+
+  [identity]
+  driver = keystone.identity.backends.ldap.Identity
+
+  [assignment]
+  driver = keystone.assignment.backends.sql.Assignment
+
+In the above scenario, the existing LDAP configuration in keystone.conf
+is still valid.  However, the LDAP configuration values for entities that
+are now in the assignment backend (e.g. projects, roles, role assignments,
+and domains) will be ignored.
