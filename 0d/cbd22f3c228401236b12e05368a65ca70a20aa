@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Verified+1: SmokeStack
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 12 Nov 2013 20:00:43 +0000
+Reviewed-on: https://review.openstack.org/55931
+Project: openstack/keystone
+Branch: refs/heads/master
