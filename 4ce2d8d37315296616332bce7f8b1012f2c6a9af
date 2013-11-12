@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//P3g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T09:47:32Z",
+      "side": 1,
+      "message": "Could you give a better explanation?",
+      "revId": "4ce2d8d37315296616332bce7f8b1012f2c6a9af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
