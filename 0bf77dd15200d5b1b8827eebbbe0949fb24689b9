@@ -33,6 +33,40 @@
       "revId": "0bf77dd15200d5b1b8827eebbbe0949fb24689b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//PWM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-11-12T12:49:39Z",
+      "side": 1,
+      "message": "This is not linked to the launchpad\u0027s bug page. So the recommendable commit msg should be used [1]. \n\nCloses-Bug: #1241812\n\n[1] https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "0bf77dd15200d5b1b8827eebbbe0949fb24689b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//PUo\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-11-12T12:49:39Z",
+      "side": 1,
+      "message": "authentication?",
+      "revId": "0bf77dd15200d5b1b8827eebbbe0949fb24689b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
