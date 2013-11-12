@@ -15,14 +15,14 @@
 # under the License.
 
 """SQL backends for the various services."""
+from contextlib import contextmanager
 import functools
 
 import sqlalchemy as sql
 import sqlalchemy.engine.url
 from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
-import sqlalchemy.orm
-from sqlalchemy.orm.attributes import InstrumentedAttribute
+import sqlalchemy.orm.attributes
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
@@ -58,6 +58,7 @@ Text = sql.Text
 UniqueConstraint = sql.UniqueConstraint
 relationship = sql.orm.relationship
 joinedload = sql.orm.joinedload
+flag_modified = sql.orm.attributes.flag_modified
 
 
 def initialize_decorator(init):
@@ -77,7 +78,7 @@ def initialize_decorator(init):
         for k, v in kwargs.items():
             if hasattr(cls, k):
                 attr = getattr(cls, k)
-                if isinstance(attr, InstrumentedAttribute):
+                if isinstance(attr, sql.orm.attributes.InstrumentedAttribute):
                     column = attr.property.columns[0]
                     if isinstance(column.type, String):
                         if not isinstance(v, unicode):
@@ -238,6 +239,13 @@ class Base(object):
             register_global_engine_callback(self.clear_engine)
         return self._sessionmaker(autocommit=autocommit,
                                   expire_on_commit=expire_on_commit)
+
+    @contextmanager
+    def transaction(self, expire_on_commit=False):
+        """Return a SQLAlchemy session in a scoped transaction."""
+        session = self.get_session(expire_on_commit=expire_on_commit)
+        with session.begin():
+            yield session
 
     def get_engine(self, allow_global_engine=True):
         """Return a SQLAlchemy engine.
