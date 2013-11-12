@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//P3E\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-12T09:49:10Z",
+      "side": 1,
+      "message": "nit: I think there\u0027s a missing dot at the end of the sentence.",
+      "revId": "9659f6b15e030d6edc1dc6a1e5cf9cee95005452",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//Rp8\u003d",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 1
