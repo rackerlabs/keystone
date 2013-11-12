@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//PYM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-11-12T12:22:07Z",
+      "side": 1,
+      "message": "Timestamp is not in expected format.\n\ntypo?",
+      "revId": "d77be6714af1d741681ba9f7ba0b6c01b244d2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
