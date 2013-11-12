@@ -382,6 +382,15 @@ class IdentityTests(object):
                           self.tenant_bar['id'],
                           'useless')
 
+    def test_remove_user_role_not_assigned(self):
+        # Expect failure if attempt to remove a role that was never assigned to
+        # the user.
+        self.assertRaises(exception.RoleNotFound,
+                          self.identity_api.remove_role_from_user_and_tenant,
+                          self.user_two['id'],
+                          self.tenant_bar['id'],
+                          'useless')
+
     def test_role_crud(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.identity_api.create_role(role['id'], role)

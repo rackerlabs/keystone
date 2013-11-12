@@ -692,21 +692,8 @@ class RoleApi(common_ldap.BaseLdap, ApiShimMixin):
         try:
             conn.modify_s(role_dn, [(ldap.MOD_DELETE,
                                      self.member_attribute, user_dn)])
-        except ldap.NO_SUCH_OBJECT:
-            if tenant_id is None or self.get(role_id) is None:
-                raise exception.RoleNotFound(role_id=roll_id)
-            attrs = [('objectClass', [self.object_class]),
-                     (self.member_attribute, [user_dn])]
-
-            if self.use_dumb_member:
-                attrs[1][1].append(self.DUMB_MEMBER_DN)
-            try:
-                conn.add_s(role_dn, attrs)
-            except Exception as inst:
-                raise inst
-
-        except ldap.NO_SUCH_ATTRIBUTE:
-            raise exception.UserNotFound(user_id=user_id)
+        except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):
+            raise exception.RoleNotFound(role_id=role_id)
 
     def get_by_service(self, service_id):
         roles = self.get_all('(service_id=%s)' %
