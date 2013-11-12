@@ -22,7 +22,7 @@ import sqlalchemy.engine.url
 from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
 import sqlalchemy.orm
-from sqlalchemy.orm.attributes import InstrumentedAttribute
+from sqlalchemy.orm.attributes import InstrumentedAttribute, flag_modified
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
