@@ -234,12 +234,12 @@ class Application(BaseApplication):
         try:
             result = method(context, **params)
         except exception.Unauthorized as e:
-            LOG.warning(
+            LOG.exception(
                 _('Authorization failed. %(exception)s from %(remote_addr)s') %
                 {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
             return render_exception(e, user_locale=req.best_match_language())
         except exception.Error as e:
-            LOG.warning(e)
+            LOG.exception(e)
             return render_exception(e, user_locale=req.best_match_language())
         except TypeError as e:
             LOG.exception(e)
@@ -371,7 +371,7 @@ class Middleware(Application):
             response = request.get_response(self.application)
             return self.process_response(request, response)
         except exception.Error as e:
-            LOG.warning(e)
+            LOG.exception(e)
             return render_exception(e,
                                     user_locale=request.best_match_language())
         except TypeError as e:
