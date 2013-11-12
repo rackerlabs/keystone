@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Obo\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-12T16:18:26Z",
+      "side": 1,
+      "message": "Might have to update the exception we are checking in the assertRaise here: \n\nhttps://github.com/openstack/tempest/blob/master/tempest/api/identity/admin/test_roles.py#L141\n\nNot entirely sure, but thought that might be a reason why this is failing tempest?",
+      "revId": "6ee2ceb00b63bfdb4704df5815384b852fe2b74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
