@@ -16,6 +16,24 @@
       "revId": "9659f6b15e030d6edc1dc6a1e5cf9cee95005452",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//P+k\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-12T09:14:16Z",
+      "side": 1,
+      "message": "We already do, see line 612 and 654",
+      "parentUuid": "AAAATn//Rp8\u003d",
+      "revId": "9659f6b15e030d6edc1dc6a1e5cf9cee95005452",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
