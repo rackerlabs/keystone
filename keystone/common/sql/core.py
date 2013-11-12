@@ -21,8 +21,7 @@ import sqlalchemy as sql
 import sqlalchemy.engine.url
 from sqlalchemy.exc import DisconnectionError
 from sqlalchemy.ext import declarative
-import sqlalchemy.orm
-from sqlalchemy.orm.attributes import InstrumentedAttribute
+import sqlalchemy.orm.attributes
 import sqlalchemy.pool
 from sqlalchemy import types as sql_types
 
@@ -58,6 +57,7 @@ Text = sql.Text
 UniqueConstraint = sql.UniqueConstraint
 relationship = sql.orm.relationship
 joinedload = sql.orm.joinedload
+flag_modified = sql.orm.attributes.flag_modified
 
 
 def initialize_decorator(init):
@@ -77,7 +77,7 @@ def initialize_decorator(init):
         for k, v in kwargs.items():
             if hasattr(cls, k):
                 attr = getattr(cls, k)
-                if isinstance(attr, InstrumentedAttribute):
+                if isinstance(attr, sql.orm.attributes.InstrumentedAttribute):
                     column = attr.property.columns[0]
                     if isinstance(column.type, String):
                         if not isinstance(v, unicode):
