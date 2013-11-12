@@ -16,6 +16,24 @@
       "revId": "6ee2ceb00b63bfdb4704df5815384b852fe2b74d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//NIo\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-12T22:49:29Z",
+      "side": 1,
+      "message": "I submitted a change to tempest: https://review.openstack.org/56106",
+      "parentUuid": "AAAATn//Obo\u003d",
+      "revId": "6ee2ceb00b63bfdb4704df5815384b852fe2b74d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
