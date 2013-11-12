@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//OZA\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-12T16:47:36Z",
+      "side": 1,
+      "message": "s/a/an",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//OZo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-12T16:47:36Z",
+      "side": 1,
+      "message": "Remove trailing whitespace",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//OYM\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-12T16:47:36Z",
+      "side": 1,
+      "message": "(NIT): Add an example of what removing should look like here? Or a snipped of \u0027methods\u0027 without external authentication enable but other enabled.",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//OT0\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-12T16:47:36Z",
+      "side": 1,
+      "message": "update gyee to aloga?",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
