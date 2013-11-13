@@ -416,6 +416,23 @@ def get_unix_group(group=None):
     return group_info.gr_gid, group_info.gr_name
 
 
+def trust_is_limited_in_uses(remaining_use_counter):
+    '''Verify that a trust is limited in uses, from its backend-specific
+    remaining_use_counter parameter.
+    '''
+    return remaining_use_counter is not None
+
+
+def trust_has_uses_left(remaining_use_counter):
+    '''Assuming a trust is limited in uses, verify that there are some
+    uses left.
+    '''
+    if remaining_use_counter > 0:
+        return True
+    else:
+        return False
+
+
 def set_permissions(path, mode=None, user=None, group=None, log=None):
     '''Set the ownership and permissions on the pathname.
 
