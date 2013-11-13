@@ -160,6 +160,10 @@ class TrustV3(controller.V3Controller):
                                            (trust['expires_at']))
                 except ValueError:
                     raise exception.ValidationTimeStampError()
+
+            if 'remaining_uses' in trust and trust['remaining_uses'] <= 0:
+                msg = 'remaining_uses must be a positive integer or null.'
+                raise exception.ValidationError(msg)
             trust_id = uuid.uuid4().hex
             new_trust = self.trust_api.create_trust(trust_id,
                                                     trust,
