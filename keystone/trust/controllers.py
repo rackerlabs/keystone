@@ -160,6 +160,7 @@ class TrustV3(controller.V3Controller):
                                            (trust['expires_at']))
                 except ValueError:
                     raise exception.ValidationTimeStampError()
+
             trust_id = uuid.uuid4().hex
             new_trust = self.trust_api.create_trust(trust_id,
                                                     trust,
