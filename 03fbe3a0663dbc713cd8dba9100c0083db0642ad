@@ -16,6 +16,24 @@
       "revId": "03fbe3a0663dbc713cd8dba9100c0083db0642ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Koc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1332,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-13T13:56:52Z",
+      "side": 1,
+      "message": "hmmm.  I think the section title of Read Only LDAP is confusing.  Having a read only LDAP is the most compelling use case but in reality whats more important is the smaller amount of information that needs to be available from LDAP as opposed to whether or not that smaller amount of information is read only or not.   Let me try a rewrite emphasizing that",
+      "parentUuid": "AAAATn//K9w\u003d",
+      "revId": "03fbe3a0663dbc713cd8dba9100c0083db0642ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
