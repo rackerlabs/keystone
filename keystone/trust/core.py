@@ -75,3 +75,11 @@ class Driver(object):
     @abc.abstractmethod
     def delete_trust(self, trust_id):
         raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def has_remaining_uses(self, trust_id):
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def consume_use(self, trust_id):
+        raise exception.NotImplemented()
