@@ -1854,6 +1854,120 @@ class TestTrustAuth(TestAuthInfo):
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
         self.assertValidTrustResponse(r, ref)
 
+    def test_create_one_time_use_trust(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            remaining_uses=1,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        # make sure the trust exists
+        trust = self.assertValidTrustResponse(r, ref)
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        # get a token for the trustee
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'])
+        r = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        token = r.headers.get('X-Subject-Token')
+        # get a trust token, consume one use
+        auth_data = self.build_authentication_request(
+            token=token,
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        # make sure the remaining_uses counter was decremented
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        trust = r.result.get('trust')
+        self.assertIsNotNone(trust)
+        self.assertEqual(trust['remaining_uses'], 0)
+        # this time we can't get a trust token
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+    def test_create_zero_use_trust(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            remaining_uses=0,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'])
+        r = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        token = r.headers.get('X-Subject-Token')
+        auth_data = self.build_authentication_request(
+            token=token,
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data, expected_status=401)
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        trust = r.result.get('trust')
+        self.assertIsNotNone(trust)
+        self.assertEqual(trust['remaining_uses'], 0)
+
+    def test_create_negative_use_trust(self):
+        # negative values for the remaining_uses parameter are forbidden
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            remaining_uses=-10,
+            role_ids=[self.role_id])
+        del ref['id']
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': ref},
+                  expected_status=400)
+
+    def test_create_unlimited_use_trust(self):
+        # by default trusts are unlimited in terms of tokens that can be
+        # generated from them, this test creates such a trust explicitly
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            remaining_uses=None,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'])
+        r = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        token = r.headers.get('X-Subject-Token')
+        auth_data = self.build_authentication_request(
+            token=token,
+            trust_id=trust['id'])
+        r = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        trust = r.result.get('trust')
+        self.assertIsNotNone(trust)
+        self.assertEqual(trust.get('remaining_uses'), None)
+
     def test_trust_crud(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,

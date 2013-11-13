@@ -50,6 +50,7 @@ Column = sql.Column
 Index = sql.Index
 String = sql.String
 ForeignKey = sql.ForeignKey
+Integer = sql.Integer
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
 OperationalError = sql.exc.OperationalError
