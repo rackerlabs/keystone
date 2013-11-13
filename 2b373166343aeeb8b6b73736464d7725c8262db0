@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//KK8\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-13T15:52:28Z",
+      "side": 1,
+      "message": "Remove trailing whitespace.",
+      "revId": "2b373166343aeeb8b6b73736464d7725c8262db0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
