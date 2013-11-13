@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Lj4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-13T09:27:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//OZA\u003d",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//OZo\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-12T16:47:36Z",
       "side": 1,
       "message": "Remove trailing whitespace",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Lj8\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-13T09:27:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//OZo\u003d",
       "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Ljw\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-13T09:27:37Z",
+      "side": 1,
+      "message": "I\u0027ve removed the examples as per Dolph suggestion in patchset 18.",
+      "parentUuid": "AAAATn//OYM\u003d",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//OT0\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 19
@@ -64,6 +118,24 @@
       "writtenOn": "2013-11-12T16:47:36Z",
       "side": 1,
       "message": "update gyee to aloga?",
+      "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Llo\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-13T09:27:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//OT0\u003d",
       "revId": "64efbbb170ff0737ad36213a2fb4969496b1bc81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
