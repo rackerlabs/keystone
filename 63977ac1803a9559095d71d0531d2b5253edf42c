@@ -55,6 +55,42 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//I3A\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-13T23:01:48Z",
+      "side": 1,
+      "message": "Created new bug 1251048 for this and fixed it by setting following in auth controller\n\ncollection_name \u003d \u0027auths\u0027\nmember_name \u003d \u0027auth\u0027\n\nlooks OK?",
+      "parentUuid": "AAAATn//JxY\u003d",
+      "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I3Q\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-13T23:01:48Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "AAAATn//SF8\u003d",
+      "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//SFc\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -84,6 +120,24 @@
       "side": 1,
       "message": "...it\u0027s a bit odd this anyway, we are kind of creating a target representation for the token...(i think this whole block only applies to Auth APIs - a comment would have been good!)....so either we create a new representation, or we provide the structure in the token...the later would mean this should be:\n\npolicy_dict[\u0027target\u0027][self.member_name][\u0027user\u0027][\u0027domain\u0027][\u0027id\u0027] \u003d",
       "parentUuid": "AAAATn//SFc\u003d",
+      "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I3o\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-13T23:01:48Z",
+      "side": 1,
+      "message": "Fixed in patch #6\n\nused structure policy_dict[\u0027target\u0027][self.member_name][\u0027user\u0027][\u0027domain_id\u0027] hope that is OK?",
+      "parentUuid": "AAAATn//Jxk\u003d",
       "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
