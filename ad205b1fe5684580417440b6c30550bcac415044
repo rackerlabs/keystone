@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//I7w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:53:34Z",
+      "side": 1,
+      "message": "Should be Closes-Bug , see https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "ad205b1fe5684580417440b6c30550bcac415044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I5I\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:53:34Z",
+      "side": 1,
+      "message": "suggest move this up to just after 292 since this is related to required_args same as 290-292.",
+      "revId": "ad205b1fe5684580417440b6c30550bcac415044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I54\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:53:34Z",
+      "side": 1,
+      "message": "shouldn\u0027t err_args always be true here? The check for if the call was ok was at line 294, so shouldn\u0027t this always raise?",
+      "revId": "ad205b1fe5684580417440b6c30550bcac415044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I5A\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:53:34Z",
+      "side": 1,
+      "message": "suggest have some extra text here... \"Incorrect query parameters\" (or whatever input was incorrect... I assume it\u0027s the query string.)",
+      "revId": "ad205b1fe5684580417440b6c30550bcac415044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
