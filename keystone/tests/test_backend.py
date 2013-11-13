@@ -3219,7 +3219,7 @@ class TokenCacheInvalidation(object):
 
 
 class TrustTests(object):
-    def create_sample_trust(self, new_id):
+    def create_sample_trust(self, new_id, remaining_uses=None):
         self.trustor = self.user_foo
         self.trustee = self.user_two
         trust_data = (self.trust_api.create_trust
@@ -3229,7 +3229,8 @@ class TrustTests(object):
                        'project_id': self.tenant_bar['id'],
                        'expires_at': timeutils.
                         parse_isotime('2031-02-18T18:10:00Z'),
-                       'impersonation': True},
+                       'impersonation': True,
+                       'remaining_uses': remaining_uses},
                        roles=[{"id": "member"},
                               {"id": "other"},
                               {"id": "browser"}]))
@@ -3296,6 +3297,25 @@ class TrustTests(object):
             self.create_sample_trust(uuid.uuid4().hex)
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 3)
+
+    def test_trust_has_remaining_uses(self):
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 5)
+        self.assertTrue(self.trust_api.has_remaining_uses(trust_data['id']))
+        trust_data = self.create_sample_trust(uuid.uuid4().hex)
+        self.assertTrue(self.trust_api.has_remaining_uses(trust_data['id']))
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 0)
+        self.assertFalse(self.trust_api.has_remaining_uses(trust_data['id']))
+
+    def test_consume_use(self):
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 2)
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertTrue(self.trust_api.has_remaining_uses(trust_data['id']))
+        trust_data = self.create_sample_trust(uuid.uuid4().hex)
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertTrue(self.trust_api.has_remaining_uses(trust_data['id']))
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 1)
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertFalse(self.trust_api.has_remaining_uses(trust_data['id']))
 
 
 class CommonHelperTests(tests.TestCase):
