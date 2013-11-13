@@ -181,6 +181,7 @@ class Auth(controller.V2Controller):
                 trust_ref['trustee_user_id'])
             if not trustee_user_ref['enabled']:
                 raise exception.Forbidden()()
+            
             if trust_ref['impersonation'] is True:
                 current_user_ref = trustor_user_ref
             else:

@@ -1823,6 +1823,39 @@ class TestTrustAuth(TestAuthInfo):
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
         self.assertValidTrustResponse(r, ref)
 
+    def test_create_one_time_use_trust(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            remaining_uses=1,
+            role_ids=[self.role_id])
+        del ref['id']
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r, ref)
+
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        # first auth will work ...
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        self.post('/auth/tokens', body=auth_data, expected_status=201)
+        # ... but the next one won't
+        r = self.get(
+            '/OS-TRUST/trusts/%(trust_id)s' % {'trust_id': trust['id']},
+            expected_status=200)
+        trust = r.result.get('trust')
+        self.assertIsNotNone(trust)
+        #self.assertEqual(trust['remaining_uses'], 0)
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+        self.post('/auth/tokens', body=auth_data, expected_status=401)
+
     def test_trust_crud(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
