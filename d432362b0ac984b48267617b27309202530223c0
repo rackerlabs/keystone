@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//IyI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "Add DocImpact tag to the commit message.",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ixg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "could do\n\n if not default_project_id:\n    # User has no default project,\n    # don\u0027t set scope to issue unscoped token.\n    return\n\nthen unindent 30 lines.\n\nAlso, could return after emitting warning messages when checking enabled, etc. and only have 1 level of indentation.",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//IwM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "remove domain_id\u003dNone since that\u0027s the default.",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//IwA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "add \"The token will be unscoped rather than scoped to the project.\" to this message (and the rest of the messages in here)",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//IxE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "change \"\u0027\u0027\" to \"\u0027\" (two \u0027 to one \u0027)",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Iw0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "change to\n\n default project or domain doesn\u0027t exist, will\n\nsince a) also get here for the domain not found, and b) don\u0027t get here if the project is disabled (that\u0027s at line 335)",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//IxQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:41:48Z",
+      "side": 1,
+      "message": "Would be useful to have a comment here why no else leg...\n\n # Otherwise, there\u0027s no default project so don\u0027t set the scope.",
+      "revId": "d432362b0ac984b48267617b27309202530223c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
