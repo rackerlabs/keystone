@@ -36,7 +36,7 @@ def _filter_trust(ref):
 
 class Trust(kvs.Base, trust.Driver):
     def create_trust(self, trust_id, trust, roles):
-        trust_ref = trust
+        trust_ref = copy.deepcopy(trust)
         trust_ref['id'] = trust_id
         trust_ref['deleted'] = False
         trust_ref['roles'] = roles
@@ -44,7 +44,7 @@ class Trust(kvs.Base, trust.Driver):
                 trust_ref['expires_at'].tzinfo is not None):
                     trust_ref['expires_at'] = (timeutils.normalize_time
                                                (trust_ref['expires_at']))
-
+        trust_ref.setdefault('remaining_uses', None)
         self.db.set('trust-%s' % trust_id, trust_ref)
         trustee_user_id = trust_ref['trustee_user_id']
         trustee_list = self.db.get('trustee-%s' % trustee_user_id, [])
@@ -54,7 +54,23 @@ class Trust(kvs.Base, trust.Driver):
         trustor_list = self.db.get('trustor-%s' % trustor_user_id, [])
         trustor_list.append(trust_id)
         self.db.set('trustor-%s' % trustor_user_id, trustor_list)
-        return copy.deepcopy(trust_ref)
+        return trust_ref
+
+    def has_remaining_uses(self, trust_id):
+        try:
+            ref = self.db.get('trust-%s' % trust_id)
+        except exception.NotFound:
+            raise exception.TrustNotFound(trust_id=trust_id)
+        return ref.get('remaining_uses') != 0
+
+    def consume_use(self, trust_id):
+        try:
+            ref = self.db.get('trust-%s' % trust_id)
+        except exception.NotFound:
+            raise exception.TrustNotFound(trust_id=trust_id)
+        if ref.get('remaining_uses') > 0:
+            ref['remaining_uses'] -= 1
+            self.db.set('trust-%s' % trust_id, ref)
 
     def get_trust(self, trust_id):
         try:
