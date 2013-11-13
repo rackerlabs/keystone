@@ -52,7 +52,8 @@ class V2CatalogTestCase(rest.RestfulTestCase):
     def assertValidErrorResponse(self, response):
         self.assertEqual(response.status_code, 400)
 
-    def _endpoint_create(self, expected_status=200, missing_param=None):
+    def _endpoint_create(self, expected_status=200, missing_param=None,
+                         update_urls=None):
         path = '/v2.0/endpoints'
         body = {
             "endpoint": {
@@ -65,6 +66,10 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         }
         if missing_param:
             body['endpoint'][missing_param] = None
+        if update_urls:
+            for k, value in update_urls.items():
+                body['endpoint'][k] = value
+
         r = self.admin_request(method='POST', token=self.get_scoped_token(),
                                path=path, expected_status=expected_status,
                                body=body)
@@ -91,3 +96,22 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         req_body, response = self._endpoint_create(expected_status=400,
                                                    missing_param='publicurl')
         self.assertValidErrorResponse(response)
+
+    def test_endpoint_create_with_missing_service_id(self):
+        req_body, response = self._endpoint_create(expected_status=400,
+                                                   missing_param='service_id')
+        self.assertValidErrorResponse(response)
+
+    def test_endpoint_create_with_empty_adminurl(self):
+        empty_admin_url = {"adminurl": ""}
+        req_body, response = self._endpoint_create(expected_status=200,
+                                                   update_urls=empty_admin_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertIsNone(req_body['endpoint']['adminurl'])
+
+    def test_endpoint_create_with_null_adminurl(self):
+        null_admin_url = {"adminurl": None}
+        req_body, response = self._endpoint_create(expected_status=200,
+                                                   update_urls=null_admin_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertIsNone(req_body['endpoint']['adminurl'])
