@@ -3367,7 +3367,7 @@ class TokenCacheInvalidation(object):
 
 
 class TrustTests(object):
-    def create_sample_trust(self, new_id):
+    def create_sample_trust(self, new_id, remaining_uses=None):
         self.trustor = self.user_foo
         self.trustee = self.user_two
         trust_data = (self.trust_api.create_trust
@@ -3377,7 +3377,8 @@ class TrustTests(object):
                         'project_id': self.tenant_bar['id'],
                         'expires_at': timeutils.
                         parse_isotime('2031-02-18T18:10:00Z'),
-                        'impersonation': True},
+                        'impersonation': True,
+                        'remaining_uses': remaining_uses},
                        roles=[{"id": "member"},
                               {"id": "other"},
                               {"id": "browser"}]))
@@ -3444,6 +3445,54 @@ class TrustTests(object):
             self.create_sample_trust(uuid.uuid4().hex)
         trusts = self.trust_api.list_trusts()
         self.assertEqual(len(trusts), 3)
+
+    def _trust_has_remaining_uses(self, trust_id):
+        """Test a trust for remaining uses.
+
+        :returns: True if the trust has available uses, False otherwise
+        :raises: keystone.exception.TrustNotFound
+        """
+        trust = self.trust_api.get_trust(trust_id)
+        if trust:
+            uses = trust['remaining_uses']
+            return (uses is None) or (uses > 0)
+        else:
+            raise exception.TrustNotFound(trust_id)
+
+    def test_trust_has_remaining_uses_positive(self):
+        # create a trust with limited uses, check that we have uses left
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 5)
+        self.assertTrue(self._trust_has_remaining_uses(trust_data['id']))
+        # create a trust with unlimited uses, check that we have uses left
+        trust_data = self.create_sample_trust(uuid.uuid4().hex)
+        self.assertTrue(self._trust_has_remaining_uses(trust_data['id']))
+
+    def test_trust_has_remaining_uses_negative(self):
+        # try to create a trust with no remaining uses, check that it fails
+        self.assertRaises(exception.ValidationError,
+                          self.create_sample_trust,
+                          uuid.uuid4().hex,
+                          0)
+        # try to create a trust with negative remaining uses,
+        # check that it fails
+        self.assertRaises(exception.ValidationError,
+                          self.create_sample_trust,
+                          uuid.uuid4().hex,
+                          -12)
+
+    def test_consume_use(self):
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 2)
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertTrue(self._trust_has_remaining_uses(trust_data['id']))
+        trust_data = self.create_sample_trust(uuid.uuid4().hex)
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertTrue(self._trust_has_remaining_uses(trust_data['id']))
+        trust_data = self.create_sample_trust(uuid.uuid4().hex, 1)
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertEqual(None, self.trust_api.get_trust(trust_data['id']))
+        self.assertRaises(exception.TrustNotFound,
+                          self._trust_has_remaining_uses,
+                          trust_data['id'])
 
 
 class CommonHelperTests(tests.TestCase):
