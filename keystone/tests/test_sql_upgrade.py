@@ -2020,6 +2020,71 @@ class SqlUpgradeTests(SqlMigrateBase):
         check_grants(session, base_data)
         session.close()
 
+    def test_limited_trusts_upgrade(self):
+        # make sure that the remaining_uses column is created
+        self.upgrade(41)
+        self.assertTableColumns("trust",
+                                ["id", "trustor_user_id",
+                                 "trustee_user_id",
+                                 "project_id", "impersonation",
+                                 "deleted_at",
+                                 "expires_at", "extra",
+                                 "remaining_uses"])
+
+    def test_limited_trusts_downgrade(self):
+        # make sure that the remaining_uses column is removed
+        self.upgrade(41)
+        self.downgrade(40)
+        self.assertTableColumns("trust",
+                                ["id", "trustor_user_id",
+                                 "trustee_user_id",
+                                 "project_id", "impersonation",
+                                 "deleted_at",
+                                 "expires_at", "extra"])
+
+    def test_limited_trusts_downgrade_trusts_cleanup(self):
+        # make sure that only trusts with unlimited uses are kept in the
+        # downgrade
+        self.upgrade(41)
+        session = self.Session()
+        limited_trust = {
+            'id': uuid.uuid4().hex,
+            'trustor_user_id': uuid.uuid4().hex,
+            'trustee_user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'impersonation': True,
+            'remaining_uses': 5
+        }
+        consumed_trust = {
+            'id': uuid.uuid4().hex,
+            'trustor_user_id': uuid.uuid4().hex,
+            'trustee_user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'impersonation': True,
+            'remaining_uses': 0
+        }
+        unlimited_trust = {
+            'id': uuid.uuid4().hex,
+            'trustor_user_id': uuid.uuid4().hex,
+            'trustee_user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'impersonation': True,
+            'remaining_uses': None
+        }
+        self.insert_dict(session, "trust", limited_trust)
+        self.insert_dict(session, "trust", consumed_trust)
+        self.insert_dict(session, "trust", unlimited_trust)
+        # we should have 3 trusts in base
+        r = session.execute('select count(*) as c from trust')
+        self.assertEqual(r.fetchone()['c'], 3)
+        self.downgrade(40)
+        # Now only one trust remains ...
+        r = session.execute('select count(*) as c from trust')
+        self.assertEqual(r.fetchone()['c'], 1)
+        # ... and this trust is the one that was not limited in uses
+        r = session.execute('select id from trust')
+        self.assertEqual(r.fetchone()['id'], unlimited_trust['id'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
