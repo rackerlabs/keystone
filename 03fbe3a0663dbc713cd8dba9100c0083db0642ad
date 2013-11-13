@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//K9w\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1332,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-13T12:04:30Z",
+      "side": 1,
+      "message": "The way this is described it sounds like I have to set some other \"switch\" to enable the RO option...is that true of do I just start using it and \"write\" operations will fail?",
+      "revId": "03fbe3a0663dbc713cd8dba9100c0083db0642ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
