@@ -217,6 +217,10 @@ class TrustNotFound(NotFound):
     message_format = _("Could not find trust, %(trust_id)s.")
 
 
+class InvalidTrustRemainingUsesValue(ValidationError):
+    message_format = _("remaining_uses must be a positive integer or null")
+
+
 class CredentialNotFound(NotFound):
     message_format = _("Could not find credential, %(credential_id)s.")
 
