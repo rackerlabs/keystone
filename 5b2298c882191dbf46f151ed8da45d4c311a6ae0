@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//IvQ\u003d",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-13T23:49:40Z",
+      "side": 1,
+      "message": "Match will only happen once.  I try to make it a habit not to do much work in the initializer.",
+      "parentUuid": "AAAATn//I+0\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I9o\u003d",
         "filename": "keystone/tests/matchers.py",
         "patchSetId": 8
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Is0\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-13T23:49:40Z",
+      "side": 1,
+      "message": "I\u0027ll add some elements to this case to show the behavior.",
+      "parentUuid": "AAAATn//I84\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I80\u003d",
         "filename": "keystone/tests/test_matchers.py",
         "patchSetId": 8
@@ -64,6 +100,24 @@
       "writtenOn": "2013-11-13T22:31:43Z",
       "side": 1,
       "message": "seems like there should be a matcher for if match succeeds? (could use here and at line 34)\n\n self.assertThat(matchers.Matches(m, xml1))",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ItA\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-13T23:49:40Z",
+      "side": 1,
+      "message": "I\u0027m not sure I follow.  This is just testing through the matcher protocol defined by testtools.  If something matches a None is returned, otherwise a object containing data about the mismatch is returned.",
+      "parentUuid": "AAAATn//I80\u003d",
       "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Ito\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-13T23:49:40Z",
+      "side": 1,
+      "message": "What was the problem? Do you have a link?",
+      "parentUuid": "AAAATn//I9I\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I8Y\u003d",
         "filename": "keystone/tests/test_serializer.py",
         "patchSetId": 8
@@ -98,6 +170,24 @@
       "writtenOn": "2013-11-13T22:31:43Z",
       "side": 1,
       "message": "wondering if it would be easier if keystone.tests.matchers exposed all of testtools.matchers.",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Iuc\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-13T23:49:40Z",
+      "side": 1,
+      "message": "As a purest I like them separate as I don\u0027t like the import * pattern. If it\u0027s a deal breaker I would be willing to reconsider.",
+      "parentUuid": "AAAATn//I8Y\u003d",
       "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
