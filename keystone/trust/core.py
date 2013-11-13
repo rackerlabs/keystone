@@ -50,6 +50,11 @@ class Manager(manager.Manager):
 
         :returns: a new trust
         """
+        trust.setdefault('remaining_uses', None)
+        if trust['remaining_uses'] is not None:
+            if trust['remaining_uses'] <= 0:
+                msg = _('remaining_uses must be a positive integer or null.')
+                raise exception.ValidationError(msg)
         return self.driver.create_trust(trust_id, trust, roles)
 
     @notifications.deleted(_TRUST)
@@ -90,4 +95,8 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_trust(self, trust_id):
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def consume_use(self, trust_id):
         raise exception.NotImplemented()
