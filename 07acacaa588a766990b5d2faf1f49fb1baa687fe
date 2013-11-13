@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//I2g\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "is there a bug filed for this FIXME? If not, file a bug and put the ID here.",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I2M\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "suggest do\n\n if \u0027password\u0027 not in auth_info.get_method_names():\n    msg \u003d ...\n    raise Exception(msg)\n\nthen can unindent 9 lines.",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I2E\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "Suggest change \"remote_user\" to \"REMOTE_USER\", since it\u0027s the REMOTE_USER environment variable that the user will be more familiar with.\n\nHow about this?\n\n The user in the REMOTE_USER WSGI environment doesn\u0027t match\n the user supplied in the password credentials of the request.",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I1I\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "why change the message?",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I04\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "change \"for external.DeprecatedGrizzly\" to \"for the external.DeprecatedGrizzly external authentication method\"",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I0o\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "suggest remove this comment since the code below makes it obvious.",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I0A\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "could make api a member then don\u0027t have to duplicate this line in every test.",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Iy8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T23:18:11Z",
+      "side": 1,
+      "message": "why was a test removed? Can it be modified instead?",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
