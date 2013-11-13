@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//JxY\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-13T17:32:10Z",
+      "side": 1,
+      "message": "...and I think I have worked this out...in the code we are calling the protection() wrappers from within a v3 class but have not set up the member_name attribute (which should be set to \u0027auth\" I would suggest)...and in the light of it not being set you get \u0027entity\u0027...yuk...we should fix that",
+      "parentUuid": "AAAATn//Kiw\u003d",
+      "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//SFc\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -48,6 +66,24 @@
       "writtenOn": "2013-11-11T18:47:26Z",
       "side": 1,
       "message": "This is really the user domain. Should it be\n\npolicy_dict[\u0027target\u0027][self.member_name][\u0027user\u0027][\u0027domain_id\u0027] \u003d ...",
+      "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Jxk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-13T17:32:10Z",
+      "side": 1,
+      "message": "...it\u0027s a bit odd this anyway, we are kind of creating a target representation for the token...(i think this whole block only applies to Auth APIs - a comment would have been good!)....so either we create a new representation, or we provide the structure in the token...the later would mean this should be:\n\npolicy_dict[\u0027target\u0027][self.member_name][\u0027user\u0027][\u0027domain\u0027][\u0027id\u0027] \u003d",
+      "parentUuid": "AAAATn//SFc\u003d",
       "revId": "63977ac1803a9559095d71d0531d2b5253edf42c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
