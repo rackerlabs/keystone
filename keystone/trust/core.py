@@ -60,6 +60,19 @@ class Manager(manager.Manager):
         """
         self.driver.delete_trust(trust_id)
 
+    def has_remaining_uses(self, trust_id):
+        """Test a trust for remaining uses.
+
+        :returns: True if the trust has available uses, False otherwise
+        :raises: keystone.exception.TrustNotFound
+        """
+        trust = self.driver.get_trust(trust_id)
+        if trust:
+            uses = trust['remaining_uses']
+            return (uses is None) or (uses > 0)
+        else:
+            raise exception.TrustNotFound(trust_id)
+
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
@@ -90,4 +103,8 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_trust(self, trust_id):
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def consume_use(self, trust_id):
         raise exception.NotImplemented()
