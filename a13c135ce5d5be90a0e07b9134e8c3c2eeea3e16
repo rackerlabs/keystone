@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//I/8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:14:21Z",
+      "side": 1,
+      "message": "It works either way so it\u0027s not a deal breaker. It tells the wrong story, though, and I\u0027m worried it will lead to bugs if someone used to more functional programming styles thinks that the object they pass in isn\u0027t going to be modified since the function returns a new object. Another option is to have this function actually return a new object and not modify the one that\u0027s passed in.",
+      "parentUuid": "AAAATn//Rh4\u003d",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//Unc\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 10
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "The problem with that is that they are not always used together. filter_domain_id() is used in other places.  The _normalize_and_filter_user_properties() method is the single method that ties together related normalizations.  Besides the v2 API is being deprecated.",
       "parentUuid": "AAAATn//Ums\u003d",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I/g\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:14:21Z",
+      "side": 1,
+      "message": "I\u0027m fine with this being cleaned up with the v2 deprecation refactorings.",
+      "parentUuid": "AAAATn//Ri4\u003d",
       "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
