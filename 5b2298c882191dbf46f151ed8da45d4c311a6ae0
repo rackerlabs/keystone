@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//I+0\u003d",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:31:43Z",
+      "side": 1,
+      "message": "Could do \u0027canonical_xml(expected)\u0027 here then don\u0027t need to parse `expected` with every call to match().",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I9o\u003d",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:31:43Z",
+      "side": 1,
+      "message": "add a comment before this why we need to do this.",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I84\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:31:43Z",
+      "side": 1,
+      "message": "are 2 XML docs equivalent if an element contains subelements in a different order? Add a test.\n\ne.g.\n\n \u003ctest xmlns\u003d\"http://docs.openstack.org/identity/api/v2.0\"\u003e\n   \u003csuccess b\u003d\"b\" a\u003d\"a\"\u003e\u003c/success\u003e\n   \u003csuccess a\u003d\"b\" b\u003d\"a\"\u003e\u003c/success\u003e\n \u003c/test\u003e\n\n \u003ctest xmlns\u003d\"http://docs.openstack.org/identity/api/v2.0\"\u003e\n   \u003csuccess a\u003d\"b\" b\u003d\"a\"\u003e\u003c/success\u003e\n   \u003csuccess b\u003d\"b\" a\u003d\"a\"\u003e\u003c/success\u003e\n \u003c/test\u003e\n\nSeems like it would have to work this way for the JSON serialization/deserialization to work correctly, since JSON doesn\u0027t care about order.",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I80\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:31:43Z",
+      "side": 1,
+      "message": "seems like there should be a matcher for if match succeeds? (could use here and at line 34)\n\n self.assertThat(matchers.Matches(m, xml1))",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I9I\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:31:43Z",
+      "side": 1,
+      "message": "should there also be a test for the namespaced attribute problem that Morgan found?",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//I8Y\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-13T22:31:43Z",
+      "side": 1,
+      "message": "wondering if it would be easier if keystone.tests.matchers exposed all of testtools.matchers.",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
