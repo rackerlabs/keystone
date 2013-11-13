@@ -72,7 +72,6 @@ class Auth(controller.V2Controller):
         Alternatively, this call accepts auth with only a token and tenant
         that will return a token that is scoped to that tenant.
         """
-
         if auth is None:
             raise exception.ValidationError(attribute='auth',
                                             target='request body')
@@ -181,6 +180,11 @@ class Auth(controller.V2Controller):
                 trust_ref['trustee_user_id'])
             if not trustee_user_ref['enabled']:
                 raise exception.Forbidden()()
+            if not self.trust_api.has_remaining_uses(auth['trust_id']):
+                raise exception.Forbidden()()
+            else:
+                self.trust_api.consume_use(auth['trust_id'])
+
             if trust_ref['impersonation'] is True:
                 current_user_ref = trustor_user_ref
             else:
