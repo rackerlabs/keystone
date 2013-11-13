@@ -22,7 +22,8 @@ from keystone import trust
 class TrustModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'trust'
     attributes = ['id', 'trustor_user_id', 'trustee_user_id',
-                  'project_id', 'impersonation', 'expires_at']
+                  'project_id', 'impersonation', 'expires_at',
+                  'remaining_uses']
     id = sql.Column(sql.String(64), primary_key=True)
     #user id Of owner
     trustor_user_id = sql.Column(sql.String(64), nullable=False,)
@@ -32,6 +33,7 @@ class TrustModel(sql.ModelBase, sql.DictBase):
     impersonation = sql.Column(sql.Boolean, nullable=False)
     deleted_at = sql.Column(sql.DateTime)
     expires_at = sql.Column(sql.DateTime)
+    remaining_uses = sql.Column(sql.Integer, nullable=True)
     extra = sql.Column(sql.JsonBlob())
 
 
@@ -49,6 +51,9 @@ class Trust(sql.Base, trust.Driver):
         with session.begin():
             ref = TrustModel.from_dict(trust)
             ref['id'] = trust_id
+            # making sure remaining_uses is set, unlimited use implied
+            if ref.get('remaining_uses') is None:
+                ref['remaining_uses'] = None
             if ref.get('expires_at') and ref['expires_at'].tzinfo is not None:
                 ref['expires_at'] = timeutils.normalize_time(ref['expires_at'])
             session.add(ref)
@@ -68,6 +73,37 @@ class Trust(sql.Base, trust.Driver):
         for role in session.query(TrustRole).filter_by(trust_id=trust_id):
             roles.append({'id': role.role_id})
         trust_dict['roles'] = roles
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def has_remaining_uses(self, trust_id):
+        session = db_session.get_session()
+        ref = (session.query(TrustModel).
+               filter_by(deleted_at=None).
+               filter_by(id=trust_id).first())
+        if ref is None:
+            raise exception.TrustNotFound(trust_id=trust_id)
+        elif ref.get('remaining_uses') is None:
+            return True
+        else:
+            return ref.get('remaining_uses') > 0
+
+    @sql.handle_conflicts(conflict_type='trust')
+    def consume_use(self, trust_id):
+        session = db_session.get_session()
+        with session.begin():
+            ref = (session.query(TrustModel).
+                   filter_by(deleted_at=None).
+                   filter_by(id=trust_id).first())
+            if ref is None:
+                raise exception.TrustNotFound(trust_id=trust_id)
+            if ref.remaining_uses is None:
+                #unlimited uses, do nothing
+                session.flush()
+            elif ref.remaining_uses <= 0:
+                raise exception.TrustUseLimitReached()
+            else:
+                ref.remaining_uses -= 1
+                session.flush()
 
     @sql.handle_conflicts(conflict_type='trust')
     def get_trust(self, trust_id):
