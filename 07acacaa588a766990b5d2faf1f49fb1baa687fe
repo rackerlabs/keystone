@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Gmc\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-14T11:57:35Z",
+      "side": 1,
+      "message": "No, there is not such a bug.\n\nHowever, I am not sure about the inclusion of this code here. I added it just for the case it will enter in Havana. This plugin mimics the Grizzly behaviour for external (cherry picked from [1]) but this code is not anymore in Havana (so the support a-la-Grizzly is broken). I am now not sure if it is worth to include it here again or drop it.\n\n[1] https://github.com/openstack/keystone/blob/stable/grizzly/keystone/auth/controllers.py#L323",
+      "parentUuid": "AAAATn//I2g\u003d",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I2M\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 20
