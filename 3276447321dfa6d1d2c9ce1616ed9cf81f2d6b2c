@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Hxk\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-14T07:12:50Z",
+      "side": 1,
+      "message": "I my opinion,the empty url but not None is invalid too.As \"adminurl\" \u003d \"\".In this case the url must be discarded.",
+      "parentUuid": "AAAATn//Hz8\u003d",
+      "revId": "3276447321dfa6d1d2c9ce1616ed9cf81f2d6b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//H0U\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-14T06:10:48Z",
       "side": 1,
       "message": "I don\u0027t know what you mean the \u0027None urls\u0027 and the \u0027empty urls\u0027, are they the same?",
+      "revId": "3276447321dfa6d1d2c9ce1616ed9cf81f2d6b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Hwg\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-14T07:12:50Z",
+      "side": 1,
+      "message": "You are right.\nOnly the empty urls.I will modify to \"Empty urls can be discarded in both\".",
+      "parentUuid": "AAAATn//H0U\u003d",
       "revId": "3276447321dfa6d1d2c9ce1616ed9cf81f2d6b2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
