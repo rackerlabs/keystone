@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Ipw\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-14T00:05:37Z",
+      "side": 1,
+      "message": "I took a quick look at this and I do think that order matters. See http://bit.ly/1e4ouhS.\n\nIf the object elements in that example where out of order the test would fail.  The are turned into an ordered list in JSON.",
+      "parentUuid": "AAAATn//Is0\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I80\u003d",
         "filename": "keystone/tests/test_matchers.py",
         "patchSetId": 8
