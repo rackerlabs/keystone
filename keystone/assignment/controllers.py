@@ -22,6 +22,7 @@ import urllib
 import urlparse
 import uuid
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import config
@@ -357,7 +358,7 @@ class DomainV3(controller.V3Controller):
         super(DomainV3, self).__init__()
         self.get_member_from_driver = self.assignment_api.get_domain
 
-    @controller.protected()
+    @authorization.protected()
     def create_domain(self, context, domain):
         self._require_attribute(domain, 'name')
 
@@ -365,17 +366,17 @@ class DomainV3(controller.V3Controller):
         ref = self.assignment_api.create_domain(ref['id'], ref)
         return DomainV3.wrap_member(context, ref)
 
-    @controller.filterprotected('enabled', 'name')
+    @authorization.filterprotected('enabled', 'name')
     def list_domains(self, context, filters):
         refs = self.assignment_api.list_domains()
         return DomainV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_domain(self, context, domain_id):
         ref = self.assignment_api.get_domain(domain_id)
         return DomainV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_domain(self, context, domain_id, domain):
         self._require_matching_id(domain_id, domain)
 
@@ -492,7 +493,7 @@ class DomainV3(controller.V3Controller):
                 # rest of the users.
                 pass
 
-    @controller.protected()
+    @authorization.protected()
     def delete_domain(self, context, domain_id):
         # explicitly forbid deleting the default domain (this should be a
         # carefully orchestrated manual process involving configuration
@@ -523,7 +524,7 @@ class ProjectV3(controller.V3Controller):
         super(ProjectV3, self).__init__()
         self.get_member_from_driver = self.assignment_api.get_project
 
-    @controller.protected()
+    @authorization.protected()
     def create_project(self, context, project):
         self._require_attribute(project, 'name')
 
@@ -532,22 +533,22 @@ class ProjectV3(controller.V3Controller):
         ref = self.assignment_api.create_project(ref['id'], ref)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @authorization.filterprotected('domain_id', 'enabled', 'name')
     def list_projects(self, context, filters):
         refs = self.assignment_api.list_projects()
         return ProjectV3.wrap_collection(context, refs, filters)
 
-    @controller.filterprotected('enabled', 'name')
+    @authorization.filterprotected('enabled', 'name')
     def list_user_projects(self, context, filters, user_id):
         refs = self.assignment_api.list_projects_for_user(user_id)
         return ProjectV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_project(self, context, project_id):
         ref = self.assignment_api.get_project(project_id)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
 
@@ -558,7 +559,7 @@ class ProjectV3(controller.V3Controller):
         ref = self.assignment_api.update_project(project_id, project)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_project(self, context, project_id):
         self.credential_api.delete_credentials_for_project(project_id)
         self._delete_tokens_for_project(project_id)
@@ -574,7 +575,7 @@ class RoleV3(controller.V3Controller):
         super(RoleV3, self).__init__()
         self.get_member_from_driver = self.assignment_api.get_role
 
-    @controller.protected()
+    @authorization.protected()
     def create_role(self, context, role):
         self._require_attribute(role, 'name')
 
@@ -582,24 +583,24 @@ class RoleV3(controller.V3Controller):
         ref = self.assignment_api.create_role(ref['id'], ref)
         return RoleV3.wrap_member(context, ref)
 
-    @controller.filterprotected('name')
+    @authorization.filterprotected('name')
     def list_roles(self, context, filters):
         refs = self.assignment_api.list_roles()
         return RoleV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_role(self, context, role_id):
         ref = self.assignment_api.get_role(role_id)
         return RoleV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_role(self, context, role_id, role):
         self._require_matching_id(role_id, role)
 
         ref = self.assignment_api.update_role(role_id, role)
         return RoleV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_role(self, context, role_id):
         # The driver will delete any assignments for this role.
         # We must first, however, revoke any tokens for users that have an
@@ -647,7 +648,7 @@ class RoleV3(controller.V3Controller):
 
         self.check_protection(context, protection, ref)
 
-    @controller.protected(callback=_check_grant_protection)
+    @authorization.protected(callback=_check_grant_protection)
     def create_grant(self, context, role_id, user_id=None,
                      group_id=None, domain_id=None, project_id=None):
         """Grants a role to a user or group on either a domain or project."""
@@ -663,7 +664,7 @@ class RoleV3(controller.V3Controller):
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-    @controller.protected(callback=_check_grant_protection)
+    @authorization.protected(callback=_check_grant_protection)
     def list_grants(self, context, user_id=None,
                     group_id=None, domain_id=None, project_id=None):
         """Lists roles granted to user/group on either a domain or project."""
@@ -675,7 +676,7 @@ class RoleV3(controller.V3Controller):
             self._check_if_inherited(context))
         return RoleV3.wrap_collection(context, refs)
 
-    @controller.protected(callback=_check_grant_protection)
+    @authorization.protected(callback=_check_grant_protection)
     def check_grant(self, context, role_id, user_id=None,
                     group_id=None, domain_id=None, project_id=None):
         """Checks if a role has been granted on either a domain or project."""
@@ -691,7 +692,7 @@ class RoleV3(controller.V3Controller):
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-    @controller.protected(callback=_check_grant_protection)
+    @authorization.protected(callback=_check_grant_protection)
     def revoke_grant(self, context, role_id, user_id=None,
                      group_id=None, domain_id=None, project_id=None):
         """Revokes a role from user/group on either a domain or project."""
@@ -1001,9 +1002,9 @@ class RoleAssignmentV3(controller.V3Controller):
         else:
             return True
 
-    @controller.filterprotected('group.id', 'role.id',
-                                'scope.domain.id', 'scope.project.id',
-                                'scope.OS-INHERIT:inherited_to', 'user.id')
+    @authorization.filterprotected('group.id', 'role.id',
+                                   'scope.domain.id', 'scope.project.id',
+                                   'scope.OS-INHERIT:inherited_to', 'user.id')
     def list_role_assignments(self, context, filters):
 
         # TODO(henry-nash): This implementation uses the standard filtering
@@ -1025,14 +1026,14 @@ class RoleAssignmentV3(controller.V3Controller):
 
         return self.wrap_collection(context, formatted_refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_role_assignment(self, context):
         raise exception.NotImplemented()
 
-    @controller.protected()
+    @authorization.protected()
     def update_role_assignment(self, context):
         raise exception.NotImplemented()
 
-    @controller.protected()
+    @authorization.protected()
     def delete_role_assignment(self, context):
         raise exception.NotImplemented()

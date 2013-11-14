@@ -15,6 +15,7 @@
 # under the License.
 
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 
@@ -22,7 +23,7 @@ from keystone.common import dependency
 @dependency.requires('example_api')
 class ExampleV3Controller(controller.V3Controller):
 
-    @controller.protected()
+    @authorization.protected()
     def example_get(self, context):
         """Description of the controller logic."""
         self.example_api.do_something(context)
