@@ -34,6 +34,23 @@
       "revId": "d77be6714af1d741681ba9f7ba0b6c01b244d2b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Iag\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T02:08:02Z",
+      "side": 1,
+      "message": "Can you put in test examples that mirror what you saw?  This is OK as is, and they can go in a future patch.",
+      "revId": "d77be6714af1d741681ba9f7ba0b6c01b244d2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
