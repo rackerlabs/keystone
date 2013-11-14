@@ -20,9 +20,11 @@ import uuid
 from lxml import etree
 
 from keystone import auth
+from keystone.common import authorization
 from keystone.common import cache
 from keystone.common import serializer
 from keystone import config
+from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone.policy.backends import rules
 from keystone import tests
@@ -1056,3 +1058,20 @@ class RestfulTestCase(rest.RestfulTestCase):
 class VersionTestCase(RestfulTestCase):
     def test_get_version(self):
         pass
+
+
+class AuthContextOverrideTestCase(RestfulTestCase):
+    def test_auth_context_override(self):
+        admin_token = self.get_scoped_token()
+        auth_controller = auth.controllers.Auth()
+        # NOTE(gyee): for this test case, all we care is that
+        # 'keystone_auth_context' is used instead of 'token_id'. If 'token_id'
+        # was used, validate_token() would've returned 200 as the given
+        # token has admin privilege.
+        self.assertRaises(
+            exception.Forbidden,
+            auth_controller.validate_token,
+            dict(token_id=admin_token, subject_token_id=admin_token,
+                 query_string={},
+                 environment={
+                     authorization.AUTH_CONTEXT_ENV: {'user_id': 'bogus'}}))

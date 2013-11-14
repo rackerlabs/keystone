@@ -17,6 +17,7 @@
 
 import uuid
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import exception
@@ -132,7 +133,7 @@ class ServiceV3(controller.V3Controller):
         super(ServiceV3, self).__init__()
         self.get_member_from_driver = self.catalog_api.get_service
 
-    @controller.protected()
+    @authorization.protected()
     def create_service(self, context, service):
         ref = self._assign_unique_id(self._normalize_dict(service))
         self._require_attribute(ref, 'type')
@@ -140,24 +141,24 @@ class ServiceV3(controller.V3Controller):
         ref = self.catalog_api.create_service(ref['id'], ref)
         return ServiceV3.wrap_member(context, ref)
 
-    @controller.filterprotected('type')
+    @authorization.filterprotected('type')
     def list_services(self, context, filters):
         refs = self.catalog_api.list_services()
         return ServiceV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_service(self, context, service_id):
         ref = self.catalog_api.get_service(service_id)
         return ServiceV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_service(self, context, service_id, service):
         self._require_matching_id(service_id, service)
 
         ref = self.catalog_api.update_service(service_id, service)
         return ServiceV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_service(self, context, service_id):
         return self.catalog_api.delete_service(service_id)
 
@@ -182,7 +183,7 @@ class EndpointV3(controller.V3Controller):
         ref = cls.filter_endpoint(ref)
         return super(EndpointV3, cls).wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def create_endpoint(self, context, endpoint):
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
         self._require_attribute(ref, 'service_id')
@@ -192,17 +193,17 @@ class EndpointV3(controller.V3Controller):
         ref = self.catalog_api.create_endpoint(ref['id'], ref)
         return EndpointV3.wrap_member(context, ref)
 
-    @controller.filterprotected('interface', 'service_id')
+    @authorization.filterprotected('interface', 'service_id')
     def list_endpoints(self, context, filters):
         refs = self.catalog_api.list_endpoints()
         return EndpointV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_endpoint(self, context, endpoint_id):
         ref = self.catalog_api.get_endpoint(endpoint_id)
         return EndpointV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_endpoint(self, context, endpoint_id, endpoint):
         self._require_matching_id(endpoint_id, endpoint)
 
@@ -212,6 +213,6 @@ class EndpointV3(controller.V3Controller):
         ref = self.catalog_api.update_endpoint(endpoint_id, endpoint)
         return EndpointV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_endpoint(self, context, endpoint_id):
         return self.catalog_api.delete_endpoint(endpoint_id)
