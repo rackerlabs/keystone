@@ -46,6 +46,10 @@ CONTEXT_ENV = 'openstack.context'
 PARAMS_ENV = 'openstack.params'
 
 
+# Environment variable used to convey the Keystone auth context
+AUTH_CONTEXT_ENV = 'KEYSTONE_AUTH_CONTEXT'
+
+
 _RE_PASS = re.compile(r'([\'"].*?password[\'"]\s*:\s*u?[\'"]).*?([\'"])',
                       re.DOTALL)
 

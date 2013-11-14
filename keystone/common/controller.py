@@ -29,13 +29,9 @@ CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 
-def _build_policy_check_credentials(self, action, context, kwargs):
-    LOG.debug(_('RBAC: Authorizing %(action)s(%(kwargs)s)') % {
-        'action': action,
-        'kwargs': ', '.join(['%s=%s' % (k, kwargs[k]) for k in kwargs])})
-
+def build_credentials(token_api, assignment_api, context):
     try:
-        token_ref = self.token_api.get_token(context['token_id'])
+        token_ref = token_api.get_token(context.get('token_id'))
     except exception.TokenNotFound:
         LOG.warning(_('RBAC: Invalid token'))
         raise exception.Unauthorized()
@@ -79,10 +75,22 @@ def _build_policy_check_credentials(self, action, context, kwargs):
         except AttributeError:
             LOG.debug(_('RBAC: Proceeding without tenant'))
         # NOTE(vish): this is pretty inefficient
-        creds['roles'] = [self.assignment_api.get_role(role)['name']
+        creds['roles'] = [assignment_api.get_role(role)['name']
                           for role in creds.get('roles', [])]
 
     return creds
+
+
+def _build_policy_check_credentials(self, action, context, kwargs):
+    LOG.debug(_('RBAC: Authorizing %(action)s(%(kwargs)s)') % {
+        'action': action,
+        'kwargs': ', '.join(['%s=%s' % (k, kwargs[k]) for k in kwargs])})
+
+    if ('environment' in context and
+            wsgi.AUTH_CONTEXT_ENV in context['environment']):
+        return context['environment'].get(wsgi.AUTH_CONTEXT_ENV)
+    else:
+        return build_credentials(self.token_api, self.assignment_api, context)
 
 
 def flatten(d, parent_key=''):
