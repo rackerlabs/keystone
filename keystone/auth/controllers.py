@@ -16,6 +16,7 @@
 
 import json
 
+from keystone.common import authorization
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
@@ -393,17 +394,17 @@ class Auth(controller.V3Controller):
             msg = _('User not found')
             raise exception.Unauthorized(msg)
 
-    @controller.protected()
+    @authorization.protected()
     def check_token(self, context):
         token_id = context.get('subject_token_id')
         self.token_provider_api.check_v3_token(token_id)
 
-    @controller.protected()
+    @authorization.protected()
     def revoke_token(self, context):
         token_id = context.get('subject_token_id')
         return self.token_provider_api.revoke_token(token_id)
 
-    @controller.protected()
+    @authorization.protected()
     def validate_token(self, context):
         token_id = context.get('subject_token_id')
         include_catalog = 'nocatalog' not in context['query_string']
@@ -413,7 +414,7 @@ class Auth(controller.V3Controller):
             del token_data['token']['catalog']
         return render_token_data_response(token_id, token_data)
 
-    @controller.protected()
+    @authorization.protected()
     def revocation_list(self, context, auth=None):
         tokens = self.token_api.list_revoked_tokens()
 
