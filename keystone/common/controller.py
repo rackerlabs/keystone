@@ -18,6 +18,7 @@ import collections
 import functools
 import uuid
 
+from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
@@ -40,6 +41,12 @@ def _build_policy_check_credentials(self, action, context, kwargs):
         'action': action,
         'kwargs': ', '.join(['%s=%s' % (k, kwargs[k]) for k in kwargs])})
 
+    # see if auth context has already been created. If so use it.
+    if ('environment' in context and
+            AUTH_CONTEXT_ENV in context['environment']):
+        return context['environment'].get(AUTH_CONTEXT_ENV)
+
+    # now build the auth context from the incoming auth token
     try:
         token_ref = self.token_api.get_token(context['token_id'])
     except exception.TokenNotFound:
@@ -50,45 +57,9 @@ def _build_policy_check_credentials(self, action, context, kwargs):
     # it would otherwise need to reload the token_ref from backing store.
     wsgi.validate_token_bind(context, token_ref)
 
-    creds = {}
-    if 'token_data' in token_ref and 'token' in token_ref['token_data']:
-        #V3 Tokens
-        token_data = token_ref['token_data']['token']
-        try:
-            creds['user_id'] = token_data['user']['id']
-        except AttributeError:
-            LOG.warning(_('RBAC: Invalid user'))
-            raise exception.Unauthorized()
+    auth_context = authorization.token_to_auth_context(token_ref['token_data'])
 
-        if 'project' in token_data:
-            creds['project_id'] = token_data['project']['id']
-        else:
-            LOG.debug(_('RBAC: Proceeding without project'))
-
-        if 'domain' in token_data:
-            creds['domain_id'] = token_data['domain']['id']
-
-        if 'roles' in token_data:
-            creds['roles'] = []
-            for role in token_data['roles']:
-                creds['roles'].append(role['name'])
-    else:
-        #v2 Tokens
-        creds = token_ref.get('metadata', {}).copy()
-        try:
-            creds['user_id'] = token_ref['user'].get('id')
-        except AttributeError:
-            LOG.warning(_('RBAC: Invalid user'))
-            raise exception.Unauthorized()
-        try:
-            creds['project_id'] = token_ref['tenant'].get('id')
-        except AttributeError:
-            LOG.debug(_('RBAC: Proceeding without tenant'))
-        # NOTE(vish): this is pretty inefficient
-        creds['roles'] = [self.assignment_api.get_role(role)['name']
-                          for role in creds.get('roles', [])]
-
-    return creds
+    return auth_context
 
 
 def flatten(d, parent_key=''):
