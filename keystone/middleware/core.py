@@ -16,7 +16,9 @@
 
 import webob.dec
 
+from keystone.common import authorization
 from keystone.common import config
+from keystone.common import dependency
 from keystone.common import serializer
 from keystone.common import utils
 from keystone.common import wsgi
@@ -201,3 +203,28 @@ class RequestBodySizeLimiter(wsgi.Middleware):
                                            CONF.max_request_body_size)
             req.body_file = limiter
         return self.application
+
+
+@dependency.requires('token_api', 'assignment_api')
+class AuthContextMiddleware(wsgi.Middleware):
+    """Build the authentication context from the request auth token."""
+
+    def _build_auth_context(self, request):
+        token_id = request.headers.get(AUTH_TOKEN_HEADER)
+
+        if token_id == CONF.admin_token:
+            # NOTE(gyee): no need to preceed any further as the special ADMIN
+            # token doesn't exist in the backend and AdminTokenAuthMiddleware
+            # will set the 'is_admin' flag in the context anyway.
+            return {}
+        else:
+            context = {'token_id': token_id}
+            context['environment'] = request.environ
+            return authorization.build_policy_check_credentials(self, context)
+
+    def process_request(self, request):
+        if (authorization.AUTH_CONTEXT_ENV not in request.environ and
+                AUTH_TOKEN_HEADER in request.headers):
+            auth_context = self._build_auth_context(request)
+            LOG.debug(_('RBAC: auth_context: %s'), auth_context)
+            request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context
