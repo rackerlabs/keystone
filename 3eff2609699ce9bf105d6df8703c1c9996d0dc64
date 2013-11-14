@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//HZg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-14T08:51:06Z",
+      "side": 1,
+      "message": "nit: With rather than with",
+      "revId": "3eff2609699ce9bf105d6df8703c1c9996d0dc64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//Ibc\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
