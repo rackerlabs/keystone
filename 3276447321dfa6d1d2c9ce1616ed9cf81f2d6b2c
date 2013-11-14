@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Hz8\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6348
+      },
+      "writtenOn": "2013-11-14T06:10:48Z",
+      "side": 1,
+      "message": "I think this line shouldn\u0027t be changed.",
+      "revId": "3276447321dfa6d1d2c9ce1616ed9cf81f2d6b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//H0U\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6348
+      },
+      "writtenOn": "2013-11-14T06:10:48Z",
+      "side": 1,
+      "message": "I don\u0027t know what you mean the \u0027None urls\u0027 and the \u0027empty urls\u0027, are they the same?",
+      "revId": "3276447321dfa6d1d2c9ce1616ed9cf81f2d6b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
