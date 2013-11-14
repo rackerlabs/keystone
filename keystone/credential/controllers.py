@@ -17,6 +17,7 @@
 import hashlib
 import json
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import exception
@@ -52,29 +53,29 @@ class CredentialV3(controller.V3Controller):
         else:
             return super(CredentialV3, self)._assign_unique_id(ref)
 
-    @controller.protected()
+    @authorization.protected()
     def create_credential(self, context, credential):
         ref = self._assign_unique_id(self._normalize_dict(credential))
         ref = self.credential_api.create_credential(ref['id'], ref)
         return CredentialV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def list_credentials(self, context):
         refs = self.credential_api.list_credentials()
         return CredentialV3.wrap_collection(context, refs)
 
-    @controller.protected()
+    @authorization.protected()
     def get_credential(self, context, credential_id):
         ref = self.credential_api.get_credential(credential_id)
         return CredentialV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_credential(self, context, credential_id, credential):
         self._require_matching_id(credential_id, credential)
 
         ref = self.credential_api.update_credential(credential_id, credential)
         return CredentialV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_credential(self, context, credential_id):
         return self.credential_api.delete_credential(credential_id)

@@ -21,6 +21,7 @@ import six
 import uuid
 
 from keystone.assignment import controllers as assignment_controllers
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import config
@@ -270,7 +271,7 @@ class UserV3(controller.V3Controller):
         ref['group'] = self.identity_api.get_group(group_id)
         self.check_protection(context, prep_info, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def create_user(self, context, user):
         self._require_attribute(user, 'name')
 
@@ -279,20 +280,20 @@ class UserV3(controller.V3Controller):
         ref = self.identity_api.create_user(ref['id'], ref)
         return UserV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
+    @authorization.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
         refs = self.identity_api.list_users(
             domain_scope=self._get_domain_id_for_request(context))
         return UserV3.wrap_collection(context, refs, filters)
 
-    @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
+    @authorization.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):
         refs = self.identity_api.list_users_in_group(
             group_id,
             domain_scope=self._get_domain_id_for_request(context))
         return UserV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_user(self, context, user_id):
         ref = self.identity_api.get_user(
             user_id,
@@ -310,12 +311,12 @@ class UserV3(controller.V3Controller):
 
         return UserV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_user(self, context, user_id, user):
         domain_scope = self._get_domain_id_for_request(context)
         return self._update_user(context, user_id, user, domain_scope)
 
-    @controller.protected(callback=_check_user_and_group_protection)
+    @authorization.protected(callback=_check_user_and_group_protection)
     def add_user_to_group(self, context, user_id, group_id):
         self.identity_api.add_user_to_group(
             user_id, group_id,
@@ -324,20 +325,20 @@ class UserV3(controller.V3Controller):
         # immediate effect
         self._delete_tokens_for_user(user_id)
 
-    @controller.protected(callback=_check_user_and_group_protection)
+    @authorization.protected(callback=_check_user_and_group_protection)
     def check_user_in_group(self, context, user_id, group_id):
         return self.identity_api.check_user_in_group(
             user_id, group_id,
             domain_scope=self._get_domain_id_for_request(context))
 
-    @controller.protected(callback=_check_user_and_group_protection)
+    @authorization.protected(callback=_check_user_and_group_protection)
     def remove_user_from_group(self, context, user_id, group_id):
         self.identity_api.remove_user_from_group(
             user_id, group_id,
             domain_scope=self._get_domain_id_for_request(context))
         self._delete_tokens_for_user(user_id)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_user(self, context, user_id):
         # Delete any credentials that reference this user
         self.credential_api.delete_credentials_for_user(user_id)
@@ -349,7 +350,7 @@ class UserV3(controller.V3Controller):
         # to this user
         return self.identity_api.delete_user(user_id, domain_scope=domain_id)
 
-    @controller.protected()
+    @authorization.protected()
     def change_password(self, context, user_id, user):
         original_password = user.get('original_password')
         if original_password is None:
@@ -382,7 +383,7 @@ class GroupV3(controller.V3Controller):
         super(GroupV3, self).__init__()
         self.get_member_from_driver = self.identity_api.get_group
 
-    @controller.protected()
+    @authorization.protected()
     def create_group(self, context, group):
         self._require_attribute(group, 'name')
 
@@ -391,27 +392,27 @@ class GroupV3(controller.V3Controller):
         ref = self.identity_api.create_group(ref['id'], ref)
         return GroupV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'name')
+    @authorization.filterprotected('domain_id', 'name')
     def list_groups(self, context, filters):
         refs = self.identity_api.list_groups(
             domain_scope=self._get_domain_id_for_request(context))
         return GroupV3.wrap_collection(context, refs, filters)
 
-    @controller.filterprotected('name')
+    @authorization.filterprotected('name')
     def list_groups_for_user(self, context, filters, user_id):
         refs = self.identity_api.list_groups_for_user(
             user_id,
             domain_scope=self._get_domain_id_for_request(context))
         return GroupV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_group(self, context, group_id):
         ref = self.identity_api.get_group(
             group_id,
             domain_scope=self._get_domain_id_for_request(context))
         return GroupV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_group(self, context, group_id, group):
         self._require_matching_id(group_id, group)
 
@@ -420,7 +421,7 @@ class GroupV3(controller.V3Controller):
             domain_scope=self._get_domain_id_for_request(context))
         return GroupV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_group(self, context, group_id):
         # As well as deleting the group, we need to invalidate
         # any tokens for the users who are members of the group.
