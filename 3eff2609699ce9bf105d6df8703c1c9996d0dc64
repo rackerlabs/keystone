@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Ibo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T02:05:45Z",
+      "side": 1,
+      "message": "Technically, they are Directories, with LDAP the protocol.  Let\u0027s not refer to them as LDAPs.  Use  \"Directoreis accessed by LDAP\"  the first time, and directories after that.",
+      "revId": "3eff2609699ce9bf105d6df8703c1c9996d0dc64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ibc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T02:05:45Z",
+      "side": 1,
+      "message": "it is OK to say \"store via LDAP\"  as that is using the protocol,  but not \"stored in LDAP\"",
+      "revId": "3eff2609699ce9bf105d6df8703c1c9996d0dc64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ia0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1336,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T02:05:45Z",
+      "side": 1,
+      "message": "Please add a note in here that if there is and LDAP Identity, and no Assignment backend is specified, the Assignment Backend will default to LDAP.  While this is counterintuitive, it is provided for backward\u0027s compatibility.  But, the Explicit option will always over ride r the implicit option, people who specify as above will have it right.",
+      "revId": "3eff2609699ce9bf105d6df8703c1c9996d0dc64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//IbM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T02:05:45Z",
+      "side": 1,
+      "message": "I see RED!  Eradicate! Deredify!",
+      "revId": "3eff2609699ce9bf105d6df8703c1c9996d0dc64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
