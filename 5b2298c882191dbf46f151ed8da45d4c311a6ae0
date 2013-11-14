@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//ECo\u003d",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-14T23:43:09Z",
+      "side": 1,
+      "message": "Couldn\u0027t I create an XMLEquals(some_doc) and use it in several different tests?",
+      "parentUuid": "AAAATn//IvQ\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I9o\u003d",
         "filename": "keystone/tests/matchers.py",
         "patchSetId": 8
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//ECg\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-14T23:43:09Z",
+      "side": 1,
+      "message": "Add a test that shows that the order matters.",
+      "parentUuid": "AAAATn//Ipw\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I80\u003d",
         "filename": "keystone/tests/test_matchers.py",
         "patchSetId": 8
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "I\u0027m not sure I follow.  This is just testing through the matcher protocol defined by testtools.  If something matches a None is returned, otherwise a object containing data about the mismatch is returned.",
       "parentUuid": "AAAATn//I80\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ECc\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-14T23:43:09Z",
+      "side": 1,
+      "message": "This line is the same as line 34... also, it\u0027s kind of non-intuitive (why checking is None?), a named matcher would make it more obvious.",
+      "parentUuid": "AAAATn//ItA\u003d",
       "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -177,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//ECY\u003d",
+        "filename": "keystone/tests/test_matchers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-14T23:43:09Z",
+      "side": 1,
+      "message": "Here\u0027s Morgan\u0027s comment from patch set 6:\n\nand as discussed in IRC there is an issue with the namespaced attributes in the matcher:\n\nhttp://paste.openstack.org/show/51730/ ( failure ) http://paste.openstack.org/show/51731/ ( test that was added that causes failure after rebase )",
+      "parentUuid": "AAAATn//Ito\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I8Y\u003d",
         "filename": "keystone/tests/test_serializer.py",
         "patchSetId": 8
@@ -206,6 +278,24 @@
       "side": 1,
       "message": "As a purest I like them separate as I don\u0027t like the import * pattern. If it\u0027s a deal breaker I would be willing to reconsider.",
       "parentUuid": "AAAATn//I8Y\u003d",
+      "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ECM\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-14T23:43:09Z",
+      "side": 1,
+      "message": "I\u0027m fine with it either way. I just think ksmatchers is an ugly name and can\u0027t think of a better one so would be nice to only have matchers.",
+      "parentUuid": "AAAATn//Iuc\u003d",
       "revId": "5b2298c882191dbf46f151ed8da45d4c311a6ae0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
