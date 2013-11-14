@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//FJk\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T16:59:33Z",
+      "side": 1,
+      "message": "AuthContextMiddleware  would be clearer",
+      "revId": "05d197d3fad3c4b1f114aa54edb40b11c25f50c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//FKk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T16:59:33Z",
+      "side": 1,
+      "message": "if environemnt is not in the context, it is a bug.  so please do just the second half of this check.\n\nThis really should be pulled out into middleware.  We have the admin_auth middleware that could be repurposed for this.",
+      "revId": "05d197d3fad3c4b1f114aa54edb40b11c25f50c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//FKg\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T16:59:33Z",
+      "side": 1,
+      "message": "Let\u0027s not put anything more into this file.",
+      "revId": "05d197d3fad3c4b1f114aa54edb40b11c25f50c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//FKY\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T16:59:33Z",
+      "side": 1,
+      "message": "Just define it here.  Move all references to this middleware file.",
+      "revId": "05d197d3fad3c4b1f114aa54edb40b11c25f50c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//FKI\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-14T16:59:33Z",
+      "side": 1,
+      "message": "Move that function here.",
+      "revId": "05d197d3fad3c4b1f114aa54edb40b11c25f50c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
