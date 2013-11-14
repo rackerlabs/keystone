@@ -51,6 +51,24 @@
       "revId": "d77be6714af1d741681ba9f7ba0b6c01b244d2b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//HDM\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-11-14T10:24:40Z",
+      "side": 1,
+      "message": "That is the intention of this test - the error I saw was the expires_at\u003d\"\" case below, which happens when you try to send an empty expires_at in XML format, then the controller adds \"Z\" and fails to parse the result.  \n\nIf there is something more you think we should test here I can certainly add it - I\u0027ll ping you later to discuss as I\u0027m not currently sure what needs to be added.\n\nThanks for the review! :)",
+      "parentUuid": "AAAATn//Iag\u003d",
+      "revId": "d77be6714af1d741681ba9f7ba0b6c01b244d2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
