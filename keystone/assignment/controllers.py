@@ -843,8 +843,8 @@ class RoleAssignmentV3(controller.V3Controller):
             return True
 
     @controller.filterprotected('group.id', 'role.id',
-                                'scope.domain.id', 'scope.project.id',
-                                'scope.OS-INHERIT:inherited_to', 'user.id')
+                                   'scope.domain.id', 'scope.project.id',
+                                   'scope.OS-INHERIT:inherited_to', 'user.id')
     def list_role_assignments(self, context, filters):
 
         # TODO(henry-nash): This implementation uses the standard filtering
