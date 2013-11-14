@@ -16,6 +16,7 @@
 
 import json
 
+from keystone.common import authorization
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
@@ -395,7 +396,7 @@ class Auth(controller.V2Controller):
                     _('Token does not belong to specified tenant.'))
         return data
 
-    @controller.protected()
+    @authorization.protected()
     def validate_token_head(self, context, token_id):
         """Check that a token is valid.
 
@@ -407,7 +408,7 @@ class Auth(controller.V2Controller):
         belongs_to = context['query_string'].get('belongsTo')
         self.token_provider_api.check_v2_token(token_id, belongs_to)
 
-    @controller.protected()
+    @authorization.protected()
     def validate_token(self, context, token_id):
         """Check that a token is valid.
 
@@ -425,7 +426,7 @@ class Auth(controller.V2Controller):
         self.assert_admin(context)
         self.token_api.delete_token(token_id)
 
-    @controller.protected()
+    @authorization.protected()
     def revocation_list(self, context, auth=None):
         tokens = self.token_api.list_revoked_tokens()
 

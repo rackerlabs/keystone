@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import authorization
 from keystone.common import controller
 
 
@@ -21,7 +22,7 @@ class PolicyV3(controller.V3Controller):
     collection_name = 'policies'
     member_name = 'policy'
 
-    @controller.protected()
+    @authorization.protected()
     def create_policy(self, context, policy):
         ref = self._assign_unique_id(self._normalize_dict(policy))
         self._require_attribute(ref, 'blob')
@@ -30,21 +31,21 @@ class PolicyV3(controller.V3Controller):
         ref = self.policy_api.create_policy(ref['id'], ref)
         return PolicyV3.wrap_member(context, ref)
 
-    @controller.filterprotected('type')
+    @authorization.filterprotected('type')
     def list_policies(self, context, filters):
         refs = self.policy_api.list_policies()
         return PolicyV3.wrap_collection(context, refs, filters)
 
-    @controller.protected()
+    @authorization.protected()
     def get_policy(self, context, policy_id):
         ref = self.policy_api.get_policy(policy_id)
         return PolicyV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_policy(self, context, policy_id, policy):
         ref = self.policy_api.update_policy(policy_id, policy)
         return PolicyV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_policy(self, context, policy_id):
         return self.policy_api.delete_policy(policy_id)
