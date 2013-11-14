@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//FlY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-14T15:27:27Z",
+      "side": 1,
+      "message": "I pop the null or empty urls from the response as the endpoint dict.See line 99 in controllers.py",
+      "parentUuid": "AAAATn//HFA\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//HFU\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-14T10:14:14Z",
       "side": 1,
       "message": "I just made a test and found the server returned 400 when the publicurl was set to \"\", even if this line wasn\u0027t changed.",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Fj4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-14T15:27:27Z",
+      "side": 1,
+      "message": "The publicurl is check in line 85.",
+      "parentUuid": "AAAATn//HFU\u003d",
       "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
