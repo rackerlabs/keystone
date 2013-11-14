@@ -16,6 +16,7 @@
 
 """Extensions supporting OAuth1."""
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -34,13 +35,13 @@ class ConsumerCrudV3(controller.V3Controller):
     collection_name = 'consumers'
     member_name = 'consumer'
 
-    @controller.protected()
+    @authorization.protected()
     def create_consumer(self, context, consumer):
         ref = self._assign_unique_id(self._normalize_dict(consumer))
         consumer_ref = self.oauth_api.create_consumer(ref)
         return ConsumerCrudV3.wrap_member(context, consumer_ref)
 
-    @controller.protected()
+    @authorization.protected()
     def update_consumer(self, context, consumer_id, consumer):
         self._require_matching_id(consumer_id, consumer)
         ref = self._normalize_dict(consumer)
@@ -48,17 +49,17 @@ class ConsumerCrudV3(controller.V3Controller):
         ref = self.oauth_api.update_consumer(consumer_id, consumer)
         return ConsumerCrudV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def list_consumers(self, context):
         ref = self.oauth_api.list_consumers()
         return ConsumerCrudV3.wrap_collection(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def get_consumer(self, context, consumer_id):
         ref = self.oauth_api.get_consumer(consumer_id)
         return ConsumerCrudV3.wrap_member(context, ref)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_consumer(self, context, consumer_id):
         user_token_ref = self.token_api.get_token(context['token_id'])
         user_id = user_token_ref['user'].get('id')
@@ -76,7 +77,7 @@ class AccessTokenCrudV3(controller.V3Controller):
     collection_name = 'access_tokens'
     member_name = 'access_token'
 
-    @controller.protected()
+    @authorization.protected()
     def get_access_token(self, context, user_id, access_token_id):
         access_token = self.oauth_api.get_access_token(access_token_id)
         if access_token['authorizing_user_id'] != user_id:
@@ -84,13 +85,13 @@ class AccessTokenCrudV3(controller.V3Controller):
         access_token = self._format_token_entity(access_token)
         return AccessTokenCrudV3.wrap_member(context, access_token)
 
-    @controller.protected()
+    @authorization.protected()
     def list_access_tokens(self, context, user_id):
         refs = self.oauth_api.list_access_tokens(user_id)
         formatted_refs = ([self._format_token_entity(x) for x in refs])
         return AccessTokenCrudV3.wrap_collection(context, formatted_refs)
 
-    @controller.protected()
+    @authorization.protected()
     def delete_access_token(self, context, user_id, access_token_id):
         access_token = self.oauth_api.get_access_token(access_token_id)
         consumer_id = access_token['consumer_id']
@@ -125,7 +126,7 @@ class AccessTokenRolesV3(controller.V3Controller):
     collection_name = 'roles'
     member_name = 'role'
 
-    @controller.protected()
+    @authorization.protected()
     def list_access_token_roles(self, context, user_id, access_token_id):
         access_token = self.oauth_api.get_access_token(access_token_id)
         if access_token['authorizing_user_id'] != user_id:
@@ -135,7 +136,7 @@ class AccessTokenRolesV3(controller.V3Controller):
         refs = ([self._format_role_entity(x) for x in authed_role_ids])
         return AccessTokenRolesV3.wrap_collection(context, refs)
 
-    @controller.protected()
+    @authorization.protected()
     def get_access_token_role(self, context, user_id,
                               access_token_id, role_id):
         access_token = self.oauth_api.get_access_token(access_token_id)
@@ -304,7 +305,7 @@ class OAuthControllerV3(controller.V3Controller):
 
         return response
 
-    @controller.protected()
+    @authorization.protected()
     def authorize_request_token(self, context, request_token_id, roles):
         """An authenticated user is going to authorize a request token.
 
