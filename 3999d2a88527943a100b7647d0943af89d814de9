@@ -16,6 +16,24 @@
       "revId": "3999d2a88527943a100b7647d0943af89d814de9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/6g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-15T22:59:01Z",
+      "side": 1,
+      "message": "Thanks for figuring this out. Much appreciated!!!",
+      "parentUuid": "AAAATn//ANA\u003d",
+      "revId": "3999d2a88527943a100b7647d0943af89d814de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
