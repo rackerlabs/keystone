@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//AOE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-15T21:13:01Z",
+      "side": 1,
+      "message": "I think I don\u0027t have to do anything here?",
+      "parentUuid": "AAAATn//AQg\u003d",
+      "revId": "6a435e6c307709f9833b55f97a4f3bce2f260702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//AQU\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-15T20:43:04Z",
       "side": 1,
       "message": "I\u0027m still a little unclear as to why you are mapping this to user.domain_id as opposed to user.domain.id. We could do either of course, but I would have thought we would want to create a target representation that mirrors the structure of the token (otherwise how would policy writers know what the target structure is?)",
+      "revId": "6a435e6c307709f9833b55f97a4f3bce2f260702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//AOA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-15T21:13:01Z",
+      "side": 1,
+      "message": "Now I got your point. Let me fix it",
+      "parentUuid": "AAAATn//AQU\u003d",
       "revId": "6a435e6c307709f9833b55f97a4f3bce2f260702",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
