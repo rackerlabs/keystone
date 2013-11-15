@@ -16,6 +16,24 @@
       "revId": "3e0cc37cf46cb1d512049cc23bea2e9b2f78daa8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Ako\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-15T19:08:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//DTc\u003d",
+      "revId": "3e0cc37cf46cb1d512049cc23bea2e9b2f78daa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
