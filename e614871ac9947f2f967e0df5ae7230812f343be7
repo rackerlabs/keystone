@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+/3c\u003d",
+        "filename": "keystone/tests/_ldap_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-15T23:19:17Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem like a bug, something more along the lines of an implementation requirement.  You must always map an attribute to a LDAP attr.  Without that, it is impossible to store the value.  I\u0027m not sure if this is something to be \"fixed\".  Unless we are looking to add some kind of mapping to a \"text blob\" equivalent and store JSON in that within LDAP.",
+      "revId": "e614871ac9947f2f967e0df5ae7230812f343be7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
