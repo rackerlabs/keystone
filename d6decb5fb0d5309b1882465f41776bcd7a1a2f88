@@ -123,6 +123,24 @@
       "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Dqk\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6348
+      },
+      "writtenOn": "2013-11-15T02:34:03Z",
+      "side": 1,
+      "message": "I didn\u0027t notice the \"adminurl\" and \"internalurl\". Sorry for that.\nDeleting the empty urls seems good though in endpoint-list adminurl and internalurl still shows.",
+      "parentUuid": "AAAATn//DuU\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
