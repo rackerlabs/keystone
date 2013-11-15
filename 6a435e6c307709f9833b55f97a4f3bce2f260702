@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//AQg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-15T20:43:04Z",
+      "side": 1,
+      "message": "As an aside, I think that the contents of this whole block should be in a member method in Auth which would be called using get_member_from_driver (just like we do to get the target of other member types: user, group etc.). I appreciate might consider such a change outside of the scope of this patch.",
+      "revId": "6a435e6c307709f9833b55f97a4f3bce2f260702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//AQU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-15T20:43:04Z",
+      "side": 1,
+      "message": "I\u0027m still a little unclear as to why you are mapping this to user.domain_id as opposed to user.domain.id. We could do either of course, but I would have thought we would want to create a target representation that mirrors the structure of the token (otherwise how would policy writers know what the target structure is?)",
+      "revId": "6a435e6c307709f9833b55f97a4f3bce2f260702",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
