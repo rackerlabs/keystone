@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//DFw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-15T06:54:14Z",
+      "side": 1,
+      "message": "may want to drop a note here indicating that Auth have no collections. We are merely using them to facilitate policy decisions.",
+      "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DGo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-15T06:54:14Z",
+      "side": 1,
+      "message": "no need for user_domain_id as you are using user_id",
+      "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DGQ\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-15T06:54:14Z",
+      "side": 1,
+      "message": "is there a positive test case where userAdminA can remove userNormalA\u0027s token?",
+      "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
