@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//ANA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-15T21:08:38Z",
+      "side": 1,
+      "message": "I think this might need to be Closes-Bug: #1235778?\n\nThe link to the bug report isn\u0027t working for me.",
+      "revId": "3999d2a88527943a100b7647d0943af89d814de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
