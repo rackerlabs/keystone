@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//D28\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-15T00:54:33Z",
+      "side": 1,
+      "message": "could clean up with a function:\n\n  def default_project_changed():\n    if default_project_id is None:\n      # No new default project\n      return False\n\n    # There is a new default project\n\n    if \u0027tenantId\u0027 not in old_user_ref:\n      # default project is being added.\n      return True\n\n    # User had a default project, check if it changed.\n    return old_user_ref[\u0027tenantId\u0027] !\u003d default_project_id:\n\n  if default_project_changed():\n    self.assignment_api.get_project(default_project_id)",
+      "revId": "50d52538cf6128e4588bcce745dccb32a545e313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
