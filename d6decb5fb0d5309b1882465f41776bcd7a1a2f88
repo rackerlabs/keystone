@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//ECQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6348
+      },
+      "writtenOn": "2013-11-15T01:44:00Z",
+      "side": 1,
+      "message": "I think I have misunderstood you. I had thought you meant checking the urls\u0027 format.",
+      "parentUuid": "AAAATn//FlY\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//HFU\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 7
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "The publicurl is check in line 85.",
       "parentUuid": "AAAATn//HFU\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DxM\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6348
+      },
+      "writtenOn": "2013-11-15T01:44:00Z",
+      "side": 1,
+      "message": "Just because the line 85, when publicurl is set to \u0027\u0027, the exception will be raised and the invalid publicurl won\u0027t be written in legacy_endpoint_ref. So I think there is no need to pop it intentionally.",
+      "parentUuid": "AAAATn//Fj4\u003d",
       "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
