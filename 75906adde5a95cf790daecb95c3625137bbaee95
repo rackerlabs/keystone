@@ -16,6 +16,23 @@
       "revId": "75906adde5a95cf790daecb95c3625137bbaee95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//AHk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-15T21:41:49Z",
+      "side": 1,
+      "message": "That that\u0027s the hash of the oslo-incubator commit: http://bit.ly/1dAeFr8",
+      "revId": "75906adde5a95cf790daecb95c3625137bbaee95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
