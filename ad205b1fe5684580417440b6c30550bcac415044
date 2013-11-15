@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Bf0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-15T22:03:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//I7w\u003d",
+      "revId": "ad205b1fe5684580417440b6c30550bcac415044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I5I\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2013-11-13T22:53:34Z",
       "side": 1,
       "message": "shouldn\u0027t err_args always be true here? The check for if the call was ok was at line 294, so shouldn\u0027t this always raise?",
+      "revId": "ad205b1fe5684580417440b6c30550bcac415044",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Bes\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-15T22:03:53Z",
+      "side": 1,
+      "message": "No.  On 290 it checks to see if the provided parameters exactly match the required arguments.  There are two additional checks that need to happen if they don\u0027t match.  First is to look to see if required arguments are missing and the second is to see if too many parameters were provided.",
+      "parentUuid": "AAAATn//I54\u003d",
       "revId": "ad205b1fe5684580417440b6c30550bcac415044",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
