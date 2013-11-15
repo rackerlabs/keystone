@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Bfk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-15T19:45:09Z",
+      "side": 1,
+      "message": "Good catch!! Thanks",
+      "parentUuid": "AAAATn//BmI\u003d",
+      "revId": "e775615183677bb4253568a0fa2ec9aef9b23340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//Bms\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-15T14:35:03Z",
       "side": 1,
       "message": "a word is missing between types and directories? of?\n\u0027these types *of* directories\u0027 ?",
+      "revId": "e775615183677bb4253568a0fa2ec9aef9b23340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//AZM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-15T19:45:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//Bms\u003d",
       "revId": "e775615183677bb4253568a0fa2ec9aef9b23340",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//AZI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-15T19:45:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//BmU\u003d",
+      "revId": "e775615183677bb4253568a0fa2ec9aef9b23340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//BnU\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2013-11-15T14:35:03Z",
       "side": 1,
       "message": "indentations for lines 1348-1351 don\u0027t match those of 1330-1334",
+      "revId": "e775615183677bb4253568a0fa2ec9aef9b23340",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//AZE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-15T19:45:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//BnU\u003d",
       "revId": "e775615183677bb4253568a0fa2ec9aef9b23340",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
