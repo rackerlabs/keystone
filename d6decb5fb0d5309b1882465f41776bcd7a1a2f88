@@ -105,6 +105,24 @@
       "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DuU\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-15T02:09:16Z",
+      "side": 1,
+      "message": "There may be other urls such as \"adminurl\" and \"internalurl\",i think we should check them,and pop them if there are empty.\nYou mean i have to exclude the \"publicurl\"?I think it\u0027s unnesessary?",
+      "parentUuid": "AAAATn//DxM\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
