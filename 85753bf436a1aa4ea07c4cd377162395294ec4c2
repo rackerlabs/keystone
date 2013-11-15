@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+/z0\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-15T23:31:23Z",
+      "side": 1,
+      "message": "It\u0027s because we have to interpolate the string anyways for the exception message.  The benefit of having the logging framework do it is that the operation only happens if the string will be logged.  In this case it will happen no matter what and doing it ahead of time prevents it from happening twice.",
+      "parentUuid": "AAAATn/+/1Y\u003d",
+      "revId": "85753bf436a1aa4ea07c4cd377162395294ec4c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+/1U\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
