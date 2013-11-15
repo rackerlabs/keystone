@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Alo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-15T19:02:53Z",
+      "side": 1,
+      "message": "Good idea, fix is no the way.",
+      "parentUuid": "AAAATn//DFw\u003d",
+      "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//DGo\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Amc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-15T19:02:53Z",
+      "side": 1,
+      "message": "I need domain scoped token for this test.",
+      "parentUuid": "AAAATn//DGo\u003d",
+      "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//DGQ\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-11-15T06:54:14Z",
       "side": 1,
       "message": "is there a positive test case where userAdminA can remove userNormalA\u0027s token?",
+      "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Alw\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-11-15T19:02:53Z",
+      "side": 1,
+      "message": "test \"test_admin_revokes_user_token\" line # 450 covering use case.",
+      "parentUuid": "AAAATn//DGQ\u003d",
       "revId": "0cdfc18f1130374c8309a0fc14e5aeaa5fbcd9df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
