@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//ALo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-15T21:15:25Z",
+      "side": 1,
+      "message": "subpross -\u003e subprocess",
+      "revId": "31539f700cd8d40d2aae400c801d1e5d2657765d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//ALs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-15T21:15:25Z",
+      "side": 1,
+      "message": "Suggest using either this line or the one above. Use this section as a place to explain *why* you want to us subprocess.",
+      "revId": "31539f700cd8d40d2aae400c801d1e5d2657765d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//JYw\u003d",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 6
