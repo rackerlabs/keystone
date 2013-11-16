@@ -33,6 +33,23 @@
       "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/t4\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-16T00:11:25Z",
+      "side": 1,
+      "message": "I thought we are going with API version discovery. Having computev3 and compute essentially means we are going with different service types for different API versions of the same service.\n\nWe may want to get a general consensus before going with that direction.",
+      "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
