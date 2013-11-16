@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+/Qk\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-16T09:24:02Z",
+      "side": 1,
+      "message": "there was a separate bug, fixed by this patch, where we were not specifying the member_name as part of a V3 controller (in this case auth) that was calling the protection wrappers.  In the absence of that, you got the generic \u0027entity\u0027 stuffed into the target",
+      "parentUuid": "AAAATn/+/eE\u003d",
+      "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+/do\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 11
@@ -30,6 +48,40 @@
       "writtenOn": "2013-11-16T04:19:34Z",
       "side": 1,
       "message": "So you need to have a much better comment here. Please explain in more detail regarding why and how  the policy stuff breaks without these put here. Henry Nash covered this in his comment on an earlier patch so please expand upon his explanation.  If you don\u0027t do this we will all forget why this is here in about 3 months :-)",
+      "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/QY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-16T09:24:02Z",
+      "side": 1,
+      "message": "I really think this all belongs in a member method inside v3 Auth.  However, I agree moving it isn\u0027t really part of this patch…but perhaps you could add a comment with a TODO that this should be done.  I\u0027m happy for you to assign it to me, i.e. TODO (henry-nash):.",
+      "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/QM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-16T09:24:02Z",
+      "side": 1,
+      "message": "ahh. not sure you should change this though….I think we should just reflect what is in the token (which I agree is not very well structured, but it is what it is).  So just user_id is correct here, since that\u0027s what is in the token.  I agree that having [user_id] and [user][domain][id] appears to use conflicting styles, but that\u0027s what we have in the token.  I\u0027m assuming the token also contains [user][id] as well as [user_id]?  If so, it would perhaps be good to also put [user][id] into the representation (as well as [user_id]) and then we could slowly depreciate referring to user_id in the policy files.",
       "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
