@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+/g8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-16T03:16:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t domain_scope be an _ ?  It doesn\u0027t appear to be used",
+      "revId": "0982e18e366704aba2b021b9ff6cd9b665dc8a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/gg\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1713,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-16T03:16:35Z",
+      "side": 1,
+      "message": "Ruturns should be Returns",
+      "revId": "0982e18e366704aba2b021b9ff6cd9b665dc8a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
