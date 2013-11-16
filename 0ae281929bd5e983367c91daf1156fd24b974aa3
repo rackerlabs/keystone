@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+/eE\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-16T04:19:34Z",
+      "side": 1,
+      "message": "Why did you need to change from entity to auth?",
+      "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/do\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-16T04:19:34Z",
+      "side": 1,
+      "message": "So you need to have a much better comment here. Please explain in more detail regarding why and how  the policy stuff breaks without these put here. Henry Nash covered this in his comment on an earlier patch so please expand upon his explanation.  If you don\u0027t do this we will all forget why this is here in about 3 months :-)",
+      "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/dw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-16T04:19:34Z",
+      "side": 1,
+      "message": "What does the following section of code accomplish?",
+      "revId": "0ae281929bd5e983367c91daf1156fd24b974aa3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
