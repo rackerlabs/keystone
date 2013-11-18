@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+5AI\u003d",
+        "filename": "keystone/tests/test_ssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T22:18:52Z",
+      "side": 1,
+      "message": "suggest making this the default and then add/change as required.  This seems copied all over below for each and every test below.",
+      "revId": "f3bcd2c10ac871521eed3b8515d029c115ec6cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
