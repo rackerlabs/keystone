@@ -14,6 +14,34 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+"""Controlled access to objects without the need for multiple instantiation.
+
+This module provides a controlled way to access objects from different pieces
+of code, without having multiple instances. The most important routines are
+provider and requires, which are used as decorators to register or retrieve an
+object, respectively.
+
+By way of example, in the following code fragment:
+
+    @dependency.provider('foo_api')
+    class Foo:
+        ...
+
+    @dependency.requires('foo_api')
+    class FooClient:
+        ...
+
+Once an instance of the class Foo has been created, each FooClient will have
+an attribute 'foo_api', which refers to the instance of Foo (of which there
+should be only one). FooClients can be created both before and after the
+instance of Foo, but their 'foo_api' attribute will not exist until Foo is
+instantiated.
+
+The heaviest use of this module is the class keystone.common.manager.Manager
+and it's descendants, but there are a few others as well.
+
+"""
+
 REGISTRY = {}
 
 _future_dependencies = {}
