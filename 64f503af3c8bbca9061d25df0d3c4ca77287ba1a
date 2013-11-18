@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+47Q\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T22:57:22Z",
+      "side": 1,
+      "message": "Good catch.  This indicates we were lacking test coverage for this method.",
+      "revId": "64f503af3c8bbca9061d25df0d3c4ca77287ba1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+430\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T22:57:22Z",
+      "side": 1,
+      "message": "You should use self.opt_in_group(\u0027ldap\u0027, allow_subtree_delete\u003dTrue) instead of the direct setting of the CONF value.",
+      "revId": "64f503af3c8bbca9061d25df0d3c4ca77287ba1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
