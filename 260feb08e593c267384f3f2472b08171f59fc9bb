@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+5Q8\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-18T21:34:13Z",
+      "side": 1,
+      "message": "Python docstrings?",
+      "revId": "260feb08e593c267384f3f2472b08171f59fc9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+5RA\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-18T21:34:13Z",
+      "side": 1,
+      "message": "We should probably log something here. Informing the user we didn\u0027t find the role they were trying to delete.",
+      "revId": "260feb08e593c267384f3f2472b08171f59fc9bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
