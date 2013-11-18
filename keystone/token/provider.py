@@ -48,6 +48,7 @@ class UnsupportedTokenVersionException(Exception):
 
 @dependency.requires('token_api')
 @dependency.provider('token_provider_api')
+@dependency.requires('revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
 
@@ -222,6 +223,9 @@ class Manager(manager.Manager):
         self._validate_token.invalidate(self, token_id)
         self._validate_v2_token.invalidate(self, token_id)
         self._validate_v3_token.invalidate(self, token_id)
+
+    def revoke_token(self, token_id):
+        self.driver.revoke_token(token_id)
 
 
 class Provider(object):

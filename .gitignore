@@ -27,5 +27,6 @@ etc/logging.conf
 keystone/tests/tmp/
 .project
 .pydevproject
+.idea
 keystone/locale/*/LC_MESSAGES/*.mo
 .testrepository/

@@ -1,4 +1,4 @@
-# vim: tabstop=4 shiftwidth=4 softtabstop=4
+    # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
 # Copyright 2013 OpenStack Foundation
 #
@@ -16,6 +16,7 @@
 
 import datetime
 
+from keystone.contrib import revoke
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import tests
@@ -825,3 +826,97 @@ class TestTokenProvider(tests.TestCase):
         self.assertRaises(exception.Forbidden,
                           driver.issue_v3_token,
                           self.user_foo['id'], ['oauth1'])
+
+
+class TestRevokeToken(tests.TestCase):
+    def setUp(self):
+        super(TestRevokeToken, self).setUp()
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+        self.opt_in_group('token', provider=token.provider.UUID_PROVIDER)
+        self.method_names = []
+        self.revoke_api = revoke.Manager()
+
+    def assertEmptyRevocationList(self):
+        self.assertEqual(len(revoke.Manager().get_events()), 0)
+
+    #This function documents the logic used to test if a token
+    #should be considered revoked.
+    def assertIsRevoked(self, revocation_events, token_data):
+        pass
+
+    def test_revoke_tokens_by_token_id(self):
+        self.assertEmptyRevocationList()
+
+        t = token.provider.Manager().issue_v3_token(self.user_foo['id'],
+                                                    self.method_names)
+        self.revoke_apitoken_provider_api.revoke_token(t[0])
+        events = revoke.Manager().get_events()
+        self.assertEqual(len(events), 1)
+
+    def assertAllRevoked(self, events, issued_tokens):
+        for t in issued_tokens:
+            self.assertIsRevoked(events, t)
+
+    def issue_chained_tokens(self, t):
+        issued_tokens = [t]
+        for x in range(1, 10):
+            t = token.provider.Manager().issue_v3_token(token=t)
+            issued_tokens.append(t)
+        return issued_tokens
+
+    def test_revoke_tokens_by_token_id_revokes_chained_tokens(self):
+        t = token.provider.Manager().issue_v3_token(self.user_foo['id'],
+                                                    self.method_names)
+        issued_tokens = self.issue_chained_tokens(t)
+
+        self.token_provider_api.revoke_token(t[0])
+        events = self.revoke_api.get_events()
+        self.assertEqual(len(events), 1)
+        self.assertAllRevoked(events, issued_tokens)
+
+    def test_revoke_tokens_by_domain(self):
+
+        token.provider.Manager().issue_v3_token(self.user_foo['id'],
+                                                self.method_names)
+        self.assertEmptyRevocationList()
+        self.revoke_api.revoke_by_domain(self.domain_default['id'])
+        events = self.revoke_api.get_events()
+        self.assertEqual(len(events), 1)
+
+    def test_revoke_tokens_by_project(self):
+        for user in default_fixtures.USERS:
+            token.provider.Manager().issue_v3_token(user['id'],
+                                                    self.method_names)
+        self.assertEmptyRevocationList()
+        #TODO(ayoung):make sure this matches
+        self.revoke_api.revoke_by_project(self.project_bar['id'])
+        events = self.revoke_api.get_events()
+        self.assertEqual(len(events), 1)
+
+    def test_revoke_tokens_by_user_id(self):
+        self.assertEmptyRevocationList()
+
+        token.provider.Manager().issue_v3_token(self.user_foo['id'],
+                                                self.method_names)
+        self.revoke_api.revoke_by_user(self.user_foo['id'])
+        events = self.revoke_api.get_events()
+        self.assertEqual(len(events), 1)
+
+    def test_revoke_tokens_by_user_id_revokes_trustee_tokens(self):
+        self.assertEmptyRevocationList()
+
+        token.provider.Manager().issue_v3_token(self.user_foo['id'],
+                                                self.method_names)
+        self.revoke_api.revoke_by_user(self.user_foo['id'])
+        events = self.revoke_api.get_events()
+        self.assertEqual(len(events), 1)
+
+    def test_revoke_trust_revokes_trust_tokens(self):
+        self.assertEmptyRevocationList()
+
+        token.provider.Manager().issue_v3_token(self.user_foo['id'],
+                                                self.method_names)
+        self.revoke_api.revoke_by_user(self.user_foo['id'])
+        events = revoke.Manager().get_events()
+        self.assertEqual(len(events), 1)

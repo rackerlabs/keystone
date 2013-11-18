@@ -55,6 +55,7 @@ from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import endpoint_filter
 from keystone.contrib import oauth1
+from keystone.contrib import revoke
 from keystone import credential
 from keystone import exception
 from keystone import identity
@@ -307,7 +308,8 @@ class TestCase(testtools.TestCase):
         # assignment manager gets the default assignment driver from the
         # identity driver.
         for manager in [identity, assignment, catalog, credential,
-                        endpoint_filter, policy, token, token_provider,
+                        endpoint_filter, policy, token, revoke,
+                        token_provider,
                         trust, oauth1]:
             # manager.__name__ is like keystone.xxx[.yyy],
             # converted to xxx[_yyy]
