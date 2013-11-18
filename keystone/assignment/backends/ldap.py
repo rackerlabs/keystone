@@ -91,13 +91,35 @@ class Assignment(assignment.Driver):
                     (self.project._id_to_dn(tenant_id))
                     if self.user._dn_to_id(a.user_dn) == user_id]
 
+        def _get_roles_for_just_group_and_project(group_id, tenant_id):
+            self.identity_api.get_group(group_id)
+            self.get_project(tenant_id)
+            group_dn = self.group._id_to_dn(group_id)
+            # NOTE(marcos-fermin-lobo): In tests performed on the memory, for
+            # functions such as "self.role.get_role_assignments, it returns
+            # the key "CN" or "OU" in uppercase.
+            # The group_dn var has "CN" and "OU" in lowercase.
+            # For this reason it has been necessary to use the function
+            # "upper()" on IF sentence.
+            return [self.role._dn_to_id(a.role_dn)
+                    for a in self.role.get_role_assignments
+                    (self.project._id_to_dn(tenant_id))
+                    if a.user_dn.upper() == group_dn.upper()]
+
         if domain_id is not None:
             msg = 'Domain metadata not supported by LDAP'
             raise exception.NotImplemented(message=msg)
-        if tenant_id is None or user_id is None:
+        if group_id is None and user_id is None:
             return {}
 
-        metadata_ref = _get_roles_for_just_user_and_project(user_id, tenant_id)
+        if tenant_id is None:
+            return {}
+        if user_id is None:
+            metadata_ref = _get_roles_for_just_group_and_project(group_id,
+                                                                 tenant_id)
+        else:
+            metadata_ref = _get_roles_for_just_user_and_project(user_id,
+                                                                tenant_id)
         if not metadata_ref:
             return {}
         return {'roles': [self._role_to_dict(r, False) for r in metadata_ref]}
@@ -150,6 +172,18 @@ class Assignment(assignment.Driver):
             user_dn=user_dn,
             tenant_dn=tenant_dn)
 
+    def add_role_to_group_and_project(self, group_id, tenant_id, role_id):
+        self.identity_api.get_group(group_id)
+        self.get_project(tenant_id)
+        self.get_role(role_id)
+        group_dn = self.group._id_to_dn(group_id)
+        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
+        self.role.add_user(role_id, role_dn, group_dn, group_id, tenant_id)
+        tenant_dn = self.project._id_to_dn(tenant_id)
+        return GroupRoleAssociation(group_dn=group_dn,
+                                    role_dn=role_dn,
+                                    tenant_dn=tenant_dn)
+
     def _create_metadata(self, user_id, tenant_id, metadata):
         return {}
 
@@ -189,6 +223,13 @@ class Assignment(assignment.Driver):
                                      self.user._id_to_dn(user_id),
                                      self.project._id_to_dn(tenant_id),
                                      user_id, role_id)
+
+    def remove_role_from_group_and_project(self, group_id, tenant_id, role_id):
+        role_dn = self._subrole_id_to_dn(role_id, tenant_id)
+        return self.role.delete_user(role_dn,
+                                     self.group._id_to_dn(group_id),
+                                     self.project._id_to_dn(tenant_id),
+                                     group_id, role_id)
 
     def update_role(self, role_id, role):
         self.get_role(role_id)
@@ -255,22 +296,99 @@ class Assignment(assignment.Driver):
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
-        raise exception.NotImplemented()
+        self.get_role(role_id)
+
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        if project_id and inherited_to_projects:
+            msg = _('Inherited roles can only be assigned to domains')
+            raise exception.Conflict(type='role grant', details=msg)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+
+        if user_id is None:
+            metadata_ref['roles'] = self.add_role_to_group_and_project(
+                group_id, project_id, role_id)
+        else:
+            metadata_ref['roles'] = self.add_role_to_user_and_project(
+                user_id, project_id, role_id)
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None,
                   inherited_to_projects=False):
-        raise exception.NotImplemented()
+        role_ref = self.get_role(role_id)
+
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+        role_ids = set(self._roles_from_role_dicts(
+            metadata_ref.get('roles', []), inherited_to_projects))
+        if role_id not in role_ids:
+            raise exception.RoleNotFound(role_id=role_id)
+        return role_ref
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
-        raise exception.NotImplemented()
+        if user_id:
+            self.identity_api.get_user(user_id)
+        if group_id:
+            self.identity_api.get_group(group_id)
+
+        self.get_role(role_id)
+
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+
+        try:
+            if user_id is None:
+                metadata_ref['roles'] = self.remove_role_from_group_and_project(
+                    group_id, project_id, role_id)
+            else:
+                metadata_ref['roles'] = self.remove_role_from_user_and_project(
+                    user_id, project_id, role_id)
+        except KeyError:
+            raise exception.RoleNotFound(role_id=role_id)
 
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
-        raise exception.NotImplemented()
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+
+        return [self.get_role(x) for x in
+                self._roles_from_role_dicts(metadata_ref.get('roles', []),
+                                            inherited_to_projects)]
 
     def get_domain_by_name(self, domain_name):
         raise exception.NotImplemented()
