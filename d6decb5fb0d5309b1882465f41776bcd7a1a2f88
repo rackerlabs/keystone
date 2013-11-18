@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+50U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-18T19:08:43Z",
+      "side": 1,
+      "message": "I agree with xu-haiwei, please remove #3 from the commit message as we didn\u0027t check for the actual URL format.",
+      "parentUuid": "AAAATn//ECQ\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//HFU\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 7
@@ -138,6 +156,23 @@
       "side": 1,
       "message": "I didn\u0027t notice the \"adminurl\" and \"internalurl\". Sorry for that.\nDeleting the empty urls seems good though in endpoint-list adminurl and internalurl still shows.",
       "parentUuid": "AAAATn//DuU\u003d",
+      "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+51c\u003d",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-18T19:08:43Z",
+      "side": 1,
+      "message": "may want to use interface and url instead of k and value to make the code more readable.\n\nfor interface, url in update_urls.items():",
       "revId": "d6decb5fb0d5309b1882465f41776bcd7a1a2f88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
