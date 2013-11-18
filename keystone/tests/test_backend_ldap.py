@@ -267,6 +267,17 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertEqual(len(res), 1, "Expected 1 entry (user_1)")
         self.assertEqual(res[0]['id'], user_1_id, "Expected user 1 id")
 
+    def test_list_group_members_when_no_members(self):
+        # List group members when there is no member in the group.
+        # It should not occur any exception
+        group_id = None
+        group = dict(name=uuid.uuid4().hex,
+                     domain_id=CONF.identity.default_domain_id)
+        group_id = self.identity_api.create_group(group_id, group)['id']
+
+        # If this doesn't raise, then the test is successful.
+        self.identity_api.list_users_in_group(group_id)
+
     def test_list_domains(self):
         domains = self.assignment_api.list_domains()
         self.assertEqual(
