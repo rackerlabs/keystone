@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+5SM\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T21:30:32Z",
+      "side": 1,
+      "message": "There should also be a quick documentation of the optional() decorator as that rounds out the 3 used/provided here.",
+      "revId": "eb193bee24974daa31c43d37e2a5f7b0c698eea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+5S8\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T21:30:32Z",
+      "side": 1,
+      "message": "Suggest removing this line, as it doesn\u0027t contribute to the documentation of the functionality provided here.",
+      "revId": "eb193bee24974daa31c43d37e2a5f7b0c698eea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
