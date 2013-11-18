@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+5W8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-18T21:26:50Z",
+      "side": 1,
+      "message": "(NIT): I agree with the consistency of having the value of \u0027enabled\u0027 be a boolean but do you think we could add a little to the commit message explain *why* we should only accept boolean values?",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+5Tg\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1788,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-18T21:26:50Z",
+      "side": 1,
+      "message": "Failing jenkins since we don\u0027t have get_project contained within the identity.core.. Only CRUD on users, domains, and groups. \n\n\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L293",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+5V4\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1336,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-18T21:26:50Z",
+      "side": 1,
+      "message": "Just out of curiosity, are there positive test cases for this situation? Or are they needed?",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
