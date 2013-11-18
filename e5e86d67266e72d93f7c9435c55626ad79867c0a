@@ -50,6 +50,24 @@
       "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4ro\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T23:38:07Z",
+      "side": 1,
+      "message": "We may need to support (e.g.) computer v3 vs v2 for the time being until we get beyond the basic keystone version discovery.\n\nThough, to be 100% up front, I\u0027m not sure what Nova\u0027s take on this is.",
+      "parentUuid": "AAAATn/+/t4\u003d",
+      "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
