@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+5Qs\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T21:38:48Z",
+      "side": 1,
+      "message": "Whoopse! Whitespace!",
+      "revId": "387354726b73b21e5e99ddacdc24b4362b7db7ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+5QI\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-18T21:38:48Z",
+      "side": 1,
+      "message": "use six and abc here for the driver in the long run.\n\n@six.addmetaclass(abc.ABCMeta)\n\nand the \"methods\" should be decorated with @abc.abstractmethod",
+      "revId": "387354726b73b21e5e99ddacdc24b4362b7db7ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
