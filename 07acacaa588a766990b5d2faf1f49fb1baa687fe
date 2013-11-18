@@ -140,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//FdQ\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-18T14:41:20Z",
+      "side": 1,
+      "message": "I do agree.",
+      "parentUuid": "AAAATn//I0o\u003d",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//I0A\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 20
@@ -157,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Fds\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-18T14:41:20Z",
+      "side": 1,
+      "message": "Yes, indeed. I will do it in a separate patch, since there are a lot of them in these tests.",
+      "parentUuid": "AAAATn//I0A\u003d",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//Iy8\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 20
@@ -168,6 +204,24 @@
       "writtenOn": "2013-11-13T23:18:11Z",
       "side": 1,
       "message": "why was a test removed? Can it be modified instead?",
+      "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Fdk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-18T14:41:20Z",
+      "side": 1,
+      "message": "My fault. I removed it accidentally.",
+      "parentUuid": "AAAATn//Iy8\u003d",
       "revId": "07acacaa588a766990b5d2faf1f49fb1baa687fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
