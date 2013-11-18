@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+4qo\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-18T23:41:46Z",
+      "side": 1,
+      "message": "actually, shouldn\u0027t we switch all instances of tenant_id to project_id ?",
+      "parentUuid": "AAAATn//oVc\u003d",
+      "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+/t4\u003d",
         "filename": "etc/default_catalog.templates",
         "patchSetId": 1
