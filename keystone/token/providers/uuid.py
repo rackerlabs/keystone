@@ -470,6 +470,9 @@ class Provider(token.provider.Provider):
         return token_ref
 
     def revoke_token(self, token_id):
+        token_ref = self.token_api.get_token(token_id)
+        self.revoke_api.revoke_by_expiration(token_ref['user_id'],
+                                             token_ref['expires_at'])
         self.token_api.delete_token(token_id=token_id)
 
     def _assert_default_domain(self, token_ref):
