@@ -34,6 +34,24 @@
       "revId": "85ca6ac8a7fab14c659673ddf47777badcbcbf04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4xo\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-19T00:08:47Z",
+      "side": 1,
+      "message": "In the future a comment would be sufficient as well.  But less terse makes it easier to read.",
+      "parentUuid": "AAAATn//A6Q\u003d",
+      "revId": "85ca6ac8a7fab14c659673ddf47777badcbcbf04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
