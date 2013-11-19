@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+z8k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-11-19T20:43:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+5W8\u003d",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+5Tg\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 4
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+z5U\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1788,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-11-19T20:43:32Z",
+      "side": 1,
+      "message": "It wasn\u0027t :) in previous path i used identity_api but it\u0027s because of this change https://review.openstack.org/#/c/51688/ and my lack of attention while rebasing my new patch that create this problem.",
+      "parentUuid": "AAAATn/+3lQ\u003d",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+5V4\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 4
@@ -65,6 +101,24 @@
       "writtenOn": "2013-11-18T21:26:50Z",
       "side": 1,
       "message": "Just out of curiosity, are there positive test cases for this situation? Or are they needed?",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+z4U\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1336,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-11-19T20:43:32Z",
+      "side": 1,
+      "message": "Indirectly yes there is, like in test_backends.py test_update_project_invalid_enabled_type method.",
+      "parentUuid": "AAAATn/+5V4\u003d",
       "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
