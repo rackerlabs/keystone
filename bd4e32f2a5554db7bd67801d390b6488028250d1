@@ -16,6 +16,24 @@
       "revId": "bd4e32f2a5554db7bd67801d390b6488028250d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zfs\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-19T23:02:18Z",
+      "side": 1,
+      "message": "This actually will fail pep8 (H302) once the new hacking goes in since BaseProvider is not a module.\n\nhttps://review.openstack.org/#/c/56648/ will add new hacking",
+      "parentUuid": "AAAATn/+znY\u003d",
+      "revId": "bd4e32f2a5554db7bd67801d390b6488028250d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
