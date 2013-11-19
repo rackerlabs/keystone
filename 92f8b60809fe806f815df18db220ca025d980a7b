@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+3lQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1788,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-19T06:35:16Z",
+      "side": 1,
+      "message": "Weird, it was assignment in the previous versions of the code. I wonder what made Mouad decide to change this to identity???",
+      "parentUuid": "AAAATn/+5Tg\u003d",
+      "revId": "92f8b60809fe806f815df18db220ca025d980a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+5V4\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 4
