@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+0PA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2013-11-19T19:16:42Z",
+      "side": 1,
+      "message": "Sorry to raise a nit, but in general we don\u0027t (in code comments) refer to code how it used to be (that\u0027s what git is for).  So perhaps this should say something like: \n\n\" From V3 auth controller code we are calling protection() wrappers, so we need to setup the member_name and  collection_name….\"",
+      "revId": "84ca3a7973acebcf552b27b52420a990e44d5771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
