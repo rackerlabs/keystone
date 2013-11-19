@@ -34,6 +34,24 @@
       "revId": "bbcf7853dfb8c614f653a1c8e01e9635bee3ed96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zcE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-19T23:14:44Z",
+      "side": 1,
+      "message": "as I recall, related-bug: \u003cid\u003e is the correct nomenclature.  Please correct me if i\u0027m wrong.",
+      "parentUuid": "AAAATn/+zro\u003d",
+      "revId": "bbcf7853dfb8c614f653a1c8e01e9635bee3ed96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
