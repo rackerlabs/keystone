@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+zh4\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-19T22:46:48Z",
+      "side": 0,
+      "message": "Would it make sense to move this logic to keystone/token/provider.py? We would be inheriting from the same module and possibly a different class name. Just thinking about this since it would keep the token/provider logic consolidated without spreading common functionality to another module. Thoughts?",
+      "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
