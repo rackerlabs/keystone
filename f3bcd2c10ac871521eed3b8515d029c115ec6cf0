@@ -34,6 +34,24 @@
       "revId": "f3bcd2c10ac871521eed3b8515d029c115ec6cf0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4WU\u003d",
+        "filename": "keystone/tests/test_ssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-19T01:11:43Z",
+      "side": 1,
+      "message": "Fair enough.",
+      "parentUuid": "AAAATn/+4fA\u003d",
+      "revId": "f3bcd2c10ac871521eed3b8515d029c115ec6cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
