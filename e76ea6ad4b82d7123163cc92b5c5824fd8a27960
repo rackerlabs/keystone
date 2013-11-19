@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+3bs\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-19T07:13:29Z",
+      "side": 1,
+      "message": "Why is this target.auth.user.domain.id as opposed to just target.user.domain_id ?  Is the difference between these two documented somewhere?",
+      "revId": "e76ea6ad4b82d7123163cc92b5c5824fd8a27960",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+3c4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-19T07:13:29Z",
+      "side": 1,
+      "message": "Typo on this line. Perhaps it should be \"would not reflect the exact entity that is in context.\"   ???",
+      "revId": "e76ea6ad4b82d7123163cc92b5c5824fd8a27960",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
