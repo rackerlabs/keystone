@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+z8c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-19T20:30:31Z",
+      "side": 1,
+      "message": "Please add the relevant bug information line.  See https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_GIT_commit_message_structure for more information on proper git commit messages.\n\nIn this case the line would be:\n\ncloses-bug: #1252428",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+4ss\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
