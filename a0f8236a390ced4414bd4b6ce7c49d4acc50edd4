@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+zaY\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-19T23:28:54Z",
+      "side": 0,
+      "message": "(NIT): Why delete the newline here?",
+      "revId": "a0f8236a390ced4414bd4b6ce7c49d4acc50edd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

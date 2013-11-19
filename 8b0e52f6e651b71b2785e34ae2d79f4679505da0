@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+zaQ\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-19T23:28:54Z",
+      "side": 1,
+      "message": "(NIT): Can probably just keep this at \n\n\u0027null or empty urls can be discarded\u0027",
+      "revId": "8b0e52f6e651b71b2785e34ae2d79f4679505da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
