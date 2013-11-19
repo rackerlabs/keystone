@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+zuw\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T21:45:03Z",
+      "side": 1,
+      "message": "I\u0027m not sure what \"controlled\" means here... controlled by what?\n\nThis module is for dependency injection so that should be mentioned.",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zuk\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T21:45:03Z",
+      "side": 1,
+      "message": "suggest change \"routines\" to \"decorators\"\n\nrequires doesn\u0027t really retrieve an object... it injects the provider.",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zuY\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T21:45:03Z",
+      "side": 1,
+      "message": "suggest remove \"Once an instance of the class Foo has been created,\" .. not really how we want to think of this.",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zuQ\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T21:45:03Z",
+      "side": 1,
+      "message": "resolve_future_dependencies should be called only once, after he initial \"global\" objects are created (this happens in service.py). It was put in to handle a circular dependency during startup and wasn\u0027t planned to be used in any other case. We should just not have circular dependencies in objects created after startup (i.e., after the call to resolve_future_dependencies().",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+4+I\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -65,6 +133,23 @@
       "side": 1,
       "message": "My default tends to be to not adjust the capitalization of identifiers, even when it conflicts with English grammar. If you think it would be better to capitalize it, I can do so.",
       "parentUuid": "AAAATn/+4ss\u003d",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zt8\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T21:45:03Z",
+      "side": 1,
+      "message": "this is more a description of what happens and not really how users should think about it. optional is to be used if the provider may not be registered. The member will be set to None if there\u0027s no provider.",
       "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
