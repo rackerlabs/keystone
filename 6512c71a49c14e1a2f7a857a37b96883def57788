@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+4V4\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T01:16:37Z",
+      "side": 1,
+      "message": "I think you can use \n\n e \u003d self.assertRaises(exception.ControllerArgsError , self.inspect, func_user_test, params)",
+      "revId": "6512c71a49c14e1a2f7a857a37b96883def57788",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
