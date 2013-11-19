@@ -16,6 +16,24 @@
       "revId": "bbcf7853dfb8c614f653a1c8e01e9635bee3ed96",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zro\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1849
+      },
+      "writtenOn": "2013-11-19T23:03:30Z",
+      "side": 1,
+      "message": "Bug https://bugs.launchpad.net/keystone/+bug/1252454 isn\u0027t actually related to this patch beyond this review raised the issue.\n\nWhat would you like me to say here? As this is only tangentially related and definitely doesn\u0027t fix bug 1252454",
+      "parentUuid": "AAAATn/+z4s\u003d",
+      "revId": "bbcf7853dfb8c614f653a1c8e01e9635bee3ed96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
