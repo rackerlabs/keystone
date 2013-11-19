@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+znY\u003d",
+        "filename": "keystone/token/providers/uuid.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-19T22:19:34Z",
+      "side": 1,
+      "message": "(NIT): Just for consistency sake, pki.py inherits from BaseProvider like.. \n\n    class Provider(common.BaseProvider):\n\nand here we are importing the class directly. \n\n    class Provider(BaseProvider):\n\nThinking it might be easier for readability between the two if they are consistent.",
+      "revId": "bd4e32f2a5554db7bd67801d390b6488028250d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
