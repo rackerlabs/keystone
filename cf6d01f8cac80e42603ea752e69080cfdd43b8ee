@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+zd8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-19T23:07:29Z",
+      "side": 1,
+      "message": "Just a brain-fart ... I think we may need to have a read-only LDAP backend. Something like\n\ndriver \u003d keystone.identity.backends.ldap.ReadOnlyIdentity\n\ninstead of this an a bunch of options like\n\nuser_allow_* \u003d False\n\nWe should aim for simplicity.",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zfY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-19T23:07:29Z",
+      "side": 1,
+      "message": "Can you please translate this sentence into plain English?\n\n\"In the above scenario, the existing LDAP configuration in keystone.conf is still valid.\"",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+0BE\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -47,6 +81,40 @@
       "writtenOn": "2013-11-19T20:00:00Z",
       "side": 1,
       "message": "e.g. or i.e.?",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zek\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-19T23:07:29Z",
+      "side": 1,
+      "message": "I think its universally understood that explicit overrides implicit. Not sure we even need to mention it.",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+zdo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-19T23:07:29Z",
+      "side": 1,
+      "message": "Ugly! We should really have a ReadOnlyIdentity driver instead of these. And why do we need three? Do we even have a use case where we only allow to create but not update or delete? I haven\u0027t seen one.",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
