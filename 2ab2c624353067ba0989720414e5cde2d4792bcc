@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+1Bk\u003d",
+        "filename": "run_tests.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-19T16:35:31Z",
+      "side": 0,
+      "message": "the license notice should probably stay",
+      "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
