@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+1z4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-19T13:53:02Z",
+      "side": 1,
+      "message": "I\u0027m confused by this.  This line is an existing line that is passing domain_scope as a kwarg into identity_api.update_user.",
+      "parentUuid": "AAAATn/+/g8\u003d",
+      "revId": "0982e18e366704aba2b021b9ff6cd9b665dc8a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+/gg\u003d",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-16T03:16:35Z",
       "side": 1,
       "message": "Ruturns should be Returns",
+      "revId": "0982e18e366704aba2b021b9ff6cd9b665dc8a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+1zo\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1713,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-19T13:53:02Z",
+      "side": 1,
+      "message": "Nice catch. Thanks.",
+      "parentUuid": "AAAATn/+/gg\u003d",
       "revId": "0982e18e366704aba2b021b9ff6cd9b665dc8a58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
