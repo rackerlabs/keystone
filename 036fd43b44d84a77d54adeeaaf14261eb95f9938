@@ -16,6 +16,24 @@
       "revId": "036fd43b44d84a77d54adeeaaf14261eb95f9938",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ztg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T21:47:01Z",
+      "side": 1,
+      "message": "you can verify the defaults by checking against the common.config code: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/config.py#n262",
+      "parentUuid": "AAAATn/+zuo\u003d",
+      "revId": "036fd43b44d84a77d54adeeaaf14261eb95f9938",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
