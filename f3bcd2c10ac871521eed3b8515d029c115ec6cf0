@@ -16,6 +16,24 @@
       "revId": "f3bcd2c10ac871521eed3b8515d029c115ec6cf0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4fA\u003d",
+        "filename": "keystone/tests/test_ssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T00:49:12Z",
+      "side": 1,
+      "message": "These are SSL tests so it makes sense to be explicit in these options rather than have a default.",
+      "parentUuid": "AAAATn/+5AI\u003d",
+      "revId": "f3bcd2c10ac871521eed3b8515d029c115ec6cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
