@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+4cM\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T01:03:11Z",
+      "side": 1,
+      "message": "change \"three\" to \"two\"",
+      "revId": "27de643676bc36f469d502b8fca0971a51dc16a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4b4\u003d",
+        "filename": "keystone/tests/auth_plugin_external_deprecated.conf",
+        "patchSetId": 21
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T01:03:11Z",
+      "side": 1,
+      "message": "remove this file?",
+      "revId": "27de643676bc36f469d502b8fca0971a51dc16a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4Y0\u003d",
+        "filename": "keystone/tests/auth_plugin_external_domain.conf",
+        "patchSetId": 21
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T01:03:11Z",
+      "side": 1,
+      "message": "suggest revert the change on the previous line since it\u0027s not really relevant to this patch.",
+      "revId": "27de643676bc36f469d502b8fca0971a51dc16a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4ag\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T01:03:11Z",
+      "side": 1,
+      "message": "suggest revert this change since it\u0027s irrelevant to this patch.",
+      "revId": "27de643676bc36f469d502b8fca0971a51dc16a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4ZM\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1640,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-19T01:03:11Z",
+      "side": 1,
+      "message": "rather than copy and paste, suggest define a local function to call.",
+      "revId": "27de643676bc36f469d502b8fca0971a51dc16a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
