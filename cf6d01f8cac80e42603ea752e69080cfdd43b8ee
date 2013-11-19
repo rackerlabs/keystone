@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+0CU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-19T20:00:00Z",
+      "side": 1,
+      "message": "I\u0027d rather rephrase to \"read-only directories accessed by LDAP ...\" and remove \"and is also read only\", but I am not a native English speaker so I may be totally wrong.",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+0Bo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-19T20:00:00Z",
+      "side": 1,
+      "message": "Which version? I\u0027d rather specify \"versions prior to Havana\".",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+0BE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-19T20:00:00Z",
+      "side": 1,
+      "message": "e.g. or i.e.?",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
