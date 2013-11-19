@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+zpk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-19T22:00:36Z",
+      "side": 1,
+      "message": "Any docs on the protection part besides the basics? Or are we just assuming common sense?",
+      "revId": "5b04a7954cfd718c05dd11fdfc392c27c6c4a608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
