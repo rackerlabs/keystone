@@ -16,6 +16,24 @@
       "revId": "e614871ac9947f2f967e0df5ae7230812f343be7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+xdQ\u003d",
+        "filename": "keystone/tests/_ldap_livetest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2013-11-20T11:55:21Z",
+      "side": 1,
+      "message": "In this case will it be better to change the skip message to \"Using arbitrary attributes doesn\u0027t work under LDAP\" or something like that?",
+      "parentUuid": "AAAATn/+/3c\u003d",
+      "revId": "e614871ac9947f2f967e0df5ae7230812f343be7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
