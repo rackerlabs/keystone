@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+y3E\u003d",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-20T04:04:19Z",
+      "side": 1,
+      "message": "Take a look at how I used assertRaises in patchset 10.  That removes the need for a try-except.",
+      "revId": "905070163ef65855e6e77d335f48d21b058f447e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
