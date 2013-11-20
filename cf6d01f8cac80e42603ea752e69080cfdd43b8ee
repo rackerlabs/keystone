@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+wqI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-20T15:21:11Z",
+      "side": 1,
+      "message": "drop the word \"only\"\n\nIt is not that the information is \"read only\" but rather that the application developer is not allowed to modify it:  it is a question of permission, not permanence.\n\n\"Many environments typically have user and group information in directories that are accessable by LDAP.  This information is for read-only use in a wide array of applications. \"",
+      "parentUuid": "AAAATn/+0CU\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+0Bo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+wpw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-20T15:21:11Z",
+      "side": 1,
+      "message": "A single, overriding configuration option makes more sense than a separate backend.  But that is not a documentation issue.",
+      "parentUuid": "AAAATn/+zd8\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zfY\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -64,6 +100,24 @@
       "writtenOn": "2013-11-19T23:07:29Z",
       "side": 1,
       "message": "Can you please translate this sentence into plain English?\n\n\"In the above scenario, the existing LDAP configuration in keystone.conf is still valid.\"",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wpI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-20T15:21:11Z",
+      "side": 1,
+      "message": "\"Once the assignment driver  has been explicitly set to the sql, the LDAP configuration values for projects, roles, role assignments, and domains will be stored and fetched from the SQL database; Values in LDAP will be ignored.\"",
+      "parentUuid": "AAAATn/+zfY\u003d",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +169,24 @@
       "writtenOn": "2013-11-19T23:07:29Z",
       "side": 1,
       "message": "Ugly! We should really have a ReadOnlyIdentity driver instead of these. And why do we need three? Do we even have a use case where we only allow to create but not update or delete? I haven\u0027t seen one.",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wo8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-20T15:21:11Z",
+      "side": 1,
+      "message": "Open A bug for that, but for now, we need to document what is in the existing driver.",
+      "parentUuid": "AAAATn/+zdo\u003d",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
