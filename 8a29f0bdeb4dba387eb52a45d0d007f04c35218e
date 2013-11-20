@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+waM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-20T16:12:20Z",
+      "side": 1,
+      "message": "(NIT): It sometimes helps to follow this guide on git commit messages: \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages\n\nWhere the title summarizes the change and the paragraph after describes the reason for the change.",
+      "revId": "8a29f0bdeb4dba387eb52a45d0d007f04c35218e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wbM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-20T16:12:20Z",
+      "side": 1,
+      "message": "Suggest using Closes Bug: #1246489",
+      "revId": "8a29f0bdeb4dba387eb52a45d0d007f04c35218e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wZ4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-20T16:12:20Z",
+      "side": 1,
+      "message": "Suggest changing \u0027x\u0027 to \u0027id\u0027 to help readability.",
+      "revId": "8a29f0bdeb4dba387eb52a45d0d007f04c35218e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wY0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-20T16:12:20Z",
+      "side": 1,
+      "message": "Nice comment! Suggest adding # NOTE(\u003cname\u003e): here similar to the format of TODOs and FIXMEs: \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#todo-vs-fixme",
+      "revId": "8a29f0bdeb4dba387eb52a45d0d007f04c35218e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wZY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-20T16:12:20Z",
+      "side": 1,
+      "message": "\"Mutation Tracking\" in SQLAlchemy\u0027s documentation \n\ncan you provide a link here?",
+      "revId": "8a29f0bdeb4dba387eb52a45d0d007f04c35218e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+wYo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-20T16:12:20Z",
+      "side": 1,
+      "message": "We are already importing sqlalchemy.orm.attributes on the line below when we are pulling in the class InstrumentedAttribute. Why not just import .attributes and refactor InstrumentedAttribute accordingly since importing a class is going to fail the pep8 checks once hacking H302 goes in?\n\nhttps://review.openstack.org/#/c/56648/",
+      "revId": "8a29f0bdeb4dba387eb52a45d0d007f04c35218e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
