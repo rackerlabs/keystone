@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+vJM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T22:03:24Z",
+      "side": 1,
+      "message": "I will update as ayoung suggests.",
+      "parentUuid": "AAAATn/+wpI\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+0BE\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -189,6 +207,24 @@
       "writtenOn": "2013-11-19T20:00:00Z",
       "side": 1,
       "message": "e.g. or i.e.?",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+vIQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T22:03:24Z",
+      "side": 1,
+      "message": "this goes away when I use ayoung\u0027s substitute",
+      "parentUuid": "AAAATn/+0BE\u003d",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
