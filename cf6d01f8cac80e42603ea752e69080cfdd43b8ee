@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+vK0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T21:46:31Z",
+      "side": 1,
+      "message": "I will make the changes suggested by ayoung",
+      "parentUuid": "AAAATn/+wqI\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+0Bo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "writtenOn": "2013-11-19T20:00:00Z",
       "side": 1,
       "message": "Which version? I\u0027d rather specify \"versions prior to Havana\".",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+vKk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T21:46:31Z",
+      "side": 1,
+      "message": "I will update as requested",
+      "parentUuid": "AAAATn/+0Bo\u003d",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -83,6 +119,24 @@
       "side": 1,
       "message": "A single, overriding configuration option makes more sense than a separate backend.  But that is not a documentation issue.",
       "parentUuid": "AAAATn/+zd8\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+vMA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T21:46:31Z",
+      "side": 1,
+      "message": "Thank you! And no thanks to Guang-yee for shooting the messenger :-).  Guang do you want you or me to open a bug on this?",
+      "parentUuid": "AAAATn/+wpw\u003d",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+vLg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T21:46:31Z",
+      "side": 1,
+      "message": "ayoung asked me to put it in",
+      "parentUuid": "AAAATn/+zek\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zdo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -187,6 +259,24 @@
       "side": 1,
       "message": "Open A bug for that, but for now, we need to document what is in the existing driver.",
       "parentUuid": "AAAATn/+zdo\u003d",
+      "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+vLs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-20T21:46:31Z",
+      "side": 1,
+      "message": "I agree with ayoung. Need to document what we have and open a bug for the change",
+      "parentUuid": "AAAATn/+wo8\u003d",
       "revId": "cf6d01f8cac80e42603ea752e69080cfdd43b8ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
