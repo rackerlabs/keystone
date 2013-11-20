@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+zCw\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7488
+      },
+      "writtenOn": "2013-11-20T03:29:28Z",
+      "side": 1,
+      "message": "May need some work around for the compatible with python 2.6.",
+      "revId": "f62c61357cdbd0115c24c9306436759a2da65ff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
