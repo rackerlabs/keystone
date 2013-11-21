@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+r4Y\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-21T15:10:51Z",
+      "side": 1,
+      "message": "Any particular reason why this is only in the kvs backend? Won\u0027t all backends need to carry out this functionality? Maybe we can find an appropriate seam for it in; \n\nhttps://github.com/openstack/keystone/blob/master/keystone/trust/controllers.py\n\nThoughts?",
+      "revId": "2b79205dc5b25d5e6c084670e1ba46e005382424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+r4Q\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-21T15:10:51Z",
+      "side": 1,
+      "message": "See previous comment. It would be nice to reuse this code, that way we know trusts are handled the same way no matter the backend.",
+      "revId": "2b79205dc5b25d5e6c084670e1ba46e005382424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
