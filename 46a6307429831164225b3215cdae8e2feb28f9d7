@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rAo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T18:23:01Z",
+      "side": 1,
+      "message": "That\u0027s interesting. I don\u0027t remember ever seeing that before. If that\u0027s the case your just creating a new method because you feel it\u0027s more expressive than \u0027with self.get_session().begin():\u0027?",
+      "parentUuid": "AAAATn/+rZU\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uss\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
