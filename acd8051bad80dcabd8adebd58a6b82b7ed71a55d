@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+uF8\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T04:24:02Z",
+      "side": 1,
+      "message": "This only works if you specify tests on the command line. That\u0027s probably the most common way to run this, but if you don\u0027t specify tests you get a strange error.",
+      "revId": "acd8051bad80dcabd8adebd58a6b82b7ed71a55d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
