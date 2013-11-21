@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 import uuid
 import webob
 
@@ -1065,6 +1066,29 @@ class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
         self.assertRaises(client_exceptions.Unauthorized, client.tenants.list)
         client.auth_token = new_token_id
         client.tenants.list()
+
+
+class KcOptTestCase(KcMasterTestCase):
+    # Set KSCTEST_REPO to the repository and KSCTEST_BRANCH to the branch,
+    # then run this test.
+    #
+    # Note that you'll wind up with a vendor/python-keystoneclient-<branch>
+    # directory for each KSCTEST_BRANCH you use, so clean them up.
+    #
+    # For example, to test your local keystoneclient,
+    #
+    # KSCTEST_REPO=/opt/stack/python-keystoneclient \
+    #  KSCTEST_BRANCH=b89d28 tox -e py27 test_keystoneclient.KcOptTestCase
+    def setUp(self):
+        self.repo = os.environ.get('KSCTEST_REPO')
+        if not self.repo:
+            self.skip('Set KSCTEST_REPO and KSCTEST_BRANCH envs to test with '
+                      'alternate/local client')
+        self.branch = os.environ.get('KSCTEST_BRANCH', 'opt')
+        super(KcOptTestCase, self).setUp()
+
+    def get_checkout(self):
+        return self.repo, self.branch
 
 
 class KcEssex3TestCase(CompatTestCase, KeystoneClientTests):
