@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+usE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T00:18:33Z",
+      "side": 1,
+      "message": "Two points:\n\n1. This may be useful in the sql.Base class so that it can be used in the other SQL backends.\n\n2. In the SQLAlchemy docs this call their example session_scope.  How do you feel about a name change?\n\nSo it would be:\n\n    with self._session_scope() as session\n\nInstead of:\n\n    with self._transaction() as session\n\nYou have to scroll down a little to see the examples: http://bit.ly/1c3YLEn",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+vGU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T00:18:33Z",
+      "side": 1,
+      "message": "Is there any reason that you are not explicitly committing or rolling back like:\n\n    session \u003d self.get_session()\n    session.begin()\n    try:\n        yield session\n        session.commit()\n    except:\n        session.rollback()\n        raise\n    finally:\n        session.close()",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uss\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T00:18:33Z",
+      "side": 1,
+      "message": "I know you were told in an earlier review that x should have been renamed to id, but id is a builtin and shouldn\u0027t be used as an identifier.  Maybe it could be project_id?  I am also fine with single letter names in situations like this (x, i, etc), but I\u0027m not sure how the core reviews feel about that.",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+u8E\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T00:18:33Z",
+      "side": 1,
+      "message": "++ Love that you limited the code in the try block.",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+u7o\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T00:18:33Z",
+      "side": 1,
+      "message": "I know that you just moved the line, but since it\u0027s all green I feel it\u0027s fair game :-)\n\nThe message portion should be wrapped in _().  So something like: _(\"..... %s\") % role_id",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+u50\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T00:18:33Z",
+      "side": 1,
+      "message": "Do we still need the flush here now that this is part of a larger transaction?",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
