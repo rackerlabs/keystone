@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+r0M\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-21T15:23:43Z",
+      "side": 1,
+      "message": "(NIT): Thanks for adding this. Another quick note, just make sure that the name you use is something that can be traced back to you, more often than not you see people using the name that they can be reached by on IRC #openstack-dev or something. \n\nEx. \n\n# NOTE(ldbragst):",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+u50\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
