@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+r2g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-21T15:17:19Z",
+      "side": 1,
+      "message": "https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references\n\nThis might help with the format of \u0027WIP for bug #1250617\u0027",
+      "revId": "2b79205dc5b25d5e6c084670e1ba46e005382424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+r4Y\u003d",
         "filename": "keystone/trust/backends/kvs.py",
         "patchSetId": 2
