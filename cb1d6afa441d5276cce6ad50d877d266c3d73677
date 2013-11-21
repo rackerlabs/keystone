@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+q88\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-21T18:45:50Z",
+      "side": 1,
+      "message": "http://en.wikipedia.org/wiki/Dependency_injection\n\n\"\"\"\nDependency injection involves at least three elements:\n\n    a dependent consumer,\n    a declaration of a component\u0027s dependencies, defined as interface contracts,\n    an injector (sometimes referred to as a provider or container) that creates instances of classes that implement a given dependency interface on request.\n\"\"\"",
+      "parentUuid": "AAAATn/+rEc\u003d",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zuk\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -158,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+q8E\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-21T18:45:50Z",
+      "side": 1,
+      "message": "seems like the difference between requires and optional is pretty obvious just from the names... requires are required and optional are optional. description of resolve_future_dependencies should be added to the end. It\u0027s there to handle circular dependencies. (I\u0027m not sure that it works correctly when optional is used after initialization...)",
+      "parentUuid": "AAAATn/+4+I\u003d",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+4ss\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -187,6 +223,24 @@
       "side": 1,
       "message": "My default tends to be to not adjust the capitalization of identifiers, even when it conflicts with English grammar. If you think it would be better to capitalize it, I can do so.",
       "parentUuid": "AAAATn/+4ss\u003d",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+q8A\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-21T18:45:50Z",
+      "side": 1,
+      "message": "could put \u0027optional\u0027 in quotes.",
+      "parentUuid": "AAAATn/+4cI\u003d",
       "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
