@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+rq4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-21T15:55:00Z",
+      "side": 1,
+      "message": "Could you put explicitly what was missing and what was added, not just the example?",
+      "revId": "5cc8e32ad7d9b9eef7845e317d8c413b4f3e44b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+rt4\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-21T15:55:00Z",
+      "side": 1,
+      "message": "Is this always happening or, does it just happen for the in-memory tests? If it is the later, why not putting this in the tests?",
+      "revId": "5cc8e32ad7d9b9eef7845e317d8c413b4f3e44b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+rt0\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-21T15:55:00Z",
+      "side": 1,
+      "message": "This is not related with your patch, therefore I\u0027ll revert it.",
+      "revId": "5cc8e32ad7d9b9eef7845e317d8c413b4f3e44b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+rsI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-21T15:55:00Z",
+      "side": 1,
+      "message": "You are reverting some changes that were applied in a previous changese, I tink that you need to rebase against master",
+      "revId": "5cc8e32ad7d9b9eef7845e317d8c413b4f3e44b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
