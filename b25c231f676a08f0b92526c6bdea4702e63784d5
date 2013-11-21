@@ -16,6 +16,24 @@
       "revId": "b25c231f676a08f0b92526c6bdea4702e63784d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uaI\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-21T02:28:08Z",
+      "side": 1,
+      "message": "Change it to what? This tests the github master version, while the new KcOptTestCase tests whichever one you want.",
+      "parentUuid": "AAAATn/+uc8\u003d",
+      "revId": "b25c231f676a08f0b92526c6bdea4702e63784d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
