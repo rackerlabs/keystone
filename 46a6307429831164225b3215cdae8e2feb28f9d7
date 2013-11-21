@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+q7Q\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T18:49:15Z",
+      "side": 1,
+      "message": "Yes, exactly. \n\nSee the mention of python\u0027s with statement at the end of the section on autocommit mode in http://docs.sqlalchemy.org/en/rel_0_9/orm/session.html#autocommit-mode.",
+      "parentUuid": "AAAATn/+rAo\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uss\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
