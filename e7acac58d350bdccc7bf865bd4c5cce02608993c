@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+ux0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "why are there two spaces after the period? \"applications.  With\"",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uuo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1321,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "This sentence still sound weird, for a non-English speaker like me anyway. :) Maybe this?\n\nPrior to Havana release, we cannot deploy Keystone with read-only directories as backends because Keystone also need to store information such as projects, roles, domains and role assignments into the directories, in conjunction with reading user and group information.",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uuE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "group assignments -\u003e group membership",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ut0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "served out of directories while assignments ...",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+utU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "How about \"served from a different Keystone backend (i.e. SQL).\" because it doesn\u0027t have to be SQL. We support other backends.",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+usg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1328,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "``keystone.conf``",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uq8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "With the above configuration, Keystone will only lookup identity-related information such users, groups, and group membership from the directory, while assignment-related information will be provided by the SQL backend.",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uq4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "Still think this sentence is redundant. Isn\u0027t that universally understood that explicit overrides implicit? Anyway, if you guys want to keep it there, fine by me.",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uy0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1346,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-11-21T00:23:32Z",
+      "side": 1,
+      "message": "in the ``[ldap]`` section of the configuration file",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
