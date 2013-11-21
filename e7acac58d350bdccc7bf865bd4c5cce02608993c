@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+t0A\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+ux0\u003d",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uuo\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-21T00:23:32Z",
       "side": 1,
       "message": "This sentence still sound weird, for a non-English speaker like me anyway. :) Maybe this?\n\nPrior to Havana release, we cannot deploy Keystone with read-only directories as backends because Keystone also need to store information such as projects, roles, domains and role assignments into the directories, in conjunction with reading user and group information.",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+tyo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1321,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+uuo\u003d",
       "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tyg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+uuE\u003d",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+ut0\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-11-21T00:23:32Z",
       "side": 1,
       "message": "served out of directories while assignments ...",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+tyE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+ut0\u003d",
       "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tw4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+utU\u003d",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+usg\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2013-11-21T00:23:32Z",
       "side": 1,
       "message": "``keystone.conf``",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+twM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1328,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+usg\u003d",
       "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tvQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+uq8\u003d",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uq4\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tv8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "I\u0027m going to err on being redundant to make sure the point is not overlooked.",
+      "parentUuid": "AAAATn/+uq4\u003d",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uy0\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 7
@@ -149,6 +293,24 @@
       "writtenOn": "2013-11-21T00:23:32Z",
       "side": 1,
       "message": "in the ``[ldap]`` section of the configuration file",
+      "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+tv4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1346,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-11-21T06:43:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+uy0\u003d",
       "revId": "e7acac58d350bdccc7bf865bd4c5cce02608993c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
