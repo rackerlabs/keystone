@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rEc\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8949
+      },
+      "writtenOn": "2013-11-21T18:34:10Z",
+      "side": 1,
+      "message": "I just meant \"controlled\" as a synonym for \"structured\" or \"organized\" or \"not spaghetti code\". Perhaps I could make that more clear.\n\nI don\u0027t think I understand what you mean by dependency injection.",
+      "parentUuid": "AAAATn/+zuw\u003d",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zuk\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rBs\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8949
+      },
+      "writtenOn": "2013-11-21T18:34:10Z",
+      "side": 1,
+      "message": "Again, the word \u0027inject\u0027 here feels very vague to me.\n\nI agree that this is a bit wordy, and could be improved by just calling them decorators, rather than \u0027routines ... which are used as decorators\u0027. I\u0027ll change that.",
+      "parentUuid": "AAAATn/+zuk\u003d",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zuY\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -64,6 +100,24 @@
       "writtenOn": "2013-11-19T21:45:03Z",
       "side": 1,
       "message": "suggest remove \"Once an instance of the class Foo has been created,\" .. not really how we want to think of this.",
+      "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+q/8\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8949
+      },
+      "writtenOn": "2013-11-21T18:34:10Z",
+      "side": 1,
+      "message": "I think it\u0027s important to specify the interface fully. without this, it isn\u0027t clear that the attributes don\u0027t get set until the provider is initialized. If it\u0027s not written down somewhere, I don\u0027t know whether:\n\n- The provider isn\u0027t available until it\u0027s initialized for the first time\n- The provider is initialized the first time an object which requires it is initialized\n- I\u0027m supposed to wait until after resolve_future_dependencies is called to actually access the providers\n- The interface is some other reasonable thing I haven\u0027t thought of.\n\nI agree the documentation I\u0027ve written could stand to be less procedural, but I\u0027m wary of achieving this by just omitting information required to use the module correctly.\n\n(incidentally, for all I know the third bullet point really is the correct one - please let me know)",
+      "parentUuid": "AAAATn/+zuY\u003d",
       "revId": "cb1d6afa441d5276cce6ad50d877d266c3d73677",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
