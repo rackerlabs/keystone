@@ -34,6 +34,24 @@
       "revId": "b25c231f676a08f0b92526c6bdea4702e63784d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uYE\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-21T02:39:42Z",
+      "side": 1,
+      "message": "Never mind.  I get it now.  You are adding a *new* set of tests that only run *if* the environment variables are set.  I like it.",
+      "parentUuid": "AAAATn/+uaI\u003d",
+      "revId": "b25c231f676a08f0b92526c6bdea4702e63784d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
