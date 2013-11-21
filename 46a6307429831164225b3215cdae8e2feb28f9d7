@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rZE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T17:21:03Z",
+      "side": 1,
+      "message": "I think \"transaction\" more clearly expresses intent \u0026 behavior. Everybody knows what a transaction is but a \"session\" is sqlalchemy jargon. Moreover, a session doesn\u0027t necessarily correspond to an ACID transaction, as is the case when you use autocommit\u003dTrue.",
+      "parentUuid": "AAAATn/+usE\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+vGU\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rZU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T17:21:03Z",
+      "side": 1,
+      "message": "What I have is more concise and has exactly the same behavior. The key is that session.begin() returns an object with and __exit__ method that has all of the commit, rollback, and close logic.",
+      "parentUuid": "AAAATn/+vGU\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uss\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-11-21T00:18:33Z",
       "side": 1,
       "message": "I know you were told in an earlier review that x should have been renamed to id, but id is a builtin and shouldn\u0027t be used as an identifier.  Maybe it could be project_id?  I am also fine with single letter names in situations like this (x, i, etc), but I\u0027m not sure how the core reviews feel about that.",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+rYc\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T17:21:03Z",
+      "side": 1,
+      "message": "changed to project_id",
+      "parentUuid": "AAAATn/+uss\u003d",
       "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rW8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T17:21:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+u7o\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+r0M\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+rWw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T17:21:03Z",
+      "side": 1,
+      "message": "changed to my launchpad name pete5\n\nI used peter because that\u0027s my gerrit name. I\u0027m always surprised when I can snap that up :-)",
+      "parentUuid": "AAAATn/+r0M\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+u50\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -115,6 +205,24 @@
       "writtenOn": "2013-11-21T00:18:33Z",
       "side": 1,
       "message": "Do we still need the flush here now that this is part of a larger transaction?",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+rUA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-11-21T17:21:03Z",
+      "side": 1,
+      "message": "All of the calls to flush() could be removed. All they do is effect outstanding ORM queries in the DBMS. The only behavioural difference could be that errors due to constraints enforced by the DBMS are detected and raised earlier in Python. Failing earlier, or failing fast, helps with debugging and precludes pointless work that will be rolled back.\n\nA side effect of flush() is that the ORM can drop state; assuming that the DBMS is more efficient than sqlalchemy, keeping the transaction\u0027s state in the DBMS is probably a good thing. However, this is a pretty hand-wavy argument, so I wouldn\u0027t put much stock in it without empirical validation.\n\nAnyhow, I just removed the flush() calls that happened immediately before the commits because they were truly pointless. I could go through and remove all of the flush calls, but I think the fail-fast argument is solid enough to justify keeping the flush() calls in.",
+      "parentUuid": "AAAATn/+u50\u003d",
       "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
