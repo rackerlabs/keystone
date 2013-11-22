@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Alvaro Lopez Garcia <aloga@ifca.unican.es>
+Code-Review+1: Paul Belanger <paul.belanger@polybeacon.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: ling-yun <zengyunling@huawei.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 22 Nov 2013 16:20:43 +0000
+Reviewed-on: https://review.openstack.org/51370
+Project: openstack/keystone
+Branch: refs/heads/master
