@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+lpM\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-22T19:15:24Z",
+      "side": 1,
+      "message": "I\u0027ll reword this and make it a docstring?",
+      "parentUuid": "AAAATn/+pNY\u003d",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+pf4\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 5
@@ -82,6 +100,24 @@
       "writtenOn": "2013-11-22T01:30:14Z",
       "side": 1,
       "message": "not really a list since these are the positional arguments.",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+lpI\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-22T19:15:24Z",
+      "side": 1,
+      "message": "Will fix in re-wording",
+      "parentUuid": "AAAATn/+pf4\u003d",
       "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+ln4\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-22T19:15:24Z",
+      "side": 1,
+      "message": "This is mirroring the base functionality.  If the section doesn\u0027t define the caching option, we make the assumption we should cache.  Changing this logic would (in theory) necessitate a change in the common cache logic.  I\u0027m ok with that but I\u0027d rather not make that change in this test-logic-fix patchset.",
+      "parentUuid": "AAAATn/+pfo\u003d",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+pfM\u003d",
         "filename": "keystone/tests/test_cache.py",
         "patchSetId": 5
@@ -116,6 +170,24 @@
       "writtenOn": "2013-11-22T01:30:14Z",
       "side": 1,
       "message": "\u003c Why was the comment removed? Don\u0027t we need to test this anymore?",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+lpQ\u003d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-22T19:15:24Z",
+      "side": 1,
+      "message": "Good catch, shouldn\u0027t be removed. will add back in.",
+      "parentUuid": "AAAATn/+pfM\u003d",
       "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
