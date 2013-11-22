@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+lZU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2226
+      },
+      "writtenOn": "2013-11-22T19:51:37Z",
+      "side": 1,
+      "message": "sysctl -w \u0027net.ipv4.ip_local_reserved_ports\u003d35357\u0027",
+      "revId": "7652beb63782a920e457fc205c3fb63120789c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
