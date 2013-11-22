@@ -1,0 +1,16 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review-1: guang-yee <guang.yee@hp.com>
+Verified+1: SmokeStack
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Victor Howard <victor.r.howard@gmail.com>
+Code-Review+1: Rick Hull <rick@cloudscaling.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 22 Nov 2013 19:23:44 +0000
+Reviewed-on: https://review.openstack.org/55600
+Project: openstack/keystone
+Branch: refs/heads/master
