@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+mnM\u003d",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-22T15:53:26Z",
+      "side": 0,
+      "message": "i swear i\u0027ve commented on this before, but perhaps it was in a previous change-id?\n\nanyway, the single quotes thing is not reflected in http://docs.openstack.org/developer/hacking/ so it should either be added there or preserved here",
+      "revId": "6751c7dc3b1b364e8f59d452f5702e89d4d56bcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//R0E\u003d",
         "filename": "HACKING.rst",
         "patchSetId": 1
