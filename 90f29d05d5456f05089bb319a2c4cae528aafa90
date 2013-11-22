@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+ob4\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-22T08:26:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+pjw\u003d",
+      "revId": "90f29d05d5456f05089bb319a2c4cae528aafa90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+pjs\u003d",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-22T01:07:17Z",
       "side": 1,
       "message": "I don\u0027t think these previous 2 lines can be removed. It\u0027s not backwards-compatible.",
+      "revId": "90f29d05d5456f05089bb319a2c4cae528aafa90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+oak\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2013-11-22T08:26:47Z",
+      "side": 1,
+      "message": "Hi Brant. It is not backwards compatible, but being backwards compatible means being unusable.\n\nA remote user containing an \"@\" (think on LDAP dns, X509 certificates or anything where the email would be used) will be completely wrong: it will be splitted and only the leftmost part would be considered. IMO we sould not split it since we are using the default domain here, and the REMOTE_USER should be considered as is.",
+      "parentUuid": "AAAATn/+pjs\u003d",
       "revId": "90f29d05d5456f05089bb319a2c4cae528aafa90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
