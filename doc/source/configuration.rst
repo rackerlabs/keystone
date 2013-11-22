@@ -25,8 +25,19 @@ Configuring Keystone
    man/keystone-all
 
 Once Keystone is installed, it is configured via a primary configuration file
-(``etc/keystone.conf``), a PasteDeploy configuration file (``etc/keystone-paste.ini``),
-possibly a separate logging configuration file, and initializing data into Keystone using the command line client.
+(``etc/keystone.conf``), a PasteDeploy configuration file
+(``etc/keystone-paste.ini``), possibly a separate logging configuration file,
+and initializing data into Keystone using the command line client.
+
+By default, keystone starts a service on `IANA-assigned port 35357
+<http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt>`_.
+This may overlap with your system's ephemeral port range, so another process
+may already be using this port without being explicitly configured to do so. To
+prevent this scenario from occurring, it's recommended that you explicitly
+exclude port 35357 from the available ephemeral port range. On a Linux system,
+this would be accomplished by::
+
+    $ echo 35357 > /proc/sys/net/ipv4/ip_local_reserved_ports
 
 Starting and Stopping Keystone
 ==============================
