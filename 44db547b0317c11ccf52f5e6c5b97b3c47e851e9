@@ -16,6 +16,24 @@
       "revId": "44db547b0317c11ccf52f5e6c5b97b3c47e851e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ksk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/035_add_compound_revoked_token_index.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2013-11-22T22:55:56Z",
+      "side": 1,
+      "message": "That wasn\u0027t intentional.. I have uploaded a new patch with both columns listed. It may matter in some instances, especially if it is ever, for some reason, made more strict upstream.",
+      "parentUuid": "AAAATn/+kvQ\u003d",
+      "revId": "44db547b0317c11ccf52f5e6c5b97b3c47e851e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
