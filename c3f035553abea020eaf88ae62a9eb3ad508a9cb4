@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+pZQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T02:09:42Z",
+      "side": 1,
+      "message": "this is a change ID and not a commit hash... the commit hash is 3acd57c2825a8bf6660c3124f12794414622eb26",
+      "revId": "c3f035553abea020eaf88ae62a9eb3ad508a9cb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
