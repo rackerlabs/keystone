@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+mic\u003d",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-22T16:13:12Z",
+      "side": 1,
+      "message": "this approach is terribly difficult to follow",
+      "revId": "79bcbce9022fbcb70ae9d23a35e78d36edfbe7b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
