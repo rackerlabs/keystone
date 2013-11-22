@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+k+g\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-22T21:39:51Z",
+      "side": 1,
+      "message": "can you express this with `except SomethingMoreSpecific:` ? there\u0027s no reason to have such a vague except block",
+      "revId": "ee9c7f3f7a2bdb841629c812cae1b6ea1eeb7dba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+k+A\u003d",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-22T21:39:51Z",
+      "side": 1,
+      "message": "i that this came from line 86, but try/excepts really shouldn\u0027t exist in test methods without good reason. just assert what you want to assert\n\nif you want to include a friendly error with the failure, most assertion methods support that as the last argument",
+      "revId": "ee9c7f3f7a2bdb841629c812cae1b6ea1eeb7dba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
