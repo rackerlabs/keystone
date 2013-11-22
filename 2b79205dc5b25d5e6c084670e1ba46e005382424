@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+ls4\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T18:56:32Z",
+      "side": 1,
+      "message": "Responded to this in the latest patch set. Thanks for respinning!",
+      "parentUuid": "AAAATn/+rqE\u003d",
+      "revId": "2b79205dc5b25d5e6c084670e1ba46e005382424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+r4Q\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 2
