@@ -16,6 +16,24 @@
       "revId": "2a2692d54f506af8cb01c4a038ac711956f9c194",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+k9k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-22T21:41:18Z",
+      "side": 1,
+      "message": "a Related-Bug in the footer would be sufficient for me, at least to link it back to the dependent commit later",
+      "parentUuid": "AAAATn/+mDs\u003d",
+      "revId": "2a2692d54f506af8cb01c4a038ac711956f9c194",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
