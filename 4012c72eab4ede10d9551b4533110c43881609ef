@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+lKw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1032
+      },
+      "writtenOn": "2013-11-22T20:49:58Z",
+      "side": 1,
+      "message": "This change is not persistent.. please add to sysctl.conf or sysctl.conf.d",
+      "revId": "4012c72eab4ede10d9551b4533110c43881609ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
