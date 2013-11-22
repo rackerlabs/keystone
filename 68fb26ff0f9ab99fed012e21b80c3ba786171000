@@ -33,6 +33,74 @@
       "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+pgA\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T01:30:14Z",
+      "side": 1,
+      "message": "not sure what \"this\" is referring to here.",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+pf4\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T01:30:14Z",
+      "side": 1,
+      "message": "not really a list since these are the positional arguments.",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+pfo\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T01:30:14Z",
+      "side": 1,
+      "message": "seems a little dangerous to have a default here since a mistyped section name would not be caught.",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+pfM\u003d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T01:30:14Z",
+      "side": 1,
+      "message": "\u003c Why was the comment removed? Don\u0027t we need to test this anymore?",
+      "revId": "68fb26ff0f9ab99fed012e21b80c3ba786171000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
