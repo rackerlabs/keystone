@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+ltw\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T18:55:59Z",
+      "side": 1,
+      "message": "Suggest wrapping this in () and removing the \\ for line continuation.",
+      "revId": "92581d81e300c390d4ded49f5aad1a72fb3c2dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+lts\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T18:55:59Z",
+      "side": 1,
+      "message": "(NIT): if else?",
+      "revId": "92581d81e300c390d4ded49f5aad1a72fb3c2dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ltM\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T18:55:59Z",
+      "side": 1,
+      "message": "Same comment as sql implementation. This is why it would be nice to have these two methods be common code so that both sql and kvs could use the same methods to maintain this. That way if it gets refactored in the future, it will be consistent for both.",
+      "revId": "92581d81e300c390d4ded49f5aad1a72fb3c2dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+lvY\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T18:55:59Z",
+      "side": 1,
+      "message": "Why not have these three returns handled in an if/elif/else?",
+      "revId": "92581d81e300c390d4ded49f5aad1a72fb3c2dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+lu4\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T18:55:59Z",
+      "side": 1,
+      "message": "(NIT): might be able to substitute \n\n    old_dict[\u0027remaining_uses\u0027] \u003d old_dict[\u0027remaining_uses\u0027] - 1\n\nfor: \n\n    old_dict[\u0027remaining_uses\u0027] \u003d- 1\n\nfor short hand format.",
+      "revId": "92581d81e300c390d4ded49f5aad1a72fb3c2dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
