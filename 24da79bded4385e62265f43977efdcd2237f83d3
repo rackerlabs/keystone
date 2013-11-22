@@ -16,6 +16,24 @@
       "revId": "24da79bded4385e62265f43977efdcd2237f83d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+lSs\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-22T20:17:51Z",
+      "side": 1,
+      "message": "Short of asking every service if a role is in use, you cannot assert that keystone should know if a role is used.\n\nthe concern here is outside the scope of this change (which is mostly a bug fix) to prevent un-desired behavior.",
+      "parentUuid": "AAAATn/+rC8\u003d",
+      "revId": "24da79bded4385e62265f43977efdcd2237f83d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
