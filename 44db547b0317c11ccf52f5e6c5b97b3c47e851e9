@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+kvQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/035_add_compound_revoked_token_index.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-22T22:37:45Z",
+      "side": 1,
+      "message": "i played with this and it works in mysql as-is, but i was surprised that it seems to have no effect if you do/don\u0027t include the token.valid column here -- explanation appreciated if anyone has one!",
+      "revId": "44db547b0317c11ccf52f5e6c5b97b3c47e851e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
