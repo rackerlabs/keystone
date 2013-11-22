@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+pjw\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T01:07:17Z",
+      "side": 1,
+      "message": "(grammar nit) remove the ,",
+      "revId": "90f29d05d5456f05089bb319a2c4cae528aafa90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+pjs\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-22T01:07:17Z",
+      "side": 1,
+      "message": "I don\u0027t think these previous 2 lines can be removed. It\u0027s not backwards-compatible.",
+      "revId": "90f29d05d5456f05089bb319a2c4cae528aafa90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
