@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+mDs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-22T17:31:10Z",
+      "side": 1,
+      "message": "(NIT): Would it be alright to add a small explanation here, describing why we need the new module from Oslo?",
+      "revId": "2a2692d54f506af8cb01c4a038ac711956f9c194",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
