@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+kMw\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-23T05:36:39Z",
+      "side": 1,
+      "message": "More of a nit than anything else, we should likely only do the string formatting action one time instead of potentially 2-3 times:\n1: line 94 (None/False returned)\n2: line 97 (True)\n3: line 100 (pop)",
+      "revId": "f77822bbc0147b1c1bb3569c14d141013645b576",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
