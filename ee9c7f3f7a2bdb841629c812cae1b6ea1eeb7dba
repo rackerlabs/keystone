@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+kPM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-23T04:34:07Z",
+      "side": 1,
+      "message": "If a non-decode error occurs, perhaps the right answer is to show the message itself and a repr of the kwargs?\n\nI really don\u0027t want to see the message or the kwargs lost.",
+      "parentUuid": "AAAATn/+kVw\u003d",
+      "revId": "ee9c7f3f7a2bdb841629c812cae1b6ea1eeb7dba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+k+A\u003d",
         "filename": "keystone/tests/test_exception.py",
         "patchSetId": 1
