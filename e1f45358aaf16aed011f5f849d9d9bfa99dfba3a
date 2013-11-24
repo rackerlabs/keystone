@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+iVQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:57:31Z",
+      "side": 1,
+      "message": "there\u0027s 2 plugins.",
+      "revId": "e1f45358aaf16aed011f5f849d9d9bfa99dfba3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iVM\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:57:31Z",
+      "side": 1,
+      "message": "\u003c we can\u0027t change this behavior because then it\u0027s not backwards compatible.",
+      "revId": "e1f45358aaf16aed011f5f849d9d9bfa99dfba3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
