@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+iYQ\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "what is our parser going to do? It doesn\u0027t know if openssl is configured for multivalue-rdn or not. a Keystone config option?",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXg\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "if we just need to know if it\u0027s an openssl DN or a RFC4514 DN, then just check if starts with /.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXc\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "reverse\u003dFalse is only used in tests and I don\u0027t see any reason to have it. Suggest remove this parameter.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXE\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "wrap strings in _() so that they can be translated.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXY\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "this is going to be incorrect if openssl isn\u0027t configured for multi-valued rdns.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXU\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "the code never uses multivalue_rdn\u003dTrue, so suggest remove the option.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXA\u003d",
+        "filename": "keystone/common/dn_conv.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "wrap strings in _() so that they can be translated.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iXI\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "use named argument for named parameter... format\u003d\u0027openssl\u0027",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iW8\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "wrap strings in _() so that they can be translated.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iW4\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "wrap strings in _() so that they can be translated.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iW0\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-24T22:45:35Z",
+      "side": 1,
+      "message": "wrap strings in _() so that they can be translated.",
+      "revId": "c3dbd62e213f3e67606a3f95ba632ffd75b03041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
