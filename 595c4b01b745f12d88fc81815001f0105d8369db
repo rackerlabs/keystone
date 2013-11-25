@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+dzo\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-25T20:36:29Z",
+      "side": 1,
+      "message": "This should probably be refactored to import utils. \n\n    from keystone.common import utils \n\nand then reference those methods using.. \n\n    utils.trust_is_limited_in_uses \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#imports",
+      "revId": "595c4b01b745f12d88fc81815001f0105d8369db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+dzk\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-25T20:36:29Z",
+      "side": 1,
+      "message": "Call these methods with utils.\u003cmethod\u003e",
+      "revId": "595c4b01b745f12d88fc81815001f0105d8369db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
