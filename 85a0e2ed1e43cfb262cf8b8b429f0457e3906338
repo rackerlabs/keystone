@@ -16,6 +16,41 @@
       "revId": "85a0e2ed1e43cfb262cf8b8b429f0457e3906338",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4nw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T16:15:40Z",
+      "side": 1,
+      "message": "looks like this isn\u0027t used anymore so it should be removed.",
+      "parentUuid": "AAAATn//IYM\u003d",
+      "revId": "85a0e2ed1e43cfb262cf8b8b429f0457e3906338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+4no\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T16:15:40Z",
+      "side": 1,
+      "message": "revert the random cleanup on previous line. should be a separate commit.",
+      "revId": "85a0e2ed1e43cfb262cf8b8b429f0457e3906338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
