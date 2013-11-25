@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+iQs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T00:18:22Z",
+      "side": 1,
+      "message": "suggest remove \"explicit\" ... not sure what it means here.",
+      "revId": "5b04a7954cfd718c05dd11fdfc392c27c6c4a608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iQo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T00:18:22Z",
+      "side": 1,
+      "message": "... but they don\u0027t (always) because the servers requesting the revocation list can overwhelm the Keystone server.",
+      "revId": "5b04a7954cfd718c05dd11fdfc392c27c6c4a608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zpk\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
