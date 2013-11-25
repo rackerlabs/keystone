@@ -41,7 +41,6 @@ gettextutils.install('keystone', lazy=True)
 
 from keystone import assignment
 from keystone import catalog
-from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import environment
 from keystone.common import kvs
@@ -57,6 +56,7 @@ from keystone import identity
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
 from keystone import policy
+from keystone.tests import fixtures
 from keystone import token
 from keystone.token import provider as token_provider
 from keystone import trust
@@ -253,9 +253,8 @@ class TestCase(testtools.TestCase):
         super(TestCase, self).setUp()
         self.config([etcdir('keystone.conf.sample'),
                      testsdir('test_overrides.conf')])
-        # ensure the cache region instance is setup
-        cache.configure_cache_region(cache.REGION)
         self.opt(policy_file=etcdir('policy.json'))
+        self.useFixture(fixtures.Cache())
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
@@ -263,10 +262,6 @@ class TestCase(testtools.TestCase):
     def tearDown(self):
         try:
             timeutils.clear_time_override()
-            # NOTE(morganfainberg):  The only way to reconfigure the
-            # CacheRegion object on each setUp() call is to remove the
-            # .backend property.
-            del cache.REGION.backend
             super(TestCase, self).tearDown()
         finally:
             for path in self._paths:
