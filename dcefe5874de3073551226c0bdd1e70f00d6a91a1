@@ -16,6 +16,23 @@
       "revId": "dcefe5874de3073551226c0bdd1e70f00d6a91a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+eSs\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-25T17:49:02Z",
+      "side": 1,
+      "message": "Another possible action here is to safe_decode the dict again supplying errors\u003d\u0027replace\u0027 so that the data also appears in the error message. It won\u0027t be 100% correct, but could give additional clues about the nature of the error.",
+      "revId": "dcefe5874de3073551226c0bdd1e70f00d6a91a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
