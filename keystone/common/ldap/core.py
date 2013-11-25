@@ -277,7 +277,11 @@ class BaseLdap(object):
         return ldap.dn.str2dn(dn)[0][0][1]
 
     def _ldap_res_to_model(self, res):
-        obj = self.model(id=self._dn_to_id(res[0]))
+        if self.id_attr == self.DEFAULT_ID_ATTR:
+            obj = self.model(id=self._dn_to_id(res[0]))
+        else:
+            obj = self.model(id=res[1][self.id_attr][0])
+
         for k in obj.known_keys:
             if k in self.attribute_ignore:
                 continue

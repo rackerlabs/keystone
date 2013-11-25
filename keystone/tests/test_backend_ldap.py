@@ -706,6 +706,36 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
         self.assertTrue(user['name'] in attrs['description'])
 
+    def test_user_attribute_mapping(self):
+        sam_account_name = uuid.uuid4().hex
+        common_name = uuid.uuid4().hex
+
+        # NOTE(cjellick): We need to first create the user with the
+        # user_id_attribute mapped to the default 'cn' and with the
+        # user_name_attribute mapped to sAMAccountName so that we
+        # can have the user correctly structured in LDAP.
+        CONF.ldap.user_name_attribute = 'sAMAccountName'
+        self.load_backends()
+        user = {
+            'id': common_name,
+            'name': sam_account_name,
+            'password': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id
+        }
+        self.identity_api.create_user(common_name, user)
+
+        # Now configure the user_id_attribute to be sAMAccountName.
+        # We have to also set the query scope to 'sub' because the code will
+        # otherwise take a shortcut and try to always construct
+        # the DN from the id
+        CONF.ldap.query_scope = 'sub'
+        CONF.ldap.user_id_attribute = 'sAMAccountName'
+        self.load_backends()
+
+        user_ref = self.identity_api.get_user(sam_account_name)
+        self.assertEquals(user_ref['id'], sam_account_name)
+        self.assertEquals(user_ref['name'], sam_account_name)
+
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
                        'fake:invalid', 'invalid1', 'invalid2:',
