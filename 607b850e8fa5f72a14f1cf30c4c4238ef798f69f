@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+ebE\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-25T17:37:11Z",
+      "side": 0,
+      "message": "please revert! this one is intentional... naive datetime objects mean that there\u0027s no timezone information included in the object, although the time itself represents UTC. to demonstrate the lack of timezone info:\n\n    \u003e\u003e\u003e from keystone.openstack.common import timeutils\n    \u003e\u003e\u003e t \u003d timeutils.utcnow()\n    \u003e\u003e\u003e t\n    datetime.datetime(2013, 11, 25, 17, 33, 7, 328633)\n    \u003e\u003e\u003e print t.tzinfo\n    None",
+      "revId": "607b850e8fa5f72a14f1cf30c4c4238ef798f69f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
