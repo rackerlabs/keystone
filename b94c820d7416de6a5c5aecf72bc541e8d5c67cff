@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+d3E\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-11-25T19:13:21Z",
+      "side": 1,
+      "message": "This might fail future pep8 Hacking checks for importing classes.",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
