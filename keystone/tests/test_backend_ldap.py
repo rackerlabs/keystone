@@ -902,6 +902,27 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
         self.assertTrue(user['name'] in attrs['description'])
 
+    def test_user_attribute_mapping(self):
+        CONF.ldap.query_scope = 'sub'
+        CONF.ldap.user_id_attribute = 'sAMAccountName'
+        CONF.ldap.user_name_attribute = 'sAMAccountName'
+        self.load_backends()
+
+        sam_account_name = uuid.uuid4().hex
+
+        user_attrs = [('objectClass', ['person', 'inetOrgPerson']),
+                      ('sAMAccountName', [sam_account_name]),
+                      ('userPassword', ['pass']),
+                      ('enabled', [True]),
+                      ('email', ['foo@bar.com'])]
+        dn = 'cn=Givenname Surname,ou=Users,cn=example,cn=com'
+        ldap_ = self.identity_api.driver.user.get_connection()
+        ldap_.add_s(dn, user_attrs)
+
+        user_ref = self.identity_api.get_user(sam_account_name)
+        self.assertEqual(user_ref['id'], sam_account_name)
+        self.assertEqual(user_ref['name'], sam_account_name)
+
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
                        'fake:invalid', 'invalid1', 'invalid2:',
