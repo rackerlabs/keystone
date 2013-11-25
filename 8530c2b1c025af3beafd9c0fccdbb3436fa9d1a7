@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+cjo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:54:13Z",
+      "side": 1,
+      "message": "If we\u0027re going to continue to support changing password this way, then not improving security with the new function. Suggest reject requests to change password this way... maybe needs a config option.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ckM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:54:13Z",
+      "side": 1,
+      "message": "change \"original password\" to \"original_password\" since that\u0027s the attribute.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ckI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:54:13Z",
+      "side": 1,
+      "message": "Probably should be Forbidden here, since we already checked authority and they have it.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cgQ\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1729,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:54:13Z",
+      "side": 1,
+      "message": "might also want to check that changing the password revoked the token.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cfw\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1740,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:54:13Z",
+      "side": 1,
+      "message": "could also test case where have original_password but not password.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ce4\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:54:13Z",
+      "side": 1,
+      "message": "this might be returning 401 because the token was revoked?",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
