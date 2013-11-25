@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+iLc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "remove \"typically\" since it\u0027s redundant",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iLU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "change \"assignments into\" to \"assignment to\"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iLQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1320,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "change \"directories\" to \"directory\"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iLM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "remove \"now\", suggest change to \"Since Havana, Keystone ...\"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iLI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "remove \"now\"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iLE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "change \"directories\" to \"LDAP\" or \"an LDAP directory\"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iK8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "remove \"to be\" ?",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+iK4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T01:15:30Z",
+      "side": 1,
+      "message": "change \"i.e.\" to \"e.g.\"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
