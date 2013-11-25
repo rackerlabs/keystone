@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+cpo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:20:03Z",
+      "side": 1,
+      "message": "token_api should be listed here since it\u0027s used.",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cmE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:20:03Z",
+      "side": 1,
+      "message": "Rather than copy and paste code, can this be put in one place? That\u0027s then called from here and keystone/token/controllers.py.",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+clA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:20:03Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+eZE\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:20:03Z",
+      "side": 1,
+      "message": "seems like this should be a separate commit.",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cpM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:20:03Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+eZI\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-25T23:20:03Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
