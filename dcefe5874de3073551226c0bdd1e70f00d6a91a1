@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+eYw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-25T17:37:26Z",
+      "side": 1,
+      "message": "It would be nice if safe_decode was smarter so that you can pass in a value for errors (like \u0027replace\u0027) and have it do the right thing.",
+      "revId": "dcefe5874de3073551226c0bdd1e70f00d6a91a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
