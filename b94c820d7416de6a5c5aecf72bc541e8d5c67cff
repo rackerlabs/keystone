@@ -16,6 +16,24 @@
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cqo\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-25T23:08:47Z",
+      "side": 1,
+      "message": "regardless of the noqa? if so, it sounds like hacking would be broken...\n\nI\u0027m happy to pull public classes into the __init__ like this",
+      "parentUuid": "AAAATn/+d3E\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
