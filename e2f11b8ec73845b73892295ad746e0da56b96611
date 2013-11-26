@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+XzM\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T21:25:37Z",
+      "side": 1,
+      "message": "nice catch, i totally forgot about this file!",
+      "revId": "e2f11b8ec73845b73892295ad746e0da56b96611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+Xos\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 6
@@ -13,6 +30,24 @@
       "writtenOn": "2013-11-26T20:33:34Z",
       "side": 1,
       "message": "I think we need to pass the domain_scope here like is done at line 729 (not that it works, but maybe will be less likely to cause confusion when trying to get it working).",
+      "revId": "e2f11b8ec73845b73892295ad746e0da56b96611",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Xbc\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T21:25:37Z",
+      "side": 1,
+      "message": "that\u0027s probably worth another discussion -- we might be able to rip all that back out",
+      "parentUuid": "AAAATn/+Xos\u003d",
       "revId": "e2f11b8ec73845b73892295ad746e0da56b96611",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
