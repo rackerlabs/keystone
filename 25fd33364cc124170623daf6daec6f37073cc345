@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+YXs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T17:35:41Z",
+      "side": 1,
+      "message": "ok. I\u0027ve got a separate change to clean up dependency lists.",
+      "parentUuid": "AAAATn/+b+c\u003d",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+cmE\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 15
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+YXo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T17:35:41Z",
+      "side": 1,
+      "message": "I\u0027m ok with this if there\u0027s some plan to change this already. Seems like it\u0027s easy enough to make it a shared implementation now and break it when the behavior changes. We should be working with a \"canonical\" representation and have the controllers modify it for their way of representing it.",
+      "parentUuid": "AAAATn/+ZPE\u003d",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+clA\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 15
@@ -137,6 +173,24 @@
       "side": 1,
       "message": "double spacing between imports and global variables is actually preferred, but not yet enforced by hacking",
       "parentUuid": "AAAATn/+clA\u003d",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+YXY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T17:35:41Z",
+      "side": 1,
+      "message": "Guidelines say to not mix whitespace changes with other changes... https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits",
+      "parentUuid": "AAAATn/+cCs\u003d",
       "revId": "25fd33364cc124170623daf6daec6f37073cc345",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
