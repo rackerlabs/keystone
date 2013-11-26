@@ -34,6 +34,42 @@
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+b8U\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-26T04:00:38Z",
+      "side": 1,
+      "message": "@Dolph: I could just as easily import out of the module instead of the package.  I was just hoping to have a nicer API for fixtures.",
+      "parentUuid": "AAAATn/+cqo\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+b8Y\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-26T04:00:38Z",
+      "side": 1,
+      "message": "@Lance: Do you have a reference for this?  It is not against pep8 to import classes.  It is, however, against the OpenStack style, but I preferred it to import *.",
+      "parentUuid": "AAAATn/+d3E\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
