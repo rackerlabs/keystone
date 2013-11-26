@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+cWw\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T00:44:06Z",
+      "side": 1,
+      "message": "suggest change \"object\" to \"instance\".\n\nsuggest also provide a reason why shouldn\u0027t create more than one instance... because each new instance will replace the current provider and you might wind up with different instances used by different consumers.",
+      "revId": "bd17f256f89a78bdd232f4d25b2b17fdc8b5e689",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cWE\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T00:44:06Z",
+      "side": 1,
+      "message": "suggest add \"with the same name as the provider\" after \"via an attribute\"... this is less vague.",
+      "revId": "bd17f256f89a78bdd232f4d25b2b17fdc8b5e689",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cV4\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T00:44:06Z",
+      "side": 1,
+      "message": "change \"It\" to \"it\" (lowercase)",
+      "revId": "bd17f256f89a78bdd232f4d25b2b17fdc8b5e689",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cVw\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T00:44:06Z",
+      "side": 1,
+      "message": "change \"The\" to \"the\" (lowercase)",
+      "revId": "bd17f256f89a78bdd232f4d25b2b17fdc8b5e689",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
