@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+ZPE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T15:27:35Z",
+      "side": 1,
+      "message": "\"share the same code\" -\u003e \"produce the same output\" :)",
+      "parentUuid": "AAAATn/+cC4\u003d",
+      "revId": "25fd33364cc124170623daf6daec6f37073cc345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+clA\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 15
