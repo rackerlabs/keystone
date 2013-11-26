@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+cCQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T03:18:31Z",
+      "side": 1,
+      "message": "the goal isn\u0027t to improve security or to prevent those with authorization from changing passwords using the administrative approach (override with a known value) -- the goal is to provide a secondary means of changing passwords for self-service",
+      "parentUuid": "AAAATn/+cjo\u003d",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+ckM\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-25T23:54:13Z",
       "side": 1,
       "message": "change \"original password\" to \"original_password\" since that\u0027s the attribute.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cCM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T03:18:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAATn/+ckM\u003d",
       "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+cBw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T03:18:31Z",
+      "side": 1,
+      "message": "i think that logic is backwards? a 403 implies that authentication succeeded but authorization failed, which is not the case here-- the supplied password was wrong so you have to stop short at 401.",
+      "parentUuid": "AAAATn/+ckI\u003d",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+cgQ\u003d",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2013-11-25T23:54:13Z",
       "side": 1,
       "message": "might also want to check that changing the password revoked the token.",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cBo\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1729,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T03:18:31Z",
+      "side": 1,
+      "message": "++, i think the v2 password change method has this test",
+      "parentUuid": "AAAATn/+cgQ\u003d",
       "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +170,24 @@
       "writtenOn": "2013-11-25T23:54:13Z",
       "side": 1,
       "message": "this might be returning 401 because the token was revoked?",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+cBE\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-11-26T03:18:31Z",
+      "side": 1,
+      "message": "my understanding is that the test method is performing these operations as an \"admin\" user from an X-Auth-Token perspective -- not as user_ref -- but it needs to (sort of) authenticate as user_ref in order to change the password (via URL + POST body). if that\u0027s correct, then a test explicitly authenticating as user_ref to do a password change (although appropriate and certainly desirable) wouldn\u0027t test the same thing as this test.\n\nthat\u0027s probably a really confusing paragraph.",
+      "parentUuid": "AAAATn/+ce4\u003d",
       "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
