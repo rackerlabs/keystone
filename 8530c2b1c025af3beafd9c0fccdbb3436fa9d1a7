@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+Yb4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T17:25:06Z",
+      "side": 1,
+      "message": "ok, different config in policy.json.",
+      "parentUuid": "AAAATn/+cCQ\u003d",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+ckM\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "i think that logic is backwards? a 403 implies that authentication succeeded but authorization failed, which is not the case here-- the supplied password was wrong so you have to stop short at 401.",
       "parentUuid": "AAAATn/+ckI\u003d",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+YbM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T17:25:06Z",
+      "side": 1,
+      "message": "I\u0027m ok with 401, too. The actual status code is pretty useless as far as figuring out what to do so irrelevant IMO.",
+      "parentUuid": "AAAATn/+cBw\u003d",
       "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -188,6 +224,24 @@
       "side": 1,
       "message": "my understanding is that the test method is performing these operations as an \"admin\" user from an X-Auth-Token perspective -- not as user_ref -- but it needs to (sort of) authenticate as user_ref in order to change the password (via URL + POST body). if that\u0027s correct, then a test explicitly authenticating as user_ref to do a password change (although appropriate and certainly desirable) wouldn\u0027t test the same thing as this test.\n\nthat\u0027s probably a really confusing paragraph.",
       "parentUuid": "AAAATn/+ce4\u003d",
+      "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+YaE\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-11-26T17:25:06Z",
+      "side": 1,
+      "message": "Is there any way the test could also verify that the 401 was because the user was disabled and not for a different reason, since we return the same code for just about everything... maybe the response body contains extra info?",
+      "parentUuid": "AAAATn/+cBE\u003d",
       "revId": "8530c2b1c025af3beafd9c0fccdbb3436fa9d1a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
