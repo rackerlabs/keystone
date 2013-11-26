@@ -227,6 +227,24 @@
       "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+b1E\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-26T06:16:27Z",
+      "side": 1,
+      "message": "The get method is used because these tests are shared between XML and JSON tests.  XML elements can be accessed using .get just like dictionaries, but the XML elements are not indexable with a key.",
+      "parentUuid": "AAAATn//Umk\u003d",
+      "revId": "a13c135ce5d5be90a0e07b9134e8c3c2eeea3e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
