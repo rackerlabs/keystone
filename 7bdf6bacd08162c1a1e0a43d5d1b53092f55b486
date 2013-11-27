@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+TLo\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-27T17:33:20Z",
+      "side": 1,
+      "message": "Should be a PUT",
+      "revId": "7bdf6bacd08162c1a1e0a43d5d1b53092f55b486",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
