@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+TKg\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-27T17:36:19Z",
+      "side": 1,
+      "message": "As discussed on IRC, admin would use \"PATCH\" on the user not the new password change mechanism since the admin user wouldn\u0027t likely know the old password.  This likely should be just owner",
+      "revId": "7bdf6bacd08162c1a1e0a43d5d1b53092f55b486",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+TK4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-27T17:36:19Z",
+      "side": 1,
+      "message": "You may want to make the domain_scope be a required argument for _update_user since (for example the change password mechanism) other things that call this may need to do the domain_id/scope lookup as well. (see line 790, that code flow does the domain scope/id lookup twice)",
+      "revId": "7bdf6bacd08162c1a1e0a43d5d1b53092f55b486",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+TLo\u003d",
         "filename": "keystone/identity/routers.py",
         "patchSetId": 7
@@ -13,6 +47,23 @@
       "writtenOn": "2013-11-27T17:33:20Z",
       "side": 1,
       "message": "Should be a PUT",
+      "revId": "7bdf6bacd08162c1a1e0a43d5d1b53092f55b486",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+TKo\u003d",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-11-27T17:36:19Z",
+      "side": 1,
+      "message": "This isn\u0027t a creation, recommend PUT instead of POST",
       "revId": "7bdf6bacd08162c1a1e0a43d5d1b53092f55b486",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
