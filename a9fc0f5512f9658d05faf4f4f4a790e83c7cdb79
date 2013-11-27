@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+WSw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-27T03:15:34Z",
+      "side": 1,
+      "message": "and make it \"assignments, to  \"",
+      "revId": "a9fc0f5512f9658d05faf4f4f4a790e83c7cdb79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+iLQ\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 8
