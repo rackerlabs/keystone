@@ -33,6 +33,24 @@
       "revId": "e1f45358aaf16aed011f5f849d9d9bfa99dfba3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+WU0\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-27T03:04:59Z",
+      "side": 1,
+      "message": "Brant See the bug report:  REMOTE_USER should have already been split.  This is a second split, and will break fo people that are using, say, an email address in the user_id",
+      "parentUuid": "AAAATn/+iVM\u003d",
+      "revId": "e1f45358aaf16aed011f5f849d9d9bfa99dfba3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
