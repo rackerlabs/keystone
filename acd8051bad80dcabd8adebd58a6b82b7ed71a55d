@@ -16,6 +16,23 @@
       "revId": "acd8051bad80dcabd8adebd58a6b82b7ed71a55d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+WQM\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-11-27T03:28:29Z",
+      "side": 1,
+      "message": "Add in the STANDARD_THREADS env var to get around eventlet threading issues",
+      "revId": "acd8051bad80dcabd8adebd58a6b82b7ed71a55d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
