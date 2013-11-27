@@ -33,6 +33,24 @@
       "revId": "acd8051bad80dcabd8adebd58a6b82b7ed71a55d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+S1M\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-27T19:03:59Z",
+      "side": 1,
+      "message": "we could make it exit (earlier) if {posargs} is empty, or run the whole suite",
+      "parentUuid": "AAAATn/+uF8\u003d",
+      "revId": "acd8051bad80dcabd8adebd58a6b82b7ed71a55d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
