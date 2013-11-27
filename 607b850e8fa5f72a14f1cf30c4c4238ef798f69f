@@ -16,6 +16,24 @@
       "revId": "607b850e8fa5f72a14f1cf30c4c4238ef798f69f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+U/g\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-11-27T10:44:50Z",
+      "side": 0,
+      "message": "Thanks very much.\nI will modify this soon.",
+      "parentUuid": "AAAATn/+ebE\u003d",
+      "revId": "607b850e8fa5f72a14f1cf30c4c4238ef798f69f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
