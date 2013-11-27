@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Yuuichi Fujioka <fujioka.yuuichi@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 27 Nov 2013 07:46:23 +0000
+Reviewed-on: https://review.openstack.org/56143
+Project: openstack/keystone
+Branch: refs/heads/master
