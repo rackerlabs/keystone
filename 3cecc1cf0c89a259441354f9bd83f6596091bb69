@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+TzQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-11-27T15:05:49Z",
+      "side": 1,
+      "message": "Please add more nformation to commit message. See https://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages",
+      "revId": "3cecc1cf0c89a259441354f9bd83f6596091bb69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
