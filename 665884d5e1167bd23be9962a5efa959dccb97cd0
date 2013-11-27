@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+SRM\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-27T21:03:59Z",
+      "side": 1,
+      "message": "this line is causing jenkins to fail. there is a limit of 80 chars per line, try to run pep8 tests before submitting",
+      "revId": "665884d5e1167bd23be9962a5efa959dccb97cd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
