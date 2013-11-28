@@ -16,6 +16,24 @@
       "revId": "48465e5e19a669c5fbe03446874b820440972fd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+QVs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2013-11-28T09:43:54Z",
+      "side": 1,
+      "message": "It is testr. The problem is testr imports all the modules prior to run tests and monkey-patching, contained in keystone/tests/core.py +44, executes before tests starts. This feature reveals the problem.",
+      "parentUuid": "AAAATn/+TFk\u003d",
+      "revId": "48465e5e19a669c5fbe03446874b820440972fd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
