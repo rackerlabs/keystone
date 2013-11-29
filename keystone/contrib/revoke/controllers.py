@@ -14,6 +14,7 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone import exception
 from keystone.openstack.common import timeutils
+from keystone.openstack.common.gettextutils import _
 
 
 @dependency.requires('revoke_api')
