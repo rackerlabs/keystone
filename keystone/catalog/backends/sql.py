@@ -22,7 +22,6 @@ from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
 
-
 CONF = config.CONF
 
 

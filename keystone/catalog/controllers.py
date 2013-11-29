@@ -21,7 +21,6 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone import exception
 
-
 INTERFACES = ['public', 'internal', 'admin']
 
 
@@ -80,6 +79,11 @@ class Endpoint(controller.V2Controller):
     def create_endpoint(self, context, endpoint):
         """Create three v3 endpoint refs based on a legacy ref."""
         self.assert_admin(context)
+
+        print("endpoint")
+        print("-------------------------------")
+        print(endpoint)
+        print("-------------------------------")
 
         # according to the v2 spec publicurl is mandatory
         self._require_attribute(endpoint, 'publicurl')
@@ -184,6 +188,12 @@ class EndpointV3(controller.V3Controller):
 
     @controller.protected()
     def create_endpoint(self, context, endpoint):
+
+        print("endpoint")
+        print("-------------------------------")
+        print(endpoint)
+        print("-------------------------------")
+
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
         self._require_attribute(ref, 'service_id')
         self._require_attribute(ref, 'interface')
