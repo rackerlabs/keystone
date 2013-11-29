@@ -16,6 +16,7 @@ from keystone import assignment
 from keystone import clean
 from keystone.common import kvs
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 class Assignment(kvs.Base, assignment.Driver):

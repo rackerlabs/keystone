@@ -21,6 +21,7 @@ from migrate.versioning import api as versioning_api
 
 from keystone.common.sql import migration_helpers
 from keystone import config
+from keystone.openstack.common.gettextutils import _
 
 
 CONF = config.CONF
