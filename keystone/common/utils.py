@@ -89,6 +89,8 @@ def hash_user_password(user):
     """Hash a user dict's password without modifying the passed-in dict."""
     try:
         password = user['password']
+        if password is None:
+            return user
     except KeyError:
         return user
     else:
@@ -99,6 +101,8 @@ def hash_ldap_user_password(user):
     """Hash a user dict's password without modifying the passed-in dict."""
     try:
         password = user['password']
+        if password is None:
+            return user
     except KeyError:
         return user
     else:
