@@ -25,6 +25,7 @@ gettextutils.install(PROJECT)
 
 from keystone.contrib.kds.api import app
 from keystone.contrib.kds.common import service
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 
 CONF = cfg.CONF

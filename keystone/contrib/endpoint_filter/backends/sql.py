@@ -17,6 +17,7 @@
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 class ProjectEndpoint(sql.ModelBase, sql.DictBase):

@@ -97,6 +97,7 @@ and consumption of PEM formatted data including:
 import base64
 import io
 from keystone.common import base64utils
+from keystone.openstack.common.gettextutils import _
 import re
 
 PEM_TYPE_TO_HEADER = {
