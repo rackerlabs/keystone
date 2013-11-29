@@ -361,6 +361,79 @@ Example (using the above cacheable_function)::
 .. _`dogpile.cache`: http://dogpilecache.readthedocs.org/
 
 
+dogpile.cache based Key-Value-Store (KVS)
+-----------------------------------------
+The ``dogpile.cache`` based KVS system has been designed to allow for flexible stores for the
+backend of the KVS system.  The implementation allows for the use of any normal ``dogpile.cache``
+cache backends to be used as a store.  All interfacing to the KVS system happens via the ``KVSBase``
+object located at ``keystone.common.kvs.KVSBase``.
+
+To utilize the KVS system an instantiation of the KVSBase class is needed with minimally the argument
+``backend`` to be passed to the constructor.  The value of the ``backend`` argument should be the short
+name of the dogpile.cache backend that is desired.  All arguments that are needed to be passed to the
+specific dogpile.cache backend that is selected should be passed as key-word arguments to the KVSBase
+constructor.  There are two basic backend implementations that are ``Keystone`` specific
+provided: ``openstack.kvs.Memory`` and ``openstack.kvs.Memcached``.
+
+The in-memory based backend has a single extra option ``isolation``; if ``isolation`` is set to false,
+the backend will not perform the ``copy.deepcopy`` operations on values during store/retrieval, allowing
+reference manipulation to affect the backend directly.
+
+Example utilizing the in-memory KVS backend with isolation disabled::
+
+    KVSBase(name='KVS_Region_Name', backend='openstack.kvs.Memory', isolation=False)
+
+The memcached backend uses the Keystone manager mechanism to support the use of any of the provided dogpile.cache
+memcached backends (``BMemcached``, ``pylibmc``, and basic ``Memcached``).  By default the standard Memcache backend
+is used.  Currently the Memcache URLs come from the ``servers`` option in the ``[memcache]`` configuration section
+of the Keystone config.
+
+Example configuring the KVS system to use memcached and a specific dogpile.cache memcached backend::
+
+    KVSBase(name='KVS_Region_name', backend='openstack.kvs.Memcached', dogpile_cache_backend='MemcachedBackend')
+
+Once a KVS object has been instantiated the method of interacting is the same as most memcache implementations::
+
+    kvs_store = KVSBase(...)
+    # Set a Value
+    kvs_store.set(<Key>, <Value>)
+    # Retrieve a value:
+    retrived_value = kvs_store.get(<key>)
+    # Delete a key/value pair:
+    kvs_store.delete(<key>)
+    # multi-get:
+    kvs_store.get_multi([<key>, <key>, ...])
+    # multi-set:
+    kvs_store.set_multi({<key>: <value>, <key>: <value>, ...})
+    # multi-delete
+    kvs_store.delete_multi([<key>, <key>, ...])
+
+Beyond the basics, the KVS system also implements a ``get_and_set`` method that allows the passing of a callback that
+will receive the value from a get and directly set the return value of the callback via a set in a single-locked
+transaction.  This is to allow for the case where an update requires the get of a value prior, but race conditions
+could occur when Keystone is run under multiple processes (e.g. HTTPD+wsgi).
+
+Example of ``get_and_set``::
+
+    kvs_store = KVSBase(...)
+    def callback(value):
+        return value + 1
+
+    kvs_store.get_and_set(<key>, callback)
+
+There are a couple of global configuration options to be aware of (that can be set in the ``[kvs]`` section of the Keystone
+configuration file): ``enable_locking``, if set to false will disable all KVS locking; ``enable_key_mangler``, if set
+to false will disable the use of key_manglers (modification of the key when saving to the backend to help prevent collisions/
+exceeding key-size limits with memcached).
+
+Finally, the use of the ``memcache_crypt`` functionality provided to the ``auth_token`` middleware has been implemented in the
+KVSBase object.  This allows for transparent encryption or HMAC integrity verification on all store/retrieval from a given KVS
+region.  These settings are configured per-KVS-region instead of globally.  By passing the ``security_strategy`` key-word arg
+and the ``secret_key`` key-word arg to the KVSBase constructor, the memcache_crypt mechanism is enabled.  The two valid
+``security_strategy`` settings are ``MAC`` (HMAC integrity validation) and ``ENCRYPT`` (full encryption).  These strategy
+names are case-sensitive.
+
+
 Building the Documentation
 ==========================
 

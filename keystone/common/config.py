@@ -260,13 +260,18 @@ FILE_OPTIONS = {
     'paste_deploy': [
         cfg.StrOpt('config_file', default=None)],
     'memcache': [
-        cfg.StrOpt('servers', default='localhost:11211'),
+        cfg.ListOpt('servers', default='localhost:11211'),
         cfg.IntOpt('max_compare_and_set_retry', default=16)],
     'catalog': [
         cfg.StrOpt('template_file',
                    default='default_catalog.templates'),
         cfg.StrOpt('driver',
-                   default='keystone.catalog.backends.sql.Catalog')]}
+                   default='keystone.catalog.backends.sql.Catalog')],
+    'kvs': [
+        cfg.ListOpt('backends', default=[]),
+        cfg.StrOpt('config_prefix', default='keystone.kvs'),
+        cfg.BoolOpt('enable_key_mangler', default=True),
+        cfg.BoolOpt('enable_locking', default=True)]}
 
 
 CONF = cfg.CONF
