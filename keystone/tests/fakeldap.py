@@ -29,6 +29,7 @@ import six
 import ldap
 
 from keystone.common import utils
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from six import moves
 

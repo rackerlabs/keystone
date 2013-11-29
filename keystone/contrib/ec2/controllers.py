@@ -40,9 +40,9 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone import exception
-from keystone import token
-
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import jsonutils
+from keystone import token
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'credential_api',

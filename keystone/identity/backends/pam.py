@@ -21,6 +21,7 @@ except ImportError:
     import PAM
 
 from keystone import identity
+from keystone.openstack.common.gettextutils import _
 
 
 def PAM_authenticate(username, password):
