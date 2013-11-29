@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import utils
 from keystone import exception
 
 
@@ -47,6 +48,10 @@ INMEMDB = DictKvs()
 
 
 class Base(object):
+    @utils.deprecated(utils.deprecated.ICEHOUSE,
+                      in_favor_of='keystone.common.kvs.KeyValueStore',
+                      remove_in=+1,
+                      what='keystone.common.kvs.Base')
     def __init__(self, db=None):
         if db is None:
             db = INMEMDB
