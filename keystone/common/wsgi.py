@@ -30,6 +30,7 @@ from keystone.common import config
 from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common import gettextutils
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log as logging

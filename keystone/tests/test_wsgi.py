@@ -312,5 +312,6 @@ class LocalizedResponseTest(tests.TestCase):
     def test_dynamic_translated_string_is_Message(self):
         # Dynamically created message strings are Message objects so that they
         # are lazy-translated.
-        self.assertIsInstance(_('The resource could not be found.'),
-                              gettextutils.Message)
+        self.assertIsInstance(gettextutils._(
+            'The resource could not be found.'),
+            gettextutils.Message)

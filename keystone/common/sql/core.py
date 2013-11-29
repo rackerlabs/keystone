@@ -30,6 +30,7 @@ from sqlalchemy import types as sql_types
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import models
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log as logging
 

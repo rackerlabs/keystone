@@ -21,6 +21,7 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 CONF = config.CONF

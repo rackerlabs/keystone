@@ -44,6 +44,8 @@ import re
 import string
 import urllib
 
+from keystone.openstack.common.gettextutils import _
+
 
 class InvalidBase64Error(ValueError):
     pass
