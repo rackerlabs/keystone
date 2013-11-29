@@ -18,6 +18,7 @@ from keystone.contrib import endpoint_filter
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
+from keystone.openstack.common.gettextutils import _
 
 
 class ProjectEndpoint(sql.ModelBase, sql.DictBase):
