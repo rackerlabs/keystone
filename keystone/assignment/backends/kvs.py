@@ -16,6 +16,7 @@ from keystone import assignment
 from keystone import clean
 from keystone.common import kvs
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 class Assignment(kvs.Base, assignment.Driver):
@@ -85,7 +86,7 @@ class Assignment(kvs.Base, assignment.Driver):
         metadata_keys = filter(lambda x: x.startswith("metadata_user-"),
                                self.db.keys())
         for key in metadata_keys:
-            _, meta_project_or_domain_id, meta_user_id = key.split('-')
+            i, meta_project_or_domain_id, meta_user_id = key.split('-')
 
             if meta_project_or_domain_id != tenant_id:
                 # target is not the project, so on to next metadata.
@@ -138,7 +139,7 @@ class Assignment(kvs.Base, assignment.Driver):
         metadata_keys = filter(lambda x: x.startswith('metadata_user-'),
                                self.db.keys())
         for key in metadata_keys:
-            _, meta_project_or_domain_id, meta_user_id = key.split('-')
+            i, meta_project_or_domain_id, meta_user_id = key.split('-')
 
             if meta_user_id != user_id:
                 # Not the user, so on to next metadata.
