@@ -17,6 +17,7 @@
 
 import sys
 
+from keystone.openstack.common.gettextutils import _
 from migrate.versioning import api as versioning_api
 
 from keystone.common.sql import migration_helpers
