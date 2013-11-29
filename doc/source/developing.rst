@@ -361,6 +361,74 @@ Example (using the above cacheable_function)::
 .. _`dogpile.cache`: http://dogpilecache.readthedocs.org/
 
 
+dogpile.cache based Key-Value-Store (KVS)
+-----------------------------------------
+The ``dogpile.cache`` based KVS system has been designed to allow for flexible stores for the
+backend of the KVS system. The implementation allows for the use of any normal ``dogpile.cache``
+cache backends to be used as a store. All interfacing to the KVS system happens via the
+``KeyValueStore`` object located at ``keystone.common.kvs.KeyValueStore``.
+
+To utilize the KVS system an instantiation of the ``KeyValueStore`` class is needed. To acquire
+the previously instantiated KVS object with the specified name (or in the case of no instantiation
+linked to that name) utilize the ``keystone.common.kvs.get_key_value_store`` function. Once the
+KeyValueStore object has been instantiated, it must be configured. The KVS object will only be
+retrievable with the ``get_key_value_store`` function while there is an active reference outside
+of the registry.  Once all references have been removed the object is gone (the registry uses a
+``weakref`` to match the KVS object to the name).
+
+Example Instantiation and Configuration::
+
+    kvs_store = kvs.get_key_value_store('TestKVSRegion')
+    kvs_store.configure('openstack.kvs.Memory', ...)
+
+Any keyword arguments passed to the configure method that are not defined as part of the
+KeyValueStore object configuration are passed to the backend for further configuration (e.g.
+memcache servers, lock_timeout, etc).
+
+The provided in-memory based backend has a single extra option ``isolation``; if ``isolation`` is
+set to false, the backend will not perform the ``copy.deepcopy`` operations on values during
+store/retrieval, allowing reference manipulation to affect the backend directly.
+
+The memcached backend uses the Keystone manager mechanism to support the use of any of the
+provided dogpile.cache memcached backends (``BMemcached``, ``pylibmc``, and basic ``Memcached``).
+By default the standard Memcache backend is used.  Currently the Memcache URLs come from the
+``servers`` option in the ``[memcache]`` configuration section of the Keystone config.
+
+Example configuring the KVS system to use memcached and a specific dogpile.cache memcached backend::
+
+    kvs_store = kvs.get_key_value_store('TestKVSRegion')
+    kvs_store.configure('openstack.kvs.Memcached', dogpile_cache_backend='MemcachedBackend')
+
+Once a KVS object has been instantiated the method of interacting is the same as most memcache
+implementations::
+
+    kvs_store = kvs.get_key_value_store('TestKVSRegion')
+    kvs_store.configure(...)
+    # Set a Value
+    kvs_store.set(<Key>, <Value>)
+    # Retrieve a value:
+    retrieved_value = kvs_store.get(<key>)
+    # Delete a key/value pair:
+    kvs_store.delete(<key>)
+    # multi-get:
+    kvs_store.get_multi([<key>, <key>, ...])
+    # multi-set:
+    kvs_store.set_multi(dict(<key>=<value>, <key>=<value>, ...))
+    # multi-delete
+    kvs_store.delete_multi([<key>, <key>, ...])
+
+
+There is a global configuration option to be aware of (that can be set in the ``[kvs]`` section of
+the Keystone configuration file): ``enable_key_mangler`` can be set top false, disabling the use of
+key_manglers (modification of the key when saving to the backend to help prevent
+collisions or exceeding key size limits with memcached).
+
+.. WARNING::
+    Setting the ``enable_key_mangler`` option to False can have detrimental effects on the KeyValueStore
+    backend. It is recommended that this value is not set to False except for debugging issues with the
+    ``dogpile.cache`` backend itself.
+
+
 Building the Documentation
 ==========================
 
