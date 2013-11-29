@@ -20,6 +20,7 @@ import socket
 from oslo.config import cfg
 from oslo import messaging
 
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 
 notifier_opts = [
