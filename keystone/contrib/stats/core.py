@@ -14,15 +14,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 from keystone.common import wsgi
 from keystone import config
 from keystone import exception
-from keystone import identity
 from keystone.openstack.common import log as logging
-from keystone import policy
-from keystone import token
 
 
 CONF = config.CONF
@@ -92,12 +90,9 @@ class StatsExtension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
+@dependency.requires('stats_api')
 class StatsController(wsgi.Application):
     def __init__(self):
-        self.identity_api = identity.Manager()
-        self.policy_api = policy.Manager()
-        self.stats_api = Manager()
-        self.token_api = token.Manager()
         super(StatsController, self).__init__()
 
     def get_stats(self, context):
