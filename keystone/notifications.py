@@ -16,6 +16,7 @@
 
 import logging
 
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.openstack.common.notifier import api as notifier_api
 
