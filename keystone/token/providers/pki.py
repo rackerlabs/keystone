@@ -23,6 +23,7 @@ from keystone.common import environment
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
+from keystone.openstack.common.gettextutils import _
 from keystone.token.providers import uuid
 
 

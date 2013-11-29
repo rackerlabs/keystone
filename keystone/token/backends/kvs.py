@@ -20,6 +20,7 @@ from keystone.common import kvs
 from keystone import exception
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import timeutils
+from keystone.openstack.common.gettextutils import _
 from keystone import token
 
 LOG = logging.getLogger(__name__)

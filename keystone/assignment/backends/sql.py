@@ -17,6 +17,7 @@
 from keystone import assignment
 from keystone import clean
 from keystone.common import dependency
+from keystone.openstack.common.gettextutils import _
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config

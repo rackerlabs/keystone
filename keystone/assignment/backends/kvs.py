@@ -18,6 +18,7 @@ from keystone import assignment
 from keystone import clean
 from keystone.common import dependency
 from keystone.common import kvs
+from keystone.openstack.common.gettextutils import _
 from keystone import exception
 
 

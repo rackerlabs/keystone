@@ -18,6 +18,7 @@ import hashlib
 import json
 
 from keystone.common import controller
+from keystone.openstack.common.gettextutils import _
 from keystone import exception
 
 

@@ -20,6 +20,7 @@
 import os
 import sys
 
+from keystone.openstack.common.gettextutils import _
 from migrate.versioning import api as versioning_api
 
 from keystone import config

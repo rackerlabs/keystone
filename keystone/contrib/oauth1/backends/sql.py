@@ -18,6 +18,7 @@ import datetime
 import random
 import uuid
 
+from keystone.openstack.common.gettextutils import _
 from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.contrib.oauth1 import core

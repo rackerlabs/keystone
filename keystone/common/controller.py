@@ -23,6 +23,7 @@ from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
+from keystone.openstack.common.gettextutils import _
 
 LOG = logging.getLogger(__name__)
 CONF = config.CONF

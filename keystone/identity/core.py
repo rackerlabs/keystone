@@ -33,6 +33,7 @@ from keystone import exception
 from keystone import notifications
 from keystone.openstack.common import importutils
 from keystone.openstack.common import log as logging
+from keystone.openstack.common.gettextutils import _
 
 
 CONF = config.CONF

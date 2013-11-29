@@ -28,6 +28,7 @@ from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
 from keystone import contrib
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone import token
 

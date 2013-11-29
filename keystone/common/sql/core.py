@@ -31,6 +31,7 @@ from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import models
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log as logging
+from keystone.openstack.common.gettextutils import _
 
 
 LOG = logging.getLogger(__name__)

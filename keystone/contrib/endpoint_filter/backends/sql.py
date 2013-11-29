@@ -16,6 +16,7 @@
 
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone.openstack.common.gettextutils import _
 from keystone import exception
 
 

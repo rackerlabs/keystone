@@ -25,6 +25,7 @@ from keystone.common import controller
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
+from keystone.openstack.common.gettextutils import _
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id

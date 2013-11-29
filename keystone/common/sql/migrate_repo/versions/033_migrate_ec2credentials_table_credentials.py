@@ -16,6 +16,7 @@
 
 import sqlalchemy as sql
 
+from keystone.openstack.common.gettextutils import _
 from keystone.common import utils
 from keystone import exception
 

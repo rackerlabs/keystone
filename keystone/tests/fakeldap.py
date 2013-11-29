@@ -31,6 +31,7 @@ import ldap
 
 from keystone.common import utils
 from keystone.openstack.common import log as logging
+from keystone.openstack.common.gettextutils import _
 
 
 SCOPE_NAMES = {

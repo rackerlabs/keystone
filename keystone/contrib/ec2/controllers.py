@@ -40,6 +40,7 @@ from keystoneclient.contrib.ec2 import utils as ec2_utils
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.openstack.common.gettextutils import _
 from keystone.common import utils
 from keystone import exception
 from keystone import token

@@ -17,6 +17,7 @@
 """Extensions supporting OAuth1."""
 
 from keystone.common import controller
+from keystone.openstack.common.gettextutils import _
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
