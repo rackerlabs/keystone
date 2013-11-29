@@ -21,6 +21,7 @@
 import collections
 
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 
 
