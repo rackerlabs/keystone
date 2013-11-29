@@ -22,6 +22,7 @@ import six
 from keystone.common import dependency
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone import token
 from keystone.token import provider
 from keystone import trust

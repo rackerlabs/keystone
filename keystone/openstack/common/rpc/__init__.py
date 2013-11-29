@@ -27,7 +27,7 @@ import inspect
 
 from oslo.config import cfg
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone.openstack.common import local
 from keystone.openstack.common import log as logging
