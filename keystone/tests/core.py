@@ -32,18 +32,6 @@ import six
 import testtools
 from testtools import testcase
 
-
-from keystone.openstack.common import gettextutils
-
-# NOTE(blk-u):
-# gettextutils.install() must run to set _ before importing any modules that
-# contain static translated strings.
-#
-# Configure gettextutils for deferred translation of messages
-# so that error messages in responses can be translated according to the
-# Accept-Language in the request rather than the Keystone server locale.
-gettextutils.install('keystone', lazy=True)
-
 # NOTE(ayoung)
 # environment.use_eventlet must run before any of the code that will
 # call the eventlet monkeypatching.
@@ -62,6 +50,8 @@ from keystone import config
 from keystone import exception
 from keystone import notifications
 from keystone.openstack.common.db.sqlalchemy import session
+from keystone.openstack.common import gettextutils
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import service

@@ -45,6 +45,8 @@ import urllib
 
 import six
 
+from keystone.openstack.common.gettextutils import _
+
 
 class InvalidBase64Error(ValueError):
     pass
