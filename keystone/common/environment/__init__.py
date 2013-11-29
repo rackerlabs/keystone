@@ -18,6 +18,7 @@ import functools
 import os
 
 from keystone.common import config
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 
 CONF = config.CONF

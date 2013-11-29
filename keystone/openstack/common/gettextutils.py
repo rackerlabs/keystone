@@ -39,7 +39,7 @@ _localedir = os.environ.get('keystone'.upper() + '_LOCALEDIR')
 _t = gettext.translation('keystone', localedir=_localedir, fallback=True)
 
 _AVAILABLE_LANGUAGES = {}
-USE_LAZY = False
+USE_LAZY = True
 
 
 def enable_lazy():
