@@ -34,6 +34,24 @@
       "revId": "48465e5e19a669c5fbe03446874b820440972fd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Lqg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-11-29T15:24:18Z",
+      "side": 1,
+      "message": "The real problem is that Keystone\u0027s code is fundamentally broken.  It only works if you import things in a certain order.\n\nhttp://paste.openstack.org/show/54179/",
+      "parentUuid": "AAAATn/+QVs\u003d",
+      "revId": "48465e5e19a669c5fbe03446874b820440972fd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
