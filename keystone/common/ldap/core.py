@@ -20,7 +20,9 @@ import ldap
 import ldap.filter
 
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
+
 
 LOG = log.getLogger(__name__)
 

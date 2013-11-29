@@ -27,6 +27,7 @@ See also:
 """
 
 from keystone import notifications
+from keystone.openstack.common.gettextutils import _
 
 
 REGISTRY = {}

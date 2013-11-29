@@ -15,6 +15,7 @@
 # under the License.
 
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 def check_length(property_name, value, min_length=1, max_length=64):
