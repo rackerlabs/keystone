@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.openstack.common.gettextutils import _
+
 _FATAL_EXCEPTION_FORMAT_ERRORS = False
 
 

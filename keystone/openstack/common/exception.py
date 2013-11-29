@@ -21,7 +21,7 @@ Exceptions common to OpenStack projects
 
 import logging
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 
 _FATAL_EXCEPTION_FORMAT_ERRORS = False
 

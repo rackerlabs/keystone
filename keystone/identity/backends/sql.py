@@ -21,6 +21,7 @@ from keystone.common import utils
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common.db.sqlalchemy import session as db_session
+from keystone.openstack.common.gettextutils import _
 
 
 class User(sql.ModelBase, sql.DictBase):
