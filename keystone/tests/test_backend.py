@@ -1765,6 +1765,16 @@ class IdentityTests(object):
                           'fake1',
                           user)
 
+    def test_create_user_blank_password_works(self):
+        user = {'id': 'fake1', 'name': 'fake1', 'password': '',
+                'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_user('fake1', user)
+
+    def test_create_user_None_password_works(self):
+        user = {'id': 'fake1', 'name': 'fake1', 'password': None,
+                'domain_id': DEFAULT_DOMAIN_ID}
+        self.identity_api.create_user('fake1', user)
+
     def test_create_user_invalid_name_fails(self):
         user = {'id': 'fake1', 'name': None,
                 'domain_id': DEFAULT_DOMAIN_ID}
