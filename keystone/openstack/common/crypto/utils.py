@@ -17,7 +17,7 @@ import base64
 from Crypto.Hash import HMAC
 from Crypto import Random
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 
 

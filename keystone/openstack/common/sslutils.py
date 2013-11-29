@@ -17,7 +17,7 @@ import ssl
 
 from oslo.config import cfg
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 
 
 ssl_opts = [

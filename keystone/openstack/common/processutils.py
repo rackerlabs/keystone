@@ -26,7 +26,7 @@ import signal
 from eventlet.green import subprocess
 from eventlet import greenthread
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 
 

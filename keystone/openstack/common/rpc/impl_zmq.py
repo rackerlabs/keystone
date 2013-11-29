@@ -27,7 +27,7 @@ import six
 from six import moves
 
 from keystone.openstack.common import excutils
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common.rpc import common as rpc_common
