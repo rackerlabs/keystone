@@ -31,18 +31,6 @@ from lxml import etree
 from paste import deploy
 import testtools
 
-
-from keystone.openstack.common import gettextutils
-
-# NOTE(blk-u):
-# gettextutils.install() must run to set _ before importing any modules that
-# contain static translated strings.
-#
-# Configure gettextutils for deferred translation of messages
-# so that error messages in responses can be translated according to the
-# Accept-Language in the request rather than the Keystone server locale.
-gettextutils.install('keystone', lazy=True)
-
 from keystone import assignment
 from keystone import catalog
 from keystone.common import cache
@@ -58,6 +46,7 @@ from keystone.contrib import oauth1
 from keystone import credential
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import policy

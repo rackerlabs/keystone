@@ -24,6 +24,7 @@ import uuid
 from keystone.common import controller
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 
 CONF = config.CONF

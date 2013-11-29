@@ -19,6 +19,7 @@ import json
 
 from keystone.common import controller
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 class CredentialV3(controller.V3Controller):

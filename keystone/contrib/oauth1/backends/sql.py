@@ -22,6 +22,7 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.contrib.oauth1 import core
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 

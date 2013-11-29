@@ -30,6 +30,7 @@ from keystone.common import config
 from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common import gettextutils
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log as logging
@@ -93,7 +94,7 @@ def validate_token_bind(context, token_ref):
             # no bind provided and none required
             return
         else:
-            LOG.info(_("No bind information present in token"))
+            LOG.info(gettextutils._("No bind information present in token"))
             raise exception.Unauthorized()
 
     if name and name not in bind:
@@ -111,7 +112,7 @@ def validate_token_bind(context, token_ref):
                 LOG.info(_("Kerberos credentials do not match those in bind"))
                 raise exception.Unauthorized()
 
-            LOG.info(_("Kerberos bind authentication successful"))
+            LOG.info(gettextutils._("Kerberos bind authentication successful"))
 
         elif bind_mode == 'permissive':
             LOG.debug(_("Ignoring unknown bind for permissive mode: "
@@ -207,7 +208,7 @@ class Application(BaseApplication):
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
         del arg_dict['controller']
-        LOG.debug(_('arg_dict: %s'), arg_dict)
+        LOG.debug(gettextutils._('arg_dict: %s'), arg_dict)
 
         # allow middleware up the stack to provide context, params and headers.
         context = req.environ.get(CONTEXT_ENV, {})
