@@ -17,6 +17,7 @@
 import six
 
 from keystone.common import config
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import strutils
 

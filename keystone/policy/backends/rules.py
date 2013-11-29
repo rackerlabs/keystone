@@ -22,6 +22,7 @@ import os.path
 from keystone.common import utils
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import policy as common_policy
 from keystone import policy

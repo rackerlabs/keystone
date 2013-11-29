@@ -42,6 +42,7 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 from keystone import token
 
 

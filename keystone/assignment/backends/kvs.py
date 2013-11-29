@@ -19,6 +19,7 @@ from keystone import clean
 from keystone.common import dependency
 from keystone.common import kvs
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 @dependency.requires('identity_api')
