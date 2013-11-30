@@ -1,0 +1,25 @@
+Fix null value of password on hash_user_password
+
+"password" is optional parameter when create a user. If create a user with
+the null value of password the HTTP 400 (ValidationError) exception
+raised. Because the server has to check the length of the password when
+hash the password, the TypeError be catched and be transfered to
+ValidationError.
+
+First there is no need to hash the null value. Second "password" para
+should be treated as other optional para such as "tenantId", the server
+should not raise exception with the null value.
+
+The patch fixes the null value situation for "password" para.
+
+Closes-Bug: #1256491
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch bug/1256491
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   keystone/common/utils.py
+#	modified:   keystone/tests/test_utils.py
+#
