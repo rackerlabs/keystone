@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+Ko4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-30T05:35:14Z",
+      "side": 1,
+      "message": "can you add a comment or two here? or should the user just read the docs? I don\u0027t think a quick comment would hurt. \n\nOverall, there are some inconsistencies with the .conf file (some parts have long comments, some have short, some have none). So maybe this isn\u0027t the right place.",
+      "revId": "28ce9e64410c3f67082ba062a5d55200e1593120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Kos\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-30T05:35:14Z",
+      "side": 1,
+      "message": "new line needed between 15 and 16",
+      "revId": "28ce9e64410c3f67082ba062a5d55200e1593120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Koo\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-30T05:35:14Z",
+      "side": 1,
+      "message": "new line needed between 18 and 19",
+      "revId": "28ce9e64410c3f67082ba062a5d55200e1593120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Kok\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-11-30T05:35:14Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "28ce9e64410c3f67082ba062a5d55200e1593120",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
