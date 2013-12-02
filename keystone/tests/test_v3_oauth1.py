@@ -66,7 +66,8 @@ class OAuth1Tests(test_v3.RestfulTestCase):
                                                       **kw)
 
     def _create_request_token(self, consumer, project_id):
-        params = {'requested_project_id': project_id}
+        params = {'requested_project_id': project_id,
+                  'oauth_callback': "oob"}
         headers = {'Content-Type': 'application/json'}
         url = '/OS-OAUTH1/request_token'
         oreq = self._oauth_request(
@@ -77,7 +78,14 @@ class OAuth1Tests(test_v3.RestfulTestCase):
         hmac = oauth1.SignatureMethod_HMAC_SHA1()
         oreq.sign_request(hmac, consumer, None)
         headers.update(oreq.to_header())
-        headers.update(params)
+        headers.update({'requested_project_id': project_id})
+#        with open('/tmp/rqtoken', 'a') as f:
+#            f.write(repr(consumer.__dict__))
+#            f.write('\n')
+#            f.write('to sign: %r\n' % oreq.get_normalized_parameters())
+#            for k,v in headers.items():
+#                f.write('%r: %r\n' % (k,v))
+#            f.write('---------\n')
         return url, headers
 
     def _create_access_token(self, consumer, token):
@@ -456,7 +464,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer = oauth1.Consumer(consumer_id, "bad_secret")
         url, headers = self._create_request_token(consumer,
                                                   self.project_id)
-        self.post(url, headers=headers, expected_status=500)
+        self.post(url, headers=headers, expected_status=401)
 
     def test_bad_request_token_key(self):
         consumer = self._create_single_consumer()
