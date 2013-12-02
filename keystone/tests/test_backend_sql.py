@@ -372,6 +372,26 @@ class SqlToken(SqlTests, test_backend.TokenTests):
         self.mox.ReplayAll()
         tok.list_revoked_tokens()
 
+    def test_flush_expired_tokens_batch(self):
+        # This test simply executes the code under test to verify
+        # that the code is legal.  It is is not possible to test
+        # whether records are deleted in batches using sqlite,
+        # because the limit function does not seem to affect
+        # delete subqueries; these are, however, legal.
+        # After several failed attempts of using mox, it would
+        # seem that the use of mock objects for testing
+        # the target code does not seem possible, because of
+        # the unique way the SQLAlchemy Query class's filter
+        # method works.
+        tok = token_sql.Token()
+        success = False
+        try:
+            tok.flush_expired_tokens(batch_size=5)
+            success = True
+        except:
+            pass 
+        self.assertTrue(success)
+
 
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
     def test_malformed_catalog_throws_error(self):
