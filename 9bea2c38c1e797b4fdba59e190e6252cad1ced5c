@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+FCc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 2170
+      },
+      "writtenOn": "2013-12-02T21:44:23Z",
+      "side": 1,
+      "message": "This has been converted from a StrOpt to a ListOpt. Do we need to change the type of the default as well?",
+      "revId": "9bea2c38c1e797b4fdba59e190e6252cad1ced5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+FCY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 2170
+      },
+      "writtenOn": "2013-12-02T21:44:23Z",
+      "side": 1,
+      "message": "On line 241 above, a ListOpt is initialized with a default value of None. Here we use an empty list. Do we need to be consistent?",
+      "revId": "9bea2c38c1e797b4fdba59e190e6252cad1ced5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+E2U\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2170
+      },
+      "writtenOn": "2013-12-02T21:44:23Z",
+      "side": 1,
+      "message": "This has the potential to be an infinite loop. Is it worth adding a limit to the maximum number of retries and then raise an exception when maximum retries is exceeded (as per the link referenced above)?",
+      "revId": "9bea2c38c1e797b4fdba59e190e6252cad1ced5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EkI\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 2170
+      },
+      "writtenOn": "2013-12-02T21:44:23Z",
+      "side": 1,
+      "message": "Could you please add a line or two explanation for why we don\u0027t serialize? Also for delete_multi(). Thanks!",
+      "revId": "9bea2c38c1e797b4fdba59e190e6252cad1ced5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
