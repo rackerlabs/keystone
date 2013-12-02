@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+Ir4\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T06:04:24Z",
+      "side": 1,
+      "message": "are token, policy and identity even needed?\ni don\u0027t see them being used, and i can\u0027t see why a stats api would need access to them.",
+      "revId": "e1f24c92184c518e241ade53259de3dd5fa545d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
