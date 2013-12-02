@@ -28,11 +28,11 @@ GET /
 This call is identical to that documented for the Admin API, except
 that it uses port 5000, instead of port 35357, by default::
 
-    $ curl http://0.0.0.0:5000
+    $ curl http://127.0.0.1:5000
 
 or::
 
-    $ curl http://0.0.0.0:5000/v2.0/
+    $ curl http://127.0.0.1:5000/v2.0/
 
 See the `Admin API Examples Using Curl`_ for more info.
 
@@ -80,11 +80,11 @@ GET /
 Discover API version information, links to documentation (PDF, HTML, WADL),
 and supported media types::
 
-    $ curl http://0.0.0.0:35357
+    $ curl http://127.0.0.1:35357
 
 or::
 
-    $ curl http://0.0.0.0:35357/v2.0/
+    $ curl http://127.0.0.1:35357/v2.0/
 
 Returns::
 
@@ -132,7 +132,7 @@ GET /extensions
 
 Discover the API extensions enabled at the endpoint::
 
-    $ curl http://0.0.0.0:35357/extensions
+    $ curl http://127.0.0.1:35357/extensions
 
 Returns::
 
