@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-11-28 06:01+0000\n"
+"POT-Creation-Date: 2013-12-02 06:01+0000\n"
 "PO-Revision-Date: 2013-05-21 09:13+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Spanish "
@@ -61,14 +61,24 @@ msgid ""
 "is assumed to be in error."
 msgstr ""
 
-#: keystone/exception.py:82
+#: keystone/exception.py:91
+#, python-format
+msgid "%s is not allowed."
+msgstr ""
+
+#: keystone/exception.py:94
+#, python-format
+msgid "%s is required."
+msgstr ""
+
+#: keystone/exception.py:100
 #, python-format
 msgid ""
 "String length exceeded.The length of string '%(string)s' exceeded the "
 "limit of column %(type)s(CHAR(%(length)d))."
 msgstr ""
 
-#: keystone/exception.py:88
+#: keystone/exception.py:106
 #, python-format
 msgid ""
 "Request attribute %(attribute)s must be less than or equal to %(size)i. "
@@ -76,131 +86,131 @@ msgid ""
 "is invalid (too large). The client is assumed to be in error."
 msgstr ""
 
-#: keystone/exception.py:109
+#: keystone/exception.py:127
 msgid "The request you have made requires authentication."
 msgstr ""
 
-#: keystone/exception.py:115
+#: keystone/exception.py:133
 msgid "Authentication plugin error."
 msgstr ""
 
-#: keystone/exception.py:123
+#: keystone/exception.py:141
 msgid "Attempted to authenticate with an unsupported method."
 msgstr ""
 
-#: keystone/exception.py:131
+#: keystone/exception.py:149
 msgid "Additional authentications steps required."
 msgstr ""
 
-#: keystone/exception.py:139
+#: keystone/exception.py:157
 msgid "You are not authorized to perform the requested action."
 msgstr ""
 
-#: keystone/exception.py:146
+#: keystone/exception.py:164
 #, python-format
 msgid "You are not authorized to perform the requested action, %(action)s."
 msgstr ""
 
-#: keystone/exception.py:151
+#: keystone/exception.py:169
 #, python-format
 msgid "Could not find, %(target)s."
 msgstr ""
 
-#: keystone/exception.py:157
+#: keystone/exception.py:175
 #, python-format
 msgid "Could not find endpoint, %(endpoint_id)s."
 msgstr ""
 
-#: keystone/exception.py:164
+#: keystone/exception.py:182
 msgid "An unhandled exception has occurred: Could not find metadata."
 msgstr ""
 
-#: keystone/exception.py:169
+#: keystone/exception.py:187
 #, python-format
 msgid "Could not find policy, %(policy_id)s."
 msgstr ""
 
-#: keystone/exception.py:173
+#: keystone/exception.py:191
 #, python-format
 msgid "Could not find role, %(role_id)s."
 msgstr ""
 
-#: keystone/exception.py:177
+#: keystone/exception.py:195
 #, python-format
 msgid "Could not find service, %(service_id)s."
 msgstr ""
 
-#: keystone/exception.py:181
+#: keystone/exception.py:199
 #, python-format
 msgid "Could not find domain, %(domain_id)s."
 msgstr ""
 
-#: keystone/exception.py:185
+#: keystone/exception.py:203
 #, python-format
 msgid "Could not find project, %(project_id)s."
 msgstr ""
 
-#: keystone/exception.py:189
+#: keystone/exception.py:207
 #, python-format
 msgid "Could not find token, %(token_id)s."
 msgstr ""
 
-#: keystone/exception.py:193
+#: keystone/exception.py:211
 #, python-format
 msgid "Could not find user, %(user_id)s."
 msgstr ""
 
-#: keystone/exception.py:197
+#: keystone/exception.py:215
 #, python-format
 msgid "Could not find group, %(group_id)s."
 msgstr ""
 
-#: keystone/exception.py:201
+#: keystone/exception.py:219
 #, python-format
 msgid "Could not find trust, %(trust_id)s."
 msgstr ""
 
-#: keystone/exception.py:205
+#: keystone/exception.py:223
 #, python-format
 msgid "Could not find credential, %(credential_id)s."
 msgstr ""
 
-#: keystone/exception.py:209
+#: keystone/exception.py:227
 #, python-format
 msgid "Could not find version, %(version)s."
 msgstr ""
 
-#: keystone/exception.py:213
+#: keystone/exception.py:231
 #, python-format
 msgid "Conflict occurred attempting to store %(type)s. %(details)s"
 msgstr ""
 
-#: keystone/exception.py:220
+#: keystone/exception.py:238
 msgid "Request is too large."
 msgstr ""
 
-#: keystone/exception.py:226
+#: keystone/exception.py:244
 #, python-format
 msgid ""
 "An unexpected error prevented the server from fulfilling your request. "
 "%(exception)s"
 msgstr ""
 
-#: keystone/exception.py:233
+#: keystone/exception.py:251
 #, python-format
 msgid "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 msgstr ""
 
-#: keystone/exception.py:238
+#: keystone/exception.py:256
 msgid "The action you have requested has not been implemented."
 msgstr ""
 
-#: keystone/exception.py:245
+#: keystone/exception.py:263
 #, python-format
-msgid "The Keystone paste configuration file %(config_file)s could not be found."
+msgid "The Keystone configuration file %(config_file)s could not be found."
 msgstr ""
 
-#: keystone/notifications.py:96
+#: keystone/notifications.py:97
 #, python-format
 msgid "Failed to send %(res_id)s %(event_type)s notification"
 msgstr ""
@@ -238,11 +248,13 @@ msgid "Project is disabled: %s"
 msgstr "El proyecto está inhabilitado: %s"
 
 #: keystone/auth/controllers.py:78 keystone/auth/plugins/password.py:42
+#: keystone/token/core.py:76 keystone/token/core.py:92
 #, python-format
 msgid "Domain is disabled: %s"
 msgstr "El dominio está inhabilitado: %s"
 
 #: keystone/auth/controllers.py:84 keystone/auth/plugins/password.py:48
+#: keystone/token/core.py:68
 #, python-format
 msgid "User is disabled: %s"
 msgstr "El usuario está inhabilitado: %s"
@@ -337,11 +349,9 @@ msgstr ""
 #: keystone/catalog/core.py:53
 #, python-format
 msgid ""
-"Malformed endpoint %s - incomplete format                   (are you "
-"missing a type notifier ?)"
+"Malformed endpoint %s - incomplete format (are you missing a type "
+"notifier ?)"
 msgstr ""
-"Punto final con formato incorrecto %s - formato incompleto"
-"                    (¿Le falta un notificador de tipo?)"
 
 #: keystone/catalog/backends/templated.py:107
 #, python-format
@@ -388,12 +398,12 @@ msgid "RBAC: Proceeding without tenant"
 msgstr "RBAC: Continuando sin arrendatario"
 
 #: keystone/common/controller.py:122 keystone/common/controller.py:199
-#: keystone/common/controller.py:472
+#: keystone/common/controller.py:471
 msgid "RBAC: Bypassing authorization"
 msgstr "RBAC: Eludiendo autorización"
 
 #: keystone/common/controller.py:157 keystone/common/controller.py:197
-#: keystone/common/controller.py:488
+#: keystone/common/controller.py:487
 msgid "RBAC: Authorization granted"
 msgstr "RBAC: Autorización otorgada"
 
@@ -423,7 +433,7 @@ msgid ""
 "ignoring."
 msgstr ""
 
-#: keystone/common/controller.py:443
+#: keystone/common/controller.py:442
 msgid "Invalid token in _get_domain_id_for_request"
 msgstr ""
 
@@ -457,79 +467,79 @@ msgid ""
 "%(remove_in)s. It will not be superseded."
 msgstr ""
 
-#: keystone/common/wsgi.py:96
+#: keystone/common/wsgi.py:97
 msgid "No bind information present in token"
 msgstr ""
 
-#: keystone/common/wsgi.py:100
+#: keystone/common/wsgi.py:101
 #, python-format
 msgid "Named bind mode %s not in bind information"
 msgstr ""
 
-#: keystone/common/wsgi.py:107
+#: keystone/common/wsgi.py:108
 msgid "Kerberos credentials required and not present"
 msgstr ""
 
-#: keystone/common/wsgi.py:111
+#: keystone/common/wsgi.py:112
 msgid "Kerberos credentials do not match those in bind"
 msgstr ""
 
-#: keystone/common/wsgi.py:114
+#: keystone/common/wsgi.py:115
 msgid "Kerberos bind authentication successful"
 msgstr ""
 
-#: keystone/common/wsgi.py:117
+#: keystone/common/wsgi.py:118
 #, python-format
 msgid "Ignoring unknown bind for permissive mode: {%(bind_type)s: %(identifier)s}"
 msgstr ""
 
-#: keystone/common/wsgi.py:121
+#: keystone/common/wsgi.py:122
 #, python-format
 msgid "Couldn't verify unknown bind: {%(bind_type)s: %(identifier)s}"
 msgstr ""
 
-#: keystone/common/wsgi.py:210
+#: keystone/common/wsgi.py:211
 #, python-format
 msgid "arg_dict: %s"
 msgstr "arg_dict: %s"
 
-#: keystone/common/wsgi.py:238
+#: keystone/common/wsgi.py:240
 #, fuzzy, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr "Ha fallado la autorización. %s de %s"
 
-#: keystone/common/wsgi.py:486 keystone/tests/test_wsgi.py:315
+#: keystone/common/wsgi.py:520 keystone/tests/test_wsgi.py:317
 msgid "The resource could not be found."
 msgstr "El recurso no se ha podido encontrar."
 
 #: keystone/common/cache/core.py:50
 #, python-format
-msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
+msgid "CACHE_GET: Key: \"%(key)r\" Value: \"%(value)r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:56
 #, python-format
-msgid "CACHE_GET_MULTI: \"%(keys)s\" Values: \"%(values)s\""
+msgid "CACHE_GET_MULTI: \"%(keys)r\" Values: \"%(values)r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:61
 #, python-format
-msgid "CACHE_SET: Key: \"%(key)s\" Value: \"%(value)s\""
+msgid "CACHE_SET: Key: \"%(key)r\" Value: \"%(value)r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:66
 #, python-format
-msgid "CACHE_SET_MULTI: \"%s\""
+msgid "CACHE_SET_MULTI: \"%r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:71
 #, python-format
-msgid "CACHE_DELETE: \"%s\""
+msgid "CACHE_DELETE: \"%r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:74
 #, python-format
-msgid "CACHE_DELETE_MULTI: \"%s\""
+msgid "CACHE_DELETE_MULTI: \"%r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:92
@@ -861,7 +871,7 @@ msgid ""
 "%(role)s"
 msgstr ""
 
-#: keystone/identity/core.py:95
+#: keystone/identity/core.py:96
 #, python-format
 msgid "Invalid domain name (%s) found in config file name"
 msgstr ""
@@ -1182,7 +1192,7 @@ msgstr ""
 msgid "Got mysql server has gone away: %s"
 msgstr "Se ha notificado que mysql server ha desaparecido: %s"
 
-#: keystone/openstack/common/db/sqlalchemy/session.py:696
+#: keystone/openstack/common/db/sqlalchemy/session.py:697
 #, python-format
 msgid "SQL connection failed. %s attempts left."
 msgstr ""
@@ -1792,6 +1802,11 @@ msgstr ""
 msgid "Token does not belong to specified tenant."
 msgstr "La señal no pertenece al arrendatario especificado."
 
+#: keystone/token/core.py:83
+#, python-format
+msgid "Tenant is disabled: %s"
+msgstr ""
+
 #: keystone/token/provider.py:82
 msgid ""
 "keystone.conf [signing] token_format (deprecated) conflicts with "
@@ -1847,6 +1862,10 @@ msgstr ""
 #: keystone/token/backends/memcache.py:170
 msgid "Unable to add token to revocation list."
 msgstr "No se puede añadir señal a lista de revocación. "
+
+#: keystone/token/providers/pki.py:42
+msgid "Unable to sign token"
+msgstr ""
 
 #: keystone/token/providers/pki.py:43
 msgid "Unable to sign token."
@@ -1966,4 +1985,36 @@ msgstr "La señal con ámbito de dominio no está soportada"
 
 #~ msgid "Failed to understand rule %(rule)r"
 #~ msgstr "No se ha podido comprender la regla %(rule)r"
+
+#~ msgid ""
+#~ "The Keystone paste configuration file "
+#~ "%(config_file)s could not be found."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Malformed endpoint %s - incomplete "
+#~ "format                   (are you missing a"
+#~ " type notifier ?)"
+#~ msgstr ""
+#~ "Punto final con formato incorrecto %s"
+#~ " - formato incompleto                    (¿Le "
+#~ "falta un notificador de tipo?)"
+
+#~ msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_GET_MULTI: \"%(keys)s\" Values: \"%(values)s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_SET: Key: \"%(key)s\" Value: \"%(value)s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_SET_MULTI: \"%s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_DELETE: \"%s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_DELETE_MULTI: \"%s\""
+#~ msgstr ""
 
