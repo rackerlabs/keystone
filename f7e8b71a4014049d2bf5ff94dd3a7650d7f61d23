@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+Fs4\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-02T17:20:14Z",
+      "side": 1,
+      "message": "You also have to call a \u0027stats_api\u0027 provider. as-is, this change will just break any deployment using stats",
+      "revId": "f7e8b71a4014049d2bf5ff94dd3a7650d7f61d23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
