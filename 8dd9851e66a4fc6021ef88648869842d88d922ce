@@ -50,6 +50,24 @@
       "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EeU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-12-02T21:13:02Z",
+      "side": 1,
+      "message": "Agreed and agreed: this could be done with a single query and should be done in a future patch :-)",
+      "parentUuid": "AAAATn/+E04\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
