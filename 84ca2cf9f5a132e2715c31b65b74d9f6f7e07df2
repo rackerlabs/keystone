@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+EVs\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "did we want this running by default? I don\u0027t recall if we spoke about this in the design session, but usually the stuff in contrib doesn\u0027t run by default",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EVo\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ESA\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "do we really need a kvs backend too?",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EUU\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "Update title",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EUI\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "s/example/revoke\n\nalso, they values aren\u0027t in etc/sample.conf yet",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EUQ\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "s/example/revoke",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ESI\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "remove comment if not needed",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ETE\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "this comment is copy/pasted from line 27, \nthis functional actually returns the revoked tokens",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+EUk\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "might be better if placed at keystone/common/config.py ?",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ETw\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/migrate.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T21:44:33Z",
+      "side": 1,
+      "message": "s/example/revoke",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
