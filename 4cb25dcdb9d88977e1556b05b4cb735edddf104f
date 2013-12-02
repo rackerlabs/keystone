@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+FpU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-02T17:29:42Z",
+      "side": 1,
+      "message": "continue to use named parameter for named argument -- change \"domain_scope\" to \"domain_scope\u003ddomain_scope\"",
+      "revId": "4cb25dcdb9d88977e1556b05b4cb735edddf104f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
