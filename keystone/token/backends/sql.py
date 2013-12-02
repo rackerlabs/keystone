@@ -195,9 +195,31 @@ class Token(sql.Base, token.Driver):
 
     def flush_expired_tokens(self):
         session = self.get_session()
+        dialect = session.bind.dialect.name
 
-        query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires < timeutils.utcnow())
-        query.delete(synchronize_session=False)
+        if dialect == 'ibm_db_sa':
+            # This functionality is limited to DB2, because
+            # it is necessary to prevent the tranaction log
+            # from filling up, while several, if not all,
+            # versions of MySQL do not support update
+            # queries with LIMIT subqueries.
+            query = session.query(TokenModel.id)
+            query = query.filter(TokenModel.expires < timeutils.utcnow())
+            # Limit of 100 is known to not fill a transaction log
+            # of default maximum size while not significantly
+            # impacting the performance of large token purges on
+            # systems where the maximum transaction log size has
+            # been increased beyond the default.
+            query = query.limit(100).subquery()
+            delete_query = (session.query(TokenModel).
+                            filter(TokenModel.id.in_(query)))
+            while True:
+                rowcount = delete_query.delete(synchronize_session=False)
+                if rowcount == 0:
+                    break
+        else:
+            query = session.query(TokenModel)
+            query = query.filter(TokenModel.expires < timeutils.utcnow())
+            query.delete(synchronize_session=False)
 
         session.flush()
