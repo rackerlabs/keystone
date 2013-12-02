@@ -21,7 +21,11 @@ from __future__ import absolute_import
 import abc
 
 import oauth2 as oauth
+from oauthlib import oauth1
+from oauthlib.common import extract_params
+from oauthlib.common import Request as oRequest
 import six
+import uuid
 
 from keystone.common import dependency
 from keystone.common import extension
@@ -38,10 +42,27 @@ SignatureMethod_HMAC_SHA1 = oauth.SignatureMethod_HMAC_SHA1
 SignatureMethod_PLAINTEXT = oauth.SignatureMethod_PLAINTEXT
 Token = oauth.Token
 Client = oauth.Client
+#elements from oauth1, will replace the ones above once change is effective
+RequestValidator = oauth1.RequestValidator
+NewClient = oauth1.Client
+AccessTokenEndpoint = oauth1.AccessTokenEndpoint
+ResourceEndpoint = oauth1.ResourceEndpoint
+AuthorizationEndpoint = oauth1.AuthorizationEndpoint
+
+
+class RTokenEndpoint(oauth1.RequestTokenEndpoint):
+    # This is an attempt at circumventing the absence of redirect URIs in
+    # some request token queries, but it doesn't seem to work.
+    def validate_request_token(self, request):
+        if not request.redirect_uri:
+            request.redirect_uri = 'oob'
+        return oauth1.RequestTokenEndpoint.validate_request_token(self, request)
 
 
 CONF = config.CONF
 
+def token_generator(*args, **kwargs):
+    return uuid.uuid4().hex
 
 EXTENSION_DATA = {
     'name': 'OpenStack OAUTH1 API',
@@ -116,13 +137,14 @@ def get_oauth_headers(headers):
         # to split the rest of the headers.
 
         auth_header = headers['Authorization']
-        # Check that the authorization header is OAuth.
-        if auth_header[:6] == 'OAuth ':
-            auth_header = auth_header[6:]
-            # Get the parameters from the header.
-            header_params = oauth.Request._split_header(auth_header)
-            parameters.update(header_params)
-            return parameters
+        params = oauth1.rfc5849.utils.parse_authorization_header(auth_header)
+        parameters.update(dict(params))
+        return parameters
+
+
+def extract_non_oauth_params(query_string):
+    params = extract_params(query_string)
+    return dict([(k, v) for k, v in params if not k.startswith('oauth_')])    
 
 
 @dependency.provider('oauth_api')

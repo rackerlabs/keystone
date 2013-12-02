@@ -16,6 +16,8 @@
 
 """Extensions supporting OAuth1."""
 
+import logging
+
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -27,6 +29,161 @@ from keystone.openstack.common import timeutils
 
 
 CONF = config.CONF
+
+
+# this is for debug but would be nice to have in keystone logs anyway
+logger = logging.getLogger('oauthlib')
+logger.setLevel(logging.DEBUG)
+fh = logging.FileHandler('/tmp/spam.log')
+fh.setLevel(logging.DEBUG)
+logger.addHandler(fh)
+
+@dependency.requires('oauth_api')
+class OAuthValidator(oauth1.RequestValidator):
+
+    def __init__(self):
+        self.oauth_api = oauth1.Manager()
+
+    #TODO(mhu) set as option probably ?
+    @property
+    def enforce_ssl(self):
+        return False
+
+    @property
+    def safe_characters(self):
+        #oauth tokens are generated from a uuid hex value
+        return set("abcdef0123456789")
+
+    def _check_token(self, token):
+        # generic token verification when they're obtained from a uuid hex
+        return (set(token) <= self.safe_characters and
+                len(token) == 32)
+
+    def check_client_key(self, client_key):
+        return self._check_token(client_key)
+
+    def check_request_token(self, request_token):
+        return self._check_token(request_token)
+
+    def check_access_token(self, access_token):
+        return self._check_token(access_token)
+
+    def check_nonce(self, nonce):
+        # Assuming length is not a concern
+        return set(nonce) <= self.safe_characters
+
+    def check_verifier(self, verifier):
+        try:
+            return 1000 <= int(verifier) <= 9999
+        except ValueError:
+            return False
+
+    def get_client_secret(self, client_key, request):
+        client = self.oauth_api.get_consumer_with_secret(client_key)
+        return client['secret']
+
+    def get_request_token_secret(self, client_key, token, request):
+        token_ref = self.oauth_api.get_request_token(token)
+        return token_ref['request_secret']
+
+    def get_access_token_secret(self, client_key, token, request):
+        access_token = self.oauth_api.get_access_token(token)
+        return access_token['access_secret']
+
+    def get_default_realms(self, client_key, request):
+        # realms weren't implemented with the previous library
+        return []
+
+    def get_realms(self, token, request):
+        return []
+
+    def get_redirect_uri(self, token, request):
+        # OOB (out of band) is supposed to be the default value to use
+        return 'oob'
+
+    def get_rsa_key(self, client_key, request):
+        # HMAC signing is used, so return a dummy value
+        return ''
+
+    def invalidate_request_token(self, client_key, request_token, request):
+        # this method is invoked when an access token is generated out of a
+        # request token, to make sure that request token cannot be consumed
+        # anymore. This is done somewhere else, so we do nothing here.
+        pass
+
+    def validate_client_key(self, client_key, request):
+        try:
+            return self.oauth_api.get_consumer(client_key) is not None
+        except exception.NotFound:
+            return False
+
+    def validate_request_token(self, client_key, token, request):
+        try:
+            return self.oauth_api.get_request_token(token) is not None
+        except exception.NotFound:
+            return False
+
+    def validate_access_token(self, client_key, token, request):
+        try:
+            return self.oauth_api.get_access_token(token) is not None
+        except exception.NotFound:
+            return False
+
+    def validate_timestamp_and_nonce(self, client_key, timestamp, nonce,
+          request, request_token=None, access_token=None):
+        return True
+
+    def validate_redirect_uri(self, client_key, redirect_uri, request):
+        # we expect OOB, we don't really care
+        return True
+
+    def validate_requested_realms(self, client_key, realms, request):
+        # realms are not used
+        return True
+
+    def validate_realms(self, client_key, token,
+          request, uri=None, realms=None):
+        return True
+
+    def validate_verifier(self, client_key, token, verifier, request):
+        try:
+            req_token = self.oauth_api.get_request_token(token)
+            return req_token['verifier'] == verifier
+        except exception.NotFound:
+            return False
+
+    def verify_request_token(self, token, request):
+        # there aren't strong expectations on the request token format
+        return isinstance(token, basestring)
+
+    def verify_realms(self, token, realms, request):
+        return True
+
+    # the following save_XXX methods are called to create tokens. I chose to
+    # keep the original logic, but comments show how that could be implemented.
+    def save_access_token(self, token, request): 
+        pass
+#        token_duration = CONF.oauth1.request_token_duration
+#        request_token_id = request.client_key
+#        self.oauth_api.create_access_token(request_token_id,
+#                                           token_duration,
+#                                           token["oauth_token"],
+#                                           token["oauth_token_secret"])
+
+    def save_request_token(self, token, request):
+        pass
+#        project_id = request.headers.get('Requested-Project-Id')
+#        token_duration = CONF.oauth1.request_token_duration
+#        self.oauth_api.create_request_token(request.client_key,
+#                                            project_id,
+#                                            token_duration,
+#                                            token["oauth_token"],
+#                                            token["oauth_token_secret"])
+
+    def save_verifier(self, token, verifier, request):
+        # keep the old logic for this, as it is done in two steps and requires
+        # information that the request validator has no access to
+        pass
 
 
 @dependency.requires('oauth_api', 'token_api')
@@ -179,8 +336,8 @@ class OAuthControllerV3(controller.V3Controller):
         consumer_ref = self.oauth_api.get_consumer_with_secret(consumer_id)
         consumer = oauth1.Consumer(key=consumer_ref['id'],
                                    secret=consumer_ref['secret'])
-
         url = oauth1.rebuild_url(context['path'])
+        # leaving the old lib until a solution is found
         oauth_request = oauth1.Request.from_request(
             http_method='POST',
             http_url=url,
@@ -197,6 +354,23 @@ class OAuthControllerV3(controller.V3Controller):
         if project_params != requested_project_id:
             msg = _('Non-oauth parameter - project, do not match')
             raise exception.Unauthorized(message=msg)
+# the following code is how the request token should be generated using
+# oauthlib. Unfortunately it doesn't work with the current tests because
+# oauthlib expects a redirect URI in the query, see
+# https://github.com/idan/oauthlib/blob/1a06325edb3dd2ea083827e30f92544cc69db5f0/oauthlib/oauth1/rfc5849/endpoints/request_token.py#L172
+# since I am not sure oAuth clients specify strictly a redirect URI, I don't
+# know whether I should consider that the tests need to be changed or keystone
+# oAuth API needs to be redefined to take this into account.
+#        validator = OAuthValidator()
+#        request_verifier = oauth1.RTokenEndpoint(
+#            request_validator=validator,
+#            token_generator=oauth1.token_generator)
+#        h, b, s = request_verifier.create_request_token_response(
+#            url,
+#            http_method='POST',
+#            body=context['query_string'],
+#            headers=context['headers'],
+#            credentials={'requested_project_id': requested_project_id})
 
         request_token_duration = CONF.oauth1.request_token_duration
         token_ref = self.oauth_api.create_request_token(consumer_id,
@@ -247,25 +421,19 @@ class OAuthControllerV3(controller.V3Controller):
             if now > expires:
                 raise exception.Unauthorized(_('Request token is expired'))
 
-        consumer_obj = oauth1.Consumer(key=consumer['id'],
-                                       secret=consumer['secret'])
-        req_token_obj = oauth1.Token(key=req_token['id'],
-                                     secret=req_token['request_secret'])
-        req_token_obj.set_verifier(oauth_verifier)
-
         url = oauth1.rebuild_url(context['path'])
-        oauth_request = oauth1.Request.from_request(
-            http_method='POST',
-            http_url=url,
-            headers=context['headers'],
-            query_string=context['query_string'])
-        oauth_server = oauth1.Server()
-        oauth_server.add_signature_method(oauth1.SignatureMethod_HMAC_SHA1())
-        params = oauth_server.verify_request(oauth_request,
-                                             consumer_obj,
-                                             token=req_token_obj)
 
-        if params:
+        validator = OAuthValidator()
+        access_verifier = oauth1.AccessTokenEndpoint(
+            request_validator=validator,
+            token_generator=oauth1.token_generator)
+        h, b, s = access_verifier.create_access_token_response(
+            url,
+            http_method='POST',
+            body=context['query_string'],
+            headers=context['headers'])
+        params = oauth1.extract_non_oauth_params(b)
+        if len(params) != 0:
             msg = _('There should not be any non-oauth parameters')
             raise exception.Unauthorized(message=msg)
 
