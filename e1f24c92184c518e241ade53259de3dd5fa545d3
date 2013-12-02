@@ -34,6 +34,24 @@
       "revId": "e1f24c92184c518e241ade53259de3dd5fa545d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+GLM\u003d",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T16:08:43Z",
+      "side": 1,
+      "message": "I think the change is valid, but only keep stats_api.",
+      "parentUuid": "AAAATn/+HeA\u003d",
+      "revId": "e1f24c92184c518e241ade53259de3dd5fa545d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
