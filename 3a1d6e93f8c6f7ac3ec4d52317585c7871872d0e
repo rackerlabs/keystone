@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+I5k\u003d",
+        "filename": "1",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-02T04:32:34Z",
+      "side": 1,
+      "message": "this whole file needs to be removed, looks like it was meant to be in the git comment",
+      "revId": "3a1d6e93f8c6f7ac3ec4d52317585c7871872d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
