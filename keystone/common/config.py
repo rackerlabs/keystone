@@ -28,11 +28,11 @@ FILE_OPTIONS = {
     '': [
         cfg.StrOpt('admin_token', secret=True, default='ADMIN'),
         cfg.StrOpt('public_bind_host',
-                   default='0.0.0.0',
+                   default='127.0.0.1',
                    deprecated_opts=[cfg.DeprecatedOpt('bind_host',
                                                       group='DEFAULT')]),
         cfg.StrOpt('admin_bind_host',
-                   default='0.0.0.0',
+                   default='127.0.0.1',
                    deprecated_opts=[cfg.DeprecatedOpt('bind_host',
                                                       group='DEFAULT')]),
         cfg.IntOpt('compute_port', default=8774),

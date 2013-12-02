@@ -37,7 +37,7 @@ class Server(object):
 
     def __init__(self, application, host=None, port=None, threads=1000):
         self.application = application
-        self.host = host or '0.0.0.0'
+        self.host = host or '127.0.0.1'
         self.port = port or 0
         self.pool = eventlet.GreenPool(threads)
         self.socket_info = {}
