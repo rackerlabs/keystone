@@ -35,10 +35,10 @@ LOG = logging.getLogger(__name__)
 class Server(object):
     """Server class to manage multiple WSGI sockets and applications."""
 
-    def __init__(self, application, host=None, port=None, threads=1000):
+    def __init__(self, application, host='127.0.0.1', port=0, threads=1000):
         self.application = application
-        self.host = host or '127.0.0.1'
-        self.port = port or 0
+        self.host = host
+        self.port = port
         self.pool = eventlet.GreenPool(threads)
         self.socket_info = {}
         self.greenthread = None
