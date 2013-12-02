@@ -195,8 +195,20 @@ class Token(sql.Base, token.Driver):
     def flush_expired_tokens(self):
         session = self.get_session()
 
-        query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires < timeutils.utcnow())
-        query.delete(synchronize_session=False)
+        dialect = session.bind.dialect.name
+        if dialect == 'ibm_db_sa':
+            sql = (('DELETE FROM %(table)s WHERE ID IN (SELECT ID FROM '
+                    '%(table)s WHERE EXPIRES < ? FETCH FIRST 100 ROWS ONLY)') %
+                   {'table': TokenModel.__tablename__})
+            while True:
+                result = session.bind.execute(sql, (timeutils.utcnow(),))
+                deleted = result.rowcount
+                result.close()
+                if deleted == 0:
+                    break
+        else:
+            query = session.query(TokenModel)
+            query = query.filter(TokenModel.expires < timeutils.utcnow())
+            query.delete(synchronize_session=False)
 
         session.flush()
