@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+D1Y\u003d",
+        "filename": "keystone/tests/test_base64utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-03T19:01:23Z",
+      "side": 1,
+      "message": "Suggest adding a non hex-string for testing, but not insanely important.",
+      "revId": "6ba5e3683bc597b24a9447bf1f52ada5be3ec921",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
