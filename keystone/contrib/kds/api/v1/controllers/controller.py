@@ -14,6 +14,8 @@
 
 import pecan
 
+from keystone.contrib.kds.api.v1.controllers import key as key_controller
+
 
 class Controller(object):
     """Version 1 API controller root."""
@@ -26,6 +28,8 @@ class Controller(object):
                 'links': [{
                     'href': '%s/%s' % (pecan.request.host_url, path),
                     'rel': 'self'}]}
+
+    key = key_controller.KeyController()
 
     @pecan.expose('json')
     def index(self):
