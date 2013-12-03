@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/995E\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Is the boolean expression \u0027not self.isolation\u0027 correct?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99zc\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Since reconfiguring the backend is potentially dangerous is there any reason why this isn\u0027t in the __init__?  It is possible to create an instance of KeyValueStore and use it without calling configure?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99zA\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Is this just making sure that the value isn\u0027t None?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99y0\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Replace \u0027 %\u0027 with \u0027,\u0027",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99yk\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "What\u0027s this for?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99xk\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Any reason not to use importutils.import_class?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99vM\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "In the case of memcached won\u0027t this return a dictionary?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99vw\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Is there any reason you are forcing an exception here?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99u0\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "Why do you need to lock here? I would expect the backend to serialize access to a key already. Does that not happen for one of the backends?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99uc\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:25:00Z",
+      "side": 1,
+      "message": "What\u0027s the race condition here?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
