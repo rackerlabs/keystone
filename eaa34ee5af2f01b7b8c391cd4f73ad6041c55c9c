@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9+XI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:21:13Z",
+      "side": 1,
+      "message": "(NIT): s/with/from/",
+      "revId": "eaa34ee5af2f01b7b8c391cd4f73ad6041c55c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+Wk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:21:13Z",
+      "side": 1,
+      "message": "replace \u0027what is not exists\u0027 with \u0027which doesn\u0027t exist in Keystone yet.\u0027",
+      "revId": "eaa34ee5af2f01b7b8c391cd4f73ad6041c55c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+Wc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:21:13Z",
+      "side": 1,
+      "message": "NIT: Can probably remove the \u0027File was synchronized\u0027 part.",
+      "revId": "eaa34ee5af2f01b7b8c391cd4f73ad6041c55c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
