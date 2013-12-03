@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9+Uw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:28:33Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to link to the bug report for me. Also consider changing to:\n\n    Closes-Bug: 1230260",
+      "revId": "f5a5d477f3053303d407d7ff8cd590f3aa05342d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+UU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:28:33Z",
+      "side": 1,
+      "message": "(NIT): It might be nice to have the docstring parameter for entity_ref documented as well, since that is being passed in and we return it.",
+      "revId": "f5a5d477f3053303d407d7ff8cd590f3aa05342d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+T4\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:28:33Z",
+      "side": 1,
+      "message": "Same comment as entity_ref",
+      "revId": "f5a5d477f3053303d407d7ff8cd590f3aa05342d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+TU\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:28:33Z",
+      "side": 1,
+      "message": "Wrap in parenthesis instead of using \\ for line continuation: \n\nhttp://docs.openstack.org/developer/hacking/#general",
+      "revId": "f5a5d477f3053303d407d7ff8cd590f3aa05342d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+TI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:28:33Z",
+      "side": 1,
+      "message": "Just out of curiosity, why add a new line here?",
+      "revId": "f5a5d477f3053303d407d7ff8cd590f3aa05342d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
