@@ -12,8 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.tests.contrib.kds.fixture import conf
+from keystone.tests.contrib.kds.fixture import kvsdb
+from keystone.tests.contrib.kds.fixture import sqlitedb
 
-Conf = conf.Conf
+SqliteDb = sqlitedb.SqliteDb
+KvsDb = kvsdb.KvsDb
 
-__all__ = [Conf]
+
+__all__ = [SqliteDb, KvsDb]
