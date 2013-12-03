@@ -1004,6 +1004,87 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': token2},
                   expected_status=404)
 
+    def test_removing_roles_should_not_remove_token_in_other_projects(self):
+        """If the user has roles in two projects (role1 in ProjectA,
+           role1 and new_role in ProjectB) and new_role is removed
+           from ProjectB, the token for ProjectA should still be valid.
+        """
+        self.assignment_api.create_grant(self.role1['id'],
+                                         user_id=self.user1['id'],
+                                         project_id=self.projectB['id'])
+        ra = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectA['id']))
+        user1_token_a = ra.headers.get('X-Subject-Token')
+        # Confirm token is valid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': user1_token_a},
+                  expected_status=204)
+        rb = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectB['id']))
+        user1_token_b = rb.headers.get('X-Subject-Token')
+
+        # Confirm token is valid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': user1_token_b},
+                  expected_status=204)
+        new_role = self.new_role_ref()
+        self.assignment_api.create_role(new_role['id'], new_role)
+
+        # Assign a role, which should not affect the token
+        grant_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': self.projectB['id'],
+                'user_id': self.user1['id'],
+                'role_id': new_role['id']})
+        self.put(grant_url)
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': user1_token_b},
+                  expected_status=204)
+        # delete relationships between user1 and projectB (new_role)
+        self.delete(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'project_id': self.projectB['id'],
+                'user_id': self.user1['id'],
+                'role_id': new_role['id']})
+
+        # authorization for projectB should fail since the token is
+        # removed for projectB
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': user1_token_b},
+                  expected_status=404)
+        # authorization for projectA should not fail.
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': user1_token_a},
+                  expected_status=204)
+
+        rb = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectB['id']))
+        user1_token_b = rb.headers.get('X-Subject-Token')
+        # Confirm token is valid
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': user1_token_b},
+                  expected_status=204)
+        # onle role1 is expected for user1 in projectB
+        r = self.get(
+            '/projects/%(project_id)s/users/%(user_id)s/roles' % {
+                'project_id': self.projectB['id'],
+                'user_id': self.user1['id']})
+        self.assertValidRoleListResponse(r, expected_length=1)
+        self.assertValidRoleListResponse(r, ref=self.role1)
+
     def test_removing_role_assignment_does_not_affect_other_users(self):
         """Revoking a role from one user should not affect other users."""
         r = self.post(
