@@ -788,7 +788,7 @@ class AuthWithTrust(AuthTest):
 
     def assert_token_count_for_trust(self, expected_value):
         tokens = self.trust_controller.token_api.list_tokens(
-            self.trustee['id'], trust_id=self.new_trust['id'])
+            self.trustor['id'], trust_id=self.new_trust['id'])
         token_count = len(tokens)
         self.assertEqual(token_count, expected_value)
 
@@ -796,7 +796,7 @@ class AuthWithTrust(AuthTest):
         self.assert_token_count_for_trust(0)
         self.fetch_v2_token_from_trust()
         self.assert_token_count_for_trust(1)
-        self.trust_controller._delete_tokens_for_user(self.trustee['id'])
+        self.trust_controller._delete_tokens_for_user(self.trustor['id'])
         self.assert_token_count_for_trust(0)
 
     def test_token_from_trust_cant_get_another_token(self):

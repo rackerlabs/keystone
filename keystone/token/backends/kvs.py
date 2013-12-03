@@ -83,17 +83,21 @@ class Token(kvs.Base, token.Driver):
     def trust_matches(self, trust_id, ref):
         return ref.get('trust_id') and ref['trust_id'] == trust_id
 
-    def _list_tokens_for_trust(self, trust_id):
+    def user_matches(self, user_id, ref):
+        return ref.get('user') and ref['user'].get('id') == user_id
+
+    def _list_tokens_for_trust(self, trust_id, user_id):
         tokens = []
         now = timeutils.utcnow()
         for token, ref in self.db.items():
             if not token.startswith('token-') or self.is_expired(now, ref):
                 continue
-            if self.trust_matches(trust_id, ref):
+            if (self.trust_matches(trust_id, ref) and
+                    self.user_matches(user_id, ref)):
                 tokens.append(token.split('-', 1)[1])
         return tokens
 
-    def _consumer_matches(self, consumer_id, token_ref_dict):
+    def _consumer_matches(self, consumer_id, token_ref_dict, user_id):
         if consumer_id is None:
             return True
         else:
@@ -102,11 +106,12 @@ class Token(kvs.Base, token.Driver):
                 if 'token' in token_data:
                     token = token_data.get('token')
                     oauth = token.get('OS-OAUTH1')
-                    if oauth and oauth.get('consumer_id') == consumer_id:
+                    if (oauth and oauth.get('consumer_id') == consumer_id
+                            and self.user_matches(user_id, token_ref_dict)):
                         return True
             return False
 
-    def _list_tokens_for_consumer(self, consumer_id):
+    def _list_tokens_for_consumer(self, consumer_id, user_id):
         tokens = []
         now = timeutils.utcnow()
         for token, ref in self.db.items():
@@ -117,8 +122,6 @@ class Token(kvs.Base, token.Driver):
         return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
-        def user_matches(user_id, ref):
-            return ref.get('user') and ref['user'].get('id') == user_id
 
         def tenant_matches(tenant_id, ref):
             return ((tenant_id is None) or
@@ -131,7 +134,7 @@ class Token(kvs.Base, token.Driver):
             if not token.startswith('token-') or self.is_expired(now, ref):
                 continue
             else:
-                if (user_matches(user_id, ref) and
+                if (self.user_matches(user_id, ref) and
                         tenant_matches(tenant_id, ref)):
                         tokens.append(token.split('-', 1)[1])
         return tokens
@@ -139,9 +142,9 @@ class Token(kvs.Base, token.Driver):
     def list_tokens(self, user_id, tenant_id=None, trust_id=None,
                     consumer_id=None):
         if trust_id:
-            return self._list_tokens_for_trust(trust_id)
+            return self._list_tokens_for_trust(trust_id, user_id)
         if consumer_id:
-            return self._list_tokens_for_consumer(consumer_id)
+            return self._list_tokens_for_consumer(consumer_id, user_id)
         else:
             return self._list_tokens_for_user(user_id, tenant_id)
 
