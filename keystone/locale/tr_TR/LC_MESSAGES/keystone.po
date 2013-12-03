@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-11-28 06:01+0000\n"
+"POT-Creation-Date: 2013-12-03 06:01+0000\n"
 "PO-Revision-Date: 2013-07-29 22:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Turkish (Turkey) "
@@ -197,10 +197,10 @@ msgstr ""
 
 #: keystone/exception.py:245
 #, python-format
-msgid "The Keystone paste configuration file %(config_file)s could not be found."
+msgid "The Keystone configuration file %(config_file)s could not be found."
 msgstr ""
 
-#: keystone/notifications.py:96
+#: keystone/notifications.py:97
 #, python-format
 msgid "Failed to send %(res_id)s %(event_type)s notification"
 msgstr ""
@@ -238,11 +238,13 @@ msgid "Project is disabled: %s"
 msgstr ""
 
 #: keystone/auth/controllers.py:78 keystone/auth/plugins/password.py:42
+#: keystone/token/core.py:76 keystone/token/core.py:92
 #, python-format
 msgid "Domain is disabled: %s"
 msgstr ""
 
 #: keystone/auth/controllers.py:84 keystone/auth/plugins/password.py:48
+#: keystone/token/core.py:68
 #, python-format
 msgid "User is disabled: %s"
 msgstr ""
@@ -333,8 +335,8 @@ msgstr ""
 #: keystone/catalog/core.py:53
 #, python-format
 msgid ""
-"Malformed endpoint %s - incomplete format                   (are you "
-"missing a type notifier ?)"
+"Malformed endpoint %s - incomplete format (are you missing a type "
+"notifier ?)"
 msgstr ""
 
 #: keystone/catalog/backends/templated.py:107
@@ -380,12 +382,12 @@ msgid "RBAC: Proceeding without tenant"
 msgstr ""
 
 #: keystone/common/controller.py:122 keystone/common/controller.py:199
-#: keystone/common/controller.py:472
+#: keystone/common/controller.py:471
 msgid "RBAC: Bypassing authorization"
 msgstr ""
 
 #: keystone/common/controller.py:157 keystone/common/controller.py:197
-#: keystone/common/controller.py:488
+#: keystone/common/controller.py:487
 msgid "RBAC: Authorization granted"
 msgstr ""
 
@@ -415,7 +417,7 @@ msgid ""
 "ignoring."
 msgstr ""
 
-#: keystone/common/controller.py:443
+#: keystone/common/controller.py:442
 msgid "Invalid token in _get_domain_id_for_request"
 msgstr ""
 
@@ -496,32 +498,32 @@ msgstr ""
 
 #: keystone/common/cache/core.py:50
 #, python-format
-msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
+msgid "CACHE_GET: Key: \"%(key)r\" Value: \"%(value)r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:56
 #, python-format
-msgid "CACHE_GET_MULTI: \"%(keys)s\" Values: \"%(values)s\""
+msgid "CACHE_GET_MULTI: \"%(keys)r\" Values: \"%(values)r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:61
 #, python-format
-msgid "CACHE_SET: Key: \"%(key)s\" Value: \"%(value)s\""
+msgid "CACHE_SET: Key: \"%(key)r\" Value: \"%(value)r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:66
 #, python-format
-msgid "CACHE_SET_MULTI: \"%s\""
+msgid "CACHE_SET_MULTI: \"%r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:71
 #, python-format
-msgid "CACHE_DELETE: \"%s\""
+msgid "CACHE_DELETE: \"%r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:74
 #, python-format
-msgid "CACHE_DELETE_MULTI: \"%s\""
+msgid "CACHE_DELETE_MULTI: \"%r\""
 msgstr ""
 
 #: keystone/common/cache/core.py:92
@@ -836,22 +838,22 @@ msgstr ""
 msgid "Unable to add user %(user)s to %(tenant)s."
 msgstr ""
 
-#: keystone/identity/controllers.py:884
+#: keystone/identity/controllers.py:910
 msgid "Specify a domain or project, not both"
 msgstr ""
 
-#: keystone/identity/controllers.py:889
+#: keystone/identity/controllers.py:915
 msgid "Specify a user or group, not both"
 msgstr ""
 
-#: keystone/identity/controllers.py:1118
+#: keystone/identity/controllers.py:1144
 #, python-format
 msgid ""
 "Group %(group)s not found for role-assignment - %(target)s with Role: "
 "%(role)s"
 msgstr ""
 
-#: keystone/identity/core.py:95
+#: keystone/identity/core.py:96
 #, python-format
 msgid "Invalid domain name (%s) found in config file name"
 msgstr ""
@@ -1172,7 +1174,7 @@ msgstr ""
 msgid "Got mysql server has gone away: %s"
 msgstr ""
 
-#: keystone/openstack/common/db/sqlalchemy/session.py:696
+#: keystone/openstack/common/db/sqlalchemy/session.py:697
 #, python-format
 msgid "SQL connection failed. %s attempts left."
 msgstr ""
@@ -1771,6 +1773,11 @@ msgstr ""
 msgid "Token does not belong to specified tenant."
 msgstr ""
 
+#: keystone/token/core.py:83
+#, python-format
+msgid "Tenant is disabled: %s"
+msgstr ""
+
 #: keystone/token/provider.py:82
 msgid ""
 "keystone.conf [signing] token_format (deprecated) conflicts with "
@@ -1825,6 +1832,10 @@ msgstr ""
 
 #: keystone/token/backends/memcache.py:170
 msgid "Unable to add token to revocation list."
+msgstr ""
+
+#: keystone/token/providers/pki.py:42
+msgid "Unable to sign token"
 msgstr ""
 
 #: keystone/token/providers/pki.py:43
@@ -1935,5 +1946,34 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Failed to understand rule %(rule)r"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Keystone paste configuration file "
+#~ "%(config_file)s could not be found."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Malformed endpoint %s - incomplete "
+#~ "format                   (are you missing a"
+#~ " type notifier ?)"
+#~ msgstr ""
+
+#~ msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_GET_MULTI: \"%(keys)s\" Values: \"%(values)s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_SET: Key: \"%(key)s\" Value: \"%(value)s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_SET_MULTI: \"%s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_DELETE: \"%s\""
+#~ msgstr ""
+
+#~ msgid "CACHE_DELETE_MULTI: \"%s\""
 #~ msgstr ""
 
