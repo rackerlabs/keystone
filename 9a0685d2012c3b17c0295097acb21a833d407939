@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/7M\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T16:35:33Z",
+      "side": 1,
+      "message": "does this have to be 100 or can this be something that is configurable, with 100 being the max?\n\nOr would it be beneficial to have this as a config option?",
+      "revId": "9a0685d2012c3b17c0295097acb21a833d407939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
