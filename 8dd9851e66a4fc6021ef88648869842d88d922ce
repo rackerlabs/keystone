@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9/w4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-12-03T17:08:50Z",
+      "side": 1,
+      "message": "Yes, this can cause problems. For example, Manager.remove_user_from_project makes a bunch of queries in separate transactions to get all of the roles a user has on a tenant, then calls the driver\u0027s remove_role_from_user_and_project on each role. Since a role could be deleted between driver calls, the Manager\u0027s remove_user_from_project can return a 404 even though not all of the roles have been deleted: for example, the second role in a list of five is deleted in another transaction, then the last 3 roles aren\u0027t deleted.\n\nThere are a couple of solutions to this problem. One would be to add try: except: around driver calls that could refer to data that can be deleted:\n\n    def remove_user_from_project(...)\n    ...\n        for role_id in roles:\n            try:\n                self.driver.remove_role_from_user_and_project(user_id, tenant_id,\n                                                          role_id)\n            except RoleNotFound:\n                pass\n\nAnother solution would be to add begin \u0026 end transaction methods to the driver interface and call them at the higher level spots in the manager. A simple begin \u0026 end transaction implementation could be to serialize everything with a lock; for sql, we\u0027d obviously use database transactions.\n\nI\u0027m pretty sure the try: except: approach would be a smaller patch, so that\u0027s what I\u0027d favor implementing.",
+      "parentUuid": "AAAATn/+ADw\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+ACU\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 7
@@ -81,6 +99,24 @@
       "writtenOn": "2013-12-03T16:26:33Z",
       "side": 1,
       "message": "use named parameters for named arguments... e.g. change \"user_id, group_id, ...\" to \"user_id\u003duser_id, group_id\u003dgroup_id, ...\"",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/tc\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-12-03T17:08:50Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAATn/+ACU\u003d",
       "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9/sw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-12-03T17:08:50Z",
+      "side": 1,
+      "message": "Good catch! Will do.",
+      "parentUuid": "AAAATn/+AJ4\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+AS0\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 7
@@ -156,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9/sk\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-12-03T17:08:50Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAATn/+AS0\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+AUE\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 7
@@ -167,6 +239,24 @@
       "writtenOn": "2013-12-03T16:26:33Z",
       "side": 1,
       "message": "How is this change required for doing one transaction per operation? Suggest revert it.",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/rE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7500
+      },
+      "writtenOn": "2013-12-03T17:08:50Z",
+      "side": 1,
+      "message": "Another reviewer had suggested making the change in the spirit of the same HACKING rule you cited above (- Do not import objects, only modules (*)) since I had to add  \"import sqlalchemy.orm.attributes\" for flag_modified.\n\nSince I want the review to converge to +[12], so somebody ought to make an executive decision :-)",
+      "parentUuid": "AAAATn/+AUE\u003d",
       "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
