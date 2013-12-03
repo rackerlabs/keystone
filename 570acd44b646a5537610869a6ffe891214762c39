@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+DnI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:02:09Z",
+      "side": 1,
+      "message": "Neither the commit message nor the bug describes what behavior is changing. Can I use both username and name on POST /v2.0/users? Do I get back username and user when GET /v2.0/users and GET /v2.0/users/{userId}?",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DmQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:02:09Z",
+      "side": 1,
+      "message": "do we need to copy \"v2.0 users\" on every line?",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DkA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:02:09Z",
+      "side": 1,
+      "message": "revert whitespace change, see https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits \"Mixing whitespace changes with functional code changes.\"",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Dk0\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:02:09Z",
+      "side": 1,
+      "message": "suggest change to self.assertEqual(user[\u0027name\u0027], user[\u0027username\u0027]) ... that way if the user changes to use different names then this will fail rather than passing since None \u003d\u003d None.\n\nThis applies throughout these tests, e.g. lines 815 and 893.\n\nAlso, could put this in a function... function should probably cover 794-797 since these lines are copied into all these tests.\n\nCould put the assertEqual test in the assertValidUser function?",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Dl8\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:02:09Z",
+      "side": 1,
+      "message": "suggest change assertValidUserResponse to return the user.",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Dlo\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:02:09Z",
+      "side": 1,
+      "message": "POST doesn\u0027t return 201 Created? Weird.",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
