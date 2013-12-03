@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+DUE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-03T02:38:33Z",
+      "side": 1,
+      "message": "there are just inconsistencies, look at line 72 for an example with [] as the default.",
+      "parentUuid": "AAAATn/+ERI\u003d",
+      "revId": "9bea2c38c1e797b4fdba59e190e6252cad1ced5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+E2U\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 5
