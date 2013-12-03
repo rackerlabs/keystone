@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+DIo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T03:06:24Z",
+      "side": 1,
+      "message": "why did i think that this was SecImpact? need to spell it out SecurityImpact",
+      "revId": "fba87358f344541788d573280e89cffc696f7b82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
