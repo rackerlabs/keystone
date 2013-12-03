@@ -11,27 +11,49 @@
 # under the License.
 
 from oslo.config import cfg
+import six
 
 from keystone.openstack.common import log
 
 CONF = cfg.CONF
 
 FILE_OPTIONS = {
-    None: [
+    None: (None, [
         cfg.StrOpt('bind_ip',
                    default='0.0.0.0',
                    help='IP for the server to bind to'),
         cfg.IntOpt('port',
                    default=9109,
-                   help='The port for the server')]}
+                   help='The port for the server'),
+    ]),
+    'kds': ('Key Distribution Service', [
+        cfg.StrOpt('master_key_file',
+                   default='/etc/keystone/kds.mkey',
+                   help='The location of the KDS master key. MUST be private. '
+                        'If missing or unavailable one will be created.'),
+        cfg.StrOpt('enctype',
+                   default='AES',
+                   help='Encryption Algorithm used to encrypt service keys '
+                        'for storing in the database.'),
+        cfg.StrOpt('hashtype',
+                   default='SHA256',
+                   help='Hashing Algorithm used when generating signatures '
+                        'for integrity when storing keys to the database'),
+        cfg.IntOpt('ticket_lifetime',
+                   default=3600,
+                   help='Length of ticket validity (in seconds)'),
+    ]),
+}
 
 
 def configure(conf=None):
     if conf is None:
         conf = CONF
 
-    for group in FILE_OPTIONS:
-        conf.register_opts(FILE_OPTIONS[group], group=group)
+    for group, (title, options) in six.iteritems(FILE_OPTIONS):
+        if title:
+            conf.register_group(cfg.OptGroup(name=group, title=title))
+        conf.register_opts(options, group=group)
 
 
 def parse_args(args, default_config_files=None):
