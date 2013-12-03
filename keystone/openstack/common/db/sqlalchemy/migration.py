@@ -42,6 +42,7 @@
 import distutils.version as dist_version
 import os
 import re
+import sys
 
 import migrate
 from migrate.changeset import ansisql
@@ -221,6 +222,7 @@ def db_sync(abs_path, version=None, init_version=0):
 
     current_version = db_version(abs_path, init_version)
     repository = _find_migrate_repo(abs_path)
+    sys.stderr.write("Migrate db: %s with repo: %s\n" % (get_engine(), repository))
     if version is None or version > current_version:
         return versioning_api.upgrade(get_engine(), repository, version)
     else:

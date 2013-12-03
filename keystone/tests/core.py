@@ -132,11 +132,14 @@ def setup_database():
 
     try:
         if os.path.exists(db):
+            print "Remove old db", db
             os.unlink(db)
         if not os.path.exists(pristine):
             sql.migration.db_sync()
             shutil.copyfile(db, pristine)
+            print "copying db %s to prinsting %s" % (db, pristine)
         else:
+            print "copying pristine %s to %s" % (pristine, db)
             shutil.copyfile(pristine, db)
     except Exception:
         pass

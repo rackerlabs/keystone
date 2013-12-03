@@ -40,6 +40,8 @@ except ImportError:
 
 
 def migrate_repository(version, current_version, repo_path):
+    sys.stderr.write("Migrating db: %s with %s\n" % (CONF.sql.connection,
+                                                     repo_path))
     if version is None or version > current_version:
         result = versioning_api.upgrade(CONF.sql.connection,
                                         repo_path, version)
