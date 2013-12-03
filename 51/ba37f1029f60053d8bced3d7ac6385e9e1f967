@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Verified+1: SmokeStack
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Jamie Lennox <jamielennox@redhat.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Kui Shi <skuicloud@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 03 Dec 2013 16:52:09 +0000
+Reviewed-on: https://review.openstack.org/53860
+Project: openstack/keystone
+Branch: refs/heads/master
