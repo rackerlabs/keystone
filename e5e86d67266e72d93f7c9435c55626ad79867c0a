@@ -104,6 +104,24 @@
       "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/993g\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-03T22:31:33Z",
+      "side": 1,
+      "message": "the new abuse of service \"type\" is completely terrible. i\u0027d rather delete all non-identity endpoints from this file than promote that approach",
+      "parentUuid": "AAAATn/+4lw\u003d",
+      "revId": "e5e86d67266e72d93f7c9435c55626ad79867c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
