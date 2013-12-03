@@ -230,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9944\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T22:28:34Z",
+      "side": 1,
+      "message": "Thanks again, appreciate it!",
+      "parentUuid": "AAAATn/+rWw\u003d",
+      "revId": "46a6307429831164225b3215cdae8e2feb28f9d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+u50\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
