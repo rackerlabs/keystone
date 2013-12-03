@@ -14,9 +14,18 @@
 
 import pecan
 
+from keystone.contrib.kds.api.v1 import controllers
+
 
 class RootController(object):
 
+    v1 = controllers.Controller()
+
     @pecan.expose('json')
     def index(self):
-        return {'hello': 'world'}
+        pecan.response.status = 300
+        return {
+            'versions': {
+                'values': [self.v1.VERSION_INFO]
+            }
+        }
