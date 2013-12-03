@@ -12,6 +12,45 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+_FATAL_EXCEPTION_FORMAT_ERRORS = False
+
 
 class KdsException(Exception):
-    pass
+    """Base Exception class.
+
+    To correctly use this class, inherit from it and define
+    a 'msg_fmt' property. That message will get printf'd
+    with the keyword arguments provided to the constructor.
+    """
+
+    msg_fmt = _("An unknown exception occurred")
+
+    def __init__(self, **kwargs):
+        try:
+            self._error_string = self.msg_fmt % kwargs
+
+        except Exception:
+            if _FATAL_EXCEPTION_FORMAT_ERRORS:
+                raise
+            else:
+                # at least get the core message out if something happened
+                self._error_string = self.msg_fmt
+
+    def __str__(self):
+        return self._error_string
+
+
+class _SingleArgumentException(KdsException):
+    _argument = 'reason'
+
+    def __init__(self, argument):
+        kwargs = {self._argument: argument}
+        super(_SingleArgumentException, self).__init__(**kwargs)
+
+
+class BackendException(_SingleArgumentException):
+    msg_fmt = _("Failed to load a pluggable backend: %(reason)s")
+
+
+class IntegrityError(_SingleArgumentException):
+    msg_fmt = _("Cannot set key value: %(reason)s")

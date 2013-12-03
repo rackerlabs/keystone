@@ -12,16 +12,19 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
+import fixtures
+from oslo.config import cfg
 
-COMMON_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
-ROOT_DIR = os.path.join(COMMON_DIR, '..')
-TEST_DIR = os.path.join(ROOT_DIR, 'tests')
+from keystone.contrib.kds.db import api as db_api
 
-
-def root_path(*args):
-    return os.path.join(TEST_DIR, *args)
+CONF = cfg.CONF
 
 
-def test_path(*args):
-    return os.path.join(TEST_DIR, *args)
+class KvsDb(fixtures.Fixture):
+
+    def setUp(self):
+        super(KvsDb, self).setUp()
+
+        CONF.set_override('backend', 'kvs', 'database')
+
+        db_api.reset()
