@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/8o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T16:29:55Z",
+      "side": 1,
+      "message": "Here it would be nice to explain why you\u0027re making the change and also reference the bug:\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages\n\nhttps://bugs.launchpad.net/keystone/+bug/1252299",
+      "revId": "9d3027391fac36a038eecea2e839937fb5a6d4d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
