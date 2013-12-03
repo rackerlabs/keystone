@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/5A\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:47:34Z",
+      "side": 1,
+      "message": "remove \"just\" from the name.\n\nchange \"tenant_id\" parameter to \"project_id\"",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/4Y\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:47:34Z",
+      "side": 1,
+      "message": "we shouldn\u0027t be calling a private method of a class. Create a public method to call.\n\nDoes it make sense to generate a DN for a group that\u0027s in the SQL backend rather than an LDAP backend? The entry isn\u0027t going to exist.",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/3U\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:47:34Z",
+      "side": 1,
+      "message": "This is because Active Directory changes the member value in the same way. So suggest change \"In tests performed on the memory\" to \"For Active Directory,\"",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
