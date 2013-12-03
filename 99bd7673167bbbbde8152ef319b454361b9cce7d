@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+DiQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:16:21Z",
+      "side": 1,
+      "message": "suggest add some docs for how to disable caching for tests.",
+      "revId": "99bd7673167bbbbde8152ef319b454361b9cce7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DiI\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:16:21Z",
+      "side": 1,
+      "message": "suggest don\u0027t copy the name, use \"This decorator\"",
+      "revId": "99bd7673167bbbbde8152ef319b454361b9cce7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
