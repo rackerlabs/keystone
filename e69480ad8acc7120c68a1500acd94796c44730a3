@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+DNA\u003d",
+        "filename": "keystone/contrib/kds/cli/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:47:15Z",
+      "side": 1,
+      "message": "needs eventlet",
+      "revId": "e69480ad8acc7120c68a1500acd94796c44730a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DM4\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:47:15Z",
+      "side": 1,
+      "message": "needs an example /etc/kds.conf file - or should it still be part of keystone.conf?",
+      "revId": "e69480ad8acc7120c68a1500acd94796c44730a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DMo\u003d",
+        "filename": "keystone/tests/contrib/kds/api/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:47:15Z",
+      "side": 1,
+      "message": "this file doesn\u0027t exist - but nor do we use templates or public.",
+      "revId": "e69480ad8acc7120c68a1500acd94796c44730a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DNQ\u003d",
+        "filename": "keystone/tests/contrib/kds/fixture/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:47:15Z",
+      "side": 1,
+      "message": "was replaced by the one from oslo. remove.",
+      "revId": "e69480ad8acc7120c68a1500acd94796c44730a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
