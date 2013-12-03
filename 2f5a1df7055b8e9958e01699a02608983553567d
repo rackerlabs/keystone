@@ -16,6 +16,24 @@
       "revId": "2f5a1df7055b8e9958e01699a02608983553567d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/LQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-03T18:36:29Z",
+      "side": 1,
+      "message": "Ah.  I was a bit confused.  The documentation on caching is: \nhttps://github.com/openstack/keystone/blob/master/doc/source/configuration.rst#caching-layer\n \nShould I outline placing those options in test-overrides.conf?",
+      "parentUuid": "AAAATn/+AYA\u003d",
+      "revId": "2f5a1df7055b8e9958e01699a02608983553567d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
