@@ -16,6 +16,24 @@
       "revId": "569ac30823298203bba8782c6c8122a08dca38c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+AzA\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 8001
+      },
+      "writtenOn": "2013-12-03T14:11:40Z",
+      "side": 1,
+      "message": "That would have been my preference as well.  I attempted to use a subquery with query.yield_per(100), but that did not affect the generated SQL--from what I could tell in the SQLAlchemy code, it is used after the query has already been performed.  I could not find any other mechanism for limiting the number of results.",
+      "parentUuid": "AAAATn/+EDI\u003d",
+      "revId": "569ac30823298203bba8782c6c8122a08dca38c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
