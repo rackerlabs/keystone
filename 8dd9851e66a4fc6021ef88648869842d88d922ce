@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9/o8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T17:15:31Z",
+      "side": 1,
+      "message": "Suggest change add a TODO(peter@gridcentric.ca): here and submit that change separately to not hold up the rest of this.",
+      "parentUuid": "AAAATn/9/w4\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+ACU\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 7
@@ -257,6 +275,24 @@
       "side": 1,
       "message": "Another reviewer had suggested making the change in the spirit of the same HACKING rule you cited above (- Do not import objects, only modules (*)) since I had to add  \"import sqlalchemy.orm.attributes\" for flag_modified.\n\nSince I want the review to converge to +[12], so somebody ought to make an executive decision :-)",
       "parentUuid": "AAAATn/+AUE\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/og\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T17:15:31Z",
+      "side": 1,
+      "message": "I don\u0027t mind the change itself, just that a cleanup like this should be made in a separate commit.\n\nAlso, there\u0027s an exception to the rule for sqlalchemy imports: https://github.com/openstack-dev/hacking/blame/master/doc/source/index.rst#L62",
+      "parentUuid": "AAAATn/9/rE\u003d",
       "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
