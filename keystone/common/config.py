@@ -77,7 +77,8 @@ FILE_OPTIONS = {
                    default='keystone.token.backends.sql.Token'),
         cfg.BoolOpt('caching', default=True),
         cfg.IntOpt('revocation_cache_time', default=3600),
-        cfg.IntOpt('cache_time', default=None)],
+        cfg.IntOpt('cache_time', default=None),
+        cfg.IntOpt('flush_period', default=3600)],
     'cache': [
         cfg.StrOpt('config_prefix', default='cache.keystone'),
         cfg.IntOpt('expiration_time', default=600),
