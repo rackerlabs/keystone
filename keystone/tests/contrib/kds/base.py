@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone.contrib.kds.common import service
+from keystone.contrib.kds.db import api as db_api
 from keystone.openstack.common.fixture import config
 from keystone.openstack.common import test
 
@@ -23,4 +24,8 @@ class BaseTestCase(test.BaseTestCase):
         super(BaseTestCase, self).setUp()
         self.config_fixture = self.useFixture(config.Config())
         self.CONF = self.config_fixture.conf
+        db_api.reset()
         service.parse_args(args=[])
+
+    def config(self, *args, **kwargs):
+        self.config_fixture.config(*args, **kwargs)

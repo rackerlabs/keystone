@@ -12,6 +12,21 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.openstack.common import exception
 
-class KdsException(Exception):
-    pass
+
+class KdsException(exception.OpenstackException):
+
+    def __init__(self, message=None, **kwargs):
+        if message:
+            try:
+                kwargs['reason'] = message.message
+            except AttributeError:
+                kwargs['reason'] = message
+
+        kwargs.setdefault('reason', '')
+        super(KdsException, self).__init__(**kwargs)
+
+
+class BackendException(KdsException):
+    msg_fmt = _("Failed to load a pluggable backend: %(reason)s")
