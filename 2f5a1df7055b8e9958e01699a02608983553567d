@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+AYA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T15:29:21Z",
+      "side": 1,
+      "message": "I should have been clearer in the previous patch set -- how do I change the configuration from the default so that I\u0027m not using caching for any or all tests?\n\nI thought this was a feature so that I could reconfigure my local system to disable caching and run tests and have it pass rather than fail.\n\nThe decorator is already documented in its docstring.",
+      "revId": "2f5a1df7055b8e9958e01699a02608983553567d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
