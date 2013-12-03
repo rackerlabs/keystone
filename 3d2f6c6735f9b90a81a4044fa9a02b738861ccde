@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9+BM\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-03T22:09:30Z",
+      "side": 1,
+      "message": "I\u0027ll work on removing this test and making the test validate via the public delete method instead of the \"internal\" reference.",
+      "parentUuid": "AAAATn/9+X0\u003d",
+      "revId": "3d2f6c6735f9b90a81a4044fa9a02b738861ccde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9+aY\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-03T21:12:36Z",
       "side": 1,
       "message": "These values are already defaulting to None in the method signature on line 198 and 199.",
+      "revId": "3d2f6c6735f9b90a81a4044fa9a02b738861ccde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+Co\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-03T22:09:30Z",
+      "side": 1,
+      "message": "Whoopse.  Good catch.",
+      "parentUuid": "AAAATn/9+aY\u003d",
       "revId": "3d2f6c6735f9b90a81a4044fa9a02b738861ccde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
