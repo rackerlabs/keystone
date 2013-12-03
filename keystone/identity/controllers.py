@@ -1038,10 +1038,11 @@ class RoleV3(controller.V3Controller):
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-        # Now delete any tokens for this user or, in the case of a group,
-        # tokens from all the uses who are members of this group.
+        # Now delete any tokens for this user in the given project (if any)
+        # or, in the case of a group, tokens from all the uses who
+        # are members of this group.
         if user_id:
-            self._delete_tokens_for_user(user_id)
+            self._delete_tokens_for_user(user_id, project_id)
         else:
             self._delete_tokens_for_group(group_id)
 
