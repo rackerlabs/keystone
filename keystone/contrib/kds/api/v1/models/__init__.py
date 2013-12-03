@@ -12,9 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.contrib.kds.api.v1.models import group
 from keystone.contrib.kds.api.v1.models import key
 from keystone.contrib.kds.api.v1.models import ticket
 
+Group = group.Group
 KeyInput = key.KeyInput
 KeyData = key.KeyData
 Ticket = ticket.Ticket
