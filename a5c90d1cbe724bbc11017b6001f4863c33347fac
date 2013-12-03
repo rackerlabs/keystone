@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9+yQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T19:58:55Z",
+      "side": 1,
+      "message": "use named parameters for named arguments, change \"user_id\" to \"user_id\u003duser_id\"",
+      "revId": "a5c90d1cbe724bbc11017b6001f4863c33347fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
