@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9+Rk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:33:41Z",
+      "side": 1,
+      "message": "(NIT): docstrings for parameters and return values?",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9+Rg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:33:41Z",
+      "side": 1,
+      "message": "ditto?",
+      "revId": "570acd44b646a5537610869a6ffe891214762c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+DmQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
