@@ -12,18 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import fixtures
+import sys
 
 from keystone.contrib.kds.common import service
+from keystone.contrib.kds.db import api as db_api
 
 
-class Conf(fixtures.Fixture):
-    """Fixture to manage global conf settings."""
-
-    def __init__(self, conf):
-        self.conf = conf
-
-    def setUp(self):
-        super(Conf, self).setUp()
-        service.parse_args(args=[])
-        self.addCleanup(self.conf.reset)
+def main():
+    service.prepare_service(sys.argv)
+    return db_api.get_instance().db_sync()
