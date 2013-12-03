@@ -441,8 +441,8 @@ class AuthTokenTests(OAuthFlowTests):
 
     def test_list_keystone_tokens_by_consumer(self):
         self.test_oauth_flow()
-        tokens = self.token_api.list_tokens(self.user_id,
-                                            consumer_id=self.consumer.key)
+        tokens = self.token_api._list_tokens(self.user_id,
+                                             consumer_id=self.consumer.key)
         keystone_token_uuid = cms.cms_hash_token(self.keystone_token_id)
         self.assertTrue(len(tokens) > 0)
         self.assertTrue(keystone_token_uuid in tokens)
