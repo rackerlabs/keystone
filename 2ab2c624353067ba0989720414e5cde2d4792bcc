@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/rU\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-03T17:06:56Z",
+      "side": 0,
+      "message": "i assume this is redundant with the manager implementation, but this change seems out of scope with the rest of the patch",
+      "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
