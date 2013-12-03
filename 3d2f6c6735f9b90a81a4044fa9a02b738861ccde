@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9+aY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-03T21:12:36Z",
+      "side": 1,
+      "message": "These values are already defaulting to None in the method signature on line 198 and 199.",
+      "revId": "3d2f6c6735f9b90a81a4044fa9a02b738861ccde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
