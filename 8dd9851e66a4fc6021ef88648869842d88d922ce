@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+AVc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:26:33Z",
+      "side": 1,
+      "message": "(nit) remove .",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+iOU\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 7
@@ -30,6 +47,40 @@
       "writtenOn": "2013-11-25T00:43:56Z",
       "side": 1,
       "message": "ditto, single call",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ADw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:26:33Z",
+      "side": 1,
+      "message": "is this a problem then, since doesn\u0027t get called in a transaction as expected?",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ACU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:26:33Z",
+      "side": 1,
+      "message": "use named parameters for named arguments... e.g. change \"user_id, group_id, ...\" to \"user_id\u003duser_id, group_id\u003dgroup_id, ...\"",
       "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +116,57 @@
       "side": 1,
       "message": "Agreed and agreed: this could be done with a single query and should be done in a future patch :-)",
       "parentUuid": "AAAATn/+E04\u003d",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+AJ4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:26:33Z",
+      "side": 1,
+      "message": "using session before it\u0027s been defined seems weird... suggest pass in the session.",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+AS0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:26:33Z",
+      "side": 1,
+      "message": "don\u0027t import objects, so change to \"import contextlib\". see https://github.com/openstack-dev/hacking/blame/master/doc/source/index.rst#L52",
+      "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+AUE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T16:26:33Z",
+      "side": 1,
+      "message": "How is this change required for doing one transaction per operation? Suggest revert it.",
       "revId": "8dd9851e66a4fc6021ef88648869842d88d922ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
