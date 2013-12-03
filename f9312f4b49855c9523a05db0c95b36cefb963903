@@ -16,6 +16,24 @@
       "revId": "f9312f4b49855c9523a05db0c95b36cefb963903",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/bE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-03T17:50:14Z",
+      "side": 1,
+      "message": "We picked this name based on Henry\u0027s comment, which is based on resource name \"Auth\". We do not have token resource\n\nLet me know if you want ti to be \"token and tokens\"",
+      "parentUuid": "AAAATn/9/qQ\u003d",
+      "revId": "f9312f4b49855c9523a05db0c95b36cefb963903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
