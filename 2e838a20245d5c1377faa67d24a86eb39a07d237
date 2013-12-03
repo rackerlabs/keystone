@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/wc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-03T23:47:28Z",
+      "side": 1,
+      "message": "Should this be user-create?\n\nI may also rephrase this as:\n\nWhen creating a new user without a password (optional) the server will return a 400 status code.  Example call:\n\n  keystone user-create --name \u003cname\u003e",
+      "revId": "2e838a20245d5c1377faa67d24a86eb39a07d237",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
