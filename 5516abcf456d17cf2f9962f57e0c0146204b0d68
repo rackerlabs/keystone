@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/vQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-03T17:01:17Z",
+      "side": 1,
+      "message": "this isn\u0027t a \"check\" -- it\u0027s actually modifying the referenced object",
+      "revId": "5516abcf456d17cf2f9962f57e0c0146204b0d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/vs\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-03T17:01:17Z",
+      "side": 1,
+      "message": "i\u0027m not sure if you mean to replace null, unset AND empty string descriptions with empty strings (that doesn\u0027t make much sense to me?).... i\u0027m wondering if you meant:\n\n  tenant.setdefault(\u0027description\u0027, \u0027\u0027)",
+      "revId": "5516abcf456d17cf2f9962f57e0c0146204b0d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/uU\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-03T17:01:17Z",
+      "side": 1,
+      "message": "if this change requires this \"fix\" -- then this change looks broken. please remove these new descriptions",
+      "revId": "5516abcf456d17cf2f9962f57e0c0146204b0d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
