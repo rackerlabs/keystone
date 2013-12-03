@@ -12,11 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.tests.contrib.kds.api import base
+from keystone.tests.contrib.kds import base
+from keystone.tests.contrib.kds import fixture
 
 
-class SimpleTest(base.BaseTestCase):
+class BaseTestCase(base.BaseTestCase):
 
-    def test_simple(self):
-        resp = self.get("/")
-        self.assertEqual(resp.json['hello'], 'world')
+    def setUp(self):
+        super(BaseTestCase, self).setUp()
+
+        self.useFixture(fixture.KvsDb())
