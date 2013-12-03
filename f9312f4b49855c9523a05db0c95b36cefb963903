@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/qQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-03T17:09:46Z",
+      "side": 1,
+      "message": "why not tokens and token -- the actual resource this controller is working with?",
+      "revId": "f9312f4b49855c9523a05db0c95b36cefb963903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
