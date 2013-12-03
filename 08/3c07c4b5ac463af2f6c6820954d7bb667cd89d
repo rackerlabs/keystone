@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Arvind Tiwari <arvind.tiwari@hp.com>
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 03 Dec 2013 23:32:32 +0000
+Reviewed-on: https://review.openstack.org/58936
+Project: openstack/keystone
+Branch: refs/heads/master
