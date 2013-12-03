@@ -65,7 +65,7 @@ class V2CatalogTestCase(rest.RestfulTestCase):
             "endpoint": {
                 "adminurl": "http://localhost:8080",
                 "service_id": self.service_id,
-                "region": "regionOne",
+                "region": "RegionOne",
                 "internalurl": "http://localhost:8080",
                 "publicurl": "http://localhost:8080"
             }
