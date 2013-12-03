@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+DLo\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:56:24Z",
+      "side": 1,
+      "message": "doc string incorrect.",
+      "revId": "2fac439c4346af01b29c5aff3f581fc432592c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DLk\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:56:24Z",
+      "side": 1,
+      "message": "doc string incorrect.",
+      "revId": "2fac439c4346af01b29c5aff3f581fc432592c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DLI\u003d",
+        "filename": "keystone/contrib/kds/db/migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:56:24Z",
+      "side": 1,
+      "message": "can we get options from OSLO db instead of re-specifying this?",
+      "revId": "2fac439c4346af01b29c5aff3f581fc432592c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DLU\u003d",
+        "filename": "keystone/contrib/kds/db/migration.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:56:24Z",
+      "side": 1,
+      "message": "what\u0027s wrong with the one in dbapi? can i just import that?",
+      "revId": "2fac439c4346af01b29c5aff3f581fc432592c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DK8\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:56:24Z",
+      "side": 1,
+      "message": "is this sufficient db transaction locking?",
+      "revId": "2fac439c4346af01b29c5aff3f581fc432592c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
