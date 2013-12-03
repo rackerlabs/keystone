@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+DL8\u003d",
+        "filename": "keystone/contrib/kds/common/paths.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-03T02:49:50Z",
+      "side": 1,
+      "message": "these are incorrect here, fixed higher up.",
+      "revId": "e69480ad8acc7120c68a1500acd94796c44730a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+DM4\u003d",
         "filename": "keystone/contrib/kds/common/service.py",
         "patchSetId": 1
