@@ -16,6 +16,24 @@
       "revId": "1ca49e0571ce9396a2a28105d2fd6c474fac5202",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/994w\u003d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T22:30:06Z",
+      "side": 1,
+      "message": "I don\u0027t think there\u0027s no point to saving it... I was worried that if there\u0027s no reference to it then it\u0027ll get cleaned up... but there\u0027s a reference in dependency when it registers anyways.",
+      "parentUuid": "AAAATn/9990\u003d",
+      "revId": "1ca49e0571ce9396a2a28105d2fd6c474fac5202",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
