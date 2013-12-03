@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+DgU\u003d",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-03T01:22:48Z",
+      "side": 1,
+      "message": "I don\u0027t think this function is used anymore. Suggest remove it since it\u0027s pretty useless anyways.",
+      "revId": "e3b67d9129f41838943a34c26886863483d414f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
