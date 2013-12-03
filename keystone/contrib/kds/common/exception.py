@@ -33,3 +33,11 @@ class KdsException(exception.OpenstackException):
 
 class BackendException(KdsException):
     msg_fmt = "Failed to load a pluggable backend: %(reason)s"
+
+
+class KeyNotFound(KdsException):
+    msg_fmt = _("No key for %s(name)s:%(generation). %(reason)s")
+
+
+class CryptoError(KdsException):
+    msg_fmt = _("Cryptographic Failure: %(reason)s")
