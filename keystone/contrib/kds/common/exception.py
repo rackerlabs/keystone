@@ -54,3 +54,11 @@ class BackendException(_SingleArgumentException):
 
 class IntegrityError(_SingleArgumentException):
     msg_fmt = _("Cannot set key value: %(reason)s")
+
+
+class KeyNotFound(KdsException):
+    msg_fmt = _("No key for %s(name)s:%(generation). %(reason)s")
+
+
+class CryptoError(_SingleArgumentException):
+    msg_fmt = _("Cryptographic Failure: %(reason)s")
