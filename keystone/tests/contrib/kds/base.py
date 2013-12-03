@@ -12,9 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.contrib.kds.common import crypto
 from keystone.contrib.kds.common import service
+from keystone.contrib.kds.common import storage
 from keystone.openstack.common.fixture import config
 from keystone.openstack.common import test
+from keystone.tests.contrib.kds import paths
 
 
 class BaseTestCase(test.BaseTestCase):
@@ -24,7 +27,15 @@ class BaseTestCase(test.BaseTestCase):
         self.config_fixture = self.useFixture(config.Config())
         self.CONF = self.config_fixture.conf
 
+        storage.StorageManager.reset()
+        crypto.CryptoManager.reset()
+
         service.parse_args(args=[])
+
+        self.master_key_file = paths.tmp_path('mkey.key')
+        self.config(group='kds',
+                    master_key_file=self.master_key_file,
+                    )
 
     def config(self, *args, **kwargs):
         self.config_fixture.config(*args, **kwargs)
