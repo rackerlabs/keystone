@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+DUA\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-03T02:26:23Z",
+      "side": 1,
+      "message": "Yes, it can.  It needs to get in before Icehouse 2 closes, though.",
+      "parentUuid": "AAAATn/+EVs\u003d",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+EVo\u003d",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 3
@@ -121,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+DTg\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-03T02:26:23Z",
+      "side": 1,
+      "message": "It will be needed, but I have not written the policy for it yet.",
+      "parentUuid": "AAAATn/+ESI\u003d",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+ETE\u003d",
         "filename": "keystone/contrib/revoke/controllers.py",
         "patchSetId": 3
@@ -149,6 +185,24 @@
       "writtenOn": "2013-12-02T21:44:33Z",
       "side": 1,
       "message": "might be better if placed at keystone/common/config.py ?",
+      "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+DTc\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-03T02:26:23Z",
+      "side": 1,
+      "message": "We are trying to get config options out of there.  This solution is more modular.  But it probably should be in something called by the router, not in core.",
+      "parentUuid": "AAAATn/+EUk\u003d",
       "revId": "84ca2cf9f5a132e2715c31b65b74d9f6f7e07df2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
