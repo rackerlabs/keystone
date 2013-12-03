@@ -231,6 +231,9 @@
 # Revocation-List specific cache time-to-live (TTL) in seconds.
 # revocation_cache_time = 3600
 
+# Periodic flush of expired tokens in seconds (0=disabled)
+# flush_period = 3600
+
 [cache]
 # Global cache functionality toggle.
 # enabled = False
