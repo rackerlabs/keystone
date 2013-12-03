@@ -1,0 +1,42 @@
+# vim: tabstop=4 shiftwidth=4 softtabstop=4
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import fixtures
+
+from keystone.contrib.kds.db.sqlalchemy import migration
+from keystone.openstack.common.db import exception as db_exception
+from keystone import tests
+
+
+class SqliteDb(fixtures.Fixture):
+    """Connect to Keystone's sqlite database.
+
+    KDS is not designed with the intention that it should run within the same
+    database as keystone however there is nothing preventing that. There seems
+    to be issues regarding the conflicting CONF objects between keystone and
+    KDS that prevent the connection to seperate databases for testing.
+    Therefore this fixture must simply bridge the gap back to the testing
+    database for keystone and setup the KDS tables.
+    """
+
+    def setUp(self):
+        super(SqliteDb, self).setUp()
+
+        tests.setup_database()
+
+        try:
+            migration.db_sync()
+        except db_exception.DbMigrationError:
+            migration.db_version_control(0)
+            migration.db_sync()
