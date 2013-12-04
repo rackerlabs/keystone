@@ -53,6 +53,7 @@ from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import endpoint_filter
+from keystone.contrib import federation
 from keystone.contrib import oauth1
 from keystone import credential
 from keystone import exception
@@ -309,7 +310,7 @@ class TestCase(testtools.TestCase):
         # identity driver.
         for manager in [identity, assignment, catalog, credential,
                         endpoint_filter, policy, token, token_provider,
-                        trust, oauth1]:
+                        trust, oauth1, federation]:
             # manager.__name__ is like keystone.xxx[.yyy],
             # converted to xxx[_yyy]
             manager_name = ('%s_api' %
