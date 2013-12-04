@@ -145,7 +145,7 @@ FILE_OPTIONS = {
     'federation': [
         cfg.StrOpt(
             'driver', default='keystone.contrib.federation.'
-                              'backends.sql.IdentityProvider')],
+                              'backends.sql.Federation')],
 
     'policy': [
         cfg.StrOpt('driver',

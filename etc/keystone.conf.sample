@@ -345,7 +345,7 @@
 # access_token_duration = 86400
 
 [federation]
-#driver = keystone.contrib.federation.backends.sql.IdentityProvider
+#driver = keystone.contrib.federation.backends.sql.Federation
 
 [ssl]
 #enable = True
