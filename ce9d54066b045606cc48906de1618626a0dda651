@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/97uQ\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2013-12-04T10:00:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9/5A\u003d",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9/4Y\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 7
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/97uM\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2013-12-04T10:00:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9/4Y\u003d",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9/3U\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 7
@@ -65,6 +101,24 @@
       "writtenOn": "2013-12-03T16:47:34Z",
       "side": 1,
       "message": "This is because Active Directory changes the member value in the same way. So suggest change \"In tests performed on the memory\" to \"For Active Directory,\"",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/97uI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2013-12-04T10:00:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9/3U\u003d",
       "revId": "ce9d54066b045606cc48906de1618626a0dda651",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
