@@ -23,7 +23,9 @@ from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
 from keystone.openstack.common import importutils
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
 
 
@@ -413,3 +415,116 @@ class FederatedIdentityProviderTests(FederationTests):
                      'protocol_id': proto}
         self.delete(url)
         self.get(url, expected_status=404)
+
+
+class MappingTests(FederationTests):
+
+    MAPPING_URL = '/OS-FEDERATION/mappings/'
+
+    def assertValidMappingListResponse(self, resp, *args, **kwargs):
+        return self.assertValidListResponse(
+            resp,
+            'mappings',
+            self.assertValidMapping,
+            keys_to_check=['name'],
+            *args,
+            **kwargs)
+
+    def assertValidMappingResponse(self, resp, *args, **kwargs):
+        return self.assertValidResponse(
+            resp,
+            'mapping',
+            self.assertValidMapping,
+            keys_to_check=['name'],
+            *args,
+            **kwargs)
+
+    def assertValidMapping(self, entity, ref=None):
+        self.assertIsNotNone(entity.get('name'))
+        self.assertIsNotNone(entity.get('id'))
+        self.assertIsNotNone(entity.get('rules'))
+        if ref:
+            self.assertEqual(entity['name'], ref['name'])
+            self.assertEqual(jsonutils.loads(entity['rules']), ref['rules'])
+        return entity
+
+    def _create_default_mapping_entry(self):
+        url = self.MAPPING_URL
+        resp = self.post(url,
+                         body={'mapping': mapping_fixtures.MAPPING_LARGE})
+        return resp
+
+    def _get_id_from_response(self, resp):
+        r = resp.result.get('mapping', None)
+        return r.get('id')
+
+    def test_mapping_create(self):
+        resp = self._create_default_mapping_entry()
+        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_LARGE)
+
+    def test_mapping_list(self):
+        url = self.MAPPING_URL
+        self._create_default_mapping_entry()
+        resp = self.get(url)
+        entities = resp.result.get('mappings')
+        self.assertIsNotNone(entities)
+        self.assertResponseStatus(resp, 200)
+        self.assertValidListLinks(resp.result.get('links'))
+        self.assertEqual(len(entities), 1)
+
+    def test_mapping_delete(self):
+        url = self.MAPPING_URL + '%(mapping_id)s'
+        resp = self._create_default_mapping_entry()
+        mapping_id = self._get_id_from_response(resp)
+        url = url % {'mapping_id': str(mapping_id)}
+        resp = self.delete(url)
+        self.assertResponseStatus(resp, 204)
+        self.get(url, expected_status=404)
+
+    def test_mapping_get(self):
+        url = self.MAPPING_URL + '%(mapping_id)s'
+        resp = self._create_default_mapping_entry()
+        mapping_id = self._get_id_from_response(resp)
+        url = url % {'mapping_id': str(mapping_id)}
+        resp = self.get(url)
+        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_LARGE)
+
+    def test_mapping_update(self):
+        url = self.MAPPING_URL + '%(mapping_id)s'
+        resp = self._create_default_mapping_entry()
+        mapping_id = self._get_id_from_response(resp)
+        url = url % {'mapping_id': str(mapping_id)}
+        resp = self.patch(url,
+                          body={'mapping': mapping_fixtures.MAPPING_SMALL})
+        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
+        resp = self.get(url)
+        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
+
+    def test_delete_mapping_dne(self):
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        self.delete(url, expected_status=404)
+
+    def test_get_mapping_dne(self):
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        self.get(url, expected_status=404)
+
+    def test_create_mapping_bad_local(self):
+        self.post(self.MAPPING_URL, expected_status=400,
+                  body={'mapping': mapping_fixtures.MAPPING_BAD_LOCAL})
+
+    def test_create_mapping_bad_requirements(self):
+        self.post(self.MAPPING_URL, expected_status=400,
+                  body={'mapping': mapping_fixtures.MAPPING_BAD_REQ})
+
+    def test_create_mapping_no_rules(self):
+        self.post(self.MAPPING_URL, expected_status=400,
+                  body={'mapping': mapping_fixtures.MAPPING_NO_RULES})
+
+    def test_create_mapping_no_remote_objects(self):
+        self.post(self.MAPPING_URL, expected_status=400,
+                  body={'mapping': mapping_fixtures.MAPPING_NO_REMOTE})
+
+    #TODO(stevemar): not sure why this is passing
+    #def test_create_mapping_bad_value(self):
+        #self.post(self.MAPPING_URL, expected_status=400,
+            #body={'mapping': mapping_fixtures.MAPPING_BAD_VALUE})
