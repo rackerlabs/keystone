@@ -147,6 +147,9 @@ FILE_OPTIONS = {
                    default='keystone.contrib.oauth1.backends.sql.OAuth1'),
         cfg.IntOpt('request_token_duration', default=28800),
         cfg.IntOpt('access_token_duration', default=86400)],
+    'mapping': [
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.mapping.backends.sql.Mapping')],
     'policy': [
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy')],

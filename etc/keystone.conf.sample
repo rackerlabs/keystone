@@ -298,6 +298,9 @@
 # Specify how quickly the access token will expire (in seconds)
 # access_token_duration = 86400
 
+[mapping]
+# driver = keystone.contrib.mapping.backends.sql.Mapping
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/ssl/certs/keystone.pem
