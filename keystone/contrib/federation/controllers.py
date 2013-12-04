@@ -19,7 +19,9 @@
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import config
+from keystone.contrib.federation import utils
 from keystone import exception
+
 
 CONF = config.CONF
 
@@ -258,3 +260,42 @@ class FederationProtocol(IdentityProvider):
     @controller.protected()
     def delete_protocol(self, context, idp_id, protocol_id):
         self.federation_api.delete_protocol(idp_id, protocol_id)
+
+
+@dependency.requires('federation_api')
+class MappingController(controller.V3Controller):
+    collection_name = 'mappings'
+    member_name = 'mapping'
+
+    @classmethod
+    def base_url(cls, path=None):
+        path = '/OS-FEDERATION/' + cls.collection_name
+        return controller.V3Controller.base_url(path)
+
+    @controller.protected()
+    def create_mapping(self, context, mapping):
+        ref = self._assign_unique_id(self._normalize_dict(mapping))
+        utils.validate_mapping_structure(ref)
+        mapping_ref = self.federation_api.create_mapping(ref)
+        return MappingController.wrap_member(context, mapping_ref)
+
+    @controller.protected()
+    def list_mappings(self, context):
+        ref = self.federation_api.list_mappings()
+        return MappingController.wrap_collection(context, ref)
+
+    @controller.protected()
+    def get_mapping(self, context, mapping_id):
+        ref = self.federation_api.get_mapping(mapping_id)
+        return MappingController.wrap_member(context, ref)
+
+    @controller.protected()
+    def delete_mapping(self, context, mapping_id):
+        self.federation_api.delete_mapping(mapping_id)
+
+    @controller.protected()
+    def update_mapping(self, context, mapping_id, mapping):
+        mapping = self._normalize_dict(mapping)
+        utils.validate_mapping_structure(mapping)
+        mapping_ref = self.federation_api.update_mapping(mapping_id, mapping)
+        return MappingController.wrap_member(context, mapping_ref)

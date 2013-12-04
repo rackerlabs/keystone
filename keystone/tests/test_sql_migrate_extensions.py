@@ -137,12 +137,16 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
         super(FederationExtension, self).__init__(*args, **kwargs)
         self.identity_provider = 'identity_provider'
         self.federation_protocol = 'federation_protocol'
+        self.mapping = 'mapping'
 
     def repo_package(self):
         return federation
 
     def test_upgrade(self):
         self.assertTableDoesNotExist(self.identity_provider)
+        self.assertTableDoesNotExist(self.federation_protocol)
+        self.assertTableDoesNotExist(self.mapping)
+
         self.upgrade(1, repository=self.repo_path)
         self.assertTableColumns(self.identity_provider,
                                 ['id',
@@ -157,14 +161,21 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
                                  'mapping_id',
                                  'extra'])
 
+        self.upgrade(2, repository=self.repo_path)
+        self.assertTableColumns(self.mapping,
+                                ['id', 'name', 'rules', 'extra'])
+
     def test_downgrade(self):
-        self.upgrade(1, repository=self.repo_path)
+        self.upgrade(2, repository=self.repo_path)
         self.assertTableColumns(self.identity_provider,
                                 ['id', 'name', 'enabled',
                                  'description', 'extra'])
         self.assertTableColumns(self.federation_protocol,
                                 ['id', 'idp_id', 'mapping_id', 'extra'])
+        self.assertTableColumns(self.mapping,
+                                ['id', 'name', 'rules', 'extra'])
 
         self.downgrade(0, repository=self.repo_path)
         self.assertTableDoesNotExist(self.identity_provider)
         self.assertTableDoesNotExist(self.federation_protocol)
+        self.assertTableDoesNotExist(self.mapping)

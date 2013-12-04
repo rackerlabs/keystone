@@ -52,6 +52,7 @@ from keystone.common import sql
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
+
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
@@ -348,6 +349,7 @@ class TestCase(testtools.TestCase):
         # possible to re-configure a backend, we need to clear the list.  This
         # should eventually be removed once testing has been cleaned up.
         kvs_core.KEY_VALUE_STORE_REGISTRY.clear()
+
         drivers = service.load_backends(include_oauth1=True,
                                         include_federation=True)
 
