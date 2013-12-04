@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/98H8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "The message here should be a translatable string",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/98Ew\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "Personally, considering these aren\u0027t really common (only used in the trust backends), and that each function only wraps a trivial conditional, I\u0027d be tempted to just put the conditional statements into each backend and remove these functions - IMHO they\u0027re not really needed.\n\ne.g what is more readable:\n\n  if utils.trust_is_limited_in_uses(ref.remaining_uses):  \n    if utils.trust_has_uses_left(ref.remaining_uses):\n       ...\n\nvs\n  if ref.remaining_uses \u003e 0:\n     ...",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/979c\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "I\u0027m not sure how keystone scale-out works, but doesn\u0027t this have the potential to be racy?  ie what happens if two requests hit different keystone processes in a scaled-out environment, and they both hit has_remaining_uses for the same trust concurrently?\n\nSeems like it would be better to have just one DB query, ie call consume_use and have it raise exception.Forbidden if a conflict decrementing the use counter happens?",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/98CU\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "You could simplify this to just:\n\nreturn ref.get(\u0027remaining_uses\u0027)  !\u003d 0",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/98CI\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "if ref.get(\u0027remaining_uses\u0027) \u003e 0:",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/98DE\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "This section could be simplified to:\n\nreturn ref is not None and ref.remaining_uses !\u003d 0\n\nAs mentioned in utils.py, I think the utils abstraction is obfuscating what is a basically a simple test.",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/98Cs\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-04T09:11:26Z",
+      "side": 1,
+      "message": "As above, this could just be:\n\n  if ref.remaining_uses \u003e 0:",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
