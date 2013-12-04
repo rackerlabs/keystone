@@ -59,6 +59,7 @@ from keystone.contrib import oauth1
 from keystone import credential
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import policy
@@ -100,6 +101,17 @@ class dirs:
     @staticmethod
     def tmp(*p):
         return os.path.join(TMPDIR, *p)
+
+
+# keystone.common.sql.initialize() for testing.
+def _initialize_sql_session():
+    db_file = dirs.tmp('test.db')
+    session.set_defaults(
+        sql_connection="sqlite:///" + db_file,
+        sqlite_db=db_file)
+
+
+_initialize_sql_session()
 
 
 def checkout_vendor(repo, rev):
@@ -173,7 +185,7 @@ def remove_generated_paste_config(extension_name):
 
 
 def teardown_database():
-    sql.core.set_global_engine(None)
+    session.cleanup()
 
 
 def skip_if_cache_disabled(*sections):
