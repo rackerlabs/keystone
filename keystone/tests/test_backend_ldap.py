@@ -27,6 +27,7 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common.fixture import moxstubout
 from keystone import tests
 from keystone.tests import default_fixtures
@@ -1003,7 +1004,7 @@ class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
         self.clear_database()
         self.load_backends()
         cache.configure_cache_region(cache.REGION)
-        self.engine = self.get_engine()
+        self.engine = session.get_engine()
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self.load_fixtures(default_fixtures)
         #defaulted by the data load
@@ -1011,8 +1012,7 @@ class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
 
     def tearDown(self):
         sql.ModelBase.metadata.drop_all(bind=self.engine)
-        self.engine.dispose()
-        sql.set_global_engine(None)
+        session.cleanup()
         super(LdapIdentitySqlAssignment, self).tearDown()
 
     def test_domain_crud(self):
@@ -1054,7 +1054,7 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
 
         self._set_config()
         self.load_backends()
-        self.engine = self.get_engine()
+        self.engine = session.get_engine()
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self._setup_domain_test_data()
 
@@ -1080,8 +1080,7 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
             'identity',
             domain_specific_drivers_enabled=self.orig_config_domains_enabled)
         sql.ModelBase.metadata.drop_all(bind=self.engine)
-        self.engine.dispose()
-        sql.set_global_engine(None)
+        session.cleanup()
 
     def _set_config(self):
         self.config([tests.etcdir('keystone.conf.sample'),
