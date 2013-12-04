@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99MU\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T01:52:27Z",
+      "side": 1,
+      "message": "The way dogpile implements this ensures only a list will be returned, and the list is a list of values.  I guess the lesson here is make sure to send through a deterministic iterable (list, tuple) instead of something like a set.\n\n    def get_multi(self, keys):\n        values \u003d self.client.get_multi(keys)\n        return [\n            NO_VALUE if key not in values\n            else values[key] for key in keys\n        ]",
+      "parentUuid": "AAAATn/99ek\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99vw\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
