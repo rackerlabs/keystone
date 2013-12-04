@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/964w\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-04T13:42:12Z",
+      "side": 1,
+      "message": "instead of a typo, just use uuid.uuid4().hex to produce arbitrary values :)",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/964o\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-04T13:42:12Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
