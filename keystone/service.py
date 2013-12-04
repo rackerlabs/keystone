@@ -43,7 +43,7 @@ LOG = logging.getLogger(__name__)
 cache.configure_cache_region(cache.REGION)
 
 
-def load_backends(include_oauth1=False):
+def load_backends(include_oauth1=False, include_federation=False):
 
     # Ensure that the identity driver is created before the assignment manager.
     # The default assignment driver is determined by the identity driver, so
@@ -64,6 +64,9 @@ def load_backends(include_oauth1=False):
     if include_oauth1:
         from keystone.contrib import oauth1
         DRIVERS['oauth1_api'] = oauth1.Manager()
+    if include_federation:
+        from keystone.contrib import federation
+        DRIVERS['federation_api'] = federation.Manager()
 
     dependency.resolve_future_dependencies()
 
