@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/94nA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-04T21:49:48Z",
+      "side": 1,
+      "message": "we should have a bug or blueprint for this and also a DocImpact to advertise that we\u0027ve deprecated something.",
+      "revId": "39b85356e3f5a08e56f6332e7e3c77e3bcfc279b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
