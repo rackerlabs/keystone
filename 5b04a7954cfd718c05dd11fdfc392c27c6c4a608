@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99Og\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-04T01:31:19Z",
+      "side": 1,
+      "message": "though one could also call back to Keystone to validate PKI tokens by hashing it as the token ID",
+      "parentUuid": "AAAATn/+iQo\u003d",
+      "revId": "5b04a7954cfd718c05dd11fdfc392c27c6c4a608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+zpk\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-11-19T22:00:36Z",
       "side": 1,
       "message": "Any docs on the protection part besides the basics? Or are we just assuming common sense?",
+      "revId": "5b04a7954cfd718c05dd11fdfc392c27c6c4a608",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99r4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-04T01:31:19Z",
+      "side": 1,
+      "message": "Yeah seem like this warning message is about making a general statement then offer anything useful to the target audience.",
+      "parentUuid": "AAAATn/+zpk\u003d",
       "revId": "5b04a7954cfd718c05dd11fdfc392c27c6c4a608",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
