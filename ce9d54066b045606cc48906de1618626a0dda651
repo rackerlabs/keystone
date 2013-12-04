@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/976w\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2013-12-04T09:48:12Z",
+      "side": 1,
+      "message": "About call to private methods. On line 91 and 92 on this file there are calls to private methods. This is the reason because I did not implement a public method to call to group._id_to_dn.",
+      "parentUuid": "AAAATn/9/4Y\u003d",
+      "revId": "ce9d54066b045606cc48906de1618626a0dda651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9/3U\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 7
