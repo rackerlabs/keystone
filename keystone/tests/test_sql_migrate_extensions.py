@@ -29,6 +29,7 @@ To run these tests against a live database:
 
 from keystone.contrib import endpoint_filter
 from keystone.contrib import example
+from keystone.contrib import federation
 from keystone.contrib import oauth1
 from keystone.tests import test_sql_upgrade
 
@@ -127,3 +128,45 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
                                 ['endpoint_id', 'project_id'])
         self.downgrade(0, repository=self.repo_path)
         self.assertTableDoesNotExist('project_endpoint')
+
+
+class FederationExtension(test_sql_upgrade.SqlMigrateBase):
+    """Test class for ensuring the Federation SQL."""
+
+    def __init__(self, *args, **kwargs):
+        super(FederationExtension, self).__init__(*args, **kwargs)
+        self.identity_provider = 'identity_provider'
+        self.federation_protocol = 'federation_protocol'
+
+    def repo_package(self):
+        return federation
+
+    def test_upgrade(self):
+        self.assertTableDoesNotExist(self.identity_provider)
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns(self.identity_provider,
+                                ['id',
+                                 'name',
+                                 'enabled',
+                                 'domain_id',
+                                 'description',
+                                 'extra'])
+
+        self.assertTableColumns(self.federation_protocol,
+                                ['id',
+                                 'idp_id',
+                                 'mapping_id',
+                                 'extra'])
+
+    def test_downgrade(self):
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns(self.identity_provider,
+                                ['id', 'name', 'enabled', 'domain_id',
+                                 'description',
+                                 'extra'])
+        self.assertTableColumns(self.federation_protocol,
+                                ['id', 'idp_id', 'mapping_id', 'extra'])
+
+        self.downgrade(0, repository=self.repo_path)
+        self.assertTableDoesNotExist(self.identity_provider)
+        self.assertTableDoesNotExist(self.federation_protocol)
