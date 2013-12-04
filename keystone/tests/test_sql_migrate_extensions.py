@@ -29,6 +29,7 @@ To run these tests against a live database:
 
 from keystone.contrib import endpoint_filter
 from keystone.contrib import example
+from keystone.contrib import mapping
 from keystone.contrib import oauth1
 from keystone.tests import test_sql_upgrade
 
@@ -127,3 +128,28 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
                                 ['endpoint_id', 'project_id'])
         self.downgrade(0, repository=self.repo_path)
         self.assertTableDoesNotExist('project_endpoint')
+
+
+class MappingExtension(test_sql_upgrade.SqlMigrateBase):
+    """Test class for ensuring the Mapping SQL."""
+
+    def __init__(self, *args, **kwargs):
+        super(MappingExtension, self).__init__(*args, **kwargs)
+        self.mapping = 'mapping'
+
+    def repo_package(self):
+        return mapping
+
+    def test_upgrade(self):
+        self.assertTableDoesNotExist(self.mapping)
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns(self.mapping,
+                                ['id', 'name', 'rules', 'extra'])
+
+    def test_downgrade(self):
+        self.upgrade(1, repository=self.repo_path)
+        self.assertTableColumns(self.mapping,
+                                ['id', 'name', 'rules', 'extra'])
+
+        self.downgrade(0, repository=self.repo_path)
+        self.assertTableDoesNotExist(self.mapping)
