@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99c8\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "I will invert this since it would be clearer.  But the boolean expression is correct.",
+      "parentUuid": "AAAATn/995E\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99zc\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-03T23:25:00Z",
       "side": 1,
       "message": "Since reconfiguring the backend is potentially dangerous is there any reason why this isn\u0027t in the __init__?  It is possible to create an instance of KeyValueStore and use it without calling configure?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99hA\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "The idea is configuration happens independantly of creating an instance.  This was specifically asked for by adam young (and I agree with him) that the object instantiation should happen independently of configuration since the configuration is ostensibly quite complex and fairly orthogonal to the object.  This is similar to how dogpile works.  It allows for configuration to happen after other work has been done, but not have it strongly tied to the instantiation.\n\nThis does bring up another issue, making sure it is configured before use.",
+      "parentUuid": "AAAATn/99zc\u003d",
       "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99hY\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "This is ensuring any iterable is uses.  eg. tuple, etc.  There are I guess i could specifically do isinstance, but I didn\u0027t want to limit the options to list only.",
+      "parentUuid": "AAAATn/99zA\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99y0\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-03T23:25:00Z",
       "side": 1,
       "message": "Replace \u0027 %\u0027 with \u0027,\u0027",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99g4\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "Good catch! Done.",
+      "parentUuid": "AAAATn/99y0\u003d",
       "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99gw\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "Good catch.  Removing it.",
+      "parentUuid": "AAAATn/99yk\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99xk\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-03T23:25:00Z",
       "side": 1,
       "message": "Any reason not to use importutils.import_class?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99gk\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "Does import class function with functions?  my thought was key_mangler would either be a path to a function or a function ref.  I\u0027m actually content to make it be a required function ref instead.",
+      "parentUuid": "AAAATn/99xk\u003d",
       "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99ek\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "I\u0027ll 2x check.  I... honestly don\u0027t know off the top of my head, but I thought it was a list that is returned.",
+      "parentUuid": "AAAATn/99vM\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99vw\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2013-12-03T23:25:00Z",
       "side": 1,
       "message": "Is there any reason you are forcing an exception here?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99gI\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "This mirrors current .get functionality in KVS.  It was added to parrot that but with get_multi, it can be allowed.",
+      "parentUuid": "AAAATn/99vw\u003d",
       "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99fE\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "The mutex for locking is handled at this layer, you can\u0027t lock in the backend, and this is designed to ensure we can perform a nearly-transactional update for a case of updating a user_token_list (or similar) that previously was relying on the CAS (memcache compare and set) mechanism.  Instead of trying to set and failing because the CAS_ID changed, we wrap in a lock and perform the get, update, set in a single locked context.\n\nThis could probably go away if we never want to lock sets (let races happen unless you wrap the set in a lock context).  Input on the approach is welcome.  But if we remove this very active systems might have a delete go through after a set occurs.",
+      "parentUuid": "AAAATn/99u0\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99uc\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
@@ -166,6 +328,24 @@
       "writtenOn": "2013-12-03T23:25:00Z",
       "side": 1,
       "message": "What\u0027s the race condition here?",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/99dE\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T00:11:40Z",
+      "side": 1,
+      "message": "This is more of a mirror of previous \"workings\" where an attempted delete would raise an exception.  In the case of the new delete, we want to ensure that functionality is still met, so we lock and get (raises not found if it doesn\u0027t exist) and then performs the delete.  It\u0027s about communicating back to the rest of the system that the item doesn\u0027t exist rather than silently failing or attempting to perform a delete on a non-existant value that gets set elsewhere.\n\nMost uses of the context here are edge-cases on very busy systems.",
+      "parentUuid": "AAAATn/99uc\u003d",
       "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
