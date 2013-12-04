@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/99Nk\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-04T01:40:13Z",
+      "side": 1,
+      "message": "Oh wait you are right here.  It _should_ be if self.isolation.",
+      "parentUuid": "AAAATn/99c8\u003d",
+      "revId": "4b91f56fafce50619cdf26370cb851b40838587e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99zc\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 8
