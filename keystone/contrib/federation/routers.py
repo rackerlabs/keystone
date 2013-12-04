@@ -39,44 +39,51 @@ class FederationExtension(wsgi.ExtensionRouter):
      DELETE /OS-FEDERATION/identity_providers/
          $identity_providers/protocols/$protocol
 
+     POST /OS-FEDERATION/mappings
+     GET /OS-FEDERATION/mappings
+     PATCH /OS-FEDERATION/mappings/$mapping_id
+     GET /OS-FEDERATION/mappings/$mapping_id
+     DELETE /OS-FEDERATION/mappings/$mapping_id
+
     """
 
     def add_routes(self, mapper):
-        federation_controller = controllers.IdentityProvider()
+        idp_controller = controllers.IdentityProvider()
         protocol_controller = controllers.FederationProtocol()
+        mapping_controller = controllers.MappingController()
 
-## Identity Providers CRUD operations
+        ## Identity Providers CRUD operations
         mapper.connect(
             '/OS-FEDERATION/identity_providers',
-            controller=federation_controller,
+            controller=idp_controller,
             action='create_federated_provider',
             conditions=dict(method=['POST']))
 
         mapper.connect(
             '/OS-FEDERATION/identity_providers',
-            controller=federation_controller,
+            controller=idp_controller,
             action='list_federated_providers',
             conditions=dict(method=['GET']))
 
         mapper.connect(
             '/OS-FEDERATION/identity_providers/{idp_id}',
-            controller=federation_controller,
+            controller=idp_controller,
             action='get_federated_provider',
             conditions=dict(method=['GET']))
 
         mapper.connect(
             '/OS-FEDERATION/identity_providers/{idp_id}',
-            controller=federation_controller,
+            controller=idp_controller,
             action='delete_federated_provider',
             conditions=dict(method=['DELETE']))
 
         mapper.connect(
             '/OS-FEDERATION/identity_providers/{idp_id}',
-            controller=federation_controller,
+            controller=idp_controller,
             action='update_federated_provider',
             conditions=dict(method=['PATCH']))
 
-## Protocol CRUD operations
+        ## Protocol CRUD operations
         mapper.connect(
             '/OS-FEDERATION/identity_providers/{idp_id}/'
             'protocols/{protocol_id}',
@@ -111,3 +118,34 @@ class FederationExtension(wsgi.ExtensionRouter):
             controller=protocol_controller,
             action='delete_protocol',
             conditions=dict(method=['DELETE']))
+
+        # Mapping CRUD operations
+        mapper.connect(
+            '/OS-FEDERATION/mappings',
+            controller=mapping_controller,
+            action='create_mapping',
+            conditions=dict(method=['POST']))
+
+        mapper.connect(
+            '/OS-FEDERATION/mappings',
+            controller=mapping_controller,
+            action='list_mappings',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            '/OS-FEDERATION/mappings/{mapping_id}',
+            controller=mapping_controller,
+            action='get_mapping',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            '/OS-FEDERATION/mappings/{mapping_id}',
+            controller=mapping_controller,
+            action='delete_mapping',
+            conditions=dict(method=['DELETE']))
+
+        mapper.connect(
+            '/OS-FEDERATION/mappings/{mapping_id}',
+            controller=mapping_controller,
+            action='update_mapping',
+            conditions=dict(method=['PATCH']))

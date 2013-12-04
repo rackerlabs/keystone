@@ -739,6 +739,14 @@ Federation
 
    extensions/federation-configuration.rst
 
+Federation
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   extensions/federation-configuration.rst
+
 .. _`prepare your deployment`:
 
 Preparing your deployment
