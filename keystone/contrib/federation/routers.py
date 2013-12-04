@@ -1,6 +1,5 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
-# Copyright 2013 OpenStack Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -39,6 +38,12 @@ class FederationExtension(wsgi.ExtensionRouter):
      DELETE /OS-FEDERATION/identity_providers/
          $identity_providers/protocols/$protocol
 
+     PUT /OS-FEDERATION/mappings
+     GET /OS-FEDERATION/mappings
+     PATCH /OS-FEDERATION/mappings/$mapping_id
+     GET /OS-FEDERATION/mappings/$mapping_id
+     DELETE /OS-FEDERATION/mappings/$mapping_id
+
     """
 
     def _construct_url(self, suffix):
@@ -47,8 +52,9 @@ class FederationExtension(wsgi.ExtensionRouter):
     def add_routes(self, mapper):
         idp_controller = controllers.IdentityProvider()
         protocol_controller = controllers.FederationProtocol()
+        mapping_controller = controllers.MappingController()
 
-## Identity Providers CRUD operations
+        ## Identity Providers CRUD operations
         mapper.connect(
             self._construct_url('identity_providers/{idp_id}'),
             controller=idp_controller,
@@ -79,7 +85,7 @@ class FederationExtension(wsgi.ExtensionRouter):
             action='update_identity_provider',
             conditions=dict(method=['PATCH']))
 
-## Protocol CRUD operations
+        ## Protocol CRUD operations
         mapper.connect(
             self._construct_url('identity_providers/{idp_id}/'
                                 'protocols/{protocol_id}'),
@@ -114,3 +120,34 @@ class FederationExtension(wsgi.ExtensionRouter):
             controller=protocol_controller,
             action='delete_protocol',
             conditions=dict(method=['DELETE']))
+
+        # Mapping CRUD operations
+        mapper.connect(
+            self._construct_url('mappings/{mapping_id}'),
+            controller=mapping_controller,
+            action='create_mapping',
+            conditions=dict(method=['PUT']))
+
+        mapper.connect(
+            self._construct_url('mappings'),
+            controller=mapping_controller,
+            action='list_mappings',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('mappings/{mapping_id}'),
+            controller=mapping_controller,
+            action='get_mapping',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('mappings/{mapping_id}'),
+            controller=mapping_controller,
+            action='delete_mapping',
+            conditions=dict(method=['DELETE']))
+
+        mapper.connect(
+            self._construct_url('mappings/{mapping_id}'),
+            controller=mapping_controller,
+            action='update_mapping',
+            conditions=dict(method=['PATCH']))
