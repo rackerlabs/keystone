@@ -16,6 +16,24 @@
       "revId": "d54ca38d55af5de1739a43c1b570499ce83ea8c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/97+A\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-04T09:15:24Z",
+      "side": 1,
+      "message": "I would like to keep the function without side effect :)",
+      "parentUuid": "AAAATn/9/sg\u003d",
+      "revId": "d54ca38d55af5de1739a43c1b570499ce83ea8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

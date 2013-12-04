@@ -16,6 +16,24 @@
       "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9774\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-04T09:15:24Z",
+      "side": 0,
+      "message": "I don\u0027t see why it\u0027s not part of this patch, this code make sure that enabled is a boolean which what this patch does but the problem with this code is that it may break future changes relaying on this path (think git blame), i my self spend sometime trying to figure out where changes from bug #1110435  and #1167593 fit together, that\u0027s why i am fixing it here, thoughts ?",
+      "parentUuid": "AAAATn/9/rU\u003d",
+      "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
