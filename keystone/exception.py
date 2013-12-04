@@ -100,6 +100,11 @@ class StringLengthExceeded(ValidationError):
                        " of column %(type)s(CHAR(%(length)d)).")
 
 
+class ImmutableAttributeError(ValidationError):
+    message_format = _("Could not change immutable attribute %(attribute)s"
+                       "in target %(target)s")
+
+
 class ValidationSizeError(Error):
     message_format = _("Request attribute %(attribute)s must be"
                        " less than or equal to %(size)i. The server"
@@ -223,6 +228,20 @@ class CredentialNotFound(NotFound):
 
 class VersionNotFound(NotFound):
     message_format = _("Could not find version, %(version)s.")
+
+
+class IdentityProviderNotFound(NotFound):
+    message_format = _("Could not find IdentityProvider, %(idp_id)s.")
+
+
+class IdentityProviderKeyNotFound(NotFound):
+    message_format = _("Could not find public key for"
+                       "IdentityProvider, %(idp_id)s")
+
+
+class FederatedProtocolNotFound(NotFound):
+    message_format = _("Could not find federated protocol for"
+                       "IdentityProvider, %(idp_id)s")
 
 
 class Conflict(Error):
