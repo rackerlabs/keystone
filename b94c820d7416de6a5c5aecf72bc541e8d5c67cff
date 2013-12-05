@@ -122,6 +122,24 @@
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93l8\u003d",
+        "filename": "keystone/tests/fixtures/cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T02:06:54Z",
+      "side": 1,
+      "message": "This solves the first-test scenario.  Due to the way the backends are loaded, the cache is built before the test-overrides (and the like) are loaded in.  This only affects tests (since they do a setUp with new config values where running keystone doesn\u0027t need to).  Moving this to the .setUp guarantees a clean configuration at the start of each test rather than at the end of each test.\n\nThis caused an issue if certain tests were run in isolation with no tests occurring before them.  This is an odd case that is more of a one-off in how testing needs to work.",
+      "parentUuid": "AAAATn/9314\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
