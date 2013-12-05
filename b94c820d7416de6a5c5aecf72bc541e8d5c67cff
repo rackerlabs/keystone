@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9yXQ\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T22:17:40Z",
+      "side": 1,
+      "message": "Oops, I must have glazed over this before. Sorry for the confusion. I\u0027ll see if I can dig up the link that I was referencing before. I know morganfainberg and I were talking about this (importing classes) but maybe that was a different case?",
+      "parentUuid": "AAAATn/+Rlg\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9314\u003d",
         "filename": "keystone/tests/fixtures/cache.py",
         "patchSetId": 2
