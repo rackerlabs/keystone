@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9zyg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T17:20:34Z",
+      "side": 1,
+      "message": "just realized the above is being handled by the existing try/except -- eliminating it would be appreciated so you\u0027re not returning \u0027user\u0027 twice though, to handle basically the same condition seperately",
+      "revId": "a96c2ed6083b9bcc5038e758f3d91ff4fb660990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/90Fw\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 3
