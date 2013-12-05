@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/93uo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-05T02:55:26Z",
+      "side": 1,
+      "message": "Nice catch thanks!",
+      "parentUuid": "AAAATn/932U\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+d3E\u003d",
         "filename": "keystone/tests/fixtures/__init__.py",
         "patchSetId": 2
@@ -136,6 +154,24 @@
       "writtenOn": "2013-12-05T02:06:54Z",
       "side": 1,
       "message": "This solves the first-test scenario.  Due to the way the backends are loaded, the cache is built before the test-overrides (and the like) are loaded in.  This only affects tests (since they do a setUp with new config values where running keystone doesn\u0027t need to).  Moving this to the .setUp guarantees a clean configuration at the start of each test rather than at the end of each test.\n\nThis caused an issue if certain tests were run in isolation with no tests occurring before them.  This is an odd case that is more of a one-off in how testing needs to work.",
+      "parentUuid": "AAAATn/9314\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93e4\u003d",
+        "filename": "keystone/tests/fixtures/cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-05T02:55:26Z",
+      "side": 1,
+      "message": "I\u0027ll put a comment in there about why it\u0027s in the setup.  When the cache code is imported it automatically sets up a default cache. When you run the entire test suite everything works because somewhere along the way it is reconfigured.  If you run just one of the caching tests it will fail.  If you specify two caching tests the first will fail and the second will succeed.",
       "parentUuid": "AAAATn/9314\u003d",
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
