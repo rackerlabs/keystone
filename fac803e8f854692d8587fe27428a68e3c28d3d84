@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/90HU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:34:00Z",
+      "side": 1,
+      "message": "Would it be possibly to find official docs supporting this? Maybe: http://docs.sqlalchemy.org/en/latest/orm/session.html#committing",
+      "revId": "fac803e8f854692d8587fe27428a68e3c28d3d84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
