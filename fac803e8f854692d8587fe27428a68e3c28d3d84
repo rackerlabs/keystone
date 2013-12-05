@@ -34,6 +34,24 @@
       "revId": "fac803e8f854692d8587fe27428a68e3c28d3d84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ycA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T22:04:22Z",
+      "side": 1,
+      "message": "Oh I didn\u0027t even notice that. Good to know, thanks!",
+      "parentUuid": "AAAATn/9yh8\u003d",
+      "revId": "fac803e8f854692d8587fe27428a68e3c28d3d84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
