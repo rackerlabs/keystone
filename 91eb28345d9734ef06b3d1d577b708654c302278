@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9yvs\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-05T21:00:06Z",
+      "side": 1,
+      "message": "Your test seems much clearer and more intuitive than what it replaced. Thanks for helping me to understand why you added it.",
+      "parentUuid": "AAAATn/9y64\u003d",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9zHo\u003d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 3
