@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/93wo\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-05T00:48:06Z",
+      "side": 1,
+      "message": "suggest make this a separate commit.",
+      "revId": "4a3ba4c4e76d59fc669246e7ed025edb5426895d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99wc\u003d",
         "filename": "keystone/tests/test_policy.py",
         "patchSetId": 2
