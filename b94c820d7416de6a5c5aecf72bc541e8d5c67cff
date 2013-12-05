@@ -176,6 +176,24 @@
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93bo\u003d",
+        "filename": "keystone/tests/fixtures/cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-05T03:06:35Z",
+      "side": 1,
+      "message": "Can we change the code so that when the cache code is imported it doesn\u0027t automatically set up a default cache? We should write our code so that it can be tested. Seems like we\u0027re working around a problem by adding more code rather than fixing the problem.",
+      "parentUuid": "AAAATn/93e4\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
