@@ -70,6 +70,57 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9zOQ\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-05T19:12:01Z",
+      "side": 1,
+      "message": "for completion, (wait til spec is in) there should be a driver class.",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zW0\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-05T19:12:01Z",
+      "side": 1,
+      "message": "can you add comments to separate the other apis?",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zWE\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-05T19:12:01Z",
+      "side": 1,
+      "message": "might want to switch this to POST and create, as PUT seems to return 204 No Content? I think..",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/90B0\u003d",
         "filename": "keystone/tests/test_backend_federation_sql.py",
         "patchSetId": 2
