@@ -210,7 +210,12 @@ class TrustV3(controller.V3Controller):
             trusts += self.trust_api.list_trusts_for_trustee(user_id)
         global_roles = self.assignment_api.list_roles()
         for trust in trusts:
-            self._fill_in_roles(context, trust, global_roles)
+            # get_trust returns roles, list_trusts does not
+            del trust['roles']
+            if trust.get('expires_at') is not None:
+                trust['expires_at'] = (timeutils.isotime
+                                       (trust['expires_at'],
+                                        subsecond=True))
         return TrustV3.wrap_collection(context, trusts)
 
     @controller.protected()
