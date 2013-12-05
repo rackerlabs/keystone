@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9z4E\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-05T17:08:48Z",
+      "side": 1,
+      "message": "This file looks much cleaner and has an elegance of simplicity that makes it easy to read.  Looks very good.",
+      "revId": "c2af3f9df1d60e4f83ccdb55b2b77b8c210b62a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
