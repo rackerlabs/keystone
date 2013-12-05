@@ -16,6 +16,24 @@
       "revId": "fac803e8f854692d8587fe27428a68e3c28d3d84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9yh8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6722
+      },
+      "writtenOn": "2013-12-05T22:00:26Z",
+      "side": 1,
+      "message": "Lance,\nthanks for your review . will update this . Actually the person zzzeek who answered the question is the author of sqlalchemy :)",
+      "parentUuid": "AAAATn/90HU\u003d",
+      "revId": "fac803e8f854692d8587fe27428a68e3c28d3d84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
