@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9z+o\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:59:15Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like this will work unless we sync strutils to havana as well: \n\nhttps://github.com/openstack/keystone/tree/stable/havana/keystone/openstack/common",
+      "revId": "67facf6d6f76c75d5672077140c3643cb5f7cd77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
