@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/90GI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "This doesn\u0027t link to the actual blueprint. \nhttps://blueprints.launchpad.net/openstack/?searchtext\u003dbp\n\nSuggest changing to; \n    blueprint virtual-idp",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90Eg\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "I think session.flush() calls are in the process of being pulled out as flush is automatically called on commit calls. \n\nhttp://docs.sqlalchemy.org/en/latest/orm/session.html#committing",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90FI\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "Protocol*",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90Cg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "Missing docstrings for parameters and return values. This applies to all instances in this module.",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90B0\u003d",
+        "filename": "keystone/tests/test_backend_federation_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "Remove commented out code.",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90Bc\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "Convert to NOTE format:\n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#todo-vs-fixme",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90BU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-05T16:51:08Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
