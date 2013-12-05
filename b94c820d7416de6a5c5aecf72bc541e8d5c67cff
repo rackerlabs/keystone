@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/932U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-05T00:23:24Z",
+      "side": 1,
+      "message": "change \"becasue\" to \"because\"",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+d3E\u003d",
         "filename": "keystone/tests/fixtures/__init__.py",
         "patchSetId": 2
@@ -85,6 +102,23 @@
       "side": 1,
       "message": "If hacking breaks noqa, I think we have a massive amount of fixing to do across OpenStack.  I don\u0027t think this is an issue for now we can play cleanup in a patchset if/when that hacking change comes down the line.",
       "parentUuid": "AAAATn/+b8Y\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9314\u003d",
+        "filename": "keystone/tests/fixtures/cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-05T00:23:24Z",
+      "side": 1,
+      "message": "I expected this to be done in tearDown(). Why isn\u0027t it? Do we want to leave the cache in whatever state the previous test left it?",
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
