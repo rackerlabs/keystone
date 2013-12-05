@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9zsw\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T17:32:35Z",
+      "side": 1,
+      "message": "this isn\u0027t actually asserting anything useful..? not really sure what you were intended to test... assertEqual wouldn\u0027t be an appropriate substitution either",
+      "revId": "03bef3b2342871447b060b4ac70074346c93994a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
