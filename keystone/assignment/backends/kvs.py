@@ -108,7 +108,6 @@ class Assignment(kvs.Base, assignment.Driver):
         return [self.get_project(x) for x in user_ref.get('tenants', [])]
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.identity_api.get_user(user_id)
         self.get_project(tenant_id)
         self.get_role(role_id)
         try:
@@ -374,10 +373,6 @@ class Assignment(kvs.Base, assignment.Driver):
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.identity_api.get_group(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -397,8 +392,6 @@ class Assignment(kvs.Base, assignment.Driver):
                   domain_id=None, project_id=None,
                   inherited_to_projects=False):
         self.get_role(role_id)
-        if user_id:
-            self.identity_api.get_user(user_id)
         if group_id:
             self.get_group(group_id)
         if domain_id:
@@ -423,10 +416,6 @@ class Assignment(kvs.Base, assignment.Driver):
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
         self.get_role(role_id)
-        if user_id:
-            self.identity_api.get_user(user_id)
-        if group_id:
-            self.identity_api.get_group(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
