@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/90F4\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T16:38:29Z",
+      "side": 1,
+      "message": "change this to user.get(\u0027password\u0027) such that you also handle the case of no password in the request the same way",
+      "revId": "a96c2ed6083b9bcc5038e758f3d91ff4fb660990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90Fw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T16:38:29Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a96c2ed6083b9bcc5038e758f3d91ff4fb660990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/90FU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T16:38:29Z",
+      "side": 1,
+      "message": "you should also verify that the user can\u0027t subsequently be authenticated with an empty string or null (i\u0027m not sure this is explicitly tested somewhere else)",
+      "revId": "a96c2ed6083b9bcc5038e758f3d91ff4fb660990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
