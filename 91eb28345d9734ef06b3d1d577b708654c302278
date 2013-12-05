@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9zBE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2907,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-05T19:51:44Z",
+      "side": 1,
+      "message": "Nice!  I was curious how you were going to write a test case to handle the deprecation.  I see you did provided the \"gold standard\" as usual.",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zCw\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-05T19:51:44Z",
+      "side": 1,
+      "message": "So I understand why test_list_keystone_tokens_by_consumer needs to go away but why did you decide to add test_delete_keystone_tokens_by_consumer_id in its place?",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zHo\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-05T19:51:44Z",
+      "side": 1,
+      "message": "Nice to see this properly marked as a private function",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zI0\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-05T19:51:44Z",
+      "side": 1,
+      "message": "I did not realize we were starting to use the python 2 to python 3 transition stuff.  It\u0027s scary what you miss when you go on vacation for a few weeks :-)",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
