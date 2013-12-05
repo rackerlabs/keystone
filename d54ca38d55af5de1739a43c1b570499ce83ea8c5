@@ -34,6 +34,24 @@
       "revId": "d54ca38d55af5de1739a43c1b570499ce83ea8c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/92M0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-05T09:49:11Z",
+      "side": 1,
+      "message": "Ohh i think i misunderstood your comment, you were only asking for change the attribute name right ? Sorry for that .",
+      "parentUuid": "AAAATn/97+A\u003d",
+      "revId": "d54ca38d55af5de1739a43c1b570499ce83ea8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
