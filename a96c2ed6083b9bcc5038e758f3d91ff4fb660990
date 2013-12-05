@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9zxQ\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2013-12-05T17:23:24Z",
+      "side": 1,
+      "message": "Yes I already see it, in fact due to the return in the if body, the else statement is not needed any more, but I prefer to keep it, what do you think?",
+      "parentUuid": "AAAATn/9zyg\u003d",
+      "revId": "a96c2ed6083b9bcc5038e758f3d91ff4fb660990",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/90Fw\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 3
