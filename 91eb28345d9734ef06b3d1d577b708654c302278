@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9y6E\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2907,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T20:22:20Z",
+      "side": 1,
+      "message": "Thankfully this one was easy to test!",
+      "parentUuid": "AAAATn/9zBE\u003d",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9zCw\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-05T19:51:44Z",
       "side": 1,
       "message": "So I understand why test_list_keystone_tokens_by_consumer needs to go away but why did you decide to add test_delete_keystone_tokens_by_consumer_id in its place?",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9y64\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T20:22:20Z",
+      "side": 1,
+      "message": "This is testing the same functionality just via the delete_tokens method.  Since we don\u0027t create more than a single consumer based token in the oauth_flow method, it makes sense to test actual functionality not the side effect (list_tokens was validating the list was empty in this case, which seems to be a bad choice, we want to check that the token(s) created are properly removed).",
+      "parentUuid": "AAAATn/9zCw\u003d",
       "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2013-12-05T19:51:44Z",
       "side": 1,
       "message": "I did not realize we were starting to use the python 2 to python 3 transition stuff.  It\u0027s scary what you miss when you go on vacation for a few weeks :-)",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9y6c\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T20:22:20Z",
+      "side": 1,
+      "message": "This happened to me for something similar when I took a week off.  I felt almost lost coming back.",
+      "parentUuid": "AAAATn/9zI0\u003d",
       "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
