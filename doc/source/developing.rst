@@ -422,6 +422,14 @@ There is a global configuration option to be aware of (that can be set in the ``
 configuration file): ``enable_key_mangler``, if set to false will disable the use of key_manglers (modification
 of the key when saving to the backend to help prevent collisions/ exceeding key-size limits with memcached).
 
+Finally, the use of the ``memcache_crypt`` functionality provided to the ``auth_token`` middleware has been
+implemented in the KeyValueStore object.  This allows for transparent encryption or HMAC integrity verification
+on all store/retrieval from a given KVS region.  These settings are configured per-KVS-region instead of globally.
+By passing the ``security_strategy`` key-word arg and the ``secret_key`` key-word arg to the KeyValueStore
+configuration method, the memcache_crypt mechanism is enabled.  The two valid ``security_strategy`` settings
+are ``MAC`` (HMAC integrity validation) and ``ENCRYPT`` (full encryption).  These strategy names are
+case-sensitive.
+
 
 Building the Documentation
 ==========================

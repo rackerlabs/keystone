@@ -28,7 +28,9 @@ from dogpile.core import nameregistry
 from keystone.common import config
 from keystone import exception
 from keystone.openstack.common import importutils
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystoneclient.middleware import memcache_crypt
 
 
 __all__ = ['KeyValueStore', 'KeyValueStoreLock', 'LockTimeout',
@@ -72,6 +74,14 @@ class KeyValueStore(object):
 
     This manager also supports the concept of locking a given key resource to
     allow for a guaranteed atomic transaction to the backend.
+
+    This KVS Backend Manager implements the ability to encrypt or validate
+    data integrity from the various backends.  This is done via the
+    memcache_crypt mechanism provided for keystoneclient.  No encryption
+    or integrity validation will be performed unless explicitly configured to
+    do so.  This means the crypto mechanisms have a dependency on pycrypto and
+    will raise CryptoUnavailableError if pycrypto is unavailable and crypto
+    is configured.
     """
     def __init__(self, kvs_region):
         self.locking = True
@@ -80,11 +90,14 @@ class KeyValueStore(object):
         self._secret_key = None
         self._lock_registry = nameregistry.NameRegistry(self._create_mutex)
 
-    def configure(self, backing_store, key_mangler=None, proxy_list=None,
-                  locking=True, **region_config_args):
+    def configure(self, backing_store, security_strategy=None, secret_key=None,
+                  key_mangler=None, proxy_list=None, locking=True,
+                  **region_config_args):
         """Configure the KeyValueStore instance.
 
         :param backing_store: dogpile.cache short name of the region backend
+        :param security_strategy: (optional) ENCRYPT or MAC
+        :param secret_key: (optional) secret key for security_strategy
         :param key_mangler: key_mangler function
         :param proxy_list: list of proxy classes to apply to the region
         :param locking: boolean that allows disabling of locking mechanism for
@@ -102,6 +115,15 @@ class KeyValueStore(object):
                                  'Cannot reconfigure.') % self._region.name)
 
         self.locking = locking
+        if security_strategy:
+            if not secret_key:
+                raise ValueError(_('`security_strategy` is defined, '
+                                   '`secret_key` must also be defined.'))
+            if security_strategy not in ('MAC', 'ENCRYPT'):
+                raise ValueError(_('`security_strategy` must be either '
+                                   '`MAC` or `ENCRYPT`'))
+            self._security_strategy = security_strategy
+            self._secret_key = secret_key
         self._configure_region(backing_store, **region_config_args)
         self._set_key_mangler(key_mangler)
         self._apply_region_proxy(proxy_list)
@@ -135,6 +157,14 @@ class KeyValueStore(object):
                                               'configured: %s'),
                                             self._region.name)
 
+    def _build_crypto_info_from_key(self, key):
+        # Encryption / MAC validation keys and cache_key derivation based upon
+        # the secret_key and the targeted key to store the data at.
+        c_keys = memcache_crypt.derive_keys(key, self._secret_key,
+                                            self._security_strategy)
+        cache_key = memcache_crypt.get_cache_key(c_keys)
+        return c_keys, cache_key
+
     def _set_key_mangler(self, key_mangler):
         # Set the key_mangler that is appropriate for the given region being
         # configured here.  The key_mangler function is called prior to storing
@@ -152,7 +182,12 @@ class KeyValueStore(object):
             # the first choice.
             key_mangler = self._region.backend.key_mangler
 
-        if CONF.kvs.enable_key_mangler:
+        if self._security_strategy is not None:
+            # If security strategy is enabled, we do not want any key_mangling
+            # we will handle the key mangling at the KeyValueStore level.
+            LOG.info(_('KVS security enabled with strategy: %s'),
+                     self._security_strategy)
+        elif CONF.kvs.enable_key_mangler:
             if key_mangler is not None:
                 msg = _('Using %(func)s as KVS region %(name)s key_mangler')
                 if callable(key_mangler):
@@ -231,10 +266,42 @@ class KeyValueStore(object):
         def release(self):
             self.lock.release()
 
+    def _get(self, key):
+        if self._security_strategy is None:
+            data = self._region.get(key)
+        else:
+            c_keys, cache_key = self._build_crypto_info_from_key(key)
+            raw_data = self._region.get(cache_key)
+            try:
+                if raw_data is not NO_VALUE:
+                    # unprotect data will return None if raw_data is None
+                    data = memcache_crypt.unprotect_data(c_keys, raw_data)
+                else:
+                    data = NO_VALUE
+            except Exception as e:
+                # NOTE(morganfainberg): All exceptions are an error that need
+                # to be logged.  This data is bad.  In cases such as this we
+                # will specifically pass back the NO_VALUE (empty data) value
+                msg = _('Failed to decrypt/verify data from KVS: %s')
+                LOG.error(msg, e)
+                data = NO_VALUE
+
+            if data is not NO_VALUE:
+                data = jsonutils.loads(data)
+
+        return data
+
+    def _set(self, key, value):
+        if self._security_strategy is not None:
+            c_keys, key = self._build_crypto_info_from_key(key)
+            serialized_data = jsonutils.dumps(value)
+            value = memcache_crypt.protect_data(c_keys, serialized_data)
+        self._region.set(key, value)
+
     def get(self, key):
         """Get a single value from the KVS backend."""
         self._is_configured()
-        value = self._region.get(key)
+        value = self._get(key)
         if value is NO_VALUE:
             raise exception.NotFound(target=key)
         return value
@@ -242,24 +309,31 @@ class KeyValueStore(object):
     def get_multi(self, keys):
         """Get multiple values in a single call from the KVS backend."""
         self._is_configured()
-        values = self._region.get_multi(keys)
+        if self._security_strategy is None:
+            values = self._region.get_multi(keys)
+        else:
+            # NOTE(morganfainberg): Since we have a security strategy, we will
+            # use the KeyValueStore mechanism to unprotect the data.  This is
+            # likely less performant than allowing the backend to use it's
+            # get_multi implementation, however this reduces code duplication
+            # in a clean and maintainable way.
+            values = [self._get(key) for key in keys]
+
         not_found = []
         for index, key in enumerate(keys):
             if values[index] is NO_VALUE:
                 not_found.append(key)
+
         if not_found:
-            # NOTE(morganfainberg): If any of the multi-get values are non-
-            # existent, we should raise a NotFound error to mimic the .get()
-            # method's behavior.  In all cases the internal dogpile NO_VALUE
-            # should be masked from the consumer of the KeyValueStore.
             raise exception.NotFound(target=not_found)
+
         return values
 
     def set(self, key, value, lock=None):
         """Set a single value in the KVS backend."""
         self._is_configured()
         with self._action_with_lock(key, lock):
-            self._region.set(key, value)
+            self._set(key, value)
 
     def set_multi(self, mapping):
         """Set multiple key/value pairs in the KVS backend at once.
@@ -269,7 +343,15 @@ class KeyValueStore(object):
         key in a given context without significant deadlock potential).
         """
         self._is_configured()
-        self._region.set_multi(mapping)
+        if self._security_strategy is None:
+            self._region.set_multi(mapping)
+        else:
+            # NOTE(morganfainberg): Due to serialization needs, it is
+            # easier to prevent duplicated code here by calling the
+            # manager's `set` method rather than relying on the backend to
+            # do the multi_set directly. This will be slightly less efficient.
+            for k, v in mapping.iteritems():
+                self._set(k, v)
 
     def delete(self, key, lock=None):
         """Delete a single key from the KVS backend.
@@ -279,10 +361,13 @@ class KeyValueStore(object):
         mechanism).
         """
         self._is_configured()
+        delete_key = key
+        if self._security_strategy is not None:
+            c_keys, delete_key = self._build_crypto_info_from_key(key)
 
-        with self._action_with_lock(key, lock):
+        with self._action_with_lock(delete_key, lock):
             self.get(key)
-            self._region.delete(key)
+            self._region.delete(delete_key)
 
     def delete_multi(self, keys):
         """Delete multiple keys from the KVS backend in a single call.
@@ -292,7 +377,18 @@ class KeyValueStore(object):
         key in a given context without significant deadlock potential).
         """
         self._is_configured()
-        self._region.delete_multi(keys)
+        if self._security_strategy is None:
+            self._region.delete_multi(keys)
+        else:
+            # NOTE(morganfainberg): Since there is no deserialization needed
+            # here, we will build the key-list first, then (possibly) let the
+            # backend perform whatever optimisations it can on a delete_multi
+            # call.
+            to_delete = []
+            for key in keys:
+                c_keys, delete_key = self._build_crypto_info_from_key(key)
+                to_delete.append(delete_key)
+            self._region.delete_multi(to_delete)
 
     def get_lock(self, key):
         """Get a write lock on the KVS value referenced by `key`.

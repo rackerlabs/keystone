@@ -24,7 +24,10 @@ from dogpile.cache import util
 from keystone.common.kvs.backends import inmemdb
 from keystone.common.kvs import core
 from keystone import exception
+from keystone.openstack.common import jsonutils
 from keystone import tests
+from keystoneclient.middleware import memcache_crypt
+
 
 NO_VALUE = api.NO_VALUE
 
@@ -159,6 +162,34 @@ class KVSTest(tests.TestCase):
 
         self.assertIs(kvs._region.key_mangler, None)
 
+    def test_kvs_key_mangler_configuration_crypto_enabled(self):
+        # Test that no key_mangler is set if crypto is enabled
+        kvs = self._get_kvs_region()
+        kvs.configure('openstack.kvs.Memory',
+                      key_mangler=util.sha1_mangle_key,
+                      security_strategy='ENCRYPT',
+                      secret_key=uuid.uuid4().hex)
+        self.assertIs(kvs._region.key_mangler, None)
+
+    def test_kvs_crypto_encryption_enabled_no_secret_key(self):
+        # Test that ValueError is raised if security_strategy is set and no
+        # secret_key is passed
+        kvs = self._get_kvs_region()
+        self.assertRaises(ValueError,
+                          kvs.configure,
+                          backing_store='openstack.kvs.Memory',
+                          security_strategy='ENCRYPT')
+
+    def test_kvs_crypto_encryption_enabled_bad_strategy(self):
+        # Test that ValueError is raised if an invalid security_strategy is
+        # specified
+        kvs = self._get_kvs_region()
+        self.assertRaises(ValueError,
+                          kvs.configure,
+                          backing_store='openstack.kvs.Memory',
+                          security_strategy=uuid.uuid4().hex,
+                          secret_key=uuid.uuid4().hex)
+
     def test_kvs_basic_get_set_delete(self):
         # Test the basic get/set/delete actions on the KVS region
         kvs = self._get_kvs_region()
@@ -200,6 +231,61 @@ class KVSTest(tests.TestCase):
         kvs = self._get_kvs_region()
         kvs.configure('openstack.kvs.Memory')
 
+        self._kvs_multi_get_set_delete(kvs)
+
+    def _kvs_basic_get_set_delete_crypto(self, kvs):
+        # Not found should be raised if the key doesn't exist
+        self.assertRaises(exception.NotFound, kvs.get, key=self.key_bar)
+        kvs.set(self.key_bar, self.value_bar)
+        returned_value = kvs.get(self.key_bar)
+        # The returned value should be the same value as the value in .set
+        self.assertEqual(returned_value, self.value_bar)
+        # The value should not be the exact object used in .set
+        self.assertIsNot(returned_value, self.value_bar)
+
+        c_keys, cache_key = kvs._build_crypto_info_from_key(self.key_bar)
+        # Validate that the data in the backend is correct.
+        serialized_data = jsonutils.dumps(self.value_bar)
+        protected = kvs._region.backend.get(cache_key)[0]
+
+        unprotected = memcache_crypt.unprotect_data(c_keys, protected)
+        self.assertEqual(serialized_data, unprotected)
+
+        kvs.delete(self.key_bar)
+        # After deletion the backend should explicitly return NO_VALUE since
+        # the key no longer exists.
+        self.assertIs(NO_VALUE, kvs._region.backend.get(cache_key))
+
+        # Second delete should raise NotFound
+        self.assertRaises(exception.NotFound, kvs.delete, key=self.key_bar)
+
+    def test_kvs_basic_get_set_delete_crypto_encryption_enabled(self):
+        # Test basic get/set/delete with ENCRYPT security_strategy
+        kvs = self._get_kvs_region()
+        kvs.configure('openstack.kvs.Memory', security_strategy='ENCRYPT',
+                      secret_key=uuid.uuid4().hex)
+
+        self._kvs_basic_get_set_delete_crypto(kvs)
+
+    def test_kvs_multi_get_set_delete_crypto_encryption_enabled(self):
+        # Test multi get/set/delete with ENCRYPT security_strategy
+        kvs = self._get_kvs_region()
+        kvs.configure('openstack.kvs.Memory', security_strategy='ENCRYPT',
+                      secret_key=uuid.uuid4().hex)
+        self._kvs_multi_get_set_delete(kvs)
+
+    def test_kvs_basic_get_set_delete_crypto_integrity_enabled(self):
+        # Test basic get/set/delete with MAC security_strategy
+        kvs = self._get_kvs_region()
+        kvs.configure('openstack.kvs.Memory', security_strategy='MAC',
+                      secret_key=uuid.uuid4().hex)
+        self._kvs_basic_get_set_delete_crypto(kvs)
+
+    def test_kvs_multi_get_set_delete_crypto_integrity_enabled(self):
+        # Test multi get/set/delete with MAC security_strategy
+        kvs = self._get_kvs_region()
+        kvs.configure('openstack.kvs.Memory', security_strategy='MAC',
+                      secret_key=uuid.uuid4().hex)
         self._kvs_multi_get_set_delete(kvs)
 
     def test_kvs_locking_context_handler(self):
