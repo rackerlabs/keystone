@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/93tQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T01:05:17Z",
+      "side": 1,
+      "message": "Will fix in next patchset.  good catch",
+      "parentUuid": "AAAATn/94HY\u003d",
+      "revId": "39b85356e3f5a08e56f6332e7e3c77e3bcfc279b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/94nA\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/93s8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T01:05:17Z",
+      "side": 1,
+      "message": "I\u0027ll open a generic \"deprecated in Icehouse\" (vs. the \"removed deprecated\" bp we can track all of this with.",
+      "parentUuid": "AAAATn/94nA\u003d",
+      "revId": "39b85356e3f5a08e56f6332e7e3c77e3bcfc279b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/94HQ\u003d",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-04T23:29:48Z",
       "side": 1,
       "message": "this looks like it\u0027s fixing a different bug?",
+      "revId": "39b85356e3f5a08e56f6332e7e3c77e3bcfc279b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93tU\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-05T01:05:17Z",
+      "side": 1,
+      "message": "Will Revert that, should not have been changed.",
+      "parentUuid": "AAAATn/94HQ\u003d",
       "revId": "39b85356e3f5a08e56f6332e7e3c77e3bcfc279b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
