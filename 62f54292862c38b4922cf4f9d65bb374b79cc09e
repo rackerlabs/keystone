@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/93Nw\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 8340
+      },
+      "writtenOn": "2013-12-05T05:21:39Z",
+      "side": 1,
+      "message": "Good catch on the typo. I feel that the uuid approach would add an extra computation or two without adding any real value to the test. But if you feel strongly about it or I\u0027m missing something, I\u0027ll switch it to the uuid approach",
+      "parentUuid": "AAAATn/964w\u003d",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/964o\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 1
