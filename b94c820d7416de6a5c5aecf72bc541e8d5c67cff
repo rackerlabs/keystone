@@ -212,6 +212,24 @@
       "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zpQ\u003d",
+        "filename": "keystone/tests/fixtures/cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-05T17:44:32Z",
+      "side": 1,
+      "message": "I agree this should be split into two patches, one for the refactor to a fixture and one to fix the problem.",
+      "parentUuid": "AAAATn/9zr0\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
