@@ -14,6 +14,7 @@
 
 import json
 import uuid
+import sys
 
 from keystone import auth
 from keystone.common import cms
@@ -2216,10 +2217,16 @@ class TestTrustAuth(TestAuthInfo):
             r = self.post('/OS-TRUST/trusts', body={'trust': ref})
             self.assertValidTrustResponse(r, ref)
 
+        r = self.get('/OS-TRUST/trusts', expected_status=200)
+        trusts = r.result['trusts']
+        self.assertEqual(len(trusts), 3)
+        self.assertValidTrustListResponse(r)
+
         r = self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
                      self.user_id, expected_status=200)
         trusts = r.result['trusts']
         self.assertEqual(len(trusts), 3)
+        self.assertValidTrustListResponse(r)
 
         r = self.get('/OS-TRUST/trusts?trustee_user_id=%s' %
                      self.user_id, expected_status=200)
