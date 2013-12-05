@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/964I\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T17:22:35Z",
+      "side": 1,
+      "message": "doc str?",
+      "revId": "5c0fc3f49d5b2ffa436021af24e33db745db2b39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/964M\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-05T17:22:35Z",
+      "side": 1,
+      "message": "i assume this is intended to be a doc str?",
+      "revId": "5c0fc3f49d5b2ffa436021af24e33db745db2b39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
