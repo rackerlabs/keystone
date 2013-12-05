@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/933k\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-05T00:13:27Z",
+      "side": 1,
+      "message": "what if null/empty it should be treated as no trust",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/98Ew\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 8
