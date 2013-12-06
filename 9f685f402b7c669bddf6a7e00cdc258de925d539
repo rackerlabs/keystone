@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9urY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-06T16:32:15Z",
+      "side": 1,
+      "message": "This change was merged into oslo-incubator master branch. Shouldn\u0027t this be back ported to oslo-incubator stable/havana if we are syncing keystone stable/havana with oslo-incubator stable/havana? \n\nMaster Oslo-incubator commit:\nhttps://review.openstack.org/#/c/59677/2/openstack/common/rpc/impl_qpid.py\n\nthe above change is not in oslo-incubator stable/havana: \nhttps://github.com/openstack/oslo-incubator/blob/stable/havana/openstack/common/rpc/impl_qpid.py#L133\n\nSo, we would have a patch that landed in Keystone\u0027s impl_qpid.py (stable/havana) that was from oslo-incubator\u0027s master without first being backported to oslo-incubator\u0027s stable/havana branch. Can we do that?",
+      "revId": "9f685f402b7c669bddf6a7e00cdc258de925d539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
