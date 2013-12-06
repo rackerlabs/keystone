@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9vxc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-12-06T13:55:48Z",
+      "side": 1,
+      "message": "Am I supposed to add the translatable string to a .po/.mo file? If so, is there a howto on openstack I can refer to?",
+      "parentUuid": "AAAATn/98H8\u003d",
+      "revId": "49681e4715c936098dcf51e82e6a0c2d19ba4619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/933k\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 8
