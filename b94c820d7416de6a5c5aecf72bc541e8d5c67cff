@@ -162,6 +162,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9vJQ\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-06T15:11:49Z",
+      "side": 1,
+      "message": "Per IRC discussion with dolphm and morganfainberg, I am ok with this and it seems clear to me now. Sorry for the confusion.",
+      "parentUuid": "AAAATn/9vOA\u003d",
+      "revId": "b94c820d7416de6a5c5aecf72bc541e8d5c67cff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9314\u003d",
         "filename": "keystone/tests/fixtures/cache.py",
         "patchSetId": 2
