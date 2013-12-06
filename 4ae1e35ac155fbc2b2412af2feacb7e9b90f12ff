@@ -16,6 +16,24 @@
       "revId": "4ae1e35ac155fbc2b2412af2feacb7e9b90f12ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9t+o\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2013-12-06T19:15:46Z",
+      "side": 0,
+      "message": "Ooops.. I didn\u0027t meant to drop that one! Good catch.",
+      "parentUuid": "AAAATn/9uF0\u003d",
+      "revId": "4ae1e35ac155fbc2b2412af2feacb7e9b90f12ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
