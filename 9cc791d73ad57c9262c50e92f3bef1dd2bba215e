@@ -34,6 +34,24 @@
       "revId": "9cc791d73ad57c9262c50e92f3bef1dd2bba215e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9txM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-06T19:53:15Z",
+      "side": 1,
+      "message": "Ah ok, had to look at it again. Taking off my -1. Thanks!",
+      "parentUuid": "AAAATn/9uLQ\u003d",
+      "revId": "9cc791d73ad57c9262c50e92f3bef1dd2bba215e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
