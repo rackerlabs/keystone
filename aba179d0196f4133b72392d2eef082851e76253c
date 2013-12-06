@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/9uDo\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2013-12-06T20:40:44Z",
+      "side": 1,
+      "message": "forgot about \u0027extra\u0027?",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9uFk\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2013-12-06T20:40:44Z",
+      "side": 1,
+      "message": "forgot about \u0027extra\u0027?",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9t70\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2013-12-06T20:40:44Z",
+      "side": 1,
+      "message": "The resulting dict will not have \u0027attribute_mapping\u0027 value (nor rules).\nI think you can use something like:\n\nresult[\u0027attribute_mapping\u0027] \u003d [rule.to_dict() for rule in self.rules] (I guess ruless equals \u0027attribute_mapping\u0027\n\nto make it work. \n\nAFAIK even if you put \u0027rules\u0027 in the \u0027attributes\u0027 list SqlAlchemy would fetch the objects and try to str() them....or raise other exception during code execution.\nThis applies to every Model that has sql.relationship() attribute and that atribute should be considered in the to_dict() methods.",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9uEk\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2013-12-06T20:40:44Z",
+      "side": 1,
+      "message": "repeating after ldbragst :-)\n\n\"\"I think session.flush() calls are in the process of being pulled out as flush is automatically called on commit calls.\nhttp://docs.sqlalchemy.org/en/latest/orm/session.html#committing\"\n\n\"\"\"",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9xLI\u003d",
         "filename": "keystone/contrib/mapping/core.py",
         "patchSetId": 1
@@ -13,6 +81,23 @@
       "writtenOn": "2013-12-06T06:13:52Z",
       "side": 1,
       "message": "I debated about this a lot, i think it needs to be somewhere, the proposed mapping in the api spec just keeps getting larger, so validating the structure only made sense. \n\nIf someone knows of a better way to do it, (my way seems very tedious), let me know.\n\nAlso, not sure if core was the right spot for this, ideally a utils would be better, but it would be mapping specific.",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9t2s\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2013-12-06T20:40:44Z",
+      "side": 1,
+      "message": "I think \u0027mapping\u0027 is too generic? How about eventually squeezing all the code into one catalog, e.g. federation?",
       "revId": "aba179d0196f4133b72392d2eef082851e76253c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
