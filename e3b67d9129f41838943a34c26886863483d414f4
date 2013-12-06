@@ -16,6 +16,24 @@
       "revId": "e3b67d9129f41838943a34c26886863483d414f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9tZo\u003d",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-06T21:14:52Z",
+      "side": 1,
+      "message": "This function is being used in keystone.tests.rest.  The best course of action is probably to move it into the subclass there.  That could be another patch.",
+      "parentUuid": "AAAATn/+DgU\u003d",
+      "revId": "e3b67d9129f41838943a34c26886863483d414f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
