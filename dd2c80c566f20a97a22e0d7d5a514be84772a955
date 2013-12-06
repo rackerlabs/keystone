@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9vTI\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-06T14:47:55Z",
+      "side": 1,
+      "message": "It looks like we don\u0027t ever use \u0027valid\u0027 index in isolation from expires.  With the new index this could be removed.",
+      "revId": "dd2c80c566f20a97a22e0d7d5a514be84772a955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
