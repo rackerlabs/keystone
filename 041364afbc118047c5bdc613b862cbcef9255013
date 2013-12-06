@@ -138,6 +138,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9ue0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-06T17:13:57Z",
+      "side": 1,
+      "message": "these two variables aren\u0027t being used anywhere",
+      "revId": "041364afbc118047c5bdc613b862cbcef9255013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/90Bc\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
