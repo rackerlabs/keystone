@@ -16,6 +16,24 @@
       "revId": "03bef3b2342871447b060b4ac70074346c93994a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9x0k\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8289
+      },
+      "writtenOn": "2013-12-06T01:12:57Z",
+      "side": 1,
+      "message": "I modify the func : hash_user_password, the \"user\" is returned if without the password. \nI made a mistake, assertEqual should be use here.",
+      "parentUuid": "AAAATn/9zsw\u003d",
+      "revId": "03bef3b2342871447b060b4ac70074346c93994a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
