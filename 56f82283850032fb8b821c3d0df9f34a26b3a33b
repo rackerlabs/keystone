@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9tlM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-06T21:35:31Z",
+      "side": 1,
+      "message": "Great comment!!!  With this comment it was very easy for me to go check the V3Controller class and see what is going on here with collection_name and member_name",
+      "revId": "56f82283850032fb8b821c3d0df9f34a26b3a33b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9tUU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-06T21:35:31Z",
+      "side": 1,
+      "message": "So you are testing to make sure that policy is enforced and that adminB gets a 403 (forbidden) when trying to revoke the token of a user from a different domain.  So you really should rename this test something like test_adminB_fails_revoking_userA_token or add a comment saying what this test actually does",
+      "revId": "56f82283850032fb8b821c3d0df9f34a26b3a33b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
