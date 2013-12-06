@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9uF0\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-06T18:58:13Z",
+      "side": 0,
+      "message": "token flush does a query on just expires, regardless of validity",
+      "revId": "4ae1e35ac155fbc2b2412af2feacb7e9b90f12ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
