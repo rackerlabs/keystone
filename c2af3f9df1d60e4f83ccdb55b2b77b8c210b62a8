@@ -16,6 +16,23 @@
       "revId": "c2af3f9df1d60e4f83ccdb55b2b77b8c210b62a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9uaA\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-06T17:40:27Z",
+      "side": 1,
+      "message": "where\u0027s SERVICE_HOST and S3_SERVICE_PORT getting populated?",
+      "revId": "c2af3f9df1d60e4f83ccdb55b2b77b8c210b62a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
