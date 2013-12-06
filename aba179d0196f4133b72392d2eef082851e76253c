@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9xLI\u003d",
+        "filename": "keystone/contrib/mapping/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-06T06:13:52Z",
+      "side": 1,
+      "message": "I debated about this a lot, i think it needs to be somewhere, the proposed mapping in the api spec just keeps getting larger, so validating the structure only made sense. \n\nIf someone knows of a better way to do it, (my way seems very tedious), let me know.\n\nAlso, not sure if core was the right spot for this, ideally a utils would be better, but it would be mapping specific.",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
