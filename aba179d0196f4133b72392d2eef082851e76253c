@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9slI\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-07T04:55:33Z",
+      "side": 1,
+      "message": "thanks for the catch!",
+      "parentUuid": "AAAATn/9uDo\u003d",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9uFk\u003d",
         "filename": "keystone/contrib/mapping/backends/sql.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9slE\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-07T04:55:33Z",
+      "side": 1,
+      "message": "thanks for the catch!",
+      "parentUuid": "AAAATn/9uFk\u003d",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9t70\u003d",
         "filename": "keystone/contrib/mapping/backends/sql.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-06T20:40:44Z",
       "side": 1,
       "message": "The resulting dict will not have \u0027attribute_mapping\u0027 value (nor rules).\nI think you can use something like:\n\nresult[\u0027attribute_mapping\u0027] \u003d [rule.to_dict() for rule in self.rules] (I guess ruless equals \u0027attribute_mapping\u0027\n\nto make it work. \n\nAFAIK even if you put \u0027rules\u0027 in the \u0027attributes\u0027 list SqlAlchemy would fetch the objects and try to str() them....or raise other exception during code execution.\nThis applies to every Model that has sql.relationship() attribute and that atribute should be considered in the to_dict() methods.",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9skk\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-07T04:55:33Z",
+      "side": 1,
+      "message": "okay, i was wondering about this too, but when i was testing it, the \u0027rules\u0027 and \u0027attributes\u0027 were there ... i was surprised, i thought it would fail. \n\ni\u0027ve never had to create a complicated/nested model like this before, which is why i want people to review it, thanks for that!\n\ni\u0027ll ping you on irc about this, eventually.",
+      "parentUuid": "AAAATn/9t70\u003d",
       "revId": "aba179d0196f4133b72392d2eef082851e76253c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +152,24 @@
       "writtenOn": "2013-12-06T20:40:44Z",
       "side": 1,
       "message": "I think \u0027mapping\u0027 is too generic? How about eventually squeezing all the code into one catalog, e.g. federation?",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9slM\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-07T04:55:33Z",
+      "side": 1,
+      "message": "i originally wanted to, but i think mapping may be used outside of federation... maybe?",
+      "parentUuid": "AAAATn/9t2s\u003d",
       "revId": "aba179d0196f4133b72392d2eef082851e76253c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
