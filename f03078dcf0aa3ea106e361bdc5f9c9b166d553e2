@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9sk4\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-07T04:44:48Z",
+      "side": 1,
+      "message": "Can you use mktemp or something like that to create a unique temp file name?  It\u0027s unlikely that more than 1 debug test run will happen on a box at the same time, but if it does happen it would be a pain to debug.",
+      "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
