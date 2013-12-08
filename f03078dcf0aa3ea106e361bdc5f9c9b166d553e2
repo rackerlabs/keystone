@@ -16,6 +16,24 @@
       "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9q4w\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-08T23:34:06Z",
+      "side": 1,
+      "message": "hmmm, so i tried using mktemp (with file format ks_to_run.xxxx), and logically it works, but i can\u0027t reference a random file from tox.ini.\n\nwould storing it in an env variable, and calling it, work?",
+      "parentUuid": "AAAATn/9sk4\u003d",
+      "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
