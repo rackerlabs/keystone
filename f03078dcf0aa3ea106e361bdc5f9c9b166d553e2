@@ -34,6 +34,24 @@
       "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9q4Q\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-08T23:46:37Z",
+      "side": 1,
+      "message": "I think it might work.  What I had in mind was moving that last comment from tox.ini into the shell script and just have a oneline in the tox.ini to call it.",
+      "parentUuid": "AAAATn/9q4w\u003d",
+      "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
