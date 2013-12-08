@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9rMI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-08T16:58:06Z",
+      "side": 1,
+      "message": "the docs directory has different instructions for how to build documentation, see https://github.com/openstack/keystone/blob/master/doc/README.rst . Which one is correct?",
+      "revId": "d34ff861fee685af4f45018698f6dd88587cd313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9rMM\u003d",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-08T16:58:06Z",
+      "side": 1,
+      "message": "revert whitespace change. See https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits",
+      "revId": "d34ff861fee685af4f45018698f6dd88587cd313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
