@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9q4g\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-08T23:51:56Z",
+      "side": 1,
+      "message": "Don\u0027t use this. \n\nHave a look at openstack.common.crypto.utils, there are examples of how to use it in the KDS, and if there is anything missing we can add to that file.",
+      "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
