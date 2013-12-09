@@ -84,6 +84,57 @@
       "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lpI\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T22:26:07Z",
+      "side": 1,
+      "message": "Its not clear to me when isolation could be set to false. can you explain a little more on when you would choose this option?",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lqA\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T22:26:07Z",
+      "side": 1,
+      "message": "Great comment!",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lqY\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T22:26:07Z",
+      "side": 1,
+      "message": "Why did you remove the split?   Can there only be one?  (yes, a shout out to the highlander movie :-) )",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
