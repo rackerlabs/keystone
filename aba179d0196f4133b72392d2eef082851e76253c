@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9nhI\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-09T16:15:09Z",
+      "side": 1,
+      "message": "discussed in IRC, but \u0027extra\u0027 should *never* be included in this list, and \u0027id\u0027 should *always* be included. this list determines which attributes are exposed to the API, and how.",
+      "parentUuid": "AAAATn/9slE\u003d",
+      "revId": "aba179d0196f4133b72392d2eef082851e76253c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9t70\u003d",
         "filename": "keystone/contrib/mapping/backends/sql.py",
         "patchSetId": 1
