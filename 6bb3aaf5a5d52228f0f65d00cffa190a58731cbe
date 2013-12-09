@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9qjk\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-09T03:32:25Z",
+      "side": 1,
+      "message": "Is bash -c needed here? I only had it because I needed to redirect output.",
+      "revId": "6bb3aaf5a5d52228f0f65d00cffa190a58731cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
