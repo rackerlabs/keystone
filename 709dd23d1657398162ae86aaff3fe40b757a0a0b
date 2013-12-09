@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9lWk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "Done.  Habit from english classes in college I guess.",
+      "parentUuid": "AAAATn/9l5Y\u003d",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9l30\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-09T21:37:37Z",
       "side": 1,
       "message": "Line too long? Also why the dash between key and word?",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lWg\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "Line length is less of an issue in the RST docs, but I\u0027ll collapse it down.",
+      "parentUuid": "AAAATn/9l30\u003d",
       "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9lWc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9l3M\u003d",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9oNU\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-09T15:41:42Z",
       "side": 1,
       "message": "retrieved_value*",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lWY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9oNU\u003d",
       "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9lWU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9l24\u003d",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9lpI\u003d",
         "filename": "keystone/common/kvs/backends/inmemdb.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-09T22:26:07Z",
       "side": 1,
       "message": "Its not clear to me when isolation could be set to false. can you explain a little more on when you would choose this option?",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lWo\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "ayoung asked for this ability.  I honestly don\u0027t know if there is a good use-case besides having the ability to muck with a reference (dict/list) and have the kvs reflect it without a subsequent store.",
+      "parentUuid": "AAAATn/9lpI\u003d",
       "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +240,24 @@
       "writtenOn": "2013-12-09T22:26:07Z",
       "side": 1,
       "message": "Why did you remove the split?   Can there only be one?  (yes, a shout out to the highlander movie :-) )",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lXk\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T23:35:53Z",
+      "side": 1,
+      "message": "Split was removed because we moved to a ListOpt https://review.openstack.org/#/c/59126/10/keystone/common/config.py\n\nListOpt \u003e StrOpt and the need to perform a split when we use it.  Since I am leveraging the same option, and it doesn\u0027t affect the configuration itself, moving to a ListOpt made my new code easier to work with (no need to split after the fact).",
+      "parentUuid": "AAAATn/9lqY\u003d",
       "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
