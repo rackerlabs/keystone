@@ -34,6 +34,24 @@
       "revId": "dc2a3e91dcbd50932b06f42c8b0289bec957b3c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mvs\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-09T18:44:32Z",
+      "side": 1,
+      "message": "I tried STANDARD_THREADS and it didn\u0027t cause any problems that I could see.",
+      "parentUuid": "AAAATn/9nFE\u003d",
+      "revId": "dc2a3e91dcbd50932b06f42c8b0289bec957b3c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
