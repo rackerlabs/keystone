@@ -1,5 +1,6 @@
-# vim: tabstop=4 shiftwidth=4 softtabstop=4
+# -*- coding: utf-8 -*-
 
+# Copyright 2013 Metacloud, Inc.
 # Copyright 2012 OpenStack Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -14,56 +15,204 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from __future__ import absolute_import
 import copy
 
+from keystone.common import dependency
 from keystone.common import kvs
+from keystone import config
 from keystone import exception
-from keystone.openstack.common import log as logging
+from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import token
 
-LOG = logging.getLogger(__name__)
+
+CONF = config.CONF
+LOG = log.getLogger(__name__)
 
 
-class Token(kvs.Base, token.Driver):
-    """kvs backend for tokens is deprecated.
+@dependency.requires('trust_api')
+class Token(token.Driver):
+    """KeyValueStore backend for tokens.
 
-    Deprecated in Havana and will be removed in Icehouse, as this backend
-    is not production grade.
+    This is the base implementation for any/all key-value-stores (e.g.
+    memcached) for the Token backend.  It is recommended to only use the base
+    in-memory implementation for testing purposes.
     """
+    revocation_key = 'revocation-list'
+    kvs_backend = 'openstack.kvs.Memory'
 
-    def __init__(self, *args, **kw):
-        super(Token, self).__init__(*args, **kw)
-        LOG.warn(_("kvs token backend is DEPRECATED. Use "
-                   "keystone.token.backends.sql or "
-                   "keystone.token.backend.memcache instead."))
+    def __init__(self, backing_store=None, **kwargs):
+        self._store = kvs.get_key_value_store('token-driver')
+        if backing_store is not None:
+            self.kvs_backend = backing_store
+        # NOTE(morganfainberg): Allow for extra configuration options to be
+        # passed to the KVS backend.
+        self._store.configure(backing_store=self.kvs_backend, **kwargs)
+        if self.__class__ == Token:
+            # NOTE(morganfainberg): Only warn if the base KVS implementation
+            # is instantiated.
+            LOG.warn(_('It is recommended to only use the base '
+                       'key-value-store implementation for the token driver '
+                       'for testing purposes.  '
+                       'Please use keystone.token.backends.memcache.Token '
+                       'or keystone.token.backends.sql.Token instead.'))
 
-    # Public interface
-    def get_token(self, token_id):
+    def _prefix_token_id(self, token_id):
+        return 'token-%s' % token_id.encode('utf-8')
+
+    def _prefix_user_id(self, user_id):
+        return 'usertokens-%s' % user_id.encode('utf-8')
+
+    def _get_key_or_default(self, key, default=None):
         try:
-            ref = self.db.get('token-%s' % token_id)
-            return copy.deepcopy(ref)
-        except Exception:
-            # On any issues here, Token is not found.
+            return self._store.get(key)
+        except exception.NotFound:
+            return default
+
+    def get_token(self, token_id):
+        if token_id is None:
+            raise exception.TokenNotFound(token_id='')
+        ptk = self._prefix_token_id(token_id)
+        try:
+            token_ref = self._store.get(ptk)
+        except exception.NotFound:
             raise exception.TokenNotFound(token_id=token_id)
+
+        return token_ref
 
     def create_token(self, token_id, data):
         data_copy = copy.deepcopy(data)
-        data_copy['id'] = token_id
+        ptk = self._prefix_token_id(token_id)
         if not data_copy.get('expires'):
             data_copy['expires'] = token.default_expire_time()
         if not data_copy.get('user_id'):
             data_copy['user_id'] = data_copy['user']['id']
-        self.db.set('token-%s' % token_id, data_copy)
+        # NOTE(morganfainberg): for ease of manipulating the data without
+        # concern about the backend, always store the value(s) in the
+        # index as the isotime (string) version so this is where the string is
+        # built.
+        expires_str = timeutils.isotime(data_copy['expires'], subsecond=True)
+        self._store.set(ptk, data_copy)
+        user_id = data['user']['id']
+        user_key = self._prefix_user_id(user_id)
+        self._update_user_token_list(user_key, token_id, expires_str)
+        if CONF.trust.enabled and data.get('trust_id'):
+            # NOTE(morganfainberg): If trusts are enabled and this is a trust
+            # scoped token, we add the token to the trustee list as well.  This
+            # allows password-changes of the trustee to also expire the token.
+            # There is no harm in placing the token in multiple lists, as
+            # _list_tokens is smart enough to handle almost any case of
+            # valid/invalid/expired for a given token.
+            trust = self.trust_api.get_trust(data['trust_id'])
+            if trust:
+                trustee_user_id = trust['trustee_user_id']
+                trustee_key = self._prefix_user_id(trustee_user_id)
+                self._update_user_token_list(trustee_key, token_id,
+                                             expires_str)
         return copy.deepcopy(data_copy)
 
+    def _get_user_token_list(self, user_key, include_expires=False):
+        token_list = self._get_key_or_default(user_key, [])
+        if not include_expires:
+            return [t[0] for t in token_list]
+        return token_list
+
+    def _update_user_token_list(self, user_key, token_id, expires_isotime_str):
+        current_time = self._get_current_time()
+        revoked_token_list = set([t['id'] for t in
+                                  self.list_revoked_tokens()])
+
+        with self._store.get_lock(user_key) as lock:
+            filtered_list = []
+            token_list = self._get_user_token_list(user_key,
+                                                   include_expires=True)
+            for item in token_list:
+                try:
+                    item_id, expires = self._format_token_index_item(item)
+                except (ValueError, TypeError):
+                    # NOTE(morganfainberg): Skip on expected errors
+                    # possibilities from the `_format_token_index_item` method.
+                    continue
+
+                if expires < current_time:
+                    LOG.debug(_('Token `%(token_id)s` is expired, removing '
+                                'from `%(user_key)s`.'),
+                              dict(token_id=item_id, user_key=user_key))
+                    continue
+
+                if item_id in revoked_token_list:
+                    # NOTE(morganfainberg): If the token has been revoked, it
+                    # can safely be removed from this list.  This helps to keep
+                    # the user_token_list as reasonably small as possible.
+                    LOG.debug(_('Token `%(token_id)s` is revoked, removing '
+                                'from `%(user_key)s`.'),
+                              dict(token_id=item_id, user_key=user_key))
+                    continue
+                filtered_list.append(item)
+            # NOTE(morganfainberg): Store the expire time to avoid needing to
+            # potentially expensive extra round-trips to the KVS backend.
+            filtered_list.append((token_id, expires_isotime_str))
+            self._store.set(user_key, filtered_list, lock)
+            return filtered_list
+
+    def _get_current_time(self):
+        return timeutils.normalize_time(timeutils.utcnow())
+
+    def _add_to_revocation_list(self, data, lock):
+        filtered_list = []
+        revoked_token_data = {}
+
+        current_time = self._get_current_time()
+        expires = data['expires']
+
+        if isinstance(expires, basestring):
+            expires = timeutils.parse_isotime(expires)
+
+        expires = timeutils.normalize_time(expires)
+
+        if expires < current_time:
+            LOG.warning(_('Token `%s` is expired, not adding to the '
+                          'revocation list.'))
+            return
+
+        revoked_token_data['expires'] = timeutils.isotime(expires,
+                                                          subsecond=True)
+        revoked_token_data['id'] = data['id']
+
+        token_list = self._get_key_or_default(self.revocation_key, [])
+        if not isinstance(token_list, list):
+            LOG.error(_('Reinitializing revocation list due to error '
+                        'in loading revocation list from backend.  '
+                        'Expected `list` type got `%s`.'), type(token_list))
+            token_list = []
+
+        # NOTE(morganfainberg): on revocation, cleanup the expired entries, try
+        # to keep the list of tokens revoked at the minimum.
+        for token_data in token_list:
+            try:
+                expires_at = timeutils.normalize_time(
+                    timeutils.parse_isotime(token_data['expires']))
+            except ValueError:
+                # NOTE(morganfainberg): Invalid timestamp, don't re-add to the
+                # revocation-list.
+                LOG.warning(_('Removing `%s` from revocation list due to '
+                              'invalid expires data in revocation list.'),
+                            token_data.get('id', 'INVALID_TOKEN_DATA'))
+                continue
+            if expires_at > current_time:
+                filtered_list.append(token_data)
+        filtered_list.append(revoked_token_data)
+        self._store.set(self.revocation_key, filtered_list, lock)
+
     def delete_token(self, token_id):
-        try:
-            token_ref = self.get_token(token_id)
-            self.db.delete('token-%s' % token_id)
-            self.db.set('revoked-token-%s' % token_id, token_ref)
-        except exception.NotFound:
-            raise exception.TokenNotFound(token_id=token_id)
+        # Test for existence
+        with self._store.get_lock(self.revocation_key) as lock:
+            data = self.get_token(token_id)
+            ptk = self._prefix_token_id(token_id)
+            result = self._store.delete(ptk)
+            self._add_to_revocation_list(data, lock)
+        return result
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
                       consumer_id=None):
@@ -74,90 +223,88 @@ class Token(kvs.Base, token.Driver):
             consumer_id=consumer_id,
         )
 
-    def is_not_expired(self, now, ref):
-        return not ref.get('expires') and ref.get('expires') < now
+    def _format_token_index_item(self, item):
+        try:
+            token_id, expires = item
+        except (TypeError, ValueError):
+            # NOTE(morganfainberg): In this case, we either have a non
+            # iterable (TypeError) or too few/many values to unpack.
+            # To avoid invalidating the entire list, just skip the
+            # invalid entries.
+            LOG.debug(_('Invalid token entry expected tuple of '
+                        '`(<token_id>, <expires>)` got: `%(item)r`'),
+                      dict(item=item))
+            raise
 
-    def is_expired(self, now, ref):
-        return ref.get('expires') and ref.get('expires') < now
-
-    def trust_matches(self, trust_id, ref):
-        return ref.get('trust_id') and ref['trust_id'] == trust_id
-
-    def _list_tokens_for_trust(self, trust_id):
-        tokens = []
-        now = timeutils.utcnow()
-        for token, ref in self.db.items():
-            if not token.startswith('token-') or self.is_expired(now, ref):
-                continue
-            if self.trust_matches(trust_id, ref):
-                tokens.append(token.split('-', 1)[1])
-        return tokens
-
-    def _consumer_matches(self, consumer_id, token_ref_dict):
-        if consumer_id is None:
-            return True
-        else:
-            if 'token_data' in token_ref_dict:
-                token_data = token_ref_dict.get('token_data')
-                if 'token' in token_data:
-                    token = token_data.get('token')
-                    oauth = token.get('OS-OAUTH1')
-                    if oauth and oauth.get('consumer_id') == consumer_id:
-                        return True
-            return False
-
-    def _list_tokens_for_consumer(self, consumer_id):
-        tokens = []
-        now = timeutils.utcnow()
-        for token, ref in self.db.items():
-            if not token.startswith('token-') or self.is_expired(now, ref):
-                continue
-            if self._consumer_matches(consumer_id, ref):
-                tokens.append(token.split('-', 1)[1])
-        return tokens
-
-    def _list_tokens_for_user(self, user_id, tenant_id=None):
-        def user_matches(user_id, ref):
-            return ref.get('user') and ref['user'].get('id') == user_id
-
-        def tenant_matches(tenant_id, ref):
-            return ((tenant_id is None) or
-                    (ref.get('tenant') and
-                     ref['tenant'].get('id') == tenant_id))
-
-        tokens = []
-        now = timeutils.utcnow()
-        for token, ref in self.db.items():
-            if not token.startswith('token-') or self.is_expired(now, ref):
-                continue
-            else:
-                if (user_matches(user_id, ref) and
-                        tenant_matches(tenant_id, ref)):
-                        tokens.append(token.split('-', 1)[1])
-        return tokens
+        try:
+            expires = timeutils.normalize_time(
+                timeutils.parse_isotime(expires))
+        except ValueError:
+            # NOTE(morganfainberg): ValueError here indicates the
+            # "expires" value is not isotime string format.  Remove it
+            # from this user list.
+            LOG.debug(_('Invalid expires time on token `%(token_id)s`:'
+                        ' %(expires)r'),
+                      dict(token_id=token_id, expires=expires))
+            raise
+        return token_id, expires
 
     def _list_tokens(self, user_id, tenant_id=None, trust_id=None,
                      consumer_id=None):
-        if trust_id:
-            return self._list_tokens_for_trust(trust_id)
-        if consumer_id:
-            return self._list_tokens_for_consumer(consumer_id)
-        else:
-            return self._list_tokens_for_user(user_id, tenant_id)
-
-    def list_revoked_tokens(self):
         tokens = []
-        for token, token_ref in self.db.items():
-            if not token.startswith('revoked-token-'):
+        user_key = self._prefix_user_id(user_id)
+        token_list = self._get_user_token_list(user_key, include_expires=True)
+        current_time = self._get_current_time()
+        for item in token_list:
+            try:
+                token_id, expires = self._format_token_index_item(item)
+            except (ValueError, TypeError):
+                # NOTE(morganfainberg): Skip on expected errors possibilities
+                # from the `_format_token_index_item` method.
                 continue
-            record = {}
-            record['id'] = token_ref['id']
-            record['expires'] = token_ref['expires']
-            tokens.append(record)
+
+            if expires < current_time:
+                continue
+
+            try:
+                token_ref = self.get_token(token_id)
+            except exception.TokenNotFound:
+                # NOTE(morganfainberg): Token doesn't exist, skip it.
+                continue
+            if token_ref:
+                # FIXME(morganfainberg): Extract this block of if/continue to
+                # something a bit easier to read/follow (e.g.
+                # "if self._tenant_matches(tenant_id, token_ref)", ...).
+                if tenant_id is not None:
+                    tenant = token_ref.get('tenant')
+                    if not tenant:
+                        continue
+                    if tenant.get('id') != tenant_id:
+                        continue
+                if trust_id is not None:
+                    trust = token_ref.get('trust_id')
+                    if not trust:
+                        continue
+                    if trust != trust_id:
+                        continue
+                if consumer_id is not None:
+                    try:
+                        oauth = token_ref['token_data']['token']['OS-OAUTH1']
+                        if oauth.get('consumer_id') != consumer_id:
+                            continue
+                    except KeyError:
+                        continue
+
+                tokens.append(token_id)
         return tokens
 
+    def list_revoked_tokens(self):
+        revoked_token_list = self._get_key_or_default(self.revocation_key, [])
+        if isinstance(revoked_token_list, list):
+            return revoked_token_list
+        return []
+
     def flush_expired_tokens(self):
-        now = timeutils.utcnow()
-        for token, token_ref in self.db.items():
-            if self.is_expired(now, token_ref):
-                self.db.delete(token)
+        """Archive or delete tokens that have expired.
+        """
+        raise exception.NotImplemented()
