@@ -25,6 +25,7 @@ from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import tests
 from keystone.tests import default_fixtures
+from mock import Mock
 
 
 CONF = config.CONF
@@ -1563,6 +1564,22 @@ class IdentityTests(object):
     def test_remove_user_from_project(self):
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 self.user_foo['id'])
+        self.assignment_api.remove_user_from_project(self.tenant_baz['id'],
+                                                     self.user_foo['id'])
+        tenants = self.assignment_api.list_projects_for_user(
+            self.user_foo['id'])
+        self.assertNotIn(self.tenant_baz, tenants)
+
+    def test_remove_user_from_project_race_delete_role(self):
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
+                                                self.user_foo['id'])
+        # Mock a race condition, delete role after
+        # get_roles_for_user_and_project() be called in
+        # remove_user_from_project().
+        roles = self.assignment_api.get_roles_for_user_and_project()
+        self.assignment_api.delete_role(roles[0]['id'])
+        self.assignment_api.get_roles_for_user_and_project = Mock(
+            return_value = roles)
         self.assignment_api.remove_user_from_project(self.tenant_baz['id'],
                                                      self.user_foo['id'])
         tenants = self.assignment_api.list_projects_for_user(
