@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9uVU\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-09T15:23:38Z",
+      "side": 1,
+      "message": "seems fair to include:\n\n  \"expires_at\": null,\n\nif expires_at is null, rather than excluding it altogether",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
