@@ -173,6 +173,8 @@ class Manager(manager.Manager):
         return self.driver.validate_v3_token(token_id)
 
     def _is_valid_token(self, token):
+        if token is None:
+            return None
          # Verify the token has not expired.
         current_time = timeutils.normalize_time(timeutils.utcnow())
 

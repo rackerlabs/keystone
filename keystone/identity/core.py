@@ -425,6 +425,17 @@ class Manager(manager.Manager):
 
     @notifications.deleted('group')
     @domains_configured
+
+    def revoke_tokens_for_group(self, group_id, domain_scope):
+        if CONF.token.revoke_by_id:
+            user_ids = [u['id'] for u in self.list_users_in_group(group_id, domain_scope)]
+            self.token_api.delete_tokens_for_users(user_ids)
+        for grant in self.assignment_api.list_grants(group_id=group_id):
+            if (domain_scope):
+                self.revoke_api.revoke_by_domain_assignment(domain_id=grant['domain_id'], role_id=role_id)
+            else:
+                self.revoke_api.revoke_by_project_assignment(project_id=grant['project_id'], role_id=role_id)
+
     def delete_group(self, group_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         # As well as deleting the group, we need to invalidate
@@ -432,9 +443,7 @@ class Manager(manager.Manager):
         # We get the list of users before we attempt the group
         # deletion, so that we can remove these tokens after we know
         # the group deletion succeeded.
-        user_ids = [
-            u['id'] for u in self.list_users_in_group(group_id, domain_scope)]
-        self.token_api.delete_tokens_for_users(user_ids)
+        self.revoke_tokens_for_group(group_id, domain_scope)
         driver.delete_group(group_id)
 
     @domains_configured
