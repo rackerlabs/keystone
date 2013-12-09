@@ -16,6 +16,24 @@
       "revId": "13caac1bd70d6fb17efa5d8fa6c9f7c4aa4d7d5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9pE4\u003d",
+        "filename": "keystone/openstack/common/gettextutils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2013-12-09T11:59:44Z",
+      "side": 1,
+      "message": "Sure! I just worry about inadmissibility of this change. Will be cleaned.",
+      "parentUuid": "AAAATn/9pGg\u003d",
+      "revId": "13caac1bd70d6fb17efa5d8fa6c9f7c4aa4d7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
