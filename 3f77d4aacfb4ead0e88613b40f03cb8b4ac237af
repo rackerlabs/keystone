@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9meo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-09T19:27:29Z",
+      "side": 1,
+      "message": "The original deprecation message was a copy-paste error and was referring to a different method.  This is fixed in this commit.",
+      "revId": "3f77d4aacfb4ead0e88613b40f03cb8b4ac237af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
