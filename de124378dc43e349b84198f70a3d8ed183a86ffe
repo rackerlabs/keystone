@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9qhE\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-09T03:59:41Z",
+      "side": 1,
+      "message": "instead of using /tmp, you can add a -t flag, i actually had this in place, but ended up fiddling around with it too much, and forgot to add it back in. it explains why the files were found in your keystone directory.  http://unixhelp.ed.ac.uk/CGI/man-cgi?mktemp",
+      "revId": "de124378dc43e349b84198f70a3d8ed183a86ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
