@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9pGg\u003d",
+        "filename": "keystone/openstack/common/gettextutils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-09T11:52:19Z",
+      "side": 1,
+      "message": "whoa, i think you need to undo this or document it in the commit message. this seems out of scope for this change -- please explain.\n\nat minimum, remove the commented out boolean",
+      "revId": "13caac1bd70d6fb17efa5d8fa6c9f7c4aa4d7d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
