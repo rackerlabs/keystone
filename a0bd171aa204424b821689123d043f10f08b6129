@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9qls\u003d",
+        "filename": "keystone/common/kvs/__init__.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T03:09:21Z",
+      "side": 1,
+      "message": "Core uses __all__ as it should.  I\u0027ll make the legacy stuff explicit.  Even with __all__ being used in core, would you prefer explicit imports?",
+      "parentUuid": "AAAATn/9q3w\u003d",
+      "revId": "a0bd171aa204424b821689123d043f10f08b6129",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9q3k\u003d",
         "filename": "keystone/common/kvs/backends/inmemdb.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-09T00:04:40Z",
       "side": 1,
       "message": "Wouldn\u0027t it make more sense to return a dictionary here? \n\n{ key: self.get(key) }",
+      "revId": "a0bd171aa204424b821689123d043f10f08b6129",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9qlg\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T03:09:21Z",
+      "side": 1,
+      "message": "I was following the dogpile expected result:  https://bitbucket.org/zzzeek/dogpile.cache/src/4cc0af95d626fa89bfc903a6a454191ae0b7a104/dogpile/cache/backends/memory.py?at\u003dmaster#cl-60\n\nSince my aim is to support any/all generic dogpile backends (where possible), it makes sense to use the same semantics.",
+      "parentUuid": "AAAATn/9q3k\u003d",
       "revId": "a0bd171aa204424b821689123d043f10f08b6129",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
