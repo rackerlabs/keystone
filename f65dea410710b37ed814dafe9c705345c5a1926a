@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9mqw\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1768,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T19:03:03Z",
+      "side": 1,
+      "message": "I don\u0027t understand the name of this function.  If you are testing to see if create user missed password  \"works\"  then why does the test case check for an AssertionError?",
+      "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mq8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1782,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T19:03:03Z",
+      "side": 1,
+      "message": "I don\u0027t understand the name of this function.  If you are testing to see if none password \"works\"  why does the test case check for an AssertionError?",
+      "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
