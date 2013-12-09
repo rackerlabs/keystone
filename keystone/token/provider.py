@@ -175,7 +175,6 @@ class Manager(manager.Manager):
     def _is_valid_token(self, token):
          # Verify the token has not expired.
         current_time = timeutils.normalize_time(timeutils.utcnow())
-
         try:
             # Get the data we need from the correct location (V2 and V3 tokens
             # differ in structure, Try V3 first, fall back to V2 second)

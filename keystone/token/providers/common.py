@@ -19,6 +19,7 @@ import sys
 
 from keystone.common import dependency
 from keystone import config
+from keystone.contrib.revoke import model as revoke_model
 from keystone import exception
 from keystone import token
 from keystone.token import provider
@@ -327,7 +328,7 @@ class V3TokenDataHelper(object):
 
 @dependency.optional('oauth_api')
 @dependency.requires('assignment_api', 'catalog_api', 'identity_api',
-                     'token_api', 'trust_api')
+                     'token_api', 'trust_api', 'revoke_api')
 class BaseProvider(provider.Provider):
     def __init__(self, *args, **kwargs):
         super(BaseProvider, self).__init__(*args, **kwargs)
@@ -464,7 +465,11 @@ class BaseProvider(provider.Provider):
         return token_ref
 
     def revoke_token(self, token_id):
-        self.token_api.delete_token(token_id=token_id)
+        token = self.token_api.get_token(token_id)
+        self.revoke_api.revoke_by_expiration(user_id=token['user']['id'],
+                                             expires_at=token['expires'])
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_token(token_id=token_id)
 
     def _assert_default_domain(self, token_ref):
         """Make sure we are operating on default domain only."""
@@ -552,9 +557,45 @@ class BaseProvider(provider.Provider):
             token_ref = self._verify_token(token_id)
             token_data = self._validate_v3_token_ref(token_ref)
             return token_data
-        except (exception.ValidationError,
-                exception.UserNotFound):
-            LOG.exception(_('Failed to validate token'))
+        except (exception.ValidationError, exception.UserNotFound):
+            raise exception.TokenNotFound(token_id)
+
+    def check_revocation(self, token_data):
+        def revoke_matches(event, token_data):
+            #something has to match in order to revoke the token
+            matched = False
+            if event.identity_type is revoke_model.IdentityType.user:
+                if event.identity_id != token_data['token']['user']['id']:
+                    return False
+                else:
+                    matched = True
+
+            if event.assignment_type is revoke_model.AssignmentType.project:
+                if event.assignment_id != token_data['token']['project']['id']:
+                    return False
+                else:
+                    matched = True
+
+            if event.assignment_type is revoke_model.AssignmentType.domain:
+                if event.assignment_id != token_data['token']['domain']['id']:
+                    return False
+                else:
+                    matched = True
+
+            if hasattr(event, 'expires_at'):
+                token_date = timeutils.normalize_time(
+                    timeutils.parse_isotime(token_data['token']['expires_at']))
+                if event.expires_at != token_date:
+                    return False
+                else:
+                    matched = True
+            return matched
+
+        events = self.revoke_api.get_events(filter=None)
+        for event in events:
+            if revoke_matches(event, token_data):
+                #TODO(ayoung): I18N
+                raise exception.ValidationError("Token Revoked")
 
     def _validate_v3_token_ref(self, token_ref):
         # FIXME(gyee): performance or correctness? Should we return the
@@ -579,6 +620,7 @@ class BaseProvider(provider.Provider):
                 project_id=project_id,
                 bind=token_ref.get('bind'),
                 expires=token_ref['expires'])
+        self.check_revocation(token_data)
         return token_data
 
     def validate_token(self, token_id):
