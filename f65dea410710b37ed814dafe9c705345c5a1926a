@@ -50,6 +50,24 @@
       "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mgc\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2013-12-09T19:23:53Z",
+      "side": 1,
+      "message": "Don\u0027t you think that split the test is better to localize a failure in the future? if we join all cases in a test, we could hide the problem",
+      "parentUuid": "AAAATn/9mi4\u003d",
+      "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
