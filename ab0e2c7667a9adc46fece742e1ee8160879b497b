@@ -16,6 +16,24 @@
       "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9m+U\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-09T17:43:45Z",
+      "side": 1,
+      "message": "My expectation was that it would already be null, as it\u0027s being read from the DB, where the default value will be null, hence no need to set it explicitly?\n\nAlso this is just a direct copy of the existing behaviour in _fill_in_roles (which is a weird place to manipulate expires_at, but nvm ;)",
+      "parentUuid": "AAAATn/9uVU\u003d",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
