@@ -24,14 +24,16 @@ from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
+from keystone.openstack.common import versionutils
+
 
 LOG = logging.getLogger(__name__)
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
-v2_deprecated = utils.deprecated(what='v2 API',
-                                 as_of=utils.deprecated.ICEHOUSE,
-                                 in_favor_of='v3 API')
+v2_deprecated = versionutils.deprecated(what='v2 API',
+                                        as_of=versionutils.deprecated.ICEHOUSE,
+                                        in_favor_of='v3 API')
 
 
 def _build_policy_check_credentials(self, action, context, kwargs):
