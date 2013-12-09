@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9lsU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-09T22:10:42Z",
+      "side": 1,
+      "message": "test_domain_admin_unable_to_revoke_token_for_user_in_different_domain(self):\n\nlong name but more intuitive perhaps",
+      "revId": "5fcf4cd1929701454d1ac1f1623566547facbe95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
