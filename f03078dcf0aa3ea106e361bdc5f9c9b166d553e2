@@ -52,6 +52,24 @@
       "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9qx8\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-09T01:21:32Z",
+      "side": 1,
+      "message": "*facepalm* ... thanks, got it working now, uploading a new patch.",
+      "parentUuid": "AAAATn/9q4Q\u003d",
+      "revId": "f03078dcf0aa3ea106e361bdc5f9c9b166d553e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
