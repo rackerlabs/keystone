@@ -33,6 +33,23 @@
       "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mi4\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-09T19:17:57Z",
+      "side": 1,
+      "message": "you don\u0027t need other attributes as we only care about the password attribute. I think you can also consolidate code. For example,\n\nfor user in [{}, {\u0027password\u0027: None}, {\u0027password\u0027: \u0027\u0027}]:\n    hashed \u003d utils.hash_user_password(user)\n    self.assertEqual(user, hashed)",
+      "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
