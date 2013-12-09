@@ -16,6 +16,24 @@
       "revId": "db58e28875e216acaabb93ee656e0d4fa7941a74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9n8Y\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-09T15:29:00Z",
+      "side": 1,
+      "message": "I can\u0027t tell if the first paragraph is a statement or a question! I don\u0027t want to change the behavior of this in the current patch (a bug fix), but there\u0027s a dependent code review that refactors this a bit. Perhaps that\u0027s a better place to have this discussion?",
+      "parentUuid": "AAAATn/9wJo\u003d",
+      "revId": "db58e28875e216acaabb93ee656e0d4fa7941a74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
