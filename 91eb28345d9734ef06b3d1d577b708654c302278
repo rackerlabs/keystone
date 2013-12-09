@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/9nC8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2866,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-09T17:30:47Z",
+      "side": 1,
+      "message": "rather than do a copy-paste, suggest have a common function and call it. Pass in the function to call.\n\n def _test_token_list(self, token_list_fn):\n    tokens \u003d token_list_fn(\u0027testuserid\u0027)\n    ...\n\n def test_token_list(self):\n   self._test_token_list(self.token_api._list_tokens)\n\n def test_token_list_deprecated_public_interface(self):\n   self._test_token_list(self.token_api.list_tokens)",
+      "revId": "91eb28345d9734ef06b3d1d577b708654c302278",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9zBE\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
