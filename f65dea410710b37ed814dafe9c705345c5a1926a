@@ -86,6 +86,24 @@
       "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mcs\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-09T19:37:52Z",
+      "side": 1,
+      "message": "Something like this can decrease the duplication:\n\nEMPTY \u003d object()\ndef _hashed_user_password(self, password\u003dEMPTY):\n    user \u003d {\"email\": None,\n               \"enabled\": True,\n               \"name\": \"hthtest\",\n               \"tenantId\": None}\n    if password is not SENTINAL:\n        user[\u0027password\u0027] \u003d password\n    return utils.hash_user_password(user)",
+      "parentUuid": "AAAATn/9meE\u003d",
+      "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
