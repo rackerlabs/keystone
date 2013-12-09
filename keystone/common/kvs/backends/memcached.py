@@ -89,6 +89,9 @@ class MemcachedBackend(manager.Manager):
         # NOTE(morganfainberg): Remove distributed locking from the arguments
         # passed to the "real" backend if it exists.
         arguments.pop('distributed_lock', None)
+        self._key_mangler = None
+        self._raw_no_expiry_keys = set(arguments.pop('no_expiry_keys', []))
+        self._no_expiry_keys = self._raw_no_expiry_keys
         backend = arguments.pop('dogpile_memcache_backend', None)
         if 'url' not in arguments:
             # FIXME(morganfainberg): Log deprecation warning for old-style
@@ -108,6 +111,18 @@ class MemcachedBackend(manager.Manager):
             else:
                 self.driver = getattr(memcached, backend)(arguments)
 
+    def set(self, key, value):
+        if key not in self._no_expiry_keys:
+            super(MemcachedBackend, self).set(key, value)
+        else:
+            self.driver.client.set(key, value)
+
+    def set_multi(self, mapping):
+        mapping_keys = set(mapping.keys())
+        self.driver.client.set_multi(
+            mapping_keys.intersection(self._no_expiry_keys))
+        self.driver.set_multi(mapping_keys.difference(self._no_expiry_keys))
+
     @classmethod
     def from_config_dict(cls, config_dict, prefix):
         prefix_len = len(prefix)
@@ -118,7 +133,25 @@ class MemcachedBackend(manager.Manager):
 
     @property
     def key_mangler(self):
-        return self.driver.key_mangler
+        if self._key_mangler is None:
+            return self.driver.key_mangler
+        return self._key_mangler
+
+    @key_mangler.setter
+    def key_mangler(self, key_mangler):
+        if callable(key_mangler):
+            self._key_mangler = key_mangler
+            # NOTE(morganfainberg): Rehash all the non-expiring keys to the now
+            # correct values via the key_mangler.
+            no_expire = set()
+            for key in self._raw_no_expiry_keys:
+                no_expire.add(self._key_mangler(key))
+            self._no_expiry_keys = no_expire
+        elif key_mangler is None:
+            self._no_expiry_keys = self._raw_no_expiry_keys
+            pass
+        else:
+            raise TypeError(_('`key_mangler` functions must be callable.'))
 
     def get_mutex(self, key):
         return MemcachedLock(lambda: self.driver.client, key,
