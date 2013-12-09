@@ -16,6 +16,24 @@
       "revId": "e573f70dfe11a9e746c281e98c5efb472ed0cf20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mI4\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-09T20:50:06Z",
+      "side": 1,
+      "message": "that\u0027d be a useful inline comment",
+      "parentUuid": "AAAATn/9mu0\u003d",
+      "revId": "e573f70dfe11a9e746c281e98c5efb472ed0cf20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
