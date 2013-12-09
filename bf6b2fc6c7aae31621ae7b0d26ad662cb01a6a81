@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9mMg\u003d",
+        "filename": "keystone/openstack/common/versionutils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T20:37:56Z",
+      "side": 1,
+      "message": "There is a typo on this line, \"the release where is may..\n\u0027",
+      "revId": "bf6b2fc6c7aae31621ae7b0d26ad662cb01a6a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mL8\u003d",
+        "filename": "keystone/openstack/common/versionutils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T20:37:56Z",
+      "side": 1,
+      "message": "typo, remove \"when\"",
+      "revId": "bf6b2fc6c7aae31621ae7b0d26ad662cb01a6a81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
