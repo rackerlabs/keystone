@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9q3w\u003d",
+        "filename": "keystone/common/kvs/__init__.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-09T00:04:40Z",
+      "side": 1,
+      "message": "why *? import what you want to expose.",
+      "revId": "a0bd171aa204424b821689123d043f10f08b6129",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9q3k\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-09T00:04:40Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it make more sense to return a dictionary here? \n\n{ key: self.get(key) }",
+      "revId": "a0bd171aa204424b821689123d043f10f08b6129",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
