@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/9mcE\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T19:39:40Z",
+      "side": 1,
+      "message": "Great comment!  This is very helpful.",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mco\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-09T19:39:40Z",
+      "side": 1,
+      "message": "Why is the isotime conversion being done here and at this point in the code as opposed to when trust[\u0027expires_at\u0027] value is originally set?",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9uVU\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
