@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9oNU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2013-12-09T15:41:42Z",
+      "side": 1,
+      "message": "retrieved_value*",
+      "revId": "709dd23d1657398162ae86aaff3fe40b757a0a0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
