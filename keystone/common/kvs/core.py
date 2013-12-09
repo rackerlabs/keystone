@@ -135,6 +135,18 @@ class KeyValueStore(object):
                                               'configured: %s'),
                                             self._region.name)
 
+    def _set_keymangler_on_backend(self, key_mangler):
+            try:
+                self._region.backend.key_mangler = key_mangler
+            except Exception as e:
+                # NOTE(morganfainberg): This is used simply to allow the
+                # backend to have a mechanism to calculate out a key if needed.
+                # Not all backends will support this.  Log this as a warning
+                # and move on.
+                LOG.warning(_('Unable to set key_mangler on backend for '
+                              'region %(region)s: %(err)s'),
+                            dict(region=self._region.name, err=e))
+
     def _set_key_mangler(self, key_mangler):
         # Set the key_mangler that is appropriate for the given region being
         # configured here.  The key_mangler function is called prior to storing
@@ -174,9 +186,11 @@ class KeyValueStore(object):
                 # unintended cases of exceeding cache-key in backends such
                 # as memcache.
                 self._region.key_mangler = dogpile_util.sha1_mangle_key
+            self._set_keymangler_on_backend(self._region.key_mangler)
         else:
             LOG.info(_('KVS region %s key_mangler disabled.'),
                      self._region.name)
+            self._set_keymangler_on_backend(None)
 
     def _configure_region(self, backend, **config_args):
         prefix = CONF.kvs.config_prefix

@@ -133,6 +133,9 @@ class KVSTest(tests.TestCase):
         kvs.configure('openstack.kvs.Memory')
 
         self.assertIs(kvs._region.key_mangler, util.sha1_mangle_key)
+        # The backend should also have the keymangler set the same as the
+        # region now.
+        self.assertIs(kvs._region.backend.key_mangler, util.sha1_mangle_key)
 
     def test_kvs_key_mangler_configuration_backend(self):
         kvs = self._get_kvs_region()
@@ -324,6 +327,32 @@ class KVSTest(tests.TestCase):
                       dogpile_memcache_backend='MemcachedBackend')
         self.assertIsInstance(kvs._region.backend.driver,
                               dogpile_memcached.MemcachedBackend)
+
+    def test_kvs_memcache_manager_no_expiry_keys(self):
+        # Make sure the memcache backend recalculates the no-expiry keys
+        # correctly when a key-mangler is set on it.
+
+        def new_mangler(key):
+            return '_mangled_key_' + key
+
+        kvs = self._get_kvs_region()
+        no_expiry_keys = set(['test_key'])
+        kvs.configure('openstack.kvs.Memcached',
+                      dogpile_memcache_backend='MemcachedBackend',
+                      no_expiry_keys=no_expiry_keys)
+        calculated_keys = set([kvs._region.key_mangler(key)
+                               for key in no_expiry_keys])
+        self.assertIs(kvs._region.backend.key_mangler, util.sha1_mangle_key)
+        self.assertSetEqual(calculated_keys,
+                            kvs._region.backend._no_expiry_keys)
+        self.assertSetEqual(no_expiry_keys,
+                            kvs._region.backend._raw_no_expiry_keys)
+        calculated_keys = set([new_mangler(key) for key in no_expiry_keys])
+        setattr(kvs._region.backend, 'key_mangler', new_mangler)
+        self.assertSetEqual(calculated_keys,
+                            kvs._region.backend._no_expiry_keys)
+        self.assertSetEqual(no_expiry_keys,
+                            kvs._region.backend._raw_no_expiry_keys)
 
     def test_kvs_memcache_manager_invalid_dogpile_memcache_backend(self):
         # Invalid dogpile memcache backend should raise ValueError
