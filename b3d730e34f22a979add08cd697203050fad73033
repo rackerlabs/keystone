@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9qWg\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T05:47:29Z",
+      "side": 1,
+      "message": "This change is to stop trying to instantiate the manager with the new KVS system over-and-over as it will raise an exception that the KVS region is already configured.",
+      "revId": "b3d730e34f22a979add08cd697203050fad73033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
