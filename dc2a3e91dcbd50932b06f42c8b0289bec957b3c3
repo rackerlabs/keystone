@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9nXg\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-09T16:37:52Z",
+      "side": 1,
+      "message": "You are still missing the STANDARD_THREADS env var or command line switch, which is going to prevent the debugger from switching once it hits a breakpoint.",
+      "revId": "dc2a3e91dcbd50932b06f42c8b0289bec957b3c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
