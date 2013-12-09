@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9mTw\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-09T20:05:28Z",
+      "side": 1,
+      "message": "this is an abstract class right? May want to use metaclass here.",
+      "revId": "cc0c6565e3fe6ed60543e6ebd5e54cba51e59fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9mTo\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-09T20:05:28Z",
+      "side": 1,
+      "message": "where\u0027s _get_token_id()? isn\u0027t that an abstract method?",
+      "revId": "cc0c6565e3fe6ed60543e6ebd5e54cba51e59fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
