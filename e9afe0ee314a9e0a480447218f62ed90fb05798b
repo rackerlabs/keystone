@@ -16,6 +16,24 @@
       "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9qmI\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-09T03:04:51Z",
+      "side": 1,
+      "message": "Yep, Talked to Simo about moving to that.  Thanks for the markup on it as a reminder!  Will be working on that shortly here.",
+      "parentUuid": "AAAATn/9q4g\u003d",
+      "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
