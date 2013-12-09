@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9niI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-09T16:13:55Z",
+      "side": 1,
+      "message": "Brad, do you want me to do something here?",
+      "parentUuid": "AAAATn/9tlM\u003d",
+      "revId": "56f82283850032fb8b821c3d0df9f34a26b3a33b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9tUU\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 16
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-06T23:10:38Z",
       "side": 1,
       "message": "++ The casual reader of this code won\u0027t understand why the API is returning 403s.",
+      "parentUuid": "AAAATn/9tUU\u003d",
+      "revId": "56f82283850032fb8b821c3d0df9f34a26b3a33b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ni8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-09T16:13:55Z",
+      "side": 1,
+      "message": "I will do that",
       "parentUuid": "AAAATn/9tUU\u003d",
       "revId": "56f82283850032fb8b821c3d0df9f34a26b3a33b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
