@@ -390,14 +390,30 @@ set to false, the backend will not perform the ``copy.deepcopy`` operations on v
 store/retrieval, allowing reference manipulation to affect the backend directly.
 
 The memcached backend uses the Keystone manager mechanism to support the use of any of the
-provided dogpile.cache memcached backends (``BMemcached``, ``pylibmc``, and basic ``Memcached``).
+provided memcached driver (``BMemcached``, ``Pylibmc``, and basic ``Memcached``).
 By default the standard Memcache backend is used.  Currently the Memcache URLs come from the
 ``servers`` option in the ``[memcache]`` configuration section of the Keystone config.
 
-Example configuring the KVS system to use memcached and a specific dogpile.cache memcached backend::
+Example configuring the KeyValueStore system to use a KeyValueStore object named "TestKVSRegion",
+the Memcached backend and, a specific memcached driver::
 
     kvs_store = kvs.get_key_value_store('TestKVSRegion')
-    kvs_store.configure('openstack.kvs.Memcached', dogpile_cache_backend='MemcachedBackend')
+    kvs_store.configure('openstack.kvs.MemcachedBackend', memcached_driver='Memcached')
+
+The memcached backend can support the concept of passing an explicit TTL to all keys set. This
+is accomplished by passing the argument ``memcached_expire_time`` as a keyword argument to the
+``configure`` method. Similarly it is possible to pass the ``min_compress_len`` argument to
+all set calls::
+
+    kvs_store.configure('openstack.kvs.MemcachedBackend', memcached_driver='Memcached',
+                        memcached_expire_time=86400, min_compress_len=1000)
+
+If an explicit TTL is configured via the ``memcached_expire_time`` argument, it is possible to
+exempt specific keys from receiving this TTL by passing the argument ``no_expiry_keys`` (list)
+as a keyword argument to the ``configure`` method. The ``no_expiry_keys``::
+
+    kvs_store.configure('openstack.kvs.MemcachedBackend', memcache_driver='Memcached',
+                        memcached_expire_time=86400, no_expiry_keys=['key', 'second_key', ...])
 
 Once a KVS object has been instantiated the method of interacting is the same as most memcache
 implementations::
@@ -424,9 +440,9 @@ key_manglers (modification of the key when saving to the backend to help prevent
 collisions or exceeding key size limits with memcached).
 
 .. WARNING::
-    Setting the ``enable_key_mangler`` option to False can have detrimental effects on the KeyValueStore
-    backend. It is recommended that this value is not set to False except for debugging issues with the
-    ``dogpile.cache`` backend itself.
+    Setting the ``enable_key_mangler`` option to False can have detrimental effects on the
+    KeyValueStore backend. It is recommended that this value is not set to False except for
+    debugging issues with the ``dogpile.cache`` backend itself.
 
 
 Building the Documentation
