@@ -25,6 +25,7 @@ from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import tests
 from keystone.tests import default_fixtures
+from keystone.tests import test_utils
 
 
 CONF = config.CONF
@@ -3118,6 +3119,55 @@ class TokenTests(object):
         self.assertIn(token_id, revoked_ids)
         for t in self.token_api.list_revoked_tokens():
             self.assertIn('expires', t)
+
+    def test_create_unicode_token_id(self):
+        token_id = unicode(self._create_token_id())
+        data = {'id': token_id, 'a': 'b',
+                'user': {'id': 'testuserid'}}
+        self.token_api.create_token(token_id, data)
+        self.token_api.get_token(token_id)
+
+    def test_create_unicode_user_id(self):
+        token_id = self._create_token_id()
+        user_id = unicode(uuid.uuid4().hex)
+        data = {'id': token_id, 'a': 'b',
+                'user': {'id': user_id}}
+        self.token_api.create_token(token_id, data)
+        self.token_api.get_token(token_id)
+
+    def test_list_tokens_unicode_user_id(self):
+        user_id = unicode(uuid.uuid4().hex)
+        self.token_api.list_tokens(user_id)
+
+    def test_token_expire_timezone(self):
+
+        @test_utils.timezone
+        def _create_token(expire_time):
+            token_id = uuid.uuid4().hex
+            user_id = unicode(uuid.uuid4().hex)
+            data = {'id': token_id, 'a': 'b', 'user': {'id': user_id},
+                    'expires': expire_time
+                    }
+            self.token_api.create_token(token_id, data)
+            return data
+
+        for d in ['+0', '-11', '-8', '-5', '+5', '+8', '+14']:
+            test_utils.TZ = 'UTC' + d
+            expire_time = timeutils.utcnow() + \
+                datetime.timedelta(minutes=1)
+            data_in = _create_token(expire_time)
+            data_get = None
+            data_get = self.token_api.get_token(data_in['id'])
+
+            self.assertIsNotNone(data_get, "TZ=%s" % test_utils.TZ)
+            self.assertEqual(data_in['id'], data_get['id'],
+                             "TZ=%s" % test_utils.TZ)
+
+            expire_time_expired = timeutils.utcnow() + \
+                datetime.timedelta(minutes=-1)
+            data_in = _create_token(expire_time_expired)
+            self.assertRaises(exception.TokenNotFound,
+                              self.token_api.get_token, data_in['id'])
 
 
 class TokenCacheInvalidation(object):
