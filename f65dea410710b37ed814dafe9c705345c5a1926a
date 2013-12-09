@@ -68,6 +68,24 @@
       "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9meE\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 9275
+      },
+      "writtenOn": "2013-12-09T19:29:43Z",
+      "side": 1,
+      "message": "IMHO will be better to consolidate that common code in something like _test_hash_user_password(self, password ) and then \nkeep every test name.\n\nex: test_hash_user_pasword_without_password(self):\n              self._test_hash_user_pasword(password\u003dNone)\n\netc...",
+      "parentUuid": "AAAATn/9mgc\u003d",
+      "revId": "f65dea410710b37ed814dafe9c705345c5a1926a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
