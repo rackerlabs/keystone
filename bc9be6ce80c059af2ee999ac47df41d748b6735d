@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9lEc\u003d",
+        "filename": "keystone/contrib/example/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "don\u0027t need to instantiate in order to call the static class methods",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lEU\u003d",
+        "filename": "keystone/contrib/example/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "you can just do this\n\ncontrollers.ExampleV3Controller.project_deleted_notification",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lDw\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "s/list of it is events its interested/list of events it is interested in/",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lDY\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "those are static methods, no need to instantiate the class\n\ncontrollers.ExampleV3Controller.project_deleted_notification",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lE8\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "pep8 - two lines",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lGU\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "2013, or maybe might as well put 2014 there :)",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lGc\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lGI\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T01:21:24Z",
+      "side": 1,
+      "message": "may want to check is subscription_callback is callable, just in case\n\nif not hasattr(subscription_callback, \u0027__call__\u0027):\n    LOG.error(\u0027...\u0027)\n\nAlso, want want to add a LOG.info() to log who are registered.",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
