@@ -185,17 +185,15 @@ class OAuthControllerV3(controller.V3Controller):
             http_method='POST',
             http_url=url,
             headers=context['headers'],
-            query_string=context['query_string'],
-            parameters={'requested_project_id': requested_project_id})
+            query_string=context['query_string'])
         oauth_server = oauth1.Server()
         oauth_server.add_signature_method(oauth1.SignatureMethod_HMAC_SHA1())
         params = oauth_server.verify_request(oauth_request,
                                              consumer,
                                              token=None)
 
-        project_params = params['requested_project_id']
-        if project_params != requested_project_id:
-            msg = _('Non-oauth parameter - project, do not match')
+        if params:
+            msg = _('There should not be any non-oauth parameters.')
             raise exception.Unauthorized(message=msg)
 
         request_token_duration = CONF.oauth1.request_token_duration

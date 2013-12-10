@@ -72,8 +72,7 @@ class OAuth1Tests(test_v3.RestfulTestCase):
         oreq = self._oauth_request(
             consumer=consumer,
             http_url=self.base_url + url,
-            http_method='POST',
-            parameters=params)
+            http_method='POST')
         hmac = oauth1.SignatureMethod_HMAC_SHA1()
         oreq.sign_request(hmac, consumer, None)
         headers.update(oreq.to_header())
