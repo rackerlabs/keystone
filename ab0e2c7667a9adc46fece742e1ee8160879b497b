@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9igE\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-12-10T13:25:08Z",
+      "side": 1,
+      "message": "I suppose so that the backend can deal with datetime objects the way it sees fit rather than with a string ?",
+      "parentUuid": "AAAATn/9mco\u003d",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9uVU\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
@@ -64,6 +82,24 @@
       "writtenOn": "2013-12-09T17:43:45Z",
       "side": 1,
       "message": "My expectation was that it would already be null, as it\u0027s being read from the DB, where the default value will be null, hence no need to set it explicitly?\n\nAlso this is just a direct copy of the existing behaviour in _fill_in_roles (which is a weird place to manipulate expires_at, but nvm ;)",
+      "parentUuid": "AAAATn/9uVU\u003d",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ifM\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2013-12-10T13:25:08Z",
+      "side": 1,
+      "message": "expires_at is an optional setting in trusts according to the identity-api doc, so I\u0027d agree with Steven on that one.",
       "parentUuid": "AAAATn/9uVU\u003d",
       "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
