@@ -16,6 +16,24 @@
       "revId": "9a0685d2012c3b17c0295097acb21a833d407939",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9kDw\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-10T07:39:23Z",
+      "side": 1,
+      "message": "This might be beneficial for excessively large innodb token tables to help limit gap locking issues on the delete, though I\u0027d need to defer to someone more versed in MySQL to gauge benefit.\n\nI do like the concept of making this a tunable option if it extends beyond db2 or there could be a reason to have a different value than 100.  Why was the magic \u0027100\u0027 chosen?\n\nCan this be done with SQLAlchemy semantics instead of RAW sql?",
+      "parentUuid": "AAAATn/9/7M\u003d",
+      "revId": "9a0685d2012c3b17c0295097acb21a833d407939",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
