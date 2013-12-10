@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9ku4\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T03:56:32Z",
+      "side": 1,
+      "message": "Actually I didn\u0027t find any mechanism to inject a new filter dynamically in the paste.ini. I did in the past with the keystone.conf but I could not find an equivalent method to change the past ini, any thoughts?",
+      "parentUuid": "AAAATn/9k0o\u003d",
+      "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9k1Y\u003d",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-10T02:45:53Z",
       "side": 1,
       "message": "Why are we adding the example_extension to the pipeline here?  This doesn\u0027t seem correct as it\u0027s not meant to actually be used.  If this is needed for a test use the ini-generation mechanism (see how the oauth extension does it\u0027s testing)",
+      "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ku0\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T03:56:32Z",
+      "side": 1,
+      "message": "Done.\nI just forgot to take it out during the commit ;-)",
+      "parentUuid": "AAAATn/9k1Y\u003d",
       "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9kus\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T03:56:32Z",
+      "side": 1,
+      "message": "This is actually not necessary anymore. I will take it out alltogether",
+      "parentUuid": "AAAATn/9k1A\u003d",
+      "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9k0M\u003d",
         "filename": "keystone/contrib/example/controllers.py",
         "patchSetId": 9
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9kuI\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T03:56:32Z",
+      "side": 1,
+      "message": "Morgan, this basically only counts the messages and logs what has received? What do you want to be simpler than this?",
+      "parentUuid": "AAAATn/9k0M\u003d",
+      "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9k1I\u003d",
         "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
         "patchSetId": 9
@@ -81,6 +153,24 @@
       "writtenOn": "2013-12-10T02:45:53Z",
       "side": 1,
       "message": "White space",
+      "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9kt0\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T03:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9k1I\u003d",
       "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
