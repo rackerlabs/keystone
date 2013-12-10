@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9gPU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-10T21:03:43Z",
+      "side": 1,
+      "message": "Yeah, I wanted a mechanism to let \"namespaces\" to expire without the need to do an explicit de-register.  if you dump your references, the next get will be clean.  It just felt \"right\".",
+      "parentUuid": "AAAATn/9ggo\u003d",
+      "revId": "cb4ac1c0f1876d038d023ace53560569dc8e5f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9gcs\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-10T20:55:12Z",
       "side": 1,
       "message": "How about: configuring the KVS system to use a KVS object named \u0027TestKVSRegion\u0027 that uses memcached and a specific dogpile.cache memcached backend::   ?  I was uncomfortable with TestKVSRegion not being described",
+      "revId": "cb4ac1c0f1876d038d023ace53560569dc8e5f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9gQE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-10T21:03:43Z",
+      "side": 1,
+      "message": "I\u0027ll get this in the next doc-pass.",
+      "parentUuid": "AAAATn/9gcs\u003d",
       "revId": "cb4ac1c0f1876d038d023ace53560569dc8e5f5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
