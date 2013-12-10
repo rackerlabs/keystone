@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9k3k\u003d",
+        "filename": "keystone/contrib/example/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lEc\u003d",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9lEU\u003d",
         "filename": "keystone/contrib/example/__init__.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-10T01:21:24Z",
       "side": 1,
       "message": "you can just do this\n\ncontrollers.ExampleV3Controller.project_deleted_notification",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9k3Y\u003d",
+        "filename": "keystone/contrib/example/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lEU\u003d",
       "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9k3U\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lDw\u003d",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9lDY\u003d",
         "filename": "keystone/contrib/example/configuration.rst",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-10T01:21:24Z",
       "side": 1,
       "message": "those are static methods, no need to instantiate the class\n\ncontrollers.ExampleV3Controller.project_deleted_notification",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9k2Y\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lDY\u003d",
       "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9k3M\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lE8\u003d",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9lGU\u003d",
         "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-10T01:21:24Z",
       "side": 1,
       "message": "2013, or maybe might as well put 2014 there :)",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9k2Q\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lGU\u003d",
       "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9k2U\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9lGc\u003d",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9lGI\u003d",
         "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2013-12-10T01:21:24Z",
       "side": 1,
       "message": "may want to check is subscription_callback is callable, just in case\n\nif not hasattr(subscription_callback, \u0027__call__\u0027):\n    LOG.error(\u0027...\u0027)\n\nAlso, want want to add a LOG.info() to log who are registered.",
+      "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9k3E\u003d",
+        "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-10T02:31:18Z",
+      "side": 1,
+      "message": "Done. Added more log to show the callback action and reaction",
+      "parentUuid": "AAAATn/9lGI\u003d",
       "revId": "bc9be6ce80c059af2ee999ac47df41d748b6735d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
