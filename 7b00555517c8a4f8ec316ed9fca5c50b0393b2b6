@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9kNg\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-10T06:49:58Z",
+      "side": 1,
+      "message": "I was thinking that the need to use the example extension could probably have been avoided.  However, I can see if you are continuing to use the example extension how they would be required.",
+      "parentUuid": "AAAATn/9kuI\u003d",
+      "revId": "7b00555517c8a4f8ec316ed9fca5c50b0393b2b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9k1I\u003d",
         "filename": "keystone/openstack/common/notifier/extensions_notifier.py",
         "patchSetId": 9
