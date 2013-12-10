@@ -152,6 +152,24 @@
       "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9kEw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-10T07:31:39Z",
+      "side": 1,
+      "message": "similar that update doesn\u0027t trigger create, etc",
+      "parentUuid": "AAAATn/9kHs\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
