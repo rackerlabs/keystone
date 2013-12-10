@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9hAQ\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T17:46:45Z",
+      "side": 1,
+      "message": "We only need this for Python 2.6 right. Otherwise, we would want to utilize the native one as it is the latest (and greatest).\nShould we do this instead?\n\ndef assertSetEqual(self, set1, set2, msg\u003dNone):\n    if (sys.version_info.major \u003e\u003d 2 and sys.version_info.minor \u003e 6):\n        # use the native one\n        super(TestCase, self).assertSetEqual(set1, set2, msg\u003dmsg)\n    else:\n        self._assertSetEqual(set1, set2, msg\u003dNone)\n\ndef _assertSetEqual(self, set1, set2, msg\u003dNone):\n...",
+      "revId": "87b8e46ff4f83194edf80100d61de34fc5dbd410",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
