@@ -34,6 +34,24 @@
       "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9iZY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T13:38:57Z",
+      "side": 0,
+      "message": "I think this is a good reason to remove this code.",
+      "parentUuid": "AAAATn/9774\u003d",
+      "revId": "2ab2c624353067ba0989720414e5cde2d4792bcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
