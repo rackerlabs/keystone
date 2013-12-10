@@ -565,6 +565,11 @@ def render_response(body=None, status=None, headers=None):
     headers = headers or []
     headers.append(('Vary', 'X-Auth-Token'))
 
+    # extra headers
+    for key, value in CONF.extra_headers.items():
+        if value!='None':
+            headers.append(('X-'+key, value))
+
     if body is None:
         body = ''
         status = status or (204, 'No Content')

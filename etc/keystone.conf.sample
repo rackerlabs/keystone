@@ -435,3 +435,6 @@ oauth1 = keystone.auth.plugins.oauth1.OAuth
 [paste_deploy]
 # Name of the paste configuration file that defines the available pipelines
 config_file = keystone-paste.ini
+
+[extra_headers]
+Distribution = None

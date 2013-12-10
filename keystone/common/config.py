@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import platform
+
 from oslo.config import cfg
 
 from keystone.openstack.common import log as logging
@@ -266,7 +268,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('template_file',
                    default='default_catalog.templates'),
         cfg.StrOpt('driver',
-                   default='keystone.catalog.backends.sql.Catalog')]}
+                   default='keystone.catalog.backends.sql.Catalog')],
+    'extra_headers': [
+        cfg.StrOpt('Distribution', default=platform.dist()[0])]}
 
 
 CONF = cfg.CONF
