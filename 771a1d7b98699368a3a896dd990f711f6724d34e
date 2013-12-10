@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9iME\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-10T14:15:39Z",
+      "side": 1,
+      "message": "there will either be a project_id or domain_id in this call -- not both. your code below assumes that a project_id will always be provided if a user_id is provided, which is not the case",
+      "revId": "771a1d7b98699368a3a896dd990f711f6724d34e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
