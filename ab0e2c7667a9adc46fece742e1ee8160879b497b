@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9g6g\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-10T18:13:23Z",
+      "side": 1,
+      "message": "This is probably worth further investigation, I\u0027ll look into it, but for the purposes of this patch, I just lifted the logic here from _fill_in_roles, so the bugfix doesn\u0027t contain any refactoring or changes unrelated to fixing the bug.\n\nIf we can do as you suggest, I\u0027ll post a follow-up patch, but as Matthieu mentions, I\u0027m not sure what the implications are for the format conversion at the backend, and IMO that change does not belong in this bug-fix patch, particularly because it might be a candidate for backporting to stable.",
+      "parentUuid": "AAAATn/9igE\u003d",
+      "revId": "ab0e2c7667a9adc46fece742e1ee8160879b497b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9uVU\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 4
