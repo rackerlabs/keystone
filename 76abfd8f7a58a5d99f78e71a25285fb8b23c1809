@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9gAs\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Should this really be class scope?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f6o\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Is this docstring correct?  It looks like the raises and returns values are incorrect.",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f8c\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Is there any reason you are doing it this way? Most of the other SQL backends turn return something like:\n\n  [e.to_dict() for e in query]",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fyg\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "This should have a real title",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fyQ\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Do 1, 2 and 3 need to be revised for this particular extension?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fys\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Should this be revoke instead of example?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f4o\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Is this commented out on purpose?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fx0\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "I think this needs to be updated.  Looks like it was copied here and never updated.",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f2o\u003d",
+        "filename": "keystone/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Any reason not to just use self.controller here and in the statement below?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f2I\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Could you replace this implementation with a simpler on like:\n\n  expected_order \u003d list(sorted(events, key\u003dlambda x: x.scope_id))\n  self.assertThat(events, matchers.Equal(expected_order))",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f00\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Is it possible that these ids will collide with ids from existing events? If so what would happen?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f0c\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "str(uuid.uuid4())",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9f0E\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Isn\u0027t this just a fancy was of saying `count \u003d 8`?  What about making it a \"const\" that is used here and in line 60?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fzs\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Are these two commented out lines not longer true?  Should they be replace or removed?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fzU\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Does this need to be added to the openstack/requirements project too?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fzg\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T22:23:38Z",
+      "side": 1,
+      "message": "Extra space?",
+      "revId": "76abfd8f7a58a5d99f78e71a25285fb8b23c1809",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
