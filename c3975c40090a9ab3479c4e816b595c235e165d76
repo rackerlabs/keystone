@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9iH4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T15:17:36Z",
+      "side": 1,
+      "message": "I would rewrite this to be a little more generic since the reality is that this changes quite a bit more than just the tests:\n\n  Removes the monkey patching of _",
+      "revId": "c3975c40090a9ab3479c4e816b595c235e165d76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

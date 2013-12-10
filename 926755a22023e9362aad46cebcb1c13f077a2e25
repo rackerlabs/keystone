@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9iIo\u003d",
+        "filename": "keystone/openstack/common/gettextutils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T15:17:36Z",
+      "side": 0,
+      "message": "This file should not be changed here.  This is one of the files that we sync from oslo so this change will eventually be wiped out.",
+      "revId": "926755a22023e9362aad46cebcb1c13f077a2e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9h00\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-10T15:17:36Z",
+      "side": 0,
+      "message": "We shouldn\u0027t be calling this anymore, but we still need to enable lazy mode.",
+      "revId": "926755a22023e9362aad46cebcb1c13f077a2e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
