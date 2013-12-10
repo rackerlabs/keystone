@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9hEs\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2013-12-10T17:27:47Z",
+      "side": 1,
+      "message": "I don\u0027t think moving it to the top it\u0027s clear, object should be created as close as possible to the place used (and the only place used is in this method)",
+      "parentUuid": "AAAATn/9hIA\u003d",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9hH0\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-10T17:17:12Z",
       "side": 1,
       "message": "may want to remove \"email\", \"enabled\", and \"tenantId\". They are redundant as the values are already the default.",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9hEU\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2013-12-10T17:27:47Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "AAAATn/9hH0\u003d",
       "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +101,24 @@
       "side": 1,
       "message": "Is this just a preferred Keystone style item?  From a pure Python perspective this makes no difference.",
       "parentUuid": "AAAATn/9hHg\u003d",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9hEM\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2013-12-10T17:27:47Z",
+      "side": 1,
+      "message": "Agree with David",
+      "parentUuid": "AAAATn/9hGE\u003d",
       "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
