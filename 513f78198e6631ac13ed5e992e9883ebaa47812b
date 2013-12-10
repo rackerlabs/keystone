@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9hIA\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T17:17:12Z",
+      "side": 1,
+      "message": "please move it to the top (line 70) so its easier to read the code",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9hH0\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T17:17:12Z",
+      "side": 1,
+      "message": "may want to remove \"email\", \"enabled\", and \"tenantId\". They are redundant as the values are already the default.",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9hHg\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T17:17:12Z",
+      "side": 1,
+      "message": "password is keyword arg.\n\nuser \u003d self._create_test_user(password\u003dNone)\n\nplease do that for the other calls as well.",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9hHc\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-10T17:17:12Z",
+      "side": 1,
+      "message": "user \u003d self._create_test_user(password\u003d\u0027\u0027)",
+      "revId": "513f78198e6631ac13ed5e992e9883ebaa47812b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
