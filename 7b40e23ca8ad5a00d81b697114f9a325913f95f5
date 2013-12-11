@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9aa4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "Who instantiate KeyValueStore? The example in line 381 seem to suggest get_key_value_store() is a factory.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9abs\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "This sentence doesn\u0027t sound right grammatically. You mean\n\nTo acquire the previously instantiated KVS instance with the specified name, one must utilize the ...",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9abE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "So get_key_value_store() is a factory?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9abk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "Like this design. Very flexible.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aac\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "false -\u003e ``False``\n\nthough I have seen it with no quotes so I am not sure what\u0027s the recommended way to do this.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aZo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "Is there even a use case for non-isolation? Seem like we should always be doing isolation.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aYo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "Should we make the Memcached the default so that if configure() is not called user will get memcached?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aXw\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "isn\u0027t this the ``use_key_mangler`` option in the ``[cache]`` section?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9afc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "set top -\u003e set to",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aWM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "5 seconds or miliseconds? may want to drop a comment here to clarify",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aVY\u003d",
+        "filename": "keystone/common/kvs/__init__.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "Wait, we need to register the backends here?\n\nMay want to mention this in developing.rst the fact that backends need to be registered.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aUk\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "arguments as oppose to **kwargs?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aTE\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "that right? you are changing value here. Should it be just\n\nreturn copy.deepcopy(value)",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aRA\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "k, why are do doing register_backend in common/kvs/__init__.py? Are those different backends?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aQI\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T20:12:53Z",
+      "side": 1,
+      "message": "seem redundant that we need to call _register_backends() everytime as they are statically configured in keystone.conf. May want to think about doing this just once.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
