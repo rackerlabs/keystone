@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9gwg\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kJc\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9kHU\u003d",
         "filename": "keystone/common/extensions_notifier.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-10T07:29:50Z",
       "side": 1,
       "message": "Suggest validating the event is a \"valid\" event to subscribe to (if this validation is added, a test should also be added to make sure invalid events cannot be subscribed to).",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fTI\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kHU\u003d",
       "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9fRo\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kIM\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9kGY\u003d",
         "filename": "keystone/common/extensions_notifier.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-10T07:29:50Z",
       "side": 1,
       "message": "Recommend remove this logline completely, the callback can log if desired.  As it stands, this will get very spammy in the logs (each event logging N times, where N is the number of registrations on top of the normal logging).",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fSw\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kGY\u003d",
       "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9fPs\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done. I changed to resources which is more appropriate and listed the current supported set.",
+      "parentUuid": "AAAATn/9kHk\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9kK4\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-10T07:29:50Z",
       "side": 1,
       "message": "In line with my comment, it should be possible to define the callbacks here and do the register at the start of the test function.  That way you don\u0027t need to rely on an example extension as part of the unit tests.\n\n(pseudo code)\n  def _create_project_notify_callback(self, ...):\n      \u003cdo something to verify callback was called\u003e\n\n  register self._create_project_notify_callback\n  call create_project()\n  assert\u003c_create_project_notify_callback\u003e was called",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fPY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kK4\u003d",
       "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9fPU\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kGA\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9kK0\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2013-12-10T07:29:50Z",
       "side": 1,
       "message": "Suggest removing this tearDown as it isn\u0027t doing anything except calling super().tearDown() (e.g. shouldn\u0027t be needed).",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fPQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kK0\u003d",
       "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -167,6 +311,42 @@
       "side": 1,
       "message": "similar that update doesn\u0027t trigger create, etc",
       "parentUuid": "AAAATn/9kHs\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fPM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kHs\u003d",
+      "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fPI\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-11T17:49:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9kEw\u003d",
       "revId": "dbebb7813cedab701cab640e3e5009cb04d3fcf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
