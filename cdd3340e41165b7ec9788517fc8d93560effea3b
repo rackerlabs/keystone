@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9eDY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-11T06:56:55Z",
+      "side": 1,
+      "message": "the last line ends rather abruptly",
+      "revId": "cdd3340e41165b7ec9788517fc8d93560effea3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
