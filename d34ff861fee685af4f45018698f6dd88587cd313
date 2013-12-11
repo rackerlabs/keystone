@@ -50,6 +50,23 @@
       "revId": "d34ff861fee685af4f45018698f6dd88587cd313",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ZFg\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-11T23:44:33Z",
+      "side": 1,
+      "message": "this should be \n\n python setup.py build_sphinx\n\nsince that\u0027s what happens during the build.",
+      "revId": "d34ff861fee685af4f45018698f6dd88587cd313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
