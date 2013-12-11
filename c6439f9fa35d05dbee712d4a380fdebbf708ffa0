@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9eAs\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-11T07:16:55Z",
+      "side": 1,
+      "message": "whats the point of this change, looks like you remove the whole file in: https://review.openstack.org/#/c/60743/8",
+      "revId": "c6439f9fa35d05dbee712d4a380fdebbf708ffa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
