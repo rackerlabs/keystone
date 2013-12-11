@@ -16,6 +16,24 @@
       "revId": "771a1d7b98699368a3a896dd990f711f6724d34e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9cao\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 9409
+      },
+      "writtenOn": "2013-12-11T13:45:47Z",
+      "side": 1,
+      "message": "project_id is none by default here and in _delete_tokens_for_user. Is the same if project_id is not provided.",
+      "parentUuid": "AAAATn/9iME\u003d",
+      "revId": "771a1d7b98699368a3a896dd990f711f6724d34e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
