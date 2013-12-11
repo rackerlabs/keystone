@@ -34,6 +34,23 @@
       "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eBU\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-11T07:09:00Z",
+      "side": 1,
+      "message": "since you\u0027re already validating here, and both have to be issued, what about the case where secret_key is passed, but not strategy?",
+      "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
