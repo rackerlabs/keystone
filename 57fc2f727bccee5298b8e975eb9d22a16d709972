@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9e6o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T01:53:23Z",
+      "side": 1,
+      "message": "Will re-word in next patchset.",
+      "parentUuid": "AAAATn/9fAA\u003d",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9e9c\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-11T01:42:38Z",
       "side": 1,
       "message": "It would probably be useful to have a comment saying that self.driver.client is being used because not expiring is the default.",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9e6Y\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T01:53:23Z",
+      "side": 1,
+      "message": "As discussed in IRC there is a better way to solve this.  Not proxy/rely on the dogpile backends here, implement our own logic to handle the extra set arguments cleanly.",
+      "parentUuid": "AAAATn/9e9c\u003d",
       "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9e6U\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T01:53:23Z",
+      "side": 1,
+      "message": "Good catch.  This also means I\u0027ve got some test gaps.",
+      "parentUuid": "AAAATn/9fA8\u003d",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9fAg\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-11T01:42:38Z",
       "side": 1,
       "message": "this should be removed",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9e6Q\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T01:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9fAg\u003d",
       "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
