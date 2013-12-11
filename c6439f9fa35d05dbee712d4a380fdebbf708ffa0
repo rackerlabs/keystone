@@ -16,6 +16,24 @@
       "revId": "c6439f9fa35d05dbee712d4a380fdebbf708ffa0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9dyw\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T08:21:36Z",
+      "side": 1,
+      "message": "Isolation of commits.  This is to make the commits more readable.  I didn\u0027t want to remove the memcache driver in the same commit as implementing the KVS change-over (think of cases of reverts, etc).",
+      "parentUuid": "AAAATn/9eAs\u003d",
+      "revId": "c6439f9fa35d05dbee712d4a380fdebbf708ffa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
