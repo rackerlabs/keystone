@@ -361,7 +361,7 @@ def base64_wrap_iter(text, width=64):
     """
 
     text = unicode(text)
-    for x in xrange(0, len(text), width):
+    for x in range(0, len(text), width):
         yield text[x:x + width]
 
 

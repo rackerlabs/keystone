@@ -89,7 +89,7 @@ def _paren_groups(source):
     count = 0
     start = 0
     result = []
-    for pos in xrange(len(source)):
+    for pos in range(len(source)):
         if source[pos] == '(':
             if count == 0:
                 start = pos
