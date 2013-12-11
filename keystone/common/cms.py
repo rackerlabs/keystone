@@ -167,7 +167,7 @@ def cms_hash_token(token_id):
     if token_id is None:
         return None
     if is_ans1_token(token_id):
-        hasher = hashlib.md5()
+        hasher = hashlib.sha256()
         hasher.update(token_id)
         return hasher.hexdigest()
     else:
