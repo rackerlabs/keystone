@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9a54\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-11T17:57:15Z",
+      "side": 1,
+      "message": "+1 for SHA256\n\n-1 for breaking backward compatibility",
+      "revId": "704dd3c18fbe8a9a3770f2b1087958fc5dab5fe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
