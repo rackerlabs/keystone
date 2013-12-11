@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9fAA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T01:42:38Z",
+      "side": 1,
+      "message": "This first sentence goes down a little rough.",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9e9c\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T01:42:38Z",
+      "side": 1,
+      "message": "It would probably be useful to have a comment saying that self.driver.client is being used because not expiring is the default.",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fA8\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T01:42:38Z",
+      "side": 1,
+      "message": "Don\u0027t you have to pass a dictionary to set_multi?",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9fAg\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T01:42:38Z",
+      "side": 1,
+      "message": "this should be removed",
+      "revId": "57fc2f727bccee5298b8e975eb9d22a16d709972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
