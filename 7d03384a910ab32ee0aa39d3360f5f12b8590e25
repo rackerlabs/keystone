@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9eZA\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "I haven\u0027t looked at the source of the objects created here, but is there any reason to worry about them being shared between all requests?",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eX0\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "Should we be checking permissions of the key file similar to how openssh does?  This would help prevent a master key from leaking due to the mistake of an operator.",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eZE\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "This is interesting to me.  Seems like in debug mode you would want to write a master key if it doesn\u0027t exist, but in production I would expect the operator to deal with this.",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eVY\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be how it\u0027s used.  The same key is passed in repeatedly.",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eXk\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "No i18n support?",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eXg\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9eVA\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T05:51:03Z",
+      "side": 1,
+      "message": "Is using singletons just for efficiency?",
+      "revId": "7d03384a910ab32ee0aa39d3360f5f12b8590e25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
