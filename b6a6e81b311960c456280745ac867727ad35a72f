@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9egU\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T04:57:58Z",
+      "side": 1,
+      "message": "Change this to be the following and arrange it alphabetically:\n\n  from keystone.openstack.common import versionutils",
+      "revId": "b6a6e81b311960c456280745ac867727ad35a72f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ego\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T04:57:58Z",
+      "side": 1,
+      "message": "Can you change this to use the deprecated decorator from keystone.openstack.common.versionutils?",
+      "revId": "b6a6e81b311960c456280745ac867727ad35a72f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9egk\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-11T04:57:58Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "b6a6e81b311960c456280745ac867727ad35a72f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
