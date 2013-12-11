@@ -51,6 +51,24 @@
       "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9cL4\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 7060
+      },
+      "writtenOn": "2013-12-11T14:09:00Z",
+      "side": 1,
+      "message": "I also suggest on IRC that a default strategy of ENCRYPT should be applied if someone only passes in a key, that would push people to use the most secure option by default, and fall back to MAC only if explicitly needed.",
+      "parentUuid": "AAAATn/9eBU\u003d",
+      "revId": "e9afe0ee314a9e0a480447218f62ed90fb05798b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
