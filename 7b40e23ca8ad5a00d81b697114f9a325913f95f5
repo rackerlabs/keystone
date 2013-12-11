@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aJ4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Correct, will clarify.",
+      "parentUuid": "AAAATn/9aa4\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9abs\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 13
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aJ8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Correct.  Will make easier to understand.",
+      "parentUuid": "AAAATn/9abs\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9abE\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 13
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-11T20:12:53Z",
       "side": 1,
       "message": "So get_key_value_store() is a factory?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aKU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Correct, Will clarify.",
+      "parentUuid": "AAAATn/9abE\u003d",
       "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aKc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9aac\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9aZo\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 13
@@ -98,6 +170,24 @@
       "writtenOn": "2013-12-11T20:12:53Z",
       "side": 1,
       "message": "Is there even a use case for non-isolation? Seem like we should always be doing isolation.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aJY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "This was asked for in the initial design discussion since copy.deepcopy is not exactly \"fast\" in all cases.  I can remove this functionality easily if there isn\u0027t a solid usecase.  (in fact, based on the two previous questions on this, I will remove it)",
+      "parentUuid": "AAAATn/9aZo\u003d",
       "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aH8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "I am hesitant to make a \"default\" choice in the base-implementation due to outside dependencies or even worse, unintended use of an in-memory store (which could cause memory utilization bloat).  Look at https://review.openstack.org/#/c/60742 for example, it is on the developer or subclass to determine what a sane default backend is.  This is just the scaffolding to build a KVS store.",
+      "parentUuid": "AAAATn/9aYo\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9aXw\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 13
@@ -132,6 +240,24 @@
       "writtenOn": "2013-12-11T20:12:53Z",
       "side": 1,
       "message": "isn\u0027t this the ``use_key_mangler`` option in the ``[cache]`` section?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aHs\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Nope.  KVS store has a separate set of configs that need to be isolated from the cacheing configuration.  I will clarify.",
+      "parentUuid": "AAAATn/9aXw\u003d",
       "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aHk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9afc\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9aWM\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 13
@@ -166,6 +310,24 @@
       "writtenOn": "2013-12-11T20:12:53Z",
       "side": 1,
       "message": "5 seconds or miliseconds? may want to drop a comment here to clarify",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aHY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9aWM\u003d",
       "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aG0\u003d",
+        "filename": "keystone/common/kvs/__init__.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "I will add a section about registering the backends.  There is a configuration option to specify new backends that aren\u0027t provided  (ListOpt that does the registration work when you call get_key_value_store the first time)",
+      "parentUuid": "AAAATn/9aVY\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9aUk\u003d",
         "filename": "keystone/common/kvs/backends/inmemdb.py",
         "patchSetId": 13
@@ -200,6 +380,24 @@
       "writtenOn": "2013-12-11T20:12:53Z",
       "side": 1,
       "message": "arguments as oppose to **kwargs?",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aGw\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "dogpile passes in the arguments as an explcit dict, not as key-word arguments.",
+      "parentUuid": "AAAATn/9aUk\u003d",
       "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aGg\u003d",
+        "filename": "keystone/common/kvs/backends/inmemdb.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "both are semantically correct.  I try and develop one exit point from a method where possible (rebind and return at the end).  I\u0027ll replace this with a simple return instead of rebind.",
+      "parentUuid": "AAAATn/9aTE\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9aRA\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 13
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9aGU\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "Those are \"provided\" backends, the idea is that those should _always_ be registered.  This is designed to allow the registration of any out-of-tree backends easily via the configuration option.  I\u0027ll add a comment in the __init__.py to clarify that and make this comment reflect similar information.",
+      "parentUuid": "AAAATn/9aRA\u003d",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9aQI\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 13
@@ -251,6 +485,24 @@
       "writtenOn": "2013-12-11T20:12:53Z",
       "side": 1,
       "message": "seem redundant that we need to call _register_backends() everytime as they are statically configured in keystone.conf. May want to think about doing this just once.",
+      "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9aF8\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-11T20:45:22Z",
+      "side": 1,
+      "message": "_register_backends has the logic to skip if BACKENDS_REGISTERED is true.  I have no problem moving that logic here instead if that is a better design.",
+      "parentUuid": "AAAATn/9aQI\u003d",
       "revId": "7b40e23ca8ad5a00d81b697114f9a325913f95f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
