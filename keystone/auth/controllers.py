@@ -353,6 +353,10 @@ class Auth(controller.V3Controller):
         if federation.IDENTITY_PROVIDER in auth_context:
             return
 
+        # Skip scoping when unscoped federated token is being issued
+        if 'issuer' in auth_context:
+            return
+
         # fill in default_project_id if it is available
         try:
             user_ref = self.identity_api.get_user(auth_context['user_id'])
@@ -436,6 +440,10 @@ class Auth(controller.V3Controller):
     def revoke_token(self, context):
         token_id = context.get('subject_token_id')
         return self.token_provider_api.revoke_token(token_id)
+
+    def redirect(self, context):
+        # TODO(stevemar): is there any validation needed here?
+        return
 
     @controller.protected()
     def validate_token(self, context):
