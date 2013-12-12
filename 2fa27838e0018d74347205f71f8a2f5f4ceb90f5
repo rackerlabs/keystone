@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9VkI\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-12T14:43:15Z",
+      "side": 1,
+      "message": "what about postgresql?",
+      "revId": "2fa27838e0018d74347205f71f8a2f5f4ceb90f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
