@@ -34,6 +34,24 @@
       "revId": "db58e28875e216acaabb93ee656e0d4fa7941a74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9WU8\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-12T12:10:49Z",
+      "side": 1,
+      "message": "Ha, it\u0027s a statement of my opinion, but the question mark is indicating that I\u0027m open to education if I\u0027m totally wrong ;)\n\nI\u0027ll track down the refactor review and we can discuss there, thanks! :)",
+      "parentUuid": "AAAATn/9n8Y\u003d",
+      "revId": "db58e28875e216acaabb93ee656e0d4fa7941a74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
