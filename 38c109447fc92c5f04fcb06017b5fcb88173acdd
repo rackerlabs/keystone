@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9U2w\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T16:37:00Z",
+      "side": 1,
+      "message": "You should not remove the example RPC notification line, add a comment and this line instead of replacing the other line.",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9U4M\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T16:37:00Z",
+      "side": 1,
+      "message": "suggest pre-compiling this as an instance variable.  It has lower over head to do re.compile and use the returned object instead of forcing a compile of the regex each time.",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9U3s\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T16:37:00Z",
+      "side": 1,
+      "message": "Suggest splitting this out to two distinct errors, either method is not callable or unrecognized event.",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9U5s\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T16:37:00Z",
+      "side": 1,
+      "message": "Suggest making this an instance variable that is set to False in the setUp().  Since you\u0027re using this as the mechanism to tell if the callback was performed, you\u0027ll need setUp again.",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
