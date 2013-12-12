@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Sm4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-12T23:58:26Z",
+      "side": 1,
+      "message": "I like to have a README in a directory to explain what it\u0027s for, so I would prefer if there\u0027s something there. The README in doc could just reference this section (doc/source/developing.rst \"Building the Documentation\").",
+      "parentUuid": "AAAATn/9SyA\u003d",
+      "revId": "d34ff861fee685af4f45018698f6dd88587cd313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9rMM\u003d",
         "filename": "doc/source/index.rst",
         "patchSetId": 6
