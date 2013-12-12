@@ -422,11 +422,12 @@
 # user_additional_attribute_mapping =
 
 [auth]
-methods = external,password,token,oauth1
+methods = external,password,token,oauth1,openid
 #external = keystone.auth.plugins.external.ExternalDefault
 password = keystone.auth.plugins.password.Password
 token = keystone.auth.plugins.token.Token
 oauth1 = keystone.auth.plugins.oauth1.OAuth
+openid = keystone.auth.plugins.openid.OpenIdConnect
 
 [memcache]
 # servers = localhost:11211
@@ -435,3 +436,8 @@ oauth1 = keystone.auth.plugins.oauth1.OAuth
 [paste_deploy]
 # Name of the paste configuration file that defines the available pipelines
 config_file = keystone-paste.ini
+
+[openid]
+redirect = http://localhost:8021/oidclient/redirect
+authorization_endpoint = http://liang2011:8020/oauth2/endpoint/OAuthConfigSample/authorize
+token_endpoint = http://liang2011:8010/oauth2/endpoint/OAuthConfigSample/token
