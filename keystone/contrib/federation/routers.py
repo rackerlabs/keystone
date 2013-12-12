@@ -187,3 +187,9 @@ class FederationExtension(wsgi.ExtensionRouter):
             controller=auth_controller,
             action='federated_authentication',
             conditions=dict(method=['GET', 'POST']))
+
+        mapper.connect(
+            self._construct_url('redirect'),
+            controller=auth_controller,
+            action='redirect',
+            conditions=dict(method=['GET']))

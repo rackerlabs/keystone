@@ -865,7 +865,8 @@ class FederatedTokenTests(FederationTests):
         api = federation_controllers.Auth()
         context = {'environment': {}}
         self._inject_assertion(context, assertion)
-        r = api.federated_authentication(context, self.IDP, self.PROTOCOL)
+        r = api.federated_authentication(context, self.IDP,
+                                         self.PROTOCOL, None)
         return r
 
     def test_issue_unscoped_token(self):
