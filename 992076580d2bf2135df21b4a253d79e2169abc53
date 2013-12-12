@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Y2U\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T00:38:30Z",
+      "side": 1,
+      "message": "Minor rephrasing will happen to explicitly state class_name must be unique.",
+      "parentUuid": "AAAATn/9ZHY\u003d",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9ZA4\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 14
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-12T00:29:48Z",
       "side": 1,
       "message": "Should this list be configurable? Otherwise, we\u0027ll need to update this every time a new memcache backend is added.",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y3Q\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T00:38:30Z",
+      "side": 1,
+      "message": "This changes in a patchset further down the patch chain.  It represents a known list of \"valid\" memcache drivers in https://review.openstack.org/#/c/60741/11/keystone/common/kvs/backends/memcached.py it would need to be updated each time, but i\u0027m not sure what the right semantic (__subclasses__()?) would be to programmatically make it happen.",
+      "parentUuid": "AAAATn/9ZA4\u003d",
       "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Y3I\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T00:38:30Z",
+      "side": 1,
+      "message": "will change this.",
+      "parentUuid": "AAAATn/9Y7o\u003d",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9Y78\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 14
@@ -115,6 +169,24 @@
       "writtenOn": "2013-12-12T00:29:48Z",
       "side": 1,
       "message": "why -1?",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y28\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T00:38:30Z",
+      "side": 1,
+      "message": "This is meant to have a comment, i\u0027ll add it here as well.",
+      "parentUuid": "AAAATn/9Y78\u003d",
       "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -149,6 +221,24 @@
       "writtenOn": "2013-12-12T00:29:48Z",
       "side": 1,
       "message": "so no proxy tests then?",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y2g\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-12T00:38:30Z",
+      "side": 1,
+      "message": "I\u0027ll rename these to be the _stub_ proxies.  There isn\u0027t a need to test dogpile\u0027s proxy code in this case, just that we are getting the right order of proxies.  The rename should make it more intuitive that these are fixtures (effectively) rather than a repository of tests.",
+      "parentUuid": "AAAATn/9Y44\u003d",
       "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
