@@ -16,6 +16,24 @@
       "revId": "2fa27838e0018d74347205f71f8a2f5f4ceb90f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9VAk\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 8001
+      },
+      "writtenOn": "2013-12-12T16:24:28Z",
+      "side": 1,
+      "message": "This is included for DB2, because it has been shown to be necessary.  I\u0027m thinking that if it later turns out that the same is true for postgresql or any other DB, that can be addressed in a subsequent change or subsequent changes.  I don\u0027t see a need to have postgresql or any other DB delete tokens in small batches; there is no inherent advantage in doing so that applies to all DB implementations, as far as I know.  Since it has already been shown to not work for all DBs, it seems prudent to enable this only in cases where it is known to be necessary and involving only one DB implementation at a time, instead of risking unwittingly breaking something.",
+      "parentUuid": "AAAATn/9VkI\u003d",
+      "revId": "2fa27838e0018d74347205f71f8a2f5f4ceb90f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
