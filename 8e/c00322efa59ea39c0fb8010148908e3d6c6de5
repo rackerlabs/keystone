@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 12 Dec 2013 17:10:31 +0000
+Reviewed-on: https://review.openstack.org/61609
+Project: openstack/keystone
+Branch: refs/heads/master
