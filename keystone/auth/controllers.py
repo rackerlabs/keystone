@@ -443,6 +443,10 @@ class Auth(controller.V3Controller):
         token_id = context.get('subject_token_id')
         return self.token_provider_api.revoke_token(token_id)
 
+    def redirect(self, context):
+        # TODO(stevemar): is there any validation needed here?
+        LOG.warning("Handling redirect")
+
     @controller.protected()
     def validate_token(self, context):
         token_id = context.get('subject_token_id')

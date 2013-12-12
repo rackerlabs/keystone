@@ -36,25 +36,24 @@
 
 # The base public endpoint URL for keystone that are
 # advertised to clients (NOTE: this does NOT affect how
-# keystone listens for connections) (string value).
-# Defaults to the base host URL of the request. Eg a
-# request to http://server:5000/v2.0/users will
-# default to http://server:5000. You should only need
-# to set this value if the base URL contains a path
-# (eg /prefix/v2.0) or the endpoint should be found on
-# a different server.
-#public_endpoint=http://localhost:%(public_port)s/
+# keystone listens for connections). Defaults to the base host
+# URL of the request. Eg a request to
+# http://server:5000/v2.0/users will default to
+# http://server:5000. You should only need to set this value
+# if the base URL contains a path (eg /prefix/v2.0) or the
+# endpoint should be found on a different server. (string
+# value)
+#public_endpoint=<None>
 
 # The base admin endpoint URL for keystone that are advertised
 # to clients (NOTE: this does NOT affect how keystone listens
-# for connections) (string value).
-# Defaults to the base host URL of the request. Eg a
-# request to http://server:35357/v2.0/users will
-# default to http://server:35357. You should only need
-# to set this value if the base URL contains a path
-# (eg /prefix/v2.0) or the endpoint should be found on
-# a different server.
-#admin_endpoint=http://localhost:%(admin_port)s/
+# for connections). Defaults to the base host URL of the
+# request. Eg a request to http://server:35357/v2.0/users will
+# default to http://server:35357. You should only need to set
+# this value if the base URL contains a path (eg /prefix/v2.0)
+# or the endpoint should be found on a different server.
+# (string value)
+#admin_endpoint=<None>
 
 # onready allows you to send a notification when the process
 # is ready to serve For example, to have it notify using
@@ -1126,6 +1125,27 @@
 # Duration (in seconds) for the OAuth Access Token. (integer
 # value)
 #access_token_duration=86400
+
+
+[oidc]
+
+#
+# Options defined in keystone.auth.plugins.oidc
+#
+
+# OpenID Connect authorization server endpoint. (string value)
+#auth_url=https://localhost:8020/oidc/v10/providers/OP/authorize
+
+# Redirect URL for replying party (string value)
+#redirect_url=http://localhost:5000/v3/auth/redirect
+
+# Key used to identify groups in an LDAP mapping (string
+# value)
+#ldap_group_key=cn
+
+# Key used to identify group section in an OpenID Connect
+# Claim (string value)
+#claim_group_key=groupIds
 
 
 [os_inherit]
