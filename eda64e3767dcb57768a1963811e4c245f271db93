@@ -16,6 +16,24 @@
       "revId": "eda64e3767dcb57768a1963811e4c245f271db93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9VzE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-12T13:58:05Z",
+      "side": 1,
+      "message": "This is what sets the defaults for those CONF values. Looks like they\u0027ve got their own default but it\u0027s different from what keystone used before, so I wanted to keep the defaults the same as they were for backwards compat..\n\nSee\nhttps://github.com/openstack/oslo-incubator/blob/master/openstack/common/db/sqlalchemy/session.py#L21\nfor the doc\n\nhttps://github.com/openstack/oslo-incubator/blob/master/openstack/common/db/sqlalchemy/session.py#L364\nfor the code",
+      "parentUuid": "AAAATn/9Xzg\u003d",
+      "revId": "eda64e3767dcb57768a1963811e4c245f271db93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
