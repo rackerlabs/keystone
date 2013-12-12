@@ -19,9 +19,11 @@ from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
 from keystone.contrib.federation import utils
+from keystone.openstack.common import log
 
 
 CONF = config.CONF
+LOG = log.getLogger(__name__)
 
 
 class _ControllerBase(controller.V3Controller):
@@ -230,24 +232,33 @@ class MappingController(_ControllerBase):
 
 class Auth(auth_controllers.Auth):
 
-    def federated_authentication(self, context, identity_provider, protocol):
+    def federated_authentication(self, context, idp, protocol, auth):
         """Authenticate from dedicated url endpoint.
 
         Build HTTP request body for federated authentication and inject
         it into the ``authenticate_for_token`` function.
 
         """
-        auth = {
-            'identity': {
-                'methods': ['saml2'],
-                'saml2': {
-                    'identity_provider': identity_provider,
-                    'protocol': protocol
+        if auth is None:
+            auth = {
+                'identity': {
+                    'methods': ['saml2'],
+                    'saml2': {
+                        'identity_provider': idp,
+                        'protocol': protocol
+                    }
                 }
             }
-        }
+        else:
+            method_name = auth['identity']['methods'][0]
+            auth['identity'][method_name]['identity_provider'] = idp
+            auth['identity'][method_name]['protocol'] = protocol
 
         return self.authenticate_for_token(context, auth=auth)
+
+    def redirect(self, context):
+        # TODO(stevemar): is there any validation needed here?
+        LOG.warning("Handling redirect")
 
 
 @dependency.requires('assignment_api')

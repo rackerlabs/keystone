@@ -790,7 +790,7 @@
 #
 
 # URL for connecting to the LDAP server. (string value)
-#url=ldap://localhost
+#url=ldap://keystone
 
 # User BindDN to query the LDAP server. (string value)
 #user=<None>
@@ -1110,6 +1110,23 @@
 #access_token_duration=86400
 
 
+[oidc]
+
+#
+# Options defined in keystone.auth.plugins.oidc
+#
+
+# OpenID Connect authorization server endpoint. (string value)
+#auth_url=https://localhost:8020/oidc/v10/providers/OP/authorize
+
+# Redirect URL for replying party (string value)
+#redirect_url=http://localhost:5000/v3/OS-FEDERATION/redirect
+
+# Key used to identify group section in an OpenID Connect
+# Claim (string value)
+#claim_group_key=groupIds
+
+
 [os_inherit]
 
 #
@@ -1236,7 +1253,7 @@
 
 # SSL certificate subject (auto generated certificate).
 # (string value)
-#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=keystone
 
 
 [stats]
