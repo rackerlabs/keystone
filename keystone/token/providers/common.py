@@ -420,7 +420,7 @@ class BaseProvider(provider.Provider):
             trust = self.trust_api.get_trust(metadata_ref['trust_id'])
 
         token_ref = None
-        if 'saml2' in method_names:
+        if 'saml2' in method_names or 'oidc' in method_names:
             token_ref = self._handle_saml2_tokens(auth_context, project_id,
                                                   domain_id)
 

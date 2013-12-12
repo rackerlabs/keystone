@@ -230,22 +230,27 @@ class MappingController(_ControllerBase):
 
 class Auth(auth_controllers.Auth):
 
-    def federated_authentication(self, context, identity_provider, protocol):
+    def federated_authentication(self, context, identity_provider, protocol, auth):
         """Authenticate from dedicated url endpoint.
 
         Build HTTP request body for federated authentication and inject
         it into the ``authenticate_for_token`` function.
 
         """
-        auth = {
-            'identity': {
-                'methods': ['saml2'],
+        if auth is None:
+            auth = {
+                'identity': {
+                    'methods': ['saml2'],
                 'saml2': {
                     'identity_provider': identity_provider,
                     'protocol': protocol
+                    }
                 }
             }
-        }
+        else:
+            method_name = auth['identity']['methods'][0]
+            auth['identity'][method_name]['identity_provider'] = identity_provider
+            auth['identity'][method_name]['protocol'] = protocol
 
         return self.authenticate_for_token(context, auth=auth)
 
