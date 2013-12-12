@@ -1031,7 +1031,6 @@
 # Deprecated group/name - [DEFAULT]/matchmaker_ringfile
 #ringfile=/etc/oslo/matchmaker_ring.json
 
-
 [memcache]
 
 #
@@ -1281,5 +1280,3 @@
 
 # Keystone Trust backend driver. (string value)
 #driver=keystone.trust.backends.sql.Trust
-
-
