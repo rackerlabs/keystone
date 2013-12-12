@@ -427,6 +427,10 @@ class BaseProvider(provider.Provider):
             token_ref = self._handle_saml2_tokens(auth_context, project_id,
                                                   domain_id)
 
+        if 'oidc' in method_names:
+            token_ref = self._handle_oidc_tokens(auth_context, project_id,
+                                                 domain_id)
+
         access_token = None
         if 'oauth1' in method_names:
             if self.oauth_api:
@@ -487,6 +491,24 @@ class BaseProvider(provider.Provider):
                 raise exc_info[0], exc_info[1], exc_info[2]
 
         return (token_id, token_data)
+
+    def _handle_oidc_tokens(self, auth_context, project_id, domain_id):
+        user_id = auth_context['user_id']
+        issuer = auth_context['issuer']
+        group_ids = auth_context['groups']
+        roles = self.v3_token_data_helper._populate_roles_for_groups(
+            group_ids, project_id, domain_id)
+
+        token_data = {
+            'user': {
+                'id': user_id,
+                'name': parse.unquote(user_id),
+            },
+            'roles': roles,
+            'issuer': issuer
+        }
+
+        return token_data
 
     def _handle_saml2_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
