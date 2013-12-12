@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Xzg\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T05:46:02Z",
+      "side": 1,
+      "message": "why hardcoding these? Why not\n\nsession.set_defaults(\n    sql_connection\u003dCONF.database.connection,\n    sqlite_db\u003dCONF.sqlite_db)",
+      "revId": "eda64e3767dcb57768a1963811e4c245f271db93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
