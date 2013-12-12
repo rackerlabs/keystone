@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9ZH0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "Like the note. This clears up any confusion with various key mangler options.",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ZHY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "Needless to say, the \u003cclass name\u003e must be globally unique.",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ZA4\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "Should this list be configurable? Otherwise, we\u0027ll need to update this every time a new memcache backend is added.",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ZAk\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "max_lock_attempts is required for MemcachedLock()\n\nTesting the locking mechanism may be a bit challenging though.",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y/A\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "{} instead of dict()? for amusement purposes. :)\n\nhttp://doughellmann.com/2012/11/the-performance-impact-of-using-dict-instead-of-in-cpython-2-7-2.html",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y7o\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "_assert_configured() is probably more intuitive",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y78\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "why -1?",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y7I\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "looks like _is_configured() is called in multiple places. I am seeing a decorator pattern here.",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Y44\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-12T00:29:48Z",
+      "side": 1,
+      "message": "so no proxy tests then?",
+      "revId": "992076580d2bf2135df21b4a253d79e2169abc53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
