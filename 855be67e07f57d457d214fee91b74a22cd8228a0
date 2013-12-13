@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9OfY\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T19:41:31Z",
+      "side": 1,
+      "message": "I suspect this should be enabled by default.  If so, it needs to be in the v3 pipeline.",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Ofo\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T19:41:31Z",
+      "side": 1,
+      "message": "tab",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Ogo\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T19:41:31Z",
+      "side": 1,
+      "message": "tab to spaces.  Is this the end state? or should we have a better policy for mapping management?  seems like it should be a domain admin.",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Ofw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T19:41:31Z",
+      "side": 1,
+      "message": "Move this to the extension",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9OgY\u003d",
+        "filename": "keystone/contrib/mapping/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T19:41:31Z",
+      "side": 1,
+      "message": "Use this value to generate the base URL in controllers, or have a common constant.",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9OgE\u003d",
+        "filename": "keystone/tests/test_v3_mapping.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T19:41:31Z",
+      "side": 1,
+      "message": "refactor out the repeated string",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
