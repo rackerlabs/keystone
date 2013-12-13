@@ -36,7 +36,9 @@ from keystone import service
 
 CONF = config.CONF
 
+
 sql.initialize()
+config.set_default_for_default_log_levels()
 
 CONF(project='keystone')
 config.setup_logging()
