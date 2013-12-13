@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9N1s\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-13T22:10:21Z",
+      "side": 1,
+      "message": "So at first I thought this comment may be incorrect.  But upon digging into oauth_server.verify_request it truly does return back any non-oauth parameters if it returns anything.  So your message is more accurate than I initially thought.",
+      "revId": "722f9fb12940b3b5aca88cfb777de6c99e9c9aab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
