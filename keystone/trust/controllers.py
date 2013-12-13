@@ -41,6 +41,12 @@ def _admin_trustor_trustee_only(context, trust, user_id):
                 raise exception.Forbidden()
 
 
+def _trustor_trustee_only(trust, user_id):
+    if (user_id != trust.get('trustor_user_id') and
+            user_id != trust.get('trustor_user_id')):
+                raise exception.Forbidden()
+
+
 def _admin_trustor_only(context, trust, user_id):
     if user_id != trust.get('trustor_user_id') and not context['is_admin']:
         raise exception.Forbidden()
@@ -80,12 +86,7 @@ class TrustV3(controller.V3Controller):
         trust = self.trust_api.get_trust(trust_id)
         if not trust:
             raise exception.TrustNotFound(trust_id)
-        _admin_trustor_trustee_only(context, trust, user_id)
-        if not trust:
-            raise exception.TrustNotFound(trust_id=trust_id)
-        if (user_id != trust['trustor_user_id'] and
-                user_id != trust['trustee_user_id']):
-            raise exception.Forbidden()
+        _trustor_trustee_only(trust, user_id)
         self._fill_in_roles(context, trust,
                             self.assignment_api.list_roles())
         return TrustV3.wrap_member(context, trust)
