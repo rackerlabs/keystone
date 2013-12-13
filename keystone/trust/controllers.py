@@ -81,11 +81,6 @@ class TrustV3(controller.V3Controller):
         if not trust:
             raise exception.TrustNotFound(trust_id)
         _admin_trustor_trustee_only(context, trust, user_id)
-        if not trust:
-            raise exception.TrustNotFound(trust_id=trust_id)
-        if (user_id != trust['trustor_user_id'] and
-                user_id != trust['trustee_user_id']):
-            raise exception.Forbidden()
         self._fill_in_roles(context, trust,
                             self.assignment_api.list_roles())
         return TrustV3.wrap_member(context, trust)
