@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9N30\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-13T22:04:59Z",
+      "side": 1,
+      "message": "i think it should stay an extension for now...",
+      "parentUuid": "AAAATn/9OfY\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9Ofo\u003d",
         "filename": "etc/policy.json",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-13T19:41:31Z",
       "side": 1,
       "message": "tab",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9N44\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-13T22:04:59Z",
+      "side": 1,
+      "message": "thanks, will fix",
+      "parentUuid": "AAAATn/9Ofo\u003d",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +157,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9N4c\u003d",
+        "filename": "keystone/contrib/mapping/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-13T22:04:59Z",
+      "side": 1,
+      "message": "okay, i\u0027ll use the alias here",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9OgY\u003d",
         "filename": "keystone/contrib/mapping/core.py",
         "patchSetId": 2
@@ -138,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9N4Y\u003d",
+        "filename": "keystone/contrib/mapping/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-13T22:04:59Z",
+      "side": 1,
+      "message": "will use this in the core.py file",
+      "parentUuid": "AAAATn/9OgY\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9OgE\u003d",
         "filename": "keystone/tests/test_v3_mapping.py",
         "patchSetId": 2
@@ -149,6 +220,24 @@
       "writtenOn": "2013-12-13T19:41:31Z",
       "side": 1,
       "message": "refactor out the repeated string",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9N4I\u003d",
+        "filename": "keystone/tests/test_v3_mapping.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-13T22:04:59Z",
+      "side": 1,
+      "message": "i\u0027m confused, more info please",
+      "parentUuid": "AAAATn/9OgE\u003d",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
