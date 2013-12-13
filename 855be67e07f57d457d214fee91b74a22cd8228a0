@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9N6M\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-13T22:04:01Z",
+      "side": 1,
+      "message": "Wondering if specific name instead of \"mapping\" will help.",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9Ofo\u003d",
         "filename": "etc/policy.json",
         "patchSetId": 2
@@ -30,6 +47,23 @@
       "writtenOn": "2013-12-13T19:41:31Z",
       "side": 1,
       "message": "tab",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9N5o\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-13T22:04:01Z",
+      "side": 1,
+      "message": "I think we should be more specific just \"mapping\" is not making much sense.\nthoughts?",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +98,23 @@
       "writtenOn": "2013-12-13T19:41:31Z",
       "side": 1,
       "message": "Move this to the extension",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9N4k\u003d",
+        "filename": "keystone/contrib/mapping/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2013-12-13T22:04:01Z",
+      "side": 1,
+      "message": "I think we should be little specific.\n\nIdentityMapping/AssertionMapping",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
