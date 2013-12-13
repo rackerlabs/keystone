@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Otc\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T18:42:35Z",
+      "side": 0,
+      "message": "I think the _is_admin is spurious and should be removed.  Only leave the other check...",
+      "parentUuid": "AAAATn/9R/4\u003d",
+      "revId": "35242b04eb73f41e3ecb9391697087d54464f480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9R/0\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,23 @@
       "writtenOn": "2013-12-13T03:55:54Z",
       "side": 0,
       "message": "this check is repeated on line 84. \nAnd line 83 doesn\u0027t mutate the trust, so it seems very unnecessary.",
+      "revId": "35242b04eb73f41e3ecb9391697087d54464f480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9OtQ\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2013-12-13T18:42:35Z",
+      "side": 0,
+      "message": "leave this check, and remove the call to _admin_trustor_trustee_only ...should probably refactor this call into a function like that one was.",
       "revId": "35242b04eb73f41e3ecb9391697087d54464f480",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
