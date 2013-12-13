@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9S+M\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-13T20:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9U2w\u003d",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9U4M\u003d",
         "filename": "keystone/common/extensions_notifier.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-12T16:37:00Z",
       "side": 1,
       "message": "suggest pre-compiling this as an instance variable.  It has lower over head to do re.compile and use the returned object instead of forcing a compile of the regex each time.",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9OLg\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-13T20:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9U4M\u003d",
       "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9OLc\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-13T20:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9U3s\u003d",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9U5s\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-12T16:37:00Z",
       "side": 1,
       "message": "Suggest making this an instance variable that is set to False in the setUp().  Since you\u0027re using this as the mechanism to tell if the callback was performed, you\u0027ll need setUp again.",
+      "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9OLQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-13T20:45:29Z",
+      "side": 1,
+      "message": "Done. I had to create a global variable because I have classmethods.",
+      "parentUuid": "AAAATn/9U5s\u003d",
       "revId": "38c109447fc92c5f04fcb06017b5fcb88173acdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
