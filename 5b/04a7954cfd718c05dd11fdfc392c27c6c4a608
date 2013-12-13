@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+1: Alvaro Lopez Garcia <aloga@ifca.unican.es>
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: Steven Hardy <shardy@redhat.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 13 Dec 2013 07:48:37 +0000
+Reviewed-on: https://review.openstack.org/57276
+Project: openstack/keystone
+Branch: refs/heads/master
