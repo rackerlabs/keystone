@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9N+Q\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-13T21:43:32Z",
+      "side": 1,
+      "message": "my goodness your cleaned up version looks SO MUCH BETTER!!!",
+      "revId": "70123b870ba7c7db2381e87fb676d0683c038a88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
