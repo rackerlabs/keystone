@@ -102,7 +102,9 @@ if __name__ == '__main__':
     if os.path.exists(dev_conf):
         config_files = [dev_conf]
 
+
     sql.initialize()
+    config.set_default_log_levels_default()
 
     CONF(project='keystone',
          version=pbr.version.VersionInfo('keystone').version_string(),

@@ -212,7 +212,9 @@ command_opt = cfg.SubCommandOpt('command',
 def main(argv=None, config_files=None):
     CONF.register_cli_opt(command_opt)
 
+
     sql.initialize()
+    config.set_default_log_levels_default()
 
     CONF(args=argv[1:],
          project='keystone',
