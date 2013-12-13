@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 13 Dec 2013 07:45:43 +0000
+Reviewed-on: https://review.openstack.org/61534
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
