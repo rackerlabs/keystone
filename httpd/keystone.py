@@ -32,6 +32,9 @@ from keystone.openstack.common import log
 
 
 CONF = config.CONF
+
+config.set_default_log_levels_default()
+
 CONF(project='keystone')
 config.setup_logging()
 
