@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/9M/I\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-14T06:58:37Z",
+      "side": 1,
+      "message": "i believe the original is also wrong... should be trustee here",
+      "revId": "3045e51eb198a15a5d56e7451802a45118255852",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9M/s\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 2
