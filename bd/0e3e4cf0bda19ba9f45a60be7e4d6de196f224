@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: ayoung <ayoung@redhat.com>
+Code-Review+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: Steven Hardy <shardy@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 14 Dec 2013 01:02:44 +0000
+Reviewed-on: https://review.openstack.org/61425
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
