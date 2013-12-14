@@ -16,6 +16,24 @@
       "revId": "3045e51eb198a15a5d56e7451802a45118255852",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9M/Q\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-14T06:55:15Z",
+      "side": 1,
+      "message": "*facepalm*",
+      "parentUuid": "AAAATn/9M/s\u003d",
+      "revId": "3045e51eb198a15a5d56e7451802a45118255852",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
