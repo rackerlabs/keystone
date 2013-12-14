@@ -68,6 +68,40 @@
       "revId": "35242b04eb73f41e3ecb9391697087d54464f480",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9M/c\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-14T06:54:43Z",
+      "side": 0,
+      "message": "ayoung recommended to remove this call",
+      "revId": "35242b04eb73f41e3ecb9391697087d54464f480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9M/Y\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-14T06:54:43Z",
+      "side": 0,
+      "message": "just dropped this part into it\u0027s own method",
+      "revId": "35242b04eb73f41e3ecb9391697087d54464f480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
