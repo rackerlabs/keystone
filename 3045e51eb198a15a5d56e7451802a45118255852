@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9M/s\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-14T06:53:05Z",
+      "side": 1,
+      "message": "both of these are checking trustor_user_id.  That doesn\u0027t seem right, is one meant to be trustee?  and should \"and\" be \"or\"?",
+      "revId": "3045e51eb198a15a5d56e7451802a45118255852",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
