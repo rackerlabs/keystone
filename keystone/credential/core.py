@@ -95,3 +95,16 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def delete_credentials_for_project(self, project_id):
+        """Deletes all existing credentials for a given project."""
+        for cred in self.list_credentials():
+            if cred['project_id'] == project_id:
+                self.credential_api.delete_credential(cred['id'])
+
+    @abc.abstractmethod
+    def delete_credentials_for_user(self, user_id):
+        for cred in self.list_credentials():
+            if cred['user_id'] == user_id:
+                self.credential_api.delete_credential(cred['id'])
