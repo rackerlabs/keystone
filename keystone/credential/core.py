@@ -98,13 +98,25 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_credentials_for_project(self, project_id):
-        """Deletes all existing credentials for a given project."""
+        """Deletes all exisiting credentials for an existing project."""
         for cred in self.list_credentials():
             if cred['project_id'] == project_id:
-                self.credential_api.delete_credential(cred['id'])
+                try:
+                    self.credential_api.delete_credential(cred['id'])
+                except exception.CredentialNotFound:
+                    # NOTE(morganfainberg): If the credential doesn't exist
+                    # it doesn't matter, it is meant to be deleted. Continue
+                    # on and delete the rest.
+                    pass
 
     @abc.abstractmethod
     def delete_credentials_for_user(self, user_id):
         for cred in self.list_credentials():
             if cred['user_id'] == user_id:
-                self.credential_api.delete_credential(cred['id'])
+                try:
+                    self.credential_api.delete_credential(cred['id'])
+                except exception.CredentialNotFound:
+                    # NOTE(morganfainberg): If the credential doesn't exist
+                    # it doesn't matter, it is meant to be deleted. Continue
+                    # on and delete the rest.
+                    pass
