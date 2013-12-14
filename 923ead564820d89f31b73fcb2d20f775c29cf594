@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9NAg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-14T06:37:08Z",
+      "side": 1,
+      "message": "s/toxtree/toctree",
+      "revId": "923ead564820d89f31b73fcb2d20f775c29cf594",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
