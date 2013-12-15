@@ -1154,6 +1154,7 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
         """Test that separate configs have segregated the domain.
 
         Test Plan:
+
         - Create a user in each of the domains
         - Make sure that you can only find a given user in its
           relevant domain
