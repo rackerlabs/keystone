@@ -55,7 +55,7 @@ def mask_password(message, is_unicode=False, secret="***"):
 
     :param message: The string which include security information.
     :param is_unicode: Is unicode string ?
-    :param secret: substitution string default to "***".
+    :param secret: substitution string default to "\*\*\*".
     :returns: The string
 
     For example:

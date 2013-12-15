@@ -131,8 +131,7 @@ def base64_to_base64url(text):
     This function only translates the altchars, non-alphabet
     characters are not filtered out.
 
-    WARNING
-    -------
+    WARNING:
 
     base64url continues to use the '=' pad character which is NOT URL
     safe. RFC-4648 suggests two alternate methods to deal with this.
@@ -371,7 +370,7 @@ def base64_wrap(text, width=64):
     Input is assumed to consist only of members of a base64
     alphabet (i.e no whitepace). Fold the text into lines whose
     line length is width chars long, terminate each line with line
-    ending (default is '\n'). Return the wrapped text as a single
+    ending (default is '\\n'). Return the wrapped text as a single
     string.
 
     Use the filter_formatting() function to assure the input text
