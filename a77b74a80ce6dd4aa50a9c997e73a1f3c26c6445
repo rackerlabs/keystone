@@ -16,6 +16,24 @@
       "revId": "a77b74a80ce6dd4aa50a9c997e73a1f3c26c6445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Lck\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-12-15T17:01:30Z",
+      "side": 1,
+      "message": "Yes, sorry, this was a mass backport to normalize parts of tox.ini across a dozen integrated projects\u0027 stable branches. Turns out all keystone was lacking out of this list was the -U. I\u0027ll write a keystone-specific commit message for you.",
+      "parentUuid": "AAAATn/9Ldw\u003d",
+      "revId": "a77b74a80ce6dd4aa50a9c997e73a1f3c26c6445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
