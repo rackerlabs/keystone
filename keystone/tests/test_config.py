@@ -40,3 +40,18 @@ class ConfigTestCase(tests.TestCase):
                          CONF.auth.password)
         self.assertEqual('keystone.auth.plugins.token.Token',
                          CONF.auth.token)
+
+
+class DeprecatedTestCase(tests.TestCase):
+    def setUp(self):
+        super(DeprecatedTestCase, self).setUp()
+        self.config([tests.dirs.etc('keystone.conf.sample'),
+                     tests.dirs.tests('test_overrides.conf'),
+                     tests.dirs.tests('deprecated.conf'), ])
+
+    def testSql(self):
+        # Options in [sql] were moved to [database] in Icehouse for the change
+        # to use oslo-incubator's db.sqlalchemy.sessions.
+
+        self.assertEqual(CONF.database.connection, 'sqlite://deprecated')
+        self.assertEqual(CONF.database.idle_timeout, 54321)
