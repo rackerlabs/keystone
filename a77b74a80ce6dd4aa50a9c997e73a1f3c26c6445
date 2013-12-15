@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Ldw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-15T16:41:29Z",
+      "side": 1,
+      "message": "I don\u0027t see either of these happening in this change... it only added -U to pip install.",
+      "revId": "a77b74a80ce6dd4aa50a9c997e73a1f3c26c6445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
