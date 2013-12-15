@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9L7k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-15T06:52:35Z",
+      "side": 1,
+      "message": "theres a few mapping bp\u0027s floating around, i was hoping to piggy back on one of them, gotta talk to dolph about which one, but i\u0027ll definitely add it here",
+      "parentUuid": "AAAATn/9L8Q\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9OfY\u003d",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 2
@@ -174,6 +192,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9L7c\u003d",
+        "filename": "keystone/contrib/mapping/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-15T06:52:35Z",
+      "side": 1,
+      "message": "ty",
+      "parentUuid": "AAAATn/9L8I\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9L8E\u003d",
         "filename": "keystone/contrib/mapping/configuration.rst",
         "patchSetId": 2
@@ -185,6 +221,24 @@
       "writtenOn": "2013-12-15T06:44:00Z",
       "side": 1,
       "message": "Out of curiosity, should this file be in doc? and linked to the main configuration.rst?",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9L7Y\u003d",
+        "filename": "keystone/contrib/mapping/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-15T06:52:35Z",
+      "side": 1,
+      "message": "yes, the example in contrib had it here, so i copy/pasted it, i\u0027ll drop it in the right spot, and update the example in another patch",
+      "parentUuid": "AAAATn/9L8E\u003d",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -313,6 +367,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9L7U\u003d",
+        "filename": "keystone/tests/test_v3_mapping.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-15T06:52:35Z",
+      "side": 1,
+      "message": "will do something to avoid repeating it",
+      "parentUuid": "AAAATn/9L70\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9L7s\u003d",
         "filename": "tools/debug_helper.sh",
         "patchSetId": 2
@@ -324,6 +396,24 @@
       "writtenOn": "2013-12-15T06:44:00Z",
       "side": 1,
       "message": "Is this file supposed to be added?  Should this be a separate commit?  Suggest making it separate since it doesn\u0027t seem directly tied to this work.",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9L7Q\u003d",
+        "filename": "tools/debug_helper.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-15T06:52:35Z",
+      "side": 1,
+      "message": "the changes in this file, and tox.ini will be gone when i rebase.",
+      "parentUuid": "AAAATn/9L7s\u003d",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
