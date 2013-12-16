@@ -121,6 +121,24 @@
       "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FjQ\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-16T22:28:43Z",
+      "side": 1,
+      "message": "I think it is worth adding a sentence to the Event Notification section of the how to explain this scope clarification",
+      "parentUuid": "AAAATn/9Fps\u003d",
+      "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
