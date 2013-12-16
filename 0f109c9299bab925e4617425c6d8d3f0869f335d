@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9HzI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T16:14:25Z",
+      "side": 1,
+      "message": "why putting henry-nash\u0027s name here?",
+      "revId": "0f109c9299bab925e4617425c6d8d3f0869f335d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Hwc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T16:14:25Z",
+      "side": 1,
+      "message": "since domainB is only used in test_adminB_fails_revoking_userA_token, suggest move creating it to there.",
+      "revId": "0f109c9299bab925e4617425c6d8d3f0869f335d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HwA\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T16:14:25Z",
+      "side": 1,
+      "message": "change the name of this test so it\u0027s clear why it\u0027s different than the new test: test_adminA_revokes_userA_token .",
+      "revId": "0f109c9299bab925e4617425c6d8d3f0869f335d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HvM\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T16:14:25Z",
+      "side": 1,
+      "message": "why would user_token be empty? We\u0027ve already tested this 3 times.",
+      "revId": "0f109c9299bab925e4617425c6d8d3f0869f335d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
