@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Fck\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-16T22:50:51Z",
+      "side": 1,
+      "message": "typo: exisiting should be existing",
+      "revId": "9ff2a8bc108fe02be957707fc6f30fb777cda3d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
