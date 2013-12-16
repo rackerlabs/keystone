@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9HR8\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Actually no, because when an extension registers it will invoke the method and a new compilation will be performed. Being outside I make sure it will be executed only once.",
+      "parentUuid": "AAAATn/9KD4\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9KDg\u003d",
         "filename": "keystone/contrib/example/configuration.rst",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-16T08:15:00Z",
       "side": 1,
       "message": "at this point, we should remove the word tenant, it\u0027s only in the notifications docs because end-users might read it, but for *new* extensions lets just use projects.",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HRs\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9KDg\u003d",
       "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9HMg\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "This is to illustrate how the callback works. Do not forget that this is a demo example that has no functionality at all it is just a boilerplate for extensions development.\nI wanted to log something to help people understand that the mechanism works.",
+      "parentUuid": "AAAATn/9KDA\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9KAs\u003d",
         "filename": "keystone/contrib/example/controllers.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-16T08:15:00Z",
       "side": 1,
       "message": "do we need these to be @classmethods?",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HNM\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "This is safer. If you create several instances the callback notification with the registered objects will happen always only one, which is the wanted behaviour",
+      "parentUuid": "AAAATn/9KAs\u003d",
       "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9HKQ\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9KCw\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9KCs\u003d",
         "filename": "keystone/contrib/example/controllers.py",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-16T08:15:00Z",
       "side": 1,
       "message": "same here",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HKI\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9KCs\u003d",
       "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9HKE\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9KCo\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9KCk\u003d",
         "filename": "keystone/contrib/example/controllers.py",
         "patchSetId": 14
@@ -132,6 +258,24 @@
       "writtenOn": "2013-12-16T08:15:00Z",
       "side": 1,
       "message": "and here",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HKA\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9KCk\u003d",
       "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9HQk\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Steve, the methods are classmethods so I cannot use self.\nThe reason is that are classmethods is that I have to ensure that even if you create many instance of that class the callback is performed only once.\nI will change the camel case",
+      "parentUuid": "AAAATn/9KBM\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9KA4\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 14
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9HP4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "Yes, Removed is not a valid event message.\nI added a note",
+      "parentUuid": "AAAATn/9KA4\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9KB8\u003d",
         "filename": "keystone/tests/test_overrides.conf",
         "patchSetId": 14
@@ -200,6 +380,24 @@
       "writtenOn": "2013-12-16T08:15:00Z",
       "side": 1,
       "message": "i think you could override this in test_notifications with:\nself.opt(notification_driver\u003d\u0027keystone.common.extensions_notifier\u0027)",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HLg\u003d",
+        "filename": "keystone/tests/test_overrides.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T17:36:37Z",
+      "side": 1,
+      "message": "I actually tried and it does not work.\nI think the reason is that this parameter is in [DEFAULT] and not in a specific header. If you have some ideas pleas help.",
+      "parentUuid": "AAAATn/9KB8\u003d",
       "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
