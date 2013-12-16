@@ -401,6 +401,24 @@
       "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9G2o\u003d",
+        "filename": "keystone/tests/test_overrides.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T18:30:49Z",
+      "side": 1,
+      "message": "That\u0027s weird. I know it\u0027s under DEFAULT, but that is why i suggested self.opt, instead of self.opt_in_group. \n\nHave you tried using opt_in_group, and calling [DEFAULT] directly? Might it have to do with the fact that you can have multiple notification drivers specified?",
+      "parentUuid": "AAAATn/9HLg\u003d",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
