@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9G/o\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T18:08:48Z",
+      "side": 1,
+      "message": "I don\u0027t understand why we have to change from check_call to Popen? check_call takes stdout and stderr options. The docs recommend to use check_call, etc, if possible: http://docs.python.org/2/library/subprocess.html#using-the-subprocess-module",
+      "revId": "50510af50780bc96c07068bb1c6b6783ae5cf757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9G/M\u003d",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T18:08:48Z",
+      "side": 1,
+      "message": "give names to the None parameters so we know what they are for.",
+      "revId": "50510af50780bc96c07068bb1c6b6783ae5cf757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9G/E\u003d",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T18:08:48Z",
+      "side": 1,
+      "message": "give names to the None parameters so we know what they are for.",
+      "revId": "50510af50780bc96c07068bb1c6b6783ae5cf757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
