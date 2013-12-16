@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Fos\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T22:12:43Z",
+      "side": 1,
+      "message": "re-phrased",
+      "parentUuid": "AAAATn/9GY4\u003d",
+      "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9GYI\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-16T21:03:08Z",
       "side": 1,
       "message": "change to \"listing as keys those events that are of interest and the values should be the respective callbacks\"",
+      "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Foc\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T22:12:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9GYI\u003d",
       "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2013-12-16T21:03:08Z",
       "side": 1,
       "message": "Why are the extensions limited to only registering  keystone events\n i.e. identity.(group|project|role|user).created|updated|deleted) ? \nAre there not use cases where the extensions would be\n interested in other events outside of keystone?  Or are they \nexpected to register for non-keystone events in a different way?",
+      "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Fps\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-16T22:12:43Z",
+      "side": 1,
+      "message": "Brad, this patch is to notify the extensions of keystone data changes with the main aim to maintain the different data sets in sync. If you want a global event notification you can leverage the queue mechanism or any other that may make sense.",
+      "parentUuid": "AAAATn/9GDw\u003d",
       "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
