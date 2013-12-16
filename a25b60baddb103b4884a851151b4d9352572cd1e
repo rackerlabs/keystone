@@ -16,6 +16,142 @@
       "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9G28\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "there\u0027s a random comma at the end of this line??",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9G04\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "you need a composite primary key between id + idp_id ... the way this is defined right now, two IdPs would be unable to use the same protocol ID (e.g. saml2)",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9G0I\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "awesome",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Gy4\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "need to remove pub keys",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Gyw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "need to remove pub keys",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Gyg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "should at least log a warning that this isn\u0027t implemented",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9GyE\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "TODO/FIXME instead?",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Gxw\u003d",
+        "filename": "keystone/contrib/federation/doc/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-16T19:46:41Z",
+      "side": 1,
+      "message": "some weird RST syntax issues in this file... i\u0027ll fix",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
