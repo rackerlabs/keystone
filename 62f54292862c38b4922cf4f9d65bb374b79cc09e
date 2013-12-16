@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9H7s\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T15:38:18Z",
+      "side": 1,
+      "message": "I prefer uuid.uuid4().hex here too since it matches how the other tests work.",
+      "parentUuid": "AAAATn/93Nw\u003d",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/964o\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -48,6 +66,23 @@
       "writtenOn": "2013-12-04T13:42:12Z",
       "side": 1,
       "message": "same as above",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9H6g\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T15:38:18Z",
+      "side": 1,
+      "message": "why split up the configuration setting? This doesn\u0027t happen when the keystone server is running. Put all the CONF setting up front.",
       "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
