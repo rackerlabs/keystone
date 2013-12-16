@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9KD4\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "might be better to have pattern and p\u003dre.compile just outside the for loop, but not at the class level. I don\u0027t think they are used outside of it anyway",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KDg\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "at this point, we should remove the word tenant, it\u0027s only in the notifications docs because end-users might read it, but for *new* extensions lets just use projects.",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KDA\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "i\u0027m not really getting the point of the received message count, it\u0027s just an ID (starting and 0 and going up) that is never used/read again. If keystone restarts we start at 0 again, so it\u0027s not like the ids are unique. And i\u0027m not seeing them used again.\n\nSuggest removing them completely, if we want something to help differentiate notifications, we might be better served by a time stamp or something?",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KAs\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "do we need these to be @classmethods?",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KCw\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "if we do go forward with message_id, then repalce %(message)s with %(message_id)s",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KCs\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KCo\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KCk\u003d",
+        "filename": "keystone/contrib/example/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KBY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "no need to have this as a global, use setup to reset it",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KBM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "you can add:\n\nself.send_notification_called \u003d False\n\nin the setup, and use that in your tests, instead of hasBeenNotified\n\ncamelCase is a no-no.",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KA4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "Why is remove producing different output from create? \nI do not see an invalid message (as line 281 suggests).\n\n*edit* oh, i think I know why, is it because the keyword \u0027removed\u0027 was used instead of \u0027deleted\u0027? - if so ad a comment to line 283",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9KB8\u003d",
+        "filename": "keystone/tests/test_overrides.conf",
+        "patchSetId": 14
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T08:15:00Z",
+      "side": 1,
+      "message": "i think you could override this in test_notifications with:\nself.opt(notification_driver\u003d\u0027keystone.common.extensions_notifier\u0027)",
+      "revId": "32ff0bb19fff16684315cfba0efc575cb64dbb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
