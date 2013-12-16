@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Fsk\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-16T22:23:07Z",
+      "side": 1,
+      "message": "So you feel this was not worthy of a subsection, correct?",
+      "revId": "6930f5d724dd5791233bea009af7d8fa35a63b83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FqY\u003d",
+        "filename": "keystone/common/cms.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-16T22:23:07Z",
+      "side": 1,
+      "message": "Line blocks.  Very classy!",
+      "revId": "6930f5d724dd5791233bea009af7d8fa35a63b83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FoE\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-16T22:23:07Z",
+      "side": 1,
+      "message": "good catch",
+      "revId": "6930f5d724dd5791233bea009af7d8fa35a63b83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FlM\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-16T22:23:07Z",
+      "side": 1,
+      "message": "Blank line before and after the bullet list items. Very nice. Way to read the reStructuredText spec!",
+      "revId": "6930f5d724dd5791233bea009af7d8fa35a63b83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
