@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9FSw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T23:27:37Z",
+      "side": 1,
+      "message": "I\u0027m not seeing any change to the server, only the tests, so how does this fix a bug?",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FUw\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T23:27:37Z",
+      "side": 1,
+      "message": "does this string come from an RFC? suggest add a reference.",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FVg\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T23:27:37Z",
+      "side": 1,
+      "message": "remove the _() since don\u0027t need to translate test code.\n\nAlso, remove \"FakeLdap\" since \"fakeldap\" will already be in the log entry.",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FTc\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T23:27:37Z",
+      "side": 1,
+      "message": "I think they want us to use six.iteritems() for python3 compat now.",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
