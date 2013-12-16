@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9G6w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-16T18:19:14Z",
+      "side": 1,
+      "message": "Remove instances of \"Virtual\" in the message, keep the blue-print, i guess",
+      "revId": "a25b60baddb103b4884a851151b4d9352572cd1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
