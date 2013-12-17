@@ -16,6 +16,24 @@
       "revId": "8f6ba88d94e2cfa2c643021a2e0e1934343ea93f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9A0A\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-17T17:49:19Z",
+      "side": 1,
+      "message": "some of the services were there in patch 1, we took them out because of the way they (ab)use the catalog by creating a different services just to advertise different versions of the API. There hasn\u0027t been any consensus on that yet.",
+      "parentUuid": "AAAATn/9Cgw\u003d",
+      "revId": "8f6ba88d94e2cfa2c643021a2e0e1934343ea93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
