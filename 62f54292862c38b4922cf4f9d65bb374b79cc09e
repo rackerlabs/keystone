@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9EYc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 8340
+      },
+      "writtenOn": "2013-12-17T04:32:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/964w\u003d",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/964o\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9EYY\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 8340
+      },
+      "writtenOn": "2013-12-17T04:32:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/964o\u003d",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9H6g\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -83,6 +119,24 @@
       "writtenOn": "2013-12-16T15:38:18Z",
       "side": 1,
       "message": "why split up the configuration setting? This doesn\u0027t happen when the keystone server is running. Put all the CONF setting up front.",
+      "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9EZ8\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 8340
+      },
+      "writtenOn": "2013-12-17T04:32:03Z",
+      "side": 1,
+      "message": "This is intentionally split up. The user must be created with the user_id_attribute not set to the default \u0027cn\u0027. This creates a fakeldap entry where cn\u003d\u0027foo\u0027 and sAMAccountName\u003d\u0027bar\u0027. We then switch the user_id_attribute to sAMAccountName and verify that when we look the user up by id\u003dbar, we get back the appropriate user and that that user\u0027s id attribute is set to \u0027bar\u0027.",
+      "parentUuid": "AAAATn/9H6g\u003d",
       "revId": "62f54292862c38b4922cf4f9d65bb374b79cc09e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
