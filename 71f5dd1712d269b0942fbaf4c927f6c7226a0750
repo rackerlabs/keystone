@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9FIM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-17T00:14:25Z",
+      "side": 1,
+      "message": "change \"xrange was\" to \"xrange is\"\n\nchange six.range to six.moves.range",
+      "revId": "71f5dd1712d269b0942fbaf4c927f6c7226a0750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FH8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-17T00:14:25Z",
+      "side": 1,
+      "message": "Use Closes-Bug: #1259978\n\nSee https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "71f5dd1712d269b0942fbaf4c927f6c7226a0750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
