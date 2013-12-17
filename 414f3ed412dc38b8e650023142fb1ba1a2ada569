@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Axg\u003d",
+        "filename": "keystone/tests/test_config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-17T18:01:22Z",
+      "side": 1,
+      "message": "awesome! I think we need one more test showing that if both [sq] and [database] sections are configured, the ones in [database] will be used.",
+      "revId": "414f3ed412dc38b8e650023142fb1ba1a2ada569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
