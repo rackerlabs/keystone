@@ -50,6 +50,24 @@
       "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9AZw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-17T19:26:16Z",
+      "side": 1,
+      "message": "I\u0027ll work on making deletes idempotent at the manager or driver level as a separate patchset.  I think this is a much bigger task than I want to attempt in this part of the refactor.",
+      "parentUuid": "AAAATn/9ElE\u003d",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
