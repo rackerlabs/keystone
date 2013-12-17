@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8/j8\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-17T23:01:58Z",
+      "side": 1,
+      "message": "Why do you need this if you have already added to the config?",
+      "revId": "f4404fb542d6973dbf29ef0a7c6452bdadd9e109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
