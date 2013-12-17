@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Cgw\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-17T12:40:48Z",
+      "side": 1,
+      "message": "This is incorrect, port 8000 is the \"cloudformation\" service, our cloudformation-compatible API, and the native \"orchestration\" service endpoint should be:\n\nhttp://localhost:8004/v1/%(tenant_id)s\n\nAlso, there\u0027s no entries for the following services?:\n- metering (ceilometer)\n- volume (cinder)\n- compute (nova)\n- object-store (swift)\n- network (neutron)",
+      "revId": "8f6ba88d94e2cfa2c643021a2e0e1934343ea93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
