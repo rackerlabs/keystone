@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/8/6o\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-17T21:32:50Z",
+      "side": 1,
+      "message": "As per the IRC discussion today this logic will move down to the manager as we progress in the patchset and cleanup.  This is a long line of patches to get there and making each one a small and digestible as possible is the best course of action.",
+      "parentUuid": "AAAATn/9Eko\u003d",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9ElE\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
