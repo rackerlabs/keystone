@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9EZc\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-17T04:40:19Z",
+      "side": 1,
+      "message": "this will all be under the federation extension, i\u0027ll be dropping the  mapping part",
+      "parentUuid": "AAAATn/9N6M\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9Ofo\u003d",
         "filename": "etc/policy.json",
         "patchSetId": 2
@@ -152,6 +170,24 @@
       "writtenOn": "2013-12-13T19:41:31Z",
       "side": 1,
       "message": "tab to spaces.  Is this the end state? or should we have a better policy for mapping management?  seems like it should be a domain admin.",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9EZQ\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-17T04:40:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9Ogo\u003d",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -245,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9EY8\u003d",
+        "filename": "keystone/contrib/mapping/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-17T04:40:19Z",
+      "side": 1,
+      "message": "will be removing this file once everything is under federation extension",
+      "parentUuid": "AAAATn/9L7Y\u003d",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9N4k\u003d",
         "filename": "keystone/contrib/mapping/controllers.py",
         "patchSetId": 2
@@ -273,6 +327,24 @@
       "writtenOn": "2013-12-13T22:04:59Z",
       "side": 1,
       "message": "okay, i\u0027ll use the alias here",
+      "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9EY0\u003d",
+        "filename": "keystone/contrib/mapping/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-17T04:40:19Z",
+      "side": 1,
+      "message": "will be replaced under common federation",
+      "parentUuid": "AAAATn/9N4c\u003d",
       "revId": "855be67e07f57d457d214fee91b74a22cd8228a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
