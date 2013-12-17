@@ -139,6 +139,24 @@
       "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9A4c\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-17T17:35:40Z",
+      "side": 1,
+      "message": "Brad, I made the changes in the Extensions_howto docs.\nI specifically mentioned that the code only notifies on specific events for selected resources. Hope this is good to go now ...",
+      "parentUuid": "AAAATn/9FjQ\u003d",
+      "revId": "6a6ba5c88cfa058b39ccba54535076372535b742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
