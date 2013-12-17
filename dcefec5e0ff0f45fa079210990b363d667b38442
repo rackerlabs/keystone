@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9EkY\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-17T04:15:42Z",
+      "side": 1,
+      "message": "This also seems to be duplicate logic. See below for an explanation.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Eko\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-17T04:15:42Z",
+      "side": 1,
+      "message": "Does this also need some of the extra logic from the delete_group method?",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ElE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2013-12-17T04:15:42Z",
+      "side": 1,
+      "message": "This seems to be a duplication of the logic in delete_user.  The only thing not in there is the try-except which probably should/could be since deleting a user should be idempotent.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
