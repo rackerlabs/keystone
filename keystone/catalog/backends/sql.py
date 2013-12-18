@@ -21,6 +21,7 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db import exception as db_exception
 
 
 CONF = config.CONF
@@ -28,9 +29,10 @@ CONF = config.CONF
 
 class Service(sql.ModelBase, sql.DictBase):
     __tablename__ = 'service'
-    attributes = ['id', 'type']
+    attributes = ['id', 'type', 'name']
     id = sql.Column(sql.String(64), primary_key=True)
     type = sql.Column(sql.String(255))
+    name = sql.Column(sql.String(64), index=True, unique=True)
     extra = sql.Column(sql.JsonBlob())
     endpoints = sql.relationship("Endpoint", backref="service")
 
@@ -81,7 +83,14 @@ class Catalog(sql.Base, catalog.Driver):
         session = self.get_session()
         with session.begin():
             service = Service.from_dict(service_ref)
-            session.add(service)
+            try:
+                session.add(service)
+                session.flush()
+            except db_exception.DBDuplicateEntry as e:
+                msg = _('Could not create service %(id)s, %(error)s')
+                message = msg % {'id': service_id, 'error': e.message}
+                raise exception.Conflict(type='service', details=message)
+
         return service.to_dict()
 
     def update_service(self, service_id, service_ref):
