@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/87co\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-18T17:15:16Z",
+      "side": 1,
+      "message": "this all looks super flakey now... it\u0027s either very fragile or needs heavy commenting to explain why its not",
+      "revId": "ae988568156bdb949fda1e516a80dbe709dfbba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

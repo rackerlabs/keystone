@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/87c0\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-18T17:15:16Z",
+      "side": 0,
+      "message": "it looks like all you need to do is check that the response.content_type \u003d\u003d \u0027application/json\u0027",
+      "revId": "1a96f961e33ac3308159847d62d99b62f21b21c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/87c4\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-18T17:15:16Z",
+      "side": 0,
+      "message": "this should not go away",
+      "revId": "1a96f961e33ac3308159847d62d99b62f21b21c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
