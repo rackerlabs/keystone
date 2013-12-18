@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8560\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-18T23:49:00Z",
+      "side": 1,
+      "message": "Suggest remove this because it\u0027s already a comment in the code.",
+      "revId": "f3d29b076156152a636efa4f2eef59202a1b301e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/855s\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-18T23:49:00Z",
+      "side": 1,
+      "message": "I\u0027m not sure what this is doing... what\u0027s different between lines 387-393 and a one-line:\n\n tok.flush_expired_tokens(batch_size\u003d5)",
+      "revId": "f3d29b076156152a636efa4f2eef59202a1b301e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/856I\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-18T23:49:00Z",
+      "side": 1,
+      "message": "this should be \"dialect \u003d\u003d \u0027ibm_db_sa\u0027 and batch_size \u003d\u003d 0\" ? since if they passed in a batch_size then we want to use that rather than DB2\u0027s default?\n\n(should have a unit test for this)",
+      "revId": "f3d29b076156152a636efa4f2eef59202a1b301e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
