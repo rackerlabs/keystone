@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/876Q\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2013-12-18T16:05:39Z",
+      "side": 1,
+      "message": "(nit) It is is -\u003e It is",
+      "revId": "fa987390f8ebb3b57257948b34f2dbb4ac123288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
