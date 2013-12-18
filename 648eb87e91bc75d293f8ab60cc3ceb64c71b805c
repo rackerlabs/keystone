@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/87FY\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-18T18:32:59Z",
+      "side": 1,
+      "message": "assertValidErrorResponse and just checking for 400 doesn\u0027t seem right as \"error response\" can be anything (i.e. in the 400 range).\n\nI know this patch is just for moving code around. But can we improve it a bit. Either name the method accordingly (i.e. assertBadRequestResponse) or do something generic. For example,\n\ndef assertValidErrorResponse(self, response, expected_status\u003d400):\n    if expected_status is not None:\n        self.assertEqual(response.status_code, expected_status)\n    else:\n        # anything in the 400 range is bad\n        self.assertGreaterEqual(response.status_code, 400)",
+      "revId": "648eb87e91bc75d293f8ab60cc3ceb64c71b805c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
