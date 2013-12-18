@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/859U\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-18T23:31:17Z",
+      "side": 1,
+      "message": "What about check_output? http://docs.python.org/2/library/subprocess.html#subprocess.check_output\n\nthat one doesn\u0027t say \"Do not use stdout\u003dPIPE\", probably because there\u0027s no stdout argument, and it also says \"use stderr\u003dsubprocess.STDOUT\" which this is doing.",
+      "parentUuid": "AAAATn/9EcQ\u003d",
+      "revId": "50510af50780bc96c07068bb1c6b6783ae5cf757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9G/M\u003d",
         "filename": "keystone/tests/test_cert_setup.py",
         "patchSetId": 17
