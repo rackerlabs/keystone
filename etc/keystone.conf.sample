@@ -1,5 +1,7 @@
 [DEFAULT]
-# A "shared secret" between keystone and other openstack services
+# A "shared secret" that can be used in keystone. 
+# This token does not represent a user, and carries no explicit authorization.
+# It is a method for bootstrapping keystone, that is all.
 # admin_token = ADMIN
 
 # The IP address of the network interface to listen on
