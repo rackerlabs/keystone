@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/89Gc\u003d",
+        "filename": "keystone/tests/test_config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2013-12-18T12:34:23Z",
+      "side": 1,
+      "message": "Very minor. I think this is not the best name for the test function. Even service methods named in camel-case, I believe camel-case used for service methods visual separation. \"Use the function naming rules: lowercase with words separated by underscores as necessary to improve readability.\" pep8 (c)",
+      "revId": "414f3ed412dc38b8e650023142fb1ba1a2ada569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9Axg\u003d",
         "filename": "keystone/tests/test_config.py",
         "patchSetId": 26
