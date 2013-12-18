@@ -21,7 +21,9 @@
 """Utility methods for working with WSGI servers."""
 
 import re
+import six
 
+import pecan
 import routes.middleware
 import webob.dec
 import webob.exc
@@ -558,6 +560,19 @@ class ExtensionRouter(Router):
             conf.update(local_config)
             return cls(app, **local_config)
         return _factory
+
+
+class PecanExtensionRouter(ExtensionRouter):
+
+    controllers = dict()
+
+    def get_controllers(self):
+        return self.controllers
+
+    def add_routes(self, mapper):
+        for path, cont in six.iteritems(self.get_controllers()):
+            app = pecan.make_app(root=cont)
+            mapper.connect(path, controller=app, path_info="/")
 
 
 def render_response(body=None, status=None, headers=None):
