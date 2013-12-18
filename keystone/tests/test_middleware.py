@@ -39,8 +39,7 @@ def make_request(**kwargs):
 
 
 def make_response(**kwargs):
-    body = kwargs.pop('body', None)
-    return webob.Response(body)
+    return webob.Response(**kwargs)
 
 
 class TokenAuthMiddlewareTest(tests.TestCase):
@@ -120,7 +119,7 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         body = '{"container": {"attribute": "value"}}'
         req = make_request(body=body, method='POST', accept='application/xml')
         middleware.XmlBodyMiddleware(None).process_request(req)
-        resp = make_response(body=body)
+        resp = make_response(body=body, content_type='application/json')
         middleware.XmlBodyMiddleware(None).process_response(req, resp)
         self.assertEqual(resp.content_type, 'application/xml')
 
@@ -160,3 +159,16 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(req.body, body)
         self.assertEqual(req.content_type, content_type)
+
+    def test_dont_xml_things_you_dont_understand(self):
+        """Don't try to convert things with content-types you can't decode."""
+
+        test_data = [('text/html', '<html><body>BOO</body></html>'),
+                     ('application/text', 'raw text data')]
+
+        for content_type, body in test_data:
+            req = make_request(method='GET', accept='application/xml')
+            resp = make_response(body=body, content_type=content_type)
+            middleware.XmlBodyMiddleware(None).process_response(req, resp)
+            self.assertEqual(resp.body, body)
+            self.assertEqual(resp.content_type, content_type)
