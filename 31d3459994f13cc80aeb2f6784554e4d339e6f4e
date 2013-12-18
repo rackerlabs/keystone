@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/87L4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-18T18:18:35Z",
+      "side": 1,
+      "message": "if a trust no longer has uses, should it be deleted?",
+      "revId": "31d3459994f13cc80aeb2f6784554e4d339e6f4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/87J8\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-18T18:18:35Z",
+      "side": 1,
+      "message": "i think, ideally, this part should go under issue_token, don\u0027t subtract a use until the last possible part. \n\nif something goes further into the code, you\u0027ve already subtracted a use, without giving a token.",
+      "revId": "31d3459994f13cc80aeb2f6784554e4d339e6f4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
