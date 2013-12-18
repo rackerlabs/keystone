@@ -1670,6 +1670,126 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertEqual(user1['default_project_id'],
                          new_json_data['tenant_id'])
 
+    def test_extract_name_from_meta_in_service_upgrade(self):
+        self.upgrade(35)
+        service_extra = {
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex
+        }
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'extra': json.dumps(service_extra),
+        }
+
+        session = self.Session()
+        self.insert_dict(session, 'service', service)
+        session.commit()
+        session.close()
+
+        self.upgrade(36)
+        self.assertTableColumns(
+            'service',
+            ['id', 'type', 'extra', 'name'])
+
+        #test that name is in the column and description remain in extra
+        service_table = sqlalchemy.Table('service',
+                                         self.metadata,
+                                         autoload=True)
+        updated_service = session.query(service_table)\
+            .filter_by(id=service['id']).one()
+        new_json_data = json.loads(updated_service.extra)
+        self.assertIn('description', new_json_data)
+        self.assertEqual(service_extra['description'],
+                         new_json_data['description'])
+        self.assertNotIn('name', new_json_data)
+        self.assertEqual(service_extra['name'],
+                         updated_service.name)
+
+    def test_extract_name_from_meta_in_service_upgrade_fail(self):
+        self.upgrade(35)
+        service_extra = {
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex
+        }
+        service1 = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'extra': json.dumps(service_extra),
+        }
+        service2 = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'extra': json.dumps(service_extra),
+        }
+
+        session = self.Session()
+        self.insert_dict(session, 'service', service1)
+        self.insert_dict(session, 'service', service2)
+        session.commit()
+        session.close()
+
+        # upgrade must assert with Conflict
+        # The table must not change after fail
+        self.assertRaises(exception.Conflict,
+                          self.upgrade,
+                          36)
+
+        self.assertEqual(self.schema.version, 35)
+
+        self.assertTableColumns(
+            'service',
+            ['id', 'type', 'extra'])
+
+        service_table = sqlalchemy.Table('service',
+                                         self.metadata,
+                                         autoload=True)
+        updated_service1 = session.query(service_table).\
+            filter_by(id=service1['id']).one()
+        new_json_data1 = json.loads(updated_service1.extra)
+        self.assertEqual(new_json_data1, service_extra)
+
+        updated_service2 = session.query(service_table).\
+            filter_by(id=service2['id']).one()
+        new_json_data2 = json.loads(updated_service2.extra)
+        self.assertEqual(new_json_data2, service_extra)
+
+    def test_extract_name_from_meta_in_service_downgrade(self):
+        self.upgrade(36)
+        service_extra = {
+            'description': uuid.uuid4().hex
+        }
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'extra': json.dumps(service_extra),
+            'name': uuid.uuid4().hex,
+        }
+
+        session = self.Session()
+        self.insert_dict(session, 'service', service)
+        session.commit()
+        session.close()
+
+        self.downgrade(35)
+        self.assertTableColumns(
+            'service',
+            ['id', 'type', 'extra'])
+
+        #test that name goes back to extra and description is still there
+        service_table = sqlalchemy.Table('service',
+                                         self.metadata,
+                                         autoload=True)
+        updated_service = session.query(service_table).\
+            filter_by(id=service['id']).one()
+        new_json_data = json.loads(updated_service.extra)
+        self.assertIn('description', new_json_data)
+        self.assertEqual(service_extra['description'],
+                         new_json_data['description'])
+        self.assertIn('name', new_json_data)
+        self.assertEqual(service['name'],
+                         new_json_data['name'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

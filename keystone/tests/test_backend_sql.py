@@ -374,6 +374,26 @@ class SqlToken(SqlTests, test_backend.TokenTests):
 
 
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
+    def test_create_service_with_duplicated_name_fail(self):
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+
+        service2 = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': service["name"],
+            'description': uuid.uuid4().hex,
+        }
+        self.assertRaises(exception.Conflict,
+                          self.catalog_api.create_service,
+                          service2['id'],
+                          service2.copy())
+
     def test_malformed_catalog_throws_error(self):
         service = {
             'id': uuid.uuid4().hex,
