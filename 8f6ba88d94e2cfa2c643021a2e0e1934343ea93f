@@ -34,6 +34,24 @@
       "revId": "8f6ba88d94e2cfa2c643021a2e0e1934343ea93f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/86CQ\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-18T23:05:25Z",
+      "side": 1,
+      "message": "I submitted a change to devstack: https://review.openstack.org/63011\n\nand, as guang-yee says, I got rid of the services that other reviewers complained about.",
+      "parentUuid": "AAAATn/9A0A\u003d",
+      "revId": "8f6ba88d94e2cfa2c643021a2e0e1934343ea93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
