@@ -16,6 +16,24 @@
       "revId": "f4404fb542d6973dbf29ef0a7c6452bdadd9e109",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/86L4\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-18T22:26:15Z",
+      "side": 1,
+      "message": "Fabio - You mean keystone.conf.sample ? That file is only documenting the default and doesn\u0027t affect the behavior of the server.",
+      "parentUuid": "AAAATn/8/j8\u003d",
+      "revId": "f4404fb542d6973dbf29ef0a7c6452bdadd9e109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
