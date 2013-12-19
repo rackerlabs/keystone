@@ -16,6 +16,24 @@
       "revId": "ae988568156bdb949fda1e516a80dbe709dfbba9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/854Y\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-19T00:06:05Z",
+      "side": 1,
+      "message": "If you keep the content_type outside or at the beginning of the try block then it will set the content type even if the actual conversion fails.",
+      "parentUuid": "AAAATn/87co\u003d",
+      "revId": "ae988568156bdb949fda1e516a80dbe709dfbba9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

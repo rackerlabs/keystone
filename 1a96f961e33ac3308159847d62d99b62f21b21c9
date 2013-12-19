@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/854o\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-19T00:06:05Z",
+      "side": 0,
+      "message": "I was looking to leave open the application/json+v2 or whatever we are allowed to return. It shouldn\u0027t happen but it was an equivalent check.",
+      "parentUuid": "AAAATn/87c0\u003d",
+      "revId": "1a96f961e33ac3308159847d62d99b62f21b21c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/87c4\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-18T17:15:16Z",
       "side": 0,
       "message": "this should not go away",
+      "revId": "1a96f961e33ac3308159847d62d99b62f21b21c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/855A\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2013-12-19T00:06:05Z",
+      "side": 0,
+      "message": "If we keep that then it will error out rather than passing through the original response back to the user.",
+      "parentUuid": "AAAATn/87c4\u003d",
       "revId": "1a96f961e33ac3308159847d62d99b62f21b21c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
