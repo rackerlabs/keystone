@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/85mA\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "looks like threre was a mishap here, keep the bottom version",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/85kk\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "so change /OS-IDP/ to /OS-FEDERATION/",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/85kw\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "so change /OS-IDP/ to /OS-FEDERATION/",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/85lg\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "i think we can settled on changing the alias now,\nso change /OS-IDP/ to /OS-FEDERATION/",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/85lU\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "remove this block",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/85j8\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "are you planning to implement the validator?",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/85k0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-19T01:26:32Z",
+      "side": 1,
+      "message": "change /OS-IDP/ to /OS-FEDERATION/",
+      "revId": "8ccb3cbc229ad021d8e76fe4b5b36558aff1ef6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
