@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 19 Dec 2013 22:05:33 +0000
+Reviewed-on: https://review.openstack.org/62140
+Project: openstack/keystone
+Branch: refs/heads/master
