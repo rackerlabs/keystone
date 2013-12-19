@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/845g\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "you mean the extension\u0027s ``router.py`` file?",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84wA\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "Perhaps worth mentioning that the callback must be expecting the following parameters:\n\n    - `context` - the session context\n    - `message` - the notification message\n\nExample::\n\n    callback(context, message)",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84xc\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "core.ExampleManager()",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/845o\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "Please refer to :doc:`event_notifications` for more information on notifications.",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84x4\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "don\u0027t think this is correct. Should be\n\npattern \u003d \u0027^identity\\.(group|project|role|user)\\.(created|updated|deleted)$\u0027",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84xo\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "make sure the string is clean before doing the match\n\nsubscription_event \u003d subscription_event.strip()",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84w4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "not sure why it needs to be a separate method. Should be just be in the test as this code is not shared.",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84w0\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84ww\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "same",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/84wg\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2013-12-19T06:24:26Z",
+      "side": 1,
+      "message": "is this method used?",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
