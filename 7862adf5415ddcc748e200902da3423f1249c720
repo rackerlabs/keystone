@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/81yY\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/845g\u003d",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/84wA\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-19T06:24:26Z",
       "side": 1,
       "message": "Perhaps worth mentioning that the callback must be expecting the following parameters:\n\n    - `context` - the session context\n    - `message` - the notification message\n\nExample::\n\n    callback(context, message)",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/81xg\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/84wA\u003d",
       "revId": "7862adf5415ddcc748e200902da3423f1249c720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/81z4\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "No this is a generic instructions, the one for the Example extensions are in the example folder.",
+      "parentUuid": "AAAATn/84xc\u003d",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/845o\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 19
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-19T06:24:26Z",
       "side": 1,
       "message": "Please refer to :doc:`event_notifications` for more information on notifications.",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/81xQ\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/845o\u003d",
       "revId": "7862adf5415ddcc748e200902da3423f1249c720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/81wI\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/84x4\u003d",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/84xo\u003d",
         "filename": "keystone/common/extensions_notifier.py",
         "patchSetId": 19
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-19T06:24:26Z",
       "side": 1,
       "message": "make sure the string is clean before doing the match\n\nsubscription_event \u003d subscription_event.strip()",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/81v8\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/84xo\u003d",
       "revId": "7862adf5415ddcc748e200902da3423f1249c720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/81tU\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/84w4\u003d",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/84w0\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 19
@@ -132,6 +258,24 @@
       "writtenOn": "2013-12-19T06:24:26Z",
       "side": 1,
       "message": "same as above",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/81tQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/84w0\u003d",
       "revId": "7862adf5415ddcc748e200902da3423f1249c720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/81tM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/84ww\u003d",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/84wg\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 19
@@ -166,6 +328,24 @@
       "writtenOn": "2013-12-19T06:24:26Z",
       "side": 1,
       "message": "is this method used?",
+      "revId": "7862adf5415ddcc748e200902da3423f1249c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/81uQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2013-12-19T17:22:24Z",
+      "side": 1,
+      "message": "It should be used if the event type was correct, so the method is necessary but is never invoked because it is used for the negative test in the false event type",
+      "parentUuid": "AAAATn/84wg\u003d",
       "revId": "7862adf5415ddcc748e200902da3423f1249c720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
