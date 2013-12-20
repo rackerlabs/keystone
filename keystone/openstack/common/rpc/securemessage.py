@@ -400,7 +400,7 @@ class SecureMessage(object):
 
         :param key: The key to use to decrypt the ticket (esek)
         :param source: The name of the source service
-        :param traget: The name of the target service
+        :param target: The name of the target service
         :param timestamp: The incoming message timestamp
         :param esek: a base64 encoded encrypted block containing a JSON string
         """
