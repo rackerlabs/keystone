@@ -261,11 +261,6 @@ def filter_query(model, query, hints):
     return query
 
 
-# Backends
-class Base(object):
-    pass
-
-
 def handle_conflicts(conflict_type='object'):
     """Converts select sqlalchemy exceptions into HTTP 409 Conflict."""
     def decorator(method):
