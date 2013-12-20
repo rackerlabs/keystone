@@ -992,7 +992,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             "Enabled emulation conflicts with enabled mask")
 
 
-class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
+class LdapIdentitySqlAssignment(tests.TestCase, BaseLDAPIdentity):
 
     def _set_config(self):
         self.config([tests.dirs.etc('keystone.conf.sample'),
@@ -1032,7 +1032,7 @@ class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
             'N/A: Not part of SQL backend')
 
 
-class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
+class MultiLDAPandSQLIdentity(tests.TestCase, BaseLDAPIdentity):
     """Class to test common SQL plus individual LDAP backends.
 
     We define a set of domains and domain-specific backends:
