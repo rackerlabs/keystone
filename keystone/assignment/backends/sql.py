@@ -28,7 +28,7 @@ CONF = config.CONF
 
 
 @dependency.requires('identity_api')
-class Assignment(sql.Base, assignment.Driver):
+class Assignment(assignment.Driver):
 
     # Internal interface to manage the database
     def db_sync(self, version=None):
