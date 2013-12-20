@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/80Qg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "change \"tenant\" to \"project\" (throughout the commit message)\n\nchange \"send\" to \"sent\"",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80QM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "change \"this tenant\" to \"the new tenant\"",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80QI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "change \"else because\" to \"because\" ?\n\nchange \"here the tenant\" to \"to the project\"\n\nchange \"endup\" to \"end up\"",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80QA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "change \"enabled\" to \"the enabled\"",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80Pk\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "seems like this is the only line that needed to be changed... why change the other lines in this function?",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80Pg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "same here, why change the other lines?",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80PY\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1673,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "change \"fields\" to \"field\"",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/80PI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T01:11:51Z",
+      "side": 1,
+      "message": "Use \"self.assertIs(project[\u0027enabled\u0027], True)\" here to ensure that the value is a boolean.",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
