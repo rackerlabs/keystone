@@ -62,6 +62,11 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
         self.add_path(revdir)
         self.clear_module('keystoneclient')
 
+    def tearDown(self):
+        self.public_server = None
+        self.admin_server = None
+        super(CompatTestCase, self).tearDown()
+
     def _public_url(self):
         public_port = self.public_server.socket_info['socket'][1]
         return "http://localhost:%s/v2.0" % public_port
