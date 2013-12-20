@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/8vYE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-12-20T20:34:51Z",
+      "side": 1,
+      "message": "could just return the condition lol\n\n  return (\n    callable(item) and\n    inspect.ismethod(item) and\n    not inspect.isbuildin(item))",
+      "revId": "3e2a26281c6d48bdb1505bad350ffd5a33831aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/8vYk\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 7
