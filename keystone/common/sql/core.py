@@ -152,11 +152,6 @@ def transaction(expire_on_commit=False):
         yield session
 
 
-# Backends
-class Base(object):
-    pass
-
-
 def handle_conflicts(conflict_type='object'):
     """Converts select sqlalchemy exceptions into HTTP 409 Conflict."""
     def decorator(method):
