@@ -1085,3 +1085,23 @@ class KcOptTestCase(KcMasterTestCase):
         if not self.checkout_info:
             self.skip('Set KSCTEST_PATH env to test with local client')
         super(KcOptTestCase, self).setUp()
+
+
+class Kc030TestCase(CompatTestCase, KeystoneClientTests):
+    checkout_info = (KEYSTONECLIENT_REPO, '0.3.0')
+
+
+class Kc031TestCase(CompatTestCase, KeystoneClientTests):
+    checkout_info = (KEYSTONECLIENT_REPO, '0.3.1')
+
+
+class Kc032TestCase(CompatTestCase, KeystoneClientTests):
+    checkout_info = (KEYSTONECLIENT_REPO, '0.3.2')
+
+
+class Kc040TestCase(CompatTestCase, KeystoneClientTests):
+    checkout_info = (KEYSTONECLIENT_REPO, '0.4.0')
+
+
+class Kc041TestCase(CompatTestCase, KeystoneClientTests):
+    checkout_info = (KEYSTONECLIENT_REPO, '0.4.1')
