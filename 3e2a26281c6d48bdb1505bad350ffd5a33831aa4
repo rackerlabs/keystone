@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/8vX8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-20T20:30:06Z",
+      "side": 1,
+      "message": "Fair point.  Will keep in mind for future cases like this.  Since this will be removed in the next cycle early-on, I\u0027ll not worry about updating it.",
+      "parentUuid": "AAAATn/8vYs\u003d",
+      "revId": "3e2a26281c6d48bdb1505bad350ffd5a33831aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/8vYk\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-20T20:26:29Z",
       "side": 1,
       "message": "these classes seem unnecessary to me.",
+      "revId": "3e2a26281c6d48bdb1505bad350ffd5a33831aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vYA\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-20T20:30:06Z",
+      "side": 1,
+      "message": "I am just making every effort not to rip out the carpet from under people.  The non-v3 ones are likely not required, but the V3 ones use the .wrap_member stuff that might be valid in out-of-tree extensions.",
+      "parentUuid": "AAAATn/8vYk\u003d",
       "revId": "3e2a26281c6d48bdb1505bad350ffd5a33831aa4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
