@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8vPE\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T21:03:47Z",
+      "side": 1,
+      "message": "can we use addCleanup() in setUp() instead?",
+      "revId": "5d0a5ca2d8d31cc163188ff27f2f39e682acfadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
