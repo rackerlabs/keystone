@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/8veM\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vi8\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "suggest remove \"existing\" from this sentence since it\u0027s redundant... how would you delete non-existent credentials? ... also, this isn\u0027t checking that the project exists.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vig\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "suggest do a debug log here, then could probably remove the comment.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8viU\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "should have a docstring.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8viY\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "suggest do a debug log here, then could probably remove the comment.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vh8\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "the code in 102-110 is very similar to 114-122... suggest refactor into a common function.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9EkY\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -13,6 +115,40 @@
       "writtenOn": "2013-12-17T04:15:42Z",
       "side": 1,
       "message": "This also seems to be duplicate logic. See below for an explanation.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vgo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "should we skip attempting to delete the project if _delete_tokens_for_project() raises ProjectNotFound?",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vgk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "suggest log.debug here.",
       "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -54,6 +190,40 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/8vfE\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "what is r?",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vgQ\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "suggest log.debug here.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9ElE\u003d",
         "filename": "keystone/identity/controllers.py",
         "patchSetId": 5
@@ -83,6 +253,125 @@
       "side": 1,
       "message": "I\u0027ll work on making deletes idempotent at the manager or driver level as a separate patchset.  I think this is a much bigger task than I want to attempt in this part of the refactor.",
       "parentUuid": "AAAATn/9ElE\u003d",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vf4\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "should we skip attempting to delete the user if _delete_tokens_for_user raises UserNotFound?",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vf8\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "suggest log.debug here.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vfo\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "this is duplicated from 618-621 so should be consolidated.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8ve0\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "this looks duplicated.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vew\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "also duplicated.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8veo\u003d",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "add a comment why this should fail.",
+      "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8vek\u003d",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-20T19:57:32Z",
+      "side": 1,
+      "message": "add a comment why this should fail.",
       "revId": "dcefec5e0ff0f45fa079210990b363d667b38442",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
