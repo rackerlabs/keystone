@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/8yhQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-20T09:43:32Z",
+      "side": 1,
+      "message": "It didn\u0027t make sense to me to keep argument name \"tenant_ref\" while using variable \"tenant\" all the time in the body function that\u0027s why i renamed it, this way the code read much better (IMHO) **and** in some sense this can also be the cause of the bug introduction.",
+      "parentUuid": "AAAATn/80Pk\u003d",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/80Pg\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -121,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/8ygs\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1673,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-20T09:43:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/80PY\u003d",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/80PI\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 2
@@ -132,6 +168,24 @@
       "writtenOn": "2013-12-20T01:11:51Z",
       "side": 1,
       "message": "Use \"self.assertIs(project[\u0027enabled\u0027], True)\" here to ensure that the value is a boolean.",
+      "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8ygw\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-20T09:43:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/80PI\u003d",
       "revId": "7d1dc512f8a8744f596952fea2fe49925272d298",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
