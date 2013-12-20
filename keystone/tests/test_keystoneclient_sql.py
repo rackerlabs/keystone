@@ -29,7 +29,7 @@ from keystone.tests import test_keystoneclient
 CONF = config.CONF
 
 
-class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
+class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
     def config(self, config_files):
         super(KcMasterSqlTestCase, self).config([
             tests.dirs.etc('keystone.conf.sample'),
