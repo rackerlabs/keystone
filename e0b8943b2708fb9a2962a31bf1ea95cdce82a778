@@ -16,6 +16,23 @@
       "revId": "e0b8943b2708fb9a2962a31bf1ea95cdce82a778",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8zrs\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2013-12-20T04:43:10Z",
+      "side": 1,
+      "message": "Nice additional comment!",
+      "revId": "e0b8943b2708fb9a2962a31bf1ea95cdce82a778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
