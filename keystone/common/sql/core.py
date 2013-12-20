@@ -153,11 +153,6 @@ def transaction(expire_on_commit=False):
         yield session
 
 
-# Backends
-class Base(object):
-    pass
-
-
 def filter_query(model, query, hints):
     """Applies filtering to a query.
 

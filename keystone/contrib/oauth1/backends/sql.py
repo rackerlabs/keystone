@@ -82,7 +82,7 @@ class AccessToken(sql.ModelBase, sql.DictBase):
         return dict(self.iteritems())
 
 
-class OAuth1(sql.Base):
+class OAuth1(object):
     def db_sync(self):
         migration.db_sync()
 
