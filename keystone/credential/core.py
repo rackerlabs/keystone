@@ -98,25 +98,21 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_credentials_for_project(self, project_id):
-        """Deletes all existing credentials for an existing project."""
-        for cred in self.list_credentials():
-            if cred['project_id'] == project_id:
-                try:
-                    self.credential_api.delete_credential(cred['id'])
-                except exception.CredentialNotFound:
-                    # NOTE(morganfainberg): If the credential doesn't exist
-                    # it doesn't matter, it is meant to be deleted. Continue
-                    # on and delete the rest.
-                    pass
+        """Deletes all credentials for a project."""
+        self._delete_credentials(project_id=project_id)
 
     @abc.abstractmethod
     def delete_credentials_for_user(self, user_id):
-        for cred in self.list_credentials():
-            if cred['user_id'] == user_id:
-                try:
-                    self.credential_api.delete_credential(cred['id'])
-                except exception.CredentialNotFound:
-                    # NOTE(morganfainberg): If the credential doesn't exist
-                    # it doesn't matter, it is meant to be deleted. Continue
-                    # on and delete the rest.
-                    pass
+        """Deletes all credentials for a user."""
+        self._delete_credentials(user_id=user_id)
+
+    def _delete_credentials(self, user_id=None, project_id=None):
+        for cr in self.list_credentials():
+            if ((project_id is not None and cr['project_id'] != project_id) or
+                    (user_id is not None and cr['user_id'] != project_id)):
+                continue
+            try:
+                self.credential_api.delete_credential(cr['id'])
+            except exception.CredentialNotFound:
+                LOG.debug(_('Deletion of credential %s not required.'),
+                          cr['id'])
