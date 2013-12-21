@@ -98,25 +98,27 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_credentials_for_project(self, project_id):
-        """Deletes all existing credentials for an existing project."""
-        for cred in self.list_credentials():
-            if cred['project_id'] == project_id:
-                try:
-                    self.credential_api.delete_credential(cred['id'])
-                except exception.CredentialNotFound:
-                    # NOTE(morganfainberg): If the credential doesn't exist
-                    # it doesn't matter, it is meant to be deleted. Continue
-                    # on and delete the rest.
-                    pass
+        """Deletes all credentials for a project."""
+        self._delete_credentials(project_id,
+                                 lambda id, cr: cr['user_id'] == id)
 
     @abc.abstractmethod
     def delete_credentials_for_user(self, user_id):
-        for cred in self.list_credentials():
-            if cred['user_id'] == user_id:
+        """Deletes all credentials for a user."""
+        self._delete_credentials(user_id, lambda id, cr: cr['user_id'] == id)
+
+    def _delete_credentials(self, o_id, match_fn):
+        """Do the actual credential deletion work (default implementation).
+
+        :param o_id: identifier used to match objects for deletion
+        :param match_fn: function that takes an id and a credential dict as
+                         parameters and returns true or false if the
+                         identifier matches the credential dict.
+        """
+        for cr in self.list_credentials():
+            if match_fn(o_id, cr):
                 try:
-                    self.credential_api.delete_credential(cred['id'])
+                    self.credential_api.delete_credential(cr['id'])
                 except exception.CredentialNotFound:
-                    # NOTE(morganfainberg): If the credential doesn't exist
-                    # it doesn't matter, it is meant to be deleted. Continue
-                    # on and delete the rest.
-                    pass
+                    LOG.debug(_('Deletion of credential %s not required.'),
+                              cr['id'])
