@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 21 Dec 2013 07:16:54 +0000
+Reviewed-on: https://review.openstack.org/60973
+Project: openstack/keystone
+Branch: refs/heads/master
