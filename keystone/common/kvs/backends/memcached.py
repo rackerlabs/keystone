@@ -27,11 +27,11 @@ from dogpile.cache.backends import memcached
 from keystone.common import manager
 from keystone import config
 from keystone import exception
-from keystone.openstack.common import log
+from keystone.openstack.common import log as logging
 
 
 CONF = config.CONF
-LOG = log.getLogger(__name__)
+LOG = logging.getLogger(__name__)
 NO_VALUE = api.NO_VALUE
 
 

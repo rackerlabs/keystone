@@ -28,7 +28,7 @@ from dogpile.core import nameregistry
 from keystone.common import config
 from keystone import exception
 from keystone.openstack.common import importutils
-from keystone.openstack.common import log
+from keystone.openstack.common import log as logging
 
 
 __all__ = ['KeyValueStore', 'KeyValueStoreLock', 'LockTimeout',
@@ -39,7 +39,7 @@ BACKENDS_REGISTERED = False
 CONF = config.CONF
 KEY_VALUE_STORE_REGISTRY = weakref.WeakValueDictionary()
 LOCK_WINDOW = 1
-LOG = log.getLogger(__name__)
+LOG = logging.getLogger(__name__)
 NO_VALUE = api.NO_VALUE
 
 

@@ -16,11 +16,11 @@
 
 """Notifications module for OpenStack Identity Service resources"""
 
-from keystone.openstack.common import log
+from keystone.openstack.common import log as logging
 from keystone.openstack.common.notifier import api as notifier_api
 
 
-LOG = log.getLogger(__name__)
+LOG = logging.getLogger(__name__)
 
 
 class ManagerNotificationWrapper(object):

@@ -19,7 +19,7 @@ import os
 
 from keystone.common import config
 from keystone import exception
-from keystone.openstack.common import log
+from keystone.openstack.common import log as logging
 
 
 config.configure()
@@ -31,7 +31,7 @@ configure = config.configure
 
 def setup_logging():
     """Sets up logging for the keystone package."""
-    log.setup('keystone')
+    logging.setup('keystone')
 
 
 def find_paste_config():
