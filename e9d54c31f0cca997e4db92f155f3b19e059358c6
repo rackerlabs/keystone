@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8pXY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-12-23T19:08:08Z",
+      "side": 1,
+      "message": "do you really need these duplicates?",
+      "revId": "e9d54c31f0cca997e4db92f155f3b19e059358c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8pXs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2013-12-23T19:08:08Z",
+      "side": 1,
+      "message": "hm... I was sure, that this change already in keystone.",
+      "revId": "e9d54c31f0cca997e4db92f155f3b19e059358c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
