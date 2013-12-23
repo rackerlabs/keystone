@@ -184,6 +184,25 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
         creds = self.default_client.ec2.list(user_id=self.user_foo['id'])
         self.assertEqual(creds, [])
 
+    def test_ec2_credential_crud_admin(self):
+        client = self.get_client(admin=True)
+
+        creds = client.ec2.list(user_id=self.user_foo['id'])
+        self.assertEqual(creds, [])
+
+        cred = client.ec2.create(user_id=self.user_foo['id'],
+                                 tenant_id=self.tenant_bar['id'])
+        creds = client.ec2.list(user_id=self.user_foo['id'])
+        self.assertEqual(creds, [cred])
+        got = client.ec2.get(user_id=self.user_foo['id'],
+                             access=cred.access)
+        self.assertEqual(cred, got)
+
+        client.ec2.delete(user_id=self.user_foo['id'],
+                          access=cred.access)
+        creds = client.ec2.list(user_id=self.user_foo['id'])
+        self.assertEqual(creds, [])
+
     def test_ec2_credential_crud_non_admin(self):
         na_client = self.get_client(self.user_two)
         creds = na_client.ec2.list(user_id=self.user_two['id'])
@@ -224,6 +243,7 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
 
     def test_ec2_credentials_create_404(self):
         from keystoneclient import exceptions as client_exceptions
+
         self.assertRaises(client_exceptions.NotFound,
                           self.default_client.ec2.create,
                           user_id=uuid.uuid4().hex,
@@ -291,6 +311,7 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
 
     def test_endpoint_create_404(self):
         from keystoneclient import exceptions as client_exceptions
+
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
                           client.endpoints.create,
@@ -302,6 +323,7 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
 
     def test_endpoint_delete_404(self):
         from keystoneclient import exceptions as client_exceptions
+
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
                           client.endpoints.delete,
@@ -315,6 +337,7 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
         self.skipTest('Written prior to v3 client; needs refactor')
 
         from keystoneclient import exceptions as client_exceptions
+
         client = self.get_client(admin=True)
 
         policy_blob = uuid.uuid4().hex

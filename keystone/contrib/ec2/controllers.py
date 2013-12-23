@@ -147,12 +147,13 @@ class Ec2Controller(controller.V2Controller):
         :param tenant_id: id of tenant
         :returns: credential: dict of ec2 credential
         """
+        trust_id = None
         if not self._is_admin(context):
             self._assert_identity(context, user_id)
+            trust_id = self._context_trust_id(context)
 
         self._assert_valid_user_id(user_id)
         self._assert_valid_project_id(tenant_id)
-        trust_id = self._context_trust_id(context)
         blob = {'access': uuid.uuid4().hex,
                 'secret': uuid.uuid4().hex,
                 'trust_id': trust_id}
@@ -179,7 +180,7 @@ class Ec2Controller(controller.V2Controller):
             user_id=user_id)
         return {'credentials':
                 [self._convert_v3_to_ec2_credential(credential)
-                for credential in credential_refs]}
+                 for credential in credential_refs]}
 
     def get_credential(self, context, user_id, credential_id):
         """Retrieve a user's access/secret pair by the access key.
