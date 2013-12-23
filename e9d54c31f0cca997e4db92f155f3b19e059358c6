@@ -33,6 +33,24 @@
       "revId": "e9d54c31f0cca997e4db92f155f3b19e059358c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8ot4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2013-12-23T22:33:36Z",
+      "side": 1,
+      "message": "Hm... I have a problems with this part of things. I took the last sync patch from Keystone and used the corresponding information to compile that message. I really do not know how to exclude already synced patches or to find out what the patch is the last synced one. Please describe to me, how to?",
+      "parentUuid": "AAAATn/8pXs\u003d",
+      "revId": "e9d54c31f0cca997e4db92f155f3b19e059358c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
