@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8qdk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9331
+      },
+      "writtenOn": "2013-12-23T15:00:46Z",
+      "side": 1,
+      "message": "In this line you should describe the change, instead of what is the problem.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages",
+      "revId": "90a77844068ee642b38e1e293e16bdf7402ed57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8qbs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/036_extract_name_from_meta_in_services.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 9331
+      },
+      "writtenOn": "2013-12-23T15:00:46Z",
+      "side": 1,
+      "message": "Maybe you can pass this piece of code as a parameter. If you do that you could reuse the common code between the migrate_name_from_extra_json_to_name() and migrate_name_from_name_to_extra_json() methods.",
+      "revId": "90a77844068ee642b38e1e293e16bdf7402ed57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
