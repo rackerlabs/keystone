@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8peA\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-23T21:15:02Z",
+      "side": 1,
+      "message": "Need a comma after notifications",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
