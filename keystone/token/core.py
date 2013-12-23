@@ -95,7 +95,8 @@ def validate_auth_info(self, user_ref, tenant_ref):
             raise exception.Unauthorized(msg)
 
 
-@dependency.requires('token_provider_api')
+@dependency.requires('assignment_api', 'identity_api', 'token_provider_api',
+                     'trust_api')
 @dependency.provider('token_api')
 class Manager(manager.Manager):
     """Default pivot point for the Token backend.
@@ -181,6 +182,42 @@ class Manager(manager.Manager):
         # invalidate() because of the way the invalidation method works on
         # determining cache-keys.
         self.list_revoked_tokens.invalidate(self)
+
+    def delete_tokens_for_domain(self, domain_id):
+        """Delete all tokens for a given domain."""
+        projects = self.assignment_api.list_projects()
+        for project in projects:
+            if project['domain_id'] == domain_id:
+                for user_id in self.assignment_api.list_user_ids_for_project(
+                        project['id']):
+                    self.delete_tokens_for_user(user_id, project['id'])
+        # TODO(morganfainberg): implement deletion of domain_scoped tokens.
+
+    def delete_tokens_for_user(self, user_id, project_id=None):
+        """Delete all tokens for a given user or user-project combination.
+
+        This method adds in the extra logic for handling trust-scoped token
+        revocations in a single call instead of needing to explicitly handle
+        trusts in the caller's logic.
+        """
+        self.delete_tokens(user_id, tenant_id=project_id)
+        for trust in self.trust_api.list_trusts_for_trustee(user_id):
+            self.delete_tokens(user_id, trust_id=trust['id'])
+        for trust in self.trust_api.list_trusts_for_trustor(user_id):
+            self.delete_tokens(trust['trustee_user_id'], trust_id=trust['id'])
+
+    def delete_tokens_for_users(self, user_ids, project_id=None):
+        """Delete all tokens for a list of user_ids.
+
+        :param user_ids: list of user identifiers
+        :param project_id: optional project identifier
+        """
+        if (not(hasattr(user_ids, '__iter__') or
+                isinstance(user_ids, six.string_types))):
+            msg = _('`user_ids` must be a non-string iterable, got: %s')
+            raise TypeError(msg % type(user_ids))
+        for user_id in user_ids:
+            self.delete_tokens_for_user(user_id, project_id)
 
     def _invalidate_individual_token_cache(self, token_id):
         # NOTE(morganfainberg): invalidate takes the exact same arguments as
