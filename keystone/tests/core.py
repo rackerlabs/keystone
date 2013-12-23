@@ -505,15 +505,16 @@ class TestCase(testtools.TestCase):
         self.fail(self._formatMessage(msg, standardMsg))
 
     def skip_if_no_ipv6(self):
-        try:
-            s = socket.socket(socket.AF_INET6)
-        except socket.error as e:
-            if e.errno == errno.EAFNOSUPPORT:
+        if socket.has_ipv6:
+            sock = None
+            try:
+                sock = socket.socket(socket.AF_INET6)
+                sock.bind(("::1", 0))
+            except socket.error:
                 raise self.skipTest("IPv6 is not enabled in the system")
-            else:
-                raise
-        else:
-            s.close()
+            finally:
+                if sock:
+                    sock.close()
 
     def assertSetEqual(self, set1, set2, msg=None):
         # TODO(morganfainberg): Remove this and self._assertSetEqual once
