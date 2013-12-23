@@ -2199,6 +2199,11 @@ class IdentityTests(object):
         new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
+        # Make sure we get an empty list back on a new group, not an error.
+        user_refs = self.identity_api.list_users_in_group(new_group['id'])
+        self.assertEqual(user_refs, [])
+        # Make sure we get the correct users back once they have been added
+        # to the group.
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
                     'domain_id': domain['id']}
