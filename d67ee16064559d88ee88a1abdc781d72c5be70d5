@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8md8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-24T14:06:37Z",
+      "side": 1,
+      "message": "Typo s/dependancy/dependency",
+      "revId": "d67ee16064559d88ee88a1abdc781d72c5be70d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8mgA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-24T14:06:37Z",
+      "side": 1,
+      "message": "This log message is missing the _ prefix to make it translatable",
+      "revId": "d67ee16064559d88ee88a1abdc781d72c5be70d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
