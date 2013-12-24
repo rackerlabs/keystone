@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8mhc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-24T13:51:55Z",
+      "side": 1,
+      "message": "typo s/dependancy/dependency",
+      "revId": "718b451d6e95ecfc1a59b9e2fdeb3c79e987d8fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
