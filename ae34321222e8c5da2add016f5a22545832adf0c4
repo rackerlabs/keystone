@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8mWA\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-24T15:04:53Z",
+      "side": 1,
+      "message": "Nice!!! I didn\u0027t know this flag was available",
+      "revId": "ae34321222e8c5da2add016f5a22545832adf0c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8mTU\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-24T15:04:53Z",
+      "side": 1,
+      "message": "Given some folks may not be as familiar with IPv6 please add a comment before this line that says Try to bind to IPv6 loopback ip address.",
+      "revId": "ae34321222e8c5da2add016f5a22545832adf0c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
