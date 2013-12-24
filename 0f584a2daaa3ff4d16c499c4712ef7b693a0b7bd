@@ -16,6 +16,23 @@
       "revId": "0f584a2daaa3ff4d16c499c4712ef7b693a0b7bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8mXM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-24T14:50:34Z",
+      "side": 1,
+      "message": "I agree with Ilya.  If you could give a little more explanation it would be helpful.  Other than that looks great",
+      "revId": "0f584a2daaa3ff4d16c499c4712ef7b693a0b7bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
