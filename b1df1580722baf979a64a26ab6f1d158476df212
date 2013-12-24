@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8mkw\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2013-12-24T13:42:46Z",
+      "side": 1,
+      "message": "This means that trusts are worthless for any user who has the admin role, not just the service admin token.\n\nConsider when https://bugs.launchpad.net/keystone/+bug/968696 gets fixed, this then becomes a giant security hole where any user delegating a role via impersonation to an admin user in another project effectively delegates everything whether they want to or not (defeating the entire point of trusts)",
+      "revId": "b1df1580722baf979a64a26ab6f1d158476df212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
