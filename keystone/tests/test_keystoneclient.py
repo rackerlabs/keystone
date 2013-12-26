@@ -672,6 +672,21 @@ class KeystoneClientTests(object):
         user = users[0]
         self.assertRaises(AttributeError, lambda: user.password)
 
+    def test_user_list_limit(self):
+        client = self.get_client(admin=True)
+        users = client.users.list()
+        users_limited = client.users.list(limit=2)
+        self.assertEqual(len(users_limited), 2)
+        self.assertEqual(users[0].name, users_limited[0].name)
+        self.assertEqual(users[1].name, users_limited[1].name)
+
+    def test_user_list_limit_bad_value(self):
+        from keystoneclient import exceptions as client_exceptions
+        client = self.get_client(admin=True)
+        self.assertRaises(ValueError, client.users.list, limit='a')
+        self.assertRaises(client_exceptions.BadRequest,
+                          client.users.list, limit=-1)
+
     def test_user_get(self):
         client = self.get_client(admin=True)
         user = client.users.get(user=self.user_foo['id'])
