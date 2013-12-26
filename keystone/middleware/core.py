@@ -44,6 +44,12 @@ CONTEXT_ENV = wsgi.CONTEXT_ENV
 PARAMS_ENV = wsgi.PARAMS_ENV
 
 
+# The xml response namespaces for diffrent api versions
+VERSION_XMLNS = {
+    "v3": "http://docs.openstack.org/identity/api/v3",
+}
+
+
 class TokenAuthMiddleware(wsgi.Middleware):
     def process_request(self, request):
         token = request.headers.get(AUTH_TOKEN_HEADER)
@@ -163,8 +169,10 @@ class XmlBodyMiddleware(wsgi.Middleware):
         if outgoing_xml and response.body:
             response.content_type = 'application/xml'
             try:
+                api_version = request.path.split("/")[1]
+                xmlns = VERSION_XMLNS.get(api_version, None)
                 body_obj = jsonutils.loads(response.body)
-                response.body = serializer.to_xml(body_obj)
+                response.body = serializer.to_xml(body_obj, xmlns)
             except Exception:
                 LOG.exception('Serializer failed')
                 raise exception.Error(message=response.body)
