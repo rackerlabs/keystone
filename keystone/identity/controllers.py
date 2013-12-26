@@ -110,7 +110,18 @@ class User(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
+        limit = context['query_string'].get('limit')
+        if limit is not None:
+            try:
+                limit = int(limit)
+                if limit < 0:
+                    raise AssertionError()
+            except (ValueError, AssertionError):
+                msg = _('Invalid limit value')
+                raise exception.ValidationError(message=msg)
         user_list = self.identity_api.list_users()
+        if limit is not None:
+            user_list = user_list[:limit]
         return {'users': self.identity_api.v3_to_v2_user(user_list)}
 
     @controller.v2_deprecated
