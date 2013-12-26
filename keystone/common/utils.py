@@ -515,3 +515,36 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def paginate(entities, limit=None, marker=None):
+    '''Returns the subset of entities, bounded by limit and marker.
+
+    :entities: sequence of dicts to apply pagination
+    :param limit: maximum number of items to return
+    :param marker: the id of last item of the previous page; we returns
+                    the next results after this value
+
+    :return: subset of entities, bounded by limit and marker.
+    '''
+
+    first_index = 0
+    if marker is not None:
+        try:  # start pagination after marker
+            first_index = [ent['id'] for ent in entities].index(marker) + 1
+        except ValueError:
+            msg = _('Marker could not be found')
+            raise exception.ValidationError(message=msg)
+
+    last_index = None
+    if limit is not None:
+        try:
+            limit = int(limit)
+            if limit <= 0:
+                    raise ValueError()
+        except ValueError:
+            msg = _('Invalid limit value')
+            raise exception.ValidationError(message=msg)
+        last_index = first_index + limit
+
+    return entities[first_index:last_index]
