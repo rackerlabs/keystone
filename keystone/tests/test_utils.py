@@ -35,6 +35,7 @@ import os
 import time
 
 from keystone.common import utils
+from keystone import exception
 from keystone import tests
 
 
@@ -148,6 +149,20 @@ class UtilsTestCase(tests.TestCase):
         for d in ['+0', '-11', '-8', '-5', '+5', '+8', '+14']:
             TZ = 'UTC' + d
             _test_unixtime()
+
+    def test_paginate(self):
+        entities = [{'id': '1'}, {'id': '2'}, {'id': '3'}, {'id': '4'},
+                    {'id': '5'}]
+        self.assertEqual(entities, utils.paginate(entities, None, None))
+        self.assertEqual(entities[:2], utils.paginate(entities, 2, None))
+        self.assertEqual(entities[2:4],
+                         utils.paginate(entities, 2, entities[1]['id']))
+        self.assertRaises(exception.ValidationError,
+                          utils.paginate, entities, limit=-1)
+        self.assertRaises(exception.ValidationError,
+                          utils.paginate, entities, limit='a')
+        self.assertRaises(exception.ValidationError,
+                          utils.paginate, entities, marker='10')
 
 
 class LimitingReaderTests(tests.TestCase):
