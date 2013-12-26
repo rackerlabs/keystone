@@ -23,6 +23,7 @@ import uuid
 from keystone.assignment import controllers as assignment_controllers
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log as logging
@@ -110,7 +111,10 @@ class User(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        user_list = self.identity_api.list_users()
+        limit = context['query_string'].get('limit')
+        marker = context['query_string'].get('marker')
+        user_list = utils.paginate(self.identity_api.list_users(),
+                                   limit, marker)
         return {'users': self.identity_api.v3_to_v2_user(user_list)}
 
     @controller.v2_deprecated
