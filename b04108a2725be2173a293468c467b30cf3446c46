@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//5Is\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "Is there only one federation driver currently?  Will there be more of these in the future?  Would be good to know what the expectations are here for the future",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5IY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be commented out in the sample file?",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5Fw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "Why the extra parentheses around the default value?",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5EI\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "Clouds should be Cloud",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5DE\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/migrate.cfg",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "What does this mean, you can use the name of your project? Is this referring to a particular Keystone project?",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5D0\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "Great comment!!!",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5DU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "\"let\u0027s\" should be  \"lets us\"",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//5DQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T19:58:57Z",
+      "side": 1,
+      "message": "\"however\" should be \"with each\"",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
