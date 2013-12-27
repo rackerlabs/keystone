@@ -36,8 +36,7 @@
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 
 import distutils.version as dist_version
 import os
@@ -242,7 +241,7 @@ def db_version(abs_path, init_version):
         engine = get_engine()
         meta.reflect(bind=engine)
         tables = meta.tables
-        if len(tables) == 0:
+        if len(tables) == 0 or 'alembic_version' in tables:
             db_version_control(abs_path, init_version)
             return versioning_api.db_version(get_engine(), repository)
         else:
