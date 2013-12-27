@@ -18,17 +18,15 @@ from __future__ import absolute_import
 
 import os
 
-from migrate import exceptions
-
 from oslo.config import cfg
 import pbr.version
 
 from keystone.common import openssl
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
 from keystone import contrib
+from keystone.openstack.common.db.sqlalchemy import migration_cli
 from keystone.openstack.common import importutils
 from keystone import token
 
@@ -46,78 +44,85 @@ class BaseApp(object):
         return parser
 
 
-class DbSync(BaseApp):
-    """Sync the database."""
+class DbManage(BaseApp):
 
-    name = 'db_sync'
+    name = 'db'
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(DbSync, cls).add_argument_parser(subparsers)
-        parser.add_argument('version', default=None, nargs='?',
-                            help=('Migrate the database up to a specified '
-                                  'version. If not provided, db_sync will '
-                                  'migrate the database to the latest known '
-                                  'version.'))
+        parser = super(DbManage, cls).add_argument_parser(subparsers)
+
+        sync_parser = subparsers.add_parser('db_sync')
+        sync_parser.set_defaults(cmd_class=cls)
+        sync_parser.set_defaults(method='upgrade')
+
+        version_parser = subparsers.add_parser('db_version')
+        version_parser.set_defaults(cmd_class=cls)
+        version_parser.set_defaults(method='version')
+
         parser.add_argument('--extension', default=None,
                             help=('Migrate the database for the specified '
                                   'extension. If not provided, db_sync will '
                                   'migrate the common repository.'))
 
+        parser.add_argument('--revision', nargs='?')
+
+        parser.add_argument('-m', '--message')
+        parser.add_argument('--autogenerate', action='store_true')
+
+        parser.add_argument('method', choices=['upgrade', 'downgrade',
+                                               'stamp', 'revision', 'version'])
         return parser
 
-    @staticmethod
-    def main():
-        version = CONF.command.version
-        extension = CONF.command.extension
-        if not extension:
-            migration.db_sync(version=version)
-        else:
-            package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
-            try:
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(0)
-            try:
-                # Register the repo with the version control API
-                # If it already knows about the repo, it will throw
-                # an exception that we can safely ignore
-                migration.db_version_control(version=None, repo_path=repo_path)
-            except exceptions.DatabaseAlreadyControlledError:
-                pass
-            migration.db_sync(version=version, repo_path=repo_path)
-
-
-class DbVersion(BaseApp):
-    """Print the current migration version of the database."""
-
-    name = 'db_version'
+    @classmethod
+    def upgrade(cls, manager):
+        manager.upgrade(CONF.command.revision)
 
     @classmethod
-    def add_argument_parser(cls, subparsers):
-        parser = super(DbVersion, cls).add_argument_parser(subparsers)
-        parser.add_argument('--extension', default=None,
-                            help=('Migrate the database for the specified '
-                                  'extension. If not provided, db_sync will '
-                                  'migrate the common repository.'))
+    def downgrade(cls, manager):
+        manager.downgrade(CONF.command.revision)
 
-    @staticmethod
-    def main():
-        extension = CONF.command.extension
-        if extension:
-            try:
-                package_name = ("%s.%s.migrate_repo" %
-                                (contrib.__name__, extension))
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-                print(migration.db_version(repo_path))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(1)
+    @classmethod
+    def revision(cls, manager):
+        manager.revision(CONF.command.message, CONF.command.autogenerate)
+
+    @classmethod
+    def stamp(cls, manager):
+        manager.stamp(CONF.command.revision)
+
+    @classmethod
+    def version(cls, manager):
+        print(manager.version())
+
+    @classmethod
+    def main(cls):
+        if CONF.command.extension:
+            path = cls.get_extension_path()
         else:
-            print(migration.db_version())
+            path = sql.__path__[0]
+
+        alembic_path = os.path.join(sql.__path__[0], 'alembic.ini')
+        migrate_repo_path = os.path.join(path, 'migrate_repo')
+        alembic_repo_path = os.path.join(path, 'alembic')
+        migration_config = {'alembic_ini_path': alembic_path,
+                            'migration_repo_path': migrate_repo_path,
+                            'alembic_repo_path': alembic_repo_path,
+                            'init_version': 000}
+
+        manager = migration_cli.get_migration_manager(migration_config)
+
+        getattr(cls, CONF.command.method)(manager)
+
+    @classmethod
+    def get_extension_path(cls):
+        extension = CONF.command.extension
+        package_name = "%s.%s" % (contrib.__name__, extension)
+        try:
+            package = importutils.import_module(package_name)
+            return os.path.abspath(os.path.dirname(package.__file__))
+        except ImportError:
+            print("There is no {0} extension.".format(extension))
+            exit(1)
 
 
 class BaseCertificateSetup(BaseApp):
@@ -190,11 +195,10 @@ class TokenFlush(BaseApp):
 
 
 CMDS = [
-    DbSync,
-    DbVersion,
     PKISetup,
     SSLSetup,
     TokenFlush,
+    DbManage
 ]
 
 
