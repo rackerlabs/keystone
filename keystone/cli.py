@@ -29,6 +29,7 @@ from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
 from keystone import contrib
+from keystone.openstack.common.db.sqlalchemy import migration_cli
 from keystone.openstack.common import importutils
 from keystone import token
 
@@ -44,6 +45,79 @@ class BaseApp(object):
         parser = subparsers.add_parser(cls.name, help=cls.__doc__)
         parser.set_defaults(cmd_class=cls)
         return parser
+
+
+class DbManage(BaseApp):
+
+    name = 'db'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(DbManage, cls).add_argument_parser(subparsers)
+
+        parser.add_argument('--extension', default=None,
+                            help=('Migrate the database for the specified '
+                                  'extension. If not provided, db_sync will '
+                                  'migrate the common repository.'))
+
+        parser.add_argument('--revision', nargs='?')
+
+        parser.add_argument('-m', '--message')
+        parser.add_argument('--autogenerate', action='store_true')
+
+        parser.add_argument('method', choices=['upgrade', 'downgrade',
+                                               'stamp', 'revision', 'version'])
+        return parser
+
+    @classmethod
+    def upgrade(cls, manager):
+        manager.upgrade(CONF.command.revision)
+
+    @classmethod
+    def downgrade(cls, manager):
+        manager.downgrade(CONF.command.revision)
+
+    @classmethod
+    def revision(cls, manager):
+        manager.revision(CONF.command.message, CONF.command.autogenerate)
+
+    @classmethod
+    def stamp(cls, manager):
+        manager.stamp(CONF.command.revision)
+
+    @classmethod
+    def version(cls, manager):
+        print(manager.version())
+
+    @classmethod
+    def main(cls):
+        if CONF.command.extension:
+            path = cls.get_extension_path()
+        else:
+            path = sql.__path__[0]
+
+        alembic_path = os.path.join(sql.__path__[0], 'alembic.ini')
+        migrate_repo_path = os.path.join(path, 'migrate_repo')
+        alembic_repo_path = os.path.join(path, 'alembic')
+        migration_config = {'alembic_ini_path': alembic_path,
+                            'migration_repo_path': migrate_repo_path,
+                            'alembic_repo_path': alembic_repo_path,
+                            'init_version': 000}
+
+        manager = migration_cli.get_migration_manager(migration_config)
+
+        getattr(cls, CONF.command.method)(manager)
+
+    @classmethod
+    def get_extension_path(cls):
+        extension = CONF.command.extension
+        package_name = "%s.%s" % (contrib.__name__, extension)
+        try:
+            package = importutils.import_module(package_name)
+            return os.path.abspath(os.path.dirname(package.__file__))
+        except ImportError:
+            print("There is no {0} extension.".format(extension))
+            exit(1)
 
 
 class DbSync(BaseApp):
@@ -195,6 +269,7 @@ CMDS = [
     PKISetup,
     SSLSetup,
     TokenFlush,
+    DbManage
 ]
 
 
