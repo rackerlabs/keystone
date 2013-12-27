@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//5Mk\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2013-12-27T18:03:18Z",
+      "side": 1,
+      "message": "Might be worth mentioning in a comment that an entry for v2 is not needed since that is the default namespace value used by keystone.common.serializer",
+      "revId": "7b0193e6f5b8b315811f46d7225541cd19bb34a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
