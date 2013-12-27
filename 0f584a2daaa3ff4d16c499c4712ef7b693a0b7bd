@@ -33,6 +33,24 @@
       "revId": "0f584a2daaa3ff4d16c499c4712ef7b693a0b7bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//57A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2013-12-27T12:41:11Z",
+      "side": 1,
+      "message": "I agree with Brant. The only purpose of logging.getLogger is to return a logger, that can be used afterwards. If the return value is not used, the call doesn\u0027t do anything:\nhttp://docs.python.org/2/library/logging.html#module-level-functions",
+      "parentUuid": "AAAATn/8mXM\u003d",
+      "revId": "0f584a2daaa3ff4d16c499c4712ef7b693a0b7bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
