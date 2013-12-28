@@ -16,6 +16,24 @@
       "revId": "5d0a5ca2d8d31cc163188ff27f2f39e682acfadd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//4pQ\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T02:39:16Z",
+      "side": 1,
+      "message": "++ This is a good idea.",
+      "parentUuid": "AAAATn/8vPE\u003d",
+      "revId": "5d0a5ca2d8d31cc163188ff27f2f39e682acfadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
