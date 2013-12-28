@@ -18,7 +18,9 @@ import os
 import uuid
 import webob
 
+from keystone.common import sql
 from keystone import config
+from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 from keystone import tests
@@ -33,6 +35,19 @@ KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
 
 
 class CompatTestCase(tests.NoModule, tests.TestCase):
+
+    def config(self, config_files):
+        super(CompatTestCase, self).config(config_files)
+
+        # FIXME(morganfainberg): Since we are running tests through the
+        # controllers and some core systems are SQL-only, the correct approach
+        # is to ensure we have the correct backing store. The credential api
+        # makes some very SQL specific assumptions that should be addressed
+        # allowing for non-SQL based testing to occur.
+        self.load_backends()
+        self.engine = session.get_engine()
+        sql.ModelBase.metadata.create_all(bind=self.engine)
+
     def setUp(self):
         super(CompatTestCase, self).setUp()
 
