@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//4lY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T03:54:49Z",
+      "side": 1,
+      "message": "I understand that this is an excerpt from the PEP8 document, however as a commit message it is hard to understand and read.  Suggest re-phrasing to make this a bit more clear.\n\nExample (below) is a bit more readable and avoids copy/paste of the PEP8 doc that out of context is harder-to-read (if there is disagreement on the readability, I\u0027ll change my vote on this patchset):\n\nIn accordance with the pep8 recommendations instances of `if len(seq)` with `if seq` and `if not len(seq)` with `if not seq`.",
+      "revId": "9234b5acc39403d58c8b26258d10a51ca93a4c83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
