@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//4HY\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T17:41:48Z",
+      "side": 1,
+      "message": "This will not always solve the issue.  If member is a non-empty dict but does not contain the member_attribute as a key, this will still raise an exception.  Suggest:\n\nuser_dns \u003d member.get(self.member_attribute, [])\n\n\nThat will ensure that if the key doesn\u0027t exist the loop is skipped and no exception is raised.",
+      "revId": "13573bd65492ff4868eb26f5d11318e7e086798a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
