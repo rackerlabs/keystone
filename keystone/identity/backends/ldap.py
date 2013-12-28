@@ -343,7 +343,10 @@ class GroupApi(common_ldap.BaseLdap):
             conn.unbind_s()
         users = []
         for dn, member in attrs:
-            user_dns = member[self.member_attribute]
+            # NOTE(morganfainberg): In the case of an empty group, it should
+            # simply make sure user_dns is an empty iterable so we skip the
+            # loop.
+            user_dns = member.get(self.member_attribute, [])
             for user_dn in user_dns:
                 if self.use_dumb_member and user_dn == self.dumb_member:
                     continue
