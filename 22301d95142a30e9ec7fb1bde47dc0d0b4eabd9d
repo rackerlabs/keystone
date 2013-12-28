@@ -50,6 +50,24 @@
       "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//3/s\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-28T19:40:22Z",
+      "side": 1,
+      "message": "Sorry but i didn\u0027t quiet understand what you meant ! the problem is not in clean.project_enabled but the fact that we were passing \"tenant_ref\" instead of \"tenant\" to self.driver.create_project.",
+      "parentUuid": "AAAAT3//4B4\u003d",
+      "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
