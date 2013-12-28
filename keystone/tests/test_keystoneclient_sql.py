@@ -36,10 +36,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
             tests.dirs.tests('test_overrides.conf'),
             tests.dirs.tests('backend_sql.conf')])
 
-        self.load_backends()
-        self.engine = session.get_engine()
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-
     def setUp(self):
         super(KcMasterSqlTestCase, self).setUp()
         self.default_client = self.get_client()
