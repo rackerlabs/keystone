@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//4kw\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T04:08:12Z",
+      "side": 1,
+      "message": "Is a limit of 0 really valid? It seems as if forcing the server to do work if you\u0027re going to return an empty list is incorrect.  Suggest either returning {\u0027users\u0027: []} explicitly or avoid doing the work at line 122 if 0 is the limit specified.  I could also see 0 raising the invalid limit exception on line 121.",
+      "revId": "1e2f4c6178af497324d5d093575d1b8b6e4a01b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//4ks\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T04:08:12Z",
+      "side": 1,
+      "message": "(NIT) You could raise ValueError here, it is an incorrect value, and it simplifies line 119 except line.",
+      "revId": "1e2f4c6178af497324d5d093575d1b8b6e4a01b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//4kk\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T04:08:12Z",
+      "side": 1,
+      "message": "You might want to indicate the invalid limit that was requested in the exception or state what the limit format should be.",
+      "revId": "1e2f4c6178af497324d5d093575d1b8b6e4a01b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
