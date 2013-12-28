@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAT3//4CU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T19:05:07Z",
+      "side": 1,
+      "message": "(NIT) could say \"Default projects enabled on create\" as something more descriptive.",
+      "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/8tYU\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -13,6 +30,23 @@
       "writtenOn": "2013-12-22T04:31:23Z",
       "side": 1,
       "message": "I like how you got rid of tenant_ref. I agree that how you have the code now there would be less chance of this bug occurring.",
+      "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//4B4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-28T19:05:07Z",
+      "side": 1,
+      "message": "In theory, you could have also solved this by making clean.project_enabled return the proper value if \u0027enabled\u0027 didn\u0027t exist in the tenant.",
       "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
