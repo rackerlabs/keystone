@@ -49,7 +49,8 @@ def get_auth_method(method_name):
     return AUTH_METHODS[method_name]
 
 
-@dependency.requires('assignment_api', 'identity_api', 'trust_api')
+@dependency.requires('assignment_api', 'identity_api', 'token_api',
+                     'trust_api')
 class AuthInfo(object):
     """Encapsulation of "auth" request."""
 
@@ -275,7 +276,7 @@ class AuthInfo(object):
         self._scope_data = (domain_id, project_id, trust)
 
 
-@dependency.requires('identity_api', 'token_provider_api')
+@dependency.requires('assignment_api', 'identity_api', 'token_provider_api')
 class Auth(controller.V3Controller):
 
     # Note(atiwari): From V3 auth controller code we are
