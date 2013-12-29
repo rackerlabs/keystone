@@ -85,6 +85,24 @@
       "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//3K0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-29T22:14:29Z",
+      "side": 1,
+      "message": "With your change you could have used the clean.project_enabled logic to make sure the value was set instead of needing to use .setdefault as well.",
+      "parentUuid": "AAAAT3//3/s\u003d",
+      "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
