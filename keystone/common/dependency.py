@@ -203,8 +203,6 @@ def resolve_future_dependencies(provider_name=None):
         for target in targets:
             setattr(target, dependency, provider)
 
-    _future_optionals.clear()
-
     # Resolve optional dependencies, raises UnresolvableDependencyException if
     # there's no provider registered.
     try:
