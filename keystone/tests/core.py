@@ -350,7 +350,7 @@ class TestCase(testtools.TestCase):
         # should eventually be removed once testing has been cleaned up.
         kvs_core.KEY_VALUE_STORE_REGISTRY.clear()
 
-        drivers = service.load_backends(include_oauth1=True)
+        drivers = service.load_backends()
 
         for manager_name, manager in drivers.iteritems():
             setattr(self, manager_name, manager)
