@@ -103,6 +103,24 @@
       "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//3KM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7073
+      },
+      "writtenOn": "2013-12-29T22:40:22Z",
+      "side": 1,
+      "message": "But this mean also that we should have passed something else (tenant object ?) to project_enabled else current code raise a KeyError, which mean that will have to change clean.project_enabled behavior radically (and probably also user_enabled and similar functions) which is a change that i am not comfortable making for now at least, did i understand you correctly ?",
+      "parentUuid": "AAAAT3//3K0\u003d",
+      "revId": "22301d95142a30e9ec7fb1bde47dc0d0b4eabd9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
