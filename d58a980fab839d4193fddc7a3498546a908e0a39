@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//25E\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Q8\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3Sg\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "change \"driver\" to \"drivers\"",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//25w\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Sg\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//25s\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3SY\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3Sc\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "move \",\" before \"and\"",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//25o\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Sc\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//25k\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3SQ\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3SM\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -98,6 +188,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "why would I pass min_compress_len?",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//25g\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "The mechanism to set min_compress_len is the same as memcache_expire_time, i\u0027ll pull this doc change out into it;s own commit though.",
+      "parentUuid": "AAAAT3//3SM\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//25c\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3SI\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3SA\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -132,6 +258,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "seems like \"no_expiry_keys\" should be \"memcached_no_expiry_keys\" to match the pattern. Or, why does \"memcached_expire_time\" need \"memcache_\" ?",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//25U\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "\"memcached_expire_time\" is a dogpile specific argument.  I\u0027ll clarify.  no_expiry_keys can/will be changed.",
+      "parentUuid": "AAAAT3//3SA\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//25Q\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3SE\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3R4\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 12
@@ -166,6 +328,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "does no_expiry_keys also apply to min_compress_len? or is there a no_min_compress_keys?",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//25M\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "min_compress_len is a memcache specific function, not related to the python code but the memcache server.",
+      "parentUuid": "AAAAT3//3R4\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//258\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "I\u0027ll clarify, but \"directly\" means not thoguht the dogpile logic, directly using the backend\u0027s TTL mechanism.",
+      "parentUuid": "AAAAT3//3R0\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3Qc\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -200,6 +398,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "suggest change \"set_arguments\" to \"args_to_set\" since it will make this more readable.",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//26Q\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Qc\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//26Y\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Rw\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3Rs\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -234,6 +468,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "revert random whitespace change.",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//26c\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Rs\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//26g\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3RU\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3RM\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -268,6 +538,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "why is memcached driver called \"memcache_driver\", shouldn\u0027t it be \"memcached_driver\"?",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//26o\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3RM\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//26s\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3RE\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3RI\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -302,6 +608,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "use () to continue a line rather than \\",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//26w\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3RI\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//260\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Qw\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3Qg\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -336,6 +678,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "suggest move this into the if block.",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//264\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Qg\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//268\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3Qo\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3QY\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -370,6 +748,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "suggest set _key_mangler to self.driver.key_mangler rather than set it to None, then don\u0027t need to make this check.",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//244\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "I will need to 2x check on the impact that would have.  There are other bits of code that may get cranky if changed.",
+      "parentUuid": "AAAAT3//3QY\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +789,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//27E\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "I\u0027ll add a comment but this is the equivalent of rehashing the keys.  self._no_expiry_keys is the hashed versions, if key_mangler is None, we don\u0027t rehash.  Yes it should set self._key_mangler.",
+      "parentUuid": "AAAAT3//3QQ\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3QU\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 12
@@ -410,6 +824,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//27A\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//3QU\u003d",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3P4\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 12
@@ -421,6 +853,24 @@
       "writtenOn": "2013-12-29T20:29:51Z",
       "side": 1,
       "message": "I don\u0027t know what \"calculate out\" means.\n\nThe key mangling changes seem like they should be in a separate commit.",
+      "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//254\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:29:42Z",
+      "side": 1,
+      "message": "I can pull them into their own parent commit, but they are tied to the ability to hash the keys and not set a TTL on those keys (dogpile globally sets a TTL if configured to do so, and in the case of certain keys we don\u0027t want that).",
+      "parentUuid": "AAAAT3//3P4\u003d",
       "revId": "d58a980fab839d4193fddc7a3498546a908e0a39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
