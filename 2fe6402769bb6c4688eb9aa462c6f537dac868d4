@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//3I8\u003d",
+        "filename": "keystone/contrib/example/README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T00:03:01Z",
+      "side": 1,
+      "message": "I think doc/source/extensions/example-configuration.rst is supposed to be a guideline, too, so that should stay in this directory.",
+      "revId": "2fe6402769bb6c4688eb9aa462c6f537dac868d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//3JA\u003d",
+        "filename": "keystone/contrib/example/README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T00:03:01Z",
+      "side": 1,
+      "message": "change \"Creating\" to \"Create\"",
+      "revId": "2fe6402769bb6c4688eb9aa462c6f537dac868d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
