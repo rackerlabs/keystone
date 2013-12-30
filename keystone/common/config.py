@@ -265,7 +265,13 @@ FILE_OPTIONS = {
         cfg.ListOpt('backends', default=[]),
         cfg.StrOpt('config_prefix', default='keystone.kvs'),
         cfg.BoolOpt('enable_key_mangler', default=True),
-        cfg.IntOpt('default_lock_timeout', default=5)]}
+        cfg.IntOpt('default_lock_timeout', default=5)],
+    'federated': [
+        cfg.StrOpt('mapping_file', default='/etc/keystone/mapping_file'),
+        cfg.StrOpt('issuing_policy_file',
+                   default='/etc/keystone/issuing_policy_file'),
+        cfg.StrOpt('SPName', default='KeystoneClientSecure'),
+        cfg.StrOpt('request_signing_key', default=None)]}
 
 
 CONF = cfg.CONF
