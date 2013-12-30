@@ -16,6 +16,24 @@
       "revId": "ab8b374b6626d08c49dd1f4530c46a0a5648b9a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//22o\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T02:52:13Z",
+      "side": 1,
+      "message": "Ah, dang it, that was a copy-paste error.",
+      "parentUuid": "AAAAT3//23g\u003d",
+      "revId": "ab8b374b6626d08c49dd1f4530c46a0a5648b9a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
