@@ -16,6 +16,24 @@
       "revId": "13573bd65492ff4868eb26f5d11318e7e086798a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//20U\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 9206
+      },
+      "writtenOn": "2013-12-30T03:19:46Z",
+      "side": 1,
+      "message": "The search only get the member_attribute.\nSo, if there is no member_attribute in any group, the \"member\" is an empty dict.\nAnd your suggestion is good, I will follow your suggestion and commit code again.",
+      "parentUuid": "AAAAT3//4HY\u003d",
+      "revId": "13573bd65492ff4868eb26f5d11318e7e086798a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
