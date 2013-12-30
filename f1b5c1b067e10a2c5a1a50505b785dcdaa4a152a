@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//2/Q\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T01:41:01Z",
+      "side": 1,
+      "message": "should pass in a function and the id. e.g.\n\n def _delete_credentials(self, id, fn):\n    ... if id !\u003d fn(cr): continue\n\nthen call like\n\n self._delete_credentials(project_id, lambda cr: cr[\u0027project_id\u0027])\n\nthen don\u0027t need to have the complicated logic below.",
+      "revId": "f1b5c1b067e10a2c5a1a50505b785dcdaa4a152a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
