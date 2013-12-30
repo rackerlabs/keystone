@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//3Iw\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T00:16:03Z",
+      "side": 1,
+      "message": "The configuration shouldn\u0027t be changed in the middle of a test because that\u0027s not something Keystone supports. Since this test needs a user with certain values then create the user by going directly to LDAP.",
+      "revId": "a1bd6e9358ee4c02277bd5d75a62dee2d912efba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
