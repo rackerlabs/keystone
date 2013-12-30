@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//3B4\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T01:21:01Z",
+      "side": 1,
+      "message": "should raise skipTest if not socket.has_ipv6?",
+      "revId": "134071a3bfd44ca3b42c3ee0322ac5269f8c5d43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
