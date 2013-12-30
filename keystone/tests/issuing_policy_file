@@ -1,0 +1,15 @@
+<IssuingPolicy>
+	<Issuer service_id="1">
+		<Attributes>
+			<Attribute type="unikentaccountType">
+				<AttributeValue>pgrstudent</AttributeValue>
+				<AttributeValue>staff</AttributeValue>
+				<AttributeValue>guest</AttributeValue>
+			</Attribute>
+			<Attribute type="uid">
+				<AttributeValue/>
+			</Attribute>
+		</Attributes>
+	</Issuer>
+</IssuingPolicy>
+
