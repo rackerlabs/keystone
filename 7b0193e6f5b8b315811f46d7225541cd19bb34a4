@@ -16,6 +16,24 @@
       "revId": "7b0193e6f5b8b315811f46d7225541cd19bb34a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//2/4\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T01:34:46Z",
+      "side": 1,
+      "message": "There shouldn\u0027t be a default, since either v2 or v3 are equally valid.",
+      "parentUuid": "AAAAT3//5Mk\u003d",
+      "revId": "7b0193e6f5b8b315811f46d7225541cd19bb34a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
