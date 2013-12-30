@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//0Ls\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2013-12-30T22:50:50Z",
+      "side": 1,
+      "message": "Done: https://bugs.launchpad.net/keystone/+bug/1265071",
+      "parentUuid": "AAAAT3//4Bk\u003d",
+      "revId": "17dc72edfeec75d2c852e74a532cf0c617f5ed61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//4AQ\u003d",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-28T19:46:25Z",
       "side": 1,
       "message": "There is a comment at: https://review.openstack.org/#/c/56430/ about putting transactions around even single calls, specifically to make it explicit demarcation.  I\u0027d like to see new SQL backends adhere to this (I know we need to go cleanup some that may not adhere to this).\n\nSo, please add the context manager \"with session.begin()\" here (in short)",
+      "revId": "17dc72edfeec75d2c852e74a532cf0c617f5ed61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//0Lk\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2013-12-30T22:50:50Z",
+      "side": 1,
+      "message": "I don\u0027t see the point in putting session.begin() around SELECT calls if the SELECT is not done with a FOR UPDATE.",
+      "parentUuid": "AAAAT3//4Ac\u003d",
       "revId": "17dc72edfeec75d2c852e74a532cf0c617f5ed61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
