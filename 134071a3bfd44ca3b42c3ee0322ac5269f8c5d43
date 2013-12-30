@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAT3//3Bk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T01:21:37Z",
+      "side": 1,
+      "message": "why doesn\u0027t this link to the bug?",
+      "revId": "134071a3bfd44ca3b42c3ee0322ac5269f8c5d43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//3B4\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 4
