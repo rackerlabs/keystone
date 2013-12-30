@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//0Js\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T23:24:05Z",
+      "side": 1,
+      "message": "change \"diffrent\" to \"different\"",
+      "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//0Jw\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T23:24:05Z",
+      "side": 1,
+      "message": "use \u0027 for strings, see https://github.com/openstack/keystone/blob/master/HACKING.rst#keystone-specific-commandments",
+      "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//0Jk\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T23:24:05Z",
+      "side": 1,
+      "message": "use a named argument for a named parameter -- change \"xmlns\" to \"xmlns\u003dxmlns\"",
+      "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
