@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//0Ko\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T23:07:13Z",
+      "side": 1,
+      "message": "Looks like id is always going to be project_id. If so, could make this...\n\n self._delete_credentials(lambda cr: cr[\u0027user_id\u0027] \u003d\u003d project_id)",
+      "revId": "be50cd64f57196814a42b4ec36d8273695dc6fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
