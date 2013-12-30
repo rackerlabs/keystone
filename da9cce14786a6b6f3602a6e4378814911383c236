@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//3Hk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T00:27:49Z",
+      "side": 1,
+      "message": "this commit changes a lot more than just the user_attribute_ignore default value, so the commit message should match what the actual change is.",
+      "revId": "da9cce14786a6b6f3602a6e4378814911383c236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//3Ho\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T00:27:49Z",
+      "side": 1,
+      "message": "remove this comment since it\u0027s obvious from the commit.",
+      "revId": "da9cce14786a6b6f3602a6e4378814911383c236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
