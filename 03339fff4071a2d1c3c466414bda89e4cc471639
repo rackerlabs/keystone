@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//2cA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2013-12-30T07:03:08Z",
+      "side": 1,
+      "message": "Suggest making this a debug.  There is no reason to cause extra log lines for a perfectly acceptable (and possible) situation under production (read: not debug) scenarios.",
+      "revId": "03339fff4071a2d1c3c466414bda89e4cc471639",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
