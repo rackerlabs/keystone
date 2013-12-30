@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//3BA\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T01:26:24Z",
+      "side": 1,
+      "message": "this needs an argument... not sure why this passed tests.",
+      "revId": "b3deb5425f279d4e11a71d6621bd19c5037fd464",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
