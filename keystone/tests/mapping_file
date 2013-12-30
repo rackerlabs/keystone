@@ -1,0 +1,16 @@
+<AttributeMappings>
+    <AttributeMapping>
+        <ExternalAttributes>
+            <Attribute type="attribute_type" requirement="any" />
+        </ExternalAttributes>
+        <InternalAttributes>
+            <Attribute type="project">
+                <AttributeValue>project_id</AttributeValue>
+            </Attribute>
+            <Attribute type="role">
+                <AttributeValue>role_id</AttributeValue>
+            </Attribute>
+        </InternalAttributes>
+    </AttributeMapping>
+</AttributeMappings>
+
