@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//3Eo\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-30T01:06:35Z",
+      "side": 1,
+      "message": "If we\u0027re going to standardize on something then let\u0027s standardize on the more obvious method of not renaming the import.",
+      "revId": "a88cac9b0f084b524b4693bcee1829cb583adc08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
