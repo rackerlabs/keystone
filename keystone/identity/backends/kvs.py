@@ -49,7 +49,8 @@ class Identity(kvs.Base, identity.Driver):
 
     def _get_user_by_name(self, user_name, domain_id):
         try:
-            return self.db.get('user_name-%s' % user_name)
+            return self.db.get(
+                self._calc_user_name_key_from_name(user_name, domain_id))
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_name)
 
@@ -88,7 +89,7 @@ class Identity(kvs.Base, identity.Driver):
         new_user.setdefault('groups', [])
 
         self.db.set('user-%s' % user_id, new_user)
-        self.db.set('user_name-%s' % new_user['name'], new_user)
+        self.db.set(self._calc_user_name_key(new_user), new_user)
         user_list = set(self.db.get('user_list', []))
         user_list.add(user_id)
         self.db.set('user_list', list(user_list))
@@ -96,7 +97,7 @@ class Identity(kvs.Base, identity.Driver):
 
     def update_user(self, user_id, user):
         if 'name' in user:
-            existing = self.db.get('user_name-%s' % user['name'], False)
+            existing = self.db.get(self._calc_user_name_key(user), False)
             if existing and user_id != existing['id']:
                 msg = 'Duplicate name, %s.' % user['name']
                 raise exception.Conflict(type='user', details=msg)
@@ -110,9 +111,9 @@ class Identity(kvs.Base, identity.Driver):
         new_user.update(user)
         if new_user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
-        self.db.delete('user_name-%s' % old_user['name'])
+        self.db.delete(self._calc_user_name_key(old_user))
         self.db.set('user-%s' % user_id, new_user)
-        self.db.set('user_name-%s' % new_user['name'], new_user)
+        self.db.set(self._calc_user_name_key(new_user), new_user)
         return identity.filter_user(new_user)
 
     def add_user_to_group(self, user_id, group_id):
@@ -156,7 +157,7 @@ class Identity(kvs.Base, identity.Driver):
             old_user = self.db.get('user-%s' % user_id)
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_id)
-        self.db.delete('user_name-%s' % old_user['name'])
+        self.db.delete(self._calc_user_name_key(old_user))
         self.db.delete('user-%s' % user_id)
         user_list = set(self.db.get('user_list', []))
         user_list.remove(user_id)
