@@ -18,7 +18,6 @@
 import logging
 import os
 import signal
-import socket
 import sys
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
@@ -32,7 +31,6 @@ if os.path.exists(os.path.join(possible_topdir,
     sys.path.insert(0, possible_topdir)
 
 
-from paste import deploy
 import pbr.version
 
 from keystone.openstack.common import gettextutils
@@ -42,24 +40,12 @@ from keystone.openstack.common import gettextutils
 # contain static translated strings.
 gettextutils.install('keystone')
 
-from keystone.common import environment
+from keystone.application import eventlet_server
 from keystone.common import sql
-from keystone.common import utils
 from keystone import config
-from keystone.openstack.common import importutils
-from keystone import service
 
 
 CONF = config.CONF
-
-
-def create_server(conf, name, host, port):
-    app = deploy.loadapp('config:%s' % conf, name=name)
-    server = environment.Server(app, host=host, port=port)
-    if CONF.ssl.enable:
-        server.set_ssl(CONF.ssl.certfile, CONF.ssl.keyfile,
-                       CONF.ssl.ca_certs, CONF.ssl.cert_required)
-    return name, server
 
 
 def sigint_handler(signal, frame):
@@ -68,30 +54,8 @@ def sigint_handler(signal, frame):
     sys.exit(0)
 
 
-def serve(*servers):
+def setup_interrupt_handler():
     signal.signal(signal.SIGINT, sigint_handler)
-
-    for name, server in servers:
-        try:
-            server.start()
-        except socket.error:
-            logging.exception(_('Failed to start the %(name)s server') % {
-                'name': name})
-            raise
-
-    # notify calling process we are ready to serve
-    if CONF.onready:
-        try:
-            notifier = importutils.import_module(CONF.onready)
-            notifier.notify()
-        except ImportError:
-            try:
-                utils.check_output(CONF.onready.split())
-            except Exception:
-                logging.exception('Failed to execute onready command')
-
-    for name, server in servers:
-        server.wait()
 
 
 if __name__ == '__main__':
@@ -110,31 +74,4 @@ if __name__ == '__main__':
 
     config.setup_logging()
 
-    # Log the options used when starting if we're in debug mode...
-    if CONF.debug:
-        CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
-
-    paste_config = config.find_paste_config()
-
-    monkeypatch_thread = not CONF.standard_threads
-    pydev_debug_url = utils.setup_remote_pydev_debug()
-    if pydev_debug_url:
-        # in order to work around errors caused by monkey patching we have to
-        # set the thread to False.  An explanation is here:
-        # http://lists.openstack.org/pipermail/openstack-dev/2012-August/
-        # 000794.html
-        monkeypatch_thread = False
-    environment.use_eventlet(monkeypatch_thread)
-
-    service.load_backends()
-
-    servers = []
-    servers.append(create_server(paste_config,
-                                 'admin',
-                                 CONF.admin_bind_host,
-                                 int(CONF.admin_port)))
-    servers.append(create_server(paste_config,
-                                 'main',
-                                 CONF.public_bind_host,
-                                 int(CONF.public_port)))
-    serve(*servers)
+    eventlet_server.run(pre_start_fn=setup_interrupt_handler)
