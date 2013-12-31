@@ -50,6 +50,24 @@
       "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//z8k\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2013-12-31T01:17:45Z",
+      "side": 1,
+      "message": "Hi Brant, why should I do this change? Is it a standard?",
+      "parentUuid": "AAAAT3//0Jk\u003d",
+      "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
