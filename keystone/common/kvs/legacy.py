@@ -60,3 +60,13 @@ class Base(object):
         elif isinstance(db, dict):
             db = DictKvs(db)
         self.db = db
+
+    def _calc_user_name_key(self, name, domain_id):
+        """Calculate the name of the "user name" key.
+
+        Calculates the name of the key used to store the mapping of user name
+        and domain to user ID. This allows quick lookup of the user ID given
+        a user name and domain ID.
+
+        """
+        return ('user_name-%s-%s' % (domain_id, name))
