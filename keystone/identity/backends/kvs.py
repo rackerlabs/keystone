@@ -49,9 +49,21 @@ class Identity(kvs.Base, identity.Driver):
 
     def _get_user_by_name(self, user_name, domain_id):
         try:
-            return self.db.get('user_name-%s' % user_name)
+            return self.db.get(self._calc_user_name_key(user_name, domain_id))
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_name)
+
+    def _calc_user_id_to_domain_id_key(self, user_id):
+        return ('user_domain-%s' % (user_id))
+
+    def _set_user_id_to_domain_id(self, user_id, domain_id):
+        self.db.set(self._calc_user_id_to_domain_id_key(user_id), domain_id)
+
+    def _clear_user_id_to_domain_id(self, user_id):
+        self.db.delete(self._calc_user_id_to_domain_id_key(user_id))
+
+    def _get_domain_id_for_user(self, user_id):
+        return self.db.get(self._calc_user_id_to_domain_id_key(user_id))
 
     def get_user(self, user_id):
         return identity.filter_user(self._get_user(user_id))
@@ -88,31 +100,37 @@ class Identity(kvs.Base, identity.Driver):
         new_user.setdefault('groups', [])
 
         self.db.set('user-%s' % user_id, new_user)
-        self.db.set('user_name-%s' % new_user['name'], new_user)
+        domain_id = user['domain_id']
+        user_name_key = self._calc_user_name_key(new_user['name'], domain_id)
+        self.db.set(user_name_key, new_user)
+        self._set_user_id_to_domain_id(user_id, domain_id)
         user_list = set(self.db.get('user_list', []))
         user_list.add(user_id)
         self.db.set('user_list', list(user_list))
         return identity.filter_user(new_user)
 
     def update_user(self, user_id, user):
+        try:
+            domain_id = self._get_domain_id_for_user(user_id)
+        except exception.NotFound:
+            raise exception.UserNotFound(user_id=user_id)
         if 'name' in user:
-            existing = self.db.get('user_name-%s' % user['name'], False)
+            user_key = self._calc_user_name_key(user['name'], domain_id)
+            existing = self.db.get(user_key, False)
             if existing and user_id != existing['id']:
                 msg = 'Duplicate name, %s.' % user['name']
                 raise exception.Conflict(type='user', details=msg)
         # get the old name and delete it too
-        try:
-            old_user = self.db.get('user-%s' % user_id)
-        except exception.NotFound:
-            raise exception.UserNotFound(user_id=user_id)
+        old_user = self.db.get('user-%s' % user_id)
         new_user = old_user.copy()
         user = utils.hash_user_password(user)
         new_user.update(user)
         if new_user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
-        self.db.delete('user_name-%s' % old_user['name'])
+        self.db.delete(self._calc_user_name_key(old_user['name'], domain_id))
         self.db.set('user-%s' % user_id, new_user)
-        self.db.set('user_name-%s' % new_user['name'], new_user)
+        user_name_key = self._calc_user_name_key(new_user['name'], domain_id)
+        self.db.set(user_name_key, new_user)
         return identity.filter_user(new_user)
 
     def add_user_to_group(self, user_id, group_id):
@@ -156,8 +174,10 @@ class Identity(kvs.Base, identity.Driver):
             old_user = self.db.get('user-%s' % user_id)
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_id)
-        self.db.delete('user_name-%s' % old_user['name'])
+        domain_id = self._get_domain_id_for_user(user_id)
+        self.db.delete(self._calc_user_name_key(old_user['name'], domain_id))
         self.db.delete('user-%s' % user_id)
+        self._clear_user_id_to_domain_id(user_id)
         user_list = set(self.db.get('user_list', []))
         user_list.remove(user_id)
         self.db.set('user_list', list(user_list))

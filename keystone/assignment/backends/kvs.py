@@ -66,7 +66,7 @@ class Assignment(kvs.Base, assignment.Driver):
 
     def _get_user_by_name(self, user_name, domain_id):
         try:
-            return self.db.get('user_name-%s' % user_name)
+            return self.db.get(self._calc_user_name_key(user_name, domain_id))
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_name)
 
