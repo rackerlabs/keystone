@@ -14,8 +14,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.config import cfg
+
 from keystone import exception
 from keystone.openstack.common import versionutils
+
+
+CONF = cfg.CONF
 
 
 class DictKvs(dict):
@@ -60,3 +65,6 @@ class Base(object):
         elif isinstance(db, dict):
             db = DictKvs(db)
         self.db = db
+
+    def _calc_user_name_key(self, name, domain_id):
+        return ('user_name-%s-%s' % (domain_id, name))
