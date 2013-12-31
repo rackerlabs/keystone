@@ -27,7 +27,6 @@ import warnings
 
 import fixtures
 import logging
-from paste import deploy
 import six
 import testtools
 from testtools import testcase
@@ -50,6 +49,7 @@ gettextutils.install('keystone', lazy=True)
 from keystone.common import environment
 environment.use_eventlet()
 
+from keystone.application import common
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import kvs
@@ -445,7 +445,7 @@ class TestCase(testtools.TestCase):
         return config
 
     def loadapp(self, config, name='main'):
-        return deploy.loadapp(self._paste_config(config), name=name)
+        return common.loadapp(self._paste_config(config), name)
 
     def client(self, app, *args, **kw):
         return TestClient(app, *args, **kw)
