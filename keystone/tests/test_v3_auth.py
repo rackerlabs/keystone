@@ -146,6 +146,32 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
                                   method='GET',
                                   expected_status=401)
 
+    def test_v3_v2_intermix_new_default_domain(self):
+        # If the default domain is changed, then authenticating a v2 token
+        # with a v3 user in the old default domain should be ok.
+
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        token = resp.headers.get('X-Subject-Token')
+
+        self.opt_in_group('identity', default_domain_id=uuid.uuid4().hex)
+
+        # TODO(blk-u): The following should be
+        #  resp = self.admin_request(path=path,
+        #                            token='ADMIN',
+        #                            method='GET')
+        # but the default domain ID doesn't change because some parts are
+        # keeping references to the old config value. See bug 1265108.
+
+        # now validate the v3 token with v2 API
+        path = '/v2.0/tokens/%s' % (token)
+        resp = self.admin_request(path=path,
+                                  token='ADMIN',
+                                  method='GET',
+                                  expected_status=401)
+
     def test_v3_v2_intermix_domain_scoped_token_failed(self):
         # grant the domain role to user
         path = '/domains/%s/users/%s/roles/%s' % (
