@@ -16,12 +16,16 @@
 
 import uuid
 
+from oslo.config import cfg
 from testtools import matchers
 
 from keystone.common import controller
 from keystone import exception
 from keystone import tests
 from keystone.tests import test_v3
+
+
+CONF = cfg.CONF
 
 
 def _build_role_assignment_url_and_entity(
@@ -316,6 +320,78 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertDictEqual(r, self.user)
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(r, self.credential)
+
+    def test_delete_default_domain_fails(self):
+        # Attempting to delete the default domain results in 403 Forbidden.
+
+        # Need to disable it first.
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': CONF.identity.default_domain_id},
+            body={'domain': {'enabled': False}})
+
+        self.delete('/domains/%(domain_id)s' % {
+            'domain_id': CONF.identity.default_domain_id},
+            expected_status=exception.ForbiddenAction.code)
+
+    def test_delete_new_default_domain_fails(self):
+        # If change the default domain ID, deleting the new default domain
+        # results in a 403 Forbidden.
+
+        # Create a new domain that's not the default
+        new_domain = self.new_domain_ref()
+        new_domain_id = new_domain['id']
+        self.assignment_api.create_domain(new_domain_id, new_domain)
+
+        # Disable the new domain so can delete it later.
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': new_domain_id},
+            body={'domain': {'enabled': False}})
+
+        # Change the default domain
+        self.opt_in_group('identity', default_domain_id=new_domain_id)
+
+        # Attempt to delete the new domain
+
+        # TODO(blk-u): This should fail with 403 Forbidden, but it doesn't
+        # because some parts are keeping references to the old config value.
+        # See bug 1265108.
+        # Should be able to use
+        #  self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id},
+        #              expected_status=exception.ForbiddenAction.code)
+
+        self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id})
+
+    def test_delete_old_default_domain(self):
+        # If change the default domain ID, deleting the old default domain
+        # works.
+
+        # Create a new domain that's not the default
+        new_domain = self.new_domain_ref()
+        new_domain_id = new_domain['id']
+        self.assignment_api.create_domain(new_domain_id, new_domain)
+
+        old_default_domain_id = CONF.identity.default_domain_id
+
+        # Disable the default domain so we can delete it later.
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': old_default_domain_id},
+            body={'domain': {'enabled': False}})
+
+        # Change the default domain
+        self.opt_in_group('identity', default_domain_id=new_domain_id)
+
+        # Delete the old default domain
+
+        # TODO(blk-u): This should work, but it doesn't
+        # because some parts are keeping references to the old config value.
+        # See bug 1265108.
+        # Should be able to use
+        #  self.delete(
+        #      '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
+
+        self.delete(
+            '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id},
+            expected_status=exception.ForbiddenAction.code)
 
     # project crud tests
 
