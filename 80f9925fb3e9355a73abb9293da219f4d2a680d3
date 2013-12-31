@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//z04\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2013-12-31T03:03:13Z",
+      "side": 1,
+      "message": "Please use \"Closes-Bug: #1079154\" instead.",
+      "revId": "80f9925fb3e9355a73abb9293da219f4d2a680d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
