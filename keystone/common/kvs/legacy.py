@@ -60,3 +60,6 @@ class Base(object):
         elif isinstance(db, dict):
             db = DictKvs(db)
         self.db = db
+
+    def _calc_user_name_key(self, name, domain_id):
+        return ('user_name-%s-%s' % (domain_id, name))
