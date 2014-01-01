@@ -34,12 +34,14 @@ CONF = config.CONF
 LOG = logging.getLogger(__name__)
 SHOULD_CACHE = cache.should_cache_fn('assignment')
 
-DEFAULT_DOMAIN = {'description':
-                  (u'Owns users and tenants (i.e. projects)'
-                   ' available on Identity API v2.'),
-                  'enabled': True,
-                  'id': CONF.identity.default_domain_id,
-                  'name': u'Default'}
+
+def calc_default_domain():
+    return {'description':
+            (u'Owns users and tenants (i.e. projects)'
+                ' available on Identity API v2.'),
+            'enabled': True,
+            'id': CONF.identity.default_domain_id,
+            'name': u'Default'}
 
 
 @dependency.provider('assignment_api')
@@ -297,7 +299,7 @@ class Manager(manager.Manager):
         # explicitly forbid deleting the default domain (this should be a
         # carefully orchestrated manual process involving configuration
         # changes, etc)
-        if domain_id == DEFAULT_DOMAIN['id']:
+        if domain_id == CONF.identity.default_domain_id:
             raise exception.ForbiddenAction(action='delete the default domain')
 
         domain = self.driver.get_domain(domain_id)
