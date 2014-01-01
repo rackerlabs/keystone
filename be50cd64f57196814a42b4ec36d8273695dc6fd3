@@ -16,6 +16,24 @@
       "revId": "be50cd64f57196814a42b4ec36d8273695dc6fd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//xTw\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-01T20:44:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//0Ko\u003d",
+      "revId": "be50cd64f57196814a42b4ec36d8273695dc6fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
