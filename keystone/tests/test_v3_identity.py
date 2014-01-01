@@ -351,15 +351,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.opt_in_group('identity', default_domain_id=new_domain_id)
 
         # Attempt to delete the new domain
-
-        # TODO(blk-u): This should fail with 403 Forbidden, but it doesn't
-        # because some parts are keeping references to the old config value.
-        # See bug 1265108.
-        # Should be able to use
-        #  self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id},
-        #              expected_status=exception.ForbiddenAction.code)
-
-        self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id})
+        self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id},
+                    expected_status=exception.ForbiddenAction.code)
 
     def test_delete_old_default_domain(self):
         # If change the default domain ID, deleting the old default domain
@@ -382,16 +375,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         # Delete the old default domain
 
-        # TODO(blk-u): This should work, but it doesn't
-        # because some parts are keeping references to the old config value.
-        # See bug 1265108.
-        # Should be able to use
-        #  self.delete(
-        #      '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
-
         self.delete(
-            '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id},
-            expected_status=exception.ForbiddenAction.code)
+            '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
 
     # project crud tests
 
