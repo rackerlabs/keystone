@@ -23,10 +23,10 @@ import six
 from keystone import auth
 from keystone.common import config
 from keystone import exception
-from keystone.openstack.common import log as logging
+from keystone.openstack.common import log
 
 
-LOG = logging.getLogger(__name__)
+LOG = log.getLogger(__name__)
 
 CONF = config.CONF
 
