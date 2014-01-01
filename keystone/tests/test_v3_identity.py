@@ -351,7 +351,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.opt_in_group('identity', default_domain_id=new_domain_id)
 
         # Attempt to delete the new domain
-
         self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id},
                     expected_status=exception.ForbiddenAction.code)
 
