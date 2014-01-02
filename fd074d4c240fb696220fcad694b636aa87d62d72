@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//whc\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-02T08:50:11Z",
+      "side": 1,
+      "message": "You can take a look at how I am calling the endpoints here:\nhttps://review.openstack.org/#/c/60820/2/keystoneclient/v3/contrib/oauth1/request_tokens.py\n\nOne thing I\u0027m a bit confused about it how to add in the extra \u0027requested_project_id\u0027 header in the client side, an issue you will run into when updating the tests too. \n\nIf we don\u0027t end up adding the project id as an extra header, then you can remove the entire credentials part here",
+      "revId": "fd074d4c240fb696220fcad694b636aa87d62d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
