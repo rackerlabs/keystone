@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//ufw\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-02T20:40:15Z",
+      "side": 1,
+      "message": "I really like how you rewrote this over the previous version",
+      "revId": "336292e10dc0179cf1019ed5260f9a2cd82840c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
