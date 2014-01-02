@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//uuw\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-02T19:27:52Z",
+      "side": 1,
+      "message": "revert this because it\u0027s working as designed.",
+      "revId": "42850fd50834f8687f91838fc1ce497ec730183c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//uuo\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-02T19:27:52Z",
+      "side": 1,
+      "message": "load the oauth backend here.",
+      "revId": "42850fd50834f8687f91838fc1ce497ec730183c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
