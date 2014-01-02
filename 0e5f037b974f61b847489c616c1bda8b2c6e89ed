@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//uy4\u003d",
+        "filename": "keystone/auth/plugins/federated/discovery/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-02T19:27:27Z",
+      "side": 1,
+      "message": "Why we are calling with is_admin \u003d True?",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//uuI\u003d",
+        "filename": "keystone/auth/plugins/federated/user_management.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-02T19:27:27Z",
+      "side": 1,
+      "message": "Pulling the entire list will be heavy, can we get user by name/id in place of iterating through list?",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//uts\u003d",
+        "filename": "keystone/tests/mapping_file",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-02T19:27:27Z",
+      "side": 1,
+      "message": "why not role_name",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
