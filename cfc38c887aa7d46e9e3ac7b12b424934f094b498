@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//u/M\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-02T17:52:56Z",
+      "side": 1,
+      "message": "What about Domain roles?  I guess they are less important with LDAP front and backend, so maybe not necessary to implement this time around.",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
