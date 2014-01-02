@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-12-28 06:00+0000\n"
+"POT-Creation-Date: 2014-01-02 06:00+0000\n"
 "PO-Revision-Date: 2013-05-22 03:11+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) "
@@ -1994,8 +1994,8 @@ msgstr ""
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr ""
 
-#: keystone/token/provider.py:200 keystone/token/providers/common.py:548
-#: keystone/token/providers/common.py:558
+#: keystone/token/provider.py:200 keystone/token/providers/common.py:547
+#: keystone/token/providers/common.py:557
 msgid "Failed to validate token"
 msgstr ""
 
@@ -2027,37 +2027,37 @@ msgstr ""
 msgid "Unable to add token to revocation list."
 msgstr "無法將記號新增至撤銷清冊。"
 
-#: keystone/token/providers/common.py:184
+#: keystone/token/providers/common.py:183
 msgid "Trustor is disabled."
 msgstr ""
 
-#: keystone/token/providers/common.py:248
+#: keystone/token/providers/common.py:247
 msgid "Trustee has no delegated roles."
 msgstr ""
 
-#: keystone/token/providers/common.py:257
+#: keystone/token/providers/common.py:256
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
 msgstr ""
 
-#: keystone/token/providers/common.py:262
+#: keystone/token/providers/common.py:261
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
 msgstr ""
 
-#: keystone/token/providers/common.py:312
+#: keystone/token/providers/common.py:311
 msgid "User is not a trustee."
 msgstr ""
 
-#: keystone/token/providers/common.py:402
+#: keystone/token/providers/common.py:401
 msgid "Oauth is disabled."
 msgstr ""
 
-#: keystone/token/providers/common.py:476
+#: keystone/token/providers/common.py:475
 msgid "Non-default domain is not supported"
 msgstr "不支援非預設網域"
 
-#: keystone/token/providers/common.py:484
+#: keystone/token/providers/common.py:483
 msgid "Domain scoped token is not supported"
 msgstr "不支援網域範圍的記號"
 
@@ -2151,15 +2151,7 @@ msgstr "無法簽署記號。"
 #~ msgstr "無法理解規則 %(rule)r"
 
 #~ msgid ""
-#~ "The Keystone paste configuration file "
-#~ "%(config_file)s could not be found."
 #~ msgstr ""
-
-#~ msgid ""
-#~ "Malformed endpoint %s - incomplete "
-#~ "format                   (are you missing a"
-#~ " type notifier ?)"
-#~ msgstr "端點 %s 的格式不正確 - 格式不完整（遺漏了類型通知符嗎？）"
 
 #~ msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
 #~ msgstr ""
@@ -2190,10 +2182,4 @@ msgstr "無法簽署記號。"
 
 #~ msgid "Got mysql server has gone away: %s"
 #~ msgstr "已取得 mysql 伺服器已斷線的訊息：%s"
-
-#~ msgid ""
-#~ "Number of call waiters is greater "
-#~ "than warning threshhold: %d. There could"
-#~ " be a MulticallProxyWaiter leak."
-#~ msgstr ""
 
