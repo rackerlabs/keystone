@@ -39,11 +39,10 @@ CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
 
-# Ensure the cache is configured and built before we instantiate the managers
-cache.configure_cache_region(cache.REGION)
-
-
 def load_backends(include_oauth1=False):
+
+    # Configure and build the cache
+    cache.configure_cache_region(cache.REGION)
 
     # Ensure that the identity driver is created before the assignment manager.
     # The default assignment driver is determined by the identity driver, so
