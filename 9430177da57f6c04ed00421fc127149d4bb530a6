@@ -230,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q2c\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T19:22:00Z",
+      "side": 1,
+      "message": "Moved this to the parent class in an addCleanup step to mirror correct functionality",
+      "parentUuid": "AAAAT3//q/A\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//q+4\u003d",
         "filename": "keystone/tests/test_keystoneclient_sql.py",
         "patchSetId": 13
@@ -259,6 +277,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAT3//q+4\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q2Y\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T19:22:00Z",
+      "side": 1,
+      "message": "Moved this to the parent class in an addCleanup step to mirror correct functionality",
+      "parentUuid": "AAAAT3//q8w\u003d",
       "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
