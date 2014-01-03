@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//q9Y\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:41:45Z",
+      "side": 1,
+      "message": "could reword this to \"No exception should be raised.\"",
+      "revId": "17c2ec03454bfcf20970b9d91fb2d525b1fef746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q9w\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:41:45Z",
+      "side": 1,
+      "message": "remove this line because it doesn\u0027t do anything.",
+      "revId": "17c2ec03454bfcf20970b9d91fb2d525b1fef746",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
