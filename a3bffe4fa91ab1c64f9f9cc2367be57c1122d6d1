@@ -16,6 +16,24 @@
       "revId": "a3bffe4fa91ab1c64f9f9cc2367be57c1122d6d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tyY\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T00:29:43Z",
+      "side": 1,
+      "message": "I think this is less clear because of lambdas...or lack of syntax highlighting... ugh.  I will _actually_ fix this in the next patch.",
+      "parentUuid": "AAAAT3//t9Y\u003d",
+      "revId": "a3bffe4fa91ab1c64f9f9cc2367be57c1122d6d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
