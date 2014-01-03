@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//qh0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T21:37:48Z",
+      "side": 1,
+      "message": "You must have worked pretty hard to get the spaces to line up vertically here. Bravo.",
+      "revId": "331b4ca3310c6df0795c2e5d1b55809d17bc0768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
