@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//tUg\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T04:31:45Z",
+      "side": 1,
+      "message": "these should all be changed to assertIs rather than assertTrue/assertFalse.",
+      "revId": "ff740f5ffc9a003b208a1a1ddcb9dd4bbb596959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
