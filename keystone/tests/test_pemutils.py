@@ -101,7 +101,7 @@ class TestPEMParse(tests.TestCase):
         parse_results = pemutils.parse_pem(text)
         self.assertEqual(len(parse_results), 0)
 
-        self.assertEqual(pemutils.is_pem(text), False)
+        self.assertFalse(pemutils.is_pem(text))
 
     def test_parse_invalid(self):
         p = PEM(pem_type='xxx',
