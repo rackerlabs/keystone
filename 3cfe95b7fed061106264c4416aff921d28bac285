@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//s0g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-03T08:31:19Z",
+      "side": 1,
+      "message": "You should remove the \u0027.\u0027 at the end of line. It makes the link broken.",
+      "revId": "3cfe95b7fed061106264c4416aff921d28bac285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
