@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//rBg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "change \"an given\" to \"a given\"",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//rBY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "would be nice if there was a bug filed and referenced here.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//rBM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "Move this up to right after line 86 and into the if clause. Then remove line 82.\n\nIt\u0027s safer to delete tokens before attempting to update the project.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q/o\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "should this be a separate commit? Why is it required for this one?",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q/g\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "this seems like it should be a separate commit.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q/A\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "since sql.ModelBase.metadata.create_all(bind\u003dself.engine) was removed, then don\u0027t need to do this anymore.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q+4\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:35:19Z",
+      "side": 1,
+      "message": "since \"self.engine \u003d session.get_engine()\" was removed, then don\u0027t need to do this.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
