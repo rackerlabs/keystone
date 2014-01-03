@@ -38,16 +38,13 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase, sql.Base):
 
         self.load_backends()
         self.engine = session.get_engine()
+        self.addCleanup(session.cleanup)
         sql.ModelBase.metadata.create_all(bind=self.engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
 
     def setUp(self):
         super(KcMasterSqlTestCase, self).setUp()
         self.default_client = self.get_client()
-
-    def tearDown(self):
-        sql.ModelBase.metadata.drop_all(bind=self.engine)
-        session.cleanup()
-        super(KcMasterSqlTestCase, self).tearDown()
 
     def test_endpoint_crud(self):
         from keystoneclient import exceptions as client_exceptions
