@@ -68,6 +68,24 @@
       "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//ubw\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-03T16:19:46Z",
+      "side": 1,
+      "message": "I\u0027ve seen other keystone cores make this same request. Brant is this just a Keystone guideline or is this an OpenStack guideline or buried in a PEP somewhere?",
+      "parentUuid": "AAAAT3//z8k\u003d",
+      "revId": "371119b58c2e528f8377a7fbe7421c8807a63b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
