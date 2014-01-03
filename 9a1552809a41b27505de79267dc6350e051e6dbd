@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//tnc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "change \"an given\" to \"a given\"",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tnI\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "This limitation should be mentioned in the commit message, because I\u0027m guessing kvs backend is kind of broken with this.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tmQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "suggest change the name to \"users_to_disable\"",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tmY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "I don\u0027t think we should mix \u0027enabled\u0027 cleanup with listing users, so suggest out-dent this.\n\nuse \"if not tenant.get(\u0027enabled\u0027, True):\" like we had in v2 controller. I\u0027m worried about the change to \"is False\"... it\u0027s not the same",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tlw\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "say that self.get_project.invalidate() fails with an exception, now the tokens aren\u0027t disabled. Seems like this should happen first, or even if those calls failed? The previous behavior was that the tokens were deleted before the project was updated (since it happened in controller).\n\nThis comment applies to delete_project and delete_role. The tokens used to be deleted first, and I think that\u0027s the right way to do it, since it\u0027s a little safer.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tlY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "I don\u0027t see token_api being used.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tlQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "is this docstring accurate?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tkQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "here\u0027s another few spots where we should consider revoking tokens first in case delete_group raises.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tjs\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "what\u0027s a \"core system\"?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tjk\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "seems like this would have been done already by config()?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tjA\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "is this broken without implementing deletion of domain-scoped tokens?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tjI\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "I\u0027m a little confused as to how this is supposed to work if they pass in user_id + project_id, could you add a comment?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tjY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "why would this happen? the caller should be able to ensure this.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tjQ\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T02:12:07Z",
+      "side": 1,
+      "message": "should be project_id\u003dproject_id.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
