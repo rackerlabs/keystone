@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//qb0\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T21:41:13Z",
+      "side": 1,
+      "message": "I think the cleanups are going to happen in the wrong order. Move line 52 right after line 48.",
+      "revId": "8a0291009ba837baf725bda27bedea3a422df13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//qbc\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T21:41:13Z",
+      "side": 1,
+      "message": "remove this function it\u0027s not doing anything.",
+      "revId": "8a0291009ba837baf725bda27bedea3a422df13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
