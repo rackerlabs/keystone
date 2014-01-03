@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//taM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:41:20Z",
+      "side": 1,
+      "message": "To be fair, clean should always return a boolean here, but I\u0027m fine with mirroring logic for clarity sake at the very least.",
+      "parentUuid": "AAAAT3//tco\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tlw\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
