@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q8o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//rBg\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//rBY\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-03T18:35:19Z",
       "side": 1,
       "message": "would be nice if there was a bug filed and referenced here.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q8k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//rBY\u003d",
       "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q9s\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "If the update fails, do we really want to revoke all tokens for the project?",
+      "parentUuid": "AAAAT3//rBM\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//q/o\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-03T18:35:19Z",
       "side": 1,
       "message": "should this be a separate commit? Why is it required for this one?",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q9I\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "This commit shuffled all the @requires for the new delete logic.  This was part of that (removing the no-longer-needed @requires from V2Controller).  The methods here still require it.  This could be split, but in theory this _is_ part of this changeset.",
+      "parentUuid": "AAAAT3//q/o\u003d",
       "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q9E\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "Done. let me figure out the best place to do this rebase so we can get the best chain of patchsets.",
+      "parentUuid": "AAAAT3//q+A\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//q/A\u003d",
         "filename": "keystone/tests/test_keystoneclient_sql.py",
         "patchSetId": 13
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q80\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//q/A\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//q+4\u003d",
         "filename": "keystone/tests/test_keystoneclient_sql.py",
         "patchSetId": 13
@@ -133,6 +241,24 @@
       "writtenOn": "2014-01-03T18:35:19Z",
       "side": 1,
       "message": "since \"self.engine \u003d session.get_engine()\" was removed, then don\u0027t need to do this.",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//q8w\u003d",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:45:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//q+4\u003d",
       "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
