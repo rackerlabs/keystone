@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q+A\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T18:39:22Z",
+      "side": 1,
+      "message": "Actually, this already is a separate commit: https://review.openstack.org/#/c/56887/\n\nsuggest rebase this one on that change.",
+      "parentUuid": "AAAAT3//q/g\u003d",
+      "revId": "9430177da57f6c04ed00421fc127149d4bb530a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//q/A\u003d",
         "filename": "keystone/tests/test_keystoneclient_sql.py",
         "patchSetId": 13
