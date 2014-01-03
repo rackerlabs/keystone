@@ -63,13 +63,10 @@ class RestfulTestCase(tests.TestCase):
 
         self.public_app = webtest.TestApp(
             self.loadapp(app_conf, name='main'))
+        self.addCleanup(setattr, self, 'public_app', None)
         self.admin_app = webtest.TestApp(
             self.loadapp(app_conf, name='admin'))
-
-    def tearDown(self):
-        self.public_app = None
-        self.admin_app = None
-        super(RestfulTestCase, self).tearDown()
+        self.addCleanup(setattr, self, 'admin_app', None)
 
     def request(self, app, path, body=None, headers=None, token=None,
                 expected_status=None, **kwargs):
