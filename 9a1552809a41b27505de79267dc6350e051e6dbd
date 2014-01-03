@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//ta8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//tnc\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tnI\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "This limitation should be mentioned in the commit message, because I\u0027m guessing kvs backend is kind of broken with this.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tbI\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "I hope no one is using KVS beyond testing.  I\u0027ll add it to the commit message.",
+      "parentUuid": "AAAAT3//tnI\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tck\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//tmQ\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tmY\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "I don\u0027t think we should mix \u0027enabled\u0027 cleanup with listing users, so suggest out-dent this.\n\nuse \"if not tenant.get(\u0027enabled\u0027, True):\" like we had in v2 controller. I\u0027m worried about the change to \"is False\"... it\u0027s not the same",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tco\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "Oh, yes, that is a good point.  Will do.",
+      "parentUuid": "AAAAT3//tmY\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tcU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "I\u0027m fine with doing that.  However, if invalidate (somehow fails) the project will only be partially disabled and in theory (depending on cache state) there are ways to issue new tokens.  This was to eliminate races on new tokens being issued while project deletion occurred.  \n\nI\u0027ll switch to token deletion first where appropriate.",
+      "parentUuid": "AAAAT3//tlw\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tlY\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "I don\u0027t see token_api being used.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tcQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "Will 2x check and remove if possible.",
+      "parentUuid": "AAAAT3//tlY\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tcE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "Technically \"Identity API v2\" would be OpenStack Identity API v2, not to be confused with identity_api or assignment_api (managers) internal.  I\u0027d say yes, it is still accurate.",
+      "parentUuid": "AAAAT3//tlQ\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tkQ\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "here\u0027s another few spots where we should consider revoking tokens first in case delete_group raises.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tb8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "As stated in previous comment, i\u0027ll invert these to delete first.",
+      "parentUuid": "AAAAT3//tkQ\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tb4\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "I will clarify",
+      "parentUuid": "AAAAT3//tjs\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tjk\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 11
@@ -166,6 +328,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "seems like this would have been done already by config()?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tb0\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "hm. will 2x check and remove if appropriate.",
+      "parentUuid": "AAAAT3//tjk\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tbw\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "This is the same functionality as before, we had a similar docstring with no related code previously (I just moved it over to this spot and tagged it to my name since I reworked this).  This should be addressed, but I also heard rumors of denying domain scoped tokens.  Depending on the direction taken (support/not support of domain scoped tokens) will dictate the end result here.",
+      "parentUuid": "AAAAT3//tjA\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tjI\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 11
@@ -200,6 +398,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "I\u0027m a little confused as to how this is supposed to work if they pass in user_id + project_id, could you add a comment?",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tbY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "I\u0027ll get some comments in here to help make it less opaque.",
+      "parentUuid": "AAAAT3//tjI\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tbQ\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "just being a bit more defensive.  will remove it.",
+      "parentUuid": "AAAAT3//tjY\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tjQ\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 11
@@ -234,6 +468,24 @@
       "writtenOn": "2014-01-03T02:12:07Z",
       "side": 1,
       "message": "should be project_id\u003dproject_id.",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//tbM\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//tjQ\u003d",
       "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
