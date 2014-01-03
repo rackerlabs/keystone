@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//qbM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-03T21:43:02Z",
+      "side": 1,
+      "message": "change \"to stand\" to \"stand\"\n\nchange \"with out\" to \"without\"",
+      "revId": "225331a2939ccccc4183bfe18a0f77cf45ffac0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
