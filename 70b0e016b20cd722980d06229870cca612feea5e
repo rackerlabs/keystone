@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//tmU\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-03T16:32:29Z",
+      "side": 1,
+      "message": "Discussed on IRC:  the data we want is in inside the token data already, but there is some question as to whether we will consistantly find it in the right location.  I suspectr that the lack of a \"token\" object that reflects both V2 and V3 tokens is really hurning us here.  This approach, using the token API, is probably OK.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//rbo\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-03T16:32:29Z",
+      "side": 1,
+      "message": "To other reviewers:  this is why this class needs the trust-api:  to get the trustee id to add the token to the right list.  While this data is inside the token-data already, it is in a v2/v3 specific location, and we want to be sure to find it no matter what.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
