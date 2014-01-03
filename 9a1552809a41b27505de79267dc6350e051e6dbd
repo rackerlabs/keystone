@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//tZs\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T03:43:49Z",
+      "side": 1,
+      "message": "delete role already does token deletion first (due to the complexity in the role deletion logic)",
+      "parentUuid": "AAAAT3//tcU\u003d",
+      "revId": "9a1552809a41b27505de79267dc6350e051e6dbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tlY\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 11
