@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAT3//q6w\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-03T18:49:46Z",
+      "side": 1,
+      "message": "Yep! Working on ensuring this is cleaned up.  I\u0027ll be hopefully posting a patchset that resolves this specific complaint shortly (and potentially doing a complete token rework to address the v2 vs v3 tokens down the line in Icehouse)",
+      "parentUuid": "AAAAT3//tmU\u003d",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//rbo\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 11
