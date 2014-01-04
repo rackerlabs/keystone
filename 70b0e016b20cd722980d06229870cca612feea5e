@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH///hU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///hQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3167,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "remove this line since it doesn\u0027t do anything.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///hI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "the next line checks this so suggest remove this line.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///hM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3174,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///js\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "can you add a comment as to what this does? seems like this should have been done before load_backends.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//tmU\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 11
@@ -31,6 +116,142 @@
       "side": 1,
       "message": "Yep! Working on ensuring this is cleaned up.  I\u0027ll be hopefully posting a patchset that resolves this specific complaint shortly (and potentially doing a complete token rework to address the v2 vs v3 tokens down the line in Icehouse)",
       "parentUuid": "AAAAT3//tmU\u003d",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///jo\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "this isn\u0027t deprecated anymore? seems like that should be mentioned in the commit message.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///jg\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "why would token_id be None here? seems like the caller could make sure the token_id is not None.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///jQ\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "change \"password-changes\" to \"password changes\"",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///jM\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "suggest change \"[]\" to \"default\u003d[]\"",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///jA\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "It looks like we\u0027re returning completely different things based on \"include_expires\". This is extra confusing, so suggest split up into separate functions.\n\nAlso, add a comment why this works... is t a tuple?",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///iI\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "how would this happen?",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///hY\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "suggest put the exceptions in alphabetical order.",
+      "revId": "70b0e016b20cd722980d06229870cca612feea5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///hg\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-04T14:12:07Z",
+      "side": 1,
+      "message": "suggest take care of this FIXME now.",
       "revId": "70b0e016b20cd722980d06229870cca612feea5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
