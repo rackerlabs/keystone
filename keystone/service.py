@@ -21,7 +21,6 @@ from keystone import assignment
 from keystone import auth
 from keystone import catalog
 from keystone.common import cache
-from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import endpoint_filter
@@ -64,8 +63,6 @@ def load_backends(include_oauth1=False):
     if include_oauth1:
         from keystone.contrib import oauth1
         DRIVERS['oauth1_api'] = oauth1.Manager()
-
-    dependency.resolve_future_dependencies()
 
     return DRIVERS
 
