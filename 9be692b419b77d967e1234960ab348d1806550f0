@@ -16,6 +16,74 @@
       "revId": "9be692b419b77d967e1234960ab348d1806550f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7Yc\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T17:26:55Z",
+      "side": 1,
+      "message": "``[auth]`` section of the configuration file.",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7X0\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T17:26:55Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7XE\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T17:26:55Z",
+      "side": 1,
+      "message": "What happen if REMOTE_DOMAIN env var is set?",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7XQ\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T17:26:55Z",
+      "side": 1,
+      "message": "So the only difference between the two plugins is the REMOTE_DOMAIN env var? Then why do we need two plugins as REMOTE_DOMAIN is *optional*? Can we just have one plugin? If REMOTE_DOMAIN is present, use it. Otherwise, use the default domain.",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
