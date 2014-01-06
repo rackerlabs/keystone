@@ -24,7 +24,7 @@ function usage {
   echo "  -N, --no-virtual-env     Don't use virtualenv.  Run tests in local environment"
   echo "  -r, --recreate-db        Recreate the test database (deprecated, as this is now the default)."
   echo "  -n, --no-recreate-db     Don't recreate the test database."
-  echo "  -x, --stop               Stop running tests after the first error or failure."
+  echo "  -x, --until-failure      Stop running tests after the first error or failure."
   echo "  -f, --force              Force a clean re-build of the virtual environment. Useful when dependencies have been added."
   echo "  -u, --update             Update the virtual environment with any newer package versions"
   echo "  -p, --pep8               Just run flake8"
@@ -52,6 +52,7 @@ function process_option {
     -8|--8) short_flake8=1;;
     -P|--no-pep8) no_flake8=1;;
     -c|--coverage) coverage=1;;
+    -x|--until-failure) testropts="$testropts --until-failure";;
     -*) testropts="$testropts $1";;
     *) testrargs="$testrargs $1"
   esac
@@ -112,10 +113,6 @@ function run_flake8 {
   ${wrapper} flake8 $FLAGS | tee pep8.txt
 }
 
-echo "This script is now deprecated.  Please use tox instead."
-echo "Checkout http://tox.readthedocs.org/en/latest/ for information on tox."
-echo "[press enter to continue]"
-read
 
 if [ $never_venv -eq 0 ]
 then
