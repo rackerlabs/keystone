@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//7Io\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 8001
+      },
+      "writtenOn": "2014-01-06T18:38:33Z",
+      "side": 1,
+      "message": "As I point out in the comments, mocking sqlalchemy does not appear to work, so I don\u0027t know how looping could be tested.",
+      "parentUuid": "AAAAUH//7Y8\u003d",
+      "revId": "ef03c7b8478cfe6ae8e8013246f50a40cafad2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//7ZM\u003d",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-06T17:15:09Z",
       "side": 1,
       "message": "suggest split into separate test functions.",
+      "revId": "ef03c7b8478cfe6ae8e8013246f50a40cafad2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7Dc\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 8001
+      },
+      "writtenOn": "2014-01-06T18:38:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//7ZM\u003d",
       "revId": "ef03c7b8478cfe6ae8e8013246f50a40cafad2ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
