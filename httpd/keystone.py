@@ -26,6 +26,7 @@ from keystone.openstack.common import gettextutils
 # contain static translated strings.
 gettextutils.install('keystone')
 
+from keystone.common import dependency
 from keystone.common import environment
 from keystone.common import sql
 from keystone import config
@@ -48,6 +49,8 @@ if CONF.debug:
 
 
 drivers = service.load_backends()
+
+dependency.resolve_future_dependencies()
 
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation

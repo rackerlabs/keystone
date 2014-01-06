@@ -90,7 +90,7 @@ class RestfulTestCase(rest.RestfulTestCase):
         rules.reset()
         super(RestfulTestCase, self).tearDown()
 
-    def load_backends(self):
+    def load_backends(self, **kwargs):
         self.config(self.config_files())
 
         self.setup_database()
@@ -98,7 +98,7 @@ class RestfulTestCase(rest.RestfulTestCase):
         # ensure the cache region instance is setup
         cache.configure_cache_region(cache.REGION)
 
-        super(RestfulTestCase, self).load_backends()
+        super(RestfulTestCase, self).load_backends(**kwargs)
 
     def load_fixtures(self, fixtures):
         self.load_sample_data()
