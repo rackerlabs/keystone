@@ -163,6 +163,11 @@ class ForbiddenAction(Forbidden):
                        " requested action, %(action)s.")
 
 
+class ImmutableAttributeError(Forbidden):
+    message_format = _("Could not change immutable attribute %(attribute)s"
+                       " in target %(target)s")
+
+
 class NotFound(Error):
     message_format = _("Could not find, %(target)s.")
     code = 404
@@ -227,6 +232,15 @@ class CredentialNotFound(NotFound):
 
 class VersionNotFound(NotFound):
     message_format = _("Could not find version, %(version)s.")
+
+
+class IdentityProviderNotFound(NotFound):
+    message_format = _("Could not find IdentityProvider, %(idp_id)s.")
+
+
+class FederatedProtocolNotFound(NotFound):
+    message_format = _("Could not find federated protocol %(protocol_id)s for"
+                       " IdentityProvider, %(idp_id)s")
 
 
 class Conflict(Error):
