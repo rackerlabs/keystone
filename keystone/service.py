@@ -15,10 +15,11 @@
 # under the License.
 
 import functools
+
+import pecan
 import routes
 
 from keystone import assignment
-from keystone import auth
 from keystone import catalog
 from keystone.common import cache
 from keystone.common import dependency
@@ -128,19 +129,8 @@ def admin_version_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def v3_app_factory(global_conf, **local_conf):
-    controllers.register_version('v3')
     conf = global_conf.copy()
     conf.update(local_conf)
-    mapper = routes.Mapper()
-    v3routers = []
-    for module in [assignment, auth, catalog, credential, identity, policy]:
-        module.routers.append_v3_routers(mapper, v3routers)
-
-    if CONF.trust.enabled:
-        trust.routers.append_v3_routers(mapper, v3routers)
-
-    # Add in the v3 version api
-    v3routers.append(routers.VersionV3('admin'))
-    v3routers.append(routers.VersionV3('public'))
-    # TODO(ayoung): put token routes here
-    return wsgi.ComposingRouter(mapper, v3routers)
+    controllers.register_version('v3')
+    return pecan.make_app(controllers.V3Controller(conf),
+                          custom_renderers={'keystone': wsgi.KeystoneRenderer})
