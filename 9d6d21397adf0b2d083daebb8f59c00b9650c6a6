@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//6n0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-06T20:36:41Z",
+      "side": 1,
+      "message": "it\u0027s really dogpile.cache - right?",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//6nw\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-06T20:36:41Z",
+      "side": 1,
+      "message": "dogpile.cache ?",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//6ns\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-06T20:36:41Z",
+      "side": 1,
+      "message": "yikes - is that the best way to find this? :( no indexing?",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//6no\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-06T20:36:41Z",
+      "side": 1,
+      "message": "i\u0027d prefer .append() or something here if that\u0027s possible",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
