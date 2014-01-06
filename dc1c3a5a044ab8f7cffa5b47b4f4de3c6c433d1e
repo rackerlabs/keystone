@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//+WA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-06T00:20:34Z",
+      "side": 1,
+      "message": "change \"then 404 could be avoid\" to \"and a 404 is not returned\".",
+      "revId": "dc1c3a5a044ab8f7cffa5b47b4f4de3c6c433d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//+Vs\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-06T00:20:34Z",
+      "side": 1,
+      "message": "change \"Remove\" to \"Removing\"",
+      "revId": "dc1c3a5a044ab8f7cffa5b47b4f4de3c6c433d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
