@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//7E8\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "I want to make build_auth_context as independent as possible.",
+      "parentUuid": "AAAAUH//+aM\u003d",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//+Zs\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2014-01-05T23:59:32Z",
       "side": 1,
       "message": "what is an auth context, please add more info to the comment.",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7HE\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAUH//+Zs\u003d",
       "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//7G0\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "I will remove \"self\" and ask caller to explicitly pass in \"token_api\" and \"assignment_api\".",
+      "parentUuid": "AAAAUH//+ZQ\u003d",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//+Zo\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 7
@@ -81,6 +135,24 @@
       "writtenOn": "2014-01-05T23:59:32Z",
       "side": 1,
       "message": "why RBAC on all these logs message? the log message can already be prefixed with the module name",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7GQ\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "I am retaining the original impl so it won\u0027t break the existing log filters.",
+      "parentUuid": "AAAAUH//+Zo\u003d",
       "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//7Ig\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "They are still needed. See line 223. They are being used by build_policy_check_credentials(). Perhaps I can change build_policy_check_credentials() to make it explicit.",
+      "parentUuid": "AAAAUH//+aY\u003d",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//+aU\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 7
@@ -149,6 +239,24 @@
       "writtenOn": "2014-01-05T23:59:32Z",
       "side": 1,
       "message": "which backend?",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7JY\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "token backend. We don\u0027t persist the ADMIN token.",
+      "parentUuid": "AAAAUH//+aQ\u003d",
       "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +314,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//7IM\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "auth context is used by RBAC. I retained the \u0027RBAC: \u0027 tag to make it easier to sort through the log file.",
+      "parentUuid": "AAAAUH//+Z4\u003d",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//+YY\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 7
@@ -217,6 +343,24 @@
       "writtenOn": "2014-01-05T23:59:32Z",
       "side": 1,
       "message": "provide a name to the \"None\" parameter -- what\u0027s it supposed to be?",
+      "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7I8\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-06T18:35:40Z",
+      "side": 1,
+      "message": "I\u0027ll remove the None. Just need an instance of AuthContextMiddleware.",
+      "parentUuid": "AAAAUH//+YY\u003d",
       "revId": "7294b21c4a14b6c2797e6943807082aad46264a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
