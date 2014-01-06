@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//7Y8\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-06T17:15:09Z",
+      "side": 1,
+      "message": "should we have a test that mocks up db2 dialect and makes sure that it loops properly?",
+      "revId": "ef03c7b8478cfe6ae8e8013246f50a40cafad2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//7ZM\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-06T17:15:09Z",
+      "side": 1,
+      "message": "suggest split into separate test functions.",
+      "revId": "ef03c7b8478cfe6ae8e8013246f50a40cafad2ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
