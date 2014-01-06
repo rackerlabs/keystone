@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//8Ro\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "I think this may be the generic driver, covering all the use-cases.\nHowever then it would be worth renaming it.",
+      "parentUuid": "AAAAT3//5Is\u003d",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//5IY\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-27T19:58:57Z",
       "side": 1,
       "message": "Shouldn\u0027t this be commented out in the sample file?",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//8NY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//5IY\u003d",
       "revId": "b04108a2725be2173a293468c467b30cf3446c46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//8OM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//5Fw\u003d",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//5EI\u003d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//8QE\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//5EI\u003d",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//5DE\u003d",
         "filename": "keystone/contrib/federation/migrate_repo/migrate.cfg",
         "patchSetId": 8
@@ -81,6 +153,24 @@
       "writtenOn": "2013-12-27T19:58:57Z",
       "side": 1,
       "message": "What does this mean, you can use the name of your project? Is this referring to a particular Keystone project?",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//8PQ\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/migrate.cfg",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "To be honest I haven\u0027t dug deep enough in the code, but it looks like it\u0027s the name of the module (directory) under keystone/contrib. This applies to all extensions stored under keystone/contrib.",
+      "parentUuid": "AAAAT3//5DE\u003d",
       "revId": "b04108a2725be2173a293468c467b30cf3446c46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//8O0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//5DU\u003d",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//5DQ\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
@@ -132,6 +240,24 @@
       "writtenOn": "2013-12-27T19:58:57Z",
       "side": 1,
       "message": "\"however\" should be \"with each\"",
+      "revId": "b04108a2725be2173a293468c467b30cf3446c46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//8Ow\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-06T14:05:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAT3//5DQ\u003d",
       "revId": "b04108a2725be2173a293468c467b30cf3446c46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
