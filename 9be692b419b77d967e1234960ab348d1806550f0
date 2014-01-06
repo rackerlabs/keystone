@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//8Vo\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-06T13:26:28Z",
+      "side": 1,
+      "message": "(nit) avoid using \"etc.\" in docs",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
