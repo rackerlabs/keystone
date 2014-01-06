@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//628\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-06T19:40:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//7Mw\u003d",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//7Mg\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-06T18:24:46Z",
       "side": 1,
       "message": "this string isn\u0027t translated... maybe can just wrap in _().",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//620\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-06T19:40:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//7Mg\u003d",
       "revId": "348d66260d883ff7017c9284b7541542d805bb23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//62w\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-06T19:40:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//7Mc\u003d",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//7ME\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-06T18:24:46Z",
       "side": 1,
       "message": "(nit) suggest remove \"NOTE(morganfainberg): \" here... it makes me think that maybe this should be a TODO and it\u0027s not getting done or something.",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//63E\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-06T19:40:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//7ME\u003d",
       "revId": "348d66260d883ff7017c9284b7541542d805bb23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//61k\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-06T19:40:36Z",
+      "side": 1,
+      "message": "I\u0027ll get a bug filed for this.",
+      "parentUuid": "AAAAUH//7Lo\u003d",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//7Ng\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-06T18:24:46Z",
       "side": 1,
       "message": "this should be moved right after line 48 so that it runs even if line 49 fails.",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//61c\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-06T19:40:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//7Ng\u003d",
       "revId": "348d66260d883ff7017c9284b7541542d805bb23",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
