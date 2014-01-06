@@ -46,6 +46,9 @@ class OAuth1Tests(test_v3.RestfulTestCase):
         migration.db_version_control(version=None, repo_path=self.repo_path)
         migration.db_sync(version=None, repo_path=self.repo_path)
 
+    def load_backends(self):
+        super(OAuth1Tests, self).load_backends(include_oauth1=True)
+
     def setUp(self):
         super(OAuth1Tests, self).setUp()
 

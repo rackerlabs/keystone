@@ -335,7 +335,7 @@ class TestCase(testtools.TestCase):
         for k, v in kw.iteritems():
             CONF.set_override(k, v)
 
-    def load_backends(self):
+    def load_backends(self, **kwargs):
         """Initializes each manager and assigns them to an attribute."""
 
         # TODO(blk-u): Shouldn't need to clear the registry here, but some
@@ -349,7 +349,13 @@ class TestCase(testtools.TestCase):
         # should eventually be removed once testing has been cleaned up.
         kvs_core.KEY_VALUE_STORE_REGISTRY.clear()
 
-        drivers = service.load_backends(include_oauth1=True)
+        drivers = service.load_backends()
+
+        if 'include_oauth1' in kwargs:
+            from keystone.contrib import oauth1
+            drivers['oauth1_api'] = oauth1.Manager()
+
+        dependency.resolve_future_dependencies()
 
         for manager_name, manager in drivers.iteritems():
             setattr(self, manager_name, manager)
