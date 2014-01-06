@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//6yw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-06T19:56:09Z",
+      "side": 1,
+      "message": "this can/should just be built on top of the \u0027federation\u0027 driver now",
+      "revId": "74b438ec0ef53117fc4c51779ef7488913fedbfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
