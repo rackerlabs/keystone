@@ -177,6 +177,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//3VM\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T14:42:11Z",
+      "side": 1,
+      "message": "wish this was on one line... took me a second to comprehend the first line\n\n  user_ids \u003d [\n    u[\u0027id\u0027] for u in self.list_users_in_group(group_id, domain_scope)]",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3Rk\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2493,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T14:42:11Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "348d66260d883ff7017c9284b7541542d805bb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//7Ng\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 15
