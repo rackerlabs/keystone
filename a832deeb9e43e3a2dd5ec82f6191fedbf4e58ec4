@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//2i4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/036_add_region_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-07T17:10:32Z",
+      "side": 1,
+      "message": "add sql upgrade test for completeness.",
+      "revId": "a832deeb9e43e3a2dd5ec82f6191fedbf4e58ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//2i0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3386,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-07T17:10:32Z",
+      "side": 1,
+      "message": "Tests for region nesting, and how a nested region is accessed?",
+      "revId": "a832deeb9e43e3a2dd5ec82f6191fedbf4e58ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
