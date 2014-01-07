@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//5ZU\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-07T03:57:46Z",
+      "side": 1,
+      "message": "I am wondering if this should be tested in the backend for both kvs and sql. Since we have two methods that are suppose to behave the same way but require different implementations, unit testing these methods would ensure that if something down the road changes with one implementation, it should change consistently with the other.",
+      "revId": "674a50397ea15fb706e044f7b7fa7142a4d8c9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
