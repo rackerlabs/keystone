@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//58s\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T00:17:50Z",
+      "side": 1,
+      "message": "see reply in config.py.",
+      "parentUuid": "AAAAUH//6n0\u003d",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//6nw\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-06T20:36:41Z",
       "side": 1,
       "message": "dogpile.cache ?",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//588\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T00:17:50Z",
+      "side": 1,
+      "message": "When I switched from dogpile to dogpile.cache, I got a bunch of unwanted debug output from dogpile.core. Would you prefer I use dogpile.cache and dogpile.core rather than dogpile? Either way works for me.",
+      "parentUuid": "AAAAUH//6nw\u003d",
       "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//580\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T00:17:50Z",
+      "side": 1,
+      "message": "It\u0027s a list of objects: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/openstack/common/log.py?id\u003d11bb081d0eb5da5b6b44c35c92574eec14866269#n130",
+      "parentUuid": "AAAAUH//6ns\u003d",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//6no\u003d",
         "filename": "keystone/config.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-06T20:36:41Z",
       "side": 1,
       "message": "i\u0027d prefer .append() or something here if that\u0027s possible",
+      "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//58w\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T00:17:50Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "AAAAUH//6no\u003d",
       "revId": "9d6d21397adf0b2d083daebb8f59c00b9650c6a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
