@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//5f8\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T03:03:44Z",
+      "side": 1,
+      "message": "if we have this then we don\u0027t need this same code in keystone.tests.fixtures.appserver : http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/fixtures/appserver.py#n29",
+      "revId": "aca10c16b50e32e1c44c50be0060e4aebb0044b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
