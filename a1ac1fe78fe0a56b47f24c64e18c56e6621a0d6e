@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//1tY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-07T22:10:49Z",
+      "side": 1,
+      "message": "I hate to be anal but shouldn\u0027t the equals be extended a little farther out to match the number of characters in Federation?",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1s8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-07T22:10:49Z",
+      "side": 1,
+      "message": "add one more dash.   Sorry again for the egregious nit",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1lg\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-07T22:10:49Z",
+      "side": 1,
+      "message": "extend the equals above and below to the n.  Yes I know they \"have pills for that\"  :-)",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1k4\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-07T22:10:49Z",
+      "side": 1,
+      "message": "Great comment!  The spacing between HTTP operation and the URL is a little inconsistent/funky.  Perhaps stick to just one space between each?",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1dM\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-07T22:10:49Z",
+      "side": 1,
+      "message": "Why did you have both a put and a patch here?  Is the put a replace and the patch an update?",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
