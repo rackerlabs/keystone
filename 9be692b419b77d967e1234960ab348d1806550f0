@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//5fs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-07T03:24:14Z",
+      "side": 1,
+      "message": "considers?",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5fE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-07T03:24:14Z",
+      "side": 1,
+      "message": "default*",
+      "revId": "9be692b419b77d967e1234960ab348d1806550f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//8Vo\u003d",
         "filename": "doc/source/external-auth.rst",
         "patchSetId": 27
