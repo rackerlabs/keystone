@@ -75,6 +75,7 @@ CONF = config.CONF
 
 exception._FATAL_EXCEPTION_FORMAT_ERRORS = True
 
+environment.use_eventlet()
 
 class dirs:
     @staticmethod
