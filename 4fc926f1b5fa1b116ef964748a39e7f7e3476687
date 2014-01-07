@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//1oU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T21:22:32Z",
+      "side": 1,
+      "message": "?",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1nY\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T21:22:32Z",
+      "side": 1,
+      "message": "lol nice catch",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
