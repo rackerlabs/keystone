@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//1dg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T22:04:33Z",
+      "side": 1,
+      "message": "these look like a bunch of unrelated changes to me, suggest split them up.",
+      "revId": "91c2c5a31691c240fbd87b065f2ae9578ebcfdd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1hk\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
