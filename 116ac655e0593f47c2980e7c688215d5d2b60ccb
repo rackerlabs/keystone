@@ -16,6 +16,296 @@
       "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5yU\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAATn/8peA\u003d",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5yM\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "lists don\u0027t need to be indented like this, i don\u0027t think. i\u0027m actually not sure how this will render",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5yI\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "replace the triple line breaks with double line breaks",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5yE\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "``double backticks`` around the literal",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5yA\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "... dictionary of ``subscribed_events`` above with the... ?",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5x8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 20
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "why wouldn\u0027t this be enabled by default?",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5xw\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "this is a really dense method... a bit of whitespace where appropriate would be appreciated",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5x4\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "this doesn\u0027t look like it needs to be declared as a global in this scope",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5v8\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "why get_admin_context() ?",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5xY\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "please don\u0027t document this twice -- it doesn\u0027t need to be maintained more than once. link to the other doc if you really want to",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5xk\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "as before, replace the triple line breaks with double line breaks throughout",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5ws\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "why is this a global?",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5xI\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "this should be an inline comment, not a docstr",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5ww\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "same",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5wQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "either rewrite these or make them inline comments... and if it\u0027s really not supposed to do anything, use a:\n\n  pass\n\ns/intented/intended/",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5wc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "assertIn",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//5wk\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T01:33:31Z",
+      "side": 1,
+      "message": "assertNotIn",
+      "revId": "116ac655e0593f47c2980e7c688215d5d2b60ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
