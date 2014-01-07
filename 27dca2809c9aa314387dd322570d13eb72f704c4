@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//3aM\u003d",
+        "filename": "etc/kds.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T14:06:19Z",
+      "side": 1,
+      "message": "can definitely clean up the whitespace in this file",
+      "revId": "27dca2809c9aa314387dd322570d13eb72f704c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3as\u003d",
+        "filename": "keystone/contrib/kds/api/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T14:06:19Z",
+      "side": 1,
+      "message": "can this not be an int? :(",
+      "revId": "27dca2809c9aa314387dd322570d13eb72f704c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3aQ\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T14:06:19Z",
+      "side": 1,
+      "message": "missing a blank line between imports and constants",
+      "revId": "27dca2809c9aa314387dd322570d13eb72f704c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3aU\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-07T14:06:19Z",
+      "side": 1,
+      "message": "this one is an int...",
+      "revId": "27dca2809c9aa314387dd322570d13eb72f704c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
