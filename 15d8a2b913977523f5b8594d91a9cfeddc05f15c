@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//3IM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "I think we need to explain more what the DocImpact is, since the bp doesn\u0027t say.\n\n - new build_auth_context middleware is added to the paste pipeline that does (whatever)\n\nIs the middleware optional or required?",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3BU\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "would it be easier if the auth context was the same format as a v3 token?",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3Co\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "should add \"(optional)\", since this may not be present -- see line 70.",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3FE\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "suggest change to \u0027Invalid user data in v3 token\u0027",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3C8\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "you can get a token without any roles?\n\nSeems like it would make things easier if always set \u0027roles\u0027 in creds.",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3Eo\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "suggest change to \u0027Invalid user data in v2 token\u0027",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3AY\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "role_dict.get could be None, and it would probably be easier if there were no \"None\" roles in creds[\u0027roles\u0027], so suggest change this so skip any that aren\u0027t found instead.",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3A0\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "I assume creds here should be token_ref -- needs unit test.",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3EU\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "seems like this should be \"v3_token_to_auth_context\" ... this is a conversion from token to auth_context, not normalizing.\n\nthen could change name of function \"normalize_credentials\" to \"token_to_auth_context\"",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//3EI\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "seems like this should be \"v2_token_to_auth_context\"",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//2/8\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "add some more info to this log since it\u0027s the same as all the other log messages...\n\n \"The token was not found, rejecting auth request.\"",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//2/o\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "since the docstring says \"returns auth context\", suggest call this variable \"auth_context\"",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//2+k\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "could do \n\n AUTH_CONTEXT_ENV in context.get(\u0027environment\u0027, {})\n\nthen wouldn\u0027t need \"\u0027environment\u0027 in context and\"\n\nor, could do\n\n auth_context \u003d context.get(\u0027environment\u0027, {}).get(AUTH_CONTEXT_ENV)\n if auth_context:\n   LOG.debug(\u0027RBAC: Got auth context from environment. user_id\u003d%s\u0027, auth_context[\u0027user_id\u0027])\n   return auth_context\n\n ...",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//28w\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "what if the admin token middleware is removed from the pipeline? suggest add to the comment.",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//29A\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "change \"exist\" to \"exists\".\n\nWould be nice to put something here that says what to do about it... although I\u0027m not sure what you would do?",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//28k\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-07T15:44:14Z",
+      "side": 1,
+      "message": "remove commented-out code",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
