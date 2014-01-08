@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//w3g\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//xOc\u003d",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//xM4\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-08T17:25:19Z",
       "side": 1,
       "message": "The change to only load oauth backend in the oauth tests is a new feature and shouldn\u0027t be mixed in with the fix to load oauth. Put this into a separate commit.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//w1Y\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:51:10Z",
+      "side": 1,
+      "message": "i can remove the changes from the oauth tests, but if you want to keep the conditional on line 354, then I need to keep kwargs here.",
+      "parentUuid": "AAAAUH//xM4\u003d",
       "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//w1Q\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:51:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//xOI\u003d",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//w1I\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:51:10Z",
+      "side": 1,
+      "message": "i\u0027ll remove the changes in this file, and include them in another set when i change the oauth tests",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//xNE\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 6
@@ -64,6 +135,24 @@
       "writtenOn": "2014-01-08T17:25:19Z",
       "side": 1,
       "message": "I\u0027d rather the signature didn\u0027t change when override.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//w1A\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:51:10Z",
+      "side": 1,
+      "message": "i\u0027ll remove this for now",
+      "parentUuid": "AAAAUH//xNE\u003d",
       "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
