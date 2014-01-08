@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//xHM\u003d",
+        "filename": "keystone/tests/test_no_admin_token_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T17:47:22Z",
+      "side": 1,
+      "message": "should really be a docstr",
+      "revId": "af55fe3d8d7da26c91ea5f1d7e760d5e0435eb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
