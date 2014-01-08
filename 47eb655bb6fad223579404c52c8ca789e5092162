@@ -143,6 +143,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//wlU\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T19:34:36Z",
+      "side": 1,
+      "message": "I have to keep this part in here, or risk breaking the oauth tests completely. i\u0027ll add a TODO to make it conditional.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//w1I\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 6
