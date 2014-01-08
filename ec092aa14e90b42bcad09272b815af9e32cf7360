@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//xrA\u003d",
+        "filename": "keystone/common/kvs/legacy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T16:04:08Z",
+      "side": 1,
+      "message": "the fact that this second function is trying to guess the domain ID just looks like it\u0027s going to lead to bugs... refactor this into one method where the domain_id must be explicitly provided\n\n  @staticmethod\n  def user_name_key(user_name, domain_id):\n    pass",
+      "revId": "ec092aa14e90b42bcad09272b815af9e32cf7360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//xpw\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T16:04:08Z",
+      "side": 1,
+      "message": "the user might not have a domain_id here, and then they get shoved into the default domain?",
+      "revId": "ec092aa14e90b42bcad09272b815af9e32cf7360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
