@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//0WY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "actually, the equals line should be removed, since it\u0027s not a new header. but a sub-header, under \"Adding Extensions\" (line 708).\n\nmake sure there is a new line at 725, or it wont be rendered correctly. currently, it\u0027s falling under the Endpoint Filtering section: http://docs-draft.openstack.org/44/60244/9/check/gate-keystone-docs/20eb217/doc/build/html/configuration.html#adding-extensions",
+      "parentUuid": "AAAAUH//1tY\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1s8\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-07T22:10:49Z",
       "side": 1,
       "message": "add one more dash.   Sorry again for the egregious nit",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//0Wg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "+1 on the extra dash",
+      "parentUuid": "AAAAUH//1s8\u003d",
       "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//0O0\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "drop the \u0027cloud\u0027 part",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//0O4\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "drop the \u0027virtual\u0027 part,",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1k4\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 9
@@ -70,6 +140,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//0V0\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "nit, in the comment, add a DELETE",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1dM\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 9
@@ -81,6 +168,41 @@
       "writtenOn": "2014-01-07T22:10:49Z",
       "side": 1,
       "message": "Why did you have both a put and a patch here?  Is the put a replace and the patch an update?",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//0Vk\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "the PUT in this case is similar to a create (POST, we don\u0027t have one here). If the $protocol does not exist, it\u0027ll be created. if it does, it\u0027ll be replaced. \n\nPOST \u003d create | PUT \u003d create or replace (sauce: http://stackoverflow.com/questions/630453/put-vs-post-in-rest)\n\nthe PATCH on line 36 is just there for updating.",
+      "parentUuid": "AAAAUH//1dM\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//0Oc\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T05:53:59Z",
+      "side": 1,
+      "message": "just a heads up, in case this patch gets in first, you may have to rebase: https://review.openstack.org/#/c/64349/",
       "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
