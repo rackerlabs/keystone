@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//wj0\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-08T19:38:55Z",
+      "side": 1,
+      "message": "this was not optional before, since we always set include_oauth1\u003dTrue in load_backends for the tests.",
+      "revId": "8bf22c34fa9848e24de74ef1d72595b58352fd8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
