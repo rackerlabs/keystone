@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//wsU\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T19:12:21Z",
+      "side": 1,
+      "message": "okay, thanks for confirming",
+      "parentUuid": "AAAAUH//w0Q\u003d",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//xOI\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 6
