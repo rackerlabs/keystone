@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//zVI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//0WY\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1s8\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 9
@@ -72,6 +90,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//zVE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//1s8\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//zVA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//0Wg\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1lg\u003d",
         "filename": "doc/source/extensions/federation-configuration.rst",
         "patchSetId": 9
@@ -83,6 +137,24 @@
       "writtenOn": "2014-01-07T22:10:49Z",
       "side": 1,
       "message": "extend the equals above and below to the n.  Yes I know they \"have pills for that\"  :-)",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//zUs\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "it\u0027s done but I was following oauth1\u0027s patterns and there the \u0027\u003d\u0027 line ends with the last letter of the \u0027header\u0027.",
+      "parentUuid": "AAAAUH//1lg\u003d",
       "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//zUU\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//0O0\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//0O4\u003d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 9
@@ -117,6 +207,24 @@
       "writtenOn": "2014-01-08T05:53:59Z",
       "side": 1,
       "message": "drop the \u0027virtual\u0027 part,",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//zUM\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//0O4\u003d",
       "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//zSA\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//1k4\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//0V0\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 9
@@ -151,6 +277,24 @@
       "writtenOn": "2014-01-08T05:53:59Z",
       "side": 1,
       "message": "nit, in the comment, add a DELETE",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//zSE\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//0V0\u003d",
       "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//zTQ\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "steve++",
+      "parentUuid": "AAAAUH//0Vk\u003d",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//0Oc\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 9
@@ -203,6 +365,24 @@
       "writtenOn": "2014-01-08T05:53:59Z",
       "side": 1,
       "message": "just a heads up, in case this patch gets in first, you may have to rebase: https://review.openstack.org/#/c/64349/",
+      "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//zS4\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-08T10:03:25Z",
+      "side": 1,
+      "message": "thanks.",
+      "parentUuid": "AAAAUH//0Oc\u003d",
       "revId": "a1ac1fe78fe0a56b47f24c64e18c56e6621a0d6e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
