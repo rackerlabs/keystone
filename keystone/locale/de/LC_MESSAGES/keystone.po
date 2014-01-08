@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-12-28 06:00+0000\n"
+"POT-Creation-Date: 2014-01-08 06:00+0000\n"
 "PO-Revision-Date: 2013-05-22 03:45+0000\n"
 "Last-Translator: daisy.ycguo <daisy.ycguo@gmail.com>\n"
 "Language-Team: German "
@@ -1869,7 +1869,7 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:136
+#: keystone/tests/core.py:135
 #, python-format
 msgid "Failed to checkout %s"
 msgstr "%s wurde nicht ausgecheckt"
@@ -2006,8 +2006,8 @@ msgstr ""
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr ""
 
-#: keystone/token/provider.py:200 keystone/token/providers/common.py:548
-#: keystone/token/providers/common.py:558
+#: keystone/token/provider.py:200 keystone/token/providers/common.py:547
+#: keystone/token/providers/common.py:557
 msgid "Failed to validate token"
 msgstr ""
 
@@ -2039,37 +2039,37 @@ msgstr ""
 msgid "Unable to add token to revocation list."
 msgstr "Token kann nicht zu Widerrufsliste hinzugefügt werden."
 
-#: keystone/token/providers/common.py:184
+#: keystone/token/providers/common.py:183
 msgid "Trustor is disabled."
 msgstr ""
 
-#: keystone/token/providers/common.py:248
+#: keystone/token/providers/common.py:247
 msgid "Trustee has no delegated roles."
 msgstr ""
 
-#: keystone/token/providers/common.py:257
+#: keystone/token/providers/common.py:256
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
 msgstr ""
 
-#: keystone/token/providers/common.py:262
+#: keystone/token/providers/common.py:261
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
 msgstr ""
 
-#: keystone/token/providers/common.py:312
+#: keystone/token/providers/common.py:311
 msgid "User is not a trustee."
 msgstr ""
 
-#: keystone/token/providers/common.py:402
+#: keystone/token/providers/common.py:401
 msgid "Oauth is disabled."
 msgstr ""
 
-#: keystone/token/providers/common.py:476
+#: keystone/token/providers/common.py:475
 msgid "Non-default domain is not supported"
 msgstr "Nicht-Standard-Domäne wird nicht unterstützt"
 
-#: keystone/token/providers/common.py:484
+#: keystone/token/providers/common.py:483
 msgid "Domain scoped token is not supported"
 msgstr "Bereichsorientiertes Token der Domäne wird nicht unterstützt"
 
@@ -2163,17 +2163,7 @@ msgstr "Token kann nicht unterzeichnet werden."
 #~ msgstr "Regel '%(rule)r' konnte nicht verstanden werden"
 
 #~ msgid ""
-#~ "The Keystone paste configuration file "
-#~ "%(config_file)s could not be found."
 #~ msgstr ""
-
-#~ msgid ""
-#~ "Malformed endpoint %s - incomplete "
-#~ "format                   (are you missing a"
-#~ " type notifier ?)"
-#~ msgstr ""
-#~ "Fehlerhafter Endpunkt %s - unvollständiges "
-#~ "Format                   (fehlender Typenhinweis?)"
 
 #~ msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
 #~ msgstr ""
@@ -2203,14 +2193,5 @@ msgstr "Token kann nicht unterzeichnet werden."
 #~ msgstr ""
 
 #~ msgid "Got mysql server has gone away: %s"
-#~ msgstr ""
-#~ "Es wurde festgestellt, dass keine "
-#~ "Verbindung zum mysql-Server mehr "
-#~ "vorhanden ist: %s"
-
-#~ msgid ""
-#~ "Number of call waiters is greater "
-#~ "than warning threshhold: %d. There could"
-#~ " be a MulticallProxyWaiter leak."
 #~ msgstr ""
 
