@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//1DU\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "So this should get dropped, and instead \"SAML\" etc should be used as the METHOD_NAMES, but in their own plugin files.",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//uy4\u003d",
         "filename": "keystone/auth/plugins/federated/discovery/core.py",
         "patchSetId": 3
@@ -19,6 +36,142 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//1EQ\u003d",
+        "filename": "keystone/auth/plugins/federated/discovery/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "Is this enumerating all endpoints?  I think that IdpS are not going to be in the endpoint lists, and this should only show IdPs.",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1Do\u003d",
+        "filename": "keystone/auth/plugins/federated/discovery/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "Youy don\u0027t need to set is_admin",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1A8\u003d",
+        "filename": "keystone/auth/plugins/federated/issuing_policy/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "JSON, not XML",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1BE\u003d",
+        "filename": "keystone/auth/plugins/federated/issuing_policy/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "class should be IssuingPolicyParser.",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1BI\u003d",
+        "filename": "keystone/auth/plugins/federated/mapping/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "USE JSON, not XML",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1CU\u003d",
+        "filename": "keystone/auth/plugins/federated/mapping/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "Bad class name.",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1Dc\u003d",
+        "filename": "keystone/auth/plugins/federated/protocol/apache2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "see how \"external\" auth is done in auth/controller.py , and integrate with that.",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1Ck\u003d",
+        "filename": "keystone/auth/plugins/federated/user_management.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "use @depends(\"identity_api\") like the controllers etc do.",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//uuI\u003d",
         "filename": "keystone/auth/plugins/federated/user_management.py",
         "patchSetId": 3
@@ -30,6 +183,92 @@
       "writtenOn": "2014-01-02T19:27:27Z",
       "side": 1,
       "message": "Pulling the entire list will be heavy, can we get user by name/id in place of iterating through list?",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1DE\u003d",
+        "filename": "keystone/auth/plugins/federated/user_management.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "++  Arvind is right",
+      "parentUuid": "AAAAT3//uuI\u003d",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1B0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "this option can go away",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1Bo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "Instead of a config option for each, they shouiod be operations supported buy the the plugin.  so  openid connect can say whether or niot it supports discovery, etc.  Should not be one per stage",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1Bk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "remove, and use the above mechanism",
+      "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1BQ\u003d",
+        "filename": "keystone/tests/issuing_policy_file",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-08T00:04:52Z",
+      "side": 1,
+      "message": "DO this in JSON, not XML",
       "revId": "0e5f037b974f61b847489c616c1bda8b2c6e89ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
