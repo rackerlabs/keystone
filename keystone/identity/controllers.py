@@ -123,7 +123,6 @@ class User(controller.V2Controller):
     @controller.v2_deprecated
     def create_user(self, context, user):
         user = self._normalize_OSKSADM_password_on_request(user)
-        user = self._normalize_dict(user)
         self.assert_admin(context)
 
         if 'name' not in user or not user['name']:
@@ -274,7 +273,7 @@ class UserV3(controller.V3Controller):
     def create_user(self, context, user):
         self._require_attribute(user, 'name')
 
-        ref = self._assign_unique_id(self._normalize_dict(user))
+        ref = self._assign_unique_id(user)
         ref = self._normalize_domain_id(context, ref)
         ref = self.identity_api.create_user(ref['id'], ref)
         return UserV3.wrap_member(context, ref)
