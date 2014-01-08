@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//0rU\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/ticket.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-08T02:52:25Z",
+      "side": 1,
+      "message": "(NIT): are lines 44 - 45 the same comment? \u0027generate generate\u0027?",
+      "revId": "b47a174dee6154777fce4df6314c1baaa9186bc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
