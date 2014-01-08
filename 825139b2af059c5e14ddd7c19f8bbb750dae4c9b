@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//0jw\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-08T03:18:29Z",
+      "side": 1,
+      "message": "should we pass here for now, or will that not matter since this is a method of an abc.ABCMeta class?",
+      "revId": "825139b2af059c5e14ddd7c19f8bbb750dae4c9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//0js\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-08T03:18:29Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "825139b2af059c5e14ddd7c19f8bbb750dae4c9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
