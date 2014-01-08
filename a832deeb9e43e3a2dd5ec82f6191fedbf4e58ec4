@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//wNc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/036_add_region_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-08T21:11:42Z",
+      "side": 1,
+      "message": "No problem. In your mind, are you thinking about a similar test to these?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_sql_upgrade.py#L603\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_sql_upgrade.py#L609\n\nLet me know... thx!",
+      "parentUuid": "AAAAUH//2i4\u003d",
+      "revId": "a832deeb9e43e3a2dd5ec82f6191fedbf4e58ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//2i0\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-07T17:10:32Z",
       "side": 1,
       "message": "Tests for region nesting, and how a nested region is accessed?",
+      "revId": "a832deeb9e43e3a2dd5ec82f6191fedbf4e58ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//wOM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3386,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-08T21:11:42Z",
+      "side": 1,
+      "message": "So, in the test_region_crud() method above has a bunch of tests to validate that the nesting of regions works properly -- both in the sense of preventing orphans as well as ensuring that a delete of a parent cascades to the children. Check it out and let me know if there are further tests you\u0027d like to see!",
+      "parentUuid": "AAAAUH//2i0\u003d",
       "revId": "a832deeb9e43e3a2dd5ec82f6191fedbf4e58ec4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
