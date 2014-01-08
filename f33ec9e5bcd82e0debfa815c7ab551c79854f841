@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//vr8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-08T23:13:39Z",
+      "side": 0,
+      "message": "oops, making this not a static method makes it much easier to debug - but wasn\u0027t supposed to be part of the patch",
+      "revId": "f33ec9e5bcd82e0debfa815c7ab551c79854f841",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
