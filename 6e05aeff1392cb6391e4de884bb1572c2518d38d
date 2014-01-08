@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//xsk\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T15:56:21Z",
+      "side": 1,
+      "message": "seems odd to bother basing this on a fixture when you\u0027re replacing all it\u0027s data anyway?",
+      "revId": "6e05aeff1392cb6391e4de884bb1572c2518d38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//xsg\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T15:56:21Z",
+      "side": 1,
+      "message": "same as the above",
+      "revId": "6e05aeff1392cb6391e4de884bb1572c2518d38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
