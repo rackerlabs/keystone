@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//w0Q\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-08T18:53:25Z",
+      "side": 1,
+      "message": "I think the conditional on line 354 should be done in a separate commit.",
+      "parentUuid": "AAAAUH//w1Y\u003d",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//xOI\u003d",
         "filename": "keystone/tests/core.py",
         "patchSetId": 6
