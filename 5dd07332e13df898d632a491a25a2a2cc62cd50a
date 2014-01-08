@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//zDI\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-08T10:30:09Z",
+      "side": 1,
+      "message": "Defaulting the host to localhost here seems wrong to me, it\u0027s defaulted in the config anyway, so you really want to fail if someone doesn\u0027t pass a host?\n\nOtherwise a bug in the config (e.g setting public_bind_host default to None or an empty string) could get through the gate without detection.\n\nAlso defaulting the port to zero seems pretty pointless as it\u0027s not a valid port - I\u0027d argue that host and port should both be required parameters.",
+      "revId": "5dd07332e13df898d632a491a25a2a2cc62cd50a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
