@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//0ck\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-08T04:07:25Z",
+      "side": 1,
+      "message": "Given that the in memory KVS backend isn\u0027t recommended for anything but testing, should Doc Impact be added to this to ensure it gets documented if it isn\u0027t already?",
+      "revId": "ba06f30ed926c548217d1a307643d96462a42d41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//0cE\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-08T04:07:25Z",
+      "side": 1,
+      "message": "Would it make sense to log something here so we know we hit a TypeError or ValueError?",
+      "revId": "ba06f30ed926c548217d1a307643d96462a42d41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
