@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//xOc\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-08T17:25:19Z",
+      "side": 1,
+      "message": "I think this has to happen after line 58, because we haven\u0027t loaded the paste pipeline yet.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//xM4\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-08T17:25:19Z",
+      "side": 1,
+      "message": "The change to only load oauth backend in the oauth tests is a new feature and shouldn\u0027t be mixed in with the fix to load oauth. Put this into a separate commit.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//xOI\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-08T17:25:19Z",
+      "side": 1,
+      "message": "Suggest change to\n\n if kwargs.get(\u0027include_auth1\u0027):\n\nsince it should be a Boolean, or not present.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//xNE\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-08T17:25:19Z",
+      "side": 1,
+      "message": "I\u0027d rather the signature didn\u0027t change when override.",
+      "revId": "47eb655bb6fad223579404c52c8ca789e5092162",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
