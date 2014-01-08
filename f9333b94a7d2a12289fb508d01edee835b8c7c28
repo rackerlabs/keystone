@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//x9E\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T15:07:10Z",
+      "side": 1,
+      "message": "rather than copy/pasting a bunch of code from _format_project_list -- can you refactor this to share that code?",
+      "revId": "f9333b94a7d2a12289fb508d01edee835b8c7c28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
