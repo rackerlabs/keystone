@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//wIU\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-08T21:32:52Z",
+      "side": 1,
+      "message": "this could also just be tunable via keystone.conf, regardless of dialect",
+      "revId": "5dc675f193a1dbaf5807416ceb2e808dd8e10f45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
