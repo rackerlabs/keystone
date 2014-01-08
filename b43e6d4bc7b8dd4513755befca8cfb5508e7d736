@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//w4s\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:41:27Z",
+      "side": 1,
+      "message": "missed this one in the rebase, i\u0027ll remove it",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//w4U\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-08T18:41:27Z",
+      "side": 1,
+      "message": "i\u0027ll revert these white space changes, it was A LOT to rebase, was bound to miss some stuff",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
