@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//vBE\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-09T02:16:21Z",
+      "side": 1,
+      "message": "Note to reviewers: This code is closer to the memcache driver than the original KVS driver (to compare logic).  The original KVS driver didn\u0027t act like an external key-value-store and just mucked with the internal dictionary",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
