@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//syk\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-09T13:33:26Z",
+      "side": 1,
+      "message": "so this technically isn\u0027t the right way to go about this. the /v3/ and /v2.0/ paths are entirely configurable and are not guaranteed to appear as expected (you could deploy with /v3.2/ and /v2/ if you desired).\n\ninstead, you can specify configuration for this middleware to use via the paste pipeline, and configure one instance of this middleware to use the v2.0 namespace, and one to use the v3 namespace... that way there\u0027s no conditionals or guesswork here, and one-off deployments get the customization they need.",
+      "revId": "631c806552e71a51891f6219b123de749e079379",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
