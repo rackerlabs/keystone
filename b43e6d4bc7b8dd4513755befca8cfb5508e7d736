@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//rm8\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "I was thinking the same thing, I\u0027m good with Federation, it seems be used more often",
+      "parentUuid": "AAAAUH//r6A\u003d",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//rtU\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 4
@@ -64,6 +82,24 @@
       "writtenOn": "2014-01-09T16:55:30Z",
       "side": 1,
       "message": "Add comment\n\n# IdP CRUD",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//rm0\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//rtU\u003d",
       "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//rms\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//rtM\u003d",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//r+Q\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 4
@@ -98,6 +152,24 @@
       "writtenOn": "2014-01-09T16:55:30Z",
       "side": 1,
       "message": "Justify the text (move one space right or the whole previous block one space left).",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//rmo\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "hmm, thought i did, not sure why it didn\u0027t take",
+      "parentUuid": "AAAAUH//r+Q\u003d",
       "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//rmg\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "awesome!",
+      "parentUuid": "AAAAUH//r1I\u003d",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//ryE\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 4
@@ -132,6 +222,24 @@
       "writtenOn": "2014-01-09T16:55:30Z",
       "side": 1,
       "message": "I think just for now local structure can have only \u0027group\u0027.",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//rmQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "right, and i\u0027ll define these somewhere else",
+      "parentUuid": "AAAAUH//ryE\u003d",
       "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//rmM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "changing to basestring",
+      "parentUuid": "AAAAUH//rwg\u003d",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//rwY\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 4
@@ -166,6 +292,24 @@
       "writtenOn": "2014-01-09T16:55:30Z",
       "side": 1,
       "message": "Any particular reason why you are only checking \u0027str\u0027 type, and not unicode?",
+      "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//rmI\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T17:14:20Z",
+      "side": 1,
+      "message": "changing to basestring",
+      "parentUuid": "AAAAUH//rwY\u003d",
       "revId": "b43e6d4bc7b8dd4513755befca8cfb5508e7d736",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
