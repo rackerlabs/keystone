@@ -317,11 +317,10 @@ class V3Controller(wsgi.Application):
 
             """
             if type(ref_attr) is bool:
-                if (isinstance(val_attr, basestring) and
-                        val_attr == '0'):
-                    val = False
-                else:
-                    val = True
+                val = True
+                if isinstance(val_attr, basestring):
+                    if val_attr.lower() in ('false', '0'):
+                        val = False
                 return (ref_attr == val)
             else:
                 return (ref_attr == val_attr)
