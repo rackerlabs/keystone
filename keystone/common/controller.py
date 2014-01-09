@@ -23,6 +23,7 @@ from keystone.common import wsgi
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
+from keystone.openstack.common import strutils
 from keystone.openstack.common import versionutils
 
 
@@ -317,11 +318,7 @@ class V3Controller(wsgi.Application):
 
             """
             if type(ref_attr) is bool:
-                if (isinstance(val_attr, basestring) and
-                        val_attr == '0'):
-                    val = False
-                else:
-                    val = True
+                val = strutils.bool_from_string(val_attr, default=True)
                 return (ref_attr == val)
             else:
                 return (ref_attr == val_attr)
