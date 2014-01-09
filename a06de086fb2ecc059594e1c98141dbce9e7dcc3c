@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//q4Y\u003d",
+        "filename": "keystone/openstack/common/db/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-09T20:29:37Z",
+      "side": 0,
+      "message": "What\u0027s OpenStack\u0027s policy for removing copyrights?",
+      "revId": "a06de086fb2ecc059594e1c98141dbce9e7dcc3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//q30\u003d",
+        "filename": "keystone/openstack/common/db/sqlalchemy/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-09T20:29:37Z",
+      "side": 0,
+      "message": "What\u0027s OpenStack\u0027s policy for removing copyrights?",
+      "revId": "a06de086fb2ecc059594e1c98141dbce9e7dcc3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
