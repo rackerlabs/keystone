@@ -33,6 +33,24 @@
       "revId": "ec092aa14e90b42bcad09272b815af9e32cf7360",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//vZ8\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-09T00:16:53Z",
+      "side": 1,
+      "message": "you\u0027re right... this is totally broken. we need some way to look up the domain for the user. Not sure why the manager doesn\u0027t just pass down the domain ID since it knows it.",
+      "parentUuid": "AAAAUH//xpw\u003d",
+      "revId": "ec092aa14e90b42bcad09272b815af9e32cf7360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
