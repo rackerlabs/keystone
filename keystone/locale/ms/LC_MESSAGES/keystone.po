@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2013-12-28 06:00+0000\n"
+"POT-Creation-Date: 2014-01-09 06:01+0000\n"
 "PO-Revision-Date: 2013-07-29 22:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Malay "
@@ -211,39 +211,86 @@ msgid "Authentication failed: %s"
 msgstr ""
 
 #: keystone/assignment/controllers.py:104
-#: keystone/assignment/controllers.py:217 keystone/identity/controllers.py:130
+#: keystone/assignment/controllers.py:210 keystone/identity/controllers.py:130
 msgid "Name field is required and cannot be empty"
 msgstr ""
 
-#: keystone/assignment/controllers.py:158
+#: keystone/assignment/controllers.py:151
 msgid "Marker could not be found"
 msgstr ""
 
-#: keystone/assignment/controllers.py:169
+#: keystone/assignment/controllers.py:162
 msgid "Invalid limit value"
 msgstr ""
 
-#: keystone/assignment/controllers.py:612
+#: keystone/assignment/controllers.py:460
 msgid "Specify a domain or project, not both"
 msgstr ""
 
-#: keystone/assignment/controllers.py:617
+#: keystone/assignment/controllers.py:465
 msgid "Specify a user or group, not both"
 msgstr ""
 
-#: keystone/assignment/controllers.py:847
+#: keystone/assignment/controllers.py:688
 #, python-format
 msgid ""
 "Group %(group)s not found for role-assignment - %(target)s with Role: "
 "%(role)s"
 msgstr ""
 
-#: keystone/assignment/core.py:224
+#: keystone/assignment/core.py:231
 #, python-format
 msgid "Creating the default role %s because it does not exist."
 msgstr ""
 
-#: keystone/assignment/core.py:683 keystone/identity/core.py:256
+#: keystone/assignment/core.py:347
+#, python-format
+msgid ""
+"Project %(projectid)s not found when deleting domain contents for "
+"%(domainid)s, continuing with cleanup."
+msgstr ""
+
+#: keystone/assignment/core.py:360
+#, python-format
+msgid ""
+"Group %(groupid)s not found when deleting domain contents for "
+"%(domainid)s, continuing with cleanup."
+msgstr ""
+
+#: keystone/assignment/core.py:372
+#, python-format
+msgid ""
+"User %(userid)s not found when deleting domain contents for %(domainid)s,"
+" continuing with cleanup."
+msgstr ""
+
+#: keystone/assignment/core.py:451
+#, python-format
+msgid "Group %s not found, no tokens to invalidate."
+msgstr ""
+
+#: keystone/assignment/core.py:489
+#, python-format
+msgid "Project (%s)"
+msgstr ""
+
+#: keystone/assignment/core.py:491
+#, python-format
+msgid "Domain (%s)"
+msgstr ""
+
+#: keystone/assignment/core.py:493
+msgid "Unknown Target"
+msgstr ""
+
+#: keystone/assignment/core.py:494
+#, python-format
+msgid ""
+"Group (%(group)s), referenced in assignment for %(target)s, not found - "
+"ignoring."
+msgstr ""
+
+#: keystone/assignment/core.py:869 keystone/identity/core.py:256
 #: keystone/identity/core.py:268
 #, python-format
 msgid "Expected dict or list: %s"
@@ -295,28 +342,28 @@ msgstr ""
 msgid "Scoping to both project and trust is not allowed"
 msgstr ""
 
-#: keystone/auth/controllers.py:360
+#: keystone/auth/controllers.py:361
 #, python-format
 msgid ""
 "User %(user_id)s doesn't have access to default project %(project_id)s. "
 "The token will be unscoped rather than scoped to the project."
 msgstr ""
 
-#: keystone/auth/controllers.py:367
+#: keystone/auth/controllers.py:368
 #, python-format
 msgid ""
 "User %(user_id)s's default project %(project_id)s is disabled. The token "
 "will be unscoped rather than scoped to the project."
 msgstr ""
 
-#: keystone/auth/controllers.py:376
+#: keystone/auth/controllers.py:377
 #, python-format
 msgid ""
 "User %(user_id)s's default project %(project_id)s not found. The token "
 "will be unscoped rather than scoped to the project."
 msgstr ""
 
-#: keystone/auth/controllers.py:407
+#: keystone/auth/controllers.py:408
 msgid "User not found"
 msgstr ""
 
@@ -440,12 +487,12 @@ msgid "RBAC: Proceeding without tenant"
 msgstr ""
 
 #: keystone/common/controller.py:128 keystone/common/controller.py:215
-#: keystone/common/controller.py:487
+#: keystone/common/controller.py:391
 msgid "RBAC: Bypassing authorization"
 msgstr ""
 
 #: keystone/common/controller.py:173 keystone/common/controller.py:213
-#: keystone/common/controller.py:503
+#: keystone/common/controller.py:407
 msgid "RBAC: Authorization granted"
 msgstr ""
 
@@ -454,28 +501,7 @@ msgstr ""
 msgid "RBAC: Adding query filter params (%s)"
 msgstr ""
 
-#: keystone/common/controller.py:275
-#, python-format
-msgid "Project (%s)"
-msgstr ""
-
-#: keystone/common/controller.py:277
-#, python-format
-msgid "Domain (%s)"
-msgstr ""
-
-#: keystone/common/controller.py:279
-msgid "Unknown Target"
-msgstr ""
-
-#: keystone/common/controller.py:280
-#, python-format
-msgid ""
-"Group (%(group)s), referenced in assignment for %(target)s, not found - "
-"ignoring."
-msgstr ""
-
-#: keystone/common/controller.py:458
+#: keystone/common/controller.py:362
 msgid "Invalid token in _get_domain_id_for_request"
 msgstr ""
 
@@ -531,48 +557,48 @@ msgid ""
 "listening on that port."
 msgstr ""
 
-#: keystone/common/wsgi.py:72
+#: keystone/common/wsgi.py:73
 msgid "No bind information present in token"
 msgstr ""
 
-#: keystone/common/wsgi.py:76
+#: keystone/common/wsgi.py:77
 #, python-format
 msgid "Named bind mode %s not in bind information"
 msgstr ""
 
-#: keystone/common/wsgi.py:83
+#: keystone/common/wsgi.py:84
 msgid "Kerberos credentials required and not present"
 msgstr ""
 
-#: keystone/common/wsgi.py:87
+#: keystone/common/wsgi.py:88
 msgid "Kerberos credentials do not match those in bind"
 msgstr ""
 
-#: keystone/common/wsgi.py:90
+#: keystone/common/wsgi.py:91
 msgid "Kerberos bind authentication successful"
 msgstr ""
 
-#: keystone/common/wsgi.py:93
+#: keystone/common/wsgi.py:94
 #, python-format
 msgid "Ignoring unknown bind for permissive mode: {%(bind_type)s: %(identifier)s}"
 msgstr ""
 
-#: keystone/common/wsgi.py:97
+#: keystone/common/wsgi.py:98
 #, python-format
 msgid "Couldn't verify unknown bind: {%(bind_type)s: %(identifier)s}"
 msgstr ""
 
-#: keystone/common/wsgi.py:186
+#: keystone/common/wsgi.py:188
 #, python-format
 msgid "arg_dict: %s"
 msgstr ""
 
-#: keystone/common/wsgi.py:214
+#: keystone/common/wsgi.py:216
 #, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr ""
 
-#: keystone/common/wsgi.py:462 keystone/tests/test_wsgi.py:282
+#: keystone/common/wsgi.py:470 keystone/tests/test_wsgi.py:282
 msgid "The resource could not be found."
 msgstr ""
 
@@ -961,6 +987,11 @@ msgstr ""
 msgid "Access token not found"
 msgstr ""
 
+#: keystone/credential/core.py:121
+#, python-format
+msgid "Deletion of credential is not required: %s"
+msgstr ""
+
 #: keystone/identity/controllers.py:133
 msgid "Enabled field must be a boolean"
 msgstr ""
@@ -969,12 +1000,12 @@ msgstr ""
 msgid "Enabled field should be a boolean"
 msgstr ""
 
-#: keystone/identity/controllers.py:204
+#: keystone/identity/controllers.py:200
 #, python-format
 msgid "Unable to remove user %(user)s from %(tenant)s."
 msgstr ""
 
-#: keystone/identity/controllers.py:223
+#: keystone/identity/controllers.py:219
 #, python-format
 msgid "Unable to add user %(user)s to %(tenant)s."
 msgstr ""
@@ -1861,7 +1892,7 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:136
+#: keystone/tests/core.py:140
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
@@ -1994,8 +2025,8 @@ msgstr ""
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr ""
 
-#: keystone/token/provider.py:200 keystone/token/providers/common.py:548
-#: keystone/token/providers/common.py:558
+#: keystone/token/provider.py:200 keystone/token/providers/common.py:547
+#: keystone/token/providers/common.py:557
 msgid "Failed to validate token"
 msgstr ""
 
@@ -2027,37 +2058,37 @@ msgstr ""
 msgid "Unable to add token to revocation list."
 msgstr ""
 
-#: keystone/token/providers/common.py:184
+#: keystone/token/providers/common.py:183
 msgid "Trustor is disabled."
 msgstr ""
 
-#: keystone/token/providers/common.py:248
+#: keystone/token/providers/common.py:247
 msgid "Trustee has no delegated roles."
 msgstr ""
 
-#: keystone/token/providers/common.py:257
+#: keystone/token/providers/common.py:256
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
 msgstr ""
 
-#: keystone/token/providers/common.py:262
+#: keystone/token/providers/common.py:261
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
 msgstr ""
 
-#: keystone/token/providers/common.py:312
+#: keystone/token/providers/common.py:311
 msgid "User is not a trustee."
 msgstr ""
 
-#: keystone/token/providers/common.py:402
+#: keystone/token/providers/common.py:401
 msgid "Oauth is disabled."
 msgstr ""
 
-#: keystone/token/providers/common.py:476
+#: keystone/token/providers/common.py:475
 msgid "Non-default domain is not supported"
 msgstr ""
 
-#: keystone/token/providers/common.py:484
+#: keystone/token/providers/common.py:483
 msgid "Domain scoped token is not supported"
 msgstr ""
 
@@ -2142,14 +2173,6 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ""
-#~ "The Keystone paste configuration file "
-#~ "%(config_file)s could not be found."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Malformed endpoint %s - incomplete "
-#~ "format                   (are you missing a"
-#~ " type notifier ?)"
 #~ msgstr ""
 
 #~ msgid "CACHE_GET: Key: \"%(key)s\" Value: \"%(value)s\""
@@ -2180,11 +2203,5 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Got mysql server has gone away: %s"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Number of call waiters is greater "
-#~ "than warning threshhold: %d. There could"
-#~ " be a MulticallProxyWaiter leak."
 #~ msgstr ""
 
