@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//sBA\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T16:14:58Z",
+      "side": 1,
+      "message": "s/fired/issued to seem less pew pew",
+      "revId": "ad5ca2e12a9c3e0e2b2fcf9fb33b238a7e32e729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//sIA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 21
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T16:14:58Z",
+      "side": 1,
+      "message": "probably should be disabled by default",
+      "revId": "ad5ca2e12a9c3e0e2b2fcf9fb33b238a7e32e729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//r+E\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T16:14:58Z",
+      "side": 1,
+      "message": "nit: can we write you cb as callback",
+      "revId": "ad5ca2e12a9c3e0e2b2fcf9fb33b238a7e32e729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//r6M\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T16:14:58Z",
+      "side": 1,
+      "message": "suggest a comment here, that mentioned that callbacks that are not callable/do not exist are only logged, they won\u0027t cause an exception",
+      "revId": "ad5ca2e12a9c3e0e2b2fcf9fb33b238a7e32e729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//r50\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-09T16:14:58Z",
+      "side": 1,
+      "message": "nit: is the error coming up because \u0027removed\u0027 is not a valid type, or because the id does not exist.",
+      "revId": "ad5ca2e12a9c3e0e2b2fcf9fb33b238a7e32e729",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
