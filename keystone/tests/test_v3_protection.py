@@ -353,9 +353,32 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assertEqual(len(id_list), 1)
         self.assertIn(self.domainC['id'], id_list)
 
+        r = self.get('/domains?enabled=False', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        self.assertEqual(len(id_list), 1)
+        self.assertIn(self.domainC['id'], id_list)
+
+        r = self.get('/domains?enabled=false', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        self.assertEqual(len(id_list), 1)
+
         # Now try a few ways of specifying 'true' when we should get back
         # the other two domains, plus the default domain
         r = self.get('/domains?enabled=1', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        self.assertEqual(len(id_list), 3)
+        self.assertIn(self.domainA['id'], id_list)
+        self.assertIn(self.domainB['id'], id_list)
+        self.assertIn(DEFAULT_DOMAIN_ID, id_list)
+
+        r = self.get('/domains?enabled=True', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        self.assertEqual(len(id_list), 3)
+        self.assertIn(self.domainA['id'], id_list)
+        self.assertIn(self.domainB['id'], id_list)
+        self.assertIn(DEFAULT_DOMAIN_ID, id_list)
+
+        r = self.get('/domains?enabled=true', auth=self.auth)
         id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
         self.assertEqual(len(id_list), 3)
         self.assertIn(self.domainA['id'], id_list)

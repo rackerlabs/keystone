@@ -317,7 +317,9 @@ class V3Controller(wsgi.Application):
 
             """
             if type(ref_attr) is bool:
-                if (isinstance(val_attr, basestring) and
+                if str(val_attr).lower() == 'false':
+                    val = False
+                elif (isinstance(val_attr, basestring) and
                         val_attr == '0'):
                     val = False
                 else:
