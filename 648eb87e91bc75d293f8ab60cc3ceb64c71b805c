@@ -34,6 +34,24 @@
       "revId": "648eb87e91bc75d293f8ab60cc3ceb64c71b805c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//sug\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-09T13:40:58Z",
+      "side": 1,
+      "message": "an inline comment explaining why it\u0027s overriding the parent method with just a check for 400\u0027s would have avoided the confusion here",
+      "parentUuid": "AAAAT3//0G0\u003d",
+      "revId": "648eb87e91bc75d293f8ab60cc3ceb64c71b805c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
