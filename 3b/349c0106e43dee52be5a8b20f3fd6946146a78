@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Dong Liu <willowd878@gmail.com>
+Code-Review+1: huangtianhua <huangtianhua@huawei.com>
+Code-Review+1: liusheng <liusheng@huawei.com>
+Code-Review+1: shihanzhang <shihanzhang@huawei.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 09 Jan 2014 17:48:50 +0000
+Reviewed-on: https://review.openstack.org/64413
+Project: openstack/keystone
+Branch: refs/heads/master
