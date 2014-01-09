@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//vJo\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-01-09T01:56:16Z",
+      "side": 1,
+      "message": "Should we consider thread safe?",
+      "revId": "45e8cfe08a5291231f75c5d16fcd4f851ad9feee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
