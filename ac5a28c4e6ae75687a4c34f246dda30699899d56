@@ -33,6 +33,23 @@
       "revId": "ac5a28c4e6ae75687a4c34f246dda30699899d56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//oR0\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4190
+      },
+      "writtenOn": "2014-01-10T10:19:29Z",
+      "side": 1,
+      "message": "self.addCleanup(shutil.rmtree, db_file, ignore_errors\u003dTrue)\n\nwill do this with no local function :)",
+      "revId": "ac5a28c4e6ae75687a4c34f246dda30699899d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
