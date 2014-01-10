@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//lYQ\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:31:08Z",
+      "side": 1,
+      "message": "this should never be true, so i don\u0027t understand this change?",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//u/M\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 11
@@ -13,6 +30,58 @@
       "writtenOn": "2014-01-02T17:52:56Z",
       "side": 1,
       "message": "What about Domain roles?  I guess they are less important with LDAP front and backend, so maybe not necessary to implement this time around.",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lnw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:31:08Z",
+      "side": 1,
+      "message": "++ i\u0027m fine with doing that later, but it\u0027d be nice if there was explicitly room to handle the request here with a TODO",
+      "parentUuid": "AAAAT3//u/M\u003d",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lWk\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:31:08Z",
+      "side": 1,
+      "message": "several pieces here in the next few methods seem like they belong at the manager layer, not in the ldap driver... maybe this patch should be based on a refactor first?",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lWE\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:31:08Z",
+      "side": 1,
+      "message": "an inline comment would be nice to explain this",
       "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
