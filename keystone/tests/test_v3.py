@@ -38,8 +38,7 @@ TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 class RestfulTestCase(rest.RestfulTestCase):
     _config_file_list = [tests.dirs.etc('keystone.conf.sample'),
                          tests.dirs.tests('test_overrides.conf'),
-                         tests.dirs.tests('backend_sql.conf'),
-                         tests.dirs.tests('backend_sql_disk.conf')]
+                         tests.dirs.tests('backend_sql.conf')]
 
     #override this to sepcify the complete list of configuration files
     def config_files(self):
