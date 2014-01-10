@@ -50,6 +50,7 @@ class DeprecatedTestCase(tests.TestCase):
         self.config([tests.dirs.etc('keystone.conf.sample'),
                      tests.dirs.tests('test_overrides.conf'),
                      tests.dirs.tests('deprecated.conf'), ])
+        self.reset_opt_in_group('database', 'connection')
 
     def test_sql(self):
         # Options in [sql] were moved to [database] in Icehouse for the change
@@ -67,6 +68,7 @@ class DeprecatedOverrideTestCase(tests.TestCase):
         self.config([tests.dirs.etc('keystone.conf.sample'),
                      tests.dirs.tests('test_overrides.conf'),
                      tests.dirs.tests('deprecated_override.conf'), ])
+        self.reset_opt_in_group('database', 'connection')
 
     def test_sql(self):
         # Options in [sql] were moved to [database] in Icehouse for the change

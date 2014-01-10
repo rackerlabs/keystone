@@ -33,6 +33,7 @@ WARNING::
 
 import copy
 import json
+import os
 import uuid
 
 from migrate.versioning import api as versioning_api
@@ -72,6 +73,20 @@ class SqlMigrateBase(tests.TestCase):
         super(SqlMigrateBase, self).setUp()
 
         self.config(self.config_files())
+        # Use a "clean" (and non migrated) db as a starting place for each
+        # sql-upgrade test als make sure the file is deleted at the cleanup
+        # step.
+        db_file = tests.dirs.tmp('sql_upgrade_tests.db')
+
+        def cleanup_db_file():
+            try:
+                os.unlink(db_file)
+            except OSError:
+                # If the file doesn't exist nothing needs to be done.
+                pass
+
+        self.addCleanup(cleanup_db_file)
+        self.opt_in_group('database', connection='sqlite:///%s' % db_file)
 
         # create and share a single sqlalchemy engine for testing
         self.engine = session.get_engine()

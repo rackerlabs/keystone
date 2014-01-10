@@ -45,7 +45,6 @@ class TestAuthPlugin(tests.TestCase):
             tests.dirs.etc('keystone.conf.sample'),
             tests.dirs.tests('test_overrides.conf'),
             tests.dirs.tests('backend_sql.conf'),
-            tests.dirs.tests('backend_sql_disk.conf'),
             tests.dirs.tests('test_auth_plugin.conf')])
         self.load_backends()
         auth.controllers.AUTH_METHODS[METHOD_NAME] = SimpleChallengeResponse()
