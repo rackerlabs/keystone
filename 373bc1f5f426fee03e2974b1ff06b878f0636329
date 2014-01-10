@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//qL4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-10T00:33:44Z",
+      "side": 1,
+      "message": "whilst i think it would work \u0027str\u0027 is bad py3\n\nmaybe change\n\nif isinstance(val_attr, basestring):\n    if val_attr.lower() \u003d\u003d \u0027false\u0027 or val_attr \u003d \u00270\u0027:\n        val \u003d False",
+      "revId": "373bc1f5f426fee03e2974b1ff06b878f0636329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
