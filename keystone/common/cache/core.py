@@ -133,9 +133,9 @@ def configure_cache_region(region):
         # size cache-key.  This is toggle-able for debug purposes; if disabled
         # this could cause issues with certain backends (such as memcached) and
         # its limited key-size.
-        if region.key_mangler is None:
-            if CONF.cache.use_key_mangler:
-                region.key_mangler = util.sha1_mangle_key
+        #if region.key_mangler is None:
+        #    if CONF.cache.use_key_mangler:
+        #        region.key_mangler = util.sha1_mangle_key
 
         for class_path in CONF.cache.proxies:
             # NOTE(morganfainberg): if we have any proxy wrappers, we should
