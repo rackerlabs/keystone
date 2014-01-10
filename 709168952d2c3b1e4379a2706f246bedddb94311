@@ -2,6 +2,176 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//lXw\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2865,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "FIXME should either be fixed or reference a bug.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lXM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2875,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "why testuserid2? add a comment.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lW0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2877,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "data contains data? is that intentional? add a comment.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lWc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "isn\u0027t this exactly what create_token_sample_data does?",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lWM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "try to use create_token_sample_data",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lV4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "try to use create_token_sample_data",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//la8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "the next line checks this so suggest remove this line. if data_get is None then data_get[\u0027id\u0027] will raise.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lVI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "can you add \"\u0027TZ\u003d%s\u0027 % test_utils.TZ\" so get a nicer message? like at 3177.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lUI\u003d",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "can create_token_sample_data be used for these tokens?",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lTo\u003d",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "if you know what the list is supposed to look like then should be able to assertEqual(user_token_list, [token_1, token_2]) then you\u0027d get more info then just the length is incorrect.\n\nThis comment applies at line 135 \u0026 142.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//vBE\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 15
@@ -13,6 +183,363 @@
       "writtenOn": "2014-01-09T02:16:21Z",
       "side": 1,
       "message": "Note to reviewers: This code is closer to the memcache driver than the original KVS driver (to compare logic).  The original KVS driver didn\u0027t act like an external key-value-store and just mucked with the internal dictionary",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lO8\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "add a blank line after this for pep257",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lS0\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "why doesn\u0027t this call super().__init__?",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lR8\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "suggest change \"KVS backend\" here to \"store\". This is the \"KeyValueStore backend for tokens\" according to the docstring for the class.. so the next line is passing extra config options to itself?\n\nAlternatively, it\u0027s pretty obvious what the next line is doing so not sure we need a comment here.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lRM\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "why can\u0027t we have the caller (and maybe this should happen in controllers) encode the token_id as required?",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lag\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "why would token_id be None here? seems like the caller could make sure the token_id is not None. We don\u0027t check token_id is None on all of these function where it shouldn\u0027t be None, so pick one or the other. Or add a comment why this has to be handled differently here.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lNo\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "if going to have a _get_key_or_default, then seems like would be nice to have a _get_key() and _set_key() to use, too.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lMw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "does this comment apply to the next line or all the lines after it? suggest add a break where the comment doesn\u0027t apply anymore.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lMU\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "I trust the caller has validated the data already... could have a docstring that mentions that the caller must have validated the data.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lOg\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "how many copies do we need??\nhow many copies do we need??",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lZc\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "suggest call _get_user_token_list_with_expiry() here rather than self._get_key_or_default to re-use code.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lLs\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "I don\u0027t think you need the dict here?\n\nalso applies at 162.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lLQ\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t make sense to me.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lKc\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "there\u0027s an argument missing here... is this not tested?",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lPs\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "suggest change \"[]\" to \"default\u003d[]\"",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lY0\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "this is a huge security hole.\n\nSeems like if we have to check this for revocation list then we have to check every time we get data from the store, like every time we call _get_key_or_default or _store.get()",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lKE\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "the log message already says this, so suggest remove the comment.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lJI\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "why not put this in the log message, then don\u0027t need a comment.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lJg\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "another spot where I think dict can be removed?",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lJA\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "put the note in the debug log message, then don\u0027t need a comment.",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lPo\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "suggest change \"[]\" to \"default\u003d[]\"",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lPY\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-10T20:05:35Z",
+      "side": 1,
+      "message": "put the \"\"\" on line 338 for one-line docstring.",
       "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
