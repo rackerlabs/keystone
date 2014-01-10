@@ -370,6 +370,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
     def setUp(self):
         super(LDAPIdentity, self).setUp()
+        # Database setup is required for credential sql backend
+        tests.setup_database()
+        self.addCleanup(tests.teardown_database)
         self._set_config()
         self.clear_database()
 
