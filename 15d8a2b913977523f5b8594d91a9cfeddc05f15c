@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//l4g\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "are the _name attributes available? it\u0027d be nice to eliminate lookups where possible",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//3Co\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 9
@@ -47,6 +64,40 @@
       "writtenOn": "2014-01-07T15:44:14Z",
       "side": 1,
       "message": "should add \"(optional)\", since this may not be present -- see line 70.",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//l4Y\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "how about a comment explaining why this is representative of a v3 token?",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//sNU\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "where does keystone need to care about the user_id? just password changes?",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +138,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//sN0\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "creds[\u0027roles\u0027] \u003d [r[\u0027name\u0027] for r in token_data.get(\u0027roles\u0027, [])]",
+      "parentUuid": "AAAAUH//3C8\u003d",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//l4U\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "normalize to what?",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//3Eo\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 9
@@ -98,6 +184,23 @@
       "writtenOn": "2014-01-07T15:44:14Z",
       "side": 1,
       "message": "suggest change to \u0027Invalid user data in v2 token\u0027",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//l4Q\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "project",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +258,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//l4M\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH//3EU\u003d",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//3EI\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 9
@@ -166,6 +287,24 @@
       "writtenOn": "2014-01-07T15:44:14Z",
       "side": 1,
       "message": "seems like this should be \"v2_token_to_auth_context\"",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//l4E\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH//3EI\u003d",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -200,6 +339,24 @@
       "writtenOn": "2014-01-07T15:44:14Z",
       "side": 1,
       "message": "since the docstring says \"returns auth context\", suggest call this variable \"auth_context\"",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//sMg\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T17:43:20Z",
+      "side": 1,
+      "message": "yeah, i really don\u0027t like this suddenly being called \"creds\" -- they\u0027re absolutely not authentication credentials. authorization context is much more correct.",
+      "parentUuid": "AAAAUH//2/o\u003d",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
