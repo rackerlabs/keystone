@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//pDM\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-10T06:51:16Z",
+      "side": 1,
+      "message": "nit whitespace",
+      "revId": "ac5a28c4e6ae75687a4c34f246dda30699899d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//pC0\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-10T06:51:16Z",
+      "side": 1,
+      "message": "nit: really no need to be nested in the function",
+      "revId": "ac5a28c4e6ae75687a4c34f246dda30699899d56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
