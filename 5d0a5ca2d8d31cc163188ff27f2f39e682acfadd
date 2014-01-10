@@ -34,6 +34,24 @@
       "revId": "5d0a5ca2d8d31cc163188ff27f2f39e682acfadd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//qIE\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4190
+      },
+      "writtenOn": "2014-01-10T01:05:46Z",
+      "side": 1,
+      "message": "self.addCleanup(delattr, self, \u0027public_server\u0027)\nself.addCleanup(delattr, self, \u0027admin_server\u0027)",
+      "parentUuid": "AAAAT3//4pQ\u003d",
+      "revId": "5d0a5ca2d8d31cc163188ff27f2f39e682acfadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
