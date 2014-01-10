@@ -16,6 +16,7 @@
 
 from __future__ import absolute_import
 
+import atexit
 import functools
 import os
 import re
@@ -70,15 +71,18 @@ from keystone.openstack.common import policy as common_policy  # noqa
 
 
 LOG = log.getLogger(__name__)
+PID = str(os.getpid())
 TESTSDIR = os.path.dirname(os.path.abspath(__file__))
 ROOTDIR = os.path.normpath(os.path.join(TESTSDIR, '..', '..'))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
-TMPDIR = os.path.join(TESTSDIR, 'tmp')
+TMPDIR = os.path.join(TESTSDIR, 'tmp', PID)
 
 CONF = config.CONF
 
 exception._FATAL_EXCEPTION_FORMAT_ERRORS = True
+os.mkdir(TMPDIR)
+atexit.register(shutil.rmtree, TMPDIR)
 
 
 class dirs:
@@ -105,7 +109,6 @@ def _initialize_sql_session():
     session.set_defaults(
         sql_connection="sqlite:///" + db_file,
         sqlite_db=db_file)
-
 
 _initialize_sql_session()
 
@@ -311,6 +314,15 @@ class TestCase(testtools.TestCase):
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
+        # NOTE(morganfainberg): If the SQLite backend is being used for testing
+        # make sure that the PID specific db is used from the pid-specific temp
+        # dir.
+        conn_str = CONF.database.connection
+        if (conn_str not in ('sqlite://deprecated', 'sqlite://new') and
+                conn_str.startswith('sqlite://')):
+            db_file = dirs.tmp('test.db')
+            self.opt_in_group('database',
+                              connection='sqlite:///%s' % db_file)
 
     def tearDown(self):
         try:
@@ -331,6 +343,10 @@ class TestCase(testtools.TestCase):
 
             kvs.INMEMDB.clear()
             CONF.reset()
+
+    def reset_opt_in_group(self, group, *optnames):
+        for item in optnames:
+            CONF.clear_override(item, group)
 
     def opt_in_group(self, group, **kw):
         for k, v in kw.iteritems():
