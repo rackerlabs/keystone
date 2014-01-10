@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//lUc\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "no unicode support?",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lUQ\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "_() ?",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lRc\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "should this be run on import, or on first call to get_instance() ?",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lQ8\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "skip the try/except\n\n  self._data.setdefault(\n    name, {\u0027latest_generation\u0027: 0, \u0027keys\u0027: dict(), \u0027group\u0027: group})",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lRI\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "avoid using assert like this",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lP4\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "i vastly prefer the other style for building queries, as it\u0027s much easier to read \u0026 maintain\n\n  q \u003d session.query(models.Host)\n  q \u003d q.filter(models.Host.name \u003d\u003d name)\n  host \u003d q.first()",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//lPI\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/migrate_repo/versions/001_kds_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-10T19:49:45Z",
+      "side": 1,
+      "message": "why start this with anything but alembic??",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
