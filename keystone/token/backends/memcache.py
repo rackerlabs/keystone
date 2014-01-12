@@ -83,19 +83,17 @@ class Token(token.Driver):
             kwargs['time'] = expires_ts
         self.client.set(ptk, data_copy, **kwargs)
         if 'id' in data['user']:
-            token_data = jsonutils.dumps(token_id)
             user_id = data['user']['id']
             user_key = self._prefix_user_id(user_id)
             # Append the new token_id to the token-index-list stored in the
             # user-key within memcache.
-            self._update_user_list_with_cas(user_key, token_data)
+            self._update_user_list_with_cas(user_key, token_id, data_copy)
         return copy.deepcopy(data_copy)
 
-    def _update_user_list_with_cas(self, user_key, token_id):
+    def _update_user_list_with_cas(self, user_key, token_id, token_data):
         cas_retry = 0
         max_cas_retry = CONF.memcache.max_compare_and_set_retry
-        current_time = timeutils.normalize_time(
-            timeutils.parse_isotime(timeutils.isotime()))
+        current_time = timeutils.normalize_time(timeutils.utcnow())
 
         self.client.reset_cas()
 
@@ -110,35 +108,31 @@ class Token(token.Driver):
             # case memcache is down or something horrible happens we don't
             # iterate forever trying to compare and set the new value.
             cas_retry += 1
-            record = self.client.gets(user_key)
+            token_list = self.client.gets(user_key)
             filtered_list = []
 
-            if record is not None:
-                token_list = jsonutils.loads('[%s]' % record)
-                for token_i in token_list:
-                    ptk = self._prefix_token_id(token_i)
-                    token_ref = self.client.get(ptk)
-                    if not token_ref:
-                        # skip tokens that do not exist in memcache
+            if token_list is not None:
+                if not isinstance(token_list, list):
+                    LOG.error(_('Resetting non-list user token index record: '
+                                '%s'), user_key)
+                    token_list = []
+                for token_i, expiry in token_list:
+                    expires_at = timeutils.normalize_time(expiry)
+                    if expires_at < current_time:
+                        # skip tokens that are expired.
                         continue
 
-                    if 'expires' in token_ref:
-                        expires_at = timeutils.normalize_time(
-                            token_ref['expires'])
-                        if expires_at < current_time:
-                            # skip tokens that are expired.
-                            continue
-
                     # Add the still valid token_id to the list.
-                    filtered_list.append(jsonutils.dumps(token_i))
-            # Add the new token_id to the list.
-            filtered_list.append(token_id)
+                    filtered_list.append((token_i, expiry))
+            # Add the new token_id and expiry.
+            filtered_list.append(
+                (token_id, timeutils.normalize_time(token_data['expires'])))
 
             # Use compare-and-set (cas) to set the new value for the
             # token-index-list for the user-key. Cas is used to prevent race
             # conditions from causing the loss of valid token ids from this
             # list.
-            if self.client.cas(user_key, ','.join(filtered_list)):
+            if self.client.cas(user_key, filtered_list):
                 msg = _('Successful set of token-index-list for user-key '
                         '"%(user_key)s", #%(count)d records')
                 LOG.debug(msg, {'user_key': user_key,
@@ -182,9 +176,17 @@ class Token(token.Driver):
                     consumer_id=None):
         tokens = []
         user_key = self._prefix_user_id(user_id)
-        user_record = self.client.get(user_key) or ""
-        token_list = jsonutils.loads('[%s]' % user_record)
-        for token_id in token_list:
+        current_time = timeutils.normalize_time(timeutils.utcnow())
+        token_list = self.client.get(user_key) or []
+        if not isinstance(token_list, list):
+            # NOTE(morganfainberg): This is for compatibility for old-format
+            # token-lists that were a JSON string of just token_ids. This code
+            # will reference the underlying expires directly from the
+            # token_ref vs in this list, so setting to none just ensures the
+            # loop works as expected.
+            token_list = [(i, None) for i in
+                          jsonutils.loads('[%s]' % token_list)]
+        for token_id, expiry in token_list:
             ptk = self._prefix_token_id(token_id)
             token_ref = self.client.get(ptk)
             if token_ref:
@@ -207,6 +209,11 @@ class Token(token.Driver):
                             continue
                     except KeyError:
                         continue
+
+                if (timeutils.normalize_time(token_ref['expires']) <
+                        current_time):
+                    # Skip expired tokens.
+                    continue
 
                 tokens.append(token_id)
         return tokens
