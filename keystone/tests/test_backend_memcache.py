@@ -23,7 +23,6 @@ import memcache
 from keystone.common import utils
 from keystone import config
 from keystone import exception
-from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 from keystone import tests
 from keystone.tests import test_backend
@@ -163,30 +162,31 @@ class MemcacheToken(tests.TestCase, test_backend.TokenTests):
         # get expired tokens as well as valid tokens. token_api.list_tokens()
         # will not return any expired tokens in the list.
         user_key = self.token_api.driver._prefix_user_id(user_id)
-        user_record = self.token_api.driver.client.get(user_key)
-        user_token_list = jsonutils.loads('[%s]' % user_record)
+        user_token_list = self.token_api.driver.client.get(user_key)
         self.assertEquals(len(user_token_list), 2)
-        expired_token_ptk = self.token_api.driver._prefix_token_id(
-            expired_token_id)
-        expired_token = self.token_api.driver.client.get(expired_token_ptk)
-        expired_token['expires'] = (timeutils.utcnow() - expire_delta)
-        self.token_api.driver.client.set(expired_token_ptk, expired_token)
+        # Tokens are not fetched again on token issuance, expiry is held in the
+        # user token index record as the second element.
+        expired_idx = [i[0] for i in user_token_list].index(expired_token_id)
+        user_token_list[expired_idx] = (user_token_list[expired_idx][0],
+                                        timeutils.utcnow() - expire_delta)
+        self.token_api.driver.client.set(user_key, user_token_list)
 
         self.token_api.create_token(second_valid_token_id, second_valid_data)
-        user_record = self.token_api.driver.client.get(user_key)
-        user_token_list = jsonutils.loads('[%s]' % user_record)
+        user_token_list = self.token_api.driver.client.get(user_key)
         self.assertEquals(len(user_token_list), 2)
 
     def test_cas_failure(self):
+        expire_delta = datetime.timedelta(seconds=86400)
         self.token_api.driver.client.reject_cas = True
         token_id = uuid.uuid4().hex
         user_id = unicode(uuid.uuid4().hex)
+        token_data = {'expires': timeutils.utcnow() + expire_delta,
+                      'id': token_id}
         user_key = self.token_api.driver._prefix_user_id(user_id)
-        token_data = jsonutils.dumps(token_id)
         self.assertRaises(
             exception.UnexpectedError,
             self.token_api.driver._update_user_list_with_cas,
-            user_key, token_data)
+            user_key, token_id, token_data)
 
     def test_token_expire_timezone(self):
 
