@@ -19,6 +19,143 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//hq0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "revert whitespace change.",
+      "parentUuid": "AAAAUH//1oU\u003d",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqs\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "seems like we should continue to use find_migrate_repo() from keystone.common.sql.migration since that worked fine for us.",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "suggest remove \"abs_path\u003d\" here since it will make it more obvious to reviewers that it\u0027s a required parameter and not something you\u0027re doing to override a default.",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqg\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "same comment here.\n\nMaybe should change keystone.common.sql.migration to call keystone.openstack.common.db.sqlalchemy.migration.db_sync rather than change all these parts.",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqQ\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "change the name to abs_path.",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqU\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "change the order here to match the migration.db_sync order... \n\n migration.db_sync(repo_path, version\u003dversion)",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "this code is duplicated in too many places. Make a function and call it instead.",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hqA\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T16:37:18Z",
+      "side": 1,
+      "message": "nice! didn\u0027t pass abs_path\u003dabs_path like the other places.",
+      "revId": "4fc926f1b5fa1b116ef964748a39e7f7e3476687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1nY\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 6
