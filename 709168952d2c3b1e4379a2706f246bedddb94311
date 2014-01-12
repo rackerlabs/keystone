@@ -246,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//iqE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3184,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-12T04:21:50Z",
+      "side": 1,
+      "message": "assertRaises does not appear to take the \"msg\" parameter like some other TestCase methods.",
+      "parentUuid": "AAAAUH//lVI\u003d",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lUI\u003d",
         "filename": "keystone/tests/test_backend_kvs.py",
         "patchSetId": 15
@@ -403,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//ipg\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-12T04:21:50Z",
+      "side": 1,
+      "message": "There is no reason to call super() .__init__ because we don\u0027t define it on the abstract class.  I\u0027ll add it in either case for completeness.",
+      "parentUuid": "AAAAUH//ixA\u003d",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lR8\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 15
@@ -473,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//ipY\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-12T04:21:50Z",
+      "side": 1,
+      "message": "Actually, we explicitly test for the ability to create tokens with unicode ids.  I\u0027m going to leave it based upon that we can evaluate removing this later if we decide to.",
+      "parentUuid": "AAAAUH//iws\u003d",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lag\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 15
@@ -502,6 +556,24 @@
       "side": 1,
       "message": "This is one of those cases where there are potentials for token_id to actually be none.  I removed this and watched a ton of things explode.  I\u0027ll comment and log a bug to address this independently if it\u0027s more than some minor changes.",
       "parentUuid": "AAAAUH//lag\u003d",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//iks\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-12T04:21:50Z",
+      "side": 1,
+      "message": "There are cases, it looks like where the contect[\u0027token_id\u0027] is None.  We also explicitly test for this case at http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/test_backend.py?id\u003d4af150e58bf654d0f9d86e95d0ef625edf3698d5#n3020\n\nThe question is where do we put the validation.  I\u0027ve moved this check to the manager so we can skip a round-trip to the backend `if not token_id`.",
+      "parentUuid": "AAAAUH//iwg\u003d",
       "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -718,6 +790,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//ioI\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-12T04:21:50Z",
+      "side": 1,
+      "message": "Confirmed a dict is needed, but converting to a literal.",
+      "parentUuid": "AAAAUH//iwE\u003d",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lLQ\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 15
@@ -782,6 +872,24 @@
       "side": 1,
       "message": "As i recall log isn\u0027t as picky as the raw % substitutions.  it only errors if we pass too many items, not too few.  I will fix this.",
       "parentUuid": "AAAAUH//lKc\u003d",
+      "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//ioE\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-12T04:21:50Z",
+      "side": 1,
+      "message": "Also confirmed, log.XXX will not error if you dont supply a substitution, it will error if you supply too many substitutions.",
+      "parentUuid": "AAAAUH//iv4\u003d",
       "revId": "709168952d2c3b1e4379a2706f246bedddb94311",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
