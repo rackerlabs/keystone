@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//hv4\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T15:55:54Z",
+      "side": 1,
+      "message": "(nit) might be useful to have a docstring... I\u0027m not sure what the type of backing_store is from looking at it. Apparently it\u0027s a string name of a class, like kvs_backend (but not called kvs_backend for some reason).",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//huw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T15:55:54Z",
+      "side": 1,
+      "message": "(nit) add a blank line before \"\"\" for pep 257 (http://www.python.org/dev/peps/pep-0257/#multi-line-docstrings)",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//htY\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T15:55:54Z",
+      "side": 1,
+      "message": "isn\u0027t this a case similar to the revoked_token_list, where it might not be a list as expected (see 210, 337)?",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//huE\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T15:55:54Z",
+      "side": 1,
+      "message": "seems like every token should be revoked, since we don\u0027t know which tokens were revoked before.",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//htk\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-12T15:55:54Z",
+      "side": 1,
+      "message": "suggest add a comment why revoked_token_list wouldn\u0027t be a list.",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
