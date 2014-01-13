@@ -67,6 +67,24 @@
       "revId": "3277efb3ccddfd72e8d11b87c7af9693417f834a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//dqo\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-13T16:23:04Z",
+      "side": 1,
+      "message": "Because with the old library the _check_signature method would have raised a RuntimeError https://github.com/simplegeo/python-oauth2/blob/master/oauth2/__init__.py#L767\n\nand \n\nhttps://github.com/simplegeo/python-oauth2/blob/master/oauth2/__init__.py#L57",
+      "parentUuid": "AAAAUH//fmU\u003d",
+      "revId": "3277efb3ccddfd72e8d11b87c7af9693417f834a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
