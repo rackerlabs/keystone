@@ -34,6 +34,7 @@ Glance to list images needed to perform the requested task.
 
 """
 
+import json
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
@@ -158,7 +159,7 @@ class Ec2Controller(controller.V2Controller):
         credential_id = utils.hash_access_key(blob['access'])
         cred_ref = {'user_id': user_id,
                     'project_id': tenant_id,
-                    'blob': blob,
+                    'blob': json.dumps(blob),
                     'id': credential_id,
                     'type': 'ec2'}
         self.credential_api.create_credential(credential_id, cred_ref)
@@ -215,8 +216,14 @@ class Ec2Controller(controller.V2Controller):
         return self.credential_api.delete_credential(ec2_credential_id)
 
     def _convert_v3_to_ec2_credential(self, credential):
-
-        blob = credential['blob']
+        # Prior to bug #1259584 fix, blob was stored unserialized
+        # but it should be stored as a json string for compatibility
+        # with the v3 credentials API.  Fall back to the old behavior
+        # for backwards compatibility with existing DB contents
+        try:
+            blob = json.loads(credential['blob'])
+        except TypeError:
+            blob = credential['blob']
         return {'user_id': credential.get('user_id'),
                 'tenant_id': credential.get('project_id'),
                 'access': blob.get('access'),
