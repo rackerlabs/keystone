@@ -23,7 +23,7 @@ from keystone.tests import default_fixtures
 from keystone import token
 
 
-FUTURE_DELTA = datetime.timedelta(seconds=86400)
+FUTURE_DELTA = datetime.timedelta(seconds=3600)
 CURRENT_DATE = timeutils.utcnow()
 
 SAMPLE_V2_TOKEN = {
