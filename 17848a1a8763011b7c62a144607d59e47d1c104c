@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//ghI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9954
+      },
+      "writtenOn": "2014-01-13T07:26:54Z",
+      "side": 1,
+      "message": "Link to the blueprints doesn\u0027t seem to be working for me, replace the forward slash between \u0027bp\u0027 and \u0027mapping\u0027 with a space?",
+      "revId": "17848a1a8763011b7c62a144607d59e47d1c104c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
