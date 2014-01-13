@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//d4o\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-13T15:50:46Z",
+      "side": 1,
+      "message": "i can\u0027t tell if this is used anywhere, it should be capitalized though.",
+      "revId": "3277efb3ccddfd72e8d11b87c7af9693417f834a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//d4U\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-13T15:50:46Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "3277efb3ccddfd72e8d11b87c7af9693417f834a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//d6s\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-13T15:50:46Z",
+      "side": 1,
+      "message": "I feel, that when you switch the using oauthlib in the tests, then the hack on the server side will likely be removed. I think there is a bug in the way the signing of extra non-oauth params is done (using the old lib).\n\nTo help you get started on the test port ... \n\n\n client \u003d oauth1.Client(consumer_key, client_secret\u003dconsumer_secret, signature_method\u003doauth1.SIGNATURE_HMAC)\n endpoint \u003d \u0027/OS-OAUTH1/request_token\u0027\n headers \u003d {\u0027requested_project_id\u0027: project_id}\n url, headers, body \u003d client.sign(self.base_url + endpoint, http_method\u003d\u0027POST\u0027, headers\u003dheaders)\n\nYou can get rid of the _oauth_request() function now, i think",
+      "revId": "3277efb3ccddfd72e8d11b87c7af9693417f834a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//fmU\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 3
