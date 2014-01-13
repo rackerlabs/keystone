@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//fmU\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-01-13T10:58:08Z",
+      "side": 1,
+      "message": "Any reason why providing an incorrect secret was handled as a server-side error (500) before this ?",
+      "revId": "3277efb3ccddfd72e8d11b87c7af9693417f834a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
