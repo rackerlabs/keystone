@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//gx0\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "I\u0027m sure this was here for a reason but i can\u0027t remember what so i\u0027ll just fall through to oslo.",
+      "parentUuid": "AAAAUH//lUc\u003d",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lUQ\u003d",
         "filename": "keystone/contrib/kds/common/exception.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-10T19:49:45Z",
       "side": 1,
       "message": "_() ?",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//gxw\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//lUQ\u003d",
       "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//hDc\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "I don\u0027t know. I was following the lead of other projects here.\n\nIt does mean that CONF has to be loaded by this point but i think that\u0027s ok. I do like the idea that if you misconfigure your database backend then you get an exception at import time rather than when you try to access the db.\n\nDo you want me to change it?",
+      "parentUuid": "AAAAUH//lRc\u003d",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lQ8\u003d",
         "filename": "keystone/contrib/kds/db/kvs/api.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-10T19:49:45Z",
       "side": 1,
       "message": "skip the try/except\n\n  self._data.setdefault(\n    name, {\u0027latest_generation\u0027: 0, \u0027keys\u0027: dict(), \u0027group\u0027: group})",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hC4\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//lQ8\u003d",
       "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//hC0\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "oops, yea - that wasn\u0027t supposed to make it to review - i\u0027m not sure if there is an appropriate error to throw yet. so putting a FIXME.",
+      "parentUuid": "AAAAUH//lRI\u003d",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lP4\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
         "patchSetId": 16
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//hCw\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//lP4\u003d",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lPI\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/migrate_repo/versions/001_kds_table.py",
         "patchSetId": 16
@@ -115,6 +223,24 @@
       "writtenOn": "2014-01-10T19:49:45Z",
       "side": 1,
       "message": "why start this with anything but alembic??",
+      "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//hCo\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/migrate_repo/versions/001_kds_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-13T05:26:05Z",
+      "side": 1,
+      "message": "i thought that too but i\u0027ve yet to see any real push towards alembic, particularly now that migrate is on stackforge. \n\nThere is also a lot of migration helpers and utils in OSLO for dealing with migrate that would otherwise need to be written.",
+      "parentUuid": "AAAAUH//lPI\u003d",
       "revId": "c0f6a9bc8aaf1bbd831ea10569bed84e609964ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
