@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//dMw\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-13T17:52:33Z",
+      "side": 1,
+      "message": "Hm, you appear to be correct here.  An issuance of a new token would resolve it but a token revocation even would not.  I\u0027ll get a subsequent patchset to address this behavior (there are a couple more patchsets involved with the kvs backends to come that depend on this one).  This is an edge-case just like the one below.",
+      "parentUuid": "AAAAUH//htY\u003d",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//huE\u003d",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 17
@@ -64,6 +82,24 @@
       "writtenOn": "2014-01-12T15:55:54Z",
       "side": 1,
       "message": "seems like every token should be revoked, since we don\u0027t know which tokens were revoked before.",
+      "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//dNs\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-13T17:52:33Z",
+      "side": 1,
+      "message": "Sadly, that isn\u0027t doable w/o the revocation events.  If this isn\u0027t a \"sane\" list, we can\u0027t revoke the tokens.  I think long term, revocation events solves this issue.",
+      "parentUuid": "AAAAUH//huE\u003d",
       "revId": "6802b24e11dde7ec77a87240ae23d0b76620512c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
