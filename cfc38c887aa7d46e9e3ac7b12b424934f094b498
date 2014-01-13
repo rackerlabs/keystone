@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//gCk\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-01-13T10:43:36Z",
+      "side": 1,
+      "message": "I\u0027m protecting function misuses.",
+      "parentUuid": "AAAAUH//lYQ\u003d",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAT3//u/M\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 11
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//f/0\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-01-13T10:43:36Z",
+      "side": 1,
+      "message": "Do you propose to up this methods to the Drives class?",
+      "parentUuid": "AAAAUH//lWk\u003d",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//lWE\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 11
@@ -82,6 +118,24 @@
       "writtenOn": "2014-01-10T19:31:08Z",
       "side": 1,
       "message": "an inline comment would be nice to explain this",
+      "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//foo\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-01-13T10:43:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//lWE\u003d",
       "revId": "cfc38c887aa7d46e9e3ac7b12b424934f094b498",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
