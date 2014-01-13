@@ -479,13 +479,12 @@
 # authentication request.
 # For each method named, an option in this section with the same name defines
 # the plugin to use to implement the method.
-methods = external,password,token,oauth1
+# methods = external,password,token
 
 # The plugin to use for each of the methods listed in the "methods" option.
-#external = keystone.auth.plugins.external.DefaultDomain
-password = keystone.auth.plugins.password.Password
-token = keystone.auth.plugins.token.Token
-oauth1 = keystone.auth.plugins.oauth1.OAuth
+# external = keystone.auth.plugins.external.DefaultDomain
+# password = keystone.auth.plugins.password.Password
+# token = keystone.auth.plugins.token.Token
 
 [memcache]
 # servers = localhost:11211
@@ -500,5 +499,6 @@ oauth1 = keystone.auth.plugins.oauth1.OAuth
 # default_lock_timeout = 5
 
 [paste_deploy]
-# Name of the paste configuration file that defines the available pipelines
-config_file = keystone-paste.ini
+# Name of the paste configuration file, typically `keystone-paste.ini`, that
+# defines the available pipelines
+# config_file =
