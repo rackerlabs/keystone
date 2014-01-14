@@ -722,14 +722,6 @@ Endpoint Filtering
    :maxdepth: 1
 
    extensions/endpoint_filter-configuration.rst
-=======
-Federation
----------
-
-.. toctree::
-   :maxdepth: 1
-
-   extensions/federation-configuration.rst
 
 Federation
 ----------

@@ -34,6 +34,7 @@ To enable the federation extension:
        xml_body json_body ec2_extension s3_extension federation_extension
        service_v3
 
-3. Create the federation extension tables if using the provided SQL backend. For example::
+3. Create the federation extension tables if using the provided SQL backend.
+   For example::
 
        ./bin/keystone-manage db_sync --extension federation
