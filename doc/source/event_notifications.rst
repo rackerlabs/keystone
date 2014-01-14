@@ -28,12 +28,15 @@ Notifications for Create/Update/Delete Events
 
 A notification is sent when a resource is successfully ``created``,
 ``updated``, or ``deleted``. The following resource types (where a
-``<resource type>`` is always a singular noun) produce notifications:
+``<resource type>`` is always a singular noun) produce notifications. For
+resources types that are immutable, like trusts, notifications are only sent
+on creation and deletion of that resource:
 
 - ``group``
 - ``project`` (i.e. "tenant")
 - ``role``
 - ``user``
+- ``trust`` (immutable resource)
 
 The following message template is used to form a message when an operation on a
 resource completes successfully::
