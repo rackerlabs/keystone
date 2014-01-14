@@ -468,7 +468,20 @@
 # user_additional_attribute_mapping =
 
 [auth]
+
+# Defines the authentication method plugins that are available.
+# This is a comma-separated list of names of the methods that are allowed in
+# the "methods" field of an authentication request and the external
+# authentication handler.
+# If the "external" method is included, then external authentication (via
+# REMOTE_USER) is enabled.
+# The other named methods can be used in the "methods" field of the
+# authentication request.
+# For each method there must be a corresponding plugin class which implements
+# the method in this section.
 methods = external,password,token,oauth1
+
+# The plugin to use for each of the methods listed in the "methods" option.
 #external = keystone.auth.plugins.external.DefaultDomain
 password = keystone.auth.plugins.password.Password
 token = keystone.auth.plugins.token.Token
