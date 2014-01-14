@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//aIY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-14T02:16:08Z",
+      "side": 0,
+      "message": "submitted docs for this section in https://review.openstack.org/66477",
+      "parentUuid": "AAAAUH//crM\u003d",
+      "revId": "55b9948157cc9f9ee72abdc66444edc233eb0352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//cqw\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-13T19:39:53Z",
       "side": 0,
       "message": "i think the conventional file name be preserved as part of the inline comment here, for example:\n\n  # Name of the paste configuration file, typically `keystone-paste.ini`, that\n  # defines the available pipelines",
+      "revId": "55b9948157cc9f9ee72abdc66444edc233eb0352",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//aIU\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-14T02:16:08Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "AAAAUH//cqw\u003d",
       "revId": "55b9948157cc9f9ee72abdc66444edc233eb0352",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
