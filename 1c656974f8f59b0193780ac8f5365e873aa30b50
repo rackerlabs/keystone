@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Wdw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "this conflicts with the \"enabled by default\" below",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Wd8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "the value should be commented out regardless, and indicate the default",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WdE\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "this is a counter-intuitive place to put this... shouldn\u0027t it be it\u0027s own decorator?",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WWA\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "module level CONSTANTS should appear in all caps",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WV8\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "remove - you\u0027re not writing to this as a global",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WUc\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "it\u0027d be nice to raise a custom exception here",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WUY\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WVc\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "SUBSCRIBERS",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WTs\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "this is doing a lot of work to produce an info message.. wrap all the extraneous work in a conditional block that won\u0027t be executed if it\u0027s not going to appear in the log anyway",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WVg\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "SUBSCRIBERS",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WVU\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "i don\u0027t think this addition belongs in this file at all. this file is a stub of what an extension\u0027s documentation should look like, not documentation for extension authors.",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WVA\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "remove - you\u0027re not using this as a global",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WUw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 1,
+      "message": "for example extensions?",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

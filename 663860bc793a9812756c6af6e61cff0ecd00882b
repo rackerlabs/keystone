@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//WVQ\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 0,
+      "message": "this file should not be modified at all",
+      "revId": "663860bc793a9812756c6af6e61cff0ecd00882b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WVI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:16:58Z",
+      "side": 0,
+      "message": "undo",
+      "revId": "663860bc793a9812756c6af6e61cff0ecd00882b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
