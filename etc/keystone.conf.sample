@@ -26,10 +26,6 @@
 # Path to your policy definition containing identity actions
 # policy_file = policy.json
 
-# Rule to check if no matching policy definition is found
-# FIXME(dolph): This should really be defined as [policy] default_rule
-# policy_default_rule = admin_required
-
 # Role for migrating membership relationships
 # During a SQL upgrade, the following values will be used to create a new role
 # that will replace records in the user_tenant_membership table with explicit
@@ -320,6 +316,9 @@
 
 [policy]
 # driver = keystone.policy.backends.sql.Policy
+
+# Rule to check if no matching policy definition is found
+# default_rule = admin_required
 
 [ec2]
 # driver = keystone.contrib.ec2.backends.kvs.Ec2
