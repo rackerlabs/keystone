@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//ZvY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-14T05:03:22Z",
+      "side": 1,
+      "message": "LDAP Tests?",
+      "revId": "deec20d5cf51ee43dc9a9b0b3302ad44d38d83e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
