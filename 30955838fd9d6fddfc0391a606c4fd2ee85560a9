@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//WMI\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T19:51:57Z",
+      "side": 1,
+      "message": "no test for PUT /regions/{user_defined_region_id} ?",
+      "revId": "30955838fd9d6fddfc0391a606c4fd2ee85560a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
