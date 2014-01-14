@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//XMs\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T16:38:28Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "ad9e313d3fa44171a24112fb4923dea7d8422c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//XMo\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T16:38:28Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "ad9e313d3fa44171a24112fb4923dea7d8422c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//XMk\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T16:38:28Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "ad9e313d3fa44171a24112fb4923dea7d8422c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//XMg\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T16:38:28Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "ad9e313d3fa44171a24112fb4923dea7d8422c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//XMc\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T16:38:28Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "ad9e313d3fa44171a24112fb4923dea7d8422c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//XMY\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-14T16:38:28Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "ad9e313d3fa44171a24112fb4923dea7d8422c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
