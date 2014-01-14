@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//WFY\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-14T20:19:44Z",
+      "side": 1,
+      "message": "does this have to change? and if so, can use the CONF.token.expiration instead so don\u0027t have to change it next time?",
+      "revId": "040c8511411d005037d46abc40c234f016c41aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WFU\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-14T20:19:44Z",
+      "side": 1,
+      "message": "does this have to change? and if so, can use the CONF.token.expiration instead so don\u0027t have to change it next time?",
+      "revId": "040c8511411d005037d46abc40c234f016c41aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
