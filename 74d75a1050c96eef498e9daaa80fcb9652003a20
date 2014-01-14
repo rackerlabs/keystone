@@ -19,6 +19,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Wgg\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-14T18:46:52Z",
+      "side": 1,
+      "message": "Can use \"federation\" in place of \"federated\"?\nFederated sound like verb\n\nAt the same time there should be some resemblance between API strings and collection/member names. Which below from controller  \n\ncollection_name \u003d \u0027identity_providers\u0027\nmember_name \u003d \u0027identity_provider\u0027\n\nThoughts?",
+      "revId": "74d75a1050c96eef498e9daaa80fcb9652003a20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Wgc\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-14T18:46:52Z",
+      "side": 1,
+      "message": "Same comment\nFederated \u003e\u003e\u003e Federation",
+      "revId": "74d75a1050c96eef498e9daaa80fcb9652003a20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WfI\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-14T18:46:52Z",
+      "side": 1,
+      "message": "Why the API \"federated_provider\" is so different from the controller name \"IdentityProvider\"\n\nCan we use matching names",
+      "revId": "74d75a1050c96eef498e9daaa80fcb9652003a20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//l6g\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 12
