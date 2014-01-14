@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Xko\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-01-14T15:53:28Z",
+      "side": 1,
+      "message": "It got patched somewhere else but lacks test coverage. It was in the first patch submitted.",
+      "parentUuid": "AAAATn/9FSw\u003d",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9FUw\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-16T23:27:37Z",
       "side": 1,
       "message": "does this string come from an RFC? suggest add a reference.",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//XpQ\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-01-14T15:53:28Z",
+      "side": 1,
+      "message": "It comes from MS Active Directory pointed in this draft, the idea is allow us to emulate the behavior so the code can be really tested\n\nhttp://msdn.microsoft.com/en-us/library/cc223320.aspx\nhttp://tools.ietf.org/html/draft-armijo-ldap-treedelete-02",
+      "parentUuid": "AAAATn/9FUw\u003d",
       "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Xkg\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-01-14T15:53:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9FVg\u003d",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9FTc\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2013-12-16T23:27:37Z",
       "side": 1,
       "message": "I think they want us to use six.iteritems() for python3 compat now.",
+      "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Xkc\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-01-14T15:53:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9FTc\u003d",
       "revId": "ba7caae4e093a2bf3fb535b3ef97f73307ddbb73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
