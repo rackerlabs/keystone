@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//ReU\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "This is the right place to do the registration, but this need a large comment block explaining why it is here.  Also the there is no reason to use the prefix \u0027__\u0027 this is a private function isolated to the \"wrapped\" method.\n\nSo, suggest fixing the \"name\" of the function and make sure this is well documented here in-line so it is clear why it\u0027s implemented here.",
+      "parentUuid": "AAAAUH//WdE\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//WWA\u003d",
         "filename": "keystone/common/extensions_notifier.py",
         "patchSetId": 22
@@ -64,6 +82,24 @@
       "writtenOn": "2014-01-14T19:16:58Z",
       "side": 1,
       "message": "module level CONSTANTS should appear in all caps",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//ReM\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH//WWA\u003d",
       "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +225,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//RdM\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "This addition is either a separate change or unrelated.  This patchset warrants some modifications to developing doc, but not configuration in this case.",
+      "parentUuid": "AAAAUH//WVU\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//RcI\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "Suggest making this an instance property, instead of a class property.",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Rbs\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "This should have more detailed documentation and why it is constructed like it is.",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//WVA\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 22
@@ -217,6 +305,41 @@
       "writtenOn": "2014-01-14T19:16:58Z",
       "side": 1,
       "message": "for example extensions?",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//RbQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "This is a bad name.  We shouldn\u0027t be testing the example extension (as the name implies), this is testing the Notification.",
+      "parentUuid": "AAAAUH//WUw\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//RbE\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 1,
+      "message": "We also need to test the @dependancy.provides doing the right thing for registering.",
       "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Rco\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-15T16:19:47Z",
+      "side": 0,
+      "message": "This file likely should reflect an example using the new \"notifications\" subscription.  This is all example code so someone can develop their own extension (including events).  I disagree that the changes are not needed here.",
+      "parentUuid": "AAAAUH//WVQ\u003d",
+      "revId": "663860bc793a9812756c6af6e61cff0ecd00882b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//WVI\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 22
