@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//QRU\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2014-01-15T22:01:33Z",
+      "side": 1,
+      "message": "The last word of the line should be \u0027return\u0027",
+      "revId": "56bd6005994dea026f14b0cd717690454e39dc0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//QOs\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2014-01-15T22:01:33Z",
+      "side": 1,
+      "message": "While enumerating all ids into a list and using index is a clever way of finding the next index, is it really more efficient (time and memory) than using the for loop that it replaces? What if there are 1000 entities? what about 10000?",
+      "revId": "56bd6005994dea026f14b0cd717690454e39dc0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//P/0\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 6738
+      },
+      "writtenOn": "2014-01-15T22:01:33Z",
+      "side": 1,
+      "message": "It would be good to add a test showing the correct interaction of marker and limit.",
+      "revId": "56bd6005994dea026f14b0cd717690454e39dc0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
