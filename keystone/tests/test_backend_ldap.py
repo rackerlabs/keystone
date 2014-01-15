@@ -92,15 +92,15 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         conf.ldap.user_allow_delete = False
         self.reload_backends(CONF.identity.default_domain_id)
 
-        user = {'id': 'fake1',
-                'name': 'fake1',
-                'password': 'fakepass1',
-                'domain_id': CONF.identity.default_domain_id,
-                'tenants': ['bar']}
+        #user = {'id': 'foo',
+        #        'name': 'FOO',
+        #        'password': 'fakepass1',
+        #        'domain_id': CONF.identity.default_domain_id,
+        #        'tenants': ['bar']}
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
-                          'fake1',
-                          user)
+                          self.user_foo['id'],
+                          self.user_foo)
 
         self.user_foo['password'] = 'fakepass2'
         self.assertRaises(exception.ForbiddenAction,
