@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Ps0\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 7996
+      },
+      "writtenOn": "2014-01-15T23:17:05Z",
+      "side": 1,
+      "message": "Hi Brant, I don\u0027t think this is necessary because the new Message class is already a text type.",
+      "revId": "71b1bfed7ea13d32c02768e5a79b538a936441c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
