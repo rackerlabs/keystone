@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//UOA\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T05:41:03Z",
+      "side": 1,
+      "message": "good catch! I\u0027ll add the check.",
+      "parentUuid": "AAAAUH//UdU\u003d",
+      "revId": "6fb85720df87315dac95d47c6e8fd00b630fd553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//UdY\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-15T03:47:55Z",
       "side": 1,
       "message": "I do see validatebind in build_policy_check credentials. Why do we need that in 2 places",
+      "revId": "6fb85720df87315dac95d47c6e8fd00b630fd553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//UNo\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T05:41:03Z",
+      "side": 1,
+      "message": "They are two different code paths. The other is for backward compatibility. See the FIXME in line 229, validate_token_bind functionality should be its own middleware. We\u0027ll fix that in a different patch.",
+      "parentUuid": "AAAAUH//UdY\u003d",
       "revId": "6fb85720df87315dac95d47c6e8fd00b630fd553",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
