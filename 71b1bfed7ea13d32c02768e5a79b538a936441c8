@@ -16,6 +16,24 @@
       "revId": "71b1bfed7ea13d32c02768e5a79b538a936441c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Pq0\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-15T23:28:42Z",
+      "side": 1,
+      "message": "There are times when the exception message might not be a translated Message... it might only be in our tests.",
+      "parentUuid": "AAAAUH//Ps0\u003d",
+      "revId": "71b1bfed7ea13d32c02768e5a79b538a936441c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
