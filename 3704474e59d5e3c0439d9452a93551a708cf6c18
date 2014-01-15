@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//R+I\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-15T14:56:03Z",
+      "side": 1,
+      "message": "as a heads up, the headers from context are already called here, so no need to call them again @ line 184. \n\nor remove this line.",
+      "revId": "3704474e59d5e3c0439d9452a93551a708cf6c18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//R88\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-15T14:56:03Z",
+      "side": 1,
+      "message": "also, again here, and line 256",
+      "revId": "3704474e59d5e3c0439d9452a93551a708cf6c18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//R8o\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-15T14:56:03Z",
+      "side": 1,
+      "message": "I\u0027m being picky, but can we call this RequestTokenEndpoint instead of RTokenEndpoint?",
+      "revId": "3704474e59d5e3c0439d9452a93551a708cf6c18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
