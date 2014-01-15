@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//1SY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T01:02:57Z",
+      "side": 1,
+      "message": "yes, its required. I\u0027ll add more description.",
+      "parentUuid": "AAAAUH//3IM\u003d",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//3BU\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//1SQ\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T01:02:57Z",
+      "side": 1,
+      "message": "agreed. Moreover, we need to abstract the auth token itself. Its on the todo list for future enhancements.",
+      "parentUuid": "AAAAUH//3BU\u003d",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//l4g\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2014-01-10T17:43:20Z",
       "side": 1,
       "message": "are the _name attributes available? it\u0027d be nice to eliminate lookups where possible",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//VR0\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T01:02:57Z",
+      "side": 1,
+      "message": "_name attributes are currently not populated. But I agree, we should. Will file an enhancement bug.",
+      "parentUuid": "AAAAUH//l4g\u003d",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//VP8\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T01:02:57Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "AAAAUH//l4Y\u003d",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//sNU\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 9
@@ -98,6 +170,24 @@
       "writtenOn": "2014-01-10T17:43:20Z",
       "side": 1,
       "message": "where does keystone need to care about the user_id? just password changes?",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//VQU\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T01:02:57Z",
+      "side": 1,
+      "message": "Probably. Looks like create_trust is using it too, according to policy.json\n\n\"identity:create_trust\": [[\"user_id:%(trust.trustor_user_id)s\"]],",
+      "parentUuid": "AAAAUH//sNU\u003d",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -149,6 +239,24 @@
       "writtenOn": "2014-01-10T17:43:20Z",
       "side": 1,
       "message": "creds[\u0027roles\u0027] \u003d [r[\u0027name\u0027] for r in token_data.get(\u0027roles\u0027, [])]",
+      "parentUuid": "AAAAUH//3C8\u003d",
+      "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1PM\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T01:02:57Z",
+      "side": 1,
+      "message": "Yes. Unscoped (Keystone-scoped) tokens may not have any roles.",
       "parentUuid": "AAAAUH//3C8\u003d",
       "revId": "15d8a2b913977523f5b8594d91a9cfeddc05f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
