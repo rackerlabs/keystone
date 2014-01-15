@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//UdU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-01-15T03:47:55Z",
+      "side": 1,
+      "message": "Don\u0027t we need to check for no token_id?   If the user doesn\u0027t send token_id, do we need to go to db to get the error?",
+      "revId": "6fb85720df87315dac95d47c6e8fd00b630fd553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//UdY\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-01-15T03:47:55Z",
+      "side": 1,
+      "message": "I do see validatebind in build_policy_check credentials. Why do we need that in 2 places",
+      "revId": "6fb85720df87315dac95d47c6e8fd00b630fd553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
