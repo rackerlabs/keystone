@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Rnk\u003d",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-15T15:49:55Z",
+      "side": 1,
+      "message": "ahh, headers are already called here too!",
+      "revId": "09d9cdc20458f5b06d2e9bd03cfc1e2b1020e3ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//RoQ\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-15T15:49:55Z",
+      "side": 1,
+      "message": "is this used at all?",
+      "revId": "09d9cdc20458f5b06d2e9bd03cfc1e2b1020e3ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
