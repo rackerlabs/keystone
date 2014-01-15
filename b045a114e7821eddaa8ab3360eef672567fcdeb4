@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//RaU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/037_extract_name_from_meta_in_services.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2014-01-15T16:23:15Z",
+      "side": 1,
+      "message": "I\u0027m Not completely sure if the duplicated name should be replace by the name with a number. but if I don\u0027t do that, the migration from alder version where nova or cinder is duplicated will fail",
+      "revId": "b045a114e7821eddaa8ab3360eef672567fcdeb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//RZg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/037_extract_name_from_meta_in_services.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2014-01-15T16:23:15Z",
+      "side": 1,
+      "message": "I set a limit to 10 for insert retry with the name + number. I Only find 2 duplicate names. (I know it is a magic number)",
+      "revId": "b045a114e7821eddaa8ab3360eef672567fcdeb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
