@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Q0Q\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T19:00:55Z",
+      "side": 1,
+      "message": "looking at the code, seem like nothing is enabled by default\n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/notifier/api.py#L33",
+      "parentUuid": "AAAAUH//Wdw\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Wd8\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-14T19:16:58Z",
       "side": 1,
       "message": "the value should be commented out regardless, and indicate the default",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Qzo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T19:00:55Z",
+      "side": 1,
+      "message": "sure I can commented it out. But it doesn\u0027t appear any drivers are enabled by default.",
+      "parentUuid": "AAAAUH//Wd8\u003d",
       "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Qsk\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T19:00:55Z",
+      "side": 1,
+      "message": "Agree with Morgan. The main use case for notifications subscription is to update the corresponding data when the related data has changed as we are further decoupling relational data to support other backends (i.e. non-relational data stores). Providers are responsible for data manipulation so this is the right place for it.",
+      "parentUuid": "AAAAUH//ReU\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//WWA\u003d",
         "filename": "keystone/common/extensions_notifier.py",
         "patchSetId": 22
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "AAAAUH//WWA\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Qr8\u003d",
+        "filename": "keystone/common/extensions_notifier.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T19:00:55Z",
+      "side": 1,
+      "message": "sure. Will use the ALL CAPS convention.",
+      "parentUuid": "AAAAUH//ReM\u003d",
       "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Qr0\u003d",
+        "filename": "keystone/contrib/example/configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T19:00:55Z",
+      "side": 1,
+      "message": "will take it out",
+      "parentUuid": "AAAAUH//RdM\u003d",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//RcI\u003d",
         "filename": "keystone/contrib/example/core.py",
         "patchSetId": 22
@@ -288,6 +378,24 @@
       "writtenOn": "2014-01-14T19:16:58Z",
       "side": 1,
       "message": "remove - you\u0027re not using this as a global",
+      "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//QrQ\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-15T19:00:55Z",
+      "side": 1,
+      "message": "Not sure if I understand your comment. We are updating RESOURCE_TYPES in line 44.",
+      "parentUuid": "AAAAUH//WVA\u003d",
       "revId": "1c656974f8f59b0193780ac8f5365e873aa30b50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
