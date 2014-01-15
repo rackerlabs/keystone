@@ -117,6 +117,48 @@ class CredentialTestCase(test_v3.RestfulTestCase):
             '/credentials',
             body={'credential': ref}, expected_status=409)
 
+    def _create_dict_blob_credential(self):
+        blob = {"access": uuid.uuid4().hex,
+                "secret": uuid.uuid4().hex}
+        credential_id = uuid.uuid4().hex
+        credential = self.new_credential_ref(
+            user_id=self.user['id'],
+            project_id=self.project_id)
+        credential['id'] = credential_id
+
+        # Store the blob as a dict *not* JSON ref bug #1259584
+        # This means we can test the dict->json workaround, added
+        # as part of the bugfix for backwards compatibility works.
+        credential['blob'] = blob
+        credential['type'] = 'ec2'
+        # Create direct via the DB API to avoid validation failure
+        self.credential_api.create_credential(
+            credential_id,
+            credential)
+        expected_blob = json.dumps(blob)
+        return expected_blob, credential_id
+
+    def test_get_ec2_dict_blob(self):
+        """Ensure non-JSON blob data is correctly converted."""
+        expected_blob, credential_id = self._create_dict_blob_credential()
+
+        r = self.get(
+            '/credentials/%(credential_id)s' % {
+                'credential_id': credential_id})
+        self.assertEqual(expected_blob, r.result['credential']['blob'])
+
+    def test_list_ec2_dict_blob(self):
+        """Ensure non-JSON blob data is correctly converted."""
+        expected_blob, credential_id = self._create_dict_blob_credential()
+
+        list_r = self.get('/credentials')
+        list_creds = list_r.result['credentials']
+        list_ids = [r['id'] for r in list_creds]
+        self.assertIn(credential_id, list_ids)
+        for r in list_creds:
+            if r['id'] == credential_id:
+                self.assertEqual(expected_blob, r['blob'])
+
     def test_create_non_ec2_credential(self):
         """Call ``POST /credentials`` for creating non-ec2 credential."""
         ref = self.new_credential_ref(user_id=self.user['id'])
