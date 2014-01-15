@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//RNA\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-15T16:55:40Z",
+      "side": 1,
+      "message": "i don\u0027t think you need to try/except, sine the drivers will handle that",
+      "revId": "d41a6091eef38b9b60e685cbc39d9694828b9fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
