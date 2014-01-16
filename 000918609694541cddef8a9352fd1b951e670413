@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Jl0\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-16T23:40:58Z",
+      "side": 1,
+      "message": "Personally I think alphabetical ordering of imports is one of the least useful possible ways of specifying them.  \n\nMy preference is to order in blocks based on where things are imported from, and AFAIK the keystone gate does not mandate alphabetic ordering, so I\u0027ll leave as-is unless any keystone-core object.",
+      "parentUuid": "AAAAUH//J3E\u003d",
+      "revId": "000918609694541cddef8a9352fd1b951e670413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//J1w\u003d",
         "filename": "keystone/tests/test_v3_credential.py",
         "patchSetId": 2
