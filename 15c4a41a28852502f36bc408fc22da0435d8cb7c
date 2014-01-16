@@ -69,6 +69,24 @@
       "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//NmY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 9954
+      },
+      "writtenOn": "2014-01-16T10:18:39Z",
+      "side": 1,
+      "message": "sure, I\u0027ll get a new patchset on the way",
+      "parentUuid": "AAAAUH//Okk\u003d",
+      "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
