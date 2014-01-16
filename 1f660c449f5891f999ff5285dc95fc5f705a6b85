@@ -16,6 +16,24 @@
       "revId": "1f660c449f5891f999ff5285dc95fc5f705a6b85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kz4\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T19:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//K7Q\u003d",
+      "revId": "1f660c449f5891f999ff5285dc95fc5f705a6b85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
