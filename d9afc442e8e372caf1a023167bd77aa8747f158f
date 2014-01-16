@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//OCk\u003d",
+        "filename": "doc/source/extensions/endpoint_filter-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2014-01-16T08:56:23Z",
+      "side": 1,
+      "message": "this blank line is optional",
+      "revId": "d9afc442e8e372caf1a023167bd77aa8747f158f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
