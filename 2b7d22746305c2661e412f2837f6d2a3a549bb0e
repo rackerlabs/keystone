@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//LDI\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T18:59:02Z",
+      "side": 1,
+      "message": "s/#A/a/",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LCc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T18:59:02Z",
+      "side": 1,
+      "message": "I remember dolphm was asking for specific exception instead of ValueError in one of his earlier comments. But I am fine with it as it if dolphm doesn\u0027t oppose to it.",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
