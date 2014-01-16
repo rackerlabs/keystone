@@ -87,6 +87,24 @@
       "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Mfc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T15:16:49Z",
+      "side": 1,
+      "message": "Steve, I think I am going to have to leave the role in the trust_api call. The trust_api is expecting it: \n\nhttp://paste.openstack.org/show/61367/",
+      "parentUuid": "AAAAUH//NmY\u003d",
+      "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
