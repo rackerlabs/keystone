@@ -16,6 +16,24 @@
       "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//O+o\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 9954
+      },
+      "writtenOn": "2014-01-16T04:05:09Z",
+      "side": 1,
+      "message": "I believe bknudson what the one who originally suggested using decorators: \n\nhttps://review.openstack.org/#/c/41970/14/keystone/identity/core.py\n\nI thought there was some discussion going on in #openstack-dev about this as well around the time that patch landed. \n\nDigging to see if I can find some docs for decorators, so we can include those if possible.",
+      "parentUuid": "AAAAUH//PBs\u003d",
+      "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
