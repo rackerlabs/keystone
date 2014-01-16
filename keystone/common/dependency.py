@@ -26,6 +26,9 @@ See also:
     https://en.wikipedia.org/wiki/Dependency_injection
 """
 
+from keystone import notifications
+
+
 REGISTRY = {}
 
 _future_dependencies = {}
@@ -64,10 +67,76 @@ def provider(name):
     """
     def wrapper(cls):
         def wrapped(init):
+            def register_event_callbacks(self):
+                """Register event callbacks.
+
+                A provider who has an implicit dependency on other
+                providers may utilize the event callback mechanism to
+                react to any changes in those providers. This is useful
+                in a scenario where one provider's data model is having
+                foreign key-like relationship with other providers. However,
+                since Keystone allow different backends, an explicit foreign
+                key relationship may not be possible because there's no
+                guarantee that all providers are using SQL backend.
+
+                To register event callbacks, the provider must define (and
+                populate) the 'event_callbacks' attribute. 'event_callbacks'
+                is a dictionary listing as keys those events that are of
+                interest and the values should be the respective callbacks.
+                For example:
+
+                    @dependency.provider('foo_api')
+                    class FooManager(manager.Manager):
+
+                        def __init__(self):
+                            self.event_callbacks = {
+                                'deleted': {
+                                    'project': [
+                                        self.project_deleted_callback]}}
+                            super(FooManager, self).__init__(
+                                'keystone.contrib.foo.core.FooDriver')
+
+                        def project_deleted_callback(self,
+                                                     context,
+                                                     message):
+                        # cleanup data related to the deleted project here
+
+                A callback must accept the following arguments:
+
+                    * context - the session context
+                    * message - the message event
+                """
+                if not hasattr(self, 'event_callbacks'):
+                    return
+
+                if not isinstance(self.event_callbacks, dict):
+                    msg = _('event_callbacks must be a dict')
+                    raise ValueError(msg)
+
+                for event in self.event_callbacks:
+                    if not isinstance(self.event_callbacks[event], dict):
+                        msg = _('event_callbacks[%s] must be a dict') % (
+                            event)
+                        raise ValueError(msg)
+                    for resource_type in self.event_callbacks[event]:
+                        # Make sure we register the provider for each event it
+                        # cares to call back.
+                        callbacks = self.event_callbacks[event][resource_type]
+                        if not callbacks:
+                            continue
+                        if not hasattr(callbacks, '__iter__'):
+                            # ensure the callback information is a list
+                            # allowing multiple callbacks to exist
+                            callbacks = [callbacks]
+                        notifications.register_event_callback(event,
+                                                              resource_type,
+                                                              callbacks)
+
             def __wrapped_init__(self, *args, **kwargs):
                 """Initialize the wrapped object and add it to the registry."""
                 init(self, *args, **kwargs)
                 REGISTRY[name] = self
+                register_event_callbacks(self)
 
                 resolve_future_dependencies(name)
 

@@ -44,7 +44,8 @@ Extension code base in the `keystone/contrib/example` folder.
   file, these should be kept disabled as default and have their own element.
 - If configuration changes are required/introduced in the `keystone-paste.ini`,
   the new filter must be declared.
-
+- If the configuration is listening to core notifications, the events list and
+  corresponding callbacks must be declared in the ``core.py`` file.
 
 `keystone.conf.sample` File
 ---------------------------
@@ -241,3 +242,64 @@ must be executed.
 Example::
 
      ./bin/keystone-manage db_sync --extension example
+
+
+Event Callbacks
+-----------
+
+Extensions may provide callbacks to Keystone (Identity) events.
+Extensions must provide the list of events of interest and the corresponding
+callbacks. Events are issued upon successful creation, modification, and
+deletion of the following Keystone resources:
+
+* ``group``
+* ``project``
+* ``role``
+* ``user``
+
+The extension's ``Manager`` class must contain the
+``event_callbacks`` attribute. It is a dictionary listing as keys
+those events that are of interest and the values should be the respective
+callbacks. Event callback registration is done via the
+dependency injection mechanism. During dependency provider registration, the
+``dependency.provider`` decorator looks for the ``event_callbacks``
+class attribute. If it exist the event callbacks are registered
+accordingly. Needless to say, in order to enable event callbacks, the
+extension's ``Manager`` class must also be a dependency provider.
+
+Example:
+
+.. code:: python
+    @dependency.provider('example_api')
+    class ExampleManager(manager.Manager):
+        """Example Manager.
+
+        See :mod:`keystone.common.manager.Manager` for more details on
+        how this dynamically calls the backend.
+
+        """
+
+        def __init__(self):
+            self.event_callbacks = {
+                'deleted': {
+                    'project': [
+                        self.project_deleted_callback]}}
+            super(ExampleManager, self).__init__(
+                'keystone.contrib.example.core.ExampleDriver')
+
+        def project_deleted_callback(self, context, message):
+            # cleanup data related to the deleted project here
+
+A callback must accept the following parameters:
+
+* ``service`` - the service information (e.g. identity)
+* ``resource_type`` - the resource type (e.g. project)
+* ``operation`` - the operation (updated, created, deleted)
+* ``payload`` - the actual payload info of the resource that was acted on
+
+Example:
+
+.. code:: python
+      def project_deleted_callback(self, service, resource_type, operation,
+                                   payload):
+
