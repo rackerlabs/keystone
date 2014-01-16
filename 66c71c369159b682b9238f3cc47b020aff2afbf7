@@ -34,6 +34,24 @@
       "revId": "66c71c369159b682b9238f3cc47b020aff2afbf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//MDI\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-16T16:20:45Z",
+      "side": 1,
+      "message": "I\u0027ve posted a patch to api-site:\n\nhttps://review.openstack.org/67211",
+      "parentUuid": "AAAAUH//OD0\u003d",
+      "revId": "66c71c369159b682b9238f3cc47b020aff2afbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
