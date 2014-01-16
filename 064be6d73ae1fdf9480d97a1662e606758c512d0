@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//OmU\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T06:27:14Z",
+      "side": 1,
+      "message": "not sure why we need extra as rules is already a JSON blob. You can essentially stash all kinds of tigers and dragons in there. :)",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Olg\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T06:27:14Z",
+      "side": 1,
+      "message": "may want to add sql.handle_conflict decorator",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Olc\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T06:27:14Z",
+      "side": 1,
+      "message": "sql.handle_conflict",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//O1o\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 9
@@ -30,6 +81,23 @@
       "writtenOn": "2014-01-16T05:28:31Z",
       "side": 1,
       "message": "need to change this whole file entirely, based on latest mapping API spec",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Oi0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T06:27:14Z",
+      "side": 1,
+      "message": "wonder if we can use jsonschema for this\n\nhttps://pypi.python.org/pypi/jsonschema",
       "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
