@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//MTs\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T15:45:22Z",
+      "side": 1,
+      "message": "-2: these are only evaluated once, so the same request_token_secret will always be used until keystone is restarted",
+      "revId": "efde820e2f664751a3e4d01dc35507383c59b1e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
