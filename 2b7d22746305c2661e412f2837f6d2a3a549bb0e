@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Knc\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//K8M\u003d",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//K7k\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-16T19:31:22Z",
       "side": 1,
       "message": "exist should be exists",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KnY\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//K7k\u003d",
       "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KnU\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//K7I\u003d",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//K10\u003d",
         "filename": "doc/source/EXTENSIONS_HOWTO.rst",
         "patchSetId": 28
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-16T19:31:22Z",
       "side": 1,
       "message": "put a comment in the example saying, \"Here we add the the event_callbacks class attribute that calls project_deleted_callback when a project is deleted\"\n\nAlso does this have to go before the superclass init? Could it go after and that be okay???",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KnQ\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//K10\u003d",
       "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KnE\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//Kxc\u003d",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//LDI\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 28
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-16T18:59:02Z",
       "side": 1,
       "message": "s/#A/a/",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KnA\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//LDI\u003d",
       "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Km4\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//Ky0\u003d",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Kyw\u003d",
         "filename": "keystone/contrib/example/core.py",
         "patchSetId": 28
@@ -149,6 +275,24 @@
       "writtenOn": "2014-01-16T19:31:22Z",
       "side": 1,
       "message": "wil should be will",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Km0\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//Kyw\u003d",
       "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
