@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//QV8\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T04:48:46Z",
+      "side": 1,
+      "message": "i believe HMAC is defaulted if unspecified, no big deal",
+      "revId": "9586aa6261556a0ccbd1aa70382d1f4a30556591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PE0\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T04:48:46Z",
+      "side": 1,
+      "message": "headers is also called at line 64, not sure you need that one, I believe a signed POST request will automagically add the application/json part.",
+      "revId": "9586aa6261556a0ccbd1aa70382d1f4a30556591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PEs\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T04:48:46Z",
+      "side": 1,
+      "message": "secondly, you are in-fact including the requested_project_id in the headers to sign.",
+      "revId": "9586aa6261556a0ccbd1aa70382d1f4a30556591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
