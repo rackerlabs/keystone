@@ -12,11 +12,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.tests.contrib.kds.api import base
+from keystone.contrib.kite.common import service
+from keystone.openstack.common.fixture import config
+from keystone.openstack.common import test
 
 
-class SimpleTest(base.BaseTestCase):
+class BaseTestCase(test.BaseTestCase):
 
-    def test_simple(self):
-        resp = self.get("/")
-        self.assertEqual(resp.json['hello'], 'world')
+    def setUp(self):
+        super(BaseTestCase, self).setUp()
+        self.config_fixture = self.useFixture(config.Config())
+        self.CONF = self.config_fixture.conf
+        service.parse_args(args=[])

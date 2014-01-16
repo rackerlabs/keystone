@@ -32,7 +32,7 @@ CONF.register_opts(API_SERVICE_OPTS)
 
 def parse_args(args, default_config_files=None):
     CONF(args=args[1:],
-         project='kds',
+         project='kite',
          default_config_files=default_config_files)
 
 
@@ -42,4 +42,4 @@ def prepare_service(argv=[]):
                                          'eventlet.wsgi.server=WARN'
                                          ])
     parse_args(argv)
-    log.setup('kds')
+    log.setup('kite')

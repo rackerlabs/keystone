@@ -15,8 +15,8 @@
 from oslo.config import cfg
 import pecan
 
-from keystone.contrib.kds.api import config as pecan_config
-from keystone.contrib.kds.api import hooks
+from keystone.contrib.kite.api import config as pecan_config
+from keystone.contrib.kite.api import hooks
 
 CONF = cfg.CONF
 
@@ -38,7 +38,7 @@ def setup_app(config=None, extra_hooks=None):
 
     pecan.configuration.set_config(dict(config), overwrite=True)
 
-    app = pecan.make_app('keystone.contrib.kds.api.root.RootController',
+    app = pecan.make_app('keystone.contrib.kite.api.root.RootController',
                          debug=CONF.debug,
                          hooks=app_hooks)
 

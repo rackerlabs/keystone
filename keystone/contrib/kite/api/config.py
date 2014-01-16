@@ -12,15 +12,21 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.contrib.kds.common import service
-from keystone.openstack.common.fixture import config
-from keystone.openstack.common import test
+# Server Specific Configurations
+server = {
+    'port': 9109,
+    'host': '0.0.0.0'
+}
 
+# Pecan Application Configurations
+app = {
+    'root': 'keystone.contrib.kite.api.root.RootController',
+    'modules': ['keystone.contrib.kite.api'],
+    'static_root': '%(confdir)s/public',
+    'template_path': '%(confdir)s/templates',
+    'debug': False,
+}
 
-class BaseTestCase(test.BaseTestCase):
-
-    def setUp(self):
-        super(BaseTestCase, self).setUp()
-        self.config_fixture = self.useFixture(config.Config())
-        self.CONF = self.config_fixture.conf
-        service.parse_args(args=[])
+# Custom Configurations must be in Python dictionary format::
+#
+# foo = {'bar': 'baz'}

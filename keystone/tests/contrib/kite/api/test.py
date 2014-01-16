@@ -12,21 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# Server Specific Configurations
-server = {
-    'port': 9109,
-    'host': '0.0.0.0'
-}
+from keystone.tests.contrib.kite.api import base
 
-# Pecan Application Configurations
-app = {
-    'root': 'keystone.contrib.kds.api.root.RootController',
-    'modules': ['keystone.contrib.kds.api'],
-    'static_root': '%(confdir)s/public',
-    'template_path': '%(confdir)s/templates',
-    'debug': False,
-}
 
-# Custom Configurations must be in Python dictionary format::
-#
-# foo = {'bar': 'baz'}
+class SimpleTest(base.BaseTestCase):
+
+    def test_simple(self):
+        resp = self.get("/")
+        self.assertEqual(resp.json['hello'], 'world')

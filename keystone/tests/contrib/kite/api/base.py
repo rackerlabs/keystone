@@ -16,9 +16,9 @@ import webtest
 
 import pecan.testing
 
-from keystone.contrib.kds.common import paths
+from keystone.contrib.kite.common import paths
 from keystone.openstack.common import jsonutils
-from keystone.tests.contrib.kds import base
+from keystone.tests.contrib.kite import base
 
 
 def urljoin(*args):
@@ -45,14 +45,14 @@ class BaseTestCase(base.BaseTestCase):
 
     def setUp(self):
         super(BaseTestCase, self).setUp()
-        root = 'keystone.contrib.kds.api.root.RootController'
+        root = 'keystone.contrib.kite.api.root.RootController'
 
         self.app_config = {
             'app': {
                 'root': root,
-                'modules': ['keystone.contrib.kds.api'],
+                'modules': ['keystone.contrib.kite.api'],
                 'static_root': paths.root_path('public'),
-                'template_path': paths.root_path('kds', 'api', 'templates'),
+                'template_path': paths.root_path('kite', 'api', 'templates'),
             },
         }
 

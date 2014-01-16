@@ -20,11 +20,11 @@ from wsgiref import simple_server
 
 from keystone.openstack.common import gettextutils
 
-PROJECT = 'kds'
+PROJECT = 'kite'
 gettextutils.install(PROJECT)
 
-from keystone.contrib.kds.api import app
-from keystone.contrib.kds.common import service
+from keystone.contrib.kite.api import app
+from keystone.contrib.kite.common import service
 from keystone.openstack.common import log
 
 CONF = cfg.CONF

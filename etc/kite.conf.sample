@@ -1,7 +1,7 @@
 [DEFAULT]
 
 #
-# Options defined in keystone.contrib.kds.common.service
+# Options defined in keystone.contrib.kite.common.service
 #
 
 # IP for the server to bind to (string value)
