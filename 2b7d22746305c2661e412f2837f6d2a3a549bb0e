@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//K8M\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "is configuration the right word?  perhaps you mean If the extension\u0027s configuration or just extension?",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//K7k\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "exist should be exists",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//K7I\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "Remove Needless to say and just start as \"In order...\"",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//K10\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "put a comment in the example saying, \"Here we add the the event_callbacks class attribute that calls project_deleted_callback when a project is deleted\"\n\nAlso does this have to go before the superclass init? Could it go after and that be okay???",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kxc\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "How do I know what the exhaustive list of options are that I can use.  projects, domains...  what else?  Is it all crud or just deleted???",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//LDI\u003d",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 28
@@ -13,6 +98,74 @@
       "writtenOn": "2014-01-16T18:59:02Z",
       "side": 1,
       "message": "s/#A/a/",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KyE\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "what do you put in to make this work if you don\u0027t have any existing dependencies to declare???",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ky0\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "involved should be invoked?",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kyw\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "wil should be will",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kyc\u003d",
+        "filename": "keystone/contrib/example/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T19:31:22Z",
+      "side": 1,
+      "message": "great examples",
       "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
