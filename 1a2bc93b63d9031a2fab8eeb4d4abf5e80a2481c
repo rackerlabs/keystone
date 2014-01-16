@@ -34,6 +34,24 @@
       "revId": "1a2bc93b63d9031a2fab8eeb4d4abf5e80a2481c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//MG4\u003d",
+        "filename": "keystone/common/kvs/legacy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T16:14:01Z",
+      "side": 1,
+      "message": "Submitted the change with https://review.openstack.org/67204",
+      "parentUuid": "AAAAUH//Mso\u003d",
+      "revId": "1a2bc93b63d9031a2fab8eeb4d4abf5e80a2481c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
