@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//MJE\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T16:10:48Z",
+      "side": 1,
+      "message": "double quotes and change to uuid4",
+      "revId": "bc488416d52315d05f92e5d02cbdabdcd2f62226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
