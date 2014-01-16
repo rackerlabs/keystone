@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//PH8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9954
+      },
+      "writtenOn": "2014-01-16T02:55:24Z",
+      "side": 1,
+      "message": "3ca8f3052898f1ecf3 isn\u0027t linking to a commit for me? \n\nI also noticed that this commit pulls in two changes from oslo-incubator;\n1.) https://github.com/openstack/oslo-incubator/commit/e53fe852c4d0d4dabdf33de1f55bad3bb5856779\n\nwhich is the change you merged into oslo-incubator and... \n\n2.) https://github.com/openstack/oslo-incubator/commit/84d461e859e4b1eb1a00b9b141df61c37da84d2d\n\nIt would be nice to have both of these documented in the commit message. Maybe something like the following?  \n\ne53fe85 strutils bool_from_string, allow specified default\n\n84d461e Fix a bug in safe_encode where it returns a bytes object in py3",
+      "revId": "9dc014d47385747945e9369176935e31c9f1a119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
