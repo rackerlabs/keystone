@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//J3E\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T22:28:45Z",
+      "side": 1,
+      "message": "Should this be in alphabetical order after line 44?",
+      "revId": "000918609694541cddef8a9352fd1b951e670413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//J1w\u003d",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T22:28:45Z",
+      "side": 1,
+      "message": "(NIT): replace \u0027atm\u0027 with \u0027for now.\u0027",
+      "revId": "000918609694541cddef8a9352fd1b951e670413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
