@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//JtU\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 0,
+      "message": "Any reason to remove the whitespace here?",
+      "revId": "0d2c21eefadc74c574ad65b055f6d711a6c6e2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

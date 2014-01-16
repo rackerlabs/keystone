@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Jx4\u003d",
+        "filename": "keystone/contrib/revoke/__init__.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "Update Copyright year to 2014.",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jxw\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "Update Copyright year to 2014. \n\nSame for all new files in this patch.",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JxI\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "\u0027Return\u0027 and end with a period.",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jw8\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "remove commented out code",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JwY\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "(NIT): this is really minor, but I think the most of Keystone just leaves: \n\n    from keystone.openstack.common import log as logging \n\nas... \n\n    from keystone.openstack.common.import log \n\n    LOG \u003d log.getLogger(__name__)\n\nhttps://github.com/openstack/keystone/blob/master/keystone/identity/core.py#L34",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ju8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "(NIT): any reason to wrap \u0027domain_scope\u0027 in ()?",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jtk\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "missing a comma after \"/extensions\"",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JtY\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T23:03:10Z",
+      "side": 1,
+      "message": "Remove these?",
+      "revId": "06d60b533dd6f1d189ce5c4b05ccbceda76a67c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
