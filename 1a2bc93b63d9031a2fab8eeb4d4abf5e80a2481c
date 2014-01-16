@@ -16,6 +16,24 @@
       "revId": "1a2bc93b63d9031a2fab8eeb4d4abf5e80a2481c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Mso\u003d",
+        "filename": "keystone/common/kvs/legacy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T15:36:53Z",
+      "side": 1,
+      "message": "For some reason both the assignment and identity backend look up the user ID by user name, see the previous file in this review... keystone/assignment/backends/kvs.py\n\nTaking a look at keystone/assignment/backends/kvs.py, it looks like the function that calls this isn\u0027t used, so I\u0027ll look at getting rid of it and then I can move this into identity/backends/kvs.py instead. The change to remove those functions will be a separate patch.",
+      "parentUuid": "AAAAUH//NCA\u003d",
+      "revId": "1a2bc93b63d9031a2fab8eeb4d4abf5e80a2481c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
