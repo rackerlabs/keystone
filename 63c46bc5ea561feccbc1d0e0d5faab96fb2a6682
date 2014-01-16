@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//LMk\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T18:23:33Z",
+      "side": 1,
+      "message": "Use single quotes when possible. See keystone hacking guidelines",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LNE\u003d",
+        "filename": "keystone/contrib/kds/db/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T18:23:33Z",
+      "side": 1,
+      "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LNQ\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T18:23:33Z",
+      "side": 1,
+      "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LN4\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T18:23:33Z",
+      "side": 1,
+      "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LOY\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T18:23:33Z",
+      "side": 1,
+      "message": "Why is a counter needed to keep track of key generation?  Are all the previous generations stored in the database? For how long?",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LSw\u003d",
+        "filename": "keystone/tests/contrib/kds/db/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T18:23:33Z",
+      "side": 1,
+      "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty.\n(See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
