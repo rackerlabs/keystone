@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//MW0\u003d",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T15:46:16Z",
+      "side": 1,
+      "message": "Use single quotes instead of double quotes when possible",
+      "revId": "efde820e2f664751a3e4d01dc35507383c59b1e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//MTs\u003d",
         "filename": "keystone/contrib/oauth1/backends/sql.py",
         "patchSetId": 9
