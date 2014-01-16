@@ -33,6 +33,24 @@
       "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LBY\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:00:52Z",
+      "side": 1,
+      "message": "I asked him and he was fine with moving back to ValueError.",
+      "parentUuid": "AAAAUH//LCc\u003d",
+      "revId": "2b7d22746305c2661e412f2837f6d2a3a549bb0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
