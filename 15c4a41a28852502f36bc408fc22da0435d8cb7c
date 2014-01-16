@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//PBs\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T03:33:25Z",
+      "side": 1,
+      "message": "i apologize, as this is totally out of scope, but shouldn\u0027t the trustor or trustee need to have the role assigned to them first? before the trust is actually created? \n\nunless the notification is triggered regardless of (un)successful completion of the event?",
+      "revId": "15c4a41a28852502f36bc408fc22da0435d8cb7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
