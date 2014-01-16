@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//NCA\u003d",
+        "filename": "keystone/common/kvs/legacy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T12:51:04Z",
+      "side": 1,
+      "message": "Is there a reason this ended up on the DB itself instead of on the identity driver (or similarly something like the UserIdToDomain object).  It seems odd this is on the base kvs class instead of in the identity specific location.",
+      "revId": "1a2bc93b63d9031a2fab8eeb4d4abf5e80a2481c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
