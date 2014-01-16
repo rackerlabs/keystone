@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//LX4\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T18:18:41Z",
+      "side": 1,
+      "message": "this example should be simplified quite a bit",
+      "revId": "04e2c987a924cdaba69f566d55ae1183efd19cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LXY\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T18:18:41Z",
+      "side": 1,
+      "message": "pep8: add more parens",
+      "revId": "04e2c987a924cdaba69f566d55ae1183efd19cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LPw\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T18:18:41Z",
+      "side": 1,
+      "message": "this should be less than or equal to actually log if the level is INFO",
+      "revId": "04e2c987a924cdaba69f566d55ae1183efd19cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LOI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T18:18:41Z",
+      "side": 1,
+      "message": "++",
+      "revId": "04e2c987a924cdaba69f566d55ae1183efd19cf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
