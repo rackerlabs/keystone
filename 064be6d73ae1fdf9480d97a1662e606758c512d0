@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//O1o\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T05:28:31Z",
+      "side": 1,
+      "message": "need to update these if we\u0027re going to change the variable on line 51",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//O0k\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T05:28:31Z",
+      "side": 1,
+      "message": "need to change this whole file entirely, based on latest mapping API spec",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//O0c\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T05:28:31Z",
+      "side": 1,
+      "message": "some changes in here too",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
