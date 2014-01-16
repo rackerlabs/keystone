@@ -163,6 +163,37 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
                  body='',
                  expected_status=404)
 
+    def test_list_projects_for_endpoint_default(self):
+        """
+        GET /OS-EP-FILTER/endpoints/{endpoint_id}/projects success
+        """
+        self.get('/OS-EP-FILTER/endpoints/{endpoint_id}/projects' % {
+            'endpoint_id': self.endpoint_id},
+                 body='',
+                 expexted_status=200)
+
+    def test_list_projects_for_endpoint_noendpoint(self):
+        """
+        GET /OS-EP-FILTER/endpoints/{endpoint_id}/projects
+
+        Invalid endpoint id test case.
+
+        """
+        self.get('/OS-EP-FILTER/endpoints/{endpoint_id}/projects' % {
+            'endpoint_id': uuid.uuid4().hex},
+                 body='',
+                 expexted_status=404)
+
+    def test_list_projects_for_endpoint_assoc(self):
+        """
+        GET /OS-EP-FILTER/endpoints/{endpoint_id}/projects success
+        """
+        self.put(self.default_request_url)
+        self.get('/OS-EP-FILTER/endpoints/{endpoint_id}/projects' % {
+            'endpoint_id': self.endpoint_id},
+                 body='',
+                 expexted_status=200)
+
     # DELETE
     def test_remove_endpoint_project_assoc(self):
         """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
