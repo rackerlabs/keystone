@@ -16,6 +16,24 @@
       "revId": "d0c5920e67edcfc957ab62e0be925c39587559d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kno\u003d",
+        "filename": "doc/source/EXTENSIONS_HOWTO.rst",
+        "patchSetId": 29
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-16T19:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//KvM\u003d",
+      "revId": "d0c5920e67edcfc957ab62e0be925c39587559d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
