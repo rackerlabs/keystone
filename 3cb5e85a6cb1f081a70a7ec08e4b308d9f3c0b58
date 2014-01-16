@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Pjw\u003d",
+        "filename": "keystone/contrib/kds/cli/dbsync.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "since it\u0027s odd to run code before importing, I think it\u0027s useful to add a comment why need to do this.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PjM\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "why do we need this and can\u0027t just use OpenStackException?",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PjI\u003d",
+        "filename": "keystone/contrib/kds/common/paths.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "seems like test macros should be in a test part and not leak out into production code.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ph4\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "use common import log method.\n\n from keystone.openstack.common import log",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PiM\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "BackendException already has a msg_format, why not use it? Create a new exception with its own msg_format for a different message.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Phg\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "provide a name to the None arguments so reviewers know what they\u0027re for.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PhY\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PhM\u003d",
+        "filename": "keystone/contrib/kds/db/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "I don\u0027t see this being used.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Pgw\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "suggest call it create_backend, since it\u0027s going to create something new every time you call it. Also, why not have it in the class?",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PgM\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "were you going to fix this?",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PfI\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "what does this mean?",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PfA\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "were you planning to fix this?",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PeY\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Pd8\u003d",
+        "filename": "keystone/tests/contrib/kds/db/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "shouldn\u0027t need to do this for kvsdb.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//PeI\u003d",
+        "filename": "keystone/tests/contrib/kds/db/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-16T00:28:07Z",
+      "side": 1,
+      "message": "base.BaseTestCase did this in its setUp.",
+      "revId": "3cb5e85a6cb1f081a70a7ec08e4b308d9f3c0b58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
