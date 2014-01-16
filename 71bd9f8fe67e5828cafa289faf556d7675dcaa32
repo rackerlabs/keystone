@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//L5o\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-16T17:03:28Z",
+      "side": 1,
+      "message": "I don\u0027t see this used anywhere.  Is it needed?",
+      "revId": "71bd9f8fe67e5828cafa289faf556d7675dcaa32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//L6Y\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-16T17:03:28Z",
+      "side": 1,
+      "message": "Can we add a comment about where this happens?  Feels like we should know this for security auditing purposes.",
+      "revId": "71bd9f8fe67e5828cafa289faf556d7675dcaa32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//L58\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-16T17:03:28Z",
+      "side": 1,
+      "message": "Do we really not need the implementations below?",
+      "revId": "71bd9f8fe67e5828cafa289faf556d7675dcaa32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
