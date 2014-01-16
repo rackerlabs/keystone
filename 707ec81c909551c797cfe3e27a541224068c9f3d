@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//MqY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T14:39:59Z",
+      "side": 1,
+      "message": "please wrap your commit message at 79 chars -- it\u0027s not very readable otherwise\n\n  https://wiki.openstack.org/wiki/GitCommitMessages\n\nit\u0027s also more helpful to focus on why you\u0027re making changes in the commit body, rather than on what you\u0027re changing, which is redundant with the patch itself.",
+      "revId": "707ec81c909551c797cfe3e27a541224068c9f3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//MqM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T14:39:59Z",
+      "side": 1,
+      "message": "this has nothing to do with the rest of the patch??",
+      "revId": "707ec81c909551c797cfe3e27a541224068c9f3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
