@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//LDo\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//LMk\u003d",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//LNE\u003d",
         "filename": "keystone/contrib/kds/db/__init__.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-16T18:23:33Z",
       "side": 1,
       "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LDk\u003d",
+        "filename": "keystone/contrib/kds/db/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//LNE\u003d",
       "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//LDg\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//LNQ\u003d",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Lcw\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "use double quotes here lol",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//LN4\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/__init__.py",
         "patchSetId": 21
@@ -64,6 +135,24 @@
       "writtenOn": "2014-01-16T18:23:33Z",
       "side": 1,
       "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LDc\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//LN4\u003d",
       "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//LDM\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "yes- forever",
+      "parentUuid": "AAAAUH//LOY\u003d",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//LSw\u003d",
         "filename": "keystone/tests/contrib/kds/db/__init__.py",
         "patchSetId": 21
@@ -98,6 +205,41 @@
       "writtenOn": "2014-01-16T18:23:33Z",
       "side": 1,
       "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty.\n(See OpenStack hacking guidelines)",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//LCU\u003d",
+        "filename": "keystone/tests/contrib/kds/db/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//LSw\u003d",
+      "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Li0\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 21
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-16T19:01:35Z",
+      "side": 1,
+      "message": "following the lead of every other project, this should be:\n\n  kds-manage\n\nwith an argument of:\n\n  db_sync\n\nso why is this deviating?\n\nor even better:\n\n  kite-manage db_sync",
       "revId": "63c46bc5ea561feccbc1d0e0d5faab96fb2a6682",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
