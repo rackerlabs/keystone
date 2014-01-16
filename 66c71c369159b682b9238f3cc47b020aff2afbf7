@@ -70,6 +70,24 @@
       "revId": "66c71c369159b682b9238f3cc47b020aff2afbf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jzc\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-16T22:36:58Z",
+      "side": 1,
+      "message": "Yeah, I think that is fair. I commented on https://review.openstack.org/67211 just a minor nit. I think you\u0027re missing a \u0027,\u0027.",
+      "parentUuid": "AAAAUH//L98\u003d",
+      "revId": "66c71c369159b682b9238f3cc47b020aff2afbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
