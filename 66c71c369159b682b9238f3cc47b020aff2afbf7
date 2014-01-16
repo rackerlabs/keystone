@@ -16,6 +16,24 @@
       "revId": "66c71c369159b682b9238f3cc47b020aff2afbf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//OD0\u003d",
+        "filename": "keystone/credential/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-16T08:50:03Z",
+      "side": 1,
+      "message": "Actually that highlights a possible docs issue:\n\nI\u0027ve been looking at:\n\nhttps://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#credentials-v3credentials\n\nWhich says:\n\n\"blob\": \"--JSON serialized object containing \u0027access\u0027 and \u0027secret\u0027--\",\n\nBut then the api-site has a dict in the example response:\n\nhttp://api.openstack.org/api-ref-identity.html#Credential_Calls\n\nSo I\u0027m guessing the latter needs updating, but I\u0027m a little confused as to why there\u0027s docs in two places, certainly all of the v3 code currently expects json so it would seem this is just a docs inconsistency.",
+      "parentUuid": "AAAAUH//PPM\u003d",
+      "revId": "66c71c369159b682b9238f3cc47b020aff2afbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
