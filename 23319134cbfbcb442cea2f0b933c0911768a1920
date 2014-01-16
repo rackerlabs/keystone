@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//MoE\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-16T14:47:17Z",
+      "side": 1,
+      "message": "Very minor nit/suggestion... these docstrings are not necessary. They don\u0027t give any more information to the reader of the code than the test method\u0027s name and a quick look at the call to self.get() already describes.",
+      "revId": "23319134cbfbcb442cea2f0b933c0911768a1920",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
