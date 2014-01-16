@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//MrQ\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-01-16T14:31:46Z",
+      "side": 1,
+      "message": "you may want to use :\n\nfrom keystone.openstack.common import jsonutils \n\nfor that",
+      "revId": "88060cc3671ff6ef89dfe4199f77dcac568f8dda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Mrs\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-01-16T14:31:46Z",
+      "side": 1,
+      "message": "as you said in your comment that exception is not tested.",
+      "revId": "88060cc3671ff6ef89dfe4199f77dcac568f8dda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
