@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//LOg\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 7385
+      },
+      "writtenOn": "2014-01-16T18:15:33Z",
+      "side": 1,
+      "message": "Shouldn\u0027t those comments be removed?",
+      "revId": "c66c307496f515cbb50a0e5d6ee1cd07d75ea63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
