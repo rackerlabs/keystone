@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//OaI\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-16T15:27:30Z",
+      "side": 1,
+      "message": "yeah, this will be removed. thanks for catching that",
+      "parentUuid": "AAAAUH//OmU\u003d",
+      "revId": "064be6d73ae1fdf9480d97a1662e606758c512d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Olg\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 9
