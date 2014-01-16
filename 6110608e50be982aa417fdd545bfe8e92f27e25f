@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KoI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aZo\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//avc\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 37
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KoM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aZw\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aVE\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 37
@@ -118,6 +154,24 @@
       "writtenOn": "2013-09-05T01:14:35Z",
       "side": 1,
       "message": "same",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kn4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 37
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aVE\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -141,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KmM\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//avE\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aaA\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 37
@@ -152,6 +224,24 @@
       "writtenOn": "2013-09-05T01:14:35Z",
       "side": 1,
       "message": "a domain_id is guaranteed now... not conditional",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kmw\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aaA\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -193,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Kk4\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aZk\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//atE\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 37
@@ -204,6 +312,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "suggest consolidate duplicated code in list_projects and list_projects_in_domain",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kj0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "With the later changes, the advantage of this seem more minimal",
+      "parentUuid": "AAAASn//atE\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -227,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KjQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ars\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//arY\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 37
@@ -238,6 +382,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "remove extra blank line",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KjU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//arY\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -279,6 +441,42 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//UpI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//arA\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Uoo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "that has now changed, so keeping with the \"mark satisfied\u0027 throughout",
+      "parentUuid": "AAAASn//aYo\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aq8\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 37
@@ -290,6 +488,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "change \"must\" to \"will\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Uog\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aq8\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -313,6 +529,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//UoY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aq0\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aqo\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 37
@@ -324,6 +558,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "this comment doesn\u0027t make sense.\n\nWhy isn\u0027t this comment about hints up in the docstring?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Uoc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aqo\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -365,6 +617,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Kco\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "so added comment that we only support inexact filters on strings. Was that the issue, or that there are some languages for which lower() is not guaranteed to work?",
+      "parentUuid": "AAAASn//apo\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//ap0\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 37
@@ -382,6 +652,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KfM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Could do…just wonder that with just three options, this is OK",
+      "parentUuid": "AAAASn//ap0\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//apA\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 37
@@ -393,6 +681,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "remove () here, also should add the comparator that was invalid.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UiQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//apA\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -433,6 +739,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//UkM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ams\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//al4\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 37
@@ -444,6 +768,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "this isn\u0027t a sentence and doesn\u0027t make sense to me.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Ukk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//al4\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -467,6 +809,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//XJA\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "This whole paragraph has been removed, since we support inexact filters in IceHouse",
+      "parentUuid": "AAAASn//ak8\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aeQ\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 37
@@ -478,6 +838,24 @@
       "writtenOn": "2013-09-05T00:38:20Z",
       "side": 1,
       "message": "Likely this should become an @property in the future.  (you only check hasattr in the code referencing it in sql.core)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//XI8\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Maybe...",
+      "parentUuid": "AAAASn//aeQ\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -501,6 +879,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//XIg\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aj4\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//ajw\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 37
@@ -512,6 +908,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "change \u0027comapartor\u0027 to \u0027comparator\"",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//XIc\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ajw\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -535,6 +949,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KYE\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "used for testing the implementation…is there a better way of doing this?",
+      "parentUuid": "AAAASn//ajI\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//aUk\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 37
@@ -546,6 +978,24 @@
       "writtenOn": "2013-09-05T01:14:35Z",
       "side": 1,
       "message": "a one line helper isn\u0027t very helpful",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//XIo\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "nope.  It\u0027s dead, jim",
+      "parentUuid": "AAAASn//aUk\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -569,6 +1019,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//UqU\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ai0\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//ais\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 37
@@ -580,6 +1048,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "what\u0027s list_directive?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UqQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ais\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -603,6 +1089,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//UqM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aig\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//ah4\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 37
@@ -614,6 +1118,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "add : after TODO(henry-nash)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//UqI\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ah4\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -671,6 +1193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//aaw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Agreed, I\u0027ll be happy to come back in and tidy this up",
+      "parentUuid": "AAAASn//adU\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//agA\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 37
@@ -682,6 +1222,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "suggest give a name to [] magic constant., e.g., \n\n hints\u003d[]\n user_refs \u003d self.list_users_in_group(group_id, hints)",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Kiw\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//agA\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -705,6 +1263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KQI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//aeE\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//ad8\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 37
@@ -716,6 +1292,24 @@
       "writtenOn": "2013-09-05T00:38:20Z",
       "side": 1,
       "message": "(NIT): This comment look superfluous?  It appears to be a join below.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KP4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//ad8\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -757,6 +1351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KNM\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1159,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "I don\u0027t it needs to, so removed.",
+      "parentUuid": "AAAASn//aU0\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//adI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 37
@@ -768,6 +1380,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "why change name of variable?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KMo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "no match all the other functions that use \u0027ref\u0027 rather than \u0027user\u0027 as as the internal item being worked on",
+      "parentUuid": "AAAASn//adI\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -791,6 +1421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KMA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "so we could do that, although that is called in other places where that code would  not be required.",
+      "parentUuid": "AAAASn//adw\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//adA\u003d",
         "filename": "keystone/policy/controllers.py",
         "patchSetId": 37
@@ -802,6 +1450,24 @@
       "writtenOn": "2013-09-05T00:38:20Z",
       "side": 1,
       "message": "Hints are not passed to the driver here.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//abI\u003d",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Agreed...as per the commit comment, policy filtering remains at the controller level",
+      "parentUuid": "AAAASn//adA\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -825,6 +1491,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KKA\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//acw\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//ack\u003d",
         "filename": "keystone/tests/filtering.py",
         "patchSetId": 37
@@ -836,6 +1520,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "what do we need this for?",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KIE\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "comment added",
+      "parentUuid": "AAAASn//ack\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -859,6 +1561,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KHs\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "AAAASn//acY\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//acQ\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 37
@@ -870,6 +1590,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "revert whitespace change.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KHU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 1808,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//acQ\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -893,6 +1631,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//KGQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 3216,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "AAAASn//alA\u003d",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//abM\u003d",
         "filename": "keystone/tests/test_driver_hints.py",
         "patchSetId": 37
@@ -904,6 +1660,24 @@
       "writtenOn": "2013-09-05T00:42:46Z",
       "side": 1,
       "message": "a comment here would be nice to say what this is for.",
+      "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//XFw\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-16T22:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//abM\u003d",
       "revId": "6110608e50be982aa417fdd545bfe8e92f27e25f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
