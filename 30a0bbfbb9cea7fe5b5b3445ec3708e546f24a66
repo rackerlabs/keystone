@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Kow\u003d",
+        "filename": "keystone/contrib/kds/api/v1/__init__.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T20:06:15Z",
+      "side": 1,
+      "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "30a0bbfbb9cea7fe5b5b3445ec3708e546f24a66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//KmU\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/__init__.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-16T20:06:15Z",
+      "side": 1,
+      "message": "Files with no code shouldn\u0027t contain any license header nor comments, and must be left completely empty. (See OpenStack hacking guidelines)",
+      "revId": "30a0bbfbb9cea7fe5b5b3445ec3708e546f24a66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
