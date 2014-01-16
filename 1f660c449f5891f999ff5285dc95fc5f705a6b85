@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//K7Q\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-16T19:11:38Z",
+      "side": 1,
+      "message": "For resource types that are immutable, like trust, notifications are only sent",
+      "revId": "1f660c449f5891f999ff5285dc95fc5f705a6b85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
