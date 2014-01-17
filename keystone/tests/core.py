@@ -28,6 +28,7 @@ import warnings
 import fixtures
 import logging
 from paste import deploy
+import six
 import testtools
 from testtools import testcase
 
@@ -467,7 +468,7 @@ class TestCase(testtools.TestCase):
         try:
             callable_obj(*args, **kwargs)
         except expected_exception as exc_value:
-            if isinstance(expected_regexp, basestring):
+            if isinstance(expected_regexp, six.string_types):
                 expected_regexp = re.compile(expected_regexp)
             if not expected_regexp.search(str(exc_value)):
                 raise self.failureException(

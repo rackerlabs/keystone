@@ -23,6 +23,7 @@
 import re
 
 import routes.middleware
+import six
 import webob.dec
 import webob.exc
 
