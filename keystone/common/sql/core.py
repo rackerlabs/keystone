@@ -23,6 +23,7 @@ CONF() because it sets up configuration options.
 import contextlib
 import functools
 
+import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
 from sqlalchemy.orm.attributes import flag_modified, InstrumentedAttribute
@@ -84,7 +85,7 @@ def initialize_decorator(init):
                 if isinstance(attr, InstrumentedAttribute):
                     column = attr.property.columns[0]
                     if isinstance(column.type, String):
-                        if not isinstance(v, unicode):
+                        if not isinstance(v, six.text_type):
                             v = str(v)
                         if column.type.length and \
                                 column.type.length < len(v):
