@@ -22,8 +22,6 @@ Starting point for routing EC2 requests.
 
 """
 
-import urlparse
-
 from eventlet.green import httplib
 from oslo.config import cfg
 import webob.dec
@@ -32,6 +30,8 @@ import webob.exc
 from keystone.common import config
 from keystone.common import wsgi
 from keystone.openstack.common import jsonutils
+from keystone.openstack.common.py3kcompat import urlutils
+
 
 keystone_ec2_opts = [
     cfg.StrOpt('keystone_ec2_url',
@@ -77,7 +77,7 @@ class EC2Token(wsgi.Middleware):
         # Disable 'has no x member' pylint error
         # for httplib and urlparse
         # pylint: disable-msg=E1101
-        o = urlparse.urlparse(CONF.keystone_ec2_url)
+        o = urlutils.urlparse(CONF.keystone_ec2_url)
         if o.scheme == 'http':
             conn = httplib.HTTPConnection(o.netloc)
         else:
