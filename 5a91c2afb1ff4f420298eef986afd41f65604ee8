@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//JdY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:28:33Z",
+      "side": 1,
+      "message": "I don\u0027t see how adding a test fixes the bug.",
+      "revId": "5a91c2afb1ff4f420298eef986afd41f65604ee8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JdU\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:28:33Z",
+      "side": 1,
+      "message": "add a comment to the code where this came from.",
+      "revId": "5a91c2afb1ff4f420298eef986afd41f65604ee8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
