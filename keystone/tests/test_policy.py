@@ -18,7 +18,6 @@
 import json
 import StringIO
 import tempfile
-import urllib2
 
 from testtools import matchers
 
@@ -26,6 +25,7 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common import policy as common_policy
+from keystone.openstack.common.py3kcompat import urlutils
 from keystone.policy.backends import rules
 from keystone import tests
 
@@ -115,7 +115,7 @@ class PolicyTestCase(tests.TestCase):
         def fakeurlopen(url, post_data):
             return StringIO.StringIO("True")
 
-        self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
+        self.stubs.Set(urlutils, 'urlopen', fakeurlopen)
         action = "example:get_http"
         target = {}
         result = rules.enforce(self.credentials, action, target)
@@ -125,7 +125,7 @@ class PolicyTestCase(tests.TestCase):
 
         def fakeurlopen(url, post_data):
             return StringIO.StringIO("False")
-        self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
+        self.stubs.Set(urlutils, 'urlopen', fakeurlopen)
         action = "example:get_http"
         target = {}
         self.assertRaises(exception.ForbiddenAction, rules.enforce,
