@@ -17,6 +17,7 @@
 from keystone import config
 from keystone.contrib import revoke
 from keystone import tests
+from keystone.tests import test_backend_sql
 
 
 CONF = config.CONF
@@ -39,6 +40,12 @@ class RevokeTests(object):
             self.assertLess(events[cur].scope_id, events[nxt].scope_id)
             cur += 1
             nxt += 1
+
+
+class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
+    def setUp(self):
+        super(SqlRevokeTests, self).setUp()
+        self.revoke_api = revoke.Manager()
 
 
 class KvsRevokeTests(tests.TestCase, RevokeTests):
