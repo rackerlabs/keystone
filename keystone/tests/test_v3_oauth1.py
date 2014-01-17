@@ -26,6 +26,7 @@ from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone import exception
 from keystone.openstack.common import importutils
+from keystone import tests
 from keystone.tests import test_v3
 
 
@@ -33,11 +34,11 @@ CONF = config.CONF
 
 
 class OAuth1Tests(test_v3.RestfulTestCase):
-
     EXTENSION_NAME = 'oauth1'
     EXTENSION_TO_ADD = 'oauth_extension'
 
     def setup_database(self):
+
         super(OAuth1Tests, self).setup_database()
         package_name = "%s.%s.migrate_repo" % (contrib.__name__,
                                                self.EXTENSION_NAME)
@@ -327,6 +328,12 @@ class AccessTokenCRUDTests(OAuthFlowTests):
 
 
 class AuthTokenTests(OAuthFlowTests):
+
+    def config_files(self):
+        conf_files = super(AuthTokenTests, self).config_files()
+        conf_files.append(tests.dirs.tests(
+            'test_token_provider_revoke_by_id_false.conf'))
+        return conf_files
 
     def test_keystone_token_is_valid(self):
         self.test_oauth_flow()
