@@ -20,6 +20,7 @@ import hashlib
 import mock
 import uuid
 
+import six
 from six import moves
 from testtools import matchers
 
@@ -3207,17 +3208,17 @@ class TokenTests(object):
             self.assertIn('expires', t)
 
     def test_create_unicode_token_id(self):
-        token_id = unicode(self._create_token_id())
+        token_id = six.text_type(self._create_token_id())
         self.create_token_sample_data(token_id=token_id)
         self.token_api.get_token(token_id)
 
     def test_create_unicode_user_id(self):
-        user_id = unicode(uuid.uuid4().hex)
+        user_id = six.text_type(uuid.uuid4().hex)
         token_id, data = self.create_token_sample_data(user_id=user_id)
         self.token_api.get_token(token_id)
 
     def test_list_tokens_unicode_user_id(self):
-        user_id = unicode(uuid.uuid4().hex)
+        user_id = six.text_type(uuid.uuid4().hex)
         self.token_api.list_tokens(user_id)
 
     def test_token_expire_timezone(self):
@@ -3225,7 +3226,7 @@ class TokenTests(object):
         @test_utils.timezone
         def _create_token(expire_time):
             token_id = uuid.uuid4().hex
-            user_id = unicode(uuid.uuid4().hex)
+            user_id = six.text_type(uuid.uuid4().hex)
             return self.create_token_sample_data(token_id=token_id,
                                                  user_id=user_id,
                                                  expires=expire_time)
