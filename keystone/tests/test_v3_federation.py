@@ -20,6 +20,7 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -584,3 +585,140 @@ class MappingCRUDTests(FederationTests):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
+
+
+class MappingRuleEngineTests(FederationTests):
+    """A class for testing the mapping rule engine."""
+
+    def test_rule_engine_admin(self):
+        """Should return user's name, email and group 0cd5e9.
+
+        The ADMIN_ASSERTION should successfully have a match in MAPPING_LARGE.
+        This local rule will return a user object with name (first and last)
+        and email; it will also have a group object with an id value of
+        0cd5e9, the EMPLOYEE_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_LARGE
+        assertion = mapping_fixtures.ADMIN_ASSERTION
+        ap = mapping_utils.AssertionProcessor(mapping)
+        values = ap.process(assertion)
+
+        fn = mapping_fixtures.ADMIN_ASSERTION.get('FirstName')
+        ln = mapping_fixtures.ADMIN_ASSERTION.get('LastName')
+        full_name = '%s %s' % (fn, ln)
+
+        groups = values['groups']
+        name = values['name']
+
+        self.assertEqual(groups[0]['id'], mapping_fixtures.EMPLOYEE_GROUP_ID)
+        self.assertEqual(name, full_name)
+
+    def test_rule_engine_bad_tester(self):
+        """Should return 0 values, the email of the tester won't match.
+
+        This will not match since the email of the assertion will fail
+        the regex test. It is set to match any @example.com address.
+        But the incoming value is set to eviltester@example.org.
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_LARGE
+        assertion = mapping_fixtures.BAD_TESTER_ASSERTION
+        ap = mapping_utils.AssertionProcessor(mapping)
+        values = ap.process(assertion)
+
+        groups = values['groups']
+        name = values['name']
+
+        self.assertIsNone(name)
+        self.assertEqual(groups, [])
+
+    def test_rule_engine_contractor(self):
+        """Should return group 85a868.
+
+        The CONTRACTOR_ASSERTION should successfully have a match in
+        MAPPING_SMALL. This local rule will return a group object
+        with an id value of 85a868, the CONTRACTOR_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_SMALL
+        assertion = mapping_fixtures.CONTRACTOR_ASSERTION
+        ap = mapping_utils.AssertionProcessor(mapping)
+        values = ap.process(assertion)
+
+        groups = values['groups']
+        name = values['name']
+
+        self.assertIsNone(name)
+        self.assertEqual(groups[0]['id'],
+                         mapping_fixtures.CONTRACTOR_GROUP_ID)
+
+    def test_rule_engine_customer(self):
+        """Should return user's name and email.
+
+        The CUSTOMER_ASSERTION should successfully have a match in
+        MAPPING_LARGE. This local rule will return a user object with
+        name (username) and email.
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_LARGE
+        assertion = mapping_fixtures.CUSTOMER_ASSERTION
+        ap = mapping_utils.AssertionProcessor(mapping)
+        values = ap.process(assertion)
+
+        groups = values['groups']
+        name = values['name']
+
+        uname = mapping_fixtures.CUSTOMER_ASSERTION.get('UserName')
+
+        self.assertEqual(name, uname)
+        self.assertEqual(groups, [])
+
+    def test_rule_engine_employee(self):
+        """Should return group 0cd5e9.
+
+        The EMPLOYEE_ASSERTION should successfully have a match in
+        MAPPING_SMALL. This local rule will return a group object
+        with an id value of 0cd5e9, the EMPLOYEE_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_SMALL
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        ap = mapping_utils.AssertionProcessor(mapping)
+        values = ap.process(assertion)
+
+        groups = values['groups']
+        name = values['name']
+
+        self.assertIsNone(name)
+        self.assertEqual(groups[0]['id'], mapping_fixtures.EMPLOYEE_GROUP_ID)
+
+    def test_rule_engine_tester(self):
+        """Should return group 123 and xyz.
+
+        The TESTER_ASSERTION should successfully have a match in
+        MAPPING_LARGE. This local rule will return two group objects
+        with an ids of 123, the TESTER_GROUP_ID and xyz, the
+        DEVELOPER_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.MAPPING_LARGE
+        assertion = mapping_fixtures.TESTER_ASSERTION
+        ap = mapping_utils.AssertionProcessor(mapping)
+        values = ap.process(assertion)
+
+        groups = values['groups']
+        name = values['name']
+
+        self.assertIsNone(name)
+        self.assertEqual(groups[0]['id'],
+                         mapping_fixtures.TESTER_GROUP_ID)
+
+        self.assertEqual(groups[1]['id'],
+                         mapping_fixtures.DEVELOPER_GROUP_ID)
