@@ -16,6 +16,24 @@
       "revId": "4be3b3736f99e2d7860bbdb48d17ea90d39b61a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EjY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T18:13:52Z",
+      "side": 1,
+      "message": "it\u0027s enabled here so that the tests work. I changed this in a separate review -- https://review.openstack.org/#/c/66247/",
+      "parentUuid": "AAAAUH//Epc\u003d",
+      "revId": "4be3b3736f99e2d7860bbdb48d17ea90d39b61a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
