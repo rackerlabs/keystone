@@ -560,7 +560,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
     def config_files(self):
         conf_files = super(TestTokenRevokeById, self).config_files()
         conf_files.append(tests.dirs.tests(
-            'test_token_provider_revoke_by_id_false.conf'))
+            'test_revoke_kvs.conf'))
         return conf_files
 
     def setUp(self):
@@ -1180,7 +1180,7 @@ class TestTokenRevokeApi(TestTokenRevokeById):
     def config_files(self):
         conf_files = super(TestTokenRevokeApi, self).config_files()
         conf_files.append(tests.dirs.tests(
-            'test_token_provider_revoke_by_id_false.conf'))
+            'test_revoke_kvs.conf'))
         return conf_files
 
     def assertProjectInList(self, events, project_id):
@@ -2112,7 +2112,7 @@ class TestTrustAuth(TestAuthInfo):
     def config_files(self):
         conf_files = super(TestTrustAuth, self).config_files()
         conf_files.append(tests.dirs.tests(
-            'test_token_provider_revoke_by_id_false.conf'))
+            'test_revoke_kvs.conf'))
         return conf_files
 
     def setUp(self):
