@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//ENg\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-17T19:17:24Z",
+      "side": 1,
+      "message": "removing this method as a whole",
+      "parentUuid": "AAAAUH//FlU\u003d",
+      "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Fdo\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-17T18:48:43Z",
       "side": 1,
       "message": "Is there any reason to do this delete and the one on line 201?  Either one should work. Note that is you only do the query based delete that you would not need the self._get_mapping call, but not calling it will change the semantics of the method slightly.",
+      "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//ENc\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-17T19:17:24Z",
+      "side": 1,
+      "message": "removing the query part",
+      "parentUuid": "AAAAUH//Fdo\u003d",
       "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//EaU\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-17T19:17:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//Fa4\u003d",
+      "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Ejw\u003d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 12
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Ea8\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-17T19:17:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//Ejw\u003d",
+      "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Ego\u003d",
         "filename": "keystone/tests/mapping_fixtures.py",
         "patchSetId": 12
@@ -81,6 +153,24 @@
       "writtenOn": "2014-01-17T18:48:43Z",
       "side": 1,
       "message": "Newline to match?",
+      "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ebo\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-17T19:17:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//Ego\u003d",
       "revId": "cc05c14b90386325152e6a2820a3ca11592928bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
