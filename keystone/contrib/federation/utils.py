@@ -15,6 +15,8 @@
 
 """Utilities for Federation Extension."""
 
+import re
+
 import jsonschema
 
 from keystone import exception
@@ -104,3 +106,164 @@ def validate_mapping_structure(ref):
 
         if messages:
             raise exception.ValidationError(messages)
+
+
+class AssertionProcessor(object):
+    """A class to process assertions and mapping rules."""
+
+    class _EvalType(object):
+        """Mapping rule evaluation types."""
+        ANY_ONE_OF = 'any_one_of'
+        NOT_ANY_OF = 'not_any_of'
+
+    def __init__(self, assertion):
+        """Initialize assertion data
+
+        An incoming assertion looks like:
+            {
+                'Email': 'testacct@example.com',
+                'UserName': 'testacct',
+                'FirstName': 'Test',
+                'LastName': 'Account',
+                'orgPersonType': 'Tester;'
+            }
+
+        """
+
+        self.assertion = dict((n, v.split(';')) for n, v in assertion.items())
+
+    def process(self, mapping_ref):
+        """Transform assertion to a list of identity values based on a mapping
+
+        The function will iterate through the mappings rules to find
+        assertions that may be matched to a rule.
+
+        Example mappings can be found in tests/mapping_fixtures
+        :param mapping_ref: existing mapping ref
+        :type mapping_ref: dict
+
+        The returned data is an array of local objects from the
+        rules that were matched, for example:
+
+        [{'group': {'id': '0cd5e9'}, 'user': {'email': 'bob@example.com'}}]
+
+            or if there is more than one local property:
+
+        [{'group': {'id': '123'}}, {'group': {'id': 'xyz'}}]
+
+        :returns: array of all valid local identity values.
+
+        """
+
+        rules = mapping_ref['rules']
+        identity_values = []
+
+        for rule in rules:
+            direct_maps = self._verify_all_requirements(rule.get('remote'))
+
+            # If the compare comes back as None, then the rule did not apply
+            # to the assertion data, go on to the next rule
+            if direct_maps is None:
+                continue
+
+            # Otherwise, the compare is valid, get the local rule
+            local_array = rule.get('local')
+            # If there is no direct mapping, then add it directly to the array
+            # of saved values.
+            if not direct_maps:
+                identity_values += local_array
+            # However, if there is direct mapping, then we need to perform
+            # variable replacement.
+            else:
+                for local in local_array:
+                    local = self._replace_local_with_direct_maps(local,
+                                                                 direct_maps)
+                    identity_values.append(local)
+
+        return identity_values
+
+    def _replace_local_with_direct_maps(self, local, direct_maps):
+        """Replace any $0, $1 ... values with data from the assertion.
+
+        :returns: local type object with replaced values.
+
+        """
+
+        for k, v in local.iteritems():
+            if isinstance(v, dict):
+                v = self._replace_local_with_direct_maps(v, direct_maps)
+            else:
+                v = v.format(*direct_maps)
+            local[k] = v
+        return local
+
+    def _verify_all_requirements(self, requirements):
+        """Go through the remote requirements and compare the assertion.
+
+        If a value of None is returned, then go on to the next rule.
+        If an array of zero length is returned, then there are no direct
+        mappings to be performed.
+        If the array is positive value in length, then it will store the
+        values *in order* to be directly mapped.
+
+        :returns: array of local objects or None.
+
+        """
+
+        direct_maps = []
+
+        for requirement in requirements:
+            requirement_type = requirement['type']
+            regex = requirement.get('regex', False)
+
+            any_one_values = requirement.get(self._EvalType.ANY_ONE_OF)
+            if any_one_values:
+                if not self._evaluate_requirement(any_one_values,
+                                                  requirement_type,
+                                                  self._EvalType.ANY_ONE_OF,
+                                                  regex):
+                    return None
+
+            not_any_values = requirement.get(self._EvalType.NOT_ANY_OF)
+            if not_any_values:
+                if not self._evaluate_requirement(not_any_values,
+                                                  requirement_type,
+                                                  self._EvalType.NOT_ANY_OF,
+                                                  regex):
+                    return None
+
+            # neither case, so it's a direct mapping
+            if not not_any_values and not any_one_values:
+                direct_map_value = self.assertion.get(requirement_type)
+                if direct_map_value:
+                    direct_maps += direct_map_value
+
+        return direct_maps
+
+    def _evaluate_requirement(self, values, requirement_type,
+                              eval_type, regex):
+        """Evaluate the incoming requirement and assertion.
+
+        If the requirement type does not exist in the assertion data, then
+        return False. If regex is specified, then compare the values and
+        assertion values. Otherwise, grab the intersection of the values
+        and use that to compare against the evaluation type.
+
+        :returns: boolean, whether requirement if valid or not.
+
+        """
+
+        assertion_values = self.assertion.get(requirement_type)
+        if not assertion_values:
+            return False
+
+        if regex:
+            return re.search(values[0], assertion_values[0])
+
+        any_match = bool(set(values).intersection(set(assertion_values)))
+        if any_match and eval_type == self._EvalType.ANY_ONE_OF:
+            return True
+        if not any_match and eval_type == self._EvalType.NOT_ANY_OF:
+            return True
+
+        return False
