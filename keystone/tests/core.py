@@ -56,6 +56,8 @@ from keystone.common import dependency
 from keystone.common import kvs
 from keystone.common.kvs import core as kvs_core
 from keystone.common import sql
+from keystone.common.sql import migration
+
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import config
@@ -156,7 +158,8 @@ def setup_database():
         if os.path.exists(db):
             os.unlink(db)
         if not os.path.exists(pristine):
-            sql.migration.db_sync()
+            migration.db_sync()
+            migration.sync_database(extension='revoke')
             shutil.copyfile(db, pristine)
         else:
             shutil.copyfile(pristine, db)
