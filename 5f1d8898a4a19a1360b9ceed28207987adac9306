@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//EPo\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T19:10:53Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH//E+U\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E+E\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -53,6 +71,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//EPY\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T19:10:53Z",
+      "side": 1,
+      "message": "this should become user-specified and immutable, just like in protocols",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EPc\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T19:10:53Z",
+      "side": 1,
+      "message": "this should be dropped",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E9E\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -64,6 +116,24 @@
       "writtenOn": "2014-01-17T17:24:52Z",
       "side": 1,
       "message": "according to the spec the description is required, so no need to allow null for this column.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EZg\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T19:10:53Z",
+      "side": 1,
+      "message": "hmm... i followed up on this in https://review.openstack.org/#/c/67549/",
+      "parentUuid": "AAAAUH//E9E\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
