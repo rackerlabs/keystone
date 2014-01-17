@@ -237,6 +237,227 @@
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EcU\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "suggest have a constant for /OS-FEDERATION so doesn\u0027t have to be duplicated.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EcE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "It\u0027s incorrect to send a 400 Bad Request for this since the server understood the request. Should be 403 Forbidden since the server didn\u0027t want to do it.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Eb0\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "shouldn\u0027t this also include the protocol ID?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ebs\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "revert whitespace change on previous line.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Eac\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be \"if assert_is_not_none\" ?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EaQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "user normal naming convention for parameters -- assert_none\u003dTrue",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EaM\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "this is already asserted by the next line.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EZo\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "change \"FederatedIdentityProviderTests\" to \"self\"",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EYk\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "change \"FederatedIdentityProviderTests\" to \"self\"",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//EXI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "we should know what the resulting list is supposed to look like so that we can check that the lists are equal instead of the length.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//ESU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "suggest move line 229 here - url \u003d self.base_url(suffix\u003d\u0027/%(idp_id)s\u0027 % idp_id)\n\n(applies throughout these changes... don\u0027t need 2 lines where 1 would do)",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//ERo\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "the response variables are not used, remove them.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//ERg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T19:07:22Z",
+      "side": 1,
+      "message": "not used -- this applies throughout these changes.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
