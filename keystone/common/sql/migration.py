@@ -20,9 +20,13 @@
 import os
 import sys
 
+from migrate import exceptions
 from migrate.versioning import api as versioning_api
 
 from keystone import config
+from keystone import contrib
+
+from keystone.openstack.common import importutils
 
 
 CONF = config.CONF
@@ -37,6 +41,33 @@ except ImportError:
         from migrate import exceptions as versioning_exceptions
     except ImportError:
         sys.exit('python-migrate is not installed. Exiting.')
+
+
+def sync_database(version=None, extension=None):
+    if not extension:
+        db_sync(version=version)
+    else:
+        package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
+        package = importutils.import_module(package_name)
+        repo_path = os.path.abspath(os.path.dirname(package.__file__))
+        try:
+            db_version_control(version=None, repo_path=repo_path)
+            # Register the repo with the version control API
+            # If it already knows about the repo, it will throw
+            # an exception that we can safely ignore
+        except exceptions.DatabaseAlreadyControlledError:
+            pass
+        db_sync(version=version, repo_path=repo_path)
+
+
+def print_db_version(extension):
+    if extension:
+        package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
+        package = importutils.import_module(package_name)
+        repo_path = os.path.abspath(os.path.dirname(package.__file__))
+        return db_version(repo_path)
+    else:
+        return db_version()
 
 
 def migrate_repository(version, current_version, repo_path):

@@ -18,8 +18,6 @@ from __future__ import absolute_import
 
 import os
 
-from migrate import exceptions
-
 from oslo.config import cfg
 import pbr.version
 
@@ -28,8 +26,6 @@ from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
-from keystone import contrib
-from keystone.openstack.common import importutils
 from keystone import token
 
 CONF = config.CONF
@@ -70,24 +66,11 @@ class DbSync(BaseApp):
     def main():
         version = CONF.command.version
         extension = CONF.command.extension
-        if not extension:
-            migration.db_sync(version=version)
-        else:
-            package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
-            try:
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(0)
-            try:
-                # Register the repo with the version control API
-                # If it already knows about the repo, it will throw
-                # an exception that we can safely ignore
-                migration.db_version_control(version=None, repo_path=repo_path)
-            except exceptions.DatabaseAlreadyControlledError:
-                pass
-            migration.db_sync(version=version, repo_path=repo_path)
+        try:
+            migration.sync_database(version, extension)
+        except ImportError:
+            print (_("This extension does not provide migrations."))
+            exit(0)
 
 
 class DbVersion(BaseApp):
@@ -106,18 +89,11 @@ class DbVersion(BaseApp):
     @staticmethod
     def main():
         extension = CONF.command.extension
-        if extension:
-            try:
-                package_name = ("%s.%s.migrate_repo" %
-                                (contrib.__name__, extension))
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-                print(migration.db_version(repo_path))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(1)
-        else:
-            print(migration.db_version())
+        try:
+            print (migration.print_db_version(extension))
+        except ImportError:
+            print (_("This extension does not provide migrations."))
+            exit(1)
 
 
 class BaseCertificateSetup(BaseApp):

@@ -20,22 +20,33 @@ import uuid
 
 from keystone.openstack.common import timeutils
 
+#The set of attributes common between the RevokeEvent
+#and the dictionaries created from the token Data.
+_names = ['trust_id',
+          'consumer_id',
+          'access_token_id',
+          'expires_at',
+          'domain_id',
+          'project_id',
+          'user_id',
+          'role_id']
+
+
+#additional arguments for creating a RevokeEvent
+_addl_args = ['id', 'issued_before', 'revoked_at']
+
+
+revoke_keys = _names + _addl_args
+
 
 class RevokeEvent(object):
-    def __init__(self, id,
-                 user_id=None,
-                 role_id=None,
-                 issued_before=None,
-                 expires_at=None,
-                 domain_id=None,
-                 project_id=None,
-                 trust_id=None,
-                 consumer_id=None,
-                 access_token_id=None):
-        for k, v in locals().copy().iteritems():
+    def __init__(self, **kwargs):
+        for k in revoke_keys:
+            v = kwargs.get(k, None)
             setattr(self, k, v)
-        self.revoked_at = timeutils.utcnow()
-        if issued_before is None:
+        if self.revoked_at is None:
+            self.revoked_at = timeutils.utcnow()
+        if self.issued_before is None:
             self.issued_before = self.revoked_at
 
     def to_dict(self):
