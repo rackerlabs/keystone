@@ -1,7 +1,3 @@
-# vim: tabstop=4 shiftwidth=4 softtabstop=4
-
-# Copyright 2013 OpenStack Foundation
-#
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -16,6 +12,7 @@
 
 
 import abc
+import datetime
 import six
 
 from keystone.common import dependency
@@ -26,6 +23,8 @@ from keystone.contrib.revoke import model
 from keystone import exception
 from keystone import notifications
 from keystone.openstack.common import log
+from keystone.openstack.common import timeutils
+
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
@@ -53,6 +52,13 @@ EXTENSION_DATA = {
     ]}
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
+
+
+def revoked_before_cutoff():
+    expire_delta = datetime.timedelta(
+        seconds=CONF.token.expiration + (60 * 30))
+    oldest = timeutils.utcnow() - expire_delta
+    return oldest
 
 
 @dependency.provider('revoke_api')
