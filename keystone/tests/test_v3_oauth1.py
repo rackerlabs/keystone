@@ -326,7 +326,7 @@ class AuthTokenTests(OAuthFlowTests):
     def config_files(self):
         conf_files = super(AuthTokenTests, self).config_files()
         conf_files.append(tests.dirs.tests(
-            'test_token_provider_revoke_by_id_false.conf'))
+            'test_revoke_kvs.conf'))
         return conf_files
 
     def test_keystone_token_is_valid(self):
