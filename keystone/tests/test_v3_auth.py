@@ -92,14 +92,9 @@ class TestAuthInfo(test_v3.RestfulTestCase):
                           method_name)
 
 
-class TestPKITokenAPIs(test_v3.RestfulTestCase):
-    def config_files(self):
-        conf_files = super(TestPKITokenAPIs, self).config_files()
-        conf_files.append(tests.dirs.tests('test_pki_token_provider.conf'))
-        return conf_files
+class TokenAPITests(object):
 
-    def setUp(self):
-        super(TestPKITokenAPIs, self).setUp()
+    def doSetUp(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain_id,
@@ -328,20 +323,27 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
         r = self.get('/auth/tokens?nocatalog', headers=headers)
         self.assertValidProjectScopedTokenResponse(r, require_catalog=False)
 
-    def test_revoke_token(self):
-        headers = {'X-Subject-Token': self.get_scoped_token()}
-        self.delete('/auth/tokens', headers=headers, expected_status=204)
-        self.head('/auth/tokens', headers=headers, expected_status=404)
-        # make sure we have a CRL
-        r = self.get('/auth/tokens/OS-PKI/revoked')
-        self.assertIn('signed', r.result)
+
+class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+    def config_files(self):
+        conf_files = super(TestPKITokenAPIs, self).config_files()
+        conf_files.append(tests.dirs.tests('test_pki_token_provider.conf'))
+        return conf_files
+
+    def setUp(self):
+        super(TestPKITokenAPIs, self).setUp()
+        self.doSetUp()
 
 
-class TestUUIDTokenAPIs(TestPKITokenAPIs):
+class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_files(self):
         conf_files = super(TestUUIDTokenAPIs, self).config_files()
         conf_files.append(tests.dirs.tests('test_uuid_token_provider.conf'))
         return conf_files
+
+    def setUp(self):
+        super(TestUUIDTokenAPIs, self).setUp()
+        self.doSetUp()
 
     def test_v3_token_id(self):
         auth_data = self.build_authentication_request(
@@ -507,6 +509,12 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
 
 class TestTokenRevoking(test_v3.RestfulTestCase):
     """Test token revocation on the v3 Identity API."""
+
+    def config_files(self):
+        conf_files = super(TestTokenRevoking, self).config_files()
+        conf_files.append(tests.dirs.tests(
+            'test_token_provider_revoke_by_id_false.conf'))
+        return conf_files
 
     def setUp(self):
         """Setup for Token Revoking Test Cases.
@@ -1114,6 +1122,20 @@ class TestTokenRevoking(test_v3.RestfulTestCase):
 
         # Make sure that we get a NotFound(404) when heading that role.
         self.head(role_path, expected_status=404)
+
+    def test_revoke_token(self):
+        headers = {'X-Subject-Token': self.get_scoped_token()}
+        self.head('/auth/tokens', headers=headers, expected_status=204)
+        self.delete('/auth/tokens', headers=headers, expected_status=204)
+        self.head('/auth/tokens', headers=headers, expected_status=404)
+
+
+class TestTokenRevokeById(TestTokenRevoking):
+    """Test token revocation on the v3 Identity API."""
+
+    def config_files(self):
+        conf_files = super(TestTokenRevoking, self).config_files()
+        return conf_files
 
 
 class TestAuthExternalDisabled(test_v3.RestfulTestCase):
