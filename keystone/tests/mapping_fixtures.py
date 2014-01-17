@@ -13,8 +13,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+"""Fixtures for Federation Mapping."""
+
+""" Mapping summary:
+
+LastName Smith & Not Contractor or SubContractor -> group 0cd5e9
+FirstName Jill & Contractor or SubContractor -> to group 85a868
+"""
+
 MAPPING_SMALL = {
-    'name': 'large mapping',
     "rules": [
         {
             "local": [
@@ -30,6 +37,12 @@ MAPPING_SMALL = {
                     "not_any_of": [
                         "Contractor",
                         "SubContractor"
+                    ]
+                },
+                {
+                    "type": "LastName",
+                    "any_one_of": [
+                        "Smith"
                     ]
                 }
             ]
@@ -49,11 +62,24 @@ MAPPING_SMALL = {
                         "Contractor",
                         "SubContractor"
                     ]
+                },
+                {
+                    "type": "FirstName",
+                    "any_one_of": [
+                        "Jill"
+                    ]
                 }
             ]
         }
     ]
 }
+
+""" Mapping summary:
+
+orgPersonType Admin or Big Cheese -> user name $0 $1 email $2 and group 0cd5e9
+orgPersonType Customer -> user name $0 email $1
+orgPersonType Test and email ^@example.com$ -> group 123 and 123 xyz
+"""
 
 MAPPING_LARGE = {
     "rules": [
@@ -63,6 +89,9 @@ MAPPING_LARGE = {
                     "user": {
                         "name": "$0 $1",
                         "email": "$2"
+                    },
+                    "group": {
+                        "id": "0cd5e9"
                     }
                 }
             ],
@@ -77,10 +106,10 @@ MAPPING_LARGE = {
                     "type": "Email"
                 },
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
                         "Admin",
-                        "God"
+                        "Big Cheese"
                     ]
                 }
             ]
@@ -102,7 +131,7 @@ MAPPING_LARGE = {
                     "type": "Email"
                 },
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
                         "Customer"
                     ]
@@ -124,15 +153,15 @@ MAPPING_LARGE = {
             ],
             "remote": [
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
-                        "Special"
+                        "Tester"
                     ]
                 },
                 {
                     "type": "Email",
                     "any_one_of": [
-                        "^@example.com$"
+                        "^@corp.com$"
                     ],
                     "regex": True
                 }
@@ -208,4 +237,52 @@ MAPPING_MISSING_LOCAL = {
             ]
         }
     ]
+}
+
+EMPLOYEE_ASSERTION = {
+    'Email': 'tim@corp.com',
+    'UserName': 'tbo',
+    'FirstName': 'Tim',
+    'LastName': 'Bo',
+    'orgPersonType': 'Employee;BuildingX;'
+}
+
+CONTRACTOR_ASSERTION = {
+    'Email': 'jill@contractor.com',
+    'UserName': 'jsmith',
+    'FirstName': 'Jill',
+    'LastName': 'Smith',
+    'orgPersonType': 'Customer;Non-Dev;'
+}
+
+ADMIN_ASSERTION = {
+    'Email': 'bob@admin.com',
+    'UserName': 'bob',
+    'FirstName': 'Bob',
+    'LastName': 'Thompson',
+    'orgPersonType': 'Admin;Chief;'
+}
+
+CUSTOMER_ASSERTION = {
+    'Email': 'beth@customer.com',
+    'UserName': 'bwilliams',
+    'FirstName': 'Beth',
+    'LastName': 'Williams',
+    'orgPersonType': 'Customer;'
+}
+
+TESTER_ASSERTION = {
+    'Email': 'testacct@corp.com',
+    'UserName': 'testacct',
+    'FirstName': 'Test',
+    'LastName': 'Account',
+    'orgPersonType': 'Tester;'
+}
+
+BAD_TESTER_ASSERTION = {
+    'Email': 'eviltester@evilcorp.com',
+    'UserName': 'Evil',
+    'FirstName': 'Test',
+    'LastName': 'Account',
+    'orgPersonType': 'Tester;'
 }

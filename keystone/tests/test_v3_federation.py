@@ -20,6 +20,7 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -437,7 +438,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.get(url, expected_status=404)
 
 
-class MappingTests(FederationTests):
+class MappingCRUDTests(FederationTests):
 
     MAPPING_URL = '/OS-FEDERATION/mappings/'
 
@@ -551,3 +552,42 @@ class MappingTests(FederationTests):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
+
+
+class MappingRuleEngineTests(FederationTests):
+
+    def test_rule_engine_admin(self):
+        """Should return user's name, email and group 0cd5e9."""
+        values = mapping_utils.process(mapping_fixtures.ADMIN_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        self.assertIsNotNone(values)
+
+    def test_rule_engine_bad_tester(self):
+        """Should return group 123 and 123."""
+        values = mapping_utils.process(mapping_fixtures.BAD_TESTER_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        self.assertIs(len(values), 0)
+
+    def test_rule_engine_contractor(self):
+        """Should return group 85a868."""
+        values = mapping_utils.process(mapping_fixtures.CONTRACTOR_ASSERTION,
+                                       mapping_fixtures.MAPPING_SMALL)
+        self.assertIsNotNone(values)
+
+    def test_rule_engine_customer(self):
+        """Should return user's name and email."""
+        values = mapping_utils.process(mapping_fixtures.CUSTOMER_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        self.assertIsNotNone(values)
+
+    def test_rule_engine_employee(self):
+        """Should return group 0cd5e9."""
+        values = mapping_utils.process(mapping_fixtures.EMPLOYEE_ASSERTION,
+                                       mapping_fixtures.MAPPING_SMALL)
+        self.assertIsNotNone(values)
+
+    def test_rule_engine_tester(self):
+        """Should return group 123 and 123."""
+        values = mapping_utils.process(mapping_fixtures.TESTER_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        self.assertIsNotNone(values)
