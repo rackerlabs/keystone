@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//F+M\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T14:33:38Z",
+      "side": 1,
+      "message": "wrap string in _() for translation.\n\n(nit) change \"use\" to \"using\"",
+      "revId": "f9589107ce7473330ec91b6254a54d6784c9c384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//F+E\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T14:33:38Z",
+      "side": 1,
+      "message": "wrap string in _() for translation.\n\n(nit) change \"build\" to \"building\"",
+      "revId": "f9589107ce7473330ec91b6254a54d6784c9c384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
