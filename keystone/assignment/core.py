@@ -43,7 +43,8 @@ DEFAULT_DOMAIN = {'description':
 
 
 @dependency.provider('assignment_api')
-@dependency.requires('credential_api', 'identity_api', 'token_api')
+@dependency.requires('credential_api', 'identity_api', 'token_api',
+                     'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the Assignment backend.
 
@@ -455,6 +456,8 @@ class Manager(manager.Manager):
                                                                   domain_id):
                     if user['id'] != user_id:
                         user_ids.append(user['id'])
+                        #TODO(ayoung): make this a group role revocation.
+                        self.revoke_api.revoke_by_user(user['id'])
             except exception.GroupNotFound:
                 LOG.debug(_('Group %s not found, no tokens to invalidate.'),
                           group_id)
@@ -463,6 +466,8 @@ class Manager(manager.Manager):
                                  project_id, inherited_to_projects)
         if user_id is not None:
             user_ids.append(user_id)
+            self.revoke_api.revoke_by_user(user_id)
+
         self.token_api.delete_tokens_for_users(user_ids)
 
     def _delete_tokens_for_role(self, role_id):
