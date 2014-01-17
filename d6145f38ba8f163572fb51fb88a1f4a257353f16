@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//HEk\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "I think it\u0027s better to use \" instead of \u0027. This applies to all your docstrings.\nPlus http://www.python.org/dev/peps/pep-0257/  might be helpful.",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//HAk\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "How about changing to this:\n\nif phase is None:\n    return msg\n\n?",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G+A\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "Should not it be changed to comment with \u0027#\u0027 at the begining?",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//GOQ\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "raise exception.NotImplemented()",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//GOM\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "raise exception.NotImplemented()",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G90\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "Remove this docstring.",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//GNc\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "maybe the dependency.requires() decorator could do the work?",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G9M\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "I think changing to:\n\nif endpoint[\u0027interface\u0027] !\u003d \u0027public\u0027:\n\ncan slightly increase readability.",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G60\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "keep in mind that the structure has changed - https://review.openstack.org/#/c/59848/",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G40\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "If i understood your intentions correctly, once you set found variable to True you will not reset it to False inside that for. Maybe it\u0027s worth exiting that for loop after you set found to True? Apparently you don\u0027t alwas need to iterate over whole list.",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G4s\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "If i understood your intentions correctly, once you set found variable to True you will not reset it to False inside that for loop. Maybe it\u0027s worth exiting that loop after you set found to True? Then, you don\u0027t always need to iterate over whole list.",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Gas\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "raise exception.Unauthorized()",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Gag\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "Move this block to function/method so temp_password is filled with new data evey time new user is created.",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//GZs\u003d",
+        "filename": "keystone/auth/plugins/federated/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "Why not return user\u0027s id just after the ids are matched in the for loop above? Do you intentionally look for last matching id?",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//GTY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-17T14:50:58Z",
+      "side": 1,
+      "message": "So far we have been using \u0027federation\u0027 instead of \u0027federated\u0027  so maybe we could stick with that?",
+      "revId": "d6145f38ba8f163572fb51fb88a1f4a257353f16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
