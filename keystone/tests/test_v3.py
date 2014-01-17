@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import datetime
 import uuid
 
@@ -43,7 +44,7 @@ class RestfulTestCase(rest.RestfulTestCase):
 
     #override this to sepcify the complete list of configuration files
     def config_files(self):
-        return self._config_file_list
+        return copy.copy(self._config_file_list)
 
     def setup_database(self):
         tests.setup_database()
