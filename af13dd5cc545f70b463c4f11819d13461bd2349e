@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//EEs\u003d",
+        "filename": "keystone/contrib/kds/cli/manage.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "I don\u0027t think this is going to work for translation -- we\u0027ll get all the strings back for the keystone project, so the catalogs are going to be for keystone and not kds:\n\n\tgettextutils.install(\u0027keystone\u0027)",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D9s\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "I think people are going to wonder which invalid\u0027s backend we\u0027re talking about here.\n\nSuggest something like \n\n The \u0027%(be_name)s\u0027 backend is not expected. Allowed backends are %(bes).\n\nso the resulting message will be like\n\n Failed to load a pluggable backend: The \u0027memcache\u0027 backend is\n not expected. Allowed backends are kvs, sql.\n\n... which I would rather it said\n\n Failed to load the \u0027memcache\u0027 KDS backend because the \u0027memcache\u0027\n backend is not allowed. Allowed KDS backends are kvs, sqlalchemy.\n\nCan the code be changed to generate that instead?",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D+c\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "suggest provide names for the magic numbers:\n\n globals\u003dNone\n locals\u003dNone\n self.__backend \u003d __import__(name, globals, locals, fromlist)",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D7c\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "suggest remove this line since it\u0027s duplicating what\u0027s in the function definition.\n\nDoes None mean that the key doesn\u0027t expire?",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D6U\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "suggest add\n\n  super(KvsDbImpl, self).__init__()\n\nin case someone changes Connection init to do something.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D5M\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "change \"signature\" to \"sig\" since that\u0027s what the superclass calls it.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D30\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "Would it be useful to have the name of the key in the message? Otherwise it\u0027s just an error that someone tried to do something.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D2k\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "change \"signature\" to \"sig\" since that\u0027s what the superclass does.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//G5s\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
         "patchSetId": 23
@@ -19,6 +155,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//D18\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "this is a copy-paste of the error message in kvs/api.py -- suggest have a specific exception for this condition then don\u0027t need to copy-paste.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//D0M\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "The 2 tables were already joined on the previous line. How does this work?",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//G5o\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
         "patchSetId": 23
@@ -30,6 +200,142 @@
       "writtenOn": "2014-01-17T11:22:42Z",
       "side": 1,
       "message": "ditto to above",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//DwE\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "001_kds_table.py has autoincrement\u003dTrue here... suggest do the same in both places.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Dv0\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "001_kds_table.py has nullable\u003dFalse and unique\u003dTrue",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Dvk\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "nullable\u003dFalse, index\u003dTrue",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//DvI\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "autoincrement\u003dFalse",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Duw\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "autoincrement\u003dFalse",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//DuI\u003d",
+        "filename": "keystone/tests/contrib/kds/api/base.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "why this change? seems unrelated.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//DtM\u003d",
+        "filename": "keystone/tests/contrib/kds/db/test_host_key.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "would be nice to have comments on each of these saying what they\u0027re verifying.\n\n # If set_key a new key and then get_key that key, get the expected key back.",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Dtk\u003d",
+        "filename": "keystone/tests/contrib/kds/db/test_host_key.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T20:53:51Z",
+      "side": 1,
+      "message": "if group is supposed to be a Boolean, use self.assertIs(key[\u0027group\u0027], False)",
       "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
