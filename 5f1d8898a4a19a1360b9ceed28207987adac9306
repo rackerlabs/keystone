@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//FEI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "just wondering why this was stuck here and not at the end?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E+U\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "mapping ID is required according to the spec, so this column shouldn\u0027t be nullable.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E+E\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "do we need to support extra for everything?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E9E\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "according to the spec the description is required, so no need to allow null for this column.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E8o\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "give a name to the False magic number so that reviewers know what it indicates.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E6I\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "suggest change \"identity_provider\" to \"idp\" since that\u0027s what\u0027s used for the other functions.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E2o\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "why have \"extra\" field in the database when only some fields can be changed?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E04\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "why would we check that a response has mutable parameters?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E2M\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "add a .",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E1Q\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "how would a response involve mutating parameters?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E1U\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "should be \"stored\" rather than \"serialized\"?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ezg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "how many exceptions do you think can be thrown here?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E0U\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "add a .",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ez8\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T17:24:52Z",
+      "side": 1,
+      "message": "why would we need to filter_params on the request? this is for filtering the response data.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
