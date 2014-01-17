@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Eds\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T18:42:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//EgM\u003d",
+      "revId": "4be3b3736f99e2d7860bbdb48d17ea90d39b61a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Epc\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
