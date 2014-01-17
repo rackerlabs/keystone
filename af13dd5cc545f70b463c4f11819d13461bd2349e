@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//G5s\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-17T11:22:42Z",
+      "side": 1,
+      "message": "Minor thing, but q.one() is often preferable since this will throw an error if there is more than one result of the filter",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//G5o\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-17T11:22:42Z",
+      "side": 1,
+      "message": "ditto to above",
+      "revId": "af13dd5cc545f70b463c4f11819d13461bd2349e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
