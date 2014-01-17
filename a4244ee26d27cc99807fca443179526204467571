@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IXg\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JcU\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JcI\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "would be nice if this was a DocString (move after variable name).",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IXM\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JcI\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IXI\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JcQ\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Jbc\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "could do:\n\n  fn \u003d (v3_token_to_auth_context if is_v3_token(token)\n           else v2_token_to_auth_context)\n  return fn(token)\n\nto remove some duplication.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IWs\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "I prefer to keep the current format. Probably easier to read the code that way.",
+      "parentUuid": "AAAAUH//Jbc\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IVs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JbQ\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JbE\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 13
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "would be nice to have this as a log statement rather than a comment.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IVo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JbE\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IN8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "comment removed. I prefer to keep the change in this patch as it is a a one line change. Not worth doing another patch.",
+      "parentUuid": "AAAAUH//Ja4\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Ja0\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 13
@@ -132,6 +258,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "remove this method since it\u0027s not needed, it\u0027s the default.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//INo\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//Ja0\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IMw\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//Jas\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Jao\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 13
@@ -166,6 +328,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "suggest remove the else here then can unindent several lines.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IMs\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//Jao\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IMo\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JaU\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JZA\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 13
@@ -200,6 +398,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "suggest move this up to the top of the function, right after 241 --\n\n if authorization.AUTH_CONTEXT_ENV in request.environ:\n    msg \u003d _(\u0027auth context already exists in the request environment\u0027)\n    LOG.warning(msg)\n    return\n\nThen you can switch from \"not in\" to \"in\", which is better since negative tests are more difficult. And it will be obvious that there\u0027s 2 situations where the normal code doesn\u0027t happen.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IMU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "good idea!",
+      "parentUuid": "AAAAUH//JZA\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IMM\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JY4\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JYo\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 13
@@ -234,6 +468,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "suggest remove \"actual\"",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IL4\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JYo\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//ILQ\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "it is essentially mocking the request object. Perhaps I\u0027ll just rename to method to make it more clear.",
+      "parentUuid": "AAAAUH//JXo\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JX4\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 13
@@ -268,6 +538,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "would be nice to have comments on these functions saying what they\u0027re supposed to be verifying.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IKM\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1085,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JX4\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IJs\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//JXc\u003d",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JWw\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 13
@@ -302,6 +608,24 @@
       "writtenOn": "2014-01-17T00:59:01Z",
       "side": 1,
       "message": "could add a test for if auth context is in the environment... what happens?",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IJc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2452,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T06:24:31Z",
+      "side": 1,
+      "message": "those tests are implicitly covered. Essentially, all API tests are not flowing through the new middleware.",
+      "parentUuid": "AAAAUH//JWw\u003d",
       "revId": "a4244ee26d27cc99807fca443179526204467571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
