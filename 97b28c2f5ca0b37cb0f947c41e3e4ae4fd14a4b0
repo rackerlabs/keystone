@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Ftc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 45
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-17T18:24:11Z",
+      "side": 1,
+      "message": "Draft saved at 5:44 PM\n\nThere is a typo or something wrong with this sentence. It doesnt make sense",
+      "revId": "97b28c2f5ca0b37cb0f947c41e3e4ae4fd14a4b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//FtU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 45
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-17T18:24:11Z",
+      "side": 1,
+      "message": "Do you ever state somewhere how to reduce the list via filtering?",
+      "revId": "97b28c2f5ca0b37cb0f947c41e3e4ae4fd14a4b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
