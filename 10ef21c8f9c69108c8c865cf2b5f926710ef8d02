@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IJo\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "It was just a simplification around having being able to pass a message to an exception without having to find the %(keyword)s to use as a kwarg.\n\nRemoved.",
+      "parentUuid": "AAAAUH//JWU\u003d",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JVE\u003d",
         "filename": "keystone/contrib/kds/common/utils.py",
         "patchSetId": 22
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//II0\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "big note added that this is a direct C\u0026P from a bunch of other projects and i\u0027ve got no idea what some of those do.",
+      "parentUuid": "AAAAUH//JVY\u003d",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JSg\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 22
@@ -64,6 +100,24 @@
       "writtenOn": "2014-01-17T01:12:04Z",
       "side": 1,
       "message": "should also document the arguments.",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IHU\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//JSg\u003d",
       "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IHY\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//JSU\u003d",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JUg\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 22
@@ -98,6 +170,24 @@
       "writtenOn": "2014-01-17T01:12:04Z",
       "side": 1,
       "message": "should say under what condition this exception is raised.",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IHc\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//JUg\u003d",
       "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IHA\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//JUM\u003d",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JTA\u003d",
         "filename": "keystone/contrib/kds/db/kvs/api.py",
         "patchSetId": 22
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//IHI\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//JTA\u003d",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//JS8\u003d",
         "filename": "keystone/contrib/kds/db/kvs/api.py",
         "patchSetId": 22
@@ -149,6 +275,24 @@
       "writtenOn": "2014-01-17T01:12:04Z",
       "side": 1,
       "message": "according to the docstring this returns a tuple and not None.",
+      "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//IHE\u003d",
+        "filename": "keystone/contrib/kds/db/kvs/api.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-17T07:15:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//JS8\u003d",
       "revId": "10ef21c8f9c69108c8c865cf2b5f926710ef8d02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
