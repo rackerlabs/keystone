@@ -22,6 +22,7 @@ from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 from keystone.openstack.common import timeutils
 from keystone import tests
+from keystone.tests import test_backend_sql
 
 
 CONF = config.CONF
@@ -51,6 +52,12 @@ class RevokeTests(object):
         event.revoked_at = past_time
         self.revoke_api.revoke(event)
         self.assertEqual(1, len(self.revoke_api.get_events()))
+
+
+class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
+    def setUp(self):
+        super(SqlRevokeTests, self).setUp()
+        self.revoke_api = revoke.Manager()
 
 
 class KvsRevokeTests(tests.TestCase, RevokeTests):
