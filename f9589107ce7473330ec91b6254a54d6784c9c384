@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//E8A\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T16:58:49Z",
+      "side": 1,
+      "message": "not sure if we are internationalizing debug message, but sure",
+      "parentUuid": "AAAAUH//F+M\u003d",
+      "revId": "f9589107ce7473330ec91b6254a54d6784c9c384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//F+E\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-17T14:33:38Z",
       "side": 1,
       "message": "wrap string in _() for translation.\n\n(nit) change \"build\" to \"building\"",
+      "revId": "f9589107ce7473330ec91b6254a54d6784c9c384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//E74\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-17T16:58:49Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "AAAAUH//F+E\u003d",
       "revId": "f9589107ce7473330ec91b6254a54d6784c9c384",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
