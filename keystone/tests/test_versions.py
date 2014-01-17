@@ -94,6 +94,10 @@ v3_EXPECTED_RESPONSE = {
         {
             "rel": "self",
             "href": "",     # Will get filled in after initialization
+        },
+        {
+            "rel": "extensions",
+            "href": "/extensions"
         }
     ],
     "media-types": v3_MEDIA_TYPES
@@ -130,6 +134,8 @@ class VersionTestCase(tests.TestCase):
         for link in response['links']:
             if link['rel'] == 'self':
                 link['href'] = port
+            if link['rel'] == 'extensions':
+                link['href'] = port + "extensions"
 
     def test_public_versions(self):
         client = self.client(self.public_app)
@@ -309,6 +315,7 @@ vnd.openstack.identity-v3+xml"/>
   </media-types>
   <links>
     <link href="http://localhost:%%(port)s/v3/" rel="self"/>
+    <link href="http://localhost:%%(port)s/v3/extensions" rel="extensions"/>
   </links>
 </version>
 """
