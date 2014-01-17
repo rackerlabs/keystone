@@ -23,6 +23,7 @@
 import re
 
 import routes.middleware
+import six
 import webob.dec
 import webob.exc
 
@@ -230,7 +231,7 @@ class Application(BaseApplication):
 
         if result is None:
             return render_response(status=(204, 'No Content'))
-        elif isinstance(result, basestring):
+        elif isinstance(result, six.string_types):
             return result
         elif isinstance(result, webob.Response):
             return result
