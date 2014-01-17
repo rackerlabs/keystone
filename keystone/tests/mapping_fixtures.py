@@ -13,13 +13,23 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-MAPPING_SMALL = {
+"""Fixtures for Federation Mapping."""
+
+EMPLOYEE_GROUP_ID = "0cd5e9"
+CONTRACTOR_GROUP_ID = "85a868"
+TESTER_GROUP_ID = "123"
+DEVELOPER_GROUP_ID = "xyz"
+
+# Mapping summary:
+# LastName Smith & Not Contractor or SubContractor -> group 0cd5e9
+# FirstName Jill & Contractor or SubContractor -> to group 85a868
+RULES_SMALL = {
     "rules": [
         {
             "local": [
                 {
                     "group": {
-                        "id": "0cd5e9"
+                        "id": EMPLOYEE_GROUP_ID
                     }
                 }
             ],
@@ -30,6 +40,12 @@ MAPPING_SMALL = {
                         "Contractor",
                         "SubContractor"
                     ]
+                },
+                {
+                    "type": "LastName",
+                    "any_one_of": [
+                        "Bo"
+                    ]
                 }
             ]
         },
@@ -37,7 +53,7 @@ MAPPING_SMALL = {
             "local": [
                 {
                     "group": {
-                        "id": "85a868"
+                        "id": CONTRACTOR_GROUP_ID
                     }
                 }
             ],
@@ -48,20 +64,33 @@ MAPPING_SMALL = {
                         "Contractor",
                         "SubContractor"
                     ]
+                },
+                {
+                    "type": "FirstName",
+                    "any_one_of": [
+                        "Jill"
+                    ]
                 }
             ]
         }
     ]
 }
 
-MAPPING_LARGE = {
+# Mapping summary:
+# orgPersonType Admin or Big Cheese -> name {0} {1} email {2} and group 0cd5e9
+# orgPersonType Customer -> user name {0} email {1}
+# orgPersonType Test and email ^@example.com$ -> group 123 and xyz
+RULES_LARGE = {
     "rules": [
         {
             "local": [
                 {
                     "user": {
-                        "name": "$0 $1",
-                        "email": "$2"
+                        "name": "{0} {1}",
+                        "email": "{2}"
+                    },
+                    "group": {
+                        "id": EMPLOYEE_GROUP_ID
                     }
                 }
             ],
@@ -76,10 +105,10 @@ MAPPING_LARGE = {
                     "type": "Email"
                 },
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
                         "Admin",
-                        "God"
+                        "Big Cheese"
                     ]
                 }
             ]
@@ -88,8 +117,8 @@ MAPPING_LARGE = {
             "local": [
                 {
                     "user": {
-                        "name": "$0",
-                        "email": "$1"
+                        "name": "{0}",
+                        "email": "{1}"
                     }
                 }
             ],
@@ -101,7 +130,7 @@ MAPPING_LARGE = {
                     "type": "Email"
                 },
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
                         "Customer"
                     ]
@@ -112,26 +141,26 @@ MAPPING_LARGE = {
             "local": [
                 {
                     "group": {
-                        "id": "123"
+                        "id": TESTER_GROUP_ID
                     }
                 },
                 {
                     "group": {
-                        "id": "xyz"
+                        "id": DEVELOPER_GROUP_ID
                     }
                 }
             ],
             "remote": [
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
-                        "Special"
+                        "Tester"
                     ]
                 },
                 {
                     "type": "Email",
                     "any_one_of": [
-                        "^@example.com$"
+                        ".*@example.com$"
                     ],
                     "regex": True
                 }
@@ -141,7 +170,7 @@ MAPPING_LARGE = {
 }
 
 
-MAPPING_BAD_REQ = {
+RULES_BAD_REQ = {
     "rules": [
         {
             "local": [
@@ -161,7 +190,7 @@ MAPPING_BAD_REQ = {
     ]
 }
 
-MAPPING_BAD_VALUE = {
+RULES_BAD_VALUE = {
     "rules": [
         {
             "local": [
@@ -179,11 +208,11 @@ MAPPING_BAD_VALUE = {
     ]
 }
 
-MAPPING_NO_RULES = {
+RULES_NO_RULES = {
     'rules': []
 }
 
-MAPPING_NO_REMOTE = {
+RULES_NO_REMOTE = {
     "rules": [
         {
             "local": [
@@ -196,7 +225,7 @@ MAPPING_NO_REMOTE = {
     ]
 }
 
-MAPPING_MISSING_LOCAL = {
+RULES_MISSING_LOCAL = {
     "rules": [
         {
             "remote": [
@@ -209,12 +238,12 @@ MAPPING_MISSING_LOCAL = {
     ]
 }
 
-MAPPING_WRONG_TYPE = {
+RULES_WRONG_TYPE = {
     "rules": [
         {
             "local": [
                 {
-                    "user": "$1"
+                    "user": "{1}"
                 }
             ],
             "remote": [
@@ -226,12 +255,12 @@ MAPPING_WRONG_TYPE = {
     ]
 }
 
-MAPPING_MISSING_TYPE = {
+RULES_MISSING_TYPE = {
     "rules": [
         {
             "local": [
                 {
-                    "user": "$1"
+                    "user": "{1}"
                 }
             ],
             "remote": [
@@ -241,7 +270,7 @@ MAPPING_MISSING_TYPE = {
     ]
 }
 
-MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF = {
+RULES_EXTRA_REMOTE_PROPS_NOT_ANY_OF = {
     "rules": [
         {
             "local": [
@@ -264,7 +293,7 @@ MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF = {
     ]
 }
 
-MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF = {
+RULES_EXTRA_REMOTE_PROPS_ANY_ONE_OF = {
     "rules": [
         {
             "local": [
@@ -287,7 +316,7 @@ MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF = {
     ]
 }
 
-MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE = {
+RULES_EXTRA_REMOTE_PROPS_JUST_TYPE = {
     "rules": [
         {
             "local": [
@@ -307,7 +336,7 @@ MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE = {
     ]
 }
 
-MAPPING_EXTRA_RULES_PROPS = {
+RULES_EXTRA_RULES_PROPS = {
     "rules": [
         {
             "local": [
@@ -330,4 +359,52 @@ MAPPING_EXTRA_RULES_PROPS = {
             ]
         }
     ]
+}
+
+EMPLOYEE_ASSERTION = {
+    'Email': 'tim@example.com',
+    'UserName': 'tbo',
+    'FirstName': 'Tim',
+    'LastName': 'Bo',
+    'orgPersonType': 'Employee;BuildingX;'
+}
+
+CONTRACTOR_ASSERTION = {
+    'Email': 'jill@example.com',
+    'UserName': 'jsmith',
+    'FirstName': 'Jill',
+    'LastName': 'Smith',
+    'orgPersonType': 'Contractor;Non-Dev;'
+}
+
+ADMIN_ASSERTION = {
+    'Email': 'bob@example.com',
+    'UserName': 'bob',
+    'FirstName': 'Bob',
+    'LastName': 'Thompson',
+    'orgPersonType': 'Admin;Chief;'
+}
+
+CUSTOMER_ASSERTION = {
+    'Email': 'beth@example.com',
+    'UserName': 'bwilliams',
+    'FirstName': 'Beth',
+    'LastName': 'Williams',
+    'orgPersonType': 'Customer;'
+}
+
+TESTER_ASSERTION = {
+    'Email': 'testacct@example.com',
+    'UserName': 'testacct',
+    'FirstName': 'Test',
+    'LastName': 'Account',
+    'orgPersonType': 'Tester;'
+}
+
+BAD_TESTER_ASSERTION = {
+    'Email': 'eviltester@example.org',
+    'UserName': 'Evil',
+    'FirstName': 'Test',
+    'LastName': 'Account',
+    'orgPersonType': 'Tester;'
 }

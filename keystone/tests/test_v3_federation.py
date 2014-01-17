@@ -20,6 +20,7 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -467,7 +468,7 @@ class MappingCRUDTests(FederationTests):
     def _create_default_mapping_entry(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         resp = self.put(url,
-                        body={'mapping': mapping_fixtures.MAPPING_LARGE},
+                        body={'mapping': mapping_fixtures.RULES_LARGE},
                         expected_status=201)
         return resp
 
@@ -477,7 +478,7 @@ class MappingCRUDTests(FederationTests):
 
     def test_mapping_create(self):
         resp = self._create_default_mapping_entry()
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_LARGE)
+        self.assertValidMappingResponse(resp, mapping_fixtures.RULES_LARGE)
 
     def test_mapping_list(self):
         url = self.MAPPING_URL
@@ -504,7 +505,7 @@ class MappingCRUDTests(FederationTests):
         mapping_id = self._get_id_from_response(resp)
         url = url % {'mapping_id': mapping_id}
         resp = self.get(url)
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_LARGE)
+        self.assertValidMappingResponse(resp, mapping_fixtures.RULES_LARGE)
 
     def test_mapping_update(self):
         url = self.MAPPING_URL + '%(mapping_id)s'
@@ -512,10 +513,10 @@ class MappingCRUDTests(FederationTests):
         mapping_id = self._get_id_from_response(resp)
         url = url % {'mapping_id': mapping_id}
         resp = self.patch(url,
-                          body={'mapping': mapping_fixtures.MAPPING_SMALL})
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
+                          body={'mapping': mapping_fixtures.RULES_SMALL})
+        self.assertValidMappingResponse(resp, mapping_fixtures.RULES_SMALL)
         resp = self.get(url)
-        self.assertValidMappingResponse(resp, mapping_fixtures.MAPPING_SMALL)
+        self.assertValidMappingResponse(resp, mapping_fixtures.RULES_SMALL)
 
     def test_delete_mapping_dne(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
@@ -528,51 +529,51 @@ class MappingCRUDTests(FederationTests):
     def test_create_mapping_bad_requirements(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_BAD_REQ})
+                 body={'mapping': mapping_fixtures.RULES_BAD_REQ})
 
     def test_create_mapping_no_rules(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_NO_RULES})
+                 body={'mapping': mapping_fixtures.RULES_NO_RULES})
 
     def test_create_mapping_no_remote_objects(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_NO_REMOTE})
+                 body={'mapping': mapping_fixtures.RULES_NO_REMOTE})
 
     def test_create_mapping_bad_value(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_BAD_VALUE})
+                 body={'mapping': mapping_fixtures.RULES_BAD_VALUE})
 
     def test_create_mapping_missing_local(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
+                 body={'mapping': mapping_fixtures.RULES_MISSING_LOCAL})
 
     def test_create_mapping_missing_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_MISSING_TYPE})
+                 body={'mapping': mapping_fixtures.RULES_MISSING_TYPE})
 
     def test_create_mapping_wrong_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_WRONG_TYPE})
+                 body={'mapping': mapping_fixtures.RULES_WRONG_TYPE})
 
     def test_create_mapping_extra_remote_properties_not_any_of(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF
+        mapping = mapping_fixtures.RULES_EXTRA_REMOTE_PROPS_NOT_ANY_OF
         self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_any_one_of(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF
+        mapping = mapping_fixtures.RULES_EXTRA_REMOTE_PROPS_ANY_ONE_OF
         self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_extra_remote_properties_just_type(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
-        mapping = mapping_fixtures.MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE
+        mapping = mapping_fixtures.RULES_EXTRA_REMOTE_PROPS_JUST_TYPE
         self.put(url, expected_status=400, body={'mapping': mapping})
 
     def test_create_mapping_empty_map(self):
@@ -583,4 +584,136 @@ class MappingCRUDTests(FederationTests):
     def test_create_mapping_extra_rules_properties(self):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
-                 body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
+                 body={'mapping': mapping_fixtures.RULES_EXTRA_RULES_PROPS})
+
+
+class MappingRuleEngineTests(FederationTests):
+    """A class for testing the mapping rule engine."""
+
+    def test_rule_engine_admin(self):
+        """Should return user's name, email and group 0cd5e9.
+
+        The ADMIN_ASSERTION should successfully have a match in RULES_LARGE.
+        This local rule will return a user object with name (first and last)
+        and email; it will also have a group object with an id value of
+        0cd5e9, the EMPLOYEE_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.RULES_LARGE
+        assertion = mapping_fixtures.ADMIN_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        values = rp.process(assertion)
+
+        fn = mapping_fixtures.ADMIN_ASSERTION.get('FirstName')
+        ln = mapping_fixtures.ADMIN_ASSERTION.get('LastName')
+        full_name = '%s %s' % (fn, ln)
+
+        group_ids = values.get('group_ids')
+        name = values.get('name')
+
+        self.assertIn(mapping_fixtures.EMPLOYEE_GROUP_ID, group_ids)
+        self.assertEqual(name, full_name)
+
+    def test_rule_engine_bad_tester(self):
+        """Should return 0 values, the email of the tester won't match.
+
+        This will not match since the email of the assertion will fail
+        the regex test. It is set to match any @example.com address.
+        But the incoming value is set to eviltester@example.org.
+
+        """
+
+        mapping = mapping_fixtures.RULES_LARGE
+        assertion = mapping_fixtures.BAD_TESTER_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        values = rp.process(assertion)
+
+        group_ids = values.get('group_ids')
+        name = values.get('name')
+
+        self.assertIsNone(name)
+        self.assertEqual(group_ids, [])
+
+    def test_rule_engine_contractor(self):
+        """Should return group 85a868.
+
+        The CONTRACTOR_ASSERTION should successfully have a match in
+        RULES_SMALL. This local rule will return a group object
+        with an id value of 85a868, the CONTRACTOR_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.RULES_SMALL
+        assertion = mapping_fixtures.CONTRACTOR_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        values = rp.process(assertion)
+
+        group_ids = values.get('group_ids')
+        name = values.get('name')
+
+        self.assertIsNone(name)
+        self.assertIn(mapping_fixtures.CONTRACTOR_GROUP_ID, group_ids)
+
+    def test_rule_engine_customer(self):
+        """Should return user's name and email.
+
+        The CUSTOMER_ASSERTION should successfully have a match in
+        RULES_LARGE. This local rule will return a user object with
+        name (username) and email.
+
+        """
+
+        mapping = mapping_fixtures.RULES_LARGE
+        assertion = mapping_fixtures.CUSTOMER_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        values = rp.process(assertion)
+
+        user_name = mapping_fixtures.CUSTOMER_ASSERTION.get('UserName')
+        group_ids = values.get('group_ids')
+        name = values.get('name')
+
+        self.assertEqual(name, user_name)
+        self.assertEqual(group_ids, [])
+
+    def test_rule_engine_employee(self):
+        """Should return group 0cd5e9.
+
+        The EMPLOYEE_ASSERTION should successfully have a match in
+        RULES_SMALL. This local rule will return a group object
+        with an id value of 0cd5e9, the EMPLOYEE_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.RULES_SMALL
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        values = rp.process(assertion)
+
+        group_ids = values.get('group_ids')
+        name = values.get('name')
+
+        self.assertIsNone(name)
+        self.assertIn(mapping_fixtures.EMPLOYEE_GROUP_ID, group_ids)
+
+    def test_rule_engine_tester(self):
+        """Should return group 123 and xyz.
+
+        The TESTER_ASSERTION should successfully have a match in
+        RULES_LARGE. This local rule will return two group objects
+        with an ids of 123, the TESTER_GROUP_ID and xyz, the
+        DEVELOPER_GROUP_ID.
+
+        """
+
+        mapping = mapping_fixtures.RULES_LARGE
+        assertion = mapping_fixtures.TESTER_ASSERTION
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        values = rp.process(assertion)
+
+        group_ids = values.get('group_ids')
+        name = values.get('name')
+
+        self.assertIsNone(name)
+        self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
+        self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
