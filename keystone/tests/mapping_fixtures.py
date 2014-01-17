@@ -13,6 +13,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+"""Fixtures for Federation Mapping."""
+
 MAPPING_SMALL = {
     'name': 'large mapping',
     "rules": [
@@ -31,7 +33,13 @@ MAPPING_SMALL = {
                         "Contractor",
                         "SubContractor"
                     ]
-                }
+                },
+                {
+                    "type": "LastName",
+                    "any_one_of": [
+                        "Smith"
+                    ]
+                 }
             ]
         },
         {
@@ -49,7 +57,13 @@ MAPPING_SMALL = {
                         "Contractor",
                         "SubContractor"
                     ]
-                }
+                },
+                {
+                    "type": "FirstName",
+                    "any_one_of": [
+                        "Jill"
+                    ]
+                 }
             ]
         }
     ]
@@ -78,10 +92,10 @@ MAPPING_LARGE = {
                     "type": "Email"
                 },
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
                         "Admin",
-                        "God"
+                        "Big Cheese"
                     ]
                 }
             ]
@@ -103,7 +117,7 @@ MAPPING_LARGE = {
                     "type": "Email"
                 },
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
                         "Customer"
                     ]
@@ -125,9 +139,9 @@ MAPPING_LARGE = {
             ],
             "remote": [
                 {
-                    "type": "Group",
+                    "type": "orgPersonType",
                     "any_one_of": [
-                        "Special"
+                        "Tester"
                     ]
                 },
                 {
@@ -213,4 +227,20 @@ MAPPING_MISSING_LOCAL = {
             ]
         }
     ]
+}
+
+ASSERTION_ADMIN = {
+    'Email': 'admin@admin.com',
+    'UserName': 'jsmith',
+    'FirstName': 'Joe',
+    'LastName': 'Smith',
+    'orgPersonType': 'Domain Users;Admin;;'
+}
+
+ASSERTION_CUSTOMER = {
+    'Email': 'customer@customer.domain.com',
+    'UserName': 'smithj',
+    'FirstName': 'Jill',
+    'LastName': 'Smith',
+    'orgPersonType': 'Contractor;SubContractor;Customer;;'
 }

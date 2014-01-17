@@ -21,6 +21,7 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -526,3 +527,11 @@ class MappingTests(FederationTests):
     def test_create_mapping_missing_local(self):
         self.post(self.MAPPING_URL, expected_status=400,
                   body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
+
+    def test_rule_engine_1(self):
+        mapping_utils.process(mapping_fixtures.ASSERTION_ADMIN,
+                              mapping_fixtures.MAPPING_SMALL)
+
+    def test_rule_engine_2(self):
+        mapping_utils.process(mapping_fixtures.ASSERTION_CUSTOMER,
+                              mapping_fixtures.MAPPING_LARGE)
