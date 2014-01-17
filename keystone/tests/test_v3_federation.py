@@ -20,6 +20,7 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -437,7 +438,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.get(url, expected_status=404)
 
 
-class MappingTests(FederationTests):
+class MappingCRUDTests(FederationTests):
 
     MAPPING_URL = '/OS-FEDERATION/mappings/'
 
@@ -551,3 +552,67 @@ class MappingTests(FederationTests):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_MISSING_LOCAL})
+
+
+class MappingRuleEngineTests(FederationTests):
+
+    def test_rule_engine_admin(self):
+        """Should return user's name, email and group 0cd5e9."""
+        values = mapping_utils.process(mapping_fixtures.ADMIN_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        email = mapping_fixtures.ADMIN_ASSERTION.get('Email')
+        fn = mapping_fixtures.ADMIN_ASSERTION.get('FirstName')
+        ln = mapping_fixtures.ADMIN_ASSERTION.get('LastName')
+        group_id = "0cd5e9"
+
+        group_value = values[0]['group']
+        user_value = values[0]['user']
+
+        self.assertEqual(group_value['id'], group_id)
+        self.assertEqual(user_value['email'], email)
+        self.assertEqual(user_value['name'], fn + " " + ln)
+
+    def test_rule_engine_bad_tester(self):
+        """Should return 0 values, the email of the tester won't match."""
+        values = mapping_utils.process(mapping_fixtures.BAD_TESTER_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        self.assertIs(len(values), 0)
+
+    def test_rule_engine_contractor(self):
+        """Should return group 85a868."""
+        values = mapping_utils.process(mapping_fixtures.CONTRACTOR_ASSERTION,
+                                       mapping_fixtures.MAPPING_SMALL)
+        group_id = "85a868"
+        group_value = values[0]['group']
+        self.assertEqual(group_value['id'], group_id)
+
+    def test_rule_engine_customer(self):
+        """Should return user's name and email."""
+        values = mapping_utils.process(mapping_fixtures.CUSTOMER_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        email = mapping_fixtures.CUSTOMER_ASSERTION.get('Email')
+        uname = mapping_fixtures.CUSTOMER_ASSERTION.get('UserName')
+
+        user_value = values[0]['user']
+        self.assertEqual(user_value['email'], email)
+        self.assertEqual(user_value['name'], uname)
+
+    def test_rule_engine_employee(self):
+        """Should return group 0cd5e9."""
+        values = mapping_utils.process(mapping_fixtures.EMPLOYEE_ASSERTION,
+                                       mapping_fixtures.MAPPING_SMALL)
+        group_id = "0cd5e9"
+        group_value = values[0]['group']
+        self.assertEqual(group_value['id'], group_id)
+
+    def test_rule_engine_tester(self):
+        """Should return group 123 and xyz."""
+        values = mapping_utils.process(mapping_fixtures.TESTER_ASSERTION,
+                                       mapping_fixtures.MAPPING_LARGE)
+        group_id = "123"
+        group_value = values[0]['group']
+        self.assertEqual(group_value['id'], group_id)
+
+        group_id = "xyz"
+        group_value = values[1]['group']
+        self.assertEqual(group_value['id'], group_id)
