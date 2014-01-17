@@ -42,9 +42,10 @@ This module provides the following base64 utility functionality:
 import io
 import re
 import string
-import urllib
 
 from six import moves
+
+from keystone.openstack.common.py3kcompat import urlutils
 
 
 class InvalidBase64Error(ValueError):
@@ -241,7 +242,7 @@ def base64url_percent_encode(text):
         raise InvalidBase64Error(_('padded base64url text must be '
                                    'multiple of 4 characters'))
 
-    return urllib.quote(text)
+    return urlutils.quote(text)
 
 
 def base64url_percent_decode(text):
@@ -256,7 +257,7 @@ def base64url_percent_decode(text):
     :returns: string -- percent-decoded base64url text
     """
 
-    decoded_text = urllib.unquote(text)
+    decoded_text = urlutils.unquote(text)
 
     if len(decoded_text) % 4 != 0:
         raise InvalidBase64Error(_('padded base64url text must be '

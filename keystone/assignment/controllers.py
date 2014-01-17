@@ -18,7 +18,6 @@
 """Workflow Logic the Assignment service."""
 
 import copy
-import urllib
 import urlparse
 import uuid
 
@@ -27,6 +26,7 @@ from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
+from keystone.openstack.common.py3kcompat import urlutils
 
 
 CONF = config.CONF
@@ -289,7 +289,7 @@ class Role(controller.V2Controller):
                 ref = {'roleId': role_id,
                        'tenantId': tenant['id'],
                        'userId': user_id}
-                ref['id'] = urllib.urlencode(ref)
+                ref['id'] = urlutils.urlencode(ref)
                 o.append(ref)
         return {'roles': o}
 
