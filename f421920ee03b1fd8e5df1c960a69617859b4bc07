@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Frw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "opening the paren for a function call on another line makes this really difficult/misleading to read",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//FkI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be a public method",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Fj4\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be public, and should follow the naming convention of similar methods: _remove_role_from_group_and_project()",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Fgk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "these need to be kwargs",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Fgg\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "kwargs",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//FgQ\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "kwargs",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Fgc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-17T18:02:19Z",
+      "side": 1,
+      "message": "kwargs",
+      "revId": "f421920ee03b1fd8e5df1c960a69617859b4bc07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
