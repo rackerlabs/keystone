@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//JcU\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "use the standard way of import logging -- Morgan made this change a little while ago.\n\n from keystone.openstack.common import log",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JcI\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "would be nice if this was a DocString (move after variable name).",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JcQ\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "(nit) change . to :",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jbc\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "could do:\n\n  fn \u003d (v3_token_to_auth_context if is_v3_token(token)\n           else v2_token_to_auth_context)\n  return fn(token)\n\nto remove some duplication.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JbQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "would be nice to have a log statement here saying that using auth_context from environment.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JbE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "would be nice to have this as a log statement rather than a comment.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ja4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "suggest remove this comment since this is just how one typically uses OO in python. Also, Could make this change in a separate review.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Ja0\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "remove this method since it\u0027s not needed, it\u0027s the default.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jas\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "change \"ADMIN\" to \"admin token\"",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Jao\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "suggest remove the else here then can unindent several lines.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JaU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "suggest make this a TODO. FIXME indicates to me that this isn\u0027t going to work without this changed.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JZA\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "suggest move this up to the top of the function, right after 241 --\n\n if authorization.AUTH_CONTEXT_ENV in request.environ:\n    msg \u003d _(\u0027auth context already exists in the request environment\u0027)\n    LOG.warning(msg)\n    return\n\nThen you can switch from \"not in\" to \"in\", which is better since negative tests are more difficult. And it will be obvious that there\u0027s 2 situations where the normal code doesn\u0027t happen.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JY4\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "revert whitespace change on previous line.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JYo\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "suggest remove \"actual\"",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JXo\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "suggest change \"make\" to \"create\" since \"make\" can also mean \"do\"\n\nalso, why not do the request in a function? why would you create a request and then not do the request? None of these tests do.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JX4\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1085,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "would be nice to have comments on these functions saying what they\u0027re supposed to be verifying.",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JXc\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "for example\n \n   # if the admin token is provided on the request then it\u0027s not the auth context",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//JWw\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2452,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-17T00:59:01Z",
+      "side": 1,
+      "message": "could add a test for if auth context is in the environment... what happens?",
+      "revId": "a4244ee26d27cc99807fca443179526204467571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
