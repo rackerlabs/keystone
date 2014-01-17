@@ -67,27 +67,12 @@ class DbSync(BaseApp):
         return parser
 
     @staticmethod
+
+
     def main():
         version = CONF.command.version
         extension = CONF.command.extension
-        if not extension:
-            migration.db_sync(version=version)
-        else:
-            package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
-            try:
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(0)
-            try:
-                # Register the repo with the version control API
-                # If it already knows about the repo, it will throw
-                # an exception that we can safely ignore
-                migration.db_version_control(version=None, repo_path=repo_path)
-            except exceptions.DatabaseAlreadyControlledError:
-                pass
-            migration.db_sync(version=version, repo_path=repo_path)
+        migration.sync_database(version, extension)
 
 
 class DbVersion(BaseApp):
@@ -104,20 +89,11 @@ class DbVersion(BaseApp):
                                   'migrate the common repository.'))
 
     @staticmethod
+
+
     def main():
         extension = CONF.command.extension
-        if extension:
-            try:
-                package_name = ("%s.%s.migrate_repo" %
-                                (contrib.__name__, extension))
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-                print(migration.db_version(repo_path))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(1)
-        else:
-            print(migration.db_version())
+        migration.print_db_version(extension)
 
 
 class BaseCertificateSetup(BaseApp):
