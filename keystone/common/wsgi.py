@@ -560,11 +560,11 @@ def render_response(body=None, status=None, headers=None):
 
 def render_exception(error, user_locale=None):
     """Forms a WSGI response based on the current error."""
+    msg = gettextutils.get_localized_message(error.args[0], user_locale)
     body = {'error': {
         'code': error.code,
         'title': error.title,
-        'message': unicode(gettextutils.get_localized_message(error.args[0],
-                                                              user_locale)),
+        'message': six.text_type(msg),
     }}
     headers = []
     if isinstance(error, exception.AuthPluginException):

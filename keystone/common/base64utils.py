@@ -44,6 +44,7 @@ import re
 import string
 import urllib
 
+import six
 from six import moves
 
 
@@ -361,7 +362,7 @@ def base64_wrap_iter(text, width=64):
     :returns: generator -- sequence of lines of base64 text.
     """
 
-    text = unicode(text)
+    text = six.text_type(text)
     for x in moves.range(0, len(text), width):
         yield text[x:x + width]
 
