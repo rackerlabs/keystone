@@ -44,7 +44,7 @@ import re
 import string
 import urllib
 
-from six import moves
+import six
 
 
 class InvalidBase64Error(ValueError):
@@ -361,8 +361,8 @@ def base64_wrap_iter(text, width=64):
     :returns: generator -- sequence of lines of base64 text.
     """
 
-    text = unicode(text)
-    for x in moves.range(0, len(text), width):
+    text = six.text_type(text)
+    for x in six.moves.range(0, len(text), width):
         yield text[x:x + width]
 
 
