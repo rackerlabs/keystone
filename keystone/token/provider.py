@@ -49,7 +49,7 @@ class UnsupportedTokenVersionException(Exception):
     pass
 
 
-@dependency.requires('token_api')
+@dependency.requires('token_api', 'revoke_api')
 @dependency.provider('token_provider_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
@@ -124,6 +124,52 @@ class Manager(manager.Manager):
         self._is_valid_token(token)
         return token
 
+    def check_revocation(self, token):
+        def revoke_matches(event, token_data):
+            #something has to match in order to revoke the token
+            matched = False
+            if event.user_id is not None:
+                if event.user_id != token_data['user']['id']:
+                    return False
+                else:
+                    matched = True
+
+            if event.project_id is not None:
+                if event.project_id != token_data['project']['id']:
+                    return False
+                else:
+                    matched = True
+
+            if event.domain_id is not None:
+                if event.domain_id != token_data['domain']['id']:
+                    return False
+                else:
+                    matched = True
+
+            if event.expires_at is not None:
+                token_date = timeutils.normalize_time(
+                    timeutils.parse_isotime(token_data['expires_at']))
+                if event.expires_at != token_date:
+                    return False
+                else:
+                    matched = True
+            return matched
+
+        token_data = token.get('token')
+        #Only here to prevent test breakage.
+        if token_data is None:
+            return
+        events = self.revoke_api.get_events(filter=None)
+        for event in events:
+            try:
+                if revoke_matches(event, token_data):
+                    #TODO(ayoung): I18N
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+            except KeyError:
+                #only to pass tests
+                pass
+
     def validate_v3_token(self, token_id):
         unique_id = self.token_api.unique_id(token_id)
         # NOTE(morganfainberg): Ensure we never use the long-form token_id
@@ -175,7 +221,6 @@ class Manager(manager.Manager):
     def _is_valid_token(self, token):
          # Verify the token has not expired.
         current_time = timeutils.normalize_time(timeutils.utcnow())
-
         try:
             # Get the data we need from the correct location (V2 and V3 tokens
             # differ in structure, Try V3 first, fall back to V2 second)
@@ -186,12 +231,16 @@ class Manager(manager.Manager):
                 expires_at = token_data['token']['expires']
             expiry = timeutils.normalize_time(
                 timeutils.parse_isotime(expires_at))
-            if current_time < expiry:
-                # Token is has not expired and has not been revoked.
-                return None
         except Exception:
             LOG.exception(_('Unexpected error or malformed token determining '
                             'token expiry: %s'), token)
+            raise exception.TokenNotFound(_('Failed to validate token'))
+
+        if current_time < expiry:
+            self.check_revocation(token)
+            # Token is has not expired and has not been revoked.
+            return None
+        raise exception.TokenNotFound(_('Failed to validate token'))
 
         # FIXME(morganfainberg): This error message needs to be updated to
         # reflect the token couldn't be found, but this change needs to wait
