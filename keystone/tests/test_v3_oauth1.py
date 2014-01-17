@@ -25,6 +25,7 @@ from keystone.contrib.oauth1 import controllers
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
+from keystone import tests
 from keystone.tests import test_v3
 
 
@@ -355,6 +356,13 @@ class AccessTokenCRUDTests(OAuthFlowTests):
 
 
 class AuthTokenTests(OAuthFlowTests):
+
+    def config_files(self):
+        conf_files = super(AuthTokenTests, self).config_files()
+        conf_files.append(tests.dirs.tests(
+            'test_revoke_kvs.conf'))
+        return conf_files
+
     def test_keystone_token_is_valid(self):
         self.test_oauth_flow()
         headers = {'X-Subject-Token': self.keystone_token_id,

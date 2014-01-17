@@ -22,6 +22,7 @@ from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 from keystone.openstack.common import timeutils
 from keystone import tests
+from keystone.tests import test_backend_sql
 
 
 CONF = config.CONF
@@ -44,7 +45,7 @@ class RevokeTests(object):
         self.revoke_api.revoke_by_expiration(user_id, future_time)
         self.assertEqual(1, len(self.revoke_api.get_events()))
 
-        expire_delta = datetime.timedelta(days=-1000)
+        expire_delta = datetime.timedelta(hours=-200)
         past_time = timeutils.utcnow() + expire_delta
 
         event = model.RevokeEvent()
@@ -53,12 +54,18 @@ class RevokeTests(object):
         self.assertEqual(1, len(self.revoke_api.get_events()))
 
 
+class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
+    def setUp(self):
+        super(SqlRevokeTests, self).setUp()
+        pass
+
+
 class KvsRevokeTests(tests.TestCase, RevokeTests):
     def setUp(self):
         super(KvsRevokeTests, self).setUp()
         self.config([tests.dirs.etc('keystone.conf.sample'),
                      tests.dirs.tests(
-                         'test_token_provider_revoke_by_id_false.conf')])
+                         'test_revoke_kvs.conf')])
         self.load_backends()
 
         self.revoke_api = revoke.Manager()
