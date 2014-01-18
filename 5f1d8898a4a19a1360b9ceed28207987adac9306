@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BOQ\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "will remove.",
+      "parentUuid": "AAAAUH//E+U\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E+E\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BMU\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "probably not, will remove in the next patch.",
+      "parentUuid": "AAAAUH//E+E\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//EPY\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -82,6 +118,24 @@
       "writtenOn": "2014-01-17T19:10:53Z",
       "side": 1,
       "message": "this should become user-specified and immutable, just like in protocols",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//BK8\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "according to the https://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3-os-federation-ext.md id is a random uuid assigned when new IdentityProvider is being created... shall i follow other specs?",
+      "parentUuid": "AAAAUH//EPY\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BMk\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "will remove.",
+      "parentUuid": "AAAAUH//E9E\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E8o\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -151,6 +223,24 @@
       "writtenOn": "2014-01-17T17:24:52Z",
       "side": 1,
       "message": "give a name to the False magic number so that reviewers know what it indicates.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//BK4\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "will fix and make more readable.",
+      "parentUuid": "AAAAUH//E8o\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BMo\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "will remove.",
+      "parentUuid": "AAAAUH//E6I\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E2o\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 15
@@ -185,6 +293,24 @@
       "writtenOn": "2014-01-17T17:24:52Z",
       "side": 1,
       "message": "why have \"extra\" field in the database when only some fields can be changed?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//BKY\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "good comment. I will remove extra attributes from the DB entity definitions. Any objections from the rest?",
+      "parentUuid": "AAAAUH//E2o\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -225,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BK0\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//E2M\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E1Q\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 15
@@ -259,6 +403,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BKw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//E1U\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Ezg\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 15
@@ -270,6 +432,24 @@
       "writtenOn": "2014-01-17T17:24:52Z",
       "side": 1,
       "message": "how many exceptions do you think can be thrown here?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//BKo\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "the idea was to raise an exception when the first condition is met, no matter if latter params might be also invalid. \nAny suggested changes here, and why can\u0027t it stay like it is now?",
+      "parentUuid": "AAAAUH//Ezg\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -293,6 +473,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BKk\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//E0U\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Ez8\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 15
@@ -304,6 +502,24 @@
       "writtenOn": "2014-01-17T17:24:52Z",
       "side": 1,
       "message": "why would we need to filter_params on the request? this is for filtering the response data.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//BKg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "right! Are you suggesting to remove this method completely and not filter input data or just make docstring more specific?",
+      "parentUuid": "AAAAUH//Ez8\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -327,6 +543,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BJw\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "AAAAUH//EcU\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//EcE\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 15
@@ -344,6 +578,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//BKI\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "awesome comment. I will fix it!",
+      "parentUuid": "AAAAUH//EcE\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Eb0\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 15
@@ -355,6 +607,24 @@
       "writtenOn": "2014-01-17T19:07:22Z",
       "side": 1,
       "message": "shouldn\u0027t this also include the protocol ID?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//BKQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-18T22:04:10Z",
+      "side": 1,
+      "message": "good point!",
+      "parentUuid": "AAAAUH//Eb0\u003d",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
