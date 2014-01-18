@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//CBg\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-18T08:34:33Z",
+      "side": 1,
+      "message": "currently this line makes things messy since i\u0027m appending an array to an array",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//CBo\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-18T08:34:33Z",
+      "side": 1,
+      "message": "need to add more assertions",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//CBk\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-18T08:34:33Z",
+      "side": 1,
+      "message": "more tests for more assertion / mappings combinations",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
