@@ -53,3 +53,12 @@ class UrlMiddlewareTest(tests.TestCase):
         req = webob.Request.blank('')
         self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(req.path_url, 'http://localhost/')
+
+    def test_rewrite_no_path(self):
+        """Tests no PATH_INFO is rewritten to root."""
+        req = webob.Request.blank('')
+        # NormalizingFilter uses PATH_INFO from request env
+        # simulate the case where this variable is not in the env
+        req.environ.pop('PATH_INFO', None)
+        self.middleware(req.environ, self.start_fake_response)
+        self.assertEqual(req.path_url, 'http://localhost/')
