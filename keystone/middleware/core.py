@@ -176,13 +176,13 @@ class NormalizingFilter(wsgi.Middleware):
 
     def process_request(self, request):
         """Normalizes URLs."""
+        # Rewrites path to root if no path is given.
+        if not request.environ.get('PATH_INFO'):
+            request.environ['PATH_INFO'] = '/'
         # Removes a trailing slash from the given path, if any.
-        if (len(request.environ['PATH_INFO']) > 1 and
+        elif (len(request.environ['PATH_INFO']) > 1 and
                 request.environ['PATH_INFO'][-1] == '/'):
             request.environ['PATH_INFO'] = request.environ['PATH_INFO'][:-1]
-        # Rewrites path to root if no path is given.
-        elif not request.environ['PATH_INFO']:
-            request.environ['PATH_INFO'] = '/'
 
 
 class RequestBodySizeLimiter(wsgi.Middleware):
