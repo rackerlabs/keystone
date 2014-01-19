@@ -113,6 +113,28 @@ class JsonBodyMiddlewareTest(tests.TestCase):
         params = req.environ.get(middleware.PARAMS_ENV, {})
         self.assertEqual(params, {})
 
+    def test_asked_to_skip_parsing(self):
+        req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
+                           content_type='application/json',
+                           method='POST')
+        req.environ["SKIP_JSON_PARSING"] = True
+        middleware.JsonBodyMiddleware(None).process_request(req)
+        params = req.environ.get(middleware.PARAMS_ENV, {})
+        self.assertEqual(params, {})
+
+    def test_asked_not_to_skip_parsing(self):
+        req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
+                           content_type='application/json',
+                           method='POST')
+        req.environ["SKIP_JSON_PARSING"] = False
+        middleware.JsonBodyMiddleware(None).process_request(req)
+        params = req.environ.get(middleware.PARAMS_ENV, {})
+        self.assertEqual(params, {"arg1": "one", "arg2": ["a"]})
+        req.environ.pop("SKIP_JSON_PARSING", None)
+        middleware.JsonBodyMiddleware(None).process_request(req)
+        params = req.environ.get(middleware.PARAMS_ENV, {})
+        self.assertEqual(params, {"arg1": "one", "arg2": ["a"]})
+
 
 class XmlBodyMiddlewareTest(tests.TestCase):
     def test_client_wants_xml_back(self):
@@ -151,6 +173,24 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(req.content_type, 'application/json')
         self.assertTrue(jsonutils.loads(req.body))
+
+    def test_xml_parsing_sets_skip_json_variable(self):
+        """XML conversion should set SKIP_JSON_PARSING variable."""
+        req = make_request(
+            body='<container><element attribute="value" /></container>',
+            content_type='application/xml',
+            method='POST')
+        middleware.XmlBodyMiddleware(None).process_request(req)
+        self.assertTrue(req.environ["SKIP_JSON_PARSING"])
+
+    def test_non_xml_content_should_not_set_skip_json_variable(self):
+        """No XML conversion, should not set SKIP_JSON_PARSING variable."""
+        req = make_request(
+            body='{"container": {"attribute": "value"}}',
+            content_type='application/json',
+            method='POST')
+        middleware.XmlBodyMiddleware(None).process_request(req)
+        self.assertEqual(req.environ.get("SKIP_JSON_PARSING"), None)
 
     def test_json_unnaffected(self):
         """JSON-only requests should be unaffected by the XML middleware."""

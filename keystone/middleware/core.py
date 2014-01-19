@@ -44,7 +44,31 @@ CONTEXT_ENV = wsgi.CONTEXT_ENV
 PARAMS_ENV = wsgi.PARAMS_ENV
 
 
+def get_filtered_params(params_parsed):
+    """Looks for private fields in params_parsed and removes them.
+
+    Filters out the parameters `self`, `context` and anything beginning with
+    an underscore.
+
+    """
+
+    params = {}
+    # Abort early if we don't have anything to do
+    if not params_parsed:
+        return params
+
+    # Filter private fields, if found
+    for k, v in params_parsed.iteritems():
+        if k in ('self', 'context'):
+            continue
+        if k.startswith('_'):
+            continue
+        params[k] = v
+    return params
+
+
 class TokenAuthMiddleware(wsgi.Middleware):
+
     def process_request(self, request):
         token = request.headers.get(AUTH_TOKEN_HEADER)
         context = request.environ.get(CONTEXT_ENV, {})
@@ -56,6 +80,7 @@ class TokenAuthMiddleware(wsgi.Middleware):
 
 
 class AdminTokenAuthMiddleware(wsgi.Middleware):
+
     """A trivial filter that checks for a pre-defined admin token.
 
     Sets 'is_admin' to true in the context, expected to be checked by
@@ -71,6 +96,7 @@ class AdminTokenAuthMiddleware(wsgi.Middleware):
 
 
 class PostParamsMiddleware(wsgi.Middleware):
+
     """Middleware to allow method arguments to be passed as POST parameters.
 
     Filters out the parameters `self`, `context` and anything beginning with
@@ -79,19 +105,11 @@ class PostParamsMiddleware(wsgi.Middleware):
     """
 
     def process_request(self, request):
-        params_parsed = request.params
-        params = {}
-        for k, v in params_parsed.iteritems():
-            if k in ('self', 'context'):
-                continue
-            if k.startswith('_'):
-                continue
-            params[k] = v
-
-        request.environ[PARAMS_ENV] = params
+        request.environ[PARAMS_ENV] = get_filtered_params(request.params)
 
 
 class JsonBodyMiddleware(wsgi.Middleware):
+
     """Middleware to allow method arguments to be passed as serialized JSON.
 
     Accepting arguments as JSON is useful for accepting data that may be more
@@ -105,10 +123,11 @@ class JsonBodyMiddleware(wsgi.Middleware):
     an underscore.
 
     """
+
     def process_request(self, request):
         # Abort early if we don't have any work to do
         params_json = request.body
-        if not params_json:
+        if not params_json or request.environ.get("SKIP_JSON_PARSING") is True:
             return
 
         # Reject unrecognized content types. Empty string indicates
@@ -129,18 +148,11 @@ class JsonBodyMiddleware(wsgi.Middleware):
             if not params_parsed:
                 params_parsed = {}
 
-        params = {}
-        for k, v in params_parsed.iteritems():
-            if k in ('self', 'context'):
-                continue
-            if k.startswith('_'):
-                continue
-            params[k] = v
-
-        request.environ[PARAMS_ENV] = params
+        request.environ[PARAMS_ENV] = get_filtered_params(params_parsed)
 
 
 class XmlBodyMiddleware(wsgi.Middleware):
+
     """De/serializes XML to/from JSON."""
 
     def process_request(self, request):
@@ -148,14 +160,19 @@ class XmlBodyMiddleware(wsgi.Middleware):
         incoming_xml = 'application/xml' in str(request.content_type)
         if incoming_xml and request.body:
             request.content_type = 'application/json'
+            params_parsed = {}
             try:
-                request.body = jsonutils.dumps(
-                    serializer.from_xml(request.body))
+                params_parsed = serializer.from_xml(request.body)
+                request.body = jsonutils.dumps(params_parsed)
             except Exception:
                 LOG.exception('Serializer failed')
                 e = exception.ValidationError(attribute='valid XML',
                                               target='request body')
                 return wsgi.render_exception(e)
+            if not params_parsed:
+                params_parsed = {}
+            request.environ[PARAMS_ENV] = get_filtered_params(params_parsed)
+            request.environ["SKIP_JSON_PARSING"] = True
 
     def process_response(self, request, response):
         """Transform the response from JSON to XML."""
@@ -172,6 +189,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
 
 
 class NormalizingFilter(wsgi.Middleware):
+
     """Middleware filter to handle URL normalization."""
 
     def process_request(self, request):
@@ -186,6 +204,7 @@ class NormalizingFilter(wsgi.Middleware):
 
 
 class RequestBodySizeLimiter(wsgi.Middleware):
+
     """Limit the size of an incoming request."""
 
     def __init__(self, *args, **kwargs):
