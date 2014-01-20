@@ -16,6 +16,41 @@
       "revId": "b6e163168313989393c5ed64c409be9d870881b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/Q8\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T01:43:32Z",
+      "side": 1,
+      "message": "Elite ascii stuffs!",
+      "parentUuid": "AAAAUH//PWU\u003d",
+      "revId": "b6e163168313989393c5ed64c409be9d870881b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/Qw\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T01:43:32Z",
+      "side": 1,
+      "message": "My comment from previous patchset in the chain abourt configuration.rst applies here more so (I didn\u0027t -1 the other patch).  Basically, configuration.rst should go in the doc directory and be linked into the main configuration doc, i don\u0027t think they get built if in contrib directory.",
+      "revId": "b6e163168313989393c5ed64c409be9d870881b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
