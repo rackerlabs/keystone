@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+9qI\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T11:04:06Z",
+      "side": 1,
+      "message": "….not caused by your change, but while we are here, let\u0027s fix the \"houldn\u0027t\" typo as well!!!",
+      "revId": "4127a1245723ac088173c36557f55552585e48aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+9pw\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T11:04:06Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "4127a1245723ac088173c36557f55552585e48aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
