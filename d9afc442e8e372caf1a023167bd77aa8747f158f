@@ -16,6 +16,24 @@
       "revId": "d9afc442e8e372caf1a023167bd77aa8747f158f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//M/M\u003d",
+        "filename": "doc/source/extensions/endpoint_filter-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8276
+      },
+      "writtenOn": "2014-01-20T01:27:38Z",
+      "side": 1,
+      "message": "Blank line is EOL for unix file :) @ZhiQiang Fan",
+      "parentUuid": "AAAAUH//OCk\u003d",
+      "revId": "d9afc442e8e372caf1a023167bd77aa8747f158f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
