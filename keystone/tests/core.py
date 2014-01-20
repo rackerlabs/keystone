@@ -333,8 +333,6 @@ class TestCase(testtools.TestCase):
 
         self.addCleanup(kvs.INMEMDB.clear)
 
-        self.addCleanup(timeutils.clear_time_override)
-
         # Ensure Notification subscriotions and resource types are empty
         self.addCleanup(notifications.SUBSCRIBERS.clear)
 
