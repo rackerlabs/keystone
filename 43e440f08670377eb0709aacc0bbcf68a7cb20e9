@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/++tU\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-20T06:27:08Z",
+      "side": 1,
+      "message": "hmm, no i think i did a bad rebase somewhere - this was a problem before that i thought i got.",
+      "parentUuid": "AAAAUH/+++c\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+++o\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-20T04:49:15Z",
       "side": 1,
       "message": "Should these raise NotImplemented errors if the connection class is going to be inherited somewhere else?",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/++tQ\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-20T06:27:08Z",
+      "side": 1,
+      "message": "I don\u0027t think it will matter. The abc.abstractmethod will catch that case",
+      "parentUuid": "AAAAUH/+++o\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2014-01-20T04:49:15Z",
       "side": 1,
       "message": "(NIT): update copyright year to 2014",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/++tA\u003d",
+        "filename": "keystone/contrib/kds/db/migration.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-20T06:27:08Z",
+      "side": 1,
+      "message": "I must have copied that from somewhere - i have no need to update NASA\u0027s copyright.",
+      "parentUuid": "AAAAUH/+++A\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
