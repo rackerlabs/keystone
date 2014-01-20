@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6Tg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 50
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+8OU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+8MI\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 50
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-20T17:31:15Z",
       "side": 1,
       "message": "``double backticks`` on literals\n\n  ``wrap_collection()`` method",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+62I\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+8MI\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+610\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+8Lc\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+73E\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 50
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+60M\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "No, I don\u0027t think so…this is an internal method and not exposed via the API (see comment in assignment/core.py)",
+      "parentUuid": "AAAAUH/+73E\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+8Hg\u003d",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 50
@@ -81,6 +153,41 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Can this be put up a line?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7bA\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+8Hg\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7a4\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "…and this one too",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +222,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Can you remove the wrapping parens there and also % key?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6bA\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+8Ac\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -156,6 +281,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6bE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "We kind of discussed this last time - and thought that we didn\u0027t want to fail any calls if the operators were not recognised..",
+      "parentUuid": "AAAAUH/+8AY\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6bU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "I agree..",
+      "parentUuid": "AAAAUH/+7WY\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7/o\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 50
@@ -167,6 +328,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Couldn\u0027t we just check if hints is None?  Will we ever pass a truthy value that doesn\u0027t have a filters method?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6ao\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+7/o\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6Yo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "so what\u0027s the advantage…we call this as, say, DomainV3.build_driver_hints()",
+      "parentUuid": "AAAAUH/+7vU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+76Y\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 50
@@ -201,6 +398,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "This seems inefficient because I think we alway iterate through the entire list.  Can this be converted to an \u0027in\u0027 check?  If this were a set instead of a list of cost of the check would be even less.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Xs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "I\u0027d be OK to come back in and look at the efficiency of this if we think it will be a problem…..typically the list of supported filters is very small.",
+      "parentUuid": "AAAAUH/+76Y\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -224,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6YE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+78M\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+770\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 50
@@ -235,6 +468,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "This can be removed if you do the above.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6YI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+770\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -258,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6zw\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "I\u0027m open to that….but is that very pythonic?",
+      "parentUuid": "AAAAUH/+72Y\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+70s\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 50
@@ -269,6 +538,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Do you have plans to store other types of hints in this list?  This function forces us to look over the list twice everytime `hints.filters()` is called.  Once to evaluate the list comprehension and a second time to loop over the result and do something with each one.\n\nI would rather see a filters list that we don\u0027t have to filter.  Or if we really need this shared list structure we can return a generator instead of a list comprehension to limit the looping.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6y4\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Yes we do, see the patch for list limiting (https://review.openstack.org/#/c/44836/18/keystone/common/driver_hints.py) that is dependant on this one.",
+      "parentUuid": "AAAAUH/+70s\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6bo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "I think it was because I couldn\u0027t see that the contains/startswith and ends with support case sensitive and insensitive operations, while like \u0026 ilike obviously do.",
+      "parentUuid": "AAAAUH/+7gI\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7yk\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 50
@@ -303,6 +608,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Is there any reason that this would be an object that doesn\u0027t have the filters method?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6xg\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "ahh, hangover from when it ok to just pass in a naked list here….I don\u0027t really think it\u0027s worth maintaining that, so I\u0027ll remove that check",
+      "parentUuid": "AAAAUH/+7yk\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -326,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6fg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "agree on v2 vs v3, but would it still be accessible from core/sql as well (where it is also used), however?",
+      "parentUuid": "AAAAUH/+71A\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+708\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 50
@@ -337,6 +678,24 @@
       "writtenOn": "2014-01-20T17:31:15Z",
       "side": 1,
       "message": "this is a terrible convention",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6fM\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "that maybe true (!), although it is what we agreed at the time...",
+      "parentUuid": "AAAAUH/+708\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -377,6 +736,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6fI\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "AAAAUH/+71M\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7xo\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 50
@@ -388,6 +765,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Why is this not None or an empty Hints object?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6hs\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "It should be….",
+      "parentUuid": "AAAAUH/+7xo\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -411,6 +806,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6nQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Nice catch!!!!",
+      "parentUuid": "AAAAUH/+7tY\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7tI\u003d",
         "filename": "keystone/tests/filtering.py",
         "patchSetId": 50
@@ -422,6 +835,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Isn\u0027t this doing the same logic as the function called in the line above?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6kY\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Agreed…in fact, I think we ditch this function altogether...",
+      "parentUuid": "AAAAUH/+7tI\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -445,6 +876,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6kw\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Nice…done.",
+      "parentUuid": "AAAAUH/+7sU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7k0\u003d",
         "filename": "keystone/tests/test_driver_hints.py",
         "patchSetId": 50
@@ -456,6 +905,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Lines 29 through 32 can be rewritten to just:\n\n  self.assertEqual(len(hints.filters()), 2)",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6mA\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+7k0\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -479,6 +946,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6l8\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+7kY\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7kU\u003d",
         "filename": "keystone/tests/test_driver_hints.py",
         "patchSetId": 50
@@ -496,6 +981,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6l4\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+7kU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7jk\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 50
@@ -507,6 +1010,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "None instead of []?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6mY\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T20:30:47Z",
+      "side": 1,
+      "message": "Actually this change should be reverted…the wrap collection has hints\u003dNone as a default",
+      "parentUuid": "AAAAUH/+7jk\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
