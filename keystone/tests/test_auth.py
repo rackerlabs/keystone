@@ -12,9 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+
 import copy
 import datetime
 import uuid
+
+import mock
 
 from keystone import assignment
 from keystone import auth
@@ -853,9 +856,10 @@ class AuthWithTrust(AuthTest):
 
 
 class TokenExpirationTest(AuthTest):
-    def _maintain_token_expiration(self):
+    @mock.patch("keystone.openstack.common.timeutils.utcnow")
+    def _maintain_token_expiration(self, mock_utcnow):
         """Token expiration should be maintained after re-auth & validation."""
-        timeutils.set_time_override()
+        mock_utcnow.return_value = datetime.datetime.utcnow()
 
         r = self.controller.authenticate(
             {},
