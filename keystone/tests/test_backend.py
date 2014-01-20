@@ -3445,14 +3445,16 @@ class CatalogTests(object):
             'id': region_id,
             'description': uuid.uuid4().hex,
         }
+        original_new_region = new_region.copy()
         res = self.catalog_api.create_region(
             region_id,
-            new_region.copy())
+            new_region)
+        self.assertDictEqual(new_region, original_new_region)
         # Ensure that we don't need to have a
         # parent_region_id in the original supplied
         # ref dict, but that it will be returned from
         # the endpoint, with None value.
-        expected_region = new_region.copy()
+        expected_region = new_region
         expected_region['parent_region_id'] = None
         self.assertDictEqual(res, expected_region)
 
@@ -3466,10 +3468,13 @@ class CatalogTests(object):
             'description': uuid.uuid4().hex,
             'parent_region_id': parent_region_id
         }
+        original_new_region = new_region.copy()
+
         self.catalog_api.create_region(
             region_id,
-            new_region.copy())
+            new_region)
 
+        self.assertDictEqual(new_region, original_new_region)
         # list
         regions = self.catalog_api.list_regions()
         self.assertThat(regions, matchers.HasLength(2))
@@ -3507,10 +3512,12 @@ class CatalogTests(object):
             'description': uuid.uuid4().hex,
             'parent_region_id': 'nonexisting'
         }
+        original_new_region = new_region.copy()
         self.assertRaises(exception.RegionNotFound,
                           self.catalog_api.create_region,
                           region_id,
                           new_region)
+        self.assertDictEqual(new_region, original_new_region)
 
     def test_service_crud(self):
         # create
@@ -3521,10 +3528,12 @@ class CatalogTests(object):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
+        original_new_service = new_service.copy()
         res = self.catalog_api.create_service(
             service_id,
-            new_service.copy())
+            new_service)
         self.assertDictEqual(res, new_service)
+        self.assertDictEqual(new_service, original_new_service)
 
         # list
         services = self.catalog_api.list_services()
@@ -3605,8 +3614,9 @@ class CatalogTests(object):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
-
+        original_service = service.copy()
+        self.catalog_api.create_service(service['id'], service)
+        self.assertDictEqual(service, original_service)
         endpoint = {
             'id': uuid.uuid4().hex,
             'region': "0" * 255,
@@ -3614,7 +3624,9 @@ class CatalogTests(object):
             'interface': 'public',
             'url': uuid.uuid4().hex,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        original_endpoint = endpoint.copy()
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+        self.assertDictEqual(endpoint, original_endpoint)
 
 
 class PolicyTests(object):
