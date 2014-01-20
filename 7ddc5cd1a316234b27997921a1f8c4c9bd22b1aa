@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+/Rw\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T01:40:53Z",
+      "side": 1,
+      "message": "The configuration.rst should really be placed in the keystone/doc location like oauth, etc and linked from the main configuration.rst.  The example one is in contrib/example because it is convienent.  Since we are doing the cleanup here, we likely should also make sure new extensions are linked in as expected.  Likely this can be made a separate \"specific\" update to the documentation (as it is not in the scope as outlined by the commit message)",
+      "revId": "7ddc5cd1a316234b27997921a1f8c4c9bd22b1aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
