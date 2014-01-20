@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/++5c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T05:15:20Z",
+      "side": 1,
+      "message": "Looks like pep8 is failing here (Git commit title 50+ characters), the following is a good guide for structuring commit messages. \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/++5o\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T05:15:20Z",
+      "side": 1,
+      "message": "Any reason for adding new lines here, and not on lines 197 or 211?",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
