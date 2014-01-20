@@ -217,6 +217,13 @@ class Application(BaseApplication):
                 _('Authorization failed. %(exception)s from %(remote_addr)s'),
                 {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
             return render_exception(e, user_locale=req.best_match_language())
+        except exception.Forbidden as e:
+            address = req.environ.get('REMOTE_ADDR', '')
+            LOG.info(
+                _('User from: %(remote_addr)s is not authorized'
+                  ' to perform action: %(action)s'),
+                {'remote_addr': address, 'action': action})
+            return render_exception(e, user_locale=req.best_match_language())
         except exception.Error as e:
             LOG.warning(e)
             return render_exception(e, user_locale=req.best_match_language())

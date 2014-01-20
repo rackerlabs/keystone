@@ -48,6 +48,15 @@ class ApplicationTest(BaseWSGITest):
         resp = req.get_response(self.app)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_response_content_forbidden_action(self):
+        class FakeApp(wsgi.Application):
+            def index(self, context):
+                raise exception.Forbidden
+        req = self._make_request(url='/?1=2')
+        resp = req.get_response(FakeApp())
+        self.assertEqual(resp.status, '403 Forbidden')
+        self.assertEqual(resp.status_int, 403)
+
     def test_query_string_available(self):
         class FakeApp(wsgi.Application):
             def index(self, context):
