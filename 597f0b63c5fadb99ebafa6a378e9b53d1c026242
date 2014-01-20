@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+8OU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 50
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "commit message shouldn\u0027t reference things in other commits-- especially ones that may never land!",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8MI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "``double backticks`` on literals\n\n  ``wrap_collection()`` method",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8Lc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "remove extra whitespace",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+73E\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "shouldn\u0027t hints be passed in here, and then passed through to list_projects()?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+8Hg\u003d",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 50
@@ -64,6 +132,24 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Rewrite as \u0027LOG.debug(msg, key)\u0027\n\nWould it be more user friendly to return a 4XX error letting the user know that they messed up the query?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7WY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "regarding unsupported \"comparators\" ... i just assume ignore them and not log anything.",
+      "parentUuid": "AAAAUH/+8AY\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +309,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+71A\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "this really belongs in the base v3 controller, as it\u0027s not applicable at all to v2 and should only be used by controllers handing query strings",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+708\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "this is a terrible convention",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7x8\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 50
@@ -234,6 +354,23 @@
       "writtenOn": "2014-01-20T16:59:34Z",
       "side": 1,
       "message": "Is there any value to checking the type if you have going to \"val_attr \u003d\u003d \u00270\u0027\" anyway?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+71M\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-20T17:31:15Z",
+      "side": 1,
+      "message": "this whole thing should be a one liner\n\n  return not (isinstance(val_attr, basestring) and val_attr \u003d\u003d \u00270\u0027)",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
