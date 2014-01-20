@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6qQ\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T19:16:58Z",
+      "side": 1,
+      "message": "Sounds good",
+      "parentUuid": "AAAAUH/++tQ\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+++k\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 24
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "I must have copied that from somewhere - i have no need to update NASA\u0027s copyright.",
       "parentUuid": "AAAAUH/+++A\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6p0\u003d",
+        "filename": "keystone/contrib/kds/db/migration.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T19:16:58Z",
+      "side": 1,
+      "message": "Should we still have this as the copyright?",
+      "parentUuid": "AAAAUH/++tA\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
