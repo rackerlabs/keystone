@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+/H0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "s/dogtag/dogpile",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/Mg\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "If we are going to keep this unprotected, suggest removing this line.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/MU\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "Should this use the v3 controller wrap_member method instead of rolling it\u0027s own logic?",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/Mc\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/MY\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this use the wrap_collection method instead of constructing it itself (it is a V3 controller)",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/LA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "This is not an example manager.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/KA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "If we support domain scoped tokens you likely need a similar by_user_and_domain method since you wouldnt want to revoke _all_ domain tokens if a specific user-domain combination is needed  But if domain-scoped tokens aren\u0027t supported, we don\u0027t need to add the method.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/J0\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "Is there a bug/bp or other bit of information for supporting trust revocations (e.g. timeline for implementation).  Suggest comment.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/IU\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "You\u0027ve injected your new method and grabbed the \"delete_group\" decorators.  Your method needs to be above 427.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/IM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "NIT: These should be alphabetical.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/H4\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "Out of curiosity, why this change? It seems to stand out compared to the rest of the patchset.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/HY\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "Suggest a comment why this is needed (I\u0027m fairly sure I\u0027ve seen this elsewhere and we dont use similar copy.copy).",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/GQ\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "If this is really no longer used, suggest removing the line.",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/GI\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-20T03:15:47Z",
+      "side": 1,
+      "message": "Same as 237",
+      "revId": "6d1ae54c42fec3963dbfddeedfd1c515e7436e4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
