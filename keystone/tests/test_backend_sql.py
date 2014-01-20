@@ -412,8 +412,9 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
-
+        original_service = service.copy()
+        self.catalog_api.create_service(service['id'], service)
+        self.assertDictEqual(service, original_service)
         malformed_url = "http://192.168.1.104:$(compute_port)s/v2/$(tenant)s"
         endpoint = {
             'id': uuid.uuid4().hex,
@@ -422,7 +423,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'interface': 'public',
             'url': malformed_url,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
         self.assertRaises(exception.MalformedEndpoint,
                           self.catalog_api.get_catalog,
@@ -436,8 +437,9 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
-
+        original_service = service.copy()
+        self.catalog_api.create_service(service['id'], service)
+        self.assertDictEqual(service, original_service)
         endpoint = {
             'id': uuid.uuid4().hex,
             'region': uuid.uuid4().hex,
@@ -445,8 +447,9 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'url': '',
             'service_id': service['id'],
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
-
+        original_endpoint = endpoint.copy()
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+        self.assertDictEqual(endpoint, original_endpoint)
         catalog = self.catalog_api.get_catalog('user', 'tenant')
         catalog_endpoint = catalog[endpoint['region']][service['type']]
         self.assertEqual(catalog_endpoint['name'], service['name'])
@@ -462,8 +465,9 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
         }
-        self.catalog_api.create_service(service['id'], service.copy())
-
+        original_service = service.copy()
+        self.catalog_api.create_service(service['id'], service)
+        self.assertDictEqual(service, original_service)
         endpoint = {
             'id': uuid.uuid4().hex,
             'region': "0" * 256,
@@ -471,12 +475,12 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
             'interface': 'public',
             'url': uuid.uuid4().hex,
         }
-
+        original_endpoint = endpoint.copy()
         self.assertRaises(exception.StringLengthExceeded,
                           self.catalog_api.create_endpoint,
                           endpoint['id'],
-                          endpoint.copy())
-
+                          endpoint)
+        self.assertDictEqual(endpoint, original_endpoint)
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass

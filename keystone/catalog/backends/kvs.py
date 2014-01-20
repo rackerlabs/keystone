@@ -52,13 +52,14 @@ class Catalog(kvs.Base, catalog.Driver):
             self.get_region(parent_region_id)
 
     def create_region(self, region_id, region):
-        region.setdefault('parent_region_id')
-        self._check_parent_region(region)
-        self.db.set('region-%s' % region_id, region)
+        res = region.copy()
+        res.setdefault('parent_region_id')
+        self._check_parent_region(res)
+        self.db.set('region-%s' % region_id, res)
         region_list = set(self.db.get('region_list', []))
         region_list.add(region_id)
         self.db.set('region_list', list(region_list))
-        return region
+        return res
 
     def list_regions(self):
         return [self.get_region(x) for x in self.db.get('region_list', [])]
