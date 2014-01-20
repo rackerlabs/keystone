@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+6v8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 9412
+      },
+      "writtenOn": "2014-01-20T19:02:46Z",
+      "side": 1,
+      "message": "Jay, I\u0027m sorry to disagree... Log.warning seems more appropriate for this situation (and consistent with the Unauthorized exception above). However, as I consider myself a newbie here, can I ask which is the rational behind the change you suggest?\n\nThanks!",
+      "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
