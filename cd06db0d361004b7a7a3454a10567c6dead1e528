@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5wY\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "Nope. Done",
+      "parentUuid": "AAAAUH/+6c8\u003d",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6V0\u003d",
         "filename": "keystone/contrib/revoke/configuration.rst",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-20T21:26:46Z",
       "side": 1,
       "message": "Is this cut-n-paste from the template?",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5wQ\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "yep.  Fixed",
+      "parentUuid": "AAAAUH/+6V0\u003d",
       "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5wI\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6IU\u003d",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6Hc\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 22
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-20T21:26:46Z",
       "side": 1,
       "message": "self._value \u003d value or uuid.uuid4()?",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5vc\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6Hc\u003d",
       "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5vY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6Ho\u003d",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5/Q\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 22
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5uk\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "removing.  Test is not going to be performed yet.",
+      "parentUuid": "AAAAUH/+5/Q\u003d",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5+M\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 22
@@ -115,6 +223,24 @@
       "writtenOn": "2014-01-20T21:26:46Z",
       "side": 1,
       "message": "Not sure I like this, but I don\u0027t have anything to suggest right now.",
+      "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5vA\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T22:25:24Z",
+      "side": 1,
+      "message": "The SQL version was chopped out.  The difference between the two of them is just the setup.",
+      "parentUuid": "AAAAUH/+5+M\u003d",
       "revId": "cd06db0d361004b7a7a3454a10567c6dead1e528",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
