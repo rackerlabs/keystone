@@ -61,7 +61,6 @@ from keystone import exception
 from keystone import notifications
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
-from keystone.openstack.common import timeutils
 from keystone import service
 
 # NOTE(dstanek): Tests inheriting from TestCase depend on having the
@@ -332,8 +331,6 @@ class TestCase(testtools.TestCase):
         self.addCleanup(dependency.reset)
 
         self.addCleanup(kvs.INMEMDB.clear)
-
-        self.addCleanup(timeutils.clear_time_override)
 
         # Ensure Notification subscriotions and resource types are empty
         self.addCleanup(notifications.SUBSCRIBERS.clear)
