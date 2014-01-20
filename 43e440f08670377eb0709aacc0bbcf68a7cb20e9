@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+6OQ\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "\"%(backend)\" should be \"%(backend)s\" -- There should be unit tests for the messages.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6L8\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "would be nice to know which key they were trying to set.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6D0\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "(nit) use \u0027 for strings per keystone guidelines.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+++c\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 24
@@ -31,6 +82,75 @@
       "side": 1,
       "message": "hmm, no i think i did a bad rebase somewhere - this was a problem before that i thought i got.",
       "parentUuid": "AAAAUH/+++c\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6CU\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "I think there should be a blank line there... abc is from python and six is a separate library.",
+      "parentUuid": "AAAAUH/++tU\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Bw\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "remove this since that\u0027s the default. or add a comment why it\u0027s needed.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5/4\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "should document what None indicates... some default timeout, or never expire?",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6A4\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "change \"the IntegrityError\" to \"an IntegrityError\", or \"this exception\"\n\nor is \"the\" supposed to be \"then\" ?",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -84,6 +204,23 @@
       "side": 1,
       "message": "Sounds good",
       "parentUuid": "AAAAUH/++tQ\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+53c\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "suggest change \"will expire\" to \"expires\" - what if it\u0027s already expired?",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -160,6 +297,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+52U\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "kvs is \"KvsDbImpl\"... should this be \"SqlalchemyDbImpl\" for consistency?",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6I8\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "I was going off of this documentation -- http://docs.sqlalchemy.org/en/rel_0_7/orm/tutorial.html#querying-with-joins\n\nMaybe don\u0027t need \"models.Key\" on previous line.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/++9k\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/migrate_repo/versions/001_kds_table.py",
         "patchSetId": 24
@@ -171,6 +342,74 @@
       "writtenOn": "2014-01-20T04:49:15Z",
       "side": 1,
       "message": "(NIT): Update copyright year to 2014",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+504\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "suggest remove this line since it\u0027s primary_key, and it\u0027s not there in the upgrade script.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+50Y\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "can\u0027t your database store binary values? This seems unnecessary.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+50A\u003d",
+        "filename": "keystone/tests/contrib/kds/api/base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "what does this change have to do with adding database functionality? put it in a separate commit.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6H0\u003d",
+        "filename": "keystone/tests/contrib/kds/db/test_host_key.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T22:04:38Z",
+      "side": 1,
+      "message": "use assertIs to compare singletons.",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
