@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/++5I\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T05:28:19Z",
+      "side": 1,
+      "message": "fc1843ba485e3 doesn\u0027t seem to link to any review/git commits from Oslo.\n\n\nLooks like this commit includes the following changes from oslo: \n\nI9043bf\n\n0d8f18b1\n\nI15ed49\n\nIt might be helpful to list each of the commits you\u0027re syncing from Oslo in the commit message along with the title of the commit as it landed in Oslo.",
+      "revId": "03b2d00a028cf94fa70b2d412eaa76a43a01e61d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
