@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+8qI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T14:33:36Z",
+      "side": 1,
+      "message": "Agreed. The commit message (besides the 50-char thing) does not describe what the patch is doing and why. What is the \"double parsing issue\"? What is the patch refactoring and why did you choose the strategy you did? These are the kinds of things that should go in a commit message.",
+      "parentUuid": "AAAAUH/++5c\u003d",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8ow\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T14:33:36Z",
+      "side": 1,
+      "message": "Instead of this hash comment, a docstring for the function below would be preferred.",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/++5o\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 2
