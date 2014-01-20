@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+7Lw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 20
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "is this is missing from common.config, nvm, it\u0027s in the extension",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7MI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "i don\u0027t see this option in your change to sample conf.",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7Gg\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "nit: if it\u0027s supposed to be private, prefix it with an _",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7I4\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "delete this line",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7JY\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "copy pasta on Example",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7JQ\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "example section does not exist",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7JA\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "I think this whole doc needs to be updated to actually reflect how to enable extensions. also, it should live over here: https://github.com/openstack/keystone/tree/master/doc/source/extensions",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7FQ\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "nit, remove this",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7Fg\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "nice comment",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7EQ\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "nit, extra line break here",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7Cs\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "ad description for filter",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7Cw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T18:09:40Z",
+      "side": 1,
+      "message": "add a description for revocation",
+      "revId": "e5413f2bf8752baf38287397b4ca13cabf49527c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
