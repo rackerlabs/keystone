@@ -37,6 +37,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6jM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 50
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "(nit) remove \"for\"",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6go\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "we also have an \"architecture\" page where this might be more appropriate: http://docs.openstack.org/developer/keystone/architecture.html\n\n(I\u0027m fine with it here... can reorganize later)",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+8MI\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 50
@@ -66,6 +100,40 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAUH/+8MI\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6ho\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "change \"list dicts\" to \"list of dicts\"",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6hc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "change \"can know\" to \"knows\"",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -107,6 +175,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6P8\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "the change from list_projects to list_projects \u0026 list_projects_in_domain is a candidate for splitting out into its own review.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+73E\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 50
@@ -136,6 +221,23 @@
       "side": 1,
       "message": "No, I don\u0027t think so…this is an internal method and not exposed via the API (see comment in assignment/core.py)",
       "parentUuid": "AAAAUH/+73E\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6ak\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "could create a hints and then call list_projects(self, domain_hints) to re-use code.",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -317,6 +419,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6TI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "I\u0027d like to see a log so that when someone asks why their comparator it will be obvious from the log that they mistyped it.",
+      "parentUuid": "AAAAUH/+7WY\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7/o\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 50
@@ -380,6 +500,24 @@
       "writtenOn": "2014-01-20T20:30:47Z",
       "side": 1,
       "message": "so what\u0027s the advantage…we call this as, say, DomainV3.build_driver_hints()",
+      "parentUuid": "AAAAUH/+7vU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Xc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "probably would best fit into Hints, since that\u0027s what it\u0027s constructing. Add a static method to Hints or a function in driver_hints:\n\n driver_hints.Hints.build_from_context(context, support_filters)",
       "parentUuid": "AAAAUH/+7vU\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -521,6 +659,24 @@
       "side": 1,
       "message": "I\u0027m open to that….but is that very pythonic?",
       "parentUuid": "AAAAUH/+72Y\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6S0\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "it is entirely pythonic.",
+      "parentUuid": "AAAAUH/+6zw\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -824,6 +980,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6RQ\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "This is broken because the config setting doesn\u0027t get set until after imports are done. Get rid of this line.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7tI\u003d",
         "filename": "keystone/tests/filtering.py",
         "patchSetId": 50
@@ -888,6 +1061,24 @@
       "side": 1,
       "message": "Nice…done.",
       "parentUuid": "AAAAUH/+7sU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6RE\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "Don\u0027t do this. It doesn\u0027t work because default argument values are calculated at import time, and config isn\u0027t set until after that.",
+      "parentUuid": "AAAAUH/+6kw\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -993,6 +1184,23 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAUH/+7kU\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6QY\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-20T20:41:20Z",
+      "side": 1,
+      "message": "don\u0027t do this. it\u0027s broken.",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
