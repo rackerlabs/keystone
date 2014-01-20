@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+544\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T21:50:07Z",
+      "side": 1,
+      "message": "Please wrap commit message at 72 chars per https://wiki.openstack.org/wiki/GitCommitMessages.\n\nAlso, it\u0027s not necessary to list out what the patch does; rather, it\u0027s preferred that the commit message indicate the problem and the strategy used to fix it. So perhaps something like the following?\n\n Remove side effects caused by dict parameters passed by reference\n\n Methods that have dicts supplied as parameters may have adverse side effects\n if the method changes the supplied parameter (and does not document that behavior).\n This patch fixes methods that modified supplied dict parameters by using dict.copy()\n to make a copy of the supplied dict parameter.",
+      "revId": "0fa1a991c193972bf4059ef518bfa49fccbebeb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
