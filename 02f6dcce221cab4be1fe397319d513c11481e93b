@@ -16,6 +16,24 @@
       "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+59Y\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T21:27:39Z",
+      "side": 1,
+      "message": "Hi Andres :)\n\nSo, it\u0027s all about who is the one reading the log. An operator is the one going to be reading the log files, not a user or a keystone administrator. The operator is going to be looking at the log files when errors occur -- in order to identify the source of a failure.\n\nIn this case, there is no failure, nor is there any security risk. The action of returning a 403 is a normal part of the operation of Keystone, and therefore there should be no warning or error logged. Instead, the log message level should be info() -- since this log message is merely information and not meant to warn the operator that something is wrong -- or debug() -- a finer-grained level of information. I would argue that this information should be he debug() level of message.",
+      "parentUuid": "AAAAUH/+6v8\u003d",
+      "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
