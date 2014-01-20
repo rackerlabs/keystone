@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+8U0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T15:19:36Z",
+      "side": 1,
+      "message": "The flatten method really needs to be part of the refactored code.  Without that, more complex policy using deeper values in the token can\u0027t be processed.  The logic is not policy or auth specific, but is certainly not part of the controller.  For now, keep it with authorization.py.",
+      "revId": "6a41630b67836d4f4a4857abf9c8794e8aba2d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8RQ\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-20T15:19:36Z",
+      "side": 1,
+      "message": "This needs to call flatten or deeper values in the token won\u0027t be accessed by policy",
+      "revId": "6a41630b67836d4f4a4857abf9c8794e8aba2d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
