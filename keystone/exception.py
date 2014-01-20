@@ -110,6 +110,14 @@ class ValidationSizeError(Error):
     title = 'Bad Request'
 
 
+class MissingCertificatesError(Error):
+    message_format = _('The certificates you requested are not available. '
+                       'It is likely that this server does not use PKI tokens '
+                       'otherwise this is the result of misconfiguration.')
+    code = 400
+    title = 'Cannot retrieve certificates'
+
+
 class SecurityError(Error):
     """Avoids exposing details of security failures, unless in debug mode."""
 
