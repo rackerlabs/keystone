@@ -1,0 +1,378 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+8Hg\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Can this be put up a line?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8Bw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Is this enforced somewhere or will the user get a 500 if they try to filter a numeric value with an inexact match?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8Ac\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Can you remove the wrapping parens there and also % key?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+8AY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Rewrite as \u0027LOG.debug(msg, key)\u0027\n\nWould it be more user friendly to return a 4XX error letting the user know that they messed up the query?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7/o\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Couldn\u0027t we just check if hints is None?  Will we ever pass a truthy value that doesn\u0027t have a filters method?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7vU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Since `cls` is not actually used should this be a staticmethod?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+76Y\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "This seems inefficient because I think we alway iterate through the entire list.  Can this be converted to an \u0027in\u0027 check?  If this were a set instead of a list of cost of the check would be even less.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+78M\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "If you rename \u0027inexact\u0027 here to \u0027comparator\u0027 it will simplify the rest of this method...",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+770\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "This can be removed if you do the above.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+72Y\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "This could probably be in another patch, but it would be nice to see some constants defined for type and comparator so that we  don\u0027t have to use the strings everywhere.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+70s\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Do you have plans to store other types of hints in this list?  This function forces us to look over the list twice everytime `hints.filters()` is called.  Once to evaluate the list comprehension and a second time to loop over the result and do something with each one.\n\nI would rather see a filters list that we don\u0027t have to filter.  Or if we really need this shared list structure we can return a generator instead of a list comprehension to limit the looping.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7gI\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Is there any reason that you are not using SQLAlchemy\u0027s contains, startswith and endswith column methods?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7yk\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Is there any reason that this would be an object that doesn\u0027t have the filters method?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7x8\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Is there any value to checking the type if you have going to \"val_attr \u003d\u003d \u00270\u0027\" anyway?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7xo\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Why is this not None or an empty Hints object?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7tY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Should this be \u0027hints or driver_hints.Hints()\u0027?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7tI\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Isn\u0027t this doing the same logic as the function called in the line above?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7sU\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Instead of None as the default you can use DEFAULT_DOMAIN_ID so that you can get rid of the conditional on line 87.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7k0\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Lines 29 through 32 can be rewritten to just:\n\n  self.assertEqual(len(hints.filters()), 2)",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7kY\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Same as above...",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7kU\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "Same as above...",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7jk\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-20T16:59:34Z",
+      "side": 1,
+      "message": "None instead of []?",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
