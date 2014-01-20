@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+7wY\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-20T16:33:28Z",
+      "side": 1,
+      "message": "nit: i think trust should be pluralized to trusts.",
+      "revId": "4c74bc92db207514d5595cf8e447bf9fe52a7068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
