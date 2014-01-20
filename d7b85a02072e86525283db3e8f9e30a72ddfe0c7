@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+7E8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T18:00:01Z",
+      "side": 1,
+      "message": "Sorry to be a stickler about the commit message, but it does not indicate what the improvement is. The detail simply repeats what the summary says. Instead, the commit message should describe the problem that the patch solves and the way that the patch solves it.\n\nFor example, something like this would be more appropriate:\n\n Add more detailed log output in case of 403 Forbidden responses\n\n When an API action is denied by the a policy, a 403 Forbidden is returned to\n the user. However, there is no indication in the log messages what policy\n condition failed, making it difficult for an admin to explain to a user why a\n particular request returned a 403. This patch adds a detailed debug message\n to the logs to allow an admin to investigate and determine the cause of the response.",
+      "revId": "d7b85a02072e86525283db3e8f9e30a72ddfe0c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7EI\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T18:00:01Z",
+      "side": 1,
+      "message": "This should definitely not be a warning. It should be a debug message. A warning is for cases where the operator should be concerned about the inner workings of Keystone or that security has possibly been breached in some way.",
+      "revId": "d7b85a02072e86525283db3e8f9e30a72ddfe0c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
