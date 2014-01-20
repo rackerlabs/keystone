@@ -16,6 +16,24 @@
       "revId": "4c74bc92db207514d5595cf8e447bf9fe52a7068",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+7n8\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T16:48:37Z",
+      "side": 1,
+      "message": "I think I originally had it that way, but gyee thought it should be \u0027trust\u0027 \u003d) \n\nhttps://review.openstack.org/#/c/66719/6/doc/source/event_notifications.rst\n\nI\u0027m fine with changing it either way.",
+      "parentUuid": "AAAAUH/+7wY\u003d",
+      "revId": "4c74bc92db207514d5595cf8e447bf9fe52a7068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
