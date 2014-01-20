@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6o8\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "(NIT): update copyright year?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6oQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "(NIT): could this be moved up a line to be consistent with most of the rest of the file? \n\n    \u0027federation\u0027: [\n        cfg.StrOpt(\u0027driver\u0027,\n                    default\u003d(\u0027keystone.contrib.federation\u0027\n                              \u0027.backends.sql.Federation\u0027))],",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6oE\u003d",
+        "filename": "keystone/contrib/federation/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "(NIT): copyright for a newly added file?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6n4\u003d",
+        "filename": "keystone/contrib/federation/backends/__init__.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6n0\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "Same copyright comment.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E+U\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -247,6 +332,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6m8\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "Do we need to make sure this session is closed (using a with or try except to make sure the connection is closed)?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//E6I\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 15
@@ -276,6 +378,23 @@
       "side": 1,
       "message": "will remove.",
       "parentUuid": "AAAAUH//E6I\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6mU\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "same comment about sessions here as above.",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -526,6 +645,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6mE\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "When is this planned to be implemented? Can this point to a bp at all, or some form of reference?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6cY\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "Add doc strings here to be consistent with  def _add_self_referential_links",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//EcU\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 15
@@ -682,6 +835,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6Zw\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "+1 this will make it much easier to review since it looks a lot like self.assertIsNone()",
+      "parentUuid": "AAAAUH//EaQ\u003d",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//EaM\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 15
@@ -716,6 +887,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6ZI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "Can\u0027t we use hex.uuid here like: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L110",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Yw\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "(NIT): \"\"\"Test creation of an IdentityProvider entity.\"\"\"",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6YA\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "(NIT): \"\"\"Test listing available IdentityProviders.\"\"\"",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Xg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "Suggest changing this to something a little more readable: \n\n    for idp in xrange(iterations)\n\nAlso, it the number of iterations something that needs to be passed in or could it just be defined in the test case as five?",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//EYk\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 15
@@ -744,6 +983,23 @@
       "writtenOn": "2014-01-17T19:07:22Z",
       "side": 1,
       "message": "we should know what the resulting list is supposed to look like so that we can check that the lists are equal instead of the length.",
+      "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6XM\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-20T20:19:18Z",
+      "side": 1,
+      "message": "Add doc strings to be consistent with other test cases.",
       "revId": "5f1d8898a4a19a1360b9ceed28207987adac9306",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
