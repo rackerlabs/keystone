@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5/k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-20T21:24:07Z",
+      "side": 1,
+      "message": "Of course you can, that\u0027s why I offered them :)",
+      "parentUuid": "AAAAUH/+7Bs\u003d",
+      "revId": "d7b85a02072e86525283db3e8f9e30a72ddfe0c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7EI\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
