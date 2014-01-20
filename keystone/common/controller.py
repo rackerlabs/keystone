@@ -227,8 +227,9 @@ class V2Controller(wsgi.Application):
         specified in the v2 call.
 
         """
-        ref['domain_id'] = DEFAULT_DOMAIN_ID
-        return ref
+        result = ref.copy()
+        result['domain_id'] = DEFAULT_DOMAIN_ID
+        return result
 
     @staticmethod
     def filter_domain_id(ref):

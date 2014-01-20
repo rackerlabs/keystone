@@ -140,7 +140,7 @@ class User(controller.V2Controller):
             user['default_project_id'] = default_project_id
 
         user_id = uuid.uuid4().hex
-        user_ref = self._normalize_domain_id(context, user.copy())
+        user_ref = self._normalize_domain_id(context, user)
         user_ref['id'] = user_id
         new_user_ref = self.identity_api.v3_to_v2_user(
             self.identity_api.create_user(user_id, user_ref))
