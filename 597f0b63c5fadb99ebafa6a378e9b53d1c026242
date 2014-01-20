@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6DA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 50
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6jM\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6go\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 50
@@ -65,6 +83,24 @@
       "writtenOn": "2014-01-20T20:41:20Z",
       "side": 1,
       "message": "we also have an \"architecture\" page where this might be more appropriate: http://docs.openstack.org/developer/keystone/architecture.html\n\n(I\u0027m fine with it here... can reorganize later)",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Ow\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Yeah. might be an idea - I\u0027ll come back in and look at that",
+      "parentUuid": "AAAAUH/+6go\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6N8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6ho\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6hc\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 50
@@ -134,6 +188,24 @@
       "writtenOn": "2014-01-20T20:41:20Z",
       "side": 1,
       "message": "change \"can know\" to \"knows\"",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Ng\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 50
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6hc\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6Mc\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "I agree we could break it out - the reason I did it here was due to the fact that now we have \"optional\" filtering at the driver level, we need to distinguish between that in \"required filtering\" (which is always for internal call only)….and this distinction would not be required if jt were not for this patch.",
+      "parentUuid": "AAAAUH/+6P8\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+73E\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 50
@@ -238,6 +328,24 @@
       "writtenOn": "2014-01-20T20:41:20Z",
       "side": 1,
       "message": "could create a hints and then call list_projects(self, domain_hints) to re-use code.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6MU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "We could….but I was kind of keeping the optional vs mandatory filtering separate (although I agree that within a driver you could enforce this)",
+      "parentUuid": "AAAAUH/+6ak\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -525,6 +633,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6Iw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "So i get what you are asking.  In fact, this is how I used to have it very similar to that - see versions 36 of this patch, where I had an __init__ method in Hints that was, essentially:\n\ndef __init__(self, context\u003dNone, supported_filters\u003dNone):\n\nHowever, others objected to this - and wanted it in the controller - I think it was to keep knowledge of context within the controller class.",
+      "parentUuid": "AAAAUH/+6Xc\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+76Y\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 50
@@ -677,6 +803,24 @@
       "side": 1,
       "message": "it is entirely pythonic.",
       "parentUuid": "AAAAUH/+6zw\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6II\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Ok, I get the idea.  Since we are close to the deadline, perhaps I could indeed make this a separate (post I2) patch?",
+      "parentUuid": "AAAAUH/+6S0\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -997,6 +1141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+6HQ\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6RQ\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+7tI\u003d",
         "filename": "keystone/tests/filtering.py",
         "patchSetId": 50
@@ -1079,6 +1241,24 @@
       "side": 1,
       "message": "Don\u0027t do this. It doesn\u0027t work because default argument values are calculated at import time, and config isn\u0027t set until after that.",
       "parentUuid": "AAAAUH/+6kw\u003d",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6G8\u003d",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "OK..undone!",
+      "parentUuid": "AAAAUH/+6RE\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1201,6 +1381,24 @@
       "writtenOn": "2014-01-20T20:41:20Z",
       "side": 1,
       "message": "don\u0027t do this. it\u0027s broken.",
+      "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+6Gw\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T21:20:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6QY\u003d",
       "revId": "597f0b63c5fadb99ebafa6a378e9b53d1c026242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
