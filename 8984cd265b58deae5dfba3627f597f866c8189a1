@@ -16,6 +16,24 @@
       "revId": "8984cd265b58deae5dfba3627f597f866c8189a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5qQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 4009,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-20T22:42:08Z",
+      "side": 1,
+      "message": "Oops - that shouldn\u0027t be skipped - it\u0027s only case sensitive tests that won\u0027t work here - see comment at end of this method",
+      "parentUuid": "AAAAUH/+5so\u003d",
+      "revId": "8984cd265b58deae5dfba3627f597f866c8189a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
