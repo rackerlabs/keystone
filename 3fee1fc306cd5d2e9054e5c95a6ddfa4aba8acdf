@@ -16,6 +16,24 @@
       "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5X0\u003d",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-20T23:41:43Z",
+      "side": 1,
+      "message": "Yes, it will list all the signing certificates - in the current case that is just one. \n\nWhen we get to the point of having multiple we can do /certficates/:id and this path will still be fine.",
+      "parentUuid": "AAAAUH/+6aw\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
