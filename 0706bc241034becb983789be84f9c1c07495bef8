@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+1eY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T16:04:11Z",
+      "side": 1,
+      "message": "(NIT): group this with the imports above after \u0027functools\u0027 and before \u0027uuid\u0027.",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1eU\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T16:04:11Z",
+      "side": 1,
+      "message": "Group with above imports.",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1eQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T16:04:11Z",
+      "side": 1,
+      "message": "same comment as previous",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1aQ\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T16:04:11Z",
+      "side": 1,
+      "message": "group with above.",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1aU\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T16:04:11Z",
+      "side": 1,
+      "message": "group with above",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1aA\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T16:04:11Z",
+      "side": 1,
+      "message": "group with above.",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
