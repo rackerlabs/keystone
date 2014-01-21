@@ -1,0 +1,237 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import uuid
+
+from keystone.openstack.common import timeutils
+
+#The set of attributes common between the RevokeEvent
+#and the dictionaries created from the token Data.
+_NAMES = ['trust_id',
+          'consumer_id',
+          'access_token_id',
+          'expires_at',
+          'domain_id',
+          'project_id',
+          'user_id',
+          'role_id']
+
+
+#additional arguments for creating a RevokeEvent
+_EVENT_ARGS = ['id', 'issued_before', 'revoked_at']
+
+#Values that will be in the token data but not in the event.
+#these will compared with event values that have different names.
+#For example: both trustor_id and trustee_id are compared against user_id
+_TOKEN_KEYS = ['user_domain_id',
+               'project_domain_id',
+               'issued_at',
+               'trustor_id',
+               'trustee_id']
+
+
+REVOKE_KEYS = _NAMES + _EVENT_ARGS
+
+
+def blank_token_data(issued_at):
+    token_data = dict()
+    for name in _NAMES:
+        token_data[name] = None
+    for name in _TOKEN_KEYS:
+        token_data[name] = None
+    #required field
+    token_data['issued_at'] = issued_at
+    return token_data
+
+
+class RevokeEvent(object):
+    def __init__(self, **kwargs):
+        for k in REVOKE_KEYS:
+            v = kwargs.get(k, None)
+            setattr(self, k, v)
+        if self.revoked_at is None:
+            self.revoked_at = timeutils.utcnow()
+        if self.issued_before is None:
+            self.issued_before = self.revoked_at
+        if self.id is None:
+            self.id = uuid.uuid4().hex
+
+    def to_dict(self, with_id=True):
+        keys = ['user_id',
+                'role_id',
+                'domain_id',
+                'project_id']
+        event = dict((key, self.__dict__[key]) for key in keys)
+        if with_id:
+            event['id'] = self.id.__str__()
+        if self.trust_id is not None:
+            event['OS-TRUST:trust_id'] = self.trust_id
+        if self.consumer_id is not None:
+            event['OS-OAUTH1:consumer_id'] = self.consumer_id
+        if self.consumer_id is not None:
+            event['OS-OAUTH1:access_token_id'] = self.access_token_id
+        if self.expires_at is not None:
+            event['expires_at'] = timeutils.isotime(self.expires_at,
+                                                    subsecond=True)
+        if self.issued_before is not None:
+            event['issued_before'] = timeutils.isotime(self.issued_before,
+                                                       subsecond=True)
+        return event
+
+    def key_for_name(self, name):
+        return "%s=%s" % (name, getattr(self, name) or '*')
+
+
+def attr_keys(event):
+    return map(event.key_for_name, _NAMES)
+
+
+def matches(event, token_values):
+    """See if the token matches the revocation event.
+
+
+    Compare each attribute from the event with the corresponding
+    value from the token.  If the event does not have a value for
+    the attribute, a match is still possible.  If the event has a
+    value for the attribute, and it does not match the token, no match
+    is possible, so skip the remaining checks.
+
+    :param event one revocation event to match
+    :param token_values dictionary with set of values taken from the
+    token
+    :returns if the token matches the revocation event, indicating the
+    token has been revoked
+    """
+
+    #something has to match in order to revoke the token
+    matched = False
+
+    #The token has three attributes that can match the user_id
+    if event.user_id is not None:
+        user_id_matched = False
+        for attribute_name in ['user_id', 'trustor_id', 'trustee_id']:
+            if event.user_id == token_values[attribute_name]:
+                user_id_matched = True
+                break
+        if not user_id_matched:
+            return False
+        else:
+            matched = True
+
+    #The token has two attributes that can match the domain_id
+    if event.domain_id is not None:
+        dom_id_matched = False
+        for attribute_name in ['user_domain_id', 'project_domain_id']:
+            if event.domain_id == token_values[attribute_name]:
+                dom_id_matched = True
+                break
+        if not dom_id_matched:
+            return False
+        else:
+            matched = True
+
+    #If any one check does not match, the while token does
+    #not match the event. The numerous return False indicate
+    # that the token is still valid and short-circuits the
+    #rest of the logic.
+    attribute_names = ['project_id',
+                       'expires_at', 'trust_id', 'consumer_id',
+                       'access_token_id']
+    for attribute_name in attribute_names:
+        attribute = getattr(event, attribute_name)
+        if attribute is not None:
+            if attribute != token_values[attribute_name]:
+                return False
+            else:
+                matched = True
+
+    if event.role_id is not None:
+        roles = token_values['roles']
+        role_found = False
+        for role in roles:
+            if event.role_id == role:
+                role_found = True
+                break
+        if role_found:
+            matched = True
+        else:
+            return False
+    matched = (matched and
+               event.issued_before > token_values['issued_at'])
+    return matched
+
+
+class RevokeTree(object):
+    def __init__(self, revoke_events=[]):
+        self.revoke_map = dict()
+        self.add_events(revoke_events)
+
+    def add_event(self, event):
+        revoke_map = self.revoke_map
+        for key in attr_keys(event):
+            revoke_map = revoke_map.setdefault(key, {})
+        revoke_map['issued_before'] = event.issued_before
+        return event
+
+    def remove_event(self, event):
+        stack = []
+        revoke_map = self.revoke_map
+        for name in _NAMES:
+            key = event.key_for_name(name)
+            nxt = revoke_map.get(key)
+            if nxt is None:
+                break
+            stack.append((revoke_map, key, nxt))
+            revoke_map = nxt
+        else:
+            if event.issued_before == revoke_map['issued_before']:
+                revoke_map.pop('issued_before')
+        for parent, key, child in reversed(stack):
+            if not any(child):
+                del parent[key]
+
+    def add_events(self, revoke_events):
+        map(self.add_event, revoke_events)
+
+    def is_revoked(self, token_data):
+
+        #Compare each level of the tree with the values from the token,
+        #taking into account the attributes that have alternative keys.
+        #if there is a match, continue down the tree.
+        #if there is no match, exit early.
+        alternatives = {
+            "user_id": ["user_id", "trustor_id", "trustee_id"],
+            "domain_id": ["user_domain_id", "project_domain_id"]}
+        subnode = [self.revoke_map]
+        for name in _NAMES:
+            bundle = []
+            any_key = "%s=*" % (name,)
+            for tree in subnode:
+                bundle.append(tree.get(any_key))
+                if name == "role_id":
+                    for role_id in token_data.get("roles", []):
+                        bundle.append(tree.get("role_id=%s" % (role_id,)))
+                else:
+                        for alt_name in alternatives.get(name, [name]):
+                            bundle.append(
+                                tree.get("%s=%s" % (name,
+                                                    token_data[alt_name])))
+                bundle = filter(None, bundle)
+                if not bundle:
+                    return False
+                subnode = bundle
+            else:
+                for leaf in subnode:
+                    issued_before = leaf.get('issued_before')
+                    if issued_before is not None:
+                        if issued_before > token_data['issued_at']:
+                            return True
