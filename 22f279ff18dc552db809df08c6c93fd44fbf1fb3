@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+1KQ\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T16:40:34Z",
+      "side": 1,
+      "message": "I checked and it\u0027s not useful to return None. Change this to raise an exception.",
+      "parentUuid": "AAAAUH/+1fc\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1ag\u003d",
         "filename": "keystone/policy/backends/sql.py",
         "patchSetId": 10
