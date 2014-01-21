@@ -1062,6 +1062,20 @@
 #list_limit=<None>
 
 
+[revoke]
+
+#
+# Options defined in keystone
+#
+
+# An implementation of the Revoke backend that does
+# notactually record the revocation events.  It is the default
+# implementation during the transition fromrevoke_by_id  to
+# revocation events.  The default will change in a future
+# release to backend that actually persists (string value)
+#driver=keystone.contrib.revoke.backends.fake.Revoke
+
+
 [signing]
 
 #
@@ -1202,6 +1216,16 @@
 # Time to cache tokens (in seconds). This has no effect unless
 # global and token caching are enabled. (integer value)
 #cache_time=<None>
+
+# Revoke Tokens By Token Identifier.  Settingrevoke_by_id to
+# True enables various forms of enumerating tokens, e.g. `list
+# tokens for user`.  These enumerations are processed to
+# determine the list of tokens to revoke.   Only disable if
+# you are switching to using the Revoke extension with
+# abackend other than
+# `keystone.contrib.revoke.backends.fake.Revoke` (boolean
+# value)
+#revoke_by_id=true
 
 
 [trust]
