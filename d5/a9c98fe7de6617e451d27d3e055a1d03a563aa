@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Jay Pipes <jaypipes@gmail.com>
+Code-Review+1: Arvind Tiwari <arvind.tiwari@hp.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Nassim Babaci <nassim.babaci@cloudwatt.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 21 Jan 2014 11:53:08 +0000
+Reviewed-on: https://review.openstack.org/66121
+Project: openstack/keystone
+Branch: refs/heads/master
