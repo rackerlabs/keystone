@@ -186,7 +186,25 @@ FILE_OPTIONS = {
         cfg.IntOpt('cache_time', default=None,
                    help=('Time to cache tokens (in seconds). This has no '
                          'effect unless global and token caching are '
-                         'enabled.'))],
+                         'enabled.')),
+        cfg.BoolOpt('revoke_by_id', default=True,
+                    help='Revoke Tokens By Token Identifier.  Setting'
+                    'revoke_by_id to True enables various forms of '
+                    'enumerating tokens, e.g. `list tokens for user`.  '
+                    'These enumerations are processed to determine the '
+                    'list of tokens to revoke.   Only disable if you are '
+                    'switching to using the Revoke extension with a'
+                    'backend other than '
+                    '`keystone.contrib.revoke.backends.fake.Revoke`')],
+    'revoke': [
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.revoke.backends.fake.Revoke',
+                   help='An implementation of the Revoke backend that does not'
+                        'actually record the revocation events.  It is the '
+                        'default implementation during the transition from'
+                        'revoke_by_id  to revocation events.  The default '
+                        'will change in a future release to backend that '
+                        'actually persists')],
     'cache': [
         cfg.StrOpt('config_prefix', default='cache.keystone',
                    help=('Prefix for building the configuration dictionary '
