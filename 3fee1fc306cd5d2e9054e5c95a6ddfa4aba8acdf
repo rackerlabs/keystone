@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0Ts\u003d",
+        "filename": "keystone/contrib/simple_cert/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-21T21:29:57Z",
+      "side": 1,
+      "message": "i\u0027m pretty sure inline like that it\u0027s line specific. \n\nI think only that line needs it because of the import * but it\u0027s a pattern i copied from elsewhere rather than really tested.",
+      "parentUuid": "AAAAUH/+0WM\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+0bs\u003d",
         "filename": "keystone/contrib/simple_cert/controllers.py",
         "patchSetId": 1
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0RI\u003d",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-21T21:29:57Z",
+      "side": 1,
+      "message": "no, these are public certs",
+      "parentUuid": "AAAAUH/+0Uk\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6aw\u003d",
         "filename": "keystone/contrib/simple_cert/controllers.py",
         "patchSetId": 1
@@ -142,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0RE\u003d",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-21T21:29:57Z",
+      "side": 1,
+      "message": "they\u0027re public certs so no policy is fine. \n\nYes on concatenation. Concatenating PEM files is the standard way of distributing multiple.",
+      "parentUuid": "AAAAUH/+0VI\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+0Vk\u003d",
         "filename": "keystone/contrib/simple_cert/routers.py",
         "patchSetId": 1
@@ -153,6 +207,24 @@
       "writtenOn": "2014-01-21T19:44:49Z",
       "side": 1,
       "message": "Suggest make \u0027OS-SIMPLE-CERT\u0027 a class property instead of set in both locations.",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+zyo\u003d",
+        "filename": "keystone/contrib/simple_cert/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-21T21:29:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+0Vk\u003d",
       "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -259,6 +331,24 @@
       "side": 1,
       "message": "uuid.uuid4().hex with a comment is preferred.",
       "parentUuid": "AAAAUH/+0ao\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+zyQ\u003d",
+        "filename": "keystone/tests/test_contrib_simple_cert.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-21T21:29:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+0Uw\u003d",
       "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
