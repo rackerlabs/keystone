@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+0yo\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-21T17:54:48Z",
+      "side": 1,
+      "message": "If we want this to be consistent with the other AWS compatibility API names, this could just be \"CloudFormation service\"",
+      "revId": "11cd8e66e7fed956b7d3b9906e5016a509995004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0yY\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-21T17:54:48Z",
+      "side": 1,
+      "message": "\"Orchestration Service\" is a better/more descriptive name IMO, and more consistent with the other native API names.",
+      "revId": "11cd8e66e7fed956b7d3b9906e5016a509995004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
