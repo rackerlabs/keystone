@@ -19,6 +19,176 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0Cw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "(nit) change \"that exposed\" to \"that are exposed\"",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z+Q\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "this function modifies ref so there\u0027s no need to return it.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0Bc\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "why set the default if this is nullable in the database?",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z98\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "can this use self.check_immutable_params since it\u0027s the same class?",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z+M\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "the idp_ref was modified by filter_params, so remove \"idp_ref \u003d \"",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z/I\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "According to the HTTP 1.1 spec a 201 Created response must set the Location header, too.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0As\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "it\u0027s weird that this is only called in 2 places, one place it uses the default and the other passes keys. How about pass the set of mutable parameters each time and then don\u0027t have to use the complicated class defaults method?",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0AU\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "I don\u0027t see how is-a is the correct relationship here -- a federation protocol is a child of identityprovider not equivalent. Suggest have a different class that both are derived from (_BaseController or something).",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z8U\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "could use self here rather than \"FederationProtocol\" ?",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z8E\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "needs a Location header in response.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+z6c\u003d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 22
@@ -36,6 +206,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+z6g\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "should be\n\n PUT /OS-FEDERATION/identity_providers/$identity_provider",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z6M\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "revert whitespace change on previous line.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z50\u003d",
+        "filename": "keystone/tests/test_backend_federation_sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "remove this function since this is the default.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z5M\u003d",
+        "filename": "keystone/tests/test_sql_migrate_extensions.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "suggest move this to setUp rather than changing __init__ for testcase.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+z5Y\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 22
@@ -47,6 +285,23 @@
       "writtenOn": "2014-01-21T21:02:59Z",
       "side": 1,
       "message": "needs a better validator",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z5E\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T21:03:41Z",
+      "side": 1,
+      "message": "remove this method since it\u0027s the default.",
       "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
