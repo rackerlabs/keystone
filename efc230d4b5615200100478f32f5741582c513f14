@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+4zk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "Should we substitute \u0027main\u0027 with \u0027[DEFAULT]\u0027?",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4zQ\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "s/list dicts/list of dictionaries/g",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4vY\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "s/he/the/",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4uo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "s/filers/filters/",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4uI\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "For this patch, we only care about applying the limit to list_{entity} right? We are not worried about the use case for filtering a user\u0027s projects?",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4tw\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4027,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "always*",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4to\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4029,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "have*",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4tk\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4051,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "created*",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4tE\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T03:46:00Z",
+      "side": 1,
+      "message": "Bug report?",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
