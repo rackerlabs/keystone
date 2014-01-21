@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+3oA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+4zk\u003d",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+4zQ\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 19
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-21T03:46:00Z",
       "side": 1,
       "message": "s/list dicts/list of dictionaries/g",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+3nM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "..actually this section is duplicated somehow from the one above - some error in the rebase…it should be removed.",
+      "parentUuid": "AAAAUH/+4zQ\u003d",
       "revId": "efc230d4b5615200100478f32f5741582c513f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+3mw\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+4vY\u003d",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+4uo\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 19
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-21T03:46:00Z",
       "side": 1,
       "message": "s/filers/filters/",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+3mM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+4uo\u003d",
       "revId": "efc230d4b5615200100478f32f5741582c513f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+3Lk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "That\u0027s a fair point.  For this patch, you are not…although one could imagine doing that…let\u0027s leave this to a separate patch",
+      "parentUuid": "AAAAUH/+4uI\u003d",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+4tw\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 19
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-21T03:46:00Z",
       "side": 1,
       "message": "always*",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+3kA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4027,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+4tw\u003d",
       "revId": "efc230d4b5615200100478f32f5741582c513f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+3j8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4029,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+4to\u003d",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+4tk\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 19
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+3j4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 4051,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+4tk\u003d",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+4tE\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 19
@@ -149,6 +293,24 @@
       "writtenOn": "2014-01-21T03:46:00Z",
       "side": 1,
       "message": "Bug report?",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+3Go\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-21T10:49:46Z",
+      "side": 1,
+      "message": "Good point - actually I retested this with the policy setting in the loop and it now works fine…so either my pilot error earlier or it has been fixed (this was back in Havana when this test was first written).  Hence comment now removed and code place in line in loop.",
+      "parentUuid": "AAAAUH/+4tE\u003d",
       "revId": "efc230d4b5615200100478f32f5741582c513f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
