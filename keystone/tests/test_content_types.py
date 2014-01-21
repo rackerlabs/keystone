@@ -18,6 +18,7 @@ import six
 
 from keystone.common import extension
 from keystone import config
+from keystone import tests
 from keystone.tests import rest
 
 
@@ -1287,6 +1288,20 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
                 },
             },
             expected_status=200)
+
+
+class RevokeApiJsonTestCase(JsonTestCase):
+    def config_files(self):
+        cfg_list = self._config_file_list[:]
+        cfg_list.append(tests.dirs.tests('test_revoke_kvs.conf'))
+        return cfg_list
+
+    def setUp(self):
+        super(RevokeApiJsonTestCase, self).setUp()
+
+    def test_fetch_revocation_list_admin_200(self):
+        #Not a skip as this will never be alid in this configuration.
+        pass
 
 
 class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
