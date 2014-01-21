@@ -95,8 +95,8 @@ def validate_auth_info(self, user_ref, tenant_ref):
             raise exception.Unauthorized(msg)
 
 
-@dependency.requires('assignment_api', 'identity_api', 'token_provider_api',
-                     'trust_api')
+@dependency.requires('assignment_api', 'identity_api', 'revoke_api',
+                     'token_provider_api', 'trust_api')
 @dependency.provider('token_api')
 class Manager(manager.Manager):
     """Default pivot point for the Token backend.
@@ -233,7 +233,8 @@ class Manager(manager.Manager):
         :param project_id: optional project identifier
         """
         for user_id in user_ids:
-            self.delete_tokens_for_user(user_id, project_id=project_id)
+            if CONF.token.revoke_by_id:
+                self.delete_tokens_for_user(user_id, project_id=project_id)
 
     def _invalidate_individual_token_cache(self, token_id):
         # NOTE(morganfainberg): invalidate takes the exact same arguments as
