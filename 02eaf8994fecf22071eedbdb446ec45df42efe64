@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+16o\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_protocol - the fact that it\u0027s implemented as a PUT is irellevant here",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+14c\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "same",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+14I\u003d",
+        "filename": "keystone/contrib/federation/backends/__init__.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "empty files don\u0027t need copyrights",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+14E\u003d",
+        "filename": "keystone/contrib/federation/backends/__init__.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "you can\u0027t assign copyright to the foundation",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+13s\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_idp",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+11c\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_identity_provider",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+10Q\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_idp",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+11k\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_protocol",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1z8\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+10A\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "create_",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1zk\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T14:58:39Z",
+      "side": 1,
+      "message": "400 ValidationError",
+      "revId": "02eaf8994fecf22071eedbdb446ec45df42efe64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
