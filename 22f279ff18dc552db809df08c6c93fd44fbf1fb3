@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+1Ls\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T16:38:03Z",
+      "side": 1,
+      "message": "OK, I tried this.\n\nWithout this change, there\u0027s no output.\n\nWith this change, the output is like:\n\n 2014-01-21 10:35:39.479 5364 WARNING keystone.openstack.common.db.sqlalchemy.session [-] This application has not enabled MySQL traditional mode, which means silent data corruption may occur. Please encourage the application developers to enable this mode.\n 2014-01-21 10:35:39.499 5364 CRITICAL keystone [-]\n\nSo the output has changed, and not for the better. For some reason no message is printed with the error... it just says CRITICAL.",
+      "parentUuid": "AAAAUH/+1gw\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1gE\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 10
