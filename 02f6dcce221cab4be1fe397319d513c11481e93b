@@ -34,6 +34,24 @@
       "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+2b8\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 9412
+      },
+      "writtenOn": "2014-01-21T13:01:24Z",
+      "side": 1,
+      "message": "Hi Jay, I appreciate your explanation! Thanks! Seen that way, I understand the point, and agree with you.",
+      "parentUuid": "AAAAUH/+59Y\u003d",
+      "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
