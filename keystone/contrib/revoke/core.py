@@ -24,6 +24,7 @@ from keystone.common import manager
 from keystone import config
 from keystone.contrib.revoke import model
 from keystone import exception
+from keystone import notifications
 from keystone.openstack.common import log
 
 CONF = config.CONF
@@ -53,7 +54,6 @@ EXTENSION_DATA = {
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
-
 @dependency.provider('revoke_api')
 class Manager(manager.Manager):
     """Revoke API Manager.
@@ -64,12 +64,79 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.revoke.driver)
+        self._register_listeners()
+
+
+    def _user_disabled_callback(self, service, resource_type, operation,
+                                  payload):
+        event = model.RevokeEvent(id=model.EventIdentifier(),
+                                  user_id=payload['resource_info'])
+        self.driver.revoke(event)
+
+    def _role_deleted_callback(self, service, resource_type, operation,
+                                  payload):
+        event = model.RevokeEvent(id=model.EventIdentifier(),
+                                  role_id=payload['resource_info'])
+        self.driver.revoke(event)
+
+    def _project_deleted_callback(self, service, resource_type, operation,
+                                  payload):
+        event = model.RevokeEvent(id=model.EventIdentifier(),
+                                  project_id=payload['resource_info'])
+        self.driver.revoke(event)
+
+    def _group_deleted_callback(self, service, resource_type, operation,
+                                  payload):
+        pass
+
+    def _domain_disabled_callback(self, service, resource_type, operation,
+                                  payload):
+        self.revoke_by_domain(payload['resource_info'])
+
+    def _register_listeners(self):
+         
+         notifications.register_event_callback('deleted',
+                                               'role',
+                                               self._role_deleted_callback)
+         notifications.register_event_callback('deleted',
+                                               'user',
+                                               self._user_disabled_callback)
+
+         notifications.register_event_callback('disabled',
+                                               'user',
+                                               self._user_disabled_callback)
+
+         notifications.register_event_callback('deleted',
+                                               'project',
+                                               self._project_deleted_callback)
+         
+         notifications.register_event_callback('disabled',
+                                               'project',
+                                               self._project_deleted_callback)
+
+         notifications.register_event_callback('deleted',
+                                               'group',
+                                               self._group_deleted_callback)
+         notifications.register_event_callback('disabled',
+                                               'domain',
+                                               self._domain_disabled_callback)
+
 
     def revoke_by_expiration(self, user_id, expires_at):
         event = model.RevokeEvent(id=model.EventIdentifier(),
                                   user_id=user_id,
                                   expires_at=expires_at)
         self.driver.revoke(event)
+
+    def revoke_by_grant(self, role_id, user_id=None,
+                        domain_id=None, project_id=None):
+        event = model.RevokeEvent(id=model.EventIdentifier(),
+                                  user_id=user_id,
+                                  role_id=role_id,
+                                  domain_id=domain_id,
+                                  project_id=project_id)
+        self.driver.revoke(event)
+
 
     def revoke_by_user(self, user_id):
         event = model.RevokeEvent(id=model.EventIdentifier(),
@@ -92,11 +159,6 @@ class Manager(manager.Manager):
         event = model.RevokeEvent(id=model.EventIdentifier(),
                                   domain_id=domain_id,
                                   user_id=user_id)
-        self.driver.revoke(event)
-
-    def revoke_by_project(self, project_id):
-        event = model.RevokeEvent(id=model.EventIdentifier(),
-                                  project_id=project_id)
         self.driver.revoke(event)
 
     #TODO(ayoung): this needs a unit test
@@ -153,13 +215,25 @@ class Manager(manager.Manager):
                     return False
                 else:
                     matched = True
-
+            #TODO(ayoung)  needs a list of roles to check
             if event.expires_at is not None:
                 token_date = token_values['expires_at']
                 if event.expires_at != token_date:
                     return False
                 else:
                     matched = True
+
+            if event.role_id is not None:
+                roles = token_values['roles']
+                role_found = False
+                for role in roles:
+                    if event.role_id == role:
+                        role_found = True
+                        break
+                if role_found:
+                    matched = True
+                else:
+                    return False
 
             if event.trust_id is not None:
                 if event.trust_id != token_values['trust_id']:

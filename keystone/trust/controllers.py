@@ -220,7 +220,8 @@ class TrustV3(controller.V3Controller):
         _admin_trustor_only(context, trust, user_id)
         self.trust_api.delete_trust(trust_id)
         userid = trust['trustor_user_id']
-        self.token_api.delete_tokens(userid, trust_id=trust_id)
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_tokens(userid, trust_id=trust_id)
 
     @controller.protected()
     def list_roles_for_trust(self, context, trust_id):

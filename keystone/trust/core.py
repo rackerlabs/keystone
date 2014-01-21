@@ -32,6 +32,7 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
+@dependency.requires('revoke_api')
 @dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
@@ -43,6 +44,10 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.trust.driver)
+
+    def delete_trust(self, trust_id):
+        self.revoke_api.revoke_by_trust(trust_id)
+        return self.driver.delete_trust(trust_id)
 
 
 @six.add_metaclass(abc.ABCMeta)
