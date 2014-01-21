@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+0Mk\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T20:14:24Z",
+      "side": 1,
+      "message": "add a . at end of sentence.",
+      "revId": "619b6670b04bdb97543685f0cfc8232fa9f609e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0Mc\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T20:14:24Z",
+      "side": 1,
+      "message": "add . at end of sentence.",
+      "revId": "619b6670b04bdb97543685f0cfc8232fa9f609e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0L8\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T20:14:24Z",
+      "side": 1,
+      "message": "identity_providers should be identity_provider ?",
+      "revId": "619b6670b04bdb97543685f0cfc8232fa9f609e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0Lw\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T20:14:24Z",
+      "side": 1,
+      "message": "could have \"construct_identity_provider_url()\" so don\u0027t have to duplicate identity_providers/{idp_id}/ everywhere.",
+      "revId": "619b6670b04bdb97543685f0cfc8232fa9f609e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0Lk\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T20:14:24Z",
+      "side": 1,
+      "message": "It\u0027s incorrect to send a 400 Bad Request for this since the server understood the request. Should be 403 Forbidden since the server didn\u0027t want to do it.",
+      "revId": "619b6670b04bdb97543685f0cfc8232fa9f609e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0K8\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T20:14:24Z",
+      "side": 1,
+      "message": "since the request was understood this should not be a 400, should be 403 Forbidden since the server understood but didn\u0027t want to do it.",
+      "revId": "619b6670b04bdb97543685f0cfc8232fa9f609e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
