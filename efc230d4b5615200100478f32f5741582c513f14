@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0s0\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T18:19:09Z",
+      "side": 1,
+      "message": "Would it be appropriate to add a TODO to revisit this at that time?",
+      "parentUuid": "AAAAUH/+3Lk\u003d",
+      "revId": "efc230d4b5615200100478f32f5741582c513f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+4tw\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 19
