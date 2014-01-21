@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+1oY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T15:32:38Z",
+      "side": 1,
+      "message": "Is there ever a change that the default None will be returned on the line above and then this line would fail?",
+      "revId": "1191c8242f247c15dc7d4214a7d047f48f0f1612",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1ls\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T15:32:38Z",
+      "side": 1,
+      "message": "nit: same as below",
+      "revId": "1191c8242f247c15dc7d4214a7d047f48f0f1612",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1ng\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T15:32:38Z",
+      "side": 1,
+      "message": "nit: no need to str() here since you specify it on line 492.",
+      "revId": "1191c8242f247c15dc7d4214a7d047f48f0f1612",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
