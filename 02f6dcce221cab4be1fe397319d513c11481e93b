@@ -52,6 +52,24 @@
       "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+s\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2014-01-21T14:29:20Z",
+      "side": 1,
+      "message": "Hi Jay, for any reason If I set the log as debug it can\u0027t be shown\nIs it possible debug logs could not be included inside exception catch?  info log works ok",
+      "parentUuid": "AAAAUH/+59Y\u003d",
+      "revId": "02f6dcce221cab4be1fe397319d513c11481e93b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
