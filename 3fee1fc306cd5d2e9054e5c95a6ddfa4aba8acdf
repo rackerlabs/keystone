@@ -34,6 +34,23 @@
       "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0oQ\u003d",
+        "filename": "keystone/tests/test_contrib_simple_cert.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-21T18:45:05Z",
+      "side": 1,
+      "message": "I believe the PTL prefers that you use uuid.uuid4().hex instead of a constant like doesnotexist",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
