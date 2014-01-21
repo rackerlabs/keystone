@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+5Gg\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2014-01-21T01:33:50Z",
+      "side": 1,
+      "message": "only mock is 3rd party",
+      "revId": "d4059127029c8d07cce56c7de403b1045b6a6d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5G0\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2014-01-21T01:33:50Z",
+      "side": 1,
+      "message": "os is stdlib",
+      "revId": "d4059127029c8d07cce56c7de403b1045b6a6d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
