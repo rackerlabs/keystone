@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+z74\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-21T21:02:59Z",
+      "side": 1,
+      "message": "nit, we can take this as a bug, should be .Federation at the end",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z6c\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-21T21:02:59Z",
+      "side": 1,
+      "message": "a bunch of these are missing :return: comments",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+z5Y\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-21T21:02:59Z",
+      "side": 1,
+      "message": "needs a better validator",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
