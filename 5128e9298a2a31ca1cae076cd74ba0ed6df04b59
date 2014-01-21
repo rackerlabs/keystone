@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+1DI\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-21T16:57:51Z",
+      "side": 1,
+      "message": "i\u0027ll open a bug for this, we should be able to do somehting better than go to the wsgi layer.",
+      "revId": "5128e9298a2a31ca1cae076cd74ba0ed6df04b59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
