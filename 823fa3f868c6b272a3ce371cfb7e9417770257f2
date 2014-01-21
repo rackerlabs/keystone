@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+zXg\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T23:34:02Z",
+      "side": 1,
+      "message": "just have extensions register themselves here",
+      "revId": "823fa3f868c6b272a3ce371cfb7e9417770257f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
