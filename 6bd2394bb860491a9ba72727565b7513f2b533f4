@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+4Vs\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-21T06:04:43Z",
+      "side": 1,
+      "message": "looks like a typo in this sentence",
+      "revId": "6bd2394bb860491a9ba72727565b7513f2b533f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4VY\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-21T06:04:43Z",
+      "side": 1,
+      "message": "looks like a similar typo.  If change the default_domain_id???",
+      "revId": "6bd2394bb860491a9ba72727565b7513f2b533f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4PY\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-21T06:04:43Z",
+      "side": 1,
+      "message": "Why no need for the lambda stuff?  Why no need to worry about getting dynamically updated config stuff here?",
+      "revId": "6bd2394bb860491a9ba72727565b7513f2b533f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
