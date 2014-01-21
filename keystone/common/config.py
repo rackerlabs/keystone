@@ -76,6 +76,9 @@ FILE_OPTIONS = {
         cfg.BoolOpt('caching', default=True),
         cfg.IntOpt('revocation_cache_time', default=3600),
         cfg.IntOpt('cache_time', default=None)],
+    'revoke': [
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.revoke.backends.fake.Revoke')],
     'cache': [
         cfg.StrOpt('config_prefix', default='cache.keystone'),
         cfg.IntOpt('expiration_time', default=600),
