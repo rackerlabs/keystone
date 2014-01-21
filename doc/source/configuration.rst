@@ -856,6 +856,13 @@ Federation
 
    extensions/federation-configuration.rst
 
+Revocation Events
+------------------
+.. toctree::
+   :maxdepth: 1
+
+   extensions/revoke-configuration.rst
+
 .. _`prepare your deployment`:
 
 Preparing your deployment
