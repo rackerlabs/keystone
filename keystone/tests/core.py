@@ -31,6 +31,7 @@ import testtools
 from testtools import testcase
 import webob
 
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.fixture import mockpatch
 from keystone.openstack.common import gettextutils
 
@@ -59,7 +60,6 @@ from keystone.common import utils as common_utils
 from keystone import config
 from keystone import exception
 from keystone import notifications
-from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
@@ -155,7 +155,8 @@ def setup_database():
     if os.path.exists(db):
         os.unlink(db)
     if not os.path.exists(pristine):
-        migration.db_sync(migration_helpers.find_migrate_repo())
+        migration.db_sync((migration_helpers.find_migrate_repo()))
+        migration_helpers.sync_database_to_version(extension='revoke')
         shutil.copyfile(db, pristine)
     else:
         shutil.copyfile(pristine, db)
