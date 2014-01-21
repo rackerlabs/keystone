@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0N4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T20:13:05Z",
+      "side": 1,
+      "message": "six is a thirdparty lib so the import placement is OK.\n\nhttp://docs.openstack.org/developer/hacking/#imports",
+      "parentUuid": "AAAAUH/+1eY\u003d",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1eU\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0Nk\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T20:13:05Z",
+      "side": 1,
+      "message": "Actually the import grouping above is incorrect since lxml is thirdparty. lxml and six should be grouped together.",
+      "parentUuid": "AAAAUH/+1eU\u003d",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1eQ\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
         "patchSetId": 3
@@ -47,6 +83,41 @@
       "writtenOn": "2014-01-21T16:04:11Z",
       "side": 1,
       "message": "same comment as previous",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0M8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T20:13:05Z",
+      "side": 1,
+      "message": "This one is OK too.",
+      "parentUuid": "AAAAUH/+1eQ\u003d",
+      "revId": "0706bc241034becb983789be84f9c1c07495bef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0Ms\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/010_normalize_identity_migration.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T20:13:05Z",
+      "side": 1,
+      "message": "I\u0027d actually rather see this one level more indented than the line below.  This would make it more obvious to me that it\u0027s a part of the \u0027if\u0027 statement.",
       "revId": "0706bc241034becb983789be84f9c1c07495bef8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
