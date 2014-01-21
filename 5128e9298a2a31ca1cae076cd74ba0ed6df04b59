@@ -16,6 +16,57 @@
       "revId": "5128e9298a2a31ca1cae076cd74ba0ed6df04b59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+064\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T17:33:10Z",
+      "side": 1,
+      "message": "Needs a driver interface in a future patch",
+      "revId": "5128e9298a2a31ca1cae076cd74ba0ed6df04b59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+02Y\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T17:33:10Z",
+      "side": 1,
+      "message": "This needs to be replaced with an appropriate validator for IdP and for Protocol.  Potentially multiple",
+      "revId": "5128e9298a2a31ca1cae076cd74ba0ed6df04b59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+05o\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T17:33:10Z",
+      "side": 1,
+      "message": "You could make these constants:\nkwargs \u003d {\u0027expected_status\u0027: 404}  could be\nEXPECT_NOT_FOUND \u003d {\u0027expected_status\u0027: 404}",
+      "revId": "5128e9298a2a31ca1cae076cd74ba0ed6df04b59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
