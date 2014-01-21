@@ -25,7 +25,7 @@ from keystone.openstack.common.notifier import api as notifier_api
 LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
 # a new action is supported.
-ACTIONS = frozenset(['created', 'deleted', 'updated'])
+ACTIONS = frozenset(['created', 'deleted', 'disabled', 'updated'])
 # resource types that can be notified
 RESOURCE_TYPES = set()
 SUBSCRIBERS = {}
@@ -74,6 +74,11 @@ def updated(*args, **kwargs):
     return ManagerNotificationWrapper('updated', *args, **kwargs)
 
 
+def disabled(*args, **kwargs):
+    """Decorator to send notifications for ``Manager.update_*`` methods."""
+    return ManagerNotificationWrapper('disabled', *args, **kwargs)
+
+
 def deleted(*args, **kwargs):
     """Decorator to send notifications for ``Manager.delete_*`` methods."""
     return ManagerNotificationWrapper('deleted', *args, **kwargs)
@@ -94,10 +99,7 @@ def register_event_callback(event, resource_type, callbacks):
                            'be one of: %(actions)s') %
                          {'event': event, 'actions': ', '.join(ACTIONS)})
     if resource_type not in RESOURCE_TYPES:
-        raise ValueError(_('%(resource_type)s is not a valid notification '
-                           'resource, must be one of: %(types)s') %
-                         {'resource_type': resource_type,
-                          'types': ', '.join(RESOURCE_TYPES)})
+        RESOURCE_TYPES.add(resource_type)
 
     if not hasattr(callbacks, '__iter__'):
         callbacks = [callbacks]
