@@ -63,7 +63,8 @@ class ConsumerCrudV3(controller.V3Controller):
     def delete_consumer(self, context, consumer_id):
         user_token_ref = self.token_api.get_token(context['token_id'])
         user_id = user_token_ref['user'].get('id')
-        self.token_api.delete_tokens(user_id, consumer_id=consumer_id)
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_tokens(user_id, consumer_id=consumer_id)
         self.oauth_api.delete_consumer(consumer_id)
 
     def _validate_consumer_ref(self, consumer):
@@ -95,7 +96,8 @@ class AccessTokenCrudV3(controller.V3Controller):
     def delete_access_token(self, context, user_id, access_token_id):
         access_token = self.oauth_api.get_access_token(access_token_id)
         consumer_id = access_token['consumer_id']
-        self.token_api.delete_tokens(user_id, consumer_id=consumer_id)
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_tokens(user_id, consumer_id=consumer_id)
         return self.oauth_api.delete_access_token(
             user_id, access_token_id)
 

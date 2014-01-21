@@ -43,7 +43,8 @@ DEFAULT_DOMAIN = {'description':
 
 
 @dependency.provider('assignment_api')
-@dependency.requires('credential_api', 'identity_api', 'token_api')
+@dependency.requires('credential_api', 'identity_api',
+                     'revoke_api', 'token_api')
 class Manager(manager.Manager):
     """Default pivot point for the Assignment backend.
 
@@ -76,15 +77,19 @@ class Manager(manager.Manager):
                                          ret['domain_id'])
         return ret
 
+    @notifications.disabled('project')
+    def _disable_project(self, tenant_id):
+        return self.token_api.delete_tokens_for_users(
+            self.list_user_ids_for_project(tenant_id),
+            project_id=tenant_id)
+
     @notifications.updated('project')
     def update_project(self, tenant_id, tenant):
         tenant = tenant.copy()
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         if not tenant.get('enabled', True):
-            self.token_api.delete_tokens_for_users(
-                self.list_user_ids_for_project(tenant_id),
-                project_id=tenant_id)
+            self._disable_project(tenant_id)
         ret = self.driver.update_project(tenant_id, tenant)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, ret['name'],
@@ -282,6 +287,7 @@ class Manager(manager.Manager):
     def get_domain_by_name(self, domain_name):
         return self.driver.get_domain_by_name(domain_name)
 
+    @notifications.created('domain')
     def create_domain(self, domain_id, domain):
         ret = self.driver.create_domain(domain_id, domain)
         if SHOULD_CACHE(ret):
@@ -289,16 +295,22 @@ class Manager(manager.Manager):
             self.get_domain_by_name.set(ret, self, ret['name'])
         return ret
 
+    @notifications.disabled('domain')
+    def _disable_domain(self, domain_id):
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_tokens_for_domain(domain_id)
+
     def update_domain(self, domain_id, domain):
         ret = self.driver.update_domain(domain_id, domain)
         # disable owned users & projects when the API user specifically set
         #     enabled=False
         if not domain.get('enabled', True):
-            self.token_api.delete_tokens_for_domain(domain_id)
+            self._disable_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, ret['name'])
         return ret
 
+    @notifications.deleted('domain')
     def delete_domain(self, domain_id):
         # explicitly forbid deleting the default domain (this should be a
         # carefully orchestrated manual process involving configuration
@@ -446,24 +458,34 @@ class Manager(manager.Manager):
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
+        self.driver.delete_grant(role_id, user_id, group_id, domain_id,
+                                 project_id, inherited_to_projects)
+
         user_ids = []
-        if group_id is not None:
-            # NOTE(morganfainberg): The user ids are the important part for
-            # invalidating tokens below, so extract them here.
+        if group_id is None:
+            self.revoke_api.revoke_by_grant(user_id=user_id,
+                                            role_id=role_id,
+                                            domain_id=domain_id,
+                                            project_id=project_id)
+        else:
             try:
                 for user in self.identity_api.list_users_in_group(group_id,
                                                                   domain_id):
                     if user['id'] != user_id:
+                        # NOTE(morganfainberg): The user ids are used
+                        # for invalidating tokens below, so extract them here.
+
                         user_ids.append(user['id'])
+                        self.revoke_api.revoke_by_grant(user_id=user['id'],
+                                                        role_id=role_id,
+                                                        domain_id=domain_id,
+                                                        project_id=project_id)
             except exception.GroupNotFound:
                 LOG.debug(_('Group %s not found, no tokens to invalidate.'),
                           group_id)
 
-        self.driver.delete_grant(role_id, user_id, group_id, domain_id,
-                                 project_id, inherited_to_projects)
-        if user_id is not None:
-            user_ids.append(user_id)
-        self.token_api.delete_tokens_for_users(user_ids)
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_tokens_for_users(user_ids)
 
     def _delete_tokens_for_role(self, role_id):
         assignments = self.list_role_assignments_for_role(role_id=role_id)

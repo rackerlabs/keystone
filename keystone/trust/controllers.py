@@ -169,9 +169,7 @@ class TrustV3(controller.V3Controller):
                 except ValueError:
                     raise exception.ValidationTimeStampError()
             new_trust = self.trust_api.create_trust(
-                trust_id=uuid.uuid4().hex,
-                trust=trust,
-                roles=clean_roles)
+                uuid.uuid4().hex, trust, clean_roles)
             self._fill_in_roles(context, new_trust, all_roles)
             return TrustV3.wrap_member(context, new_trust)
         except KeyError as e:
@@ -220,7 +218,8 @@ class TrustV3(controller.V3Controller):
         _admin_trustor_only(context, trust, user_id)
         self.trust_api.delete_trust(trust_id)
         userid = trust['trustor_user_id']
-        self.token_api.delete_tokens(userid, trust_id=trust_id)
+        if CONF.token.revoke_by_id:
+            self.token_api.delete_tokens(userid, trust_id=trust_id)
 
     @controller.protected()
     def list_roles_for_trust(self, context, trust_id):

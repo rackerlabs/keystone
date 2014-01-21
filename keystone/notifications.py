@@ -25,7 +25,7 @@ from keystone.openstack.common.notifier import api as notifier_api
 LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
 # a new action is supported.
-ACTIONS = frozenset(['created', 'deleted', 'updated'])
+ACTIONS = frozenset(['created', 'deleted', 'disabled', 'updated'])
 # resource types that can be notified
 RESOURCE_TYPES = set()
 SUBSCRIBERS = {}
@@ -40,9 +40,10 @@ class ManagerNotificationWrapper(object):
     :param resource_type: type of resource being affected
     :param host: host of the resource (optional)
     """
-    def __init__(self, operation, resource_type, host=None):
+    def __init__(self, operation, resource_type, host=None, arg_index=1):
         self.operation = operation
         self.resource_type = resource_type
+        self.arg_index = arg_index
         RESOURCE_TYPES.add(resource_type)
         self.host = host
 
@@ -57,7 +58,7 @@ class ManagerNotificationWrapper(object):
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    args[1],  # f(self, resource_id, ...)
+                    args[self.arg_index],  # f(self, resource_id, ...)
                     self.host)
             return result
 
@@ -72,6 +73,11 @@ def created(*args, **kwargs):
 def updated(*args, **kwargs):
     """Decorator to send notifications for ``Manager.update_*`` methods."""
     return ManagerNotificationWrapper('updated', *args, **kwargs)
+
+
+def disabled(*args, **kwargs):
+    """Decorator to send notifications for ``Manager.update_*`` methods."""
+    return ManagerNotificationWrapper('disabled', *args, **kwargs)
 
 
 def deleted(*args, **kwargs):
@@ -94,10 +100,7 @@ def register_event_callback(event, resource_type, callbacks):
                            'be one of: %(actions)s') %
                          {'event': event, 'actions': ', '.join(ACTIONS)})
     if resource_type not in RESOURCE_TYPES:
-        raise ValueError(_('%(resource_type)s is not a valid notification '
-                           'resource, must be one of: %(types)s') %
-                         {'resource_type': resource_type,
-                          'types': ', '.join(RESOURCE_TYPES)})
+        RESOURCE_TYPES.add(resource_type)
 
     if not hasattr(callbacks, '__iter__'):
         callbacks = [callbacks]

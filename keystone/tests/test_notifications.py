@@ -292,12 +292,12 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
                           'project',
                           self._project_deleted_callback)
 
-    def test_resource_type_not_valid(self):
-        self.assertRaises(ValueError,
-                          notifications.register_event_callback,
-                          'deleted',
-                          uuid.uuid4().hex,
-                          self._project_deleted_callback)
+    def test_event_registration_for_invalid_resource_type(self):
+        # Registration for invalid resource types should succeed.  If no event
+        # is issued for that resource type, the callback wont be triggered.
+        notifications.register_event_callback('deleted',
+                                              uuid.uuid4().hex,
+                                              self._project_deleted_callback)
 
     def test_provider_event_callbacks_subscription(self):
         @dependency.provider('foo_api')
