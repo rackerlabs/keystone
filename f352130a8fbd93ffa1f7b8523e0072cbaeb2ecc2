@@ -172,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+4+8\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "This is the first, though.  If I split it out, it would be untested until this code goes in.",
+      "parentUuid": "AAAAUH/+5gs\u003d",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5gM\u003d",
         "filename": "keystone/contrib/oauth1/controllers.py",
         "patchSetId": 23
@@ -183,6 +201,24 @@
       "writtenOn": "2014-01-20T23:55:32Z",
       "side": 1,
       "message": "seems like support for CONF.token.revoke_by_id could be split out to a separate commit.",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+468\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "Then there would be no revocation mechanism available.  Also, each change conditional on  CONF.token.revoke_by_id  needs to be paired with the new revoke call: this makes it easier to confirm that.",
+      "parentUuid": "AAAAUH/+5gM\u003d",
       "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +344,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+46k\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "No, base class is abstract.",
+      "parentUuid": "AAAAUH/+5dc\u003d",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5eQ\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 23
@@ -319,6 +373,24 @@
       "writtenOn": "2014-01-20T23:55:32Z",
       "side": 1,
       "message": "suggest make this public since it\u0027s called from tests, and make the comment a docstring.",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+46o\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "changed to a docstring, but want to keep it priviate.  It is a \"friend\" method for testing, but should not be called in anger.",
+      "parentUuid": "AAAAUH/+5eQ\u003d",
       "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +482,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+46U\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "copy is to remove the old references so they can be garbage collected.",
+      "parentUuid": "AAAAUH/+5do\u003d",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5dQ\u003d",
         "filename": "keystone/contrib/revoke/configuration.rst",
         "patchSetId": 23
@@ -472,6 +562,23 @@
       "writtenOn": "2014-01-20T23:55:32Z",
       "side": 1,
       "message": "did you want to do this now or have a separate commit? if doing in separate commit then should mention in the commit message that this is a limitation.",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5to\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "The rest of these need to add \"issued_before\" field.  THat is going to be implicitly created in the model object",
       "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -733,6 +840,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+45w\u003d",
+        "filename": "keystone/routers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "Its ignored, but will be passed in when called to distinguish between admin and public routes",
+      "parentUuid": "AAAAUH/+5Y4\u003d",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5Yo\u003d",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 23
@@ -795,6 +920,24 @@
       "writtenOn": "2014-01-20T23:55:32Z",
       "side": 1,
       "message": "there\u0027s something very wrong with test structure if we need to do these contortions.",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+424\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "Yes, there is, but it is due to the fact that we are about 4 deep in the inheritance chain here, and the base class that has the tests should not be directly executed.  It is a vestige of treating PKI as a subclass of UUID tokens (they are not) that the original setup ever made sense.  The doSetup code is common to both types of token, but would otherwise never get called.",
+      "parentUuid": "AAAAUH/+5Xk\u003d",
       "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -920,6 +1063,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+4mI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "Some tests submit bogus tokens. Done",
+      "parentUuid": "AAAAUH/+5WY\u003d",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5WU\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 23
@@ -1016,6 +1177,24 @@
       "writtenOn": "2014-01-20T23:55:32Z",
       "side": 1,
       "message": "is this fixing a bug?",
+      "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4k8\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-21T04:55:07Z",
+      "side": 1,
+      "message": "It was returning without returning a value (see line 558 above) which means the semantics were wrong for the signature.  Throwing the exception kept the behavior the same.  Also, the log message is unnecessary: we are spamming the log on invalid token checks.  It would be OK to have it as a debug message.  That message should be  injected by the exception  handler now.",
+      "parentUuid": "AAAAUH/+5V0\u003d",
       "revId": "f352130a8fbd93ffa1f7b8523e0072cbaeb2ecc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
