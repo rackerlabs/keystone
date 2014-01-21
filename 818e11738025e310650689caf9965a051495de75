@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+1tc\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "why would we check that a response has mutable parameters?",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1tQ\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "add a .",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1tE\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "how would a response involve mutating parameters?",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1sg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "should be \"stored\" rather than \"serialized\"?",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1qo\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "suggest change to\n\n if not blocked_keys:\n    # No immutable parameters changed.\n    return\n\n exception_args \u003d {\u0027target\u0027: cls.__name__,\n                    \u0027attribute\u0027: blocked_params.pop()}\n raise exception.ImmutableAttributeError(**exception_args)\n\nthen it will be obvious that there\u0027s no actual looping going on here.",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1qg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "add a .",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1qY\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "make docstring more specific since this is for filtering the response data and not the request data.",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1pw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:22:31Z",
+      "side": 1,
+      "message": "It\u0027s incorrect to send a 400 Bad Request for this since the server understood the request. Should be 403 Forbidden since the server didn\u0027t want to do it.",
+      "revId": "818e11738025e310650689caf9965a051495de75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
