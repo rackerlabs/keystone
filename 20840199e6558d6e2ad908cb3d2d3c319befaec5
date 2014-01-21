@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+z1A\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-21T21:15:50Z",
+      "side": 1,
+      "message": "++ but i think we have an open bug for this -- the rest of keystone is guilty of this as well",
+      "parentUuid": "AAAAUH/+z/I\u003d",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+0As\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 22
