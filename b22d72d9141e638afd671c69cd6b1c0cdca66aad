@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+2/Q\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-21T13:38:36Z",
+      "side": 1,
+      "message": "nice, very Pythonic!",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//CBQ\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 1
@@ -13,6 +30,40 @@
       "writtenOn": "2014-01-18T08:35:56Z",
       "side": 1,
       "message": "i\u0027m wondering if there isn\u0027t a cleaner way to do this? i\u0027m very much abusing jsonutils here!",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+3BA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-21T13:38:36Z",
+      "side": 1,
+      "message": "what\u0027s the purpose of this operation?\nI don\u0027t see any way for reqs_valid to be anything other than True.",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+3A8\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-21T13:38:36Z",
+      "side": 1,
+      "message": "what\u0027s the purpose of this operation?\nI don\u0027t see any way for reqs_valid to be anything other than True.",
       "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
