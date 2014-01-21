@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+5PU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T00:32:41Z",
+      "side": 1,
+      "message": "remove this sentence -- we already know this because it\u0027s a depedency on this patch, and nobody\u0027s going to care about this or know what that review is after it\u0027s merged.",
+      "revId": "23f15156027b0f5134ebc597f30bcf58a5b89f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
