@@ -34,6 +34,24 @@
       "revId": "4c74bc92db207514d5595cf8e447bf9fe52a7068",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0H8\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T20:29:29Z",
+      "side": 1,
+      "message": "I would vote for trusts here.",
+      "parentUuid": "AAAAUH/+7n8\u003d",
+      "revId": "4c74bc92db207514d5595cf8e447bf9fe52a7068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
