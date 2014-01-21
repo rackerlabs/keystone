@@ -9,7 +9,7 @@ PasteDeploy>=1.5.0
 Paste
 Routes>=1.12.3
 six>=1.4.1
-SQLAlchemy>=0.7.8,<=0.7.99
+SQLAlchemy>=0.7.8,<=0.8.99
 sqlalchemy-migrate>=0.8.2
 passlib
 lxml>=2.3
