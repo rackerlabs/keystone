@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+4WI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-21T06:04:45Z",
+      "side": 1,
+      "message": "sure, I\u0027ll park it in authorization.py for now",
+      "parentUuid": "AAAAUH/+8U0\u003d",
+      "revId": "6a41630b67836d4f4a4857abf9c8794e8aba2d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+8RQ\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-20T15:19:36Z",
       "side": 1,
       "message": "This needs to call flatten or deeper values in the token won\u0027t be accessed by policy",
+      "revId": "6a41630b67836d4f4a4857abf9c8794e8aba2d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4U8\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-21T06:04:45Z",
+      "side": 1,
+      "message": "I hear ya. But that\u0027s a bigger change as the policy files are also impacted. Furthermore, we need to come up with a normalized token format before flatten it so it is token version agnostic. I think we should do this in a separate patch.",
+      "parentUuid": "AAAAUH/+8RQ\u003d",
       "revId": "6a41630b67836d4f4a4857abf9c8794e8aba2d47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
