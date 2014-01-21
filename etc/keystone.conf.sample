@@ -979,8 +979,19 @@
 #  (boolean value)
 #use_dumb_member=false
 
-#  (string value)
-#dumb_member=cn=dumb,dc=nonexistent
+#Revoke Tokens By Token Identifier.  Setting revoke_by_id to True enables
+#various forms of enumerating tokens, e.g. `list tokens for user`. These
+#enumerations are processed to determine the list of tokens to revoke.
+#Only disable if you are switching to using the Revoke extension with a
+#backend other than `keystone.contrib.revoke.backends.fake.Revoke`
+#revoke_by_id = True
+
+[revoke]
+#An implementation of the Revoke backend that does not actually record the
+#revocation events.  It is the default implementation during the transition
+#from revoke_by_id to revocation events.  The default  will change in a future
+#release to backend that actually persists
+#driver = keystone.contrib.revoke.backends.fake.Revoke
 
 # allow deleting subtrees (boolean value)
 #allow_subtree_delete=false
