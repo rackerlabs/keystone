@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+1ik\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-21T15:46:39Z",
+      "side": 1,
+      "message": "credit goes to dstanek on this one :)",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//CBQ\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 1
@@ -47,6 +64,23 @@
       "writtenOn": "2014-01-21T13:38:36Z",
       "side": 1,
       "message": "what\u0027s the purpose of this operation?\nI don\u0027t see any way for reqs_valid to be anything other than True.",
+      "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1iE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-21T15:46:39Z",
+      "side": 1,
+      "message": "good point, i was using it to make sure all the requirements were valid, and evaluating it at the end; but then decided to just exit if any condition was false, which made keeping track of it pointless. I\u0027ll re-structure",
       "revId": "b22d72d9141e638afd671c69cd6b1c0cdca66aad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
