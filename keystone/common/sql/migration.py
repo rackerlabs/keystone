@@ -17,10 +17,15 @@
 
 import sys
 
+from migrate import exceptions
 from migrate.versioning import api as versioning_api
 
 from keystone.common.sql import migration_helpers
 from keystone import config
+from keystone import contrib
+from keystone import exception
+
+from keystone.openstack.common import importutils
 
 
 CONF = config.CONF
@@ -35,6 +40,47 @@ except ImportError:
         from migrate import exceptions as versioning_exceptions
     except ImportError:
         sys.exit('python-migrate is not installed. Exiting.')
+
+
+def sync_database(version=None, extension=None):
+    if not extension:
+        db_sync(version=version)
+    else:
+        try:
+            package_name = '.'.join((contrib.__name__, extension))
+            package = importutils.import_module(package_name)
+        except ImportError:
+            raise ImportError(
+                _("%s extension does not exist.") % package_name)
+        try:
+            try:
+                db_version_control(package=package)
+            except exceptions.DatabaseAlreadyControlledError:
+                pass
+
+            db_sync(version=version, package=package)
+        except exception.MigrationNotProvided as e:
+            print(e)
+            exit(1)
+
+
+def print_db_version(extension):
+        if extension:
+            try:
+                package_name = '.'.join((contrib.__name__, extension))
+                package = importutils.import_module(package_name)
+            except ImportError:
+                raise ImportError(_("%s extension does not exist.")
+                                  % package_name)
+            try:
+                print(db_version(
+                    migration_helpers.find_migrate_repo(package)), 0)
+            except exception.MigrationNotProvided as e:
+                print(e)
+                exit(1)
+        else:
+            print(db_version(
+                migration_helpers.find_migrate_repo()), 0)
 
 
 def migrate_repository(version, current_version, repo_path):
