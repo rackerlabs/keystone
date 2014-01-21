@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+1v8\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:08:54Z",
+      "side": 1,
+      "message": "would be nice to know which key they were trying to set.",
+      "revId": "bc035ed261e43d6a5c1471b159a42566b2cb70eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1vQ\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T15:08:54Z",
+      "side": 1,
+      "message": "can\u0027t your database store binary values? This seems unnecessary.",
+      "revId": "bc035ed261e43d6a5c1471b159a42566b2cb70eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
