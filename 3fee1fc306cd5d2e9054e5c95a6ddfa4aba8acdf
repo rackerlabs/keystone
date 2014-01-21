@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+0Uk\u003d",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T19:50:41Z",
+      "side": 1,
+      "message": "Does access to this need to be controlled by policy?",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6aw\u003d",
         "filename": "keystone/contrib/simple_cert/controllers.py",
         "patchSetId": 1
@@ -101,6 +118,24 @@
       "side": 1,
       "message": "Yes, it will list all the signing certificates - in the current case that is just one. \n\nWhen we get to the point of having multiple we can do /certficates/:id and this path will still be fine.",
       "parentUuid": "AAAAUH/+6aw\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0VI\u003d",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T19:50:41Z",
+      "side": 1,
+      "message": "Will this just return all of them concatenated together?\n\nAlso does access to this need to be controlled by policy?",
+      "parentUuid": "AAAAUH/+5X0\u003d",
       "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -152,6 +187,24 @@
       "writtenOn": "2014-01-21T19:44:49Z",
       "side": 1,
       "message": "Likely this should be an internal server error (500), it isn\u0027t forbidden nor a bad request.  It would be a mis-configuration of Keystone or an issue with accessing the certs",
+      "parentUuid": "AAAAUH/+0bA\u003d",
+      "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+0SQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-21T19:50:41Z",
+      "side": 1,
+      "message": "I think this should be a 500 because it would indicate a mis-configuration.",
       "parentUuid": "AAAAUH/+0bA\u003d",
       "revId": "3fee1fc306cd5d2e9054e5c95a6ddfa4aba8acdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
