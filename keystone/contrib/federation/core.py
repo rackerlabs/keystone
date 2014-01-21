@@ -16,11 +16,17 @@
 
 """Extension supporting Federation."""
 
+import abc
+
+import six
+
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 from keystone import config
+from keystone import exception
 from keystone.openstack.common import log as logging
+
 
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
@@ -52,3 +58,90 @@ class Manager(manager.Manager):
     """
     def __init__(self):
         super(Manager, self).__init__(CONF.federation.driver)
+
+
+@six.add_metaclass(abc.ABCMeta)
+class Driver(object):
+
+    def create_idp(self, idp_id, idp):
+        """Create an identity provider.
+
+        :returns: idp_ref
+
+        """
+        raise exception.NotImplemented()
+
+    def delete_idp(self, idp_id):
+        """Delete an identity provider.
+
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def list_idps(self):
+        """List all identity providers.
+
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def get_idp(self, idp_id):
+        """Get an identity provider by ID.
+
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def update_idp(self, idp_id, idp):
+        """Update an identity provider by ID.
+
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def create_protocol(self, idp_id, protocol_id, protocol):
+        """Add an IdP-Protocol configuration.
+
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def update_protocol(self, idp_id, protocol_id, protocol):
+        """Change an IdP-Protocol configuration.
+
+        :raises: keystone.exception.IdentityProviderNotFound,
+                 keystone.exception.FederatedProtocolNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def get_protocol(self, idp_id, protocol_id):
+        """Get an IdP-Protocol configuration.
+
+        :raises: keystone.exception.IdentityProviderNotFound,
+                 keystone.exception.FederatedProtocolNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    def list_protocols(self, idp_id):
+        """List an IdP's supported protocols.
+
+        :raises: keystone.exception.IdentityProviderNotFound,
+
+        """
+        raise exception.NotImplemented()
+
+    def delete_protocol(self, idp_id, protocol_id):
+        """Delete an IdP-Protocol configuration.
+
+        :raises: keystone.exception.IdentityProviderNotFound,
+                 keystone.exception.FederatedProtocolNotFound,
+
+        """
+        raise exception.NotImplemented()

@@ -16,6 +16,7 @@
 
 from keystone.common import sql
 from keystone.common.sql import migration
+from keystone.contrib.federation import core
 from keystone import exception
 
 
@@ -65,7 +66,7 @@ class IdentityProviderModel(sql.ModelBase, sql.DictBase):
         return d
 
 
-class Federation(sql.Base):
+class Federation(sql.Base, core.Driver):
 
     def db_sync(self):
         migration.db_sync()
