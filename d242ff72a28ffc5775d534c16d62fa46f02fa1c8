@@ -427,6 +427,91 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+1nw\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T15:37:32Z",
+      "side": 1,
+      "message": "Two sets of doc string comments? Can these be combined?",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1mo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T15:37:32Z",
+      "side": 1,
+      "message": "Should this, assertDomainInList, and assertUserAndExpiryInList be refactored to follow the \u0027assert_domain_in_list\u0027 naming convention instead of camelCase?",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1mc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2407,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T15:37:32Z",
+      "side": 1,
+      "message": "Same comment here as above",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1kc\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T15:37:32Z",
+      "side": 1,
+      "message": "Why the newline here?",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1kQ\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-21T15:37:32Z",
+      "side": 1,
+      "message": "missing \u0027,\u0027 after \"/extensions\"",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+16g\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 24
