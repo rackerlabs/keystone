@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+z3c\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-21T21:47:18Z",
+      "side": 1,
+      "message": "Is \"autoincrement\u003dFalse\" needed here since it\u0027s a String(64) instead of an int? (see below at line 52, this is inconsistent)",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+0Cw\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 22
@@ -30,6 +47,23 @@
       "writtenOn": "2014-01-21T21:03:41Z",
       "side": 1,
       "message": "(nit) change \"that exposed\" to \"that are exposed\"",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+zwE\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-21T21:47:18Z",
+      "side": 1,
+      "message": "period is needed at the end of this line.  This might actually be a pep8 violation according to hacking",
       "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +241,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+zug\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-21T21:47:18Z",
+      "side": 1,
+      "message": "None of the methods here are decorated with @abc.abstractmethod\n\nThis doesn\u0027t leverage any benefit from the ABCMeta class.\n\nYou\u0027ll neeed to add them for each method a subclassed driver must override.",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+z6c\u003d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 22
@@ -235,6 +286,24 @@
       "writtenOn": "2014-01-21T21:03:41Z",
       "side": 1,
       "message": "should be\n\n PUT /OS-FEDERATION/identity_providers/$identity_provider",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+zt8\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-21T21:47:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH/+z6g\u003d",
       "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -303,6 +372,24 @@
       "writtenOn": "2014-01-21T21:02:59Z",
       "side": 1,
       "message": "needs a better validator",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ztY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-21T21:47:18Z",
+      "side": 1,
+      "message": "Or at least an example of what you\u0027re expecting a validator to do.",
+      "parentUuid": "AAAAUH/+z5Y\u003d",
       "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
