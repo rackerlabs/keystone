@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+4aY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7874
+      },
+      "writtenOn": "2014-01-21T05:50:32Z",
+      "side": 1,
+      "message": "Thanks. Have now provided more details in the comment. Please review. Done",
+      "parentUuid": "AAAAUH/+8qI\u003d",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4ac\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7874
+      },
+      "writtenOn": "2014-01-21T05:50:32Z",
+      "side": 1,
+      "message": "Thanks. That was a nice wiki. Have tried to follow the advice. Please review",
+      "parentUuid": "AAAAUH/++5c\u003d",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+8ow\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 2
@@ -54,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+4aM\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7874
+      },
+      "writtenOn": "2014-01-21T05:50:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+8ow\u003d",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/++5o\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 2
@@ -65,6 +119,24 @@
       "writtenOn": "2014-01-20T05:15:20Z",
       "side": 1,
       "message": "Any reason for adding new lines here, and not on lines 197 or 211?",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+4Zw\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7874
+      },
+      "writtenOn": "2014-01-21T05:50:32Z",
+      "side": 1,
+      "message": "No particular reason. I used the autopep8 tool and that somehow did not update those two places. Have fixed it now. Thanks.",
+      "parentUuid": "AAAAUH/++5o\u003d",
       "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
