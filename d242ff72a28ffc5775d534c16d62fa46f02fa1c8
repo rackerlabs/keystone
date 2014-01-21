@@ -1,0 +1,429 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+2As\u003d",
+        "filename": "keystone/common/extension.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "split this out into a separate commit and write tests specific to it so that it\u0027s not untested.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+2AI\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "if each change conditional on CONF.token.revoke_by_id needs to be paired with the new revoke call then there should be a function that does both and call that.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+2AA\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "could the \"if CONF.token.revoke_by_id:\" check be moved into delete_tokens? then wouldn\u0027t have to check it everywhere this is called.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1/E\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "seems like this should be in the docs/ directory so it gets published.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+8\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "use \u0027 for strings for consistency.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+4\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "you can use policy to make things publically callable, suggest add @controller.protected() and set the policy so that it\u0027s public.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+0\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "did you want to do this now or have a separate commit? if doing in separate commit then should mention in the commit message that this is a limitation.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+o\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "suggest change \"model.EventIdentifier()\" to \"id\u003dmodel.EventIdentifier()\" for consistency ... this applies elsewhere too - line 91, 97, etc.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+Y\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "did you want to do this for this commit or in a separate one?",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+Q\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "a docstring here would be useful for reviewers.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+E\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "this is already done",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+1+A\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "update the docstring.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+19w\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "suggest get rid of code related to features that aren\u0027t supported... add it when the function is supported.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+19g\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "remove ,",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+19c\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "I assume this is a list and not a set.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+19Q\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "change \"instance\" to \"instance of\"",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+18w\u003d",
+        "filename": "keystone/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "this really should be a separate commit.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+18c\u003d",
+        "filename": "keystone/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "it would be helpful to add comment why is_admin is not used.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+168\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "suggest make this a separate commit because it\u0027s not related to revocation events.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+16w\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "could make this change in a separate commit.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+16g\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "keep in alphabetical order.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+158\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "suggest add a comment that this will raise if the token is revoked.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+154\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "change \"is has\" to \"has\"",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+150\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "suggest remove \"None\" since callers of this function aren\u0027t expecting a return value anyways.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+15Y\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-21T14:39:11Z",
+      "side": 1,
+      "message": "seems like this change should be in a separate commit.",
+      "revId": "d242ff72a28ffc5775d534c16d62fa46f02fa1c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
