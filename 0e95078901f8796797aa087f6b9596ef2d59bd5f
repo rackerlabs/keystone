@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+zKU\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-22T01:21:19Z",
+      "side": 1,
+      "message": "kind of wish this was a named variable so you don\u0027t lose the method signature in this patch\n\n  trust_id \u003d uuid.uuid4().hex\n  create_trust(trust_id, ...)",
+      "revId": "0e95078901f8796797aa087f6b9596ef2d59bd5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
