@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+wy0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-01-22T11:58:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//KGw\u003d",
+      "revId": "a88359a10c047833f8186a42153cda2489d25d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//KN0\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/037_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 14
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xBg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/037_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-01-22T11:58:46Z",
+      "side": 1,
+      "message": "I\u0027ll remove these comments entirely, they come from one of the existing migration scripts I used as a template for mine.",
+      "parentUuid": "AAAAUH//KNs\u003d",
+      "revId": "a88359a10c047833f8186a42153cda2489d25d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//KHY\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 14
@@ -64,6 +100,24 @@
       "writtenOn": "2014-01-16T21:27:47Z",
       "side": 1,
       "message": "(NIT): should we check if ref returns as none, like at line 83?\n\nwith session.begin():\n    ref \u003d (session.query(TrustModel).\n              filter_by(deleted_at\u003dNone).\n              filter_by(id\u003dtrust_id).first())\n    if ref is None:\n        # Throw some exception saying that you can\u0027t\n        # consume a use from the trust because no trust was\n        # found? \n    elif ref.remaining_uses \u003e 0:\n        # Continue with consume logic here\n\n\nIt\u0027s kind of a slim change path, but does it make sense to cover it? Just thinking of consistency between the two methods (has_remaining_uses and consume_use).",
+      "revId": "a88359a10c047833f8186a42153cda2489d25d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+wzA\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-01-22T11:58:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//KHY\u003d",
       "revId": "a88359a10c047833f8186a42153cda2489d25d1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
