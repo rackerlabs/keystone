@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+vRY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-22T16:48:27Z",
+      "side": 1,
+      "message": "Any reason why this shouldn\u0027t be grouped with import json?",
+      "revId": "f3d25fb6d0e6ffa0391f98e6e6378d5d36450e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vPY\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-22T16:48:27Z",
+      "side": 1,
+      "message": "if we are going to import six we can probably remove: \n\n    from six import moves",
+      "revId": "f3d25fb6d0e6ffa0391f98e6e6378d5d36450e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vQI\u003d",
+        "filename": "keystone/common/base64utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-22T16:48:27Z",
+      "side": 1,
+      "message": "can moves be refactored to six.moves that way we only need one import six?",
+      "revId": "f3d25fb6d0e6ffa0391f98e6e6378d5d36450e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vPA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-22T16:48:27Z",
+      "side": 1,
+      "message": "same comment applies here.",
+      "revId": "f3d25fb6d0e6ffa0391f98e6e6378d5d36450e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vOw\u003d",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-22T16:48:27Z",
+      "side": 1,
+      "message": "group with above? \n\n    import uuid\n    import six",
+      "revId": "f3d25fb6d0e6ffa0391f98e6e6378d5d36450e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
