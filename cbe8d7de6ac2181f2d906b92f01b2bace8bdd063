@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vZk\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T16:20:46Z",
+      "side": 1,
+      "message": "It could be…in fact that was one of the early versions….although some people were keen that you could always enumerate the list manually if you want",
+      "parentUuid": "AAAAUH/+vhE\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vm4\u003d",
         "filename": "keystone/common/manager.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-22T15:57:10Z",
       "side": 1,
       "message": "I find this a little confusing.  Can\u0027t the driver just do the +1 so it\u0027s more obvious that it\u0027s happening?",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vYA\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T16:20:46Z",
+      "side": 1,
+      "message": "So I did consider that…it lend of depends where we wan to lie :-)  It seemed (at least to me) that it might be better for the drives to return what they are being asked for, and for us to do the manipulation here.",
+      "parentUuid": "AAAAUH/+vm4\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vX0\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T16:20:46Z",
+      "side": 1,
+      "message": "that is true….but so my reply to the comment in driver_hints",
+      "parentUuid": "AAAAUH/+vgI\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vjQ\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 24
@@ -81,6 +135,24 @@
       "writtenOn": "2014-01-22T15:57:10Z",
       "side": 1,
       "message": "I wouldn\u0027t mind seeing this in it\u0027s own testing class so it can have it\u0027s own setup and cleanup.  If this test fails the CONF entries may be incorrect for the next test run.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vXk\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T16:20:46Z",
+      "side": 1,
+      "message": "I think you are right.  Would it be OK if I came back in and did this in a subsequent patch once I2 is out?",
+      "parentUuid": "AAAAUH/+vjQ\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
