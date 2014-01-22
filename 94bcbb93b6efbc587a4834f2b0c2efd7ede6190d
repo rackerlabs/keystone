@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+uC4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-22T20:26:23Z",
+      "side": 1,
+      "message": "The exception should not be logged with LOG.warning() here. There is nothing in the exception class that is not already contained in the LOG.debug() message on line 222-225.",
+      "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
