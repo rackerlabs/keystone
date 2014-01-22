@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+xiM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T09:27:09Z",
+      "side": 1,
+      "message": "This function has now moved to keystone/common/utils as part of a patch that is now gating: https://review.openstack.org/#/c/43257/54\n\nI\u0027d suggest you rebase this change on that patch",
+      "revId": "e0abdab639bb3673e5f2913d479b5034ba864f8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+xio\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T09:27:09Z",
+      "side": 1,
+      "message": "I\u0027m not sure this comment would be valid any more?",
+      "revId": "e0abdab639bb3673e5f2913d479b5034ba864f8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
