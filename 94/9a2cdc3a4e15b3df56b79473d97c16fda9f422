@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Chmouel Boudjnah <chmouel@enovance.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 22 Jan 2014 15:19:33 +0000
+Reviewed-on: https://review.openstack.org/66447
+Project: openstack/keystone
+Branch: refs/heads/master
