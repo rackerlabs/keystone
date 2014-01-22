@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+xek\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-22T10:02:32Z",
+      "side": 1,
+      "message": "(nit) was a \u0027bug\u0027 in the comment before, but \u0027domains\u0027 are also removed...",
+      "revId": "8e71b8bcac84c21bd4df96725bda576a02acae02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
