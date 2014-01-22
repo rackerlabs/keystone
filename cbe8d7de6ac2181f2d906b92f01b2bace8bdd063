@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+vhE\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-22T15:57:10Z",
+      "side": 1,
+      "message": "Why put this in the list?  Seems much more efficient and less confusing to have a self.limit attribute instead of a getter and setter and iterate through a list.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vm4\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-22T15:57:10Z",
+      "side": 1,
+      "message": "I find this a little confusing.  Can\u0027t the driver just do the +1 so it\u0027s more obvious that it\u0027s happening?",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vgs\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4008,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-22T15:57:10Z",
+      "side": 1,
+      "message": "I think this test suffers from the same failure mode that I mentioned in the other test file.  Needs it\u0027s own setup and cleanup.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vgI\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-22T15:57:10Z",
+      "side": 1,
+      "message": "It the Hints object just used a .limit attribute there would be no need for this test.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vjQ\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-22T15:57:10Z",
+      "side": 1,
+      "message": "I wouldn\u0027t mind seeing this in it\u0027s own testing class so it can have it\u0027s own setup and cleanup.  If this test fails the CONF entries may be incorrect for the next test run.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
