@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+ttU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T21:32:51Z",
+      "side": 1,
+      "message": "change \"comaptible\" to \"compatible\"",
+      "revId": "81ba2ee03bb40b3f3449988bd7e23b359052a28a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+tss\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T21:32:51Z",
+      "side": 1,
+      "message": "revert this change it\u0027s not related",
+      "revId": "81ba2ee03bb40b3f3449988bd7e23b359052a28a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
