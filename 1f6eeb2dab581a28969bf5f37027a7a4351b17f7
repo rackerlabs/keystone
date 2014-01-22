@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+wNg\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-22T14:10:43Z",
+      "side": 1,
+      "message": "Thank you!",
+      "revId": "1f6eeb2dab581a28969bf5f37027a7a4351b17f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
