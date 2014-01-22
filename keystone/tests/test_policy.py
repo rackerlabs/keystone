@@ -18,7 +18,8 @@
 import json
 import StringIO
 import tempfile
-import urllib2
+
+from six import moves
 
 from testtools import matchers
 
@@ -110,7 +111,7 @@ class PolicyTestCase(tests.TestCase):
         def fakeurlopen(url, post_data):
             return StringIO.StringIO("True")
 
-        self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
+        self.stubs.Set(moves.urllib.request, 'urlopen', fakeurlopen)
         action = "example:get_http"
         target = {}
         result = rules.enforce(self.credentials, action, target)
@@ -120,7 +121,7 @@ class PolicyTestCase(tests.TestCase):
 
         def fakeurlopen(url, post_data):
             return StringIO.StringIO("False")
-        self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
+        self.stubs.Set(moves.urllib.request, 'urlopen', fakeurlopen)
         action = "example:get_http"
         target = {}
         self.assertRaises(exception.ForbiddenAction, rules.enforce,

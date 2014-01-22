@@ -34,7 +34,8 @@ This WSGI component:
 """
 
 import httplib
-import urllib
+
+from six import moves
 import webob
 
 from keystone.openstack.common import jsonutils
@@ -77,7 +78,8 @@ def split_path(path, minsegs=1, maxsegs=None, rest_with_last=False):
         count = len(segs)
         if (segs[0] or count < minsegs or count > maxsegs or
                 '' in segs[1:minsegs]):
-            raise ValueError('Invalid path: %s' % urllib.quote(path))
+            raise ValueError('Invalid path: %s' %
+                             moves.urllib.parse.quote(path))
     else:
         minsegs += 1
         maxsegs += 1
@@ -86,7 +88,8 @@ def split_path(path, minsegs=1, maxsegs=None, rest_with_last=False):
         if (segs[0] or count < minsegs or count > maxsegs + 1 or
                 '' in segs[1:minsegs] or
                 (count == maxsegs + 1 and segs[maxsegs])):
-            raise ValueError('Invalid path: %s' % urllib.quote(path))
+            raise ValueError('Invalid path: %s' %
+                             moves.urllib.parse.quote(path))
     segs = segs[1:maxsegs]
     segs.extend([None] * (maxsegs - 1 - len(segs)))
     return segs
