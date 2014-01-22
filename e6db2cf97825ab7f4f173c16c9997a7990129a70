@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+uoE\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-22T18:41:59Z",
+      "side": 1,
+      "message": "Mapping should be associated with IdP per protocol.\nSo expecting IdP_id as foreign_key.\n\nThoughtless?",
+      "revId": "e6db2cf97825ab7f4f173c16c9997a7990129a70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+uq4\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-22T18:41:59Z",
+      "side": 1,
+      "message": "Why blank line",
+      "revId": "e6db2cf97825ab7f4f173c16c9997a7990129a70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+z7w\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 17
