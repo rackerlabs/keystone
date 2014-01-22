@@ -18,9 +18,9 @@
 """Workflow Logic the Assignment service."""
 
 import copy
-import urllib
-import urlparse
 import uuid
+
+from six import moves
 
 from keystone.common import controller
 from keystone.common import dependency
@@ -289,7 +289,7 @@ class Role(controller.V2Controller):
                 ref = {'roleId': role_id,
                        'tenantId': tenant['id'],
                        'userId': user_id}
-                ref['id'] = urllib.urlencode(ref)
+                ref['id'] = moves.urllib.parse.urlencode(ref)
                 o.append(ref)
         return {'roles': o}
 
@@ -327,7 +327,7 @@ class Role(controller.V2Controller):
         """
         self.assert_admin(context)
         # TODO(termie): for now we're ignoring the actual role
-        role_ref_ref = urlparse.parse_qs(role_ref_id)
+        role_ref_ref = moves.urllib.parse.parse_qs(role_ref_id)
         tenant_id = role_ref_ref.get('tenantId')[0]
         role_id = role_ref_ref.get('roleId')[0]
         self.assignment_api.remove_role_from_user_and_project(
