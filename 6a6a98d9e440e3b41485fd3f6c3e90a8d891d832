@@ -140,6 +140,24 @@
       "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+t88\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-22T20:47:03Z",
+      "side": 1,
+      "message": "Wondering if those should be pulled out into a separate commit?",
+      "parentUuid": "AAAAUH/+4Zw\u003d",
+      "revId": "6a6a98d9e440e3b41485fd3f6c3e90a8d891d832",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
