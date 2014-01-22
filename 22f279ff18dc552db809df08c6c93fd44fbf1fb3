@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xiw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:20:17Z",
+      "side": 1,
+      "message": "Ok. I think it will be difficult to merge, but anyway, you are right.",
+      "parentUuid": "AAAAUH/+1Y8\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1fc\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 10
