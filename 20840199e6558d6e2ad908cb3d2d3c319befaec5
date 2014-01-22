@@ -275,6 +275,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+u1M\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/001_add_identity_provider_table.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-22T18:08:44Z",
+      "side": 1,
+      "message": "Why do you need autoincrement\u003dFalse in String id?",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+z6g\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 22
@@ -304,6 +321,23 @@
       "side": 1,
       "message": "++",
       "parentUuid": "AAAAUH/+z6g\u003d",
+      "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+uyo\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-22T18:08:44Z",
+      "side": 1,
+      "message": "nit-pick: federated or federation",
       "revId": "20840199e6558d6e2ad908cb3d2d3c319befaec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
