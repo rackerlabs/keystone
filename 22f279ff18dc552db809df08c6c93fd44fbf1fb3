@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xyw\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+1ic\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1gw\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 10
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xoE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "Really I have done wrong logic here. Reverted back with minor changes.",
+      "parentUuid": "AAAAUH/+1Ls\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1gE\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 10
@@ -65,6 +101,24 @@
       "writtenOn": "2014-01-21T16:05:34Z",
       "side": 1,
       "message": "btw - I like the code in DbSync that figured out the package and then migrate.db_version in one place.",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+xmU\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "I do not get, what do you want me to do? Please describe to me, what, concretely, are you talking about?",
+      "parentUuid": "AAAAUH/+1gE\u003d",
       "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xis\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+1KQ\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1ag\u003d",
         "filename": "keystone/policy/backends/sql.py",
         "patchSetId": 10
@@ -134,6 +206,24 @@
       "writtenOn": "2014-01-21T16:05:34Z",
       "side": 1,
       "message": "revert whitespace change on previous line.",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+xUE\u003d",
+        "filename": "keystone/policy/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+1ag\u003d",
       "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xdQ\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+1aI\u003d",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+1Z8\u003d",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 10
@@ -168,6 +276,24 @@
       "writtenOn": "2014-01-21T16:05:34Z",
       "side": 1,
       "message": "leave the blank line after the license comment",
+      "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+xUc\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-22T10:19:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+1Z8\u003d",
       "revId": "22f279ff18dc552db809df08c6c93fd44fbf1fb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
