@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+vg4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 24
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "the list_limit options should be also documented in those sections.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vUI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "why is the function paginate_limit? this commit is not supporting paginating.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vSI\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "this is assuming we know what all the drivers are. deployers might have their own drivers that would be able to implement this.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vRk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "this doesn\u0027t do pagination so it should be renamed.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vRg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "this code should be removed.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vhE\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 24
@@ -37,6 +122,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vPE\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "(nit) Change \"Provided a\" to \"If a\"",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vOk\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "suggest change the function to return an indication of whether the list has been truncated or not rather than requesting the wrong number of items.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vN0\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "simplify this by using \"kwargs.get(\u0027hints\u0027)\"",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vP4\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "suggest remove the else then you can unindent several lines.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vm4\u003d",
         "filename": "keystone/common/manager.py",
         "patchSetId": 24
@@ -66,6 +219,75 @@
       "side": 1,
       "message": "So I did consider that…it lend of depends where we wan to lie :-)  It seemed (at least to me) that it might be better for the drives to return what they are being asked for, and for us to do the manipulation here.",
       "parentUuid": "AAAAUH/+vm4\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vNU\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "I\u0027d rather let the driver pick what method it wants to use to figure out if the response was truncated or not.",
+      "parentUuid": "AAAAUH/+vYA\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vM0\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "why change so that links might not be in child?",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vMs\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "this doesn\u0027t do pagination, so remove this.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vMI\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-22T16:54:28Z",
+      "side": 1,
+      "message": "add a docstring so that classes implementing this function know what to do.",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
