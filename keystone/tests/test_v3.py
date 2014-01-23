@@ -84,8 +84,9 @@ class RestfulTestCase(rest.RestfulTestCase):
         #drop the policy rules
         self.addCleanup(rules.reset)
 
-        # need to reset the plug-ins
-        self.addCleanup(setattr, auth.controllers, 'AUTH_METHODS', {})
+        # TODO(blk-u): check if the following line is necessary and remove if
+        # it's not. TestCase already does CONF.reset.
+        self.addCleanup(CONF.reset)
 
         self.addCleanup(self.teardown_database)
 
@@ -338,9 +339,9 @@ class RestfulTestCase(rest.RestfulTestCase):
     def v3_request(self, path, **kwargs):
         # Check if the caller has passed in auth details for
         # use in requesting the token
-        auth = kwargs.pop('auth', None)
-        if auth:
-            token = self.get_requested_token(auth)
+        auth_ref = kwargs.pop('auth', None)
+        if auth_ref:
+            token = self.get_requested_token(auth_ref)
         else:
             token = kwargs.pop('token', None)
             if not token:

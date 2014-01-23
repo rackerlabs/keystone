@@ -471,11 +471,15 @@
 # user_additional_attribute_mapping =
 
 [auth]
-methods = external,password,token,oauth1
-#external = keystone.auth.plugins.external.DefaultDomain
-password = keystone.auth.plugins.password.Password
-token = keystone.auth.plugins.token.Token
-oauth1 = keystone.auth.plugins.oauth1.OAuth
+# Defines the authentication method plugins that are available.
+# This is a comma-separated list of the names of classes that represent the methods that
+# are allowed in the "methods" field of an authentication request and the external
+# authentication handler.
+# If an "external" plugin is included, then external authentication (via
+# REMOTE_USER) is enabled.
+# The order of plugin list is the order in which authentication methods will be processed.
+
+#plugins = keystone.auth.plugins.external.DefaultDomain,keystone.auth.plugins.password.Password,keystone.auth.plugins.token.Token
 
 [memcache]
 # servers = localhost:11211

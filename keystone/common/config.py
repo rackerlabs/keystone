@@ -249,14 +249,22 @@ FILE_OPTIONS = {
         cfg.StrOpt('userid', default=None),
         cfg.StrOpt('password', default=None)],
     'auth': [
-        cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS),
+        cfg.ListOpt('plugins',
+                    default=['keystone.auth.plugins.external.DefaultDomain',
+                             'keystone.auth.plugins.password.Password',
+                             'keystone.auth.plugins.token.Token']),
+
+        # TODO(morganfainberg): remove the plugin-specific config options when
+        # and 'methods' options (following [auth] options) in K release.
+        cfg.ListOpt('methods', default=[]),
         cfg.StrOpt('password',
                    default='keystone.auth.plugins.password.Password'),
         cfg.StrOpt('token',
                    default='keystone.auth.plugins.token.Token'),
-        #deals with REMOTE_USER authentication
         cfg.StrOpt('external',
-                   default='keystone.auth.plugins.external.DefaultDomain')],
+                   default='keystone.auth.plugins.external.DefaultDomain')
+        # END of options to be removed in K.
+    ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default=None)],
     'memcache': [
@@ -278,6 +286,7 @@ CONF = cfg.CONF
 
 
 def setup_authentication(conf=None):
+    # TODO(morganfainberg): Remove this function in K release.
     # register any non-default auth methods here (used by extensions, etc)
     if conf is None:
         conf = CONF
