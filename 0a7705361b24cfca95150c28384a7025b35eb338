@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+pcw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-23T15:29:18Z",
+      "side": 1,
+      "message": "This change was based upon, as you can see on the other side, oauth being \"uncommented\" in the [auth] section, external is commented out, but is in the default auth methods",
+      "parentUuid": "AAAAUH/+qPM\u003d",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+qOk\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-23T13:16:42Z",
       "side": 1,
       "message": "i don\u0027t think we do so anywhere yet, but the @deprecator is also callable(), right?",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+pbY\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-23T15:29:18Z",
+      "side": 1,
+      "message": "I didn\u0027t think it was explicitly callable.. if it is, I will use it instead.",
+      "parentUuid": "AAAAUH/+qOk\u003d",
       "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+pcA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-23T15:29:18Z",
+      "side": 1,
+      "message": "I will add that into the test-overrides instead of here. I was basing this part of the change on the fact that the keystone.conf.sample explicitly had oauth uncommented and configured (so all tests saw it).",
+      "parentUuid": "AAAAUH/+qMg\u003d",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+qNA\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-23T13:16:42Z",
       "side": 1,
       "message": "maybe put some whitespace around this comment and after \u0027external\u0027 so it\u0027s a bit more clear what needs to be removed",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+pbw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-23T15:29:18Z",
+      "side": 1,
+      "message": "done in next patchset",
+      "parentUuid": "AAAAUH/+qNA\u003d",
       "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
