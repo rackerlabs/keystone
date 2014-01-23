@@ -50,6 +50,24 @@
       "revId": "a16659a036d838211f35544c6fb148face9c26bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+srI\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T02:22:51Z",
+      "side": 1,
+      "message": "how about set_default_for_default_log_levels ?",
+      "parentUuid": "AAAAUH/+s0k\u003d",
+      "revId": "a16659a036d838211f35544c6fb148face9c26bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
