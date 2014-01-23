@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+ops\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 3426,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:47:21Z",
+      "side": 1,
+      "message": "@arvind there is a test with remaining_uses \u003d -10. \nhttps://review.openstack.org/#/c/56243/15/keystone/tests/test_v3_auth.py line 2061",
+      "parentUuid": "AAAAUH/+vDE\u003d",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+ouA\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 15
@@ -72,6 +90,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+oqU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2048,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:47:21Z",
+      "side": 1,
+      "message": "oh i see, hmm that\u0027s not really necessary, i think.. \nbut it\u0027s fine to keep it i suppose.",
+      "parentUuid": "AAAAUH/+orQ\u003d",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+omw\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:47:21Z",
+      "side": 1,
+      "message": "use \u003e 0 instead of !\u003d 0 ?",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+u/4\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
@@ -101,6 +154,23 @@
       "side": 1,
       "message": "consume_use is not supposed to be called in that case, but I can add a check if you want to be extra cautious",
       "parentUuid": "AAAAUH/+u/4\u003d",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+omI\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:47:21Z",
+      "side": 1,
+      "message": "i\u0027m tempted to say \u003c\u003d 0 too. as I don\u0027t see a use case for setting remaining_uses to 0.",
       "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
