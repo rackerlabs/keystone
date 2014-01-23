@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+qPM\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-23T13:16:42Z",
+      "side": 1,
+      "message": "does this reflect the actual default? i thought external and oauth were excluded",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+qOk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-23T13:16:42Z",
+      "side": 1,
+      "message": "i don\u0027t think we do so anywhere yet, but the @deprecator is also callable(), right?",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+qMg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-23T13:16:42Z",
+      "side": 1,
+      "message": "this is definitely introducing OAuth as a default auth method -- remove / propose separately",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+qNA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-23T13:16:42Z",
+      "side": 1,
+      "message": "maybe put some whitespace around this comment and after \u0027external\u0027 so it\u0027s a bit more clear what needs to be removed",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
