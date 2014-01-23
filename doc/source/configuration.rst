@@ -901,6 +901,38 @@ The following attributes are available
   would ensure that the user object that is being deleted is in the same
   domain as the token provided.
 
+List of object attributes:
+
+* role:
+    * target.role.id
+    * target.role.name
+
+* user:
+    * target.user.default_project_id
+    * target.user.description
+    * target.user.domain_id
+    * target.user.enabled
+    * target.user.id
+    * target.user.name
+
+* group:
+    * target.group.description
+    * target.group.domain_id
+    * target.group.id
+    * target.group.name
+
+* domain:
+    * target.domain.enabled
+    * target.domain.id
+    * target.domain.name
+
+* project:
+    * target.project.description
+    * target.project.domain_id
+    * target.project.enabled
+    * target.project.id
+    * target.project.name
+
 The default policy.json file supplied provides a somewhat basic example of
 API protection, and does not assume any particular use of domains. For
 multi-domain configuration installations where, for example, a cloud
