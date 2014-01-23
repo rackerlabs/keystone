@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+nHE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "Does \"along with your ``[auth]`` sections\" still apply?  This sentence feels strange.",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+nFI\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "Maybe split this in two? Something like:\n\nThis is a comma-separated list of the class names that are enabled as authentication plugins. These classes define the methods are you allowed in the \"methods\" field of an authentication request.",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+m5A\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "I really like that this is no longer loading on demand!",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+nAE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "Should you be using LOG.deprecate? I think you are missing a trailing space.",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+m8M\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "Spacing?",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+m9s\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "Any reason to not add a function `auth.controllers.reset_auth_methods` since we do this in a couple of places?",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+m8w\u003d",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T22:47:44Z",
+      "side": 1,
+      "message": "I like that you are replacing the string literals with constants.",
+      "revId": "0ae131365d1432552d93a586b8db597c26b68575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
