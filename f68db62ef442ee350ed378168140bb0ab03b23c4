@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+oz0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-23T17:18:06Z",
+      "side": 1,
+      "message": "This seems to be missing the @notifications.update decorator",
+      "revId": "f68db62ef442ee350ed378168140bb0ab03b23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ozc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-23T17:18:06Z",
+      "side": 1,
+      "message": "This could have been a separate commit.  Not going to block based on this.",
+      "revId": "f68db62ef442ee350ed378168140bb0ab03b23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+o1M\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 2
