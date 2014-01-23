@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+opA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-23T17:38:14Z",
+      "side": 1,
+      "message": "It\u0027s only callable so that it will function like a decorator.  `__call__` is actually called by the Python machinery with the function/method being decorated.",
+      "parentUuid": "AAAAUH/+pbY\u003d",
+      "revId": "0a7705361b24cfca95150c28384a7025b35eb338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+qMg\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
