@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+sL4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-01-23T06:17:44Z",
+      "side": 1,
+      "message": "you may want to make sure its really registered. i.e.\n\n   resource_type \u003d uuid.uuuid4().hex\n   notifications.register_event_callbacks(\u0027deleted\u0027, resource_type, self._project_deleted_callback)\n  self.assertIn(\u0027deleted\u0027, notifications.SUBSCRIBERS)\n  self.assertIn(resource_type, notifications.SUBSCRIBERS[\u0027deleted\u0027])",
+      "revId": "586b6e67d00a348d231fcb7f39d60868a53e89f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
