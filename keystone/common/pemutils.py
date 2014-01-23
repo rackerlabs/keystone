@@ -468,7 +468,7 @@ def base64_to_pem(base64_text, pem_type='cert'):
 
     """
     pem_header = PEM_TYPE_TO_HEADER[pem_type]
-    buf = io.StringIO()
+    buf = six.StringIO()
 
     buf.write(u'-----BEGIN %s-----' % pem_header)
     buf.write(u'\n')
