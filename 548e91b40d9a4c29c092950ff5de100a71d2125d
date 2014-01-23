@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+r8k\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-23T07:09:36Z",
+      "side": 1,
+      "message": "Nice!!! This is very helpful.",
+      "revId": "548e91b40d9a4c29c092950ff5de100a71d2125d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
