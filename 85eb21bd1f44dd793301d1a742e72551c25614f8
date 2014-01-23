@@ -16,6 +16,57 @@
       "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+sOw\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-23T07:04:12Z",
+      "side": 1,
+      "message": "Very cool to see mock being used. I had not seen an example of this yet",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+r+8\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-23T07:04:12Z",
+      "side": 1,
+      "message": "why did you need to set a return_value in mock_getaddrinfo? And why did you pick the value [(1,2,3,4,5)]",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+r+Q\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-23T07:04:12Z",
+      "side": 1,
+      "message": "Here you insure that mock_listen will return mock_sock, correct?",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
