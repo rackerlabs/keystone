@@ -18,8 +18,8 @@
 import json
 import StringIO
 import tempfile
-import urllib2
 
+import six
 from testtools import matchers
 
 from keystone import config
@@ -110,7 +110,12 @@ class PolicyTestCase(tests.TestCase):
         def fakeurlopen(url, post_data):
             return StringIO.StringIO("True")
 
-        self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
+        if six.PY3:
+            import urllib.request
+            self.stubs.Set(urllib.request, 'urlopen', fakeurlopen)
+        else:
+            import urllib2
+            self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
         action = "example:get_http"
         target = {}
         result = rules.enforce(self.credentials, action, target)
@@ -120,7 +125,13 @@ class PolicyTestCase(tests.TestCase):
 
         def fakeurlopen(url, post_data):
             return StringIO.StringIO("False")
-        self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
+
+        if six.PY3:
+            import urllib.request
+            self.stubs.Set(urllib.request, 'urlopen', fakeurlopen)
+        else:
+            import urllib2
+            self.stubs.Set(urllib2, 'urlopen', fakeurlopen)
         action = "example:get_http"
         target = {}
         self.assertRaises(exception.ForbiddenAction, rules.enforce,
