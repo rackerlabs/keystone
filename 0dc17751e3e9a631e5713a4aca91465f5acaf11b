@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+n+Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "Not really a cleanup, more of a change.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n+E\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "change \"instatiation\" to \"instantiation\"",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n98\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "change \"should\" to \"must\"",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n90\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "change \"acailable\" to \"available\"",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n9g\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "change \"classes\" to \"names of classes\"",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n9Q\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "change \u0027the \"external\" plugin\u0027 to \u0027an \"external\" plugin\" (change \"the\" to \"an\")\n\nchange \"then the external authentication\" to \"then external authentication\" (remove \"the\")",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n8k\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "I don\u0027t think a system admin reading this needs to know the internal implementation details of the plugins.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n8Y\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "suggest do \"if AUTH_PLUGINS_LOADED: return\" then can unindent the rest of this code.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n74\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "use the deprecated code from oslo for this.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n6w\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "remove extra space between \u0027registered\u0027 and \u0027auth\u0027",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n6M\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "suggest remove this and change 38 to method \u003d \u0027external\u0027",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n44\u003d",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "provide a function on auth.controllers to reset the auth plugins.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n5k\u003d",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "this looks like an unrelated change, from \u0027simple-challenge-response\u0027 to \u0027simple_challenge_response\u0027",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n3s\u003d",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "this only makes sense when you create an auth controller like at line 60.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n3I\u003d",
+        "filename": "keystone/tests/test_auth_plugin_duplicate_method.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "suggest put these in alphabetical order.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n24\u003d",
+        "filename": "keystone/tests/test_overrides.conf",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "suggest put these in alphabetical order.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n2k\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T19:48:30Z",
+      "side": 1,
+      "message": "suggest provide a method on auth.controllers to reset.",
+      "revId": "0dc17751e3e9a631e5713a4aca91465f5acaf11b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
