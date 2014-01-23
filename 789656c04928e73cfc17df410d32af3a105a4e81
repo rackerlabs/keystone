@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+oyk\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-23T17:15:21Z",
+      "side": 1,
+      "message": "the custom error messages should be removed in favor of assertIsInstance\u0027s default error message, which would provide better feedback here in the event of a failure",
+      "revId": "789656c04928e73cfc17df410d32af3a105a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
