@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+mvw\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-23T23:02:05Z",
+      "side": 1,
+      "message": "Steve - like the first time, I copied this from devstack, so I\u0027ll make the update to devstack.",
+      "parentUuid": "AAAAUH/+0yo\u003d",
+      "revId": "11cd8e66e7fed956b7d3b9906e5016a509995004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+0yY\u003d",
         "filename": "etc/default_catalog.templates",
         "patchSetId": 5
