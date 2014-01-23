@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+ouA\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2048,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:25:42Z",
+      "side": 1,
+      "message": "i\u0027m a bit confused here, remaining_uses was set to 0 initially, but you were able to get a token back?",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+u/4\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
