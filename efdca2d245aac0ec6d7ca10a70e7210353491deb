@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+o3o\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-23T17:04:39Z",
+      "side": 1,
+      "message": "i\u0027d expect this to raise a 409 without seeing the configuration above -- can you introduce this as a new test, rather than rewriting an existing test? both scenarios look like valid tests and i\u0027d rather not lose the old test",
+      "revId": "efdca2d245aac0ec6d7ca10a70e7210353491deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
