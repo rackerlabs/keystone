@@ -33,6 +33,24 @@
       "revId": "4ec3363aa6f627ce747406d4c67088ead8e87768",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+swE\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-23T02:02:35Z",
+      "side": 1,
+      "message": "Thought we should keep it for debugging.  If things go pear shaped, looking at the values in RESOURCE_TYPES would expose types and mismatches",
+      "parentUuid": "AAAAUH/+s0Y\u003d",
+      "revId": "4ec3363aa6f627ce747406d4c67088ead8e87768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
