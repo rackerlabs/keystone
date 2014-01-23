@@ -86,6 +86,8 @@ class RestfulTestCase(rest.RestfulTestCase):
 
         # need to reset the plug-ins
         self.addCleanup(setattr, auth.controllers, 'AUTH_METHODS', {})
+        self.addCleanup(setattr, auth.controllers, 'AUTH_PLUGINS_LOADED',
+                        False)
 
         self.addCleanup(self.teardown_database)
 

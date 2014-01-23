@@ -27,6 +27,7 @@ from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
 
+METHOD_NAME = 'external'
 LOG = log.getLogger(__name__)
 
 CONF = config.CONF
@@ -34,6 +35,8 @@ CONF = config.CONF
 
 @six.add_metaclass(abc.ABCMeta)
 class Base(auth.AuthMethodHandler):
+    method = METHOD_NAME
+
     def authenticate(self, context, auth_info, auth_context):
         """Use REMOTE_USER to look up the user in the identity backend.
 

@@ -28,6 +28,8 @@ LOG = log.getLogger(__name__)
 
 
 class Token(auth.AuthMethodHandler):
+    method = METHOD_NAME
+
     def __init__(self):
         self.provider = provider.Manager()
 
