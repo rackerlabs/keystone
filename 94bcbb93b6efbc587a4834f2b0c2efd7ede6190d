@@ -88,6 +88,24 @@
       "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+qho\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2014-01-23T12:11:56Z",
+      "side": 1,
+      "message": "the previous behavior was exiting in the line 228 through the base exception. In that case the exception was logged as warning.\n\nIf I keep the exception logging as warning, I agree to keep the extra information as debug. But If only the extra information is logged, I think it should be warning.\n\nI think that both logs should be keep, one warning (the exception like old behavior) and the other as debug (the extra info)",
+      "parentUuid": "AAAAUH/+tyk\u003d",
+      "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
