@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+m/A\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-01-23T22:18:01Z",
+      "side": 1,
+      "message": "It will be useful to user_domain_id available as part of creds data as it can be used in policy enforcement",
+      "revId": "c8e4584a073dbedb37ddfb61fa4b00928b869fdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
