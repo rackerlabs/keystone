@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+n+A\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "(NIT): add newline after description to be consistent with the doc strings above.",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n7Y\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 34
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "Add an example with the [revoke] section and an example driver. Something similar to \nhttps://github.com/openstack/keystone/blob/master/doc/source/configuration.rst#step-1-configure-keystoneconf",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n8A\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 34
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "Add an example here like: \n\nhttps://github.com/openstack/keystone/blob/master/doc/source/configuration.rst#user-crud",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n5I\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "(NIT): would we be able to change this to \n\n    :param token_values: \u003cdescription\u003e\n\nhttp://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n3Y\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "There is a lot of common code between the if checks here, what about breaking it out into a separate (probably private) check function, that way this can be handled in a loop. Thoughts?",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n10\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "update copyright year since this is a new file?",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+n1g\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-23T19:52:24Z",
+      "side": 1,
+      "message": "Nested doc strings? Can this just be one set of doc strings?",
+      "revId": "a952a49787cfbaa045e1195a881e40c4a08d3b62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
