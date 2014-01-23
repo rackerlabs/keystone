@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+s0U\u003d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-23T01:49:19Z",
+      "side": 1,
+      "message": "method name change",
+      "revId": "a16659a036d838211f35544c6fb148face9c26bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+s0I\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-23T01:49:19Z",
+      "side": 1,
+      "message": "method name change",
+      "revId": "a16659a036d838211f35544c6fb148face9c26bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+s0k\u003d",
+        "filename": "keystone/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-23T01:49:19Z",
+      "side": 1,
+      "message": "this method name is a little bit confusing. Could you please change it in something like:\nset_default_log_levels_to_default_values",
+      "revId": "a16659a036d838211f35544c6fb148face9c26bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
