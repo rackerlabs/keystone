@@ -30,6 +30,8 @@ LOG = log.getLogger(__name__)
 
 @dependency.requires('oauth_api')
 class OAuth(auth.AuthMethodHandler):
+    method = METHOD_NAME
+
     def __init__(self):
         self.oauth_api = oauth1.Manager()
 
