@@ -124,8 +124,7 @@ in the ``[auth]`` section of the configuration file. However, an
 authentication plugin may also have its own section in the configuration
 file. It is up to the plugin to register its own configuration options.
 
-* ``methods`` - comma-delimited list of authentication plugin names
-* ``<plugin name>`` - specify the class which handles to authentication method, in the same manner as one would specify a backend driver.
+* ``plugins`` - comma-delimited list of authentication plugin class names
 
 Keystone provides three authentication methods by default. ``password`` handles password
 authentication and ``token`` handles token authentication.  ``external`` is used in conjunction
@@ -160,9 +159,8 @@ step.
 If authentication is unsuccessful, the ``authenticate()`` method must raise a
 ``keystone.exception.Unauthorized`` exception.
 
-Simply add the new plugin name to the ``methods`` list along with your plugin
-class configuration in the ``[auth]`` sections of the configuration file
-to deploy it.
+Simply add the new plugin name to the ``plugins`` list along with your
+``[auth]`` sections of the configuration file to deploy it.
 
 If the plugin require addition configurations, it may register its own section
 in the configuration file.
@@ -178,6 +176,9 @@ to ensure that a user must go through other authentication mechanisms, even if t
 is set, remove ``external`` from the list of plugins specified in ``methods``.  This effectively
 disables external authentication.  For more details, refer to :doc:`External
 Authentication <external-auth>`.
+
+All auth plugins must define the attribute ``method`` which indicates what method the plugin will
+be called for. No two plugins can register for the same ``method`` at the same time.
 
 
 Token Provider

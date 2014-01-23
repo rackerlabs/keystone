@@ -49,6 +49,7 @@ gettextutils.install('keystone', lazy=True)
 from keystone.common import environment
 environment.use_eventlet()
 
+from keystone import auth
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import kvs
@@ -333,6 +334,11 @@ class TestCase(testtools.TestCase):
         # tests aren't used.
         self.addCleanup(dependency.reset)
 
+        # need to reset the plug-ins
+        self.addCleanup(auth.controllers.AUTH_METHODS.clear)
+        self.addCleanup(setattr, auth.controllers, 'AUTH_PLUGINS_LOADED',
+                        False)
+
         self.addCleanup(kvs.INMEMDB.clear)
 
         self.addCleanup(timeutils.clear_time_override)
@@ -361,6 +367,11 @@ class TestCase(testtools.TestCase):
         # possible to re-configure a backend, we need to clear the list.  This
         # should eventually be removed once testing has been cleaned up.
         kvs_core.KEY_VALUE_STORE_REGISTRY.clear()
+
+        # need to reset the plug-ins
+        self.addCleanup(auth.controllers.AUTH_METHODS.clear)
+        self.addCleanup(setattr, auth.controllers, 'AUTH_PLUGINS_LOADED',
+                        False)
 
         drivers = service.load_backends()
 
