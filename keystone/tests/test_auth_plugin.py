@@ -23,12 +23,14 @@ from keystone import token
 
 
 # for testing purposes only
-METHOD_NAME = 'simple-challenge-response'
+METHOD_NAME = 'simple_challenge_response'
 EXPECTED_RESPONSE = uuid.uuid4().hex
 DEMO_USER_ID = uuid.uuid4().hex
 
 
 class SimpleChallengeResponse(auth.AuthMethodHandler):
+    method = METHOD_NAME
+
     def authenticate(self, context, auth_payload, user_context):
         if 'response' in auth_payload:
             if auth_payload['response'] != EXPECTED_RESPONSE:
@@ -38,23 +40,28 @@ class SimpleChallengeResponse(auth.AuthMethodHandler):
             return {"challenge": "What's the name of your high school?"}
 
 
+class DuplicateChallengeResponse(SimpleChallengeResponse):
+    """Duplicate test challenge-response plugin."""
+
+
 class TestAuthPlugin(tests.TestCase):
     def setUp(self):
         super(TestAuthPlugin, self).setUp()
-        self.config([
-            tests.dirs.etc('keystone.conf.sample'),
-            tests.dirs.tests('test_overrides.conf'),
-            tests.dirs.tests('backend_sql.conf'),
-            tests.dirs.tests('backend_sql_disk.conf'),
-            tests.dirs.tests('test_auth_plugin.conf')])
+        self.config(self.config_files())
         self.load_backends()
-        auth.controllers.AUTH_METHODS[METHOD_NAME] = SimpleChallengeResponse()
 
         # need to register the token provider first because auth controller
         # depends on it
         token.provider.Manager()
 
         self.api = auth.controllers.Auth()
+
+    def config_files(self):
+        return [tests.dirs.etc('keystone.conf.sample'),
+                tests.dirs.tests('test_overrides.conf'),
+                tests.dirs.tests('backend_sql.conf'),
+                tests.dirs.tests('backend_sql_disk.conf'),
+                tests.dirs.tests('test_auth_plugin.conf')]
 
     def test_unsupported_auth_method(self):
         method_name = uuid.uuid4().hex
@@ -67,8 +74,8 @@ class TestAuthPlugin(tests.TestCase):
                           auth_data)
 
     def test_addition_auth_steps(self):
-        auth_data = {'methods': ['simple-challenge-response']}
-        auth_data['simple-challenge-response'] = {
+        auth_data = {'methods': [METHOD_NAME]}
+        auth_data[METHOD_NAME] = {
             'test': 'test'}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo.create(None, auth_data)
@@ -82,8 +89,8 @@ class TestAuthPlugin(tests.TestCase):
             self.assertTrue('challenge' in e.authentication[METHOD_NAME])
 
         # test correct response
-        auth_data = {'methods': ['simple-challenge-response']}
-        auth_data['simple-challenge-response'] = {
+        auth_data = {'methods': [METHOD_NAME]}
+        auth_data[METHOD_NAME] = {
             'response': EXPECTED_RESPONSE}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo.create(None, auth_data)
@@ -92,8 +99,8 @@ class TestAuthPlugin(tests.TestCase):
         self.assertEqual(auth_context['user_id'], DEMO_USER_ID)
 
         # test incorrect response
-        auth_data = {'methods': ['simple-challenge-response']}
-        auth_data['simple-challenge-response'] = {
+        auth_data = {'methods': [METHOD_NAME]}
+        auth_data[METHOD_NAME] = {
             'response': uuid.uuid4().hex}
         auth_data = {'identity': auth_data}
         auth_info = auth.controllers.AuthInfo.create(None, auth_data)
@@ -103,3 +110,25 @@ class TestAuthPlugin(tests.TestCase):
                           {'environment': {}},
                           auth_info,
                           auth_context)
+
+
+class LegacyAuthPluginConfiguration(TestAuthPlugin):
+    def config_files(self):
+        return [tests.dirs.etc('keystone.conf.sample'),
+                tests.dirs.tests('test_overrides.conf'),
+                tests.dirs.tests('backend_sql.conf'),
+                tests.dirs.tests('backend_sql_disk.conf'),
+                tests.dirs.tests('legacy_test_auth_plugin.conf')]
+
+
+class TestFailureAuthMethodRegistration(tests.TestCase):
+    def test_auth_plugin_loading_duplicate_method_registration(self):
+        # Ensure the auth plugin list is empty.
+        auth.controllers.AUTH_METHODS.clear()
+        auth.controllers.AUTH_PLUGINS_LOADED = False
+        self.opt_in_group(
+            'auth',
+            plugins=[
+                'keystone.tests.test_auth_plugin.SimpleChallengeResponse',
+                'keystone.tests.test_auth_plugin.DuplicateChallengeResponse'])
+        self.assertRaises(ValueError, auth.controllers.load_auth_methods)

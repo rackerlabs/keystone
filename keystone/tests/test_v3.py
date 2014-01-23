@@ -88,9 +88,6 @@ class RestfulTestCase(rest.RestfulTestCase):
         # it's not. TestCase already does CONF.reset.
         self.addCleanup(CONF.reset)
 
-        # need to reset the plug-ins
-        self.addCleanup(setattr, auth.controllers, 'AUTH_METHODS', {})
-
         self.addCleanup(self.teardown_database)
 
     def load_backends(self):

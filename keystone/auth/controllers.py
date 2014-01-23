@@ -32,21 +32,50 @@ LOG = log.getLogger(__name__)
 CONF = config.CONF
 
 # registry of authentication methods
+AUTH_PLUGINS_LOADED = False
 AUTH_METHODS = {}
 
 
-def load_auth_method(method_name):
-    if method_name not in CONF.auth.methods:
+def load_auth_methods():
+    global AUTH_PLUGINS_LOADED
+
+    if not AUTH_PLUGINS_LOADED:
+        if CONF.auth.methods:
+            config.setup_authentication()
+            LOG.warning(_('keystone.conf [auth] methods is deprecated in favor'
+                          'of keystone.conf [auth] plugins and will be '
+                          'removed in K'))
+            for method in CONF.auth.methods:
+                plugin = CONF.auth.get(method)
+                driver = importutils.import_object(plugin)
+                if hasattr(driver, 'method'):
+                    if driver.method != method:
+                        raise ValueError(_('Driver requested method %(req)s '
+                                           'does not match method name '
+                                           '%(method)s.') %
+                                         {'req': driver.method,
+                                          'method': method})
+                else:
+                    LOG.warning(_('Auth Plugin %s does not have a '
+                                  '"method" attribute.'), plugin)
+                AUTH_METHODS[method] = driver
+        else:
+            for plugin in CONF.auth.plugins:
+                driver = importutils.import_object(plugin)
+                if driver.method in AUTH_METHODS:
+                    raise ValueError(_('Plugin %(plugin)s requesting '
+                                       'previously registered  auth method '
+                                       '%(method)s') %
+                                     {'plugin': plugin,
+                                      'method': driver.method})
+                AUTH_METHODS[driver.method] = driver
+        AUTH_PLUGINS_LOADED = True
+
+
+def get_auth_method(method):
+    if method not in AUTH_METHODS:
         raise exception.AuthMethodNotSupported()
-    driver = CONF.auth.get(method_name)
-    return importutils.import_object(driver)
-
-
-def get_auth_method(method_name):
-    global AUTH_METHODS
-    if method_name not in AUTH_METHODS:
-        AUTH_METHODS[method_name] = load_auth_method(method_name)
-    return AUTH_METHODS[method_name]
+    return AUTH_METHODS[method]
 
 
 @dependency.requires('assignment_api', 'identity_api', 'trust_api')
@@ -211,7 +240,7 @@ class AuthInfo(object):
 
         # make sure auth method is supported
         for method_name in self.get_method_names():
-            if method_name not in CONF.auth.methods:
+            if method_name not in AUTH_METHODS:
                 raise exception.AuthMethodNotSupported()
 
     def _validate_and_normalize_auth_data(self):
@@ -291,10 +320,6 @@ class Auth(controller.V3Controller):
     # member_name = 'token' to facilitate policy decisions.
     collection_name = 'tokens'
     member_name = 'token'
-
-    def __init__(self, *args, **kw):
-        super(Auth, self).__init__(*args, **kw)
-        config.setup_authentication()
 
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
