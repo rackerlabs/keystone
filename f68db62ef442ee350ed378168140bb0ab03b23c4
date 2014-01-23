@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+o0E\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:12:50Z",
+      "side": 1,
+      "message": "you\u0027re doing a lot more just notifications upon disable.\n\nsuggest re-writing the summary line and adding more content to the commit message in general.",
+      "revId": "f68db62ef442ee350ed378168140bb0ab03b23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+o1M\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:12:50Z",
+      "side": 1,
+      "message": "rebase this file after https://review.openstack.org/#/c/66718/2/keystone/trust/controllers.py has been merged.",
+      "revId": "f68db62ef442ee350ed378168140bb0ab03b23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+o00\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-23T17:12:50Z",
+      "side": 1,
+      "message": "same as previous trust comment, the work lance did will replace this https://review.openstack.org/#/c/66719/10/keystone/trust/core.py",
+      "revId": "f68db62ef442ee350ed378168140bb0ab03b23c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
