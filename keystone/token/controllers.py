@@ -250,12 +250,11 @@ class Auth(controller.V2Controller):
             raise exception.ValidationSizeError(attribute='userId',
                                                 size=CONF.max_param_size)
 
-        username = auth['passwordCredentials'].get('username', '')
-        if len(username) > CONF.max_param_size:
-            raise exception.ValidationSizeError(attribute='username',
-                                                size=CONF.max_param_size)
-
+        username = auth['passwordCredentials'].get('username')
         if username:
+            if len(username) > CONF.max_param_size:
+                raise exception.ValidationSizeError(attribute='username',
+                                                    size=CONF.max_param_size)
             try:
                 user_ref = self.identity_api.get_user_by_name(
                     username, CONF.identity.default_domain_id)
