@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+gq4\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-24T22:32:24Z",
+      "side": 1,
+      "message": "Agree.",
+      "parentUuid": "AAAAUH/+hWI\u003d",
+      "revId": "9cb653ee16b00491d59b09f300ceb26795b64206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+hYo\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+gqU\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-24T22:32:24Z",
+      "side": 1,
+      "message": "Nice rules.\nI\u0027ll just have to add `domain_id%(target.domain.id)s` to the `match_domain_id` rule.",
+      "parentUuid": "AAAAUH/+hYo\u003d",
+      "revId": "9cb653ee16b00491d59b09f300ceb26795b64206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+hWE\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2014-01-24T19:53:58Z",
       "side": 1,
       "message": "I think it would be better, you set these variables at the beginning of the file to use it here, helps maintain the organization.",
+      "revId": "9cb653ee16b00491d59b09f300ceb26795b64206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+gqQ\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-24T22:32:24Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAUH/+hWE\u003d",
       "revId": "9cb653ee16b00491d59b09f300ceb26795b64206",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
