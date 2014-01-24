@@ -84,9 +84,6 @@ class RestfulTestCase(rest.RestfulTestCase):
         #drop the policy rules
         self.addCleanup(rules.reset)
 
-        # need to reset the plug-ins
-        self.addCleanup(setattr, auth.controllers, 'AUTH_METHODS', {})
-
         self.addCleanup(self.teardown_database)
 
     def load_backends(self):
