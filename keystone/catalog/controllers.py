@@ -146,6 +146,13 @@ class RegionV3(controller.V3Controller):
         self.get_member_from_driver = self.catalog_api.get_region
 
     @controller.protected()
+    def create_region_with_id(self, context, region_id, region):
+        """Specialized route target for PUT /regions/{region_id}."""
+        ref = self._normalize_dict(region)
+        ref = self.catalog_api.create_region(region_id, ref)
+        return RegionV3.wrap_member(context, ref)
+
+    @controller.protected()
     def create_region(self, context, region):
         ref = self._assign_unique_id(self._normalize_dict(region))
 

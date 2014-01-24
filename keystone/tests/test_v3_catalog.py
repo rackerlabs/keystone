@@ -25,13 +25,26 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
     # region crud tests
 
+    def test_create_region_with_id(self):
+        """Call ``PUT /regions/{region_id}``."""
+        ref = self.new_region_ref()
+        del ref['id']
+        region_id = 'myregion'
+        r = self.put(
+            '/regions/%s' % region_id,
+            body={'region': ref})
+        self.assertValidRegionResponse(r, ref)
+        # Double-check that the region ID was kept as-is and not
+        # populated with a UUID, like is the case with POST /regions
+        self.assertEqual(region_id, r['id'])
+
     def test_create_region(self):
         """Call ``POST /regions``."""
         ref = self.new_region_ref()
         r = self.post(
             '/regions',
             body={'region': ref})
-        return self.assertValidRegionResponse(r, ref)
+        self.assertValidRegionResponse(r, ref)
 
     def test_list_regions(self):
         """Call ``GET /regions``."""
@@ -71,7 +84,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.post(
             '/services',
             body={'service': ref})
-        return self.assertValidServiceResponse(r, ref)
+        self.assertValidServiceResponse(r, ref)
 
     def test_list_services(self):
         """Call ``GET /services``."""
