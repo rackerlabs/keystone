@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+l3c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T02:35:16Z",
+      "side": 1,
+      "message": "If you don\u0027t do something like: for (counter, value) in reversed(enumerate(direct_maps)) then a $10 would be be partially replaced by $1.",
+      "parentUuid": "AAAAUH/+l78\u003d",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+mO8\u003d",
         "filename": "keystone/tests/mapping_fixtures.py",
         "patchSetId": 2
