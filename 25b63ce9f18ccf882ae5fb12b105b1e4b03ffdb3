@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hDE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-24T21:03:23Z",
+      "side": 1,
+      "message": "gerrit isn\u0027t linking this, but it will link this:\n\n  Closes-Bug: 1263804",
+      "revId": "25b63ce9f18ccf882ae5fb12b105b1e4b03ffdb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+hCw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-24T21:03:23Z",
+      "side": 1,
+      "message": "do this before the try block so we\u0027re not needlessly calling get_token()",
+      "revId": "25b63ce9f18ccf882ae5fb12b105b1e4b03ffdb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
