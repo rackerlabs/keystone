@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hGM\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-24T20:52:47Z",
+      "side": 0,
+      "message": "Nice to see this evil double quote was removed as a result of your new code!",
+      "revId": "5df787576aa0a88d098ead8be9a9beb7e48124cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hHQ\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-24T20:52:47Z",
+      "side": 1,
+      "message": "Very helpful comment!",
+      "revId": "aa14b37ccdec654bda86ba7b95f8dea58eef8b2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+hG4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-24T20:52:47Z",
+      "side": 1,
+      "message": "just curiously why did you feel the need to add this sanity check?",
+      "revId": "aa14b37ccdec654bda86ba7b95f8dea58eef8b2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
