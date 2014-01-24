@@ -108,6 +108,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+sn8\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-24T15:32:52Z",
+      "side": 1,
+      "message": "I think you might have a potential race condition here.  If two different threads hit this code, and they are operating on the same object out of memcache, etc, then one could decrement, the  second decrement, and then the value is less than 0.  Better to do a copy before the math.",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+omw\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
@@ -154,6 +171,24 @@
       "side": 1,
       "message": "consume_use is not supposed to be called in that case, but I can add a check if you want to be extra cautious",
       "parentUuid": "AAAAUH/+u/4\u003d",
+      "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+snU\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-24T15:32:52Z",
+      "side": 1,
+      "message": "Yes, this code is done outside of a transaction.  It is possible the multiple access to the DB can lead to just that case,.",
+      "parentUuid": "AAAAUH/+usk\u003d",
       "revId": "90242b1c33de6955601cf187838ad31d2408f1a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
