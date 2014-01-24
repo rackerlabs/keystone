@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+ie0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T16:16:19Z",
+      "side": 1,
+      "message": "Info for the reviewers:\n\n  (Pdb) p local\n  [{\u0027group\u0027: {\u0027id\u0027: \u00270cd5e9\u0027}}]\n\nI should probably loop through local array (since it\u0027s always an array and add each one to identity_values, or just combine the two",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+mIU\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 2
@@ -83,6 +100,58 @@
       "side": 1,
       "message": "If you don\u0027t do something like: for (counter, value) in reversed(enumerate(direct_maps)) then a $10 would be be partially replaced by $1.",
       "parentUuid": "AAAAUH/+l78\u003d",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+l0E\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T16:16:19Z",
+      "side": 1,
+      "message": "Right, good call.",
+      "parentUuid": "AAAAUH/+l3c\u003d",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ih4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T16:16:19Z",
+      "side": 1,
+      "message": "these comments are more of just FYIs..\n\n  (Pdb) p assertion_data\n  {\u0027UserName\u0027: [\u0027smithj\u0027], \u0027LastName\u0027:[\u0027Smith\u0027], \u0027orgPersonType\u0027:\n  [\u0027Contractor\u0027,\u0027SubContractor\u0027,\u0027Customer\u0027, \u0027\u0027, \u0027\u0027], \u0027Email\u0027:\n  [\u0027customer@customer.domain.com\u0027], \u0027FirstName\u0027: [\u0027Jill\u0027]}\n\nI want to grab the value that I plan on directly mapping, Smith or Jill in this case, I guess I can safely assume it\u0027s just 1 element, not sure if grabbing [0] is a good idea.",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+iew\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T16:16:19Z",
+      "side": 1,
+      "message": "same thing here, another bit of info:\n\n  (Pdb) p assertion_values \n  [\u0027eviltester@evilcorp.com\u0027]\n  (Pdb) p values\n  [\u0027^@corp.com$\u0027]",
       "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
