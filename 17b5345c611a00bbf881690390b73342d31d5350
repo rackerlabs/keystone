@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hLQ\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-24T20:24:25Z",
+      "side": 1,
+      "message": "this signature needs to be updated as well",
+      "revId": "17b5345c611a00bbf881690390b73342d31d5350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+hL0\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-24T20:24:25Z",
+      "side": 1,
+      "message": "this should be a 201 created, but i logged a bug and proposed a fix in a dependent patch\n\n  https://bugs.launchpad.net/keystone/+bug/1272501",
+      "revId": "17b5345c611a00bbf881690390b73342d31d5350",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
