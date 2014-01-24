@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hYo\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8932
+      },
+      "writtenOn": "2014-01-24T19:46:05Z",
+      "side": 1,
+      "message": "I have also being working with domain admin and i create a rule thats a little more global for domain_admin\n\n\"user_domain_id\": \"domain_id:%(target.user.domain_id)s or domain_id:%(user.domain_id)s\",\n    \"project_domain_id\": \"domain_id:%(target.project.domain_id)s or domain_id:%(project.domain_id)s\",\n    \"groups_domain_id\": \"domain_id:%(group.domain_id)s or domain_id:%(target.group.domain_id)s\",\n    \"match_domain_id\": \"domain_id:%(domain_id)s or rule:user_domain_id or rule:project_domain_id or rule:groups_domain_id\",\n    \"domain_admin\": \"rule:admin_required and rule:match_domain_id\",\n\nMaybe you could use it instead of 3 different domain_admin based on where the domain_id comes from.",
+      "revId": "9cb653ee16b00491d59b09f300ceb26795b64206",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
