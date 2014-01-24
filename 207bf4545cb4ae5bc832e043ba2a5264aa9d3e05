@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+g+g\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-24T21:18:37Z",
+      "side": 1,
+      "message": "These are KDS config options, KDS is going to be separate from Keystone, so we can\u0027t have these config options on the keystone config file.",
+      "revId": "207bf4545cb4ae5bc832e043ba2a5264aa9d3e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
