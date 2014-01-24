@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+mCI\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1994
+      },
+      "writtenOn": "2014-01-24T01:40:37Z",
+      "side": 1,
+      "message": "Isn\u0027t this line obsolete since we have line 36?",
+      "revId": "5d8a1a41420aa20d2aa21da6311c9d55b9e373b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
