@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hx4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-24T18:08:31Z",
+      "side": 1,
+      "message": "please remove the \"when involving a\".\nListing role, user etc is more effective and concise.\nThanks.",
+      "revId": "2ae2a650498a843ed7e9aaa5c378e82898384e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
