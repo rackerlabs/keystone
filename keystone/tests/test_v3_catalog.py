@@ -14,6 +14,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import uuid
+
 from keystone.tests import test_v3
 
 
@@ -24,16 +26,16 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
     def test_create_region_with_id(self):
         """Call ``PUT /regions/{region_id}``."""
-        ref = dict(description="my region")
-        region_id = 'myregion'
+        ref = self.new_region_ref()
+        region_id = ref.pop('id')
         r = self.put(
-            '/regions/myregion',
-            body={'region': ref}, expected_status=200)
+            '/regions/%s' % region_id,
+            body={'region': ref},
+            expected_status=201)
         self.assertValidRegionResponse(r, ref)
         # Double-check that the region ID was kept as-is and not
         # populated with a UUID, like is the case with POST /regions
-        entity = r.result.get("region")
-        self.assertEqual(region_id, entity['id'])
+        self.assertEqual(region_id, r.json['region']['id'])
 
     def test_create_region(self):
         """Call ``POST /regions``."""
@@ -42,6 +44,24 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/regions',
             body={'region': ref})
         self.assertValidRegionResponse(r, ref)
+
+    def test_create_region_without_id(self):
+        """Call ``POST /regions``."""
+        ref = self.new_region_ref()
+        del ref['id']
+        r = self.post(
+            '/regions',
+            body={'region': ref},
+            expected_status=201)
+        self.assertValidRegionResponse(r, ref)
+
+    def test_create_region_with_conflicting_ids(self):
+        """Call ``POST /regions``."""
+        ref = self.new_region_ref()
+        self.put(
+            '/regions/%s' % uuid.uuid4().hex,
+            body={'region': ref},
+            expected_status=400)
 
     def test_list_regions(self):
         """Call ``GET /regions``."""

@@ -88,7 +88,7 @@ class Catalog(sql.Base, catalog.Driver):
     def _get_region(self, session, region_id):
         ref = session.query(Region).get(region_id)
         if not ref:
-            raise exception.RegionNotFound(region_id=region_id)
+            raise exception.NotFound(target=region_id)
         return ref
 
     def _delete_child_regions(self, session, region_id):
