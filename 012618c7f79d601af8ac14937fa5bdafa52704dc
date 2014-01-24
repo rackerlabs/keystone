@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+gjc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-24T22:49:23Z",
+      "side": 0,
+      "message": "Have to investigate this part a little more. The config generator doesn\u0027t seem to pick up any of the options defined in keystone/common/config.py which is a problem since that is where the majority of the Keystone configuration options are defined. We could probably go about this two ways: \n\n1.) rewrite keystone/common/config.py so the generator works properly.\n\n2.) modify the generator to accept certain files and generate configs for just the options defined in those files.",
+      "revId": "012618c7f79d601af8ac14937fa5bdafa52704dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

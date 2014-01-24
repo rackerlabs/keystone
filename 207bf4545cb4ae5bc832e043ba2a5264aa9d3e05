@@ -16,6 +16,23 @@
       "revId": "207bf4545cb4ae5bc832e043ba2a5264aa9d3e05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+gzE\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-24T22:49:23Z",
+      "side": 1,
+      "message": "double ampersand? Fix in oslo, resync log to keystone, regenerate config.",
+      "revId": "207bf4545cb4ae5bc832e043ba2a5264aa9d3e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
