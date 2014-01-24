@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+jB8\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-24T15:35:24Z",
+      "side": 1,
+      "message": "there wasn\u0027t much of a conflict here, but brant updated L261 to evaluate the default domain at runtime",
+      "revId": "395531d4300c8466d2ed433564ee378ecd1067b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
