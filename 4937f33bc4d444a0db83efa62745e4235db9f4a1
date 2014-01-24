@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+mKU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T01:15:21Z",
+      "side": 1,
+      "message": "You probably want to drop this line down a few lines and replace it with a short description of what the method does.",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+mIU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T01:15:21Z",
+      "side": 1,
+      "message": "Is is possible that there would be more than 10 direct_maps?  If so we would have to do them in reverse.",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+mO8\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T01:15:21Z",
+      "side": 1,
+      "message": "Is there any reason that this is a Python string instead of a comment?",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+mO0\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T01:15:21Z",
+      "side": 1,
+      "message": "Or this one?",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+mME\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T01:15:21Z",
+      "side": 1,
+      "message": "I think you might what to do a deeper inspection on values instead of just checking that it has a value.\n\nSame goes for most of these tests.",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+mL0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-24T01:15:21Z",
+      "side": 1,
+      "message": "Does this comment match the test?",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
