@@ -16,6 +16,24 @@
       "revId": "efdca2d245aac0ec6d7ca10a70e7210353491deb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+oRE\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2014-01-24T19:56:50Z",
+      "side": 1,
+      "message": "Will fix, thanks!",
+      "parentUuid": "AAAAUH/+o3o\u003d",
+      "revId": "efdca2d245aac0ec6d7ca10a70e7210353491deb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
