@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+h4I\u003d",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-24T17:50:14Z",
+      "side": 1,
+      "message": "Thanks for the follow up!",
+      "parentUuid": "AAAAUH/+v+I\u003d",
+      "revId": "385de76e8a2022e267a48e9bd733b11220698fd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+wI0\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "ditto ;)",
       "parentUuid": "AAAAUH/+wI0\u003d",
+      "revId": "385de76e8a2022e267a48e9bd733b11220698fd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+h4Q\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-24T17:50:14Z",
+      "side": 1,
+      "message": "Good to know! Thanks for the follow up",
+      "parentUuid": "AAAAUH/+v+E\u003d",
       "revId": "385de76e8a2022e267a48e9bd733b11220698fd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
