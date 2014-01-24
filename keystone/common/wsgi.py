@@ -296,6 +296,9 @@ class Application(BaseApplication):
         Retrieve the trust_id from the token
         Returns None if token is is not trust scoped
         """
+        #allow the admin token to pass through.
+        if context['token_id'] == CONF.admin_token:
+            return None
         try:
             token_ref = self.token_api.get_token(context['token_id'])
         except exception.TokenNotFound:
