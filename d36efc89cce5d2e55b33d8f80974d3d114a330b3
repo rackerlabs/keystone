@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+hMA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-24T20:39:36Z",
+      "side": 1,
+      "message": "typo.  oringal should be original",
+      "revId": "d36efc89cce5d2e55b33d8f80974d3d114a330b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+hIc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-24T20:39:36Z",
+      "side": 1,
+      "message": "you really are only checking create_user below so perhaps there is no need to set add conf.ldap.user_allow_update to be false and conf.ldap.user_allow_delete to be false? Unless you want to add separate unit tests for these?",
+      "revId": "d36efc89cce5d2e55b33d8f80974d3d114a330b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
