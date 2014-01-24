@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+l84\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T02:19:02Z",
+      "side": 1,
+      "message": "cool, will do",
+      "parentUuid": "AAAAUH/+mKU\u003d",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+mIU\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 2
@@ -36,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+l78\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T02:19:02Z",
+      "side": 1,
+      "message": "Hmm, why is that? Also, can you think of an easier way to replace the $0 ... $X values? This one seems like overkill.",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+mO8\u003d",
         "filename": "keystone/tests/mapping_fixtures.py",
         "patchSetId": 2
@@ -47,6 +82,24 @@
       "writtenOn": "2014-01-24T01:15:21Z",
       "side": 1,
       "message": "Is there any reason that this is a Python string instead of a comment?",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+l8g\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T02:19:02Z",
+      "side": 1,
+      "message": "Nope, I can make them comments",
+      "parentUuid": "AAAAUH/+mO8\u003d",
       "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+l8M\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T02:19:02Z",
+      "side": 1,
+      "message": "Yesh, the trouble is traversing the values, theyre a bit too nested atm. I think I need to change the way I\u0027m saving them in the utils section",
+      "parentUuid": "AAAAUH/+mME\u003d",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+mL0\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
@@ -98,6 +169,24 @@
       "writtenOn": "2014-01-24T01:15:21Z",
       "side": 1,
       "message": "Does this comment match the test?",
+      "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+l8Y\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-24T02:19:02Z",
+      "side": 1,
+      "message": "thanks for that find!",
+      "parentUuid": "AAAAUH/+mL0\u003d",
       "revId": "4937f33bc4d444a0db83efa62745e4235db9f4a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
