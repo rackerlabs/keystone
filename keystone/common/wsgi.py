@@ -299,6 +299,9 @@ class Application(BaseApplication):
         try:
             token_ref = self.token_api.get_token(context['token_id'])
         except exception.TokenNotFound:
+            #allow the admin token to pass through.
+            if context['token_id'] == CONF.admin_token:
+                return None
             LOG.warning(_('Invalid token in _get_trust_id_for_request'))
             raise exception.Unauthorized()
 
