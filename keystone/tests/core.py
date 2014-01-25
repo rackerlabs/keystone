@@ -300,6 +300,7 @@ class TestCase(testtools.TestCase):
         super(TestCase, self).setUp()
 
         self._paths = []
+        self._opt_default_reset = []
 
         def _cleanup_paths():
             for path in self._paths:
@@ -346,6 +347,9 @@ class TestCase(testtools.TestCase):
         # Reset the auth-plugin registry
         self.addCleanup(self.clear_auth_plugin_registry)
 
+        # Reset any default options to the actual defaults originally defined
+        self.addCleanup(self._cleanup_reset_default_options)
+
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
 
@@ -356,6 +360,33 @@ class TestCase(testtools.TestCase):
     def opt(self, **kw):
         for k, v in six.iteritems(kw):
             CONF.set_override(k, v)
+
+    def opt_override_default(self, group=None, **kw):
+        """Overrides the default values of configuration options.
+
+        Sometimes it is useful to change the default value of a configuration
+        option. This allows for a configuration file to still override the
+        option value (where opt_in_group sets a full override that cannot
+        be overriden by a configuration file).  ``opt_override_default`` will
+        ensure that the original default is reset when cleanup is performed.
+
+        ``opt_override_default`` will not work on options that do not provide
+        a default value.
+        """
+        for name, value in kw.iteritems():
+            opt_info = CONF._get_opt_info(name, group)
+            if 'default' not in opt_info:
+                raise AssertionError('Options without a default value cannot '
+                                     'have the default overriden.')
+            self._opt_default_reset.append({'group': group,
+                                            name: opt_info.get('default')})
+            CONF.set_default(name, value, group=group)
+
+    def _cleanup_reset_default_options(self):
+        # This is meant to be run during the cleanup phase and reset
+        # any configuration options to the original defaults.
+        for default_opt_value in self._opt_default_reset:
+            CONF.set_default(**default_opt_value)
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
