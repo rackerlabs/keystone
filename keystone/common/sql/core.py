@@ -206,18 +206,16 @@ class Base(object):
             hints.remove(filter_)
             return query.filter(query_term)
 
-        def exact_filter(model, filter_, cumlative_filter_dict, hints):
+        def exact_filter(model, filter_, hints):
             """Applies an exact filter to a query.
 
             :param model: the table model in question
             :param filter_: the dict that describes this filter
-            :param cumlative_filter_dict: a dict that describes the set of
-                                          exact filters built up so far
             :param hints: contains the list of filters yet to be satisfied.
                           Any filters satisfied here will be removed so that
                           the caller will know if any filters remain.
 
-            :returns cumlative_filter_dict: updated cumulative dict
+            :returns filter_dict: updated filter dict
 
             """
             key = filter_['name']
@@ -238,7 +236,7 @@ class Base(object):
         for filter_ in hints.filters():
             # TODO(henry-nash): Check if name is valid column, if not skip
             if filter_['comparator'] == 'equals':
-                filter_dict = exact_filter(model, filter_, filter_dict, hints)
+                filter_dict = exact_filter(model, filter_, hints)
             else:
                 query = inexact_filter(model, query, filter_, hints)
 
