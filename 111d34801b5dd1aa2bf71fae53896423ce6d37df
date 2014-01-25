@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+d94\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-25T16:34:10Z",
+      "side": 1,
+      "message": "an update event?",
+      "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+d90\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-25T16:34:10Z",
+      "side": 1,
+      "message": "we\u0027re potentially sending two notifications for the same event now",
+      "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
