@@ -1,0 +1,11 @@
+Approved+1: James E. Blair <corvus@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Approved+1: David Stanek <dstanek@dstanek.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 25 Jan 2014 12:19:54 +0000
+Reviewed-on: https://review.openstack.org/68116
+Project: openstack/keystone
+Branch: refs/heads/master
