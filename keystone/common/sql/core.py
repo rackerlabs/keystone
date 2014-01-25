@@ -155,7 +155,7 @@ def transaction(expire_on_commit=False):
 
 # Backends
 class Base(object):
-    def _filter(self, model, query, hints):
+    def filter_query(self, model, query, hints):
         """Applies filtering to a query.
 
         :param model: the table model in question
@@ -229,6 +229,10 @@ class Base(object):
             hints.remove(filter_)
             return filter_dict
 
+        if hints is None:
+            # Nothing to do, just return the same query.
+            return query
+
         filter_dict = {}
 
         for filter_ in hints.filters():
@@ -241,23 +245,6 @@ class Base(object):
         # Apply any exact filters we built up
         if filter_dict:
             query = query.filter_by(**filter_dict)
-
-        return query
-
-    def filter_query(self, model, query, hints):
-        """Applies filtering to a query.
-
-        :param model: table model
-        :param query: query to apply filters to
-        :param hints: contains the list of filters yet to be satisfied.
-                      Any filters satisfied here will be removed so that
-                      the caller will know if any filters remain.
-
-        :returns updated query
-
-        """
-        if hints is not None:
-            query = self._filter(model, query, hints)
 
         return query
 
