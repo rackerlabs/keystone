@@ -16,6 +16,24 @@
       "revId": "3ab5178c85484ce1590a1dcbba5e35303dfe939b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+d5g\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-25T16:51:56Z",
+      "side": 1,
+      "message": "Dolph - This function isn\u0027t meant to be public -- the only place it\u0027s called is from filter_query() at line 259, which is the public function.\n\nI could probably get rid of this function and just put all this code in filter_query.",
+      "parentUuid": "AAAAUH/+d6s\u003d",
+      "revId": "3ab5178c85484ce1590a1dcbba5e35303dfe939b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
