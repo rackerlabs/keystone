@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+d6s\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-25T16:46:13Z",
+      "side": 1,
+      "message": "as this is becoming a public module-level function, it needs to be renamed as part of this patch",
+      "revId": "3ab5178c85484ce1590a1dcbba5e35303dfe939b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
