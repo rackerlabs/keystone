@@ -1,0 +1,12 @@
+Approved+1: James E. Blair <corvus@inaugust.com>
+Verified+2: Jenkins
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Code-Review+1: Steven Hardy <shardy@redhat.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+1: bryan-murray <bryan.murray@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 25 Jan 2014 09:33:45 +0000
+Reviewed-on: https://review.openstack.org/51973
+Project: openstack/keystone
+Branch: refs/heads/stable/grizzly
