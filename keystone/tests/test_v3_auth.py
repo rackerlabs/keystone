@@ -2033,8 +2033,7 @@ class TestTrustAuth(TestAuthInfo):
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id)
         del ref['id']
-        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
-        self.assertValidTrustResponse(r, ref)
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
     def test_trust_crud(self):
         ref = self.new_trust_ref(
@@ -2090,14 +2089,18 @@ class TestTrustAuth(TestAuthInfo):
     def test_create_trust_trustee_404(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
-            trustee_user_id=uuid.uuid4().hex)
+            trustee_user_id=uuid.uuid4().hex,
+            project_id=self.project_id,
+            role_ids=[self.role_id])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_trust_trustor_trustee_backwards(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.trustee_user_id,
-            trustee_user_id=self.user_id)
+            trustee_user_id=self.user_id,
+            project_id=self.project_id,
+            role_ids=[self.role_id])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
