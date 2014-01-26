@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+cpg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T07:09:31Z",
+      "side": 1,
+      "message": "replace this line with \"because there are no roles for the trustee on the authorized project.\"",
+      "revId": "3c723125c68e747955363cad7d41a41d3a790db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+cpY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T07:09:31Z",
+      "side": 1,
+      "message": "a check in trust creation ... to ensure at least one role exists ...",
+      "revId": "3c723125c68e747955363cad7d41a41d3a790db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+cpw\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T07:09:31Z",
+      "side": 1,
+      "message": "Are you just trying to check if there is a roles reference in the trust? Or specifically when a problem is also specified?\n\nCan this be moved up to like 149 if that\u0027s the case?\nAnd just call:\n\n  if not trust.get(\u0027roles\u0027):\n     raise ... \n\nInstead of going through the extra api call to list all roles",
+      "revId": "3c723125c68e747955363cad7d41a41d3a790db6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
