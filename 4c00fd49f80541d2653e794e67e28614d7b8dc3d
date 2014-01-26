@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+bV8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-26T23:46:25Z",
+      "side": 1,
+      "message": "Maybe we should modify the commit message here since the identity_api is still being used for update user calls? This patch just makes sure that we\u0027re not using identity_api.get_user or identity_api.get_group calls, at least from the KVS backend.\n\nThis are still *some* identity calls, two I believe, that are used from the KVS backend for updating users.",
+      "revId": "4c00fd49f80541d2653e794e67e28614d7b8dc3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bWU\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-26T23:46:25Z",
+      "side": 1,
+      "message": "Only a couple calls left to the identity_api here, and it looks like they are updates. After this patch there shouldn\u0027t be any get_user/get_group calls to the identity_api.",
+      "revId": "4c00fd49f80541d2653e794e67e28614d7b8dc3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bWQ\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-26T23:46:25Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "4c00fd49f80541d2653e794e67e28614d7b8dc3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
