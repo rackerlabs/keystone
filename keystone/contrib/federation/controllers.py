@@ -26,19 +26,13 @@ from keystone import exception
 CONF = config.CONF
 
 
-@dependency.requires('federation_api')
-class IdentityProvider(controller.V3Controller):
-    """Identity Provider representation.
+class _ControllerBase(controller.V3Controller):
+    """Base behaviors for federation controllers.
 
     New class parameter:
     - _public_parameters - set of parameters that are exposed to the user.
                            Usually used by cls.filter_params()
-
     """
-    collection_name = 'identity_providers'
-    member_name = 'identity_provider'
-
-    _public_parameters = frozenset(['id', 'enabled', 'description', 'links'])
 
     @classmethod
     def check_immutable_params(cls, ref, keys):
@@ -94,6 +88,15 @@ class IdentityProvider(controller.V3Controller):
 
         path = '/OS-FEDERATION/' + cls.collection_name
         return controller.V3Controller.base_url(path=path)
+
+
+@dependency.requires('federation_api')
+class IdentityProvider(_ControllerBase):
+    """Identity Provider representation."""
+    collection_name = 'identity_providers'
+    member_name = 'identity_provider'
+
+    _public_parameters = frozenset(['id', 'enabled', 'description', 'links'])
 
     @classmethod
     def _add_related_links(cls, ref):
@@ -174,7 +177,7 @@ class IdentityProvider(controller.V3Controller):
 
 
 @dependency.requires('federation_api')
-class FederationProtocol(IdentityProvider):
+class FederationProtocol(_ControllerBase):
     """A federation protocol representation.
 
     See IdentityProvider docstring for explanation on _mutable_parameters
