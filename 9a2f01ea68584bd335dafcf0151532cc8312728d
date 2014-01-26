@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+blA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-26T20:35:18Z",
+      "side": 1,
+      "message": "Ahh, so the now I get the issue.  filter_dict here (and below) should actually have been cumlative_filter_dict.  In fact it works with that bug due to the scope of filter_dict, but isn\u0027t actually what I intended.  Let me post a different patch and then we\u0027ll see which we prefer",
+      "revId": "9a2f01ea68584bd335dafcf0151532cc8312728d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
