@@ -113,7 +113,7 @@ class IdentityProvider(controller.V3Controller):
         ref.setdefault('links', {})
         base_path = ref['links'].get('self')
         if base_path is None:
-            base_path = '/'.join([IdentityProvider.base_url(), ref['id']])
+            base_path = '/'.join([cls.base_url(), ref['id']])
         for name in ['protocols']:
             ref['links'][name] = '/'.join([base_path, name])
 
@@ -150,24 +150,23 @@ class IdentityProvider(controller.V3Controller):
         public_params = set(['id', 'description', 'enabled'])
         identity_provider = self._normalize_dict(identity_provider)
         identity_provider.setdefault('enabled', False)
-        IdentityProvider.check_immutable_params(identity_provider,
-                                                keys=mutable_params)
+        self.check_immutable_params(identity_provider, keys=mutable_params)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
-        idp_ref = IdentityProvider.filter_params(idp_ref, keys=public_params)
-        response = IdentityProvider.wrap_member(context, idp_ref)
+        idp_ref = self.filter_params(idp_ref, keys=public_params)
+        response = self.wrap_member(context, idp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
     @controller.protected()
     def list_identity_providers(self, context):
         ref = self.federation_api.list_idps()
         ref = [self.filter_params(x) for x in ref]
-        return IdentityProvider.wrap_collection(context, ref)
+        return self.wrap_collection(context, ref)
 
     @controller.protected()
     def get_identity_provider(self, context, idp_id):
         ref = self.federation_api.get_idp(idp_id)
         ref = self.filter_params(ref)
-        return IdentityProvider.wrap_member(context, ref)
+        return self.wrap_member(context, ref)
 
     @controller.protected()
     def delete_identity_provider(self, context, idp_id):
@@ -176,9 +175,9 @@ class IdentityProvider(controller.V3Controller):
     @controller.protected()
     def update_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
-        IdentityProvider.check_immutable_params(identity_provider)
+        self.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
-        return IdentityProvider.wrap_member(context, idp_ref)
+        return self.wrap_member(context, idp_ref)
 
 
 @dependency.requires('federation_api')
@@ -239,29 +238,29 @@ class FederationProtocol(IdentityProvider):
     def create_protocol(self, context, idp_id, protocol_id, protocol):
         ref = self._normalize_dict(protocol)
         keys = self._mutable_parameters.copy()
-        FederationProtocol.check_immutable_params(ref, keys=keys)
+        self.check_immutable_params(ref, keys=keys)
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
-        response = FederationProtocol.wrap_member(context, ref)
+        response = self.wrap_member(context, ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
     @controller.protected()
     def update_protocol(self, context, idp_id, protocol_id, protocol):
         ref = self._normalize_dict(protocol)
-        FederationProtocol.check_immutable_params(ref)
+        self.check_immutable_params(ref)
         ref = self.federation_api.update_protocol(idp_id, protocol_id,
                                                   protocol)
-        return FederationProtocol.wrap_member(context, ref)
+        return self.wrap_member(context, ref)
 
     @controller.protected()
     def get_protocol(self, context, idp_id, protocol_id):
         ref = self.federation_api.get_protocol(idp_id, protocol_id)
-        return FederationProtocol.wrap_member(context, ref)
+        return self.wrap_member(context, ref)
 
     @controller.protected()
     def list_protocols(self, context, idp_id):
         protocols_ref = self.federation_api.list_protocols(idp_id)
         protocols = list(protocols_ref)
-        return FederationProtocol.wrap_collection(context, protocols)
+        return self.wrap_collection(context, protocols)
 
     @controller.protected()
     def delete_protocol(self, context, idp_id, protocol_id):
@@ -283,18 +282,18 @@ class MappingController(controller.V3Controller):
         ref = self._normalize_dict(mapping)
         utils.validate_mapping_structure(ref)
         mapping_ref = self.federation_api.create_mapping(mapping_id, ref)
-        response = MappingController.wrap_member(context, mapping_ref)
+        response = self.wrap_member(context, mapping_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
     @controller.protected()
     def list_mappings(self, context):
         ref = self.federation_api.list_mappings()
-        return MappingController.wrap_collection(context, ref)
+        return self.wrap_collection(context, ref)
 
     @controller.protected()
     def get_mapping(self, context, mapping_id):
         ref = self.federation_api.get_mapping(mapping_id)
-        return MappingController.wrap_member(context, ref)
+        return self.wrap_member(context, ref)
 
     @controller.protected()
     def delete_mapping(self, context, mapping_id):
@@ -305,4 +304,4 @@ class MappingController(controller.V3Controller):
         mapping = self._normalize_dict(mapping)
         utils.validate_mapping_structure(mapping)
         mapping_ref = self.federation_api.update_mapping(mapping_id, mapping)
-        return MappingController.wrap_member(context, mapping_ref)
+        return self.wrap_member(context, mapping_ref)
