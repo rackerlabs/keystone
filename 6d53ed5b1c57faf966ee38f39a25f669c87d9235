@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+bbc\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T22:22:48Z",
+      "side": 1,
+      "message": "can you change these too? or is that for another patch?",
+      "revId": "6d53ed5b1c57faf966ee38f39a25f669c87d9235",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
