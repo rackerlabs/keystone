@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+b/Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-26T15:40:46Z",
+      "side": 1,
+      "message": "change \"disable event\" to \"update event\"",
+      "parentUuid": "AAAAUH/+d94\u003d",
+      "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+b/U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-26T15:40:46Z",
+      "side": 1,
+      "message": "why not add the info instead?",
+      "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+d90\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 4
