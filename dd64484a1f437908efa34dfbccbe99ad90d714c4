@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+baQ\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T22:42:13Z",
+      "side": 1,
+      "message": "more of an FYI, as this line is the same at 170, and when you create a common class in https://review.openstack.org/#/c/69229/1/keystone/contrib/federation/controllers.py you can pull out mutable_params to the class level like you do at line 188 of this file.",
+      "revId": "dd64484a1f437908efa34dfbccbe99ad90d714c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
