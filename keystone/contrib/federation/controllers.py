@@ -30,9 +30,7 @@ CONF = config.CONF
 class IdentityProvider(controller.V3Controller):
     """Identity Provider representation.
 
-    Two new class parameters:
-    - _mutable_parameters - set of parameters that can be changed by users.
-                            Usually used by cls.check_immutable_params()
+    New class parameter:
     - _public_parameters - set of parameters that are exposed to the user.
                            Usually used by cls.filter_params()
 
@@ -40,11 +38,10 @@ class IdentityProvider(controller.V3Controller):
     collection_name = 'identity_providers'
     member_name = 'identity_provider'
 
-    _mutable_parameters = frozenset(['description', 'enabled'])
     _public_parameters = frozenset(['id', 'enabled', 'description', 'links'])
 
     @classmethod
-    def check_immutable_params(cls, ref, keys=None):
+    def check_immutable_params(cls, ref, keys):
         """Raise exception when disallowed parameter is stored in the keys.
 
         Check whether the ref dictionary representing a request has only
@@ -53,14 +50,10 @@ class IdentityProvider(controller.V3Controller):
 
         :param ref: a dictionary representing deserialized request to be
                     stored
-        :param keys: a set with mutable parameters. If None, use default class
-                     attribute - _mutable_parameters
+        :param keys: a set with mutable parameters.
         :raises exception.ImmutableAttributeError
 
         """
-        if keys is None:
-            keys = cls._mutable_parameters
-
         ref_keys = set(ref.keys())
         blocked_keys = ref_keys.difference(keys)
 
@@ -146,13 +139,12 @@ class IdentityProvider(controller.V3Controller):
 
     @controller.protected()
     def create_identity_provider(self, context, idp_id, identity_provider):
-        mutable_params = set(['description', 'enabled'])
-        public_params = set(['id', 'description', 'enabled'])
         identity_provider = self._normalize_dict(identity_provider)
         identity_provider.setdefault('enabled', False)
-        self.check_immutable_params(identity_provider, keys=mutable_params)
+        mutable_params = frozenset(['description', 'enabled'])
+        self.check_immutable_params(identity_provider, mutable_params)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
-        idp_ref = self.filter_params(idp_ref, keys=public_params)
+        idp_ref = self.filter_params(idp_ref)
         response = self.wrap_member(context, idp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
 
@@ -175,7 +167,8 @@ class IdentityProvider(controller.V3Controller):
     @controller.protected()
     def update_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
-        self.check_immutable_params(identity_provider)
+        mutable_params = frozenset(['description', 'enabled'])
+        self.check_immutable_params(identity_provider, mutable_params)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
         return self.wrap_member(context, idp_ref)
 
@@ -192,7 +185,7 @@ class FederationProtocol(IdentityProvider):
     member_name = 'protocol'
 
     _public_parameters = frozenset(['id', 'mapping_id', 'links'])
-    _mutable_parameters = set(['mapping_id'])
+    _mutable_parameters = frozenset(['mapping_id'])
 
     @classmethod
     def _add_self_referential_link(cls, ref):
@@ -237,8 +230,7 @@ class FederationProtocol(IdentityProvider):
     @controller.protected()
     def create_protocol(self, context, idp_id, protocol_id, protocol):
         ref = self._normalize_dict(protocol)
-        keys = self._mutable_parameters.copy()
-        self.check_immutable_params(ref, keys=keys)
+        self.check_immutable_params(ref, self._mutable_parameters)
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
         response = self.wrap_member(context, ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
@@ -246,7 +238,7 @@ class FederationProtocol(IdentityProvider):
     @controller.protected()
     def update_protocol(self, context, idp_id, protocol_id, protocol):
         ref = self._normalize_dict(protocol)
-        self.check_immutable_params(ref)
+        self.check_immutable_params(ref, self._mutable_parameters)
         ref = self.federation_api.update_protocol(idp_id, protocol_id,
                                                   protocol)
         return self.wrap_member(context, ref)
