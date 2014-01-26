@@ -16,6 +16,24 @@
       "revId": "599b919d58c3232184e8a38a9471c7e0d7b5e9b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bwQ\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-26T18:05:34Z",
+      "side": 1,
+      "message": "the behavior of the exact_filter function hasn\u0027t changed. Before, the filter_dict was passed in as cumlative_filter_dict and then it wasn\u0027t used. I could fix it to use the value passed in instead if that\u0027s the preferred fix. I was just trying to avoid changing the behavior at all.",
+      "parentUuid": "AAAAUH/+bxM\u003d",
+      "revId": "599b919d58c3232184e8a38a9471c7e0d7b5e9b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
