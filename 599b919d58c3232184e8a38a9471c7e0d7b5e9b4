@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+bxM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-26T17:54:45Z",
+      "side": 1,
+      "message": "This combination of updating filter_dict within the method as well as returning the result is confusing to me…it\u0027s not obvious reading this line that the previous contents of flter_dict are retained.  However, if others feel this is OK, then I\u0027ll remove the -1.",
+      "revId": "599b919d58c3232184e8a38a9471c7e0d7b5e9b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
