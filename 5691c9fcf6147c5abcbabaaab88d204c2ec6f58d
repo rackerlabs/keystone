@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+b4o\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T16:53:08Z",
+      "side": 1,
+      "message": "can you add an assert here to make sure the default project is returned?",
+      "revId": "5691c9fcf6147c5abcbabaaab88d204c2ec6f58d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
