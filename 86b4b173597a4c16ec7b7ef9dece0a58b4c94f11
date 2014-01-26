@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+bZ8\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T22:44:27Z",
+      "side": 1,
+      "message": "you could make this controller extend the base one, if only to remove the extra base_url method.",
+      "revId": "86b4b173597a4c16ec7b7ef9dece0a58b4c94f11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
