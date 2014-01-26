@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+ce0\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T08:38:04Z",
+      "side": 0,
+      "message": "remove this line",
+      "revId": "49993b295faf8dd01d900a4ef1a17a6ae76820f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ce4\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-26T08:38:04Z",
+      "side": 0,
+      "message": "remove this line",
+      "revId": "49993b295faf8dd01d900a4ef1a17a6ae76820f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
