@@ -2110,6 +2110,14 @@ class TestTrustAuth(TestAuthInfo):
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
+    def test_create_trust_project_no_roles(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id)
+        del ref['id']
+        self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=400)
+
     def test_create_trust_role_id_404(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,

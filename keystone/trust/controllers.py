@@ -152,6 +152,9 @@ class TrustV3(controller.V3Controller):
             all_roles = self.assignment_api.list_roles()
             clean_roles = self._clean_role_list(context, trust, all_roles)
             if trust.get('project_id'):
+                if not clean_roles:
+                    raise exception.ValidationError(attribute='roles',
+                                                    target='trust')
                 user_role = self.assignment_api.get_roles_for_user_and_project(
                     user_id,
                     trust['project_id'])

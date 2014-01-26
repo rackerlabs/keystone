@@ -696,6 +696,7 @@ class AuthWithTrust(AuthTest):
     def test_create_trust_no_roles(self):
         self.new_trust = None
         self.sample_data['roles'] = []
+        self.sample_data['project_id'] = None
         self.create_trust()
         self.assertEqual(self.new_trust['roles'], [])
 
