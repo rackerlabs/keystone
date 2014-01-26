@@ -16,6 +16,24 @@
       "revId": "99051778fa2a05784f8a6b535b29ad822bbbbbfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+cec\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8290
+      },
+      "writtenOn": "2014-01-26T08:41:49Z",
+      "side": 0,
+      "message": "thanks for you comments,I am not sure about this, but I think this python file should include license, like some other projects of openstack.",
+      "parentUuid": "AAAAUH/+cf0\u003d",
+      "revId": "99051778fa2a05784f8a6b535b29ad822bbbbbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
