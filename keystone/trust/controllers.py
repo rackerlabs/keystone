@@ -142,6 +142,8 @@ class TrustV3(controller.V3Controller):
         if not trust:
             raise exception.ValidationError(attribute='trust',
                                             target='request')
+        if not trust.get('roles'):
+            raise exception.ValidationError(attribute='roles', target='trust')
         try:
             user_id = self._get_user_id(context)
             _trustor_only(context, trust, user_id)

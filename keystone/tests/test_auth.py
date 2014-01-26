@@ -704,10 +704,11 @@ class AuthWithTrust(AuthTest):
                           context, trust=bad_sample_data)
 
     def test_create_trust_no_roles(self):
-        self.new_trust = None
+        context = {'token_id': self.unscoped_token['access']['token']['id']}
         self.sample_data['roles'] = []
-        self.create_trust()
-        self.assertEqual(self.new_trust['roles'], [])
+        self.assertRaises(exception.ValidationError,
+                          self.trust_controller.create_trust,
+                          context, trust=self.sample_data)
 
     def test_create_trust(self):
         self.assertEqual(self.new_trust['trustor_user_id'], self.trustor['id'])
