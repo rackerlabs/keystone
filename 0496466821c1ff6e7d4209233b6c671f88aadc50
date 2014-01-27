@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+YnM\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-27T14:47:30Z",
+      "side": 1,
+      "message": "It is actually not obvious why this (and the line for create_grant) works. Conceptually the rules for these should not be looking at the target object (since that that is only for get/delete).  However, looking at the code for checking_protection in the assignment\u0027s controller, for simplicity it loads any objects referenced by ID in the call and makes this the target.  This is actually, technically, incorrect - but since I wrote it, I guess I can\u0027t complain :-).  It is because of this error, that these policy lines work (i.e. for grants, and grants only, you can always just refer to the target for any ID checking included in the API call).  We may or may not change that in the future, but since you are not really changing the functionality here, I\u0027m fine with this change.",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+YWA\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-27T14:47:30Z",
+      "side": 1,
+      "message": "While keep tests small is usual a good thing, I\u0027d be tempted to include this in the above test_user_management method",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+YV4\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-27T14:47:30Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+YVs\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-27T14:47:30Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
