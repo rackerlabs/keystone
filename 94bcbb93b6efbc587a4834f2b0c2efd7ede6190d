@@ -106,6 +106,24 @@
       "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+XiM\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5623
+      },
+      "writtenOn": "2014-01-27T16:58:32Z",
+      "side": 1,
+      "message": "The base class for exception.Forbidden is exception.Error, by way of exception.SecurityError  So Juan\u0027s assertion that the current behavior is logging a warning seems accurate.  I could see adding the check for type Forbidden in the except block starting at 228 to add debug level logging info, or maintaining the new except block.",
+      "parentUuid": "AAAAUH/+qho\u003d",
+      "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
