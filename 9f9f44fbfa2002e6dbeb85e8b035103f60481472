@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+ZhM\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T10:58:00Z",
+      "side": 1,
+      "message": "I thnik this import should be put between datetime and uuid",
+      "revId": "9f9f44fbfa2002e6dbeb85e8b035103f60481472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Zhk\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T10:58:00Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to move this import between datetime and os",
+      "revId": "9f9f44fbfa2002e6dbeb85e8b035103f60481472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ZiQ\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T10:58:00Z",
+      "side": 1,
+      "message": "Well, I guess you have forgotten to remove this line.",
+      "revId": "9f9f44fbfa2002e6dbeb85e8b035103f60481472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
