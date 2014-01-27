@@ -33,6 +33,24 @@
       "revId": "e0abdab639bb3673e5f2913d479b5034ba864f8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+YpU\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-01-27T14:05:47Z",
+      "side": 1,
+      "message": "I think it is still valid:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/strutils.py#L81\n\nWe test explicitly for a value which matches something in FALSE_STRINGS, otherwise we return True.",
+      "parentUuid": "AAAAUH/+xio\u003d",
+      "revId": "e0abdab639bb3673e5f2913d479b5034ba864f8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
