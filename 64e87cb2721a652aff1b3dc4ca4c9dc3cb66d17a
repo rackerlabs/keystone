@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+bVs\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-27T00:02:25Z",
+      "side": 1,
+      "message": "s/even/event/?",
+      "revId": "64e87cb2721a652aff1b3dc4ca4c9dc3cb66d17a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bVE\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-27T00:02:25Z",
+      "side": 1,
+      "message": "(NIT): add doc strings and return values?",
+      "revId": "64e87cb2721a652aff1b3dc4ca4c9dc3cb66d17a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bVU\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-27T00:02:25Z",
+      "side": 1,
+      "message": "Just curious, why return False here to the caller instead of setting matched \u003d False? Maybe a small inline comment here?",
+      "revId": "64e87cb2721a652aff1b3dc4ca4c9dc3cb66d17a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bVA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-27T00:02:25Z",
+      "side": 1,
+      "message": "Same comment here as above?",
+      "revId": "64e87cb2721a652aff1b3dc4ca4c9dc3cb66d17a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
