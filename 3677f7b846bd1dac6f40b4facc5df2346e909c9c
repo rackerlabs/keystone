@@ -16,6 +16,24 @@
       "revId": "3677f7b846bd1dac6f40b4facc5df2346e909c9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+YuU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T13:54:53Z",
+      "side": 1,
+      "message": "Hi Francisco,\n\nAbsolutely, although this patch focuses on providing details about object fields available to build policy rules, I will try to explain the difference between matching \"user.id\" and \"target.user.id\" in a next patch.\n\nBasically, \"user.id\" allows to check the \"user.id\" field of the json message received for a given API call (typically used for a create_user action). On the other hand, \"target.user.id\" allows to check the \"user.id\" field of a user impacted by an API call (the data checked has been loaded from the database) (used for actions involving a user. e.g delete_user).",
+      "parentUuid": "AAAAUH/+Y3I\u003d",
+      "revId": "3677f7b846bd1dac6f40b4facc5df2346e909c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
