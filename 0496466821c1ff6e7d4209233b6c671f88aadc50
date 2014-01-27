@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+V1E\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-27T21:27:59Z",
+      "side": 1,
+      "message": "The conceptual issue is that in all other APIs items that need to be policy check for say create are in the payload of the call (and available with, say,via  just domain_id rather than target.domain_id).  However, I\u0027m not actually suggesting we change this, just that it\u0027s different than all the other APIs.",
+      "parentUuid": "AAAAUH/+XqE\u003d",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+YWA\u003d",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 6
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I thought about (and tried) to include the test in the method above.\n\nHowever, the _test_user_management method retrieves details about the `just-a-user` user, then deletes it at the end of the test. Therefore, this method cannot be called successfully several times in a row, without going through the `setUp` method. IMHO, this behavior is ok (this is what the setUp method is here for). This is why, we have to test the `cloud_admin` accesses in a separate method.",
       "parentUuid": "AAAAUH/+YWA\u003d",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Xd4\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-27T21:27:59Z",
+      "side": 1,
+      "message": "Ah, Ok, yes I see.  It would be better to probably reorganises that, but that\u0027s probably outside of the scope of this patch",
+      "parentUuid": "AAAAUH/+Xxk\u003d",
       "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
