@@ -135,7 +135,11 @@ class Manager(manager.Manager):
             token_values['project_domain_id'] = CONF.identity.default_domain_id
 
             trust = token_data.get('trust')
-            if trust is not None:
+            if trust is None:
+                token_values['trust_id'] = None
+                token_values['trustor_id'] = None
+                token_values['trustee_id'] = None
+            else:
                 token_values['trust_id'] = trust['id']
                 token_values['trustor_id'] = trust['trustor_id']
                 token_values['trustee_id'] = trust['trustee_id']
@@ -160,7 +164,9 @@ class Manager(manager.Manager):
         def build_token_values(token_data):
             token_values = {
                 'expires_at': timeutils.normalize_time(
-                    timeutils.parse_isotime(token_data['expires_at']))}
+                    timeutils.parse_isotime(token_data['expires_at'])),
+                'issued_at': timeutils.normalize_time(
+                    timeutils.parse_isotime(token_data['issued_at']))}
 
             user = token_data.get('user')
             if user is not None:

@@ -167,70 +167,35 @@ class Manager(manager.Manager):
         :returns no value returned
          """
 
-        def revoke_matches(event, token_values):
-            """See if the token matches the revocation event.
-
-            Compare each attribute from the event with the corresponding
-            value from the token.  If the event does not have a value for
-            the attribute, a match is still possible.  If the event has a
-            value for the attribute, and it does not match the token, no match
-            is possible, so skip the remaining checks.
-
-            :param event one revocation event to match
-            :param token_values dictionary with set of values taken from the
-            token
-            :returns if the token matches the revocation event, indicating the
-            token has been revoked
-            """
-
-            #something has to match in order to revoke the token
-            matched = False
-
-            #The token has three attributes that can match the user_id
-            if event.user_id is not None:
-                user_id_matched = False
-                for attribute_name in ['user_id', 'trustor_id', 'trustee_id']:
-                    if event.user_id == token_values[attribute_name]:
-                        user_id_matched = True
-                        break
-                if not user_id_matched:
-                    return False
-                else:
-                    matched = True
-
-            #If any one check does not match, the while token does
-            #not match the event. The numerous return False indicate
-            # that the token is still valid and short-circuits the
-            #rest of the logic.
-            attribute_names = ['project_id', 'domain_id',
-                               'expires_at', 'trust_id', 'consumer_id',
-                               'access_token_id']
-            for attribute_name in attribute_names:
-                if getattr(event, attribute_name) is not None:
-                    if (getattr(event, attribute_name) !=
-                            token_values[attribute_name]):
-                                return False
-                    else:
-                        matched = True
-
-            if event.role_id is not None:
-                roles = token_values['roles']
-                role_found = False
-                for role in roles:
-                    if event.role_id == role:
-                        role_found = True
-                        break
-                if role_found:
-                    matched = True
-                else:
-                    return False
-
-            return matched
-
+        #TODO(ayoung): we calculate revocation two ways for now, to make sure
+        #we have it right:  one is by exhaustive listing of the evnts ,and the
+        #other by an event_map l00kup.  Eventually we should only do the map
+        #lookup, and also cache the map.
         events = self.get_events(filter=None)
+        revoke_map = model.RevokeTree(events)
+        revoked = False
+        if (revoke_map.is_revoked(token_values)):
+                #raise exception.TokenNotFound(_('Failed to validate token'))
+                revoked = True
+
         for event in events:
-            if revoke_matches(event, token_values):
-                raise exception.TokenNotFound(_('Failed to validate token'))
+            if event.matches(token_values):
+                if revoked:
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+                else:
+                    #logic in the new code is wrong.  Debug
+                    revoke_map.is_revoked(token_values)
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+
+        if revoked:
+            #logic in the new code does not match old code.  Debug
+            r2 = False
+            for event in events:
+                r2 = r2 or event.matches(token_values)
+            revoke_map.is_revoked(token_values)
+            raise exception.TokenNotFound(_('Failed to validate token'))
 
 
 @six.add_metaclass(abc.ABCMeta)
