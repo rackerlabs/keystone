@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+XqE\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T16:42:51Z",
+      "side": 1,
+      "message": "Since the action of retrieving roles assigned to a user on a given domain is somehow related to the domain, the fact that the domains\u0027 fields are available through the `target.domain.*` seems fully legitimate to me. I don\u0027t think this is technically incorrect (Same reasoning for identity:create_grant).",
+      "parentUuid": "AAAAUH/+YnM\u003d",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+YWA\u003d",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-27T14:47:30Z",
       "side": 1,
       "message": "While keep tests small is usual a good thing, I\u0027d be tempted to include this in the above test_user_management method",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Xxk\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T16:42:51Z",
+      "side": 1,
+      "message": "I thought about (and tried) to include the test in the method above.\n\nHowever, the _test_user_management method retrieves details about the `just-a-user` user, then deletes it at the end of the test. Therefore, this method cannot be called successfully several times in a row, without going through the `setUp` method. IMHO, this behavior is ok (this is what the setUp method is here for). This is why, we have to test the `cloud_admin` accesses in a separate method.",
+      "parentUuid": "AAAAUH/+YWA\u003d",
       "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+XxU\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T16:42:51Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "AAAAUH/+YV4\u003d",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+YVs\u003d",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-27T14:47:30Z",
       "side": 1,
       "message": "as above",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+XxE\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T16:42:51Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "AAAAUH/+YVs\u003d",
       "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
