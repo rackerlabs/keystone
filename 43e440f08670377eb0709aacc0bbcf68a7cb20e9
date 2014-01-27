@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5T0\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6OQ\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6L8\u003d",
         "filename": "keystone/contrib/kds/common/exception.py",
         "patchSetId": 24
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5VM\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "isn\u0027t name sufficient?",
+      "parentUuid": "AAAAUH/+6L8\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6D0\u003d",
         "filename": "keystone/contrib/kds/common/utils.py",
         "patchSetId": 24
@@ -47,6 +83,24 @@
       "writtenOn": "2014-01-20T22:04:38Z",
       "side": 1,
       "message": "(nit) use \u0027 for strings per keystone guidelines.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5VI\u003d",
+        "filename": "keystone/contrib/kds/common/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "gah, none of this is mine - please oslo just take it: https://review.openstack.org/#/c/67002/",
+      "parentUuid": "AAAAUH/+6D0\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5Sg\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6Bw\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+5/4\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 24
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5Sk\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+5/4\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6A4\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 24
@@ -151,6 +241,24 @@
       "writtenOn": "2014-01-20T22:04:38Z",
       "side": 1,
       "message": "change \"the IntegrityError\" to \"an IntegrityError\", or \"this exception\"\n\nor is \"the\" supposed to be \"then\" ?",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5So\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6A4\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -227,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5SI\u003d",
+        "filename": "keystone/contrib/kds/db/connection.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+53c\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+++k\u003d",
         "filename": "keystone/contrib/kds/db/connection.py",
         "patchSetId": 24
@@ -297,6 +423,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5U0\u003d",
+        "filename": "keystone/contrib/kds/db/migration.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "I don\u0027t know - i am under the impression you shouldn\u0027t remove copyright tags.\n\nThen again the file is a very simple template file that is replicated in a bunch of places throughout openstck.",
+      "parentUuid": "AAAAUH/+6p0\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+52U\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
         "patchSetId": 24
@@ -308,6 +452,24 @@
       "writtenOn": "2014-01-20T22:04:38Z",
       "side": 1,
       "message": "kvs is \"KvsDbImpl\"... should this be \"SqlalchemyDbImpl\" for consistency?",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5SA\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+52U\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -331,6 +493,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5PA\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "join(models.Key) was providing the link from models.Key.host_id \u003d\u003d models.Host.id.\n\nApparently i am better off using another filter there anyway.",
+      "parentUuid": "AAAAUH/+6I8\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/++9k\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/migrate_repo/versions/001_kds_table.py",
         "patchSetId": 24
@@ -342,6 +522,24 @@
       "writtenOn": "2014-01-20T04:49:15Z",
       "side": 1,
       "message": "(NIT): Update copyright year to 2014",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5L8\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/migrate_repo/versions/001_kds_table.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/++9k\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -365,6 +563,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5L0\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/models.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+504\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+50Y\u003d",
         "filename": "keystone/contrib/kds/db/sqlalchemy/utils.py",
         "patchSetId": 24
@@ -376,6 +592,24 @@
       "writtenOn": "2014-01-20T22:04:38Z",
       "side": 1,
       "message": "can\u0027t your database store binary values? This seems unnecessary.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5UE\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Haven\u0027t we had this discussion before? There was some database that didn\u0027t support it or that sqlalchemy screwed up. \n\nEither way i took this directly from keystone which is using it to handle this very case.",
+      "parentUuid": "AAAAUH/+50Y\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -399,6 +633,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+5KM\u003d",
+        "filename": "keystone/tests/contrib/kds/api/base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+50A\u003d",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+6H0\u003d",
         "filename": "keystone/tests/contrib/kds/db/test_host_key.py",
         "patchSetId": 24
@@ -410,6 +662,24 @@
       "writtenOn": "2014-01-20T22:04:38Z",
       "side": 1,
       "message": "use assertIs to compare singletons.",
+      "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5LY\u003d",
+        "filename": "keystone/tests/contrib/kds/db/test_host_key.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-27T23:50:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+6H0\u003d",
       "revId": "43e440f08670377eb0709aacc0bbcf68a7cb20e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
