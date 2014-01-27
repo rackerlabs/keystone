@@ -29,6 +29,7 @@ from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
 from keystone import contrib
+from keystone import exception
 from keystone.openstack.common import importutils
 from keystone import token
 
@@ -70,24 +71,22 @@ class DbSync(BaseApp):
     def main():
         version = CONF.command.version
         extension = CONF.command.extension
-        if not extension:
-            migration.db_sync(version=version)
-        else:
-            package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
+        if extension:
+            package_name = '.'.join((contrib.__name__, extension))
+            package = importutils.import_module(package_name)
             try:
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
+                migration.db_version_control(package=package)
+                migration.db_sync(version=version, package=package)
+            except exception.Error as e:
+                print(e)
                 exit(0)
-            try:
-                # Register the repo with the version control API
-                # If it already knows about the repo, it will throw
-                # an exception that we can safely ignore
-                migration.db_version_control(version=None, repo_path=repo_path)
+            # Register the repo with the version control API
+            # If it already knows about the repo, it will throw
+            # an exception that we can safely ignore
             except exceptions.DatabaseAlreadyControlledError:
                 pass
-            migration.db_sync(version=version, repo_path=repo_path)
+        else:
+            migration.db_sync(version=version)
 
 
 class DbVersion(BaseApp):
@@ -107,15 +106,13 @@ class DbVersion(BaseApp):
     def main():
         extension = CONF.command.extension
         if extension:
+            package_name = '.'.join((contrib.__name__, extension))
+            package = importutils.import_module(package_name)
             try:
-                package_name = ("%s.%s.migrate_repo" %
-                                (contrib.__name__, extension))
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-                print(migration.db_version(repo_path))
-            except ImportError:
-                print(_("This extension does not provide migrations."))
-                exit(1)
+                print(migration.db_version(package))
+            except exception.Error as e:
+                print(e)
+                exit(0)
         else:
             print(migration.db_version())
 
