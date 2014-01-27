@@ -20,6 +20,17 @@ import uuid
 
 from keystone.openstack.common import timeutils
 
+#TODO(ayoung) turn these two lists into the prameter names for the constructor
+#for RevokeEvent
+_names = ['domain_id',
+          'project_id',
+          'trust_id',
+          'consumer_id',
+          'access_token_id',
+          'expires_at',
+          'user_id',
+          'role_id']
+
 
 class RevokeEvent(object):
     def __init__(self, id,
@@ -35,7 +46,7 @@ class RevokeEvent(object):
         for k, v in locals().copy().iteritems():
             setattr(self, k, v)
         self.revoked_at = timeutils.utcnow()
-        if issued_before is None and expires_at is None:
+        if issued_before is None:
             self.issued_before = self.revoked_at
 
     def to_dict(self):
@@ -59,6 +70,13 @@ class RevokeEvent(object):
                                                        subsecond=True)
         return event
 
+    def attr_keys(self):
+        attr_keys = []
+        for name in _names:
+            key = "%s=%s" % (name, getattr(self, name) or 'None')
+            attr_keys.append(key)
+        return attr_keys
+
 
 class EventIdentifier(object):
     def __init__(self, value=None):
@@ -66,3 +84,91 @@ class EventIdentifier(object):
 
     def __str__(self):
         return str(self._value)
+
+
+class RevokeMap(object):
+    def add_event(self, event):
+        revoke_map = self.revoke_map
+        for key in event.attr_keys():
+            sub = revoke_map.get(key)
+            if sub is None:
+                sub = dict()
+                revoke_map[key] = sub
+                revoke_map = sub
+        revoke_map['issued_before'] = event.issued_before
+
+    def __init__(self, revoke_events):
+        revoke_map = dict()
+        self.revoke_map = revoke_map
+        for event in revoke_events:
+            self.add_event(event)
+
+    def is_revoked(self, token_data):
+
+            #iterate through the roles of the token.
+            #First match is sufficient since role is at the
+            #end of the name list
+        def _check_roles(revoke_map, names, token_data):
+            matched = False
+            sub = None
+            for role_id in token_data['roles']:
+                key = "%s=%s" % ('role_id', role_id)
+                sub = revoke_map.get(key)
+                matched = matched or _check_revoked(sub, names, token_data)
+                if matched:
+                    break
+            if not matched:
+                key = "%s=%s" % ('role_id', 'None')
+                sub = revoke_map.get(key)
+                matched = _check_revoked(sub, names, token_data)
+            return matched
+
+        def _check_revoked(revoke_map, names, token_data):
+            if revoke_map is None:
+                return False
+            if len(names) == 0:
+                #leaf node
+                issued_before = revoke_map.get('issued_before')
+                if issued_before is None:
+                    return False
+                else:
+                    return issued_before > token_data['issued_at']
+
+            name = names[0]
+            names = names[1:]
+            matched = False
+
+            if name == 'role_id':
+                matched = _check_roles(revoke_map, names, token_data)
+            else:
+                key = "%s=%s" % (name, token_data.get(name) or 'None')
+                sub = revoke_map.get(key)
+                matched = _check_revoked(sub, names, token_data)
+                if not matched and token_data.get(name) is not None:
+                    key = "%s=%s" % (name, 'None')
+                    sub = revoke_map.get(key)
+                    matched = _check_revoked(sub, names, token_data)
+            return matched
+
+        def _check_domain_ids(revoke_map, token_data):
+            token_data['domain_id'] = token_data['user_domain_id']
+            matched = _check_revoked(revoke_map, _names, token_data)
+            if not matched:
+                token_data['domain_id'] = token_data['project_domain_id']
+                matched = _check_revoked(revoke_map, _names, token_data)
+            return matched
+
+        def _check_user_ids(revoke_map, token_data):
+            matched = _check_domain_ids(revoke_map, token_data)
+        #check trust values against user_id based revocations
+            if not matched and token_data['trustor_id'] is not None:
+                token_data['user_id'] = token_data['trustor_id']
+                matched = _check_domain_ids(revoke_map, token_data)
+            if not matched and token_data['trustee_id'] is not None:
+                token_data['user_id'] = token_data['trustee_id']
+                matched = _check_domain_ids(revoke_map, token_data)
+            return matched
+
+        revoke_map = self.revoke_map
+        matched = _check_user_ids(revoke_map, token_data)
+        return matched
