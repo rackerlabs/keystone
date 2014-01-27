@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+bHI\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-27T02:16:30Z",
+      "side": 1,
+      "message": "since line 60 and line 83 are the same, you *could* put them in a common function _get_blocked_keys()?",
+      "revId": "4cc923bf571d5a00f9d54f7fbe93773973f6e799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
