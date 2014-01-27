@@ -73,21 +73,21 @@ class DbSync(BaseApp):
         if not extension:
             migration.db_sync(version=version)
         else:
-            package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
-            try:
-                package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-            except ImportError:
+            package_name = '.'.join((contrib.__name__, extension))
+            package = importutils.import_module(package_name)
+            migrate_repo_path = os.path.abspath(os.path.dirname(
+                os.path.join(package.__file__, 'migrate_repo')))
+            if not os.path.isdir(migrate_repo_path):
                 print(_("This extension does not provide migrations."))
                 exit(0)
             try:
                 # Register the repo with the version control API
                 # If it already knows about the repo, it will throw
                 # an exception that we can safely ignore
-                migration.db_version_control(version=None, repo_path=repo_path)
+                migration.db_version_control(package=package)
             except exceptions.DatabaseAlreadyControlledError:
                 pass
-            migration.db_sync(version=version, repo_path=repo_path)
+            migration.db_sync(version=version, package=package)
 
 
 class DbVersion(BaseApp):
@@ -108,8 +108,7 @@ class DbVersion(BaseApp):
         extension = CONF.command.extension
         if extension:
             try:
-                package_name = ("%s.%s.migrate_repo" %
-                                (contrib.__name__, extension))
+                package_name = '.'.join((contrib.__name__, extension))
                 package = importutils.import_module(package_name)
                 repo_path = os.path.abspath(os.path.dirname(package.__file__))
                 print(migration.db_version(repo_path))
