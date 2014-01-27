@@ -86,6 +86,24 @@
       "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Xmc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-27T16:43:46Z",
+      "side": 1,
+      "message": "Yeah, I think I like that idea too. Right now, I believe the information that is sent in a notification is pretty simple/basic, as it was intended for the initial implementation. I think when I was having this discussion on the initial implementation it was decided that we could add the shiny features once we had something basic working, and I feel the decorator is awesome. \n\nThis will also be easier to use from a third party perspective if you\u0027re consuming the notification off the queue. That way you will have *all* the information for notification type (create, update, delete) encapsulated within one notification, instead of the case where you: \n\n1.) consume a notification reflecting a change in resource state (update)\n\n2.) consume a second event for the same resource where the change is state was because it was disabled.\n\nSteps one and two could be carried out with one notification, since there isn\u0027t really anything significant about either one that mandates it to stand alone as it\u0027s own notification. Thoughts?",
+      "parentUuid": "AAAAUH/+X40\u003d",
+      "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
