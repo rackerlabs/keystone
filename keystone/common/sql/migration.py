@@ -49,30 +49,27 @@ def migrate_repository(version, current_version, repo_path):
     return result
 
 
-def db_sync(version=None, repo_path=None):
+def db_sync(version=None, repo=None):
     if version is not None:
         try:
             version = int(version)
         except ValueError:
             raise Exception(_('version should be an integer'))
-    if repo_path is None:
-        repo_path = find_migrate_repo()
-    current_version = db_version(repo_path=repo_path)
+    repo_path = find_migrate_repo(repo)
+    current_version = db_version(repo)
     return migrate_repository(version, current_version, repo_path)
 
 
-def db_version(repo_path=None):
-    if repo_path is None:
-        repo_path = find_migrate_repo()
+def db_version(repo=None):
+    repo_path = find_migrate_repo(repo)
     try:
         return versioning_api.db_version(CONF.database.connection, repo_path)
     except versioning_exceptions.DatabaseNotControlledError:
-        return db_version_control(0)
+        return db_version_control(0, repo)
 
 
-def db_version_control(version=None, repo_path=None):
-    if repo_path is None:
-        repo_path = find_migrate_repo()
+def db_version_control(version=None, repo=None):
+    repo_path = find_migrate_repo(repo)
     versioning_api.version_control(CONF.database.connection, repo_path,
                                    version)
     return version
