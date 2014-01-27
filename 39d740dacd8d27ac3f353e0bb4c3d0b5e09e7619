@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+aSg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T08:19:14Z",
+      "side": 1,
+      "message": "nice catch.",
+      "parentUuid": "AAAAUH/+bXg\u003d",
+      "revId": "39d740dacd8d27ac3f353e0bb4c3d0b5e09e7619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+bHw\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+aSw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T08:19:14Z",
+      "side": 1,
+      "message": "Agree, I guess it will allow updating other docs.",
+      "parentUuid": "AAAAUH/+bHw\u003d",
+      "revId": "39d740dacd8d27ac3f353e0bb4c3d0b5e09e7619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+bXk\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-01-26T23:26:27Z",
       "side": 1,
       "message": "suggest rename to:\n\nList of object attributes:",
+      "revId": "39d740dacd8d27ac3f353e0bb4c3d0b5e09e7619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+aSc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T08:19:14Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "AAAAUH/+bXk\u003d",
       "revId": "39d740dacd8d27ac3f353e0bb4c3d0b5e09e7619",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
