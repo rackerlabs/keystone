@@ -124,6 +124,24 @@
       "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Xao\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-01-27T17:19:15Z",
+      "side": 1,
+      "message": "OK, so I understand now Juan\u0027s comment about a warning being previously logged on line 228, thx. However, I still maintain that line 226 should be removed and that there should be no warning logged at all for this particular condition (Forbidden). This is not a situation that is elevated to the warning log level, IMO. I would be +1 on this patch if line 226 was removed :)",
+      "parentUuid": "AAAAUH/+XiM\u003d",
+      "revId": "94bcbb93b6efbc587a4834f2b0c2efd7ede6190d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
