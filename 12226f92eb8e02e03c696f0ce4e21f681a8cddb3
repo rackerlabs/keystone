@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+XeI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-27T17:10:16Z",
+      "side": 1,
+      "message": "this isn\u0027t accurate because it also changes the server to not return the backtrace when an exception occurs that\u0027s not caught. So suggest change this sentence to:\n\n Debug mode is useless from an OpenStack perspective because it\n\n - adds an \u0027accepted\u0027 message after every single request log\n - causes the server to return a backtrace in the response when an exception\n   is not caught",
+      "revId": "12226f92eb8e02e03c696f0ce4e21f681a8cddb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
