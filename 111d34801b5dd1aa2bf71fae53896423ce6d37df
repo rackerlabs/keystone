@@ -68,6 +68,24 @@
       "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+X40\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-27T16:09:55Z",
+      "side": 1,
+      "message": "not sure how to reliably implement it without abandoning the decorator here, but what about emitting \"enabled\": (bool) as part of the \u0027updated\u0027 event? that way you don\u0027t have to worry about redundant events",
+      "parentUuid": "AAAAUH/+d90\u003d",
+      "revId": "111d34801b5dd1aa2bf71fae53896423ce6d37df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
