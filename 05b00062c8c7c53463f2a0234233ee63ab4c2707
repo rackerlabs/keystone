@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+XKY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-27T18:11:32Z",
+      "side": 1,
+      "message": "Adam can you also add the notifications for the update?\nI think it is better to have all the notifications available for an entity rather than only some otherwise we cannot say in the docs that domain is now something it can be listen to.",
+      "revId": "05b00062c8c7c53463f2a0234233ee63ab4c2707",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
