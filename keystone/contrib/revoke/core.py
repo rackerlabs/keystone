@@ -198,11 +198,23 @@ class Manager(manager.Manager):
                 else:
                     matched = True
 
+            #The token has two attributes that can match the domain_id
+            if event.domain_id is not None:
+                dom_id_matched = False
+                for attribute_name in ['user_domain_id', 'project_domain_id']:
+                    if event.domain_id == token_values[attribute_name]:
+                        dom_id_matched = True
+                        break
+                if not dom_id_matched:
+                    return False
+                else:
+                    matched = True
+
             #If any one check does not match, the while token does
             #not match the event. The numerous return False indicate
             # that the token is still valid and short-circuits the
             #rest of the logic.
-            attribute_names = ['project_id', 'domain_id',
+            attribute_names = ['project_id',
                                'expires_at', 'trust_id', 'consumer_id',
                                'access_token_id']
             for attribute_name in attribute_names:
@@ -224,13 +236,39 @@ class Manager(manager.Manager):
                     matched = True
                 else:
                     return False
-
+            matched = (matched and
+                       event.issued_before > token_values['issued_at'])
             return matched
 
+        #TODO(ayoung): we calculate revocation two ways for now, to make sure
+        #we have it right:  one is by exhaustive listing of the evnts ,and the
+        #other by an event_map l00kup.  Eventually we should only do the map
+        #lookup, and also cache the map.
         events = self.get_events(filter=None)
+        revoke_map = model.RevokeMap(events)
+        revoked = False
+        if (revoke_map.is_revoked(token_values)):
+                #raise exception.TokenNotFound(_('Failed to validate token'))
+                revoked = True
+
         for event in events:
             if revoke_matches(event, token_values):
-                raise exception.TokenNotFound(_('Failed to validate token'))
+                if revoked:
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+                else:
+                    #logic in the new code is wrong.  Debug
+                    revoke_map.is_revoked(token_values)
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+
+        if revoked:
+            #logic in the new code does not match old code.  Debug
+            r2 = False
+            for event in events:
+                r2 = r2 or revoke_matches(event, token_values)
+            revoke_map.is_revoked(token_values)
+            raise exception.TokenNotFound(_('Failed to validate token'))
 
 
 @six.add_metaclass(abc.ABCMeta)
