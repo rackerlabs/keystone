@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+XXU\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-27T17:36:35Z",
+      "side": 1,
+      "message": "Also write, `whenever possible, the new extension should not be included in any pipeline by default.`  ... just read a bit further down that it\u0027s mentioned at line 109ish, but i think it\u0027s worth mentioning again, i\u0027ve seen it happen a few times now.",
+      "revId": "ae9992f1882d97d010f47ff6c8998b8aa2296d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+XX0\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-27T17:36:35Z",
+      "side": 1,
+      "message": "suggest \"Modifying `keystone.conf.sample`\" instead?\nsame for line 95",
+      "revId": "ae9992f1882d97d010f47ff6c8998b8aa2296d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+XWc\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-27T17:36:35Z",
+      "side": 1,
+      "message": "nit: s/right/correct.",
+      "revId": "ae9992f1882d97d010f47ff6c8998b8aa2296d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+XVU\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-27T17:36:35Z",
+      "side": 1,
+      "message": "trusts too, now",
+      "revId": "ae9992f1882d97d010f47ff6c8998b8aa2296d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+XVk\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-27T17:36:35Z",
+      "side": 1,
+      "message": "this code is not showing up on the webpage that jenkins produced for patch 3 - http://docs-draft.openstack.org/42/66642/3/check/gate-keystone-docs/e3cfc2a/doc/build/html/extension_development.html",
+      "revId": "ae9992f1882d97d010f47ff6c8998b8aa2296d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
