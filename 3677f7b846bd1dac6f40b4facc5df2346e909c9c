@@ -69,6 +69,24 @@
       "revId": "3677f7b846bd1dac6f40b4facc5df2346e909c9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+WRY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-27T20:13:45Z",
+      "side": 1,
+      "message": "Well, I wouldn\u0027t say that there really is a pattern (at least that I know of). All objects do have an \u0027id\u0027 and a \u0027name\u0027, but then other attributes vary from object to object. These attributes are retrieved from the database (and go through filters - e.g. password field is removed from `user`), so I guess that they may slightly move in the future.",
+      "parentUuid": "AAAAUH/+XEQ\u003d",
+      "revId": "3677f7b846bd1dac6f40b4facc5df2346e909c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
