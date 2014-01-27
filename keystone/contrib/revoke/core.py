@@ -224,13 +224,38 @@ class Manager(manager.Manager):
                     matched = True
                 else:
                     return False
-
+            matched = (matched and
+                       event.issued_before < token_values['issued_at'])
             return matched
 
+        #TODO(ayoung): we calculate revokation two ways for now, to make sure
+        #we have it right:  one is by exhaustive listing of the evnts ,and the
+        #other by an event_map l00kup.  Eventually we should only do the map
+        #lookup, and also cache the map.
         events = self.get_events(filter=None)
+        revoke_map = model.RevokeMap(events)
+        revoked = False
+        if (revoke_map.is_revoked(token_values)):
+                #raise exception.TokenNotFound(_('Failed to validate token'))
+                revoked = True
+
         for event in events:
             if revoke_matches(event, token_values):
-                raise exception.TokenNotFound(_('Failed to validate token'))
+                if revoked:
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+                else:
+                    #logic in the new code is wrong.  Debug
+                    revoke_map.is_revoked(token_values)
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+            else:
+                if revoked:
+                    #logic in the new code does not match old code.  Debug
+                    revoke_matches(event, token_values)
+                    revoke_map.is_revoked(token_values)
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
 
 
 @six.add_metaclass(abc.ABCMeta)
