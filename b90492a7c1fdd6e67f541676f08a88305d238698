@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+R68\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-28T13:10:40Z",
+      "side": 1,
+      "message": "Maybe it\u0027s worth watching for some exceptions here? What happens now if somebody puts invalid regex in his/her request? Will it be validated by the jsonschema?",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+UBU\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
