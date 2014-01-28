@@ -22,6 +22,7 @@ from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
+from keystone import cadf_notifications
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import importutils
@@ -297,7 +298,8 @@ class Auth(controller.V3Controller):
     def __init__(self, *args, **kw):
         super(Auth, self).__init__(*args, **kw)
         config.setup_authentication()
-
+    
+    @cadf_notifications.emit_cadf_event('authenticate')
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in context['query_string']
