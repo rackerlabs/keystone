@@ -15,6 +15,8 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone import exception
+from keystone.openstack.common import timeutils
 
 
 @dependency.requires('revoke_api')
@@ -32,7 +34,16 @@ class RevokeController(controller.V3Controller):
 
     #Not @controller.protected() to allow this to be publicly callable.
     def list_events(self, context):
-        events = self.revoke_api.get_events(filter)
+        since = context['query_string'].get('since')
+        last_fetched = None
+        if since:
+            try:
+                last_fetched = timeutils.normalize_time(
+                    timeutils.parse_isotime(since))
+            except Exception:
+                raise exception.ValidationError(
+                    message=_("invalid date format %s") % since)
+        events = self.revoke_api.get_events(last_fetched)
         #TODO(ayoung): fill in the links
         events = {'events': [event.to_dict() for event in events],
                   'links': []}
