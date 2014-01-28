@@ -72,6 +72,9 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.revoke.driver)
         self._register_listeners()
+        self._revoke_map = model.RevokeTree()
+        self._last_fetch = None
+        self._current_events = []
 
     def _user_callback(self, service, resource_type, operation,
                        payload):
@@ -151,6 +154,35 @@ class Manager(manager.Manager):
         self.driver.revoke(model.RevokeEvent(domain_id=domain_id,
                                              role_id=role_id))
 
+    def _synchronize_revoke_map(self):
+        #this code needs to be synchronized across greenthreads:
+        #It calls into the Driver, which is an I/O call,  surrendering
+        #the Processor.  However, it is wasteful to have one copy of
+        #the map per greenthread, as it would require processing every
+        #event every time. The logic, if required, would look like the
+        #commands in comments:
+
+        #if timeout
+        #get lock
+        #if not timeout:
+            #release lock
+            #return
+        self._update_revoke_map()
+        #release lock
+
+    def _update_revoke_map(self):
+        cutoff = revoked_before_cutoff()
+        for e in self._current_events:
+            if e.revoked_at < cutoff:
+                self._revoke_map.remove(e)
+                self._current_events.remove(e)
+            else:
+                break
+        events = self.get_events(last_fetch=self._last_fetch)
+        self._last_fetch = timeutils.utcnow()
+        self._revoke_map.add_events(events)
+        self._current_events = self._current_events + events
+
     def check_token(self, token_values):
         """Checks the values from a token against the revocation list
 
@@ -162,11 +194,9 @@ class Manager(manager.Manager):
         :returns: no value returned
 
          """
-
-        events = self.get_events()
-        for event in events:
-            if model.matches(event, token_values):
-                raise exception.TokenNotFound(_('Failed to validate token'))
+        self._synchronize_revoke_map()
+        if (self._revoke_map.is_revoked(token_values)):
+            raise exception.TokenNotFound(_('Failed to validate token'))
 
 
 @six.add_metaclass(abc.ABCMeta)

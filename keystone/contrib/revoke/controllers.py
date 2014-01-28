@@ -13,7 +13,6 @@
 
 from keystone.common import controller
 from keystone.common import dependency
-
 from keystone import exception
 from keystone.openstack.common import timeutils
 
