@@ -16,6 +16,7 @@ import uuid
 
 import mock
 
+from keystone import cadf_notifications
 from keystone.common import dependency
 from keystone import notifications
 from keystone.openstack.common.fixture import moxstubout
@@ -418,3 +419,70 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
         notifications.SUBSCRIBERS = {}
         self.assertRaises(ValueError, Foo)
+
+
+class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
+
+    LOCAL_HOST = 'localhost'
+    ACTION = 'authenticate'
+
+    def setUp(self):
+        super(CadfNotificationsWrapperTestCase, self).setUp()
+        self._notifications = []
+
+        def fake_notify(action, remote_addr, http_user_agent, user_id,
+                        outcome):
+            note = {
+                'action': action,
+                'remote_addr': remote_addr,
+                'http_user_agent': http_user_agent,
+                'user_id': user_id,
+                # (NOTE) stevemar: outcome has 2 stages, pending and success
+                # so we are ignoring it for now.
+                #'outcome': outcome,
+                'send_notification_called': True}
+            self._notifications.append(note)
+
+        fixture = self.useFixture(moxstubout.MoxStubout())
+        self.stubs = fixture.stubs
+        self.stubs.Set(cadf_notifications, '_send_audit_notification',
+                       fake_notify)
+
+    def _assertLastNotify(self, action, remote_addr, http_user_agent, user_id):
+        self.assertTrue(len(self._notifications) > 0)
+        note = self._notifications[-1]
+        self.assertEqual(note['action'], action)
+        self.assertEqual(note['remote_addr'], remote_addr)
+        self.assertEqual(note['http_user_agent'], http_user_agent)
+        self.assertEqual(note['user_id'], user_id)
+        self.assertTrue(note['send_notification_called'])
+
+    def test_v3_authenticate_user_name_and_domain_id(self):
+        user_id = self.user_id
+        user_name = self.user['name']
+        password = self.user['password']
+        domain_id = self.domain_id
+        data = self.build_authentication_request(username=user_name,
+                                                 user_domain_id=domain_id,
+                                                 password=password)
+        self.post('/auth/tokens', body=data)
+        self._assertLastNotify(self.ACTION, self.LOCAL_HOST, None, user_id)
+
+    def test_v3_authenticate_user_id(self):
+        user_id = self.user_id
+        password = self.user['password']
+        data = self.build_authentication_request(user_id=user_id,
+                                                 password=password)
+        self.post('/auth/tokens', body=data)
+        self._assertLastNotify(self.ACTION, self.LOCAL_HOST, None, user_id)
+
+    def test_v3_authenticate_user_name_and_domain_name(self):
+        user_id = self.user_id
+        user_name = self.user['name']
+        password = self.user['password']
+        domain_name = self.domain['name']
+        data = self.build_authentication_request(username=user_name,
+                                                 user_domain_name=domain_name,
+                                                 password=password)
+        self.post('/auth/tokens', body=data)
+        self._assertLastNotify(self.ACTION, self.LOCAL_HOST, None, user_id)
