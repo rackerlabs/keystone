@@ -15,15 +15,12 @@
 # under the License.
 
 
-import datetime
-
 from keystone.common import config
 from keystone.common import sql
 from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 
 from keystone.openstack.common.db.sqlalchemy import session as db_session
-from keystone.openstack.common import timeutils
 
 
 CONF = config.CONF
@@ -83,9 +80,7 @@ class Revoke(sql.Base, revoke.Driver):
     def _prune_expired_events(self):
         #add 30 minutes to token expiration to make sure that we don't have
         #issues with clock skew.  In practice, 5 minutes should be enough.
-        expire_delta = datetime.timedelta(seconds=CONF.token.expiration
-                                          + (60 * 30))
-        oldest = timeutils.utcnow() - expire_delta
+        oldest = revoke.revoked_before_cutoff()
 
         session = db_session.get_session()
         dialect = session.bind.dialect.name
@@ -107,7 +102,7 @@ class Revoke(sql.Base, revoke.Driver):
 
         session.flush()
 
-    def get_events(self, filter=None):
+    def get_events(self, last_fetch=None):
         """return the revocation events,
 
         :param filter:
@@ -117,12 +112,19 @@ class Revoke(sql.Base, revoke.Driver):
         """
         self._prune_expired_events()
         session = db_session.get_session()
-        events = []
         query = session.query(RevocationEvent).order_by(
             RevocationEvent.revoked_at)
 
-        for e in query:
-            events.append(model.RevokeEvent(**e.to_dict(False)))
+        #this should be filtered by revokend_at, but it is broken
+        #Maybe SQLite?
+        if last_fetch:
+            query.filter(RevocationEvent.revoked_at > last_fetch)
+            events = []
+            for e in query:
+                if last_fetch and e.revoked_at > last_fetch:
+                    events.append(model.RevokeEvent(**e.to_dict(False)))
+        else:
+            events = [model.RevokeEvent(**e.to_dict(False)) for e in query]
         return events
 
     def revoke(self, event):
