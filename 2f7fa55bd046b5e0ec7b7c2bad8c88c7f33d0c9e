@@ -16,6 +16,24 @@
       "revId": "2f7fa55bd046b5e0ec7b7c2bad8c88c7f33d0c9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Qdk\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-28T16:29:41Z",
+      "side": 1,
+      "message": "This is what produces the 404 when the endpoint does not exist.",
+      "parentUuid": "AAAAUH/+Qkg\u003d",
+      "revId": "2f7fa55bd046b5e0ec7b7c2bad8c88c7f33d0c9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
