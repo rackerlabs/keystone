@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+QLI\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-28T17:18:53Z",
+      "side": 1,
+      "message": "parameter",
+      "revId": "d430f9fc3af926f5d23bff263b1aa79391eae9cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+QK8\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-28T17:18:53Z",
+      "side": 1,
+      "message": "entries? this could use a \"because\"",
+      "revId": "d430f9fc3af926f5d23bff263b1aa79391eae9cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+QJA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-28T17:18:53Z",
+      "side": 1,
+      "message": "wtf are you trying to accomplish here?",
+      "revId": "d430f9fc3af926f5d23bff263b1aa79391eae9cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
