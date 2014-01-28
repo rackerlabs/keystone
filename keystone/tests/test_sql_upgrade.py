@@ -38,6 +38,7 @@ import uuid
 from migrate.versioning import api as versioning_api
 import sqlalchemy
 
+from keystone.common import sql
 from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
@@ -66,7 +67,7 @@ class SqlMigrateBase(tests.TestCase):
         return self._config_file_list
 
     def repo_package(self):
-        return None
+        return sql
 
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
@@ -78,7 +79,7 @@ class SqlMigrateBase(tests.TestCase):
         self.Session = session.get_maker(self.engine, autocommit=False)
 
         self.initialize_sql()
-        self.repo_path = migration.find_migrate_repo(self.repo_package())
+        self.repo_path = utils.find_migrate_repo(self.repo_package())
         self.schema = versioning_api.ControlledSchema.create(
             self.engine,
             self.repo_path, 0)

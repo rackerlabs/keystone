@@ -19,6 +19,7 @@
 #    under the License.
 
 import calendar
+import errno
 import grp
 import hashlib
 import json
@@ -527,3 +528,12 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def find_migrate_repo(module, repo_name='migrate_repo'):
+    path = os.path.abspath(os.path.join(
+        os.path.dirname(module.__file__), repo_name))
+    if os.path.isdir(path):
+        return path
+    raise OSError(errno=errno.ENOENT, filename=path,
+                  strerror="No such file or directory")
