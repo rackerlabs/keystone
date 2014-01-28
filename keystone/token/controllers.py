@@ -22,6 +22,7 @@ from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
+from keystone import cadf_notifications
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
@@ -56,6 +57,8 @@ class Auth(controller.V2Controller):
         cert_file.close()
         return data
 
+    #BT wrap with decorator that then does notification
+    @cadf_notifications.emit_cadf_event('authenticate')
     @controller.v2_deprecated
     def authenticate(self, context, auth=None):
         """Authenticate credentials and return a token.
