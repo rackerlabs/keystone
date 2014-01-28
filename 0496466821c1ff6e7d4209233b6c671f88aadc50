@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+THk\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-01-28T09:00:16Z",
+      "side": 1,
+      "message": "I agree with Brant. It is documented there:\n\nhttp://docs.openstack.org/developer/keystone/configuration.html#keystone-api-protection-with-role-based-access-control-rbac\n\n\"The domain_id of the admin domain would then be obtained and could be pasted into a modifed version of policy.v3cloudsample.json which could then be enabled as the main policy file.\"",
+      "parentUuid": "AAAAUH/+Ur0\u003d",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+YnM\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 6
