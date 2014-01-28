@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Ur0\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-28T01:02:19Z",
+      "side": 1,
+      "message": "you\u0027re supposed to replace \"admin_domain_id\" with your deployment\u0027s admin domain ID.",
+      "parentUuid": "AAAAUH/+Utk\u003d",
+      "revId": "0496466821c1ff6e7d4209233b6c671f88aadc50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+YnM\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 6
