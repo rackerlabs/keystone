@@ -108,6 +108,8 @@ class Revoke(revoke.Driver):
         query = session.query(RevocationEvent).order_by(
             RevocationEvent.revoked_at)
 
+        #this should be filtered by revoked_at, but it is broken
+        #Maybe SQLite?
         if last_fetch:
             query.filter(RevocationEvent.revoked_at > last_fetch)
             events = []
@@ -116,7 +118,6 @@ class Revoke(revoke.Driver):
                     events.append(model.RevokeEvent(**e.to_dict(False)))
         else:
             events = [model.RevokeEvent(**e.to_dict(False)) for e in query]
-
         return events
 
     def revoke(self, event):
