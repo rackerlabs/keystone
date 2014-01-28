@@ -87,6 +87,24 @@
       "revId": "3677f7b846bd1dac6f40b4facc5df2346e909c9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+U3U\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-28T00:28:01Z",
+      "side": 1,
+      "message": "Ok, so I think your explanation should go in the document. For instance state that target.\u003centity\u003e.id and target.\u003centity\u003e.name are always available and the other attributes are coming from a database and subsequent filter.",
+      "parentUuid": "AAAAUH/+WRY\u003d",
+      "revId": "3677f7b846bd1dac6f40b4facc5df2346e909c9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
