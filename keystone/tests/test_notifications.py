@@ -16,6 +16,7 @@
 
 import uuid
 
+from keystone import cadf_notifications
 from keystone.common import dependency
 from keystone import notifications
 from keystone.openstack.common.fixture import moxstubout
@@ -365,3 +366,74 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
         notifications.SUBSCRIBERS = {}
         self.assertRaises(ValueError, Foo)
+
+
+class CadfNotificationsWrapperTestCase(tests.TestCase):
+    def setUp(self):
+        super(CadfNotificationsWrapperTestCase, self).setUp()
+
+        self.exp_action = None
+        self.exp_remote_addr = None
+        self.exp_http_user_agent = None
+        self.exp_user_name = None
+        self.send_notification_called = False
+
+        def fake_notify(action, remote_addr, http_user_agent, user_name,
+                        outcome):
+            self.exp_action = action
+            self.exp_remote_addr = remote_addr
+            self.exp_http_user_agent = http_user_agent
+            self.exp_user_name = user_name
+            self.send_notification_called = True
+
+        fixture = self.useFixture(moxstubout.MoxStubout())
+        self.stubs = fixture.stubs
+        self.stubs.Set(cadf_notifications, '_send_notification', fake_notify)
+
+    @cadf_notifications.emit_event('authenticate')
+    def authenticate(self, context, auth=None):
+        return auth
+
+    def _assertLastNotify(self, action, http_user_agent, remote_addr,
+                          user_name):
+        self.assertEqual(self.exp_action, action)
+        self.assertEqual(self.exp_remote_addr, remote_addr)
+        self.assertEqual(self.exp_http_user_agent, http_user_agent)
+        self.assertEqual(self.exp_user_name, user_name)
+        self.assertTrue(self.send_notification_called)
+
+    def test_v3_authenticate(self):
+        exp_action = 'authenticate'
+        exp_http_user_agent = uuid.uuid4().hex
+        exp_remote_addr = '127.0.0.1'
+        exp_user_name = uuid.uuid4().hex
+        context = {
+            'environment': {
+                'REMOTE_ADDR': exp_remote_addr,
+                'HTTP_USER_AGENT': exp_http_user_agent,
+                'openstack.params': {
+                    'auth': {
+                        'identity': {
+                            'password': {'user': {'name': exp_user_name}}}}}}}
+        self.authenticate(context, None)
+        self.assertTrue(self.send_notification_called)
+        self._assertLastNotify(exp_action, exp_http_user_agent,
+                               exp_remote_addr, exp_user_name)
+
+    def test_v2_authenticate(self):
+        exp_action = 'authenticate'
+        exp_http_user_agent = uuid.uuid4().hex
+        exp_remote_addr = '127.0.0.1'
+        exp_user_name = uuid.uuid4().hex
+        context = {
+            'environment': {
+                'REMOTE_ADDR': exp_remote_addr,
+                'HTTP_USER_AGENT': exp_http_user_agent,
+                'openstack.params': {
+                    'auth': {
+                        'passwordCredentials': {
+                            'username': exp_user_name}}}}}
+        self.authenticate(context, None)
+        self.assertTrue(self.send_notification_called)
+        self._assertLastNotify(exp_action, exp_http_user_agent,
+                               exp_remote_addr, exp_user_name)
