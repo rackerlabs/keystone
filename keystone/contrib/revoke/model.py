@@ -22,21 +22,39 @@ from keystone.openstack.common import timeutils
 
 #The set of attributes common between the RevokeEvent
 #and the dictionaries created from the token Data.
-_names = ['trust_id',
-          'consumer_id',
-          'access_token_id',
-          'expires_at',
-          'domain_id',
-          'project_id',
-          'user_id',
-          'role_id']
+NAMES = ['trust_id',
+         'consumer_id',
+         'access_token_id',
+         'expires_at',
+         'domain_id',
+         'project_id',
+         'user_id',
+         'role_id']
 
 
 #additional arguments for creating a RevokeEvent
-_addl_args = ['id', 'issued_before', 'revoked_at']
+_event_args = ['id', 'issued_before', 'revoked_at']
 
 
-revoke_keys = _names + _addl_args
+_token_keys = ['user_domain_id',
+               'project_domain_id',
+               'issued_at',
+               'trustor_id',
+               'trustee_id']
+
+
+revoke_keys = NAMES + _event_args
+
+
+def blank_token_data(issued_at):
+    token_data = dict()
+    for name in NAMES:
+        token_data[name] = None
+    for name in _token_keys:
+        token_data[name] = None
+    #required field
+    token_data['issued_at'] = issued_at
+    return token_data
 
 
 class RevokeEvent(object):
@@ -54,8 +72,8 @@ class RevokeEvent(object):
                 'role_id',
                 'domain_id',
                 'project_id']
-        event = dict((key, self.__dict__[key]) for key in keys)
-        event['id'] = self.id.__str__()
+        event = dict((key, getattr(self, key)) for key in keys)
+        event['id'] = str(self.id)
         if self.trust_id is not None:
             event['OS-TRUST:trust_id'] = self.trust_id
         if self.consumer_id is not None:
@@ -70,78 +88,8 @@ class RevokeEvent(object):
                                                        subsecond=True)
         return event
 
-    def matches(self, token_values):
-        """See if the token matches the revocation self.
-
-        Compare each attribute from the self with the corresponding
-        value from the token.  If the self does not have a value for
-        the attribute, a match is still possible.  If the self has a
-        value for the attribute, and it does not match the token, no match
-        is possible, so skip the remaining checks.
-
-        :param self one revocation self to match
-        :param token_values dictionary with set of values taken from the
-        token
-        :returns if the token matches the revocation self, indicating the
-        token has been revoked
-        """
-
-        #something has to match in order to revoke the token
-        matched = False
-
-        #The token has three attributes that can match the user_id
-        if self.user_id is not None:
-            user_id_matched = False
-            for attribute_name in ['user_id', 'trustor_id', 'trustee_id']:
-                if self.user_id == token_values[attribute_name]:
-                    user_id_matched = True
-                    break
-            if not user_id_matched:
-                return False
-            else:
-                matched = True
-
-        #The token has two attributes that can match the domain_id
-        if self.domain_id is not None:
-            dom_id_matched = False
-            for attribute_name in ['user_domain_id', 'project_domain_id']:
-                if self.domain_id == token_values[attribute_name]:
-                    dom_id_matched = True
-                    break
-            if not dom_id_matched:
-                return False
-            else:
-                matched = True
-
-        #If any one check does not match, the while token does
-        #not match the self. The numerous return False indicate
-        # that the token is still valid and short-circuits the
-        #rest of the logic.
-        attribute_names = ['project_id',
-                           'expires_at', 'trust_id', 'consumer_id',
-                           'access_token_id']
-        for attribute_name in attribute_names:
-            if getattr(self, attribute_name) is not None:
-                if (getattr(self, attribute_name) !=
-                        token_values[attribute_name]):
-                            return False
-                else:
-                    matched = True
-
-        if self.role_id is not None:
-            roles = token_values['roles']
-            role_found = False
-            for role in roles:
-                if self.role_id == role:
-                    role_found = True
-                    break
-            if role_found:
-                matched = True
-            else:
-                return False
-        matched = (matched and
-                   self.issued_before > token_values['issued_at'])
-        return matched
+    def key_for_name(self, name):
+        return "%s=%s" % (name, getattr(self, name) or '*')
 
 
 class EventIdentifier(object):
@@ -150,3 +98,73 @@ class EventIdentifier(object):
 
     def __str__(self):
         return str(self._value)
+
+
+def attr_keys(event):
+    return map(event.key_for_name, NAMES)
+
+
+class RevokeTree(object):
+    def __init__(self, revoke_events=[]):
+        self.revoke_map = dict()
+        self.add_events(revoke_events)
+
+    def add_event(self, event):
+        revoke_map = self.revoke_map
+        for key in attr_keys(event):
+            revoke_map = revoke_map.setdefault(key, {})
+        revoke_map['issued_before'] = event.issued_before
+        return event
+
+    def remove_event(self, event):
+        stack = []
+        revoke_map = self.revoke_map
+        for name in NAMES:
+            key = event.key_for_name(name)
+            nxt = revoke_map.get(key)
+            if nxt is None:
+                break
+            stack.append((revoke_map, key, nxt))
+            revoke_map = nxt
+        else:
+            revoke_map.pop('issued_before')
+        for parent, key, child in reversed(stack):
+            if not any(child):
+                del parent[key]
+
+    def add_events(self, revoke_events):
+        map(self.add_event, revoke_events)
+
+    def is_revoked(self, token_data):
+
+        #Compare each level of the tree with the values from the token,
+        #taking into account the attributes that have alternative keys.
+        #if there is a match, continue down the tree.
+        #if there is no match, exit early.
+        alternatives = {
+            "user_id": ["user_id", "trustor_id", "trustee_id"],
+            "domain_id": ["user_domain_id", "project_domain_id"]}
+        subnode = [self.revoke_map]
+        for name in NAMES:
+            bundle = []
+            any_key = "%s=*" % (name,)
+            for tree in subnode:
+                bundle.append(tree.get(any_key))
+                if name == "role_id":
+                    for role_id in token_data.get("roles", []):
+                        bundle.append(tree.get("role_id=%s" % (role_id,)))
+                else:
+                        for alt_name in alternatives.get(name, [name]):
+                            bundle.append(
+                                tree.get("%s=%s" % (name,
+                                                    token_data[alt_name])))
+                bundle = filter(None, bundle)
+                if not bundle:
+                    return False
+                subnode = bundle
+            else:
+                for leaf in subnode:
+                    issued_before = leaf.get('issued_before')
+                    if issued_before is not None:
+                        if issued_before > token_data['issued_at']:
+                            return True
