@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+OR8\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-28T22:47:35Z",
+      "side": 1,
+      "message": "Adam, shouldn\u0027t there be a test for create domain too?",
+      "revId": "dd449f625d7de43a4ccb5639bd670b9127f02acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
