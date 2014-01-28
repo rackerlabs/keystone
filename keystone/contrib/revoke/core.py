@@ -26,6 +26,8 @@ from keystone.contrib.revoke import model
 from keystone import exception
 from keystone import notifications
 from keystone.openstack.common import log
+from keystone.openstack.common import timeutils
+
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
@@ -66,6 +68,8 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.revoke.driver)
         self._register_listeners()
+        self._revoke_map = model.RevokeTree()
+        self.last_fetch = None
 
     def _user_callback(self, service, resource_type, operation,
                        payload):
@@ -167,10 +171,12 @@ class Manager(manager.Manager):
         :returns no value returned
          """
 
-        events = self.get_events(filter=None)
-        for event in events:
-            if event.matches(token_values):
-                raise exception.TokenNotFound(_('Failed to validate token'))
+        #this code needs to be synchronized across greenthreads
+        events = self.get_events(last_fetch=self.last_fetch)
+        self.last_fetch = timeutils.utcnow()
+        self._revoke_map.add_events(events)
+        if (self._revoke_map.is_revoked(token_values)):
+            raise exception.TokenNotFound(_('Failed to validate token'))
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -178,7 +184,7 @@ class Driver(object):
     """Interface for recording and reporting revocation Events."""
 
     @abc.abstractmethod
-    def get_events(self, filter=None):
+    def get_events(self, last_fetch=None):
         """return the revocation events, as a list of  objects
 
         :param filter:   Not yet supported.

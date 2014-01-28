@@ -107,7 +107,7 @@ class Revoke(sql.Base, revoke.Driver):
 
         session.flush()
 
-    def get_events(self, filter=None):
+    def get_events(self, last_fetch=None):
         """return the revocation events,
 
         :param filter:
@@ -117,12 +117,19 @@ class Revoke(sql.Base, revoke.Driver):
         """
         self._prune_expired_events()
         session = db_session.get_session()
-        events = []
         query = session.query(RevocationEvent).order_by(
             RevocationEvent.revoked_at)
 
-        for e in query:
-            events.append(model.RevokeEvent(**e.to_dict(False)))
+        #this should be filtered by revokend_at, but it is broken
+        #Maybe SQLite?
+        if last_fetch:
+            query.filter(RevocationEvent.revoked_at > last_fetch)
+            events = []
+            for e in query:
+                if last_fetch and e.revoked_at > last_fetch:
+                    events.append(model.RevokeEvent(**e.to_dict(False)))
+        else:
+            events = [model.RevokeEvent(**e.to_dict(False)) for e in query]
         return events
 
     def revoke(self, event):
