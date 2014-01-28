@@ -15,8 +15,14 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+
+import errno
+import os
+
 import migrate
 import sqlalchemy
+
+from keystone.common import sql
 
 
 #  Different RDBMSs use different schemes for naming the Foreign Key
@@ -93,3 +99,12 @@ def rename_tables_with_constraints(renames, constraints, engine):
 
     if engine != 'sqlite':
         add_constraints(constraints)
+
+
+def find_migrate_repo(module=sql, repo_name='migrate_repo'):
+    path = os.path.abspath(os.path.join(
+        os.path.dirname(module.__file__), repo_name))
+    if os.path.isdir(path):
+        return path
+    raise OSError(errno=errno.ENOENT, filename=path,
+                  strerror="No such file or directory")

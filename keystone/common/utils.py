@@ -529,3 +529,5 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
