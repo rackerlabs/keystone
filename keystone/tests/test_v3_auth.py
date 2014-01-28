@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+
+import datetime
 import json
 import uuid
 
@@ -19,9 +21,9 @@ from keystone import auth
 from keystone.common import cms
 from keystone import config
 from keystone import exception
+from keystone.openstack.common import timeutils
 from keystone import tests
 from keystone.tests import test_v3
-
 
 CONF = config.CONF
 
@@ -1248,14 +1250,41 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.head('/auth/tokens', headers=headers2, expected_status=204)
 
         self.delete('/auth/tokens', headers=headers, expected_status=204)
+        self.delete('/auth/tokens', headers=headers2, expected_status=204)
         events = self.get('/OS-REVOKE/events',
                           expected_status=200).json_body['events']
-        self.assertEqual(1, len(events))
+        self.assertEqual(2, len(events))
         self.assertUserAndExpiryInList(events,
                                        token2['user']['id'],
                                        token2['expires_at'])
         self.head('/auth/tokens', headers=headers, expected_status=404)
         self.head('/auth/tokens', headers=headers2, expected_status=404)
+
+    def test_list_with_filter(self):
+
+        self.role_data_fixtures()
+        events = self.get('/OS-REVOKE/events',
+                          expected_status=200).json_body['events']
+        self.assertEqual(0, len(events))
+
+        scoped_token = self.get_scoped_token()
+        headers = {'X-Subject-Token': scoped_token}
+        auth = self.build_authentication_request(token=scoped_token)
+        response = self.post('/auth/tokens', body=auth)
+        headers2 = {'X-Subject-Token': response.headers['X-Subject-Token']}
+        self.delete('/auth/tokens', headers=headers, expected_status=204)
+        self.delete('/auth/tokens', headers=headers2, expected_status=204)
+
+        events = self.get('/OS-REVOKE/events',
+                          expected_status=200).json_body['events']
+
+        self.assertEqual(2, len(events))
+        future = timeutils.isotime(timeutils.utcnow() +
+                                   datetime.timedelta(seconds=1000))
+
+        events = self.get('/OS-REVOKE/events?since=%s' % (future),
+                          expected_status=200).json_body['events']
+        self.assertEqual(0, len(events))
 
 
 class TestAuthExternalDisabled(test_v3.RestfulTestCase):
