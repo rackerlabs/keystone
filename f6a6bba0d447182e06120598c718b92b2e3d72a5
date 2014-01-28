@@ -34,6 +34,24 @@
       "revId": "f6a6bba0d447182e06120598c718b92b2e3d72a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+OmI\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-28T21:47:53Z",
+      "side": 1,
+      "message": "also this is cherry picked from master onto stable. I dont want to actually modify the code",
+      "parentUuid": "AAAAUH/+PB4\u003d",
+      "revId": "f6a6bba0d447182e06120598c718b92b2e3d72a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
