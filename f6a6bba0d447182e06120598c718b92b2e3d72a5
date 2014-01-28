@@ -16,6 +16,24 @@
       "revId": "f6a6bba0d447182e06120598c718b92b2e3d72a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+PB4\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-28T20:19:07Z",
+      "side": 1,
+      "message": "pretty standard in keystone to maintain the expiration date",
+      "parentUuid": "AAAAUH/+Qhk\u003d",
+      "revId": "f6a6bba0d447182e06120598c718b92b2e3d72a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
