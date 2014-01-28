@@ -18,6 +18,7 @@ import json
 
 import six
 
+from keystone import cadf_notifications
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
@@ -56,6 +57,7 @@ class Auth(controller.V2Controller):
         cert_file.close()
         return data
 
+    @cadf_notifications.emit_event('authenticate')
     @controller.v2_deprecated
     def authenticate(self, context, auth=None):
         """Authenticate credentials and return a token.
