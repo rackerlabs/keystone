@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+Qek\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-28T16:28:28Z",
+      "side": 1,
+      "message": "Please use full name for method as you did in line # 159\n\n_eval_req Vs  _verify_all_requirements",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+R68\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
