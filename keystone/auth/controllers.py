@@ -18,6 +18,7 @@ import json
 
 import six
 
+from keystone import cadf_notifications
 from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
@@ -332,6 +333,7 @@ class Auth(controller.V3Controller):
         super(Auth, self).__init__(*args, **kw)
         config.setup_authentication()
 
+    @cadf_notifications.emit_event('authenticate')
     def authenticate_for_token(self, context, auth=None):
         """Authenticate user and issue a token."""
         include_catalog = 'nocatalog' not in context['query_string']
