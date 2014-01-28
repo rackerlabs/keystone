@@ -167,10 +167,35 @@ class Manager(manager.Manager):
         :returns no value returned
          """
 
+        #TODO(ayoung): we calculate revocation two ways for now, to make sure
+        #we have it right:  one is by exhaustive listing of the evnts ,and the
+        #other by an event_map l00kup.  Eventually we should only do the map
+        #lookup, and also cache the map.
         events = self.get_events(filter=None)
+        revoke_map = model.RevokeTree(events)
+        revoked = False
+        if (revoke_map.is_revoked(token_values)):
+                #raise exception.TokenNotFound(_('Failed to validate token'))
+                revoked = True
+
         for event in events:
             if event.matches(token_values):
-                raise exception.TokenNotFound(_('Failed to validate token'))
+                if revoked:
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+                else:
+                    #logic in the new code is wrong.  Debug
+                    revoke_map.is_revoked(token_values)
+                    raise exception.TokenNotFound(
+                        _('Failed to validate token'))
+
+        if revoked:
+            #logic in the new code does not match old code.  Debug
+            r2 = False
+            for event in events:
+                r2 = r2 or event.matches(token_values)
+            revoke_map.is_revoked(token_values)
+            raise exception.TokenNotFound(_('Failed to validate token'))
 
 
 @six.add_metaclass(abc.ABCMeta)
