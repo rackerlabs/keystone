@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+UBU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-28T03:26:37Z",
+      "side": 1,
+      "message": "Keystone hacking commandment: avoid using double quotes when you can reasonably use single quotes.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+UBQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-28T03:26:37Z",
+      "side": 1,
+      "message": "Keystone hacking commandment: avoid using double quotes when you can reasonably use single quotes.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+UBI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-28T03:26:37Z",
+      "side": 1,
+      "message": "Keystone hacking commandment: avoid using double quotes when you can reasonably use single quotes.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+UBE\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-28T03:26:37Z",
+      "side": 1,
+      "message": "Keystone hacking commandment: avoid using double quotes when you can reasonably use single quotes.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
