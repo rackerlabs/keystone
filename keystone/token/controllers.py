@@ -103,6 +103,10 @@ class Auth(controller.V2Controller):
         # part of the token data. The token provider doesn't care about the
         # format.
         user_ref = self.v3_to_v2_user(user_ref)
+        # The user_ref is encoded into the auth_token_data which is returned as
+        # part of the token data. The token provider doesn't care about the
+        # format.
+        user_ref = self.v3_to_v2_user(user_ref)
         if tenant_ref:
             tenant_ref = self.filter_domain_id(tenant_ref)
         auth_token_data = self._get_auth_token_data(user_ref,
@@ -263,6 +267,7 @@ class Auth(controller.V2Controller):
 
         try:
             user_ref = self.identity_api.authenticate(
+                context,
                 user_id=user_id,
                 password=password)
         except AssertionError as e:
@@ -471,10 +476,6 @@ class Auth(controller.V2Controller):
 
             {
                 'endpoints': [
-                    {
-                        'id': $endpoint_id,
-                        'name': $SERVICE[name],
-                        'type': $SERVICE,
                         'tenantId': $tenant_id,
                         'region': $REGION,
                     }

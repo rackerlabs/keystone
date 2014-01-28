@@ -350,7 +350,7 @@ class UserV3(controller.V3Controller):
 
         domain_scope = self._get_domain_id_for_request(context)
         try:
-            self.identity_api.change_password(user_id, original_password,
+            self.identity_api.change_password(context, user_id, original_password,
                                               password, domain_scope)
         except AssertionError:
             raise exception.Unauthorized()
