@@ -29,8 +29,9 @@ class Revoke(revoke.Driver):
     def __init__(self):
         self._events = []
 
-    def _prune_expired_events(self):
+    def _prune_expired_events(self, last_fetch=None):
         pruned = []
+        results = []
         expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
         oldest = timeutils.utcnow() - expire_delta
 
@@ -38,18 +39,24 @@ class Revoke(revoke.Driver):
             revoked_at = event.revoked_at
             if revoked_at > oldest:
                 pruned.append(event)
+                if last_fetch:
+                    if revoked_at > last_fetch:
+                        results.append(event)
+                else:
+                    results.append(event)
         self._events = copy.copy(pruned)
-        return pruned
+        return results
 
-    def get_events(self, filter=None):
+    def get_events(self, last_fetch=None):
         """List Revocation Events.
 
-        :param filter: Ignored
+        :param last_fetch: Ignored
         :raises: None
         :returns: A list of keystone.contrib.revoke.model.RevocationEvents
 
         """
-        return self._prune_expired_events()
+        events = self._prune_expired_events(last_fetch)
+        return events
 
     def revoke(self, event):
         """register a revocation event

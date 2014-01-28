@@ -20,7 +20,7 @@ from keystone.contrib import revoke
 
 class Revoke(revoke.Driver):
 
-    def get_events(self, filter=None):
+    def get_events(self, last_fetch=None):
         """A real implementation would return the revocation events.
 
         :param filter: Ignored
