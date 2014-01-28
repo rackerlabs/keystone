@@ -21,6 +21,7 @@ import os
 from oslo.config import cfg
 import six
 
+from keystone import cadf_notifications
 from keystone import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -270,8 +271,9 @@ class Manager(manager.Manager):
     # - select the right driver for this domain
     # - clear/set domain_ids for drivers that do not support domains
 
+    @cadf_notifications.emit_event('authenticate')
     @domains_configured
-    def authenticate(self, user_id, password, domain_scope=None):
+    def authenticate(self, context, user_id, password, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         ref = driver.authenticate(user_id, password)
         if not driver.is_domain_aware():
