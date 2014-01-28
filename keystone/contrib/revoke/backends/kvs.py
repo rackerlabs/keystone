@@ -25,8 +25,9 @@ class Revoke(revoke.Driver):
     def __init__(self):
         self._events = []
 
-    def _prune_expired_events(self):
+    def _prune_expired_events(self, last_fetch=None):
         pruned = []
+        results = []
         expire_delta = datetime.timedelta(seconds=CONF.token.expiration)
         oldest = timeutils.utcnow() - expire_delta
 
@@ -34,11 +35,16 @@ class Revoke(revoke.Driver):
             revoked_at = event.revoked_at
             if revoked_at > oldest:
                 pruned.append(event)
+                if last_fetch:
+                    if revoked_at > last_fetch:
+                        results.append(event)
+                else:
+                    results.append(event)
         self._events = copy.copy(pruned)
-        return pruned
+        return results
 
-    def get_events(self, filter=None):
-        return self._prune_expired_events()
+    def get_events(self, last_fetch=None):
+        return self._prune_expired_events(last_fetch)
 
     def revoke(self, event):
         self._prune_expired_events()
