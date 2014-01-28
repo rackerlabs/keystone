@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+UHM\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-28T02:54:27Z",
+      "side": 1,
+      "message": "Nice refactoring!",
+      "revId": "5189338244bca9bc3e7638a2eaf48190e21267c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
