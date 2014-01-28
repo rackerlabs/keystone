@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Qkg\u003d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-28T16:11:21Z",
+      "side": 1,
+      "message": "What is the use of line # 71?",
+      "revId": "2f7fa55bd046b5e0ec7b7c2bad8c88c7f33d0c9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
