@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+JI4\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-29T19:27:29Z",
+      "side": 1,
+      "message": "In authz point of view, we should not provide detailed error message to client.\nMay be OK to log.\nm2c",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+JBc\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-29T19:27:29Z",
+      "side": 1,
+      "message": "Why duplication of lookup method, can\u0027t we use them from keystone/auth/controllers.py?\n\nWe may need to enhance them.\n\nThoughts?",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+JAs\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-29T19:27:29Z",
+      "side": 1,
+      "message": "You are not using private methods, better to remove them from code.\n\nI think we need to clean or reuse then .",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I/w\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-29T19:27:29Z",
+      "side": 1,
+      "message": "Some comment about this code will be helpful",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I+4\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-29T19:27:29Z",
+      "side": 1,
+      "message": "In authz point of view, we should not provide detailed error message to client. May be OK to log. m2c",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I+w\u003d",
+        "filename": "keystone/auth/plugins/signature.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2014-01-29T19:27:29Z",
+      "side": 1,
+      "message": "In authz point of view, we should not provide detailed error message to client. May be OK to log. m2c",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
