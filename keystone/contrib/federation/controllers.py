@@ -31,10 +31,10 @@ class IdentityProvider(controller.V3Controller):
     """Identity Provider representation.
 
     Two new class parameters:
-    - _mutable_parameters - set of parameters that can be changed by users.
-                            Usually used by cls.check_immutable_params()
-    - _public_parameters - set of parameters that are exposed to the user.
-                           Usually used by cls.filter_params()
+    * `_mutable_parameters` - set of parameters that can be changed by users.
+                              Usually used by cls.check_immutable_params()
+    * `_public_parameters` - set of parameters that exposed to the user.
+                             Usually used by cls.filter_params()
 
     """
     collection_name = 'identity_providers'
@@ -54,8 +54,8 @@ class IdentityProvider(controller.V3Controller):
         :param ref: a dictionary representing deserialized request to be
                     stored
         :param keys: a set with mutable parameters. If None, use default class
-                     attribute - _mutable_parameters
-        :raises exception.ImmutableAttributeError
+                     attribute - `_mutable_parameters`
+        :raises: :class:`keystone.exception.ImmutableAttributeError`
 
         """
         if keys is None:
