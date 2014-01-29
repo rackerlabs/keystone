@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+MjE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T06:53:34Z",
+      "side": 1,
+      "message": "will remove one of the cadfs.  \n\nWould like to keep authenticate because that maps directly to a CADF_Event action type that I am required to use",
+      "parentUuid": "AAAAUH/+Nbg\u003d",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Mi8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T06:53:34Z",
+      "side": 1,
+      "message": "probably a good idea. I wanted to write this from scratch and kept it separate from notifications initially but as I finish it if it makes sense I can move it into notifications.py",
+      "parentUuid": "AAAAUH/+Mvk\u003d",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Na0\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 2
@@ -48,6 +84,24 @@
       "writtenOn": "2014-01-29T02:07:35Z",
       "side": 1,
       "message": "in the keystone working directory, run either \"flake8 .\" or \"tox -e pep8\" to find the little issues causing the pep8 check failures",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Mis\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T06:53:34Z",
+      "side": 1,
+      "message": "will do.",
+      "parentUuid": "AAAAUH/+Na0\u003d",
       "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Mic\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T06:53:34Z",
+      "side": 1,
+      "message": "will remove. as it may be painfully obvious I was writing my first decorator and really wanted to understand what was happening.  The fact that whether or not the decorator has arguments affects whether the function is passed to __init__ or __call__ blows my mind.",
+      "parentUuid": "AAAAUH/+NbM\u003d",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Mv4\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 2
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+MiU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T06:53:34Z",
+      "side": 1,
+      "message": "I believe it is to record that the authentication failed for auditing purposes.  Would need to ask Matt Rutkowski why they added this to the CADF spec",
+      "parentUuid": "AAAAUH/+Mv4\u003d",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Nag\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 2
@@ -116,6 +206,24 @@
       "writtenOn": "2014-01-29T02:07:35Z",
       "side": 1,
       "message": "you don\u0027t need to sign inline comments, unless you\u0027re writing a novel\n\n  # NOTE(btopol): Now, this is the story all about how...",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+MiM\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T06:53:34Z",
+      "side": 1,
+      "message": "will remove. I put that in when you and I were talking in San Antonio as a placeholder for when I got back and was able to start coding",
+      "parentUuid": "AAAAUH/+Nag\u003d",
       "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
