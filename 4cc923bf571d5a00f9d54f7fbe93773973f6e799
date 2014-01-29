@@ -16,6 +16,24 @@
       "revId": "4cc923bf571d5a00f9d54f7fbe93773973f6e799",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+NFA\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T03:48:17Z",
+      "side": 1,
+      "message": "Steve - line 60 uses cls._mutable_parameters and line 83 uses cls._public_parameters . They aren\u0027t the same.",
+      "parentUuid": "AAAAUH/+bHI\u003d",
+      "revId": "4cc923bf571d5a00f9d54f7fbe93773973f6e799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
