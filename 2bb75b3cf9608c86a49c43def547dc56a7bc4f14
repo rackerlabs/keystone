@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+H2s\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2014-01-29T23:03:36Z",
+      "side": 1,
+      "message": "Is there a reason you can\u0027t just use timeutils.utcnow() here? That would match better with how the default token expiry time is generated.\n\n    In [10]: timeutils.utcnow()\n    Out[10]: datetime.datetime(2014, 1, 29, 23, 1, 31, 957879)\n\n    In [11]: timeutils.normalize_time(timeutils.parse_isotime(timeutils.isotime()))\n    Out[11]: datetime.datetime(2014, 1, 29, 23, 1, 33)",
+      "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
