@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Kds\u003d",
+        "filename": "keystone/tests/contrib/kds/base.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-29T15:18:49Z",
+      "side": 1,
+      "message": "How come there is an added new line here?",
+      "revId": "365e65dfd31351a2e76b013d1205a5711a1b31f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
