@@ -34,6 +34,24 @@
       "revId": "4cc923bf571d5a00f9d54f7fbe93773973f6e799",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+M3Q\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T04:51:34Z",
+      "side": 1,
+      "message": "Thanks Brant, serves me right for reviewing late at night.",
+      "parentUuid": "AAAAUH/+NFA\u003d",
+      "revId": "4cc923bf571d5a00f9d54f7fbe93773973f6e799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
