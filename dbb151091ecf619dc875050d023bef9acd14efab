@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Kdo\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-29T15:18:05Z",
+      "side": 1,
+      "message": "This should be in the else block below.   Keep the semantics of  checking that remaining_uses  \u003e 0",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Kdk\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-29T15:18:05Z",
+      "side": 1,
+      "message": "return ref.remaining_uses \u003e 0",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Kdg\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-01-29T15:18:05Z",
+      "side": 1,
+      "message": "else block",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
