@@ -191,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Imk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:35:45Z",
+      "side": 1,
+      "message": "add a comment to explain that.",
+      "parentUuid": "AAAAUH/+Ipo\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+IzY\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -255,6 +273,24 @@
       "side": 1,
       "message": "can i get more info here?",
       "parentUuid": "AAAAUH/+Iyc\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ImQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:35:45Z",
+      "side": 1,
+      "message": "Reviewers looking at this function call have no idea that True means \"any_one_of\" -- so rather than pass True, pass something like EvalType.ANY_ONE_OF , and then at line 177 you\u0027d pass something like EvalType.NOT_ANY_OF\n\nEvalType.ANY_ONE_OF could be set to \u0027any_one_of\u0027, and then you could also use it at line 167.",
+      "parentUuid": "AAAAUH/+Ing\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -531,6 +567,24 @@
       "side": 1,
       "message": "They comes from content in: https://review.openstack.org/#/c/67645/6/keystone/tests/mapping_fixtures.py\n\nIt\u0027s what would be expected when processing a specific assertion with a set of rules. \nAside from going into the rules[0][\u0027local\u0027][0][\u0027group\u0027][\u0027id\u0027]... is there an easier way?",
       "parentUuid": "AAAAUH/+I4I\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ImA\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:35:45Z",
+      "side": 1,
+      "message": "pull the value out into a new variable in mapping_fixtures and use that in both places.",
+      "parentUuid": "AAAAUH/+Ino\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
