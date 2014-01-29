@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Hfs\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T23:54:31Z",
+      "side": 1,
+      "message": "could add `` around keystone.conf.sample here for consistency.",
+      "revId": "40f13df249b6e5e2331b8bc2f54657e64783a7e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
