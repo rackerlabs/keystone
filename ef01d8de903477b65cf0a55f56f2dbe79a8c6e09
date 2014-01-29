@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+HnA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T23:43:51Z",
+      "side": 1,
+      "message": "change \"function never\" to \"function was never\" (add \"was\")",
+      "revId": "ef01d8de903477b65cf0a55f56f2dbe79a8c6e09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Hm8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T23:43:51Z",
+      "side": 1,
+      "message": "change \"is presuppose\" to \"presupposes\"",
+      "revId": "ef01d8de903477b65cf0a55f56f2dbe79a8c6e09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Hmw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T23:43:51Z",
+      "side": 1,
+      "message": "change \"the only one string\" to \"only one string\"\n\nchange \"all other\" to \"all others\"",
+      "revId": "ef01d8de903477b65cf0a55f56f2dbe79a8c6e09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Hmo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T23:43:51Z",
+      "side": 1,
+      "message": "Remove this line since it\u0027s obvious from the code provided.",
+      "revId": "ef01d8de903477b65cf0a55f56f2dbe79a8c6e09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
