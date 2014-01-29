@@ -2,6 +2,244 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+I2w\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "is this fixing a bug? if so put it in a separate commit. Also, use \u0027 for strings consistently.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I00\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "suggest put these 3 new functions in a class -- AssertionProcessor or something. Then it will be obvious that they\u0027re all related.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I2c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "remove : at end of sentence",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I2Q\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "remove , s\n\nthis first sentence is obvious from the parameters to the function.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I1M\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "should document the format of the returned data.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I14\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "would be nice to have in the docstring an explanation of what assertion is supposed to be.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I1Y\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "\u0027rules\u0027 might be None here (see line 124), in which case this would fail.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I0c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "this comment would make an excellent docstring for _verify_all_requirements.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Iz8\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "why reversed?",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IzY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "this is obvious, remove it.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Iyc\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "suggest use an enumeration here rather than True/False for readability.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IzM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "this is obvious, remove it.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IyU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "suggest use an enumeration here rather than True/False for readability.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IxM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "seems like the caller can tell if it\u0027s True/False by the direct_maps already... since it\u0027s always False if the second parameter is [] and otherwise True... so could simplify this and return None or a list rather than a tuple.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Qek\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -13,6 +251,23 @@
       "writtenOn": "2014-01-28T16:28:28Z",
       "side": 1,
       "message": "Please use full name for method as you did in line # 159\n\n_eval_req Vs  _verify_all_requirements",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Iw4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "suggest\n\n if not assertion_values:\n    return False\n\nthen can unindent several lines.",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +291,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+IwE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "suggest change 193-196 to\n\n return re.search(values[0], assertion_values[0])",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Iv8\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "change \"len(intersection) \u003d\u003d 0\" to \"(not intersection)\". it\u0027s more efficient to not calculate the length.\n\nalso change elif to if since just returned anyways.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I4w\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "why change this? Could be done as a separate commit.\n\nIf changing the name, maybe should also add a docstring so we know what goes in here, and a docstring for the new class too.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I4g\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "add to the docstring here the reason why it should return that.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+UBU\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -53,6 +376,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+I4I\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "where does this come from? This applies to all these magic numbers.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I3w\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently. Also, suggest \u0027%s %s\u0027 % (fn, ln) it\u0027s a little more obvious what\u0027s going on.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I3c\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "Suggest\n\n self.assertEqual([], values)",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I3M\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "explain why. this comment applies to all these test functions.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+UBQ\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -64,6 +455,23 @@
       "writtenOn": "2014-01-28T03:26:37Z",
       "side": 1,
       "message": "Keystone hacking commandment: avoid using double quotes when you can reasonably use single quotes.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+I3Y\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T20:02:44Z",
+      "side": 1,
+      "message": "again, where does this come from?",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
