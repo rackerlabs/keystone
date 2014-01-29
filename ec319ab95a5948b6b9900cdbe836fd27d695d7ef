@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+JF0\u003d",
+        "filename": "keystone/tests/fixtures/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T18:59:18Z",
+      "side": 1,
+      "message": "latest legal advice is that developers can\u0027t assign copyright to the foundation (unless you work for the foundation directly) -- so the entire copyright statement (but not the licensing bit) should be removed",
+      "parentUuid": "AAAAUH//KCk\u003d",
+      "revId": "ec319ab95a5948b6b9900cdbe836fd27d695d7ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//KCc\u003d",
         "filename": "keystone/tests/fixtures/cache.py",
         "patchSetId": 5
