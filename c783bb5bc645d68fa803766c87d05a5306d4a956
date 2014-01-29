@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Nbg\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T02:07:35Z",
+      "side": 1,
+      "message": "one of the \"cadf\"s needs to be removed from this line to clean up the api a bit\n\n\u0027authenticate\u0027 is also a verb -- shouldn\u0027t this be a noun (authentication?), or past tense verb (authenticated)? although, a past tense verb implies success... thoughts?",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Na0\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T02:07:35Z",
+      "side": 1,
+      "message": "in the keystone working directory, run either \"flake8 .\" or \"tox -e pep8\" to find the little issues causing the pep8 check failures",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+NbA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T02:07:35Z",
+      "side": 1,
+      "message": "same as below",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+NbM\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T02:07:35Z",
+      "side": 1,
+      "message": "remove the print statements, or covert to LOG.debug() where appropriate",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Nag\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T02:07:35Z",
+      "side": 1,
+      "message": "you don\u0027t need to sign inline comments, unless you\u0027re writing a novel\n\n  # NOTE(btopol): Now, this is the story all about how...",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+NZs\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T02:07:35Z",
+      "side": 1,
+      "message": "remove extra whitespace -- i don\u0027t think flake8 will catch this",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
