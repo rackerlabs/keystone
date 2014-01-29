@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Mvk\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T05:35:08Z",
+      "side": 1,
+      "message": "cadf_notifications.send_event() ?\n\ncurious, why don\u0027t we append the cadf_notifications code to the existing keystone/notifications.py file?",
+      "parentUuid": "AAAAUH/+Nbg\u003d",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Na0\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 2
@@ -64,6 +82,23 @@
       "writtenOn": "2014-01-29T02:07:35Z",
       "side": 1,
       "message": "remove the print statements, or covert to LOG.debug() where appropriate",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Mv4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T05:35:08Z",
+      "side": 1,
+      "message": "thanks for comment, i was about to ask you to remove line 53, but why do we send events if it had an exception?",
       "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
