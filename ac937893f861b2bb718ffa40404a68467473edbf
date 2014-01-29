@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+I6Q\u003d",
+        "filename": "keystone/auth/auth_utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-29T19:33:45Z",
+      "side": 1,
+      "message": "Arvind - the keystone server doesn\u0027t return the message to the client unless debug\u003dTrue is configured. See http://git.openstack.org/cgit/openstack/keystone/tree/keystone/exception.py#n121",
+      "parentUuid": "AAAAUH/+JI4\u003d",
+      "revId": "ac937893f861b2bb718ffa40404a68467473edbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+JBc\u003d",
         "filename": "keystone/auth/auth_utils.py",
         "patchSetId": 18
