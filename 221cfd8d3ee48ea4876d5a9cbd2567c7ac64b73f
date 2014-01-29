@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+JEs\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-29T19:05:39Z",
+      "side": 1,
+      "message": "this is all IIRC, so correct me if things have changed, but this method isn\u0027t intended to only check the status code -- that\u0027s basically a given. the method is intended to validate the actual body of the response ({\"error\": {\"message\": ...}}). the implementation that you\u0027re deleting in the other module is an exception, for some reason (and shouldn\u0027t be promoted to the implementation in this base class)",
+      "revId": "221cfd8d3ee48ea4876d5a9cbd2567c7ac64b73f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
