@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Iqk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "yes it is, i\u0027ll do that in another patch.",
+      "parentUuid": "AAAAUH/+I2w\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I00\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -155,6 +173,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Ipo\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "to replace $0, $1, ... $10, $11, and so forth correctly,\notherwise I run the risk of replace $11 with the $1 value.\n\nif using string replacement",
+      "parentUuid": "AAAAUH/+Iz8\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+IzY\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -166,6 +202,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "this is obvious, remove it.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Ipk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+IzY\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Ing\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "can i get more info here?",
+      "parentUuid": "AAAAUH/+Iyc\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+IzM\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -200,6 +272,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "this is obvious, remove it.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IpM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+IzM\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +398,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Io8\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+IwE\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Iv8\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -319,6 +427,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "change \"len(intersection) \u003d\u003d 0\" to \"(not intersection)\". it\u0027s more efficient to not calculate the length.\n\nalso change elif to if since just returned anyways.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Io0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+Iv8\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +519,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Ino\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "They comes from content in: https://review.openstack.org/#/c/67645/6/keystone/tests/mapping_fixtures.py\n\nIt\u0027s what would be expected when processing a specific assertion with a set of rules. \nAside from going into the rules[0][\u0027local\u0027][0][\u0027group\u0027][\u0027id\u0027]... is there an easier way?",
+      "parentUuid": "AAAAUH/+I4I\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I3w\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -404,6 +548,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "use \u0027 for strings consistently. Also, suggest \u0027%s %s\u0027 % (fn, ln) it\u0027s a little more obvious what\u0027s going on.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IoE\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-29T20:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I3w\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
