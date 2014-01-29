@@ -244,6 +244,24 @@
       "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Iag\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-01-29T21:12:50Z",
+      "side": 1,
+      "message": "do you mean lines 24 and 26?   Those were already in there. You want me to take them out?",
+      "parentUuid": "AAAAUH/+NZs\u003d",
+      "revId": "c783bb5bc645d68fa803766c87d05a5306d4a956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
