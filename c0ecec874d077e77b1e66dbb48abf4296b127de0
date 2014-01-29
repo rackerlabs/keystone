@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+KXk\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-29T15:28:52Z",
+      "side": 1,
+      "message": "Just curious, how come this was switched from single quotes to double?",
+      "revId": "c0ecec874d077e77b1e66dbb48abf4296b127de0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+KaE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-29T15:28:52Z",
+      "side": 0,
+      "message": "Why remove this line?",
+      "revId": "ddc25d0b6e2fb0db125b2a62ae69fe296049a283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
