@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+BiA\u003d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T22:04:50Z",
+      "side": 1,
+      "message": "this is going to happen anyways because tests.TestCase resets CONF -- http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/core.py#n316",
+      "revId": "0f78e94bcb2cefc1865b5c6ba41697a52c30a833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
