@@ -34,6 +34,57 @@
       "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+A70\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T23:49:10Z",
+      "side": 1,
+      "message": "(nit) use \u0027 for strings.",
+      "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+A7Q\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T23:49:10Z",
+      "side": 1,
+      "message": "this needs to handle potentially invalid JSON.",
+      "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+A68\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T23:49:10Z",
+      "side": 1,
+      "message": "what happened to the rest of the docs that explained what None meant (for example)",
+      "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
