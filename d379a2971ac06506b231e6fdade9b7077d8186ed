@@ -16,6 +16,24 @@
       "revId": "d379a2971ac06506b231e6fdade9b7077d8186ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+BF4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-30T23:16:32Z",
+      "side": 1,
+      "message": "I don\u0027t see this as a HTTP error which the keystone ValidationError seems to imply.  This should error on keystone startup not sometime during runtime.  Since I am expecting some specific value here, I figured ValueError was correct.\n\nI am not opposed to using a Keystone-specific error if ValueError is not most correct option.",
+      "parentUuid": "AAAAUH/+BJU\u003d",
+      "revId": "d379a2971ac06506b231e6fdade9b7077d8186ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
