@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+BM8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-30T22:50:32Z",
+      "side": 1,
+      "message": "Please be a little bit more specific.\nSomething like:\n\nContinuous Integration Project link obsolete\n\nThe Continuous Integration Project link does not exist anymore and it cannot be replaced. This patch removes it from the documentation.",
+      "revId": "15bd5305fa2bfd4282f8c2d4235580badc455f58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
