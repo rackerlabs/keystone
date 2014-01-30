@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+CRs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T19:30:49Z",
+      "side": 1,
+      "message": "I think this should be \u0027Closes-Bug: #1263804\u0027 so that the link is correct.",
+      "revId": "07529ab4fec739907bd8ac42b506a13010538652",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+CRk\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T19:30:49Z",
+      "side": 1,
+      "message": "nit: add a space after #",
+      "revId": "07529ab4fec739907bd8ac42b506a13010538652",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
