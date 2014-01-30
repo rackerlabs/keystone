@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Adam Gandelman <adam.gandelman@canonical.com>
+Approved+1: Alan Pevec <apevec@gmail.com>
+Code-Review+1: Steven Hardy <shardy@redhat.com>
+Code-Review+1: Fabio Giannetti <fabio.giannetti@hp.com>
+Code-Review+1: Jamie Lennox <jamielennox@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 30 Jan 2014 17:05:51 +0000
+Reviewed-on: https://review.openstack.org/60386
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
