@@ -147,6 +147,13 @@ class SqlModels(SqlTests):
 
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
+    def test_domain_specific_drivers_enabled(self):
+        self.opt_in_group('identity',
+                          domain_specific_drivers_enabled=True)
+        self.assertTrue(config.CONF.identity.domain_specific_drivers_enabled)
+        list_users = self.identity_api.list_users()
+        self.assertEqual(len(list_users), 4)
+
     def test_password_hashed(self):
         session = db_session.get_session()
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
