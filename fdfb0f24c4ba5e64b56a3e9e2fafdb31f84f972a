@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+F2o\u003d",
+        "filename": "keystone/contrib/kds/api/root.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-30T07:58:56Z",
+      "side": 1,
+      "message": "Keystone uses \u0027values\u0027 here - no other project does. I think we should scrap it. Preferences?",
+      "revId": "fdfb0f24c4ba5e64b56a3e9e2fafdb31f84f972a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+F2Q\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-01-30T07:58:56Z",
+      "side": 1,
+      "message": "I\u0027m not sure about the concept of a relative link here. I want to discuss this in a broader context because there are some problems with absolute links in discovery and public vs private endpoints.",
+      "revId": "fdfb0f24c4ba5e64b56a3e9e2fafdb31f84f972a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
