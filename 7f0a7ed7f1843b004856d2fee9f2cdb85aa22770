@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+BxM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+B9s\u003d",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+B9g\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-30T20:58:58Z",
       "side": 1,
       "message": "Is \"Store\" a verb here? This comment doesn\u0027t make sense. How about\n\n Mapping rule evaluation types\n\n?",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+BxQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+B9g\u003d",
       "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Bx0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "I think I use that wording in a few other spots, I\u0027ll fix it up",
+      "parentUuid": "AAAAUH/+B8k\u003d",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+B9A\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-30T20:58:58Z",
       "side": 1,
       "message": "if this \"rules\" is always going to be in mapping_ref, then use mapping_ref[\u0027rules\u0027], because if it\u0027s not there then it\u0027ll fail at 152 instead of here.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+BxY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+B9A\u003d",
       "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Bw4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "# If the compare comes back as None, then the rule did not apply to the assertion data, go on to the next rule \n\n?",
+      "parentUuid": "AAAAUH/+B2Y\u003d",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+B10\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-30T20:58:58Z",
       "side": 1,
       "message": "suggest have a function replace_variables.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Bww\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "good idea",
+      "parentUuid": "AAAAUH/+B10\u003d",
       "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Bvc\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "I think that would be better, but we would need to change the API spec to be {0} instead of $0. \n\nI think doing this for now is OK, it should work fine. But we can kindly ask Dolph for permission to change the API spec, and the function in another patch.",
+      "parentUuid": "AAAAUH/+B3c\u003d",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+B9I\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2014-01-30T20:58:58Z",
       "side": 1,
       "message": "rather than pass assertion_data around to the different functions, how about make it a member variable?\n\nSince it\u0027s created right away in process, maybe pass in assertion to the constructor and build assertion_data there.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Bsc\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+B9I\u003d",
       "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+ByM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": ":returns: an array of local objects or None",
+      "parentUuid": "AAAAUH/+B4E\u003d",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+B74\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+ByY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+B74\u003d",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+B7c\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 7
@@ -183,6 +363,24 @@
       "writtenOn": "2014-01-30T20:58:58Z",
       "side": 1,
       "message": "suggest call this \"common_values\" or \"matched_values\" ?\n\nsince going to use this as a boolean, could do\n\n any_match \u003d bool(set(values).intersection(set(assertion_values)))",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ByU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T21:26:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+B7c\u003d",
       "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
