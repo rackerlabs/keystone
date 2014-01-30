@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Ga8\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T05:17:22Z",
+      "side": 1,
+      "message": "Is this necessary?",
+      "revId": "fadeb8001e147f97097e38ed5b840a42911ce1d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
