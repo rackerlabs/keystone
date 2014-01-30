@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+BFA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-01-30T23:38:28Z",
+      "side": 1,
+      "message": "(NIT): add docstrings here for mapping_ref and the return value/description of identity_values",
+      "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
