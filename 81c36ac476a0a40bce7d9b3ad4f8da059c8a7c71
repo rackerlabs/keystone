@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+B28\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "what\u0027s the \u00271\u0027 suffix for? i\u0027d prefer this to be called project_or_domain_id",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B4A\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "just do the split once and assign the results to a tuple",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B30\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "this whole patch is a good first step, but i\u0027d like the KVS backend to go one step further and follow the design we laid out at the summit for the SQL backend (i think henry nash was going to work on that",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B3k\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "an inline comment would be nice to explain why this is a valid assumption at this point (it\u0027s clear what\u0027s going on, but only after reading the last 10 lines of code)",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B3M\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "what\u0027s the False for?",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B2U\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "same comments as on meta_id1 above",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B2I\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-30T20:56:15Z",
+      "side": 1,
+      "message": "same",
+      "revId": "81c36ac476a0a40bce7d9b3ad4f8da059c8a7c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
