@@ -562,3 +562,8 @@ class MappingCRUDTests(FederationTests):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_WRONG_TYPE})
+
+    def test_create_mapping_empty_map(self):
+        url = self.MAPPING_URL + uuid.uuid4().hex
+        self.put(url, expected_status=400,
+                 body={'mapping': {}})
