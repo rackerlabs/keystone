@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+BX4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-30T22:23:59Z",
+      "side": 1,
+      "message": "Could this be raised as a ValidationError instead?",
+      "revId": "0f742c5d756ea03511b5aa13785ae6e7daa07b8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
