@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+D3s\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "Since consume_one throws an exception if it\u0027s no longer able to consume then this could be rewritten as a try-except to save an extra select query.  I think that also mean the has_remaining_uses would only be used in tests.",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+D4w\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 3432,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "It would be nice to add a test method that forces the remaining_uses to -1 to simulate double decrementing.  That way we can be sure it\u0027s handled properly.",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+EJ0\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "I think you want \"return ref.get(\u0027remaining_uses\u0027) \u003e 0\"\n\nYou also may want a short comment explaining that the value may be None and None is always less that numeric values in Python. Or you could have an explicit \"if is None: return True\"",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Kdo\u003d",
         "filename": "keystone/trust/backends/kvs.py",
         "patchSetId": 16
@@ -13,6 +64,58 @@
       "writtenOn": "2014-01-29T15:18:05Z",
       "side": 1,
       "message": "This should be in the else block below.   Keep the semantics of  checking that remaining_uses  \u003e 0",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+EGA\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "I agree with this and would add that we\u0027d need an explicity elif checking for None.",
+      "parentUuid": "AAAAUH/+Kdo\u003d",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+EEo\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "I understand what this is doing, but it looks weird.  Is it really necessary?",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ECw\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "The KVS backend raises a TrustNotFound here.  I think the behavior should be the same for both backends.",
       "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +150,40 @@
       "writtenOn": "2014-01-29T15:18:05Z",
       "side": 1,
       "message": "else block",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+D/0\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "Can\u0027t this block be simplified to:\n\n  ref.remaining_uses -\u003d 1\n  session.flush()\n\nI don\u0027t see what all the dictionary back and forth buys you...",
+      "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+D8c\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:46:22Z",
+      "side": 1,
+      "message": "This reads funny to me.  I think just \u0027consume\u0027 would be good, but I\u0027d like to hear what others think.",
       "revId": "dbb151091ecf619dc875050d023bef9acd14efab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
