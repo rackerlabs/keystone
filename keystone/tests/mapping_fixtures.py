@@ -240,3 +240,28 @@ MAPPING_MISSING_TYPE = {
         }
     ]
 }
+
+MAPPING_EXTRA_RULES_PROPS = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "group": {
+                        "id": "0cd5e9"
+                    }
+                }
+            ],
+            "invalid_type": {
+                "id": "xyz",
+            },
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "not_any_of": [
+                        "SubContractor"
+                    ]
+                }
+            ]
+        }
+    ]
+}
