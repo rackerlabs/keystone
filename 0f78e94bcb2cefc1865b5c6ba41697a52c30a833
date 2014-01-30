@@ -16,6 +16,24 @@
       "revId": "0f78e94bcb2cefc1865b5c6ba41697a52c30a833",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+BTE\u003d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-01-30T22:36:08Z",
+      "side": 1,
+      "message": "You have to do a reset before you can unregister an opt.  I know it\u0027s duplicated, but it is required to unregister.  otherwise you get:\n\nArgsAlreadyParsedError: arguments already parsed: reset before unregistering options",
+      "parentUuid": "AAAAUH/+BiA\u003d",
+      "revId": "0f78e94bcb2cefc1865b5c6ba41697a52c30a833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
