@@ -240,3 +240,94 @@ MAPPING_MISSING_TYPE = {
         }
     ]
 }
+
+MAPPING_EXTRA_REMOTE_PROPS_NOT_ANY_OF = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "group": {
+                        "id": "0cd5e9"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "not_any_of": [
+                        "SubContractor"
+                    ],
+                    "invalid_type": "xyz"
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_EXTRA_REMOTE_PROPS_ANY_ONE_OF = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "group": {
+                        "id": "0cd5e9"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "any_one_of": [
+                        "SubContractor"
+                    ],
+                    "invalid_type": "xyz"
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_EXTRA_REMOTE_PROPS_JUST_TYPE = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "group": {
+                        "id": "0cd5e9"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "invalid_type": "xyz"
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_EXTRA_RULES_PROPS = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "group": {
+                        "id": "0cd5e9"
+                    }
+                }
+            ],
+            "invalid_type": {
+                "id": "xyz",
+            },
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "not_any_of": [
+                        "SubContractor"
+                    ]
+                }
+            ]
+        }
+    ]
+}
