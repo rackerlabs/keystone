@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+De4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T16:21:47Z",
+      "side": 1,
+      "message": "Note to self....I think I am going to make this a fixture.",
+      "revId": "dd449f625d7de43a4ccb5639bd670b9127f02acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Dfc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T16:21:47Z",
+      "side": 1,
+      "message": "There is any reason why you are also doing a disable in this test?",
+      "revId": "dd449f625d7de43a4ccb5639bd670b9127f02acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+OR8\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 3
@@ -13,6 +47,24 @@
       "writtenOn": "2014-01-28T22:47:35Z",
       "side": 1,
       "message": "Adam, shouldn\u0027t there be a test for create domain too?",
+      "revId": "dd449f625d7de43a4ccb5639bd670b9127f02acd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+DfI\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T16:21:47Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH/+OR8\u003d",
       "revId": "dd449f625d7de43a4ccb5639bd670b9127f02acd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
