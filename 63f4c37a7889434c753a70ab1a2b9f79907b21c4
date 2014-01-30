@@ -16,6 +16,24 @@
       "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+A7E\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T23:43:39Z",
+      "side": 1,
+      "message": "oh right, thanks ldbragst!\n\nI should move the description of the assertion up a few lines to the __init__\n\nand yes, I\u0027ll see what I can do about describing a mapping_ref, might be easier to point to an example in the fixtures file.\n\ni\u0027ll add a return too",
+      "parentUuid": "AAAAUH/+BFA\u003d",
+      "revId": "63f4c37a7889434c753a70ab1a2b9f79907b21c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
