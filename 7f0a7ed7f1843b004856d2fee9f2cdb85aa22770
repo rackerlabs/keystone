@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+B9s\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "This isn\u0027t used outside of AssertionProcessor, so suggest move it in there. Also, prefix with _ since it\u0027s not public.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B9g\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "Is \"Store\" a verb here? This comment doesn\u0027t make sense. How about\n\n Mapping rule evaluation types\n\n?",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B8k\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "change \"would be\" to \"is\".",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B9A\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "if this \"rules\" is always going to be in mapping_ref, then use mapping_ref[\u0027rules\u0027], because if it\u0027s not there then it\u0027ll fail at 152 instead of here.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B2Y\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "we know this already because we can read the code... what we need to know is why.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B10\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "suggest have a function replace_variables.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B3c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "seems like this would be a lot easier if we used a format string that python handles already... for example, http://docs.python.org/2/library/string.html#format-string-syntax ... is it too late to switch?",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B9I\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "rather than pass assertion_data around to the different functions, how about make it a member variable?\n\nSince it\u0027s created right away in process, maybe pass in assertion to the constructor and build assertion_data there.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B4E\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "Since the docstring format has a format for this, suggest use it\n\n :returns: an array of xxx or None.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B74\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "suggest change \"rtype\" to \"requirement_type\", then it will be more obvious that this is the argument that the docstring is referring to.",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+B7c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-30T20:58:58Z",
+      "side": 1,
+      "message": "suggest call this \"common_values\" or \"matched_values\" ?\n\nsince going to use this as a boolean, could do\n\n any_match \u003d bool(set(values).intersection(set(assertion_values)))",
+      "revId": "7f0a7ed7f1843b004856d2fee9f2cdb85aa22770",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
