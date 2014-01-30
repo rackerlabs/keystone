@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+BJU\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-30T23:05:50Z",
+      "side": 1,
+      "message": "Would it better/possible to raise a ValidationError exception instead?",
+      "revId": "d379a2971ac06506b231e6fdade9b7077d8186ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
