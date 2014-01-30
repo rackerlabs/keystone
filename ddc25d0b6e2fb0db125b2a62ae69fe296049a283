@@ -34,6 +34,24 @@
       "revId": "ddc25d0b6e2fb0db125b2a62ae69fe296049a283",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Fz0\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-01-30T08:10:36Z",
+      "side": 1,
+      "message": "Sure, `migration_helpers.py` is perfect place for it.",
+      "parentUuid": "AAAAUH/+HkQ\u003d",
+      "revId": "ddc25d0b6e2fb0db125b2a62ae69fe296049a283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
