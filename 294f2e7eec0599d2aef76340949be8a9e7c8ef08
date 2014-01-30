@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+Dss\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:59:34Z",
+      "side": 1,
+      "message": "nit: extra space",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Dr0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:59:34Z",
+      "side": 1,
+      "message": "nit: another one",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+UOM\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -13,6 +47,41 @@
       "writtenOn": "2014-01-28T02:35:10Z",
       "side": 1,
       "message": "docstring for arg_index",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+DpU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:59:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH/+UOM\u003d",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+DqI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-30T15:59:34Z",
+      "side": 1,
+      "message": "Can the arg_index change be moved to a separate commit with tests to show its usage? I don\u0027t see anything in this commit using it.\n\nEven if you don\u0027t feel that it\u0027s worth splitting out it would be nice to have a test or two.",
       "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
