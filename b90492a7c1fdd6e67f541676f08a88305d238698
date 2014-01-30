@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+IRQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I00\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I2c\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -65,6 +83,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "remove : at end of sentence",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+IRI\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I2c\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+IQ4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "I removed the first sentence entirely",
+      "parentUuid": "AAAAUH/+I2Q\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I1M\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -99,6 +153,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "should document the format of the returned data.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+GXw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I1M\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+GXs\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I14\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I1Y\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -139,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+GXo\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "actually, i think the schema ensures that a rules object should exist.",
+      "parentUuid": "AAAAUH/+I1Y\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I0c\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -150,6 +258,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "this comment would make an excellent docstring for _verify_all_requirements.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+GXI\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I0c\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -349,6 +475,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+GTY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+IyU\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+IxM\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -360,6 +504,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "seems like the caller can tell if it\u0027s True/False by the direct_maps already... since it\u0027s always False if the second parameter is [] and otherwise True... so could simplify this and return None or a list rather than a tuple.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+GHg\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "thank you very much, I was hoping someone could find a way to simplify that!",
+      "parentUuid": "AAAAUH/+IxM\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -383,6 +545,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+GTU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+Qek\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+Iw4\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -394,6 +574,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "suggest\n\n if not assertion_values:\n    return False\n\nthen can unindent several lines.",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+GTM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Thanks, that looks MUCH cleaner now.",
+      "parentUuid": "AAAAUH/+Iw4\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -504,6 +702,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+IQU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "it\u0027s in a new commit now",
+      "parentUuid": "AAAAUH/+I4w\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I4g\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -591,6 +807,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+GFo\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+ImA\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I3w\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -643,6 +877,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+GSY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+I3c\u003d",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+I3M\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -688,6 +940,24 @@
       "writtenOn": "2014-01-29T20:02:44Z",
       "side": 1,
       "message": "again, where does this come from?",
+      "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+GFw\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-30T06:46:35Z",
+      "side": 1,
+      "message": "I now reference a value in fixtures",
+      "parentUuid": "AAAAUH/+I3Y\u003d",
       "revId": "b90492a7c1fdd6e67f541676f08a88305d238698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
