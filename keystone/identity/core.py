@@ -100,6 +100,7 @@ class DomainConfigs(dict):
         domain_config['driver'].assignment_api = assignment_api
 
     def _load_config(self, assignment_api, file_list, domain_name):
+        domain_ref = None
         try:
             domain_ref = assignment_api.get_domain_by_name(domain_name)
         except exception.DomainNotFound:
