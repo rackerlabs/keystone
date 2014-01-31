@@ -368,6 +368,7 @@
 
 [federation]
 #driver = keystone.contrib.federation.backends.sql.Federation
+#assertion_prefix = FEDERATION_
 
 [ssl]
 #enable = True
@@ -493,10 +494,12 @@
 # user_additional_attribute_mapping =
 
 [auth]
-# methods = external,password,token
-# external = keystone.auth.plugins.external.DefaultDomain
-# password = keystone.auth.plugins.password.Password
-# token = keystone.auth.plugins.token.Token
+methods = external,password,token,oauth1,federation
+external = keystone.auth.plugins.external.DefaultDomain
+password = keystone.auth.plugins.password.Password
+token = keystone.auth.plugins.token.Token
+oauth1 = keystone.auth.plugins.oauth1.OAuth
+federation = keystone.auth.plugins.federation.Federation
 
 [memcache]
 # servers = localhost:11211
