@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vKY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 24
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vg4\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vUI\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-22T16:54:28Z",
       "side": 1,
       "message": "why is the function paginate_limit? this commit is not supporting paginating.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vJ8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Dolphm and I agreed that we would call it that to create he framework for paging.",
+      "parentUuid": "AAAAUH/+vUI\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vJ0\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "I guess that is true…would it be OK if I came back in and added that in a later path?",
+      "parentUuid": "AAAAUH/+vSI\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vRk\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 24
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vI4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "I left it there for the same reasons stated in the drivers…but I agree here there is no harm in making it specific.  Done.",
+      "parentUuid": "AAAAUH/+vRk\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vRg\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 24
@@ -81,6 +153,24 @@
       "writtenOn": "2014-01-22T16:54:28Z",
       "side": 1,
       "message": "this code should be removed.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vJg\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vRg\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vIo\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vPE\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vOk\u003d",
         "filename": "keystone/common/manager.py",
         "patchSetId": 24
@@ -150,6 +258,24 @@
       "writtenOn": "2014-01-22T16:54:28Z",
       "side": 1,
       "message": "suggest change the function to return an indication of whether the list has been truncated or not rather than requesting the wrong number of items.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Egg\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "see comment below",
+      "parentUuid": "AAAAUH/+vOk\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+vHQ\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vN0\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vP4\u003d",
         "filename": "keystone/common/manager.py",
         "patchSetId": 24
@@ -184,6 +328,24 @@
       "writtenOn": "2014-01-22T16:54:28Z",
       "side": 1,
       "message": "suggest remove the else then you can unindent several lines.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+vHM\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vP4\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+Egk\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "So the slight complication with that approach is that it means that the driver level would have to do something like this:\n- add the limit ahead of the query taking place, and ask for one more than the limit\n- intercept after the query and see if we got more than the limit (which, I think,  impacts more code due to the way we sqlalchemy to actually execute the query), and if so, remove the extra item and then set a status (perhaps in the limit item in the hints) to say that truncation has taken place.\n\nIF we really feel that is better, I\u0027m OK with that approach - just canvasing views",
+      "parentUuid": "AAAAUH/+vNU\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vM0\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 24
@@ -254,6 +434,24 @@
       "writtenOn": "2014-01-22T16:54:28Z",
       "side": 1,
       "message": "why change so that links might not be in child?",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+edk\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Maybe I am misunderstanding the way this works, but I think we walk the the elements and since \u0027truncated\u0027 as at the same level as \u0027links\u0027, when we looking at the \u0027truncated\u0027 element it won\u0027 have \u0027links\u0027 in it...",
+      "parentUuid": "AAAAUH/+vM0\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +475,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+edg\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "I have renamed this to simply \u0027limit\u0027",
+      "parentUuid": "AAAAUH/+vMs\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vMI\u003d",
         "filename": "keystone/credential/core.py",
         "patchSetId": 24
@@ -294,6 +510,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+eKg\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vMI\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+vgs\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 24
@@ -305,6 +539,24 @@
       "writtenOn": "2014-01-22T15:57:10Z",
       "side": 1,
       "message": "I think this test suffers from the same failure mode that I mentioned in the other test file.  Needs it\u0027s own setup and cleanup.",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9+8w\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 4008,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+vgs\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -375,6 +627,24 @@
       "side": 1,
       "message": "I think you are right.  Would it be OK if I came back in and did this in a subsequent patch once I2 is out?",
       "parentUuid": "AAAAUH/+vjQ\u003d",
+      "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+bgM\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-01-31T11:19:53Z",
+      "side": 1,
+      "message": "Ok, this is now done.",
+      "parentUuid": "AAAAUH/+vXk\u003d",
       "revId": "cbe8d7de6ac2181f2d906b92f01b2bace8bdd063",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
