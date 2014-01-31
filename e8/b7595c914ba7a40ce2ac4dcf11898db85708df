@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Approved+1: Russell Bryant <rbryant@redhat.com>
+Code-Review+2: Russell Bryant <rbryant@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 31 Jan 2014 23:33:06 +0000
+Reviewed-on: https://review.openstack.org/60514
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
