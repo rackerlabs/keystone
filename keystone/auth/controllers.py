@@ -326,9 +326,22 @@ class Auth(controller.V3Controller):
             # argument is during the issue_v3_token provider call.
             metadata_ref = None
 
-            (token_id, token_data) = self.token_provider_api.issue_v3_token(
-                auth_context['user_id'], method_names, expires_at, project_id,
-                domain_id, auth_context, trust, metadata_ref, include_catalog)
+            if method_names and method_names[0] == 'federation':
+                t = self.token_provider_api.scoped_federation_token(
+                    auth_context['user_id'],
+                    auth_context['federated_token'],
+                    method_names,
+                    expires_at, project_id, domain_id,
+                    auth_context, metadata_ref)
+                token_id, token_data = t
+
+            else:
+                t = self.token_provider_api.issue_v3_token(
+                    auth_context['user_id'], method_names,
+                    expires_at, project_id, domain_id,
+                    auth_context, trust, metadata_ref,
+                    include_catalog)
+                token_id, token_data = t
 
             return render_token_data_response(token_id, token_data,
                                               created=True)
@@ -388,6 +401,14 @@ class Auth(controller.V3Controller):
                     " scoped to the project.")
             LOG.warning(msg, {'user_id': user_ref['id'],
                               'project_id': default_project_id})
+
+    def authenticate_unscoped_federation(self, context, idp, protocol):
+        federation = get_auth_method('federation')
+        token_data = federation.get_unscoped_token(context, idp, protocol)
+        auth_methods = [protocol]
+        token_id, token = self.token_provider_api.unscoped_federation_token(
+            token_data, auth_methods=auth_methods)
+        return render_token_data_response(token_id, token, created=True)
 
     def authenticate(self, context, auth_info, auth_context):
         """Authenticate user."""
