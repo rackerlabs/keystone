@@ -34,6 +34,10 @@ class Assignment(sql.Base, assignment.Driver):
     def db_sync(self, version=None):
         migration.db_sync(version=version)
 
+    def _project_ids_to_dicts(self, session, ids):
+        return [self._get_project(session, project_id).to_dict()
+                for project_id in ids]
+
     def _get_project(self, session, project_id):
         project_ref = session.query(Project).get(project_id)
         if project_ref is None:
@@ -242,6 +246,10 @@ class Assignment(sql.Base, assignment.Driver):
                         domain_ids.add(domain_grant.domain_id)
             return domain_ids
 
+        #NOTE(marek-denis): This function is useful in the outer scope, so was
+        # move to the class level.
+        # Suggested refactoring so self._project_ids_to_dicts() is used
+        # and removal of the local equivalent.
         def _project_ids_to_dicts(session, ids):
             return [self._get_project(session, project_id).to_dict()
                     for project_id in ids]
@@ -301,6 +309,47 @@ class Assignment(sql.Base, assignment.Driver):
                     project_ids.add(project_ref.id)
 
             return _project_ids_to_dicts(session, project_ids)
+
+    def _decapsulate_param_from_objects(self, param_name, obj_list):
+        return [getattr(x, param_name) for x in obj_list]
+
+    def list_projects_for_groups(self, group_ids):
+        """List all projects accessible for a member of
+        specified groups
+
+        :param group_ids: list of groups user is member of
+        :type: list
+
+        return: list of dictionarized projects
+
+        """
+        project_ids = []
+        session = db_session.get_session()
+        with session.begin():
+            for group_id in group_ids:
+                q = session.query(GroupProjectGrant)
+                q = q.filter_by(group_id=group_id)
+                project_ids.extend(self._decapulate_param_from_objects(q))
+            return self._project_ids_to_dicts(session, project_ids)
+
+    def list_domains_for_groups(self, group_ids):
+        """List all domains accessible for a member of
+        specified groups
+
+        :param group_ids: list of groups user is member of
+        :type: list
+
+        :returns: list of dictionarized domains
+
+        """
+        domain_ids = []
+        session = db_session.get_session()
+        with session.begin():
+            for group_id in group_ids:
+                q = session.query(GroupDomainGrant)
+                q = q.filter_by(group_id=group_id)
+                domain_ids.extend(self._decapsulate_param_from_objects(q))
+            return self._domain_ids_to_dicts(session, domain_ids)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self.identity_api.get_user(user_id)
@@ -408,6 +457,38 @@ class Assignment(sql.Base, assignment.Driver):
                                             'project_id': x.project_id,
                                             'role_id': r})
             return assignment_list
+
+    def get_roles_for_groups(self, group_ids, session=None):
+        """Fetch a set of role ids assigned to the specified groups."""
+
+        def _fetch_roles_from_groups(cls, session):
+            roles = []
+            for group_id in group_ids:
+                query = session.query(cls)
+                query = query.filter_by(group_id=group_id)
+                grants_for_group = query.all()
+                roles += [grant for grant in grants_for_group]
+            return roles
+
+        if session is None:
+            session = db_session.get_session()
+        with session.begin():
+            assignment_list = []
+            refs = _fetch_roles_from_groups(GroupDomainGrant, session)
+            for x in refs:
+                roles = x.data.get('roles', {})
+                for role in self._roles_from_role_dicts(roles, False):
+                    assignment_list.append(role)
+
+                for role in self._roles_from_role_dicts(roles, True):
+                    assignment_list.append(role)
+
+            refs = _fetch_roles_from_groups(GroupProjectGrant, session)
+            for x in refs:
+                roles = x.data.get('roles', {})
+                for role in self._roles_from_role_dicts(roles, False):
+                    assignment_list.append(role)
+        return list(set(assignment_list))
 
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
@@ -533,6 +614,10 @@ class Assignment(sql.Base, assignment.Driver):
             query = session.query(Domain)
             refs = self.filter_query(Domain, query, hints)
             return [ref.to_dict() for ref in refs]
+
+    def _domain_ids_to_dicts(self, session, ids):
+        return [self._get_domain(session, domain_id).to_dict()
+                for domain_id in ids]
 
     def _get_domain(self, session, domain_id):
         ref = session.query(Domain).get(domain_id)

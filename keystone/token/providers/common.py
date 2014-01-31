@@ -453,6 +453,57 @@ class BaseProvider(provider.Provider):
 
         return (token_id, token_data)
 
+    def issue_federated_token(self, token_data, auth_methods=None):
+        """Issue unscoped token for federated authentication.
+
+        :param token: prepared token dictionary with a 'user'
+                      property predefined.
+        :param auth_methods: list of auth methods. Defaults to federation
+                             protocol name.
+        :return token_id: unique id of the token all the data
+                          tied to the token
+
+        """
+        # NOTE(marek-denis):Expilicitely set values to None
+        # to make sure the token is unscoped
+        token_kwargs = {
+            'user_id': None,
+            'method_names': auth_methods,
+            'extras': None,
+            'domain_id': None,
+            'project_id': None,
+            'token': token_data,
+            'include_catalog': False,
+            'bind': None,
+            'access_token': None
+        }
+
+        token_data = self.v3_token_data_helper.get_token_data(
+            **token_kwargs)
+
+        token_id = self._get_token_id(token_data)
+        try:
+            data = dict(key=token_id,
+                        id=token_id,
+                        expires=None,
+                        user=token_data['token']['user'],
+                        metadata={},
+                        token_data=token_data,
+                        token_version=token.provider.V3)
+
+            self.token_api.create_token(token_id, data)
+        # I'm not crazy about catching Exception here.
+        except Exception:
+            exc_info = sys.exc_info()
+            # An identical token may have been created already.
+            # If so, return the token_data as it is also identical
+            try:
+                self.token_api.get_token(token_id)
+            except exception.TokenNotFound:
+                raise exc_info[0], exc_info[1], exc_info[2]
+
+        return (token_id, token_data)
+
     def _verify_token(self, token_id):
         """Verify the given token and return the token_ref."""
         token_ref = self.token_api.get_token(token_id)

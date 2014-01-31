@@ -373,7 +373,7 @@ class DomainV3(controller.V3Controller):
         return self.assignment_api.delete_domain(domain_id)
 
 
-@dependency.requires('assignment_api')
+@dependency.requires('assignment_api', 'token_api')
 class ProjectV3(controller.V3Controller):
     collection_name = 'projects'
     member_name = 'project'
@@ -403,6 +403,45 @@ class ProjectV3(controller.V3Controller):
         refs = self.assignment_api.list_projects_for_user(user_id,
                                                           hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
+
+    @controller.protected()
+    def list_projects_for_groups(self, context):
+        """List all available projects based on the
+        group membership.
+
+        Group ids are stored in the token.
+        :param context: request context
+        :raises exception.TokenNotFound
+        :returns: Wrapped JSON with matching projects.
+
+        """
+
+        def _fetch_group_ids_from_token(token):
+            groups_ref = []
+            try:
+                groups_ref = token['user']['groups']
+            except KeyError:
+                return groups_ref
+            else:
+                return [g['id'] for g in groups_ref]
+
+        token = self.token_api.get_token(context['token_id'])
+        group_ids = _fetch_group_ids_from_token(token)
+        projects = self.assignment_api.list_projects_for_groups(group_ids)
+        return ProjectV3.wrap_collection(context, projects)
+
+    @controller.protected()
+    def list_domains_for_groups(self, context):
+        """List all available domains based on the
+        group membership.
+
+        Group ids are stored in the token.
+        :param context: request context
+        :raises exception.TokenNotFound
+        :returns: Wrapped JSON with matching projects.
+
+        """
+        raise exception.NotImplemented()
 
     @controller.protected()
     def get_project(self, context, project_id):
