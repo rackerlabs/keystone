@@ -20,9 +20,9 @@ import six
 from keystone import catalog
 from keystone.catalog import core
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 
