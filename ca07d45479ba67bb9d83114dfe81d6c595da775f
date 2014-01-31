@@ -34,6 +34,24 @@
       "revId": "ca07d45479ba67bb9d83114dfe81d6c595da775f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/99+I\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-31T15:24:24Z",
+      "side": 0,
+      "message": "openstack/openstack-ci (originally a single repo) has evolved and split into a separate organization on github:\n\n  https://github.com/openstack-infra\n\nHowever, this link is sort of useless without the docs that Steve linked to. In terms of a \"You may also be interested in...\", ci.openstack.org is perfectly appropriate, disregarding the out-of-context phrasing on that page regarding \"not needing to read this documentation.\"",
+      "parentUuid": "AAAAUH/9/m0\u003d",
+      "revId": "ca07d45479ba67bb9d83114dfe81d6c595da775f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
