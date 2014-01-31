@@ -350,6 +350,7 @@
 
 [federation]
 #driver = keystone.contrib.federation.backends.sql.Federation
+#assertion_prefix = FEDERATION_
 
 [ssl]
 #enable = True
