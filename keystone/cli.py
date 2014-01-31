@@ -25,10 +25,10 @@ import pbr.version
 
 from keystone.common import openssl
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import config
 from keystone import contrib
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone import token
 
@@ -71,12 +71,12 @@ class DbSync(BaseApp):
         version = CONF.command.version
         extension = CONF.command.extension
         if not extension:
-            migration.db_sync(version=version)
+            migration.db_sync(sql.MIGRATE_REPO_PATH, version=version)
         else:
-            package_name = "%s.%s.migrate_repo" % (contrib.__name__, extension)
+            package_name = ".".join((contrib.__name__, extension))
             try:
                 package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
+                repo_path = package.MIGRATE_REPO_PATH
             except ImportError:
                 print(_("This extension does not provide migrations."))
                 exit(0)
@@ -84,10 +84,10 @@ class DbSync(BaseApp):
                 # Register the repo with the version control API
                 # If it already knows about the repo, it will throw
                 # an exception that we can safely ignore
-                migration.db_version_control(version=None, repo_path=repo_path)
+                migration.db_version_control(repo_path)
             except exceptions.DatabaseAlreadyControlledError:
                 pass
-            migration.db_sync(version=version, repo_path=repo_path)
+            migration.db_sync(repo_path, version=version)
 
 
 class DbVersion(BaseApp):
@@ -111,13 +111,12 @@ class DbVersion(BaseApp):
                 package_name = ("%s.%s.migrate_repo" %
                                 (contrib.__name__, extension))
                 package = importutils.import_module(package_name)
-                repo_path = os.path.abspath(os.path.dirname(package.__file__))
-                print(migration.db_version(repo_path))
+                print(migration.db_version(package.MIGRATE_REPO_PATH, 0))
             except ImportError:
                 print(_("This extension does not provide migrations."))
                 exit(1)
         else:
-            print(migration.db_version())
+            print(migration.db_version(sql.MIGRATE_REPO_PATH, 0))
 
 
 class BaseCertificateSetup(BaseApp):
