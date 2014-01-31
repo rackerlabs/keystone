@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9+RE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-31T15:03:18Z",
+      "side": 1,
+      "message": "How about making this one sentence, but replacing \u0027Add\u0027 with \u0027Adds\u0027 and \u0027. Returns\u0027 with \u0027and returns\u0027?",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9+Ok\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-31T15:03:18Z",
+      "side": 1,
+      "message": "If we are assuming that this has validated against the schema then should we use rule[\u0027remote] instead of .get?  To me the .get implies that it could return None and _verify_all_requirements can fail because it expects a list.",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9+P0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-01-31T15:03:18Z",
+      "side": 1,
+      "message": "How can we have invalid JSON here?  We just dumped it from above and the substitutions won\u0027t make it invalid.  If this can be invalid can you add a test showing this behavior?",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
