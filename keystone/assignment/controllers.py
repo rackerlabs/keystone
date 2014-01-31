@@ -135,8 +135,19 @@ class Tenant(controller.V2Controller):
         user_refs = []
         user_ids = self.assignment_api.list_user_ids_for_project(tenant_id)
         for user_id in user_ids:
-            user_ref = self.identity_api.get_user(user_id)
-            user_refs.append(self.identity_api.v3_to_v2_user(user_ref))
+            try:
+                user_ref = self.identity_api.get_user(user_id)
+                user_ref = self.identity_api.v3_to_v2_user(user_ref)
+            except:
+                # The user isn't known to identity, so create a fake one.
+                name = ('user-%s' % user_id)
+                user_ref = {
+                    'id': user_id,
+                    'name': name,
+                    'username': name,
+                    'enabled': True,
+                }
+            user_refs.append(user_ref)
         return {'users': user_refs}
 
     def _format_project_list(self, tenant_refs, **kwargs):
