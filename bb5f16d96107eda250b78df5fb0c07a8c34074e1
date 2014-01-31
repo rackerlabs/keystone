@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9974\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-01-31T15:31:20Z",
+      "side": 1,
+      "message": "Any particular reason why now the assertion is passed to the __init__? \n1) I liked the process() method with both assertion and mapping_ref passed when the method was called. Thanks to that I could create an object in a controller and use it many times without constant creating/destroying the object.\n\n2) If you want to keep that structure I would switch the arguments. So you pass mapping_ref to __init__() and assertion to process(). Makes more sense to me - you are then creating object that will process some input (assertion in this case) basing on invariable rules.",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9+Ok\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 9
