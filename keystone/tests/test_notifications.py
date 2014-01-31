@@ -17,6 +17,7 @@
 import uuid
 
 import mock
+from oslo.config import cfg
 
 from keystone.common import dependency
 from keystone import notifications
@@ -24,6 +25,8 @@ from keystone.openstack.common.fixture import moxstubout
 from keystone import tests
 from keystone.tests import test_v3
 
+
+CONF = cfg.CONF
 
 EXP_RESOURCE_TYPE = uuid.uuid4().hex
 
@@ -128,6 +131,9 @@ class NotificationsTestCase(tests.TestCase):
         """Test the private method _send_notification to ensure event_type,
            payload, and context are built and passed properly.
         """
+        notifications._reset_notifier()
+        CONF.rpc_backend = 'fake'
+        CONF.notification_driver = ['fake']
 
         resource = uuid.uuid4().hex
         resource_type = EXP_RESOURCE_TYPE
@@ -142,17 +148,18 @@ class NotificationsTestCase(tests.TestCase):
         # ensures and maintains these conditions.
         expected_args = [
             {},  # empty context
-            mock.ANY,  # publisher
             'identity.%s.created' % resource_type,  # event_type
+            {'resource_info': resource},  # payload
             'INFO',  # priority is always INFO...
-            {'resource_info': resource}  # payload
         ]
 
-        mod_path = 'keystone.notifications.notifier_api.notify'
-        with mock.patch(mod_path) as mocked:
+        with mock.patch.object(notifications._get_notifier(),
+                               '_notify') as mocked:
             notifications._send_notification(operation, resource_type,
                                              resource)
             mocked.assert_called_once_with(*expected_args)
+
+        notifications._send_notification(operation, resource_type, resource)
 
 
 class NotificationsForEntities(test_v3.RestfulTestCase):
