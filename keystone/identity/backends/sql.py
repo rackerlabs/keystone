@@ -16,10 +16,10 @@
 
 from keystone.common import dependency
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 

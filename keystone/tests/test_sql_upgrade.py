@@ -38,11 +38,12 @@ import uuid
 from migrate.versioning import api as versioning_api
 import sqlalchemy
 
-from keystone.common.sql import migration
+from keystone.common import sql
 from keystone.common import utils
 from keystone import config
 from keystone import credential
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone import tests
 from keystone.tests import default_fixtures
@@ -66,7 +67,7 @@ class SqlMigrateBase(tests.TestCase):
         return self._config_file_list
 
     def repo_package(self):
-        return None
+        return sql
 
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
@@ -78,7 +79,7 @@ class SqlMigrateBase(tests.TestCase):
         self.Session = session.get_maker(self.engine, autocommit=False)
 
         self.initialize_sql()
-        self.repo_path = migration.find_migrate_repo(self.repo_package())
+        self.repo_path = self.repo_package().MIGRATE_REPO_PATH
         self.schema = versioning_api.ControlledSchema.create(
             self.engine,
             self.repo_path, 0)
@@ -156,7 +157,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('user')
 
     def test_start_version_0(self):
-        version = migration.db_version()
+        version = migration.db_version(self.repo_path, 0)
         self.assertEqual(version, 0, "DB is at version 0")
 
     def test_two_steps_forward_one_step_back(self):

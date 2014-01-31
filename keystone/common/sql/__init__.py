@@ -15,4 +15,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os.path
+
 from keystone.common.sql.core import *
+
+
+MIGRATE_REPO_PATH = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), 'migrate_repo'))
