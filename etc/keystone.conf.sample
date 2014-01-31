@@ -369,6 +369,13 @@
 [federation]
 #driver = keystone.contrib.federation.backends.sql.Federation
 
+#Once the SAML assertion is parsed by HTTP server modules (e.g.
+#mod_shib/mod_mellon Apache modules) all the parameters are stored in the
+#environment and their names are prefixed with a certain string.
+#Administrator must specify this prefix here, so Keystone can fetch only
+#required SAML parameters and inject them into the mapping engine rule.
+#assertion_prefix = FEDERATION_
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/ssl/certs/keystone.pem
@@ -493,10 +500,12 @@
 # user_additional_attribute_mapping =
 
 [auth]
-# methods = external,password,token
-# external = keystone.auth.plugins.external.DefaultDomain
-# password = keystone.auth.plugins.password.Password
-# token = keystone.auth.plugins.token.Token
+#methods = external,password,token,oauth1,federation
+#external = keystone.auth.plugins.external.DefaultDomain
+#password = keystone.auth.plugins.password.Password
+#token = keystone.auth.plugins.token.Token
+#oauth1 = keystone.auth.plugins.oauth1.OAuth
+#federation = keystone.auth.plugins.federation.Federation
 
 [memcache]
 # servers = localhost:11211

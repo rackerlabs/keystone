@@ -15,7 +15,7 @@
 from oslo.config import cfg
 
 
-_DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
+_DEFAULT_AUTH_METHODS = ['federation', 'external', 'password', 'token']
 
 
 FILE_OPTIONS = {
@@ -154,7 +154,9 @@ FILE_OPTIONS = {
     'federation': [
         cfg.StrOpt('driver',
                    default='keystone.contrib.federation.'
-                           'backends.sql.Federation')],
+                           'backends.sql.Federation'),
+        cfg.StrOpt('assertion_prefix',
+                   default='FEDERATION_')],
 
     'policy': [
         cfg.StrOpt('driver',
@@ -266,7 +268,9 @@ FILE_OPTIONS = {
                    default='keystone.auth.plugins.token.Token'),
         #deals with REMOTE_USER authentication
         cfg.StrOpt('external',
-                   default='keystone.auth.plugins.external.DefaultDomain')],
+                   default='keystone.auth.plugins.external.DefaultDomain'),
+        cfg.StrOpt('federation',
+                   default='keystone.auth.plugins.federation.Federation')],
     'paste_deploy': [
         cfg.StrOpt('config_file', default=None)],
     'memcache': [

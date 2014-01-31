@@ -324,11 +324,25 @@ class Auth(controller.V3Controller):
             expires_at = auth_context.get('expires_at')
             # NOTE(morganfainberg): define this here so it is clear what the
             # argument is during the issue_v3_token provider call.
-            metadata_ref = None
 
-            (token_id, token_data) = self.token_provider_api.issue_v3_token(
-                auth_context['user_id'], method_names, expires_at, project_id,
-                domain_id, auth_context, trust, metadata_ref, include_catalog)
+            metadata_ref = None
+            if method_names and method_names[0] == 'federation':
+                t = self.token_provider_api.scope_federated_token(
+                    auth_context['user_id'],
+                    auth_context['federated_token'],
+                    method_names,
+                    expires_at, project_id, domain_id,
+                    auth_context, metadata_ref)
+
+                token_id, token_data = t
+
+            else:
+                t = self.token_provider_api.issue_v3_token(
+                    auth_context['user_id'], method_names,
+                    expires_at, project_id, domain_id,
+                    auth_context, trust, metadata_ref,
+                    include_catalog)
+                token_id, token_data = t
 
             return render_token_data_response(token_id, token_data,
                                               created=True)
