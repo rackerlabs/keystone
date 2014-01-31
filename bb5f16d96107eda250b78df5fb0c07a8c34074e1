@@ -67,6 +67,24 @@
       "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/992o\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-01-31T15:38:16Z",
+      "side": 1,
+      "message": "If the value that\u0027s substituted contains a \" then the JSON will be invalid.",
+      "parentUuid": "AAAAUH/9+P0\u003d",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
