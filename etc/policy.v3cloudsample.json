@@ -38,6 +38,7 @@
     "identity:get_project": "rule:admin_required and domain_id:%(target.project.domain_id)s",
     "identity:list_projects": "rule:admin_required and domain_id:%(domain_id)s",
     "identity:list_user_projects": "rule:owner or (rule:admin_required and domain_id:%(domain_id)s)",
+    "identity:list_projects_for_groups": "rule:admin_or_owner",
     "identity:create_project": "rule:admin_required and domain_id:%(project.domain_id)s",
     "identity:update_project": "rule:admin_required and domain_id:%(target.project.domain_id)s",
     "identity:delete_project": "rule:admin_required and domain_id:%(target.project.domain_id)s",

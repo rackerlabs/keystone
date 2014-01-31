@@ -17,10 +17,12 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib import federation
 from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone.tests import federation_token_fixtures as federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
 
@@ -714,3 +716,77 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
+
+
+class FederatedTokenTests(FederationTests):
+
+    def setUp(self):
+        super(FederationTests, self).setUp()
+        self.load_sample_data()
+        self.fixtures = federation_fixtures.FederationFixtures()
+        self.fixtures.load_federation_sample_data()
+
+    def test_issue_unscoped_token(self):
+        """Skip rule mapping, expect unscoped token with 3 groups."""
+
+        context = {'environment': {}}
+        self.fixtures._inject_mapped_groups(context, 'PROJ_A')
+        api = federation.controllers.AuthController()
+
+        r = api.authenticate(context, self.fixtures.IDP,
+                             self.fixtures.PROTOCOL)
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_list_projects_for_groups(self):
+        url = "/groups/projects"
+        for variant in ('PROJ_A', 'PROJ_B', 'PROJ_AC', 'PROJ_ALL'):
+            r = self.get(url, token=self.fixtures.tokens[variant])
+            projects = r.result.get('projects')
+            project_ids = set([p['id'] for p in projects])
+            project_ids_ref = set(self.fixtures.project_ids[variant])
+            self.assertEqual(project_ids, project_ids_ref)
+
+    def test_list_domains_for_groups(self):
+        url = "/groups/domains"
+        for variant in ('DOMAIN_ALL', 'DOMAIN_A', 'DOMAIN_B',
+                        'DOMAIN_AC'):
+            r = self.get(url, token=self.fixtures.tokens[variant])
+            domains = r.result.get('domains')
+            domain_ids = set([d['id'] for d in domains])
+            domain_ids_ref = set(self.fixtures.domain_ids[variant])
+            self.assertEqual(domain_ids, domain_ids_ref)
+
+    def test_scope_unscoped_token(self):
+        url = '/auth/tokens'
+        r = self.post(url, body=self.fixtures.TOKEN_INPUT_B_FROM_B)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.fixtures.projectB['id'])
+
+    def scope_token_with_bad_project(self):
+        """Scope unscoped token with wrong project."""
+
+        url = '/auth/tokens'
+        self.post(url, body=self.fixtures.TOKEN_INPUT_PROJ_B_FROM_A,
+                  expected_status=401)
+
+    def scope_from_expired_token(self):
+        pass
+
+    def test_scope_token_multiple_times(self):
+        """Try to scope the unscoped tokens multiple times.
+
+        The new tokens should be scoped to:
+        * Project A
+        * Project C
+        """
+        url = '/auth/tokens'
+        r = self.post(url, body=self.fixtures.TOKEN_INPUT_PROJ_A_FROM_AC)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.fixtures.projectA['id'])
+
+        r = self.post(url, body=self.fixtures.TOKEN_INPUT_PROJ_C_FROM_AC)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.fixtures.projectC['id'])
