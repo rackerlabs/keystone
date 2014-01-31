@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/98sg\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 39
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-31T19:06:31Z",
+      "side": 1,
+      "message": "This should be removed from the pipeline since it is optional",
+      "revId": "a941324a43b10fb89449207a417198ad8f4d4a5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/98sU\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 39
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-31T19:06:31Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "a941324a43b10fb89449207a417198ad8f4d4a5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
