@@ -15,11 +15,13 @@
 
 import os
 import random
+import urllib
 import uuid
 
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib import federation
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -584,3 +586,86 @@ class MappingCRUDTests(FederationTests):
         url = self.MAPPING_URL + uuid.uuid4().hex
         self.put(url, expected_status=400,
                  body={'mapping': mapping_fixtures.MAPPING_EXTRA_RULES_PROPS})
+
+
+class FederatedTokenTests(FederationTests):
+
+    ASSERTION = {
+        'ADFS_LOGIN': 'madenis',
+        'ADFS_NAME': 'M',
+        'ADFS_SURNAME': 'D',
+        'ADFS_ORG': 'BIG_ORG',
+        'ADFS_DEP': 'IT'
+    }
+    IDP = 'ORGANISATION_IDP'
+    PROTOCOL = 'saml2'
+    USER = 'marek@ORGANISATION_IDP'
+    ENC_USER = urllib.quote(USER)
+
+    def setUp(self):
+        super(FederationTests, self).setUp()
+        self.load_sample_data()
+        self.load_federation_sample_data()
+
+    def load_federation_sample_data(self):
+        """Inject additional data.
+
+        Prepare:
+        - 2 domains
+        - 2 projects
+        - 3 groups assertion will map to
+        - mapping rules for the mapping engine
+
+        """
+        self.domainA = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
+        self.domainB = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
+        self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.projectA['id'], self.projectA)
+        self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.projectB['id'], self.projectB)
+
+        self.group1 = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group1['id'], self.group1)
+
+        self.group2 = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group2['id'], self.group2)
+
+        self.group3 = self.new_group_ref(
+            domain_id=self.domainB['id'])
+        self.identity_api.create_group(self.group3['id'], self.group3)
+
+    def _inject_assertion(self, context):
+        context['environment'].update(self.ASSERTION)
+
+    def _inject_mapped_groups(self, context):
+        """Inject mapped set of user/groups.
+
+        This methods helps skipping assertion mapping step.
+
+        :param context: request context
+
+        """
+        rules = {
+            'name': self.USER,
+            'groups': [
+                {'id': self.group1['id']},
+                {'id': self.group2['id']},
+                {'id': self.group3['id']}
+            ]
+        }
+
+        context['environment']['mapped_rules'] = rules
+
+    def test_issue_unscoped_token(self):
+        """Skip rule mapping, expect unscoped token with 3 groups."""
+
+        context = {'environment': {}}
+        self._inject_mapped_groups(context)
+        api = federation.controllers.AuthController()
+
+        token = api.authenticate(context, self.IDP, self.PROTOCOL)
+        self.assertIsNotNone(token)

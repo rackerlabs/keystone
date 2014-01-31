@@ -107,3 +107,17 @@ def validate_mapping_structure(ref):
 
         if messages:
             raise exception.ValidationError(messages)
+
+
+def map_assertion(context):
+    """Return list of user/groups passed in
+    the context variable.
+
+    Function makes token generation independent from
+    rule mapping engine
+    :param context: context passed to the controller function
+    :return user_group: fake output from the rule mapping engine.
+
+    """
+
+    return context['environment'].get('mapped_rules')
