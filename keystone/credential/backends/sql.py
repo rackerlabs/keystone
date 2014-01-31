@@ -15,9 +15,9 @@
 # under the License.
 
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone import credential
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 
@@ -36,7 +36,7 @@ class CredentialModel(sql.ModelBase, sql.DictBase):
 class Credential(sql.Base, credential.Driver):
     # Internal interface to manage the database
     def db_sync(self, version=None):
-        migration.db_sync(version=version)
+        migration.db_sync(sql.MIGRATE_REPO_PATH, version=version)
 
     # credential crud
 

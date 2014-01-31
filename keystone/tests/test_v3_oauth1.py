@@ -15,16 +15,15 @@
 # under the License.
 
 import copy
-import os
 import urlparse
 import uuid
 
-from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone.tests import test_v3
 
@@ -39,12 +38,11 @@ class OAuth1Tests(test_v3.RestfulTestCase):
 
     def setup_database(self):
         super(OAuth1Tests, self).setup_database()
-        package_name = "%s.%s.migrate_repo" % (contrib.__name__,
-                                               self.EXTENSION_NAME)
+        package_name = ".".join((contrib.__name__, self.EXTENSION_NAME))
         package = importutils.import_module(package_name)
-        self.repo_path = os.path.abspath(os.path.dirname(package.__file__))
-        migration.db_version_control(version=None, repo_path=self.repo_path)
-        migration.db_sync(version=None, repo_path=self.repo_path)
+        self.repo_path = package.MIGRATE_REPO_PATH
+        migration.db_version_control(abs_path=self.repo_path)
+        migration.db_sync(abs_path=self.repo_path)
 
     def setUp(self):
         super(OAuth1Tests, self).setUp()
