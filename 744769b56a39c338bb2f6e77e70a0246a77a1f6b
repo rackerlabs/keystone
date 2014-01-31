@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/99jU\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-01-31T16:26:20Z",
+      "side": 1,
+      "message": "Since federated users are mapped to roles and roles to groups, would it make sense to have either the name or username to state the group_id as reference, e.g. name: (\u0027fed_user_group-%s\u0027 % group_id) ?",
+      "revId": "744769b56a39c338bb2f6e77e70a0246a77a1f6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
