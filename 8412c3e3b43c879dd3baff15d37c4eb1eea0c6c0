@@ -16,6 +16,24 @@
       "revId": "8412c3e3b43c879dd3baff15d37c4eb1eea0c6c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/98lw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-31T19:30:54Z",
+      "side": 1,
+      "message": "I thought about that, but just in case \u0027id\u0027 is coming in, too.\nSo I figured it was OK to leave additionalProps out this time.",
+      "parentUuid": "AAAAUH/980s\u003d",
+      "revId": "8412c3e3b43c879dd3baff15d37c4eb1eea0c6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
