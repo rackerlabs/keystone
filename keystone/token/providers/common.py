@@ -27,6 +27,7 @@ from keystone import trust
 
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
+import urllib
 
 
 LOG = log.getLogger(__name__)
@@ -168,6 +169,39 @@ class V3TokenDataHelper(object):
             roles = self.assignment_api.get_roles_for_user_and_project(
                 user_id, project_id)
         return [self.assignment_api.get_role(role_id) for role_id in roles]
+
+    def _populate_roles_for_groups(self, token_data, group_ids,
+                                   project_id=None, domain_id=None,
+                                   user_id=None):
+        def _check_roles(roles, user_id, project_id, domain_id):
+            if roles:
+                return
+            if project_id:
+                msg = _('User %(user_id)s has no access '
+                        'to project %(project_id)s') % {
+                            'user_id': user_id,
+                            'project_id': project_id}
+            elif domain_id:
+                msg = _('User %(user_id)s has no access '
+                        'to domain %(domain_id)s') % {
+                            'user_id': user_id,
+                            'domain_id': domain_id}
+
+            LOG.debug(msg)
+            raise exception.Unauthorized(msg)
+
+        roles = []
+        if project_id:
+            roles = self.assignment_api.get_roles_for_groups_and_project(
+                group_ids, project_id)
+            _check_roles(roles, user_id, project_id, domain_id)
+
+        elif domain_id:
+            roles = self.assignment_api.get_roles_for_groups_and_domain(
+                group_ids, domain_id)
+            _check_roles(roles, user_id, project_id, domain_id)
+
+        token_data['roles'] = [role.to_dict() for role in roles]
 
     def _populate_user(self, token_data, user_id, trust):
         if 'user' in token_data:
@@ -391,6 +425,21 @@ class BaseProvider(provider.Provider):
                 'trust_id' in metadata_ref):
             trust = self.trust_api.get_trust(metadata_ref['trust_id'])
 
+        if 'saml2' in method_names and not project_id:
+            t = self.unscoped_federation_token(auth_context['user_id'],
+                                               auth_context['group_ids'],
+                                               method_names, expires_at,
+                                               project_id, domain_id,
+                                               auth_context, metadata_ref)
+            return t
+        elif 'saml2' in method_names:
+            t = self.scoped_federation_token(auth_context['user_id'],
+                                             auth_context['federated_token'],
+                                             method_names, expires_at,
+                                             project_id, domain_id,
+                                             auth_context, metadata_ref)
+            return t
+
         access_token = None
         if 'oauth1' in method_names:
             if self.oauth_api:
@@ -449,6 +498,100 @@ class BaseProvider(provider.Provider):
             except exception.TokenNotFound:
                 raise exc_info[0], exc_info[1], exc_info[2]
 
+        return (token_id, token_data)
+
+    def unscoped_federation_token(self, user_id, groups, method_names,
+                                  expires_at, project_id, domain_id,
+                                  auth_context, metadata_ref):
+
+        token_data = {
+            'user': {
+                'id': urllib.quote(user_id),
+                'name': user_id,
+                'groups': groups,
+            }
+        }
+
+        # NOTE(marek-denis): Explicitly set values to None
+        # to make sure the token is unscoped
+        token_kwargs = {
+            'user_id': None,
+            'method_names': method_names,
+            'extras': None,
+            'domain_id': None,
+            'project_id': None,
+            'token': token_data,
+            'include_catalog': False,
+            'bind': None,
+            'access_token': None
+        }
+
+        token_data = self.v3_token_data_helper.get_token_data(
+            **token_kwargs)
+
+        token_id = self._get_token_id(token_data)
+        try:
+            data = dict(key=token_id,
+                        id=token_id,
+                        expires=None,
+                        user=token_data['token']['user'],
+                        metadata=None,
+                        token_data=token_data,
+                        token_version=token.provider.V3)
+
+            self.token_api.create_token(token_id, data)
+        except Exception:
+            exc_info = sys.exc_info()
+            # An identical token may have been created already.
+            # If so, return the token_data as it is also identical
+            try:
+                self.token_api.get_token(token_id)
+            except exception.TokenNotFound:
+                raise exc_info[0], exc_info[1], exc_info[2]
+
+        return (token_id, token_data)
+
+    def scoped_federation_token(self, user_id, federated_token, method_names,
+                                expires_at, project_id, domain_id,
+                                auth_context, metadata_ref):
+        token_data = {
+            'user': federated_token['user'],
+            'methods': method_names,
+        }
+
+        group_ids = [g['id'] for g in federated_token['user']['groups']]
+        self.v3_token_data_helper._populate_roles_for_groups(
+            token_data, group_ids, project_id, domain_id)
+        self.v3_token_data_helper._populate_token_dates(
+            token_data, expires=expires_at, trust=None)
+        token_kwargs = {
+            'user_id': None,
+            'method_names': method_names,
+            'extras': None,
+            'domain_id': domain_id,
+            'project_id': project_id,
+            'token': token_data,
+            'include_catalog': True,
+            'bind': None
+        }
+
+        token_data = self.v3_token_data_helper.get_token_data(
+            **token_kwargs)
+        token_id = self._get_token_id(token_data)
+        try:
+            data = dict(key=token_id,
+                        id=token_id,
+                        expires=expires_at,
+                        user=token_data['token']['user'])
+            self.token_api.create_token(token_id, data)
+        except Exception:
+            exc_info = sys.exc_info()
+            # An identical token may have been created already.
+            # If so, return the token_data as it is also identical
+            try:
+                self.token_api.get_token(token_id)
+            except exception.TokenNotFound:
+                raise exc_info[0], exc_info[1], exc_info[2]
         return (token_id, token_data)
 
     def _verify_token(self, token_id):
