@@ -19,7 +19,6 @@ import uuid
 from keystone.common import dependency
 from keystone import notifications
 from keystone.openstack.common.fixture import moxstubout
-from keystone.openstack.common.notifier import api as notifier_api
 from keystone import tests
 from keystone.tests import test_v3
 
@@ -141,7 +140,8 @@ class NotificationsTestCase(tests.TestCase):
         # agreed that context should be empty in Keystone's case, which is
         # also noted in the /keystone/notifications.py module. This test
         # ensures and maintains these conditions.
-        def fake_notify(context, publisher_id, event_type, priority, payload):
+        def fake_notify(context, event_type, payload, priority,
+                        publisher_id=None):
             exp_event_type = 'identity.%s.created' % resource_type
             self.assertEqual(exp_event_type, event_type)
             exp_context = {}
@@ -150,7 +150,7 @@ class NotificationsTestCase(tests.TestCase):
             self.assertEqual(exp_payload, payload)
             self.called = True
 
-        self.stubs.Set(notifier_api, 'notify', fake_notify)
+        self.stubs.Set(notifications._get_notifier(), '_notify', fake_notify)
         notifications._send_notification(operation, resource_type, resource)
         self.assertTrue(self.called)
 
