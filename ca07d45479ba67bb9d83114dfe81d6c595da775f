@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9/sY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-31T07:46:56Z",
+      "side": 0,
+      "message": "What about linking to: \nhttp://ci.openstack.org/",
+      "revId": "ca07d45479ba67bb9d83114dfe81d6c595da775f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
