@@ -59,7 +59,7 @@ class Admin(wsgi.ComposableRouter):
 
 def append_v3_routers(mapper, routers):
     routers.append(
-        router.Router(controllers.DomainV3(),
+        router.Router(controllers.DomainV3,
                       'domains', 'domain'))
 
     project_controller = controllers.ProjectV3()

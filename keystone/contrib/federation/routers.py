@@ -55,6 +55,7 @@ class FederationExtension(wsgi.ExtensionRouter):
         idp_controller = controllers.IdentityProvider()
         protocol_controller = controllers.FederationProtocol()
         mapping_controller = controllers.MappingController()
+        auth_controller = controllers.AuthController()
 
         # Identity Provider CRUD operations
 
@@ -156,3 +157,11 @@ class FederationExtension(wsgi.ExtensionRouter):
             controller=mapping_controller,
             action='update_mapping',
             conditions=dict(method=['PATCH']))
+
+        # Assertion consuming
+        mapper.connect(
+            self._construct_url('token/identity_provider/{identity_provider}/'
+                                'protocol/{protocol}'),
+            controller=auth_controller,
+            action='authenticate',
+            conditions=dict(method=['GET']))
