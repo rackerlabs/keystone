@@ -142,17 +142,17 @@ class NotificationsTestCase(tests.TestCase):
         # ensures and maintains these conditions.
         expected_args = [
             {},  # empty context
-            mock.ANY,  # publisher
             'identity.%s.created' % resource_type,  # event_type
+            {'resource_info': resource},  # payload
             'INFO',  # priority is always INFO...
-            {'resource_info': resource}  # payload
         ]
 
-        mod_path = 'keystone.notifications.notifier_api.notify'
-        with mock.patch(mod_path) as mocked:
+        with mock.patch.object(notifications._get_notifier(), '_notify') as mocked:
             notifications._send_notification(operation, resource_type,
                                              resource)
             mocked.assert_called_once_with(*expected_args)
+
+        notifications._send_notification(operation, resource_type, resource)
 
 
 class NotificationsForEntities(test_v3.RestfulTestCase):
