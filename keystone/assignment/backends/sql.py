@@ -18,9 +18,9 @@ from keystone import assignment
 from keystone import clean
 from keystone.common import dependency
 from keystone.common import sql
-from keystone.common.sql import migration
 from keystone import config
 from keystone import exception
+from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 
