@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/99Hw\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-31T17:54:34Z",
+      "side": 1,
+      "message": "3rd party modules are imported before imports from keystone",
+      "revId": "0fd70b28d5257adc0e519f18602420e92f4c1ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/99IU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-31T17:54:34Z",
+      "side": 1,
+      "message": "if this should be a doc string (which looks to be the case), it should be at the top of the function definition before any code... if this should be an inline comment, it should use # instead of triple quotes",
+      "revId": "0fd70b28d5257adc0e519f18602420e92f4c1ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/99Ik\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-31T17:54:34Z",
+      "side": 1,
+      "message": "this _send_notification() shouldn\u0027t be in the try block - if it fails, it will trigger an irrelevant cadf failure notification",
+      "revId": "0fd70b28d5257adc0e519f18602420e92f4c1ec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
