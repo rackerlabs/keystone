@@ -58,9 +58,14 @@ class Admin(wsgi.ComposableRouter):
 
 
 def append_v3_routers(mapper, routers):
+    domain_controller = controllers.DomainV3()
     routers.append(
-        router.Router(controllers.DomainV3(),
+        router.Router(domain_controller,
                       'domains', 'domain'))
+    mapper.connect('/groups/domains',
+                   controller=domain_controller,
+                   action='list_domains_for_groups',
+                   conditions=dict(method=['GET']))
 
     project_controller = controllers.ProjectV3()
     routers.append(
@@ -69,6 +74,11 @@ def append_v3_routers(mapper, routers):
     mapper.connect('/users/{user_id}/projects',
                    controller=project_controller,
                    action='list_user_projects',
+                   conditions=dict(method=['GET']))
+
+    mapper.connect('/groups/projects',
+                   controller=project_controller,
+                   action='list_projects_for_groups',
                    conditions=dict(method=['GET']))
 
     role_controller = controllers.RoleV3()

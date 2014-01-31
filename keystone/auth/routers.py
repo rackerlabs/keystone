@@ -38,3 +38,9 @@ def append_v3_routers(mapper, routers):
                    controller=auth_controller,
                    action='revocation_list',
                    conditions=dict(method=['GET']))
+
+    # For federation extension
+    mapper.connect('/auth/tokens/identity_provider/{idp}/protocol/{protocol}',
+                   controller=auth_controller,
+                   action='authenticate_unscoped_federation',
+                   conditions=dict(method=['GET']))
