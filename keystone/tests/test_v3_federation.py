@@ -17,10 +17,12 @@ import uuid
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
+from keystone.contrib import federation
 from keystone.contrib.federation import utils as mapping_utils
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone.tests import federation_token_fixtures as federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
 
@@ -714,3 +716,134 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
+
+
+class FederatedTokenTests(FederationTests):
+
+    def setUp(self):
+        super(FederationTests, self).setUp()
+        self.load_sample_data()
+        self.fixtures = federation_fixtures.FederationFixtures()
+        self.fixtures.load_federation_sample_data()
+
+    #NOTE(marek-denis): domains should also be taken into consideration
+    def _project(self, project):
+        return (project['id'], project['name'])
+
+    def _roles(self, roles):
+        return set([(r['id'], r['name']) for r in roles])
+
+    def validateUserObject(self, user, user_ref):
+        for attr in ('id', 'name'):
+            self.assertEqual(user[attr], user_ref[attr])
+
+    def checkProjectsAndRoles(self, token, roles, projects):
+        """Check whether the projects and the roles match."""
+        token_roles = token.get('roles')
+        if token_roles is None:
+            raise AssertionError('Roles not found in the token')
+        token_roles = self._roles(token_roles)
+        roles_ref = self._roles(roles)
+        self.assertEqual(token_roles, roles_ref)
+
+        token_projects = token.get('project')
+        if token_projects is None:
+            raise AssertionError('Projects not found in the token')
+        token_projects = self._project(token_projects)
+        projects_ref = self._project(projects)
+        self.assertEqual(token_projects, projects_ref)
+
+    def checkTokenIsNotExpired(self, token):
+        pass
+
+    def checkScopedTokenAttributes(self, token):
+        for obj in ('user', 'catalog', 'expires_at', 'issued_at',
+                    'methods', 'roles'):
+            self.assertIn(obj, token)
+        # Check for either project or domain
+        project_domain = [lambda x: x in token for x in
+                          ('project', 'domain')]
+        if not all(project_domain) and not any(project_domain):
+            raise AssertionError("Neither project nor domain specified.")
+
+    def test_issue_unscoped_token(self):
+        """Skip rule mapping, expect unscoped token with 3 groups."""
+
+        context = {'environment': {}}
+        self.fixtures._inject_mapped_groups(context, 'PROJ_A')
+        api = federation.controllers.AuthController()
+
+        r = api.authenticate(context, self.fixtures.IDP,
+                             self.fixtures.PROTOCOL)
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_list_projects_for_groups(self):
+        url = "/groups/projects"
+        for variant in ('PROJ_A', 'PROJ_B', 'PROJ_AC', 'PROJ_ALL'):
+            r = self.get(url, token=self.fixtures.tokens[variant])
+            projects = r.result.get('projects')
+            project_ids = set([p['id'] for p in projects])
+            project_ids_ref = set(self.fixtures.project_ids[variant])
+            self.assertEqual(project_ids, project_ids_ref)
+
+    def test_list_domains_for_groups(self):
+        url = "/groups/domains"
+        for variant in ('DOMAIN_ALL', 'DOMAIN_A', 'DOMAIN_B',
+                        'DOMAIN_AC'):
+            r = self.get(url, token=self.fixtures.tokens[variant])
+            domains = r.result.get('domains')
+            domain_ids = set([d['id'] for d in domains])
+            domain_ids_ref = set(self.fixtures.domain_ids[variant])
+            self.assertEqual(domain_ids, domain_ids_ref)
+
+    def test_scope_unscoped_token(self):
+        url = '/auth/tokens'
+        r = self.post(url, body=self.fixtures.TOKEN_INPUT_B_FROM_B)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.fixtures.projectB['id'])
+        self.checkScopedTokenAttributes(token_resp)
+        roles_ref = [self.fixtures.role2]
+        projects_ref = self.fixtures.projectB
+        self.checkProjectsAndRoles(token_resp, roles_ref, projects_ref)
+
+    def test_scope_token_with_bad_project(self):
+        """Scope unscoped token with a project we don't have access to."""
+
+        url = '/auth/tokens'
+        self.post(url, body=self.fixtures.TOKEN_INPUT_PROJ_B_FROM_A,
+                  expected_status=401)
+
+    def test_scope_token_multiple_times(self):
+        """Try to scope the unscoped tokens multiple times.
+
+        The new tokens should be scoped to:
+        * Project A
+        * Project C
+        """
+        url = '/auth/tokens'
+        r = self.post(url, body=self.fixtures.TOKEN_INPUT_PROJ_A_FROM_AC)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.fixtures.projectA['id'])
+        self.checkScopedTokenAttributes(token_resp)
+
+        r = self.post(url, body=self.fixtures.TOKEN_INPUT_PROJ_C_FROM_AC)
+        token_resp = r.result.get('token')
+        try:
+            project_id = token_resp['project']['id']
+        except KeyError:
+            raise AssertionError("Either project object or id"
+                                 "in the token is missing")
+        self.assertEqual(project_id, self.fixtures.projectC['id'])
+        self.checkScopedTokenAttributes(token_resp)
+
+    def test_scope_token_from_nonexistend_unscoped_token(self):
+        """Try to scope token from non-existent unscoped token."""
+        url = '/auth/token'
+        self.post(url, body=
+                  self.fixtures.TOKEN_INPUT_B_FROM_WRONG_TOKEN,
+                  expected_status=404)
+
+    def test_scope_token_with_nonexistent_project(self):
+        pass
