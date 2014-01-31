@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/99zg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-01-31T15:45:21Z",
+      "side": 1,
+      "message": "This does not belong as a \"common util\" -- this is a completely arbitrary limit/marker pagination approach that has no relevance to anything but v2 controllers. it belongs in the v2 controller base class, if anything.",
+      "revId": "ec48d4b3f05fbd8a264ee29a785ee131967f4505",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
