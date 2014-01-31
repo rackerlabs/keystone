@@ -16,6 +16,24 @@
       "revId": "ca07d45479ba67bb9d83114dfe81d6c595da775f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9/m0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2014-01-31T08:21:25Z",
+      "side": 0,
+      "message": "I considered that and then read on the top of that page \"OpenStack developers or users do not need to read this documentation. \" - and therefore removed the link.",
+      "parentUuid": "AAAAUH/9/sY\u003d",
+      "revId": "ca07d45479ba67bb9d83114dfe81d6c595da775f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
