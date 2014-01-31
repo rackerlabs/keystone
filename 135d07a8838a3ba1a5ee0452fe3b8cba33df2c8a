@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/99AU\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-01-31T18:18:51Z",
+      "side": 1,
+      "message": "nit: use either difference or - (minus). \ndifference is used at line 60",
+      "revId": "135d07a8838a3ba1a5ee0452fe3b8cba33df2c8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
