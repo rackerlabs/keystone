@@ -348,7 +348,9 @@ class Auth(controller.V3Controller):
             user_ref = self.identity_api.get_user(auth_context['user_id'])
         except exception.UserNotFound as e:
             LOG.exception(e)
-            raise exception.Unauthorized(e)
+            # NOTE(stevemar): Now with federation, we shouldn't raise an
+            # exception since it won't be in identity
+            return
 
         default_project_id = user_ref.get('default_project_id')
         if not default_project_id:
