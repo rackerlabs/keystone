@@ -14,6 +14,9 @@ import os
 import random
 import uuid
 
+import urllib
+
+from keystone.auth import controllers as auth_controllers
 from keystone.common.sql import migration
 from keystone import config
 from keystone import contrib
@@ -714,3 +717,392 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
+
+
+class FederatedTokenTests(FederationTests):
+
+    ASSERTION = {
+        'ADFS_LOGIN': 'madenis',
+        'ADFS_NAME': 'M',
+        'ADFS_SURNAME': 'D',
+        'ADFS_ORG': 'BIG_ORG',
+        'ADFS_DEP': 'IT'
+    }
+    IDP = 'ORGANISATION_IDP'
+    PROTOCOL = 'saml2'
+    USER = 'marek@ORGANISATION_IDP'
+    ENC_USER = urllib.quote(USER)
+
+    def setUp(self):
+        super(FederationTests, self).setUp()
+        self.load_sample_data()
+        self.load_federation_sample_data()
+
+    #NOTE(marek-denis): domains should also be taken into consideration
+    def _project(self, project):
+        return (project['id'], project['name'])
+
+    def _roles(self, roles):
+        return set([(r['id'], r['name']) for r in roles])
+
+    def validateUserObject(self, user, user_ref):
+        for attr in ('id', 'name'):
+            self.assertEqual(user[attr], user_ref[attr])
+
+    def checkProjectsAndRoles(self, token, roles, projects):
+        """Check whether the projects and the roles match."""
+        token_roles = token.get('roles')
+        if token_roles is None:
+            raise AssertionError('Roles not found in the token')
+        token_roles = self._roles(token_roles)
+        roles_ref = self._roles(roles)
+        self.assertEqual(token_roles, roles_ref)
+
+        token_projects = token.get('project')
+        if token_projects is None:
+            raise AssertionError('Projects not found in the token')
+        token_projects = self._project(token_projects)
+        projects_ref = self._project(projects)
+        self.assertEqual(token_projects, projects_ref)
+
+    def checkScopedTokenAttributes(self, token):
+        for obj in ('user', 'catalog', 'expires_at', 'issued_at',
+                    'methods', 'roles'):
+            self.assertIn(obj, token)
+        # Check for either project or domain
+        project_domain = [lambda x: x in token for x in
+                          ('project', 'domain')]
+        if not all(project_domain) and not any(project_domain):
+            raise AssertionError("Neither project nor domain specified.")
+
+    def test_issue_unscoped_token(self):
+        """Skip rule mapping, expect unscoped token with 3 groups."""
+
+        context = {'environment': {}}
+        self._inject_mapped_groups(context, 'PROJ_A')
+        api = auth_controllers.Auth()
+        r = api.authenticate_unscoped_federation(context, self.IDP,
+                                                 self.PROTOCOL)
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_scope_unscoped_token(self):
+        url = '/auth/tokens'
+        r = self.post(url, body=self.TOKEN_INPUT_B_FROM_B)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.projectB['id'])
+        self.checkScopedTokenAttributes(token_resp)
+        roles_ref = [self.role2]
+        projects_ref = self.projectB
+        self.checkProjectsAndRoles(token_resp, roles_ref, projects_ref)
+
+    def test_scope_token_with_bad_project(self):
+        """Scope unscoped token with a project we don't have access to."""
+
+        url = '/auth/tokens'
+        self.post(url, body=self.TOKEN_INPUT_PROJ_B_FROM_A,
+                  expected_status=401)
+
+    def test_scope_token_multiple_times(self):
+        """Try to scope the unscoped tokens multiple times.
+
+        The new tokens should be scoped to:
+        * Project A
+        * Project C
+        """
+        url = '/auth/tokens'
+        r = self.post(url, body=self.TOKEN_INPUT_PROJ_A_FROM_AC)
+        token_resp = r.result.get('token')
+        project_id = token_resp['project']['id']
+        self.assertEqual(project_id, self.projectA['id'])
+        self.checkScopedTokenAttributes(token_resp)
+
+        r = self.post(url, body=self.TOKEN_INPUT_PROJ_C_FROM_AC)
+        token_resp = r.result.get('token')
+        try:
+            project_id = token_resp['project']['id']
+        except KeyError:
+            raise AssertionError("Either project object or id"
+                                 "in the token is missing")
+        self.assertEqual(project_id, self.projectC['id'])
+        self.checkScopedTokenAttributes(token_resp)
+
+    def test_scope_token_from_nonexistent_unscoped_token(self):
+        """Try to scope token from non-existent unscoped token."""
+        url = '/auth/token'
+        self.post(url, body=self.TOKEN_INPUT_B_FROM_WRONG_TOKEN,
+                  expected_status=404)
+
+    def load_federation_sample_data(self):
+        """Inject additional data.
+
+        Prepare:
+        - 3 domains
+        - 3 projects
+        - 3 groups assertion will map to
+
+        """
+
+        self.domainA = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainA['id'],
+                                          self.domainA)
+        self.domainB = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainB['id'],
+                                          self.domainB)
+        self.domainC = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainC['id'],
+                                          self.domainC)
+
+        self.domain_ids = {}
+        self.domain_ids['DOMAIN_A'] = [self.domainA['id']]
+        self.domain_ids['DOMAIN_B'] = [self.domainB['id']]
+        self.domain_ids['DOMAIN_C'] = [self.domainC['id']]
+        self.domain_ids['DOMAIN_AB'] = [self.domainA['id'],
+                                        self.domainB['id']]
+        self.domain_ids['DOMAIN_AC'] = [self.domainA['id'],
+                                        self.domainC['id']]
+        self.domain_ids['DOMAIN_BC'] = [self.domainB['id'],
+                                        self.domainC['id']],
+        self.domain_ids['DOMAIN_ALL'] = [self.domainA['id'],
+                                         self.domainB['id'],
+                                         self.domainC['id']]
+
+        self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.projectA['id'],
+                                           self.projectA)
+        self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.projectB['id'],
+                                           self.projectB)
+        self.projectC = self.new_project_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.projectC['id'],
+                                           self.projectC)
+
+        self.project_ids = {}
+        self.project_ids['PROJ_A'] = [self.projectA['id']]
+        self.project_ids['PROJ_B'] = [self.projectB['id']]
+        self.project_ids['PROJ_C'] = [self.projectC['id']]
+        self.project_ids['PROJ_AC'] = [self.projectA['id'],
+                                       self.projectC['id']]
+        self.project_ids['PROJ_ALL'] = [self.projectA['id'],
+                                        self.projectB['id'],
+                                        self.projectC['id']]
+
+        self.group1 = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group1['id'], self.group1)
+
+        self.group2 = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group2['id'], self.group2)
+
+        self.group3 = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group3['id'], self.group3)
+
+        self.role1 = self.new_role_ref()
+        self.assignment_api.create_role(self.role1['id'], self.role1)
+        self.role2 = self.new_role_ref()
+        self.assignment_api.create_role(self.role2['id'], self.role2)
+        self.role3 = self.new_role_ref()
+        self.assignment_api.create_role(self.role3['id'], self.role3)
+
+        # assign roles to projects
+        self.assignment_api.create_grant(self.role1['id'],
+                                         group_id=self.group1['id'],
+                                         project_id=self.projectA['id'])
+
+        self.assignment_api.create_grant(self.role2['id'],
+                                         group_id=self.group2['id'],
+                                         project_id=self.projectB['id'])
+        # role 3 assigns group3 to projects AA and AC.
+        self.assignment_api.create_grant(self.role3['id'],
+                                         group_id=self.group3['id'],
+                                         project_id=self.projectA['id'])
+        self.assignment_api.create_grant(self.role3['id'],
+                                         group_id=self.group3['id'],
+                                         project_id=self.projectC['id'])
+
+        # assign roles to domain
+        self.assignment_api.create_grant(self.role1['id'],
+                                         group_id=self.group1['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.role2['id'],
+                                         group_id=self.group2['id'],
+                                         domain_id=self.domainB['id'])
+
+        self.assignment_api.create_grant(self.role3['id'],
+                                         group_id=self.group3['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.role3['id'],
+                                         group_id=self.group3['id'],
+                                         domain_id=self.domainC['id'])
+
+        # generate fake tokens
+        context = {'environment': {}}
+
+        self.tokens = {}
+        VARIANTS = ('PROJ_A', 'PROJ_B', 'PROJ_AC', 'PROJ_ALL',
+                    'DOMAIN_A', 'DOMAIN_B', 'DOMAIN_AC', 'DOMAIN_ALL')
+        for variant in VARIANTS:
+            self._inject_mapped_groups(context, variant)
+            api = auth_controllers.Auth()
+            r = api.authenticate_unscoped_federation(context, self.IDP,
+                                                     self.PROTOCOL)
+            self.tokens[variant] = r.headers.get('X-Subject-Token')
+
+        self.TOKEN_INPUT_B_FROM_B = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "federation"
+                    ],
+                    "federation": {
+                        "id": self.tokens['PROJ_B']
+                    }
+                },
+                "scope": {
+                    "project": {
+                        "id": self.project_ids['PROJ_B']
+                    }
+                }
+
+            }
+        }
+
+        self.TOKEN_INPUT_B_FROM_WRONG_TOKEN = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "federation"
+                    ],
+                    "federation": {
+                        "id": uuid.uuid4().hex
+                    }
+                },
+                "scope": {
+                    "project": {
+                        "id": self.project_ids['PROJ_B']
+                    }
+                }
+
+            }
+        }
+
+        self.TOKEN_INPUT_PROJ_A_FROM_AC = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "federation"
+                    ],
+                    "federation": {
+                        "id": self.tokens['PROJ_AC']
+                    }
+                },
+                "scope": {
+                    "project": {
+                        "id": self.project_ids['PROJ_A']
+                    }
+                }
+
+            }
+        }
+
+        self.TOKEN_INPUT_PROJ_C_FROM_AC = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "federation"
+                    ],
+                    "federation": {
+                        "id": self.tokens['PROJ_AC']
+                    }
+                },
+                "scope": {
+                    "project": {
+                        "id": self.project_ids['PROJ_C']
+                    }
+                }
+
+            }
+        }
+
+        self.TOKEN_INPUT_PROJ_B_FROM_A = {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "federation"
+                    ],
+                    "federation": {
+                        "id": self.tokens['PROJ_A']
+                    }
+
+                },
+                "scope": {
+                    "project": {
+                        "id": self.project_ids['PROJ_B']
+                    }
+                }
+            }
+        }
+
+    def _inject_mapped_groups(self, context, variant):
+        """Inject mapped set of user/groups.
+        This methods helps skipping assertion mapping step.
+
+        :param context: request context
+
+        """
+        RULES = {
+            'PROJ_ALL': {
+                'group_ids': [
+                    self.group1['id'],
+                    self.group2['id'],
+                    self.group3['id']
+                ]
+            },
+            'PROJ_A': {
+                'group_ids': [
+                    self.group1['id']
+                ]
+            },
+            'PROJ_B': {
+                'group_ids': [
+                    self.group2['id']
+                ]
+            },
+            'PROJ_AC': {
+                'group_ids': [
+                    self.group3['id']
+                ]
+            },
+            'DOMAIN_ALL': {
+                'group_ids': [
+                    self.group1['id'],
+                    self.group2['id'],
+                    self.group3['id']
+                ]
+            },
+            'DOMAIN_A': {
+                'group_ids': [
+                    self.group1['id']
+                ]
+            },
+            'DOMAIN_B': {
+                'group_ids': [
+                    self.group2['id']
+                ]
+            },
+            'DOMAIN_AC': {
+                'group_ids': [
+                    self.group3['id']
+                ]
+            }
+
+        }
+        rules = RULES[variant]
+        rules.setdefault('name', self.USER)
+        context['environment']['mapped_rules'] = rules
+
+    def _inject_assertion(self, context):
+        context.setdefault('environment', {})
+        context['environment'].update(self.ASSERTION)

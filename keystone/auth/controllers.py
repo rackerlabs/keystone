@@ -389,6 +389,14 @@ class Auth(controller.V3Controller):
             LOG.warning(msg, {'user_id': user_ref['id'],
                               'project_id': default_project_id})
 
+    def authenticate_unscoped_federation(self, context, idp, protocol):
+        federation = get_auth_method('federation')
+        token_data = federation.get_unscoped_token(context, idp, protocol)
+        auth_methods = [protocol]
+        token_id, token = self.token_provider_api.unscoped_federation_token(
+            token_data, auth_methods=auth_methods)
+        return render_token_data_response(token_id, token, created=True)
+
     def authenticate(self, context, auth_info, auth_context):
         """Authenticate user."""
 

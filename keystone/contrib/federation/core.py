@@ -195,3 +195,18 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_mapping_from_idp_and_protocol(self, idp_id, proto_id):
+        """Get mapping basing on idp_id and proto_id.
+
+        :param idp_id: id of the identity provider
+        :type idp_id: string
+        :param proto_id: id of the protocol
+        :type proto_id: string
+        :raises: keystone.exception.IdentityProviderNotFound,
+                 keystone.exception.FederatedProtocolNotFound,
+        :returns: mapping_ref
+
+        """
+        raise exception.NotImplemented()
