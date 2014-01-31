@@ -12,6 +12,9 @@
 
 """Extensions supporting Federation."""
 
+import urllib
+
+from keystone.auth import controllers as auth_controller
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -288,3 +291,77 @@ class MappingController(_ControllerBase):
         utils.validate_mapping_structure(mapping)
         mapping_ref = self.federation_api.update_mapping(mapping_id, mapping)
         return MappingController.wrap_member(context, mapping_ref)
+
+
+@dependency.requires('federation_api', 'token_provider_api')
+class AuthController(controller.V3Controller):
+    collection_name = 'tokens'
+    member_name = 'token'
+
+    def _get_assertion_params_from_env(self, context):
+        prefix = CONF.federation.assertion_prefix
+        for k, v in context['environment'].iteritems():
+            if k.startswith(prefix):
+                yield (k, v)
+
+    def _get_auth_methods(self):
+        return [self.protocol]
+
+    def _url(self):
+        idp_proto = {
+            'idp': self.identity_provider,
+            'proto': self.protocol
+        }
+        path = ("/OS-FEDERATION/identity_providers/"
+                "%(idp)s/protocols/%(proto)s" % idp_proto)
+        return self.base_url(path=path)
+
+    def _refactor_group_ids(self, groups):
+        return [{'id': x} for x in groups]
+
+    def _create_token_data(self, mapped_properties):
+        """Create a token data.
+
+        Assume the mapped_properties are in a format:
+            {
+                'name': 'foobar',
+                'group_ids': ['abc123', 'def456']
+            }
+
+        """
+
+        entity = {
+            'user': {
+                'id': urllib.quote(mapped_properties['name']),
+                'name': mapped_properties['name'],
+                'groups': self._refactor_group_ids(
+                    mapped_properties['group_ids']),
+                'OS-FEDERATION:protocol': {
+                    'links': {
+                        'self': self._url()
+                    }
+                }
+            }
+        }
+
+        return entity
+
+    #FIXME(marek-denis): add @controller.protected()
+    def authenticate(self, context, identity_provider, protocol):
+
+        self.identity_provider = identity_provider
+        self.protocol = protocol
+
+        #TODO(marek-denis): Uncomment below when mapping engine is ready
+
+        #assertion = dict(self._get_assertion_params_from_env(context))
+        #assertion_processor = utils.AssertionProcessor(assertion)
+        #mapping_ref = self.get_mapping_from_idp_and_proto(identity_provider,
+        #                                              protocol)
+
+        mapped_user_groups_ids = utils.map_assertion(context)
+        token_data = self._create_token_data(mapped_user_groups_ids)
+        auth_methods = self._get_auth_methods()
+        token_id, token = self.token_provider_api.issue_federated_token(
+            token_data, auth_methods=auth_methods)
+        return auth_controller.render_token_data_response(token_id, token)
