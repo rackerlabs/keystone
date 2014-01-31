@@ -29,11 +29,13 @@ import shelve
 
 import ldap
 import six
+from six import moves
 
 from keystone.common import utils
 from keystone.openstack.common import log
-from six import moves
 
+
+range = moves.range
 
 SCOPE_NAMES = {
     ldap.SCOPE_BASE: 'SCOPE_BASE',
@@ -91,7 +93,7 @@ def _paren_groups(source):
     count = 0
     start = 0
     result = []
-    for pos in moves.range(len(source)):
+    for pos in range(len(source)):
         if source[pos] == '(':
             if count == 0:
                 start = pos

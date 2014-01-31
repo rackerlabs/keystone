@@ -27,14 +27,16 @@ import pwd
 
 import passlib.hash
 import six
+from six import moves
 
 from keystone.common import config
 from keystone.common import environment
 from keystone import exception
 from keystone.openstack.common import log
 from keystone.openstack.common import strutils
-from six import moves
 
+
+range = moves.range
 
 CONF = config.CONF
 
@@ -254,7 +256,7 @@ def auth_str_equal(provided, known):
     result = 0
     p_len = len(provided)
     k_len = len(known)
-    for i in moves.range(p_len):
+    for i in range(p_len):
         a = ord(provided[i]) if i < p_len else 0
         b = ord(known[i]) if i < k_len else 0
         result |= a ^ b
