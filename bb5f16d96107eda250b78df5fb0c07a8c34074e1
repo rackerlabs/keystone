@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9928\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-01T05:18:15Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAUH/9+RE\u003d",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9974\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9600\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-01T05:18:15Z",
+      "side": 1,
+      "message": "As per the IRC convo, I think, we can keep it as-is for now? We can fix it up later depending on how you end up using it.",
+      "parentUuid": "AAAAUH/9974\u003d",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9+Ok\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2014-01-31T15:03:18Z",
       "side": 1,
       "message": "If we are assuming that this has validated against the schema then should we use rule[\u0027remote] instead of .get?  To me the .get implies that it could return None and _verify_all_requirements can fail because it expects a list.",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9910\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-01T05:18:15Z",
+      "side": 1,
+      "message": "agree, will use rule[\u0027remote\u0027]",
+      "parentUuid": "AAAAUH/9+Ok\u003d",
       "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +136,24 @@
       "side": 1,
       "message": "If the value that\u0027s substituted contains a \" then the JSON will be invalid.",
       "parentUuid": "AAAAUH/9+P0\u003d",
+      "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/960w\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-01T05:18:15Z",
+      "side": 1,
+      "message": "Replacing this with a mix of recursive calls and .format.",
+      "parentUuid": "AAAAUH/992o\u003d",
       "revId": "bb5f16d96107eda250b78df5fb0c07a8c34074e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
