@@ -85,6 +85,57 @@
       "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96S0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:23:38Z",
+      "side": 1,
+      "message": "suggest change name to id_arg_index or something.",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96S4\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:23:38Z",
+      "side": 1,
+      "message": "update the comment here to indicate that resource_id might be in a different loc .. probably want to move getting the resource_id to its own line...\n\n resource_id \u003d args[self.arg_index]\n\n _send_notification( ... , resource_id, ... )",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Sw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:23:38Z",
+      "side": 1,
+      "message": "suggest also have a testcase that if you don\u0027t change the domains enabled/disabled status then there\u0027s no notification.\n\nAlso, have tests for projects, too.",
+      "revId": "294f2e7eec0599d2aef76340949be8a9e7c8ef08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
