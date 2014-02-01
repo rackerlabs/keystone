@@ -19,7 +19,6 @@ import datetime
 import uuid
 
 from lxml import etree
-import six
 
 from keystone import auth
 from keystone.common import authorization
@@ -171,109 +170,6 @@ class RestfulTestCase(rest.RestfulTestCase):
         self.catalog_api.create_endpoint(
             self.endpoint_id,
             self.endpoint.copy())
-
-    def new_ref(self):
-        """Populates a ref with attributes common to all API entities."""
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'enabled': True}
-
-    def new_region_ref(self):
-        ref = self.new_ref()
-        # Region doesn't have name or enabled.
-        del ref['name']
-        del ref['enabled']
-        ref['parent_region_id'] = None
-        return ref
-
-    def new_service_ref(self):
-        ref = self.new_ref()
-        ref['type'] = uuid.uuid4().hex
-        return ref
-
-    def new_endpoint_ref(self, service_id):
-        ref = self.new_ref()
-        ref['interface'] = uuid.uuid4().hex[:8]
-        ref['service_id'] = service_id
-        ref['url'] = uuid.uuid4().hex
-        ref['region'] = uuid.uuid4().hex
-        return ref
-
-    def new_domain_ref(self):
-        ref = self.new_ref()
-        return ref
-
-    def new_project_ref(self, domain_id):
-        ref = self.new_ref()
-        ref['domain_id'] = domain_id
-        return ref
-
-    def new_user_ref(self, domain_id, project_id=None):
-        ref = self.new_ref()
-        ref['domain_id'] = domain_id
-        ref['email'] = uuid.uuid4().hex
-        ref['password'] = uuid.uuid4().hex
-        if project_id:
-            ref['default_project_id'] = project_id
-        return ref
-
-    def new_group_ref(self, domain_id):
-        ref = self.new_ref()
-        ref['domain_id'] = domain_id
-        return ref
-
-    def new_credential_ref(self, user_id, project_id=None):
-        ref = self.new_ref()
-        ref['user_id'] = user_id
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
-        if project_id:
-            ref['project_id'] = project_id
-        return ref
-
-    def new_role_ref(self):
-        ref = self.new_ref()
-        return ref
-
-    def new_policy_ref(self):
-        ref = self.new_ref()
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
-        return ref
-
-    def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
-                      impersonation=None, expires=None, role_ids=None,
-                      role_names=None):
-        ref = self.new_ref()
-
-        ref['trustor_user_id'] = trustor_user_id
-        ref['trustee_user_id'] = trustee_user_id
-        ref['impersonation'] = impersonation or False
-        ref['project_id'] = project_id
-
-        if isinstance(expires, six.string_types):
-            ref['expires_at'] = expires
-        elif isinstance(expires, dict):
-            ref['expires_at'] = timeutils.strtime(
-                timeutils.utcnow() + datetime.timedelta(**expires),
-                fmt=TIME_FORMAT)
-        elif expires is None:
-            pass
-        else:
-            raise NotImplementedError('Unexpected value for "expires"')
-
-        role_ids = role_ids or []
-        role_names = role_names or []
-        if role_ids or role_names:
-            ref['roles'] = []
-            for role_id in role_ids:
-                ref['roles'].append({'id': role_id})
-            for role_name in role_names:
-                ref['roles'].append({'name': role_name})
-
-        return ref
 
     def create_new_default_project_for_user(self, user_id, domain_id,
                                             enable_project=True):

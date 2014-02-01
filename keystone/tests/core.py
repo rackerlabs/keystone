@@ -16,6 +16,7 @@
 
 from __future__ import absolute_import
 
+import datetime
 import functools
 import os
 import re
@@ -23,6 +24,7 @@ import shutil
 import socket
 import sys
 import time
+import uuid
 import warnings
 
 import fixtures
@@ -31,7 +33,6 @@ from paste import deploy
 import six
 import testtools
 from testtools import testcase
-
 
 from keystone.openstack.common import gettextutils
 
@@ -81,6 +82,7 @@ ROOTDIR = os.path.normpath(os.path.join(TESTSDIR, '..', '..'))
 VENDOR = os.path.join(ROOTDIR, 'vendor')
 ETCDIR = os.path.join(ROOTDIR, 'etc')
 TMPDIR = os.path.join(TESTSDIR, 'tmp')
+TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 CONF = config.CONF
 
@@ -616,3 +618,106 @@ class TestCase(testtools.TestCase):
 
         standardMsg = '\n'.join(lines)
         self.fail(self._formatMessage(msg, standardMsg))
+
+    def new_ref(self):
+        """Populates a ref with attributes common to all API entities."""
+        return {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'enabled': True}
+
+    def new_region_ref(self):
+        ref = self.new_ref()
+        # Region doesn't have name or enabled.
+        del ref['name']
+        del ref['enabled']
+        ref['parent_region_id'] = None
+        return ref
+
+    def new_service_ref(self):
+        ref = self.new_ref()
+        ref['type'] = uuid.uuid4().hex
+        return ref
+
+    def new_endpoint_ref(self, service_id):
+        ref = self.new_ref()
+        ref['interface'] = uuid.uuid4().hex[:8]
+        ref['service_id'] = service_id
+        ref['url'] = uuid.uuid4().hex
+        ref['region'] = uuid.uuid4().hex
+        return ref
+
+    def new_domain_ref(self):
+        ref = self.new_ref()
+        return ref
+
+    def new_project_ref(self, domain_id):
+        ref = self.new_ref()
+        ref['domain_id'] = domain_id
+        return ref
+
+    def new_user_ref(self, domain_id, project_id=None):
+        ref = self.new_ref()
+        ref['domain_id'] = domain_id
+        ref['email'] = uuid.uuid4().hex
+        ref['password'] = uuid.uuid4().hex
+        if project_id:
+            ref['default_project_id'] = project_id
+        return ref
+
+    def new_group_ref(self, domain_id):
+        ref = self.new_ref()
+        ref['domain_id'] = domain_id
+        return ref
+
+    def new_credential_ref(self, user_id, project_id=None):
+        ref = self.new_ref()
+        ref['user_id'] = user_id
+        ref['blob'] = uuid.uuid4().hex
+        ref['type'] = uuid.uuid4().hex
+        if project_id:
+            ref['project_id'] = project_id
+        return ref
+
+    def new_role_ref(self):
+        ref = self.new_ref()
+        return ref
+
+    def new_policy_ref(self):
+        ref = self.new_ref()
+        ref['blob'] = uuid.uuid4().hex
+        ref['type'] = uuid.uuid4().hex
+        return ref
+
+    def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
+                      impersonation=None, expires=None, role_ids=None,
+                      role_names=None):
+        ref = self.new_ref()
+
+        ref['trustor_user_id'] = trustor_user_id
+        ref['trustee_user_id'] = trustee_user_id
+        ref['impersonation'] = impersonation or False
+        ref['project_id'] = project_id
+
+        if isinstance(expires, six.string_types):
+            ref['expires_at'] = expires
+        elif isinstance(expires, dict):
+            ref['expires_at'] = timeutils.strtime(
+                timeutils.utcnow() + datetime.timedelta(**expires),
+                fmt=TIME_FORMAT)
+        elif expires is None:
+            pass
+        else:
+            raise NotImplementedError('Unexpected value for "expires"')
+
+        role_ids = role_ids or []
+        role_names = role_names or []
+        if role_ids or role_names:
+            ref['roles'] = []
+            for role_id in role_ids:
+                ref['roles'].append({'id': role_id})
+            for role_name in role_names:
+                ref['roles'].append({'name': role_name})
+
+        return ref
