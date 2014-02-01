@@ -518,39 +518,21 @@ class AuthWithPasswordCredentials(AuthTest):
         # user in auth data is from the new default domain.
 
         # 1) Create a new domain.
-        new_domain_id = uuid.uuid4().hex
-        new_domain = {
-            'description': uuid.uuid4().hex,
-            'enabled': True,
-            'id': new_domain_id,
-            'name': uuid.uuid4().hex,
-        }
-
-        self.assignment_api.create_domain(new_domain_id, new_domain)
+        new_domain = self.new_domain_ref()
+        self.assignment_api.create_domain(new_domain['id'], new_domain)
 
         # 2) Create user "foo" in new domain with different password than
         #    default-domain foo.
-        new_user_id = uuid.uuid4().hex
-        new_user_password = uuid.uuid4().hex
-        new_user = {
-            'id': new_user_id,
-            'name': self.user_foo['name'],
-            'domain_id': new_domain_id,
-            'password': new_user_password,
-            'email': 'foo@bar2.com',
-        }
-
-        self.identity_api.create_user(new_user_id, new_user)
+        new_user = self.new_user_ref(domain_id=new_domain['id'])
+        self.identity_api.create_user(new_user['id'], new_user)
 
         # 3) Update the default_domain_id config option to the new domain
-
-        self.opt_in_group('identity', default_domain_id=new_domain_id)
+        self.opt_in_group('identity', default_domain_id=new_domain['id'])
 
         # 4) Authenticate as "foo" using the password in the new domain.
-
         body_dict = _build_user_auth(
-            username=self.user_foo['name'],
-            password=new_user_password)
+            username=new_user['name'],
+            password=new_user['password'])
 
         # The test is successful if this doesn't raise, so no need to assert.
         self.controller.authenticate({}, body_dict)
