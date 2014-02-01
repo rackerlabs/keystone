@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/96OI\u003d",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T16:13:33Z",
+      "side": 1,
+      "message": "could use mock.patch for this.",
+      "revId": "1288f694d51c13d12e6d61a1349b758ac8eab893",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
