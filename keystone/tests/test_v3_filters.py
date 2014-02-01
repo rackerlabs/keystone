@@ -41,11 +41,14 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         # file in each test to create the policies
         self.orig_policy_file = CONF.policy_file
         rules.reset()
-        _unused, self.tmpfilename = tempfile.mkstemp()
-        self.opt(policy_file=self.tmpfilename)
 
         #drop the policy rules
         self.addCleanup(rules.reset)
+
+    def config(self, config_files):
+        super(IdentityTestFilteredCase, self).config(config_files)
+        _unused, self.tmpfilename = tempfile.mkstemp()
+        self.config_fixture.config(policy_file=self.tmpfilename)
 
     def load_sample_data(self):
         """Create sample data for these tests.

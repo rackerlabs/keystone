@@ -3726,7 +3726,7 @@ class InheritanceTests(object):
           inherited should not show up
 
         """
-        self.opt_in_group('os_inherit', enabled=True)
+        self.config_fixture.config(group='os_inherit', enabled=True)
         role_list = []
         for _ in range(3):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -3801,7 +3801,7 @@ class InheritanceTests(object):
           direct and two by virtue of inherited group roles
 
         """
-        self.opt_in_group('os_inherit', enabled=True)
+        self.config_fixture.config(group='os_inherit', enabled=True)
         role_list = []
         for _ in range(4):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -3879,7 +3879,7 @@ class InheritanceTests(object):
         - Get a list of projects for user, should return all three projects
 
         """
-        self.opt_in_group('os_inherit', enabled=True)
+        self.config_fixture.config(group='os_inherit', enabled=True)
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_domain(domain['id'], domain)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -3923,7 +3923,7 @@ class InheritanceTests(object):
           from the domain, plus the one separate project
 
         """
-        self.opt_in_group('os_inherit', enabled=True)
+        self.config_fixture.config(group='os_inherit', enabled=True)
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_domain(domain['id'], domain)
         domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}

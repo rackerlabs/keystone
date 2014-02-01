@@ -387,7 +387,7 @@ class AuthWithToken(AuthTest):
             token_id=scoped_token_id)
 
     def test_token_auth_with_binding(self):
-        self.opt_in_group('token', bind=['kerberos'])
+        self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth()
         unscoped_token = self.controller.authenticate(
             self.context_with_remote_user, body_dict)
@@ -507,7 +507,7 @@ class AuthWithPasswordCredentials(AuthTest):
                           {}, body_dict)
 
     def test_bind_without_remote_user(self):
-        self.opt_in_group('token', bind=['kerberos'])
+        self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth(username='FOO', password='foo2',
                                      tenant_name='BAR')
         token = self.controller.authenticate({}, body_dict)
@@ -544,7 +544,8 @@ class AuthWithPasswordCredentials(AuthTest):
 
         # 3) Update the default_domain_id config option to the new domain
 
-        self.opt_in_group('identity', default_domain_id=new_domain_id)
+        self.config_fixture.config(group='identity',
+                                   default_domain_id=new_domain_id)
 
         # 4) Authenticate as "foo" using the password in the new domain.
 
@@ -623,14 +624,14 @@ class AuthWithRemoteUser(AuthTest):
             body_dict)
 
     def test_bind_with_kerberos(self):
-        self.opt_in_group('token', bind=['kerberos'])
+        self.config_fixture.config(group='token', bind=['kerberos'])
         body_dict = _build_user_auth(tenant_name="BAR")
         token = self.controller.authenticate(self.context_with_remote_user,
                                              body_dict)
         self.assertEqual(token['access']['token']['bind']['kerberos'], 'FOO')
 
     def test_bind_without_config_opt(self):
-        self.opt_in_group('token', bind=['x509'])
+        self.config_fixture.config(group='token', bind=['x509'])
         body_dict = _build_user_auth(tenant_name='BAR')
         token = self.controller.authenticate(self.context_with_remote_user,
                                              body_dict)
@@ -640,7 +641,6 @@ class AuthWithRemoteUser(AuthTest):
 class AuthWithTrust(AuthTest):
     def setUp(self):
         super(AuthWithTrust, self).setUp()
-        self.opt_in_group('trust', enabled=True)
 
         trust.Manager()
         self.trust_controller = trust.controllers.TrustV3()
@@ -663,6 +663,10 @@ class AuthWithTrust(AuthTest):
                                        datetime.timedelta(minutes=10),
                                        fmt=TIME_FORMAT)
         self.create_trust(expires_at=expires_at)
+
+    def config(self, config_files):
+        super(AuthWithTrust, self).config(config_files)
+        self.config_fixture.config(group='trust', enabled=True)
 
     def _create_auth_context(self, token_id):
         token_ref = self.token_api.get_token(token_id)
@@ -955,13 +959,14 @@ class TokenExpirationTest(AuthTest):
         self.assertEqual(original_expiration, r['access']['token']['expires'])
 
     def test_maintain_uuid_token_expiration(self):
-        self.opt_in_group('signing', token_format='UUID')
+        self.config_fixture.config(group='signing', token_format='UUID')
         self._maintain_token_expiration()
 
 
 class NonDefaultAuthTest(tests.TestCase):
 
     def test_add_non_default_auth_method(self):
-        self.opt_in_group('auth', methods=['password', 'token', 'custom'])
+        self.config_fixture.config(group='auth',
+                                   methods=['password', 'token', 'custom'])
         config.setup_authentication()
         self.assertTrue(hasattr(CONF.auth, 'custom'))
