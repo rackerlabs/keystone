@@ -39,17 +39,17 @@ class PolicyFileTestCase(tests.TestCase):
 
         rules.reset()
         self.addCleanup(rules.reset)
-        _unused, self.tmpfilename = tempfile.mkstemp()
-        self.opt(policy_file=self.tmpfilename)
         self.target = {}
 
     def test_modified_policy_reloads(self):
+        _unused, tmpfilename = tempfile.mkstemp()
+        self.config_fixture.config(policy_file=tmpfilename)
         action = "example:test"
         empty_credentials = {}
-        with open(self.tmpfilename, "w") as policyfile:
+        with open(tmpfilename, "w") as policyfile:
             policyfile.write("""{"example:test": []}""")
         rules.enforce(empty_credentials, action, self.target)
-        with open(self.tmpfilename, "w") as policyfile:
+        with open(tmpfilename, "w") as policyfile:
             policyfile.write("""{"example:test": ["false:false"]}""")
         # NOTE(vish): reset stored policy cache so we don't have to sleep(1)
         rules._POLICY_CACHE = {}

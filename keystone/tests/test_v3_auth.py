@@ -176,7 +176,8 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
 
         # 3) Update the default_domain_id config option to the new domain
 
-        self.opt_in_group('identity', default_domain_id=new_domain_id)
+        self.config_fixture.config(group='identity',
+                                   default_domain_id=new_domain_id)
 
         # 4) Get a token using v3 api.
 
@@ -441,7 +442,8 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.orig_policy_file = CONF.policy_file
         from keystone.policy.backends import rules
         rules.reset()
-        self.opt(policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
+        self.config_fixture.config(
+            policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
 
     def test_user_revokes_own_token(self):
         r = self.post(
@@ -1859,7 +1861,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
 
     #TODO(ayoung): move to TestPKITokenAPIs; it will be run for both formats
     def test_verify_with_bound_token(self):
-        self.opt_in_group('token', bind='kerberos')
+        self.config_fixture.config(group='token', bind='kerberos')
         auth_data = self.build_authentication_request(
             project_id=self.project['id'])
         remote_user = self.default_domain_user['name']
@@ -1900,7 +1902,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.assertEqual(token['bind']['kerberos'], remote_user)
 
     def test_v2_v3_bind_token_intermix(self):
-        self.opt_in_group('token', bind='kerberos')
+        self.config_fixture.config(group='token', bind='kerberos')
 
         # we need our own user registered to the default domain because of
         # the way external auth works.
@@ -1997,9 +1999,9 @@ class TestAuthXML(TestAuthJSON):
 
 
 class TestTrustOptional(test_v3.RestfulTestCase):
-    def setUp(self, *args, **kwargs):
-        self.opt_in_group('trust', enabled=False)
-        super(TestTrustOptional, self).setUp(*args, **kwargs)
+    def config(self, config_files):
+        super(TestTrustOptional, self).config(config_files)
+        self.config_fixture.config(group='trust', enabled=False)
 
     def test_trusts_404(self):
         self.get('/OS-TRUST/trusts', body={'trust': {}}, expected_status=404)
@@ -2015,7 +2017,6 @@ class TestTrustOptional(test_v3.RestfulTestCase):
 
 class TestTrustAuth(TestAuthInfo):
     def setUp(self):
-        self.opt_in_group('trust', enabled=True)
         super(TestTrustAuth, self).setUp()
 
         # create a trustee to delegate stuff to
@@ -2023,6 +2024,10 @@ class TestTrustAuth(TestAuthInfo):
         self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
         self.trustee_user['id'] = self.trustee_user_id
         self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
+
+    def config(self, config_files):
+        super(TestTrustAuth, self).config(config_files)
+        self.config_fixture.config(group='trust', enabled=True)
 
     def test_create_trust_400(self):
         self.skipTest('Blocked by bug 1133435')

@@ -115,15 +115,19 @@ class MemcacheClient(object):
 class MemcacheToken(tests.TestCase, test_backend.TokenTests):
     def setUp(self):
         super(MemcacheToken, self).setUp()
-        # Use the memcache backend for the token driver.
-        self.opt_in_group('token',
-                          driver='keystone.token.backends.memcache.Token')
         self.load_backends()
         # Override the memcache client with the "dummy" client.
         fake_client = MemcacheClient()
         self.token_man = token.Manager()
         self.token_man.driver = token_memcache.Token(client=fake_client)
         self.token_api = self.token_man
+
+    def config(self, config_files):
+        super(MemcacheToken, self).config(config_files)
+        # Use the memcache backend for the token driver.
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.memcache.Token')
 
     def test_create_unicode_token_id(self):
         token_id = six.text_type(self._create_token_id())

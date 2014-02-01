@@ -58,13 +58,16 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         # file in each test to create the policies
         self.addCleanup(rules.reset)
         rules.reset()
-        _unused, self.tmpfilename = tempfile.mkstemp()
-        self.opt(policy_file=self.tmpfilename)
 
         # A default auth request we can use - un-scoped user token
         self.auth = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'])
+
+    def config(self, config_files):
+        super(IdentityTestProtectedCase, self).config(config_files)
+        _unused, self.tmpfilename = tempfile.mkstemp()
+        self.config_fixture.config(policy_file=self.tmpfilename)
 
     def load_sample_data(self):
         # Start by creating a couple of domains
@@ -369,7 +372,11 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         # Finally, switch to the v3 sample policy file
         self.addCleanup(rules.reset)
         rules.reset()
-        self.opt(policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
+
+    def config(self, config_files):
+        super(IdentityTestv3CloudPolicySample, self).config(config_files)
+        self.config_fixture.config(
+            policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
 
     def load_sample_data(self):
         # Start by creating a couple of domains

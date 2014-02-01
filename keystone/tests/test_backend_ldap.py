@@ -415,7 +415,8 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # returned by list_domains changes is the new default_domain_id.
 
         new_domain_id = uuid.uuid4().hex
-        self.opt_in_group('identity', default_domain_id=new_domain_id)
+        self.config_fixture.config(group='identity',
+                                   default_domain_id=new_domain_id)
 
         domains = self.assignment_api.list_domains()
 
@@ -1067,15 +1068,18 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         self.config([tests.dirs.etc('keystone.conf.sample'),
                      tests.dirs.tests('test_overrides.conf'),
                      tests.dirs.tests('backend_ldap.conf')])
-        self.opt_in_group('ldap',
-                          user_enabled_emulation=True,
-                          tenant_enabled_emulation=True)
         self.clear_database()
         self.load_backends()
         self.load_fixtures(default_fixtures)
         for obj in [self.tenant_bar, self.tenant_baz, self.user_foo,
                     self.user_two, self.user_badguy]:
             obj.setdefault('enabled', True)
+
+    def config(self, config_files):
+        super(LDAPIdentityEnabledEmulation, self).config(config_files)
+        self.config_fixture.config(group='ldap',
+                                   user_enabled_emulation=True,
+                                   tenant_enabled_emulation=True)
 
     def test_project_crud(self):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
@@ -1175,7 +1179,8 @@ class LdapIdentitySqlAssignment(sql.Base, tests.TestCase, BaseLDAPIdentity):
         orig_default_domain_id = CONF.identity.default_domain_id
 
         new_domain_id = uuid.uuid4().hex
-        self.opt_in_group('identity', default_domain_id=new_domain_id)
+        self.config_fixture.config(group='identity',
+                                   default_domain_id=new_domain_id)
 
         domains = self.assignment_api.list_domains()
 
@@ -1234,9 +1239,9 @@ class MultiLDAPandSQLIdentity(sql.Base, tests.TestCase, BaseLDAPIdentity):
         # All initial domain data setup complete, time to switch on support
         # for separate backends per domain.
 
-        self.opt_in_group('identity',
-                          domain_specific_drivers_enabled=True,
-                          domain_config_dir=tests.TESTSDIR)
+        self.config_fixture.config(group='identity',
+                                   domain_specific_drivers_enabled=True,
+                                   domain_config_dir=tests.TESTSDIR)
 
         self._set_domain_configs()
         self.clear_database()

@@ -50,9 +50,13 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
 
     def setUp(self):
         super(TestTemplatedCatalog, self).setUp()
-        self.opt_in_group('catalog', template_file=DEFAULT_CATALOG_TEMPLATES)
         self.load_backends()
         self.load_fixtures(default_fixtures)
+
+    def config(self, config_files):
+        super(TestTemplatedCatalog, self).config(config_files)
+        self.config_fixture.config(group='catalog',
+                                   template_file=DEFAULT_CATALOG_TEMPLATES)
 
     def test_get_catalog(self):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
