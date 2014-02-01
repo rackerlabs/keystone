@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/96Ko\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T16:48:59Z",
+      "side": 1,
+      "message": "this info would be nice to have in the log message so that I don\u0027t get called asking what the customer is supposed to do about it.",
+      "revId": "210139803f9207fd14ff2909c717ba5b26e6b384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Kk\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T16:48:59Z",
+      "side": 1,
+      "message": "use assertIsNone",
+      "revId": "210139803f9207fd14ff2909c717ba5b26e6b384",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
