@@ -16,6 +16,24 @@
       "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/97E0\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-01T01:58:33Z",
+      "side": 1,
+      "message": "Sure.  If this is a blocker to merging, I am fine with making this change.",
+      "parentUuid": "AAAAUH/+H2s\u003d",
+      "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
