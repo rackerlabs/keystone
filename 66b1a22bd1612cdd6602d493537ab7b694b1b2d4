@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/963Y\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2014-02-01T04:22:06Z",
+      "side": 1,
+      "message": "why this is not fixed?",
+      "revId": "66b1a22bd1612cdd6602d493537ab7b694b1b2d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
