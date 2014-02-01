@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+1: Alvaro Lopez Garcia <aloga@ifca.unican.es>
+Approved+1: Alan Pevec <apevec@gmail.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 01 Feb 2014 05:39:50 +0000
+Reviewed-on: https://review.openstack.org/66145
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
