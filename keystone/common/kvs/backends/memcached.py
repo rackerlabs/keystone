@@ -35,15 +35,32 @@ LOG = log.getLogger(__name__)
 NO_VALUE = api.NO_VALUE
 
 
-class Pylibmc(memcached.PylibmcBackend):
+class MemcachedDriverMixin(object):
+    """Basic Mixin for setting an explicit TTL via the client object.
+
+       This mixin circumvents the TTL the driver object (abstraction above
+       the client) provides for exceptional cases (e.g. non-expiring keys).
+       """
+
+    def set(self, key, value, **set_arguments):
+        self.client.set(key, value, **set_arguments)
+
+    def set_multi(self, mapping, **set_arguments):
+        self.client.set_multi(mapping, **set_arguments)
+
+
+# NOTE(morganfainberg): Redefine the basic backends from the
+# dogpile.cache.backends.memcached module and use the
+# :class:`MemcachedDriverMixin` to override the `set` and `set_multi` methods
+class Pylibmc(MemcachedDriverMixin, memcached.PylibmcBackend):
     pass
 
 
-class BMemcached(memcached.BMemcachedBackend):
+class BMemcached(MemcachedDriverMixin, memcached.BMemcachedBackend):
     pass
 
 
-class Memcached(memcached.MemcachedBackend):
+class Memcached(MemcachedDriverMixin, memcached.MemcachedBackend):
     pass
 
 
@@ -95,12 +112,19 @@ class MemcachedBackend(manager.Manager):
     time `Memcached`, `BMemcached`, `Pylibmc` are valid).
     """
     def __init__(self, arguments):
+        self._key_mangler = None
+        self.raw_no_expiry_keys = set(arguments.pop('no_expiry_keys', set()))
+        self.no_expiry_hashed_keys = set()
+        self.set_arguments = {}
+
         self.lock_timeout = arguments.pop('lock_timeout', None)
         self.max_lock_attempts = arguments.pop('max_lock_attempts', 15)
         # NOTE(morganfainberg): Remove distributed locking from the arguments
         # passed to the "real" backend if it exists.
         arguments.pop('distributed_lock', None)
         backend = arguments.pop('memcached_backend', None)
+        if 'memcached_expire_time' in arguments:
+            self.set_arguments['time'] = arguments['memcached_expire_time']
         if 'url' not in arguments:
             # FIXME(morganfainberg): Log deprecation warning for old-style
             # configuration once full dict_config style configuration for
@@ -122,6 +146,37 @@ class MemcachedBackend(manager.Manager):
             else:
                 self.driver = VALID_DOGPILE_BACKENDS[backend](arguments)
 
+    def _get_set_arguments(self, exclude_expiry=False):
+        # NOTE(morganfainberg): Shallow copy the .set_arguments dict to
+        # ensure no changes cause the values to change in the instance
+        # variable.
+        set_arguments = self.set_arguments.copy()
+        if exclude_expiry:
+            # NOTE(morganfainberg): Explicitly strip out the 'time' key/value
+            # from the set_arguments in the case that this key isn't meant
+            # to expire
+            set_arguments.pop('time', None)
+        return set_arguments
+
+    def set(self, key, value):
+        no_expiry = key in self.no_expiry_hashed_keys
+        set_arguments = self._get_set_arguments(exclude_expiry=no_expiry)
+        self.driver.set(key, value, **set_arguments)
+
+    def set_multi(self, mapping):
+        mapping_keys = set(mapping.keys())
+        no_expiry_keys = mapping_keys.intersection(self.no_expiry_hashed_keys)
+        has_expiry_keys = mapping_keys.difference(self.no_expiry_hashed_keys)
+
+        if no_expiry_keys:
+            new_mapping = dict((k, mapping[k]) for k in no_expiry_keys)
+            set_arguments = self._get_set_arguments(exclude_expiry=True)
+            self.driver.client.set_multi(new_mapping, **set_arguments)
+        if has_expiry_keys:
+            new_mapping = dict((k, mapping[k]) for k in has_expiry_keys)
+            set_arguments = self._get_set_arguments(exclude_expiry=False)
+            self.driver.client.set_multi(new_mapping, **set_arguments)
+
     @classmethod
     def from_config_dict(cls, config_dict, prefix):
         prefix_len = len(prefix)
@@ -132,7 +187,27 @@ class MemcachedBackend(manager.Manager):
 
     @property
     def key_mangler(self):
-        return self.driver.key_mangler
+        if self._key_mangler is None:
+            self._key_mangler = self.driver.key_mangler
+        return self._key_mangler
+
+    @key_mangler.setter
+    def key_mangler(self, key_mangler):
+        if callable(key_mangler):
+            self._key_mangler = key_mangler
+            self._rehash_keys()
+        elif key_mangler is None:
+            # NOTE(morganfainberg): Set the hashed key map to the unhashed
+            # list since we no longer have a key_mangler.
+            self.no_expiry_hashed_keys = self.raw_no_expiry_keys
+        else:
+            raise TypeError(_('`key_mangler` functions must be callable.'))
+
+    def _rehash_keys(self):
+        no_expire = set()
+        for key in self.raw_no_expiry_keys:
+            no_expire.add(self._key_mangler(key))
+            self.no_expiry_hashed_keys = no_expire
 
     def get_mutex(self, key):
         return MemcachedLock(lambda: self.driver.client, key,
