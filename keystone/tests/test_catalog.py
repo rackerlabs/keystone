@@ -42,19 +42,6 @@ class V2CatalogTestCase(rest.RestfulTestCase):
             self.tenant_bar['id'],
             self.role_admin['id'])
 
-    def new_ref(self):
-        """Populates a ref with attributes common to all API entities."""
-        return {
-            'id': uuid.uuid4().hex,
-            'name': uuid.uuid4().hex,
-            'description': uuid.uuid4().hex,
-            'enabled': True}
-
-    def new_service_ref(self):
-        ref = self.new_ref()
-        ref['type'] = uuid.uuid4().hex
-        return ref
-
     def _get_token_id(self, r):
         """Applicable only to JSON."""
         return r.result['access']['token']['id']
