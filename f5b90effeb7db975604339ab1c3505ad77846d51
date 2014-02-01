@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/96WI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "change this to say that \"truncated\" will be set on the response.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Wo\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "Henry asked -- \"would it be OK if I came back in and added that in a later path?\" -- I\u0027m OK with this, but then request that this be changed to a TODO and explain that this is going to change in the future... seems like it would be just as easy to just pass on the hints now.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96V4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "suggest change drivers to managers?",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Vs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "the use of `limited` here is unnecessarily confusing... readers have to examine the entire function to figure out that limited is always False here.  Suggest define an enum or define a couple of constants for LIMITED \u003d True, NOT_LIMITED \u003d False and return those directly rather than reassigning `limited`.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96WQ\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "I still feel its better to not lie to the driver and pass the hints in as they are and let the driver figure out how it should best figure out how to limit the results.\n\nFor the sql driver, it may be this wrapper.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96VY\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "Why is the deserializer affected by this? Are clients sending the server truncated lists?",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96VU\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "why is this a FIXME? Is there something left to do here?",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96VQ\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "wrap string in _() for translation.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96VM\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "I don\u0027t see what the alternative is.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96VA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "I don\u0027t see how hints could be None here.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96U8\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "document what it means if `hints` is None.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96UM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "the call to do the cleanup for these should be set here rather than done later... because if one of these fails then the cleanup for the other ones won\u0027t be done.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Uk\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "there\u0027s no need to reset the config options because tests.TestCase calls CONF.reset() -- http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/core.py#n317",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96UA\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "I\u0027d prefer this was separated into 3 tests then it would be easier to tell which one wasn\u0027t working.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96UE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "change \"users\" to \"entities\"",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96T4\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "the identity option is set to 5 for the next time through the loop... isn\u0027t that going to lead to the incorrect result?",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96WM\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "use assertIsNone",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Tk\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "the addCleanups for these things should be done here rather than later because that will ensure they\u0027re cleaned up even if a later create_service fails.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Tg\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "the options will be reset by tests.TestCase, so shouldn\u0027t need to do this.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96TU\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "suggest have separate test cases so that it\u0027s easier to tell which type of entity failed.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96TQ\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:15:44Z",
+      "side": 1,
+      "message": "suggest use assertIs(r.result.get(\u0027truncated\u0027), True) then it\u0027ll also validate that we\u0027re returning a Boolean and not a string or something.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
