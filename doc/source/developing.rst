@@ -440,6 +440,24 @@ KeyValueStore object named "TestKVSRegion" and a specific Memcached driver::
     kvs_store = kvs.get_key_value_store('TestKVSRegion')
     kvs_store.configure('openstack.kvs.Memcached', memcached_backend='Memcached')
 
+The memcached backend supports a mechanism to supply an explicit TTL (in seconds) to all keys
+set via the KVS object. This is accomplished by passing the argument ``memcached_expire_time``
+as a keyword argument to the ``configure`` method. This will include the ``time`` argument to
+all set calls performed by the memcached client. ``memcached_expire_time`` is an argument
+exclusive to the memcached dogpile backend::
+
+    kvs_store.configure('openstack.kvs.Memcached', memcached_backend='Memcached',
+                        memcached_expire_time=86400)
+
+If an explicit TTL is configured via the ``memcached_expire_time`` argument, it is possible to
+exempt specific keys from receiving the TTL by passing the argument ``no_expiry_keys`` (list)
+as a keyword argument to the ``configure`` method. ``no_expiry_keys`` should be supported by
+all OpenStack-specific dogpile backends that have the ability to set an explicit TTL (currently
+only supported in the provided memcached backends)::
+
+    kvs_store.configure('openstack.kvs.Memcached', memcached_backend='Memcached'
+                    memcached_expire_time=86400, no_expiry_keys=['key', 'second_key', ...])
+
 Once a KVS object has been instantiated the method of interacting is the same as most memcache
 implementations::
 
