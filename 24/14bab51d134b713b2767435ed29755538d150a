@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Vish Ishaya <vishvananda@gmail.com>
+Code-Review+1: Adam Gandelman <adam.gandelman@canonical.com>
+Approved+1: Alan Pevec <apevec@gmail.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: Clint "SpamapS" Byrum <clint@ubuntu.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 01 Feb 2014 19:25:18 +0000
+Reviewed-on: https://review.openstack.org/69884
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
