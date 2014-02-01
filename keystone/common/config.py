@@ -147,7 +147,10 @@ FILE_OPTIONS = {
 
     'policy': [
         cfg.StrOpt('driver',
-                   default='keystone.policy.backends.sql.Policy')],
+                   default='keystone.policy.backends.sql.Policy'),
+        # TODO(stevemar): Remove this once oslo is updated
+        cfg.StrOpt('default_rule',
+                   default='admin_required')],
     'ec2': [
         cfg.StrOpt('driver',
                    default='keystone.contrib.ec2.backends.kvs.Ec2')],

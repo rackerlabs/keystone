@@ -62,7 +62,7 @@ def init():
 
 def _set_rules(data):
     global _ENFORCER
-    default_rule = CONF.policy_default_rule
+    default_rule = CONF.policy.default_rule
     _ENFORCER.set_rules(common_policy.Rules.load_json(
         data, default_rule))
 
