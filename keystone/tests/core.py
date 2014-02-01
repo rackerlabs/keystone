@@ -65,6 +65,7 @@ from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import service
+from keystone.tests.fixtures import config as config_fixture
 
 # NOTE(dstanek): Tests inheriting from TestCase depend on having the
 #   policy_file command-line option declared before setUp runs. Importing the
@@ -314,12 +315,12 @@ class TestCase(testtools.TestCase):
         # show complete diffs on failure
         self.maxDiff = None
 
-        self.addCleanup(CONF.reset)
+        self.config_fixture = self.useFixture(config_fixture.Config())
 
         self.config([dirs.etc('keystone.conf.sample'),
                      dirs.tests('test_overrides.conf')])
 
-        self.opt(policy_file=dirs.etc('policy.json'))
+        self.config_fixture.config(policy_file=dirs.etc('policy.json'))
 
         # NOTE(morganfainberg):  The only way to reconfigure the
         # CacheRegion object on each setUp() call is to remove the
@@ -348,14 +349,6 @@ class TestCase(testtools.TestCase):
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
-
-    def opt_in_group(self, group, **kw):
-        for k, v in six.iteritems(kw):
-            CONF.set_override(k, v, group)
-
-    def opt(self, **kw):
-        for k, v in six.iteritems(kw):
-            CONF.set_override(k, v)
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
