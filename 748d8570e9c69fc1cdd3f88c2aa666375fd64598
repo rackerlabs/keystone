@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/96I4\u003d",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-01T17:52:18Z",
+      "side": 1,
+      "message": "This test is all sorts of weird.  I went with the least amount of change and figure we\u0027d circle back and do some cleanup specifically later.",
+      "parentUuid": "AAAAUH/96LM\u003d",
+      "revId": "748d8570e9c69fc1cdd3f88c2aa666375fd64598",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96K8\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-01T16:43:51Z",
       "side": 1,
       "message": "in this case the config was moved down rather than put into config... any reason?",
+      "revId": "748d8570e9c69fc1cdd3f88c2aa666375fd64598",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96I8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2021,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-01T17:52:18Z",
+      "side": 1,
+      "message": "let me 2x check. it might have just been missed.",
+      "parentUuid": "AAAAUH/96K8\u003d",
       "revId": "748d8570e9c69fc1cdd3f88c2aa666375fd64598",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
