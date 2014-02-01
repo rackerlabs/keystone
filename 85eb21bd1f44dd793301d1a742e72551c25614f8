@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/96PY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "change \"rememdy\" to \"remedy\"",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96PM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "add a DocImpact tag because of the new config options.",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Rk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "what\u0027s a wsgi socket?",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96RY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "the help text should mention that this only applies if tcp_keepalive is True.\n\nAlso, why have 2 options when a single one would work?",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+tzE\u003d",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
@@ -36,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/96RU\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "could also use the @mock.patch decorator for eventlet.listen for consistency?",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+r+8\u003d",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 4
@@ -64,6 +149,41 @@
       "writtenOn": "2014-01-23T07:04:12Z",
       "side": 1,
       "message": "Here you insure that mock_listen will return mock_sock, correct?",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96P4\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "Brad - a call to mock_listen() or eventlet.listen() will return mock_sock now.",
+      "parentUuid": "AAAAUH/+r+Q\u003d",
+      "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Po\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:57:40Z",
+      "side": 1,
+      "message": "the following code is obvious enough that the comment isn\u0027t needed.",
       "revId": "85eb21bd1f44dd793301d1a742e72551c25614f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
