@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/96Sk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:28:42Z",
+      "side": 1,
+      "message": "split this into a separate commit.",
+      "revId": "fdfb0f24c4ba5e64b56a3e9e2fafdb31f84f972a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96Sg\u003d",
+        "filename": "keystone/contrib/kds/api/app.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:28:42Z",
+      "side": 1,
+      "message": "suggest add a , at the end and put ] on a separate line so it\u0027s easier to add to the list.",
+      "revId": "fdfb0f24c4ba5e64b56a3e9e2fafdb31f84f972a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96SY\u003d",
+        "filename": "keystone/contrib/kds/api/root.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:28:42Z",
+      "side": 1,
+      "message": "this seems like it should be a different commit too... what does it have to do with adding cryptographic storage?",
+      "revId": "fdfb0f24c4ba5e64b56a3e9e2fafdb31f84f972a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+F2o\u003d",
         "filename": "keystone/contrib/kds/api/root.py",
         "patchSetId": 23
