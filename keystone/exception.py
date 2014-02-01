@@ -15,6 +15,7 @@
 # under the License.
 
 import six
+from gettext import gettext as _
 
 from keystone.common import config
 from keystone.openstack.common import log
