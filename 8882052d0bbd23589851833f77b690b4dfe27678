@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/96jI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-01T09:54:36Z",
+      "side": 1,
+      "message": "(I should remove the word Paginate from here)",
+      "revId": "8882052d0bbd23589851833f77b690b4dfe27678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/98Ns\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 26
@@ -13,6 +30,24 @@
       "writtenOn": "2014-01-31T22:09:19Z",
       "side": 1,
       "message": "(NIT): could doc strings be added here for the parameters and a return for the value, even though you have it described generally above?",
+      "revId": "8882052d0bbd23589851833f77b690b4dfe27678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96i8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-01T09:54:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/98Ns\u003d",
       "revId": "8882052d0bbd23589851833f77b690b4dfe27678",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/96iw\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-01T09:54:36Z",
+      "side": 1,
+      "message": "It could, since we set truncated a few lines below this - and if the collection had, in error, two \u0027truncated\u0027 attributes we would hit this.  It is the same logic as the \u0027links\u0027 code above.",
+      "parentUuid": "AAAAUH/98MQ\u003d",
+      "revId": "8882052d0bbd23589851833f77b690b4dfe27678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/975s\u003d",
         "filename": "keystone/credential/core.py",
         "patchSetId": 26
@@ -47,6 +100,24 @@
       "writtenOn": "2014-01-31T22:09:19Z",
       "side": 1,
       "message": "(NIT): remove this and add a NOTE or TODO?",
+      "revId": "8882052d0bbd23589851833f77b690b4dfe27678",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96io\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-01T09:54:36Z",
+      "side": 1,
+      "message": "oops, should just delete this.  Thanks!",
+      "parentUuid": "AAAAUH/975s\u003d",
       "revId": "8882052d0bbd23589851833f77b690b4dfe27678",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
