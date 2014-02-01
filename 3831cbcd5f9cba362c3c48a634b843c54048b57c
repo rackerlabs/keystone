@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/96Nc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T16:20:01Z",
+      "side": 1,
+      "message": "Remove \"As the summary says\"\n\nOtherwise, this sentence still doesn\u0027t make sense. \"in schema something would have\" ??",
+      "revId": "3831cbcd5f9cba362c3c48a634b843c54048b57c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
