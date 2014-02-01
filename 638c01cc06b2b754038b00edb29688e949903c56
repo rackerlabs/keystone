@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/96SI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:36:52Z",
+      "side": 1,
+      "message": "this sounds like it\u0027s fixing a bug and not refactoring.",
+      "revId": "638c01cc06b2b754038b00edb29688e949903c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96SE\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:36:52Z",
+      "side": 1,
+      "message": "can sql be the default on line 104?",
+      "revId": "638c01cc06b2b754038b00edb29688e949903c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96SA\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-01T15:36:52Z",
+      "side": 1,
+      "message": "The error message isn\u0027t appropriate -- there might be a file with the name, since the code requires that it\u0027s a directory. Suggest raise an exception with a message that will help the admin figure out what the problem is.\n\ne.g.\n\n raise Exception(_(\"The migration repository path at %s doesn\u0027t exist or isn\u0027t a directory.\"))\n\nAlso, put string in _() for translation.\n\nAlso, could use a unit test.",
+      "revId": "638c01cc06b2b754038b00edb29688e949903c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
