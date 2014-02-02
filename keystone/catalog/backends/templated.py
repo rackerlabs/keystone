@@ -19,7 +19,6 @@ import six
 from keystone.catalog.backends import kvs
 from keystone.catalog import core
 from keystone import config
-from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
@@ -122,7 +121,43 @@ class Catalog(kvs.Catalog):
         return o
 
     def get_v3_catalog(self, user_id, tenant_id, metadata=None):
-        raise exception.NotImplemented()
+        v2_catalog = self.get_catalog(user_id, tenant_id, metadata=metadata)
+        ret = []
+
+        for region_name, region in six.iteritems(v2_catalog):
+            for service_type, service in six.iteritems(region):
+                service_v3 = {
+                    'type': service_type,
+                    'endpoints': []
+                }
+
+                service_id = service.pop('id', None)
+                if service_id:
+                    service_v3['id'] = service_id
+
+                service_name = service.pop('name', None)
+                if service_name:
+                    service_v3['name'] = service_name
+
+                service_endpoints_v3 = service_v3['endpoints']
+
+                for endpoint in service:
+
+                    if not endpoint.endswith('URL'):
+                        # Not an endpoint.
+                        continue
+
+                    # endpoint is like 'publicURL', 'internalURL'
+                    v3_interface = endpoint[:-3]  # strip off URL
+                    service_endpoints_v3.append({
+                        'interface': v3_interface,
+                        'region': region_name,
+                        'url': service[endpoint],
+                    })
+
+                ret.append(service_v3)
+
+        return ret
 
 
 @versionutils.deprecated(
