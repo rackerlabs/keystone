@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/94Go\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-02T19:48:11Z",
+      "side": 1,
+      "message": "will fix it. Looks like I was sending up patch set 6 when you were reviewing patchset 5. So I will address all your comments in patch set 7. But will wait till perhaps after the super bowl :-)",
+      "parentUuid": "AAAAUH/94WA\u003d",
+      "revId": "9091e4ca813da3179f8d0eba0df2bebfd88bd818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/94R0\u003d",
         "filename": "requirements.txt",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-02T19:42:33Z",
       "side": 1,
       "message": "Extra line here?",
+      "revId": "9091e4ca813da3179f8d0eba0df2bebfd88bd818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94HA\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-02T19:48:11Z",
+      "side": 1,
+      "message": "Will remove it",
+      "parentUuid": "AAAAUH/94R0\u003d",
       "revId": "9091e4ca813da3179f8d0eba0df2bebfd88bd818",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
