@@ -21,7 +21,6 @@ import six
 from keystone.catalog.backends import kvs
 from keystone.catalog import core
 from keystone import config
-from keystone import exception
 from keystone.openstack.common import log
 
 
@@ -125,4 +124,50 @@ class TemplatedCatalog(kvs.Catalog):
         return o
 
     def get_v3_catalog(self, user_id, tenant_id, metadata=None):
-        raise exception.NotImplemented()
+        v2_catalog = self.get_catalog(user_id, tenant_id, metadata=metadata)
+        ret = []
+
+        for region_name in v2_catalog:
+            region = v2_catalog[region_name]
+            for service_name in region:
+                service = region[service_name]
+
+                service_v3 = {
+                    'id': '%s-%s' % (region_name, service_name),
+                    'type': service_name,
+                }
+
+                service_endpoints_v3 = []
+
+                if 'publicURL' in service:
+                    service_endpoints_v3.append({
+                        'interface': 'public',
+                        'id': '%s-%s-%s' % (
+                            region_name, service_name, 'public'),
+                        'region': region_name,
+                        'url': service['publicURL'],
+                    })
+
+                if 'internalURL' in service:
+                    service_endpoints_v3.append({
+                        'interface': 'internal',
+                        'id': '%s-%s-%s' % (
+                            region_name, service_name, 'internal'),
+                        'region': region_name,
+                        'url': service['internalURL'],
+                    })
+
+                if 'adminURL' in service:
+                    service_endpoints_v3.append({
+                        'interface': 'admin',
+                        'id': '%s-%s-%s' % (
+                            region_name, service_name, 'admin'),
+                        'region': region_name,
+                        'url': service['adminURL'],
+                    })
+
+                service_v3['endpoints'] = service_endpoints_v3
+
+                ret.append(service_v3)
+
+        return ret
