@@ -73,6 +73,4 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
         self.skipTest("Templated backend doesn't have disabled endpoints")
 
     def test_get_v3_catalog_endpoint_disabled(self):
-        f = (super(TestTemplatedCatalog, self).
-             test_get_v3_catalog_endpoint_disabled)
-        self.assertRaises(exception.NotImplemented, f)
+        self.skipTest("Templated backend doesn't have disabled endpoints")
