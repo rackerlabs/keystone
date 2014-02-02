@@ -34,22 +34,32 @@ Glance to list images needed to perform the requested task.
 
 """
 
+import abc
 import uuid
+
+import six
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
 
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import utils
+from keystone.common import wsgi
 from keystone import exception
 from keystone import token
 
 from keystone.openstack.common import jsonutils
 
 
+COMMON_PUBLIC_METHODS = frozenset(['delete_credential', 'get_credential',
+                                   'get_credentials', 'create_credential',
+                                   'check_signature'])
+
+
 @dependency.requires('assignment_api', 'catalog_api', 'credential_api',
-                     'identity_api', 'token_api', 'token_provider_api')
-class Ec2Controller(controller.V2Controller):
+                     'identity_api', 'policy_api', 'token_api')
+@six.add_metaclass(abc.ABCMeta)
+class Ec2ControllerCommon(object):
     def check_signature(self, creds_ref, credentials):
         signer = ec2_utils.Ec2Signer(creds_ref['secret'])
         signature = signer.generate(credentials)
@@ -66,6 +76,7 @@ class Ec2Controller(controller.V2Controller):
         else:
             raise exception.Unauthorized(message='EC2 signature not supplied.')
 
+    @abc.abstractmethod
     def authenticate(self, context, credentials=None, ec2Credentials=None):
         """Validate a signed EC2 request and provide a token.
 
@@ -86,12 +97,19 @@ class Ec2Controller(controller.V2Controller):
         :returns: token: OpenStack token equivalent to access key along
                          with the corresponding service catalog and roles
         """
+        raise exception.NotImplemented()
+
+    def _authenticate(self, credentials=None, ec2credentials=None):
+        """Common code shared between the V2 and V3 authenticate methods.
+
+        :returns: user_ref, tenant_ref, metadata_ref, roles_ref, catalog_ref
+        """
 
         # FIXME(ja): validate that a service token was used!
 
         # NOTE(termie): backwards compat hack
-        if not credentials and ec2Credentials:
-            credentials = ec2Credentials
+        if not credentials and ec2credentials:
+            credentials = ec2credentials
 
         if 'access' not in credentials:
             raise exception.Unauthorized(message='EC2 signature not supplied.')
@@ -125,17 +143,7 @@ class Ec2Controller(controller.V2Controller):
         catalog_ref = self.catalog_api.get_catalog(
             user_ref['id'], tenant_ref['id'], metadata_ref)
 
-        # NOTE(morganfainberg): Make sure the data is in correct form since it
-        # might be consumed external to Keystone and this is a v2.0 controller.
-        # The token provider doesn't actually expect either v2 or v3 user data.
-        user_ref = self.v3_to_v2_user(user_ref)
-        auth_token_data = dict(user=user_ref,
-                               tenant=tenant_ref,
-                               metadata=metadata_ref,
-                               id='placeholder')
-        (token_id, token_data) = self.token_provider_api.issue_v2_token(
-            auth_token_data, roles_ref, catalog_ref)
-        return token_data
+        return user_ref, tenant_ref, metadata_ref, roles_ref, catalog_ref
 
     def create_credential(self, context, user_id, tenant_id):
         """Create a secret/access pair for use with ec2 style auth.
@@ -268,6 +276,11 @@ class Ec2Controller(controller.V2Controller):
 
         """
         try:
+            # NOTE(morganfainberg): As a mixin it appears that policy_api is
+            #  not available in all cases. ``self.assert_admin`` is
+            # implemented in one of the controller parent classes. To ensure
+            # we have the policy_api available o us, this class includes it
+            # in the @dependency.requires decorator use.
             self.assert_admin(context)
             return True
         except exception.Forbidden:
@@ -301,7 +314,6 @@ class Ec2Controller(controller.V2Controller):
     def _assert_valid_project_id(self, project_id):
         """Ensure a valid project id.
 
-        :param context: standard context
         :param project_id: expected project
         :raises exception.ProjectNotFound: on failure
 
@@ -309,3 +321,73 @@ class Ec2Controller(controller.V2Controller):
         project_ref = self.assignment_api.get_project(project_id)
         if not project_ref:
             raise exception.ProjectNotFound(project_id=project_id)
+
+
+# TODO(morganfainberg): Remove the V2 controller (Ec2Controller) in K release.
+@dependency.requires('token_provider_api')
+class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
+
+    def __getattribute__(self, item):
+        # NOTE(morganfainberg): Wrap methods that are public in the deprecated
+        # decorator as the V2 API is deprecated and slated for removal in K
+        # release. This will only perform this logic a single time since it
+        # stores the new wrapped method on the local instance (looked up via
+        # self.__dict__).
+        attr = super(Ec2Controller, self).__getattribute__(item)
+        if item in COMMON_PUBLIC_METHODS and callable(attr):
+            if item not in self.__dict__:
+                # Wrap the method in the decorator and set it on the local
+                # instance so the wrapping logic doesn't need to run multiple
+                # times.
+                attr = controller.v2_deprecated(attr)
+                setattr(self, item, attr)
+        return attr
+
+    @controller.v2_deprecated
+    def authenticate(self, context, credentials=None, ec2Credentials=None):
+        (user_ref, tenant_ref, metadata_ref, roles_ref,
+         catalog_ref) = self._authenticate(credentials=credentials,
+                                           ec2credentials=ec2Credentials)
+
+        # NOTE(morganfainberg): Make sure the data is in correct form since it
+        # might be consumed external to Keystone and this is a v2.0 controller.
+        # The token provider does not explicitly care about user_ref version
+        # in this case, but the data is stored in the token itself and should
+        # match the version
+        user_ref = self.v3_to_v2_user(user_ref)
+        auth_token_data = dict(user=user_ref,
+                               tenant=tenant_ref,
+                               metadata=metadata_ref,
+                               id='placeholder')
+        (token_id, token_data) = self.token_provider_api.issue_v2_token(
+            auth_token_data, roles_ref, catalog_ref)
+        return token_data
+
+
+@dependency.requires('token_provider_api')
+class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
+    def authenticate(self, context, credentials=None, ec2Credentials=None):
+        (user_ref, project_ref, metadata_ref, roles_ref,
+         catalog_ref) = self._authenticate(credentials=credentials,
+                                           ec2credentials=ec2Credentials)
+
+        method_names = ['ec2credential']
+
+        token_id, token_data = self.token_provider_api.issue_v3_token(
+            user_ref['id'], method_names, project_id=project_ref['id'],
+            metadata_ref=metadata_ref)
+        return render_token_data_response(token_id, token_data)
+
+
+# FIXME(morganfainberg): to maintain compatibility with previous EC2 token
+# mechanisms this diverges from the version in the authcontroller
+def render_token_data_response(token_id, token_data):
+    """Render token data HTTP response.
+
+    Stash token ID into the X-Subject-Token header.
+
+    """
+    headers = [('X-Subject-Token', token_id)]
+
+    return wsgi.render_response(body=token_data,
+                                status=(200, 'OK'), headers=headers)
