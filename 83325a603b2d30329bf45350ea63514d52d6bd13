@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/94Gg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T20:14:07Z",
+      "side": 1,
+      "message": "I think we can remove this line here. According to dolphm, developers don\u0027t need to add copyrights unless they work directly for the OpenStack Foundation. \n\nDolph might have to keep me honest on that part. See discussion here: \n\nhttps://review.openstack.org/#/c/58311/5/keystone/tests/fixtures/__init__.py",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94EY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T20:14:07Z",
+      "side": 1,
+      "message": "This should be renamed to something that is more descriptive of the module we are using it from, to not be confused with \u0027self.host\u0027 within the CadfNotificationWrapper class.\n\nMaybe: \n\n    from pycadf import host as pycadf_host\n\n?",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94C8\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T20:14:07Z",
+      "side": 1,
+      "message": "\u0027host\u0027 from a notification standpoint is used for getting a publisher_id I believe: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L147\n\nbut I don\u0027t think it is a required parameter by the notifier_api: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/notifier/api.py#L86\n\nI think Jamie Lennox was working on taking \u0027host\u0027 out and just defaulting to generating the publisher_id with default values, similar to below:\n\nhttps://github.com/jamielennox/keystone/commit/b3e81c32d9fc2a68c648f3f13b1805282f01444b\n\nsince publisher_id is no longer calculated in the oslo.messaging notifier api: \n\nhttps://github.com/openstack/oslo.messaging/blob/master/oslo/messaging/notify/notifier.py",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94EA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T20:14:07Z",
+      "side": 1,
+      "message": "refactor this to \u0027pycadf_host.Host\u0027",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
