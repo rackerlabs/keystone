@@ -19,7 +19,6 @@ import six
 from keystone.catalog.backends import kvs
 from keystone.catalog import core
 from keystone import config
-from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
@@ -122,7 +121,33 @@ class Catalog(kvs.Catalog):
         return o
 
     def get_v3_catalog(self, user_id, tenant_id, metadata=None):
-        raise exception.NotImplemented()
+        v2_catalog = self.get_catalog(user_id, tenant_id, metadata=metadata)
+        v3_catalog = []
+
+        for region_name, region in six.iteritems(v2_catalog):
+            for service_type, service in six.iteritems(region):
+                service_v3 = {
+                    'type': service_type,
+                    'endpoints': []
+                }
+
+                for attr, value in six.iteritems(service):
+                    # Attributes that end in URL are interfaces.
+                    if attr.endswith('URL'):
+                        v3_interface = attr[:-len('URL')]
+                        service_v3['endpoints'].append({
+                            'interface': v3_interface,
+                            'region': region_name,
+                            'url': value,
+                        })
+                        continue
+
+                    # Other attributes are copied to the service.
+                    service_v3[attr] = value
+
+                v3_catalog.append(service_v3)
+
+        return v3_catalog
 
 
 @versionutils.deprecated(
