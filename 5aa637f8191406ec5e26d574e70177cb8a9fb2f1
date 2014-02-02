@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/94gs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T14:48:16Z",
+      "side": 1,
+      "message": "not sure what the docimpact is since according to the first paragraph of the commit message the documentation says this already.",
+      "revId": "5aa637f8191406ec5e26d574e70177cb8a9fb2f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94gk\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T14:48:16Z",
+      "side": 1,
+      "message": "this should be returning 403 Forbidden and not 400 Bad Request.",
+      "revId": "5aa637f8191406ec5e26d574e70177cb8a9fb2f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94gg\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2036,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T14:48:16Z",
+      "side": 1,
+      "message": "why can\u0027t an unscoped trust be created anymore?",
+      "revId": "5aa637f8191406ec5e26d574e70177cb8a9fb2f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94gc\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T14:48:16Z",
+      "side": 1,
+      "message": "This should be a 403 Forbidden response and not a 400 Bad Request.",
+      "revId": "5aa637f8191406ec5e26d574e70177cb8a9fb2f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
