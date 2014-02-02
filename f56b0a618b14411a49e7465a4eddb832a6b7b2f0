@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/95pY\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T04:13:24Z",
+      "side": 1,
+      "message": "(NIT): update docstring \u0027filter\u0027",
+      "revId": "f56b0a618b14411a49e7465a4eddb832a6b7b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95pQ\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T04:13:24Z",
+      "side": 1,
+      "message": "Update docstrings",
+      "revId": "f56b0a618b14411a49e7465a4eddb832a6b7b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95o8\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T04:13:24Z",
+      "side": 1,
+      "message": "s/invalid/Invalid/",
+      "revId": "f56b0a618b14411a49e7465a4eddb832a6b7b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95o0\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T04:13:24Z",
+      "side": 1,
+      "message": "Remove whitespace errors",
+      "revId": "f56b0a618b14411a49e7465a4eddb832a6b7b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95ow\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T04:13:24Z",
+      "side": 1,
+      "message": "Remove trailing whitespace",
+      "revId": "f56b0a618b14411a49e7465a4eddb832a6b7b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95oo\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T04:13:24Z",
+      "side": 1,
+      "message": "Update docstrings to be consistent with method signature.",
+      "revId": "f56b0a618b14411a49e7465a4eddb832a6b7b2f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
