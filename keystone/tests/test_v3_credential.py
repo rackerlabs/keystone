@@ -289,10 +289,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
             '/ec2tokens',
             body={'ec2Credentials': sig_ref},
             expected_status=200)
-        # FIXME(shardy): ec2tokens is available via both v3 and v2
-        # paths, but it returns a v2 token in both cases, so we can
-        # only do a sanity assertion here for now.
-        self.assertIsNotNone(r.result['access']['token']['id'])
+        self.assertValidTokenResponse(r)
 
     def test_ec2_credential_signature_validate(self):
         """Test signature validation with a v3 ec2 credential."""
