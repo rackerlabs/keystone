@@ -34,6 +34,24 @@
       "revId": "355937d5a6777b8b557ab75232f4d8b9da4219fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94No\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 964
+      },
+      "writtenOn": "2014-02-02T18:10:11Z",
+      "side": 1,
+      "message": "For some reason Chrome won\u0027t let me inline on the red side, but it\u0027s removal of the section header Exchanging User Information that concerns me.",
+      "parentUuid": "AAAAUH/94Pw\u003d",
+      "revId": "355937d5a6777b8b557ab75232f4d8b9da4219fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
