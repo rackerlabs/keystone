@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/94mw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T13:38:35Z",
+      "side": 1,
+      "message": "I suggest split it out into a separate commit.",
+      "parentUuid": "AAAAUH/94q4\u003d",
+      "revId": "638c01cc06b2b754038b00edb29688e949903c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96SE\u003d",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 4
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Yes, but it is depends... Because several functions from `migration.py`, which call the `find_migrate_repo`  function, have optional keyword argument `package`, so they can pass `None` directly to the function. In this case line 107 might be cause of `AttributeError`. So, yes, it can be default on line 104, but only with changing of interfaces of `migration` functions.",
       "parentUuid": "AAAAUH/96SE\u003d",
+      "revId": "638c01cc06b2b754038b00edb29688e949903c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94mo\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T13:38:35Z",
+      "side": 1,
+      "message": "ok, makes sense.",
+      "parentUuid": "AAAAUH/94qk\u003d",
       "revId": "638c01cc06b2b754038b00edb29688e949903c56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
