@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/94WA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T19:42:33Z",
+      "side": 1,
+      "message": "(NIT): even though this is a private method, could the docstrings for the parameters be added?",
+      "revId": "9091e4ca813da3179f8d0eba0df2bebfd88bd818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94R0\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T19:42:33Z",
+      "side": 1,
+      "message": "Extra line here?",
+      "revId": "9091e4ca813da3179f8d0eba0df2bebfd88bd818",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

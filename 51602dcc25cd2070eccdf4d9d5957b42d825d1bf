@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/94Rw\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-02T19:42:33Z",
+      "side": 0,
+      "message": "Why remove this line?",
+      "revId": "51602dcc25cd2070eccdf4d9d5957b42d825d1bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
