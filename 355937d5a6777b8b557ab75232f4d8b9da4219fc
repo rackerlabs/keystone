@@ -16,6 +16,24 @@
       "revId": "355937d5a6777b8b557ab75232f4d8b9da4219fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94Pw\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T17:47:36Z",
+      "side": 1,
+      "message": "Added link to http://docs.openstack.org/developer/python-keystoneclient/middlewarearchitecture.html\n\nI\u0027m not sure what the v1 legacy information is that you\u0027re referring to... which lines are you concerned about? If it\u0027s the WSGI standard, that\u0027s on the keystoneclient page.",
+      "parentUuid": "AAAAUH/94VI\u003d",
+      "revId": "355937d5a6777b8b557ab75232f4d8b9da4219fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
