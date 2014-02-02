@@ -52,6 +52,24 @@
       "revId": "355937d5a6777b8b557ab75232f4d8b9da4219fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/94J4\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-02T19:15:12Z",
+      "side": 1,
+      "message": "Anne - the \"Exchanging User Information\" is in the python-keystoneclient version of the file that replaces this one -- http://docs.openstack.org/developer/python-keystoneclient/middlewarearchitecture.html#exchanging-user-information\n\nSo I don\u0027t think we\u0027re losing anything.\n\nAlso, I\u0027ve submitted a change to update that section with the correct information -- https://review.openstack.org/#/c/70617/\n\nSo removing this extra version of the file will make it easier to maintain since now it\u0027s not in 3 places.",
+      "parentUuid": "AAAAUH/94No\u003d",
+      "revId": "355937d5a6777b8b557ab75232f4d8b9da4219fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
