@@ -25,6 +25,8 @@ from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource
 
+from six.moves import filter  # flake8: noqa
+
 from keystone.openstack.common import log
 
 notifier_opts = [

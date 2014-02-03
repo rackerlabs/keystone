@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from six.moves import filter  # flake8: noqa
+
 from keystone.common import kvs
 from keystone.common import utils
 from keystone import exception

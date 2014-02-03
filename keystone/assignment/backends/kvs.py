@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from six.moves import filter  # flake8: noqa
+
 from keystone import assignment
 from keystone import clean
 from keystone.common import kvs
@@ -69,7 +71,7 @@ class Assignment(kvs.Base, assignment.Driver):
         self.get_domain(domain_id)
         project_refs = filter(lambda x: domain_id in x['domain_id'],
                               project_refs)
-        return project_refs
+        return list(project_refs)
 
     def get_project_by_name(self, tenant_name, domain_id):
         try:
