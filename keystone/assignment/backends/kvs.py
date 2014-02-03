@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from six.moves import filter
+
 from keystone import assignment
 from keystone import clean
 from keystone.common import dependency
@@ -47,7 +49,7 @@ class Assignment(kvs.Base, assignment.Driver):
         self.get_domain(domain_id)
         project_refs = filter(lambda x: domain_id in x['domain_id'],
                               project_refs)
-        return project_refs
+        return list(project_refs)
 
     def get_project_by_name(self, tenant_name, domain_id):
         try:
@@ -56,6 +58,7 @@ class Assignment(kvs.Base, assignment.Driver):
             raise exception.ProjectNotFound(project_id=tenant_name)
 
     def list_user_ids_for_project(self, tenant_id):
+        # TODO(dstanek): make this moar awesome
         self.get_project(tenant_id)
         user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
         user_refs = [self.db.get(key) for key in user_keys]
