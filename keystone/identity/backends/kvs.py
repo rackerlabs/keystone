@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from six import moves
+
 from keystone.common import kvs
 from keystone.common import utils
 from keystone import exception
@@ -188,10 +190,11 @@ class Identity(kvs.Base, identity.Driver):
 
     def list_users_in_group(self, group_id, hints):
         self.get_group(group_id)
-        user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
+        user_keys = moves.filter(lambda x: x.startswith("user-"),
+                                 self.db.keys())
         user_refs = [self.db.get(key) for key in user_keys]
-        user_refs_for_group = filter(lambda x: group_id in x['groups'],
-                                     user_refs)
+        user_refs_for_group = moves.filter(lambda x: group_id in x['groups'],
+                                           user_refs)
         return [identity.filter_user(x) for x in user_refs_for_group]
 
     def list_groups_for_user(self, user_id, hints):
@@ -276,7 +279,8 @@ class Identity(kvs.Base, identity.Driver):
         except exception.NotFound:
             raise exception.GroupNotFound(group_id=group_id)
         # Delete any entries in the group lists of all users
-        user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
+        user_keys = moves.filter(lambda x: x.startswith("user-"),
+                                 self.db.keys())
         user_refs = [self.db.get(key) for key in user_keys]
         for user_ref in user_refs:
             groups = set(user_ref.get('groups', []))

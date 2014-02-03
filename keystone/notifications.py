@@ -24,6 +24,7 @@ from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource
+from six import moves
 
 from keystone.openstack.common import log
 
@@ -137,7 +138,7 @@ def register_event_callback(event, resource_type, callbacks):
                     '`%(event)s`.')
             callback_info = _get_callback_info(callback)
             callback_str = '.'.join(
-                filter(lambda i: i is not None, callback_info))
+                moves.filter(lambda i: i is not None, callback_info))
             event_str = '.'.join(['identity', resource_type, event])
             LOG.info(msg, {'callback': callback_str, 'event': event_str})
 

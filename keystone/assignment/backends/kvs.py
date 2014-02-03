@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from six import moves
+
 from keystone import assignment
 from keystone import clean
 from keystone.common import kvs
@@ -57,8 +59,8 @@ class Assignment(kvs.Base, assignment.Driver):
             raise exception.ProjectNotFound(project_id=tenant_id)
 
     def _build_project_refs(self):
-        project_keys = filter(lambda x: x.startswith("tenant-"),
-                              self.db.keys())
+        project_keys = moves.filter(lambda x: x.startswith("tenant-"),
+                                    self.db.keys())
         return [self.db.get(key) for key in project_keys]
 
     def list_projects(self, hints):
@@ -67,9 +69,9 @@ class Assignment(kvs.Base, assignment.Driver):
     def list_projects_in_domain(self, domain_id):
         project_refs = self._build_project_refs()
         self.get_domain(domain_id)
-        project_refs = filter(lambda x: domain_id in x['domain_id'],
-                              project_refs)
-        return project_refs
+        project_refs = moves.filter(lambda x: domain_id in x['domain_id'],
+                                    project_refs)
+        return list(project_refs)
 
     def get_project_by_name(self, tenant_name, domain_id):
         try:
@@ -82,8 +84,8 @@ class Assignment(kvs.Base, assignment.Driver):
 
         user_ids = set()
 
-        metadata_keys = filter(lambda x: x.startswith("metadata_user-"),
-                               self.db.keys())
+        metadata_keys = moves.filter(lambda x: x.startswith("metadata_user-"),
+                                     self.db.keys())
         for key in metadata_keys:
             _, meta_project_or_domain_id, meta_user_id = key.split('-')
 
@@ -135,8 +137,8 @@ class Assignment(kvs.Base, assignment.Driver):
 
         project_ids = set()
 
-        metadata_keys = filter(lambda x: x.startswith('metadata_user-'),
-                               self.db.keys())
+        metadata_keys = moves.filter(lambda x: x.startswith('metadata_user-'),
+                                     self.db.keys())
         for key in metadata_keys:
             _, meta_project_or_domain_id, meta_user_id = key.split('-')
 
@@ -215,8 +217,8 @@ class Assignment(kvs.Base, assignment.Driver):
 
         """
         assignment_list = []
-        metadata_keys = filter(lambda x: x.startswith('metadata_user-'),
-                               self.db.keys())
+        metadata_keys = moves.filter(lambda x: x.startswith('metadata_user-'),
+                                     self.db.keys())
         for key in metadata_keys:
             template = {}
             _, meta_project_or_domain_id, template['user_id'] = key.split('-')
@@ -234,8 +236,8 @@ class Assignment(kvs.Base, assignment.Driver):
                 role_assignment['role_id'] = r
                 assignment_list.append(role_assignment)
 
-        metadata_keys = filter(lambda x: x.startswith('metadata_group-'),
-                               self.db.keys())
+        metadata_keys = moves.filter(lambda x: x.startswith('metadata_group-'),
+                                     self.db.keys())
         for key in metadata_keys:
             template = {}
             _, meta_project_or_domain_id, template['group_id'] = key.split('-')
@@ -371,8 +373,8 @@ class Assignment(kvs.Base, assignment.Driver):
     def delete_role(self, role_id):
         self.get_role(role_id)
 
-        metadata_keys = filter(lambda x: x.startswith('metadata_user-'),
-                               self.db.keys())
+        metadata_keys = moves.filter(lambda x: x.startswith('metadata_user-'),
+                                     self.db.keys())
         for key in metadata_keys:
             _, meta_project_or_domain_id, meta_user_id = key.split('-')
             try:
@@ -387,8 +389,8 @@ class Assignment(kvs.Base, assignment.Driver):
             except exception.NotFound:
                 pass
 
-        metadata_keys = filter(lambda x: x.startswith('metadata_group-'),
-                               self.db.keys())
+        metadata_keys = moves.filter(lambda x: x.startswith('metadata_group-'),
+                                     self.db.keys())
         for key in metadata_keys:
             _, meta_project_or_domain_id, meta_group_id = key.split('-')
             try:
