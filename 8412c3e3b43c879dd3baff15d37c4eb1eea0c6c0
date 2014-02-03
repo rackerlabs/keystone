@@ -34,6 +34,24 @@
       "revId": "8412c3e3b43c879dd3baff15d37c4eb1eea0c6c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9z9g\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-03T18:02:19Z",
+      "side": 1,
+      "message": "I actually like the suggestion.  I\u0027m pretty sure you can set additionalProperties to False and let id be an optional property.  I would err on being overly strict because it\u0027s usually more backward compatible to remove restrictions than to add them.",
+      "parentUuid": "AAAAUH/98lw\u003d",
+      "revId": "8412c3e3b43c879dd3baff15d37c4eb1eea0c6c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
