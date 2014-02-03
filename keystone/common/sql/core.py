@@ -87,7 +87,7 @@ def initialize_decorator(init):
                     column = attr.property.columns[0]
                     if isinstance(column.type, String):
                         if not isinstance(v, six.text_type):
-                            v = str(v)
+                            v = _("%s") % v
                         if column.type.length and \
                                 column.type.length < len(v):
                             raise exception.StringLengthExceeded(
@@ -271,13 +271,14 @@ def handle_conflicts(conflict_type='object'):
             try:
                 return method(*args, **kwargs)
             except db_exception.DBDuplicateEntry as e:
-                raise exception.Conflict(type=conflict_type, details=str(e))
+                raise exception.Conflict(
+                    type=conflict_type, details=_("%s") % e)
             except db_exception.DBError as e:
                 # TODO(blk-u): inspecting inner_exception breaks encapsulation;
                 # oslo.db should provide exception we need.
                 if isinstance(e.inner_exception, IntegrityError):
                     raise exception.Conflict(type=conflict_type,
-                                             details=str(e))
+                                             details=_("%s") % e)
                 raise
 
         return wrapper
