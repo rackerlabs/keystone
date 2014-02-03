@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/96F4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 27
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "ouch, missed that one!  Thanks.",
+      "parentUuid": "AAAAUH/96WI\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96Wo\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 27
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "Henry asked -- \"would it be OK if I came back in and added that in a later path?\" -- I\u0027m OK with this, but then request that this be changed to a TODO and explain that this is going to change in the future... seems like it would be just as easy to just pass on the hints now.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96BU\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "I have now implemented this.",
+      "parentUuid": "AAAAUH/96Wo\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/96BI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96V4\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96Vs\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 27
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "the use of `limited` here is unnecessarily confusing... readers have to examine the entire function to figure out that limited is always False here.  Suggest define an enum or define a couple of constants for LIMITED \u003d True, NOT_LIMITED \u003d False and return those directly rather than reassigning `limited`.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/96BM\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Nice idea.  Done.",
+      "parentUuid": "AAAAUH/96Vs\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9ymA\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96WQ\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96VY\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 27
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "Why is the deserializer affected by this? Are clients sending the server truncated lists?",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95/U\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "It is used in our testing structure (we deserializes the results to check them)",
+      "parentUuid": "AAAAUH/96VY\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/95/Q\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "I was just following the equivalent above for links….although I agree, I\u0027m not sure what else we can do.  I\u0027ll reword the comments.",
+      "parentUuid": "AAAAUH/96VU\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96VQ\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 27
@@ -132,6 +258,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "wrap string in _() for translation.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95/I\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96VQ\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/95+8\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "as above.",
+      "parentUuid": "AAAAUH/96VM\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96VA\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 27
@@ -166,6 +328,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "I don\u0027t see how hints could be None here.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95+w\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "AAAAUH/96VA\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/95+o\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96U8\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96UM\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 27
@@ -200,6 +398,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "the call to do the cleanup for these should be set here rather than done later... because if one of these fails then the cleanup for the other ones won\u0027t be done.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95+c\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4117,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96UM\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/95+Y\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96Uk\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96UA\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 27
@@ -234,6 +468,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "I\u0027d prefer this was separated into 3 tests then it would be easier to tell which one wasn\u0027t working.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95+U\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96UA\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/95+Q\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96UE\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96T4\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 27
@@ -268,6 +538,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "the identity option is set to 5 for the next time through the loop... isn\u0027t that going to lead to the incorrect result?",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95+M\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 4155,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "fixed by making these separate tests",
+      "parentUuid": "AAAAUH/96T4\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/95+I\u003d",
+        "filename": "keystone/tests/test_driver_hints.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96WM\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96Tk\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 27
@@ -302,6 +608,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "the addCleanups for these things should be done here rather than later because that will ensure they\u0027re cleaned up even if a later create_service fails.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yl8\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96Tk\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9yl4\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96Tg\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96TU\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 27
@@ -342,6 +684,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9yl0\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/96TU\u003d",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96TQ\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 27
@@ -353,6 +713,24 @@
       "writtenOn": "2014-02-01T15:15:44Z",
       "side": 1,
       "message": "suggest use assertIs(r.result.get(\u0027truncated\u0027), True) then it\u0027ll also validate that we\u0027re returning a Boolean and not a string or something.",
+      "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yfo\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-03T22:56:24Z",
+      "side": 1,
+      "message": "Done…and that actually caught a bug in the xml handling! Nice suggestion!",
+      "parentUuid": "AAAAUH/96TQ\u003d",
       "revId": "f5b90effeb7db975604339ab1c3505ad77846d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
