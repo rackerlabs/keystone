@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9yhg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T22:26:00Z",
+      "side": 1,
+      "message": "the help text here should match what\u0027s in the sample config file.\n\nSuggest change \"wsgi sockets\" to \"server sockets\" since that\u0027s what they\u0027re called at line 54.\n\nAlternatively, I\u0027d suggest \"listening sockets\".",
+      "revId": "140e3ff1e2e0a4700dff5890585c08e58a5d031e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
