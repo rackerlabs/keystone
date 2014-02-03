@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2012 OpenStack Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -15,11 +16,13 @@
 import uuid
 
 import sqlalchemy
+from sqlalchemy import exc
 
 from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
+from keystone.openstack.common.db import exception as db_exception
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common.fixture import moxstubout
 from keystone import tests
@@ -490,3 +493,48 @@ class SqlLimitTests(SqlTests, test_backend.LimitTests):
     def setUp(self):
         super(SqlLimitTests, self).setUp()
         test_backend.LimitTests.setUp(self)
+
+
+class FakeTable(sql.ModelBase):
+    __tablename__ = 'test_table'
+    col = sql.Column(sql.String(32), primary_key=True)
+
+    @sql.handle_conflicts('keystone')
+    def insert(self):
+        raise db_exception.DBDuplicateEntry
+
+    @sql.handle_conflicts('keystone')
+    def update(self):
+        raise db_exception.DBError(
+            inner_exception=exc.IntegrityError('a', 'a', 'a'))
+
+    @sql.handle_conflicts('keystone')
+    def lookup(self):
+        raise KeyError
+
+
+class SqlDecorators(tests.TestCase):
+
+    def setUp(self):
+        super(SqlDecorators, self).setUp()
+        self.test_table = FakeTable
+
+    def test_initialization_fail(self):
+        self.assertRaises(exception.StringLengthExceeded,
+                          self.test_table, col='a' * 64)
+
+    def test_initialization(self):
+        tt = self.test_table(col='a')
+        self.assertEqual('a', tt.col)
+
+    def test_non_ascii_init(self):
+        # NOTE(I159): Non ASCII characters must cause UnicodeDecodeError
+        # if encoding does not provided explicitly.
+        self.assertRaises(UnicodeDecodeError, self.test_table, col='Я')
+
+    def test_conflict_happend(self):
+        self.assertRaises(exception.Conflict, self.test_table().insert)
+        self.assertRaises(exception.Conflict, self.test_table().update)
+
+    def test_not_conflict_error(self):
+        self.assertRaises(KeyError, self.test_table().lookup)
