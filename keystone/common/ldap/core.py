@@ -675,7 +675,7 @@ class EnabledEmuMixIn(BaseLdap):
 
     * $name_enabled_emulation - boolean, on/off
     * $name_enabled_emulation_dn - DN of that groupOfNames, default is
-      cn=enabled_$name,$tree_dn
+      cn=enabled_${name}s,$tree_dn
 
     Where $name is self.options_name ('user' or 'tenant'), $tree_dn is
     self.tree_dn.
