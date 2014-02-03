@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9zM8\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-03T20:10:54Z",
+      "side": 1,
+      "message": "Why we can\u0027t specify a version for Paste too?",
+      "revId": "b9cc9a3bfb3ea801ba6284cc530a888d2762d610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zM0\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-03T20:10:54Z",
+      "side": 1,
+      "message": "Same for this library, can we specify a version?",
+      "revId": "b9cc9a3bfb3ea801ba6284cc530a888d2762d610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
