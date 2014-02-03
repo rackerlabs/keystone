@@ -255,6 +255,19 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.trust_api.delete_trust(trust_ref['id'])
         self._assertLastNotify(trust_ref['id'], 'deleted', 'OS-TRUST:trust')
 
+    def test_update_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertLastNotify(domain_ref['id'], 'updated', 'domain')
+
+    def test_disable_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.identity_api.create_domain(domain_ref['id'], domain_ref)
+        domain_ref['enabled'] = False
+        self.identity_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertLastNotify(domain_ref['id'], 'disabled', 'domain')
+
     def test_update_group(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
         self.identity_api.create_group(group_ref['id'], group_ref)
@@ -266,6 +279,13 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self.assignment_api.update_project(project_ref['id'], project_ref)
         self._assertLastNotify(project_ref['id'], 'updated', 'project')
+
+    def test_disable_project(self):
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        project_ref['enabled'] = False
+        self.assignment_api.update_project(project_ref['id'], project_ref)
+        self._assertLastNotify(project_ref['id'], 'disabled', 'project')
 
     def test_update_role(self):
         role_ref = self.new_role_ref()
