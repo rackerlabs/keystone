@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9yP4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:35:25Z",
+      "side": 1,
+      "message": "change \"have a\" to \"have\"",
+      "revId": "6bc088689477cf32ce20223f8afce0ebde5ea4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yPs\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:35:25Z",
+      "side": 1,
+      "message": "seems unnecessary to have MAPPING_EXTRA_RULES_PROPS in a separate file since it\u0027s only used once, and it\u0027s also not even valid.",
+      "revId": "6bc088689477cf32ce20223f8afce0ebde5ea4eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
