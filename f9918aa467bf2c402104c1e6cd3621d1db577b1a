@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/91Ew\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-02-03T15:36:06Z",
+      "side": 1,
+      "message": "s/issuing with/issue with/",
+      "revId": "f9918aa467bf2c402104c1e6cd3621d1db577b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/90+Y\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-02-03T15:36:06Z",
+      "side": 1,
+      "message": "I don\u0027t believe these changes are necessary, and dependency injection like this really should be done entirely with mocks or stubs, not global constants like this.",
+      "revId": "f9918aa467bf2c402104c1e6cd3621d1db577b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/909o\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-02-03T15:36:06Z",
+      "side": 1,
+      "message": "Don\u0027t need this...",
+      "revId": "f9918aa467bf2c402104c1e6cd3621d1db577b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
