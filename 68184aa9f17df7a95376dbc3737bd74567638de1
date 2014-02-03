@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/91vk\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-03T12:56:33Z",
+      "side": 1,
+      "message": "flake8 got claims to `_(v)`.",
+      "revId": "68184aa9f17df7a95376dbc3737bd74567638de1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
