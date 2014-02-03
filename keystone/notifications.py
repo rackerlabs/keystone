@@ -21,6 +21,8 @@ import logging
 from keystone.openstack.common import log
 from keystone.openstack.common.notifier import api as notifier_api
 
+ALLOW_FAILURES = True
+
 
 LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
@@ -155,3 +157,6 @@ def _send_notification(operation, resource_type, resource_id):
         LOG.exception(
             _('Failed to send %(res_id)s %(event_type)s notification'),
             {'res_id': resource_id, 'event_type': event_type})
+
+        if not ALLOW_FAILURES:
+            raise

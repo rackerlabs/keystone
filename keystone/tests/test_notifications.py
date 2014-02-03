@@ -122,6 +122,7 @@ class NotificationsTestCase(tests.TestCase):
         super(NotificationsTestCase, self).setUp()
         fixture = self.useFixture(moxstubout.MoxStubout())
         self.stubs = fixture.stubs
+        self.stubs.Set(notifications, 'ALLOW_FAILURES', False)
 
     def test_send_notification(self):
         """Test the private method _send_notification to ensure event_type,
@@ -131,6 +132,7 @@ class NotificationsTestCase(tests.TestCase):
         resource = uuid.uuid4().hex
         resource_type = EXP_RESOURCE_TYPE
         operation = 'created'
+        self.called = False
 
         # NOTE(ldbragst): Even though notifications._send_notification doesn't
         # contain logic that creates cases, this is suppose to test that
@@ -140,15 +142,17 @@ class NotificationsTestCase(tests.TestCase):
         # also noted in the /keystone/notifications.py module. This test
         # ensures and maintains these conditions.
         def fake_notify(context, publisher_id, event_type, priority, payload):
-            exp_event_type = 'identity.project.created'
+            exp_event_type = 'identity.%s.created' % resource_type
             self.assertEqual(exp_event_type, event_type)
             exp_context = {}
             self.assertEqual(exp_context, context)
-            exp_payload = {'resource_info': 'some_resource_id'}
+            exp_payload = {'resource_info': resource}
             self.assertEqual(exp_payload, payload)
+            self.called = True
 
         self.stubs.Set(notifier_api, 'notify', fake_notify)
-        notifications._send_notification(resource, resource_type, operation)
+        notifications._send_notification(operation, resource_type, resource)
+        self.assertTrue(self.called)
 
 
 class NotificationsForEntities(test_v3.RestfulTestCase):
