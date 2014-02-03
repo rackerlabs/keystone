@@ -25,7 +25,7 @@ from keystone.openstack.common.notifier import api as notifier_api
 LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
 # a new action is supported.
-ACTIONS = frozenset(['created', 'deleted', 'updated'])
+ACTIONS = frozenset(['created', 'deleted', 'disabled', 'updated'])
 # resource types that can be notified
 SUBSCRIBERS = {}
 
@@ -39,10 +39,11 @@ class ManagerNotificationWrapper(object):
     :param resource_type: type of resource being affected
     :param host: host of the resource (optional)
     """
-    def __init__(self, operation, resource_type, host=None):
+    def __init__(self, operation, resource_type, host=None, public=True):
         self.operation = operation
         self.resource_type = resource_type
         self.host = host
+        self.public = public
 
     def __call__(self, f):
         def wrapper(*args, **kwargs):
@@ -52,11 +53,12 @@ class ManagerNotificationWrapper(object):
             except Exception:
                 raise
             else:
-                _send_notification(
+                send_notification(
                     self.operation,
                     self.resource_type,
                     args[1],  # f(self, resource_id, ...)
-                    self.host)
+                    self.host,
+                    public=self.public)
             return result
 
         return wrapper
@@ -70,6 +72,11 @@ def created(*args, **kwargs):
 def updated(*args, **kwargs):
     """Decorator to send notifications for ``Manager.update_*`` methods."""
     return ManagerNotificationWrapper('updated', *args, **kwargs)
+
+
+def disabled(*args, **kwargs):
+    """Decorator to send notifications for ``Manager.update_*`` methods."""
+    return ManagerNotificationWrapper('disabled', *args, **kwargs)
 
 
 def deleted(*args, **kwargs):
@@ -131,7 +138,8 @@ def notify_event_callbacks(service, resource_type, operation, payload):
                 cb(service, resource_type, operation, payload)
 
 
-def _send_notification(operation, resource_type, resource_id, host=None):
+def send_notification(operation, resource_type, resource_id,
+                      host=None, public=True):
     """Send notification to inform observers about the affected resource.
 
     This method doesn't raise an exception when sending the notification fails.
@@ -140,6 +148,9 @@ def _send_notification(operation, resource_type, resource_id, host=None):
     :param resource_type: type of resource being operated on
     :param resource_id: ID of resource being operated on
     :param host: resource host
+    :param public:  if True, the event will be sent to the notifier API
+                    if False, the event will only be sent via
+                    notify_event_callbacks to in process listeners
     """
     context = {}
     payload = {'resource_info': resource_id}
@@ -152,10 +163,11 @@ def _send_notification(operation, resource_type, resource_id, host=None):
 
     notify_event_callbacks(service, resource_type, operation, payload)
 
-    try:
-        notifier_api.notify(
-            context, publisher_id, event_type, notifier_api.INFO, payload)
-    except Exception:
-        LOG.exception(
-            _('Failed to send %(res_id)s %(event_type)s notification'),
-            {'res_id': resource_id, 'event_type': event_type})
+    if public:
+        try:
+            notifier_api.notify(
+                context, publisher_id, event_type, notifier_api.INFO, payload)
+        except Exception:
+            LOG.exception(
+                          _('Failed to send %(res_id)s %(event_type)s notification'),
+                          {'res_id': resource_id, 'event_type': event_type})
