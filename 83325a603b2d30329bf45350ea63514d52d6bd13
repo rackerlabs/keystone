@@ -67,6 +67,40 @@
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/90q4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-02-03T16:26:24Z",
+      "side": 1,
+      "message": "targetId is not needed here as target and targetId values have XOR relationship. (Resource obj will generate an id attribute)\n\nwe\u0027re also missing an \u0027observer\u0027 attribute value. since it\u0027s Keystone that is reporting event, i think creating something along the lines of observer\u003dresource.Resource(typeURI\u003d\u0027service/security\u0027) may work... you can also add additional Keystone descriptor values to the Resource that may be relevant.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/90nk\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-02-03T16:26:24Z",
+      "side": 1,
+      "message": "might be better to stubout notifier_api.notify() rather than _send_notification as it currently stubouts the CADF event generation and only tests that the wrapper is called.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
