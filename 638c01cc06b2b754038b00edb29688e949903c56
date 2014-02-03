@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/91mY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-03T13:37:10Z",
+      "side": 1,
+      "message": "This is absolutely different function compared with an original one. So I do not think it is good idea to change the way of error raising of the original function and in the next patch delete it without any traces. But if you think it is ok, no problem — I\u0027ll do it!",
+      "parentUuid": "AAAAUH/94mw\u003d",
+      "revId": "638c01cc06b2b754038b00edb29688e949903c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96SE\u003d",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 4
