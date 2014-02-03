@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9yQM\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:33:19Z",
+      "side": 1,
+      "message": "would be nice if could prove that the failure was because \"rules\" was missing... e.g., something in the response... or call a function directly that\u0027s able to indicate what was missing.",
+      "revId": "e40ba40307e125b3d1d333de2cbb0433a26a1c5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
