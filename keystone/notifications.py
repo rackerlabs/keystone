@@ -39,9 +39,10 @@ class ManagerNotificationWrapper(object):
     :param resource_type: type of resource being affected
     :param host: host of the resource (optional)
     """
-    def __init__(self, operation, resource_type, host=None):
+    def __init__(self, operation, resource_type, host=None, arg_index=1):
         self.operation = operation
         self.resource_type = resource_type
+        self.arg_index = arg_index
         self.host = host
 
     def __call__(self, f):
@@ -55,7 +56,7 @@ class ManagerNotificationWrapper(object):
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    args[1],  # f(self, resource_id, ...)
+                    args[self.arg_index],  # f(self, resource_id, ...)
                     self.host)
             return result
 
