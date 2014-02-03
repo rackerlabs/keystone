@@ -161,6 +161,7 @@ class NotificationsTestCase(tests.TestCase):
 class NotificationsForEntities(test_v3.RestfulTestCase):
     def setUp(self):
         super(NotificationsForEntities, self).setUp()
+        self._notifications = []
 
         self.exp_resource_id = None
         self.exp_operation = None
@@ -168,10 +169,12 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.send_notification_called = False
 
         def fake_notify(operation, resource_type, resource_id, host=None):
-            self.exp_resource_id = resource_id
-            self.exp_operation = operation
-            self.exp_resource_type = resource_type
-            self.send_notification_called = True
+            obj = {
+                'exp_resource_id': resource_id,
+                'exp_operation': operation,
+                'exp_resource_type': resource_type,
+                'send_notification_called': True}
+            self._notifications.append(obj)
 
         fixture = self.useFixture(moxstubout.MoxStubout())
         self.stubs = fixture.stubs
@@ -179,10 +182,21 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.stubs.Set(notifications, '_send_notification', fake_notify)
 
     def _assertLastNotify(self, resource_id, operation, resource_type):
-        self.assertEqual(self.exp_operation, operation)
-        self.assertEqual(self.exp_resource_id, resource_id)
-        self.assertEqual(self.exp_resource_type, resource_type)
-        self.assertTrue(self.send_notification_called)
+        self.assertTrue(len(self._notifications) > 0)
+        obj = self._notifications[-1]
+        self.assertEqual(obj['exp_operation'], operation)
+        self.assertEqual(obj['exp_resource_id'], resource_id)
+        self.assertEqual(obj['exp_resource_type'], resource_type)
+        self.assertTrue(obj['send_notification_called'])
+
+    def _assertNotifyNotSent(self, resource_id, operation, resource_type):
+        obj = {
+            'exp_resource_id': resource_id,
+            'exp_operation': operation,
+            'exp_resource_type': resource_type,
+            'send_notification_called': True}
+        for note in self._notifications:
+            self.assertNotEqual(obj, note)
 
     def test_create_group(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
@@ -255,6 +269,19 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.trust_api.delete_trust(trust_ref['id'])
         self._assertLastNotify(trust_ref['id'], 'deleted', 'OS-TRUST:trust')
 
+    def test_update_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertLastNotify(domain_ref['id'], 'updated', 'domain')
+
+    def test_disable_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.identity_api.create_domain(domain_ref['id'], domain_ref)
+        domain_ref['enabled'] = False
+        self.identity_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertLastNotify(domain_ref['id'], 'disabled', 'domain')
+
     def test_update_group(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
         self.identity_api.create_group(group_ref['id'], group_ref)
@@ -266,6 +293,21 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self.assignment_api.update_project(project_ref['id'], project_ref)
         self._assertLastNotify(project_ref['id'], 'updated', 'project')
+
+    def test_disable_project(self):
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        project_ref['enabled'] = False
+        self.assignment_api.update_project(project_ref['id'], project_ref)
+        self._assertLastNotify(project_ref['id'], 'disabled', 'project')
+
+    def test_update_project_does_not_send_disable(self):
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        project_ref['enabled'] = True
+        self.assignment_api.update_project(project_ref['id'], project_ref)
+        self._assertLastNotify(project_ref['id'], 'updated', 'project')
+        self._assertNotifyNotSent(project_ref['id'], 'disabled', 'project')
 
     def test_update_role(self):
         role_ref = self.new_role_ref()
