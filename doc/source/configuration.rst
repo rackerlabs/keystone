@@ -1332,6 +1332,26 @@ specified classes in the LDAP module so you can configure them like::
   role_member_attribute    = roleOccupant
   role_attribute_ignore    =
 
+
+Enabled Emulation
+-----------------
+
+Some directory servers do not provide any enabled attribute. For these
+servers, the user_enabled_emulation and tenant_enabled_emulation
+attributes have been created. The attributes work by using a groupOfNames
+and adding whichever users or tenants that you want enabled to the respective
+group. For example::
+
+  [ldap]
+  user_enabled_emulation = True
+  user_enabled_emulation_dn = cn=enabled_users,cn=groups,dc=openstack,dc=org
+
+The default values for user and tenant enabled emulation is enabled_users
+and enabled_tenants respectively.
+
+Secure Connection
+-----------------
+
 If you are using a directory server to provide the Identity service,
 it is strongly recommended that you utilize a secure connection from
 Keystone to the directory server.  In addition to supporting ldaps,  Keystone
