@@ -25,10 +25,10 @@ To enable the OAuth1 extension:
     [oauth1]
     driver = keystone.contrib.oauth1.backends.sql.OAuth1
 
-2. Add the ``oauth1_extension`` filter to the ``api_v3`` pipeline in ``keystone-paste.ini``. For example::
+2. Add the ``oauth_extension`` filter to the ``api_v3`` pipeline in ``keystone-paste.ini``. For example::
 
     [pipeline:api_v3]
-    pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension s3_extension oauth1_extension service_v3
+    pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension s3_extension oauth_extension service_v3
 
 3. Create the OAuth1 extension tables if using the provided SQL backend. For example::
 
