@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from six.moves import filter  # flake8: noqa
+
 from keystone.common import kvs
 from keystone.common import utils
 from keystone import exception
@@ -189,6 +191,7 @@ class Identity(kvs.Base, identity.Driver):
         self.update_user(user_id, {'groups': list(groups)})
 
     def list_users_in_group(self, group_id, hints):
+        # TODO(dstanek): make this more efficient
         self.get_group(group_id)
         user_keys = filter(lambda x: x.startswith("user-"), self.db.keys())
         user_refs = [self.db.get(key) for key in user_keys]

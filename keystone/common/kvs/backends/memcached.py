@@ -23,6 +23,7 @@ import time
 
 from dogpile.cache import api
 from dogpile.cache.backends import memcached
+from six.moves import filter  # flake8: noqa
 
 from keystone.common import manager
 from keystone import config
@@ -34,10 +35,10 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 NO_VALUE = api.NO_VALUE
 
-
-VALID_DOGPILE_BACKENDS = filter(
+# dogpile expects a list, not a generator
+VALID_DOGPILE_BACKENDS = list(filter(
     lambda x: x not in ('GenericMemcachedBackend', 'MemcachedLock'),
-    memcached.__all__)
+    memcached.__all__))
 
 
 class MemcachedLock(object):

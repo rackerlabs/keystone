@@ -18,6 +18,8 @@
 
 import logging
 
+from six.moves import filter  # flake8: noqa
+
 from keystone.openstack.common import log
 from keystone.openstack.common.notifier import api as notifier_api
 
