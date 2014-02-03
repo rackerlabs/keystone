@@ -38,9 +38,10 @@ class ManagerNotificationWrapper(object):
 
     :param resource_type: type of resource being affected
     """
-    def __init__(self, operation, resource_type):
+    def __init__(self, operation, resource_type, arg_index=1):
         self.operation = operation
         self.resource_type = resource_type
+        self.arg_index = arg_index
 
     def __call__(self, f):
         def wrapper(*args, **kwargs):
@@ -53,7 +54,7 @@ class ManagerNotificationWrapper(object):
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    args[1])  # f(self, resource_id, ...)
+                    args[self.arg_index])  # f(self, resource_id, ...)
             return result
 
         return wrapper

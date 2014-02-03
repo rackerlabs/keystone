@@ -155,15 +155,15 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
     def setUp(self):
         super(NotificationsForEntities, self).setUp()
 
-        self.exp_resource_id = None
-        self.exp_operation = None
-        self.exp_resource_type = None
+        self.exp_resource_ids = []
+        self.exp_operations = []
+        self.exp_resource_types = []
         self.send_notification_called = False
 
         def fake_notify(operation, resource_type, resource_id):
-            self.exp_resource_id = resource_id
-            self.exp_operation = operation
-            self.exp_resource_type = resource_type
+            self.exp_resource_ids.append(resource_id)
+            self.exp_operations.append(operation)
+            self.exp_resource_types.append(resource_type)
             self.send_notification_called = True
 
         fixture = self.useFixture(moxstubout.MoxStubout())
@@ -171,10 +171,16 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
 
         self.stubs.Set(notifications, '_send_notification', fake_notify)
 
+    def _assertNotifySeen(self, resource_id, operation, resource_type):
+        self.assertIn(operation, self.exp_operations)
+        self.assertIn(resource_id, self.exp_resource_ids)
+        self.assertIn(resource_type, self.exp_resource_types)
+        self.assertTrue(self.send_notification_called)
+
     def _assertLastNotify(self, resource_id, operation, resource_type):
-        self.assertEqual(self.exp_operation, operation)
-        self.assertEqual(self.exp_resource_id, resource_id)
-        self.assertEqual(self.exp_resource_type, resource_type)
+        self.assertEqual(self.exp_operations[-1], operation)
+        self.assertEqual(self.exp_resource_ids[-1], resource_id)
+        self.assertEqual(self.exp_resource_types[-1], resource_type)
         self.assertTrue(self.send_notification_called)
 
     def test_create_group(self):
@@ -248,12 +254,27 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.trust_api.delete_trust(trust_ref['id'])
         self._assertLastNotify(trust_ref['id'], 'deleted', 'OS-TRUST:trust')
 
+    def test_delete_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        domain_ref['enabled'] = False
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self.assignment_api.delete_domain(domain_ref['id'])
+        self._assertLastNotify(domain_ref['id'], 'deleted', 'domain')
+
+    def test_update_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        domain_ref['description'] = "newvalue"
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertLastNotify(domain_ref['id'], 'updated', 'domain')
+
     def test_disable_domain(self):
         domain_ref = self.new_domain_ref()
-        self.identity_api.create_domain(domain_ref['id'], domain_ref)
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
         domain_ref['enabled'] = False
-        self.identity_api.update_domain(domain_ref['id'], domain_ref)
-        self._assertLastNotify(domain_ref['id'], 'disabled', 'domain')
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertNotifySeen(domain_ref['id'], 'disabled', 'domain')
 
     def test_update_group(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
