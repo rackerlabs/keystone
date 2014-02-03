@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9zcg\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "I would suggest using uppercase names for global constants.",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zbQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "You should use getattr(self, key) here",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zbM\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "and str(self.id) here.",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zWM\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "These two methods seem to be too tied to RevokeTree representation. I think they should reside in that class.",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zyE\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "This whole method can be replaced with:\n\n    return map(self.key_for_name, _names)",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zXg\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "You can use for:..else: here. else: branch will be executed after the loop if there were no \u0027break\u0027s.",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zXs\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "If we didn\u0027t get into any if, we get unconditional False here.\n\nI think, you should remove matched variable altogether and just rely on \u0027return False\u0027s.",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zx0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "You should use setdefault here:\n\n    revoke_map \u003d revoke_map.set_default(key, {})",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zt4\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "Recursion isn\u0027t necessary here:\n\n    stack \u003d []\n    for name in names:\n        key \u003d event.key_for_name(name)\n        nxt \u003d revoke_map.get(key)\n        if nxt is None:\n            break\n        stack.append((revoke_map, key, nxt))\n        revoke_map \u003d nxt\n    else:\n        revoke_map.pop(\u0027issued_before\u0027)\n    \n    for parent, key, child in reversed(stack):\n        if not any(child):\n             del parent[key]",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zcE\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "map can be used here as well.",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zfk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-03T19:52:00Z",
+      "side": 1,
+      "message": "Let me just suggest a different approach:\n\n    alt_names \u003d {\n        \"user_id\": [\"user_id\", \"trustor_id\", \"trustee_id\"],\n        \"domain_id\": [\"user_domain_id\", \"project_domain_id\"],\n    }\n    forest \u003d [revoke_map]\n    for name in names:\n        faggot \u003d []\n        any_key \u003d \"%s\u003d*\" % (name,)\n        for tree in forest:\n            faggot.append(tree.get(any_key))\n            if name \u003d\u003d \"role_id\":\n                for role_id in token_data[\"roles\"]:\n                    faggot.append(tree.get(\"role_id\u003d%s\" % (role_id,)))\n            else:\n                for alt_name in alt_names.get(name, [name]):\n                    faggot.append(tree.get(\"%s\u003d%s\" % (name, token_data[alt_name])))\n        faggot \u003d filter(None, faggot)\n        if not faggot:\n            return False\n        forest \u003d faggot\n    else:\n        for leaf in forest:\n            issued_before \u003d leaf.get(\u0027issued_before\u0027)\n            if issued_before is None:\n                continue\n            if issued_before \u003e token_data[\u0027issued_at\u0027]:\n                return True",
+      "revId": "06b565ad8c28a9cad5812d1e8e60c00b34b1d316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
