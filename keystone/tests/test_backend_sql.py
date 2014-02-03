@@ -17,11 +17,13 @@
 import uuid
 
 import sqlalchemy
+from sqlalchemy import exc
 
 from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
+from keystone.openstack.common.db import exception as db_exception
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common.fixture import moxstubout
 from keystone import tests
@@ -494,3 +496,42 @@ class SqlTokenCacheInvalidation(SqlTests, test_backend.TokenCacheInvalidation):
 
 class SqlFilterTests(SqlTests, test_backend.FilterTests):
     pass
+
+
+class FakeTable(sql.ModelBase):
+    __tablename__ = 'test_table'
+    col = sql.Column(sql.String(32), primary_key=True)
+
+    @sql.handle_conflicts('keystone')
+    def insert(self):
+        raise db_exception.DBDuplicateEntry
+
+    @sql.handle_conflicts('keystone')
+    def update(self):
+        raise db_exception.DBError(
+            inner_exception=exc.IntegrityError('a', 'a', 'a'))
+
+    @sql.handle_conflicts('keystone')
+    def lookup(self):
+        raise KeyError
+
+
+class SqlDecorators(tests.TestCase):
+    def setUp(self):
+        super(SqlDecorators, self).setUp()
+        self.test_table = FakeTable
+
+    def test_initialization_fail(self):
+        self.assertRaises(exception.StringLengthExceeded,
+                          self.test_table, col='a' * 64)
+
+    def test_initialization(self):
+        tt = self.test_table(col='a')
+        self.assertEqual(tt.col, 'a')
+
+    def test_conflict_heppend(self):
+        self.assertRaises(exception.Conflict, self.test_table().insert)
+        self.assertRaises(exception.Conflict, self.test_table().update)
+
+    def test_not_conflic_error(self):
+        self.assertRaises(KeyError, self.test_table().lookup)
