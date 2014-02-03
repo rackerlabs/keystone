@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/90o8\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-03T16:22:27Z",
+      "side": 1,
+      "message": "this should really be a V2 controller class method",
+      "revId": "866f8fee9676d04d1d26564bc5e4aa46b81f8551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
