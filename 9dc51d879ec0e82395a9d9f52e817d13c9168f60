@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/9ygw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "change : to ::\n\nand add a newline.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yg0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "I\u0027m guessing there needs to be a blank line between this and the parameters. Run tox -e docs.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yT4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "\"rule.get(\u0027remote\u0027)\" should be \"rule[\u0027remote\u0027]\" since _verify_all_requirements doesn\u0027t work with a None argument.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yUQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "I\u0027m guessing this should be rule[\u0027local\u0027], since line 178 would fail if local_array was None.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/960k\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -13,6 +81,91 @@
       "writtenOn": "2014-02-01T05:21:32Z",
       "side": 1,
       "message": "gotta update $0, $1 to {0}, {1}",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yf4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "what\u0027s a type object?",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ygI\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "since this method is modifying `local` in-place there\u0027s no need to return it, and it\u0027s also confusing since a caller would typically not expect the input value to change.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yfQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "Suggest change this to\n\n If a value of ``None`` is returned, this rule doesn\u0027t apply to the assertion data.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yVU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "Suggest change \"If the array is positive value in length\" to \"Otherwise\", since the other 2 cases were already covered.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ySs\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:25:59Z",
+      "side": 1,
+      "message": "change \"if\" to \"is\"",
       "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
