@@ -14,42 +14,20 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import logging
 import os
 
 from paste import deploy
 
-from keystone.openstack.common import gettextutils
-
-# NOTE(blk-u):
-# gettextutils.install() must run to set _ before importing any modules that
-# contain static translated strings.
-gettextutils.install('keystone', lazy=True)
+# Import this before other keystone modules to ensure _ is set.
+from keystone.httpd import import_this
 
 from keystone.common import dependency
-from keystone.common import environment
-from keystone.common import sql
 from keystone import config
-from keystone.openstack.common import log
-from keystone import service
 
 
-CONF = config.CONF
+CONF = import_this.CONF  # Use the import
 
-config.configure()
-sql.initialize()
-
-CONF(project='keystone')
-config.setup_logging()
-
-environment.use_stdlib()
 name = os.path.basename(__file__)
-
-if CONF.debug:
-    CONF.log_opt_values(log.getLogger(CONF.prog), logging.DEBUG)
-
-
-drivers = service.load_backends()
 
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
