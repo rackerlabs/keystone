@@ -16,6 +16,24 @@
       "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9zmw\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-03T19:04:45Z",
+      "side": 1,
+      "message": "I believe they need to be in tests.TestCase.\n\nOther test_v3_classes (and others) extend test_v3.RestfulTestCase -\u003e rest.RestfulTestCase -\u003e test.TestCase. \n\nAs I don\u0027t think many import tests.core, I would have to go in and change each one?",
+      "parentUuid": "AAAAUH/96K0\u003d",
+      "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
