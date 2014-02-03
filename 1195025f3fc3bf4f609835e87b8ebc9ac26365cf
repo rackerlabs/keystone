@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9ypE\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T21:58:05Z",
+      "side": 1,
+      "message": "wrap the string in _() for translation.\n\nAlso, doesn\u0027t the filename have to be %-ed in?\n\nSuggest change this from OSError to a keystone exception since it\u0027s not an OSError.",
+      "revId": "1195025f3fc3bf4f609835e87b8ebc9ac26365cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
