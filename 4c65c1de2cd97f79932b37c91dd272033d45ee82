@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9ySg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-03T23:27:04Z",
+      "side": 1,
+      "message": "use ``double backticks`` around the attribute names to have them rendered as \u003ccode\u003eliterals\u003c/code\u003e",
+      "revId": "4c65c1de2cd97f79932b37c91dd272033d45ee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ySc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-03T23:27:04Z",
+      "side": 1,
+      "message": "same on groupOfNames",
+      "revId": "4c65c1de2cd97f79932b37c91dd272033d45ee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ySI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-03T23:27:04Z",
+      "side": 1,
+      "message": "use the term \"projects\" instead of tenants where possible, or use them both\n\n  projects (i.e. tenants)",
+      "revId": "4c65c1de2cd97f79932b37c91dd272033d45ee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yR4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1350,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-03T23:27:04Z",
+      "side": 1,
+      "message": "all of the above comments apply here",
+      "revId": "4c65c1de2cd97f79932b37c91dd272033d45ee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
