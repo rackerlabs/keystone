@@ -163,9 +163,9 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         super(NotificationsForEntities, self).setUp()
         self._notifications = []
 
-        self.exp_resource_id = None
-        self.exp_operation = None
-        self.exp_resource_type = None
+        self.exp_resource_ids = []
+        self.exp_operations = []
+        self.exp_resource_types = []
         self.send_notification_called = False
 
         def fake_notify(operation, resource_type, resource_id, host=None):
@@ -175,11 +175,22 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
                 'exp_resource_type': resource_type,
                 'send_notification_called': True}
             self._notifications.append(obj)
-
         fixture = self.useFixture(moxstubout.MoxStubout())
         self.stubs = fixture.stubs
 
         self.stubs.Set(notifications, '_send_notification', fake_notify)
+
+    def _assertNotifySeen(self, resource_id, operation, resource_type):
+        obj = {
+            'exp_resource_id': resource_id,
+            'exp_operation': operation,
+            'exp_resource_type': resource_type,
+            'send_notification_called': True}
+        for note in self._notifications:
+            if note == obj:
+                break
+        else:
+            self.assertFalse("notification not seen")
 
     def _assertLastNotify(self, resource_id, operation, resource_type):
         self.assertGreater(len(self._notifications), 0)
@@ -269,18 +280,32 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.trust_api.delete_trust(trust_ref['id'])
         self._assertLastNotify(trust_ref['id'], 'deleted', 'OS-TRUST:trust')
 
+    def test_delete_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        domain_ref['enabled'] = False
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self.assignment_api.delete_domain(domain_ref['id'])
+        self._assertLastNotify(domain_ref['id'], 'deleted', 'domain')
+
     def test_update_domain(self):
         domain_ref = self.new_domain_ref()
         self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        domain_ref['description'] = "newvalue"
         self.assignment_api.update_domain(domain_ref['id'], domain_ref)
         self._assertLastNotify(domain_ref['id'], 'updated', 'domain')
 
     def test_disable_domain(self):
         domain_ref = self.new_domain_ref()
-        self.identity_api.create_domain(domain_ref['id'], domain_ref)
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
         domain_ref['enabled'] = False
-        self.identity_api.update_domain(domain_ref['id'], domain_ref)
-        self._assertLastNotify(domain_ref['id'], 'disabled', 'domain')
+        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
+        self._assertNotifySeen(domain_ref['id'], 'disabled', 'domain')
+
+    def test_create_domain(self):
+        domain_ref = self.new_domain_ref()
+        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
+        self._assertLastNotify(domain_ref['id'], 'created', 'domain')
 
     def test_update_group(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
