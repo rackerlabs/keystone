@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/9yO4\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-03T23:39:37Z",
+      "side": 1,
+      "message": "what does raw_no_expiry_keys have to do with key_manger?",
+      "revId": "db8ff67771cf92161e97788c3b3bce54fb85054c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9zoo\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 2
