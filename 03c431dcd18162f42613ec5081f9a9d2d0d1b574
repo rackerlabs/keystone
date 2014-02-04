@@ -52,6 +52,24 @@
       "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9x5U\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T01:35:40Z",
+      "side": 1,
+      "message": "Dolph brought up a good point that these are v3 entities, and maybe this class isn\u0027t the best spot for the change. \n\nHow about leaving this in test_v3, but putting them in their own class, like MockResources? \n\nHave test_v3.RestulfulTestCase extend the new MockResources. \n\nThen exploit mixin, have the stuff that doesn\u0027t need a wsgi server, like test_auth and test_catalog extend both MockResources and TestCase?\n\nMaybe I\u0027m off the mark.",
+      "parentUuid": "AAAAUH/9yEU\u003d",
+      "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
