@@ -97,6 +97,8 @@ be issued.
 Your code should set the ``REMOTE_USER`` if the user is properly authenticated,
 following the semantics below::
 
+.. code:: python
+
     from keystone.common import wsgi
 
     class MyMiddlewareAuth(wsgi.Middleware):
