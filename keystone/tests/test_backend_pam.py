@@ -37,12 +37,12 @@ class PamIdentity(tests.TestCase):
         self.user_in = {'id': CONF.pam.userid, 'name': CONF.pam.userid}
 
     def test_get_project(self):
-        tenant_out = self.identity_api.get_project(self.tenant_in['id'])
+        tenant_out = self.assignment_api.get_project(self.tenant_in['id'])
         self.assertDictEqual(self.tenant_in, tenant_out)
 
     def test_get_project_by_name(self):
         tenant_in_name = self.tenant_in['name']
-        tenant_out = self.identity_api.get_project_by_name(
+        tenant_out = self.assignment_api.get_project_by_name(
             tenant_in_name, DEFAULT_DOMAIN_ID)
         self.assertDictEqual(self.tenant_in, tenant_out)
 
