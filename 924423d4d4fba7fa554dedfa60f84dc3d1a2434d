@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9xYc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1342,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T05:22:45Z",
+      "side": 1,
+      "message": "Please remove these extra spaces standing out.",
+      "revId": "924423d4d4fba7fa554dedfa60f84dc3d1a2434d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xYM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1354,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T05:22:45Z",
+      "side": 1,
+      "message": "I think, it should be written like:\n\n    cn\u003denabled_users,$user_tree_dn\n\nor something like this.",
+      "revId": "924423d4d4fba7fa554dedfa60f84dc3d1a2434d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
