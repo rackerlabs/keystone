@@ -17,6 +17,9 @@ from keystone.tests.contrib.kds.api import base
 
 class SimpleTest(base.BaseTestCase):
 
-    def test_simple(self):
+    def test_version(self):
         resp = self.get("/")
-        self.assertEqual(resp.json['hello'], 'world')
+
+        versions = resp.json['versions']
+        self.assertIsInstance(versions, list)
+        self.assertTrue(len(versions) > 0)
