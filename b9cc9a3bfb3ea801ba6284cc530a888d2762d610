@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9sgg\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-04T21:54:52Z",
+      "side": 1,
+      "message": "Brant - Thanks, I think it would have been better to have a version, it would have been easier to package the built. I will check with other people internally if we can ask to change the global reqs.",
+      "parentUuid": "AAAAUH/9smg\u003d",
+      "revId": "b9cc9a3bfb3ea801ba6284cc530a888d2762d610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9zM0\u003d",
         "filename": "requirements.txt",
         "patchSetId": 1
