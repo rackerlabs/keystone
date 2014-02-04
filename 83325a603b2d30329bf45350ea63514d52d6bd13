@@ -419,6 +419,40 @@
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xTM\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T05:58:11Z",
+      "side": 1,
+      "message": "Will you be asserting these values after the call is made? Otherwise you can just call them in the function args.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xTE\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T05:58:11Z",
+      "side": 1,
+      "message": "You can probably get rid of making these class variables, take a look at _assertLastNotify.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
