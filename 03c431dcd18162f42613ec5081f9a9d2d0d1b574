@@ -70,6 +70,24 @@
       "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9x3Y\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T01:45:27Z",
+      "side": 1,
+      "message": "Since these aren\u0027t actually tests, they probably don\u0027t belong in a test_*.py file at all... how about utility_v3.py ?\n\nI\u0027m not a fan of Mixins in general, so I\u0027d suggest don\u0027t make it a mixin.",
+      "parentUuid": "AAAAUH/9x5U\u003d",
+      "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
