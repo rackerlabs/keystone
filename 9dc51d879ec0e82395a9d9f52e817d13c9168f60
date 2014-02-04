@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9s30\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9ygw\u003d",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9yg0\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9s3s\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9yg0\u003d",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9yT4\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -100,6 +136,24 @@
       "writtenOn": "2014-02-03T23:25:59Z",
       "side": 1,
       "message": "\"rule.get(\u0027remote\u0027)\" should be \"rule[\u0027remote\u0027]\" since _verify_all_requirements doesn\u0027t work with a None argument.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9s3c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9yT4\u003d",
       "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9s3M\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/960k\u003d",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9yf4\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -151,6 +223,24 @@
       "writtenOn": "2014-02-03T23:25:59Z",
       "side": 1,
       "message": "what\u0027s a type object?",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9s2w\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": ":returns: local mapping reference with replaced values.",
+      "parentUuid": "AAAAUH/9yf4\u003d",
       "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9s08\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "I changed it to make a new dict",
+      "parentUuid": "AAAAUH/9ygI\u003d",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9yfQ\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -185,6 +293,24 @@
       "writtenOn": "2014-02-03T23:25:59Z",
       "side": 1,
       "message": "Suggest change this to\n\n If a value of ``None`` is returned, this rule doesn\u0027t apply to the assertion data.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9s0c\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9yfQ\u003d",
       "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9s0Y\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9yVU\u003d",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9ySs\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -219,6 +363,24 @@
       "writtenOn": "2014-02-03T23:25:59Z",
       "side": 1,
       "message": "change \"if\" to \"is\"",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9s0M\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:53:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9ySs\u003d",
       "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
