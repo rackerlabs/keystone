@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9tFY\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-04T20:12:26Z",
+      "side": 1,
+      "message": "it is the attribute i picked that is used for non-expiring keys.  The only reason we set the keymangler on the backend is for calculating the hashed keys.  otherwise we don\u0027t care what the key mangler is on the backend.",
+      "parentUuid": "AAAAUH/9yO4\u003d",
+      "revId": "db8ff67771cf92161e97788c3b3bce54fb85054c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9zoo\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-03T19:01:40Z",
       "side": 1,
       "message": "backend;\n\nspelling + semicolon ^",
+      "revId": "db8ff67771cf92161e97788c3b3bce54fb85054c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9tGA\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-04T20:12:26Z",
+      "side": 1,
+      "message": "Fixed in next patchset.",
+      "parentUuid": "AAAAUH/9zoo\u003d",
       "revId": "db8ff67771cf92161e97788c3b3bce54fb85054c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
