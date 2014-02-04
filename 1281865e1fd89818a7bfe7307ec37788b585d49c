@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9x9U\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T01:11:50Z",
+      "side": 1,
+      "message": "I can\u0027t figure out what this means. The default value for user_enabled_emulation is enabled_users ? It\u0027s not a boolean like at 1346?\n\nWas line 1349 supposed to be \n\n The default values for the user and project (tenant) enabled emulation DN is ...\n\n?",
+      "revId": "1281865e1fd89818a7bfe7307ec37788b585d49c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9x8g\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T01:11:50Z",
+      "side": 1,
+      "message": "suggest put name in {} like bash -- \"$name(s)\" -\u003e \"${name}s\"",
+      "revId": "1281865e1fd89818a7bfe7307ec37788b585d49c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
