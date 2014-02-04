@@ -17,6 +17,13 @@ from keystone.tests.contrib.kds.api import base
 
 class SimpleTest(base.BaseTestCase):
 
-    def test_simple(self):
+    def test_version(self):
         resp = self.get("/")
-        self.assertEqual(resp.json['hello'], 'world')
+        versions = resp.json['versions']
+
+        host = "http://localhost"  # webtest default
+
+        self.assertEqual(versions[0]['status'], 'stable')
+        self.assertEqual(versions[0]['id'], 'v1.0')
+        self.assertEqual(versions[0]['links'][0]['href'], "%s/v1/" % host)
+        self.assertEqual(versions[0]['links'][0]['rel'], "self")
