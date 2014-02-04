@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9unA\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-04T17:23:47Z",
+      "side": 1,
+      "message": "Yes:  Not every token is going to have \"expires at\"  if anything it would be \"issued by\" but the idea is that we want to be able to continually append new events",
+      "parentUuid": "AAAAUH/9wVc\u003d",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9wVQ\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 12
@@ -155,6 +173,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9u84\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-04T17:23:47Z",
+      "side": 1,
+      "message": "That is by design.  Think in terms of \"resetting the revoke time.\"  It will actually work correctly, only the later time needs to be checked.  But you are correct that we should only add the later time.",
+      "parentUuid": "AAAAUH/9w44\u003d",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9w4Q\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 12
@@ -166,6 +202,24 @@
       "writtenOn": "2014-02-04T10:54:51Z",
       "side": 1,
       "message": "The same as with addition, we should be careful on deletion. Looks like we should delete this key only if event.issued_before \u003d\u003d revoke_map[\u0027issued_before\u0027]\n\nBut then again if we add three different issued_before\u0027s A \u003c B \u003c C and then delete C and A, we should end up with issued_before \u003d B. Looks like we have to have a list of issued_before\u0027s here.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u8U\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-04T17:23:47Z",
+      "side": 1,
+      "message": "Good point:  I think that we should ignore \"remove\" calls that don\u0027t match the issued_before time.  Probably safe for them to silently fail.",
+      "parentUuid": "AAAAUH/9w4Q\u003d",
       "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9u8Q\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-04T17:23:47Z",
+      "side": 1,
+      "message": "Done.  JSON doesn\u0027t allow that construct, so we haven\u0027t been encouraging it.",
+      "parentUuid": "AAAAUH/9w00\u003d",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9w0o\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 12
@@ -200,6 +272,24 @@
       "writtenOn": "2014-02-04T10:54:51Z",
       "side": 1,
       "message": "Too much indent here.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u8M\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-04T17:23:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9w0o\u003d",
       "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
