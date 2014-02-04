@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9smg\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T21:35:13Z",
+      "side": 1,
+      "message": "Fabio - The source for the requirements are not handled by keystone, but by the requirements project, see http://git.openstack.org/cgit/openstack/requirements/tree/global-requirements.txt#n52 ... I don\u0027t know why global requirements doesn\u0027t specify a min for these or if the is a min version required, but we can\u0027t change it in keystone without changing global requirements first.",
+      "parentUuid": "AAAAUH/9zM8\u003d",
+      "revId": "b9cc9a3bfb3ea801ba6284cc530a888d2762d610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9zM0\u003d",
         "filename": "requirements.txt",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-03T20:10:54Z",
       "side": 1,
       "message": "Same for this library, can we specify a version?",
+      "revId": "b9cc9a3bfb3ea801ba6284cc530a888d2762d610",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9smY\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T21:35:13Z",
+      "side": 1,
+      "message": "Fabio - same response.",
+      "parentUuid": "AAAAUH/9zM0\u003d",
       "revId": "b9cc9a3bfb3ea801ba6284cc530a888d2762d610",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
