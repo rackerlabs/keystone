@@ -245,7 +245,7 @@ Example::
 
 
 Event Callbacks
------------
+---------------
 
 Extensions may provide callbacks to Keystone (Identity) events.
 Extensions must provide the list of events of interest and the corresponding
@@ -255,6 +255,7 @@ deletion of the following Keystone resources:
 * ``group``
 * ``project``
 * ``role``
+* ``trust``
 * ``user``
 
 The extension's ``Manager`` class must contain the
@@ -294,7 +295,8 @@ Example:
             super(ExampleManager, self).__init__(
                 'keystone.contrib.example.core.ExampleDriver')
 
-        def project_deleted_callback(self, context, message):
+        def project_deleted_callback(self, service, resource_type, operation,
+                                     payload):
             # cleanup data related to the deleted project here
 
 A callback must accept the following parameters:
@@ -308,11 +310,4 @@ Current callback operations:
 
 * ``created``
 * ``deleted``
-* ``updated``
-
-Example:
-
-.. code:: python
-      def project_deleted_callback(self, service, resource_type, operation,
-                                   payload):
-
+* ``updated`` (not supported with ``trusts``)
