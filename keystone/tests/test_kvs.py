@@ -20,8 +20,11 @@ from dogpile.cache import api
 from dogpile.cache.backends import memcached as dogpile_memcached
 from dogpile.cache import proxy
 from dogpile.cache import util
+import mock
+from testtools import matchers
 
 from keystone.common.kvs.backends import inmemdb
+from keystone.common.kvs.backends import memcached
 from keystone.common.kvs import core
 from keystone import exception
 from keystone import tests
@@ -335,3 +338,18 @@ class KVSTest(tests.TestCase):
                           kvs.configure,
                           backing_store='openstack.kvs.Memcached',
                           dogpile_memcache_backend=uuid.uuid4().hex)
+
+
+class TestMemcachedBackend(tests.TestCase):
+
+    @mock.patch('__builtin__._', str)
+    def test_invalid_backend_fails_initialization(self):
+        raises_valueerror = matchers.Raises(matchers.MatchesException(
+            ValueError, r'.*some\.fake\.Backend.*'))
+
+        options = {
+            'url': 'needed to get to the focus of this test (the backend)',
+            'dogpile_memcache_backend': 'some.fake.Backend',
+        }
+        self.assertThat(lambda: memcached.MemcachedBackend(options),
+                        raises_valueerror)
