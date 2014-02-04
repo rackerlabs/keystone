@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9xSU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T06:00:51Z",
+      "side": 1,
+      "message": "Nice job commenting this.",
+      "revId": "52f897ff2351c7d493a381824e565c0770654ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
