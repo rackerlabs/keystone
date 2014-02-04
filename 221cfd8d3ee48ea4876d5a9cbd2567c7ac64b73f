@@ -16,6 +16,24 @@
       "revId": "221cfd8d3ee48ea4876d5a9cbd2567c7ac64b73f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9s2k\u003d",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T20:48:10Z",
+      "side": 1,
+      "message": "I added some more assertions from the subclasses.",
+      "parentUuid": "AAAAUH/+JEs\u003d",
+      "revId": "221cfd8d3ee48ea4876d5a9cbd2567c7ac64b73f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
