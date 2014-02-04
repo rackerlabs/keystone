@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9ucw\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:36:44Z",
+      "side": 1,
+      "message": "seems like this should have a date when it was last updated.",
+      "revId": "12e5369b8e22dd3ec4ac475d1ecd24f095b157e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ucQ\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:36:44Z",
+      "side": 1,
+      "message": "this is going to lead to clients going to the wrong place if the kds is hosted in a shared httpd.",
+      "revId": "12e5369b8e22dd3ec4ac475d1ecd24f095b157e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ub0\u003d",
+        "filename": "keystone/tests/contrib/kds/api/test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:36:44Z",
+      "side": 1,
+      "message": "can just assertTrue(versions) ? You asserted it was a list already, and list is true if not empty.\n\nAlso, I\u0027d prefer it if we asserted everything that we expect about the versions response... e.g., all the fields in it.",
+      "revId": "12e5369b8e22dd3ec4ac475d1ecd24f095b157e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
