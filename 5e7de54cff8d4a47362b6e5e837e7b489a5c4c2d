@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9wWA\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "You should use revoke.revoked_before_cutoff() here as well, I suppose.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wWc\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "You can drop this check since anything is greater than None.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wVc\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "The same concern here as in revoke.core: are you sure we should filter by revoked_at, not by expires_at?",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wVQ\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wUs\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "Yes, this filter should definitely work on server-side. There might be something off with timezones or time representation though.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wvs\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "Are you sure we should filter revoke events by revoked_at, not by expires_at? It looks like if I revoke now tokens that expire tomorrow, my revoke event will be forgot before it becomes useful.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wys\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "You shouldn\u0027t modify the list you\u0027re iterating over. Iterator itself holds only current index, not some view of the underlying list:\n\n    In [1]: l \u003d range(10)\n\n    In [2]: for i in l:\n       ...:     print i\n       ...:     if i % 3:\n       ...:         l.remove(i)\n       ...:         \n    0\n    1\n    3\n    4\n    6\n    7\n    9",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wXg\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "For me it looks like it\u0027ll be way more efficient to let revoke_map (mb it should be renamed to tree?) to clear it\u0027s leaves.\n\nAnd since it\u0027s going to be very frequent operation why not pull expires_at to the top of the tree? It would allow us to quickly drop subtrees that are not needed anymore.\n\nI would go one step further and convert the top level of the tree to an ordered list of pairs (expires_at_datetime, subtree). Then we can do this cut with a very simple O(log n) (-ish) operation:\n\n    tree[:bisect.bisect_right(tree, (cutoff_time,))] \u003d []",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9w44\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "It looks like we can get a problem here if we first revoke with issued_before\u003dA and then do the same revoke but with issued_before\u003dB. If B\u003eA then the first revoke event won\u0027t work at all.\n\nI think we should do this assignment only if revoke_map[\u0027issued_before\u0027] is greater than event.issued_before.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9w4Q\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "The same as with addition, we should be careful on deletion. Looks like we should delete this key only if event.issued_before \u003d\u003d revoke_map[\u0027issued_before\u0027]\n\nBut then again if we add three different issued_before\u0027s A \u003c B \u003c C and then delete C and A, we should end up with issued_before \u003d B. Looks like we have to have a list of issued_before\u0027s here.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9w00\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "Please end this line with comma and move closing brace to the next line. It\u0027ll be more Git-friendly if anyone wants to add another item to this dict.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9w0o\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-02-04T10:54:51Z",
+      "side": 1,
+      "message": "Too much indent here.",
+      "revId": "5e7de54cff8d4a47362b6e5e837e7b489a5c4c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
