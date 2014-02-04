@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9xmQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-04T03:40:02Z",
+      "side": 1,
+      "message": "Why not use the same convention on these list (_event_args, _token_keys) as NAMES?",
+      "revId": "4d128474892cdf8a76d6dc885b7d1d4746a1cf9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
