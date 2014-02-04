@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9tbo\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T19:13:28Z",
+      "side": 1,
+      "message": "OK, I can swap the way it\u0027s initialized, but I think one assertion is best. \n\nI liked the way it was before, because it just kept track of all the \"local\" objects. \n\nNow, it seems like I need to prep for token consumption, too, which will greatly restrict things.\n\nAlso, if we are going to assume a user exists, then we need to enforce that. So, just users and groups?",
+      "parentUuid": "AAAAUH/9va4\u003d",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9ygw\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
