@@ -16,6 +16,24 @@
       "revId": "744769b56a39c338bb2f6e77e70a0246a77a1f6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9vHw\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T14:55:54Z",
+      "side": 1,
+      "message": "Fabio - With federation the group mapping is only known to the federation code (the mapping of the users\u0027 attributes to their groups is only do-able if you know the users\u0027 attributes, which only the IdP know) so I\u0027m not sure how we could figure out what the group ID is.",
+      "parentUuid": "AAAAUH/99jU\u003d",
+      "revId": "744769b56a39c338bb2f6e77e70a0246a77a1f6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
