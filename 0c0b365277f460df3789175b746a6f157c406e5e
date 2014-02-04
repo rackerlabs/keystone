@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9tCY\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T20:21:44Z",
+      "side": 1,
+      "message": "fabio, let me know if this is OK, and the change at the bottom",
+      "revId": "0c0b365277f460df3789175b746a6f157c406e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
