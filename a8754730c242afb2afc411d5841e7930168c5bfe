@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9wu4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-04T08:58:44Z",
+      "side": 1,
+      "message": "Typo...",
+      "parentUuid": "AAAAUH/9yCA\u003d",
+      "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9yB8\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-04T00:42:48Z",
       "side": 1,
       "message": "there\u0027s no need to translate \"%s\", so don\u0027t wrap it in _().",
+      "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wsY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-04T08:58:44Z",
+      "side": 1,
+      "message": "This is pep8 problem:\n\npep8 runtests: commands[0] | flake8\n./keystone/common/sql/core.py:90:35: H701  Empty localization string\n                            v \u003d _(v)\n\nI do not like it too. And seems to me you right, it may not work. What could be done with it?",
+      "parentUuid": "AAAAUH/9yB8\u003d",
       "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
