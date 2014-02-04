@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9uwU\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T15:52:10Z",
+      "side": 1,
+      "message": "we can capitalize the second Keystone at the end here",
+      "revId": "061a548bee8ea03ed45e0212d066d29a12757040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uwM\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T15:52:10Z",
+      "side": 1,
+      "message": "cannot is one word",
+      "revId": "061a548bee8ea03ed45e0212d066d29a12757040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uwE\u003d",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T15:52:10Z",
+      "side": 1,
+      "message": "capitalize Keystone here, and API too.",
+      "revId": "061a548bee8ea03ed45e0212d066d29a12757040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
