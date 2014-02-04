@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9x+4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:59:53Z",
+      "side": 1,
+      "message": "probably don\u0027t need to check \"\u0027token_id\u0027 not in context\" first since CONF.admin_token can\u0027t be None.",
+      "revId": "4ed4d1974c34e43cc111f772827d1369583eff6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9x/I\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:59:53Z",
+      "side": 1,
+      "message": "wrap strings in _() for translation",
+      "revId": "4ed4d1974c34e43cc111f772827d1369583eff6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
