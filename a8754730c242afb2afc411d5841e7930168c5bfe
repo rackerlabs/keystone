@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9yCA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:42:48Z",
+      "side": 1,
+      "message": "change \"becase\" to \"because\"",
+      "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yB8\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:42:48Z",
+      "side": 1,
+      "message": "there\u0027s no need to translate \"%s\", so don\u0027t wrap it in _().",
+      "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yB4\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:42:48Z",
+      "side": 1,
+      "message": "there\u0027s no need to translate \"%s\", so don\u0027t wrap it in _().",
+      "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yB0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:42:48Z",
+      "side": 1,
+      "message": "there\u0027s no need to translate \"%s\", so don\u0027t wrap it in _().",
+      "revId": "a8754730c242afb2afc411d5841e7930168c5bfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
