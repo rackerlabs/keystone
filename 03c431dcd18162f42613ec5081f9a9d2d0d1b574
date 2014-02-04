@@ -34,6 +34,24 @@
       "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yEU\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T00:29:51Z",
+      "side": 1,
+      "message": "If we\u0027re going to do this then I think we should do it right -- there\u0027s too much in this class already, and this is an abuse of inheritance.",
+      "parentUuid": "AAAAUH/9zmw\u003d",
+      "revId": "03c431dcd18162f42613ec5081f9a9d2d0d1b574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
