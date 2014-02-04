@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9tYM\u003d",
+        "filename": "doc/source/extension_development.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-04T19:21:00Z",
+      "side": 1,
+      "message": "Steve, now we also have Trusts (without the update operation), please add that too.\nThanks",
+      "revId": "88386e572568b9bbb4bbd7b32fc8a854a39e0233",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
