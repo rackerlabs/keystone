@@ -51,6 +51,24 @@
       "revId": "51602dcc25cd2070eccdf4d9d5957b42d825d1bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xf8\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T04:46:06Z",
+      "side": 0,
+      "message": "++ revert the white space change",
+      "parentUuid": "AAAAUH/90tk\u003d",
+      "revId": "51602dcc25cd2070eccdf4d9d5957b42d825d1bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
