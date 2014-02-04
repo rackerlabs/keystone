@@ -348,6 +348,8 @@ which will provide a reference, to a function, that will consult the global cach
 
 Example use of cache and ``should_cache_fn`` (in this example, ``token`` is the manager)::
 
+.. code:: python
+
     from keystone.common import cache
     SHOULD_CACHE = cache.should_cache_fn('token')
 
@@ -374,6 +376,8 @@ configuration section.
 
 Example of using a section specific ``cache_time`` (in this example, ``identity`` is the manager)::
 
+.. code:: python
+
     from keystone.common import cache
     SHOULD_CACHE = cache.should_cache_fn('identity')
 
@@ -388,6 +392,8 @@ For cache invalidation, the ``on_arguments`` decorator will add an ``invalidate`
 to the ``invalidate`` method as you would the normal function.
 
 Example (using the above cacheable_function)::
+
+.. code:: python
 
     def invalidate_cache(arg1, arg2, arg3):
         cacheable_function.invalidate(arg1, arg2, arg3)
@@ -422,6 +428,8 @@ match the object to the name).
 
 Example Instantiation and Configuration::
 
+.. code:: python
+
     kvs_store = kvs.get_key_value_store('TestKVSRegion')
     kvs_store.configure('openstack.kvs.Memory', ...)
 
@@ -436,11 +444,15 @@ By default the standard Memcache backend is used.  Currently the Memcache URLs c
 
 Example configuring the KVS system to use memcached and a specific dogpile.cache memcached backend::
 
+.. code:: python
+
     kvs_store = kvs.get_key_value_store('TestKVSRegion')
     kvs_store.configure('openstack.kvs.Memcached', dogpile_cache_backend='MemcachedBackend')
 
 Once a KVS object has been instantiated the method of interacting is the same as most memcache
 implementations::
+
+.. code:: python
 
     kvs_store = kvs.get_key_value_store('TestKVSRegion')
     kvs_store.configure(...)

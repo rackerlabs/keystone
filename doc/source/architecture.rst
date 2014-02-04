@@ -233,6 +233,8 @@ Rules
 Given a list of matches to check for, simply verify that the credentials
 contain the matches. For example::
 
+.. code:: python
+
   credentials = {'user_id': 'foo', 'is_admin': 1, 'roles': ['nova:netadmin']}
 
   # An admin only call:
@@ -256,6 +258,8 @@ Capability RBAC
 
 Another approach to authorization can be action-based, with a mapping of roles
 to which capabilities are allowed for that role. For example::
+
+.. code:: python
 
   credentials = {'user_id': 'foo', 'is_admin': 1, 'roles': ['nova:netadmin']}
 
