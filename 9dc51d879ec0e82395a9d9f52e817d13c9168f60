@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/9va4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-04T14:05:40Z",
+      "side": 1,
+      "message": "the API on this class is backwards. initialize the assertion processor with a mapping:\n\n def __init__(self, mapping_ref)\n\nand then hand it assertions to process:\n\n def process(assertion)\n\nor:\n\n def process(assertions)\n\nand the output of a single assertion processor should be user attributes (including a list of groups):\n\n print assertion_processor.user\n {\"name\": \"foobar\", groups: [{\"id\": \"abc123\"}, {\"id\": \"def456\"}]}\n\nthe semantics / approach of this last step i care a bit less about, but the above would make token generation much easier.",
+      "revId": "9dc51d879ec0e82395a9d9f52e817d13c9168f60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9ygw\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
