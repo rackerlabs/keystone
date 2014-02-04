@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9spc\u003d",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-04T21:28:59Z",
+      "side": 1,
+      "message": "Should i use a different property that states we are meant to do no-expiry key checks?",
+      "parentUuid": "AAAAUH/9tFY\u003d",
+      "revId": "db8ff67771cf92161e97788c3b3bce54fb85054c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9zoo\u003d",
         "filename": "keystone/common/kvs/core.py",
         "patchSetId": 2
