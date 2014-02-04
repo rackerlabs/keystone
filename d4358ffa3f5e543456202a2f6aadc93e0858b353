@@ -16,6 +16,24 @@
       "revId": "d4358ffa3f5e543456202a2f6aadc93e0858b353",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u7o\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-04T15:25:33Z",
+      "side": 1,
+      "message": "didn\u0027t know I had to! next patch set will support it",
+      "parentUuid": "AAAAUH/9ysE\u003d",
+      "revId": "d4358ffa3f5e543456202a2f6aadc93e0858b353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
