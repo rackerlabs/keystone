@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9xG8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T06:37:11Z",
+      "side": 1,
+      "message": "Great that you provided an example of the key list!",
+      "revId": "fd28792bb3d1a2ac6512af205c242927a4215132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xGk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T06:37:11Z",
+      "side": 1,
+      "message": "What does the phrase \"support the ability for the region to set the key_mangler on it\"  actually mean?  Can you expand on this a little to make it more clear?",
+      "revId": "fd28792bb3d1a2ac6512af205c242927a4215132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xG4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T06:37:11Z",
+      "side": 1,
+      "message": "typo exepmt should be exempt",
+      "revId": "fd28792bb3d1a2ac6512af205c242927a4215132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xGU\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T06:37:11Z",
+      "side": 1,
+      "message": "perhaps an \"and\" before provides?",
+      "revId": "fd28792bb3d1a2ac6512af205c242927a4215132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
