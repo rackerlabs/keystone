@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9xno\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-04T03:33:06Z",
+      "side": 1,
+      "message": "Update doc strings.",
+      "revId": "6a421aa41fcf7e8b468cd9097bb843343be4c604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xnM\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-04T03:33:06Z",
+      "side": 1,
+      "message": "According to this comment, we aren\u0027t adding 30 minutes to the token anymore are we?",
+      "revId": "6a421aa41fcf7e8b468cd9097bb843343be4c604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xnc\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-04T03:33:06Z",
+      "side": 1,
+      "message": "Update doc strings",
+      "revId": "6a421aa41fcf7e8b468cd9097bb843343be4c604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xm8\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-04T03:33:06Z",
+      "side": 1,
+      "message": "here we could add the comment: \n\n    # NOTE(ayoung): add 30 minutes to token expiration to make sure that we don\u0027t have\n    # issues with clock skew.  In practice, 5 minutes should be enough.",
+      "revId": "6a421aa41fcf7e8b468cd9097bb843343be4c604",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
