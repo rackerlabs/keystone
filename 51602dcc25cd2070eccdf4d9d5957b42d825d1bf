@@ -69,6 +69,24 @@
       "revId": "51602dcc25cd2070eccdf4d9d5957b42d825d1bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xVw\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9xf8\u003d",
+      "revId": "51602dcc25cd2070eccdf4d9d5957b42d825d1bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

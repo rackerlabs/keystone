@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xXc\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/94Gg\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9xfQ\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-04T04:46:06Z",
       "side": 1,
       "message": "I think we can get rid of this line, if someone wants info on the library they can look it up.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xXg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9xfQ\u003d",
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xXk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/94EY\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9xfM\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-04T04:46:06Z",
       "side": 1,
       "message": "capitalize CADF",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xXo\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9xfM\u003d",
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xXs\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9xeE\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/94C8\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-02T20:14:07Z",
       "side": 1,
       "message": "\u0027host\u0027 from a notification standpoint is used for getting a publisher_id I believe: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L147\n\nbut I don\u0027t think it is a required parameter by the notifier_api: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/notifier/api.py#L86\n\nI think Jamie Lennox was working on taking \u0027host\u0027 out and just defaulting to generating the publisher_id with default values, similar to below:\n\nhttps://github.com/jamielennox/keystone/commit/b3e81c32d9fc2a68c648f3f13b1805282f01444b\n\nsince publisher_id is no longer calculated in the oslo.messaging notifier api: \n\nhttps://github.com/openstack/oslo.messaging/blob/master/oslo/messaging/notify/notifier.py",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xX0\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/94C8\u003d",
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xWs\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "GREAT CATCH.  Thank you for keeping me from looking dumb :-).  Much appreciated!!!",
+      "parentUuid": "AAAAUH/9xdc\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9xdg\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 6
@@ -132,6 +258,24 @@
       "writtenOn": "2014-02-04T04:46:06Z",
       "side": 1,
       "message": "you can remove defaulting of line 44, 45, and 46, and just set these other values in the caller to None. ... \n\nunless you do this because you want to re-use them in the except and else blocks.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xXU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "yes these are reused in the except block",
+      "parentUuid": "AAAAUH/9xdg\u003d",
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xV4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Yes, you caught me being lazy :-).  These values are already defined elegantly in cadftaxonomy.py (thanks Gordon).  I will pull the values from there",
+      "parentUuid": "AAAAUH/9xdk\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/94EA\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 6
@@ -166,6 +328,24 @@
       "writtenOn": "2014-02-02T20:14:07Z",
       "side": 1,
       "message": "refactor this to \u0027pycadf_host.Host\u0027",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xX4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/94EA\u003d",
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xX8\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "GREAT CATCH!!! Thanks for your CADF expertise on this!! Done!",
+      "parentUuid": "AAAAUH/90q4\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/90nk\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 6
@@ -200,6 +398,24 @@
       "writtenOn": "2014-02-03T16:26:24Z",
       "side": 1,
       "message": "might be better to stubout notifier_api.notify() rather than _send_notification as it currently stubouts the CADF event generation and only tests that the wrapper is called.",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xV0\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T05:43:51Z",
+      "side": 1,
+      "message": "This is modeled after the keystone notifications class which stubs at the _send_notification method so I am going to keep it consistent with that class",
+      "parentUuid": "AAAAUH/90nk\u003d",
       "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
