@@ -202,24 +202,7 @@ class Application(BaseApplication):
         # NOTE(vish): make sure we have no unicode keys for py2.6.
         params = self._normalize_dict(params)
 
-        try:
-            result = method(context, **params)
-        except exception.Unauthorized as e:
-            LOG.warning(
-                _('Authorization failed. %(exception)s from %(remote_addr)s'),
-                {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
-            return render_exception(e, user_locale=best_match_language(req))
-        except exception.Error as e:
-            LOG.warning(e)
-            return render_exception(e, user_locale=best_match_language(req))
-        except TypeError as e:
-            LOG.exception(e)
-            return render_exception(exception.ValidationError(e),
-                                    user_locale=best_match_language(req))
-        except Exception as e:
-            LOG.exception(e)
-            return render_exception(exception.UnexpectedError(exception=e),
-                                    user_locale=best_match_language(req))
+        result = method(context, **params)
 
         if result is None:
             return render_response(status=(204, 'No Content'))
@@ -475,9 +458,7 @@ class Router(object):
         """
         match = req.environ['wsgiorg.routing_args'][1]
         if not match:
-            return render_exception(
-                exception.NotFound(_('The resource could not be found.')),
-                user_locale=best_match_language(req))
+            raise webob.exc.HTTPNotFound()
         app = match['controller']
         return app
 
