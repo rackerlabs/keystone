@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9xIA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-04T06:23:58Z",
+      "side": 1,
+      "message": "Upon further review let\u0027s discuss.  I think Dolph\u0027s comments were regarding openstack foundation copyrights not IBM copyrights.  I just saw morgan fainberg add a copyright for his company so I think that is the distinction",
+      "parentUuid": "AAAAUH/94Gg\u003d",
+      "revId": "83325a603b2d30329bf45350ea63514d52d6bd13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9xfQ\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 6
