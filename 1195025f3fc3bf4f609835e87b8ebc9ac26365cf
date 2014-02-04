@@ -16,6 +16,24 @@
       "revId": "1195025f3fc3bf4f609835e87b8ebc9ac26365cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9wpw\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-04T09:27:02Z",
+      "side": 1,
+      "message": "What the Keystone exception do you talking about?",
+      "parentUuid": "AAAAUH/9ypE\u003d",
+      "revId": "1195025f3fc3bf4f609835e87b8ebc9ac26365cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
