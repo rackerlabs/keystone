@@ -34,10 +34,11 @@ class Connection(object):
         :param DateTime expiration: When the key should expire
                                     (None is never expire).
 
-        :raises IntegrityError: If a key exists then new keys assigned to the
-                                name must have the same 'group' setting. If the
-                                value of group is changed an IntegrityError is
-                                raised.
+        :raises GroupStatusChanged: If a key exists then new keys assigned to
+            the name must have the same 'group' setting. If the value of group
+            is changed a
+            :class:`keystone.contrib.kds.common.exception.GroupStatusChanged`
+            is raised.
 
         :returns int: The generation number of this key.
         """
@@ -53,13 +54,14 @@ class Connection(object):
         :param bool group: If provided only retrieve this key if its group
                            value is the same.
 
-        :returns dict: A dictionary of the key information or None if not
+        :returns dict: A dictionary of the key information or ``None`` if not
                        found. Keys will contain:
+
                        - name: Unique name of the key.
                        - group: If this key is a group key or not.
                        - key: The key data.
                        - signature: The signature of the key data.
                        - generation: The generation of this key.
                        - expiration: When the key expires (or None).
-                                     Expired keys can be returned.
+                         Expired keys can be returned.
         """
