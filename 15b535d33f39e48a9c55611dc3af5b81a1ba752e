@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9u5A\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "suggest change \"this\" to \"truncation\"",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u48\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "change \"required\" to \"requested\" ?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u4E\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "seems like we would check list_limit[\u0027truncated\u0027] and if it\u0027s true then the refs are already truncated? Why would the driver indicate that it truncated and then return too many elements?\n\nlike\n\n if list_limit.get(\u0027truncated\u0027) is not None:\n    return list_limit[\u0027truncated\u0027], refs\n\n if len(refs) \u003e list_limit[\u0027limit\u0027]:\n   return LIMITED, refs[:list_limit[\u0027limit\u0027]]\n\n return NOT_LIMITED, refs",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u14\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "here\u0027s a change to use for/else:\n\n for x in self:\n     if x[\u0027type\u0027] \u003d\u003d \u0027limit\u0027:\n        x[\u0027limit\u0027] \u003d limit\n        x[\u0027truncated\u0027] \u003d truncated\n        break\n  else:\n    self.append({\u0027limit\u0027: limit, \u0027type\u0027: \u0027limit\u0027,\n        \u0027truncated\u0027: truncated})\n\nthen you can get rid of the extra exists variable.\n\nand then won\u0027t also go through all the elements when there should only be one.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9u0w\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "suggest put \u0027 around limit.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uyw\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "suggest set truncated \u003d False here since it\u0027s used as a boolean at 174.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uyI\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "suggest set truncated \u003d False here since it\u0027s used as a boolean.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uxY\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "would be easier if \u0027hints\u0027 was a kwarg...",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9us0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "change \"by None\" to \"be None\"",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uss\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "change \"If it not\" to \"If it\u0027s not\"",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9uq0\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": ":returns: (add : )",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9umY\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "add a blank line after this for rst.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9umM\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-04T16:14:35Z",
+      "side": 1,
+      "message": "remove this line.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
