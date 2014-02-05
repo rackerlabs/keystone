@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9k9A\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T22:30:30Z",
+      "side": 1,
+      "message": "Is there any case there wouldn\u0027t be a local array?  Should this actually fail or just return a [] and circumvent the for loop on 182 since it has nothing to iterate over.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
