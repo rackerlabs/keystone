@@ -279,6 +279,31 @@ class Assignment(sql.Base, assignment.Driver):
 
             return _project_ids_to_dicts(session, project_ids)
 
+    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+
+        if project_id is not None:
+            assignment_type = AssignmentType.GROUP_PROJECT
+            target_id = project_id
+        elif domain_id is not None:
+            assignment_type = AssignmentType.GROUP_DOMAIN
+            target_id = domain_id
+        else:
+            raise AttributeError("Must specify either domain or project")
+
+        groups = [RoleAssignment.actor_id == group_id for
+                  group_id in group_ids]
+        general_sql_constraints = sql.and_(
+            RoleAssignment.type == assignment_type,
+            RoleAssignment.target_id == target_id,
+            Role.id == RoleAssignment.role_id,
+            sql.or_(*groups))
+
+        session = db_session.get_session()
+        with session.begin():
+            query = session.query(Role).filter(
+                general_sql_constraints).all()
+        return [role.to_dict() for role in query]
+
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
