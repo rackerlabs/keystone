@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9lFA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T22:17:35Z",
+      "side": 1,
+      "message": "This will generate 2 updated notifications if you update the domain.  Line 322 would also issue the \"updated\" event.",
+      "revId": "2d7b64ac97b6ff971b6abce5a97d85731e0f262e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
