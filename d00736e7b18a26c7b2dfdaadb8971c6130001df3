@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9mGI\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-05T19:24:38Z",
+      "side": 1,
+      "message": "I think it would be good to add this as a Note.",
+      "revId": "d00736e7b18a26c7b2dfdaadb8971c6130001df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mGM\u003d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-05T19:24:38Z",
+      "side": 1,
+      "message": "Please move this above the \"If the operation fails ...\" It is better since the previous para is still describing the parameters in the message.",
+      "revId": "d00736e7b18a26c7b2dfdaadb8971c6130001df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
