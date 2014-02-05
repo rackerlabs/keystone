@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9lEA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "i think it should be renamed to list_roles_for_groups",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lCM\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "nit: get_mapping_from_idp_and_protocol\n\notherwise ++, nice reuse",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lGU\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "what\u0027s the harm in sending everything from context[environment] over?",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lHM\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "you can get rid of this function, i\u0027ve moved it into the assertProcessor.",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lFs\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "it\u0027ll be \u0027group_ids\u0027: [\u0027123\u0027, \u0027xyz\u0027]",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lFY\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "get rid of id here",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lAw\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-05T22:23:56Z",
+      "side": 1,
+      "message": "i think method should be POST, that is typically what is used for getting a token",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
