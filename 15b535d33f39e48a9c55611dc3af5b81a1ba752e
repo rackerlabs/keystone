@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9mXU\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-05T19:21:38Z",
+      "side": 1,
+      "message": "Why is _get_list_limit a protected method of the driver if it\u0027s purpose is to be used by the manager?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9uyw\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 28
@@ -115,6 +132,23 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "suggest set truncated \u003d False here since it\u0027s used as a boolean.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mJI\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-05T19:21:38Z",
+      "side": 1,
+      "message": "Just a thought (maybe not a good one).  It this is really just meant to decorate methods with this signature \u0027list_{entity}(self, hints)\u0027 then why not use the same signature for wrapper.  You usually use *args and **kwargs because most of the time you don\u0027t care about the arguments passed in.  In this case we clearly do.\n\nDecorating the wrong thing would give you a TypeError and you could remove the next 6 lines.",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -183,6 +217,74 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": ":returns: (add : )",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9vVY\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 4117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-05T19:21:38Z",
+      "side": 1,
+      "message": "Any reason for the camel cased name?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9vVU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 4124,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-05T19:21:38Z",
+      "side": 1,
+      "message": "...or this one?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mPA\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-05T19:21:38Z",
+      "side": 1,
+      "message": "I believe this is unnecessary.  The only reason you need this is that test_backend.LimitTests is broken and not calling its own super().setUp.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mOo\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-05T19:21:38Z",
+      "side": 1,
+      "message": "Camel case again?",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
