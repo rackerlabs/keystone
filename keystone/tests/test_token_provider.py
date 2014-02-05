@@ -769,6 +769,10 @@ class TestTokenProvider(tests.TestCase):
                           provider=token.provider.PKI_PROVIDER)
         token.provider.Manager()
 
+        self.opt_in_group('token',
+                          provider=token.provider.CMSZ_PROVIDER)
+        token.provider.Manager()
+
     def test_unsupported_token_format(self):
         self.opt_in_group('signing', token_format='CUSTOM')
         self.assertRaises(exception.UnexpectedError,

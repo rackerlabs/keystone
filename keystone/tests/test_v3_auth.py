@@ -112,6 +112,11 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
     def test_default_fixture_scope_token(self):
         self.assertIsNotNone(self.get_scoped_token())
 
+    def generate_v3_token_id(self, token_data):
+        return cms.cms_sign_token(json.dumps(token_data),
+                                  CONF.signing.certfile,
+                                  CONF.signing.keyfile)
+
     def test_v3_token_id(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
@@ -121,9 +126,7 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
         token_id = resp.headers.get('X-Subject-Token')
         self.assertIn('expires_at', token_data['token'])
 
-        expected_token_id = cms.cms_sign_token(json.dumps(token_data),
-                                               CONF.signing.certfile,
-                                               CONF.signing.keyfile)
+        expected_token_id = self.generate_v3_token_id(token_data)
         self.assertEqual(expected_token_id, token_id)
         # should be able to validate hash PKI token as well
         hash_token_id = cms.cms_hash_token(token_id)
@@ -382,6 +385,18 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase):
         # make sure we have a CRL
         r = self.get('/auth/tokens/OS-PKI/revoked')
         self.assertIn('signed', r.result)
+
+
+class TestCMSZTokenAPIs(TestPKITokenAPIs):
+    def config_files(self):
+        conf_files = super(TestCMSZTokenAPIs, self).config_files()
+        conf_files.append(tests.dirs.tests('test_cmsz_token_provider.conf'))
+        return conf_files
+
+    def generate_v3_token_id(self, token_data):
+        return cms.cmsz_sign_token(json.dumps(token_data),
+                                   CONF.signing.certfile,
+                                   CONF.signing.keyfile)
 
 
 class TestUUIDTokenAPIs(TestPKITokenAPIs):

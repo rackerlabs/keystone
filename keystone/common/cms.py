@@ -14,7 +14,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import base64
 import hashlib
+import zlib
 
 from keystone.common import environment
 from keystone.openstack.common import log
@@ -22,15 +24,16 @@ from keystone.openstack.common import log
 
 LOG = log.getLogger(__name__)
 PKI_ANS1_PREFIX = 'MII'
+CMSZ_PREFIX = "{cmsz}"
 
 
-def cms_verify(formatted, signing_cert_file_name, ca_file_name):
+def cms_verify(formatted, signing_cert_file_name, ca_file_name, inform="PEM"):
     """Verifies the signature of the contents IAW CMS syntax."""
     process = environment.subprocess.Popen(["openssl", "cms", "-verify",
                                             "-certfile",
                                             signing_cert_file_name,
                                             "-CAfile", ca_file_name,
-                                            "-inform", "PEM",
+                                            "-inform", inform,
                                             "-nosmimecap", "-nodetach",
                                             "-nocerts", "-noattr"],
                                            stdin=environment.subprocess.PIPE,
@@ -62,6 +65,21 @@ def token_to_cms(signed_text):
     formatted += "-----END CMS-----\n"
 
     return formatted
+
+
+def verify_cmsz_token(token, signing_cert_file_name, ca_file_name):
+    encoded = token[len(CMSZ_PREFIX):]
+    decoded = base64.urlsafe_b64decode(encoded)
+    uncompressed = zlib.decompress(decoded)
+    validated = cms_verify(uncompressed,
+                           signing_cert_file_name,
+                           ca_file_name,
+                           "DER")
+    return validated
+
+
+def is_cmsz_token(token):
+    return token[:len(CMSZ_PREFIX)] == CMSZ_PREFIX
 
 
 def verify_token(token, signing_cert_file_name, ca_file_name):
@@ -114,7 +132,8 @@ def is_ans1_token(token):
     return token[:3] == PKI_ANS1_PREFIX
 
 
-def cms_sign_text(text, signing_cert_file_name, signing_key_file_name):
+def cms_sign_text(text, signing_cert_file_name, signing_key_file_name,
+                  outform="PEM"):
     """Uses OpenSSL to sign a document
     Produces a Base64 encoding of a DER formatted CMS Document
     http://en.wikipedia.org/wiki/Cryptographic_Message_Syntax
@@ -122,7 +141,7 @@ def cms_sign_text(text, signing_cert_file_name, signing_key_file_name):
     process = environment.subprocess.Popen(["openssl", "cms", "-sign",
                                             "-signer", signing_cert_file_name,
                                             "-inkey", signing_key_file_name,
-                                            "-outform", "PEM",
+                                            "-outform", outform,
                                             "-nosmimecap", "-nodetach",
                                             "-nocerts", "-noattr"],
                                            stdin=environment.subprocess.PIPE,
@@ -146,6 +165,17 @@ def cms_sign_token(text, signing_cert_file_name, signing_key_file_name):
     return cms_to_token(output)
 
 
+def cmsz_sign_token(token_data, signing_cert_file_name,
+                    signing_key_file_name):
+    signed = cms_sign_text(token_data,
+                           signing_cert_file_name,
+                           signing_key_file_name,
+                           "DER")
+    compressed = zlib.compress(signed, 6)
+    encoded = CMSZ_PREFIX + base64.urlsafe_b64encode(compressed)
+    return encoded
+
+
 def cms_to_token(cms_text):
 
     start_delim = "-----BEGIN CMS-----"
@@ -167,7 +197,7 @@ def cms_hash_token(token_id):
     """
     if token_id is None:
         return None
-    if is_ans1_token(token_id):
+    if len(token_id) > 64:
         hasher = hashlib.md5()
         hasher.update(token_id)
         return hasher.hexdigest()
