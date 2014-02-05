@@ -379,6 +379,13 @@
 [federation]
 #driver = keystone.contrib.federation.backends.sql.Federation
 
+# Once the SAML assertion is parsed by an HTTP server module, (e.g.
+# mod_shib/mod_mellon Apache modules) all the parameters are stored in the
+# environment and their names are prefixed with a certain string.
+# An administrator may specify this prefix here, so only the required SAML
+# parameters are retrieved.
+#assertion_prefix =
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/ssl/certs/keystone.pem

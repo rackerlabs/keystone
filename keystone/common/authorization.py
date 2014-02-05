@@ -34,6 +34,7 @@ It is a dictionary with the following attributes:
 * ``domain_id`` (optional): domain ID of the scoped domain if auth is
                             domain-scoped
 * ``roles`` (optional): list of role names for the given scope
+* ``group_ids``: list of group IDs for which the API user has membership
 
 """
 
@@ -67,7 +68,8 @@ def v3_token_to_auth_context(token):
     creds = {}
     token_data = token['token']
     try:
-        creds['user_id'] = token_data['user']['id']
+        user = token_data['user']
+        creds['user_id'] = user['id']
     except AttributeError:
         LOG.warning(_('RBAC: Invalid user data in v3 token'))
         raise exception.Unauthorized()
@@ -81,6 +83,8 @@ def v3_token_to_auth_context(token):
         creds['roles'] = []
         for role in token_data['roles']:
             creds['roles'].append(role['name'])
+    creds['group_ids'] = [
+        g['id'] for g in user.get('OS-FEDERATION:groups', [])]
     return creds
 
 
