@@ -16,6 +16,24 @@
       "revId": "220334577a692284672149d6b6df8c3ae291a242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lgo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T22:18:25Z",
+      "side": 1,
+      "message": "++ This seems to be adding in an extra layer for the sake of adding in an extra layer",
+      "parentUuid": "AAAAUH/+be0\u003d",
+      "revId": "220334577a692284672149d6b6df8c3ae291a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
