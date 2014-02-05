@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Approved+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: ZhiQiang Fan <aji.zqfan@gmail.com>
+Code-Review+1: Fabio Giannetti <fabio.giannetti@hp.com>
+Code-Review+1: Shri Javadekar <shrinand@maginatics.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 05 Feb 2014 09:19:24 +0000
+Reviewed-on: https://review.openstack.org/69971
+Project: openstack/keystone
+Branch: refs/heads/master
