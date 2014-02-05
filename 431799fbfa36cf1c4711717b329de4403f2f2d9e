@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9olw\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "document why catching OSError.",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9oks\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure that passing the requested version as the initial version is not going to do what we want it to.",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9okE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "migration.db_version has 2 required parameters.",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9oj8\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "migration.db_version has 2 required parameters.",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9og8\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "migration.db_sync has a required parameter -- def db_sync(abs_path, version\u003dNone, init_version\u003d0)",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9og0\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "this is an extension so should be passing in the extension\u0027s repo.",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ogQ\u003d",
+        "filename": "keystone/tests/test_sql_migrate_extensions.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-05T14:13:10Z",
+      "side": 1,
+      "message": "why do we need to make this change?",
+      "revId": "431799fbfa36cf1c4711717b329de4403f2f2d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
