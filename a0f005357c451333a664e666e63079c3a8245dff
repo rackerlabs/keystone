@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9pjk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-02-05T11:26:13Z",
+      "side": 1,
+      "message": "Doesn\u0027t seem to have updated the bug, should be Closes-Bug: #1269947 ?",
+      "revId": "a0f005357c451333a664e666e63079c3a8245dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
