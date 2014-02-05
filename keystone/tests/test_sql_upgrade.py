@@ -1682,6 +1682,14 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.downgrade(36)
         self.assertTableDoesNotExist('region')
 
+    def test_assignment_table_migration(self):
+        self.upgrade(37)
+        self.assertTableDoesNotExist('assignment')
+        self.upgrade(38)
+        self.assertTableExists('assignment')
+        self.downgrade(37)
+        self.assertTableDoesNotExist('assignment')
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
