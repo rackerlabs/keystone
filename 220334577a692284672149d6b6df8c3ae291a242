@@ -34,6 +34,24 @@
       "revId": "220334577a692284672149d6b6df8c3ae291a242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kbw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-05T23:56:02Z",
+      "side": 1,
+      "message": "Except, if you look at the next patch for limits, you see why it makes sense to have it, see: https://review.openstack.org/#/c/44836/",
+      "parentUuid": "AAAAUH/9lgo\u003d",
+      "revId": "220334577a692284672149d6b6df8c3ae291a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
