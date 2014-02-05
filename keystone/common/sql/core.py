@@ -47,6 +47,7 @@ String = sql.String
 ForeignKey = sql.ForeignKey
 DateTime = sql.DateTime
 IntegrityError = sql.exc.IntegrityError
+DBDuplicateEntry = db_exception.DBDuplicateEntry
 OperationalError = sql.exc.OperationalError
 NotFound = sql.orm.exc.NoResultFound
 Boolean = sql.Boolean
