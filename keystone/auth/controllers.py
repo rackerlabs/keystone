@@ -343,6 +343,10 @@ class Auth(controller.V3Controller):
             # scope is specified
             return
 
+        # Skip if we are authenticating federated user
+        if 'saml2' in auth_info.get_method_names():
+            return
+
         # fill in default_project_id if it is available
         try:
             user_ref = self.identity_api.get_user(auth_context['user_id'])
