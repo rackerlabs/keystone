@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9k9M\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-05T22:29:05Z",
+      "side": 1,
+      "message": "What about something along the lines:\nThe auth_token middleware is not longer hosted in Keystone and has moved to the python-keystoneclient project. The documentation regarding authentication middleware can be found here.",
+      "revId": "7e5b0098fa996e65e7b8b9b9507db6912b02e447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
