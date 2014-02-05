@@ -385,6 +385,14 @@ ADMIN_ASSERTION = {
     'orgPersonType': 'Admin;Chief;'
 }
 
+HACKER_ASSERTION = {
+    'Email': 'haxor@example.com',
+    'UserName': 'bob',
+    'FirstName': 'Bob',
+    'LastName': 'Thompson',
+    'orgPersonType': 'Admin;Chief;'
+}
+
 CUSTOMER_ASSERTION = {
     'Email': 'beth@example.com',
     'UserName': 'bwilliams',
