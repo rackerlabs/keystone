@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9moc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9n8w\u003d",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9n8E\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-05T15:50:04Z",
       "side": 1,
       "message": "suggest change name from _invalidate_projects to _invalidate_project, since it only invalidates the one project.\n\nAlso, suggest change name to _update_and_invalidate_project since it also updates the project.",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mn0\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9n8E\u003d",
       "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9mkY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "its the  domain ref.  Updated",
+      "parentUuid": "AAAAUH/9n4Y\u003d",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9n2s\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 8
@@ -81,6 +135,24 @@
       "writtenOn": "2014-02-05T15:50:04Z",
       "side": 1,
       "message": "why does this list need to be updated?",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mjs\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "This is the list of allowed notification event types.",
+      "parentUuid": "AAAAUH/9n2s\u003d",
       "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9mjc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "Probably shouldn\u0027t be caps, as it is not really a constant.  It is a list updated by other code, and references as a constant by the code once it has been populated with subscribers.",
+      "parentUuid": "AAAAUH/9n2g\u003d",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9n2Q\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 8
@@ -115,6 +205,24 @@
       "writtenOn": "2014-02-05T15:50:04Z",
       "side": 1,
       "message": "update the docstring to indicate that the notifications are for methods that disable things. This really doesn\u0027t seem useful to do as a decorator, and it makes a mess of the code since you have to move stuff into a function -- seems like it would be better to provide a simple send_disabled_notification function to call.",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mic\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "We still need to work around the other decorator, and they have the nice property that they document \u0027notify after all work is done.\u0027",
+      "parentUuid": "AAAAUH/9n2Q\u003d",
       "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9mgs\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "We could, but the logic is now changed to just send disable or send update, so it can\u0027t currently be triggered.",
+      "parentUuid": "AAAAUH/9n0Q\u003d",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9nzk\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 8
@@ -149,6 +275,24 @@
       "writtenOn": "2014-02-05T15:50:04Z",
       "side": 1,
       "message": "there should be a test that if the project isn\u0027t disabled then the disabled notification is not sent.",
+      "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9mgw\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-05T18:49:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9nzk\u003d",
       "revId": "9d067f7ed31e650557e6ba5455c0da9d7e4a4dcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
