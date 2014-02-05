@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9lhk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-05T20:57:09Z",
+      "side": 1,
+      "message": "http://pasteraw.com/sykz4u7pkbnz7415csl63gzcmcswsrc",
+      "revId": "27c98093dcc4ec039c9a15dd467a7f199b93c076",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
