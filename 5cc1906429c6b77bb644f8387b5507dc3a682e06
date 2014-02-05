@@ -16,6 +16,24 @@
       "revId": "5cc1906429c6b77bb644f8387b5507dc3a682e06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9km8\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T23:24:31Z",
+      "side": 1,
+      "message": "++ There are a number of issues that crop up when opt_in_group is not used (especially when reloading the backend like the next line) depending on the state of the configuration files.  If you expect the value to be set, make sure it\u0027s sticky with \n\n    self.opt_in_group(\u0027ldap\u0027, user_allow_create\u003dFalse)",
+      "parentUuid": "AAAAUH/94iY\u003d",
+      "revId": "5cc1906429c6b77bb644f8387b5507dc3a682e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
