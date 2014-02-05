@@ -343,6 +343,10 @@ class Auth(controller.V3Controller):
             # scope is specified
             return
 
+        # Skip if we are told to do so
+        if auth_context.get('skip_default_scoping', False) is True:
+            return
+
         # fill in default_project_id if it is available
         try:
             user_ref = self.identity_api.get_user(auth_context['user_id'])
