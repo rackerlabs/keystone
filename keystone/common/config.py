@@ -328,7 +328,6 @@ FILE_OPTIONS = {
                    default='keystone.contrib.federation.'
                            'backends.sql.Federation',
                    help='Keystone Federation backend driver')],
-
     'policy': [
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy',
