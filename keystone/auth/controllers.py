@@ -343,6 +343,10 @@ class Auth(controller.V3Controller):
             # scope is specified
             return
 
+        # Skip scoping in the case of federation
+        if auth_context.get('OS-FEDERATION:identity_provider'):
+            return
+
         # fill in default_project_id if it is available
         try:
             user_ref = self.identity_api.get_user(auth_context['user_id'])
