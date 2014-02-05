@@ -38,6 +38,11 @@ class AuthMethodHandler(object):
                        a dictionary.
 
         If successful, plugin must set ``user_id`` in ``auth_context``.
+        Plugin ``saml2`` additionally sets ``group_ids`` and
+        ``identity_provider`` and ``protocol`` in the ``auth_context``,
+        values required for issuing unscoped federated token.
+        During scoping of the federated tokens, plugin sets
+        ``federated_token``. This entry stores unscoped token.
         ``method_name`` is used to convey any additional authentication methods
         in case authentication is for re-scoping. For example, if the
         authentication is for re-scoping, plugin must append the previous
@@ -64,7 +69,7 @@ class AuthMethodHandler(object):
                 "auth": {
                     "identity": {
                         "custom-plugin": {
-                            "custom-data": "sdfdfsfsfsdfsf"
+                            "custom-data": "some_data"
                         },
                         "methods": [
                             "custom-plugin",
