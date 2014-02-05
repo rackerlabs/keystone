@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9lKQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T22:11:29Z",
+      "side": 1,
+      "message": "I know you are emulating current behavior, but do you want to send a disabled notification if the project is already disabled (e.g. someone did a .get_project, returned disabled data and then updated some other attribute then sent an update call)?\n\nI think this is an edge case and likely would be the exception vs. the rule.  As long as this is not an issue that needs addressing, I don\u0027t see a reason this would be a problem.\n\nthis comment holds true for domain disable / other disables.",
+      "revId": "ed844c94857817052c9aa4e9e1e981444c636575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lJQ\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T22:11:29Z",
+      "side": 1,
+      "message": "Minor suggestion, just being explicit about what should use disable events at every step of the docstring.\n\nSuggest \"Should not include disable events; disable events should use the ``disabled`` decorator instead\".",
+      "revId": "ed844c94857817052c9aa4e9e1e981444c636575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9lI0\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-05T22:11:29Z",
+      "side": 1,
+      "message": "I don\u0027t think assertGreater is py2.6 compatible/available",
+      "revId": "ed844c94857817052c9aa4e9e1e981444c636575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
