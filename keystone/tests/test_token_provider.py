@@ -766,6 +766,10 @@ class TestTokenProvider(tests.TestCase):
                                    provider=token.provider.PKI_PROVIDER)
         token.provider.Manager()
 
+        self.iconfig_fixture(group='token',
+                             provider=token.provider.CMSZ_PROVIDER)
+        token.provider.Manager()
+
     def test_unsupported_token_format(self):
         self.config_fixture.config(group='signing', token_format='CUSTOM')
         self.assertRaises(exception.UnexpectedError,

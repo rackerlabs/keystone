@@ -14,6 +14,7 @@
 
 import copy
 import datetime
+import json
 import uuid
 
 from keystoneclient.common import cms
@@ -127,6 +128,11 @@ class TokenAPITests(object):
     def test_default_fixture_scope_token(self):
         self.assertIsNotNone(self.get_scoped_token())
 
+    def generate_v3_token_id(self, token_data):
+        return cms.cms_sign_token(json.dumps(token_data),
+                                  CONF.signing.certfile,
+                                  CONF.signing.keyfile)
+
     def test_v3_token_id(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
@@ -135,10 +141,7 @@ class TokenAPITests(object):
         token_data = resp.result
         token_id = resp.headers.get('X-Subject-Token')
         self.assertIn('expires_at', token_data['token'])
-
-        expected_token_id = cms.cms_sign_token(resp.body,
-                                               CONF.signing.certfile,
-                                               CONF.signing.keyfile)
+        expected_token_id = self.generate_v3_token_id(token_data)
         self.assertEqual(expected_token_id, token_id)
         # should be able to validate hash PKI token as well
         hash_token_id = cms.cms_hash_token(token_id)
@@ -402,6 +405,19 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def setUp(self):
         super(TestPKITokenAPIs, self).setUp()
         self.doSetUp()
+
+
+class TestCMSZTokenAPIs(TestPKITokenAPIs):
+    def config_overrides(self):
+        super(TestCMSZTokenAPIs, self).config_overrides()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.cmsz.Provider')
+
+    def generate_v3_token_id(self, token_data):
+        return cms.cmsz_sign_token(json.dumps(token_data),
+                                   CONF.signing.certfile,
+                                   CONF.signing.keyfile)
 
 
 class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
