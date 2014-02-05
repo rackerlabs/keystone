@@ -13,9 +13,10 @@
 # under the License.
 
 import json
+import six
 import sys
 
-import six
+from six.moves.urllib import parse
 
 from keystone.common import dependency
 from keystone import config
@@ -168,6 +169,30 @@ class V3TokenDataHelper(object):
             roles = self.assignment_api.get_roles_for_user_and_project(
                 user_id, project_id)
         return [self.assignment_api.get_role(role_id) for role_id in roles]
+
+    def _populate_roles_for_groups(self, token_data, group_ids,
+                                   project_id=None, domain_id=None,
+                                   user_id=None):
+        def _check_roles(roles, user_id, project_id, domain_id):
+            if roles:
+                return
+            if project_id:
+                msg = _('User %(user_id)s has no access '
+                        'to project %(project_id)s') % {
+                            'user_id': user_id,
+                            'project_id': project_id}
+            elif domain_id:
+                msg = _('User %(user_id)s has no access '
+                        'to domain %(domain_id)s') % {
+                            'user_id': user_id,
+                            'domain_id': domain_id}
+            raise exception.Unauthorized(msg)
+
+        roles = self.assignment_api.get_roles_for_groups(group_ids,
+                                                         project_id,
+                                                         domain_id)
+        _check_roles(roles, user_id, project_id, domain_id)
+        token_data['roles'] = roles
 
     def _populate_user(self, token_data, user_id, trust):
         if 'user' in token_data:
@@ -391,6 +416,11 @@ class BaseProvider(provider.Provider):
                 'trust_id' in metadata_ref):
             trust = self.trust_api.get_trust(metadata_ref['trust_id'])
 
+        token_ref = None
+        if 'saml2' in method_names:
+            token_ref = self._handle_saml2_tokens(auth_context, project_id,
+                                                  domain_id)
+
         access_token = None
         if 'oauth1' in method_names:
             if self.oauth_api:
@@ -408,6 +438,7 @@ class BaseProvider(provider.Provider):
             expires=expires_at,
             trust=trust,
             bind=auth_context.get('bind') if auth_context else None,
+            token=token_ref,
             include_catalog=include_catalog,
             access_token=access_token)
 
@@ -450,6 +481,36 @@ class BaseProvider(provider.Provider):
                 raise exc_info[0], exc_info[1], exc_info[2]
 
         return (token_id, token_data)
+
+    def _handle_saml2_tokens(self, auth_context, project_id, domain_id):
+        if project_id or domain_id:
+            user_id = auth_context['user_id']
+            federated_token = auth_context['federated_token']
+            groups = federated_token['user']['OS-FEDERATION:groups']
+            group_ids = [x['id'] for x in groups]
+            token_data = {
+                'user': federated_token['user']
+            }
+            self.v3_token_data_helper._populate_roles_for_groups(
+                token_data, group_ids, project_id, domain_id)
+        else:
+            user_id = auth_context['user_id']
+            groups = auth_context['group_ids']
+            identity_provider = auth_context['identity_provider']
+            protocol = auth_context['protocol']
+
+            token_data = {
+                'user': {
+                    'id': parse.quote(user_id),
+                    'name': user_id,
+                    'OS-FEDERATION': {
+                        'identity_provider': identity_provider,
+                        'protocol': protocol
+                    },
+                    'OS-FEDERATION:groups': [{'id': x} for x in groups]
+                }
+            }
+        return token_data
 
     def _verify_token(self, token_id):
         """Verify the given token and return the token_ref."""
