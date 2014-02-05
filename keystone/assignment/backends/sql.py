@@ -25,6 +25,12 @@ from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 CONF = config.CONF
 
+# Current set of Assignment types we support
+USER_PROJECT = 'UserProject'
+GROUP_PROJECT = 'GroupProject'
+USER_DOMAIN = 'UserDomain'
+GROUP_DOMAIN = 'GroupDomain'
+
 
 class Assignment(sql.Base, assignment.Driver):
 
@@ -56,41 +62,59 @@ class Assignment(sql.Base, assignment.Driver):
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
-            query = session.query(UserProjectGrant)
-            query = query.filter(UserProjectGrant.project_id ==
-                                 tenant_id)
+            query = session.query(RoleAssignment)
+            query = query.filter_by(type=USER_PROJECT)
+            query = query.filter_by(target_id=tenant_id)
             project_refs = query.all()
-            return [project_ref.user_id for project_ref in project_refs]
+            return [project_ref.actor_id for project_ref in project_refs]
 
     def _get_metadata(self, user_id=None, tenant_id=None,
                       domain_id=None, group_id=None, session=None):
+        # TODO(henry-nash): This method represents the last vestiges of the old
+        # metadata concept in this driver.  Although we no longer need it here,
+        # since the Manager layer uses the metadata concept across all
+        # assignment drivers, we need to remove it from all of them in order to
+        # finally remove this method.
+
         # We aren't given a session when called by the manager directly.
         if session is None:
             session = db_session.get_session()
-        if user_id:
-            if tenant_id:
-                q = session.query(UserProjectGrant)
-                q = q.filter_by(project_id=tenant_id)
-            elif domain_id:
-                q = session.query(UserDomainGrant)
-                q = q.filter_by(domain_id=domain_id)
-            q = q.filter_by(user_id=user_id)
-        elif group_id:
-            if tenant_id:
-                q = session.query(GroupProjectGrant)
-                q = q.filter_by(project_id=tenant_id)
-            elif domain_id:
-                q = session.query(GroupDomainGrant)
-                q = q.filter_by(domain_id=domain_id)
-            q = q.filter_by(group_id=group_id)
-        try:
-            return q.one().data
-        except sql.NotFound:
+
+        q = session.query(RoleAssignment)
+        q = q.filter_by(actor_id=user_id or group_id)
+        q = q.filter_by(target_id=tenant_id or domain_id)
+        refs = q.all()
+        if not refs:
             raise exception.MetadataNotFound()
+
+        metadata_ref = {}
+        metadata_ref['roles'] = []
+        for x in refs:
+            role_ref = {}
+            role_ref['id'] = x.role_id
+            if x.inherited and (x.type == USER_DOMAIN or
+                                x.type == GROUP_DOMAIN):
+                role_ref['inherited_to'] = 'projects'
+            metadata_ref['roles'].append(role_ref)
+
+        return metadata_ref
 
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
+
+        def calculate_type(user_id, group_id, project_id, domain_id):
+            if user_id:
+                if project_id:
+                    return USER_PROJECT
+                else:
+                    return USER_DOMAIN
+            else:
+                if project_id:
+                    return GROUP_PROJECT
+                else:
+                    return GROUP_DOMAIN
+
         with sql.transaction() as session:
             self._get_role(session, role_id)
 
@@ -103,24 +127,18 @@ class Assignment(sql.Base, assignment.Driver):
                 msg = _('Inherited roles can only be assigned to domains')
                 raise exception.Conflict(type='role grant', details=msg)
 
-            try:
-                metadata_ref = self._get_metadata(user_id, project_id,
-                                                  domain_id, group_id,
-                                                  session=session)
-                is_new = False
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-                is_new = True
-
-            metadata_ref['roles'] = self._add_role_to_role_dicts(
-                role_id, inherited_to_projects, metadata_ref.get('roles', []))
-
-            if is_new:
-                self._create_metadata(session, user_id, project_id,
-                                      metadata_ref, domain_id, group_id)
-            else:
-                self._update_metadata(session, user_id, project_id,
-                                      metadata_ref, domain_id, group_id)
+        type = calculate_type(user_id, group_id, project_id, domain_id)
+        try:
+            with sql.transaction() as session:
+                session.add(RoleAssignment
+                            (type=type,
+                             actor_id=user_id or group_id,
+                             target_id=project_id or domain_id,
+                             role_id=role_id,
+                             inherited=inherited_to_projects))
+        except sql.DBDuplicateEntry:
+            # The v3 grant APIs are silent if the assignment already exists
+            pass
 
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None,
@@ -131,16 +149,11 @@ class Assignment(sql.Base, assignment.Driver):
             if project_id:
                 self._get_project(session, project_id)
 
-            try:
-                metadata_ref = self._get_metadata(user_id, project_id,
-                                                  domain_id, group_id,
-                                                  session=session)
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-
-            return [self.get_role(x) for x in
-                    self._roles_from_role_dicts(metadata_ref.get('roles', []),
-                                                inherited_to_projects)]
+            q = session.query(RoleAssignment)
+            q = q.filter_by(actor_id=user_id or group_id)
+            q = q.filter_by(target_id=project_id or domain_id)
+            q = q.filter_by(inherited=inherited_to_projects)
+            return [self.get_role(x.role_id) for x in q.all()]
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None,
@@ -153,59 +166,34 @@ class Assignment(sql.Base, assignment.Driver):
                 self._get_project(session, project_id)
 
             try:
-                metadata_ref = self._get_metadata(user_id, project_id,
-                                                  domain_id, group_id,
-                                                  session=session)
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-            role_ids = set(self._roles_from_role_dicts(
-                metadata_ref.get('roles', []), inherited_to_projects))
-            if role_id not in role_ids:
+                q = session.query(RoleAssignment)
+                q = q.filter_by(actor_id=user_id or group_id)
+                q = q.filter_by(target_id=project_id or domain_id)
+                q = q.filter_by(role_id=role_id)
+                q = q.filter_by(inherited=inherited_to_projects)
+                q.one()
+            except sql.NotFound:
                 raise exception.RoleNotFound(role_id=role_id)
+
             return role_ref.to_dict()
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
         with sql.transaction() as session:
-            self._delete_grant(session=session, role_id=role_id,
-                               user_id=user_id, group_id=group_id,
-                               domain_id=domain_id, project_id=project_id,
-                               inherited_to_projects=inherited_to_projects)
+            self._get_role(session, role_id)
+            if domain_id:
+                self._get_domain(session, domain_id)
+            if project_id:
+                self._get_project(session, project_id)
 
-    def _delete_grant(self, session, role_id, user_id=None, group_id=None,
-                      domain_id=None, project_id=None,
-                      inherited_to_projects=False):
-        self._get_role(session, role_id)
-        if domain_id:
-            self._get_domain(session, domain_id)
-        if project_id:
-            self._get_project(session, project_id)
-
-        try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id,
-                                              session=session)
-            is_new = False
-        except exception.MetadataNotFound:
-            metadata_ref = {}
-            is_new = True
-
-        try:
-            metadata_ref['roles'] = self._remove_role_from_role_dicts(
-                role_id, inherited_to_projects, metadata_ref.get('roles', []))
-        except KeyError:
-            raise exception.RoleNotFound(role_id=role_id)
-
-        if is_new:
-            # TODO(henry-nash) It seems odd that you would create a new
-            # entry in response to trying to delete a role that was not
-            # assigned.  Although benign, this should probably be removed.
-            self._create_metadata(session, user_id, project_id, metadata_ref,
-                                  domain_id, group_id)
-        else:
-            self._update_metadata(session, user_id, project_id, metadata_ref,
-                                  domain_id, group_id)
+            q = session.query(RoleAssignment)
+            q = q.filter_by(actor_id=user_id or group_id)
+            q = q.filter_by(target_id=project_id or domain_id)
+            q = q.filter_by(role_id=role_id)
+            q = q.filter_by(inherited=inherited_to_projects)
+            if q.delete(False) == 0:
+                raise exception.RoleNotFound(role_id=role_id)
 
     @sql.truncated
     def list_projects(self, hints):
@@ -222,51 +210,30 @@ class Assignment(sql.Base, assignment.Driver):
             return [project_ref.to_dict() for project_ref in project_refs]
 
     def list_projects_for_user(self, user_id, group_ids, hints):
-        # NOTE(henry-nash): This method is written as a series of code blocks,
-        # rather than broken down into too many sub-functions, to prepare for
-        # SQL optimization when we rationalize the grant tables in the
-        # future.
-
-        # TODO(henry-nash): Once we replace the existing grant tables with
-        # a more normalized table structure, we will be able to implement
-        # filtering here.  Until then, we'll just ignore it and let the
-        # controller do it.
-
-        def _list_domains_with_inherited_grants(query):
-            domain_ids = set()
-            domain_grants = query.all()
-            for domain_grant in domain_grants:
-                for grant in domain_grant.data.get('roles', []):
-                    if 'inherited_to' in grant:
-                        domain_ids.add(domain_grant.domain_id)
-            return domain_ids
+        # TODO(henry-nash): Now that we have a single assignment table, we
+        # should restructure the code in this method to make fewer database
+        # calls. In addition, we should be able to honor the hints list that
+        # is provided.
 
         def _project_ids_to_dicts(session, ids):
             return [self._get_project(session, project_id).to_dict()
                     for project_id in ids]
 
-        # NOTE(henry-nash): The metadata management code doesn't always clean
-        # up table entries when the last role is deleted - so when checking
-        # grant entries, only include this project if there are actually roles
-        # present.
-
         with sql.transaction() as session:
             # First get a list of the projects for which the user has a direct
             # role assigned
-            query = session.query(UserProjectGrant)
-            query = query.filter_by(user_id=user_id)
-            project_grants_for_user = query.all()
-            project_ids = set(x.project_id for x in project_grants_for_user
-                              if x.data.get('roles'))
+            query = session.query(RoleAssignment)
+            query = query.filter_by(type=USER_PROJECT)
+            query = query.filter_by(actor_id=user_id)
+            project_ids = set(x.target_id for x in query.all())
 
             # Now find any projects with group roles and add them in
             for group_id in group_ids:
-                query = session.query(GroupProjectGrant)
-                query = query.filter_by(group_id=group_id)
-                project_grants_for_group = query.all()
-                for project_grant in project_grants_for_group:
-                    if project_grant.data.get('roles'):
-                        project_ids.add(project_grant.project_id)
+                query = session.query(RoleAssignment)
+                query = query.filter_by(type=GROUP_PROJECT)
+                query = query.filter_by(actor_id=group_id)
+                for project_grant in query.all():
+                        project_ids.add(project_grant.target_id)
 
             if not CONF.os_inherit.enabled:
                 return _project_ids_to_dicts(session, project_ids)
@@ -277,16 +244,20 @@ class Assignment(sql.Base, assignment.Driver):
 
             domain_ids = set()
 
-            # First check for user roles on any domains
-            query = session.query(UserDomainGrant)
-            query = query.filter_by(user_id=user_id)
-            domain_ids.update(_list_domains_with_inherited_grants(query))
+            # First check for inherited user roles on any domains
+            query = session.query(RoleAssignment)
+            query = query.filter_by(type=USER_DOMAIN)
+            query = query.filter_by(actor_id=user_id)
+            query = query.filter_by(inherited=True)
+            domain_ids.update(set(x.target_id for x in query.all()))
 
             # Now for group roles on any domains
             for group_id in group_ids:
-                query = session.query(GroupDomainGrant)
-                query = query.filter_by(group_id=group_id)
-                domain_ids.update(_list_domains_with_inherited_grants(query))
+                query = session.query(RoleAssignment)
+                query = query.filter_by(type=GROUP_DOMAIN)
+                query = query.filter_by(actor_id=group_id)
+                query = query.filter_by(inherited=True)
+                domain_ids.update(set(x.target_id for x in query.all()))
 
             # For each domain on which the user has an inherited role, get the
             # list of projects in that domain and add them in to the
@@ -305,106 +276,57 @@ class Assignment(sql.Base, assignment.Driver):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
             self._get_role(session, role_id)
-            try:
-                metadata_ref = self._get_metadata(user_id, tenant_id,
-                                                  session=session)
-                is_new = False
-            except exception.MetadataNotFound:
-                metadata_ref = {}
-                is_new = True
 
-            try:
-                metadata_ref['roles'] = self._add_role_to_role_dicts(
-                    role_id, False, metadata_ref.get('roles', []),
-                    allow_existing=False)
-            except KeyError:
-                msg = ('User %s already has role %s in tenant %s'
-                       % (user_id, role_id, tenant_id))
-                raise exception.Conflict(type='role grant', details=msg)
-
-            if is_new:
-                self._create_metadata(session, user_id, tenant_id,
-                                      metadata_ref)
-            else:
-                self._update_metadata(session, user_id, tenant_id,
-                                      metadata_ref)
+        try:
+            with sql.transaction() as session:
+                session.add(RoleAssignment(
+                    type=USER_PROJECT, actor_id=user_id, target_id=tenant_id,
+                    role_id=role_id, inherited=False))
+        except sql.DBDuplicateEntry:
+            msg = ('User %s already has role %s in tenant %s'
+                   % (user_id, role_id, tenant_id))
+            raise exception.Conflict(type='role grant', details=msg)
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
-            try:
-                metadata_ref = self._get_metadata(user_id, tenant_id,
-                                                  session=session)
-            except exception.MetadataNotFound:
+            q = session.query(RoleAssignment)
+            q = q.filter_by(actor_id=user_id)
+            q = q.filter_by(target_id=tenant_id)
+            q = q.filter_by(role_id=role_id)
+            if q.delete() == 0:
                 raise exception.RoleNotFound(message=_(
                     'Cannot remove role that has not been granted, %s') %
                     role_id)
-            try:
-                metadata_ref['roles'] = self._remove_role_from_role_dicts(
-                    role_id, False, metadata_ref.get('roles', []))
-            except KeyError:
-                raise exception.RoleNotFound(message=_(
-                    'Cannot remove role that has not been granted, %s') %
-                    role_id)
-
-            if metadata_ref['roles']:
-                self._update_metadata(session, user_id, tenant_id,
-                                      metadata_ref)
-            else:
-                q = session.query(UserProjectGrant)
-                q = q.filter_by(user_id=user_id)
-                q = q.filter_by(project_id=tenant_id)
-                q.delete()
 
     def list_role_assignments(self):
 
-        # TODO(henry-nash): The current implementation is really simulating
-        # us having a common role assignment table, rather than having the
-        # four different grant tables we have today.  When we move to role
-        # assignment as a first class entity, we should create the single
-        # assignment table, simplifying the logic of this (and many other)
-        # functions.
+        def denormalize_role(ref):
+            assignment = {}
+            if ref.type == USER_PROJECT:
+                assignment['user_id'] = ref.actor_id
+                assignment['project_id'] = ref.target_id
+            elif ref.type == USER_DOMAIN:
+                assignment['user_id'] = ref.actor_id
+                assignment['domain_id'] = ref.target_id
+            elif ref.type == GROUP_PROJECT:
+                assignment['group_id'] = ref.actor_id
+                assignment['project_id'] = ref.target_id
+            elif ref.type == GROUP_DOMAIN:
+                assignment['group_id'] = ref.actor_id
+                assignment['domain_id'] = ref.target_id
+            else:
+                raise exception.Error(message=_(
+                    'Unexpected assignment type encountered, %s') %
+                    ref.type)
+            assignment['role_id'] = ref.role_id
+            if ref.inherited and (ref.type == USER_DOMAIN or
+                                  ref.type == GROUP_DOMAIN):
+                assignment['inherited_to_projects'] = 'projects'
+            return assignment
 
         with sql.transaction() as session:
-            assignment_list = []
-            refs = session.query(UserDomainGrant).all()
-            for x in refs:
-                roles = x.data.get('roles', {})
-                for r in self._roles_from_role_dicts(roles, False):
-                    assignment_list.append({'user_id': x.user_id,
-                                            'domain_id': x.domain_id,
-                                            'role_id': r})
-                for r in self._roles_from_role_dicts(roles, True):
-                    assignment_list.append({'user_id': x.user_id,
-                                            'domain_id': x.domain_id,
-                                            'role_id': r,
-                                            'inherited_to_projects': True})
-            refs = session.query(UserProjectGrant).all()
-            for x in refs:
-                roles = x.data.get('roles', {})
-                for r in self._roles_from_role_dicts(roles, False):
-                    assignment_list.append({'user_id': x.user_id,
-                                            'project_id': x.project_id,
-                                            'role_id': r})
-            refs = session.query(GroupDomainGrant).all()
-            for x in refs:
-                roles = x.data.get('roles', {})
-                for r in self._roles_from_role_dicts(roles, False):
-                    assignment_list.append({'group_id': x.group_id,
-                                            'domain_id': x.domain_id,
-                                            'role_id': r})
-                for r in self._roles_from_role_dicts(roles, True):
-                    assignment_list.append({'group_id': x.group_id,
-                                            'domain_id': x.domain_id,
-                                            'role_id': r,
-                                            'inherited_to_projects': True})
-            refs = session.query(GroupProjectGrant).all()
-            for x in refs:
-                roles = x.data.get('roles', {})
-                for r in self._roles_from_role_dicts(roles, False):
-                    assignment_list.append({'group_id': x.group_id,
-                                            'project_id': x.project_id,
-                                            'role_id': r})
-            return assignment_list
+            refs = session.query(RoleAssignment).all()
+            return [denormalize_role(ref) for ref in refs]
 
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
@@ -437,84 +359,11 @@ class Assignment(sql.Base, assignment.Driver):
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
 
-            q = session.query(UserProjectGrant)
-            q = q.filter_by(project_id=tenant_id)
-            q.delete(False)
-
-            q = session.query(GroupProjectGrant)
-            q = q.filter_by(project_id=tenant_id)
+            q = session.query(RoleAssignment)
+            q = q.filter_by(target_id=tenant_id)
             q.delete(False)
 
             session.delete(tenant_ref)
-
-    @sql.handle_conflicts(conflict_type='metadata')
-    def _create_metadata(self, session, user_id, tenant_id, metadata,
-                         domain_id=None, group_id=None):
-        if user_id:
-            if tenant_id:
-                session.add(UserProjectGrant
-                            (user_id=user_id,
-                             project_id=tenant_id,
-                             data=metadata))
-            elif domain_id:
-                session.add(UserDomainGrant
-                            (user_id=user_id,
-                             domain_id=domain_id,
-                             data=metadata))
-        elif group_id:
-            if tenant_id:
-                session.add(GroupProjectGrant
-                            (group_id=group_id,
-                             project_id=tenant_id,
-                             data=metadata))
-            elif domain_id:
-                session.add(GroupDomainGrant
-                            (group_id=group_id,
-                             domain_id=domain_id,
-                             data=metadata))
-        session.flush()
-        return metadata
-
-    @sql.handle_conflicts(conflict_type='metadata')
-    def _update_metadata(self, session, user_id, tenant_id, metadata,
-                         domain_id=None, group_id=None):
-        if user_id:
-            if tenant_id:
-                q = session.query(UserProjectGrant)
-                q = q.filter_by(user_id=user_id)
-                q = q.filter_by(project_id=tenant_id)
-            elif domain_id:
-                q = session.query(UserDomainGrant)
-                q = q.filter_by(user_id=user_id)
-                q = q.filter_by(domain_id=domain_id)
-        elif group_id:
-            if tenant_id:
-                q = session.query(GroupProjectGrant)
-                q = q.filter_by(group_id=group_id)
-                q = q.filter_by(project_id=tenant_id)
-            elif domain_id:
-                q = session.query(GroupDomainGrant)
-                q = q.filter_by(group_id=group_id)
-                q = q.filter_by(domain_id=domain_id)
-        metadata_ref = q.first()
-        metadata_ref.data.update(metadata)
-
-        # NOTE(pete5): We manually mark metadata_ref.data as modified since
-        # SQLAlchemy may not automatically detect the change. Why not? Well...
-        # SQLAlchemy knows that an attribute has changed either if (1) somebody
-        # has marked it as mutated, or (2) the attribute's value at load-time
-        # != the flush-time value. Since we don't track mutations to JsonBlob
-        # columns (see "Mutation Tracking" in SQLAlchemy's documentation at
-        # http://docs.sqlalchemy.org/en/rel_0_7/orm/extensions/mutable.html),
-        # we can't count on (1). Since metadata_ref.data is often the same
-        # object as metadata (i.e., we return metadata_ref.data in
-        # self._get_metadata, manipulate it, then pass it to
-        # self._update_metadata), the check in (2) determines that the value
-        # hasn't changed.
-        sql.flag_modified(metadata_ref, 'data')
-
-        session.flush()
-        return metadata_ref
 
     # domain crud
 
@@ -568,6 +417,13 @@ class Assignment(sql.Base, assignment.Driver):
     def delete_domain(self, domain_id):
         with sql.transaction() as session:
             ref = self._get_domain(session, domain_id)
+
+            # TODO(henry-nash): Although the controller will ensure deletion of
+            # all users & groups within the domain (which will cause all
+            # assignments for those users/groups to also be deleted), there
+            # could still be assignments on this domain for users/groups in
+            # other domains - so we should delete these here (see Bug #1277847)
+
             session.delete(ref)
 
     # role crud
@@ -613,55 +469,21 @@ class Assignment(sql.Base, assignment.Driver):
     def delete_role(self, role_id):
         with sql.transaction() as session:
             ref = self._get_role(session, role_id)
-            for metadata_ref in session.query(UserProjectGrant):
-                try:
-                    self._delete_grant(session, role_id,
-                                       user_id=metadata_ref.user_id,
-                                       project_id=metadata_ref.project_id)
-                except exception.RoleNotFound:
-                    pass
-            for metadata_ref in session.query(UserDomainGrant):
-                try:
-                    self._delete_grant(session, role_id,
-                                       user_id=metadata_ref.user_id,
-                                       domain_id=metadata_ref.domain_id)
-                except exception.RoleNotFound:
-                    pass
-            for metadata_ref in session.query(GroupProjectGrant):
-                try:
-                    self._delete_grant(session, role_id,
-                                       group_id=metadata_ref.group_id,
-                                       project_id=metadata_ref.project_id)
-                except exception.RoleNotFound:
-                    pass
-            for metadata_ref in session.query(GroupDomainGrant):
-                try:
-                    self._delete_grant(session, role_id,
-                                       group_id=metadata_ref.group_id,
-                                       domain_id=metadata_ref.domain_id)
-                except exception.RoleNotFound:
-                    pass
-
+            q = session.query(RoleAssignment)
+            q = q.filter_by(role_id=role_id)
+            q.delete(False)
             session.delete(ref)
 
     def delete_user(self, user_id):
         with sql.transaction() as session:
-            q = session.query(UserProjectGrant)
-            q = q.filter_by(user_id=user_id)
-            q.delete(False)
-
-            q = session.query(UserDomainGrant)
-            q = q.filter_by(user_id=user_id)
+            q = session.query(RoleAssignment)
+            q = q.filter_by(actor_id=user_id)
             q.delete(False)
 
     def delete_group(self, group_id):
         with sql.transaction() as session:
-            q = session.query(GroupProjectGrant)
-            q = q.filter_by(group_id=group_id)
-            q.delete(False)
-
-            q = session.query(GroupDomainGrant)
-            q = q.filter_by(group_id=group_id)
+            q = session.query(RoleAssignment)
+            q = q.filter_by(actor_id=group_id)
             q.delete(False)
 
 
@@ -699,66 +521,23 @@ class Role(sql.ModelBase, sql.DictBase):
     __table_args__ = (sql.UniqueConstraint('name'), {})
 
 
-class BaseGrant(sql.DictBase):
-    """Base Grant class.
+class RoleAssignment(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'assignment'
+    attributes = ['type', 'actor_id', 'target_id', 'role_id', 'inherited']
+    type = sql.Column(
+        sql.Enum(USER_PROJECT, GROUP_PROJECT, USER_DOMAIN, GROUP_DOMAIN),
+        nullable=False)
+    actor_id = sql.Column(sql.String(64), nullable=False)
+    target_id = sql.Column(sql.String(64), nullable=False)
+    role_id = sql.Column(sql.String(64), nullable=False)
+    inherited = sql.Column(sql.Boolean, default=False)
+    __table_args__ = (sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id',
+                                               'role_id'), {})
 
-    There are four grant tables in the current implementation, one for
-    each type of grant:
-
-    - User for Project
-    - User for Domain
-    - Group for Project
-    - Group for Domain
-
-    Each is a table with the two attributes above as a combined primary key,
-    with the data field holding all roles for that combination.  The data
-    field is a list of dicts.  For regular role assignments each dict in
-    the list of of the form:
-
-    {'id': role_id}
-
-    If the OS-INHERIT extension is enabled and the role on a domain is an
-    inherited role, the dict will be of the form:
-
-    {'id': role_id, 'inherited_to': 'projects'}
-
-    """
     def to_dict(self):
         """Override parent to_dict() method with a simpler implementation.
 
-        Grant tables don't have non-indexed 'extra' attributes, so the
+        Assignment don't have non-indexed 'extra' attributes, so the
         parent implementation is not applicable.
         """
         return dict(self.iteritems())
-
-
-class UserProjectGrant(sql.ModelBase, BaseGrant):
-    __tablename__ = 'user_project_metadata'
-    user_id = sql.Column(sql.String(64), primary_key=True)
-    project_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
-                            primary_key=True)
-    data = sql.Column(sql.JsonBlob())
-
-
-class UserDomainGrant(sql.ModelBase, BaseGrant):
-    __tablename__ = 'user_domain_metadata'
-    user_id = sql.Column(sql.String(64), primary_key=True)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
-                           primary_key=True)
-    data = sql.Column(sql.JsonBlob())
-
-
-class GroupProjectGrant(sql.ModelBase, BaseGrant):
-    __tablename__ = 'group_project_metadata'
-    group_id = sql.Column(sql.String(64), primary_key=True)
-    project_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'),
-                            primary_key=True)
-    data = sql.Column(sql.JsonBlob())
-
-
-class GroupDomainGrant(sql.ModelBase, BaseGrant):
-    __tablename__ = 'group_domain_metadata'
-    group_id = sql.Column(sql.String(64), primary_key=True)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
-                           primary_key=True)
-    data = sql.Column(sql.JsonBlob())
