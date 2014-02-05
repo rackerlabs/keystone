@@ -462,7 +462,7 @@ class Manager(manager.Manager):
         # will be different, and this method should have its own driver
         # implementation.
         return [r for r in self.driver.list_role_assignments()
-                if r['role_id'] == role_id]
+                if r['action_id'] == role_id]
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self.driver.remove_role_from_user_and_project(user_id, tenant_id,

@@ -583,15 +583,17 @@ class RoleAssignmentV3(controller.V3Controller):
         actor (e.g. user or group), target (e.g. domain or project) and role.
         If it is an inherited role, then this is also indicated. Examples:
 
-        {'user_id': user_id,
-         'project_id': domain_id,
-         'role_id': role_id}
+        {'actor_id': user_id,
+         'target_id': domain_id,
+         'action_id': role_id,
+         'type': 'UserDomain'}
 
         or, for an inherited role:
 
-        {'user_id': user_id,
-         'domain_id': domain_id,
-         'role_id': role_id,
+        {'actor_id': user_id,
+         'target_id': domain_id,
+         'action_id': role_id,
+         'type': 'UserDomain',
          'inherited_to_projects': true}
 
         This function maps this into the format to be returned via the API,
@@ -620,34 +622,33 @@ class RoleAssignmentV3(controller.V3Controller):
 
         formatted_entity = {}
         suffix = ""
-        if 'user_id' in entity:
-            formatted_entity['user'] = {'id': entity['user_id']}
-            actor_link = 'users/%s' % entity['user_id']
-        if 'group_id' in entity:
-            formatted_entity['group'] = {'id': entity['group_id']}
-            actor_link = 'groups/%s' % entity['group_id']
-        if 'role_id' in entity:
-            formatted_entity['role'] = {'id': entity['role_id']}
-        if 'project_id' in entity:
+        if entity['type'] == 'UserDomain' or entity['type'] == 'UserProject':
+            formatted_entity['user'] = {'id': entity['actor_id']}
+            actor_link = 'users/%s' % entity['actor_id']
+        else:
+            formatted_entity['group'] = {'id': entity['actor_id']}
+            actor_link = 'groups/%s' % entity['actor_id']
+        formatted_entity['role'] = {'id': entity['action_id']}
+        if entity['type'] == 'UserProject' or entity['type'] == 'GroupProject':
             formatted_entity['scope'] = (
-                {'project': {'id': entity['project_id']}})
-            target_link = '/projects/%s' % entity['project_id']
-        if 'domain_id' in entity:
+                {'project': {'id': entity['target_id']}})
+            target_link = '/projects/%s' % entity['target_id']
+        else:
             formatted_entity['scope'] = (
-                {'domain': {'id': entity['domain_id']}})
-            if 'inherited_to_projects' in entity:
+                {'domain': {'id': entity['target_id']}})
+            if entity['inherited']:
                 formatted_entity['scope']['OS-INHERIT:inherited_to'] = (
                     'projects')
-                target_link = '/OS-INHERIT/domains/%s' % entity['domain_id']
+                target_link = '/OS-INHERIT/domains/%s' % entity['target_id']
                 suffix = '/inherited_to_projects'
             else:
-                target_link = '/domains/%s' % entity['domain_id']
+                target_link = '/domains/%s' % entity['target_id']
         formatted_entity.setdefault('links', {})
         formatted_entity['links']['assignment'] = (
             self.base_url('%(target)s/%(actor)s/roles/%(role)s%(suffix)s' % {
                 'target': target_link,
                 'actor': actor_link,
-                'role': entity['role_id'],
+                'role': entity['action_id'],
                 'suffix': suffix}))
 
         return formatted_entity
