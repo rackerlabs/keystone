@@ -47,10 +47,10 @@
 # similar to max_param_size, but provides an exception for token values
 # max_token_size = 8192
 
-# the filename to use with sqlite
+# The file name to use with SQLite
 # sqlite_db = keystone.db
 
-# If true, use synchronous mode for sqlite
+# If True, SQLite uses synchronous mode
 # sqlite_synchronous = True
 
 # === Logging Options ===
@@ -172,16 +172,16 @@
 # timeout before idle sql connections are reaped
 # idle_timeout = 3600
 
-# Minimum number of SQL connections to keep open in a pool
+# Timeout before idle sql connections are reaped
 # min_pool_size = 1
 
 # Maximum number of SQL connections to keep open in a pool
 # max_pool_size =
 
-# maximum db connection retries during startup. (setting -1 implies an infinite retry count)
+# Maximum db connection retries during startup. (setting -1 implies an infinite retry count)
 # max_retries = 10
 
-# interval between retries of opening a sql connection
+# Interval between retries of opening a sql connection
 # retry_interval = 10
 
 # If set, use this value for max_overflow with sqlalchemy
