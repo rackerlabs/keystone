@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9irI\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-06T06:35:38Z",
+      "side": 0,
+      "message": "(NIT): removing dictionaries isn\u0027t documented in the commit message, could it be if they are going to go in with this change?",
+      "revId": "2cd2d585a983704aa9f06d365e05a74b0f8fef4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
