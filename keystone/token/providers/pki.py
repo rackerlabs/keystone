@@ -17,13 +17,13 @@
 """Keystone PKI Token Provider"""
 
 import json
+import subprocess
 
-from keystone.common import cms
-from keystone.common import environment
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
 from keystone.token.providers import common
+from keystoneclient.common import cms
 
 
 CONF = config.CONF
@@ -38,7 +38,7 @@ class Provider(common.BaseProvider):
                                           CONF.signing.certfile,
                                           CONF.signing.keyfile)
             return token_id
-        except environment.subprocess.CalledProcessError:
+        except subprocess.CalledProcessError:
             LOG.exception(_('Unable to sign token'))
             raise exception.UnexpectedError(_(
                 'Unable to sign token.'))
