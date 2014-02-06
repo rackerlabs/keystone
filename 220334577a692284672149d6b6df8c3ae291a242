@@ -52,6 +52,24 @@
       "revId": "220334577a692284672149d6b6df8c3ae291a242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kaE\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T00:01:34Z",
+      "side": 1,
+      "message": "I marked this change as a wip because I plan to rebase it on https://review.openstack.org/#/c/44836/ (I\u0027d do it now but I don\u0027t think 44836 is ready and then I\u0027d have to rebase it again) Hopefully that will satisfy everyone.",
+      "parentUuid": "AAAAUH/9kbw\u003d",
+      "revId": "220334577a692284672149d6b6df8c3ae291a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
