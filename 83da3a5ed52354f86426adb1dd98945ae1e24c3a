@@ -16,6 +16,24 @@
       "revId": "83da3a5ed52354f86426adb1dd98945ae1e24c3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9h+U\u003d",
+        "filename": "keystone/openstack/common/crypto/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-06T09:10:23Z",
+      "side": 1,
+      "message": "Nice catch! Thanks!",
+      "parentUuid": "AAAAUH/9im8\u003d",
+      "revId": "83da3a5ed52354f86426adb1dd98945ae1e24c3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
