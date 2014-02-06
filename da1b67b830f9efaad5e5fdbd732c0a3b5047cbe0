@@ -69,6 +69,24 @@
       "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9drg\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-06T18:27:29Z",
+      "side": 1,
+      "message": "This is actually broken in two ways. The first is that cms uses a different mechanism to decide between using eventlet or stdlib for the subprocess module.  Right now it will alway choose stdlib and that\u0027s why the tests pass.  The second is that we are only catching the exception from the stdlib subprocess.  \n\nSo we need fix either the way keystone uses eventlet or the way keystoneclient knows if it should use eventlet.  This will break the tests.  After doing that we should switch the import back to environment to make the tests pass again.",
+      "parentUuid": "AAAAUH/9e1E\u003d",
+      "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
