@@ -21,7 +21,6 @@ import datetime
 import six
 
 from keystone.common import cache
-from keystone.common import cms
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
@@ -29,6 +28,7 @@ from keystone import exception
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone.openstack.common import versionutils
+from keystoneclient.common import cms
 
 
 CONF = config.CONF
