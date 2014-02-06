@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9cls\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-06T21:05:31Z",
+      "side": 1,
+      "message": "wouldn\u0027t make the code more readable if ref is changed into normalized_consumer?\nJust a thought ...",
+      "revId": "1890ebbb1fd9c28a5dd45fcb50e8f35ffa3529f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
