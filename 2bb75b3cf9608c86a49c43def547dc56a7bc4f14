@@ -34,6 +34,24 @@
       "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9bgM\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-06T23:29:21Z",
+      "side": 1,
+      "message": "So it turns out timeutils.utcnow() is not TZ aware, and therefore cannot be compared against TZ aware timestamps.\n\nYou end up with something like this:\n\n\u003e\u003e\u003e from keystone.openstack.common import timeutils\n\u003e\u003e\u003e timeutils.utcnow()\ndatetime.datetime(2014, 2, 6, 23, 25, 57, 434113)\n\u003e\u003e\u003e a \u003d timeutils.utcnow()\n\u003e\u003e\u003e a.tzinfo\n\u003e\u003e\u003e a.tzname()\n\u003e\u003e\u003e b \u003d timeutils.parse_isotime(timeutils.isotime())\n\u003e\u003e\u003e b \u003e a\nTraceback (most recent call last):\n  File \"\u003cinput\u003e\", line 1, in \u003cmodule\u003e\nTypeError: can\u0027t compare offset-naive and offset-aware datetimes\n\nIf you look the utcnow() version has nothing in .tzinfo, the parseisotime one has the following:\n\n\u003e\u003e\u003e b.tzinfo\n\u003ciso8601.iso8601.Utc object at 0x1083f6a50\u003e",
+      "parentUuid": "AAAAUH/97E0\u003d",
+      "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
