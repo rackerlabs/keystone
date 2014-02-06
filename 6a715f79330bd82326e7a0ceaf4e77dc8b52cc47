@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9hMw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T10:58:48Z",
+      "side": 1,
+      "message": "Good catch! Thanks!",
+      "parentUuid": "AAAAUH/9hdA\u003d",
+      "revId": "6a715f79330bd82326e7a0ceaf4e77dc8b52cc47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9hf4\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-06T10:27:16Z",
       "side": 1,
       "message": "You should add this to etc/keystone.conf.sample",
+      "revId": "6a715f79330bd82326e7a0ceaf4e77dc8b52cc47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9hMo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T10:58:48Z",
+      "side": 1,
+      "message": "you are right!",
+      "parentUuid": "AAAAUH/9hf4\u003d",
       "revId": "6a715f79330bd82326e7a0ceaf4e77dc8b52cc47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
