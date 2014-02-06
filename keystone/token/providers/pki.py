@@ -16,12 +16,12 @@
 
 import json
 
-from keystone.common import cms
 from keystone.common import environment
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
 from keystone.token.providers import common
+from keystoneclient.common import cms
 
 
 CONF = config.CONF

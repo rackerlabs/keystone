@@ -16,7 +16,6 @@ import json
 
 import six
 
-from keystone.common import cms
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -25,6 +24,7 @@ from keystone import exception
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone.token import core
+from keystoneclient.common import cms
 
 
 CONF = config.CONF
