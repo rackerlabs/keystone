@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9jDY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "RuleProcessor if we\u0027re passing in mapping[\u0027rules\u0027]\nor\nMappingProcessor if we\u0027re passing in just the mapping\n\nI\u0027m okay with either, whatever the consensus is.",
+      "parentUuid": "AAAAUH/9jx0\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9j0E\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-06T02:22:04Z",
       "side": 1,
       "message": "Should be\n\n  Initialize AssertionProcessor\n\nalthough this is obvious since it\u0027s called __init__.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jFE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9j0E\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9jE8\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "Example mappings can be found in:\n  :class:`keystone.tests.mapping_fixtures`",
+      "parentUuid": "AAAAUH/9j0M\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9j1M\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-06T02:22:04Z",
       "side": 1,
       "message": "since this class only cares about rules, how about do self.rules \u003d mapping_ref[\u0027rules\u0027] instead?\n\nAlternatively, could have the caller pass in the rules rather than the mapping_ref... does this class need to know about mapping_refs? Seems like it would make the tests more obvious to do this.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jEA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "I\u0027m okay with the first one. \n\nFor the second, I think passing in the mapping is still OK.",
+      "parentUuid": "AAAAUH/9j1M\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9jFo\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9j0A\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9j1o\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-06T02:22:04Z",
       "side": 1,
       "message": "I think it\u0027s a bad idea to assign a local variable on the call like this, from a multi-threading perspective. Assign to a local variable instead.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jFs\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "OK, i can make it local, just didn\u0027t want to have to pass it around all the functions.",
+      "parentUuid": "AAAAUH/9j1o\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9jFw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9jys\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9jzE\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -208,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9jIY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "Hmm, yes, I think that is better, or at least clearer.",
+      "parentUuid": "AAAAUH/9jyM\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9jyE\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -219,6 +363,24 @@
       "writtenOn": "2014-02-06T02:22:04Z",
       "side": 1,
       "message": "what does neither case mean here? the logic above is more complicated than just 2 cases.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jI0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:23:15Z",
+      "side": 1,
+      "message": "a \u0027remote\u0027 rule can only have one of three structures:\n\n  \u0027type\u0027: \u0027orgType\u0027\n  \u0027any_one_of\u0027: [\u0027abc\u0027, \u0027123\u0027]\n\nor \n\n  \u0027type\u0027: \u0027orgType\u0027\n  \u0027not_any_of\u0027: [\u0027xyz\u0027, \u0027456\u0027]\n\nor\n  \u0027type\u0027: \u0027UserName\u0027\n\nthat\u0027s what I meant by neither case.\n\n\nI changed the comment to:\n  # If \u0027any_one_of\u0027 or \u0027not_any_of\u0027 are not found, then the values are\n  # within \u0027type\u0027. Attempt to find that \u0027type\u0027 within the assertion",
+      "parentUuid": "AAAAUH/9jyE\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
