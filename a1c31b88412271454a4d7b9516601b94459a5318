@@ -16,6 +16,24 @@
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kZ0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T00:02:03Z",
+      "side": 1,
+      "message": "@morgan, no, the schema used to validate rules upon creation/update, will raise an exception if no local exists. \n\nso we can assume it\u0027ll be there.",
+      "parentUuid": "AAAAUH/9k9A\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
