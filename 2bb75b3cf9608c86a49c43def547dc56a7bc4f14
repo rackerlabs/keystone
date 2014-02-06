@@ -52,6 +52,24 @@
       "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9bYs\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 5733
+      },
+      "writtenOn": "2014-02-06T23:53:51Z",
+      "side": 1,
+      "message": "Sorry for the late reply!\n\nYou missed the normalize_time() call though. The current patch already uses normalize_time() here and in the expiry check added below, so current_time is already a naive datetime.\n\n    In [3]: timeutils.normalize_time(timeutils.parse_isotime(timeutils.isotime()))\n    Out[3]: datetime.datetime(2014, 2, 6, 23, 38, 38)\n\n\nThis certainly isn\u0027t a blocker for me though, behaviour should be the same with either.",
+      "parentUuid": "AAAAUH/9bgM\u003d",
+      "revId": "2bb75b3cf9608c86a49c43def547dc56a7bc4f14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
