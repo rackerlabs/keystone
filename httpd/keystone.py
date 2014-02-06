@@ -14,47 +14,24 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import logging
+
+"""WSGI application.
+
+This file is *NOT* safe to use with Apache httpd's `WSGIImport`. See
+:class:`keystone.application.httpd.admin` and
+:class:`keystone.application.httpd.public` for scripts that can be safely
+used with `WSGIImport`.
+
+"""
+
 import os
 
-from paste import deploy
-
-from keystone.openstack.common import gettextutils
-
-# NOTE(blk-u):
-# gettextutils.install() must run to set _ before importing any modules that
-# contain static translated strings.
-gettextutils.install('keystone', lazy=True)
-
-from keystone.common import dependency
-from keystone.common import environment
-from keystone.common import sql
-from keystone import config
-from keystone.openstack.common import log
-from keystone import service
+from keystone.application.httpd import common
 
 
-CONF = config.CONF
-
-config.configure()
-sql.initialize()
-
-CONF(project='keystone')
-config.setup_logging()
-
-environment.use_stdlib()
 name = os.path.basename(__file__)
-
-if CONF.debug:
-    CONF.log_opt_values(log.getLogger(CONF.prog), logging.DEBUG)
-
-
-drivers = service.load_backends()
 
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
 # http://pythonpaste.org/deploy/
-application = deploy.loadapp('config:%s' % config.find_paste_config(),
-                             name=name)
-
-dependency.resolve_future_dependencies()
+application = common.create_application(name)
