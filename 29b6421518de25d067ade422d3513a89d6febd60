@@ -16,6 +16,23 @@
       "revId": "29b6421518de25d067ade422d3513a89d6febd60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9i80\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-06T05:56:31Z",
+      "side": 1,
+      "message": "Seems like this would be worth having a NOTE just to explain to future generations why this is here",
+      "revId": "29b6421518de25d067ade422d3513a89d6febd60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
