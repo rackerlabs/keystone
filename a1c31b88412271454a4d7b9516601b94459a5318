@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9fCQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T16:16:36Z",
+      "side": 1,
+      "message": "I\u0027ll leave it up to you. MappingRuleProcessor sounds good.",
+      "parentUuid": "AAAAUH/9i/Y\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9j0E\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -224,6 +242,24 @@
       "side": 1,
       "message": "OK, i can make it local, just didn\u0027t want to have to pass it around all the functions.",
       "parentUuid": "AAAAUH/9j1o\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9e1I\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T16:16:36Z",
+      "side": 1,
+      "message": "right, it\u0027s ugly passing it around... could create a new (perhaps internal) class that encapsulates the methods that need to share this variable to help with that and also be threadsafe.",
+      "parentUuid": "AAAAUH/9jFs\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -417,6 +453,24 @@
       "side": 1,
       "message": "a \u0027remote\u0027 rule can only have one of three structures:\n\n  \u0027type\u0027: \u0027orgType\u0027\n  \u0027any_one_of\u0027: [\u0027abc\u0027, \u0027123\u0027]\n\nor \n\n  \u0027type\u0027: \u0027orgType\u0027\n  \u0027not_any_of\u0027: [\u0027xyz\u0027, \u0027456\u0027]\n\nor\n  \u0027type\u0027: \u0027UserName\u0027\n\nthat\u0027s what I meant by neither case.\n\n\nI changed the comment to:\n  # If \u0027any_one_of\u0027 or \u0027not_any_of\u0027 are not found, then the values are\n  # within \u0027type\u0027. Attempt to find that \u0027type\u0027 within the assertion",
       "parentUuid": "AAAAUH/9jyE\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9e0E\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T16:16:36Z",
+      "side": 1,
+      "message": "If it\u0027s not supposed to do anything else if \"any_one_of\", then it should be done and return if it\u0027s got \"any_one_of\"... the way it is now it\u0027s only done if it\u0027s got \"any_one_of\" and not evaluate.",
+      "parentUuid": "AAAAUH/9jI0\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
