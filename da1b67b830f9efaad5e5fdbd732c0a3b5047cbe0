@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/9itM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-06T06:26:24Z",
+      "side": 1,
+      "message": "Would you be able to add a little more detail on why we are going to stick with the keystoneclient version? Maybe layout the benefits of using keystoneclient cms versus the keystone server version.",
+      "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9iuc\u003d",
         "filename": "keystone/token/providers/pki.py",
         "patchSetId": 1
