@@ -15,7 +15,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import rpc
 from keystone.openstack.common.rpc import dispatcher as rpc_dispatcher

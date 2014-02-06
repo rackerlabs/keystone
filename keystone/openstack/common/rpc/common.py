@@ -22,7 +22,7 @@ import traceback
 from oslo.config import cfg
 import six
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import local
@@ -269,6 +269,10 @@ def _safe_log(log_func, msg, msg_data):
                 d[k] = '<SANITIZED>'
             elif k.lower() in SANITIZE:
                 d[k] = '<SANITIZED>'
+            elif isinstance(d[k], list):
+                for e in d[k]:
+                    if isinstance(e, dict):
+                        _fix_passwords(e)
             elif isinstance(d[k], dict):
                 _fix_passwords(d[k])
         return d
