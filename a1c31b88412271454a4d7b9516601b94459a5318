@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/9jx0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "wondering if this should be called RuleProcessor now that it\u0027s taking a rule as the argument.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9j0E\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "Should be\n\n  Initialize AssertionProcessor\n\nalthough this is obvious since it\u0027s called __init__.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9j0M\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "use :class:`keystone.tests.mapping_fixtures`",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9j1M\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "since this class only cares about rules, how about do self.rules \u003d mapping_ref[\u0027rules\u0027] instead?\n\nAlternatively, could have the caller pass in the rules rather than the mapping_ref... does this class need to know about mapping_refs? Seems like it would make the tests more obvious to do this.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9j0A\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "end sentence with .",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9j1o\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "I think it\u0027s a bad idea to assign a local variable on the call like this, from a multi-threading perspective. Assign to a local variable instead.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9k9A\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -49,6 +151,74 @@
       "side": 1,
       "message": "Great!  That was the only thing that stood out from the previous commit.  Let me spend some time looking more in depth and comparing changes now.",
       "parentUuid": "AAAAUH/9kZ0\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jys\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "suggest change \"array\" to \"array of dict\"",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jzE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "I think the code should log the fact that user names are being ignored.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jyM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "should this be if any_one_values is not None? Is an empty list the same as not present?",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9jyE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T02:22:04Z",
+      "side": 1,
+      "message": "what does neither case mean here? the logic above is more complicated than just 2 cases.",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
