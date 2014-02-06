@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9ijI\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-06T07:24:13Z",
+      "side": 1,
+      "message": "(nit): _assertNotificationSeen?",
+      "revId": "6b2bbc8775c5e810daa75b811c496fadc99a87a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ifc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-06T07:24:13Z",
+      "side": 1,
+      "message": "In order for this to pass python 2.6 tests I think assertGreater will have to be replaced with something else (assertAlmostEqual?) \n\nhttp://docs.python.org/2/library/unittest.html#unittest.TestCase.assertGreater",
+      "revId": "6b2bbc8775c5e810daa75b811c496fadc99a87a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
