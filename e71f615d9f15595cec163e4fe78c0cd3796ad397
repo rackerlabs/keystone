@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9isc\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-06T06:29:52Z",
+      "side": 1,
+      "message": "Comment from patch set 4 :\n\nCan we link this to documentation in the commit message?\n\nJust for clarity if it is available, if not, no big deal.",
+      "revId": "e71f615d9f15595cec163e4fe78c0cd3796ad397",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
