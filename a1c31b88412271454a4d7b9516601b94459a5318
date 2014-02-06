@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9eyE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T16:19:56Z",
+      "side": 1,
+      "message": "bknudson++\nI vote for passing dict with actual rules only. This class  does one thing - maps parameters and the only input it needs is the dictionary with the rules.",
+      "parentUuid": "AAAAUH/9j1M\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9j0A\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
