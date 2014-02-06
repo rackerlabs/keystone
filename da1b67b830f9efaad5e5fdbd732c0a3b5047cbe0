@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9iuc\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-06T06:24:10Z",
+      "side": 1,
+      "message": "Are you sure you want to do this?  The reason it\u0027s used from environment is that if eventlet is enabled it uses a patched, non-blocking subprocess implementation.",
+      "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
