@@ -16,6 +16,24 @@
       "revId": "e71f615d9f15595cec163e4fe78c0cd3796ad397",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9e2Y\u003d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6737
+      },
+      "writtenOn": "2014-02-06T16:13:05Z",
+      "side": 1,
+      "message": "@ldbragst: if I understand you correctly, this is also mentioned in the config \u0027help\u0027 comment so when the docs are updated to reflect the new config (DocImpact already in the commit message) it should be included.",
+      "parentUuid": "AAAAUH/9isc\u003d",
+      "revId": "e71f615d9f15595cec163e4fe78c0cd3796ad397",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
