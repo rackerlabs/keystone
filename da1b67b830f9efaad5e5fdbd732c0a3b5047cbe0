@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9ezw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-06T16:16:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9itM\u003d",
+      "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9iuc\u003d",
         "filename": "keystone/token/providers/pki.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-06T06:24:10Z",
       "side": 1,
       "message": "Are you sure you want to do this?  The reason it\u0027s used from environment is that if eventlet is enabled it uses a patched, non-blocking subprocess implementation.",
+      "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9e1E\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-06T16:16:42Z",
+      "side": 1,
+      "message": "Yes, I am sure.  See the code in python-keystone client that ensuers that ethe eventlet implementation is used:  it is what the rest of openstack needs to deal with:\n\nhttps://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/common/cms.py#L37\n\nAnd we can\u0027t work around it:  the rest of OpenStack is not going to use the environment check that we do, least not in a timely manner.",
+      "parentUuid": "AAAAUH/9iuc\u003d",
       "revId": "da1b67b830f9efaad5e5fdbd732c0a3b5047cbe0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
