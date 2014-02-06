@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9jAY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-06T05:41:16Z",
+      "side": 1,
+      "message": "I modeled this after lbragstad\u0027s similar code so I think we are good",
+      "parentUuid": "AAAAUH/9k5c\u003d",
+      "revId": "52f897ff2351c7d493a381824e565c0770654ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9xSU\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 7
