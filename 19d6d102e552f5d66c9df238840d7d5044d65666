@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9kJs\u003d",
+        "filename": "keystone/contrib/kds/api/root.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T01:26:04Z",
+      "side": 1,
+      "message": "why returning a multiple choice response when there\u0027s only 1 choice?\n\nFor example, the keystone /v3 and /v2.0 response is 200 OK.",
+      "revId": "19d6d102e552f5d66c9df238840d7d5044d65666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kGk\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T01:26:04Z",
+      "side": 1,
+      "message": "is there some source that you\u0027re using for the format of the version response? Just wondering because the keystone one is like\n\n {\n    \"versions\": {\n        \"values\": [\n            {\n                \"id\": \"v3.0\",\n                \"links\": [\n                    {\n                        \"href\": \"http://192.168.122.176:5000/v3/\",\n                        \"rel\": \"self\"\n                    }\n                ],\n                \"media-types\": [\n                    {\n                        \"base\": \"application/json\",\n                        \"type\": \"application/vnd.openstack.identity-v3+json\"\n                    },\n                    {\n                        \"base\": \"application/xml\",\n                        \"type\": \"application/vnd.openstack.identity-v3+xml\"\n                    }\n                ],\n                \"status\": \"stable\",\n                \"updated\": \"2013-03-06T00:00:00Z\"\n            },\n\nSo this is missing some normal fields -- like the media-types links and updated field.",
+      "revId": "19d6d102e552f5d66c9df238840d7d5044d65666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kGY\u003d",
+        "filename": "keystone/tests/contrib/kds/api/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T01:26:04Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently",
+      "revId": "19d6d102e552f5d66c9df238840d7d5044d65666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kGU\u003d",
+        "filename": "keystone/tests/contrib/kds/api/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T01:26:04Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
+      "revId": "19d6d102e552f5d66c9df238840d7d5044d65666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kFM\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T01:26:04Z",
+      "side": 1,
+      "message": "should also assert the response code. I assume it\u0027s 200.",
+      "revId": "19d6d102e552f5d66c9df238840d7d5044d65666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kE0\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T01:26:04Z",
+      "side": 1,
+      "message": "why not assert all the fields?",
+      "revId": "19d6d102e552f5d66c9df238840d7d5044d65666",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
