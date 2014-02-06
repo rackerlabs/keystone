@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9bpk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T23:12:52Z",
+      "side": 1,
+      "message": "remove the space after :class:\n\nAlso, run tox -e docs",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9bpA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T23:12:52Z",
+      "side": 1,
+      "message": "suggest change \"dict\" to \"array of dict\"",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9bok\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T23:12:52Z",
+      "side": 1,
+      "message": "If it\u0027s not supposed to do anything else if \"any_one_of\" then should be returning at line 266 rather than continuing on.\n\nThe way the code is now if \u0027any_one_of\u0027 or \u0027not_any_of\u0027 are found it continues on and only stops if evaluate is False.",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9bn4\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T23:12:52Z",
+      "side": 1,
+      "message": "how about change the fixtures to RULES_LARGE instead of MAPPING_LARGE?",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
