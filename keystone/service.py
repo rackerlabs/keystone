@@ -76,7 +76,8 @@ def fail_gracefully(f):
             # exception message is printed to all logs
             LOG.critical(e)
 
-            exit(1)
+            # abort with a non-zero return code
+            raise SystemExit(e)
     return wrapper
 
 
