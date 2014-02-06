@@ -348,6 +348,8 @@
 #driver = keystone.contrib.federation.backends.sql.Federation
 
 [ssl]
+# For non-production environments, you may be interested in using
+# `keystone-manage ssl_setup` to generate self-signed certificates
 #enable = True
 #certfile = /etc/keystone/ssl/certs/keystone.pem
 #keyfile = /etc/keystone/ssl/private/keystonekey.pem
@@ -363,6 +365,8 @@
 # Allowed values are PKI or UUID
 #token_format =
 
+# For non-production environments, you may be interested in using
+# `keystone-manage pki_setup` to generate self-signed certificates
 #certfile = /etc/keystone/ssl/certs/signing_cert.pem
 #keyfile = /etc/keystone/ssl/private/signing_key.pem
 #ca_certs = /etc/keystone/ssl/certs/ca.pem
