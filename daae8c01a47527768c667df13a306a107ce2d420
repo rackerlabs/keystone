@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9jtc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-06T03:29:13Z",
+      "side": 1,
+      "message": "(NIT): missing a comma at the end of line 458?\n\n    kvs_store.configure(\u0027openstack.kvs.Memcached\u0027, memcached_backend\u003d\u0027Memcached\u0027,",
+      "revId": "daae8c01a47527768c667df13a306a107ce2d420",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
