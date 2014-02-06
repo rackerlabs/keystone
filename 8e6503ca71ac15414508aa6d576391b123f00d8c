@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9iIU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "This method is useless now.\nI will remove it.",
+      "parentUuid": "AAAAUH/9lEA\u003d",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9lCM\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-05T22:23:56Z",
       "side": 1,
       "message": "nit: get_mapping_from_idp_and_protocol\n\notherwise ++, nice reuse",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9iM0\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "I didn\u0027t want to make the method name too long.\nWill be fixed in next patchset.",
+      "parentUuid": "AAAAUH/9lCM\u003d",
       "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9iK0\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "I don\u0027t see any point in pushing whole environment to the RuleProcessor. It\u0027s relatively easy to fetch only parameters that we need.\nPlus, there might be a situation where somebody will be able to *somehow* access all environment variables by adding some malicious rules.\nHence, I vote for sending over only the subset of variables that will be used.",
+      "parentUuid": "AAAAUH/9lGU\u003d",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9lHM\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-05T22:23:56Z",
       "side": 1,
       "message": "you can get rid of this function, i\u0027ve moved it into the assertProcessor.",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9iKs\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "will be removed.",
+      "parentUuid": "AAAAUH/9lHM\u003d",
       "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9iKQ\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUH/9lFs\u003d",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9lFY\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 1
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9iKE\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9lFY\u003d",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9lAw\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 1
@@ -115,6 +223,41 @@
       "writtenOn": "2014-02-05T22:23:56Z",
       "side": 1,
       "message": "i think method should be POST, that is typically what is used for getting a token",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9iJM\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "Normally yes. But this URL will be mod_shib protected, so I it\u0027s slightly different situation, and POST might not be an option in this case (SAML internals).\nI\u0027d keep GET for now, and update it later.",
+      "parentUuid": "AAAAUH/9lAw\u003d",
+      "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9iIw\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-06T09:46:05Z",
+      "side": 1,
+      "message": "Shamelessly copy/pasted from ayoung\u0027s (I guess) test method :-)",
       "revId": "8e6503ca71ac15414508aa6d576391b123f00d8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
