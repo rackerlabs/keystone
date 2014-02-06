@@ -16,6 +16,24 @@
       "revId": "7e5b0098fa996e65e7b8b9b9507db6912b02e447",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kOM\u003d",
+        "filename": "doc/source/middlewarearchitecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-06T00:51:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9k9M\u003d",
+      "revId": "7e5b0098fa996e65e7b8b9b9507db6912b02e447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
