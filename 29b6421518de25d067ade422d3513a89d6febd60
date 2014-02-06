@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9jtI\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-06T02:47:03Z",
+      "side": 1,
+      "message": "whitespace changes don\u0027t seem appropriate",
+      "revId": "29b6421518de25d067ade422d3513a89d6febd60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
