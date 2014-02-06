@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9i+8\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:53:16Z",
+      "side": 1,
+      "message": "you can eliminate this line since it\u0027s done in the _assertLastNotify function",
+      "revId": "57b358d70a8c910f83a4d935b2804f1cac8a0e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9i+s\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:53:16Z",
+      "side": 1,
+      "message": "same here too.",
+      "revId": "57b358d70a8c910f83a4d935b2804f1cac8a0e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
