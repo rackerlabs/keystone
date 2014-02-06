@@ -34,6 +34,24 @@
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kYw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-06T00:17:51Z",
+      "side": 1,
+      "message": "Great!  That was the only thing that stood out from the previous commit.  Let me spend some time looking more in depth and comparing changes now.",
+      "parentUuid": "AAAAUH/9kZ0\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
