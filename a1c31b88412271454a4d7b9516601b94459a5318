@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9i/Y\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:44:46Z",
+      "side": 1,
+      "message": "MappingRuleProcessor is my vote",
+      "parentUuid": "AAAAUH/9jDY\u003d",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9j0E\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 13
@@ -311,6 +329,24 @@
       "writtenOn": "2014-02-06T02:22:04Z",
       "side": 1,
       "message": "I think the code should log the fact that user names are being ignored.",
+      "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9i/g\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-06T05:44:46Z",
+      "side": 1,
+      "message": "Changed this block to:\n\n  if \u0027user\u0027 in x:\n    # if a mapping outputs more than one user name, log it\n    if d.get(\u0027name\u0027) is not None:\n      LOG.warning(_(\u0027Ignoring user name %s\u0027), x[\u0027user\u0027][\u0027name\u0027])\n    d.setdefault(\u0027name\u0027, x[\u0027user\u0027][\u0027name\u0027])",
+      "parentUuid": "AAAAUH/9jzE\u003d",
       "revId": "a1c31b88412271454a4d7b9516601b94459a5318",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
