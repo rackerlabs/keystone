@@ -13,14 +13,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-
 import contextlib
 import errno
 import os
 import tempfile
 
 from keystone.openstack.common import excutils
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
