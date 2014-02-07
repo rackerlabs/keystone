@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9VqU\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2014-02-07T16:15:58Z",
+      "side": 1,
+      "message": "This is actually 0.5.1 now so if you wanted to be aggressive...",
+      "revId": "e3f1e00fc4b7d6d93f7bdf8bc039eb71d4b8c3b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
