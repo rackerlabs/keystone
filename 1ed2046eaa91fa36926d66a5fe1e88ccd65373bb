@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///uY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-07T21:08:47Z",
+      "side": 1,
+      "message": "if the data \"it wants\" is not available then it needs to raise an exception and abort, not take wild guesses and grant authorization that it shouldn\u0027t.\n\nagain, the assumptions made here are completely ridiculous",
+      "parentUuid": "AAAAUH/9Uak\u003d",
+      "revId": "1ed2046eaa91fa36926d66a5fe1e88ccd65373bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9Um4\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 21
@@ -48,6 +66,23 @@
       "writtenOn": "2014-02-07T18:54:51Z",
       "side": 1,
       "message": "wtf",
+      "revId": "1ed2046eaa91fa36926d66a5fe1e88ccd65373bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///tQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-07T21:08:47Z",
+      "side": 1,
+      "message": "there should be zero \"fishing\"",
       "revId": "1ed2046eaa91fa36926d66a5fe1e88ccd65373bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
