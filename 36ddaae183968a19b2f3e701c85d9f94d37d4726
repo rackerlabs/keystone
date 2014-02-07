@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9aC0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-07T04:59:15Z",
+      "side": 1,
+      "message": "kwargs.setdefault(\u0027public\u0027, False) ?",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9aDs\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-07T04:59:15Z",
+      "side": 1,
+      "message": "should we default public \u003d True like the wrapper?",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9aD0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-07T04:59:15Z",
+      "side": 1,
+      "message": "missing public doc string",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9aDU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-07T04:59:15Z",
+      "side": 1,
+      "message": "complete nit: if outside the try makes more sense",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9aB8\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-07T04:59:15Z",
+      "side": 1,
+      "message": "going to clash with: https://review.openstack.org/#/c/71044/3/keystone/tests/test_notifications.py",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
