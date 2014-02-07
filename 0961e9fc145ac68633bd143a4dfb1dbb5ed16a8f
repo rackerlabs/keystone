@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///pk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-07T21:23:54Z",
+      "side": 1,
+      "message": "nit: I know this is a private method but since we have a really good description of what this method does it might be nice to add the doc strings for what the parameters are too",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///tk\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 15
