@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///p4\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T21:23:04Z",
+      "side": 1,
+      "message": "suggest change \"not explode\" to \"will be ignored\". Could even verify that a message is logged.",
+      "revId": "244d8e1b1f98cbdc6ed219b4cd64cd077b3acb85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///qA\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T21:23:04Z",
+      "side": 1,
+      "message": "I don\u0027t want these files piling up on my system. Clean them up.",
+      "revId": "244d8e1b1f98cbdc6ed219b4cd64cd077b3acb85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///oM\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T21:23:04Z",
+      "side": 1,
+      "message": "give a name to the None parameter so that reviewers know what it\u0027s for.\n\n fake_standard_driver \u003d None\n domain_config.setup_domain_drivers(fake_standard_driver, mock_assignment_api)\n\nAlso, you could assert that mock_assignment_api.get_domain_by_name was called just to ensure that the test is still valid in case setup_domain_drivers implementation changes.",
+      "revId": "244d8e1b1f98cbdc6ed219b4cd64cd077b3acb85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
