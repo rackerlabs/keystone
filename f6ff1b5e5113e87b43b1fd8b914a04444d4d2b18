@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///cw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T22:10:54Z",
+      "side": 1,
+      "message": "increase or decrease?",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///cc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T22:10:54Z",
+      "side": 1,
+      "message": "Suggest a DocImpact ... do we document how many tokens can be outstanding for a given user?",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///b0\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T22:10:54Z",
+      "side": 1,
+      "message": "\"Tokens are not fetched again\" is documenting how things used to work vs how they work now that\u0027s going to be lost to someone who didn\u0027t know how things worked before. The doc that says the format of the user_token_list is useful though since I would have had no idea otherwise.\n\n # user_token_list is a list of (token, expiry) tuples\n\n(or whatever they are)",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///ag\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T22:10:54Z",
+      "side": 1,
+      "message": "I\u0027m still not sure what this is doing... I\u0027m guessing marking a token as expired? (A comment would be useful).",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///W8\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T22:10:54Z",
+      "side": 1,
+      "message": "could check if the new token is expired already for whatever reason.",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
