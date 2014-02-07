@@ -1102,6 +1102,12 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
     def test_create_grant_no_group(self):
         self.skipTest('Blocked by bug 1101287')
 
+    def test_get_default_domain_by_name(self):
+        domain_name = 'default'
+
+        domain_ref = self.assignment_api.get_domain_by_name(domain_name)
+        self.assertEqual(domain_ref, domain_name)
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):

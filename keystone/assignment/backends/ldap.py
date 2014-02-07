@@ -385,7 +385,9 @@ class Assignment(assignment.Driver):
                                             inherited_to_projects)]
 
     def get_domain_by_name(self, domain_name):
-        raise exception.NotImplemented()
+        if domain_name != CONF.identity.default_domain_id:
+            raise exception.DomainNotFound(domain_id=domain_name)
+        return CONF.identity.default_domain_id
 
     def list_role_assignments(self):
         role_assignments = []
