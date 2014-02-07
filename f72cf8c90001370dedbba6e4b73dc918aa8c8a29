@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9ZrU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T06:52:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9bpk\u003d",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9bpA\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-06T23:12:52Z",
       "side": 1,
       "message": "suggest change \"dict\" to \"array of dict\"",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ZrQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T06:52:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9bpA\u003d",
       "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9ZkI\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T06:52:49Z",
+      "side": 1,
+      "message": "Right, I decided to return None only if a requirement fails because, if there are multiple requirements, they should be AND\u0027ed. \n\nIf I return right away when a single one is True, then it could be too early, so I have to go through all the requirements (remote mappings)\n\n  \"remote\": [\n                {\n                    \"type\": \"orgPersonType\",\n                    \"any_one_of\": [\n                        \"Tester\"\n                    ]\n                },\n                {\n                    \"type\": \"Email\",\n                    \"any_one_of\": [\n                        \".*@example.com$\"\n                    ],\n                    \"regex\": True\n                }\n            ]",
+      "parentUuid": "AAAAUH/9bok\u003d",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9Zfw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T06:52:49Z",
+      "side": 1,
+      "message": "TL;DR: I\u0027m not sure how to optimize this.\n\nMore:\nContinuing from my previous comment, I do think there is a way to optimize this, and make it less complicated.\n\nI was thinking that maybe we could scrap the direct_maps, and leave this function to just evaluate the requirement. Replacing this line with:\n\n  return assertion.get(requirement_type)\n\nand the above conditionals to just continue on positive returns from _evaluate_requirement.\n\nMaking this function just return a boolean...\n\nIf it returned True, back in the process method, I could append \u0027local\u0027 on to the identity_values array.\n\nBut I ran into the issue with direct mapping since, i\u0027d have to go over all the requirements again to do that.",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9bn4\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 14
@@ -64,6 +135,24 @@
       "writtenOn": "2014-02-06T23:12:52Z",
       "side": 1,
       "message": "how about change the fixtures to RULES_LARGE instead of MAPPING_LARGE?",
+      "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ZrE\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T06:52:49Z",
+      "side": 1,
+      "message": "Done, I ended up changing all the MAPPING_xyz to RULES_xyz, this caused quite a few changes all over this file, so if you want it split out, let me know.",
+      "parentUuid": "AAAAUH/9bn4\u003d",
       "revId": "f72cf8c90001370dedbba6e4b73dc918aa8c8a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
