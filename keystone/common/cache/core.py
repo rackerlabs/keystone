@@ -36,6 +36,11 @@ dogpile.cache.register_backend(
     'keystone.common.cache.backends.noop',
     'NoopCacheBackend')
 
+dogpile.cache.register_backend(
+    'keystone.cache.mongo',
+    'keystone.common.cache.backends.mongo',
+    'MongoCacheBackend')
+
 
 class DebugProxy(proxy.ProxyBackend):
     """Extra Logging ProxyBackend."""
