@@ -402,7 +402,7 @@ class Assignment(assignment.Driver):
                                             inherited_to_projects)]
 
     def get_domain_by_name(self, domain_name):
-        raise exception.NotImplemented()
+        return assignment.DEFAULT_DOMAIN
 
     def list_role_assignments(self):
         role_assignments = []
