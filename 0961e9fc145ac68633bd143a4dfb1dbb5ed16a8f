@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///qE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T22:40:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9USo\u003d",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///wI\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-07T21:14:10Z",
       "side": 1,
       "message": "change \"store\" to \"return\"",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///qI\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T22:40:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX///wI\u003d",
       "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///qM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T22:40:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX///vY\u003d",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///wY\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-07T21:14:10Z",
       "side": 1,
       "message": "no need to check this since would have returned or continued already.",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///qQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T22:40:31Z",
+      "side": 1,
+      "message": "Good call",
+      "parentUuid": "AAAAUX///wY\u003d",
       "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///LA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T22:40:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX///pk\u003d",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///tk\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-07T21:14:10Z",
       "side": 1,
       "message": "I actually thought you\u0027d want to change this to \n\n rp \u003d mapping_utils.RuleProcessor(mapping_fixtures.RULES_LARGE)\n\ni.e., mapping_fixtures.RULES_LARGE would just be the rules that would get passed in to RuleProcessor.\n\nI\u0027m not sure I see the point of changing the name from mapping to rules if it\u0027s actually a mapping.",
+      "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///i0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-07T22:40:31Z",
+      "side": 1,
+      "message": "Reverting back to calling them MAPPING_, and leaving them as mappings, with a rules dict. \nReason for this is, the MappingCRUDTests also use the fixtures, and I\u0027d have to perform additional changes there, too.",
+      "parentUuid": "AAAAUX///tk\u003d",
       "revId": "0961e9fc145ac68633bd143a4dfb1dbb5ed16a8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
