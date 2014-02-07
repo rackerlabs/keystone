@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+1: Jay Pipes <jaypipes@gmail.com>
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 07 Feb 2014 05:20:11 +0000
+Reviewed-on: https://review.openstack.org/70661
+Project: openstack/keystone
+Branch: refs/heads/master
