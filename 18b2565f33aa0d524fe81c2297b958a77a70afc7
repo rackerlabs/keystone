@@ -16,6 +16,24 @@
       "revId": "18b2565f33aa0d524fe81c2297b958a77a70afc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///4Q\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-07T20:44:05Z",
+      "side": 1,
+      "message": "This is part fo the bug we are trying to fix. The original call to send_notifications is wrong. \n\nCheck keystone/notifications.py",
+      "parentUuid": "AAAAUH/9VaU\u003d",
+      "revId": "18b2565f33aa0d524fe81c2297b958a77a70afc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
