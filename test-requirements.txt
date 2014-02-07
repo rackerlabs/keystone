@@ -38,3 +38,6 @@ keyring>=1.6.1,<2.0,>=2.1
 
 # For documentation
 oslo.sphinx
+
+pymongo>=2.4
+mongomock==1.2.0

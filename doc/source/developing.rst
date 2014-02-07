@@ -482,6 +482,34 @@ should be added to the ``backends`` option in the ``[kvs]`` section of the Keyst
     [kvs]
     backends = backend_module1.backend_class1,backend_module2.backend_class2
 
+dogpile.cache based Mongo (NoSql) backend
+-----------------------------------------
+The ``dogpile.cache`` based mongo backend has been added as option to benefit from its nosql
+features. The implementation allows various various mongo configuration e.g. standalone, 
+a replica-set, sharded replicas , with or without SSL, use of TTL type collections etc.
+
+Example of typical configuration for mongo backend::
+        
+    from dogpile.cache import make_region
+
+    region = make_region().configure(
+        'keystone.cache.mongo',
+        arguments = {
+            'db_hosts': 'localhost:27017',
+            'db_name': 'ks_cache',
+            'cache_collection': 'cache',
+            'username': 'test_user',
+            'password': 'test_password',
+
+            # optional arguments
+            'son_manipulator': 'my_son_manipulator_impl'
+            }
+    )
+	  
+	  This backend is registered in keystone.common.cache.core. Once configured, its usage is
+	  similar to other dogpile caching backends as its implements the same dogpile apis. 
+        
+
 All registered backends will receive the "short name" of "openstack.kvs.<class name>" for use in the
 ``configure`` method on the ``KeyValueStore`` object.  The ``<class name>`` of a backend must be
 globally unique.
