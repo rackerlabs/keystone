@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9ZZk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-02-07T07:18:42Z",
+      "side": 1,
+      "message": "Why this return sentence? The original function didn\u0027t have return. I think with this change you are changing the original/expected behavior when this function is called from outside.",
+      "revId": "2cd53a70b800c982794f46c98b159920977883ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
