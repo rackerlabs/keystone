@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///A8\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T23:30:32Z",
+      "side": 1,
+      "message": "This extra variable is unnecessary, just use FakeTable... FakeTable is shorter.",
+      "revId": "41f8c16d32d03ce3fc8d26dbd83531f87c01288c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///As\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T23:30:32Z",
+      "side": 1,
+      "message": "(nit) the expected value is the first argument and actual is 2nd.",
+      "revId": "41f8c16d32d03ce3fc8d26dbd83531f87c01288c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///Ao\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T23:30:32Z",
+      "side": 1,
+      "message": "change \"conflic\" to \"conflict\"",
+      "revId": "41f8c16d32d03ce3fc8d26dbd83531f87c01288c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
