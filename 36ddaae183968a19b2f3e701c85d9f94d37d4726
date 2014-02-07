@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/9VOc\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T17:16:48Z",
+      "side": 1,
+      "message": "might be a good idea to put this change to a separate commit.",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9aC0\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 11
@@ -13,6 +30,23 @@
       "writtenOn": "2014-02-07T04:59:15Z",
       "side": 1,
       "message": "kwargs.setdefault(\u0027public\u0027, False) ?",
+      "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9VPE\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T17:16:48Z",
+      "side": 1,
+      "message": "I don\u0027t see why this needs to be a wrapper... what does it give us?",
       "revId": "36ddaae183968a19b2f3e701c85d9f94d37d4726",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
