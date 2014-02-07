@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9Ycc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9u5A\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9u48\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "change \"required\" to \"requested\" ?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YcY\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "good idea, done.",
+      "parentUuid": "AAAAUH/9u48\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YcI\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done (well, something very similar)",
+      "parentUuid": "AAAAUH/9u4E\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9u14\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 28
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "here\u0027s a change to use for/else:\n\n for x in self:\n     if x[\u0027type\u0027] \u003d\u003d \u0027limit\u0027:\n        x[\u0027limit\u0027] \u003d limit\n        x[\u0027truncated\u0027] \u003d truncated\n        break\n  else:\n    self.append({\u0027limit\u0027: limit, \u0027type\u0027: \u0027limit\u0027,\n        \u0027truncated\u0027: truncated})\n\nthen you can get rid of the extra exists variable.\n\nand then won\u0027t also go through all the elements when there should only be one.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YW4\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "nice!",
+      "parentUuid": "AAAAUH/9u14\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YWE\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9u0w\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9mXU\u003d",
         "filename": "keystone/common/manager.py",
         "patchSetId": 28
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-05T19:21:38Z",
       "side": 1,
       "message": "Why is _get_list_limit a protected method of the driver if it\u0027s purpose is to be used by the manager?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YUc\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "…because we only allow virtual functions in the drive object class in the manager….unless you prefix it with \u0027_\u0027.  I think we actually have a test for that somewhere in our unit tests.",
+      "parentUuid": "AAAAUH/9mXU\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YUM\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9uyw\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9uyI\u003d",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 28
@@ -132,6 +258,24 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "suggest set truncated \u003d False here since it\u0027s used as a boolean.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YT0\u003d",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9uyI\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YSM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "you mean call it truncate_list_entity(f) or something like that?",
+      "parentUuid": "AAAAUH/9mJI\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9uxY\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 28
@@ -166,6 +328,24 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "would be easier if \u0027hints\u0027 was a kwarg...",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YSg\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "yeah…I thought about that…..balance between hiding what\u0027s going on vs. complicating the signatures of all the calls we might wrap…open to other views...",
+      "parentUuid": "AAAAUH/9uxY\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YSA\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9us0\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9uss\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 28
@@ -200,6 +398,24 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "change \"If it not\" to \"If it\u0027s not\"",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YRo\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9uss\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YRM\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9uq0\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9vVY\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 28
@@ -234,6 +468,24 @@
       "writtenOn": "2014-02-05T19:21:38Z",
       "side": 1,
       "message": "Any reason for the camel cased name?",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YQo\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 4117,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "…don\u0027t know what came over me….:-)",
+      "parentUuid": "AAAAUH/9vVY\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YQg\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 4124,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "AAAAUH/9vVU\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9mPA\u003d",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 28
@@ -268,6 +538,24 @@
       "writtenOn": "2014-02-05T19:21:38Z",
       "side": 1,
       "message": "I believe this is unnecessary.  The only reason you need this is that test_backend.LimitTests is broken and not calling its own super().setUp.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YIk\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Unfortunately, I don\u0027t think it is as simple as that - some issue further up the class hierarchy to do with multiple inheritance.  I suggest I come back in and try and fix it later once this patch is in (and fixe the SqlTokenCacheInvalidation class above as well)",
+      "parentUuid": "AAAAUH/9mPA\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YPc\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "…you can make a camel pass through the eye of….",
+      "parentUuid": "AAAAUH/9mOo\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9umY\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 28
@@ -308,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9YO8\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/9umY\u003d",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9umM\u003d",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 28
@@ -319,6 +643,24 @@
       "writtenOn": "2014-02-04T16:14:35Z",
       "side": 1,
       "message": "remove this line.",
+      "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YOs\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T11:25:08Z",
+      "side": 1,
+      "message": "nice catch",
+      "parentUuid": "AAAAUH/9umM\u003d",
       "revId": "15b535d33f39e48a9c55611dc3af5b81a1ba752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
