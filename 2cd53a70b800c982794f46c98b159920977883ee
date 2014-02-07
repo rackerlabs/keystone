@@ -16,6 +16,24 @@
       "revId": "2cd53a70b800c982794f46c98b159920977883ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9ZMc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-02-07T09:26:17Z",
+      "side": 1,
+      "message": "Hi Marcos, the behavior is the same than with the previous code (The \u0027if\u0027 clause caused the same behavior than this \u0027return\u0027).\n(nit) Personaly, I would prefer a \u0027try ... except ... else\u0027 statement... But in the end the behavior is all the same.",
+      "parentUuid": "AAAAUH/9ZZk\u003d",
+      "revId": "2cd53a70b800c982794f46c98b159920977883ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
