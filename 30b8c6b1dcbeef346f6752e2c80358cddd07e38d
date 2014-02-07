@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9UeU\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T19:27:16Z",
+      "side": 1,
+      "message": "seems like if the migration repository isn\u0027t a directory then that should raise an exception since that would indicate a mistake on the part of the programmer.",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9Udk\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T19:27:16Z",
+      "side": 1,
+      "message": "at line 85 we check for both ImportError and exception.Error, seems like we should do the same here.",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9Uck\u003d",
+        "filename": "keystone/tests/test_sql_migrate_extensions.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T19:27:16Z",
+      "side": 1,
+      "message": "no need for this change it\u0027s just moving things around.",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9Ucg\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-07T19:27:16Z",
+      "side": 1,
+      "message": "no need for this change it\u0027s just moving code around.",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
