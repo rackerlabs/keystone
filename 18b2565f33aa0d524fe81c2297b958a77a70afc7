@@ -34,6 +34,24 @@
       "revId": "18b2565f33aa0d524fe81c2297b958a77a70afc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///2Q\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-02-07T20:47:23Z",
+      "side": 1,
+      "message": "The commit message says:\n\n\"The operation and resource parameters to _send_notification() were\nmistakenly reversed in the test case\u0027s call to that method\"",
+      "parentUuid": "AAAAUH/9VaU\u003d",
+      "revId": "18b2565f33aa0d524fe81c2297b958a77a70afc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
