@@ -231,7 +231,7 @@ Migrate Repository
 
 In case the Extension is adding data structures, these must be stored in
 separate tables and must not be included in the `migrate_repo` of the core
-Keystone. Please refere to the 'migrate.cfg' file to configure the Extension
+Keystone. Please refer to the 'migrate.cfg' file to configure the Extension
 repository.
 
 
