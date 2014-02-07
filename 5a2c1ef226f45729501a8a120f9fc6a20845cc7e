@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///gI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-07T21:43:57Z",
+      "side": 1,
+      "message": "If public is going in with this patch (Brant suggested it should be pulled out into a separate commit; see previous patch set comment) then I think we should have it doc\u0027d. Unless we are just going to rely on the documentation on line 151, in which case I think the doc strings here should be cleaned up/removed (this can be done in a separate commit) so that we are not documenting the same parameter is two different places.",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
