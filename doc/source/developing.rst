@@ -513,6 +513,55 @@ All registered backends will receive the "short name" of "openstack.kvs.<class n
 ``configure`` method on the ``KeyValueStore`` object.  The ``<class name>`` of a backend must be
 globally unique.
 
+dogpile.cache based MongoDB (NoSQL) backend
+--------------------------------------------
+The ``dogpile.cache`` based MongoDB backend has been added as an option to benefit from its
+cache specific features. The implementation allows various MongoDB configuration e.g., standalone,
+a replica set, sharded replicas, with or without SSL, use of TTL type collections, etc.
+
+Example of typical configuration for MongoDB backend::
+
+.. code:: python
+
+    from dogpile.cache import region
+
+    arguments = {
+        'db_hosts': 'localhost:27017',
+        'db_name': 'ks_cache',
+        'cache_collection': 'cache',
+        'username': 'test_user',
+        'password': 'test_password',
+
+        # optional arguments
+        'son_manipulator': 'my_son_manipulator_impl'
+    }
+
+    region.make_region().configure('keystone.cache.mongo',
+                                   arguments=arguments)
+
+optional `son_manipulator` is used to manipulate custom datatype while its saved in or
+retrieved from MongoDB. If the dogpile cached values contain built-in data types and no
+custom classes, then the provided implementation class is sufficient.
+
+Similar to other backends, this backend can be added via keystone configuration in
+keystone.conf
+
+.. code:: python
+
+    [cache]
+    # Global cache functionality toggle.
+    enabled = True
+
+    # Referring to specific cache backend
+    backend = keystone.cache.mongo
+
+    # Backend specific configuration arguments
+    backend_argument = db_hosts:localhost:27017, db_name:ks_cache, cache_collection:cache,
+    username:test_user, password:test_password
+
+This backend is registered in ``keystone.common.cache.core`` module. So, its usage
+is similar to other dogpile caching backends as it implements the same dogpile APIs.
+
 
 Building the Documentation
 --------------------------
