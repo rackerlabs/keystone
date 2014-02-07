@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9Uak\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-07T19:33:50Z",
+      "side": 1,
+      "message": "I don\u0027t disagree that there is a problem with this method, since the actual data it wants is not available in all cases.  That\u0027s why we are working on fixing it!",
+      "parentUuid": "AAAAUH/9UnM\u003d",
+      "revId": "1ed2046eaa91fa36926d66a5fe1e88ccd65373bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9Um4\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 21
