@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///KQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-07T22:44:04Z",
+      "side": 1,
+      "message": "decrease, fixed in next patchset (more specific)",
+      "parentUuid": "AAAAUX///cw\u003d",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///cc\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-07T22:10:54Z",
       "side": 1,
       "message": "Suggest a DocImpact ... do we document how many tokens can be outstanding for a given user?",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///Kg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-07T22:44:04Z",
+      "side": 1,
+      "message": "We can\u0027t know exactly the number of tokens that can be outstanding.  there are many factors including the size of the memcache pages, TTL of tokens, etc.\n\nIt will decrease the maximum by probably 2/3, ~10kish i think with 1MB pages.  I think 32k was the original number...but again, things are highly variable.",
+      "parentUuid": "AAAAUX///cc\u003d",
       "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///J0\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-07T22:44:04Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAUX///b0\u003d",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///ag\u003d",
         "filename": "keystone/tests/test_backend_memcache.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX///KE\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-07T22:44:04Z",
+      "side": 1,
+      "message": "Correct. Comment in next patch",
+      "parentUuid": "AAAAUX///ag\u003d",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX///W8\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-02-07T22:10:54Z",
       "side": 1,
       "message": "could check if the new token is expired already for whatever reason.",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///Jo\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-07T22:44:04Z",
+      "side": 1,
+      "message": "I don\u0027t think tokens expiring by the time they are through issuance code is a large enough surface area to worry about.",
+      "parentUuid": "AAAAUX///W8\u003d",
       "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
