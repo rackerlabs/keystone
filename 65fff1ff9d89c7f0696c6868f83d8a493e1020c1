@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//9fI\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-08T10:32:49Z",
+      "side": 1,
+      "message": "We need to find out does migrate repository exist, instead of it we inquire does extension package exist. And totally ignore possible absence of migration repository.",
+      "revId": "65fff1ff9d89c7f0696c6868f83d8a493e1020c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
