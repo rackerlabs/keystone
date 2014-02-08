@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//9eI\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-08T10:54:33Z",
+      "side": 1,
+      "message": "We have the same logic with different behavior regarding the code which had been here previously. Previously here had been direct import of migration repository https://github.com/openstack/keystone/blob/master/keystone/cli.py#L76. Absence of migration repository had been checked by catching of ImportError. Now `package` is an extension package, not a migration repository. So, to keep original logic we need to catch an exception raised by `find_migrate_repo` function, because only here we can find out does migrate repository exist.\n\nYou led me to the right idea! The logic was changed here https://review.openstack.org/#/c/69593/10/keystone/cli.py . And it is wrong now. We need to find out does migrate repository exist, instead of it we inquire does extension package exist. And totally ignore possible absence of migration repository.",
+      "parentUuid": "AAAAUH/9UeU\u003d",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9Udk\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 24
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//9dk\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-08T10:54:33Z",
+      "side": 1,
+      "message": "Yep.",
+      "parentUuid": "AAAAUH/9Udk\u003d",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9Uck\u003d",
         "filename": "keystone/tests/test_sql_migrate_extensions.py",
         "patchSetId": 24
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-07T19:27:16Z",
       "side": 1,
       "message": "no need for this change it\u0027s just moving things around.",
+      "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//9dU\u003d",
+        "filename": "keystone/tests/test_sql_migrate_extensions.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-08T10:54:33Z",
+      "side": 1,
+      "message": "Missed it out.",
+      "parentUuid": "AAAAUH/9Uck\u003d",
       "revId": "30b8c6b1dcbeef346f6752e2c80358cddd07e38d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
