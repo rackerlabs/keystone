@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//+vo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "This should probably have a DocImpact.\n\nAnd an UpgradeImpact since you have to edit your paste config file?\n\nIs the V2 extension deprecated like the V2 API?\n\nShould the V3 spec be updated?\n\nMight want to mention here that the V3 response method will be \"ec2credential\"",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+ug\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "I don\u0027t see policy_api being used?",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+uA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "would probably be useful to document the return type.",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+t4\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "(nit) suggest do unrelated cleanup in a separate patch.",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+p8\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "since using token_provider_api, should have a\n\n@dependency.requires(\u0027token_provider_api\u0027)",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+sg\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "what does the token provider expect?",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+sA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "(note) I\u0027ve got a change to move this to V2Controller -- https://review.openstack.org/#/c/70535/",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+qA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "since using token_provider_api, should have a\n\n@dependency.requires(\u0027token_provider_api\u0027)",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+tg\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:53:16Z",
+      "side": 1,
+      "message": "Change \"Ok\" to \"OK\" -- http://tools.ietf.org/html/rfc2616#section-10.2.1",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
