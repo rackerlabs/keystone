@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//8r4\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-08T20:57:59Z",
+      "side": 1,
+      "message": "chased it down, this looks to be related to MRO and how we\u0027re loading up the policy_api in the inheritance chain.  I added a comment where the policy_api is needed",
+      "parentUuid": "AAAAUX//8y8\u003d",
+      "revId": "a0319f929c352057fab2d3ba3ad4a6c464147494",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//+uA\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 4
