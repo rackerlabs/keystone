@@ -295,3 +295,11 @@ class NotImplemented(Error):
 class ConfigFileNotFound(UnexpectedError):
     message_format = _("The Keystone configuration file %(config_file)s could "
                        "not be found.")
+
+
+class DBMigrationError(Error):
+    message_format = _("%(mod_name)s doesn't provide migrations. The "
+                       "migration repository path at %(path)s doesn't"
+                       " exist or isn't a directory.")
+    code = 500
+    title = 'Internal Server Error'
