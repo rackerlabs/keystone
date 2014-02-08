@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//+wA\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:35:41Z",
+      "side": 1,
+      "message": "since this class doesn\u0027t use these apis directly and somebody might want to write an AuthMethodHandler that doesn\u0027t use them, this line should be moved to the classes that use them, e.g., at line 70 would add\n\n @dependency.requires(\u0027identity_api\u0027)",
+      "revId": "e3dc76062c6388c2484a0167af8571d6b3a22191",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
