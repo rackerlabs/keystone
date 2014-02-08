@@ -174,6 +174,23 @@
       "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//+tY\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 10165
+      },
+      "writtenOn": "2014-02-08T00:49:48Z",
+      "side": 1,
+      "message": "[minor] set the TTL on the key to be the max of the expiration time of all tokens in the filtered_list; this would reduce the number of keys in the cache containing lists of tokens which are all expired",
+      "revId": "f6ff1b5e5113e87b43b1fd8b914a04444d4d2b18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
