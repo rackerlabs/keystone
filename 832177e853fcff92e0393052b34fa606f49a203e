@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//+pQ\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-08T00:56:18Z",
+      "side": 1,
+      "message": "should be six.text_type?",
+      "revId": "832177e853fcff92e0393052b34fa606f49a203e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
