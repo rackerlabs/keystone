@@ -34,11 +34,11 @@ class TenantTestCase(tests.TestCase):
     """
 
     def test_get_project_users_no_user(self):
-        """get_project_users when user doesn't exist, raises UserNotFound.
+        """get_project_users when user doesn't exist, raises UnexpectedError.
 
         When a user that's not known to `identity` has a role on a project,
         then `get_project_users` raises
-        :class:`keystone.exception.UserNotFound`.
+        :class:`keystone.exception.UnexpectedError`.
 
         """
 
@@ -55,7 +55,11 @@ class TenantTestCase(tests.TestCase):
         role_controller.add_role_to_user(
             _ADMIN_CONTEXT, user_id, self.role_other['id'], project_id)
 
-        self.assertRaisesRegexp(exception.UserNotFound,
-                                'Could not find user, %s' % user_id,
-                                tenant_controller.get_project_users,
-                                _ADMIN_CONTEXT, project_id)
+        exp_msg = ("Cannot get users for tenant %(project_id)s because user "
+                   "%(user_id)s doesn't exist." %
+                   {'user_id': user_id, 'project_id': project_id})
+
+        self.assertRaisesRegexp(
+            exception.UnexpectedError, exp_msg,
+            tenant_controller.get_project_users,
+            _ADMIN_CONTEXT, project_id)

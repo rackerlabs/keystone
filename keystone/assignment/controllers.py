@@ -135,7 +135,14 @@ class Tenant(controller.V2Controller):
         user_refs = []
         user_ids = self.assignment_api.list_user_ids_for_project(tenant_id)
         for user_id in user_ids:
-            user_ref = self.identity_api.get_user(user_id)
+            try:
+                user_ref = self.identity_api.get_user(user_id)
+            except exception.UserNotFound:
+                message = (_("Cannot get users for tenant %(project_id)s "
+                             "because user %(user_id)s doesn't exist.") %
+                           {'user_id': user_id, 'project_id': tenant_id})
+                LOG.error(message)
+                raise exception.UnexpectedError(message=message)
             user_refs.append(self.identity_api.v3_to_v2_user(user_ref))
         return {'users': user_refs}
 
