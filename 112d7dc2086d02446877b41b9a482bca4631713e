@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//9Qg\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-08T13:46:34Z",
+      "side": 1,
+      "message": "`migration` functions logic is changed: `db_sync` and `db_version_control` take package, not path. We must check for migrate repository existence. Catching ImportError does not help with acknowledgment of migrate repository absence any more.",
+      "revId": "112d7dc2086d02446877b41b9a482bca4631713e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
