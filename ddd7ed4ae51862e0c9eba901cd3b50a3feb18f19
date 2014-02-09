@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//7Jc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-02-09T16:58:53Z",
+      "side": 1,
+      "message": "Backport should keep master Author\t\nMatthieu Huin\u003cmhu@enovance.com\u003e2013-12-02 10:43",
+      "revId": "ddd7ed4ae51862e0c9eba901cd3b50a3feb18f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//+wk\u003d",
         "filename": "requirements.txt",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2014-02-08T00:33:32Z",
       "side": 1,
       "message": "these changes actually require a recent version of oauthlib -- oauthlib\u003e\u003d0.6",
+      "revId": "ddd7ed4ae51862e0c9eba901cd3b50a3feb18f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//7JQ\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-02-09T16:58:53Z",
+      "side": 1,
+      "message": "It should be then applied in Keystone master first.\nAlso minimal version was applied to requirements master branch https://review.openstack.org/67900 but not to stable/havana?",
+      "parentUuid": "AAAAUX//+wk\u003d",
       "revId": "ddd7ed4ae51862e0c9eba901cd3b50a3feb18f19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
