@@ -740,10 +740,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         #self.assertIn(collection_url, r.result['links']['self'])
 
     def test_crud_user_project_role_grants_no_user(self):
-        """Grant role on a project to a user that doesn't exist, 404 result.
+        """Grant role on a project to a user that doesn't exist.
 
-        When grant a role on a project to a user that doesn't exist, the server
-        returns 404 Not Found for the user.
+        Clients can grant a role on a project to a user that doesn't exist.
 
         """
 
@@ -756,7 +755,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'collection_url': collection_url,
             'role_id': self.role_id}
 
-        self.put(member_url, expected_status=404)
+        self.put(member_url)
+        self.head(member_url)
 
     def test_crud_user_domain_role_grants(self):
         collection_url = (
@@ -779,10 +779,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertIn(collection_url, r.result['links']['self'])
 
     def test_crud_user_domain_role_grants_no_user(self):
-        """Grant role on a domain to a user that doesn't exist, 404 result.
+        """Grant role on a domain to a user that doesn't exist.
 
-        When grant a role on a domain to a user that doesn't exist, the server
-        returns 404 Not Found for the user.
+        Clients can grant a role on a domain to a user that doesn't exist.
 
         """
 
@@ -795,7 +794,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'collection_url': collection_url,
             'role_id': self.role_id}
 
-        self.put(member_url, expected_status=404)
+        self.put(member_url)
+        self.head(member_url)
 
     def test_crud_group_project_role_grants(self):
         collection_url = (
