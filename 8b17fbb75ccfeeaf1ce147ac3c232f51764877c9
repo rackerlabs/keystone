@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//8No\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-09T05:19:34Z",
+      "side": 1,
+      "message": "Couldn\u0027t we log some information here saying no v2 or v3 auth structure was detected?",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
