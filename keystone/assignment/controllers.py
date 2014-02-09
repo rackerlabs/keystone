@@ -489,7 +489,10 @@ class RoleV3(controller.V3Controller):
         if role_id:
             ref['role'] = self.assignment_api.get_role(role_id)
         if user_id:
-            ref['user'] = self.identity_api.get_user(user_id)
+            try:
+                ref['user'] = self.identity_api.get_user(user_id)
+            except exception.UserNotFound:
+                pass
         else:
             ref['group'] = self.identity_api.get_group(group_id)
 
