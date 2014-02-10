@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xNM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "I will remove them.",
+      "parentUuid": "AAAAUX//0z4\u003d",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//xn0\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-10T21:44:12Z",
       "side": 1,
       "message": "suggest change \"old-json style\" to \"old json-style\"",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xNE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//xn0\u003d",
       "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xPs\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//xl4\u003d",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//xmE\u003d",
         "filename": "keystone/tests/test_backend_memcache.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2014-02-10T21:44:12Z",
       "side": 1,
       "message": "keystone tests use assertIsInstance in several places.",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xPw\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "sure.  was just going by documentation.",
+      "parentUuid": "AAAAUX//xmE\u003d",
       "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xPI\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "Hehe. I think I\u0027ll leave this alone.",
+      "parentUuid": "AAAAUX//yYM\u003d",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//xio\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 4
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xNo\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "More than likely this is a lie and we should just catch all exceptions.",
+      "parentUuid": "AAAAUX//xio\u003d",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//xj8\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 4
@@ -132,6 +240,24 @@
       "writtenOn": "2014-02-10T21:44:12Z",
       "side": 1,
       "message": "suggest change \"Resetting\" to \"Failed to reset\". Also add some explanation of what the admin is supposed to do about it.",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xNU\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T22:31:49Z",
+      "side": 1,
+      "message": "This is not a failed to reset, this is infact nothing to be done by the admin.  Will expand the message, but this dumps the old list or we can\u0027t move on at all.",
+      "parentUuid": "AAAAUX//xj8\u003d",
       "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
