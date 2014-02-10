@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//13I\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-10T13:35:51Z",
+      "side": 1,
+      "message": "is \n    migration.db_sync(abs_path, version\u003dversion)\n\nsuppose to be executed with the else block?\n\n    else:\n        abs_path \u003d migration_helpers.find_migrate_repo()\n        migration.db_sync(abs_path, version\u003dversion)",
+      "revId": "6852fe06c45694e0a97efc852adf91e2802527a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
