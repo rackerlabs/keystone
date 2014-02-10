@@ -206,6 +206,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//2K4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-10T13:21:19Z",
+      "side": 1,
+      "message": "Add an example of that var new returns to be consistent with the descriptions and examples of the parameters (and def process)?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//5+o\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 16
@@ -234,6 +251,23 @@
       "writtenOn": "2014-02-10T02:37:48Z",
       "side": 1,
       "message": "returns a list of direct mappings?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//2Dw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-10T13:21:19Z",
+      "side": 1,
+      "message": "Wondering if this for loop could be condensed down a little, lines 304 - 313 are the same as 314 - 324 with the exception of using any_one_values versus not_any_values.",
       "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
