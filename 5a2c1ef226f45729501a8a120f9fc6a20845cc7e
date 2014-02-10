@@ -16,6 +16,40 @@
       "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//2BI\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-10T13:27:29Z",
+      "side": 1,
+      "message": "Remove this line to pass pep8",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//18g\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-10T13:27:29Z",
+      "side": 1,
+      "message": "Remove this test since it is covered at line 276",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
