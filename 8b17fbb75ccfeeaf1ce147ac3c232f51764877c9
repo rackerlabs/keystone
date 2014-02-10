@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xvI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T21:41:37Z",
+      "side": 1,
+      "message": "guang, it\u0027ll be added to token/controller too",
+      "parentUuid": "AAAAUX//yVE\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yZY\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -64,6 +82,24 @@
       "writtenOn": "2014-02-10T20:20:25Z",
       "side": 1,
       "message": "args[1] is context, correct? the method signature of wrapper() should reflect that expectation\n\n  def wrapper(context, *args, **kwargs):\n\nthen this becomes\n\n  context.get(\u0027environment\u0027)\n\nwhich is much more self-documenting",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xlo\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T21:41:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//yZY\u003d",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xkQ\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T21:41:37Z",
+      "side": 1,
+      "message": "lets change this to just get user_id....\n\nwe can deal with the combo of \nuser_name + domain_id || user_name + domain_name || user_name (v2) later on. \n\nuser_id is easiest",
+      "parentUuid": "AAAAUX//yXg\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yYE\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -115,6 +169,24 @@
       "writtenOn": "2014-02-10T20:20:25Z",
       "side": 1,
       "message": "there isn\u0027t always a username in auth",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xj4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T21:41:37Z",
+      "side": 1,
+      "message": "Same as before, lets just get user_id, and make this function more generic sounding.... like _get_audit_info?",
+      "parentUuid": "AAAAUX//yYE\u003d",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -167,6 +239,24 @@
       "writtenOn": "2014-02-10T20:20:25Z",
       "side": 1,
       "message": "this makes me wonder what notify() expects to do with \u0027context\u0027",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xjQ\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T21:41:37Z",
+      "side": 1,
+      "message": "With your suggestion to the CADF wrapper, we could pass in context to _send_notification, and pass it to notify() ?",
+      "parentUuid": "AAAAUX//yXk\u003d",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
