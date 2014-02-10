@@ -11,6 +11,7 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+
 """
 The MatchMaker classes should except a Topic or Fanout exchange key and
 return keys for direct exchanges, per (approximate) AMQP parlance.
@@ -21,7 +22,7 @@ import contextlib
 import eventlet
 from oslo.config import cfg
 
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log as logging
 
 
