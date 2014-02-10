@@ -72,8 +72,12 @@ class DbSync(BaseApp):
         version = CONF.command.version
         extension = CONF.command.extension
         if extension:
-            package_name = '.'.join((contrib.__name__, extension))
-            package = importutils.import_module(package_name)
+            try:
+                package_name = '.'.join((contrib.__name__, extension))
+                package = importutils.import_module(package_name)
+            except ImportError:
+                raise ImportError(_("%s extension does not exist.")
+                                  % package_name)
             try:
                 migration.db_version_control(package=package)
                 migration.db_sync(version=version, package=package)
@@ -111,8 +115,12 @@ class DbVersion(BaseApp):
     def main():
         extension = CONF.command.extension
         if extension:
-            package_name = '.'.join((contrib.__name__, extension))
-            package = importutils.import_module(package_name)
+            try:
+                package_name = '.'.join((contrib.__name__, extension))
+                package = importutils.import_module(package_name)
+            except ImportError:
+                raise ImportError(_("%s extension does not exist.")
+                                  % package_name)
             try:
                 print(migration.db_version(package))
             # In a case when an extension does not provide migration
