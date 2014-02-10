@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//0GA\u003d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-10T16:59:53Z",
+      "side": 1,
+      "message": "Need some help with proper URLs.",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//0GI\u003d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-10T16:59:53Z",
+      "side": 1,
+      "message": "Need some help with proper URLs.",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//0FQ\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-10T16:59:53Z",
+      "side": 1,
+      "message": "Need some help with proper URLs.",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
