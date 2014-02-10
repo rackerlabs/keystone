@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//zs8\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-10T17:40:50Z",
+      "side": 1,
+      "message": "This is a reference to backend implementation module. This is a new backend which is available only in keystone.",
+      "parentUuid": "AAAAUX//z5s\u003d",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//z60\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-10T17:25:18Z",
       "side": 1,
       "message": "Repeated various twice ...",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//zsU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-10T17:40:50Z",
+      "side": 1,
+      "message": "Will fix it in next patch.",
+      "parentUuid": "AAAAUX//z60\u003d",
       "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//zr0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-10T17:40:50Z",
+      "side": 1,
+      "message": "Okay. I will provide some details here as well. I have added related details in code where a developer may want to know it.",
+      "parentUuid": "AAAAUX//z6Q\u003d",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//z0w\u003d",
         "filename": "test-requirements.txt",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-10T17:25:18Z",
       "side": 1,
       "message": "Please move this in the appropriate sub section:\n# Optional backend: Memcache",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//zrc\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-10T17:40:50Z",
+      "side": 1,
+      "message": "Okay. Will move as did not notice there is specific optional section.",
+      "parentUuid": "AAAAUX//z0w\u003d",
       "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
