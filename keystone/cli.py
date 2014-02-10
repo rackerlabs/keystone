@@ -72,12 +72,20 @@ class DbSync(BaseApp):
         version = CONF.command.version
         extension = CONF.command.extension
         if extension:
-            package_name = '.'.join((contrib.__name__, extension))
-            package = importutils.import_module(package_name)
+            try:
+                package_name = '.'.join((contrib.__name__, extension))
+                package = importutils.import_module(package_name)
+            except ImportError:
+                raise ImportError(_("%s extension does not exist.")
+                    % package_name)
             try:
                 migration.db_version_control(package=package)
                 migration.db_sync(version=version, package=package)
-            except exception.Error as e:
+            # In a case when an extension does not provide migration
+            # repository DBMigrationError will be raised. Further execution
+            # must be terminated, otherwise unobvious database errors are
+            # guaranteed.
+            except exception.DBMigrationError as e:
                 print(e)
                 exit(0)
             # Register the repo with the version control API
@@ -106,11 +114,17 @@ class DbVersion(BaseApp):
     def main():
         extension = CONF.command.extension
         if extension:
-            package_name = '.'.join((contrib.__name__, extension))
-            package = importutils.import_module(package_name)
+            try:
+                package_name = '.'.join((contrib.__name__, extension))
+                package = importutils.import_module(package_name)
+            except ImportError:
+                raise ImportError(_("%s extension does not exist.")
+                    % package_name)
             try:
                 print(migration.db_version(package))
-            except exception.Error as e:
+            # In a case when an extension does not provide migration
+            # repository DBMigrationError will be raised.
+            except exception.DBMigrationError as e:
                 print(e)
                 exit(0)
         else:
