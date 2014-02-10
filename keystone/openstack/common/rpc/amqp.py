@@ -37,7 +37,7 @@ import six
 
 
 from keystone.openstack.common import excutils
-from keystone.openstack.common.gettextutils import _  # noqa
+from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import local
 from keystone.openstack.common import log as logging
 from keystone.openstack.common.rpc import common as rpc_common
@@ -401,7 +401,7 @@ class CallbackWrapper(_ThreadPoolWithWait):
         if self.wait_for_consumers:
             self.pool.waitall()
             if self.exc_info:
-                raise self.exc_info[1], None, self.exc_info[2]
+                six.reraise(self.exc_info[1], None, self.exc_info[2])
 
 
 class ProxyCallback(_ThreadPoolWithWait):
