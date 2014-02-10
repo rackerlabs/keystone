@@ -26,7 +26,7 @@ from keystone import token
 
 CONF = config.CONF
 
-FUTURE_DELTA = datetime.timedelta(seconds=CONF.token.expiration)
+FUTURE_DELTA = datetime.timedelta(seconds=86400)
 CURRENT_DATE = timeutils.utcnow()
 
 SAMPLE_V2_TOKEN = {
