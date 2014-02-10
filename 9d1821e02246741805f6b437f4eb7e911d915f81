@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//5FI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T05:40:31Z",
+      "side": 1,
+      "message": "done in next patchset.",
+      "parentUuid": "AAAAUX//56w\u003d",
+      "revId": "9d1821e02246741805f6b437f4eb7e911d915f81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//55U\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-10T02:50:34Z",
       "side": 1,
       "message": "shouldn\u0027t a V3 controller be using RBAC and not requiring admin?",
+      "revId": "9d1821e02246741805f6b437f4eb7e911d915f81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5FQ\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T05:40:31Z",
+      "side": 1,
+      "message": "Yes.  Thank you for catching this.  I\u0027ll. add RBAC stuff in the next patchset.",
+      "parentUuid": "AAAAUX//55U\u003d",
       "revId": "9d1821e02246741805f6b437f4eb7e911d915f81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
