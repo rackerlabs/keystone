@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//6KU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T01:44:16Z",
+      "side": 1,
+      "message": "Change \"errors\" to \"error\".",
+      "revId": "2951913d64ec6f59eb0e2030e37c709f245cf55e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6KQ\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T01:44:16Z",
+      "side": 1,
+      "message": "it\u0027s not really an error for an extension to not provide a migration... an extension might not need to store anything. How about return None rather than raise an exception?",
+      "revId": "2951913d64ec6f59eb0e2030e37c709f245cf55e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
