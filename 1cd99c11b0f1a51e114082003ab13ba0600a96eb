@@ -36,6 +36,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xsI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-10T21:54:45Z",
+      "side": 1,
+      "message": "this is almost certainly wrong.",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xqc\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-10T21:54:45Z",
+      "side": 1,
+      "message": "Do not make this a top level controller.   A different token Provider and auth plugin. plus some refactoring of the existing code to make it more of a pipeline is more appropriate.",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xec\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-10T21:54:45Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xeg\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-10T21:54:45Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//0FQ\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 4
