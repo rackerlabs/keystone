@@ -16,6 +16,24 @@
       "revId": "6852fe06c45694e0a97efc852adf91e2802527a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//1wM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T13:46:28Z",
+      "side": 1,
+      "message": "No, we have different values for `abs_path` compiled in different `if` `else` blocks and extra `db_version_control` call if extension detected. `db_sync` must be called anyway, difference in the path to migration repository. Please note, `db_sync` have `abs_path` as requires positional argument: https://github.com/openstack/keystone/blob/master/keystone/openstack/common/db/sqlalchemy/migration.py#L175",
+      "parentUuid": "AAAAUX//13I\u003d",
+      "revId": "6852fe06c45694e0a97efc852adf91e2802527a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
