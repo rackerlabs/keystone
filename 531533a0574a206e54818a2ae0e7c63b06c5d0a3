@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xn0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T21:44:12Z",
+      "side": 1,
+      "message": "suggest change \"old-json style\" to \"old json-style\"",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yY4\u003d",
         "filename": "keystone/tests/test_backend_memcache.py",
         "patchSetId": 4
@@ -36,6 +53,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//xl4\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T21:44:12Z",
+      "side": 1,
+      "message": "change \"pythone\" to \"python\"",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xmE\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T21:44:12Z",
+      "side": 1,
+      "message": "keystone tests use assertIsInstance in several places.",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yYM\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 4
@@ -47,6 +98,40 @@
       "writtenOn": "2014-02-10T20:18:11Z",
       "side": 1,
       "message": "This is screaming for an itertools one liner :-)",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xio\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T21:44:12Z",
+      "side": 1,
+      "message": "really? what if the exception was raised by timeutils.normalize_time? Suggest put this try/except around just line 98.",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//xj8\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T21:44:12Z",
+      "side": 1,
+      "message": "suggest change \"Resetting\" to \"Failed to reset\". Also add some explanation of what the admin is supposed to do about it.",
       "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
