@@ -16,6 +16,24 @@
       "revId": "7025336eec7f04cdeea38f63e5f17a87a85b675b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//4TA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T07:55:53Z",
+      "side": 1,
+      "message": "Yes, it was.",
+      "parentUuid": "AAAAUX//6HU\u003d",
+      "revId": "7025336eec7f04cdeea38f63e5f17a87a85b675b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
