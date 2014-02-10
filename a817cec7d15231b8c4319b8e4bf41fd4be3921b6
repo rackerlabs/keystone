@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//xvA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T21:29:50Z",
+      "side": 1,
+      "message": "suggest change 231-235 to\n\n return {\u0027name\u0027: user_name, \u0027group_ids\u0027: list(group_ids)}\n\nno need to use 5 lines where 1 would do.",
+      "revId": "a817cec7d15231b8c4319b8e4bf41fd4be3921b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
