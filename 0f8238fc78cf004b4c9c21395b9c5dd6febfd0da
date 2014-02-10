@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//0Go\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T16:59:00Z",
+      "side": 1,
+      "message": "Seems like between the releases the \u0027test_list_keystone_tokens_by_consumers\u0027 was changed to \u0027test for delete_keystone_token_by_consumer_id\u0027.\n\nI think the stuff in comments is only applicable to the latter, if you don\u0027t need it here, then remove it.",
+      "revId": "0f8238fc78cf004b4c9c21395b9c5dd6febfd0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
