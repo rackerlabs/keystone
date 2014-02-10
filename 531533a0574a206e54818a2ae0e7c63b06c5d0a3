@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//0z4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-10T20:18:11Z",
+      "side": 1,
+      "message": "I don\u0027t like having actual numbers here because I think they are misleading.",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yY4\u003d",
+        "filename": "keystone/tests/test_backend_memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-10T20:18:11Z",
+      "side": 1,
+      "message": "I still think this is a little overly confusing for what it\u0027s actually doing, but I wouldn\u0027t hold things up because of it.  You should be able to just expire user_token_list[-1] and not worry about with one is called expired in the code.  The assertion is only checking the total number of tokens returned so it doesn\u0027t matter which one is actually expired.",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yYM\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-10T20:18:11Z",
+      "side": 1,
+      "message": "This is screaming for an itertools one liner :-)",
+      "revId": "531533a0574a206e54818a2ae0e7c63b06c5d0a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
