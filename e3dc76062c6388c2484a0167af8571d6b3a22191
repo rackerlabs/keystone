@@ -16,6 +16,24 @@
       "revId": "e3dc76062c6388c2484a0167af8571d6b3a22191",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//3s8\u003d",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-02-10T09:16:49Z",
+      "side": 1,
+      "message": "Thanks Brant, I agree it is more logical to have the dependencies in each of the individual classes).",
+      "parentUuid": "AAAAUX//+wA\u003d",
+      "revId": "e3dc76062c6388c2484a0167af8571d6b3a22191",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
