@@ -50,6 +50,24 @@
       "revId": "ca9d15437cb95b2c6e23364f3613c77f8abf89c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//394\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-02-10T08:44:47Z",
+      "side": 1,
+      "message": "This is an exhaustive list of Keystone context attributes available to the policy engine (I think I didn\u0027t miss any). This list may have to be synchronized from time to time.",
+      "parentUuid": "AAAAUX//5SU\u003d",
+      "revId": "ca9d15437cb95b2c6e23364f3613c77f8abf89c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
