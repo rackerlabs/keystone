@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//07w\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-10T15:23:12Z",
+      "side": 1,
+      "message": "I realize that the Default domain name is not defined in the config file, but it seems that this should still throw the exception for any domain but the default.  Does it make sense to have a default domain name defined in the conf, and then the logic would be:\nif domain_name !\u003d COND.default_domain_name:\n      raise exception.DomainNotFound()",
+      "revId": "959a3fa1f3c3d8637b0a2ec2dd5725795df4620e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
