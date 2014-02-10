@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//5KE\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-10T05:31:58Z",
+      "side": 1,
+      "message": "your version is MUCH CLEANER!   You are making the code much simpler to understand with this refactoring",
+      "revId": "e19a8e3852c110283dd4cbde79382d1ac2ba3221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
