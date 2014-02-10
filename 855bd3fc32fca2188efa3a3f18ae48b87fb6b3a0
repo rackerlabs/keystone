@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//y7s\u003d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T19:13:58Z",
+      "side": 1,
+      "message": "If you plan on using the .. code:: keywords below, i believe you need to replace the double :: to a single on here.\n\nThis goes for the whole patch",
+      "revId": "855bd3fc32fca2188efa3a3f18ae48b87fb6b3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//y5s\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T19:13:58Z",
+      "side": 1,
+      "message": "repalce :: with : here, and throughout the file",
+      "revId": "855bd3fc32fca2188efa3a3f18ae48b87fb6b3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//y2I\u003d",
+        "filename": "doc/source/external-auth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-10T19:13:58Z",
+      "side": 1,
+      "message": "last culprit",
+      "revId": "855bd3fc32fca2188efa3a3f18ae48b87fb6b3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
