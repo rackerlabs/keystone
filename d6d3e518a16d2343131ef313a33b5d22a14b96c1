@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//6GY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "(nit) remove \"existing\"... how would anyone pass in nonexistant rules?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6F0\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "suggest change \"identity values\" should be \"name and group ids\" ?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6FU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "suggest change \"mapping\" to \"mapping rules\" so that it\u0027s more obvious that this is referring to self.rules.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6Ew\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "change \"mappings\" to \"mapping\" ?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6EY\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "remove ; ?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6D4\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "add a comment what this is doing.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6Dc\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "\"Refactor\" doesn\u0027t make sense here... how about \"Transform\" or something? Refactoring is changing code.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6Cg\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "this doesn\u0027t make any sense... this method supposedly reformats the array for the process function, but it\u0027s actually generating the return value of the process function (see line 192). The process function doesn\u0027t use the results.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6HE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "should \"user\" be \"user name\"? since that\u0027s what\u0027s returned.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6AU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "suggest have user_name and group_ids variables and put them into a dict to return rather than have a dict here.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6AE\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "suggest change x to identity_value",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6BQ\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "this seems unsafe... why not raise an exception? Seems like an invalid mapping.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5+o\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "change \"this rule\" to \"the rule with this assertion\" ?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5+Q\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "returns a list of direct mappings?",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//58g\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "change \"0cd5e9\" to \"EMPLOYEE_GROUP_ID\"",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//58Q\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "change \"85a868\" to \"CONTRACTOR_GROUP_ID\"",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//58E\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "change \"0cd5e9\" to \"EMPLOYEE_GROUP_ID\"",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//578\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:37:48Z",
+      "side": 1,
+      "message": "change \"123 and xyz\" to the actual groups.",
+      "revId": "d6d3e518a16d2343131ef313a33b5d22a14b96c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
