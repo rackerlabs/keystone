@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//yaE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "subsequent patch: change this to something like:\n\n  from keystone.notification import audit\n\nper morganfainberg and ayoung",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yaM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "so this will become @audit.emit_event(\u0027authenticate\u0027) in a subsequent patch",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yZY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "args[1] is context, correct? the method signature of wrapper() should reflect that expectation\n\n  def wrapper(context, *args, **kwargs):\n\nthen this becomes\n\n  context.get(\u0027environment\u0027)\n\nwhich is much more self-documenting",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yXg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "usernames are namespaced by domain",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yYE\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "there isn\u0027t always a username in auth",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//8No\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -13,6 +98,41 @@
       "writtenOn": "2014-02-09T05:19:34Z",
       "side": 1,
       "message": "Couldn\u0027t we log some information here saying no v2 or v3 auth structure was detected?",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yYw\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "this will break if i authenticate by user ID\n\nor if i rescope a token (not sure this code should care about that scenario though?)",
+      "parentUuid": "AAAAUX//8No\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yXk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:20:25Z",
+      "side": 1,
+      "message": "this makes me wonder what notify() expects to do with \u0027context\u0027",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
