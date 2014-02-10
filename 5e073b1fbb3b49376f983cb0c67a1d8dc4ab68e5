@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//4Nc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T08:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//6JA\u003d",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//6IE\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-10T02:03:10Z",
       "side": 1,
       "message": "Seems like this could fail because the user provided an extension that doesn\u0027t exist. We should be able to provide a better error for this... you don\u0027t need to fix this here because it was an existing problem.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//4QM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T08:13:43Z",
+      "side": 1,
+      "message": "Ok, I thought about it. I\u0027ll start another patch, after fourth it can\u0027t be worse :)",
+      "parentUuid": "AAAAUX//6IE\u003d",
       "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//4QI\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T08:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//6H0\u003d",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//6Ig\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 13
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//4N4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T08:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//6Ig\u003d",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//6IY\u003d",
         "filename": "keystone/cli.py",
         "patchSetId": 13
@@ -81,6 +153,24 @@
       "writtenOn": "2014-02-10T02:03:10Z",
       "side": 1,
       "message": "we used to exit 1 if the extension didn\u0027t provide a migration. We should keep this behavior for backwards compatibility.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//4OM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-10T08:13:43Z",
+      "side": 1,
+      "message": "Explain to me please, why `DbSync.main` uses 0? If it is an error in general it must be 1 in both of functions, but if it isn\u0027t — 0 must be in both of functions. ...at least at a glance.",
+      "parentUuid": "AAAAUX//6IY\u003d",
       "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
