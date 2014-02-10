@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//5Ro\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T05:13:06Z",
+      "side": 1,
+      "message": "[NIT]: suggest change \"vary from one object to the other\" to \"vary between object types.\". \n\nMy thinking on the rephrasing is that users will typically have the same attributes, but the attribute between a user and a domain would be different and it makes it easier to understand.",
+      "revId": "ca9d15437cb95b2c6e23364f3613c77f8abf89c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5Q4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T05:13:06Z",
+      "side": 1,
+      "message": "[NIT]: suggest replace \", like users\u0027 passwords.\" with \"(e.g. password on user objects).\" or something similar.",
+      "revId": "ca9d15437cb95b2c6e23364f3613c77f8abf89c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5SU\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-10T05:13:06Z",
+      "side": 1,
+      "message": "Do we want to make this list \"authoritative\"?\n\nIs this list complete and fully inclusive (all objects and attributes that can be used in policy)?  If not we need to indicate as much.",
+      "revId": "ca9d15437cb95b2c6e23364f3613c77f8abf89c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
