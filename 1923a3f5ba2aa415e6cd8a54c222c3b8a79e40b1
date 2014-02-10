@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//yJM\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:55:47Z",
+      "side": 0,
+      "message": "if this method is public API, then it should be named send() or emit() or something, as the current name is completely redundant with the module name\n\nwhy is this method being made public is this patch anyway?",
+      "revId": "1923a3f5ba2aa415e6cd8a54c222c3b8a79e40b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//yKw\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:55:47Z",
+      "side": 1,
+      "message": "docstr needs to be revised",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yJ0\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:55:47Z",
+      "side": 1,
+      "message": "it seems like you should also test the public/private nature",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yHs\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:55:47Z",
+      "side": 1,
+      "message": "i was going to nit on the variable choice \u0027obj\u0027, but instead just append this dict without the intermediary variable:\n\n  self._notifications.append({\n    \u0027exp_resource_id\u0027: resource_id,\n    \u0027etc\u0027: etc})",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yHE\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:55:47Z",
+      "side": 1,
+      "message": "i spoke too soon ^^\n\nyes it\u0027s an \"object\" but it\u0027s more specifically a dict, so at least call it \"d\" for dict or just \"notification\"",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//2BI\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 12
@@ -30,6 +98,23 @@
       "writtenOn": "2014-02-10T13:27:29Z",
       "side": 1,
       "message": "Remove this line to pass pep8",
+      "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yFQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-10T20:55:47Z",
+      "side": 1,
+      "message": "the order of events shouldn\u0027t matter - that\u0027s an implementation detail. what you should be testing for is that a \u0027disabled\u0027 notification was sent *at any point* for the domain",
       "revId": "5a2c1ef226f45729501a8a120f9fc6a20845cc7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
