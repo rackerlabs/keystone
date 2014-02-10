@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//xHc\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T22:45:21Z",
+      "side": 1,
+      "message": "leave the docstring.",
+      "revId": "95eaf991fc1240143d010ed5c6eb6c065e840046",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
