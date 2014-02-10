@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//yVE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-10T20:32:44Z",
+      "side": 1,
+      "message": "we only care about v3? I would expect the same change in \n\nkeystone/token/controller.py?",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yZY\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -47,6 +64,23 @@
       "writtenOn": "2014-02-10T20:20:25Z",
       "side": 1,
       "message": "args[1] is context, correct? the method signature of wrapper() should reflect that expectation\n\n  def wrapper(context, *args, **kwargs):\n\nthen this becomes\n\n  context.get(\u0027environment\u0027)\n\nwhich is much more self-documenting",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//yTk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-10T20:32:44Z",
+      "side": 1,
+      "message": "If you can, please make these configurable. REMOTE_ADDR is usually the IP of the VIP if Keystone instances are HAed. Front-end proxies/VIP may use different environ/headers to convey the client information.",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
