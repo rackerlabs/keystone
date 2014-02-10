@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//6JA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:03:10Z",
+      "side": 1,
+      "message": "the comment here should make it clear what the right way to use find_migrate_repo is.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6IE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:03:10Z",
+      "side": 1,
+      "message": "Seems like this could fail because the user provided an extension that doesn\u0027t exist. We should be able to provide a better error for this... you don\u0027t need to fix this here because it was an existing problem.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6H0\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:03:10Z",
+      "side": 1,
+      "message": "add a comment why need to catch this exception.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6Ig\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:03:10Z",
+      "side": 1,
+      "message": "Add a comment why catching exception.Error here... I suspect there\u0027s lots of reasons that exception.Error might be raised and not just for the case where the extension doesn\u0027t provide migration. So maybe it would be better to catch an exception specific to this problem.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//6IY\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-10T02:03:10Z",
+      "side": 1,
+      "message": "we used to exit 1 if the extension didn\u0027t provide a migration. We should keep this behavior for backwards compatibility.",
+      "revId": "5e073b1fbb3b49376f983cb0c67a1d8dc4ab68e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
