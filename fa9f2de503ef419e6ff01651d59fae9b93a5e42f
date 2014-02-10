@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//z5s\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-10T17:25:18Z",
+      "side": 1,
+      "message": "You mentioned (in developing doc) that Mongo implements the same dogpile APIs, so why cannot be added in the configuration as dogpile.cache.backends.mongo ? (similar to redis)",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//z60\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-10T17:25:18Z",
+      "side": 1,
+      "message": "Repeated various twice ...",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//z6Q\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-10T17:25:18Z",
+      "side": 1,
+      "message": "I think you should explain what the son manipulator is and does",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//z0w\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-10T17:25:18Z",
+      "side": 1,
+      "message": "Please move this in the appropriate sub section:\n# Optional backend: Memcache",
+      "revId": "fa9f2de503ef419e6ff01651d59fae9b93a5e42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
