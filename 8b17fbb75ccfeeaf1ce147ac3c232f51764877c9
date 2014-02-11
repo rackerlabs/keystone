@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//utE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "I have done everything else.  This one should be easy but before I attempt this one I want to ask the experts on IRC what needs to be done here",
+      "parentUuid": "AAAAUX//yaE\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yaM\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 9
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//uss\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "See above comment. I want to ask about this before I attempt it. Hopefully I took care of all the hard stuff first",
+      "parentUuid": "AAAAUX//yaM\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yZY\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -99,6 +135,24 @@
       "writtenOn": "2014-02-10T21:41:37Z",
       "side": 1,
       "message": "Done",
+      "parentUuid": "AAAAUX//yZY\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//vdk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "So I tried what you said and it did not work. I get the following error:  \nAttributeError: \u0027CadfNotificationsWrapperTestCase\u0027 object has no attribute \u0027get\u0027\n\nIt seems like what you wanted me to do is causing context to get mapped to the CadfNotificationsWrapperTestCase object instead of the context object. Did I need to make some other change to make this work????",
       "parentUuid": "AAAAUX//yZY\u003d",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -158,6 +212,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//uz8\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "I went ahead and did user_id, username + domain_name, and username +domain_id",
+      "parentUuid": "AAAAUX//xkQ\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//u0c\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//yXg\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yYE\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -187,6 +277,42 @@
       "side": 1,
       "message": "Same as before, lets just get user_id, and make this function more generic sounding.... like _get_audit_info?",
       "parentUuid": "AAAAUX//yYE\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//uzw\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "I now handle the other cases as well",
+      "parentUuid": "AAAAUX//yYE\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//uzs\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//xj4\u003d",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -228,6 +354,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//uwM\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//8No\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//uyY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "authenticate by user Id is now fixed",
+      "parentUuid": "AAAAUX//yYw\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yXk\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
@@ -257,6 +419,24 @@
       "side": 1,
       "message": "With your suggestion to the CADF wrapper, we could pass in context to _send_notification, and pass it to notify() ?",
       "parentUuid": "AAAAUX//yXk\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//uyE\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T06:55:33Z",
+      "side": 1,
+      "message": "I think Lance told me context isnt used for anything",
+      "parentUuid": "AAAAUX//xjQ\u003d",
       "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
