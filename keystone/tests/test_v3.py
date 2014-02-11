@@ -248,7 +248,10 @@ class RestfulTestCase(rest.RestfulTestCase):
     def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
                       impersonation=None, expires=None, role_ids=None,
                       role_names=None, remaining_uses=None):
-        ref = self.new_ref()
+        # NOTE(lbragstad): The only attribute of ref that new_trust_ref shares
+        # with new_ref is 'id', so just create an id and use that instead of
+        # deleting 'name', 'description', and 'enabled'.
+        ref = {'id': uuid.uuid4().hex}
 
         ref['trustor_user_id'] = trustor_user_id
         ref['trustee_user_id'] = trustee_user_id
@@ -976,6 +979,8 @@ class RestfulTestCase(rest.RestfulTestCase):
             resp,
             'trusts',
             self.assertValidTrustSummary,
+            keys_to_check=['trustee_user_id', 'trustor_user_id',
+                           'impersonation'],
             *args,
             **kwargs)
 
@@ -984,6 +989,8 @@ class RestfulTestCase(rest.RestfulTestCase):
             resp,
             'trust',
             self.assertValidTrust,
+            keys_to_check=['trustee_user_id', 'trustor_user_id',
+                           'impersonation'],
             *args,
             **kwargs)
 
