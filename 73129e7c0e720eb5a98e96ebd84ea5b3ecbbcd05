@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//ulw\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-11T07:19:47Z",
+      "side": 1,
+      "message": "ec2credentials implemented \"get_credentials\" instead of list_credentials.  The change from the previous patchset was to match.  Likely, your other comment indicates this should be list_credentials instead (should have changed it on the ec2 side not policy side).\n\nI\u0027ll switch it over to list in the next patchset.",
+      "parentUuid": "AAAAUX//vIA\u003d",
+      "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//vHQ\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//um0\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-11T07:19:47Z",
+      "side": 1,
+      "message": "In this case it can\u0027t, @controller.protected() passed *args, **kwargs in, so either I need to capture user_id (since we have it as an arg below in the ec2_delete_credential) or I need to use *args, **kwargs.  This felt more explicit.\n\nI\u0027ll add a comment.",
+      "parentUuid": "AAAAUX//vHQ\u003d",
+      "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//vH0\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-11T05:56:23Z",
       "side": 1,
       "message": "seems like this should be ec2_list_credentials",
+      "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//unY\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-11T07:19:47Z",
+      "side": 1,
+      "message": "It could be. originally ec2 implemented \"get_credentials\" instead of \"list_credentials\".  I\u0027ll switch this over.",
+      "parentUuid": "AAAAUX//vH0\u003d",
       "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
