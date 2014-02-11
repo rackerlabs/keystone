@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//pLc\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-11T19:40:19Z",
+      "side": 1,
+      "message": "dolph, this was the best I could come up with regarding your request.  None of the wrapper signature changes that you suggested worked for me.  Feel free to school me on this :-)",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
