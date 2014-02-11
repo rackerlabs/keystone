@@ -32,7 +32,7 @@ def response_truncated(f):
     layer is unable to perform truncation, the 'limit' entry is simply left in
     the hints list for the caller to handle.
 
-    A _get_list_limit() method is required to be present in the object class
+    A ``list_limit`` property is required to be present in the object class
     hierarchy, which returns the limit for this backend to which we will
     truncate.
 
@@ -48,9 +48,8 @@ def response_truncated(f):
         if kwargs.get('hints') is None:
             return f(self, *args, **kwargs)
 
-        list_limit = self.driver._get_list_limit()
-        if list_limit:
-            kwargs['hints'].set_limit(list_limit)
+        if hasattr(self.driver, 'list_limit') and self.driver.list_limit:
+            kwargs['hints'].set_limit(self.driver.list_limit)
         return f(self, *args, **kwargs)
     return wrapper
 

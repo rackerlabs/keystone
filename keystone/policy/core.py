@@ -72,7 +72,8 @@ class Manager(manager.Manager):
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
 
-    def _get_list_limit(self):
+    @property
+    def list_limit(self):
         return CONF.policy.list_limit or CONF.list_limit
 
     @abc.abstractmethod

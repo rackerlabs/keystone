@@ -642,7 +642,8 @@ class Manager(manager.Manager):
 class Driver(object):
     """Interface description for an Identity driver."""
 
-    def _get_list_limit(self):
+    @property
+    def list_limit(self):
         return CONF.identity.list_limit or CONF.list_limit
 
     @abc.abstractmethod

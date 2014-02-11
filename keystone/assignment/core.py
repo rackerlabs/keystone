@@ -595,7 +595,8 @@ class Driver(object):
                                                      inherited).items()))
         return [dict(r) for r in role_set]
 
-    def _get_list_limit(self):
+    @property
+    def list_limit(self):
         return CONF.assignment.list_limit or CONF.list_limit
 
     @abc.abstractmethod
