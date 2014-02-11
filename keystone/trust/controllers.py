@@ -55,18 +55,10 @@ class TrustV3(controller.V3Controller):
 
     @classmethod
     def base_url(cls, path=None):
-        endpoint = CONF.public_endpoint % CONF
+        """Construct a path and pass it to V3Controller.base_url method."""
 
-        # allow a missing trailing slash in the config
-        if endpoint[-1] != '/':
-            endpoint += '/'
-
-        url = endpoint + 'v3/OS-TRUST'
-
-        if path:
-            return url + path
-        else:
-            return url + '/' + cls.collection_name
+        path = '/OS-TRUST/' + cls.collection_name
+        return controller.V3Controller.base_url(path=path)
 
     def _get_user_id(self, context):
         if 'token_id' in context:
