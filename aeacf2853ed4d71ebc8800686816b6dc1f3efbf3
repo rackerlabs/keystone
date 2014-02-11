@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//vGY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-11T06:01:48Z",
+      "side": 1,
+      "message": "what is messagingv2? i assume that should be removed?",
+      "revId": "aeacf2853ed4d71ebc8800686816b6dc1f3efbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//vGE\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-11T06:01:48Z",
+      "side": 1,
+      "message": "module level variables should be defined at the top of the module",
+      "revId": "aeacf2853ed4d71ebc8800686816b6dc1f3efbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//vFg\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-11T06:01:48Z",
+      "side": 1,
+      "message": "L181 should be moved outside of the try block",
+      "revId": "aeacf2853ed4d71ebc8800686816b6dc1f3efbf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
