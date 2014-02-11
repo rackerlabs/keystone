@@ -3369,7 +3369,9 @@ class TrustTests(object):
         trust_data = self.trust_api.get_trust(trust_id)
         self.assertEqual(new_id, trust_data['id'])
         self.trust_api.delete_trust(trust_id)
-        self.assertIsNone(self.trust_api.get_trust(trust_id))
+        self.assertRaises(exception.TrustNotFound,
+                          self.trust_api.get_trust,
+                          trust_id)
 
     def test_delete_trust_not_found(self):
         trust_id = uuid.uuid4().hex
