@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//wHY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-11T02:00:59Z",
+      "side": 1,
+      "message": "Done…although not strictly done as an enum…could use some guidance as to how best to use that in conjunction with sqlalchemy",
+      "parentUuid": "AAAAUX//0+k\u003d",
+      "revId": "3095bf7c5c68a5f330623ecfd60ffe6135e69373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//0+0\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
         "patchSetId": 4
