@@ -61,7 +61,7 @@ class Trust(kvs.Base, trust.Driver):
             ref = self.db.get('trust-%s' % trust_id)
             return _filter_trust(ref)
         except exception.NotFound:
-            return None
+            raise exception.TrustNotFound(trust_id)
 
     def delete_trust(self, trust_id):
         try:
