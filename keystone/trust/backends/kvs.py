@@ -25,11 +25,11 @@ from keystone.openstack.common import timeutils
 from keystone import trust
 
 
-def _filter_trust(ref):
+def _filter_trust(ref, trust_id):
     if ref['deleted']:
-        return None
+        raise exception.TrustNotFound(trust_id)
     if ref.get('expires_at') and timeutils.utcnow() > ref['expires_at']:
-        return None
+        raise exception.TrustNotFound(trust_id)
     ref = copy.deepcopy(ref)
     return ref
 
@@ -59,9 +59,9 @@ class Trust(kvs.Base, trust.Driver):
     def get_trust(self, trust_id):
         try:
             ref = self.db.get('trust-%s' % trust_id)
-            return _filter_trust(ref)
+            return _filter_trust(ref, trust_id)
         except exception.NotFound:
-            return None
+            raise exception.TrustNotFound(trust_id)
 
     def delete_trust(self, trust_id):
         try:

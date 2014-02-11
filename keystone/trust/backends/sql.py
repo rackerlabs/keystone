@@ -78,11 +78,14 @@ class Trust(sql.Base, trust.Driver):
                filter_by(deleted_at=None).
                filter_by(id=trust_id).first())
         if ref is None:
-            return None
+            raise exception.TrustNotFound(trust_id)
         if ref.expires_at is not None:
             now = timeutils.utcnow()
             if now > ref.expires_at:
-                return None
+                # TODO(stevemar): raise an ExpiredTrust error and update
+                # test test_create_expired_trust in test_v3_auth if no
+                # longer 404'ing
+                raise exception.TrustNotFound(trust_id)
         trust_dict = ref.to_dict()
 
         self._add_roles(trust_id, session, trust_dict)

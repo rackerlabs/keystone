@@ -892,7 +892,7 @@ class AuthWithTrust(AuthTest):
         self.create_trust(expiry)
         request_body = self.build_v2_token_request('TWO', 'two2')
         self.assertRaises(
-            exception.Forbidden,
+            exception.TrustNotFound,
             self.controller.authenticate, {}, request_body)
 
     def test_token_from_trust_with_wrong_role_fails(self):
