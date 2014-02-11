@@ -53,6 +53,15 @@ class TrustV3(controller.V3Controller):
     collection_name = "trusts"
     member_name = "trust"
 
+    _mutable_parameters = frozenset(['trustor_user_id', 'trustee_user_id',
+                                     'impersonation', 'project_id', 'roles',
+                                     'expires_at', 'remaining_uses'])
+    _public_parameters = frozenset(['id', 'expires_at', 'impersonation',
+                                    'roles', 'project_id', 'trustee_user_id',
+                                    'trustor_user_id'])
+    _required_parameters = frozenset(['trustor_user_id', 'trustee_user_id',
+                                      'impersonation'])
+
     @classmethod
     def base_url(cls, path=None):
         endpoint = CONF.public_endpoint % CONF
@@ -142,6 +151,9 @@ class TrustV3(controller.V3Controller):
         if not trust:
             raise exception.ValidationError(attribute='trust',
                                             target='request')
+        trust = self._normalize_dict(trust)
+        TrustV3.check_immutable_params(trust)
+        TrustV3.check_required_params(trust)
         try:
             user_id = self._get_user_id(context)
             _trustor_only(context, trust, user_id)
