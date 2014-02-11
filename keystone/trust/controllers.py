@@ -51,6 +51,15 @@ class TrustV3(controller.V3Controller):
     collection_name = "trusts"
     member_name = "trust"
 
+    _mutable_parameters = frozenset(['trustor_user_id', 'trustee_user_id',
+                                     'impersonation', 'project_id', 'roles',
+                                     'expires_at', 'remaining_uses'])
+    _public_parameters = frozenset(['id', 'expires_at', 'impersonation',
+                                    'roles', 'project_id', 'trustee_user_id',
+                                    'trustor_user_id'])
+    _required_parameters = frozenset(['trustor_user_id', 'trustee_user_id',
+                                      'impersonation'])
+
     @classmethod
     def base_url(cls, path=None):
         """Construct a path and pass it to V3Controller.base_url method."""
@@ -134,41 +143,41 @@ class TrustV3(controller.V3Controller):
         if not trust:
             raise exception.ValidationError(attribute='trust',
                                             target='request')
-        try:
-            user_id = self._get_user_id(context)
-            _trustor_only(context, trust, user_id)
-            #confirm that the trustee exists
-            self.identity_api.get_user(trust['trustee_user_id'])
-            all_roles = self.assignment_api.list_roles()
-            clean_roles = self._clean_role_list(context, trust, all_roles)
-            if trust.get('project_id'):
-                user_role = self.assignment_api.get_roles_for_user_and_project(
-                    user_id,
-                    trust['project_id'])
-            else:
-                user_role = []
-            for trust_role in clean_roles:
-                matching_roles = [x for x in user_role
-                                  if x == trust_role['id']]
-                if not matching_roles:
-                    raise exception.RoleNotFound(role_id=trust_role['id'])
-            if trust.get('expires_at') is not None:
-                if not trust['expires_at'].endswith('Z'):
-                    trust['expires_at'] += 'Z'
-                try:
-                    trust['expires_at'] = (timeutils.parse_isotime
-                                           (trust['expires_at']))
-                except ValueError:
-                    raise exception.ValidationTimeStampError()
-            trust_id = uuid.uuid4().hex
-            new_trust = self.trust_api.create_trust(trust_id,
-                                                    trust,
-                                                    clean_roles)
-            self._fill_in_roles(context, new_trust, all_roles)
-            return TrustV3.wrap_member(context, new_trust)
-        except KeyError as e:
-            raise exception.ValidationError(attribute=e.args[0],
-                                            target='trust')
+        trust = self._normalize_dict(trust)
+        TrustV3.check_immutable_params(trust)
+        TrustV3.check_required_params(trust)
+
+        user_id = self._get_user_id(context)
+        _trustor_only(context, trust, user_id)
+        #confirm that the trustee exists
+        self.identity_api.get_user(trust['trustee_user_id'])
+        all_roles = self.assignment_api.list_roles()
+        clean_roles = self._clean_role_list(context, trust, all_roles)
+        if trust.get('project_id'):
+            user_role = self.assignment_api.get_roles_for_user_and_project(
+                user_id,
+                trust['project_id'])
+        else:
+            user_role = []
+        for trust_role in clean_roles:
+            matching_roles = [x for x in user_role
+                              if x == trust_role['id']]
+            if not matching_roles:
+                raise exception.RoleNotFound(role_id=trust_role['id'])
+        if trust.get('expires_at') is not None:
+            if not trust['expires_at'].endswith('Z'):
+                trust['expires_at'] += 'Z'
+            try:
+                trust['expires_at'] = (timeutils.parse_isotime
+                                       (trust['expires_at']))
+            except ValueError:
+                raise exception.ValidationTimeStampError()
+        trust_id = uuid.uuid4().hex
+        new_trust = self.trust_api.create_trust(trust_id,
+                                                trust,
+                                                clean_roles)
+        self._fill_in_roles(context, new_trust, all_roles)
+        return TrustV3.wrap_member(context, new_trust)
 
     @controller.protected()
     def list_trusts(self, context):
