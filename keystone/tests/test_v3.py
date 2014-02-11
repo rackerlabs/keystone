@@ -249,7 +249,7 @@ class RestfulTestCase(rest.RestfulTestCase):
     def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
                       impersonation=None, expires=None, role_ids=None,
                       role_names=None, remaining_uses=None):
-        ref = self.new_ref()
+        ref = {'id': uuid.uuid4().hex}
 
         ref['trustor_user_id'] = trustor_user_id
         ref['trustee_user_id'] = trustee_user_id
@@ -974,20 +974,22 @@ class RestfulTestCase(rest.RestfulTestCase):
     # trust validation
 
     def assertValidTrustListResponse(self, resp, *args, **kwargs):
+        keys = ['trustee_user_id', 'trustor_user_id', 'impersonation']
         return self.assertValidListResponse(
             resp,
             'trusts',
             self.assertValidTrustSummary,
-            *args,
-            **kwargs)
+            keys_to_check=kwargs.setdefault('keys_to_check', keys),
+            *args)
 
     def assertValidTrustResponse(self, resp, *args, **kwargs):
+        keys = ['trustee_user_id', 'trustor_user_id', 'impersonation']
         return self.assertValidResponse(
             resp,
             'trust',
             self.assertValidTrust,
-            *args,
-            **kwargs)
+            keys_to_check=kwargs.setdefault('keys_to_check', keys),
+            *args)
 
     def assertValidTrustSummary(self, entity, ref=None):
         return self.assertValidTrust(entity, ref, summary=True)
