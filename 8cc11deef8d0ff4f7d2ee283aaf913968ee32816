@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//n5k\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-11T22:41:58Z",
+      "side": 1,
+      "message": "nit: same comment as dolphm\u0027s here, should indicate that public defaults to True.",
+      "revId": "8cc11deef8d0ff4f7d2ee283aaf913968ee32816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//qac\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 16
@@ -98,6 +115,24 @@
       "writtenOn": "2014-02-11T16:45:28Z",
       "side": 1,
       "message": "yuck! wish there was a better way to assert this :( oh well",
+      "revId": "8cc11deef8d0ff4f7d2ee283aaf913968ee32816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//n3k\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-11T22:41:58Z",
+      "side": 1,
+      "message": "why not try and leverage the test_notifier.py that we have? \n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/notifier/test_notifier.py#L17\n\nCouldn\u0027t we approach it similar to the way nova does it? https://github.com/openstack/nova/blob/master/nova/tests/test_notifications.py#L322",
+      "parentUuid": "AAAAUX//q30\u003d",
       "revId": "8cc11deef8d0ff4f7d2ee283aaf913968ee32816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
