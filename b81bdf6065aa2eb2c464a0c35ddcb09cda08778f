@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//tQQ\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-11T10:32:28Z",
+      "side": 1,
+      "message": "Brant, how about that class name?",
+      "revId": "b81bdf6065aa2eb2c464a0c35ddcb09cda08778f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
