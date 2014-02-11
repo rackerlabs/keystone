@@ -82,16 +82,17 @@ class TrustV3(controller.V3Controller):
         if not trust:
             raise exception.TrustNotFound(trust_id)
         _trustor_trustee_only(trust, user_id)
+        self._format_expires_at(trust)
         self._fill_in_roles(context, trust,
                             self.assignment_api.list_roles())
         return TrustV3.wrap_member(context, trust)
 
-    def _fill_in_roles(self, context, trust, all_roles):
+    def _format_expires_at(self, trust):
         if trust.get('expires_at') is not None:
-            trust['expires_at'] = (timeutils.isotime
-                                   (trust['expires_at'],
-                                    subsecond=True))
+            time = timeutils.isotime(trust['expires_at'], subsecond=True)
+            trust['expires_at'] = time
 
+    def _fill_in_roles(self, context, trust, all_roles):
         if 'roles' not in trust:
             trust['roles'] = []
         trust_full_roles = []
@@ -174,6 +175,7 @@ class TrustV3(controller.V3Controller):
             new_trust = self.trust_api.create_trust(trust_id,
                                                     trust,
                                                     clean_roles)
+            self._format_expires_at(new_trust)
             self._fill_in_roles(context, new_trust, all_roles)
             return TrustV3.wrap_member(context, new_trust)
         except KeyError as e:
@@ -206,10 +208,7 @@ class TrustV3(controller.V3Controller):
             # exist in the query response, so check first
             if 'roles' in trust:
                 del trust['roles']
-            if trust.get('expires_at') is not None:
-                trust['expires_at'] = (timeutils.isotime
-                                       (trust['expires_at'],
-                                        subsecond=True))
+            self._format_expires_at(trust)
         return TrustV3.wrap_collection(context, trusts)
 
     @controller.protected()
