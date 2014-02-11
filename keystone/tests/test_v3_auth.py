@@ -21,6 +21,7 @@ from keystone import config
 from keystone import exception
 from keystone import tests
 from keystone.tests import test_v3
+import pdb
 
 
 CONF = config.CONF
@@ -2034,6 +2035,7 @@ class TestTrustAuth(TestAuthInfo):
             trustee_user_id=self.trustee_user_id)
         del ref['id']
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        pdb.set_trace()
         self.assertValidTrustResponse(r, ref)
 
     def test_trust_crud(self):
