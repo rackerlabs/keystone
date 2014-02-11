@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//whc\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-11T01:01:23Z",
+      "side": 1,
+      "message": "Is it possible that a user name won\u0027t exist?  For example, it\u0027s not in the example of the docstring.",
+      "revId": "dd91803e77e0c228a7b0da0765644aaeed295dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//wgk\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-11T01:01:23Z",
+      "side": 1,
+      "message": "six.iteritems() for Python 3 compat?",
+      "revId": "dd91803e77e0c228a7b0da0765644aaeed295dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//wdU\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-11T01:01:23Z",
+      "side": 1,
+      "message": "These should probably be reordered to match the sig.",
+      "revId": "dd91803e77e0c228a7b0da0765644aaeed295dad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
