@@ -158,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//nsI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-11T23:16:15Z",
+      "side": 1,
+      "message": "Will do in PS 12 onwards",
+      "parentUuid": "AAAAUX//n4o\u003d",
+      "revId": "85e8aa351c6c21cf2688eeb0ab01d7a8592d0a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//uhs\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 10
@@ -205,6 +223,24 @@
       "side": 1,
       "message": "this isn\u0027t actually a pep8 violation, but a hacking convention. the three groupings of imports are as follows\n\n  imports from stdlib\n\n  imports from external packages\n\n  imports from local package",
       "parentUuid": "AAAAUX//rQE\u003d",
+      "revId": "85e8aa351c6c21cf2688eeb0ab01d7a8592d0a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//nsQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-11T23:16:15Z",
+      "side": 1,
+      "message": "Okay..will re-organize imports in that manner",
+      "parentUuid": "AAAAUX//n4k\u003d",
       "revId": "85e8aa351c6c21cf2688eeb0ab01d7a8592d0a69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
