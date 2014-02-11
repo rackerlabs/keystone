@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//vIA\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-11T05:56:23Z",
+      "side": 1,
+      "message": "what\u0027s with the change from list to get?",
+      "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//vHQ\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-11T05:56:23Z",
+      "side": 1,
+      "message": "looks like user_id can be dropped from the method signature now",
+      "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//vH0\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-11T05:56:23Z",
+      "side": 1,
+      "message": "seems like this should be ec2_list_credentials",
+      "revId": "73129e7c0e720eb5a98e96ebd84ea5b3ecbbcd05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
