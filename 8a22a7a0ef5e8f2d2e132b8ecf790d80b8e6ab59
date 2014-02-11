@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//uu8\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-11T06:48:13Z",
+      "side": 1,
+      "message": "I was not able to remove this one, as it calls get_trust at the controller level... probably to exploit the wrap_member call at the end.",
+      "revId": "8a22a7a0ef5e8f2d2e132b8ecf790d80b8e6ab59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
