@@ -374,6 +374,11 @@ FILE_OPTIONS = {
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.')],
 
+    'password_rotation': [
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.password_rotation.'
+                           'backends.sql.Driver')],
+
     'policy': [
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy',
