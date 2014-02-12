@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration
@@ -71,6 +73,17 @@ class UserGroupMembership(sql.ModelBase, sql.DictBase):
     group_id = sql.Column(sql.String(64),
                           sql.ForeignKey('group.id'),
                           primary_key=True)
+
+
+class RotatedPassword(sql.ModelBase, sql.ModelDictMixin):
+    __tablename__ = 'rotated_password'
+    id = sql.Column(sql.String(64), primary_key=True)
+    user_id = sql.Column(sql.String(64),
+                         sql.ForeignKey('user.id'),
+                         nullable=False)
+    password = sql.Column(sql.String(128), nullable=False)
+    created_at = sql.Column(sql.DateTime, default=datetime.datetime.utcnow)
+    expires_at = sql.Column(sql.DateTime)
 
 
 @dependency.requires('assignment_api')
@@ -300,3 +313,38 @@ class Identity(sql.Base, identity.Driver):
 
             session.delete(ref)
         self.assignment_api.delete_group(group_id)
+
+    # rotated passwords crud
+
+    @sql.handle_conflicts(conflict_type='group')
+    def create_rotated_password(self, rotated_password):
+        session = db_session.get_session()
+        with session.begin():
+            ref = RotatedPassword.from_dict(rotated_password)
+            session.add(ref)
+        return ref.to_dict()
+
+    def list_rotated_passwords_by_user(self, user_id, hints):
+        session = db_session.get_session()
+        query = session.query(RotatedPassword)
+        query = query.filter_by(user_id=user_id)
+        refs = self.filter_query(RotatedPassword, query, hints)
+        return [ref.to_dict() for ref in refs]
+
+    def list_active_rotated_passwords_by_user(self, user_id, hints):
+        now = datetime.datetime.utcnow()
+        session = db_session.get_session()
+        q = session.query(RotatedPassword)
+        q = q.filter_by(user_id=user_id)
+        q = q.filter(RotatedPassword.expires_at > now)
+        refs = self.filter_query(RotatedPassword, q, hints)
+        return [ref.to_dict() for ref in refs]
+
+    def delete_expired_rotated_passwords_by_user(self, user_id):
+        now = datetime.datetime.utcnow()
+        session = db_session.get_session()
+        with session.begin():
+            q = session.query(RotatedPassword)
+            q = q.filter_by(user_id=user_id)
+            q = q.filter(RotatedPassword.expires_at <= now)
+            q.delete(False)
