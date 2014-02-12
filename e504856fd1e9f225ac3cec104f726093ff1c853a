@@ -244,6 +244,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//f+w\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T19:10:15Z",
+      "side": 1,
+      "message": "I wouldn\u0027t hold things up for just this, but it does strike me as overly complicated. A simple function could give you those benefits too:\n\n  def create_cache_entry(key, value, doc_date):\n      return dict(key\u003dkey, value\u003dvalue, doc_date\u003ddoc_date)",
+      "parentUuid": "AAAAUX//gcw\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//l8E\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -325,6 +343,24 @@
       "side": 1,
       "message": "MongoArgs is primarily used for parsing and separating out provided configuration data. MongoApi just needs to use that data which has mongo specific internal logic. Its easier to understand and manage having them separated out. \n\nNow about its usage, the choice is between composition versus inheritance. In this case, I preferred inheritance as its easier to use here.",
       "parentUuid": "AAAAUX//l8Y\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//f54\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T19:10:15Z",
+      "side": 1,
+      "message": "From an OO perspective it just feels clunky to me.",
+      "parentUuid": "AAAAUX//gUw\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -539,6 +575,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//f7M\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T19:10:15Z",
+      "side": 1,
+      "message": "Would someone ever use this as a backend instead of BaseTransform?  AFAICT the pymongo imports are lazy already so I don\u0027t really understand what this class does.",
+      "parentUuid": "AAAAUX//gQE\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//ltY\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -637,6 +691,23 @@
       "side": 1,
       "message": "Okay. Will change it in next patch",
       "parentUuid": "AAAAUX//lq8\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//f44\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T19:10:15Z",
+      "side": 1,
+      "message": "MongoDB here too.",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
