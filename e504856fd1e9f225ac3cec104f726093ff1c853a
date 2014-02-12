@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//gF0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Will do it in next patch",
+      "parentUuid": "AAAAUX//l+E\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//lzU\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -115,6 +133,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "If _get_cache_collection is supposed to be used by other classes then it should begin with an underscore. A leading underscore indicated a protected/private method by convention.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//gJM\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Will address it in next patch",
+      "parentUuid": "AAAAUX//lzU\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//goU\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Currently dogpile allows dictionary of arguments as part of configuration. And those arguments are passed as-is and then separated out in above logic.",
+      "parentUuid": "AAAAUX//l0s\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//luw\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -166,6 +220,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "I\u0027m not sure I see the value in this being a class if it just exists return its __dict__.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//gcw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "This class adds doc_date data which is needed to support TTL type collections. Also this class is common place to provide mongo data structure e.g. let\u0027s say want to change field names  from \u0027key\u0027, \u0027value\u0027 , \u0027doc_date\u0027 to \u0027k\u0027, \u0027v\u0027, \u0027dd\u0027 or something, it can be done at one place.",
+      "parentUuid": "AAAAUX//luw\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +278,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//glA\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "I will make them required as value and doc_date is needed.",
+      "parentUuid": "AAAAUX//lug\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//l8Y\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -217,6 +307,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "I don\u0027t understand the relationship here.  I think that either the logic from MongoArgs belongs here or that an instance or MongoArgs should be used by MongoApi to parse/validate the arguments.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//gUw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "MongoArgs is primarily used for parsing and separating out provided configuration data. MongoApi just needs to use that data which has mongo specific internal logic. Its easier to understand and manage having them separated out. \n\nNow about its usage, the choice is between composition versus inheritance. In this case, I preferred inheritance as its easier to use here.",
+      "parentUuid": "AAAAUX//l8Y\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +382,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//gks\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Yes. I agree. Will move to MongoArgs",
+      "parentUuid": "AAAAUX//lts\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//lsI\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -285,6 +411,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "You should use `six.itervalues()` to make this more Py3 friendly.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//gN0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Okay. Will look into this. Earlier I used dictionary comprehension, then got failure in python 2.6 side.",
+      "parentUuid": "AAAAUX//lsI\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -342,6 +486,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//gZ8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Will move in next patch",
+      "parentUuid": "AAAAUX//ltk\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//ltE\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -353,6 +515,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "I\u0027m not sure I follow why this is needed.  Seems like you can move `will_copy()` into `BaseTransform` and make `BaseTransform` subclass object.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//gQE\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "As this is optional backend so any pymongo related imports need to be differed till its used. So no module level imports.\n\nIdeally I would have done following\n\n\u003ccode\u003e\n\nfrom pymongo import son_manipulator\n\nclass BaseTransform(son_manipulator.SONManipulator)\n\n\u003c/code\u003e\n\nNow added this, to circumvent related mongo logic. Without this, it complains at following logic\n\nhttps://github.com/mongodb/mongo-python-driver/blob/master/pymongo/database.py#L96",
+      "parentUuid": "AAAAUX//ltE\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +573,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//gLs\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "I was directly using CachedValue overriden api. I will change it as it does not have to be that way.",
+      "parentUuid": "AAAAUX//lss\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//lrk\u003d",
         "filename": "keystone/tests/test_cache_backend_mongo.py",
         "patchSetId": 13
@@ -421,6 +619,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "If you don\u0027t need all of the crazy setup provided by tests.TestCase I would recommend using testtools.TestCase.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//gJs\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T18:37:04Z",
+      "side": 1,
+      "message": "Okay. Will change it in next patch",
+      "parentUuid": "AAAAUX//lq8\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
