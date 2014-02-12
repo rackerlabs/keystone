@@ -21,10 +21,10 @@ CONF = cfg.CONF
 API_SERVICE_OPTS = [
     cfg.StrOpt('bind_ip',
                default='0.0.0.0',
-               help='IP for the server to bind to'),
+               help='(KDS) IP for the server to bind to'),
     cfg.IntOpt('port',
                default=9109,
-               help='The port for the server'),
+               help='(KDS) The port for the server'),
 ]
 
 CONF.register_opts(API_SERVICE_OPTS)
