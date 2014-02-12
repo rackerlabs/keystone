@@ -104,6 +104,109 @@
       "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//imk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:21:51Z",
+      "side": 1,
+      "message": "re*-move",
+      "parentUuid": "AAAAUX//nUc\u003d",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ijo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:21:51Z",
+      "side": 1,
+      "message": "this table doesn\u0027t need a discrete primary key column; it should have a composite primary key across (at least?) actor + target + role",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//iiQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:21:51Z",
+      "side": 1,
+      "message": "i\u0027d suggest a sql.Enum instead",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ie8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:21:51Z",
+      "side": 1,
+      "message": "with hierarchical multi-tenancy, plan on this column being dropped in favor of it always being true!",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ieY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:21:51Z",
+      "side": 1,
+      "message": "PrimaryKeyConstraint",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ieo\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:21:51Z",
+      "side": 1,
+      "message": "why should inherited be apart of this constraint?",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
