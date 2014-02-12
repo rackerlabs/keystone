@@ -1,0 +1,429 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//mCY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "I think it should be MongoDB.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mCM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "MongoDB here too.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mCA\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "You definitely don\u0027t want the space before the comma.  Should there be a comma after collections too?",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mBs\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "There should be another newline here. See http://docs.openstack.org/developer/hacking/#imports",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mBQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Usually you want a short, concise one-liner in a docstring followed by a newline and then the rest of the docstring.  If nothing else the URL should be in a second paragraph.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l+E\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Is there a point in having this and _create_client below? Can this just contain the body from _create_client and then we can get rid of that?",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lzU\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "If _get_cache_collection is supposed to be used by other classes then it should begin with an underscore. A leading underscore indicated a protected/private method by convention.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l9c\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Is it possible to actually store a None value? If it is maybe MongoApi.get should have a default arg like dict.get and have NO_VALUE passed in as the default.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l0s\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "I\u0027d like to hear opinions on this from other devs, but I\u0027d rather see an explicit second arg on __init__ for this.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//luw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "I\u0027m not sure I see the value in this being a class if it just exists return its __dict__.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l8E\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "By convention docstrings use double quotes. See http://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lug\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Do these need to be optional? The only two places I see this class used they are explicitly passed in.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l8Y\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "I don\u0027t understand the relationship here.  I think that either the logic from MongoArgs belongs here or that an instance or MongoArgs should be used by MongoApi to parse/validate the arguments.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l78\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Same docstring comment as above",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l7g\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Do you actually need this to be a global? It doesn\u0027t look like it\u0027s used outside of this method.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lts\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "This seems like validation that should be done in MongoArgs so that all of the validation is in one place.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lsI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "You should use `six.itervalues()` to make this more Py3 friendly.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l1k\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "The convention is the spell out the kwarg when calling a method/function that defines keyword args.  For example:\n\n  CacheEntry(key, cached_value\u003dvalue, doc_date\u003ddoc_date)",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//l1g\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ltk\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "It seems like this validation belongs in MongoArgs so that all of the validation is in one place.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ltE\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "I\u0027m not sure I follow why this is needed.  Seems like you can move `will_copy()` into `BaseTransform` and make `BaseTransform` subclass object.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ltY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Same double quote comment as above.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lss\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "Why call __new__ directly?",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lrk\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "six is not a part of the stdlib. This should go in the same grouping as dogpile.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lq8\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T06:32:30Z",
+      "side": 1,
+      "message": "If you don\u0027t need all of the crazy setup provided by tests.TestCase I would recommend using testtools.TestCase.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
