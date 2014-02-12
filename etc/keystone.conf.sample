@@ -379,6 +379,9 @@
 [federation]
 #driver = keystone.contrib.federation.backends.sql.Federation
 
+[password_rotation]
+#driver = keystone.contrib.password_rotation.backends.sql.Driver
+
 [ssl]
 #enable = True
 #certfile = /etc/keystone/ssl/certs/keystone.pem

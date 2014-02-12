@@ -360,3 +360,9 @@ class Identity(sql.Base, identity.Driver):
             q = q.filter_by(user_id=user_id)
             q = q.filter(RotatedPassword.expires_at <= now)
             q.delete(False)
+
+    def _get_current_password_hash(self, user_id):
+        # NOTE(dstanek): this is a temporary method. it's just here
+        # until i get rid of the password column
+        user = self._get_user(db_session.get_session(), user_id)
+        return user.password

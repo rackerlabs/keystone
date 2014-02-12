@@ -17,6 +17,7 @@
 import abc
 import functools
 import os
+import uuid
 
 from oslo.config import cfg
 import six
@@ -468,6 +469,24 @@ class Manager(manager.Manager):
         # authenticate() will raise an AssertionError if authentication fails
         self.authenticate(user_id, original_password,
                           domain_scope=domain_scope)
+
+        update_dict = {'password': new_password}
+        self.update_user(user_id, update_dict, domain_scope=domain_scope)
+
+    @domains_configured
+    def rotate_password(self, user_id, original_password, new_password,
+                        domain_scope):
+
+        # authenticate() will raise an AssertionError if authentication fails
+        self.authenticate(user_id, original_password,
+                          domain_scope=domain_scope)
+
+        self.create_rotated_password({
+            'id': uuid.uuid4().hex,
+            'user_id': user_id,
+            'password': self._get_current_password_hash(user_id),
+            #TODO: fix me 'expires_at': expires_at,
+        })
 
         update_dict = {'password': new_password}
         self.update_user(user_id, update_dict, domain_scope=domain_scope)

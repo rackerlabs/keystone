@@ -156,6 +156,11 @@ FILE_OPTIONS = {
                    default='keystone.contrib.federation.'
                            'backends.sql.Federation')],
 
+    'password_rotation': [
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.password_rotation.'
+                           'backends.sql.Driver')],
+
     'policy': [
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy'),
