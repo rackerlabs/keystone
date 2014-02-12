@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//naQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:26:39Z",
+      "side": 1,
+      "message": "this isn\u0027t actually assigning anything as the other \"assign_unique_id\" does, it\u0027s just generating an ID. why bother having a method for it?",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//nac\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:26:39Z",
+      "side": 1,
+      "message": "or just\n\n  if not refs:",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//nUc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:26:39Z",
+      "side": 1,
+      "message": "move copyright attributions to the foundation -- we don\u0027t work for the foundation",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
