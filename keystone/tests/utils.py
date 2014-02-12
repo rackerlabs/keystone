@@ -12,9 +12,20 @@
 
 """Useful utilities for tests."""
 
+import datetime
 import uuid
 
 
 def new_uuid():
     """Return a string UUID."""
     return uuid.uuid4().hex
+
+
+def future_date():
+    """Returns a datetime representing a date 24hrs in the future."""
+    return datetime.datetime.utcnow() + datetime.timedelta(hours=24)
+
+
+def past_date():
+    """Returns a datetime representing a date 24hrs in the past."""
+    return datetime.datetime.utcnow() - datetime.timedelta(hours=24)
