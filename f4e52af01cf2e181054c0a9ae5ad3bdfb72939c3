@@ -34,6 +34,24 @@
       "revId": "f4e52af01cf2e181054c0a9ae5ad3bdfb72939c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mEQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-12T05:41:06Z",
+      "side": 0,
+      "message": "Yeah, this might be one of those cases we need to have the option in two places.  we can catch that independently of this change (perhaps a bug against oslo incubator?)",
+      "parentUuid": "AAAAUX//mKw\u003d",
+      "revId": "f4e52af01cf2e181054c0a9ae5ad3bdfb72939c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
