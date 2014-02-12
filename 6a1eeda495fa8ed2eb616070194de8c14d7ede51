@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//idI\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T14:30:21Z",
+      "side": 1,
+      "message": "if this gets another rev, the method signature should be changed to expect a \"project_id\"",
+      "revId": "6a1eeda495fa8ed2eb616070194de8c14d7ede51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
