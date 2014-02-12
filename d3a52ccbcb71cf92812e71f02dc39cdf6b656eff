@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//mRs\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-02-12T04:32:00Z",
+      "side": 1,
+      "message": "Do we want to do this check?  pymongo/common.py already does this check.  We don\u0027t want to duplicate this check unless if we are adding any value by doing it.",
+      "revId": "d3a52ccbcb71cf92812e71f02dc39cdf6b656eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
