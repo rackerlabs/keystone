@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//eGo\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "according to the coverage report, none of this (lines 156-168) is being tested.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eGU\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "according to the coverage report, lines 178-180 are not tested.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eGM\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "according to coverage report this line isn\u0027t tested.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eTY\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "this change seems unnecessary.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eTA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "this seems obvious since everything in here is v2_deprecated.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eR4\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "looks like _is_admin just moved around. it used to be up at line 309, right before _assert_owner. Suggest move it back to minimize changes.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eQ4\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "suggest change \"with exception of \u0027context\u0027\" to \"with the exception of the first argument)\"... or something like that.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eQo\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "you mean ec2_delete_credential?",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eGE\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "according to the coverage report lines 356-361 are not tested.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eGA\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:47:38Z",
+      "side": 1,
+      "message": "according to the coverage report none of these are tested (377-391)",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
