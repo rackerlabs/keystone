@@ -43,17 +43,17 @@ class ManagerNotificationWrapper(object):
         self.resource_type = resource_type
 
     def __call__(self, f):
-        def wrapper(*args, **kwargs):
+        def wrapper(self, resource_id, *args, **kwargs):
             """Send a notification if the wrapped callable is successful."""
             try:
-                result = f(*args, **kwargs)
+                result = f(self, resource_id, *args, **kwargs)
             except Exception:
                 raise
             else:
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    args[1])  # f(self, resource_id, ...)
+                    resource_id)
             return result
 
         return wrapper
