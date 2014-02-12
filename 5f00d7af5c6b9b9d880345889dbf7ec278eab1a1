@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//nVw\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:23:48Z",
+      "side": 1,
+      "message": "\"stable\" is intended to be the only widely recognized value; everything else (\"beta\", \"deprecated\", \"CURRENT\", etc) should indicate to the client that it\u0027s \"not stable therefore avoid using it in a production capacity if possible\")",
+      "revId": "5f00d7af5c6b9b9d880345889dbf7ec278eab1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//nVc\u003d",
+        "filename": "keystone/tests/contrib/kds/api/test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:23:48Z",
+      "side": 1,
+      "message": "stable - where\u0027d you get \"CURRENT\" from, anyway?",
+      "revId": "5f00d7af5c6b9b9d880345889dbf7ec278eab1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//nVM\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:23:48Z",
+      "side": 1,
+      "message": "stable",
+      "revId": "5f00d7af5c6b9b9d880345889dbf7ec278eab1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
