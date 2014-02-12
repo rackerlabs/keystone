@@ -16,6 +16,24 @@
       "revId": "f4e52af01cf2e181054c0a9ae5ad3bdfb72939c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mKw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-12T05:01:08Z",
+      "side": 0,
+      "message": "I think we would need to push a patch to change this in Olso: \nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/policy.py#L75\n\nSince openstack/common/policy.py registers the config option, it would break it we just moved this to the [policy] section, even though it does probably belong there. We will need to push a patch to oslo to refactor this before moving this down to the [policy] section.",
+      "parentUuid": "AAAAUX//mOA\u003d",
+      "revId": "f4e52af01cf2e181054c0a9ae5ad3bdfb72939c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
