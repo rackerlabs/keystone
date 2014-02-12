@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//ebg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "change \"when migrate\" to \"when the migrate\"",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ebc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "change \"handeled\" to \"handled\"",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ea8\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "It\u0027s unnecessary to change the if check. Suggest change this back to how it was done in the original code to minimize changes.",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eao\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "this used to be in an \"except ImportError\" -- I think we should keep that behavior since that\u0027s not intended to be changed with this change.",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eaE\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "the call to\n\n migration.db_sync(version\u003dversion, package\u003dpackage)\n\nshould happen even if \"migration.db_version_control(package\u003dpackage)\" raised exceptions.DatabaseAlreadyControlledError.\n\nline 79 should be after line 92. (like it was before)\n\nAlternatively, move \"migration.db_version_control(package\u003dpackage)\" inside a try/except for exceptions.DatabaseAlreadyControlledError. -- something like this:\n\n try:\n     try:\n        migration.db_version_control(package\u003dpackage)\n     except exceptions.DatabaseAlreadyControlledError:\n        pass\n\n     migration.db_sync(version\u003dversion, package\u003dpackage)\n except exception.MigrationNotProvided as e:\n...",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ebM\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "with the improved name for the exception this comment isn\u0027t needed anymore in my opinion.",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ebI\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T22:55:22Z",
+      "side": 1,
+      "message": "with the improved name for the exception this comment isn\u0027t needed anymore in my opinion.",
+      "revId": "45ed360af3080812fa27381a859e8bad31c9b471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
