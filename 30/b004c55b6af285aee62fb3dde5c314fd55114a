@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Fabio Giannetti <fabio.giannetti@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 12 Feb 2014 19:38:15 +0000
+Reviewed-on: https://review.openstack.org/70884
+Project: openstack/keystone
+Branch: refs/heads/master
