@@ -153,3 +153,6 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         self.change_password(password=uuid.uuid4().hex,
                              original_password=self.password,
                              expected_status=401)
+
+    def test_changing_password_disables_all_rotated_passwords(self):
+        pass
