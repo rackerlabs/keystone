@@ -16,6 +16,24 @@
       "revId": "1329078324bf261c09eca2bcdc646af70b7f88d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mUU\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-12T04:20:35Z",
+      "side": 1,
+      "message": "Ugh, these seem to switch between patches... *grumble* you are however 100% correct.",
+      "parentUuid": "AAAAUX//mVA\u003d",
+      "revId": "1329078324bf261c09eca2bcdc646af70b7f88d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
