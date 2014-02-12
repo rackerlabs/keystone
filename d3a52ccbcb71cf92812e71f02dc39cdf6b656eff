@@ -16,6 +16,24 @@
       "revId": "d3a52ccbcb71cf92812e71f02dc39cdf6b656eff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//mPc\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T04:42:03Z",
+      "side": 1,
+      "message": "The value added is here that initialization logic raises error if \u0027ssl\u0027 argument flag is True and ssl module support is not there. This is especially useful *here* as pymongo imports are done in lazy manner i.e. used only when backend is needed.",
+      "parentUuid": "AAAAUX//mRs\u003d",
+      "revId": "d3a52ccbcb71cf92812e71f02dc39cdf6b656eff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
