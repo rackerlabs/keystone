@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//f0U\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T19:52:05Z",
+      "side": 1,
+      "message": "Rewording it in next patch",
+      "parentUuid": "AAAAUX//mBQ\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//l+E\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 13
@@ -168,6 +186,24 @@
       "writtenOn": "2014-02-12T06:32:30Z",
       "side": 1,
       "message": "Is it possible to actually store a None value? If it is maybe MongoApi.get should have a default arg like dict.get and have NO_VALUE passed in as the default.",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//fz8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T19:52:05Z",
+      "side": 1,
+      "message": "Yes. Its possible to store None and blank. To confirm that point, add test case around that.",
+      "parentUuid": "AAAAUX//l9c\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -587,6 +623,24 @@
       "side": 1,
       "message": "Would someone ever use this as a backend instead of BaseTransform?  AFAICT the pymongo imports are lazy already so I don\u0027t really understand what this class does.",
       "parentUuid": "AAAAUX//gQE\u003d",
+      "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//fvk\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-12T19:52:05Z",
+      "side": 1,
+      "message": "This is not about pymongo. Its requirement from keystone perspective i.e. this being an optional backend, a deployer does not have to have pymongo package at run-time if not using it.\n\nI have seen a situation where dogpile caching decorator is applied where a custom object is returned instead of a simple dictionary or array. In that case, the person will need to have custom encoding and decoding logic while saving to and reading from mongo if there is need to have automatic conversion from mongo dict data to class. \n\nPlease see following for further details.\nhttp://api.mongodb.org/python/current/examples/custom_type.html#automatic-encoding-and-decoding",
+      "parentUuid": "AAAAUX//f7M\u003d",
       "revId": "e504856fd1e9f225ac3cec104f726093ff1c853a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
