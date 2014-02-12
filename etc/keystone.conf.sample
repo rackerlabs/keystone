@@ -87,8 +87,8 @@
 # syslog facility to receive log lines
 # syslog_log_facility = LOG_USER
 
-# list of logger=LEVEL pairs (list value)
-#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,iso8601=WARN,dogpile=INFO,routes=INFO
+# List of logger=LEVEL pairs (list value)
+#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,dogpile=INFO,routes=INFO
 
 # The name of logging configuration file. It does not disable
 # existing loggers, but just appends specified logging
