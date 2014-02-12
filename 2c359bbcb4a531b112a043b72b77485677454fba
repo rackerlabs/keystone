@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//gq0\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T17:19:06Z",
+      "side": 1,
+      "message": "does this still behave as expected? (in other words, is the mock return value updated to +1 second?\n\nif not, this patchset is bypassing a test for a security vulnerability",
+      "revId": "2c359bbcb4a531b112a043b72b77485677454fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/96O8\u003d",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 5
