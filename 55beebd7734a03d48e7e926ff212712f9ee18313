@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//eVE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-12T23:14:13Z",
+      "side": 1,
+      "message": "However, with removing the ID as PK, this method goes away anyway",
+      "parentUuid": "AAAAUX//mNs\u003d",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//nac\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 5
@@ -142,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//e0U\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-12T23:14:13Z",
+      "side": 1,
+      "message": "So I agree it does not strictly need it.  I was thinking of the issues of:\n1) If we make role-assignment a first class entity at some point (as we discussed) this would be needed\n\n2) For people (like Rackspace and others) who running multi-Active DB replication between keystones in different regions….is it better (from a recovery point of view) in the case when two sites both added the \"same\" entry, to allow the benign result of two entries (since they would have different IDs) vs a sync clash that needs to be handled?  However, I think the UniqueConstraint would also trigger this, so not sure I achieved my goal anyway!\n\nHaving said all that, I think I\u0027m actually i favour of removing the ID for now.",
+      "parentUuid": "AAAAUX//ijo\u003d",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//iiQ\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
         "patchSetId": 5
@@ -153,6 +189,24 @@
       "writtenOn": "2014-02-12T14:21:51Z",
       "side": 1,
       "message": "i\u0027d suggest a sql.Enum instead",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//emA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-12T23:14:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//iiQ\u003d",
       "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -176,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//e2k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-12T23:14:13Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "AAAAUX//ie8\u003d",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//ieY\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
         "patchSetId": 5
@@ -193,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//eik\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-12T23:14:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//ieY\u003d",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//ieo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
         "patchSetId": 5
@@ -204,6 +294,24 @@
       "writtenOn": "2014-02-12T14:21:51Z",
       "side": 1,
       "message": "why should inherited be apart of this constraint?",
+      "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//e28\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-12T23:14:13Z",
+      "side": 1,
+      "message": "because you can have both an inherited role and a non-inherited role on the same target for the same actor/role.  This would not be included as part of a primarykeyconstraint, however",
+      "parentUuid": "AAAAUX//ieo\u003d",
       "revId": "55beebd7734a03d48e7e926ff212712f9ee18313",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
