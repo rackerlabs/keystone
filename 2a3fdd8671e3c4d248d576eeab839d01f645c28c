@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//ldE\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T07:23:04Z",
+      "side": 1,
+      "message": "It looks like this isn\u0027t being ignored anymore.",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lbs\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T07:23:04Z",
+      "side": 1,
+      "message": "Any reason not to leave this as a single line?",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lbk\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T07:23:04Z",
+      "side": 1,
+      "message": "Change name to match param",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lbU\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T07:23:04Z",
+      "side": 1,
+      "message": "Do you need this \u0027if\u0027 statement? The only way to get here is having a last_fetch (testing on line 120) and having the revoked_at greater than last_fetch (forced in the query).\n\nWithout this test this new logic in the method can by much more concise like:\n\n    if last_fetch:\n        query.filter(...)\n\n    return [model.RevokeEvent(**e.to_dict(False)) for e in query]",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//lZk\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-12T07:23:04Z",
+      "side": 1,
+      "message": "Change name to match param",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
