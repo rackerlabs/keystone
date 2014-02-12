@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//eXY\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:02:25Z",
+      "side": 1,
+      "message": "since the config file is deleted right away we don\u0027t have a config file anymore... is this still testing tis?",
+      "revId": "250d4609c2e2077a4cad26f718e4f3df17f2e567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eYg\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-12T23:02:25Z",
+      "side": 1,
+      "message": "why create the file just to delete it immediately? should this be in a self.cleanUp?\n\nAlso, since used os.path.join before should use the same thing here. Also, rather than duplicate the filename calculation keep it in a variable.",
+      "revId": "250d4609c2e2077a4cad26f718e4f3df17f2e567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
