@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//gZA\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T17:55:36Z",
+      "side": 1,
+      "message": "this generates a new password for the user and updates it as an admin, but we don\u0027t test the consequences here (authentication with the new password)...",
+      "revId": "c3cb4f8d5933845c4d17196a51c88739a8f443d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
