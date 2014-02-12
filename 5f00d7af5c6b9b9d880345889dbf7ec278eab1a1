@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//m6c\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-12T02:05:32Z",
+      "side": 1,
+      "message": "that\u0027s the keystone way. If you have a look everyone else uses \u0027CURRENT\u0027. I\u0027ll change back to stable.",
+      "parentUuid": "AAAAUX//nVw\u003d",
+      "revId": "5f00d7af5c6b9b9d880345889dbf7ec278eab1a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//nVc\u003d",
         "filename": "keystone/tests/contrib/kds/api/test.py",
         "patchSetId": 3
