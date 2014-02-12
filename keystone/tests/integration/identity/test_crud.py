@@ -1,0 +1,94 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+from testtools import matchers
+
+from keystone.identity.backends import sql
+from keystone import tests
+from keystone.tests.ksfixtures import database
+from keystone.tests import utils
+
+
+class TestPasswordRotationCrudSQL(tests.TestCase):
+
+    def setUp(self):
+        super(TestPasswordRotationCrudSQL, self).setUp()
+        self.useFixture(database.Database())
+        self.driver = sql.Identity()
+
+        # create the sample data
+
+        self.user_id = utils.new_uuid()
+
+        future_rp = self._create_data(self.user_id, utils.future_date())
+        self.future_rp = self.driver.create_rotated_password(future_rp)
+
+        past_rp = self._create_data(self.user_id, utils.past_date())
+        self.past_rp = self.driver.create_rotated_password(past_rp)
+
+    def _create_data(self, user_id, expires_at):
+        return {
+            'id': utils.new_uuid(),
+            'user_id': user_id,
+            'password': utils.new_uuid(),
+            'expires_at': expires_at,
+        }
+
+    def test_retrieving_all_rotated_passwords(self):
+        rotated_passwords = self.driver.list_rotated_passwords_by_user(
+            self.user_id, None)
+        self.assertThat(rotated_passwords, matchers.HasLength(2))
+        self.assertIn(self.future_rp, rotated_passwords)
+        self.assertIn(self.past_rp, rotated_passwords)
+
+    def test_retrieving_active_rotated_passwords(self):
+        rotated_passwords = self.driver.list_active_rotated_passwords_by_user(
+            self.user_id, None)
+        self.assertThat(rotated_passwords, matchers.HasLength(1))
+        self.assertIn(self.future_rp, rotated_passwords)
+
+    def test_deleting_a_users_rotated_passwords(self):
+        # create another user's data to make sure we don't delete it too
+        other_user_id = utils.new_uuid()
+        other_user_rp = self._create_data(other_user_id, utils.past_date())
+        other_user_rp = self.driver.create_rotated_password(other_user_rp)
+
+        # do the delete
+        self.driver.delete_rotated_passwords_by_user(self.user_id)
+        rotated_passwords = self.driver.list_rotated_passwords_by_user(
+            self.user_id, None)
+        self.assertThat(rotated_passwords, matchers.HasLength(0))
+
+        # assert the other user's data is still there
+        rotated_passwords = self.driver.list_rotated_passwords_by_user(
+            other_user_id, None)
+        self.assertThat(rotated_passwords, matchers.HasLength(1))
+        self.assertIn(other_user_rp, rotated_passwords)
+
+    def test_deleting_a_users_expired_rotated_passwords(self):
+        # create another user's data to make sure we don't delete it too
+        other_user_id = utils.new_uuid()
+        other_user_rp = self._create_data(other_user_id, utils.past_date())
+        other_user_rp = self.driver.create_rotated_password(other_user_rp)
+
+        # do the delete
+        self.driver.delete_expired_rotated_passwords_by_user(self.user_id)
+        rotated_passwords = self.driver.list_rotated_passwords_by_user(
+            self.user_id, None)
+        self.assertThat(rotated_passwords, matchers.HasLength(1))
+        self.assertIn(self.future_rp, rotated_passwords)
+
+        # assert the other user's data is still there
+        rotated_passwords = self.driver.list_rotated_passwords_by_user(
+            other_user_id, None)
+        self.assertThat(rotated_passwords, matchers.HasLength(1))
+        self.assertIn(other_user_rp, rotated_passwords)
