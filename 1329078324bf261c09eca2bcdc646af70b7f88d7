@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//mVA\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-12T04:16:54Z",
+      "side": 1,
+      "message": "I think \u0027Memcached\u0027 will have to be \u0027memcached\u0027: \n\n(u\u0027Backend `%(driver)s` is not a valid memcached backend. Valid drivers: %(driver_list)s\u0027, {\u0027driver_list\u0027: \u0027bmemcached,memcached,pylibmc\u0027, \u0027driver\u0027: \u0027Memcached\u0027})\n\nInvalid works in this case though!",
+      "revId": "1329078324bf261c09eca2bcdc646af70b7f88d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
