@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//nTw\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:33:12Z",
+      "side": 1,
+      "message": "enabled and enabled\n\nthe idea behind throwing enabled and description into everything was simply to exercise the \u0027extra\u0027 column... poorly.",
+      "revId": "a23ac89244d86f0202b5211c3dac4d0a5199620d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//nTM\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-12T00:33:12Z",
+      "side": 1,
+      "message": "pass in the variables you *do* want to check for",
+      "revId": "a23ac89244d86f0202b5211c3dac4d0a5199620d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
