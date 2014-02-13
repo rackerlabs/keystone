@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//cZI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "where do we configure these? keystone.conf?",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cs8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "use double backtick instead of single quote\n\n``son_manipulator``\n\nalso\n\ndata type instead of datatype",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//csI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "data types",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//crs\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "use double backtick for keystone.common.cache.core\n\n``keystone.common.cache.core``",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//crQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "move \"import six\" to line 18",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cps\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "MongoDB based dogpile backend",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cpc\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "may want to consider moving line 34-53 to the end, after line 133.\n\nUsually makes more sense to look at the example after reading the descriptions first.",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cpE\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "s/mongo/MongoDB/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cmM\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "The private key file in PEM format,",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ci4\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "s/If included with the certfile`/If included with ``ssl_certfile``/\ns/mongod/MongoDB instance/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cio\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "s/mongod/MongoDB instance/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ciY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "s/certificates/certificates in PEM format/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ch8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "you mean\n\n:param cert_reqs: string\n\nalso\n\ns/The parameter cert_reqs/It/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//chE\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "may want to put a double backtick on these\n\n``ssl.CERT_NONE``, ``ssl.CERT_OPTIONAL`` ...",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ccI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "why a separate base class just to parse the args? I think it should be a private method for MongoApi",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cbU\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "why using pop() instead of get()?\n\nAlso, strings in single-quote\n\n\u0027db_hosts\u0027",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cYY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-13T06:40:15Z",
+      "side": 1,
+      "message": "why is this class necessary? seem like we can just use a dict",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
