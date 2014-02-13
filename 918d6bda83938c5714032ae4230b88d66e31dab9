@@ -16,6 +16,24 @@
       "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//eas\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T05:31:26Z",
+      "side": 1,
+      "message": "Brad, I think Dolph was asking for something like this: \nhttps://review.openstack.org/#/c/72716/1/keystone/common/sql/core.py",
+      "parentUuid": "AAAAUX//pLc\u003d",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
