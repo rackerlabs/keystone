@@ -99,12 +99,16 @@ class S3TokenMiddlewareTestGood(S3TokenMiddlewareTestBase):
         self.middleware(req.environ, self.start_fake_response)
         self.assertEqual(self.response_status, 200)
 
+    def assertStartsWith(self, a, b):
+        self.assertTrue(
+            a.startswith(b), '"%s" does not start with "%s"' % (a, b))
+
     def test_authorized(self):
         req = webob.Request.blank('/v1/AUTH_cfa/c/o')
         req.headers['Authorization'] = 'access:signature'
         req.headers['X-Storage-Token'] = 'token'
         req.get_response(self.middleware)
-        self.assertTrue(req.path.startswith('/v1/AUTH_TENANT_ID'))
+        self.assertStartsWith(req.path, '/v1/AUTH_TENANT_ID')
         self.assertEqual(req.headers['X-Auth-Token'], 'TOKEN_ID')
 
     def test_authorized_http(self):
@@ -115,7 +119,7 @@ class S3TokenMiddlewareTestGood(S3TokenMiddlewareTestBase):
         req.headers['Authorization'] = 'access:signature'
         req.headers['X-Storage-Token'] = 'token'
         req.get_response(self.middleware)
-        self.assertTrue(req.path.startswith('/v1/AUTH_TENANT_ID'))
+        self.assertStartsWith(req.path, '/v1/AUTH_TENANT_ID')
         self.assertEqual(req.headers['X-Auth-Token'], 'TOKEN_ID')
 
     def test_authorization_nova_toconnect(self):
@@ -124,7 +128,7 @@ class S3TokenMiddlewareTestGood(S3TokenMiddlewareTestBase):
         req.headers['X-Storage-Token'] = 'token'
         req.get_response(self.middleware)
         path = req.environ['PATH_INFO']
-        self.assertTrue(path.startswith('/v1/AUTH_FORCED_TENANT_ID'))
+        self.assertStartsWith(path, '/v1/AUTH_FORCED_TENANT_ID')
 
 
 class S3TokenMiddlewareTestBad(S3TokenMiddlewareTestBase):
