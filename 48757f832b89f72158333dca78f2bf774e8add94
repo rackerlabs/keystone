@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//doI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T01:34:18Z",
+      "side": 1,
+      "message": "I think you\u0027ve got the wrong commit hash here because when I check out this one it reverts the change. When I do the update using oslo-incubator master there are no diffs.",
+      "revId": "48757f832b89f72158333dca78f2bf774e8add94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
