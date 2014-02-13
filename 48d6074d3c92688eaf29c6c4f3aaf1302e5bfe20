@@ -50,6 +50,24 @@
       "revId": "48d6074d3c92688eaf29c6c4f3aaf1302e5bfe20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//diQ\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T01:59:33Z",
+      "side": 1,
+      "message": "GET and CREATE require that fill_in_roles be called for trusts, and they need to format the expires_at.\n\nwhereas LIST just deletes the roles, but needs to format expires_at.\n\nThey perform two distinct operations.",
+      "parentUuid": "AAAAUX//dkk\u003d",
+      "revId": "48d6074d3c92688eaf29c6c4f3aaf1302e5bfe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
