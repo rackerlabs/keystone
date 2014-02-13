@@ -16,6 +16,24 @@
       "revId": "b82755d4204d997d50b717a44a8a7c1f357b5b19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//W60\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T18:38:41Z",
+      "side": 1,
+      "message": "I could change the backend to raise a Forbidden error for an expired trust",
+      "parentUuid": "AAAAUX//dkQ\u003d",
+      "revId": "b82755d4204d997d50b717a44a8a7c1f357b5b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
