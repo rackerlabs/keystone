@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Uxo\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:28:58Z",
+      "side": 1,
+      "message": "this says \"the standard Memcache backend\" but the previous sentence doesn\u0027t have a \"Memcache\" backend... maybe could be clarified by changing to \"memcache\"",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Uxk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:28:58Z",
+      "side": 1,
+      "message": "suggest leave the\n\n \t.. code:: python",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//UwE\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:28:58Z",
+      "side": 1,
+      "message": "do we need to continue to support the old name as a deprecated argument?",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Uv0\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:28:58Z",
+      "side": 1,
+      "message": "we should have a test for each of the documented supported memcached backends.",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
