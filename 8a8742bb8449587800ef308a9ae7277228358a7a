@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//ZBE\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-13T15:00:01Z",
+      "side": 1,
+      "message": "Cannot? :)\n\nYou could also supplement this with \"Please disable it first.\" - or something to that effect.",
+      "revId": "8a8742bb8449587800ef308a9ae7277228358a7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
