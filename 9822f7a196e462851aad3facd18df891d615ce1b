@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Urw\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:45:42Z",
+      "side": 1,
+      "message": "This should be PUT /regions/{id} rather than POST.\n\nAlso, the docstrings for test_create_region, test_create_region_without_id, and test_create_region_with_conflicting_ids are the same... since they\u0027re not testing the same thing the docstring should be different, e.g. this could be\n\n Calling ``PUT /regions/{id}`` with a region with an ID that\u0027s different than the one\n supplied on the URL results in a 400 Bad Request.",
+      "revId": "9822f7a196e462851aad3facd18df891d615ce1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
