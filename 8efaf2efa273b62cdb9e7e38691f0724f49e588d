@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Ups\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:49:33Z",
+      "side": 1,
+      "message": "why do we need to do this? the blueprint doesn\u0027t explain it either.",
+      "revId": "8efaf2efa273b62cdb9e7e38691f0724f49e588d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Uqo\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:49:33Z",
+      "side": 1,
+      "message": "(note) this is going to conflict with https://review.openstack.org/#/c/70523/9/keystone/common/kvs/backends/memcached.py",
+      "revId": "8efaf2efa273b62cdb9e7e38691f0724f49e588d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
