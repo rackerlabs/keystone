@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//ceI\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:23:42Z",
+      "side": 1,
+      "message": "remove these first 2 lines, as all files in keystone just got rid of them.",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//pLc\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 11
@@ -31,6 +48,92 @@
       "side": 1,
       "message": "Brad, I think Dolph was asking for something like this: \nhttps://review.openstack.org/#/c/72716/1/keystone/common/sql/core.py",
       "parentUuid": "AAAAUX//pLc\u003d",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cd4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:23:42Z",
+      "side": 1,
+      "message": "i replied to patch 9 with some more details on what I got to (kinda) work, @dolphm - please look it over",
+      "parentUuid": "AAAAUX//eas\u003d",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cdc\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:23:42Z",
+      "side": 1,
+      "message": "(nit) add a period",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cds\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:23:42Z",
+      "side": 1,
+      "message": "(nit) space between # and comment, this entire method",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ccg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:23:42Z",
+      "side": 1,
+      "message": "nit: you have an elif without an else, suggest add an else block to line 135 ish",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ccE\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:23:42Z",
+      "side": 1,
+      "message": "if we do end up getting the context from the auth methods, then it should be passed in, and used, instead of setting it to {} at line 167.",
       "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
