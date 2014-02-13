@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//di4\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T02:01:11Z",
+      "side": 1,
+      "message": "now this sentence doesn\u0027t make sense.",
+      "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//qsY\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -13,6 +30,41 @@
       "writtenOn": "2014-02-11T16:30:04Z",
       "side": 1,
       "message": "The previous section determines if the incoming role_id exists in trust[\u0027roles\u0027], and stores the role, if found, trust_roles.\n\nIt should only ever have 1 result.",
+      "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//dhI\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T02:01:11Z",
+      "side": 1,
+      "message": "why create a new list if all we\u0027re doing is checking if there\u0027s an entry in the list that matches some criteria? Suggest use something like the any() builtin.",
+      "parentUuid": "AAAAUX//qsY\u003d",
+      "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//dig\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T02:01:11Z",
+      "side": 1,
+      "message": "remove the else since raises otherwise anyways so would never get there.",
       "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
