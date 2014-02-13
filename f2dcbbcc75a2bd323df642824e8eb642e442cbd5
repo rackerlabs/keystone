@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//d2M\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-13T00:32:25Z",
+      "side": 1,
+      "message": "Done in next patchset",
+      "parentUuid": "AAAAUX//eTA\u003d",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//eR4\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 10
@@ -98,6 +116,24 @@
       "writtenOn": "2014-02-12T23:47:38Z",
       "side": 1,
       "message": "looks like _is_admin just moved around. it used to be up at line 309, right before _assert_owner. Suggest move it back to minimize changes.",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//d2c\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-13T00:32:25Z",
+      "side": 1,
+      "message": "Sure.  this was moved previous patchset up and now back down.  order was mixed up in the change.",
+      "parentUuid": "AAAAUX//eR4\u003d",
       "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//d2E\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-13T00:32:25Z",
+      "side": 1,
+      "message": "done in next patchset.",
+      "parentUuid": "AAAAUX//eQ4\u003d",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//eQo\u003d",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 10
@@ -132,6 +186,24 @@
       "writtenOn": "2014-02-12T23:47:38Z",
       "side": 1,
       "message": "you mean ec2_delete_credential?",
+      "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//d2A\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-13T00:32:25Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "AAAAUX//eQo\u003d",
       "revId": "f2dcbbcc75a2bd323df642824e8eb642e442cbd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
