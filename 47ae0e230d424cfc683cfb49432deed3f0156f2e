@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//UqY\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:48:05Z",
+      "side": 1,
+      "message": "(note) this is going to conflict with https://review.openstack.org/#/c/70816/2/keystone/common/kvs/backends/memcached.py",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//UwE\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 9
