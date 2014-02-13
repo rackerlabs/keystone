@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Wsk\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 1,
+      "message": "(NIT): add trust_id here if available to print with the message. Might also be helpful to print something more relating to remaining uses. \n\n    \"No remaining uses for trust %(trust_id)s.\"\n\nSo the user gets the idea if they want to continue using their workflow they have to modify their remaining uses or increase them with a new trust. The existing message *could* (probably not likely) be confused with quotas... thoughts?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Wl0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3425,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 1,
+      "message": "could these be broken into positive and negative tests? \n\n    def test_trust_has_remaining_users_positive(self):\n        # create trust and check we have uses left\n        trust_data \u003d self.create_sample_trust(uuid.uuid4().hex, 5)\n        self.assertTrue(self.trust_api.has_remaining_uses(trust_data[\u0027id\u0027]))\n        # create trust with unlimited uses and check we have uses left\n        trust_data \u003d self.create_sample_trust(uuid.uuid4().hex)\n        self.assertTrue(self.trust_api.has_remaining_uses(trust_data[\u0027id\u0027]))\n\n    def test_trust_has_remaining_users_negative(self):\n        # create trust with no remaining uses and check we have no uses left\n        trust_data \u003d self.create_sample_trust(uuid.uuid4().hex, 0)\n        self.assertFalse(self.trust_api.has_remaining_uses(trust_data[\u0027id\u0027]))",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Wh0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2039,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 1,
+      "message": "We\u0027re starting to get a lot of trust tests in test_v3_auth.py... \n\nThoughts on moving this to its own module? test_v3_trust.py?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//WfU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2078,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 1,
+      "message": "(NIT): def test_create_trust_with_zero_uses(self):",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//WaQ\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2108,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 1,
+      "message": "(NIT): def test_create_trust_with_negative_remaining_uses(self)\n\n\nthese are just nits for readability if you want them \u003d)",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//WOc\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 1,
+      "message": "Why can\u0027t we do this in the controller?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

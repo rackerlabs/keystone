@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Wq0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 3356,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-13T20:23:22Z",
+      "side": 0,
+      "message": "(NIT): why remove this space?",
+      "revId": "7b88340f9fcea39036a338c19b97bc6a3b945404",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
