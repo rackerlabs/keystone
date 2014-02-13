@@ -16,6 +16,109 @@
       "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cME\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T08:00:21Z",
+      "side": 1,
+      "message": "These should probably remain commented out and without oauth1 and federation in the is line by default.",
+      "parentUuid": "AAAAUX//c/g\u003d",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cLA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T08:00:21Z",
+      "side": 1,
+      "message": "++",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cKk\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T08:00:21Z",
+      "side": 1,
+      "message": "Remove \u0027user is member of\u0027",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cKM\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T08:00:21Z",
+      "side": 1,
+      "message": "Remove \u0027user is member of\u0027",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cFw\u003d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T08:00:21Z",
+      "side": 1,
+      "message": "Why would specifying a single group not work?",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//cBQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T08:00:21Z",
+      "side": 1,
+      "message": "I\u0027m tempted to say to put this in mapping fixtures.",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
