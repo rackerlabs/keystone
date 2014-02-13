@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Zkc\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-13T13:56:54Z",
+      "side": 1,
+      "message": "I don\u0027t think that this would actually work. The expected return value from this method is a dictionary and not an id. I would expect that `keystone.auth.plugins.password.UserAuthInfo._assert_domain_is_enabled` (and probably other things) would fail with this return value.",
+      "revId": "3a93344fce4648701af4b13b7969ccbdf1ad3883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
