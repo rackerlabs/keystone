@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//dlM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T01:49:54Z",
+      "side": 1,
+      "message": "change \"trusts\" to \"trust\u0027s\"\n\nsuggest remove \"distinct\"",
+      "revId": "48d6074d3c92688eaf29c6c4f3aaf1302e5bfe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//dlI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T01:49:54Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "48d6074d3c92688eaf29c6c4f3aaf1302e5bfe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//dkk\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T01:49:54Z",
+      "side": 1,
+      "message": "why not have _fill_in_roles continue to format _expires_at like it did before? then don\u0027t have to call the function every time _fill_in_roles is called?",
+      "revId": "48d6074d3c92688eaf29c6c4f3aaf1302e5bfe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
