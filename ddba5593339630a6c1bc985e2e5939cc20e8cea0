@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//df8\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T02:05:58Z",
+      "side": 1,
+      "message": "i\u0027ll drop in a \"that\" between role and has.",
+      "parentUuid": "AAAAUX//di4\u003d",
+      "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//qsY\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//dfY\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T02:05:58Z",
+      "side": 1,
+      "message": "so ... any(role[\u0027id\u0027] \u003d\u003d role_id for role in trust[\u0027roles\u0027]) ? I think?\n\nCool!",
+      "parentUuid": "AAAAUX//dhI\u003d",
+      "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//dig\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "writtenOn": "2014-02-13T02:01:11Z",
       "side": 1,
       "message": "remove the else since raises otherwise anyways so would never get there.",
+      "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//dgg\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T02:05:58Z",
+      "side": 1,
+      "message": "good call",
+      "parentUuid": "AAAAUX//dig\u003d",
       "revId": "ddba5593339630a6c1bc985e2e5939cc20e8cea0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
