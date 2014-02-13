@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//XT0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-13T17:53:04Z",
+      "side": 1,
+      "message": "terrible variable name, especially for a method signature",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//XTk\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-13T17:53:04Z",
+      "side": 1,
+      "message": "this should expect an actual signature",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
