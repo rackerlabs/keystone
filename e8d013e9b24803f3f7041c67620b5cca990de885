@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//VPM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "should mention the blueprint or bug that this is being done for.",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VPU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "why was this moved?",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VPg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "why was this comment moved? It makes more sense to me where it was.",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VOk\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "this string is used in multiple places so could put it in a constant.\n\nAlso, should use \u0027 for strings.",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Wf4\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 10
@@ -47,6 +115,57 @@
       "writtenOn": "2014-02-13T17:53:04Z",
       "side": 1,
       "message": "this should expect an actual signature",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VOI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "the comment here doesn\u0027t really apply anymore since the resource_id may be at a different index.",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VOA\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "is it necessary to move this function? It used to be right after test_delete_user",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VN4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T22:19:42Z",
+      "side": 1,
+      "message": "this looks like an unrelated change.",
       "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
