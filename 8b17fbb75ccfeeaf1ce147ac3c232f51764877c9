@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//cqk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T05:56:22Z",
+      "side": 1,
+      "message": "I was able to get something working, but i\u0027m not sure if it\u0027s 100%\n\n     def __call__(self, f):\n \n  -        def wrapper(*args, **kwargs):\n  +        def wrapper(caller, context, *args, **kwargs):\n               \"\"\"Send a notification if the wrapped callable is   successful.\"\"\"\n  -            context \u003d args[1]\n               remote_addr \u003d None\n               http_user_agent \u003d None\n               auth_identifier \u003d None\n\n  ...\n\n               try:\n  -                result \u003d f(*args, **kwargs)\n  +                result \u003d f(context, *args, **kwargs)\n               except Exception:\n                   # For authentication failure send a cadf event as well",
+      "parentUuid": "AAAAUX//vdk\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yTk\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
