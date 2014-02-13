@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//W/g\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-13T18:25:59Z",
+      "side": 1,
+      "message": "this needs to be updated accordingly; and tree_dn should use the same syntax",
+      "revId": "51f27b5415c8e9b7f5b12e8bd29c0e1051ef3a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
