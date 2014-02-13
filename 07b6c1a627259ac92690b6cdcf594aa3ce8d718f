@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//Y2c\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"NoSQL\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Y2Q\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"as an option\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Y2A\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"MongoDB configurations e.g.,\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Y1s\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"replica set\"\n\nMay want to refer the reader to the MongoDB docs on TTL: http://docs.mongodb.org/manual/tutorial/expire-data/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Y1g\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"MongoDB\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//cZI\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 14
@@ -36,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//YyM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"The optional \u0027son_manipulator\u0027 is used to manipulate custom data types as they are saved or retrieved\" (text mostly borrowed from mongo.py comments).",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//csI\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 14
@@ -53,6 +155,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Yx4\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"If the dogpile cached values contain\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Yxc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"classes, then the provided\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//crs\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 14
@@ -64,6 +200,23 @@
       "writtenOn": "2014-02-13T06:40:15Z",
       "side": 1,
       "message": "use double backtick for keystone.common.cache.core\n\n``keystone.common.cache.core``",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YxU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"it implements the same dogpile APIs\"",
       "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +275,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//YvQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"APIs\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//cpc\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 14
@@ -133,6 +303,23 @@
       "writtenOn": "2014-02-13T06:40:15Z",
       "side": 1,
       "message": "may want to consider moving line 34-53 to the end, after line 133.\n\nUsually makes more sense to look at the example after reading the descriptions first.",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Yuw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"MongoDB connection URI\"\n\nMay want to reference the MongoDB docs on their URI format: http://docs.mongodb.org/manual/reference/connection-string/",
       "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -346,6 +533,108 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Ynk\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Perhaps \"cache_collection name is required\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YnE\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Perhaps \"replicaset_name required when use_replica is True\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YcQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Perhaps throw in the reference to the MongoDB docs on TTL again at this point:\n\nhttp://docs.mongodb.org/manual/tutorial/expire-data/",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ye0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Would prefer 0 indicate not to use TTL, as zero as a valid TTL value makes no sense.",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YdY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Would prefer an additional check to throw ValueError exception for negative values.",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ydw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Perhaps \"non-negative integer value expected for mongo_ttl_seconds\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//cYY\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 14
@@ -411,6 +700,142 @@
       "side": 1,
       "message": "I don\u0027t think it\u0027s about being acceptable. To me it\u0027s about showing other developers your intent. The intent here is really to return a dictionary. So why do it in 11 lines when you can do it in 2?",
       "parentUuid": "AAAAUX//X4w\u003d",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YVE\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"MongoDB\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YUY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"uses PyMongo APIs\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VPc\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "If connection or authentication fails, are the generic PyMongo exceptions lucid enough, or should they be translated.  A few sample errors based upon misconfig or mongod issues:\n\nConnectionFailure: could not connect to localhost:27017: [Errno 111] ECONNREFUSED\n\nOperationFailure: not authorized to create index on ks_cache.cache",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VJ4\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Note that if there is a misconfig between the MongoDB collection creation and the Keystone config, cached data may be removed on the next run of the TTL cleanup thread on the MongoDB side.\n\nTo mitigate this, perhaps set the doc_date if the config ttl_seconds is unknown to some default number of seconds in the future, such that the MongoDB reaper thread isn\u0027t throwing out cached data right after it is persisted.\n\nEither that, or the get_cahce_collection logic needs to remove the doc_date index if ttl_seconds \u003c 1",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VMI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "What is the point of persisting the dogpile metadata if it isn\u0027t ever used to qualify the query or included in the output?",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VJg\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"do\" vs \"does\"",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VHI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Would prefer to simplify this class to remove the extra layer of explicit typing of the encoding class as it is already a custom encoding at this point (which is adding noticeable amounts of extra bytes to the record, cached in memory by MongoDB potentially on an instance that may need to swap to disk which is exactly what you do not want to happen for dogpile + MongoDB caching!)",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VG8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 9249
+      },
+      "writtenOn": "2014-02-13T22:41:27Z",
+      "side": 1,
+      "message": "Should be \"MongoDB\"",
       "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
