@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//WZc\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-13T19:52:12Z",
+      "side": 1,
+      "message": "It is unclear to me looking at the code why you ignore path being passed in.  Suggest a comment so someone doesn\u0027t come back and refactor this again and support path data if it is meant to be thrown out.",
+      "revId": "e983effe2091591b590501f6a35efc57631a91f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
