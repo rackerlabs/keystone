@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//dkQ\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T01:53:45Z",
+      "side": 1,
+      "message": "this seems like a change that\u0027s not backwards compatible?",
+      "revId": "b82755d4204d997d50b717a44a8a7c1f357b5b19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
