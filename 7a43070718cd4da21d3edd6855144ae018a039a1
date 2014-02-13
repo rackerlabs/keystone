@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//U0c\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:15:23Z",
+      "side": 1,
+      "message": "the property isn\u0027t required -- suggest \n\n An optional ``list_limit`` property may return the limit for this backend to\n which we will truncate.",
+      "revId": "7a43070718cd4da21d3edd6855144ae018a039a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//U0M\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:15:23Z",
+      "side": 1,
+      "message": "if the driver doesn\u0027t specify a list limit then should CONF.list_limit be used instead?",
+      "revId": "7a43070718cd4da21d3edd6855144ae018a039a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//U0E\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:15:23Z",
+      "side": 1,
+      "message": "Alternatively, could set in __init__,\n\n self.list_limit \u003d CONF.identity.list_limit or CONF.list_limit",
+      "revId": "7a43070718cd4da21d3edd6855144ae018a039a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
