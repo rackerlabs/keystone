@@ -16,6 +16,24 @@
       "revId": "8a8742bb8449587800ef308a9ae7277228358a7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//YxM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T15:24:32Z",
+      "side": 1,
+      "message": "++ to cannot, that was the first thing i noticed.\n\ngood call on the additional detail with \"please disable... \"",
+      "parentUuid": "AAAAUX//ZBE\u003d",
+      "revId": "8a8742bb8449587800ef308a9ae7277228358a7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
