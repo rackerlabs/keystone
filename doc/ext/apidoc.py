@@ -34,11 +34,14 @@ def run_apidoc(app):
         return
     run_already = True
 
-    package_dir = path.abspath(path.join(app.srcdir, '..', '..', 'keystone'))
     source_dir = path.join(app.srcdir, 'api')
-    apidoc.main(['apidoc', package_dir, '-f',
+    package_dir = path.abspath(path.join(app.srcdir, '..', '..', 'keystone'))
+    exclude_dir = path.abspath(path.join(package_dir, 'openstack', 'api'))
+    apidoc.main(['apidoc', '-f',
                  '-H', 'Keystone Modules',
-                 '-o', source_dir])
+                 '-o', source_dir,
+                 package_dir,
+                 exclude_dir])
 
 
 def setup(app):
