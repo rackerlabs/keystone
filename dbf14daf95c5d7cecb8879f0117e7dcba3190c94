@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//bjo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-02-13T09:09:00Z",
+      "side": 1,
+      "message": "A short explanation of the assertion_prefix meaning would be great.",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//c/g\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 7
@@ -116,6 +133,24 @@
       "writtenOn": "2014-02-13T08:00:21Z",
       "side": 1,
       "message": "I\u0027m tempted to say to put this in mapping fixtures.",
+      "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//bis\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-02-13T09:09:00Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAUX//cBQ\u003d",
       "revId": "dbf14daf95c5d7cecb8879f0117e7dcba3190c94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
