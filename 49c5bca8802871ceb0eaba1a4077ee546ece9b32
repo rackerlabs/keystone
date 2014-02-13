@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//cVs\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T06:46:48Z",
+      "side": 1,
+      "message": "the two functions were basically the same, so I decided to piggy back off of check role",
+      "revId": "49c5bca8802871ceb0eaba1a4077ee546ece9b32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
