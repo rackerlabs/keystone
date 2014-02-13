@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//Wf4\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-13T19:42:51Z",
+      "side": 1,
+      "message": "could you add one for \u0027create request token\u0027 too?",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//XT0\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 10
