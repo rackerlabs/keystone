@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//U3k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-13T23:06:40Z",
+      "side": 1,
+      "message": "Is this change being made as part of a blueprint or a bug? Mention the bug in the commit message.",
+      "revId": "ab5c59bfb82ebe3e8f040e2e28f563506714817f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
