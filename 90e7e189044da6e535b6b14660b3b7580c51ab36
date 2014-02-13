@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//dBM\u003d",
+        "filename": "keystone/openstack/common/py3kcompat/urlutils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2014-02-13T04:03:05Z",
+      "side": 1,
+      "message": "This module was removed recently  https://review.openstack.org/#/c/71591/ , please update with latest commit of oslo-incubator.",
+      "revId": "90e7e189044da6e535b6b14660b3b7580c51ab36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
