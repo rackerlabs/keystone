@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//boM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-13T08:57:28Z",
+      "side": 1,
+      "message": "You should specify included Oslo commits in --oneline format and the last one commit id in Oslo at the moment of syncing. I have the same patch with more correct commit message https://review.openstack.org/#/c/71558/ . I\u0027ll abandon it if you will fix your commit message.\n\nThanks you!",
+      "revId": "d1a66fa91efdcfdb565805ea278286659d14b43a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
