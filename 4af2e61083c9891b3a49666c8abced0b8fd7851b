@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//MuI\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-14T23:21:12Z",
+      "side": 1,
+      "message": "i\u0027m  being picky here, but lets just use user_id\u003duser_id. keeps things consistent",
+      "revId": "4af2e61083c9891b3a49666c8abced0b8fd7851b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ms0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-14T23:21:12Z",
+      "side": 1,
+      "message": "this seems duped",
+      "revId": "4af2e61083c9891b3a49666c8abced0b8fd7851b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

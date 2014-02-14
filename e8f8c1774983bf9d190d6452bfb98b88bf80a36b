@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Mss\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-14T23:21:12Z",
+      "side": 0,
+      "message": "why\u0027d you remove this?",
+      "revId": "e8f8c1774983bf9d190d6452bfb98b88bf80a36b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
