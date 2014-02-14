@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//UNo\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-14T01:23:46Z",
+      "side": 1,
+      "message": "Its not 100%. When I run with live data I get:\n2014-02-13 19:18:19.332 64843 ERROR keystone.common.wsgi [-] authenticate_for_token() takes at least 2 arguments (2 given)\n2014-02-13 19:18:19.332 64843 TRACE keystone.common.wsgi Traceback (most recent call last):\n2014-02-13 19:18:19.332 64843 TRACE keystone.common.wsgi   File \"/opt/stack/keystone/keystone/common/wsgi.py\", line 214, in __call__\n2014-02-13 19:18:19.332 64843 TRACE keystone.common.wsgi     result \u003d method(context, **params)\n2014-02-13 19:18:19.332 64843 TRACE keystone.common.wsgi   File \"/opt/stack/keystone/keystone/cadf_notifications.py\", line 55, in wrapper\n2014-02-13 19:18:19.332 64843 TRACE keystone.common.wsgi     result \u003d f(context, *args, **kwargs)\n2014-02-13 19:18:19.332 64843 TRACE keystone.common.wsgi TypeError: authenticate_for_token() takes at least 2 arguments (2 given)",
+      "parentUuid": "AAAAUX//cqk\u003d",
+      "revId": "8b17fbb75ccfeeaf1ce147ac3c232f51764877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//yTk\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 9
