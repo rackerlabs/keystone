@@ -67,6 +67,40 @@
       "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ubc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-14T00:36:09Z",
+      "side": 1,
+      "message": "there should be a test for this, too.",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//UbY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-14T00:36:09Z",
+      "side": 1,
+      "message": "there should be a test for this, too.",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
