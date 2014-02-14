@@ -653,6 +653,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Qvo\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-14T19:50:31Z",
+      "side": 1,
+      "message": "Any negative value means don\u0027t create TTL index on cache collection. So its a valid value and -1 is defined as default.",
+      "parentUuid": "AAAAUX//Ydw\u003d",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//cYY\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 14
@@ -804,6 +822,24 @@
       "writtenOn": "2014-02-13T22:41:27Z",
       "side": 1,
       "message": "Note that if there is a misconfig between the MongoDB collection creation and the Keystone config, cached data may be removed on the next run of the TTL cleanup thread on the MongoDB side.\n\nTo mitigate this, perhaps set the doc_date if the config ttl_seconds is unknown to some default number of seconds in the future, such that the MongoDB reaper thread isn\u0027t throwing out cached data right after it is persisted.\n\nEither that, or the get_cahce_collection logic needs to remove the doc_date index if ttl_seconds \u003c 1",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//N3w\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-14T19:50:31Z",
+      "side": 1,
+      "message": "If mongo_ttl_seconds \u003c 0, then TTL index is not even added on cache collection and?mongo does not define background cleanup thread for this collection.\n\nNow if there is existing TTL index and new config passes -1 for mongo_ttl_seconds, then that index needs to be addressed externally. Will add logic to generate warning in logs.",
+      "parentUuid": "AAAAUX//VJ4\u003d",
       "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
