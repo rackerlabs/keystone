@@ -43,10 +43,12 @@ class ManagerNotificationWrapper(object):
                 notify_event_callbacks to in process listeners
 
     """
-    def __init__(self, operation, resource_type, public=True):
+    def __init__(self, operation, resource_type, public=True,
+                 resource_id_arg_index=1):
         self.operation = operation
         self.resource_type = resource_type
         self.public = public
+        self.resource_id_arg_index = resource_id_arg_index
 
     def __call__(self, f):
         def wrapper(*args, **kwargs):
@@ -59,7 +61,8 @@ class ManagerNotificationWrapper(object):
                 send_notification(
                     self.operation,
                     self.resource_type,
-                    args[1],  # f(self, resource_id, ...)
+                    # f(self, resource_id, ...)
+                    args[self.resource_id_arg_index],
                     public=self.public)
             return result
 
