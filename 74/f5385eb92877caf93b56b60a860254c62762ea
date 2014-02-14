@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 14 Feb 2014 00:41:20 +0000
+Reviewed-on: https://review.openstack.org/72303
+Project: openstack/keystone
+Branch: refs/heads/master
