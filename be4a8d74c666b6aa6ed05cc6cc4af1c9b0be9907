@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//ULQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-14T01:33:34Z",
+      "side": 1,
+      "message": "you don\u0027t have to list these here at all, revert the changes completely.\n\nif anything, give instructions to add it in doc/source/extensions/federation-configuration.rst",
+      "revId": "be4a8d74c666b6aa6ed05cc6cc4af1c9b0be9907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//UK4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-14T01:33:34Z",
+      "side": 1,
+      "message": "you don\u0027t need this here, we probably don\u0027t want it enabled by default at this point.",
+      "revId": "be4a8d74c666b6aa6ed05cc6cc4af1c9b0be9907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//UKs\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-14T01:33:34Z",
+      "side": 1,
+      "message": "you don\u0027t need this here, we probably don\u0027t want it enabled by default at this point.",
+      "revId": "be4a8d74c666b6aa6ed05cc6cc4af1c9b0be9907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
