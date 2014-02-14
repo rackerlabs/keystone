@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//RkU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2039,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-14T10:10:15Z",
+      "side": 1,
+      "message": "This makes sense, but that should probably be done in a separate patch.",
+      "parentUuid": "AAAAUX//Wh0\u003d",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//WfU\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 17
@@ -98,6 +116,24 @@
       "writtenOn": "2014-02-13T20:23:22Z",
       "side": 1,
       "message": "Why can\u0027t we do this in the controller?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//RiU\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-14T10:10:15Z",
+      "side": 1,
+      "message": "Will move it there",
+      "parentUuid": "AAAAUX//WOc\u003d",
       "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
