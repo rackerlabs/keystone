@@ -87,6 +87,24 @@
       "revId": "389e74f806e3a4d22ab8b1fb4c734b461ffd0d97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Tz8\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T02:41:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//T3s\u003d",
+      "revId": "389e74f806e3a4d22ab8b1fb4c734b461ffd0d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
