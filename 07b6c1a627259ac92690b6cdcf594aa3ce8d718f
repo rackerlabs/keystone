@@ -601,6 +601,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//UxQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-14T00:33:27Z",
+      "side": 1,
+      "message": "Actually 0 is valid time from mongo perspective. It means that value needs to expire at certain time which can be in future..whatever TTL field value is.\n\nhttp://docs.mongodb.org/manual/tutorial/expire-data/#expire-documents-at-a-certain-clock-time",
+      "parentUuid": "AAAAUX//Ye0\u003d",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//YdY\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 14
@@ -757,6 +775,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Uv4\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-14T00:33:27Z",
+      "side": 1,
+      "message": "I am not sure what we are going to do with those errors other than throwing it back. \nSo why to intercept unnecessarily.",
+      "parentUuid": "AAAAUX//VPc\u003d",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//VJ4\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 14
@@ -791,6 +827,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Uvs\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-14T00:33:27Z",
+      "side": 1,
+      "message": "Its used by dogpile itself.",
+      "parentUuid": "AAAAUX//VMI\u003d",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//VJg\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 14
@@ -819,6 +873,24 @@
       "writtenOn": "2014-02-13T22:41:27Z",
       "side": 1,
       "message": "Would prefer to simplify this class to remove the extra layer of explicit typing of the encoding class as it is already a custom encoding at this point (which is adding noticeable amounts of extra bytes to the record, cached in memory by MongoDB potentially on an instance that may need to swap to disk which is exactly what you do not want to happen for dogpile + MongoDB caching!)",
+      "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Uu0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-14T00:33:27Z",
+      "side": 1,
+      "message": "Yes..will change it to remove extra wrapper as CachedValue is the known format when reading dict from db.",
+      "parentUuid": "AAAAUX//VHI\u003d",
       "revId": "07b6c1a627259ac92690b6cdcf594aa3ce8d718f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
