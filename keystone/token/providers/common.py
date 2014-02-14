@@ -352,28 +352,12 @@ class BaseProvider(provider.Provider):
                 return token.provider.V3
         raise token.provider.UnsupportedTokenVersionException()
 
-    def issue_v2_token(self, token_ref, roles_ref=None,
-                       catalog_ref=None):
-        token_data = self.v2_token_data_helper.format_token(
-            token_ref, roles_ref, catalog_ref)
-        token_id = self._get_token_id(token_data)
-        token_data['access']['token']['id'] = token_id
+    def _create_token(self, token_id, token_data):
         try:
-            expiry = token_data['access']['token']['expires']
-            if isinstance(expiry, six.string_types):
-                expiry = timeutils.normalize_time(
-                    timeutils.parse_isotime(expiry))
-            data = dict(key=token_id,
-                        id=token_id,
-                        expires=expiry,
-                        user=token_ref['user'],
-                        tenant=token_ref['tenant'],
-                        metadata=token_ref['metadata'],
-                        token_data=token_data,
-                        bind=token_ref.get('bind'),
-                        trust_id=token_ref['metadata'].get('trust_id'),
-                        token_version=token.provider.V2)
-            self.token_api.create_token(token_id, data)
+            if isinstance(token_data['expires'], six.string_types):
+                token_data['expires'] = timeutils.normalize_time(
+                    timeutils.parse_isotime(token_data['expires']))
+            self.token_api.create_token(token_id, token_data)
         except Exception:
             exc_info = sys.exc_info()
             # an identical token may have been created already.
@@ -382,6 +366,27 @@ class BaseProvider(provider.Provider):
                 self.token_api.get_token(token_id)
             except exception.TokenNotFound:
                 raise exc_info[0], exc_info[1], exc_info[2]
+
+    def issue_v2_token(self, token_ref, roles_ref=None,
+                       catalog_ref=None):
+        token_data = self.v2_token_data_helper.format_token(
+            token_ref, roles_ref, catalog_ref)
+        token_id = self._get_token_id(token_data)
+        token_data['access']['token']['id'] = token_id
+        expiry = token_data['access']['token']['expires']
+
+        data = dict(key=token_id,
+                    id=token_id,
+                    expires=expiry,
+                    user=token_ref['user'],
+                    tenant=token_ref['tenant'],
+                    metadata=token_ref['metadata'],
+                    token_data=token_data,
+                    bind=token_ref.get('bind'),
+                    trust_id=token_ref['metadata'].get('trust_id'),
+                    token_version=token.provider.V2)
+        self._create_token(token_id, data)
+
 
         return (token_id, token_data)
 
@@ -414,42 +419,31 @@ class BaseProvider(provider.Provider):
             access_token=access_token)
 
         token_id = self._get_token_id(token_data)
-        try:
-            expiry = token_data['token']['expires_at']
-            if isinstance(expiry, six.string_types):
-                expiry = timeutils.normalize_time(
-                    timeutils.parse_isotime(expiry))
+        expiry = token_data['token']['expires_at']
+
+        if metadata_ref is None:
+            metadata_ref = {}
+        if 'project' in token_data['token']:
+            # project-scoped token, fill in the v2 token data
+            # all we care are the role IDs
+
             # FIXME(gyee): is there really a need to store roles in metadata?
-            role_ids = []
-            if metadata_ref is None:
-                metadata_ref = {}
-            if 'project' in token_data['token']:
-                # project-scoped token, fill in the v2 token data
-                # all we care are the role IDs
-                role_ids = [r['id'] for r in token_data['token']['roles']]
-                metadata_ref = {'roles': role_ids}
-            if trust:
-                metadata_ref.setdefault('trust_id', trust['id'])
-                metadata_ref.setdefault('trustee_user_id',
-                                        trust['trustee_user_id'])
-            data = dict(key=token_id,
-                        id=token_id,
-                        expires=expiry,
-                        user=token_data['token']['user'],
-                        tenant=token_data['token'].get('project'),
-                        metadata=metadata_ref,
-                        token_data=token_data,
-                        trust_id=trust['id'] if trust else None,
-                        token_version=token.provider.V3)
-            self.token_api.create_token(token_id, data)
-        except Exception:
-            exc_info = sys.exc_info()
-            # an identical token may have been created already.
-            # if so, return the token_data as it is also identical
-            try:
-                self.token_api.get_token(token_id)
-            except exception.TokenNotFound:
-                raise exc_info[0], exc_info[1], exc_info[2]
+            role_ids = [r['id'] for r in token_data['token']['roles']]
+            metadata_ref = {'roles': role_ids}
+        if trust:
+            metadata_ref.setdefault('trust_id', trust['id'])
+            metadata_ref.setdefault('trustee_user_id',
+                                    trust['trustee_user_id'])
+        data = dict(key=token_id,
+                    id=token_id,
+                    expires=expiry,
+                    user=token_data['token']['user'],
+                    tenant=token_data['token'].get('project'),
+                    metadata=metadata_ref,
+                    token_data=token_data,
+                    trust_id=trust['id'] if trust else None,
+                    token_version=token.provider.V3)
+        self.token_api.create_token(token_id, data)
 
         return (token_id, token_data)
 

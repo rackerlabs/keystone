@@ -100,7 +100,6 @@ FILE_OPTIONS = {
         # unintentionally, we register a no-op as the keystone default caching
         # backend.
         cfg.StrOpt('backend', default='keystone.common.cache.noop'),
-        cfg.BoolOpt('use_key_mangler', default=True),
         cfg.MultiStrOpt('backend_argument', default=[]),
         cfg.ListOpt('proxies', default=[]),
         # Global toggle for all caching using the should_cache_fn mechanism.

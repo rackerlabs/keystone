@@ -19,6 +19,7 @@ import webob.dec
 
 from keystone.common import authorization
 from keystone.common import config
+from keystone.common import dependency
 from keystone.common import serializer
 from keystone.common import utils
 from keystone.common import wsgi
@@ -205,6 +206,7 @@ class RequestBodySizeLimiter(wsgi.Middleware):
         return self.application
 
 
+@dependency.requires('token_provider_api')
 class AuthContextMiddleware(wsgi.Middleware):
     """Build the authentication context from the request auth token."""
 
@@ -223,14 +225,7 @@ class AuthContextMiddleware(wsgi.Middleware):
         context['environment'] = request.environ
 
         try:
-            token_ref = self.token_api.get_token(token_id)
-            #TODO(ayoung): These two functions return the token in different
-            #formats instead of two calls, only make one.  However, the call
-            #to get_token hits the caching layer, and does not validate the
-            #token.  Reduce to one call
-            if not CONF.token.revoke_by_id:
-                (self.token_api.token_provider_api.
-                 validate_token(context['token_id']))
+            token_ref = self.token_provider_api.validate_token(token_id)
 
             # TODO(gyee): validate_token_bind should really be its own
             # middleware
