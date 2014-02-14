@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//O9k\u003d",
+        "filename": "keystone/openstack/common/middleware/request_id.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-14T16:58:00Z",
+      "side": 1,
+      "message": "This is unnecessary.",
+      "revId": "1d811eb2d156407dd4e2a2c20cab9347ff5f80bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
