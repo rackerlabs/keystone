@@ -26,7 +26,7 @@ from keystone.openstack.common.db.sqlalchemy import session as db_session
 CONF = config.CONF
 
 
-class Assignment(sql.Base, assignment.Driver):
+class Assignment(assignment.Driver):
 
     # Internal interface to manage the database
     def db_sync(self, version=None):

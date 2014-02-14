@@ -86,7 +86,7 @@ class MappingModel(sql.ModelBase, sql.DictBase):
         return d
 
 
-class Federation(sql.Base, core.Driver):
+class Federation(core.Driver):
 
     def db_sync(self):
         migration.db_sync()

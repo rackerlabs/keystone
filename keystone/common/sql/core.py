@@ -192,12 +192,6 @@ def truncated(f):
     return wrapper
 
 
-# Backends
-class Base(object):
-    # TODO(blk-u): remove this class since doesn't do anything.
-    pass
-
-
 def _filter(model, query, hints):
     """Applies filtering to a query.
 
