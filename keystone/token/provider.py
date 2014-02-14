@@ -109,10 +109,12 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(self.get_token_provider())
 
     def validate_token(self, token_id, belongs_to=None):
-        unique_id = self.token_api.unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token = self._validate_token(unique_id)
+        token = self._validate_token(token_id)
+        version = self.get_token_version(token)
+        if version == V2:
+            self.check_revocation_v2(token)
+        else:
+            self.check_revocation(token)
         self._token_belongs_to(token, belongs_to)
         self._is_valid_token(token)
         return token
@@ -151,10 +153,7 @@ class Manager(manager.Manager):
         self.revoke_api.check_token(token_values)
 
     def validate_v2_token(self, token_id, belongs_to=None):
-        unique_id = self.token_api.unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token = self._validate_v2_token(unique_id)
+        token = self._validate_v2_token(token_id)
         self.check_revocation_v2(token)
         self._token_belongs_to(token, belongs_to)
         self._is_valid_token(token)
@@ -219,10 +218,7 @@ class Manager(manager.Manager):
         self.revoke_api.check_token(token_values)
 
     def validate_v3_token(self, token_id):
-        unique_id = self.token_api.unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token = self._validate_v3_token(unique_id)
+        token = self._validate_v3_token(token_id)
         self._is_valid_token(token)
         return token
 
@@ -234,10 +230,7 @@ class Manager(manager.Manager):
         :returns: None
         :raises: keystone.exception.Unauthorized
         """
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        unique_id = self.token_api.unique_id(token_id)
-        self.validate_v2_token(unique_id, belongs_to=belongs_to)
+        self.validate_v2_token(token_id, belongs_to=belongs_to)
 
     def check_v3_token(self, token_id):
         """Check the validity of the given V3 token.
@@ -246,10 +239,7 @@ class Manager(manager.Manager):
         :returns: None
         :raises: keystone.exception.Unauthorized
         """
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        unique_id = self.token_api.unique_id(token_id)
-        self.validate_v3_token(unique_id)
+        self.validate_v3_token(token_id)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
