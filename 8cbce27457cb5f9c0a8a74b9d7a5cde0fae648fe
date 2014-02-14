@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Nbw\u003d",
+        "filename": "keystone/tests/unit/common/test_sql_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T20:57:32Z",
+      "side": 1,
+      "message": "(NIT): would it be worth it to import this as test_utils to not be confused with other utils modules?\n\nMaybe that is a refactor change to take as the module grows?",
+      "revId": "8cbce27457cb5f9c0a8a74b9d7a5cde0fae648fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
