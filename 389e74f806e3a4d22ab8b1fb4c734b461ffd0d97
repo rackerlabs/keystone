@@ -51,6 +51,24 @@
       "revId": "389e74f806e3a4d22ab8b1fb4c734b461ffd0d97",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//T3s\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-14T02:33:32Z",
+      "side": 1,
+      "message": "These comments should be moved to V3Controller.",
+      "parentUuid": "AAAAUX//T48\u003d",
+      "revId": "389e74f806e3a4d22ab8b1fb4c734b461ffd0d97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
