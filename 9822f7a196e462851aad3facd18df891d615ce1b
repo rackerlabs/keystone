@@ -16,6 +16,24 @@
       "revId": "9822f7a196e462851aad3facd18df891d615ce1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//NW8\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T21:07:23Z",
+      "side": 1,
+      "message": "If POST here is change it will have to be changed on line 41 as well, since it should be the same. Nice catch Brant.",
+      "parentUuid": "AAAAUX//Urw\u003d",
+      "revId": "9822f7a196e462851aad3facd18df891d615ce1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
