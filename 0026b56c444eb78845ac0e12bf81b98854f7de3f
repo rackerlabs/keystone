@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Qng\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-14T13:23:10Z",
+      "side": 1,
+      "message": "Incorrect error class.",
+      "revId": "0026b56c444eb78845ac0e12bf81b98854f7de3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
