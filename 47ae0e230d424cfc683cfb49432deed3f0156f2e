@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//OUQ\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-14T18:39:43Z",
+      "side": 1,
+      "message": "Done in next patch.",
+      "parentUuid": "AAAAUX//Uxo\u003d",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Uxk\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-13T23:28:58Z",
       "side": 1,
       "message": "suggest leave the\n\n \t.. code:: python",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//OUg\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-14T18:39:43Z",
+      "side": 1,
+      "message": "Oh That should have been left in.  I think this was a merge issue/conflict resolution.  Will add back in.",
+      "parentUuid": "AAAAUX//Uxk\u003d",
       "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//OTo\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-14T18:39:43Z",
+      "side": 1,
+      "message": "I\u0027d say no, since this is new code in Icehouse.  If this affected the cache layer, yes.",
+      "parentUuid": "AAAAUX//UwE\u003d",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Uv0\u003d",
         "filename": "keystone/tests/test_kvs.py",
         "patchSetId": 9
@@ -81,6 +135,24 @@
       "writtenOn": "2014-02-13T23:28:58Z",
       "side": 1,
       "message": "we should have a test for each of the documented supported memcached backends.",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ORY\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-14T18:39:43Z",
+      "side": 1,
+      "message": "I\u0027ll put together a new patchset specifically for this.",
+      "parentUuid": "AAAAUX//Uv0\u003d",
       "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
