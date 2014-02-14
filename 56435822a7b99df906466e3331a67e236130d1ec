@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Pgc\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-14T15:40:39Z",
+      "side": 1,
+      "message": "could probably remove \", typically `keystone-paste.ini`,\" since that\u0027s the default now.",
+      "revId": "56435822a7b99df906466e3331a67e236130d1ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
