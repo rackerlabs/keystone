@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Onw\u003d",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T17:54:21Z",
+      "side": 1,
+      "message": "Newline here?",
+      "revId": "a018b46d426a707726d1a46e73fdb026648008e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//OnE\u003d",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T17:54:21Z",
+      "side": 1,
+      "message": "same comment here, how come we\u0027ve added a newline?",
+      "revId": "a018b46d426a707726d1a46e73fdb026648008e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Omw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T17:54:21Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "a018b46d426a707726d1a46e73fdb026648008e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
