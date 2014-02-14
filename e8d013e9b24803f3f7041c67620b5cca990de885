@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Tcw\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-14T18:44:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//VOk\u003d",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Wf4\u003d",
         "filename": "keystone/contrib/oauth1/core.py",
         "patchSetId": 10
@@ -81,6 +99,24 @@
       "writtenOn": "2014-02-13T19:42:51Z",
       "side": 1,
       "message": "could you add one for \u0027create request token\u0027 too?",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VeY\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-14T18:44:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Wf4\u003d",
       "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +151,24 @@
       "writtenOn": "2014-02-13T17:53:04Z",
       "side": 1,
       "message": "this should expect an actual signature",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//VeA\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-14T18:44:38Z",
+      "side": 1,
+      "message": "?",
+      "parentUuid": "AAAAUX//XTk\u003d",
       "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +220,24 @@
       "writtenOn": "2014-02-13T22:19:42Z",
       "side": 1,
       "message": "this looks like an unrelated change.",
+      "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ta4\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-14T18:44:38Z",
+      "side": 1,
+      "message": "But necessary.  Call needs to come from the right API.  The other will get broken eventually.",
+      "parentUuid": "AAAAUX//VN4\u003d",
       "revId": "e8d013e9b24803f3f7041c67620b5cca990de885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
