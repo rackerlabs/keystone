@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//UL4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-14T01:30:15Z",
+      "side": 1,
+      "message": "It doesn\u0027t work for live data when I run curl invocations. I put the stack trace in patch 9.",
+      "parentUuid": "AAAAUX//cd4\u003d",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//cdc\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 11
@@ -83,6 +101,24 @@
       "writtenOn": "2014-02-13T06:23:42Z",
       "side": 1,
       "message": "(nit) add a period",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//UL0\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-14T01:30:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//cdc\u003d",
       "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//ULw\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-14T01:30:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//cds\u003d",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//ccg\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 11
@@ -117,6 +171,24 @@
       "writtenOn": "2014-02-13T06:23:42Z",
       "side": 1,
       "message": "nit: you have an elif without an else, suggest add an else block to line 135 ish",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ULs\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-14T01:30:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//ccg\u003d",
       "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
