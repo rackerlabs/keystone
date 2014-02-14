@@ -137,6 +137,24 @@
       "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//USw\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-14T01:04:20Z",
+      "side": 1,
+      "message": "context is overloaded. The  keystone context is different than the event context.  From what I have been told the event context should just be {}",
+      "parentUuid": "AAAAUX//ccE\u003d",
+      "revId": "918d6bda83938c5714032ae4230b88d66e31dab9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
