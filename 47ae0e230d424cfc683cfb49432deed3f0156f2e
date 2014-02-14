@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Nvg\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-14T20:14:31Z",
+      "side": 1,
+      "message": "Since the use of filter is going to go away I\u0027ll fix my patch to not rewrite that part of the code.",
+      "parentUuid": "AAAAUX//UqY\u003d",
+      "revId": "47ae0e230d424cfc683cfb49432deed3f0156f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//UwE\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 9
