@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Noo\u003d",
+        "filename": "tools/config/README",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T20:29:51Z",
+      "side": 1,
+      "message": "So, there seems to be multiple version of this README.. https://github.com/openstack/nova/tree/master/tools/config\n\nI think each case should be documented according to the project but the code all comes from oslo-incubator. Should the README be standardized, or should we be able to use this README to document the use of generate_sample.sh for Keystone specifically?",
+      "revId": "f542a61720460e87cb702f93ac102bd305e67c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
