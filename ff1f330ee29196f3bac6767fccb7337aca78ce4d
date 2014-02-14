@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//OfY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-14T18:06:44Z",
+      "side": 1,
+      "message": "(NIT): Could this be reworded a little bit, to something like;\n\n    \"Refactor migration.py to ...\" \n\nI guess I see \u0027Synchronize\u0027 and \u0027oslo\u0027 in the commit title and I automatically go to \u0027sync code from Oslo\u0027 review mode \u003d) Technically the sync already happened from oslo-incubator.\n\nThis is just a nit for readability/reviewability",
+      "revId": "ff1f330ee29196f3bac6767fccb7337aca78ce4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
