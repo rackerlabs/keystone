@@ -43,6 +43,7 @@ from keystone.common import utils
 from keystone import config
 from keystone import credential
 from keystone import exception
+from keystone.identity import core
 from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone import tests
@@ -212,9 +213,11 @@ class SqlUpgradeTests(SqlMigrateBase):
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
-        a_user = session.query(user_table).filter("id='foo'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[0]['id']).one()
         self.assertTrue(a_user.enabled)
-        a_user = session.query(user_table).filter("id='badguy'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[2]['id']).one()
         self.assertFalse(a_user.enabled)
         tenant_table = sqlalchemy.Table("tenant",
                                         self.metadata,
@@ -354,7 +357,8 @@ class SqlUpgradeTests(SqlMigrateBase):
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
-        a_user = session.query(user_table).filter("id='badguy'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[2]['id']).one()
         self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
         tenant_table = sqlalchemy.Table("tenant",
                                         self.metadata,
@@ -472,10 +476,12 @@ class SqlUpgradeTests(SqlMigrateBase):
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
-        a_user = session.query(user_table).filter("id='foo'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[0]['id']).one()
         self.assertTrue(a_user.enabled)
         self.assertEqual(a_user.domain_id, DEFAULT_DOMAIN_ID)
-        a_user = session.query(user_table).filter("id='badguy'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[2]['id']).one()
         self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
         self.assertEqual(a_user.domain_id, DEFAULT_DOMAIN_ID)
         project_table = sqlalchemy.Table("project",
@@ -503,9 +509,11 @@ class SqlUpgradeTests(SqlMigrateBase):
         user_table = sqlalchemy.Table("user",
                                       self.metadata,
                                       autoload=True)
-        a_user = session.query(user_table).filter("id='foo'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[0]['id']).one()
         self.assertTrue(a_user.enabled)
-        a_user = session.query(user_table).filter("id='badguy'").one()
+        a_user = session.query(user_table).filter_by(
+            id=default_fixtures.USERS[2]['id']).one()
         self.assertEqual(a_user.name, default_fixtures.USERS[2]['name'])
         tenant_table = sqlalchemy.Table("tenant",
                                         self.metadata,
@@ -2019,6 +2027,14 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('assignment')
         check_grants(session, base_data)
         session.close()
+
+    def test_id_mapping(self):
+        self.upgrade(40)
+        self.assertTableDoesNotExist('id_mapping')
+        self.upgrade(41)
+        self.assertTableExists('id_mapping')
+        self.downgrade(40)
+        self.assertTableDoesNotExist('id_mapping')
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):

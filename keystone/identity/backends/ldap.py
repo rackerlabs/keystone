@@ -44,7 +44,10 @@ class Identity(identity.Driver):
     def default_assignment_driver(self):
         return "keystone.assignment.backends.ldap.Assignment"
 
-    def is_domain_aware(self):
+    def _is_domain_aware(self):
+        return False
+
+    def _generates_uuids(self):
         return False
 
     # Identity interface
