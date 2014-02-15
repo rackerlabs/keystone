@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//K6c\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-15T07:13:24Z",
+      "side": 1,
+      "message": "Continued, since this function is meant to respond to the URL that the apache modules use, it wouldn\u0027t be safe to assume something is always going to be in the context/environment (just so we can switch to a specific auth module).\n\nI think moving this to auth.controller is a better spot, but this specific piece can\u0027t have it\u0027s own auth plugin.",
+      "parentUuid": "AAAAUX//K9k\u003d",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//xec\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 4
