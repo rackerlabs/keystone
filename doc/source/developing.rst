@@ -160,6 +160,23 @@ honor any such limit if possible, but if it is unable to do so then it may
 ignore it (and the truncation of the returned list of entities will happen at
 the controller level).
 
+Identity entity ID management between controllers and drivers
+-------------------------------------------------------------
+
+Keystone supports the option of having domain-specific backends for the
+identity driver (i.e. for user and group storage), allowing, for example,
+a different LDAP server for each domain. To ensure that keystone can determine
+to which backend it should route an API call, starting with IceHouse, the
+identity controller will encode the domain of the entity inside the entity_id
+when it creates a new entity. The identity Manager will extract the domain from
+the entity ID and enable the correct routing.
+
+To ensure backward compatibility, identity entities created before IceHouse
+(whose entity IDs will not contain the domain_id) will still continue to
+be accessible, hence the identity Manager must accept these. It will
+assume that any such legacy IDs are intended to be handled by the
+default identity driver.
+
 Testing
 -------
 
