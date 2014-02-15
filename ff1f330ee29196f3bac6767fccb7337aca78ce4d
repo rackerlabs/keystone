@@ -16,6 +16,24 @@
       "revId": "ff1f330ee29196f3bac6767fccb7337aca78ce4d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//K4k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-15T07:30:35Z",
+      "side": 1,
+      "message": "Yes, you are right. Me to always turning to \u0027sync code from Oslo\u0027 mode, when I see this patch X) I\u0027ll fix it.",
+      "parentUuid": "AAAAUX//OfY\u003d",
+      "revId": "ff1f330ee29196f3bac6767fccb7337aca78ce4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
