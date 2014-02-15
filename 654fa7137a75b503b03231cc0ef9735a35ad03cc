@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//KEg\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-15T18:37:02Z",
+      "side": 1,
+      "message": "change :: to :",
+      "revId": "654fa7137a75b503b03231cc0ef9735a35ad03cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//KEU\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-15T18:37:02Z",
+      "side": 1,
+      "message": "we should have a test for each of the documented supported memcached backends.",
+      "revId": "654fa7137a75b503b03231cc0ef9735a35ad03cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
