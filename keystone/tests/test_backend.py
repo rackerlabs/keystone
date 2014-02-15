@@ -44,6 +44,11 @@ class IdentityTests(object):
         self.assignment_api.create_domain(domain['id'], domain)
         return domain
 
+    def _set_domain_scope(selfself, domain_id):
+        # We only provide a domain scope if we have multiple drivers
+        if CONF.identity.domain_specific_drivers_enabled:
+            return domain_id
+
     def test_project_add_and_remove_user_role(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
             self.tenant_bar['id'])
@@ -143,8 +148,9 @@ class IdentityTests(object):
                           password='password')
 
     def test_password_hashed(self):
-        driver = self.identity_api._select_identity_driver(
-            self.user_foo['domain_id'])
+        unused, driver, entity_id = (
+            self.identity_api._get_domain_driver_and_entity_id(
+                self.user_foo['id']))
         user_ref = driver._get_user(self.user_foo['id'])
         self.assertNotEqual(user_ref['password'], self.user_foo['password'])
 
@@ -1943,7 +1949,8 @@ class IdentityTests(object):
                           user)
 
     def test_list_users(self):
-        users = self.identity_api.list_users()
+        users = self.identity_api.list_users(
+            domain_scope=self._set_domain_scope(DEFAULT_DOMAIN_ID))
         self.assertEqual(len(default_fixtures.USERS), len(users))
         user_ids = set(user['id'] for user in users)
         expected_user_ids = set(user['id'] for user in default_fixtures.USERS)
@@ -1962,7 +1969,8 @@ class IdentityTests(object):
             'name': uuid.uuid4().hex}
         self.identity_api.create_group(group1['id'], group1)
         self.identity_api.create_group(group2['id'], group2)
-        groups = self.identity_api.list_groups()
+        groups = self.identity_api.list_groups(
+            domain_scope=self._set_domain_scope(DEFAULT_DOMAIN_ID))
         self.assertEqual(len(groups), 2)
         group_ids = []
         for group in groups:

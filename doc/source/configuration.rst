@@ -92,11 +92,6 @@ is not an absolute path, then Keystone looks for it in the same directories as a
 Domain-specific Drivers
 -----------------------
 
-.. WARNING::
-
-    This feature is experimental and unsupported in Havana (with several known
-    issues that will not be fixed). Feedback welcome for Icehouse!
-
 Keystone supports the option (disabled by default) to specify identity driver
 configurations on a domain by domain basis, allowing, for example, a specific
 domain to have its own LDAP or SQL server. This is configured by specifying the
@@ -116,6 +111,9 @@ Options given in the domain specific configuration file will override those in
 the primary configuration file for the specified domain only. Domains without a
 specific configuration file will continue to use the options from the primary
 configuration file.
+
+Keystone does not support moving the contents of a domain (i.e. it's users and
+groups) from one backend to another.
 
 Authentication Plugins
 ----------------------

@@ -132,9 +132,24 @@ FILE_OPTIONS = {
                          'default; set to True to enable.'),
         cfg.StrOpt('domain_config_dir',
                    default='/etc/keystone/domains',
-                   help='Path for Keystone to locate the domain specific'
-                        'identity configuration files if '
-                        'domain_specific_drivers_enabled is set to true.'),
+                   help=('Path for Keystone to locate the domain specific'
+                         'identity configuration files if '
+                         'domain_specific_drivers_enabled is set to true.')),
+        cfg.BoolOpt('backward_compatible_default_driver_entity_ids',
+                    default=True,
+                    help=('The internal format of user and group IDs changed '
+                          'in IceHouse. For backends that do not understand '
+                          'domains (e.g. LDAP), keystone can not know whether '
+                          'an ID was created in the old or new format. By '
+                          'default it will return it in the old format, which '
+                          'ensures that existing IDs will not change. Since, '
+                          'up until now, the LDAP backend only supported the '
+                          'default domain, this is only relevant to existing '
+                          'entities in this domain, being handled by the '
+                          'this default backend LDAP driver. It is safe to '
+                          'set variable to True if you do not store user and '
+                          'group IDs outside of keystone and expect them to '
+                          'still be honored.')),
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity'),
@@ -145,6 +160,11 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit', default=None,
                    help='Maximum number of entities that will be returned in '
                         'an identity collection')],
+    'id_mapping': [
+        cfg.StrOpt('driver',
+                   default=('keystone.identity.mapping_backends'
+                            '.sql.Mapping'),
+                   help='Keystone Identity Mapping backend driver')],
     'trust': [
         cfg.BoolOpt('enabled', default=True,
                     help='delegation and impersonation features can be '

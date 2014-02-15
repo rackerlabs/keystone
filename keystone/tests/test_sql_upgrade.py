@@ -2020,6 +2020,14 @@ class SqlUpgradeTests(SqlMigrateBase):
         check_grants(session, base_data)
         session.close()
 
+    def test_id_mapping(self):
+        self.upgrade(40)
+        self.assertTableDoesNotExist('id_mapping')
+        self.upgrade(41)
+        self.assertTableExists('id_mapping')
+        self.downgrade(40)
+        self.assertTableDoesNotExist('id_mapping')
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
