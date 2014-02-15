@@ -53,6 +53,13 @@ TENANTS = [
 ]
 
 # NOTE(ja): a role of keystone_admin is done in setUp
+
+# NOTE(henry_nash): The id of the users in these fixtures may be modified
+# at run time to be a composite id - so if using this list as a reference
+# to check results received back from the database, be sure to check against
+# the list directly (e.g. USERS[0]['id'] rather than using a value
+# explicitly (e.g. 'foo').
+
 USERS = [
     {
         'id': 'foo',
