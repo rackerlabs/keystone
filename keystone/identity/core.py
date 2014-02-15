@@ -36,6 +36,7 @@ from keystone.openstack.common import versionutils
 CONF = config.CONF
 
 LOG = log.getLogger(__name__)
+COMPOSITE_ID_SEPERATOR = '@@'
 
 
 def moved_to_assignment(f):
@@ -179,10 +180,6 @@ def domains_configured(f):
     def wrapper(self, *args, **kwargs):
         if (not self.domain_configs.configured and
                 CONF.identity.domain_specific_drivers_enabled):
-            LOG.warning(_(
-                'Running an experimental and unsupported configuration '
-                '(domain_specific_drivers_enabled = True); '
-                'this will result in known issues.'))
             self.domain_configs.setup_domain_drivers(
                 self.driver, self.assignment_api)
         return f(self, *args, **kwargs)
@@ -207,7 +204,17 @@ class Manager(manager.Manager):
     Each of the identity calls are pre-processed here to choose, based on
     domain, which of the drivers should be called. The non-domain-specific
     driver is still in place, and is used if there is no specific driver for
-    the domain in question.
+    the domain in question (or we are not using multiple domain drivers).
+
+    In the case of multiple domain drivers, the domain in question is
+    encoded in the unique identifier for the entity.  This is set in the
+    controller as part of the create call.  In this Manager class, this
+    composite identifier will either be passed into the underlying driver
+    as the entity identifier or, in the case of a driver that is not
+    domain aware, the domain component is stripped off before passing
+    to the driver. In later situation, the composite identifier is re-created
+    in this Manager class after the driver call, before the result is passed
+    back to the caller.
 
     """
 
@@ -217,45 +224,86 @@ class Manager(manager.Manager):
 
     # Domain ID normalization methods
 
-    def _set_domain_id(self, ref, domain_id):
+    def _assign_domain_specific_unique_id(self, ref):
+        return ref
+        if 'domain_id' not in ref:
+            raise exception.ValidationError(
+                _('domain_id is required as part of entity'))
+        ref['id'] = ref['id'] + COMPOSITE_ID_SEPERATOR + ref['domain_id']
+        return ref
+
+    def _set_domain_id_if_domain_unaware(self, ref, domain_id, driver):
+        if driver.is_domain_aware():
+            return ref
+
         if isinstance(ref, dict):
             ref = ref.copy()
+            if CONF.identity.domain_specific_drivers_enabled:
+                ref['id'] = ref['id'] + COMPOSITE_ID_SEPERATOR + domain_id
             ref['domain_id'] = domain_id
             return ref
         elif isinstance(ref, list):
-            return [self._set_domain_id(x, domain_id) for x in ref]
+            return [self._set_domain_id_if_domain_unaware(
+                    x, domain_id, driver) for x in ref]
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
-    def _clear_domain_id(self, ref):
-        # Clear the domain_id, and then check to ensure that if this
-        # was not the default domain, it is being handled by its own
-        # backend driver.
-        ref = ref.copy()
-        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
-        if (domain_id != CONF.identity.default_domain_id and
-                domain_id not in self.domain_configs):
-                    raise exception.DomainNotFound(domain_id=domain_id)
+    def _clear_domain_id_if_domain_unaware(self, driver, ref):
+        """Clear domain_id details if driver is not domain aware."""
+        if not driver.is_domain_aware():
+            entity_id, domain_id = self._split_composite_id(ref['id'])
+            ref = ref.copy()
+            ref['id'] = entity_id
+            ref.pop('domain_id')
         return ref
 
-    def _normalize_scope(self, domain_scope):
-        if domain_scope is None:
-            return CONF.identity.default_domain_id
+    def _split_composite_id(self, composite_id):
+        split_id = composite_id.split(COMPOSITE_ID_SEPERATOR)
+        if len(split_id) == 1:
+            # No domain_id in key
+            return split_id[0], None
+        elif len(split_id) == 2:
+            return split_id[0], split_id[1]
         else:
-            return domain_scope
+            raise exception.UnexpectedError(
+                _('Unparsable composite ID encountered: %s') % composite_id)
 
     def _select_identity_driver(self, domain_id):
+        if domain_id is None:
+            if not CONF.identity.domain_specific_drivers_enabled:
+                # For backwards compatibility, we allow controllers to call us
+                # without a domain_id if we only have a single driver.
+                return self.driver
+            else:
+                raise exception.UnexpectedError(
+                    _('No domain ID specified with multiple drivers'))
+
         driver = self.domain_configs.get_domain_driver(domain_id)
         if driver:
             return driver
         else:
-            self.assignment_api.get_domain(domain_id)
             return self.driver
 
-    def _get_domain_id_and_driver(self, domain_scope):
-        domain_id = self._normalize_scope(domain_scope)
+    def _extract_entity_domain_and_driver(self, composite_id):
+        entity_id, domain_id = self._split_composite_id(composite_id)
+
         driver = self._select_identity_driver(domain_id)
-        return (domain_id, driver)
+        if driver.is_domain_aware():
+            return (composite_id, domain_id, driver)
+        else:
+            if not CONF.identity.domain_specific_drivers_enabled:
+                # For backward compatibility, we allow drivers that don't
+                # support domains (e.g. LDAP) to ignore domains and assume
+                # use of the default domain.
+                domain_id = CONF.identity.default_domain_id
+            return (entity_id, domain_id, driver)
+
+    def _extract_entity_suited_to_driver(self, composite_id, driver):
+        entity_id, unused = self._split_composite_id(composite_id)
+        if driver.is_domain_aware():
+            return composite_id
+        else:
+            return entity_id
 
     def _mark_domain_id_filter_satisfied(self, hints):
         if hints:
@@ -271,12 +319,11 @@ class Manager(manager.Manager):
     # - clear/set domain_ids for drivers that do not support domains
 
     @domains_configured
-    def authenticate(self, user_id, password, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        ref = driver.authenticate(user_id, password)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+    def authenticate(self, user_id, password):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(user_id))
+        ref = driver.authenticate(entity_id, password)
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @notifications.created('user')
     @domains_configured
@@ -285,70 +332,65 @@ class Manager(manager.Manager):
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
         user['enabled'] = clean.user_enabled(user['enabled'])
+        self.assignment_api.get_domain(user['domain_id'])
 
-        # For creating a user, the domain is in the object itself
-        domain_id = user_ref['domain_id']
-        driver = self._select_identity_driver(domain_id)
-        if not driver.is_domain_aware():
-            user = self._clear_domain_id(user)
-        ref = driver.create_user(user_id, user)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(user_id))
+        user = self._clear_domain_id_if_domain_unaware(driver, user)
+        ref = driver.create_user(entity_id, user)
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @domains_configured
-    def get_user(self, user_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        ref = driver.get_user(user_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+    def get_user(self, user_id):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(user_id))
+        ref = driver.get_user(entity_id)
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @domains_configured
     def get_user_by_name(self, user_name, domain_id):
         driver = self._select_identity_driver(domain_id)
         ref = driver.get_user_by_name(user_name, domain_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @manager.response_truncated
     @domains_configured
     def list_users(self, domain_scope=None, hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+        driver = self._select_identity_driver(domain_scope)
+        hints = hints or driver_hints.Hints()
         if not driver.is_domain_aware():
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_users(hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
-        return ref_list
+        ref_list = driver.list_users(hints)
+        return self._set_domain_id_if_domain_unaware(ref_list, domain_scope,
+                                                     driver)
 
     @notifications.updated('user')
     @domains_configured
-    def update_user(self, user_id, user_ref, domain_scope=None):
+    def update_user(self, user_id, user_ref):
         user = user_ref.copy()
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
         if 'enabled' in user:
             user['enabled'] = clean.user_enabled(user['enabled'])
+        if 'domain_id' in user:
+            self.assignment_api.get_domain(user['domain_id'])
 
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            user = self._clear_domain_id(user)
-        ref = driver.update_user(user_id, user)
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(user_id))
+        user = self._clear_domain_id_if_domain_unaware(driver, user)
+        ref = driver.update_user(entity_id, user)
         if user.get('enabled') is False or user.get('password') is not None:
             self.token_api.delete_tokens_for_user(user_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @notifications.deleted('user')
     @domains_configured
-    def delete_user(self, user_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        driver.delete_user(user_id)
+    def delete_user(self, user_id):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(user_id))
+        driver.delete_user(entity_id)
         self.credential_api.delete_credentials_for_user(user_id)
         self.token_api.delete_tokens_for_user(user_id)
 
@@ -357,120 +399,121 @@ class Manager(manager.Manager):
     def create_group(self, group_id, group_ref):
         group = group_ref.copy()
         group.setdefault('description', '')
+        self.assignment_api.get_domain(group['domain_id'])
 
-        # For creating a group, the domain is in the object itself
-        domain_id = group_ref['domain_id']
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
         driver = self._select_identity_driver(domain_id)
-        if not driver.is_domain_aware():
-            group = self._clear_domain_id(group)
-        ref = driver.create_group(group_id, group)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        group = self._clear_domain_id_if_domain_unaware(driver, group)
+        ref = driver.create_group(entity_id, group)
+        ref = self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
         return ref
 
     @domains_configured
-    def get_group(self, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        ref = driver.get_group(group_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+    def get_group(self, group_id):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
+        ref = driver.get_group(entity_id)
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @notifications.updated('group')
     @domains_configured
-    def update_group(self, group_id, group, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            group = self._clear_domain_id(group)
-        ref = driver.update_group(group_id, group)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
-        return ref
+    def update_group(self, group_id, group):
+        if 'domain_id' in group:
+            self.assignment_api.get_domain(group['domain_id'])
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
+        group = self._clear_domain_id_if_domain_unaware(driver, group)
+        ref = driver.update_group(entity_id, group)
+        return self._set_domain_id_if_domain_unaware(ref, domain_id, driver)
 
     @notifications.deleted('group')
     @domains_configured
-    def delete_group(self, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    def delete_group(self, group_id):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
         # As well as deleting the group, we need to invalidate
         # any tokens for the users who are members of the group.
         # We get the list of users before we attempt the group
         # deletion, so that we can remove these tokens after we know
         # the group deletion succeeded.
         user_ids = [
-            u['id'] for u in self.list_users_in_group(group_id, domain_scope)]
+            u['id'] for u in self.list_users_in_group(group_id)]
         self.token_api.delete_tokens_for_users(user_ids)
-        driver.delete_group(group_id)
+        driver.delete_group(entity_id)
 
     @domains_configured
-    def add_user_to_group(self, user_id, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        driver.add_user_to_group(user_id, group_id)
+    def add_user_to_group(self, user_id, group_id):
+        group_entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
+        user_entity_id = self._extract_entity_suited_to_driver(user_id, driver)
+        driver.add_user_to_group(user_entity_id, group_entity_id)
         self.token_api.delete_tokens_for_user(user_id)
 
     @domains_configured
-    def remove_user_from_group(self, user_id, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        driver.remove_user_from_group(user_id, group_id)
+    def remove_user_from_group(self, user_id, group_id):
+        group_entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
+        user_entity_id = self._extract_entity_suited_to_driver(user_id, driver)
+        driver.remove_user_from_group(user_entity_id, group_entity_id)
         self.token_api.delete_tokens_for_user(user_id)
 
     @manager.response_truncated
     @domains_configured
-    def list_groups_for_user(self, user_id, domain_scope=None,
-                             hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    def list_groups_for_user(self, user_id, hints=None):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(user_id))
+        hints = hints or driver_hints.Hints()
         if not driver.is_domain_aware():
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_groups_for_user(
-            user_id, hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
-        return ref_list
+        ref_list = driver.list_groups_for_user(entity_id, hints)
+        return self._set_domain_id_if_domain_unaware(ref_list, domain_id,
+                                                     driver)
 
     @manager.response_truncated
     @domains_configured
     def list_groups(self, domain_scope=None, hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+        driver = self._select_identity_driver(domain_scope)
+        hints = hints or driver_hints.Hints()
         if not driver.is_domain_aware():
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_groups(hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
-        return ref_list
+        ref_list = driver.list_groups(hints)
+        return self._set_domain_id_if_domain_unaware(ref_list, domain_scope,
+                                                     driver)
 
     @manager.response_truncated
     @domains_configured
-    def list_users_in_group(self, group_id, domain_scope=None,
-                            hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    def list_users_in_group(self, group_id, hints=None):
+        entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
+        hints = hints or driver_hints.Hints()
         if not driver.is_domain_aware():
             # We are effectively satisfying any domain_id filter by the above
             # driver selection, so remove any such filter
             self._mark_domain_id_filter_satisfied(hints)
-        ref_list = driver.list_users_in_group(
-            group_id, hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
-        return ref_list
+        ref_list = driver.list_users_in_group(entity_id, hints)
+        return self._set_domain_id_if_domain_unaware(ref_list, domain_id,
+                                                     driver)
 
     @domains_configured
-    def check_user_in_group(self, user_id, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        return driver.check_user_in_group(user_id, group_id)
+    def check_user_in_group(self, user_id, group_id):
+        group_entity_id, domain_id, driver = (
+            self._extract_entity_domain_and_driver(group_id))
+        user_entity_id = self._extract_entity_suited_to_driver(user_id, driver)
+        return driver.check_user_in_group(user_entity_id, group_entity_id)
 
     @domains_configured
-    def change_password(self, user_id, original_password, new_password,
-                        domain_scope):
+    def change_password(self, user_id, original_password, new_password):
 
         # authenticate() will raise an AssertionError if authentication fails
-        self.authenticate(user_id, original_password,
-                          domain_scope=domain_scope)
+        self.authenticate(user_id, original_password)
 
         update_dict = {'password': new_password}
-        self.update_user(user_id, update_dict, domain_scope=domain_scope)
+        self.update_user(user_id, update_dict)
 
     # TODO(morganfainberg): Remove the following deprecated methods once
     # Icehouse is released.  Maintain identity -> assignment proxy for 1

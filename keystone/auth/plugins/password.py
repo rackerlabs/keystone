@@ -114,8 +114,7 @@ class Password(auth.AuthMethodHandler):
         try:
             self.identity_api.authenticate(
                 user_id=user_info.user_id,
-                password=user_info.password,
-                domain_scope=user_info.domain_id)
+                password=user_info.password)
         except AssertionError:
             # authentication failed because of invalid username or password
             msg = _('Invalid username or password')
