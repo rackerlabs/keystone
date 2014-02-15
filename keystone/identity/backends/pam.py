@@ -56,7 +56,7 @@ class PamIdentity(identity.Driver):
     Tenant is always the same as User, root user has admin role.
     """
 
-    def is_domain_aware(self):
+    def _is_domain_aware(self):
         return False
 
     def authenticate(self, user_id, password):
