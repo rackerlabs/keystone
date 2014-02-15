@@ -96,7 +96,8 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
             user_ref = self.user_foo
         if tenant_ref is None:
             for user in default_fixtures.USERS:
-                if user['id'] == user_ref['id']:
+                if (getattr(self, 'user_%s' % user['id'])['id'] ==
+                        user_ref['id']):
                     tenant_id = user['tenants'][0]
         else:
             tenant_id = tenant_ref['id']
