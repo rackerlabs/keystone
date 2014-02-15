@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//K9k\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-15T06:41:00Z",
+      "side": 1,
+      "message": "@Adam,\nThe changes here are to retrieve an *unscoped* federation token, (with idp info, and method name \u003d federation, and group info) via the apache modules. Not the final token.\n\nAs you suggested, we do use a different token provider and auth plugin, to send back the final token, since that request will come via the usual /auth/tokens path.\n\nI could move to this to keystone.auth.controller, and have it extend the Auth class? Most of this would remain the same though.",
+      "parentUuid": "AAAAUX//xqc\u003d",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//xec\u003d",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 4
@@ -98,6 +116,24 @@
       "writtenOn": "2014-02-10T21:54:45Z",
       "side": 1,
       "message": "remove",
+      "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//K9s\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-15T06:41:00Z",
+      "side": 1,
+      "message": "We still need to define this route somewhere. \nThe apache modules protect certain URLs, which is why we want to protect /v3/tokens/idp/$idp/protocol/$protocol.\nIf we protected /v3/tokens, then normal keystone auth wouldn\u0027t work.\n\nWould it be better to define it in keystone.auth.routers?",
+      "parentUuid": "AAAAUX//xeg\u003d",
       "revId": "1cd99c11b0f1a51e114082003ab13ba0600a96eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
