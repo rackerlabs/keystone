@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//KC4\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-15T18:43:15Z",
+      "side": 1,
+      "message": "since lines 113-118 are a copy of 75-80, suggest create a function to share.",
+      "revId": "7dcd6f03b88ac4c00e9c50e98f5318eac05527fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
