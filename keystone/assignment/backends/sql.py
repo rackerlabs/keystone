@@ -538,7 +538,7 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
                  AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN,
                  name='type'),
         nullable=False)
-    actor_id = sql.Column(sql.String(64), nullable=False)
+    actor_id = sql.Column(sql.String(255), nullable=False)
     target_id = sql.Column(sql.String(64), nullable=False)
     role_id = sql.Column(sql.String(64), sql.ForeignKey('role.id'),
                          nullable=False)

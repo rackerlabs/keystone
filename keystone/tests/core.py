@@ -21,6 +21,7 @@ import shutil
 import socket
 import sys
 import time
+import uuid
 import warnings
 
 import fixtures
@@ -365,6 +366,11 @@ class TestCase(testtools.TestCase):
         for k, v in six.iteritems(kw):
             CONF.set_override(k, v)
 
+    def assign_unique_id(self, id=None, domain_id=None):
+        """Assign a new ID that is multi-domain aware."""
+        return ((id or uuid.uuid4().hex) + '@@' +
+                (domain_id or CONF.identity.default_domain_id))
+
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
 
@@ -410,6 +416,20 @@ class TestCase(testtools.TestCase):
         defined on `self`.
 
         """
+        def ensure_multi_domain_unique(id=None, domain_id=None):
+            """Assign a new multi-domain aware ID if necessary.
+
+            Since default_fixtures can get loaded multiple times, we
+            ensure we don't add the domain_id in twice.
+
+            """
+            new_id = id
+            if '@@' in new_id:
+                # Extract the entity ID part
+                new_id = new_id.split('@@')[0]
+            return new_id, self.assign_unique_id(id=new_id,
+                                                 domain_id=domain_id)
+
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         if hasattr(self, 'identity_api') and hasattr(self, 'assignment_api'):
@@ -441,6 +461,14 @@ class TestCase(testtools.TestCase):
                 setattr(self, 'role_%s' % role['id'], rv)
 
             for user in fixtures.USERS:
+                # We need to register the non multi-domain aware ID in
+                # as an attribute, while setting its value to the
+                # multi-domain composite ID (since some tests use the
+                # fixtures as a reference to check entity values being
+                # returned from API calls.
+                entity_id, composite_id = ensure_multi_domain_unique(
+                    id=user['id'], domain_id=user['domain_id'])
+                user['id'] = composite_id
                 user_copy = user.copy()
                 tenants = user_copy.pop('tenants')
                 try:
@@ -454,7 +482,7 @@ class TestCase(testtools.TestCase):
                                                                 user['id'])
                     except exception.Conflict:
                         pass
-                setattr(self, 'user_%s' % user['id'], user_copy)
+                setattr(self, 'user_%s' % entity_id, user_copy)
 
     def _paste_config(self, config):
         if not config.startswith('config:'):
