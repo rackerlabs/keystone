@@ -21,6 +21,7 @@ import uuid
 import six
 from testtools import matchers
 
+from keystoneclient.common import cms
 from keystone.catalog import core
 from keystone.common import driver_hints
 from keystone import config
@@ -2881,12 +2882,14 @@ class IdentityTests(object):
 
 class TokenTests(object):
     def _create_token_id(self):
-        # Token must start with MII here otherwise it fails the asn1 test
-        # and is not hashed in a SQL backend.
-        token_id = "MII"
+        #use a token signed by the cms module
+        token_id = ""
         for i in range(1, 20):
             token_id += uuid.uuid4().hex
-        return token_id
+        
+        return cms.cms_sign_token(token_id,
+                                  CONF.signing.certfile,
+                                  CONF.signing.keyfile)
 
     def test_token_crud(self):
         token_id = self._create_token_id()
