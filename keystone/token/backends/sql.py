@@ -53,10 +53,9 @@ class Token(sql.Base, token.Driver):
             raise exception.TokenNotFound(token_id=token_id)
         return token_ref.to_dict()
 
-    def create_token(self, token_id, data):
+    def create_token(self, token_id, data, expiry):
         data_copy = copy.deepcopy(data)
-        if not data_copy.get('expires'):
-            data_copy['expires'] = token.default_expire_time()
+        data_copy['expires'] = expiry
         if not data_copy.get('user_id'):
             data_copy['user_id'] = data_copy['user']['id']
 

@@ -199,10 +199,8 @@ class MemcacheToken(tests.TestCase, test_backend.TokenTests):
         def _create_token(expire_time):
             token_id = uuid.uuid4().hex
             user_id = six.text_type(uuid.uuid4().hex)
-            data = {'id': token_id, 'a': 'b', 'user': {'id': user_id},
-                    'expires': expire_time
-                    }
-            self.token_api.create_token(token_id, data)
+            data = {'id': token_id, 'a': 'b', 'user': {'id': user_id}}
+            self.token_api.create_token(token_id, data, expiry=expire_time)
             return data
 
         for d in ['+0', '-11', '-8', '-5', '+5', '+8', '+14']:

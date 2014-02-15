@@ -70,11 +70,10 @@ class Token(token.Driver):
 
         return token_ref
 
-    def create_token(self, token_id, data):
+    def create_token(self, token_id, data, expiry):
         data_copy = copy.deepcopy(data)
         ptk = self._prefix_token_id(token_id)
-        if not data_copy.get('expires'):
-            data_copy['expires'] = token.default_expire_time()
+        data_copy['expires'] = expiry
         if not data_copy.get('user_id'):
             data_copy['user_id'] = data_copy['user']['id']
         kwargs = {}
