@@ -29,7 +29,7 @@ class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
     attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
                   'default_project_id']
-    id = sql.Column(sql.String(64), primary_key=True)
+    id = sql.Column(sql.String(255), primary_key=True)
     name = sql.Column(sql.String(255), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
@@ -51,7 +51,7 @@ class User(sql.ModelBase, sql.DictBase):
 class Group(sql.ModelBase, sql.DictBase):
     __tablename__ = 'group'
     attributes = ['id', 'name', 'domain_id', 'description']
-    id = sql.Column(sql.String(64), primary_key=True)
+    id = sql.Column(sql.String(255), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
@@ -65,10 +65,10 @@ class Group(sql.ModelBase, sql.DictBase):
 class UserGroupMembership(sql.ModelBase, sql.DictBase):
     """Group membership join table."""
     __tablename__ = 'user_group_membership'
-    user_id = sql.Column(sql.String(64),
+    user_id = sql.Column(sql.String(255),
                          sql.ForeignKey('user.id'),
                          primary_key=True)
-    group_id = sql.Column(sql.String(64),
+    group_id = sql.Column(sql.String(255),
                           sql.ForeignKey('group.id'),
                           primary_key=True)
 

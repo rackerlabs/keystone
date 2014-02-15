@@ -70,7 +70,7 @@ class SqlModels(SqlTests):
                 self.assertEqual(table.c[col].type.length, length)
 
     def test_user_model(self):
-        cols = (('id', sql.String, 64),
+        cols = (('id', sql.String, 255),
                 ('name', sql.String, 255),
                 ('password', sql.String, 128),
                 ('domain_id', sql.String, 64),
@@ -79,7 +79,7 @@ class SqlModels(SqlTests):
         self.assertExpectedSchema('user', cols)
 
     def test_group_model(self):
-        cols = (('id', sql.String, 64),
+        cols = (('id', sql.String, 255),
                 ('name', sql.String, 64),
                 ('description', sql.Text, None),
                 ('domain_id', sql.String, 64),
@@ -108,15 +108,15 @@ class SqlModels(SqlTests):
 
     def test_role_assignment_model(self):
         cols = (('type', sql.Enum, None),
-                ('actor_id', sql.String, 64),
+                ('actor_id', sql.String, 255),
                 ('target_id', sql.String, 64),
                 ('role_id', sql.String, 64),
                 ('inherited', sql.Boolean, False))
         self.assertExpectedSchema('assignment', cols)
 
     def test_user_group_membership(self):
-        cols = (('group_id', sql.String, 64),
-                ('user_id', sql.String, 64))
+        cols = (('group_id', sql.String, 255),
+                ('user_id', sql.String, 255))
         self.assertExpectedSchema('user_group_membership', cols)
 
 
