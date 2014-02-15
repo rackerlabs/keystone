@@ -91,9 +91,6 @@ class Identity(identity.Driver):
         """
         return utils.check_password(password, user_ref.password)
 
-    def is_domain_aware(self):
-        return True
-
     # Identity interface
     def authenticate(self, user_id, password):
         session = sql.get_session()
