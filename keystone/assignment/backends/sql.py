@@ -25,19 +25,6 @@ from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 CONF = config.CONF
 
-# Current set of Assignment types we support
-USER_PROJECT = 'UserProject'
-GROUP_PROJECT = 'GroupProject'
-USER_DOMAIN = 'UserDomain'
-GROUP_DOMAIN = 'GroupDomain'
-
-
-class AssignmentType:
-    USER_PROJECT = 'UserProject'
-    GROUP_PROJECT = 'GroupProject'
-    USER_DOMAIN = 'UserDomain'
-    GROUP_DOMAIN = 'GroupDomain'
-
 
 class AssignmentType:
     USER_PROJECT = 'UserProject'
@@ -76,7 +63,7 @@ class Assignment(sql.Base, assignment.Driver):
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
-            query = session.query(RoleAssignment)
+            query = session.query(RoleAssignment.actor_id)
             query = query.filter_by(type=AssignmentType.USER_PROJECT)
             query = query.filter_by(target_id=tenant_id)
             assignments = query.all()
@@ -551,7 +538,7 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
                  AssignmentType.USER_DOMAIN, AssignmentType.GROUP_DOMAIN,
                  name='type'),
         nullable=False)
-    actor_id = sql.Column(sql.String(64), nullable=False)
+    actor_id = sql.Column(sql.String(255), nullable=False)
     target_id = sql.Column(sql.String(64), nullable=False)
     role_id = sql.Column(sql.String(64), sql.ForeignKey('role.id'),
                          nullable=False)
