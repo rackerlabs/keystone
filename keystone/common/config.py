@@ -135,6 +135,20 @@ FILE_OPTIONS = {
                    help=('Path for Keystone to locate the domain specific'
                          'identity configuration files if '
                          'domain_specific_drivers_enabled is set to true.')),
+        cfg.BoolOpt('backward_compatible_default_driver_entity_ids',
+                    default=False,
+                    help=('The internal format of user and group IDs changed '
+                          'at IceHouse. For domains that do not understand '
+                          'domains (e.g. LDAP), keystone can not know whether '
+                          'an ID was created in the old or new format. By '
+                          'default it will return it in the new format, which '
+                          'might mean that the ID will have changed. Since, '
+                          'up until now, the LDAP backend only supported the '
+                          'default domain, this is only an issue if IDs need '
+                          'to be preserved for existing entities in this '
+                          'domain, being handled by the default backend LDAP '
+                          'driver. Setting this variable to True will prevent '
+                          'this issue.')),
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity'),
