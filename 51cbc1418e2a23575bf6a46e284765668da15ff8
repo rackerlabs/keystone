@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Jv8\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:06:01Z",
+      "side": 1,
+      "message": "python!\n\n  group_ids \u003d [g[\u0027id\u0027] for g in token[\u0027user\u0027].get(\u0027groups\u0027, [])]",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Jv0\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:06:01Z",
+      "side": 1,
+      "message": "should just be getting groups out of context, not the token itself",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ju4\u003d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:06:01Z",
+      "side": 1,
+      "message": "what is this? driver methods don\u0027t need to be exposed to the API",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ju0\u003d",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:06:01Z",
+      "side": 1,
+      "message": "??",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
