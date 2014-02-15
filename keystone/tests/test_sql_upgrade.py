@@ -1203,6 +1203,14 @@ class SqlUpgradeTests(SqlMigrateBase):
         add_region(region_nonunique)
         self.assertEqual(2, session.query(region_nonunique).count())
 
+    def test_id_mapping(self):
+        self.upgrade(40)
+        self.assertTableDoesNotExist('id_mapping')
+        self.upgrade(41)
+        self.assertTableExists('id_mapping')
+        self.downgrade(40)
+        self.assertTableDoesNotExist('id_mapping')
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

@@ -183,6 +183,11 @@ class ImmutableAttributeError(Forbidden):
                        "'%(attributes)s' in target %(target)s")
 
 
+class CrossBackendNotAllowed(Forbidden):
+    message_format = _("Group membership across backend boundaries is not "
+                       "allowed, member in question is %(public_id)s")
+
+
 class NotFound(Error):
     message_format = _("Could not find, %(target)s.")
     code = 404
@@ -264,6 +269,12 @@ class IdentityProviderNotFound(NotFound):
 class FederatedProtocolNotFound(NotFound):
     message_format = _("Could not find federated protocol %(protocol_id)s for"
                        " IdentityProvider, %(idp_id)s")
+
+
+class PublicIDNotFound(NotFound):
+    # This is used internally and mapped to either User/GroupNotFound or,
+    # Assertion before the exception leaves keystone
+    message_format = _("%(id)s")
 
 
 class Conflict(Error):

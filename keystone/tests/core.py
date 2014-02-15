@@ -49,6 +49,7 @@ from keystone.common.kvs import core as kvs_core
 from keystone.common import utils as common_utils
 from keystone import config
 from keystone import exception
+from keystone.identity.mapping_backends import sql as mapping_sql
 from keystone import notifications
 from keystone.openstack.common.fixture import config as config_fixture
 from keystone.openstack.common.gettextutils import _
@@ -495,7 +496,9 @@ class TestCase(BaseTestCase):
                 try:
                     self.identity_api.create_user(user['id'], user_copy)
                 except exception.Conflict:
-                    pass
+                    self.identity_api.delete_user(user['id'])
+                    rv = self.identity_api.create_user(user['id'],
+                                                       user_copy.copy())
                 for tenant_id in tenants:
                     try:
                         self.assignment_api.add_user_to_project(tenant_id,
@@ -530,6 +533,12 @@ class TestCase(BaseTestCase):
     def clear_auth_plugin_registry(self):
         auth.controllers.AUTH_METHODS.clear()
         auth.controllers.AUTH_PLUGINS_LOADED = False
+
+    def list_id_mappings(self):
+        # List all id_mappings for testing purposes
+        a_session = session.get_session()
+        refs = a_session.query(mapping_sql.IDMapping).all()
+        return [x.to_dict() for x in refs]
 
     def assertCloseEnoughForGovernmentWork(self, a, b, delta=3):
         """Asserts that two datetimes are nearly equal within a small delta.

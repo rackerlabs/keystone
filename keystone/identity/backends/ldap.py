@@ -49,6 +49,9 @@ class Identity(identity.Driver):
     def is_domain_aware(self):
         return False
 
+    def generates_uuids(self):
+        return False
+
     # Identity interface
 
     def authenticate(self, user_id, password):
