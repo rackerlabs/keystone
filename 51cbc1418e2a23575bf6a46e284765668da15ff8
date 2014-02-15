@@ -67,6 +67,108 @@
       "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//JuU\u003d",
+        "filename": "keystone/auth/plugins/federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:12:13Z",
+      "side": 1,
+      "message": "these can be removed",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//JuY\u003d",
+        "filename": "keystone/auth/plugins/federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:12:13Z",
+      "side": 1,
+      "message": "don\u0027t assign copyright to the foundation -- we don\u0027t work for them",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//JuM\u003d",
+        "filename": "keystone/auth/plugins/federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:12:13Z",
+      "side": 1,
+      "message": "keep commented out code out of gerrit ;)",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//JuI\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:12:13Z",
+      "side": 1,
+      "message": "put the L back into protocol -- zero need to abbreviate it, it just makes the code harder to read for newcomers",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Jt8\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:12:13Z",
+      "side": 1,
+      "message": "why??",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Jtw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-15T23:12:13Z",
+      "side": 1,
+      "message": "don\u0027t assign request attributes to the controller -- that will cause terrible, terrible bugs with concurrency",
+      "revId": "51cbc1418e2a23575bf6a46e284765668da15ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
