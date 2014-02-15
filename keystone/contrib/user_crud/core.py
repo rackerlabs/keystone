@@ -80,7 +80,8 @@ class UserController(identity.controllers.User):
         token_id = uuid.uuid4().hex
         new_token_ref = copy.copy(token_ref)
         new_token_ref['id'] = token_id
-        self.token_api.create_token(token_id, new_token_ref)
+        expiry = token_ref['expires']
+        self.token_api.create_token(token_id, new_token_ref, expiry=expiry)
         LOG.debug('TOKEN_REF %s', new_token_ref)
         return {'access': {'token': new_token_ref}}
 

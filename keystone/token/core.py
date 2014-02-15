@@ -152,11 +152,15 @@ class Manager(manager.Manager):
         # Only ever use the "unique" id in the cache key.
         return self.driver.get_token(token_id)
 
-    def create_token(self, token_id, data):
+    def create_token(self, token_id, data, expiry=None):
         unique_id = self.unique_id(token_id)
         data_copy = copy.deepcopy(data)
         data_copy['id'] = unique_id
-        ret = self.driver.create_token(unique_id, data_copy)
+        if expiry is None:
+            expiry = default_expire_time()
+        if isinstance(expiry, six.string_types):
+            expiry = timeutils.normalize_time(timeutils.parse_isotime(expiry))
+        ret = self.driver.create_token(unique_id, data_copy, expiry=expiry)
         if SHOULD_CACHE(ret):
             # NOTE(morganfainberg): when doing a cache set, you must pass the
             # same arguments through, the same as invalidate (this includes
@@ -303,7 +307,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def create_token(self, token_id, data):
+    def create_token(self, token_id, data, expiry):
         """Create a token by id and data.
 
         :param token_id: identity of the token
@@ -321,6 +325,8 @@ class Driver(object):
             }
 
         :type data: dict
+        :param expiry: expire time of the token
+        :type expiry: datetime.datetime (timezone aware)
         :returns: token_ref or None.
 
         """

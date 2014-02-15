@@ -359,12 +359,9 @@ class BaseProvider(provider.Provider):
         self.v3_token_data_helper = V3TokenDataHelper()
         self.v2_token_data_helper = V2TokenDataHelper()
 
-    def _create_token(self, token_id, token_data):
+    def _create_token(self, token_id, token_data, expiry):
         try:
-            if isinstance(token_data['expires'], six.string_types):
-                token_data['expires'] = timeutils.normalize_time(
-                    timeutils.parse_isotime(token_data['expires']))
-            self.token_api.create_token(token_id, token_data)
+            self.token_api.create_token(token_id, token_data, expiry=expiry)
         except Exception:
             exc_info = sys.exc_info()
             # an identical token may have been created already.
@@ -398,7 +395,6 @@ class BaseProvider(provider.Provider):
         expiry = token_data['access']['token']['expires']
         data = dict(key=token_id,
                     id=token_id,
-                    expires=expiry,
                     user=token_ref['user'],
                     tenant=token_ref['tenant'],
                     metadata=token_ref['metadata'],
@@ -406,7 +402,7 @@ class BaseProvider(provider.Provider):
                     bind=token_ref.get('bind'),
                     trust_id=token_ref['metadata'].get('trust_id'),
                     token_version=token.provider.V2)
-        self._create_token(token_id, data)
+        self._create_token(token_id, data, expiry)
 
         return (token_id, token_data)
 
@@ -462,14 +458,13 @@ class BaseProvider(provider.Provider):
                                     trust['trustee_user_id'])
         data = dict(key=token_id,
                     id=token_id,
-                    expires=expiry,
                     user=token_data['token']['user'],
                     tenant=token_data['token'].get('project'),
                     metadata=metadata_ref,
                     token_data=token_data,
                     trust_id=trust['id'] if trust else None,
                     token_version=token.provider.V3)
-        self._create_token(token_id, data)
+        self._create_token(token_id, data, expiry)
 
         return (token_id, token_data)
 

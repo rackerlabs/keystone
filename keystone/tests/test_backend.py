@@ -3004,8 +3004,6 @@ class TokenTests(object):
             data['tenant'] = {'id': tenant_id, 'name': tenant_id}
         if tenant_id is NULL_OBJECT:
             data['tenant'] = None
-        if expires is not None:
-            data['expires'] = expires
         if trust_id is not None:
             data['trust_id'] = trust_id
             data.setdefault('access', {}).setdefault('trust', {})
@@ -3017,7 +3015,7 @@ class TokenTests(object):
         # Issue token stores a copy of all token data at token['token_data'].
         # This emulates that assumption as part of the test.
         data['token_data'] = copy.deepcopy(data)
-        new_token = self.token_api.create_token(token_id, data)
+        new_token = self.token_api.create_token(token_id, data, expiry=expires)
         return new_token['id'], data
 
     def test_delete_tokens(self):
@@ -3137,20 +3135,20 @@ class TokenTests(object):
 
     def test_expired_token(self):
         token_id = uuid.uuid4().hex
-        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        expires = timeutils.utcnow() - datetime.timedelta(minutes=1)
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
-                'expires': expire_time,
                 'trust_id': None,
                 'user': {'id': 'testuserid'}}
-        data_ref = self.token_api.create_token(token_id, data)
+        data_ref = self.token_api.create_token(token_id, data, expiry=expires)
         data_ref.pop('user_id')
+        self.assertEqual(data_ref.pop('expires'), expires)
         self.assertDictEqual(data_ref, data)
         self.assertRaises(exception.TokenNotFound,
                           self.token_api.get_token, token_id)
 
     def test_null_expires_token(self):
         token_id = uuid.uuid4().hex
-        data = {'id': token_id, 'id_hash': token_id, 'a': 'b', 'expires': None,
+        data = {'id': token_id, 'id_hash': token_id, 'a': 'b',
                 'user': {'id': 'testuserid'}}
         data_ref = self.token_api.create_token(token_id, data)
         self.assertIsNotNone(data_ref['expires'])
@@ -3197,23 +3195,23 @@ class TokenTests(object):
 
     def test_flush_expired_token(self):
         token_id = uuid.uuid4().hex
-        expire_time = timeutils.utcnow() - datetime.timedelta(minutes=1)
+        expires = timeutils.utcnow() - datetime.timedelta(minutes=1)
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
-                'expires': expire_time,
                 'trust_id': None,
                 'user': {'id': 'testuserid'}}
-        data_ref = self.token_api.create_token(token_id, data)
+        data_ref = self.token_api.create_token(token_id, data, expiry=expires)
         data_ref.pop('user_id')
+        self.assertEqual(data_ref.pop('expires'), expires)
         self.assertDictEqual(data_ref, data)
 
         token_id = uuid.uuid4().hex
-        expire_time = timeutils.utcnow() + datetime.timedelta(minutes=1)
+        expires = timeutils.utcnow() + datetime.timedelta(minutes=1)
         data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
-                'expires': expire_time,
                 'trust_id': None,
                 'user': {'id': 'testuserid'}}
-        data_ref = self.token_api.create_token(token_id, data)
+        data_ref = self.token_api.create_token(token_id, data, expiry=expires)
         data_ref.pop('user_id')
+        self.assertEqual(data_ref.pop('expires'), expires)
         self.assertDictEqual(data_ref, data)
 
         self.token_api.flush_expired_tokens()
@@ -3226,17 +3224,15 @@ class TokenTests(object):
         expire_time = timeutils.utcnow() + datetime.timedelta(minutes=10)
         token_id = uuid.uuid4().hex
         token_data = {'id_hash': token_id, 'id': token_id, 'a': 'b',
-                      'expires': expire_time,
                       'trust_id': None,
                       'user': {'id': 'testuserid'}}
         token2_id = uuid.uuid4().hex
         token2_data = {'id_hash': token2_id, 'id': token2_id, 'a': 'b',
-                       'expires': expire_time,
                        'trust_id': None,
                        'user': {'id': 'testuserid'}}
         # Create 2 Tokens.
-        self.token_api.create_token(token_id, token_data)
-        self.token_api.create_token(token2_id, token2_data)
+        self.token_api.create_token(token_id, token_data, expiry=expire_time)
+        self.token_api.create_token(token2_id, token2_data, expiry=expire_time)
         # Verify the revocation list is empty.
         self.assertEqual([], self.token_api.list_revoked_tokens())
         # Delete a token directly, bypassing the manager.
