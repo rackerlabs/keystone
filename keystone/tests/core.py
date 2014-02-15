@@ -450,7 +450,9 @@ class TestCase(testtools.TestCase):
                     rv = self.identity_api.create_user(user['id'],
                                                        user_copy.copy())
                 except exception.Conflict:
-                    pass
+                    self.identity_api.delete_user(user['id'])
+                    rv = self.identity_api.create_user(user['id'],
+                                                       user_copy.copy())
                 for tenant_id in tenants:
                     try:
                         self.assignment_api.add_user_to_project(tenant_id,
