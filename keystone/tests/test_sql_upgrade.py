@@ -2014,6 +2014,153 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('assignment')
         check_grants(session, base_data)
 
+    def test_domain_specific_identifiers(self):
+
+        def create_base_data(session):
+            base_data = {}
+            # Create a Domain
+            base_data['domain'] = {'id': uuid.uuid4().hex,
+                                   'name': uuid.uuid4().hex,
+                                   'enabled': True}
+            session.execute(domain_table.insert().values(base_data['domain']))
+
+            # Create a User
+            base_data['user'] = {'id': uuid.uuid4().hex,
+                                 'name': uuid.uuid4().hex,
+                                 'domain_id': base_data['domain']['id'],
+                                 'password': uuid.uuid4().hex,
+                                 'enabled': True,
+                                 'extra': json.dumps({})}
+            session.execute(user_table.insert().values(base_data['user']))
+
+            # Create a Group
+            base_data['group'] = {'id': uuid.uuid4().hex,
+                                  'name': uuid.uuid4().hex,
+                                  'domain_id': base_data['domain']['id'],
+                                  'extra': json.dumps({})}
+            session.execute(group_table.insert().values(base_data['group']))
+
+            # Create a User-Group membership
+            base_data['membership'] = {'user_id': base_data['user']['id'],
+                                       'group_id': base_data['group']['id']}
+            session.execute(
+                membership_table.insert().values(base_data['membership']))
+
+            # Create a Role
+            base_data['role'] = {'id': uuid.uuid4().hex,
+                                 'name': uuid.uuid4().hex}
+            session.execute(role_table.insert().values(base_data['role']))
+
+            # Create an Assignment
+            base_data['assignment'] = {'type': 'UserDomain',
+                                       'actor_id': base_data['user']['id'],
+                                       'target_id': base_data['domain']['id'],
+                                       'role_id': base_data['role']['id'],
+                                       'inherited': False}
+            session.execute(
+                assignment_table.insert().values(base_data['assignment']))
+
+            return base_data
+
+        def add_large_data(session, base_data):
+            large_data = {}
+
+            # Create a User
+            large_data['user'] = {'id': 'a' * 255,
+                                  'name': uuid.uuid4().hex,
+                                  'domain_id': base_data['domain']['id'],
+                                  'password': uuid.uuid4().hex,
+                                  'enabled': True,
+                                  'extra': json.dumps({})}
+            session.execute(user_table.insert().values(large_data['user']))
+
+            # Create a Group
+            large_data['group'] = {'id': 'a' * 255,
+                                   'name': uuid.uuid4().hex,
+                                   'domain_id': base_data['domain']['id'],
+                                   'extra': json.dumps({})}
+            session.execute(group_table.insert().values(large_data['group']))
+
+            # Create a User-Group membership
+            large_data['membership'] = {'user_id': large_data['user']['id'],
+                                        'group_id': large_data['group']['id']}
+            session.execute(
+                membership_table.insert().values(large_data['membership']))
+
+            # Create an Assignment
+            large_data['assignment'] = {'type': 'UserDomain',
+                                        'actor_id': large_data['user']['id'],
+                                        'target_id': base_data['domain']['id'],
+                                        'role_id': base_data['role']['id'],
+                                        'inherited': False}
+            session.execute(
+                assignment_table.insert().values(large_data['assignment']))
+
+            return large_data
+
+        def check_base_data(session, base_data):
+            q = session.query(user_table)
+            q = q.filter_by(id=base_data['user']['id'])
+            q.one()
+
+            q = session.query(group_table)
+            q = q.filter_by(id=base_data['group']['id'])
+            q.one()
+
+            q = session.query(membership_table)
+            q = q.filter_by(user_id=base_data['membership']['user_id'])
+            q = q.filter_by(group_id=base_data['membership']['group_id'])
+            q.one()
+
+            q = session.query(assignment_table)
+            q = q.filter_by(type=base_data['assignment']['type'])
+            q = q.filter_by(actor_id=base_data['assignment']['actor_id'])
+            q = q.filter_by(target_id=base_data['assignment']['target_id'])
+            q = q.filter_by(role_id=base_data['assignment']['role_id'])
+            q.one()
+
+        def check_large_data(session, base_data, large_data):
+            q = session.query(user_table)
+            q = q.filter_by(id=large_data['user']['id'])
+            self.assertEqual(len(q.all()), 0)
+
+            q = session.query(group_table)
+            q = q.filter_by(id=large_data['group']['id'])
+            self.assertEqual(len(q.all()), 0)
+
+            q = session.query(membership_table)
+            q = q.filter_by(user_id=large_data['membership']['user_id'])
+            q = q.filter_by(group_id=large_data['membership']['group_id'])
+            self.assertEqual(len(q.all()), 0)
+
+            q = session.query(assignment_table)
+            q = q.filter_by(type=base_data['assignment']['type'])
+            q = q.filter_by(actor_id=large_data['assignment']['actor_id'])
+            q = q.filter_by(target_id=base_data['assignment']['target_id'])
+            q = q.filter_by(role_id=base_data['assignment']['role_id'])
+            self.assertEqual(len(q.all()), 0)
+
+        self.upgrade(40)
+
+        domain_table = sqlalchemy.Table('domain', self.metadata, autoload=True)
+        user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
+        group_table = sqlalchemy.Table('group', self.metadata,
+                                       autoload=True)
+        membership_table = sqlalchemy.Table('user_group_membership',
+                                            self.metadata, autoload=True)
+        role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
+        assignment_table = sqlalchemy.Table('assignment', self.metadata,
+                                            autoload=True)
+
+        session = self.Session()
+        base_data = create_base_data(session)
+        self.upgrade(41)
+        check_base_data(session, base_data)
+        large_data = add_large_data(session, base_data)
+        self.downgrade(40)
+        check_base_data(session, base_data)
+        check_large_data(session, base_data, large_data)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
