@@ -19,11 +19,13 @@ import os
 from oslo.config import cfg
 import pbr.version
 
+from keystone import assignment
 from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
 from keystone import config
+from keystone import identity
 from keystone import token
 
 CONF = config.CONF
@@ -155,12 +157,45 @@ class TokenFlush(BaseApp):
         token_manager.driver.flush_expired_tokens()
 
 
+class MappingPurge(BaseApp):
+    """Purge the mapping table."""
+
+    name = 'mapping_purge'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(MappingPurge, cls).add_argument_parser(subparsers)
+        parser.add_argument('--domain-name', default=None, nargs='?',
+                            help=('Purge any mappings for the domain '
+                                  'specified. If not provided, all mappings '
+                                  'will be purged. '))
+
+        return parser
+
+    @classmethod
+    def get_domain_id():
+        try:
+            a = CONF.command.domain_name
+            if a:
+                assignment_manager = assignment.Manager()
+                return assignment_manager.driver.get_domain_by_name(a)
+        except KeyError:
+            raise ValueError("Unknown domain '%s' in --domain-name" % a)
+
+    @staticmethod
+    def main(cls):
+        domain_id = cls.get_domain_id()
+        mapping_manager = identity.MappingManager()
+        mapping_manager.driver.purge_mapping(domain_id)
+
+
 CMDS = [
     DbSync,
     DbVersion,
     PKISetup,
     SSLSetup,
     TokenFlush,
+    MappingPurge,
 ]
 
 

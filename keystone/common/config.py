@@ -146,6 +146,24 @@ FILE_OPTIONS = {
                    help='Path for Keystone to locate the domain specific '
                         'identity configuration files if '
                         'domain_specific_drivers_enabled is set to true.'),
+        cfg.BoolOpt('backward_compatible_ids',
+                    default=True,
+                    help='The format of user and group IDs changed '
+                         'in Juno for backends that do not generate UUIDs '
+                         '(e.g. LDAP) with keystone provding a mapping of an '
+                         'UUID or hash to the underlying attribute in LDAP. '
+                         'By default this mapping is disabled, which ensures '
+                         'that existing IDs will not change. '
+                         'Since, up until now, the LDAP backend only '
+                         'supported the default domain, this is only relevant '
+                         'to existing entities in this domain, being handled '
+                         'by the default backend LDAP driver. It is safe '
+                         'to set this value to False if you do not store user '
+                         'and group IDs outside of keystone and expect them '
+                         'to still be honored. If you are using domain '
+                         'specific drivers, then keystone only honors '
+                         'backards compatible IDs for the default domain, all '
+                         'other domains will always use the mapping'),
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity'),
@@ -156,6 +174,28 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit', default=None,
                    help='Maximum number of entities that will be returned in '
                         'an identity collection.'),
+    ],
+    'identity_mapping': [
+        cfg.StrOpt('driver',
+                   default=('keystone.identity.mapping_backends'
+                            '.sql.Mapping'),
+                   help='Keystone Identity Mapping backend driver'),
+        cfg.StrOpt('public_id_generator',
+                   default='uuid',
+                   help='When generating the public ID for a mapping, this '
+                        'determines the algorithm being used, which by '
+                        'default is a regular uuid.  Alternatively sha1 '
+                        'may be specified to use a sha1 hash of domain_id, '
+                        'the local_id from the underlying driver, '
+                        'and the entity type (User or Group). Note that the '
+                        'generator is only use when the underlying driver '
+                        'does not generate UUIDs (e.g. LDAP).  Use sha1 if '
+                        'you need to be able to regenerate the same public ID '
+                        'from the underlying data (e.g. running multiple '
+                        'keystone servers and it is possible for more '
+                        'than one of them to be generating the ID at any '
+                        'given time).  This value should be considered '
+                        'immutable.'),
     ],
     'trust': [
         cfg.BoolOpt('enabled', default=True,
