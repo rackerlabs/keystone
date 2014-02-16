@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//IgU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "Can we use \"import pycadf\" here and \"pycadf.host\" in the code instead?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ieg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "Note that with https://review.openstack.org/#/c/70664/ this is going away.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IgM\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest remove \"cadf_\" prefix since that\u0027s the name of the class anyways.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IgE\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "use functools.wraps -- http://docs.python.org/2/library/functools.html#functools.wraps",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IgA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "this documentation isn\u0027t accurate since a notification is sent even if it\u0027s not successful.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//If8\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest remove action\u003d, remote_addr\u003d, etc., since the variables are named well and _send_audit_notification takes positional args. (applies at 51 \u0026 58 too)",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ifw\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest put \"return result\" in with the else: leg. The way it is now, it looks like there\u0027s some case where the _send_audit_notification(OUTCOME_SUCCESS) might not happen while \"return result\" does, but that can\u0027t happen. So make the code reflect how it actually works.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ifg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "isn\u0027t 68-70 just\n\nemit_event \u003d CadfNotificationWrapper\n\n?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IfU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest change \"authenticate\" to \"e.g., \u0027authenticate\u0027\" ?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IfQ\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "what if the action isn\u0027t authentication?\n\nAlso, suggest add \"may be None\"",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IfM\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "what if the action isn\u0027t authentication?\n\nAlso, suggest add \"may be None\"",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IfE\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "what if it isn\u0027t an authentication request?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IfY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest use taxonomy.OUTCOME_SUCCESS rather than \"pending, success, failure\" -- would be nice to be able to refer to some enumerated type but it looks like pycadf didn\u0027t do that.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IfA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest pass in a pycadf_host.Host to this function rather than remote_addr and http_user_agent.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ie8\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest pass in a resource.Resource to this function rather than user_id and pycadf_host.Host.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ie4\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "where does the \u0027activity\u0027 magic number come from?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Iew\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "where do these magic numbers come from?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ies\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest remove \"Keystone\" since that\u0027s in the log info already.\n\nalso, suggest do event.as_dict() once rather than here and at line 101.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Iek\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "is this ever going to change? if not, suggest save it somewhere so only do it once.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ido\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "since the \"INFO\" constant is so poorly named, suggest use a keyword argument so that readers know what it\u0027s for: priority\u003dnotifier_api.INFO",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IbY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "there should be a unit test that covers this case.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IdI\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "suggest use mockpatch instead. OpenStack seems to be moving to mock rather than mox.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IdE\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "use self.assertTrue(self._notifications) since don\u0027t care about the actual length.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IdA\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:37:50Z",
+      "side": 1,
+      "message": "what\u0027s with this change?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
