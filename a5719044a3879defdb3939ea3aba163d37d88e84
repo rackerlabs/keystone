@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//JbA\u003d",
+        "filename": "keystone/auth/plugins/federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T04:13:22Z",
+      "side": 1,
+      "message": "I will change this file to handle all federation auth, scoped or unscoped.",
+      "revId": "a5719044a3879defdb3939ea3aba163d37d88e84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//JbM\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T04:13:22Z",
+      "side": 1,
+      "message": "will be renamed to get_unscoped_token (or something similar)... and all of these changes will be placed in auth.plugins.federation.",
+      "revId": "a5719044a3879defdb3939ea3aba163d37d88e84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//JbQ\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T04:13:22Z",
+      "side": 1,
+      "message": "my plan is to move this to auth routers, and have it call authenticate_unscoped_federation - a new function, which will call the federation plugin",
+      "revId": "a5719044a3879defdb3939ea3aba163d37d88e84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
