@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//J3A\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-16T00:59:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//UlA\u003d",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ujw\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-14T00:22:15Z",
       "side": 1,
       "message": "by ending one transaction and starting a new one it\u0027s broken the reason we had the query and insert in a transaction originally.",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//J24\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-16T00:59:09Z",
+      "side": 1,
+      "message": "So I\u0027ll admit I had trouble with this bit of code.  I couldn\u0027t find a way of successfully catching the DBDuplication error without doing this - if I kept it in the transaction, it complain that the Tx was already closed when we finally exit.  Suggestions welcome!!",
+      "parentUuid": "AAAAUX//Ujw\u003d",
       "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//J20\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-16T00:59:09Z",
+      "side": 1,
+      "message": "as above.",
+      "parentUuid": "AAAAUX//UjM\u003d",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//UiE\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-14T00:22:15Z",
       "side": 1,
       "message": "change \"don\u0027t\" to \"doesn\u0027t\" and Assignment to RoleAssignment",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//J2w\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-16T00:59:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//UiE\u003d",
       "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Jms\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-16T00:59:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Ubc\u003d",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//UbY\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-14T00:36:09Z",
       "side": 1,
       "message": "there should be a test for this, too.",
+      "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Jmw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-16T00:59:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//UbY\u003d",
       "revId": "f3dd36c877837278acca3180ae033ca9e883ad5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
