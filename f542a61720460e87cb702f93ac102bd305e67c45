@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//Ikg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T15:12:58Z",
+      "side": 1,
+      "message": "suggest change to None here to match the list_opts docs.",
+      "revId": "f542a61720460e87cb702f93ac102bd305e67c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IlI\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
