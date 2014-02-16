@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//Iaw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T16:39:36Z",
+      "side": 1,
+      "message": "Change \"basing\" to \"based\"",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Iuc\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 16
