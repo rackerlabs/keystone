@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//IkY\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T15:15:42Z",
+      "side": 1,
+      "message": "there should not be any KDS options in here.",
+      "revId": "3759b9b53cfbfc2c71b0bfc9fa87ddedfb89368c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IkU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T15:15:42Z",
+      "side": 1,
+      "message": "I think it would be easier to review if the help text changes were split out into a separate review.",
+      "revId": "3759b9b53cfbfc2c71b0bfc9fa87ddedfb89368c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
