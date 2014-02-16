@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//ImE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T14:50:04Z",
+      "side": 1,
+      "message": "this is just blatantly false - the default config file does not include paste deploy config, and therefore necessarily references an external file that does, in fact, exist by default.",
+      "revId": "0baf04ea115238c48e9f39af213345d36c228eaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
