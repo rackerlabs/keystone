@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Ios\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:16:58Z",
+      "side": 1,
+      "message": "this function takes path as an argument and then ignores it. Add a comment to explain why this is correct.",
+      "revId": "bdd381c81043f47a8aa96c74cdf782a080cb0fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
