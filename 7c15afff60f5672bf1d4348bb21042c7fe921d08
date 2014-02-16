@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//HyM\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "if all you need is actor_id\u0027s, then you can select just that column here",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//HyI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "this probably shouldn\u0027t be \"project_refs\" anymore -- assignments?",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hx4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "it\u0027s a big improvement that this driver doesn\u0027t use it anymore, at least",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hx0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "would be a bit easier to read and avoid subtle bugs later as:\n\n  if user_id and project_id:\n    return AssignmentType.USER_PROJECT\n  elif user_id and domain_id:\n    return AssignmentType.USER_DOMAIN\n  elif group_id and project_id:\n    return AssignmentType.GROUP_PROJECT\n  elif group_id and domain_id:\n    return AssignmentType.GROUP_DOMAIN\n  else:\n    raise Exception(\u0027something about supported matrix of options\u0027)",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hxg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "do a join query with the role table, so you don\u0027t have to retrieve N roles individually -- they\u0027re in the same backend afterall",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//HxU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "why is group_ids in this method signature?!",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hw4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "this approach looks good - use it above!",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hws\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "-1 this doesn\u0027t actually delete the role anymore (is this not tested??), just assignments. if the role column is a foreign key, you can use cascading deletes",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hwo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be an assignment driver method anymore",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hwg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T23:33:45Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be an assignment driver method anymore",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
