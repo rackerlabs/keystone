@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//IoE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:24:24Z",
+      "side": 1,
+      "message": "Remove \"Two new\" -- they were only new in the original commit and aren\u0027t new anymore, and if we put the count here then we\u0027ll need to update it if the number of class parameters changes.",
+      "revId": "51af554a4f8a6829834b7ec2f42a130f97b7e43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
