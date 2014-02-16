@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Ia0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T16:40:47Z",
+      "side": 1,
+      "message": "then do it rather than duplicating code at all",
+      "revId": "31b42d019d87475d4488b9df1b979439950f3b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Iao\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T16:40:47Z",
+      "side": 1,
+      "message": "this is actually *really* bad approach for performance -- instead, select the project references from the backend in a joined query rather than only selecting a bunch of assignments, throwing away everything but the project ID\u0027s, and then performing N SELECTs to retrieve each project",
+      "revId": "31b42d019d87475d4488b9df1b979439950f3b26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//I/0\u003d",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 1
