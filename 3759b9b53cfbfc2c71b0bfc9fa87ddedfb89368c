@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IB0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-16T20:45:39Z",
+      "side": 1,
+      "message": "This is not possible without restructuring the KDS options / getting KDS out of keystone\u0027s repo.",
+      "parentUuid": "AAAAUX//IkY\u003d",
+      "revId": "3759b9b53cfbfc2c71b0bfc9fa87ddedfb89368c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IkU\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-16T15:15:42Z",
       "side": 1,
       "message": "I think it would be easier to review if the help text changes were split out into a separate review.",
+      "revId": "3759b9b53cfbfc2c71b0bfc9fa87ddedfb89368c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IBc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-16T20:45:39Z",
+      "side": 1,
+      "message": "You\u0027re asking for a review for help strings, a review for the sample config? I think that wont really help a lot on the review process as the auto-generation (as long as it captures the options) will reflect the help options.  It is really pointless to split out the actual auto-generation",
+      "parentUuid": "AAAAUX//IkU\u003d",
       "revId": "3759b9b53cfbfc2c71b0bfc9fa87ddedfb89368c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
