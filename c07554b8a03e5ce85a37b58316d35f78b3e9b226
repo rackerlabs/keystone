@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IQM\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//IgU\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ieg\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "Note that with https://review.openstack.org/#/c/70664/ this is going away.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ILs\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "ugh... i\u0027ll rebase this when/if it lands.",
+      "parentUuid": "AAAAUX//Ieg\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IQI\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//IgM\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IgE\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "use functools.wraps -- http://docs.python.org/2/library/functools.html#functools.wraps",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IJI\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "I stuck to this format because its used in the other notifications class, i\u0027ll start looking into this, but i\u0027ll post all the other changes.",
+      "parentUuid": "AAAAUX//IgE\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IO8\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "I changed it to \"Always send a notification\"",
+      "parentUuid": "AAAAUX//IgA\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//If8\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "suggest remove action\u003d, remote_addr\u003d, etc., since the variables are named well and _send_audit_notification takes positional args. (applies at 51 \u0026 58 too)",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IOM\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//If8\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IOk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Ifw\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ifg\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -132,6 +258,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "isn\u0027t 68-70 just\n\nemit_event \u003d CadfNotificationWrapper\n\n?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//INQ\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "yeah, it looked funny that way, I added \nemit_event \u003d CadfNotificationWrapper to the end of file, and removed these lines",
+      "parentUuid": "AAAAUX//Ifg\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IMo\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//IfU\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IfQ\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -166,6 +328,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "what if the action isn\u0027t authentication?\n\nAlso, suggest add \"may be None\"",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IMk\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "changed to: The IP address of the requesting client, may be None",
+      "parentUuid": "AAAAUX//IfQ\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IMg\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "changed to HTTP user agent from the request, may be None",
+      "parentUuid": "AAAAUX//IfM\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IfE\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -200,6 +398,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "what if it isn\u0027t an authentication request?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IMc\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "The user name sent in with the request",
+      "parentUuid": "AAAAUX//IfE\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IMU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "changed to:\n  :param outcome: The CADF outcome (taxonomy.OUTCOME_PENDING,\n        taxonomy.OUTCOME_SUCCESS, taxonomy.OUTCOME_FAILURE)",
+      "parentUuid": "AAAAUX//IfY\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IfA\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -234,6 +468,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "suggest pass in a pycadf_host.Host to this function rather than remote_addr and http_user_agent.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IJY\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "good idea!",
+      "parentUuid": "AAAAUX//IfA\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IJU\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Ie8\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ie4\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -268,6 +538,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "where does the \u0027activity\u0027 magic number come from?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IKc\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "from cadftype.EVENTTYPE_ACTIVITY of course",
+      "parentUuid": "AAAAUX//Ie4\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//IKE\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "the first come from taxonomy.ACCOUNT_USER and the second is also defined in taxonomy, but part of a set...",
+      "parentUuid": "AAAAUX//Iew\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ies\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -302,6 +608,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "suggest remove \"Keystone\" since that\u0027s in the log info already.\n\nalso, suggest do event.as_dict() once rather than here and at line 101.",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IQo\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "1st remark - Done\n2nd remark - I just moved the log line down by 2.. and just pass in payload.",
+      "parentUuid": "AAAAUX//Ies\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//ILA\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "this will be removed when the patch to change to oslo lands anyway.",
+      "parentUuid": "AAAAUX//Iek\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ido\u003d",
         "filename": "keystone/cadf_notifications.py",
         "patchSetId": 18
@@ -336,6 +678,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "since the \"INFO\" constant is so poorly named, suggest use a keyword argument so that readers know what it\u0027s for: priority\u003dnotifier_api.INFO",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ILI\u003d",
+        "filename": "keystone/cadf_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "it\u0027ll be going away when the patch to change to oslo lands anyway.",
+      "parentUuid": "AAAAUX//Ido\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -376,6 +736,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//ITQ\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "I\u0027ve noticed this trend, but I\u0027ve never used mockpatch, are you okay with making this a TODO and fixing it later/",
+      "parentUuid": "AAAAUX//IdI\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IdE\u003d",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 18
@@ -393,6 +771,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//ITs\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//IdE\u003d",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//IdA\u003d",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 18
@@ -404,6 +800,24 @@
       "writtenOn": "2014-02-16T16:37:50Z",
       "side": 1,
       "message": "what\u0027s with this change?",
+      "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IUY\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-16T18:53:05Z",
+      "side": 1,
+      "message": "reverting...",
+      "parentUuid": "AAAAUX//IdA\u003d",
       "revId": "c07554b8a03e5ce85a37b58316d35f78b3e9b226",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
