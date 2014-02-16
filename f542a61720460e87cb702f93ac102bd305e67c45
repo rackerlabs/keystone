@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//IlI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T15:10:04Z",
+      "side": 1,
+      "message": "This comment should be clarified because there are other options than the ones in this file (e.g., those provided by other oslo libraries).\n\nAlso, one could interpret the dynamic options (the auth plugins) as not really configuration options.",
+      "revId": "f542a61720460e87cb702f93ac102bd305e67c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ik0\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T15:10:04Z",
+      "side": 1,
+      "message": "kombu should be there already now -- and with https://review.openstack.org/#/c/70664/ I think we can remove it... although maybe not.",
+      "revId": "f542a61720460e87cb702f93ac102bd305e67c45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Noo\u003d",
         "filename": "tools/config/README",
         "patchSetId": 2
