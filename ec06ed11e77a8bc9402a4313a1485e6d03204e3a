@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Ilk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "we need to find a way to make this backwards-compatible, so that if someone was using keystone.openstack.common.notifier.log_notifier then it will continue to work as expected for the deprecation period.",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//In4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "this one has an odd format -- what\u0027s with #messagingv2?",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//In0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "remove \u0027",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Inw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "remove \u0027",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ins\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "remove \u0027),",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ink\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "this is the default so remove this line.",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//InU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "the help text here doesn\u0027t match the sample config. \"; included in the payload.\" \n\nAlso, should document that the hostname will be used by default.",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Imk\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "This is never going to be corrected so might as well only log it once.",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Img\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "a test shouldn\u0027t have to clean up after what other tests are doing. Those tests should clean up after themselves. This could be done in tests.TestCase cleanUp.",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ImU\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-16T14:59:34Z",
+      "side": 1,
+      "message": "use self.opt() for these.",
+      "revId": "ec06ed11e77a8bc9402a4313a1485e6d03204e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
