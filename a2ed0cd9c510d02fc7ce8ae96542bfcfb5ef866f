@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Ims\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-16T14:36:46Z",
+      "side": 1,
+      "message": "In the webSSO browser is redirected from the IdP to the SP and I think it was not clear if the original HTTP method would stay the same (it wasn\u0027t in my simple tests where I was sending some data from HTML forms to the SAML protected resource, being redirected to IdP, authn myself, and going again to the SP. I ended up with a HTTP GET). This may be not the case for the SAML ECP/similar extensions but it\u0027s hard to say that now...:/",
+      "parentUuid": "AAAAUX//InQ\u003d",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ivg\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 16
