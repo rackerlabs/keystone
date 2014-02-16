@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Iuc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-16T13:47:27Z",
+      "side": 1,
+      "message": "actually this value is questionable here.\nWhat\u0027s the point in putting saml2/openid/whatever in here since we later expect  value \u0027federation\u0027 to fire up appropriate auth plugin?\nI did change it to \u0027federation\u0027. Feel free to revert that change.",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ivg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-16T13:47:27Z",
+      "side": 1,
+      "message": "Why was this moved back to test_v3_federation.py ?",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//IuM\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-16T13:47:27Z",
+      "side": 1,
+      "message": "nice hack.",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ivc\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-16T13:47:27Z",
+      "side": 1,
+      "message": "renamed to \u0027federation\u0027",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
