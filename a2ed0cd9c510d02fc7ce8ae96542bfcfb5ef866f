@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//InY\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T14:31:53Z",
+      "side": 1,
+      "message": "this isn\u0027t in the API spec? I assume it\u0027s supposed to be namespaced by the extension somehow, but it\u0027s not (this looks like a core API resource)",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//InQ\u003d",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-16T14:31:53Z",
+      "side": 1,
+      "message": "i\u0027m also surprised that this isn\u0027t a POST - is there some background / reasoning to that?",
+      "revId": "a2ed0cd9c510d02fc7ce8ae96542bfcfb5ef866f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ivg\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 16
