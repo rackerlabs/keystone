@@ -52,6 +52,23 @@
       "revId": "10f9c1f1c3873e264c94951207c3ac0829c5e9f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/ag\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-17T19:45:43Z",
+      "side": 1,
+      "message": "This paragraph is a little confusing. You are calling each tuple in the list an element and then each item in the tuple an element. I had the read the second sentence a few times to parse.",
+      "revId": "10f9c1f1c3873e264c94951207c3ac0829c5e9f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
