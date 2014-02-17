@@ -67,7 +67,7 @@ class TrustV3(controller.V3Controller):
             user_id = token['user']['id']
             return user_id
         return None
-
+    @controller.protected()
     def get_trust(self, context, trust_id):
         user_id = self._get_user_id(context)
         trust = self.trust_api.get_trust(trust_id)
