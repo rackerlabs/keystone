@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/++1A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-17T20:58:29Z",
+      "side": 1,
+      "message": "you don\u0027t need a recap of what you added, so remove lines 9-14. These changes won\u0027t be visible once it\u0027s merged.\n\nIn it\u0027s place, give a summary of what will change, and (more importantly) why we\u0027re doing the change.",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++zM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-17T20:58:29Z",
+      "side": 1,
+      "message": "if you plan on using the code:: python keyword, then remove the extra : from the end of this line, as it is now, the docs are not showing correctly.",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//JYs\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 16
@@ -13,6 +47,40 @@
       "writtenOn": "2014-02-16T04:31:45Z",
       "side": 1,
       "message": "Note that there is little mongo specific error checking in this code, which should probably be added. \n\nParticularly, if a failover occurs, you may get a pymongo.errors.AutoReconnect error which you should use as a signal to retry the operation, which will cause the connection to be re-established. see http://api.mongodb.org/python/2.6/examples/high_availability.html for more details",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++zs\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-17T20:58:29Z",
+      "side": 1,
+      "message": "remove the VI specific line",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++xo\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-17T20:58:29Z",
+      "side": 1,
+      "message": "this code block is not appearing correctly at all.\n\nthe doc string as a whole has some issues:\nhttp://docs-draft.openstack.org/26/72026/16/check/gate-keystone-docs/3f11769/doc/build/html/api/keystone.common.cache.backends.html\n\nyou can build the docs by running \u0027tox -e docs\u0027 and checking keystone/doc/build/html/index.html",
       "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -264,6 +332,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++ws\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-17T20:58:29Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//JZw\u003d",
         "filename": "test-requirements.txt",
         "patchSetId": 16
@@ -293,6 +378,24 @@
       "side": 1,
       "message": "Version is driven from openstack global requirements.\nhttps://github.com/openstack/requirements/blob/master/global-requirements.txt#L67",
       "parentUuid": "AAAAUX//JZw\u003d",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++w4\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-17T20:58:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUX//JV0\u003d",
       "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
