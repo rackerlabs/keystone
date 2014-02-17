@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//G6s\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-17T03:53:42Z",
+      "side": 1,
+      "message": "This should be SAML, not Federation.  Federation is not a method, SAML is.  Federation is a body of related technologies.  Remove Protocol from the message signature, put it in the body of the request, and drop \"federation \" from the method name, and you can use the Authenticate call below.",
+      "revId": "4936e264fffea338bd79b5106093d4b99b60b9e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//G6g\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-17T03:53:42Z",
+      "side": 1,
+      "message": "\u0027SAML\u0027",
+      "revId": "4936e264fffea338bd79b5106093d4b99b60b9e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//G6Y\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-17T03:53:42Z",
+      "side": 1,
+      "message": "Why is an unscoped federation token any different from any other  Unscoped token",
+      "revId": "4936e264fffea338bd79b5106093d4b99b60b9e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//G6I\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-17T03:53:42Z",
+      "side": 1,
+      "message": "They should have a different issued_at time, and thus get a different id.",
+      "revId": "4936e264fffea338bd79b5106093d4b99b60b9e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
