@@ -70,6 +70,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Hm4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "Why 60 * 30, why not 1800? Maybe a comment here detailing that value would be useful",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hmw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "wouldn\u0027t \u0027if not timeout\u0027 be \u0027else:\u0027 matching with the if above?",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//lZk\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 17
@@ -81,6 +115,108 @@
       "writtenOn": "2014-02-12T07:23:04Z",
       "side": 1,
       "message": "Change name to match param",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hmk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "what\u0027s a required field?",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hmg\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "add docstrings",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//HmQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "^ this is a good comment, why not turn it into a docstring and doc the parameters/return value as well.",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hl0\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "s/abrute/a brute/",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Hk0\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "Maybe add to this comment: \n\n    # A token has three attributes that can match the event.user_id. If the user_id of the event does match a user_id, trustor_id, or trustee_id then break and continue the matching process, else return False.",
+      "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//HkI\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T01:07:19Z",
+      "side": 1,
+      "message": "Since there are comments for the three checks above it would be nice to have a comment here too.",
       "revId": "2a3fdd8671e3c4d248d576eeab839d01f645c28c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
