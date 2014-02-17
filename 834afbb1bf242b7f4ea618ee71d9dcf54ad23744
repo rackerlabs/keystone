@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++20\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-17T20:42:07Z",
+      "side": 1,
+      "message": "Key is cache client generated content so there is no way to know what kind of data or format it will have. That\u0027s why avoided \u0027key\u0027 field value as index.\n\nIn earlier mongodb docs, it was recommended to use _id values that are roughly in ascending order. If the _id\u0027s are in a somewhat well defined order, on inserts the entire b-tree for the _id index need not be loaded. BSON ObjectIds have this property.",
+      "parentUuid": "AAAAUX//Ja4\u003d",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//JZ4\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 16
@@ -152,6 +170,24 @@
       "writtenOn": "2014-02-16T04:31:45Z",
       "side": 1,
       "message": "Note the pymongo 2.7 includes a bulk write API which would be appropriate to use here. See http://api.mongodb.org/python/current/examples/bulk.html\n\nPymongo 2.7 is still in release-candidate status tho, so should not use that now. but might plan to update when 2.7 is released.",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/PU\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-17T20:42:07Z",
+      "side": 1,
+      "message": "For this feature usage, we will need to wait till its released and we can enforce this future package version dependency.",
+      "parentUuid": "AAAAUX//JZY\u003d",
       "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
