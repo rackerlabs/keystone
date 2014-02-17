@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++jg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "++ this would need to be regenerated since Morgan\u0027s config_generator patches are going it.",
+      "parentUuid": "AAAAUX/+/0E\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/zw\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 46
@@ -115,6 +133,23 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "let\u0027s not add these back in again.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++hg\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "s/register/Register/ and add a period to the end.",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -285,6 +320,23 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "remove",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++gE\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "Could update the year here or remove this line altogether and let someone from the foundation add it. This goes for every occurrence.",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -546,6 +598,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++fQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "do we only need one line between imports? \n\n    import uuid \n    \n    from keystone.openstack.common import timeutils",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/MI\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 46
@@ -557,6 +626,23 @@
       "writtenOn": "2014-02-17T19:51:20Z",
       "side": 1,
       "message": "there should be a unit test for this.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++e0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "Doc strings and return values?",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -801,6 +887,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++bU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "(NIT): move this up with assertDominInList and assertProjectInList",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/Z4\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 46
@@ -846,6 +949,74 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "what is this for?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++aI\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "Extra line here",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++ZQ\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "There is a lot of duplicate code here. Is there a way this could be done once maybe before we reach the manager or as a wrapper function? \n\nJust thinking of the case were a method gets refactored and by accident this check goes with it.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++Y0\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "Extra line here",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++Xc\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T21:51:34Z",
+      "side": 1,
+      "message": "should: \n\n    raise exception.TokenNotFound(_(\u0027Failed to validate token\u0027))\n\nbe in an else statement or a finally statement, for the sake of readability.",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
