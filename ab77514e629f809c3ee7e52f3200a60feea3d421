@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//AIU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T18:01:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Ij0\u003d",
+      "revId": "ab77514e629f809c3ee7e52f3200a60feea3d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ijw\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-16T15:26:17Z",
       "side": 1,
       "message": "why was this moved? It used to be right before \"if user_id is not None:\"",
+      "revId": "ab77514e629f809c3ee7e52f3200a60feea3d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AHU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T18:01:41Z",
+      "side": 1,
+      "message": "seems like an inconsequential change to me, so reverting",
+      "parentUuid": "AAAAUX//Ijw\u003d",
       "revId": "ab77514e629f809c3ee7e52f3200a60feea3d421",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//AHQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T18:01:41Z",
+      "side": 1,
+      "message": "this also rewrites his comment a bit, which isn\u0027t very nice; reverting",
+      "parentUuid": "AAAAUX//Ijs\u003d",
+      "revId": "ab77514e629f809c3ee7e52f3200a60feea3d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Ijg\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-16T15:26:17Z",
       "side": 1,
       "message": "The resource_id may be at a different index. Suggest change to:\n\n # f(self, ..., resource_id, ...) -- resource_id at resource_id_arg_index\n\nAlso, could move extracting resource_id out into a separate line to make this simpler.\n\n resource_id \u003d args[self.resource_id_arg_index]\n send_notification(\n       ...,\n       resource_id\n       public\u003dself.public)",
+      "revId": "ab77514e629f809c3ee7e52f3200a60feea3d421",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AGQ\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T18:01:41Z",
+      "side": 1,
+      "message": "we had a long conversation about this in IRC, and agreed on this approach. putting it into it\u0027s own line would also make the comment unnecessary",
+      "parentUuid": "AAAAUX//Ijg\u003d",
       "revId": "ab77514e629f809c3ee7e52f3200a60feea3d421",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
