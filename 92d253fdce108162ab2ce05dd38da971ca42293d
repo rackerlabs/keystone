@@ -16,6 +16,24 @@
       "revId": "92d253fdce108162ab2ce05dd38da971ca42293d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//HgQ\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-17T01:27:06Z",
+      "side": 1,
+      "message": "Ah, is that the standard we are going for now?  I\u0027ll keep it in mind going forward.",
+      "parentUuid": "AAAAUX//HsA\u003d",
+      "revId": "92d253fdce108162ab2ce05dd38da971ca42293d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
