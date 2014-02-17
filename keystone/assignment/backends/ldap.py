@@ -693,6 +693,8 @@ class RoleApi(common_ldap.BaseLdap):
             # object.
             tenant_dn = ldap.dn.dn2str(tenant)
             for user_dn in role[self.member_attribute]:
+                if self.use_dumb_member and user_dn == self.dumb_member:
+                    continue
                 res.append(UserRoleAssociation(
                            user_dn=user_dn,
                            role_dn=role_dn,
