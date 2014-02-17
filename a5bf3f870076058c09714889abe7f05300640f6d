@@ -206,6 +206,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+/Nc\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "there should be a unit test for this function.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/r0\u003d",
         "filename": "keystone/contrib/revoke/controllers.py",
         "patchSetId": 46
@@ -427,6 +444,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+/M8\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "there should be a unit test for this.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/Ms\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "needs a unit test.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/Mk\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "needs a unit test.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/c0\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 46
@@ -472,6 +540,57 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "it does the same thing even if filter is specified.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/MI\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "there should be a unit test for this.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/MA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "there should be a unit test for this.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/L8\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "needs a unit test.",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -574,6 +693,23 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "suggest use the existing \"matched\" variable instead of introducing a new one for the same thing.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/L0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T19:51:20Z",
+      "side": 1,
+      "message": "this isn\u0027t covered by unit tests.",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
