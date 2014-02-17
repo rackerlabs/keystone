@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/++04\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2014-02-17T20:46:05Z",
+      "side": 1,
+      "message": "Please correct the indent in the commit message",
+      "revId": "a8503f38b613f951d634e2a55cc4a77494106286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
