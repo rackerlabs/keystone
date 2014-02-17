@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++lA\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 46
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "remove this from the v2 pipeline",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/0Y\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 46
@@ -71,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++jM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "... and what does it do?",
+      "parentUuid": "AAAAUX/+/0E\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/zw\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 46
@@ -105,6 +140,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++h0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "this format for line breaks is terrible to read. remove the extraneous outer parens. i\u0027m only going to mention this once in this patch.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++hc\u003d",
+        "filename": "keystone/contrib/revoke/__init__.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "remove copyright attribute to the foundation - you don\u0027t work for them",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/yg\u003d",
         "filename": "keystone/contrib/revoke/backends/fake.py",
         "patchSetId": 46
@@ -116,6 +185,125 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "let\u0027s not add these back in again.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++hY\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "remove this whole module - there\u0027s already a kvs implementation, there\u0027s no need for a \"fake\" one (?)",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++gY\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "remove filter if you\u0027re not going to use it",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++gk\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "then don\u0027t make it a part of the method signature",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++gs\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "it raises null? remove this",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++g4\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "this always returns an empty list?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++gI\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "just describe the behavior of the interface",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++gQ\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "same as above, these docs are useless",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +327,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++f0\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "you don\u0027t have to copy/paste doc strings for drivers around",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++hg\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 46
@@ -150,6 +355,23 @@
       "writtenOn": "2014-02-17T21:51:34Z",
       "side": 1,
       "message": "s/register/Register/ and add a period to the end.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++fk\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 46
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "s/revoke/OS-REVOKE/",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +395,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++fo\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 46
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "might just be gerrit, but hopefully that would raise doc build errors now",
+      "parentUuid": "AAAAUX/+/sQ\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/so\u003d",
         "filename": "keystone/contrib/revoke/configuration.rst",
         "patchSetId": 46
@@ -184,6 +424,24 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "suggest put \"revoke\" in `.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++fY\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 46
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "``OS-REVOKE``",
+      "parentUuid": "AAAAUX/+/so\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +465,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++fU\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 46
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "that\u0027s all this patch has atm",
+      "parentUuid": "AAAAUX/+/sk\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/sY\u003d",
         "filename": "keystone/contrib/revoke/configuration.rst",
         "patchSetId": 46
@@ -218,6 +494,24 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "I don\u0027t think it\u0027s going to generate properly to have :: here.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++fA\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 46
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUX/+/sY\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -377,6 +671,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++cw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "++ release date in april",
+      "parentUuid": "AAAAUX/+/mg\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/lc\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 46
@@ -462,6 +774,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++WE\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "why do revoke events have ID\u0027s??",
+      "parentUuid": "AAAAUX/+/fo\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/eQ\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 46
@@ -473,6 +803,23 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "there\u0027s a lot of duplicated code in this file... suggest provide a function:\n\n def _revoke(**kwargs):\n    event \u003d model.RevokeEvent(id\u003dmodel.EventIdentifier(), **kwargs)\n    self.driver.revoke(event)",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++W4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "this is the opposite of how \"callbacks\" normally work lol",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -507,6 +854,24 @@
       "writtenOn": "2014-02-17T19:51:20Z",
       "side": 1,
       "message": "there should be a unit test for this.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++Wc\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "i haven\u0027t reviewed that far, but i\u0027d rather see functional tests",
+      "parentUuid": "AAAAUX/+/M8\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -581,6 +946,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++V0\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUX/+/uM\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++Vg\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/tw\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 46
@@ -609,6 +1009,23 @@
       "writtenOn": "2014-02-17T21:51:34Z",
       "side": 1,
       "message": "do we only need one line between imports? \n\n    import uuid \n    \n    from keystone.openstack.common import timeutils",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++TA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "please use all 79 char",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -649,6 +1066,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++Sk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "events don\u0027t have IDs",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/MA\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 46
@@ -677,6 +1111,23 @@
       "writtenOn": "2014-02-17T19:51:20Z",
       "side": 1,
       "message": "needs a unit test.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++TI\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "i\u0027m curious as to why any of this logic is on the service side...",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -785,6 +1236,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++TQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "there\u0027s actually 3",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/L0\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 46
@@ -796,6 +1264,40 @@
       "writtenOn": "2014-02-17T19:51:20Z",
       "side": 1,
       "message": "this isn\u0027t covered by unit tests.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++UI\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "i have yet to see a purpose for this - suggest deleting the class",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++Tk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:00:23Z",
+      "side": 1,
+      "message": "fwiw, this will produce different UUID\u0027s than we normally use",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
