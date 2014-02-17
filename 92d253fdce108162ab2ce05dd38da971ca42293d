@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//HsA\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T00:16:20Z",
+      "side": 1,
+      "message": "suggest add , at end of list so is easier to add options in the future.",
+      "revId": "92d253fdce108162ab2ce05dd38da971ca42293d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
