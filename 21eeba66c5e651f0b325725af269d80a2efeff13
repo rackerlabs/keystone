@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/++RE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T22:16:16Z",
+      "side": 1,
+      "message": "what is \u0027x\u0027 representing here?",
+      "revId": "21eeba66c5e651f0b325725af269d80a2efeff13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++QY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T22:16:16Z",
+      "side": 1,
+      "message": "could use a dictionary here for the string inject to improve readability.",
+      "revId": "21eeba66c5e651f0b325725af269d80a2efeff13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++O0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T22:16:16Z",
+      "side": 1,
+      "message": "Should some information be logged here?",
+      "revId": "21eeba66c5e651f0b325725af269d80a2efeff13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++HQ\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T22:16:16Z",
+      "side": 1,
+      "message": "another*",
+      "revId": "21eeba66c5e651f0b325725af269d80a2efeff13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
