@@ -1304,6 +1304,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++Q0\u003d",
+        "filename": "keystone/contrib/revoke/routers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T22:01:27Z",
+      "side": 1,
+      "message": "this second method is not a part of the API spec",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/aw\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 46
