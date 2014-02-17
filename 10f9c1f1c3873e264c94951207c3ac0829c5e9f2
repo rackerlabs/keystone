@@ -34,6 +34,24 @@
       "revId": "10f9c1f1c3873e264c94951207c3ac0829c5e9f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/Yo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-17T19:27:26Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/73898/",
+      "parentUuid": "AAAAUX//Hgk\u003d",
+      "revId": "10f9c1f1c3873e264c94951207c3ac0829c5e9f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
