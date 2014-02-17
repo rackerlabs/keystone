@@ -206,6 +206,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+/wQ\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T18:46:09Z",
+      "side": 1,
+      "message": "there should be a unit test for this.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//ASg\u003d",
         "filename": "keystone/tests/test_kvs.py",
         "patchSetId": 25
