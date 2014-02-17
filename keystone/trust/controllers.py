@@ -64,7 +64,7 @@ class TrustV3(controller.V3Controller):
             return user_id
         return None
 
-    def get_trust(self, context, trust_id):
+    def _get_trust(self, context, trust_id):
         user_id = self._get_user_id(context)
         trust = self.trust_api.get_trust(trust_id)
         if not trust:
@@ -73,6 +73,10 @@ class TrustV3(controller.V3Controller):
         self._fill_in_roles(context, trust,
                             self.assignment_api.list_roles())
         return TrustV3.wrap_member(context, trust)
+
+    @controller.protected()
+    def get_trust(self, context, trust_id):
+        return self._get_trust(context, trust_id)
 
     def _fill_in_roles(self, context, trust, all_roles):
         if trust.get('expires_at') is not None:
@@ -236,7 +240,7 @@ class TrustV3(controller.V3Controller):
 
     @controller.protected()
     def list_roles_for_trust(self, context, trust_id):
-        trust = self.get_trust(context, trust_id)['trust']
+        trust = self._get_trust(context, trust_id)['trust']
         if not trust:
             raise exception.TrustNotFound(trust_id=trust_id)
         user_id = self._get_user_id(context)
