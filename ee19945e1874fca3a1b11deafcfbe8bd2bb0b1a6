@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//BFY\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T16:28:42Z",
+      "side": 1,
+      "message": "the comment and the name of the test seem to go in two different directions. Maybe add a little more detail to the name? \n\n    def test_create_region_without_id_in_request(self):\n\nThis is a nit, just looking from readability standpoint.",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//BEY\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T16:28:42Z",
+      "side": 1,
+      "message": "This test could play off the naming of test_create_region_with_id if it is refactored: \n\n    def test_create_region_with_id_in_request(self):",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//BBo\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T16:28:42Z",
+      "side": 1,
+      "message": "Just curious, how come this test uses POST and all others here use PUT? Should this being using PUT as well?",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
