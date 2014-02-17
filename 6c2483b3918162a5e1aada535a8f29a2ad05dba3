@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+/ME\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-17T19:47:40Z",
+      "side": 1,
+      "message": "This paragraph is a little confusing. You are calling each tuple in the list an element and then each item in the tuple an element. I had the read the second sentence a few times to parse.\n\nIt may be just me, but I thought I would let you know.",
+      "revId": "6c2483b3918162a5e1aada535a8f29a2ad05dba3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
