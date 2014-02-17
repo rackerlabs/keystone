@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//AjQ\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "clarify what \"This\" refers to in \"This will include\"... something like\n\n Passing the ``memcached_expire_time`` argument will cause the ``time``\n argument to be set on all calls performed by the memcached client.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ah8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "what if I used it with a different backend? is it ignored or does it fail?",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AkI\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "suggest use ..code:: python to format these.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ae0\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "change \"backend\" to \"backends\"... this says it\u0027s only available for backends that suport explicit TTL, and at line 471 it says only the memcached dogpile backend supports that.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AkE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "suggest use ..code:: python to format these.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Ad8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Aak\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "suggest rename to _get_set_arguments_driver_attr to make it clearer.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AZ4\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "suggest add a newline before the comment so it\u0027s clear that the comment applies to the next line and not to the function as a while.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AXQ\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "could this be implemented in terms of set_multi to eliminate some duplication?",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AX4\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "this explains what the code is doing but doesn\u0027t say why... why does the code work this way?",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AYg\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "no_expiry is always going to be True here, so suggest change \"exclude_expiry\u003dno_expiry\" to \"exclude_expiry\u003dTrue\".",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//AXc\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "this explains what the code is doing but doesn\u0027t say why... why does the code work this way?",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ASg\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "this looks like a mock... suggest use mock.MagicMock.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//ARE\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-17T17:43:06Z",
+      "side": 1,
+      "message": "if this was moved right next to line 159 it would be more obvious why the addCleanup is in this function.",
+      "revId": "8e5ade0802a98aee51ef672e137dd0681bfe616e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
