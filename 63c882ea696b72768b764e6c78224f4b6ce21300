@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/++B4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T22:32:53Z",
+      "side": 1,
+      "message": "I would change this to related bug, since I think the proper fix would be to wait until the patch clarkb posted upstream to tox lands. All this is doc\u0027d:\n\nhttps://bugs.launchpad.net/openstack-ci/+bug/1274135",
+      "revId": "63c882ea696b72768b764e6c78224f4b6ce21300",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
