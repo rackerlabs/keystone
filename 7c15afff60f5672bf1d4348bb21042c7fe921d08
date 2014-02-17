@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+/D0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//HyM\u003d",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//HyI\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-16T23:33:45Z",
       "side": 1,
       "message": "this probably shouldn\u0027t be \"project_refs\" anymore -- assignments?",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/Do\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//HyI\u003d",
       "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++s8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "AAAAUX//Hx4\u003d",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Hx0\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-16T23:33:45Z",
       "side": 1,
       "message": "would be a bit easier to read and avoid subtle bugs later as:\n\n  if user_id and project_id:\n    return AssignmentType.USER_PROJECT\n  elif user_id and domain_id:\n    return AssignmentType.USER_DOMAIN\n  elif group_id and project_id:\n    return AssignmentType.GROUP_PROJECT\n  elif group_id and domain_id:\n    return AssignmentType.GROUP_DOMAIN\n  else:\n    raise Exception(\u0027something about supported matrix of options\u0027)",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+/DU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Hx0\u003d",
       "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++wM\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "I was avoiding any real optimisations to minimise the changes in this first path - but that\u0027s an easy one.  Done.",
+      "parentUuid": "AAAAUX//Hxg\u003d",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//HxU\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-16T23:33:45Z",
       "side": 1,
       "message": "why is group_ids in this method signature?!",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Bds\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "..becasue we need to see if there are any projects for which the use has a role by virtue of group membership…and we don\u0027t want cross driver calls (e.g. assignment to identity)",
+      "parentUuid": "AAAAUX//HxU\u003d",
       "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++sw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//Hw4\u003d",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Hws\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2014-02-16T23:33:45Z",
       "side": 1,
       "message": "-1 this doesn\u0027t actually delete the role anymore (is this not tested??), just assignments. if the role column is a foreign key, you can use cascading deletes",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++r0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "actually the role delete is below….but maybe on a subsequent patch I\u0027ll come back in and use cascades",
+      "parentUuid": "AAAAUX//Hws\u003d",
       "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/++ts\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "Well its badly named…it really means delete all the role assignments for this user",
+      "parentUuid": "AAAAUX//Hwo\u003d",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Hwg\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 8
@@ -166,6 +328,24 @@
       "writtenOn": "2014-02-16T23:33:45Z",
       "side": 1,
       "message": "this shouldn\u0027t be an assignment driver method anymore",
+      "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/++tk\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-17T21:17:37Z",
+      "side": 1,
+      "message": "as above….",
+      "parentUuid": "AAAAUX//Hwg\u003d",
       "revId": "7c15afff60f5672bf1d4348bb21042c7fe921d08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
