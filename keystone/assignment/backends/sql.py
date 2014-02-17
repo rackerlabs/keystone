@@ -105,20 +105,16 @@ class Assignment(sql.Base, assignment.Driver):
                      inherited_to_projects=False):
 
         def calculate_type(user_id, group_id, project_id, domain_id):
-            if user_id and project_id:
-                return AssignmentType.USER_PROJECT
-            elif user_id and domain_id:
-                return AssignmentType.USER_DOMAIN
-            elif group_id and project_id:
-                return AssignmentType.GROUP_PROJECT
-            elif group_id and domain_id:
-                return AssignmentType.GROUP_DOMAIN
+            if user_id:
+                if project_id:
+                    return AssignmentType.USER_PROJECT
+                else:
+                    return AssignmentType.USER_DOMAIN
             else:
-                message_data = '%s, %s, %s, %s' % (
-                    user_id, group_id, project_id, domain_id)
-                raise exception.Error(message=_(
-                    'Unexpected combination of grant attributes - '
-                    'User, Group, Project, Domain: %s') % message_data)
+                if project_id:
+                    return AssignmentType.GROUP_PROJECT
+                else:
+                    return AssignmentType.GROUP_DOMAIN
 
         with sql.transaction() as session:
             self._get_role(session, role_id)
@@ -154,12 +150,11 @@ class Assignment(sql.Base, assignment.Driver):
             if project_id:
                 self._get_project(session, project_id)
 
-            q = session.query(Role).join(RoleAssignment)
-            q = q.filter(RoleAssignment.actor_id == (user_id or group_id))
-            q = q.filter(RoleAssignment.target_id == (project_id or domain_id))
-            q = q.filter(RoleAssignment.inherited == inherited_to_projects)
-            q = q.filter(Role.id == RoleAssignment.role_id)
-            return [x.to_dict() for x in q.all()]
+            q = session.query(RoleAssignment)
+            q = q.filter_by(actor_id=user_id or group_id)
+            q = q.filter_by(target_id=project_id or domain_id)
+            q = q.filter_by(inherited=inherited_to_projects)
+            return [self.get_role(x.role_id) for x in q.all()]
 
     def get_grant(self, role_id, user_id=None, group_id=None,
                   domain_id=None, project_id=None,
@@ -278,6 +273,79 @@ class Assignment(sql.Base, assignment.Driver):
 
             return _project_ids_to_dicts(session, project_ids)
 
+    def _list_entities_for_groups(self, group_ids, type, cls):
+        groups = [RoleAssignment.actor_id == g for g in group_ids]
+        group_sql_conditions = sql.and_(
+            RoleAssignment.type == type,
+            cls.id == RoleAssignment.target_id,
+            sql.or_(*groups))
+
+        session = db_session.get_session()
+        with session.begin():
+            query = session.query(cls).filter(
+                group_sql_conditions).all()
+        return [x.to_dict() for x in query]
+
+    def list_projects_for_groups(self, group_ids):
+        """List all projects accessible for a member of
+        specified groups
+
+        :param group_ids: list of groups
+        :type: list
+
+        return: list of dictionarized projects
+
+        """
+        kwargs = {
+            'type': AssignmentType.GROUP_PROJECT,
+            'cls': Project
+        }
+        return self._list_entities_for_groups(group_ids,
+                                              **kwargs)
+
+    def list_domains_for_groups(self, group_ids):
+        """List all domains accessible for a member of
+        specified groups
+
+        :param group_ids: list of groups
+        :type: list
+
+        :returns: list of dictionarized domains
+
+        """
+        kwargs = {
+            'type': AssignmentType.GROUP_DOMAIN,
+            'cls': Domain
+        }
+
+        return self._list_entities_for_groups(group_ids,
+                                              **kwargs)
+
+    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+
+        if project_id is not None:
+            assignment_type = AssignmentType.GROUP_PROJECT
+            target_id = project_id
+        elif domain_id is not None:
+            assignment_type = AssignmentType.GROUP_DOMAIN
+            target_id = domain_id
+        else:
+            raise AttributeError("Must specify either domain or project")
+
+        groups = [RoleAssignment.actor_id == group_id for
+                  group_id in group_ids]
+        general_sql_constraints = sql.and_(
+            RoleAssignment.type == assignment_type,
+            RoleAssignment.target_id == target_id,
+            Role.id == RoleAssignment.role_id,
+            sql.or_(*groups))
+
+        session = db_session.get_session()
+        with session.begin():
+            query = session.query(Role).filter(
+                general_sql_constraints).all()
+        return [role.to_dict() for role in query]
+
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
@@ -387,6 +455,10 @@ class Assignment(sql.Base, assignment.Driver):
             query = session.query(Domain)
             refs = self.filter_limit_query(Domain, query, hints)
             return [ref.to_dict() for ref in refs]
+
+    def _domain_ids_to_dicts(self, session, ids):
+        return [self._get_domain(session, domain_id).to_dict()
+                for domain_id in ids]
 
     def _get_domain(self, session, domain_id):
         ref = session.query(Domain).get(domain_id)
@@ -539,8 +611,7 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
         nullable=False)
     actor_id = sql.Column(sql.String(64), nullable=False)
     target_id = sql.Column(sql.String(64), nullable=False)
-    role_id = sql.Column(sql.String(64), sql.ForeignKey('role.id'),
-                         nullable=False)
+    role_id = sql.Column(sql.String(64), nullable=False)
     inherited = sql.Column(sql.Boolean, default=False)
     __table_args__ = (sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id',
                                                'role_id'), {})
