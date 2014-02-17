@@ -351,6 +351,32 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         after_assignments = len(self.assignment_api.list_role_assignments())
         self.assertEqual(after_assignments, existing_assignments + 2)
 
+    def test_list_role_assignments_dumb_member(self):
+        CONF.ldap.use_dumb_member = True
+        CONF.ldap.dumb_member = 'cn=dumb,dc=nonexistent'
+        self.clear_database()
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+        new_domain = self._get_domain_fixture()
+        new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'password': uuid.uuid4().hex, 'enabled': True,
+                    'domain_id': new_domain['id']}
+        self.identity_api.create_user(new_user['id'],
+                                      new_user)
+        new_project = {'id': uuid.uuid4().hex,
+                       'name': uuid.uuid4().hex,
+                       'domain_id': new_domain['id']}
+        self.assignment_api.create_project(new_project['id'], new_project)
+        self.assignment_api.create_grant(user_id=new_user['id'],
+                                         project_id=new_project['id'],
+                                         role_id='other')
+
+        # Read back the list of assignments and ensure
+        # that the LDAP dumb member isn't listed.
+        for check_assignment in self.assignment_api.list_role_assignments():
+            self.assertNotEqual('dumb', check_assignment['user_id'])
+
     def test_list_role_assignments_bad_role(self):
         self.skipTest('Blocked by bug 1221805')
 
