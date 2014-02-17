@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//BEs\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "should this be a class attribute or instance attribute?",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//BBY\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "what\u0027s wrong with using a context manager here, and skipping the finally block below?",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//BCs\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "be more specific",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//BCg\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "this needs an explanation -- you failed to read the file, failed to write a new one, so now you\u0027re trying to delete it?",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//BA4\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "the rest of the except blocks in this module are just suppressing legitimate errors without explanation or even logging",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A/A\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "one will be generated for you at runtime if it doesn\u0027t exist or we otherwise fail to read it?",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A+w\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "be more helpful",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A+s\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "in other words, this is redundant with \u0027enctype\u0027? be more helpful!",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A+k\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "then make it an int",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A+c\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "it\u0027s a service, not server",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A9k\u003d",
+        "filename": "keystone/contrib/kds/common/storage.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "\u003c ?",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A7M\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test_key.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "keys",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A7I\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test_key.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "keys",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//A7A\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test_key.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:36:03Z",
+      "side": 1,
+      "message": "keys",
+      "revId": "d7a9e5ee4efd151a82de49e80d098a17f4966da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
