@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//BWI\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-17T16:06:01Z",
+      "side": 1,
+      "message": "i\u0027m not sure if it\u0027s out of scope or not, but service IDs and endpoint IDs should never have been exposed to the user-facing catalog, as they\u0027re not attributes that end users can actually work with or care about. making up a bunch of IDs here seems to drive the point home (they\u0027re completely meaningless!); further, you can\u0027t do a GET /v3/services/{region_name}-{service_name} anyway",
+      "revId": "93eb3daabbd8d980aeb88eccf2819f37962b3370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
