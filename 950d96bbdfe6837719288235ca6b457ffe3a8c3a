@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+/+o\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T18:17:16Z",
+      "side": 1,
+      "message": "Should this be something that we do with all notification resources? trusts, users and project don\u0027t do it this way. It would be an easy fix if we wanted to and I kind of like it this way since it ensures consistency.",
+      "revId": "950d96bbdfe6837719288235ca6b457ffe3a8c3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
