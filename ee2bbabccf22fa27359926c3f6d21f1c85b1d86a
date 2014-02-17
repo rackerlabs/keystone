@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//HRA\u003d",
+        "filename": "keystone/openstack/common/notifier/rpc_notifier.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-17T02:37:29Z",
+      "side": 0,
+      "message": "I RPC needed in keystone/openstack/common/ anymore now? It was introduced when I brought over the notified as a dependency. If not then should we have a separate patch to remove that module as well?",
+      "revId": "ee2bbabccf22fa27359926c3f6d21f1c85b1d86a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
