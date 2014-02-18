@@ -122,8 +122,18 @@ class Identity(sql.Base, identity.Driver):
             user_ref = self._get_user(session, user_id)
         except exception.UserNotFound:
             raise AssertionError(_('Invalid user / password'))
+
         if not self._check_password(password, user_ref):
-            raise AssertionError(_('Invalid user / password'))
+            # TODO(dstanek): should we make sure that the password rotation
+            # extension is enabled?
+            rps = self.list_active_rotated_passwords_by_user(user_id, None)
+            for rp_ref in rps:
+                if utils.check_password(password, rp_ref['password']):
+                    break
+            else:
+                raise AssertionError(_('Invalid user / password'))
+
+
         return identity.filter_user(user_ref.to_dict())
 
     # user crud
