@@ -335,6 +335,15 @@ class RestfulTestCase(rest.RestfulTestCase):
             body=auth)
         return r.headers.get('X-Subject-Token')
 
+    def get_token_by_password(self, user_id, password, expected_status=None):
+        """Returns a token for a user using password authentication."""
+        auth_data = self.build_authentication_request(
+            user_id=user_id, password=password)
+        r = self.post('/auth/tokens',
+                      body=auth_data,
+                      expected_status=expected_status)
+        return r.headers.get('X-Subject-Token')
+
     def v3_request(self, path, **kwargs):
         # Check if the caller has passed in auth details for
         # use in requesting the token
