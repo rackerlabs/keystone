@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+zwc\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T22:03:29Z",
+      "side": 1,
+      "message": "Does it make sense to create a sql.String(255) item called \"uuid\" and use that universally across all \"uuid\" columns.  Meaning that we can avoid needing to change quite the same volume of locations in the case we want to adjust the data type again in the future (you\u0027re already changing all of them)",
+      "revId": "3b3e1aecfd9f3fd63526563825f1fdbe3b30126a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+zs8\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T22:03:29Z",
+      "side": 1,
+      "message": "You defined the composite separator elsewhere, suggest using the same definition everywhere (even in tests).",
+      "revId": "3b3e1aecfd9f3fd63526563825f1fdbe3b30126a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
