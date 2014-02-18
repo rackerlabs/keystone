@@ -414,6 +414,9 @@
 # (onelevel/singleLevel) or 'sub' (subtree/wholeSubtree)
 # query_scope = one
 
+# Attributes are case sensitive (e.g. "sAMAccountName" is different from
+# "samAccountName").
+
 # user_tree_dn = ou=Users,dc=example,dc=com
 # user_filter =
 # user_objectclass = inetOrgPerson
