@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+2BU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T17:19:27Z",
+      "side": 1,
+      "message": "(nit) should really open parens for RoleAssignment( on the same line to make it more readable and easier to maintain",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2A8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T17:19:27Z",
+      "side": 1,
+      "message": "i assume this is checking the number of affected row, but you could just do `if not q.delete(False):`",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+12c\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1689,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T17:19:27Z",
+      "side": 1,
+      "message": "data",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
