@@ -208,7 +208,6 @@ class AuthContextMiddleware(wsgi.Middleware):
 
     def _build_auth_context(self, request):
         token_id = request.headers.get(AUTH_TOKEN_HEADER)
-
         if token_id == CONF.admin_token:
             # NOTE(gyee): no need to proceed any further as the special admin
             # token is being handled by AdminTokenAuthMiddleware. This code
@@ -219,7 +218,6 @@ class AuthContextMiddleware(wsgi.Middleware):
 
         context = {'token_id': token_id}
         context['environment'] = request.environ
-
         try:
             token_ref = self.token_api.get_token(token_id)
             # TODO(gyee): validate_token_bind should really be its own

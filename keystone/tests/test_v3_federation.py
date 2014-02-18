@@ -713,3 +713,206 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
+
+
+class ListProjectsAndDomainsTests(FederationTests):
+    """A class for testing the extra project and domain listing mechanisms."""
+
+    def new_token_ref(self, group_ids):
+        def _dictionarize_groups(group_ids):
+            return [{'id': g} for g in group_ids]
+        id = uuid.uuid4().hex
+        return {
+            'id': id,
+            'user': {
+                'id': self.user['id']
+            },
+            'access': {},
+            'token_data': {
+                'token': {
+                    'id': id,
+                    'user': {
+                        'id': self.user['id']
+                    },
+                'OS-FEDERATION:groups': _dictionarize_groups(group_ids)
+                }
+            }
+        }
+
+    def setUp(self):
+        super(ListProjectsAndDomainsTests, self).setUp()
+
+        self.domainA = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainA['id'],
+                                          self.domainA)
+
+        self.domainB = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainB['id'],
+                                          self.domainB)
+
+        self.domainC = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domainC['id'],
+                                          self.domainC)
+
+        self.proj_employees = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.proj_employees['id'],
+                                           self.proj_employees)
+        self.proj_customers = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.proj_customers['id'],
+                                           self.proj_customers)
+
+        self.project_all = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.assignment_api.create_project(self.project_all['id'],
+                                           self.project_all)
+
+        self.group_employees = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group_employees['id'],
+                                       self.group_employees)
+
+        self.group_customers = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group_customers['id'],
+                                       self.group_customers)
+
+        self.group_admins = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(self.group_admins['id'],
+                                       self.group_admins)
+
+        self.role_employee = self.new_role_ref()
+        self.assignment_api.create_role(self.role_employee['id'],
+                                        self.role_employee)
+        self.role_customer = self.new_role_ref()
+        self.assignment_api.create_role(self.role_customer['id'],
+                                        self.role_customer)
+
+        self.role_admin = self.new_role_ref()
+        self.assignment_api.create_role(self.role_admin['id'],
+                                        self.role_admin)
+
+        # Employees can access
+        # * proj_employees
+        # * project_all
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         project_id=self.proj_employees['id'])
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         project_id=self.project_all['id'])
+        # Customers can access
+        # * proj_customers
+        self.assignment_api.create_grant(self.role_customer['id'],
+                                         group_id=self.group_customers['id'],
+                                         project_id=self.proj_customers['id'])
+
+        # Admins can access:
+        # * proj_customers
+        # * proj_employees
+        # * project_all
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         project_id=self.proj_customers['id'])
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         project_id=self.proj_employees['id'])
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         project_id=self.project_all['id'])
+
+        # Customers can access:
+        # * domain A
+        self.assignment_api.create_grant(self.role_customer['id'],
+                                         group_id=self.group_customers['id'],
+                                         domain_id=self.domainA['id'])
+
+        # Employees can access:
+        # * domain A
+        # * domain B
+
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         domain_id=self.domainB['id'])
+
+        # Admins can access:
+        # * domain A
+        # * domain B
+        # * domain C
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         domain_id=self.domainB['id'])
+
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         domain_id=self.domainC['id'])
+
+        # create fake tokens with groups already baked in
+
+        token_customer = self.new_token_ref(
+            [self.group_customers['id']])
+        self.token_customer = self.token_api.create_token(
+            token_customer['id'], token_customer)
+        token_employee = self.new_token_ref(
+            [self.group_employees['id']])
+        self.token_employee = self.token_api.create_token(
+            token_employee['id'], token_employee)
+
+        token_admin = self.new_token_ref(
+            [self.group_admins['id']])
+        self.token_admin = self.token_api.create_token(
+            token_admin['id'], token_admin)
+
+    def test_list_projects(self):
+        url = '/OS-FEDERATION/projects'
+        r = self.get(url, token=self.token_customer['id'])
+        projects_resp = r.result.get('projects')
+        projects = set(p['id'] for p in projects_resp)
+        projects_ref = set([self.proj_customers['id']])
+        self.assertEqual(projects, projects_ref)
+
+        r = self.get(url, token=self.token_employee['id'])
+        projects_resp = r.result.get('projects')
+        projects = set(p['id'] for p in projects_resp)
+        projects_ref = set([self.proj_employees['id'],
+                            self.project_all['id']])
+        self.assertEqual(projects, projects_ref)
+
+        r = self.get(url, token=self.token_admin['id'])
+        projects_resp = r.result.get('projects')
+        projects = set(p['id'] for p in projects_resp)
+        projects_ref = set([self.proj_employees['id'],
+                            self.project_all['id'],
+                            self.proj_customers['id']])
+        self.assertEqual(projects, projects_ref)
+
+    def test_list_domains(self):
+        url = '/OS-FEDERATION/domains'
+        r = self.get(url, token=self.token_customer['id'])
+        domains_resp = r.result.get('domains')
+        domains = set(p['id'] for p in domains_resp)
+        domains_ref = set([self.domainA['id']])
+        self.assertEqual(domains, domains_ref)
+
+        r = self.get(url, token=self.token_employee['id'])
+        domains_resp = r.result.get('domains')
+        domains = set(d['id'] for d in domains_resp)
+        domains_ref = set([self.domainA['id'],
+                           self.domainB['id']])
+        self.assertEqual(domains, domains_ref)
+
+        r = self.get(url, token=self.token_admin['id'])
+        domains_resp = r.result.get('domains')
+        domains = set(d['id'] for d in domains_resp)
+        domains_ref = set([self.domainA['id'],
+                           self.domainB['id'],
+                           self.domainC['id']])
+        self.assertEqual(domains, domains_ref)
