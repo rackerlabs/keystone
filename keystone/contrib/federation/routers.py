@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.assignment import controllers as assignment_controllers
 from keystone.common import wsgi
 from keystone.contrib import federation
 from keystone.contrib.federation import controllers
@@ -55,6 +56,8 @@ class FederationExtension(wsgi.ExtensionRouter):
         idp_controller = controllers.IdentityProvider()
         protocol_controller = controllers.FederationProtocol()
         mapping_controller = controllers.MappingController()
+        project_controller = assignment_controllers.ProjectV3()
+        domain_controller = assignment_controllers.DomainV3()
 
         # Identity Provider CRUD operations
 
@@ -156,3 +159,15 @@ class FederationExtension(wsgi.ExtensionRouter):
             controller=mapping_controller,
             action='update_mapping',
             conditions=dict(method=['PATCH']))
+
+        mapper.connect(
+            self._construct_url('projects'),
+            controller=project_controller,
+            action='list_projects_for_groups',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('domains'),
+            controller=domain_controller,
+            action='list_domains_for_groups',
+            conditions=dict(method=['GET']))

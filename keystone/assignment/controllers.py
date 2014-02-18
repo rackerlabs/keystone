@@ -332,7 +332,7 @@ class Role(controller.V2Controller):
             user_id, tenant_id, role_id)
 
 
-@dependency.requires('assignment_api')
+@dependency.requires('assignment_api', 'token_api')
 class DomainV3(controller.V3Controller):
     collection_name = 'domains'
     member_name = 'domain'
@@ -355,6 +355,22 @@ class DomainV3(controller.V3Controller):
         refs = self.assignment_api.list_domains(hints=hints)
         return DomainV3.wrap_collection(context, refs, hints=hints)
 
+    def list_domains_for_groups(self, context):
+        """List all available domains based on the
+        group membership.
+
+        Group ids are stored in the token.
+        :param context: request context
+        :raises exception.TokenNotFound
+        :returns: Wrapped JSON with matching projects.
+
+        """
+
+        token = self.token_api.get_token(context['token_id'])
+        group_ids = [g['id'] for g in token['user'].get('group_ids', [])]
+        domains = self.assignment_api.list_domains_for_groups(group_ids)
+        return DomainV3.wrap_collection(context, domains)
+
     @controller.protected()
     def get_domain(self, context, domain_id):
         ref = self.assignment_api.get_domain(domain_id)
@@ -371,7 +387,7 @@ class DomainV3(controller.V3Controller):
         return self.assignment_api.delete_domain(domain_id)
 
 
-@dependency.requires('assignment_api')
+@dependency.requires('assignment_api', 'token_api')
 class ProjectV3(controller.V3Controller):
     collection_name = 'projects'
     member_name = 'project'
@@ -401,6 +417,23 @@ class ProjectV3(controller.V3Controller):
         refs = self.assignment_api.list_projects_for_user(user_id,
                                                           hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
+
+    def list_projects_for_groups(self, context):
+        """List all available projects based on the
+        group membership.
+
+        Group ids are stored in the token.
+        :param context: request context
+        :raises exception.TokenNotFound
+        :returns: Wrapped JSON with matching projects.
+
+        """
+
+        token_id = context['token_id']
+        token = self.token_api.get_token(token_id)
+        group_ids = [g['id'] for g in token['user']['groups']]
+        projects = self.assignment_api.list_projects_for_groups(group_ids)
+        return ProjectV3.wrap_collection(context, projects)
 
     @controller.protected()
     def get_project(self, context, project_id):
