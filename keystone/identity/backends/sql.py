@@ -122,8 +122,18 @@ class Identity(identity.Driver):
             user_ref = self._get_user(session, user_id)
         except exception.UserNotFound:
             raise AssertionError(_('Invalid user / password'))
+
         if not self._check_password(password, user_ref):
-            raise AssertionError(_('Invalid user / password'))
+            # TODO(dstanek): should we make sure that the password rotation
+            # extension is enabled?
+            rps = self.list_active_rotated_passwords_by_user(user_id, None)
+            for rp_ref in rps:
+                if utils.check_password(password, rp_ref['password']):
+                    break
+            else:
+                raise AssertionError(_('Invalid user / password'))
+
+
         return identity.filter_user(user_ref.to_dict())
 
     # user crud
@@ -330,7 +340,7 @@ class Identity(identity.Driver):
         session = db_session.get_session()
         query = session.query(RotatedPassword)
         query = query.filter_by(user_id=user_id)
-        refs = self.filter_limit_query(RotatedPassword, query, hints)
+        refs = sql.filter_limit_query(RotatedPassword, query, hints)
         return [ref.to_dict() for ref in refs]
 
     def list_active_rotated_passwords_by_user(self, user_id, hints):
@@ -339,7 +349,7 @@ class Identity(identity.Driver):
         q = session.query(RotatedPassword)
         q = q.filter_by(user_id=user_id)
         q = q.filter(RotatedPassword.expires_at > now)
-        refs = self.filter_limit_query(RotatedPassword, q, hints)
+        refs = sql.filter_limit_query(RotatedPassword, q, hints)
         return [ref.to_dict() for ref in refs]
 
     def delete_expired_rotated_passwords_by_user(self, user_id):

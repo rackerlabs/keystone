@@ -10,21 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import datetime
-
 from keystone.identity.backends import sql
 from keystone import tests
 from keystone.tests import utils
-
-
-def future_date():
-    """Returns a datetime representing a date 24hrs in the future."""
-    return datetime.datetime.utcnow() + datetime.timedelta(hours=24)
-
-
-def past_date():
-    """Returns a datetime representing a date 24hrs in the past."""
-    return datetime.datetime.utcnow() - datetime.timedelta(hours=24)
 
 
 class TestPasswordRotationCrudSQL(tests.TestCase):
@@ -39,10 +27,10 @@ class TestPasswordRotationCrudSQL(tests.TestCase):
 
         self.user_id = utils.new_uuid()
 
-        future_rp = self._create_data(self.user_id, future_date())
+        future_rp = self._create_data(self.user_id, utils.future_date())
         self.future_rp = self.driver.create_rotated_password(future_rp)
 
-        past_rp = self._create_data(self.user_id, past_date())
+        past_rp = self._create_data(self.user_id, utils.past_date())
         self.past_rp = self.driver.create_rotated_password(past_rp)
 
     def _create_data(self, user_id, expires_at):
@@ -69,7 +57,7 @@ class TestPasswordRotationCrudSQL(tests.TestCase):
     def test_deleting_expired_rotated_passwords(self):
         # create another user's data to make sure we don't delete it too
         other_user_id = utils.new_uuid()
-        other_user_rp = self._create_data(other_user_id, past_date())
+        other_user_rp = self._create_data(other_user_id, utils.past_date())
         other_user_rp = self.driver.create_rotated_password(other_user_rp)
 
         # do the delete
