@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+29U\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "why would a trust not have an ID attribute? if there\u0027s no reason for this to be defensive, use trust[\u0027id\u0027] instead",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+29M\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "why doesn\u0027t consume_use() check for remaining uses by itself, and raise Unauthorized if there are no remaining uses?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+28Y\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "smart!",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+28I\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "i believe you can just do:\n\n  table.create_column(column, checkfirst\u003dTrue)\n\nand drop this entire method?\n\nbesides that, i\u0027m not really clear as to why there would be a risk of duplicate columns? if that\u0027s a legitimate concern, it needs an inline comment explaining the scenario",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Wsk\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 17
@@ -13,6 +81,41 @@
       "writtenOn": "2014-02-13T20:23:22Z",
       "side": 1,
       "message": "(NIT): add trust_id here if available to print with the message. Might also be helpful to print something more relating to remaining uses. \n\n    \"No remaining uses for trust %(trust_id)s.\"\n\nSo the user gets the idea if they want to continue using their workflow they have to modify their remaining uses or increase them with a new trust. The existing message *could* (probably not likely) be confused with quotas... thoughts?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+26U\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUX//Wsk\u003d",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+25o\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "it\u0027s not necessary to have a specific exception type for this, as i don\u0027t imagine you\u0027d handle it any differently from any other ValidationError\n\nso wherever you\u0027re using this, just:\n\n  raise ValidationError(_(\u0027remaining_uses must be a positive integer or null.\u0027))",
       "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +174,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+2zk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2070,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "once it has zero remaining uses, it seems like it should just 404 as the trust is no longer useful -- what\u0027s the point of returning a trust with 0 remaining uses? if there\u0027s not one, this test should start with 2 remaining uses, and assert a 404 at the end",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//WfU\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 17
@@ -88,6 +208,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+2y4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2078,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "again, why would you have a trust that you can\u0027t use?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//WaQ\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 17
@@ -99,6 +236,74 @@
       "writtenOn": "2014-02-13T20:23:22Z",
       "side": 1,
       "message": "(NIT): def test_create_trust_with_negative_remaining_uses(self)\n\n\nthese are just nits for readability if you want them \u003d)",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2yk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "-1 (or even better: 0)",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2xk\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "why is this being called twice?",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2xQ\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "again, this look-before-you-leap pattern should be abstracted out of this scope",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2xA\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "should be a private common driver method or manager method, i\u0027m not sure which",
       "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -134,6 +339,57 @@
       "side": 1,
       "message": "Will move it there",
       "parentUuid": "AAAAUX//WOc\u003d",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2v4\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "this probably isn\u0027t behaving exactly like you\u0027re intending... use the native method instead:\n\n  ref.setdefault(\u0027remaining_uses\u0027, None)",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2vU\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "should be a ValidationError\n\ndo the rest of this work in the manager layer:\n\n  trust.setdefault(\u0027remaining_uses\u0027, None)\n  etc",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2q0\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:57:14Z",
+      "side": 1,
+      "message": "remove this from the driver interface",
       "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
