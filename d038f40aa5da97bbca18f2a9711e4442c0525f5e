@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+2z0\u003d",
+        "filename": "keystone/contrib/kerberos/middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7662
+      },
+      "writtenOn": "2014-02-18T15:54:37Z",
+      "side": 1,
+      "message": "You should at least log failures so a user has a chance at debugging failures when GSSError is raised.\n\nAlso, if something goes wrong without raising an exception then this will fall through with no logging at all and no indication of where the failure is.",
+      "revId": "d038f40aa5da97bbca18f2a9711e4442c0525f5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2y8\u003d",
+        "filename": "keystone/contrib/kerberos/middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7662
+      },
+      "writtenOn": "2014-02-18T15:54:37Z",
+      "side": 1,
+      "message": "I\u0027d put a try/except around this to catch malformed requests.",
+      "revId": "d038f40aa5da97bbca18f2a9711e4442c0525f5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
