@@ -157,6 +157,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+8Ig\u003d",
+        "filename": "keystone/contrib/revoke/__init__.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "remove the vim header",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++hc\u003d",
         "filename": "keystone/contrib/revoke/__init__.py",
         "patchSetId": 46
@@ -321,6 +338,23 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "let\u0027s not add these back in again.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8IA\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "remove",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1372,6 +1406,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+8BE\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8Ac\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this extend a tests.TestCase? not object?\n\nWhy not just move these tests to KvsRevokeTests?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/aA\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 46
@@ -1406,6 +1474,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+79o\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "This is already called in testtokenrevokebyId. strongly suggest putting this somewhere where are tests can access it, like restful_v3_testcase",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++bU\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 46
@@ -1417,6 +1502,57 @@
       "writtenOn": "2014-02-17T21:51:34Z",
       "side": 1,
       "message": "(NIT): move this up with assertDominInList and assertProjectInList",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+7+I\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 1238,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "assertEqual(events, [])",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+7+Y\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 2112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "This change is in a lot of spots, can\u0027t you add it to a common setup?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+7+0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 2456,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "These tests can probably go in another patch later on .. they seem outside the scope of the patch",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1457,6 +1593,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+8JY\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "i\u0027m not sure why this change is here at all?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/Zs\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 46
@@ -1468,6 +1621,40 @@
       "writtenOn": "2014-02-17T19:26:32Z",
       "side": 1,
       "message": "what is this for?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+79A\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "huh?\n\napparently this is in all the backends, can you please add a comment for what\u0027s going on here? It\u0027s super unclear to me right now.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+76Y\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-18T04:42:19Z",
+      "side": 1,
+      "message": "I really need a comment here for any one of these.",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
