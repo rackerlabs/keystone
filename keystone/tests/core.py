@@ -50,6 +50,7 @@ from keystone.common import environment
 environment.use_eventlet()
 
 from keystone import auth
+from keystone import backends
 from keystone.common import dependency
 from keystone.common import kvs
 from keystone.common.kvs import core as kvs_core
@@ -64,7 +65,6 @@ from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common.fixture import config as config_fixture
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
-from keystone import service
 from keystone.tests import fixtures as ksfixtures
 
 # NOTE(dstanek): Tests inheriting from TestCase depend on having the
@@ -383,7 +383,7 @@ class TestCase(testtools.TestCase):
         kvs_core.KEY_VALUE_STORE_REGISTRY.clear()
 
         self.clear_auth_plugin_registry()
-        drivers = service.load_backends()
+        drivers = backends.load_backends()
 
         # TODO(stevemar): currently, load oauth1 driver as well, eventually
         # we need to have this as optional.
