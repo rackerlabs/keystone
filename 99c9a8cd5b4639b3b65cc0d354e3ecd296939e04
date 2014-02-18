@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+zzM\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T21:49:03Z",
+      "side": 1,
+      "message": "weren\u0027t these removed?\n\nhttps://github.com/openstack/keystone/commit/a39b815cf76e32627feab23722c8580150c0bf3f",
+      "revId": "99c9a8cd5b4639b3b65cc0d354e3ecd296939e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+zyY\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T21:49:03Z",
+      "side": 1,
+      "message": "same comment here and all other occurrences",
+      "revId": "99c9a8cd5b4639b3b65cc0d354e3ecd296939e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
