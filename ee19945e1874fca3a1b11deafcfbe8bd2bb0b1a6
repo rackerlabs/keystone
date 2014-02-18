@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+8h4\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-18T03:06:44Z",
+      "side": 1,
+      "message": "I assume \"\" means the policy is that anyone can perform this action?  I\u0027d buy someone a beer (microbrew or imported) for either an annotated version of this file or thoroughly documented examples.  I understand most of it but every so often I see something I didn\u0027t notice before.  What do you think about me taking a bug to create annotated versions of this and the v3policy file to serve as docs or I could add an annotated example to the docs?  Let me know what you think.",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8hY\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-18T03:06:44Z",
+      "side": 1,
+      "message": "great comment",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//BFY\u003d",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 5
@@ -13,6 +47,41 @@
       "writtenOn": "2014-02-17T16:28:42Z",
       "side": 1,
       "message": "the comment and the name of the test seem to go in two different directions. Maybe add a little more detail to the name? \n\n    def test_create_region_without_id_in_request(self):\n\nThis is a nit, just looking from readability standpoint.",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8eA\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-18T03:06:44Z",
+      "side": 1,
+      "message": "your new name is not accurate.  There is an id in the request. It\u0027s just encoded in the URL of the request not in the request body.  Perhaps test_create_region_with_id_in_URL?",
+      "parentUuid": "AAAAUX//BFY\u003d",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8cw\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-18T03:06:44Z",
+      "side": 1,
+      "message": "Perhaps test_create_region_with_id_in_body",
       "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +116,41 @@
       "writtenOn": "2014-02-17T16:28:42Z",
       "side": 1,
       "message": "Just curious, how come this test uses POST and all others here use PUT? Should this being using PUT as well?",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8bA\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-18T03:06:44Z",
+      "side": 1,
+      "message": "I believe he  is doing this to confirm that the new policy entries he added work for both POST and PUT as stated in the commit message",
+      "parentUuid": "AAAAUX//BBo\u003d",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8aw\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-18T03:06:44Z",
+      "side": 1,
+      "message": "Nice!",
       "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
