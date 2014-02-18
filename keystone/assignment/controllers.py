@@ -332,7 +332,7 @@ class Role(controller.V2Controller):
             user_id, tenant_id, role_id)
 
 
-@dependency.requires('assignment_api')
+@dependency.requires('assignment_api', 'token_api')
 class DomainV3(controller.V3Controller):
     collection_name = 'domains'
     member_name = 'domain'
@@ -371,7 +371,7 @@ class DomainV3(controller.V3Controller):
         return self.assignment_api.delete_domain(domain_id)
 
 
-@dependency.requires('assignment_api')
+@dependency.requires('assignment_api', 'token_api')
 class ProjectV3(controller.V3Controller):
     collection_name = 'projects'
     member_name = 'project'

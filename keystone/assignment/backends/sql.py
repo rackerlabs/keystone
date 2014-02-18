@@ -279,6 +279,53 @@ class Assignment(sql.Base, assignment.Driver):
 
             return _project_ids_to_dicts(session, project_ids)
 
+    def _list_entities_for_groups(self, group_ids, type, cls):
+        group_sql_conditions = sql.and_(
+            RoleAssignment.type == type,
+            cls.id == RoleAssignment.target_id,
+            RoleAssignment.actor_id.in_(group_ids))
+
+        session = db_session.get_session()
+        with session.begin():
+            query = session.query(cls).filter(
+                group_sql_conditions).all()
+        return [x.to_dict() for x in query]
+
+    def list_projects_for_groups(self, group_ids):
+        """List all projects accessible for a member of
+        specified groups
+
+        :param group_ids: list of groups
+        :type: list
+
+        return: list of dictionarized projects
+
+        """
+        kwargs = {
+            'type': AssignmentType.GROUP_PROJECT,
+            'cls': Project
+        }
+        return self._list_entities_for_groups(group_ids,
+                                              **kwargs)
+
+    def list_domains_for_groups(self, group_ids):
+        """List all domains accessible for a member of
+        specified groups
+
+        :param group_ids: list of groups
+        :type: list
+
+        :returns: list of dictionarized domains
+
+        """
+        kwargs = {
+            'type': AssignmentType.GROUP_DOMAIN,
+            'cls': Domain
+        }
+
+        return self._list_entities_for_groups(group_ids,
+                                              **kwargs)
+
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)

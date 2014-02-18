@@ -288,3 +288,58 @@ class MappingController(_ControllerBase):
         utils.validate_mapping_structure(mapping)
         mapping_ref = self.federation_api.update_mapping(mapping_id, mapping)
         return MappingController.wrap_member(context, mapping_ref)
+
+
+@dependency.requires('assignment_api', 'token_api')
+class Domain(controller.V3Controller):
+    collection_name = 'domains'
+    member_name = 'domain'
+
+    def __init__(self):
+        super(Domain, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_domain
+
+    @controller.protected()
+    def list_accessible_domains(self, context):
+        """List all available domains available to the authenticated user.
+
+        Since we store group IDs in the token, we can use those to resolve the
+        accessible domains.
+
+        :param context: request context
+        :returns: Wrapped JSON with matching projects.
+
+        """
+        token = self.token_api.get_token(context['token_id'])
+        group_ids = [g['id'] for g in token['user'].get('group_ids', [])]
+        domains = self.assignment_api.list_domains_for_groups(group_ids)
+        return Domain.wrap_collection(context, domains)
+
+
+@dependency.requires('assignment_api', 'token_api')
+class Project(controller.V3Controller):
+    collection_name = 'projects'
+    member_name = 'project'
+
+    def __init__(self):
+        super(Project, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_project
+
+    def list_projects_for_groups(self, context):
+        """List all available projects available to the authenticated user.
+
+        Since we store group IDs in the token, we can use those to resolve the
+        accessible projects.
+
+        :param context: request context
+        :raises exception.TokenNotFound
+        :returns: Wrapped JSON with matching projects.
+
+        """
+        # FIXME(dolph): get groups out of context instead
+        token = self.token_api.get_token(context['token_id'])
+        # FIXME(dolph): this should be ['user']['OS-FEDERATION:groups']
+        group_ids = [g['id'] for g in token['user']['groups']]
+
+        projects = self.assignment_api.list_projects_for_groups(group_ids)
+        return Project.wrap_collection(context, projects)
