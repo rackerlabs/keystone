@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+8Ek\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T04:11:44Z",
+      "side": 1,
+      "message": "If this gets respun, could just say in addition to this comment that instead the exception is logged. But that is super nit picky.",
+      "revId": "c94164a8edce533226e50b06bc4a0c7bed343529",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
