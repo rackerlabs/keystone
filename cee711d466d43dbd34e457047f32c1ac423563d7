@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+z1Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T21:42:24Z",
+      "side": 1,
+      "message": "add bp password-rotation",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+z/I\u003d",
         "filename": "keystone/tests/integration/identity/test_passwords.py",
         "patchSetId": 1
