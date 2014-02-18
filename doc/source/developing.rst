@@ -100,8 +100,8 @@ The directory ``keystone/contrib/example`` contains a sample extension
 migration.
 
 Migrations must be explicitly run for each extension individually. To run a
-migration for a specific extension, run ``keystone-manage --extension <name>
-db_sync``.
+migration for a specific extension, run ``keystone-manage db_sync --extension
+ <name>``.
 
 Initial Sample Data
 -------------------
