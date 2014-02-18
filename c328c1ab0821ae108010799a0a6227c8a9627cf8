@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+8Bs\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T04:22:10Z",
+      "side": 1,
+      "message": "I think we can group this with uuid and random since urllib is a standard library",
+      "revId": "c328c1ab0821ae108010799a0a6227c8a9627cf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8Bo\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T04:22:10Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "c328c1ab0821ae108010799a0a6227c8a9627cf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8Bc\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T04:22:10Z",
+      "side": 1,
+      "message": "Keep this on the line above, it\u0027s failing pep8: \n\n    kwargs \u003d {\u0027project_id\u0027: project_id,\n              \u0027domain_id\u0027: domain_id}",
+      "revId": "c328c1ab0821ae108010799a0a6227c8a9627cf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
