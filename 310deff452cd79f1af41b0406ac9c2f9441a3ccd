@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+0JU\u003d",
+        "filename": "keystone/tests/integration/identity/test_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-18T21:03:09Z",
+      "side": 1,
+      "message": "Nice test case.",
+      "revId": "310deff452cd79f1af41b0406ac9c2f9441a3ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
