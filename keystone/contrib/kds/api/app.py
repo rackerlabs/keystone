@@ -13,16 +13,12 @@
 from oslo.config import cfg
 import pecan
 
-from keystone.contrib.kds.api import config as pecan_config
 from keystone.contrib.kds.api import hooks
+from keystone.contrib.kds.api import root
 
 CONF = cfg.CONF
 
-
-def get_pecan_config():
-    # Set up the pecan configuration
-    filename = pecan_config.__file__.replace('.pyc', '.py')
-    return pecan.configuration.conf_from_file(filename)
+DEFAULT_CONFIG = {'app': {}}
 
 
 def setup_app(config=None, extra_hooks=None):
@@ -31,12 +27,16 @@ def setup_app(config=None, extra_hooks=None):
     if extra_hooks:
         app_hooks.extend(extra_hooks)
 
-    if not config:
-        config = get_pecan_config()
+    if config is None:
+        config = DEFAULT_CONFIG
+    else:
+        config = dict(config)
 
-    pecan.configuration.set_config(dict(config), overwrite=True)
+    # NOTE(jamielennox): Reset global pecan config. Works around some strange
+    # edge cases with running two pecan apps in the same namespace in testing.
+    pecan.configuration.set_config(config, overwrite=True)
 
-    app = pecan.make_app('keystone.contrib.kds.api.root.RootController',
+    app = pecan.make_app(root.RootController(),
                          debug=CONF.debug,
                          hooks=app_hooks)
 
