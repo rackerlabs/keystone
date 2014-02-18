@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+3A0\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:17:54Z",
+      "side": 1,
+      "message": "++ i thought i did that, actually",
+      "parentUuid": "AAAAUX/+3Xs\u003d",
+      "revId": "46c72279a629a6d0f51869460ea977c0afcc824a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+3VU\u003d",
         "filename": "keystone/notifications.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-18T15:09:31Z",
       "side": 1,
       "message": "Is there a specific exception we can catch? If we really want to use the diaper pattern a comment may be helpful.",
+      "revId": "46c72279a629a6d0f51869460ea977c0afcc824a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+3BI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T15:17:54Z",
+      "side": 1,
+      "message": "++ for diaper pattern here (also i\u0027ve never heard that term but i deem it to be awesomely accurate); one of the few places i think we should use it",
+      "parentUuid": "AAAAUX/+3VU\u003d",
       "revId": "46c72279a629a6d0f51869460ea977c0afcc824a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
