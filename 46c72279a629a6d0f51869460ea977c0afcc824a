@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+3Xs\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-18T15:09:31Z",
+      "side": 1,
+      "message": "(nit) I would probably move this into the except block since that\u0027s the only place it is used.",
+      "revId": "46c72279a629a6d0f51869460ea977c0afcc824a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+3VU\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-18T15:09:31Z",
+      "side": 1,
+      "message": "Is there a specific exception we can catch? If we really want to use the diaper pattern a comment may be helpful.",
+      "revId": "46c72279a629a6d0f51869460ea977c0afcc824a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
