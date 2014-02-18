@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+87U\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-18T01:43:58Z",
+      "side": 1,
+      "message": "no, this stays…remove the comment",
+      "revId": "1ec4bd401add8237c4fa24745e29801bec7ea77a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+87o\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-18T01:43:58Z",
+      "side": 1,
+      "message": "This looks like a merge problem",
+      "revId": "1ec4bd401add8237c4fa24745e29801bec7ea77a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+87k\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-18T01:43:58Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "1ec4bd401add8237c4fa24745e29801bec7ea77a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+87E\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-18T01:43:58Z",
+      "side": 1,
+      "message": "remove comment, no we don\u0027t",
+      "revId": "1ec4bd401add8237c4fa24745e29801bec7ea77a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
