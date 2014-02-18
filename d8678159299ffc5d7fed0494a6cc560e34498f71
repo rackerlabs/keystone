@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+0YA\u003d",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T20:28:30Z",
+      "side": 1,
+      "message": "the fact that it\u0027s returning a uuid should be hidden",
+      "revId": "d8678159299ffc5d7fed0494a6cc560e34498f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+0ZQ\u003d",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T20:28:30Z",
+      "side": 1,
+      "message": "i proposed something similar to this as keystone.common.uid once\n\n  uid.new()",
+      "revId": "d8678159299ffc5d7fed0494a6cc560e34498f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
