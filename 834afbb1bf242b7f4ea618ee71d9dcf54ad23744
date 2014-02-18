@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+2So\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUX/++1A\u003d",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2Rw\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "add a blank line after the hyphens",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++zM\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 16
@@ -30,6 +65,75 @@
       "writtenOn": "2014-02-17T20:58:29Z",
       "side": 1,
       "message": "if you plan on using the code:: python keyword, then remove the extra : from the end of this line, as it is now, the docs are not showing correctly.",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2Rg\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "will that raise an error with the new doc job?",
+      "parentUuid": "AAAAUX/++zM\u003d",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2QE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "can you reference external documentation or something for this? there\u0027s nothing here that tells me how to implement my own \"manipulator\" or why keystone would ever be expected to try and cache arbitrary data types. as written, this whole thing should just be removed because there\u0027s no use case.",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2PU\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "``keystone.conf``::",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2PY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "this isn\u0027t python code",
       "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -332,6 +436,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+2Mc\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "shouldn\u0027t the mongo driver register itself? this seems very out of place",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++ws\u003d",
         "filename": "keystone/tests/test_cache_backend_mongo.py",
         "patchSetId": 16
@@ -396,6 +517,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "AAAAUX//JV0\u003d",
+      "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+2OA\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-18T16:43:16Z",
+      "side": 1,
+      "message": "requiring \u003e\u003d2.4 doesn\u0027t preclude a recommendation of \u003e\u003d2.6, it\u0027s just that we\u0027re requiring the minimum version that we\u0027re capable of supporting",
+      "parentUuid": "AAAAUX/++w4\u003d",
       "revId": "834afbb1bf242b7f4ea618ee71d9dcf54ad23744",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
