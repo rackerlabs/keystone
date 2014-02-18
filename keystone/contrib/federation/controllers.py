@@ -288,3 +288,48 @@ class MappingController(_ControllerBase):
         utils.validate_mapping_structure(mapping)
         mapping_ref = self.federation_api.update_mapping(mapping_id, mapping)
         return MappingController.wrap_member(context, mapping_ref)
+
+
+@dependency.requires('assignment_api')
+class DomainV3(controller.V3Controller):
+    collection_name = 'domains'
+    member_name = 'domain'
+
+    def __init__(self):
+        super(DomainV3, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_domain
+
+    @controller.protected()
+    def list_accessible_domains(self, context):
+        """List all domains available to an authenticated user.
+
+        :param context: request context
+        :returns: list of accessible domains
+
+        """
+
+        group_ids = [g['id'] for g in context['user']['OS-FEDERATION:groups']]
+        domains = self.assignment_api.list_accessible_domains(group_ids)
+        return DomainV3.wrap_collection(context, domains)
+
+
+@dependency.requires('assignment_api')
+class ProjectV3(controller.V3Controller):
+    collection_name = 'projects'
+    member_name = 'project'
+
+    def __init__(self):
+        super(ProjectV3, self).__init__()
+        self.get_member_from_driver = self.assignment_api.get_project
+
+    def list_accessible_projects(self, context):
+        """List all projects available to an authenticated user.
+
+        :param context: request context
+        :returns: list of accessible projects
+
+        """
+
+        group_ids = [g['id'] for g in context['user']['OS-FEDERATION:groups']]
+        projects = self.assignment_api.list_accessible_projects(group_ids)
+        return ProjectV3.wrap_collection(context, projects)

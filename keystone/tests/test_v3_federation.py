@@ -713,3 +713,18 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
+
+
+class ListProjectsAndDomainsTests(FederationTests):
+    """A class for testing the extra project and domain listing mechanisms."""
+
+    def setUp(self):
+        super(ListProjectsAndDomainsTests, self).setUp()
+
+    def test_list_projects(self):
+        #self.get('/OS-FEDERATION/projects')
+        pass
+
+    def test_list_domains(self):
+        #self.get('/OS-FEDERATION/domains')
+        pass
