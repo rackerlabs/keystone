@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+z2w\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T21:49:42Z",
+      "side": 1,
+      "message": "This seems like it could be simplified with \u0027, \u0027.join([user_id, group_id, project_id, domain_id])\n\nSince it is a multiple replacement it should use named replacements if you keep with the % sub notation.",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+2BU\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 16
@@ -19,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+z2I\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T21:49:42Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAUX/+2BU\u003d",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+z08\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T21:49:42Z",
+      "side": 1,
+      "message": "This bit (179 to 182) seems to be duplicated 199 - 203, suggest creating a function/method that can construct that filtering, so that if it needs to be changed in the future, it only needs changing in one place.",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+2A8\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 16
@@ -30,6 +82,40 @@
       "writtenOn": "2014-02-18T17:19:27Z",
       "side": 1,
       "message": "i assume this is checking the number of affected row, but you could just do `if not q.delete(False):`",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+zzw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T21:49:42Z",
+      "side": 1,
+      "message": "Is it too much restructuring to complete this here?  Suggest making this a FIXME if it is",
+      "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+zzE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/038_add_assignment_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-18T21:49:42Z",
+      "side": 1,
+      "message": "Can this be nullable (or should it?)  It seems like it shouldn\u0027t be nullable.",
       "revId": "dbf829a75cef92f9b1284c6c20ec9b7531b2b566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
