@@ -16,6 +16,74 @@
       "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+yZM\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-19T03:09:48Z",
+      "side": 1,
+      "message": "self._key_manger \u003d None\n\nsuggest add a test that if you set key_mangler to none then the key_mangler property is now None.",
+      "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+yUs\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-19T03:09:48Z",
+      "side": 1,
+      "message": "this isn\u0027t getting tested. coverage report shows there\u0027s nothing hitting it, and I tried commenting it out and test_noncallable_key_mangler_set_on_driver_raises_type_error didn\u0027t hit it.",
+      "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+yX4\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-19T03:09:48Z",
+      "side": 1,
+      "message": "why using setattr here?\n\n kvs._region.backend.key_mangler \u003d new_mangler\n\nthe python docs say this is equivalent.",
+      "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+yaI\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-19T03:09:48Z",
+      "side": 1,
+      "message": "could use setattr rather than have an extra function.\n\n  setattr, kvs._region.backend.driver, \u0027key_mangler\u0027, \u0027Non-Callable\u0027)",
+      "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
