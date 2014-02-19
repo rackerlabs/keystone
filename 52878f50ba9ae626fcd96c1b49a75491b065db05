@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+rWA\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-19T20:50:08Z",
+      "side": 1,
+      "message": "RuleProcessor doesn\u0027t always issue a username, and I think we agreed that *something* that identifies a user would be required, for instance for auditibility etc.\nI will look at the code tomorrow and try to make it witk with users set to None.",
+      "parentUuid": "AAAAUX/+raw\u003d",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+rao\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 27
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+rY0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-19T20:50:08Z",
+      "side": 1,
+      "message": "my bad! sorry for that!",
+      "parentUuid": "AAAAUX/+rao\u003d",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+raQ\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 27
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-19T20:42:48Z",
       "side": 1,
       "message": "delete this method",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rVw\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-19T20:50:08Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "AAAAUX/+raQ\u003d",
       "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
