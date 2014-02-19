@@ -464,7 +464,7 @@
 #
 
 # Default auth methods. (list value)
-#methods=external,password,token
+#methods=external,kerberos,password,token
 
 # The password auth plugin module (string value)
 #password=keystone.auth.plugins.password.Password
@@ -475,6 +475,9 @@
 # The external (REMOTE_USER) auth plugin module. (string
 # value)
 #external=keystone.auth.plugins.external.DefaultDomain
+
+# The kerberos auth plugin module (string)
+#kerberos=keystone.auth.plugins.kerberos.Kerberos
 
 
 [cache]
@@ -1036,6 +1039,12 @@
 #  (string value)
 #password=<None>
 
+
+[kerberos]
+# Specify the location of the kerberos keytab
+# keytab_file = /etc/keystone/keystone.keytab
+# Specify the name of the service inside the keytab
+# service_name = keystone.example.com
 
 [paste_deploy]
 
