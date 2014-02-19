@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+rbw\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T20:44:06Z",
+      "side": 1,
+      "message": "Duh. Thanks.",
+      "parentUuid": "AAAAUX/+zAM\u003d",
+      "revId": "2a93236510a6ba6bcb1ebbb88b45254dba267508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+zeI\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 17
@@ -293,6 +311,24 @@
       "side": 1,
       "message": "not sure I understand what you mean by index name?",
       "parentUuid": "AAAAUX/+zcs\u003d",
+      "revId": "2a93236510a6ba6bcb1ebbb88b45254dba267508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+raY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T20:44:06Z",
+      "side": 1,
+      "message": "Ignore me. I often write comments and as I go through the code update or delete them based on what I find. This should have been deleted. I was thinking that this was an index other than the primary key.",
+      "parentUuid": "AAAAUX/+xeU\u003d",
       "revId": "2a93236510a6ba6bcb1ebbb88b45254dba267508",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
