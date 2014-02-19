@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+q3g\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T21:52:31Z",
+      "side": 1,
+      "message": "(nit) When why filter for \u0027metadata_user-%s\u0027 % tenant_id? You are already looping over the data once there\u0027s no reason to loop over the results. Also the double quotes. I think this method could be boiled down to something like:\n\n  key \u003d \u0027metadata_user-%s\u0027 % tenant_id\n  metadata_keys \u003d filter(lambda here, self.db)\n  return list(set([key.split(\u0027-\u0027)[-1] for key in metadata_keys]))",
+      "revId": "e19a8e3852c110283dd4cbde79382d1ac2ba3221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+q2Y\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T21:52:31Z",
+      "side": 1,
+      "message": "You could be a similar approach to make this a little more concise",
+      "revId": "e19a8e3852c110283dd4cbde79382d1ac2ba3221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//5KE\u003d",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 3
