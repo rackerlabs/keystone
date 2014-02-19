@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+xE0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-19T07:22:07Z",
+      "side": 1,
+      "message": "can you just use the in_ operator here, e.g.:\n\nquery \u003d query.filter(RoleAssignment.actor_id.in_(group_ids))\n\nsee list_projects_for_user() in my latest patch for https://review.openstack.org/#/c/71159/ for an example",
+      "revId": "d173c2fa96ed486f83056fd37a7db501ad5d531e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+xD8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-19T07:22:07Z",
+      "side": 1,
+      "message": "see previous comment",
+      "revId": "d173c2fa96ed486f83056fd37a7db501ad5d531e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+xEA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-19T07:22:07Z",
+      "side": 1,
+      "message": "Maybe use a join instead on the query above? Again see my latest patch of an example: list_grants()",
+      "revId": "d173c2fa96ed486f83056fd37a7db501ad5d531e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+xC4\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-19T07:22:07Z",
+      "side": 1,
+      "message": "you may not need these…..",
+      "revId": "d173c2fa96ed486f83056fd37a7db501ad5d531e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
