@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+tLs\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "Yes..this is new backend name which is defined at the time of backend registration. Please see related keystone/common/cache/core.py change where this name is defined.",
+      "parentUuid": "AAAAUX/+w7M\u003d",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+uCQ\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-19T15:49:45Z",
       "side": 1,
       "message": "To fix the documentation build I think this should be:\n\n  :mod:`keystone.common.cache.backends.mongo`",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+tLI\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "Thanks for the tip. I was wondering why I did not see this failure in previous builds. Looks like there is some new validation added around it.",
+      "parentUuid": "AAAAUX/+uCQ\u003d",
       "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+tLE\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "Yes..this is new backend name which is defined at the time of backend registration. Please see related keystone/common/cache/core.py change where this name is defined.",
+      "parentUuid": "AAAAUX/+w6w\u003d",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+uDU\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 17
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+sWI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "If I implement that import, I get following error and need to resolve by changing tox.ini. Looks like that change is still under code review so should I be waiting for incorporating that change?\n\n./keystone/common/cache/backends/mongo.py:25:1: H302  import only modules.\u0027from keystone.openstack.common.gettextutils import _\u0027 does not import a module\nfrom keystone.openstack.common.gettextutils import _\n^\nCheck for imports.",
+      "parentUuid": "AAAAUX/+uDU\u003d",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+w2A\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 17
@@ -81,6 +153,24 @@
       "writtenOn": "2014-02-19T08:51:33Z",
       "side": 1,
       "message": "What is the default?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+sqk\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "If w is not passed in, then there is no default value assigned by this code.\n\nSo in that case, the behavior is going to be whatever behavior MongoDB has around that. As per last change around this default in Nov 2012, its w\u003d1. So don\u0027t want to hard-code any default here in docs.\n\nhttp://docs.mongodb.org/manual/release-notes/drivers-write-concern/",
+      "parentUuid": "AAAAUX/+w2A\u003d",
       "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+sNQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "cache allows None and empty string as value. There are related tests around these cases with this change.\n\nIf cache value is None, then returned value is like this \n\"CachedValue: (None, {\u0027ct\u0027: 1392837221.067737, \u0027v\u0027: 1})\"\n\nAnd dogpile code returns None to client code.\n\nIf requested key is not found in DB, then NO_VALUE is returned to indicate that.",
+      "parentUuid": "AAAAUX/+w5M\u003d",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+w3k\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 17
@@ -166,6 +274,24 @@
       "writtenOn": "2014-02-19T08:51:33Z",
       "side": 1,
       "message": "This is listed above as being a string. Is None the correct default value here?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+seY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "Yes as code handles None by using BaseTransform manipulator instance. \n\nIn most impl, base manipulator will be sufficient so we can avoid overhead of `importutils.import_object` logic by referencing BaseTransform class instead of looking by string name.",
+      "parentUuid": "AAAAUX/+w3k\u003d",
       "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -319,6 +445,24 @@
       "writtenOn": "2014-02-19T08:51:33Z",
       "side": 1,
       "message": "Shouldn\u0027t this be returning NO_VALUE so that a None can be cached?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+siI\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-19T20:01:32Z",
+      "side": 1,
+      "message": "That\u0027s taken care in MongoCachebackend#get method.\n\nNone, \u0027\u0027 (empty string) can be added as cache value.\n\napi.NO_VALUE is primarily for case where specified key does not exist in cache backend.\n\nI have tests around storing None, empty strings and then looking for keys which does not exist to validate these cases.",
+      "parentUuid": "AAAAUX/+wxA\u003d",
       "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
