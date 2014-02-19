@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+rsk\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T20:12:39Z",
+      "side": 1,
+      "message": "the rest of this RST file uses 4 spaces before literal code blocks",
+      "revId": "581fff4cde4a05f258d6c62205b52b9375f6ef96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
