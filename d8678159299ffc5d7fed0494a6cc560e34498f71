@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+zHE\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T00:24:01Z",
+      "side": 1,
+      "message": "I can do this in another commit.  https://review.openstack.org/74538",
+      "parentUuid": "AAAAUX/+zSA\u003d",
+      "revId": "d8678159299ffc5d7fed0494a6cc560e34498f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+0YA\u003d",
         "filename": "keystone/tests/utils.py",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+zDg\u003d",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T00:24:01Z",
+      "side": 1,
+      "message": "I initially wanted to put it in the test base class, but I decided not to because I\u0027ve been writing tests that use testtools.TestCase so that they don\u0027t get all of our setup.",
+      "parentUuid": "AAAAUX/+zR4\u003d",
+      "revId": "d8678159299ffc5d7fed0494a6cc560e34498f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+0ZQ\u003d",
         "filename": "keystone/tests/utils.py",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2014-02-18T20:28:30Z",
       "side": 1,
       "message": "i proposed something similar to this as keystone.common.uid once\n\n  uid.new()",
+      "revId": "d8678159299ffc5d7fed0494a6cc560e34498f71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+zC8\u003d",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T00:24:01Z",
+      "side": 1,
+      "message": "What ever happened to it? I dont\u0027 know that I\u0027d make a new module just for a 1 line function, but I would rename to new_uid() or just uid(). Using uuid was a not to \u0027universally unique identifier\u0027 and not the python uuid module.",
+      "parentUuid": "AAAAUX/+0ZQ\u003d",
       "revId": "d8678159299ffc5d7fed0494a6cc560e34498f71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
