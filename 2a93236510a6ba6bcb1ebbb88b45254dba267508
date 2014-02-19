@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+tPo\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T17:13:14Z",
+      "side": 0,
+      "message": "Unrelated whitespace change?",
+      "revId": "2a93236510a6ba6bcb1ebbb88b45254dba267508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

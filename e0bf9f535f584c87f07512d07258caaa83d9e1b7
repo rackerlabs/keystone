@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+tN4\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T17:13:14Z",
+      "side": 1,
+      "message": "This is essentially the same check as on line 420. I suppose this could be done with a nest if statement. \n\n    if \u0027saml2\u0027 in method_names:\n        if not project_id:\n            # do stuff here (lines 421 - 425)\n        else:\n            # do other stuff here (lines 428 - 432)\n        return t",
+      "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+tNI\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T17:13:14Z",
+      "side": 1,
+      "message": "Docstrings",
+      "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+tNE\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T17:13:14Z",
+      "side": 1,
+      "message": "docstrings",
+      "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+tMg\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T17:13:14Z",
+      "side": 1,
+      "message": "quite a bit of similar code between scoped_federation_token and unscoped_federation_token. Wonder if we could consolidate the two methods a little.",
+      "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
