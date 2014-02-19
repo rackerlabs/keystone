@@ -656,7 +656,12 @@ FILE_OPTIONS = {
                          'for debugging purposes, it is highly recommended '
                          'to always leave this set to True.'),
         cfg.IntOpt('default_lock_timeout', default=5,
-                   help='Default lock timeout for distributed locking.')]}
+                   help='Default lock timeout for distributed locking.')],
+    'kerberos': [
+        cfg.StrOpt('service_name', default='keystone.example.com',
+                   help='Name of the service in the keytab file.'),
+        cfg.StrOpt('keytab_file', default='/etc/keystone/keystone.keytab',
+                   help='Location of the keytab file for the service.')]}
 
 
 CONF = cfg.CONF
