@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+qOM\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T23:25:02Z",
+      "side": 1,
+      "message": "i think raising an unauthorized exception makes sense here",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+rao\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 27
@@ -101,6 +118,91 @@
       "side": 1,
       "message": "ok.",
       "parentUuid": "AAAAUX/+raQ\u003d",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+qN4\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T23:25:02Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to be used in the tests",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+qMc\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T23:25:02Z",
+      "side": 1,
+      "message": "for the rules, i simplified them a bit... \n\ni removed all the restrictions on the remote side, all \"not_any_of\"s have been removed.\n\nI also added blocks to do mapping of usernames, so the rule processor will actually have a name, we should add a test to run with an assertion that will fail (and expect a 401)",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+qNk\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 1148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T23:25:02Z",
+      "side": 1,
+      "message": "you mixed up contractor and customer in a bunch of spots, i\u0027m going to change them all to customer.",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+qMM\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T23:25:02Z",
+      "side": 1,
+      "message": "I implemented lances suggestion here",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+qMA\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T23:25:02Z",
+      "side": 1,
+      "message": "i refactored this heavily, to just return token_data, from that point, we can just piggy back off the existing issue_v3_token code.",
       "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
