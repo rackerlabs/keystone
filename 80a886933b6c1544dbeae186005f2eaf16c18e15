@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+rmg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T21:06:01Z",
+      "side": 1,
+      "message": "Interesting. Good to know. Looking at this I assume it\u0027s a module path and not an opaque string identifier.",
+      "parentUuid": "AAAAUX/+tLs\u003d",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+uCQ\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 17
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "If I implement that import, I get following error and need to resolve by changing tox.ini. Looks like that change is still under code review so should I be waiting for incorporating that change?\n\n./keystone/common/cache/backends/mongo.py:25:1: H302  import only modules.\u0027from keystone.openstack.common.gettextutils import _\u0027 does not import a module\nfrom keystone.openstack.common.gettextutils import _\n^\nCheck for imports.",
       "parentUuid": "AAAAUX/+uDU\u003d",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rjY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T21:06:01Z",
+      "side": 1,
+      "message": "Hmmm.. We may have to wait for that patch then. Now that I think about it I had to make a change for that to work: https://review.openstack.org/#/c/58766/5..6/tox.ini",
+      "parentUuid": "AAAAUX/+sWI\u003d",
       "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
