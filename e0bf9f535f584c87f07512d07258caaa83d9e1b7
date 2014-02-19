@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+tII\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T17:25:06Z",
+      "side": 1,
+      "message": "++ that is much better, thanks",
+      "parentUuid": "AAAAUX/+tN4\u003d",
+      "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+tNI\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 26
@@ -64,6 +82,24 @@
       "writtenOn": "2014-02-19T17:13:14Z",
       "side": 1,
       "message": "quite a bit of similar code between scoped_federation_token and unscoped_federation_token. Wonder if we could consolidate the two methods a little.",
+      "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+tHg\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-19T17:25:06Z",
+      "side": 1,
+      "message": "could probably consolidate lines 570-586",
+      "parentUuid": "AAAAUX/+tMg\u003d",
       "revId": "e0bf9f535f584c87f07512d07258caaa83d9e1b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
