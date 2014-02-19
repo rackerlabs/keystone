@@ -470,6 +470,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//NMs\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:42:24Z",
+      "side": 1,
+      "message": "Do it in the manager, not the controller.  Controller is for calling from the Web layer, manager is for common business logic.",
+      "parentUuid": "AAAAUX//RiU\u003d",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+zN4\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 17
