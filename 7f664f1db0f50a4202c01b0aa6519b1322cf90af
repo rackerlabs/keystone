@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+rSM\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T20:57:36Z",
+      "side": 1,
+      "message": "Can this use the _build_grant_filter too?",
+      "revId": "7f664f1db0f50a4202c01b0aa6519b1322cf90af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
