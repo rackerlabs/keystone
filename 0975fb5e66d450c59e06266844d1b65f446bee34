@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+roM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T20:25:52Z",
+      "side": 1,
+      "message": "missing space after listens",
+      "revId": "0975fb5e66d450c59e06266844d1b65f446bee34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rn8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T20:25:52Z",
+      "side": 1,
+      "message": "missing space after specific",
+      "revId": "0975fb5e66d450c59e06266844d1b65f446bee34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rnM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T20:25:52Z",
+      "side": 1,
+      "message": "missing space after \u0027when\u0027",
+      "revId": "0975fb5e66d450c59e06266844d1b65f446bee34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
