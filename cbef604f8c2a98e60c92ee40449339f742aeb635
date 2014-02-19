@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+tn8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 7052
+      },
+      "writtenOn": "2014-02-19T16:25:45Z",
+      "side": 1,
+      "message": "Can you please break the sentence and have the command in a single line as independent paragraph?\nI think it will make it more readable.",
+      "revId": "cbef604f8c2a98e60c92ee40449339f742aeb635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
