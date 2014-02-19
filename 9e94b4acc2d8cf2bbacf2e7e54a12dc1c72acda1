@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+tOo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-19T17:08:32Z",
+      "side": 1,
+      "message": "attribute names are not case sensitive according to the LDAP spec:\n\n Both \u003cattributetype\u003e and \u003coption\u003e\n  productions are case insensitive.\n\nhttp://tools.ietf.org/search/rfc4512#section-2.5",
+      "revId": "9e94b4acc2d8cf2bbacf2e7e54a12dc1c72acda1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
