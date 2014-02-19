@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+w7M\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Is this the correct module name?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w6w\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Is this the correct module name?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w2A\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "What is the default?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w1c\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Probably want to add a small not saying that replicaset_name is required is this is set to True.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w3s\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "What is the default?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w5w\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Is there a useful side effect to this call?  For instance, the method name indicates that it returns a value and we are not doing anything with it. I think it deserves a comment.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w5M\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "I\u0027m not very familiar with dogpile, but it appears that this makes it impossible to store a None value in the cache. Is that what we want? The get_multi method below would allow for a None to be returned as a value.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w3k\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "This is listed above as being a string. Is None the correct default value here?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w3A\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "You may want to reorder these to match the order of the documentation above. Would make it easier to read.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w1I\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Was this too long to fit on a single line?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wzw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "I think this is just making it way too complicated. I think this block should just be replaced by the __init__ from MongoArgs and then MongoArgs could go away.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+w08\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "This should be LOG.info(msg, {\u0027key\u0027: arg_key, \u0027value\u0027: arg_value}) and then you can remove the % operator on the previous line.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wv8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "In the case of a misconfiguration and the manipulator can\u0027t be imported will the operator be able easily figure out what was messed up?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wyM\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Are these 3 lines really just doing ``coll.write_concern[\u0027w\u0027] \u003d self.w``?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wxQ\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Nice",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wxc\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Same note about logging as above. You don\u0027t want to use the % operator explicitly when logging. Let the framework do that *if* it needs to.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wxA\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be returning NO_VALUE so that a None can be cached?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wwo\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "You can just return it here",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+wvY\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T08:51:33Z",
+      "side": 1,
+      "message": "This should go in the next section down. It\u0027s a third party library.",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
