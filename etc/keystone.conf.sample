@@ -1060,6 +1060,12 @@
 #password=<None>
 
 
+[kerberos]
+# Specify the location of the kerberos keytab
+# keytab_file = /etc/keystone/keystone.keytab
+# Specify the name of the service inside the keytab
+# service_name = keystone.example.com
+
 [paste_deploy]
 
 #

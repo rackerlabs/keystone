@@ -36,6 +36,7 @@ class Error(Exception):
     code = None
     title = None
     message_format = None
+    headers = []
 
     def __init__(self, message=None, **kwargs):
         try:
@@ -132,6 +133,16 @@ class Unauthorized(SecurityError):
     code = 401
     title = 'Unauthorized'
 
+    def __init__(self, method='', token=None, **kwargs):
+        super(SecurityError, self).__init__(**kwargs)
+        if method == 'Negotiate':
+            if token:
+                self.headers.append(('WWW-Authenticate', token))
+            else:
+                self.headers.append(('WWW-Authenticate', 'Negotiate'))
+        else:
+            self.headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % (
+                CONF.public_endpoint % CONF)))
 
 class AuthPluginException(Unauthorized):
     message_format = _("Authentication plugin error.")
