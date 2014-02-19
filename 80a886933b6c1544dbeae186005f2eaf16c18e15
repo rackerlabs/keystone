@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+uCQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T15:49:45Z",
+      "side": 1,
+      "message": "To fix the documentation build I think this should be:\n\n  :mod:`keystone.common.cache.backends.mongo`",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+w6w\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 17
@@ -30,6 +47,23 @@
       "writtenOn": "2014-02-19T08:51:33Z",
       "side": 1,
       "message": "Is this the correct module name?",
+      "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+uDU\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-19T15:49:45Z",
+      "side": 1,
+      "message": "Can you add \u0027from keystone.openstack.common.gettextutils import _\u0027 here? There is a review to get rid of the __builtin__ monkey patching: https://review.openstack.org/#/c/58766",
       "revId": "80a886933b6c1544dbeae186005f2eaf16c18e15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
