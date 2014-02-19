@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+8j8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 46
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX/+/pA\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++lA\u003d",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 46
@@ -151,6 +169,24 @@
       "writtenOn": "2014-02-17T22:00:23Z",
       "side": 1,
       "message": "this format for line breaks is terrible to read. remove the extraneous outer parens. i\u0027m only going to mention this once in this patch.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8Pk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "Done.  Python line wrapping sucks.",
+      "parentUuid": "AAAAUX/++h0\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1117,6 +1153,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+8Fk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "This is not intended to be exported to the outside world, but is necessary for SQL.  SQL requires a unique primary key.",
+      "parentUuid": "AAAAUX/++Sk\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+/MA\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 46
@@ -1162,6 +1216,24 @@
       "writtenOn": "2014-02-17T22:00:23Z",
       "side": 1,
       "message": "i\u0027m curious as to why any of this logic is on the service side...",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+8DY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "It is actually not necessary anymore.  It is only ever executed by test code, to ensure that the logic from \"revoke by events\" patch is still valid.",
+      "parentUuid": "AAAAUX/++TI\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1270,6 +1342,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+8CU\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "Can\u0027t.  Has a different meaning, and we can\u0027t reset matched at this point.",
+      "parentUuid": "AAAAUX/+/bk\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++TQ\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 46
@@ -1321,6 +1411,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+760\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "It encapsulates the logic for defaulting from uuid but allows the id to be set if explicit.  We should be using this pattern elsewhere.",
+      "parentUuid": "AAAAUX/++UI\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++Tk\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 46
@@ -1338,6 +1446,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+76c\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "Done.  ah, yeah, should add hex.",
+      "parentUuid": "AAAAUX/++Tk\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/++Q0\u003d",
         "filename": "keystone/contrib/revoke/routers.py",
         "patchSetId": 46
@@ -1349,6 +1475,24 @@
       "writtenOn": "2014-02-17T22:01:27Z",
       "side": 1,
       "message": "this second method is not a part of the API spec",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+75M\u003d",
+        "filename": "keystone/contrib/revoke/routers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "No, and it does not need to be.  It is for self documenting the extension.  Note the version info for the server is not in the API spec, either.",
+      "parentUuid": "AAAAUX/++Q0\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1434,6 +1578,24 @@
       "writtenOn": "2014-02-18T04:42:19Z",
       "side": 1,
       "message": "Shouldn\u0027t this extend a tests.TestCase? not object?\n\nWhy not just move these tests to KvsRevokeTests?",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+71A\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "No, this is a mix in.  The KVS implementation will be joined by a SQL one in a later patch.  That is the class that needs to extend testcase",
+      "parentUuid": "AAAAUX/+8Ac\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1644,6 +1806,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+sqc\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX/+79A\u003d",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+76Y\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 46
@@ -1689,6 +1869,24 @@
       "writtenOn": "2014-02-17T21:51:34Z",
       "side": 1,
       "message": "There is a lot of duplicate code here. Is there a way this could be done once maybe before we reach the manager or as a wrapper function? \n\nJust thinking of the case were a method gets refactored and by accident this check goes with it.",
+      "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+sog\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-19T18:41:05Z",
+      "side": 1,
+      "message": "The code that this check avoids will be deprecated and removed in Juno or later.",
+      "parentUuid": "AAAAUX/++ZQ\u003d",
       "revId": "a5bf3f870076058c09714889abe7f05300640f6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
