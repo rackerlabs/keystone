@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+tnA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-19T16:27:12Z",
+      "side": 1,
+      "message": "Would you be able to list the commits you\u0027re syncing from Oslo in the commit message? Just a one-liner similar to the commit message here: \n\nhttps://review.openstack.org/#/c/56059/",
+      "revId": "c3a2712939528419a2595621956c833346cb0459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
