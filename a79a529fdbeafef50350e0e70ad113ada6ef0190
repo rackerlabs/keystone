@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+rHI\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "type can be inferred from cls (or \"entity\" in my example below)",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+rIc\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 4
@@ -13,6 +30,159 @@
       "writtenOn": "2014-02-19T21:15:29Z",
       "side": 1,
       "message": ":returns:",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rJc\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "?",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rHU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "the kwargs approach to this is kind of weird, considering they\u0027re required arguments in the private method\n\n  self.list_entities_for_groups(group_ids, entity\u003dProject)",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rJg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "?",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rEo\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "nothing about this method has anything to do with groups, beyond the implementation. this should really be implemented in keystone.contrib.federation as a standalone Domain controller (with one exposed method)\n\nand it should be called list_accessible_groups(self, context) or something, since that\u0027s all that\u0027s specified by the API contract.\n\np.s. i\u0027m being super picky about this because GET :5000/v2.0/tenants and GET :35357/v2.0/tenants share the same misleading semantics (they\u0027re not the same call at all- the first one behaves just like this method) and i\u0027d rather not repeat history",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rG0\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "IDs; this should reference context, i suppose, rather than tokens specifically",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rFQ\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "no, it shouldn\u0027t",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rFE\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "don\u0027t do that",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rE8\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "get groups out of context; i sent marek code to put groups into the context about a week ago",
+      "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rE4\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T21:23:02Z",
+      "side": 1,
+      "message": "same changes as above",
       "revId": "a79a529fdbeafef50350e0e70ad113ada6ef0190",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
