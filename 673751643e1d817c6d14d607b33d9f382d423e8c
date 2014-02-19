@@ -84,6 +84,24 @@
       "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rnU\u003d",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-19T20:47:48Z",
+      "side": 1,
+      "message": "unfortunately, setattr will not call the magic decorator .settr().  As the test fails when I try it the way you\u0027re recommending.  setattr() does other magic.",
+      "parentUuid": "AAAAUX/+yaI\u003d",
+      "revId": "673751643e1d817c6d14d607b33d9f382d423e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
