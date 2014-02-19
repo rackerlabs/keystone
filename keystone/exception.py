@@ -36,6 +36,7 @@ class Error(Exception):
     code = None
     title = None
     message_format = None
+    headers = []
 
     def __init__(self, message=None, **kwargs):
         try:
@@ -131,6 +132,21 @@ class Unauthorized(SecurityError):
     message_format = _("The request you have made requires authentication.")
     code = 401
     title = 'Unauthorized'
+
+    def __init__(self, **kwargs):
+        super(SecurityError, self).__init__(**kwargs)a
+        self.headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % (
+            CONF.public_endpoint % CONF)))
+
+
+class KerberosUnauthorized(Unauthorized):
+    def __init__(self, token=None, **kwargs):
+        super(Unauthorized, self).__init__(**kwargs)
+        self.headers = []
+        if token:
+            self.headers.append(('WWW-Authenticate', token))
+        else:
+            self.headers.append(('WWW-Authenticate', 'Negotiate'))
 
 
 class AuthPluginException(Unauthorized):
