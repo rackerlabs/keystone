@@ -198,6 +198,10 @@ class Identity(identity.Driver):
         query = query.filter_by(group_id=group_id)
         membership_ref = query.first()
         if membership_ref is None:
+            # Check if the group and user exist to return descriptive
+            # exceptions.
+            self.get_group(group_id)
+            self.get_user(user_id)
             raise exception.NotFound(_('User not found in group'))
         with session.begin():
             session.delete(membership_ref)
