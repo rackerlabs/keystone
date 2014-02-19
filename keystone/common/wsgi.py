@@ -585,7 +585,7 @@ def render_exception(error, user_locale=None):
         'title': error.title,
         'message': message,
     }}
-    headers = []
+    headers = error.headers
     if isinstance(error, exception.AuthPluginException):
         body['error']['identity'] = error.authentication
     elif isinstance(error, exception.Unauthorized):

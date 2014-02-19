@@ -503,9 +503,10 @@
 # user_additional_attribute_mapping =
 
 [auth]
-# methods = external,password,token
+# methods = external,kerberos,password,token
 # external = keystone.auth.plugins.external.DefaultDomain
 # password = keystone.auth.plugins.password.Password
+# kerberos - keystone.auth.plugins.kerberos.Kerberos
 # token = keystone.auth.plugins.token.Token
 
 [memcache]
@@ -519,6 +520,12 @@
 #
 # KeyValueStore lock timeout in seconds
 # default_lock_timeout = 5
+
+[kerberos]
+# Specify the location of the kerberos keytab
+# keytab_file = /etc/keystone/keystone.keytab
+# Specify the name of the service inside the keytab
+# service_name = keystone.example.com
 
 [paste_deploy]
 # Name of the paste configuration file that defines the available pipelines
