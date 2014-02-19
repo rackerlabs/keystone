@@ -221,10 +221,6 @@ def convert_v3_to_ec2_credential(credential):
             }
 
 
-def git(*args):
-    return check_output(['git'] + list(args))
-
-
 def unixtime(dt_obj):
     """Format datetime object as unix timestamp
 

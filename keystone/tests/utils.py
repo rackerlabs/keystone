@@ -14,7 +14,13 @@
 
 import uuid
 
+import keystone.common.utils as common_utils
+
 
 def new_uuid():
     """Return a string UUID."""
     return uuid.uuid4().hex
+
+
+def git(*args):
+    return common_utils.check_output(['git'] + list(args))
