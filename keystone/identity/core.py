@@ -47,25 +47,26 @@ def moved_to_assignment(f):
     return deprecated(f)
 
 
+_FILTERED_FIELDS = ['password', 'tenants', 'groups', 'domains']
+
+
 def filter_user(user_ref):
     """Filter out private items in a user dict.
 
-    'password', 'tenants' and 'groups' are never returned.
+    :param user_ref user dictionary. The values 'password',
+     'tenants', 'groups' and 'domains' are removed if present.
 
     :returns: user_ref
 
     """
     if user_ref:
         user_ref = user_ref.copy()
-        user_ref.pop('password', None)
-        user_ref.pop('tenants', None)
-        user_ref.pop('groups', None)
-        user_ref.pop('domains', None)
-        try:
-            user_ref['extra'].pop('password', None)
-            user_ref['extra'].pop('tenants', None)
-        except KeyError:
-            pass
+        for name in _FILTERED_FIELDS:
+            user_ref.pop(name, None)
+            try:
+                user_ref['extra'].pop(name, None)
+            except KeyError:
+                pass
     return user_ref
 
 
