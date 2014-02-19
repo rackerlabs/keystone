@@ -282,7 +282,12 @@ FILE_OPTIONS = {
         cfg.ListOpt('backends', default=[]),
         cfg.StrOpt('config_prefix', default='keystone.kvs'),
         cfg.BoolOpt('enable_key_mangler', default=True),
-        cfg.IntOpt('default_lock_timeout', default=5)]}
+        cfg.IntOpt('default_lock_timeout', default=5)],
+    'kerberos': [
+        cfg.StrOpt('service_name',
+                   default='keystone.example.com'),
+        cfg.StrOpt('keytab_file',
+                   default='/etc/keystone/keystone.keytab')]}
 
 
 CONF = cfg.CONF
