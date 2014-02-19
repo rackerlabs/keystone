@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+raw\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T20:42:48Z",
+      "side": 1,
+      "message": "do NOT make up user ID\u0027s like this.\n\neither a 401 needs to be raised as a result of a the rule processor not returning a user name, or we need to be able to handle null user_id\u0027s, which is what I\u0027d actually prefer.",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+rao\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T20:42:48Z",
+      "side": 1,
+      "message": "don\u0027t propose commented out code",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+raQ\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-19T20:42:48Z",
+      "side": 1,
+      "message": "delete this method",
+      "revId": "52878f50ba9ae626fcd96c1b49a75491b065db05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
