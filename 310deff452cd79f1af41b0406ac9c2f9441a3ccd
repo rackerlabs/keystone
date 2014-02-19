@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+x4M\u003d",
+        "filename": "keystone/tests/integration/identity/test_crud.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-02-19T05:14:14Z",
+      "side": 1,
+      "message": "You have chosen a  nice method name to explain what it does. Do we need a doc to explain that? Seems redundant.",
+      "revId": "310deff452cd79f1af41b0406ac9c2f9441a3ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+0JU\u003d",
         "filename": "keystone/tests/integration/identity/test_crud.py",
         "patchSetId": 3
