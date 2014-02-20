@@ -477,6 +477,15 @@ class BaseLdap(object):
                               serverctrls=[tree_delete_control])
         except ldap.NO_SUCH_OBJECT:
             raise self._not_found(object_id)
+        except ldap.NOT_ALLOWED_ON_NONLEAF:
+            # few ldap servers support the tree_delete_control
+            # so have to do a search then delete in reverse order
+            entries = conn.search_s(self._id_to_dn(object_id), ldap.SCOPE_SUBTREE, '(objectclass=*)', ['1.1'])
+            # entries should not be None here - if we did not hit ldap.NO_SUCH_OBJECT, that
+            # means there is an entry which should be returned in entries
+            entries.reverse()
+            for dn, _ in entries:
+                conn.delete_s(dn)
         finally:
             conn.unbind_s()
 
