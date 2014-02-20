@@ -1169,6 +1169,38 @@ class BaseLdap(object):
                               serverctrls=[tree_delete_control])
         except ldap.NO_SUCH_OBJECT:
             raise self._not_found(object_id)
+        except ldap.NOT_ALLOWED_ON_NONLEAF:
+            # Most LDAP servers do not support the tree_delete_control.
+            # In these servers, the usual idiom is to first perform a
+            # search to get the entries to delete, then delete them in
+            # in order of child to parent, since LDAP forbids the
+            # deletion of a parent entry before deleting the children
+            # of that parent.  The simplest way to do that is to delete
+            # the entries in order of the length of the DN, from longest
+            # to shortest DN.
+            dn = self._id_to_dn(object_id)
+            scope = ldap.SCOPE_SUBTREE
+            # With some directory servers, an entry with objectclass
+            # ldapsubentry will not be returned unless it is explicitly
+            # requested, by specifying the objectclass in the search
+            # filter.  We must specify this, with objectclass=*, in an
+            # LDAP filter OR clause, in order to return all entries
+            filt = '(|(objectclass=*)(objectclass=ldapsubentry))'
+            # The special attribute named '1.1' is guaranteed not to
+            # exist in any LDAP compliant server.  This is a common
+            # idiom to tell an LDAP server not to return any entry data
+            # except for the DN.  For the purpose of deleting the subtree,
+            # we do not need any entry data, and it is more efficient in
+            # terms of both server and network resources to reduce the
+            # amount of data returned to the minimum.  Since no attributes
+            # will be returned, we do not have to specify attrsonly=1.
+            entries = conn.search_s(dn, scope, filt, attrlist=['1.1'])
+            if entries:
+                for dn in sorted([e[0] for e in entries],
+                                 key=len, reverse=True):
+                    conn.delete_s(dn)
+            else:
+                LOG.debug("No entries in LDAP subtree %s" % dn)
         finally:
             conn.unbind_s()
 
