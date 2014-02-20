@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+iGg\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-20T17:13:19Z",
+      "side": 1,
+      "message": "definitely don\u0027t need this here, as there is no concept of group in v2",
+      "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+iDs\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-20T17:13:19Z",
+      "side": 1,
+      "message": "this token_ref seems wrong, let me poke around to make sure",
+      "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
