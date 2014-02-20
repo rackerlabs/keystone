@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+f7I\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T21:00:11Z",
+      "side": 1,
+      "message": "consider using the convention: \n\n    def is_empty(v)\n\nand add docstrings detailing the return value and the parameter in the method signature.",
+      "revId": "094ffbce59e3ec11e742cc7b6a40e6b9f1a42771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+f7w\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T21:00:11Z",
+      "side": 1,
+      "message": "remove trailing whitespace",
+      "revId": "094ffbce59e3ec11e742cc7b6a40e6b9f1a42771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+f7E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T21:00:11Z",
+      "side": 1,
+      "message": "remote whitespace.",
+      "revId": "094ffbce59e3ec11e742cc7b6a40e6b9f1a42771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+f5w\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 987,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T21:00:11Z",
+      "side": 1,
+      "message": "NGK? If this is suppose to be a note, we stick to the guidelines here: \n\nhttps://github.com/openstack/keystone/blob/master/HACKING.rst#todo-vs-fixme\n\nFor example, if I were adding the note it would look like; \n\n    # NOTE(lbragstad): Something useful written here in comments about\n    # super cool new feature or test case. \n\nor something to that effect.",
+      "revId": "094ffbce59e3ec11e742cc7b6a40e6b9f1a42771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
