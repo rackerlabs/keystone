@@ -40,6 +40,10 @@ from keystone.tests import test_backend
 
 CONF = config.CONF
 
+# test_deleteTree should only be run once, not run
+# by every subclass of BaseLDAPIdentity.
+firsttime_test_deleteTree = True
+
 
 class BaseLDAPIdentity(test_backend.IdentityTests):
 
@@ -793,6 +797,60 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         result_unicode = common_ldap_core.utf8_decode(100)
         self.assertEqual(u'100', result_unicode)
+
+    def test_deleteTree(self):
+        '''Few LDAP servers support CONTROL_DELETETREE.  This test
+        exercises the alternate code paths in BaseLdap.deleteTree.
+        '''
+        global firsttime_test_deleteTree
+        if not firsttime_test_deleteTree:
+            return
+        firsttime_test_deleteTree = False
+        common_ldap.register_handler('fake://',
+                                     fakeldap.FakeLdapNoSubtreeDelete)
+        conn = self.identity_api.user.get_connection()
+        id_attr = self.identity_api.user.id_attr
+        objclass = self.identity_api.user.object_class.lower()
+        tree_dn = self.identity_api.user.tree_dn
+
+        def create_entry(name, parent_dn=None):
+            if not parent_dn:
+                parent_dn = tree_dn
+            dn = "%s=%s,%s" % (id_attr, name, parent_dn)
+            attrs = [('objectclass', [objclass, 'ldapsubentry']),
+                     (id_attr, [name])]
+            conn.add_s(dn, attrs)
+            return dn
+
+        # create 3 entries like this:
+        # cn=base
+        # cn=child,cn=base
+        # cn=grandchild,cn=child,cn=base
+        # then attempt to deleteTree(cn=base)
+        base_id = "base"
+        base_dn = create_entry(base_id)
+        child_dn = create_entry("child", base_dn)
+        grandchild_dn = create_entry("grandchild", child_dn)
+        scope = ldap.SCOPE_SUBTREE
+        filt = '(|(objectclass=*)(objectclass=ldapsubentry))'
+        entries = conn.search_s(base_dn, scope, filt, attrlist=['1.1'])
+        self.assertEqual(len(entries), 3)
+        sort_ents = sorted([e[0] for e in entries],
+                           key=len, reverse=True)
+        self.assertEqual(sort_ents[0], grandchild_dn)
+        self.assertEqual(sort_ents[1], child_dn)
+        self.assertEqual(sort_ents[2], base_dn)
+        self.assertRaises(ldap.NOT_ALLOWED_ON_NONLEAF,
+                          conn.delete_s, base_dn)
+        self.assertRaises(ldap.NOT_ALLOWED_ON_NONLEAF,
+                          conn.delete_s, child_dn)
+        self.identity_api.user.deleteTree(base_id)
+        self.assertRaises(ldap.NO_SUCH_OBJECT,
+                          conn.search_s, base_dn, ldap.SCOPE_BASE)
+        self.assertRaises(ldap.NO_SUCH_OBJECT,
+                          conn.search_s, child_dn, ldap.SCOPE_BASE)
+        self.assertRaises(ldap.NO_SUCH_OBJECT,
+                          conn.search_s, grandchild_dn, ldap.SCOPE_BASE)
 
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
