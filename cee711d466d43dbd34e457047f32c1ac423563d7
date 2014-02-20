@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+e1g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:17:25Z",
+      "side": 1,
+      "message": "Looks like you need more commit message content.",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+z1Q\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
