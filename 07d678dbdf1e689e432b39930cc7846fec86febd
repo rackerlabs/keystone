@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+oKM\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-20T05:29:35Z",
+      "side": 1,
+      "message": "missing an @controller.protected decorator",
+      "revId": "07d678dbdf1e689e432b39930cc7846fec86febd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
