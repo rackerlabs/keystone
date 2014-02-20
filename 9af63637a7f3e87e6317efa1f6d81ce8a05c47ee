@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+h6w\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-20T17:29:13Z",
+      "side": 1,
+      "message": "you could just put this on line 737, i think it\u0027s actually fewer characters",
+      "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+iDs\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 9
@@ -30,6 +47,24 @@
       "writtenOn": "2014-02-20T17:13:19Z",
       "side": 1,
       "message": "this token_ref seems wrong, let me poke around to make sure",
+      "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+h2U\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-20T17:29:13Z",
+      "side": 1,
+      "message": "Ohh, i see what you\u0027re doing... calling token_api to create the token.",
+      "parentUuid": "AAAAUX/+iDs\u003d",
       "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
