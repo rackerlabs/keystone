@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+pJU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-20T02:17:23Z",
+      "side": 1,
+      "message": "stop building kwargs dictionaries just to call methods -- just pass in the keyword arguments and be done",
+      "revId": "c65281760825b404436377e2be48877bc0cdf4b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
