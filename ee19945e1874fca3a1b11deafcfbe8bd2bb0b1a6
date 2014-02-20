@@ -140,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+gSs\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T20:14:36Z",
+      "side": 1,
+      "message": "ahh ok, makes sense. Thanks Brad!",
+      "parentUuid": "AAAAUX/+8bA\u003d",
+      "revId": "ee19945e1874fca3a1b11deafcfbe8bd2bb0b1a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+8aw\u003d",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 5
