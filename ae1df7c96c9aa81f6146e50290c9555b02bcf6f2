@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+gUw\u003d",
+        "filename": "keystone/openstack/common/py3kcompat/__init__.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T20:13:01Z",
+      "side": 0,
+      "message": "I don\u0027t think these can be removed here.",
+      "revId": "ae1df7c96c9aa81f6146e50290c9555b02bcf6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+gUk\u003d",
+        "filename": "keystone/openstack/common/py3kcompat/urlutils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T20:13:01Z",
+      "side": 0,
+      "message": "same comment here.",
+      "revId": "ae1df7c96c9aa81f6146e50290c9555b02bcf6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
