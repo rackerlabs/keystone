@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+f98\u003d",
+        "filename": "keystone/tests/integration/identity/test_passwords.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-20T20:49:34Z",
+      "side": 1,
+      "message": "^ could remove bad_password or use it below I think: \n\n    self.get_request_token(bad_password, expected_status\u003d401)",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+z/I\u003d",
         "filename": "keystone/tests/integration/identity/test_passwords.py",
         "patchSetId": 1
