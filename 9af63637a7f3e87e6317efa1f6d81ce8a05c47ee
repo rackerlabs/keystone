@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+h7o\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-20T17:30:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX/+iGg\u003d",
+      "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+h6w\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 9
@@ -64,6 +82,24 @@
       "writtenOn": "2014-02-20T17:29:13Z",
       "side": 1,
       "message": "Ohh, i see what you\u0027re doing... calling token_api to create the token.",
+      "parentUuid": "AAAAUX/+iDs\u003d",
+      "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+h1I\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-20T17:30:28Z",
+      "side": 1,
+      "message": "You might be right, however I feel like internally token[\u0027token_data\u0027] again includes most of the token \nhttps://gist.github.com/zaccone/6dcc61b8ff1415a4945a - example of a v3.0 token added \u0027normal way\u0027.",
       "parentUuid": "AAAAUX/+iDs\u003d",
       "revId": "9af63637a7f3e87e6317efa1f6d81ce8a05c47ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
