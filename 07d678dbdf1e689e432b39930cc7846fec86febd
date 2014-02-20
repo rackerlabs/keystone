@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+iuQ\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-20T16:12:05Z",
+      "side": 1,
+      "message": "I think the aim here was to add a function that lists projects basing on a list of groups (needed in the federation patches). Previously the name had \u0027groups\u0027 in it\u0027s name and I think it should be again changed to something like: list_accessible_projects_from_groups()...or make some annotatin and extended in the future where one can use this function with argument like user_id, expecting to get a list of projects accesible to the user.",
+      "parentUuid": "AAAAUX/+jxc\u003d",
+      "revId": "07d678dbdf1e689e432b39930cc7846fec86febd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+oKM\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-20T05:29:35Z",
       "side": 1,
       "message": "missing an @controller.protected decorator",
+      "revId": "07d678dbdf1e689e432b39930cc7846fec86febd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+iuI\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-20T16:12:05Z",
+      "side": 1,
+      "message": "will be added in the next patch.",
+      "parentUuid": "AAAAUX/+oKM\u003d",
       "revId": "07d678dbdf1e689e432b39930cc7846fec86febd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
