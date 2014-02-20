@@ -984,6 +984,10 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         project_ref = self.assignment_api.get_project(project['id'])
         self.assertDictEqual(project_ref, project)
 
+        # NGK - try to update with an empty description
+        project['description'] = ''
+        self.assignment_api.update_project(project['id'], project)
+
         self.assignment_api.delete_project(project['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.get_project,

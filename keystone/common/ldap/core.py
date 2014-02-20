@@ -274,6 +274,24 @@ class BaseLdap(object):
             return self._id_to_dn_string(object_id)
 
     @staticmethod
+    def isempty(v):
+        """We can't just use if v: True else: False
+        if 0: is False, but 0 is not "empty" - it is the
+        integer value 0 - same with True/False - they are not
+        empty"""
+        ret = False
+        if v is None:
+            ret = True
+        else:
+            try:
+                ret = (len(v) == 0)
+            except TypeError:
+                # object has no length attribute -
+                # a scalar type, so not empty
+                ret = False
+        return ret 
+
+    @staticmethod
     def _dn_to_id(dn):
         return ldap.dn.str2dn(dn)[0][0][1]
 
@@ -339,7 +357,7 @@ class BaseLdap(object):
         for k, v in six.iteritems(values):
             if k == 'id' or k in self.attribute_ignore:
                 continue
-            if v is not None:
+            if not self.isempty(v):
                 attr_type = self.attribute_mapping.get(k, k)
                 if attr_type is not None:
                     attrs.append((attr_type, [v]))
@@ -348,6 +366,9 @@ class BaseLdap(object):
                                if name == k]
                 for attr in extra_attrs:
                     attrs.append((attr, [v]))
+            else:
+                LOG.debug(_('skipping attribute with empty value: %s'), k)
+                continue
 
         if 'groupOfNames' in object_classes and self.use_dumb_member:
             attrs.append(('member', [self.dumb_member]))
@@ -431,12 +452,14 @@ class BaseLdap(object):
                 msg = (_("Cannot change %(option_name)s %(attr)s") %
                        {'option_name': self.options_name, 'attr': k})
                 raise exception.ValidationError(msg)
-
-            if v is None:
-                if old_obj.get(k) is not None:
+            
+            if self.isempty(v):
+                if not self.isempty(old_obj.get(k)):
                     modlist.append((ldap.MOD_DELETE,
                                     self.attribute_mapping.get(k, k),
                                     None))
+                else:
+                    LOG.debug(_('Skipping empty value for attribute %s'), k)
                 continue
 
             current_value = old_obj.get(k)
