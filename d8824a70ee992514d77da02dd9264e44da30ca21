@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+pAg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4428
+      },
+      "writtenOn": "2014-02-20T02:40:46Z",
+      "side": 1,
+      "message": "Add Closes-bug: #904307 would be nice to me",
+      "revId": "d8824a70ee992514d77da02dd9264e44da30ca21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
