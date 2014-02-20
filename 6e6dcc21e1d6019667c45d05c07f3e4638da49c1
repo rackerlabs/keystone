@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+prw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-20T00:38:28Z",
+      "side": 1,
+      "message": "the () around the help string are unnecessary. The statement is already in () for the function call.",
+      "revId": "6e6dcc21e1d6019667c45d05c07f3e4638da49c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
