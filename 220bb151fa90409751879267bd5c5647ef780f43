@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+fG8\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "Suggest phrasing the sentence something like: \n\nThe ``dogpile.cache`` based MongoDB backend implementation allows for various MongoDB configurations ...\"\n\nThe \"has been added as an optiuon to benefit ..\" seems to be less relevant.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+fFs\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "backend argument is a MultiStrOpt not a ListOpt\n\nEach argument needs to go on a separate line:\n\n    backend_argument \u003d db_hosts:localhost:27017\n    backend_argument \u003d db_name:ks_cache\n    backend_argument \u003d cache_collection:cache\n    ...",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+fFY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "This is an unrelated change and should be separate (perhaps a wider doc cleanup commit)",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+fEA\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "I am not sure I am convinced this should be a separate class in the way that it is implemented.  It feels like (since there is only one implementation that could ever exist) the options and the API could be collapsed into this main API class and it would likely make the code easier to follow.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+fDk\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "Is this a standard mongo nomenclature?  \u0027w\u0027 is a very non-descript argument.  This might be better named \"write_acknowledgement\" with documentation on what that means.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+e7I\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "is this write_concern or write_acknoledgement? Docstring indicates one, error indicates another.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+fCw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "Please collapse the arguments and API down (see above comment on line 143).  This feels like a gross over complication to set some values as configuration options.  Unless there is expectation that the same options will be used across multiple implementations (an library that is not pymongo).",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+e70\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "Is this legitimately a warning?  Is this something that is recoverable? Or is this something the operator/deployer must deal with before continuing? Please indicate (comment or otherwise) why this is recoverable.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+e90\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "Where are \"meth_kwargs\" set?  it appears these are set on the MongoArgs object but not on the API object.  This is likely going to raise an exception.  It also indicates testing is likely missing.\n\nThis is another argument to collapse the classes down into something more straightforward.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+e5k\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "This seems like something that should occur at __init__() not on every set() call.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+e/0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the value of this class is.  Is this needed or is BaseTransform sufficient?\n\nIs this meant to be an abstract base class?  I\u0027m not sure why you need this class as a hack. It seems as if BaseTransform is what you\u0027ll need or this should be named\n\n\u0027BaseTransform\u0027 and be an abstract base class (ABCMeta) and provide a template that all other transforms must define to be used.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+e/U\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:11:19Z",
+      "side": 1,
+      "message": "Is there a case where the SON transform wouldn\u0027t need the work from BaseTransform?  Your docstring indicates that since dogpile.cache stores things as a special object, this logic is needed.  Wouldn\u0027t that imply this is _always_ needed?  If so, does it make sense to make this logic always occur?  This will always be used in the context of dogpile.cache and the SON manipulator (user specified) might need to be layered after the part that strips out the CachedValue object",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
