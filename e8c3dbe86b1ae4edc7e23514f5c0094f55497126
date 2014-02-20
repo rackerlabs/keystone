@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+id8\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-20T16:39:56Z",
+      "side": 1,
+      "message": "done in the next patch.",
+      "revId": "e8c3dbe86b1ae4edc7e23514f5c0094f55497126",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+ic0\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-20T16:39:56Z",
+      "side": 1,
+      "message": "it will be in the next patch:\n\nauth_context \u003d context[\u0027environment\u0027][\u0027KEYSTONE_AUTH_CONTEXT\u0027]\nprojects \u003d self.assignment_api.list_accessible_projects(\n    auth_context[\u0027group_ids\u0027])\n\ndue to code in common/authorization.py",
+      "revId": "e8c3dbe86b1ae4edc7e23514f5c0094f55497126",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
