@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+ekU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-20T23:27:12Z",
+      "side": 1,
+      "message": "Suggest adding oslo commit ID this was sync\u0027d from.",
+      "revId": "ae1df7c96c9aa81f6146e50290c9555b02bcf6f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
