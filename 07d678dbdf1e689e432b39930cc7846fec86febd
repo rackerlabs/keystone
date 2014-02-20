@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+jxc\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-20T14:34:48Z",
+      "side": 1,
+      "message": "So I understand why in the current use case \"accessible projects/domains\" means those for which a given set of groups have a role.  However, from a purely understandability-of-API point of view at the driver layer, I would not immeditaly say, well what about user roles?  Is the idea that we will add that, or is it the view that the current naming is sufficiently obvious given the fact that it only takes a list of groups?",
+      "revId": "07d678dbdf1e689e432b39930cc7846fec86febd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+oKM\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 8
