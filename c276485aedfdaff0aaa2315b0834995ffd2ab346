@@ -16,6 +16,24 @@
       "revId": "c276485aedfdaff0aaa2315b0834995ffd2ab346",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+c+o\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-21T03:19:37Z",
+      "side": 1,
+      "message": "Comment added to the .rc file",
+      "parentUuid": "AAAAUX/+dLY\u003d",
+      "revId": "c276485aedfdaff0aaa2315b0834995ffd2ab346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
