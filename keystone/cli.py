@@ -82,7 +82,7 @@ class DbSync(BaseApp):
             try:
                 abs_path = migration_helpers.find_migrate_repo(package)
                 try:
-                    migration.db_version_control(abs_path)
+                    migration.db_version_control(sql.get_engine(), abs_path)
                 # Register the repo with the version control API
                 # If it already knows about the repo, it will throw
                 # an exception that we can safely ignore
@@ -91,7 +91,7 @@ class DbSync(BaseApp):
             except exception.MigrationNotProvided as e:
                 print(e)
                 exit(0)
-        migration.db_sync(abs_path, version=version)
+        migration.db_sync(sql.get_engine(), abs_path, version=version)
 
 
 class DbVersion(BaseApp):
