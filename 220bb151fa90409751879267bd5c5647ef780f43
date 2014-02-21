@@ -299,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+dD0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-21T03:01:56Z",
+      "side": 1,
+      "message": "The issue is that you don\u0027t set self.meth_kwargs on this object.  Not that you\u0027re doing it.  You set it on the Mongoargs object, this one doesn\u0027t seem to pass through? It looks like you only ever set meth_kwargs on line 261.  I just didn\u0027t see how you propagated it to this object,",
+      "parentUuid": "AAAAUX/+ecM\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+e5k\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
