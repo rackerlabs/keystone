@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+dLY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T03:10:38Z",
+      "side": 1,
+      "message": "Is is just added as a comma separated value in KEYSTONE_CONFIG_GENERATOR_EXTRA_LIBRARIES? Are spaces OK after the comma?",
+      "revId": "c276485aedfdaff0aaa2315b0834995ffd2ab346",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
