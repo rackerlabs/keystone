@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+YNE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T14:41:10Z",
+      "side": 1,
+      "message": "done in next patchset",
+      "parentUuid": "AAAAUX/+e1g\u003d",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+z1Q\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-18T21:42:24Z",
       "side": 1,
       "message": "add bp password-rotation",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+YPc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T14:41:10Z",
+      "side": 1,
+      "message": "done in next patchset",
+      "parentUuid": "AAAAUX/+z1Q\u003d",
       "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+YQY\u003d",
+        "filename": "keystone/tests/integration/identity/test_passwords.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T14:41:10Z",
+      "side": 1,
+      "message": "done in next patchset",
+      "parentUuid": "AAAAUX/+f98\u003d",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+z/I\u003d",
         "filename": "keystone/tests/integration/identity/test_passwords.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-18T21:19:07Z",
       "side": 1,
       "message": "Couldn\u0027t this be put in test_v3? I could see this being useful for others too.",
+      "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+YP8\u003d",
+        "filename": "keystone/tests/integration/identity/test_passwords.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T14:41:10Z",
+      "side": 1,
+      "message": "I think there is something already there that I can use. I just wanted something clean to start testing with. I probably end up using something that already existed.",
+      "parentUuid": "AAAAUX/+z/I\u003d",
       "revId": "cee711d466d43dbd34e457047f32c1ac423563d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
