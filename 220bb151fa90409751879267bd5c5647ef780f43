@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+eOc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "Okay. Will make that change. So far it was working with above configuration but the multi string operation is better as it allows multiple hosts without escaping.",
+      "parentUuid": "AAAAUX/+fFs\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+fFY\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 18
@@ -47,6 +65,24 @@
       "writtenOn": "2014-02-20T23:11:19Z",
       "side": 1,
       "message": "This is an unrelated change and should be separate (perhaps a wider doc cleanup commit)",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+eNM\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "Just noticed the typo in previous patch. Okay. will revert it back.",
+      "parentUuid": "AAAAUX/+fFY\u003d",
       "revId": "220bb151fa90409751879267bd5c5647ef780f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+eRo\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "Will make the change to merge in one class. I was trying to abstract out functionality for easier understanding. Looks like that is not the case, so will make the change.",
+      "parentUuid": "AAAAUX/+fEA\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+fDk\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
@@ -81,6 +135,24 @@
       "writtenOn": "2014-02-20T23:11:19Z",
       "side": 1,
       "message": "Is this a standard mongo nomenclature?  \u0027w\u0027 is a very non-descript argument.  This might be better named \"write_acknowledgement\" with documentation on what that means.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+elY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "This is mongo parameter as described in http://api.mongodb.org/python/current/api/pymongo/collection.html#pymongo.collection.Collection.write_concern\n\nIts one of attribute describing write concern characteristics of insert/update/delete db operation.",
+      "parentUuid": "AAAAUX/+fDk\u003d",
       "revId": "220bb151fa90409751879267bd5c5647ef780f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+ek8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "As mentioned above, this is part of write concern behavior.",
+      "parentUuid": "AAAAUX/+e7I\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+fCw\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
@@ -115,6 +205,24 @@
       "writtenOn": "2014-02-20T23:11:19Z",
       "side": 1,
       "message": "Please collapse the arguments and API down (see above comment on line 143).  This feels like a gross over complication to set some values as configuration options.  Unless there is expectation that the same options will be used across multiple implementations (an library that is not pymongo).",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+ekg\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "Okay...will make that change",
+      "parentUuid": "AAAAUX/+fCw\u003d",
       "revId": "220bb151fa90409751879267bd5c5647ef780f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+eh8\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "This is a warning which requires out of band interaction by operator. To fix that, either  operator has to remove existing TTL index or adjust TTL time. Generally index management (addition/deletion) is done separately outside of code.",
+      "parentUuid": "AAAAUX/+e70\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+e90\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
@@ -149,6 +275,24 @@
       "writtenOn": "2014-02-20T23:11:19Z",
       "side": 1,
       "message": "Where are \"meth_kwargs\" set?  it appears these are set on the MongoArgs object but not on the API object.  This is likely going to raise an exception.  It also indicates testing is likely missing.\n\nThis is another argument to collapse the classes down into something more straightforward.",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+ecM\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "From backend configuration, some of the arguments are passed to establish db connection, collection write concern and read preference. The remaining arguments, **meth_args, are passed as-is to db operation call. E.g. db find may want to use \n\u0027tag_sets\u0027 parameter, so it can be passed as-is if there in configuration argument. \n\nThis provides flexibility of passing operator specific arguments to pymongo API if needed.",
+      "parentUuid": "AAAAUX/+e90\u003d",
       "revId": "220bb151fa90409751879267bd5c5647ef780f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+eb0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "This is not needed as initialization is already done. Will remove it from here",
+      "parentUuid": "AAAAUX/+e5k\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+e/0\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+eXU\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "This was answered in PS 13. Its actually done as a hack but as per your suggestion, now it seems like a good candidate for abstract class. I will make that change in next patch.\n\nReply in PS 13 was...\n\nAs this is optional backend so any pymongo related imports need to be differed till its used. So no module level imports.\n\nIdeally I would have done following\n\u003ccode\u003e\nfrom pymongo import son_manipulator\nclass BaseTransform(son_manipulator.SONManipulator)\n\u003c/code\u003e\n\nNow added this, to circumvent related mongo logic. Without this, it complains at following logic https://github.com/mongodb/mongo-python-driver/blob/master/pymongo/database.py#L96",
+      "parentUuid": "AAAAUX/+e/0\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+e/U\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
@@ -200,6 +380,24 @@
       "writtenOn": "2014-02-20T23:11:19Z",
       "side": 1,
       "message": "Is there a case where the SON transform wouldn\u0027t need the work from BaseTransform?  Your docstring indicates that since dogpile.cache stores things as a special object, this logic is needed.  Wouldn\u0027t that imply this is _always_ needed?  If so, does it make sense to make this logic always occur?  This will always be used in the context of dogpile.cache and the SON manipulator (user specified) might need to be layered after the part that strips out the CachedValue object",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+eUY\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-21T00:07:00Z",
+      "side": 1,
+      "message": "Yes..this is always needed, that\u0027s why BaseTransform is used if no custom SON manipulator is specified.\n\nI think if the custom class is need to be stored, then custom manipulator can do complete transformation instead of doing it in layers as it can be confusing. Also have not seen if layering approach even works.\n\nI have provided reply around similar concern in PS13 around this.\n\nI have seen a situation where dogpile caching decorator is applied where a custom object is returned instead of a simple dictionary or array. In that case, the person will need to have custom encoding and decoding logic while saving to and reading from mongo if there is need to have automatic conversion from mongo dict data to class.\nPlease see following for further details. http://api.mongodb.org/python/current/examples/custom_type.html#automatic-encoding-and-decoding",
+      "parentUuid": "AAAAUX/+e/U\u003d",
       "revId": "220bb151fa90409751879267bd5c5647ef780f43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
