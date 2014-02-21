@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+Ui8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T21:53:41Z",
+      "side": 1,
+      "message": "You can remove the list of changed files.",
+      "revId": "c35f1aefbc444ff8b7f57069a428b40934f140f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+UjA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T21:53:41Z",
+      "side": 1,
+      "message": "This should be:\n\n    Partial-Bug: #1277104",
+      "revId": "c35f1aefbc444ff8b7f57069a428b40934f140f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
