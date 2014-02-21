@@ -317,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+c/I\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T03:19:01Z",
+      "side": 1,
+      "message": "The problem is the unnecessary MongoArgs class. On line 294 all of the MongoArgs instance attributes are added to this object. MongoArgs.",
+      "parentUuid": "AAAAUX/+dD0\u003d",
+      "revId": "220bb151fa90409751879267bd5c5647ef780f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+e5k\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 18
