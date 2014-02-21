@@ -19,12 +19,15 @@ CONF = cfg.CONF
 _BACKEND_MAPPING = {'sqlalchemy': 'keystone.contrib.kds.db.sqlalchemy.api',
                     'kvs': 'keystone.contrib.kds.db.kvs.api'}
 
-IMPL = db_api.DBAPI(backend_mapping=_BACKEND_MAPPING)
+# FIXME(blk-u): this needs to be done at runtime and not at import time,
+# We haven't configured CONF.database.backend yet.
+IMPL = db_api.DBAPI(CONF.database.backend, backend_mapping=_BACKEND_MAPPING)
 
 
 def reset():
     global IMPL
-    IMPL = db_api.DBAPI(backend_mapping=_BACKEND_MAPPING)
+    IMPL = db_api.DBAPI(CONF.database.backend,
+                        backend_mapping=_BACKEND_MAPPING)
 
 
 def get_instance():
