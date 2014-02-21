@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.config import cfg
+import six
 from sqlalchemy.orm import exc
 
 from keystone.contrib.kds.common import exception
@@ -18,14 +20,39 @@ from keystone.contrib.kds.db.sqlalchemy import models
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 
+CONF = cfg.CONF
+
+
 def get_backend():
     return SqlalchemyDbImpl()
+
+
+_engine_facade = None
+
+
+def _get_engine_facade():
+    global _engine_facade
+
+    if not _engine_facade:
+        _engine_facade = db_session.EngineFacade(
+            CONF.database.connection,
+            **dict(six.iteritems(CONF.database)))
+
+    return _engine_facade
+
+
+def get_engine():
+    return _get_engine_facade().get_engine()
+
+
+def get_session(expire_on_commit=False):
+    return _get_engine_facade().get_session(expire_on_commit=expire_on_commit)
 
 
 class SqlalchemyDbImpl(connection.Connection):
 
     def set_key(self, name, key, signature, group, expiration=None):
-        session = db_session.get_session()
+        session = get_session()
 
         with session.begin():
             q = session.query(models.Host)
@@ -52,7 +79,7 @@ class SqlalchemyDbImpl(connection.Connection):
         return host.latest_generation
 
     def get_key(self, name, generation=None, group=None):
-        session = db_session.get_session()
+        session = get_session()
 
         query = session.query(models.Host, models.Key)
         query = query.filter(models.Host.id == models.Key.host_id)

@@ -16,7 +16,6 @@ import copy
 
 from keystone.common import sql
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common import timeutils
 from keystone import token
 
@@ -41,7 +40,7 @@ class Token(token.Driver):
     def get_token(self, token_id):
         if token_id is None:
             raise exception.TokenNotFound(token_id=token_id)
-        session = db_session.get_session()
+        session = sql.get_session()
         token_ref = session.query(TokenModel).get(token_id)
         if not token_ref or not token_ref.valid:
             raise exception.TokenNotFound(token_id=token_id)
@@ -56,13 +55,13 @@ class Token(token.Driver):
 
         token_ref = TokenModel.from_dict(data_copy)
         token_ref.valid = True
-        session = db_session.get_session()
+        session = sql.get_session()
         with session.begin():
             session.add(token_ref)
         return token_ref.to_dict()
 
     def delete_token(self, token_id):
-        session = db_session.get_session()
+        session = sql.get_session()
         with session.begin():
             token_ref = session.query(TokenModel).get(token_id)
             if not token_ref or not token_ref.valid:
@@ -79,7 +78,7 @@ class Token(token.Driver):
         or the trustor's user ID, so will use trust_id to query the tokens.
 
         """
-        session = db_session.get_session()
+        session = sql.get_session()
         with session.begin():
             now = timeutils.utcnow()
             query = session.query(TokenModel)
@@ -118,7 +117,7 @@ class Token(token.Driver):
                 return False
 
     def _list_tokens_for_trust(self, trust_id):
-        session = db_session.get_session()
+        session = sql.get_session()
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -132,7 +131,7 @@ class Token(token.Driver):
         return tokens
 
     def _list_tokens_for_user(self, user_id, tenant_id=None):
-        session = db_session.get_session()
+        session = sql.get_session()
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
@@ -148,7 +147,7 @@ class Token(token.Driver):
 
     def _list_tokens_for_consumer(self, user_id, consumer_id):
         tokens = []
-        session = db_session.get_session()
+        session = sql.get_session()
         with session.begin():
             now = timeutils.utcnow()
             query = session.query(TokenModel)
@@ -172,7 +171,7 @@ class Token(token.Driver):
             return self._list_tokens_for_user(user_id, tenant_id)
 
     def list_revoked_tokens(self):
-        session = db_session.get_session()
+        session = sql.get_session()
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel.id, TokenModel.expires)
@@ -205,7 +204,7 @@ class Token(token.Driver):
         return batch_size
 
     def flush_expired_tokens(self):
-        session = db_session.get_session()
+        session = sql.get_session()
         dialect = session.bind.dialect.name
         batch_size = self.token_flush_batch_size(dialect)
         if batch_size > 0:
