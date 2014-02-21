@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+XZU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-21T16:00:02Z",
+      "side": 1,
+      "message": "nit: change id to scope_id",
+      "revId": "a543d5d0dc82fa90fbe958ed8c5d8712afdbb429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
