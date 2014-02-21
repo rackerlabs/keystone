@@ -59,8 +59,8 @@ from keystone.common import utils as common_utils
 from keystone import config
 from keystone import exception
 from keystone import notifications
+from keystone.openstack.common.db import options as db_options
 from keystone.openstack.common.db.sqlalchemy import migration
-from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import service
@@ -108,7 +108,7 @@ class dirs:
 # keystone.common.sql.initialize() for testing.
 def _initialize_sql_session():
     db_file = dirs.tmp('test.db')
-    session.set_defaults(
+    db_options.set_defaults(
         sql_connection="sqlite:///" + db_file,
         sqlite_db=db_file)
 
@@ -155,14 +155,15 @@ def setup_database():
     if os.path.exists(db):
         os.unlink(db)
     if not os.path.exists(pristine):
-        migration.db_sync(migration_helpers.find_migrate_repo())
+        migration.db_sync(sql.get_engine(),
+                          migration_helpers.find_migrate_repo())
         shutil.copyfile(db, pristine)
     else:
         shutil.copyfile(pristine, db)
 
 
 def teardown_database():
-    session.cleanup()
+    sql.cleanup()
 
 
 @atexit.register
@@ -397,8 +398,8 @@ class TestCase(testtools.TestCase):
 
         # The credential backend only supports SQL, so we always have to load
         # the tables.
-        self.engine = session.get_engine()
-        self.addCleanup(session.cleanup)
+        self.engine = sql.get_engine()
+        self.addCleanup(sql.cleanup)
 
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)

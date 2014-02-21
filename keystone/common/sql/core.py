@@ -21,6 +21,7 @@ CONF() because it sets up configuration options.
 import contextlib
 import functools
 
+from oslo.config import cfg
 import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
@@ -30,10 +31,13 @@ from sqlalchemy import types as sql_types
 from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common.db import exception as db_exception
+from keystone.openstack.common.db import options as db_options
 from keystone.openstack.common.db.sqlalchemy import models
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common import jsonutils
 
+
+CONF = cfg.CONF
 
 ModelBase = declarative.declarative_base()
 
@@ -63,7 +67,7 @@ flag_modified = flag_modified
 def initialize():
     """Initialize the module."""
 
-    db_session.set_defaults(
+    db_options.set_defaults(
         sql_connection="sqlite:///keystone.db",
         sqlite_db="keystone.db")
 
@@ -161,10 +165,67 @@ class ModelDictMixin(object):
         return dict((name, getattr(self, name)) for name in names)
 
 
+_engine = None
+_sessionmaker_expire_on_commit = None
+_sessionmaker_no_expire_on_commit = None
+
+
+def get_engine():
+    global _engine
+
+    if not _engine:
+        _engine = db_session.create_engine(
+            CONF.database.connection,
+            idle_timeout=CONF.database.idle_timeout,
+            connection_debug=CONF.database.connection_debug,
+            max_pool_size=CONF.database.max_pool_size,
+            max_overflow=CONF.database.max_overflow,
+            pool_timeout=CONF.database.pool_timeout,
+            sqlite_synchronous=CONF.database.sqlite_synchronous,
+            connection_trace=CONF.database.connection_trace,
+            max_retries=CONF.database.db_max_retries,
+            retry_interval=CONF.database.db_max_retry_interval)
+
+    return _engine
+
+
+def _get_sessionmaker(expire_on_commit=False):
+    global _sessionmaker_expire_on_commit
+    global _sessionmaker_no_expire_on_commit
+
+    engine = get_engine()
+
+    if expire_on_commit:
+        if not _sessionmaker_expire_on_commit:
+            _sessionmaker_expire_on_commit = db_session.get_maker(
+                engine, expire_on_commit=True)
+        return _sessionmaker_expire_on_commit
+
+    if not _sessionmaker_no_expire_on_commit:
+        _sessionmaker_no_expire_on_commit = db_session.get_maker(
+            engine, expire_on_commit=False)
+
+    return _sessionmaker_no_expire_on_commit
+
+
+def cleanup():
+    global _engine
+    global _sessionmaker_expire_on_commit
+    global _sessionmaker_no_expire_on_commit
+
+    _engine = None
+    _sessionmaker_expire_on_commit = None
+    _sessionmaker_no_expire_on_commit = None
+
+
+def get_session(expire_on_commit=False):
+    return _get_sessionmaker(expire_on_commit=expire_on_commit)()
+
+
 @contextlib.contextmanager
 def transaction(expire_on_commit=False):
     """Return a SQLAlchemy session in a scoped transaction."""
-    session = db_session.get_session(expire_on_commit=expire_on_commit)
+    session = get_session(expire_on_commit=expire_on_commit)
     with session.begin():
         yield session
 
