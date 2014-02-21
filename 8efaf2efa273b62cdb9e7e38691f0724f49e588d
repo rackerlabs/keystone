@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+uik\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T21:09:56Z",
+      "side": 1,
+      "message": "In Py2 filter returns a list, but in Py3 it returns a generator. Using six we make Py2 behave like Py3.",
+      "parentUuid": "AAAAUX//Ups\u003d",
+      "revId": "8efaf2efa273b62cdb9e7e38691f0724f49e588d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//Uqo\u003d",
         "filename": "keystone/common/kvs/backends/memcached.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-13T23:49:33Z",
       "side": 1,
       "message": "(note) this is going to conflict with https://review.openstack.org/#/c/70523/9/keystone/common/kvs/backends/memcached.py",
+      "revId": "8efaf2efa273b62cdb9e7e38691f0724f49e588d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+U5I\u003d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-21T21:09:56Z",
+      "side": 1,
+      "message": "rebased on top of that patch",
+      "parentUuid": "AAAAUX//Uqo\u003d",
       "revId": "8efaf2efa273b62cdb9e7e38691f0724f49e588d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
