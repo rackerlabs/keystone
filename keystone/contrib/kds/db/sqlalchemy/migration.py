@@ -12,6 +12,7 @@
 
 import os
 
+from keystone.contrib.kds.db.sqlalchemy import api
 from keystone.openstack.common.db.sqlalchemy import migration
 
 
@@ -21,12 +22,13 @@ def _repo_path():
 
 
 def db_version_control(version=None):
-    return migration.db_version_control(_repo_path(), version=version)
+    return migration.db_version_control(api.get_engine(), _repo_path(),
+                                        version=version)
 
 
 def db_sync(version=None):
-    return migration.db_sync(_repo_path(), version=version)
+    return migration.db_sync(api.get_engine(), _repo_path(), version=version)
 
 
 def db_version(version=None):
-    return migration.db_version(_repo_path(), version)
+    return migration.db_version(api.get_engine(), _repo_path(), version)
