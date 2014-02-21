@@ -64,7 +64,7 @@ class Revoke(revoke.Driver):
     def _prune_expired_events(self):
         oldest = revoke.revoked_before_cutoff_time()
 
-        session = db_session.get_session()
+        session = sql.get_session()
         dialect = session.bind.dialect.name
         batch_size = self._flush_batch_size(dialect)
         if batch_size > 0:
@@ -86,7 +86,7 @@ class Revoke(revoke.Driver):
 
     def get_events(self, last_fetch=None):
         self._prune_expired_events()
-        session = db_session.get_session()
+        session = sql.get_session()
         query = session.query(RevocationEvent).order_by(
             RevocationEvent.revoked_at)
 
@@ -108,6 +108,6 @@ class Revoke(revoke.Driver):
             kwargs[attr] = getattr(event, attr)
         kwargs['id'] = uuid.uuid4().hex
         record = RevocationEvent(**kwargs)
-        session = db_session.get_session()
+        session = sql.get_session()
         with session.begin():
             session.add(record)
