@@ -1000,28 +1000,28 @@
 # dereferencing configured by your ldap.conf. (string value)
 #alias_dereferencing=default
 
-#  (string value)
+# Search base for user objects (string value)
 #user_tree_dn=<None>
 
-#  (string value)
+# LDAP search filter for user objects (string value)
 #user_filter=<None>
 
-#  (string value)
+# LDAP objectClass for user objects (string value)
 #user_objectclass=inetOrgPerson
 
-#  (string value)
+# LDAP attribute mapped to user id (string value)
 #user_id_attribute=cn
 
-#  (string value)
+# LDAP attribute mapped to user name (string value)
 #user_name_attribute=sn
 
-#  (string value)
+# LDAP attribute mapped to user email (string value)
 #user_mail_attribute=email
 
-#  (string value)
+# LDAP attribute mapped to password (string value)
 #user_pass_attribute=userPassword
 
-#  (string value)
+# LDAP attribute mapped to user enabled flag (string value)
 #user_enabled_attribute=enabled
 
 #  (integer value)
@@ -1030,20 +1030,22 @@
 #  (string value)
 #user_enabled_default=True
 
-#  (list value)
+# List of attributes stripped out of the user object on user
+# update for LDAP backends (list value)
 #user_attribute_ignore=default_project_id,tenants
 
-#  (string value)
+# LDAP attribute mapped to default_project_id for users
+# (string value)
 #user_default_project_id_attribute=<None>
 
-#  (boolean value)
+# Allow user creation in LDAP backend (boolean value)
 #user_allow_create=true
 
-#  (boolean value)
+# Allow user updates in LDAP backend (boolean value)
 #user_allow_update=true
 
-#  (boolean value)
-#user_allow_delete=true
+# Allow user deletion in LDAP backend (boolean value)
+#user_allow_delete =true
 
 #  (boolean value)
 #user_enabled_emulation=false
@@ -1051,46 +1053,49 @@
 #  (string value)
 #user_enabled_emulation_dn=<None>
 
-#  (list value)
+# List of additional LDAP attributes used for mapping values
+# stored in the user object (list value)
 #user_additional_attribute_mapping=
 
-#  (string value)
+# Search base for tenant objects (string value)
 #tenant_tree_dn=<None>
 
-#  (string value)
+# LDAP search filter for tenant objects (string value)
 #tenant_filter=<None>
 
-#  (string value)
+# LDAP objectClass for tenant objects (string value)
 #tenant_objectclass=groupOfNames
 
-#  (string value)
+# LDAP attribute mapped to tenant id (string value)
 #tenant_id_attribute=cn
 
-#  (string value)
+# LDAP attribute mapped to tenant membership for user (string
+# value)
 #tenant_member_attribute=member
 
-#  (string value)
+# LDAP attribute mapped to tenant name (string value)
 #tenant_name_attribute=ou
 
-#  (string value)
+# LDAP attribute mapped to tenant description (string value)
 #tenant_desc_attribute=description
 
-#  (string value)
+# LDAP attribute mapped to tenant enabled (string value)
 #tenant_enabled_attribute=enabled
 
-#  (string value)
+# LDAP attribute mapped to tenant domain_id (string value)
 #tenant_domain_id_attribute=businessCategory
 
-#  (list value)
+# List of attributes stripped out of the tenant object on
+# tenant update for LDAP backends (list value)
 #tenant_attribute_ignore=
 
-#  (boolean value)
+# Allow tenant creation in LDAP backend (boolean value)
 #tenant_allow_create=true
 
-#  (boolean value)
+# Allow tenant update in LDAP backend (boolean value)
 #tenant_allow_update=true
 
-#  (boolean value)
+# Allow tenant deletion in LDAP backend (boolean value)
 #tenant_allow_delete=true
 
 #  (boolean value)
@@ -1099,85 +1104,94 @@
 #  (string value)
 #tenant_enabled_emulation_dn=<None>
 
-#  (list value)
+# List of additional LDAP attributes used for mapping values
+# stored in the tenant object (list value)
 #tenant_additional_attribute_mapping=
 
-#  (string value)
+# Search base for role objects (string value)
 #role_tree_dn=<None>
 
-#  (string value)
+# LDAP search filter for role objects (string value)
 #role_filter=<None>
 
-#  (string value)
+# LDAP objectClass for role objects (string value)
 #role_objectclass=organizationalRole
 
-#  (string value)
+# LDAP attribute mapped to role id (string value)
 #role_id_attribute=cn
 
-#  (string value)
+# LDAP attribute mapped to role name (string value)
 #role_name_attribute=ou
 
 #  (string value)
 #role_member_attribute=roleOccupant
 
-#  (list value)
+# List of attributes stripped out of the role object on role
+# update for LDAP backends (list value)
 #role_attribute_ignore=
 
-#  (boolean value)
+# Allow role creation in LDAP backend (boolean value)
 #role_allow_create=true
 
-#  (boolean value)
+# Allow role update in LDAP backend (boolean value)
 #role_allow_update=true
 
-#  (boolean value)
+# Allow role deletion in LDAP backend (boolean value)
 #role_allow_delete=true
 
-#  (list value)
+# List of additional LDAP attributes used for mapping values
+# stored in the role object (list value)
 #role_additional_attribute_mapping=
 
-#  (string value)
+# Search base for group objects (string value)
 #group_tree_dn=<None>
 
-#  (string value)
+# LDAP search filter for role objects (string value)
 #group_filter=<None>
 
-#  (string value)
+# LDAP objectClass for group objects (string value)
 #group_objectclass=groupOfNames
 
-#  (string value)
+# LDAP attribute mapped to group id (string value)
 #group_id_attribute=cn
 
-#  (string value)
+# LDAP attribute mapped to group name (string value)
 #group_name_attribute=ou
 
-#  (string value)
+# LDAP attribute mapped to show group membership (string
+# value)
 #group_member_attribute=member
 
-#  (string value)
+# LDAP attribute mapped to group description (string value)
 #group_desc_attribute=description
 
-#  (list value)
+# List of attributes stripped out of the group object on group
+# update for LDAP backends (list value)
 #group_attribute_ignore=
 
-#  (boolean value)
+# Allow group creation in LDAP backend (boolean value)
 #group_allow_create=true
 
-#  (boolean value)
+# Allow group update in LDAP backend (boolean value)
 #group_allow_update=true
 
-#  (boolean value)
+# Allow group deletion in LDAP backend (boolean value)
 #group_allow_delete=true
 
-#  (list value)
+# List of additional LDAP attributes used for mapping values
+# stored in the group object (list value)
 #group_additional_attribute_mapping=
 
-#  (string value)
+# CA Certificate File Path for communicating with LDAP servers
+# (string value)
 #tls_cacertfile=<None>
 
-#  (string value)
+# CA Certificate Directory Path for communicating with LDAP
+# servers (string value)
 #tls_cacertdir=<None>
 
-#  (boolean value)
+# Enable TLS for communicating with LDAP servers (boolean
+# value)
 #use_tls=false
 
 # valid options for tls_req_cert are demand, never, and allow
