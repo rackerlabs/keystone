@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+SDs\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-22T17:17:41Z",
+      "side": 1,
+      "message": "will add, thanks",
+      "parentUuid": "AAAAUX/+kC4\u003d",
+      "revId": "93070ea459261d1b76518882fe3c98378770a146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+kCY\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-20T14:07:48Z",
       "side": 1,
       "message": "according to coverage report there\u0027s nothing testing the code in this function.",
+      "revId": "93070ea459261d1b76518882fe3c98378770a146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+SDo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-22T17:17:41Z",
+      "side": 1,
+      "message": "will add, thanks",
+      "parentUuid": "AAAAUX/+kCY\u003d",
       "revId": "93070ea459261d1b76518882fe3c98378770a146",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+SDk\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-22T17:17:41Z",
+      "side": 1,
+      "message": "will add, thanks",
+      "parentUuid": "AAAAUX/+kCA\u003d",
+      "revId": "93070ea459261d1b76518882fe3c98378770a146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+kAI\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-20T14:07:48Z",
       "side": 1,
       "message": "this code isn\u0027t going to be called since returned at line 228. Remove unreachable code.",
+      "revId": "93070ea459261d1b76518882fe3c98378770a146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+SEE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-22T17:17:41Z",
+      "side": 1,
+      "message": "this method has now been removed",
+      "parentUuid": "AAAAUX/+kAI\u003d",
       "revId": "93070ea459261d1b76518882fe3c98378770a146",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
