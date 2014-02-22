@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3///qY\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add space after # so that it matches the format for comments used in this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///tI\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 55
@@ -13,6 +30,108 @@
       "writtenOn": "2014-02-22T19:17:19Z",
       "side": 1,
       "message": "change \"Tokens\" to \"tokens\"\n\nAlso, space missing at end of line.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///p0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "Change the help text to document the option and not the fake revoke driver.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///p4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest put the ] on a separate line and add a , after the StrOpt so that it\u0027s easier to add more options.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///po\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a space after # so that it matches the format for comments used throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///pU\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add call to super() __init__",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///pM\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "why copy here? pruned is just going away at the end of the function anyways.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///ok\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 55
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a blank line after this for rst.",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +166,24 @@
       "writtenOn": "2014-02-22T19:17:19Z",
       "side": 1,
       "message": "suggest combine 25 and 24 so that it\u0027s done consistently.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///oI\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "oops, this comment should be \"suggest combine 27 and 28 so that it\u0027s done consistently.\"",
+      "parentUuid": "AAAAU3///sk\u003d",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +326,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3///oA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "seems like lambdas would work just as well for all these one-liners.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///rw\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 55
@@ -200,6 +354,159 @@
       "writtenOn": "2014-02-22T19:17:19Z",
       "side": 1,
       "message": "change \"cb[0], cb[1], cb[2]\" to \"*cb\"",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///n4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add : after token_values",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///nw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add : after TokenNotFound.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///ng\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "change \"Events\" to \"events\"",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///nU\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest change the name from \"last_fetch\" to \"newer_than\" or something more obvious.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///nY\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "keystone.exception is a module not an exception.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///nE\u003d",
+        "filename": "keystone/contrib/revoke/routers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "remove vim line",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///m8\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a space after # to match the format for comments used throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///mo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "this method isn\u0027t getting the list of users anymore, so this part of the comment should be moved into revoke_tokens_for_group.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///mk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "change \"Overkill\" to \"overkill\"",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +530,193 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3///mY\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "remove blank line.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///mI\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "what changed this behavior?",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///l8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest provide a fail message",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///l4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest provide a fail message",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///mA\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest use self.assertEqual([], events) then will get nicer output if it doesn\u0027t match.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///l0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest use\n\n self.assertEqual([], events)",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///lg\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///lc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest provide a failure message.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///lY\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest use\n\n self.assertEqual([], events)",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///lQ\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 2464,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest provide a failure message.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///lI\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "revert whitespace change on previous line.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///q4\u003d",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 55
@@ -234,6 +728,108 @@
       "writtenOn": "2014-02-22T19:17:19Z",
       "side": 1,
       "message": "what is this for?",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///lA\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "suggest use\n\n self.assertEqual([], events)",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///k8\u003d",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a space after # so that the format matches what\u0027s used with other comments throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///k0\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a space after # to match the format for comments used throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///k4\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a space after # to match the format for comments used throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///ks\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "add a space after # to match the format for comments used throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///kw\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:58:28Z",
+      "side": 1,
+      "message": "revert whitespace change on previous line.",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
