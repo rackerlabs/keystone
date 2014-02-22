@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+R6U\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-22T15:02:41Z",
+      "side": 1,
+      "message": "So what happened before you added this to explicitly select the envdir to use?  Did it just create a new one by default?",
+      "revId": "3922f29f20ff1121bf0c9353837164c61fe6f0c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
