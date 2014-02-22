@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX/+R3M\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-22T16:06:08Z",
+      "side": 1,
+      "message": "Good comment!  But is there not code somewhere that previously was relying on this code to generate the raise exception.Unauthorized?  How do you know this won\u0027t break anything?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+R2A\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-22T16:06:08Z",
+      "side": 1,
+      "message": "so _handle_scoped_token does not have to do all the mapping stuff that _handle_unscoped_token does because that would have already been done before the token was scoped?  Is my logic correct?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+S+E\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 34
@@ -13,6 +47,41 @@
       "writtenOn": "2014-02-22T04:33:14Z",
       "side": 1,
       "message": "the description sounds weird, especially the API part, not sure how to fix it up though",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+R1s\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-22T16:06:08Z",
+      "side": 1,
+      "message": "Why can\u0027t you just say Auth context user?",
+      "parentUuid": "AAAAUX/+S+E\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+R1k\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-22T16:06:08Z",
+      "side": 1,
+      "message": "I was searching for this when I saw or_ in the code.   Very glad I found it. It was bugging me... Just curiously, is it really worth the 4 chars you are saving to make the code more difficult to read????",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
