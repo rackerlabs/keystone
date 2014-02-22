@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3///tI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "change \"Tokens\" to \"tokens\"\n\nAlso, space missing at end of line.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sw\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.\n\nwhat does empty string for revoke mean here?",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sk\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "suggest combine 25 and 24 so that it\u0027s done consistently.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sg\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "can\u0027t you set up the policy.json so that it\u0027s publically available?",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sc\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "remove vim line",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sY\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "change REVOKE to \"revoke\"? or use REVOKE consistently (e.g., in the configuration.rst)",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sU\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "suggest pick a more recent date... maybe the planned date for icehouse.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sM\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "lowercase \"revoked token reporting mechanism.\"",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sE\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "remove +",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///sA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "remove +",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///r4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "remove ()",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///rw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "change \"cb[0], cb[1], cb[2]\" to \"*cb\"",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///rI\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "remove vim line.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///q4\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:17:19Z",
+      "side": 1,
+      "message": "what is this for?",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
