@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+ThQ\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2036,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-02-22T02:17:35Z",
+      "side": 1,
+      "message": "because we do not allow no roles specified now.",
+      "parentUuid": "AAAAUH/94gg\u003d",
+      "revId": "5aa637f8191406ec5e26d574e70177cb8a9fb2f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/94gc\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 2
