@@ -207,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3///d4\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-22T21:18:02Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAU3///sg\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///sc\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 55
