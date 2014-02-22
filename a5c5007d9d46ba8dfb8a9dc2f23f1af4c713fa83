@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3///uQ\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:00:13Z",
+      "side": 1,
+      "message": "use self.opt_in_group() to set config options.",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///uY\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:00:13Z",
+      "side": 1,
+      "message": "this is the default. Remove this line.",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///uA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-22T19:00:13Z",
+      "side": 1,
+      "message": "seems like the default fixtures provide plenty of users and projects already.",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
