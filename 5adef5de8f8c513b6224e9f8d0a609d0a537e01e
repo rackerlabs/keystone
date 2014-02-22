@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+XRU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-22T04:33:14Z",
+      "side": 0,
+      "message": "add the white space back?",
+      "revId": "5adef5de8f8c513b6224e9f8d0a609d0a537e01e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

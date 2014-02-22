@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+S+E\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-22T04:33:14Z",
+      "side": 1,
+      "message": "the description sounds weird, especially the API part, not sure how to fix it up though",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
