@@ -16,6 +16,23 @@
       "revId": "a8503f38b613f951d634e2a55cc4a77494106286",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//+W4\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-23T06:47:42Z",
+      "side": 1,
+      "message": "Looks like this line is causing one of your test failures. get_trust and list_roles_for_trust should probably call a private _get_trust function that does everything in get_trust but the wrapping.",
+      "revId": "a8503f38b613f951d634e2a55cc4a77494106286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
