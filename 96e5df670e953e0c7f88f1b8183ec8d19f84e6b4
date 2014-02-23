@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//9H4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T15:49:22Z",
+      "side": 1,
+      "message": "why do we need to do this? the blueprint doesn\u0027t explain it either.\n\nUpdate the commit message with the reason.",
+      "revId": "96e5df670e953e0c7f88f1b8183ec8d19f84e6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9HE\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T15:49:22Z",
+      "side": 1,
+      "message": "I\u0027d rather we did\n\n from six import moves\n\nand then did moves.filter where we used filter before.\n\nWe shouldn\u0027t be overriding the filter builtin.\n\nThis applies to all the changes.",
+      "revId": "96e5df670e953e0c7f88f1b8183ec8d19f84e6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
