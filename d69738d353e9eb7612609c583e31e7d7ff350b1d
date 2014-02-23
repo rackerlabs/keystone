@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//9DA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T16:19:41Z",
+      "side": 1,
+      "message": "suggest remove \"objects\" from all these help options. Unless system administrators are schooled in object-oriented programming it\u0027s just going to confuse.",
+      "revId": "d69738d353e9eb7612609c583e31e7d7ff350b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9EE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T16:19:41Z",
+      "side": 1,
+      "message": "suggest remove \"for LDAP backends\" -- this wasn\u0027t mentioned on any of the other options, and it really only applies to the LDAP identity backend.",
+      "revId": "d69738d353e9eb7612609c583e31e7d7ff350b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9Dc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T16:19:41Z",
+      "side": 1,
+      "message": "suggest make this\n\n Additional attribute mappings for users. Attribute mapping format is\n \u003cldap_attr\u003e:\u003cuser_attr\u003e, where ldap_attr is the attribute in the LDAP entry\n and user_attr is the Identity API attribute.\n\nThis applies to the other *_additional_attribute_mapping options.",
+      "revId": "d69738d353e9eb7612609c583e31e7d7ff350b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9DY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T16:19:41Z",
+      "side": 1,
+      "message": "change \"tenant\" to \"project\". This applies to all these options.",
+      "revId": "d69738d353e9eb7612609c583e31e7d7ff350b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9C0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T16:19:41Z",
+      "side": 1,
+      "message": "lowercase \"certificate file path\" -- this applies to all these options",
+      "revId": "d69738d353e9eb7612609c583e31e7d7ff350b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
