@@ -16,6 +16,24 @@
       "revId": "3922f29f20ff1121bf0c9353837164c61fe6f0c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3///OU\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-23T00:30:58Z",
+      "side": 1,
+      "message": "Correct, it would use one based on the \"name\", so .tox/pep8\n\nThis just forces the sharing of test venvs for pep8, docs, and sample_config",
+      "parentUuid": "AAAAUX/+R6U\u003d",
+      "revId": "3922f29f20ff1121bf0c9353837164c61fe6f0c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
