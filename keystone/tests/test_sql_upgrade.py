@@ -2014,6 +2014,188 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('assignment')
         check_grants(session, base_data)
 
+    def test_upgrade_endpoint_enabled_cols(self):
+        """Migration 41 added `enabled` column to `endpoint` table."""
+
+        self.upgrade(41)
+
+        # Verify that there's an 'enabled' field.
+        exp_cols = ['id', 'legacy_endpoint_id', 'interface', 'region',
+                    'service_id', 'url', 'extra', 'enabled']
+        self.assertTableColumns('endpoint', exp_cols)
+
+    def test_downgrade_endpoint_enabled_cols(self):
+        """Downgrade from migration 41 removes `enabled` column from
+           `endpoint` table."""
+
+        self.upgrade(self.max_version)
+        self.downgrade(40)
+
+        exp_cols = ['id', 'legacy_endpoint_id', 'interface', 'region',
+                    'service_id', 'url', 'extra']
+        self.assertTableColumns('endpoint', exp_cols)
+
+    def test_upgrade_endpoint_enabled_data(self):
+        """Migration 41 has to migrate data from `extra` to `enabled`."""
+
+        session = self.Session()
+
+        def add_service():
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        def add_endpoint(service_id, **extra_data):
+            endpoint_id = uuid.uuid4().hex
+
+            endpoint = {
+                'id': endpoint_id,
+                'interface': uuid.uuid4().hex[:8],
+                'service_id': service_id,
+                'url': uuid.uuid4().hex,
+                'extra': json.dumps(extra_data)
+            }
+            self.insert_dict(session, 'endpoint', endpoint)
+
+            return endpoint_id
+
+        self.upgrade(40)
+
+        # Insert some endpoints using the old format where `enabled` is in
+        # `extra` JSON.
+
+        # We'll need a service entry since it's the foreign key for endpoints.
+        service_id = add_service()
+
+        new_ep = lambda **extra_data: add_endpoint(service_id, **extra_data)
+
+        # Different endpoints with expected enabled and extra values, and a
+        # description.
+        endpoints = [
+            # Some values for True.
+            (new_ep(), (True, {}), 'no enabled'),
+            (new_ep(enabled=True), (True, {}), 'enabled=True'),
+            (new_ep(enabled='true'), (True, {}), "enabled='true'"),
+            (new_ep(something='whatever'),
+             (True, {'something': 'whatever'}), "something='whatever'"),
+            (new_ep(enabled=None), (True, {}), 'enabled=None'),
+
+            # Some values for False.
+            (new_ep(enabled=False), (False, {}), 'enabled=False'),
+            (new_ep(enabled='false'), (False, {}), "enabled='false'"),
+            (new_ep(enabled='0'), (False, {}), "enabled='0'"),
+            (new_ep(enabled=False, something='whatever'),
+             (False, {'something': 'whatever'}),
+             "enabled=False,something='whatever'"),
+        ]
+
+        self.upgrade(self.max_version)
+
+        # Verify that the endpoints have the expected values.
+
+        self.metadata.clear()
+        endpoint_table = sqlalchemy.Table('endpoint', self.metadata,
+                                          autoload=True)
+
+        def fetch_endpoint(endpoint_id):
+            cols = [endpoint_table.c.enabled, endpoint_table.c.extra]
+            f = endpoint_table.c.id == endpoint_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return ep.enabled, json.loads(ep.extra)
+
+        for endpoint_id, exp, msg in endpoints:
+            exp_enabled, exp_extra = exp
+
+            enabled, extra = fetch_endpoint(endpoint_id)
+
+            self.assertIs(exp_enabled, enabled, msg)
+            self.assertEqual(exp_extra, extra, msg)
+
+    def test_downgrade_endpoint_enabled_data(self):
+        """Downgrade from migration 41 has to migrate data from `enabled` to
+           `extra`."""
+
+        session = self.Session()
+
+        def add_service():
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        def add_endpoint(service_id, enabled, **extra_data):
+            endpoint_id = uuid.uuid4().hex
+
+            endpoint = {
+                'id': endpoint_id,
+                'interface': uuid.uuid4().hex[:8],
+                'service_id': service_id,
+                'url': uuid.uuid4().hex,
+                'extra': json.dumps(extra_data),
+                'enabled': enabled
+            }
+            self.insert_dict(session, 'endpoint', endpoint)
+
+            return endpoint_id
+
+        self.upgrade(self.max_version)
+
+        # Insert some endpoints using the new format.
+
+        # We'll need a service entry since it's the foreign key for endpoints.
+        service_id = add_service()
+
+        new_ep = (lambda enabled, **extra_data:
+                  add_endpoint(service_id, enabled, **extra_data))
+
+        # Different endpoints with expected extra values, and a
+        # description.
+        endpoints = [
+            # True tests
+            (new_ep(True), {}, 'enabled'),
+            (new_ep(True, something='whatever'), {'something': 'whatever'},
+             "something='whatever'"),
+
+            # False tests
+            (new_ep(False), {'enabled': False}, 'enabled=False'),
+            (new_ep(False, something='whatever'),
+             {'enabled': False, 'something': 'whatever'},
+             "enabled=False, something='whatever'"),
+        ]
+
+        self.downgrade(40)
+
+        # Verify that the endpoints have the expected values.
+
+        self.metadata.clear()
+        endpoint_table = sqlalchemy.Table('endpoint', self.metadata,
+                                          autoload=True)
+
+        def fetch_endpoint(endpoint_id):
+            cols = [endpoint_table.c.extra]
+            f = endpoint_table.c.id == endpoint_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return json.loads(ep.extra)
+
+        for endpoint_id, exp_extra, msg in endpoints:
+            extra = fetch_endpoint(endpoint_id)
+            self.assertEqual(exp_extra, extra, msg)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
