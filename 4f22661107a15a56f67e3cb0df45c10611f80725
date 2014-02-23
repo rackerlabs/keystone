@@ -121,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+Uv0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Since this is longer an error do we still need to figure out a scope?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///5A\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 34
@@ -155,6 +172,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+UvE\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Why do you need this when you are requiring it on line 28? Looks like you can just delete the __init__ entirely.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///3I\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -166,6 +200,23 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "change \"auth_info\" to \"auth_payload\" to match the superclass function signature.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+UuY\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Suggest \"if \u0027id\u0027 in auth\" feels more precise.",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +342,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+UtI\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Do we really have a nested dict structure with 2 levels or \u0027rules\u0027 keys?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///1Y\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -308,6 +376,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+Usg\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "If `rule_processor.process` will not add a \u0027name\u0027 key with a value of `None` then \"if \u0027name\u0027 not in mapped_properties\" feels better.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+UtU\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Is this too big for one line?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///3A\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -319,6 +421,23 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "the docstring for authenticate doesn\u0027t mention \"group_ids\", \"identity_provider\", or \"protocol\" as things that can be in auth_context. suggest update the documentation, or put these in \"extras\".",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+UrA\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "I assume `token_ref[\u0027expires\u0027]` can be empty or `None`. Is that correct?",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -371,6 +490,23 @@
       "side": 1,
       "message": "Why can\u0027t you just say Auth context user?",
       "parentUuid": "AAAAUX/+S+E\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9SQ\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Any reason for this change?",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -496,6 +632,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//9Tc\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Suggest using \u0027id or uuid.uuid4().hex\u0027 and then removing the \u0027if\u0027 statement below.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9TY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "I think you can to the same thing here.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///yA\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -541,6 +711,23 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "remove _() from these strings. We don\u0027t need to translate test results. This applies throughout this file (e.g., line 812 and 825)",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+Tlg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Can\u0027t these next three lines just be:\n\n    if \u0027project\u0027 not in token and \u0027domain\u0027 not in token:",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -632,6 +819,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//9So\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Are you doing this extra work to make the test failures nicer? Why not just let the KeyError propagate up?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///ws\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -711,6 +915,23 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "use \u0027 for strings consistently.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9Ts\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-23T14:37:20Z",
+      "side": 1,
+      "message": "Let\u0027s make this Python3 friendly using something like:\n\n  from six.moves.urllib import parse\n  parse.quote()",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
