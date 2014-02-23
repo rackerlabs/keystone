@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//9Jc\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T15:46:15Z",
+      "side": 1,
+      "message": "Remove this and just use FakeTable where was using self.test_table.",
+      "revId": "82ef30e185f6c3f350e3bd50097ee49b8e7baa28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9JI\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-23T15:46:15Z",
+      "side": 1,
+      "message": "change \"does\" to \"is\"",
+      "revId": "82ef30e185f6c3f350e3bd50097ee49b8e7baa28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
