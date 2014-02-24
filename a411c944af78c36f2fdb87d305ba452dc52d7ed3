@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//x0U\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-24T20:47:13Z",
+      "side": 1,
+      "message": "This is updating the memcache index.",
+      "parentUuid": "AAAAU3//zE4\u003d",
+      "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//yj0\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-24T19:22:15Z",
       "side": 1,
       "message": "so you refactored this because you now call it twice?  Nice!!!  Also this is where you update the trustor, correct?",
+      "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//x0I\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-24T20:47:13Z",
+      "side": 1,
+      "message": "This is the standard user (trustor in the case of impersonation)",
+      "parentUuid": "AAAAU3//yj0\u003d",
       "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//xzw\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-24T20:47:13Z",
+      "side": 1,
+      "message": "Yep",
+      "parentUuid": "AAAAU3//yjw\u003d",
+      "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//zII\u003d",
         "filename": "tests/test_backend.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-24T19:22:15Z",
       "side": 1,
       "message": "did this really need to start on a new line? eyeballing it it looked like it was under 79 chars if on the line above",
+      "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//xx0\u003d",
+        "filename": "tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2317,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-24T20:47:13Z",
+      "side": 1,
+      "message": "Yes, tenant_id\u003d\u003cblah\u003e was 2 characters over. It was easier to line-wrap it there and make it clear what was being done than assign into other values and pass it through.",
+      "parentUuid": "AAAAU3//zII\u003d",
       "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
