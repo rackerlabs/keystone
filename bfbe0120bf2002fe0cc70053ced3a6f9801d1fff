@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//1CI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-24T16:00:41Z",
+      "side": 1,
+      "message": "Note that this code was run using live tests on such a server, so we know it works.  I suspect that it is ude to walking the tree in either inorder or postorder,  in which case reversing the flattened view is a valid tree operation.",
+      "parentUuid": "AAAAU3//9FU\u003d",
+      "revId": "bfbe0120bf2002fe0cc70053ced3a6f9801d1fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//9FM\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
