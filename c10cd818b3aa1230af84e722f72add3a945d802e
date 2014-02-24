@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//0d4\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-24T16:47:26Z",
+      "side": 1,
+      "message": "If we base this on https://review.openstack.org/#/c/58766 I believe the LangTranslator class (and \u0027if\u0027 statement below) can be removed from the test. I think it is only needed because of the gettextutils monkey patching magic. Due to the way the magic works (and maybe a bug in Message.__new__) the translation happens twice.\n\nI\u0027m going to follow up on the oslo front to see if this is indeed a bug.",
+      "revId": "c10cd818b3aa1230af84e722f72add3a945d802e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
