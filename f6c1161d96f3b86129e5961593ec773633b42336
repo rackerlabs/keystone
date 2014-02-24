@@ -16,6 +16,24 @@
       "revId": "f6c1161d96f3b86129e5961593ec773633b42336",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//xlE\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-24T21:06:00Z",
+      "side": 1,
+      "message": "Nope, I don\u0027t think so. keys_to_check is an optional argument in assertValidListResponse [1] and the kwargs passed into assertValidResponse are popped out if they exist [2]: \n\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L417 [2] https://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L452\n\nSo, both of the above ensure that the keys we pass in here make it to assertValidEntity: https://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L463-L466\n\nSince both assertValidListResponse and assertValidResponse use assertValidEntity \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L463-L466\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L453",
+      "parentUuid": "AAAAU3//yOM\u003d",
+      "revId": "f6c1161d96f3b86129e5961593ec773633b42336",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
