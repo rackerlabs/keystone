@@ -16,10 +16,10 @@ import abc
 import os.path
 
 import codecs
-import ldap
 import ldap.filter
 import six
 
+from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
@@ -821,7 +821,10 @@ class BaseLdap(object):
             try:
                 v = lower_res[self.attribute_mapping.get(k, k).lower()]
             except KeyError:
-                pass
+                # if expected attribute is missing, and it is
+                # an attribute we know about, set value to None
+                if k in self.attribute_mapping:
+                    obj[k] = None
             else:
                 try:
                     obj[k] = v[0]
@@ -874,7 +877,10 @@ class BaseLdap(object):
         for k, v in six.iteritems(values):
             if k == 'id' or k in self.attribute_ignore:
                 continue
-            if v is not None:
+            if utils.is_empty(v):
+                LOG.debug(_('Skipping empty value for attribute %s'), k)
+                continue
+            else:
                 attr_type = self.attribute_mapping.get(k, k)
                 if attr_type is not None:
                     attrs.append((attr_type, [v]))
@@ -986,11 +992,13 @@ class BaseLdap(object):
                        {'option_name': self.options_name, 'attr': k})
                 raise exception.ValidationError(msg)
 
-            if v is None:
-                if old_obj.get(k) is not None:
+            if utils.is_empty(v):
+                if not utils.is_empty(old_obj.get(k)):
                     modlist.append((ldap.MOD_DELETE,
                                     self.attribute_mapping.get(k, k),
                                     None))
+                else:
+                    LOG.debug(_('Skipping empty value for attribute %s'), k)
                 continue
 
             current_value = old_obj.get(k)

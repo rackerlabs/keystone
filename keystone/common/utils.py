@@ -520,3 +520,21 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def is_empty(v):
+    """Return True if v has a value that evaluates to an empty value,
+    False if v has a non-empty value.  An empty value is None, or
+    some value that has a length of 0 - '', "", [], {}, or ().  An
+    integer can never be empty - the value 0 has a valid value, even
+    though it evaulates to False in a boolean context.  Same with the
+    value False - it has a non-empty value - the False value
+    """
+    try:
+        if v is None or (len(v) == 0):
+            return True
+    except TypeError:
+        # object has no length attribute -
+        # a scalar type, so not empty
+        pass
+    return False
