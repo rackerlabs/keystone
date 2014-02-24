@@ -123,7 +123,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictEqualNoneEmpty(user_ref, self.user_foo)
 
         conf = self.get_config(user_ref['domain_id'])
         conf.ldap.user_filter = '(CN=DOES_NOT_MATCH)'
@@ -774,7 +774,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
                                                 self.role_member['id'])
         role_ref = self.assignment_api.get_role(self.role_member['id'])
         self.assertEqual(role_ref['id'], self.role_member['id'])
-        self.assertNotIn('name', role_ref)
+        self.assertNotInOrEmpty('name', role_ref)
 
     def test_role_attribute_ignore(self):
         CONF.ldap.role_attribute_ignore = ['name']

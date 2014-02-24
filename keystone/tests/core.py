@@ -632,3 +632,48 @@ class TestCase(testtools.TestCase):
 
         standardMsg = '\n'.join(lines)
         self.fail(self._formatMessage(msg, standardMsg))
+
+    def _isempty(self, v):
+        # we can't just return if v: -
+        # a value of 0 or False is not empty
+        ret = False
+        if v is None:
+            ret = True
+        else:
+            try:
+                ret = (len(v) == 0)
+            except TypeError:
+                # object has no length attribute -
+                # a scalar type, so not empty
+                ret = False
+        return ret
+
+    def assertEqualNoneEmpty(self, first, second, msg=None):
+        """Fail if the two objects are unequal as determined
+           by the '==' operator.  Consider None
+           equal to len(obj) == 0
+        """
+        if not first == second:
+            # if both values are empty, they are equal
+            if (self._isempty(first) and self._isempty(second)):
+                return
+            raise self.failureException, \
+                  (msg or '%r != %r' % (first, second))
+
+    def assertDictEqualNoneEmpty(self, d1, d2, msg=None):
+        """same as assertDictEqualNoneEmpty, except consider keys
+           with empty values to be the same as non-existent keys
+        """
+        self.assertIsInstance(d1, dict)
+        self.assertIsInstance(d2, dict)
+        for k in d1:
+            self.assertEqualNoneEmpty(d1.get(k), d2.get(k), msg)
+        for k in d2:
+            self.assertEqualNoneEmpty(d2.get(k), d1.get(k), msg)
+
+    def assertNotInOrEmpty(self, object, set):
+        """assert <object> are not in <set>, or if it is in
+           the set, assert that the value is empty
+        """
+        self.assert_(object not in set or self._isempty(set[object]), "%s in %s" % (object, set))
+
