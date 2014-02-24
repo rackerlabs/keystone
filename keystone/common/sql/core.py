@@ -30,6 +30,7 @@ from sqlalchemy import types as sql_types
 from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common.db import exception as db_exception
+from keystone.openstack.common.db import options
 from keystone.openstack.common.db.sqlalchemy import models
 from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common import jsonutils
@@ -63,7 +64,7 @@ flag_modified = flag_modified
 def initialize():
     """Initialize the module."""
 
-    db_session.set_defaults(
+    options.set_defaults(
         sql_connection="sqlite:///keystone.db",
         sqlite_db="keystone.db")
 

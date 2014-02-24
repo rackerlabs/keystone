@@ -59,6 +59,7 @@ from keystone.common import utils as common_utils
 from keystone import config
 from keystone import exception
 from keystone import notifications
+from keystone.openstack.common.db import options
 from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common import log
@@ -108,7 +109,7 @@ class dirs:
 # keystone.common.sql.initialize() for testing.
 def _initialize_sql_session():
     db_file = dirs.tmp('test.db')
-    session.set_defaults(
+    options.set_defaults(
         sql_connection="sqlite:///" + db_file,
         sqlite_db=db_file)
 
