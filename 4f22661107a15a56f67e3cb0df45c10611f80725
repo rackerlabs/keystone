@@ -155,6 +155,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0No\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "Could change the return to a pass, this would allow us to check if the user has a default project",
+      "parentUuid": "AAAAU3///5A\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///4U\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -291,6 +309,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0JQ\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "Brad, correct. At this point the user the mapping has been done, and the user knows what groups she is a part of, and can check what projects/domains she can list.",
+      "parentUuid": "AAAAUX/+R2A\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///3U\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -319,6 +355,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "how are you going to loads() a dict? Add a unit test for the case when there\u0027s no \u0027rules\u0027 in mapping.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0FU\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "This might have to be done at the sql level.",
+      "parentUuid": "AAAAU3///2w\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -427,6 +481,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0DA\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "extras seems like a good spot",
+      "parentUuid": "AAAAU3///3A\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+UrA\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -513,6 +585,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0Bo\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "just to make line 87 a bit cleaner, but I could change it back.",
+      "parentUuid": "AAAAU3//9SQ\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///0M\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 34
@@ -541,6 +631,24 @@
       "writtenOn": "2014-02-22T16:06:08Z",
       "side": 1,
       "message": "I was searching for this when I saw or_ in the code.   Very glad I found it. It was bugging me... Just curiously, is it really worth the 4 chars you are saving to make the code more difficult to read????",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//z7s\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "i think the goal is to keep all the sqlalchemy stuff in here.",
+      "parentUuid": "AAAAUX/+R1k\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -643,6 +751,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "Suggest using \u0027id or uuid.uuid4().hex\u0027 and then removing the \u0027if\u0027 statement below.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//z5Y\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T17:26:34Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAU3//9Tc\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
