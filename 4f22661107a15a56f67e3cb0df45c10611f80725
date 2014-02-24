@@ -793,6 +793,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//zX8\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-24T18:05:57Z",
+      "side": 1,
+      "message": "this was a side-effect of a rebase, we can get rid of this change",
+      "parentUuid": "AAAAU3///yQ\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//9Tc\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
