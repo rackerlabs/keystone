@@ -128,6 +128,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_user_filter(self):
         user_ref = self.identity_api.get_user(self.user_foo['id'])
         self.user_foo.pop('password')
+        self._mutate_test_obj(user_ref)
         self.assertDictEqual(user_ref, self.user_foo)
 
         conf = self.get_config(user_ref['domain_id'])
@@ -779,7 +780,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                                                 self.role_member['id'])
         role_ref = self.assignment_api.get_role(self.role_member['id'])
         self.assertEqual(self.role_member['id'], role_ref['id'])
-        self.assertNotIn('name', role_ref)
+        self.assertTrue(('name' not in role_ref) or (role_ref['name'] is None))
 
     def test_role_attribute_ignore(self):
         CONF.ldap.role_attribute_ignore = ['name']
@@ -1175,6 +1176,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         user_ref = self.identity_api.get_user(user['id'])
         del user['password']
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        self._mutate_test_obj(user_ref_dict)
         self.assertDictEqual(user_ref_dict, user)
 
         user['password'] = uuid.uuid4().hex
@@ -1182,6 +1184,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         user_ref = self.identity_api.get_user(user['id'])
         del user['password']
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        self._mutate_test_obj(user_ref_dict)
         self.assertDictEqual(user_ref_dict, user)
 
         self.identity_api.delete_user(user['id'])
@@ -1409,6 +1412,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         ref = self.identity_api.get_user(
             userd['id'], domain_scope=CONF.identity.default_domain_id)
         del userd['password']
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, userd)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
@@ -1430,10 +1434,12 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         ref = self.identity_api.get_user(
             user1['id'], domain_scope=self.domain1['id'])
         del user1['password']
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, user1)
         ref = self.identity_api.get_user(
             user2['id'], domain_scope=self.domain2['id'])
         del user2['password']
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, user2)
 
         # Domains 3 and 4 share the same backend, so you should be
@@ -1442,16 +1448,20 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         ref = self.identity_api.get_user(
             user3['id'], domain_scope=self.domain3['id'])
         del user3['password']
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
             user4['id'], domain_scope=self.domain4['id'])
         del user4['password']
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, user4)
         ref = self.identity_api.get_user(
             user3['id'], domain_scope=self.domain4['id'])
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
             user4['id'], domain_scope=self.domain3['id'])
+        self._mutate_test_obj(ref)
         self.assertDictEqual(ref, user4)
 
     def test_scanning_of_config_dir(self):
