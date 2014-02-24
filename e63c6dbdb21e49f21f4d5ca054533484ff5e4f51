@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//73c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6167
+      },
+      "writtenOn": "2014-02-24T00:18:50Z",
+      "side": 1,
+      "message": "better to describe the scope of this patch in the title.",
+      "revId": "e63c6dbdb21e49f21f4d5ca054533484ff5e4f51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+Uj4\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2014-02-21T21:52:38Z",
       "side": 1,
       "message": "Can you remove the list of changes files.",
+      "revId": "e63c6dbdb21e49f21f4d5ca054533484ff5e4f51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//73Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6167
+      },
+      "writtenOn": "2014-02-24T00:18:50Z",
+      "side": 1,
+      "message": "agreed, we can know the list from the gerrit.",
+      "parentUuid": "AAAAUX/+Uj4\u003d",
       "revId": "e63c6dbdb21e49f21f4d5ca054533484ff5e4f51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
