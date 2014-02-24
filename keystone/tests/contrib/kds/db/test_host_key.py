@@ -13,14 +13,25 @@
 from testscenarios import load_tests_apply_scenarios as load_tests  # noqa
 
 from keystone.contrib.kds.common import exception
-from keystone.tests.contrib.kds.db import base
+from keystone.contrib.kds.db import api as db_api
+from keystone.openstack.common.db.sqlalchemy import test_base
+from keystone.contrib.kds.db.sqlalchemy import migration
 
 TEST_NAME = 'test-name'
 TEST_SIG = 'test-sig'
 TEST_KEY = 'test-enc'
 
 
-class KeyDbTestCase(base.BaseTestCase):
+class KeyDbTestCase(test_base.DbTestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        migration.db_sync()
+
+    def setUp(self):
+        super(KeyDbTestCase, self).setUp()
+
+        self.DB = db_api.get_instance()
 
     def test_retrieve(self):
         # Set a key and expect to get the same key back.
