@@ -1112,7 +1112,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                      tests.dirs.tests('backend_ldap.conf')])
         self.opt_in_group('ldap',
                           user_enabled_emulation=True,
-                          tenant_enabled_emulation=True)
+                          project_enabled_emulation=True)
         self.clear_database()
         self.load_backends()
         self.load_fixtures(default_fixtures)
