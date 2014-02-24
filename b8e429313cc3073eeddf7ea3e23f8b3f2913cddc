@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//6I8\u003d",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T06:04:15Z",
+      "side": 1,
+      "message": "so for folks who are not as familiar with pecan, it would be hugely helpful to comment this line. I think you want to describe the parameters to expose so folks don\u0027t have to search. Something like:\n\n:param template: The path to a template, relative to the base template\n                 directory.\n:param content_type: The content-type to use for this template.\n:param generic: A boolean which flags this as a \"generic\" controller,\n                which uses generic functions based upon ``simplegeneric``\n                generic functions.  Allows you to split a single\n                controller into multiple paths based upon HTTP method.\n\nwould really help with reviewers that are new to pecan (like me :-) )   Also what\u0027s tricky if you are new to pecan is understanding the options and syntax for the template.  To move to this we all need to understand or see some decent examples",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//6GE\u003d",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T06:04:15Z",
+      "side": 1,
+      "message": "why do you return f and not template_f  ?  Is it because template_f is a returned decorator that sets some config stuff (e.g. cfg[\u0027content_type\u0027] \u003d content_type)  and once its done that its purpose is fulfilled and so we can just return the original f back?",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//6Rk\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T06:04:15Z",
+      "side": 1,
+      "message": "what does this do?",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//6SM\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T06:04:15Z",
+      "side": 1,
+      "message": "so far this certainly looks cleaner than ComposingRouter stuff",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//6So\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T06:04:15Z",
+      "side": 1,
+      "message": "how were these headers set previously and why did it need to change?",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
