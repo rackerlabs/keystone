@@ -995,7 +995,7 @@ class Driver(object):
     def _set_default_domain(self, ref):
         """If the domain ID has not been set, set it to the default."""
         if isinstance(ref, dict):
-            if 'domain_id' not in ref:
+            if 'domain_id' not in ref or ref['domain_id'] is None:
                 ref = ref.copy()
                 ref['domain_id'] = CONF.identity.default_domain_id
             return ref
