@@ -222,6 +222,12 @@ class EndpointV3(controller.V3Controller):
     collection_name = 'endpoints'
     member_name = 'endpoint'
 
+    _mutable_parameters = frozenset(['service_id', 'interface', 'url',
+                                     'region_id', 'enabled'])
+    _public_parameters = frozenset(['id', 'interface', 'region_id',
+                                    'service_id'])
+    _required_parameters = frozenset(['service_id', 'interface', 'url'])
+
     def __init__(self):
         super(EndpointV3, self).__init__()
         self.get_member_from_driver = self.catalog_api.get_endpoint
@@ -239,9 +245,9 @@ class EndpointV3(controller.V3Controller):
 
     @controller.protected()
     def create_endpoint(self, context, endpoint):
+        EndpointV3.check_immutable_params(endpoint)
+        EndpointV3.check_required_params(endpoint)
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
-        self._require_attribute(ref, 'service_id')
-        self._require_attribute(ref, 'interface')
         self.catalog_api.get_service(ref['service_id'])
 
         ref = self.catalog_api.create_endpoint(ref['id'], ref)
