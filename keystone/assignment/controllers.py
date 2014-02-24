@@ -50,11 +50,11 @@ class Tenant(controller.V2Controller):
             CONF.identity.default_domain_id)
         for tenant_ref in tenant_refs:
             tenant_ref = self.filter_domain_id(tenant_ref)
-        params = {
-            'limit': context['query_string'].get('limit'),
-            'marker': context['query_string'].get('marker'),
-        }
-        return self._format_project_list(tenant_refs, **params)
+        limit = context['query_string'].get('limit')
+        marker = context['query_string'].get('marker')
+        tenant_refs = controller.V2Controller.paginate(tenant_refs, limit,
+                                                       marker)
+        return self._format_project_list(tenant_refs)
 
     @controller.v2_deprecated
     def get_projects_for_token(self, context, **kw):
@@ -77,11 +77,11 @@ class Tenant(controller.V2Controller):
             self.assignment_api.list_projects_for_user(user_ref['id']))
         tenant_refs = [self.filter_domain_id(ref) for ref in tenant_refs
                        if ref['domain_id'] == CONF.identity.default_domain_id]
-        params = {
-            'limit': context['query_string'].get('limit'),
-            'marker': context['query_string'].get('marker'),
-        }
-        return self._format_project_list(tenant_refs, **params)
+        limit = context['query_string'].get('limit')
+        marker = context['query_string'].get('marker')
+        tenant_refs = controller.V2Controller.paginate(tenant_refs, limit,
+                                                       marker)
+        return self._format_project_list(tenant_refs)
 
     @controller.v2_deprecated
     def get_project(self, context, tenant_id):
@@ -148,33 +148,7 @@ class Tenant(controller.V2Controller):
                 user_refs.append(self.v3_to_v2_user(user_ref))
         return {'users': user_refs}
 
-    def _format_project_list(self, tenant_refs, **kwargs):
-        marker = kwargs.get('marker')
-        first_index = 0
-        if marker is not None:
-            for (marker_index, tenant) in enumerate(tenant_refs):
-                if tenant['id'] == marker:
-                    # we start pagination after the marker
-                    first_index = marker_index + 1
-                    break
-            else:
-                msg = _('Marker could not be found')
-                raise exception.ValidationError(message=msg)
-
-        limit = kwargs.get('limit')
-        last_index = None
-        if limit is not None:
-            try:
-                limit = int(limit)
-                if limit < 0:
-                    raise AssertionError()
-            except (ValueError, AssertionError):
-                msg = _('Invalid limit value')
-                raise exception.ValidationError(message=msg)
-            last_index = first_index + limit
-
-        tenant_refs = tenant_refs[first_index:last_index]
-
+    def _format_project_list(self, tenant_refs):
         for x in tenant_refs:
             if 'enabled' not in x:
                 x['enabled'] = True
