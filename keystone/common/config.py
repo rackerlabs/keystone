@@ -397,6 +397,8 @@ FILE_OPTIONS = {
                    help='LDAP attribute mapped to user enabled flag'),
         cfg.IntOpt('user_enabled_mask', default=0),
         cfg.StrOpt('user_enabled_default', default='True'),
+        cfg.StrOpt('user_description_attribute', default='description',
+                   help='LDAP attribute mapped to the user description'),
         cfg.ListOpt('user_attribute_ignore',
                     default=['default_project_id', 'tenants'],
                     help='List of attributes stripped off the user on update'),
