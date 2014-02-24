@@ -36,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0EI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T17:14:58Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAU3///tI\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0D4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T17:14:58Z",
+      "side": 1,
+      "message": "missing a space at the end of the line",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///p0\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 55
@@ -53,6 +88,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0EE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T17:14:58Z",
+      "side": 1,
+      "message": "missing a space at the end of the line",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///p4\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 55
@@ -64,6 +116,23 @@
       "writtenOn": "2014-02-22T19:58:28Z",
       "side": 1,
       "message": "suggest put the ] on a separate line and add a , after the StrOpt so that it\u0027s easier to add more options.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0CE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T17:14:58Z",
+      "side": 1,
+      "message": "without a sql backend, is there any production use case to land this in icehouse?",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
