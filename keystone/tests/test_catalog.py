@@ -57,6 +57,9 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         """Applicable only to JSON."""
         return r.result['access']['token']['id']
 
+    def assertValidErrorResponse(self, response):
+        self.assertEqual(400, response.status_code)
+
     def _endpoint_create(self, expected_status=200, service_id=SERVICE_FIXTURE,
                          publicurl='http://localhost:8080',
                          internalurl='http://localhost:8080',
@@ -89,22 +92,22 @@ class V2CatalogTestCase(rest.RestfulTestCase):
 
     def test_endpoint_create_with_null_adminurl(self):
         req_body, response = self._endpoint_create(adminurl=None)
-        self.assertEqual(req_body['endpoint']['adminurl'], None)
+        self.assertEqual(None, req_body['endpoint']['adminurl'])
         self.assertNotIn('adminurl', response.result['endpoint'])
 
     def test_endpoint_create_with_empty_adminurl(self):
         req_body, response = self._endpoint_create(adminurl='')
-        self.assertEqual(req_body['endpoint']['adminurl'], '')
+        self.assertEqual('', req_body['endpoint']['adminurl'])
         self.assertNotIn("adminurl", response.result['endpoint'])
 
     def test_endpoint_create_with_null_internalurl(self):
         req_body, response = self._endpoint_create(internalurl=None)
-        self.assertEqual(req_body['endpoint']['internalurl'], None)
+        self.assertEqual(None, req_body['endpoint']['internalurl'])
         self.assertNotIn('internalurl', response.result['endpoint'])
 
     def test_endpoint_create_with_empty_internalurl(self):
         req_body, response = self._endpoint_create(internalurl='')
-        self.assertEqual(req_body['endpoint']['internalurl'], '')
+        self.assertEqual('', req_body['endpoint']['internalurl'])
         self.assertNotIn("internalurl", response.result['endpoint'])
 
     def test_endpoint_create_with_null_publicurl(self):
