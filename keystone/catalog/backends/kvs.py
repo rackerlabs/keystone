@@ -51,6 +51,13 @@ class Catalog(kvs.Base, catalog.Driver):
 
     def create_region(self, region):
         region_id = region['id']
+        try:
+            self.get_region(region_id)
+        except exception.NotFound:
+            pass
+        else:
+            msg = _('Duplicate ID, %s.') % region_id
+            raise exception.Conflict(type='region', details=msg)
         region.setdefault('parent_region_id')
         self._check_parent_region(region)
         self.db.set('region-%s' % region_id, region)

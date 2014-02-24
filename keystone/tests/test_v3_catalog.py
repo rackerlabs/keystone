@@ -33,6 +33,17 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         entity = r.result.get("region")
         self.assertEqual(region_id, entity['id'])
 
+    def test_create_region_with_duplicate_id(self):
+        """Call ``PUT /regions/{region_id}``."""
+        ref = dict(description="my region")
+        self.put(
+            '/regions/myregion',
+            body={'region': ref}, expected_status=200)
+        # Create region again with duplicate id
+        self.put(
+            '/regions/myregion',
+            body={'region': ref}, expected_status=409)
+
     def test_create_region(self):
         """Call ``POST /regions``."""
         ref = self.new_region_ref()
@@ -132,7 +143,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.assertValidEndpointResponse(r, ref)
 
     def assertValidErrorResponse(self, response):
-        self.assertTrue(response.status_code in [400])
+        self.assertTrue(response.status_code in [400, 409])
 
     def test_create_endpoint_400(self):
         """Call ``POST /endpoints``."""
