@@ -803,6 +803,24 @@ class BaseLdap(object):
             return self._id_to_dn_string(object_id)
 
     @staticmethod
+    def is_empty(v):
+        """Return True if v has a value that evaluates to an empty value,
+        False if v has a non-empty value.  An empty value is None, or
+        some value that has a length of 0 - '', "", [], {}, or ().  An
+        integer can never be empty - the value 0 has a valid value, even
+        though it evaulates to False in a boolean context.  Same with the
+        value False - it has a non-empty value - the False value
+        """
+        try:
+            if v is None or (len(v) == 0):
+                return True
+        except TypeError:
+            # object has no length attribute -
+            # a scalar type, so not empty
+            pass
+        return False
+
+    @staticmethod
     def _dn_to_id(dn):
         return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
 
@@ -821,7 +839,10 @@ class BaseLdap(object):
             try:
                 v = lower_res[self.attribute_mapping.get(k, k).lower()]
             except KeyError:
-                pass
+                # if expected attribute is missing, and it is
+                # an attribute we know about, set value to None
+                if k in self.attribute_mapping:
+                    obj[k] = None
             else:
                 try:
                     obj[k] = v[0]
@@ -874,7 +895,10 @@ class BaseLdap(object):
         for k, v in six.iteritems(values):
             if k == 'id' or k in self.attribute_ignore:
                 continue
-            if v is not None:
+            if self.is_empty(v):
+                LOG.debug(_('Skipping empty value for attribute %s'), k)
+                continue
+            else:
                 attr_type = self.attribute_mapping.get(k, k)
                 if attr_type is not None:
                     attrs.append((attr_type, [v]))
@@ -986,11 +1010,13 @@ class BaseLdap(object):
                        {'option_name': self.options_name, 'attr': k})
                 raise exception.ValidationError(msg)
 
-            if v is None:
-                if old_obj.get(k) is not None:
+            if self.is_empty(v):
+                if not self.is_empty(old_obj.get(k)):
                     modlist.append((ldap.MOD_DELETE,
                                     self.attribute_mapping.get(k, k),
                                     None))
+                else:
+                    LOG.debug(_('Skipping empty value for attribute %s'), k)
                 continue
 
             current_value = old_obj.get(k)

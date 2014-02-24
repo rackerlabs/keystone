@@ -22,6 +22,7 @@ from keystone import clean
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
+from keystone.common import ldap
 from keystone.common import manager
 from keystone import config
 from keystone import exception
@@ -995,7 +996,8 @@ class Driver(object):
     def _set_default_domain(self, ref):
         """If the domain ID has not been set, set it to the default."""
         if isinstance(ref, dict):
-            if 'domain_id' not in ref:
+            if ('domain_id' not in ref or
+                    ldap.core.BaseLdap.is_empty(ref['domain_id'])):
                 ref = ref.copy()
                 ref['domain_id'] = CONF.identity.default_domain_id
             return ref
