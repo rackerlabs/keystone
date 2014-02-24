@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//17E\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-24T14:55:19Z",
+      "side": 1,
+      "message": "Should this be \"Search base for projects\"?",
+      "revId": "415883dfa0652a93e0a44226873589be80239d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//15M\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-24T14:55:19Z",
+      "side": 1,
+      "message": "Should this be \"Search base for groups\"?",
+      "revId": "415883dfa0652a93e0a44226873589be80239d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
