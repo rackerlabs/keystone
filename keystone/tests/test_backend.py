@@ -100,6 +100,7 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
+        self._mutate_test_obj(user_ref)
         self.assertDictEqual(user_ref, self.user_sna)
 
     def test_authenticate_and_get_roles_no_metadata(self):
@@ -196,6 +197,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
+        self._mutate_test_obj(user_ref)
         self.assertDictEqual(user_ref, self.user_foo)
 
     def test_get_user_404(self):
@@ -210,6 +212,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
+        self._mutate_test_obj(user_ref)
         self.assertDictEqual(user_ref, self.user_foo)
 
     def test_get_user_by_name_404(self):
@@ -2506,6 +2509,8 @@ class IdentityTests(object):
         self.assignment_api.update_project(project['id'], project)
 
         project_ref = self.assignment_api.get_project(project['id'])
+        self._mutate_test_obj(project_ref)
+        self._mutate_test_obj(project)
         self.assertDictEqual(project_ref, project)
 
     def test_domain_crud(self):
@@ -2562,16 +2567,37 @@ class IdentityTests(object):
         def assert_key_equals(value):
             project_ref = self.assignment_api.update_project(
                 project['id'], project)
-            self.assertEqual(project_ref[key], value)
+            is_equal = project_ref[key] == value
+            if not is_equal and self._prop_can_be_none(key):
+                is_equal = (project_ref[key] is None and
+                            ((value is None) or (value == '')))
+            self.assertTrue(is_equal)
             project_ref = self.assignment_api.get_project(project['id'])
-            self.assertEqual(project_ref[key], value)
+            is_equal = project_ref[key] == value
+            if not is_equal and self._prop_can_be_none(key):
+                is_equal = (project_ref[key] is None and
+                            ((value is None) or (value == '')))
+            self.assertTrue(is_equal, "Project key %s value %s not equal "
+                            "to expected value %s" % (key, project_ref[key],
+                                                      value))
 
         def assert_get_key_is(value):
             project_ref = self.assignment_api.update_project(
                 project['id'], project)
-            self.assertIs(project_ref.get(key), value)
+            is_equal = project_ref.get(key) == value
+            if not is_equal and self._prop_can_be_none(key):
+                is_equal = (project_ref.get(key) is None and
+                            ((value is None) or (value == '')))
+            self.assertTrue(is_equal)
             project_ref = self.assignment_api.get_project(project['id'])
-            self.assertIs(project_ref.get(key), value)
+            is_equal = project_ref.get(key) == value
+            if not is_equal and self._prop_can_be_none(key):
+                is_equal = (project_ref.get(key) is None and
+                            ((value is None) or (value == '')))
+            self.assertTrue(is_equal, "Project key %s value %s not equal "
+                            "to expected value %s" % (key,
+                                                      project_ref.get(key),
+                                                      value))
 
         # add an attribute that doesn't exist, set it to a falsey value
         value = ''

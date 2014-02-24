@@ -359,6 +359,20 @@ class TestCase(BaseTestCase):
 
     _config_file_list = []
 
+    # these are the list of properties that an object may
+    # have a None value for, if the corresponding LDAP
+    # entry does not have the corresponding attribute
+    _none_val_props = ['description', 'email']
+
+    def _prop_can_be_none(self, prop):
+        return prop in self._none_val_props
+
+    def _mutate_test_obj(self, dict_obj):
+        for prop in self._none_val_props:
+            if prop in dict_obj and (dict_obj[prop] is None or
+                                     dict_obj[prop] == ''):
+                dict_obj.pop(prop)
+
     def config_files(self):
         return copy.copy(self._config_file_list)
 
