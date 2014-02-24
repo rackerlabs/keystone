@@ -16,6 +16,24 @@
       "revId": "f8580c07e578ba954372b47b10e5a06b29dfe8dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//1bg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-24T15:29:52Z",
+      "side": 1,
+      "message": "oh, nice catch, thanks! Fixed in the next patch set.",
+      "parentUuid": "AAAAUX/+UpY\u003d",
+      "revId": "f8580c07e578ba954372b47b10e5a06b29dfe8dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
