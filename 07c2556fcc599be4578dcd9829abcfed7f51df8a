@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//62w\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T03:54:00Z",
+      "side": 1,
+      "message": "My opinion is yes!  I think you should make sure the extension is enabled",
+      "revId": "07c2556fcc599be4578dcd9829abcfed7f51df8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//61g\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T03:54:00Z",
+      "side": 1,
+      "message": "So basically you check all the active passwords and as long as one of them matches you are good to go correct?  This is to handle having a grace period where there can be more than one valid password at a time, correct?",
+      "revId": "07c2556fcc599be4578dcd9829abcfed7f51df8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//6v8\u003d",
+        "filename": "keystone/tests/integration/identity/test_passwords.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T03:54:00Z",
+      "side": 1,
+      "message": "Nice test case.  Good to see you checking that when having concurrent valid passwords they both work",
+      "revId": "07c2556fcc599be4578dcd9829abcfed7f51df8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//6vU\u003d",
+        "filename": "keystone/tests/integration/identity/test_passwords.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-24T03:54:00Z",
+      "side": 1,
+      "message": "test coverage looks good!",
+      "revId": "07c2556fcc599be4578dcd9829abcfed7f51df8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
