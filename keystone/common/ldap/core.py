@@ -20,11 +20,13 @@ import re
 import sys
 import weakref
 
+import codecs
 import ldap
 import ldap.filter
 import ldappool
 import six
 
+from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LW
@@ -1351,7 +1353,14 @@ class BaseLdap(object):
 
                 v = lower_res[map_attr.lower()]
             except KeyError:
-                pass
+                # self.attribute_mapping specifies the properties that clients
+                # expect to be present in the object returned.  If the
+                # corresponding LDAP object does not have the attribute,
+                # then fill in the object property with a value of None.
+                # The client should know that a value of None in the
+                # property means that the property has no value.
+                if k in self.attribute_mapping:
+                    obj[k] = None
             else:
                 try:
                     obj[k] = v[0]
@@ -1407,7 +1416,9 @@ class BaseLdap(object):
                 # no need to check if v is None as 'id' will always have
                 # a value
                 attrs.append((self.id_attr, [v]))
-            elif v is not None:
+            elif utils.is_empty(v):
+                LOG.debug('Skipping empty value for attribute %s' % k)
+            else:
                 attr_type = self.attribute_mapping.get(k, k)
                 if attr_type is not None:
                     attrs.append((attr_type, [v]))
@@ -1513,16 +1524,22 @@ class BaseLdap(object):
             if k in old_obj and old_obj[k] == v:
                 continue
 
+            # old value empty and new value empty means unchanged
+            if utils.is_empty(v) and utils.is_empty(old_obj.get(k)):
+                continue
+
             if k in self.immutable_attrs:
                 msg = (_("Cannot change %(option_name)s %(attr)s") %
                        {'option_name': self.options_name, 'attr': k})
                 raise exception.ValidationError(msg)
 
-            if v is None:
-                if old_obj.get(k) is not None:
+            if utils.is_empty(v):
+                if not utils.is_empty(old_obj.get(k)):
                     modlist.append((ldap.MOD_DELETE,
                                     self.attribute_mapping.get(k, k),
                                     None))
+                else:
+                    LOG.debug('Skipping empty value for attribute %s' % k)
                 continue
 
             current_value = old_obj.get(k)

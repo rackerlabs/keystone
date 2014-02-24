@@ -41,3 +41,36 @@ class TestPasswordHashing(tests.BaseTestCase):
         new_hashed_password = utils.hash_password(self.hashed_password)
         self.assertFalse(utils.check_password(self.password,
                                               new_hashed_password))
+
+
+class TestIsEmpty(tests.BaseTestCase):
+
+    def setUp(self):
+        super(TestIsEmpty, self).setUp()
+
+    def test_None_is_empty(self):
+        self.assertTrue(utils.is_empty(None))
+
+    def test_empty_string_is_empty(self):
+        self.assertTrue(utils.is_empty(''))
+
+    def test_empty_list_is_empty(self):
+        self.assertTrue(utils.is_empty([]))
+
+    def test_empty_dict_is_empty(self):
+        self.assertTrue(utils.is_empty({}))
+
+    def test_zero_is_not_empty(self):
+        self.assertFalse(utils.is_empty(0))
+
+    def test_False_is_not_empty(self):
+        self.assertFalse(utils.is_empty(False))
+
+    def test_string_is_not_empty(self):
+        self.assertFalse(utils.is_empty("this is a non-empty string"))
+
+    def test_list_is_not_empty(self):
+        self.assertFalse(utils.is_empty(["this is a non-empty list"]))
+
+    def test_dict_is_not_empty(self):
+        self.assertFalse(utils.is_empty({"this": "is a non-empty dict"}))
