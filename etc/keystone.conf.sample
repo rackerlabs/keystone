@@ -808,6 +808,9 @@
 #  (string value)
 #user_enabled_attribute=enabled
 
+#  (string value)
+#user_description_attribute=description
+
 #  (integer value)
 #user_enabled_mask=0
 

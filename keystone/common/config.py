@@ -388,6 +388,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('user_mail_attribute', default='email'),
         cfg.StrOpt('user_pass_attribute', default='userPassword'),
         cfg.StrOpt('user_enabled_attribute', default='enabled'),
+        cfg.StrOpt('user_description_attribute', default='description'),
         cfg.IntOpt('user_enabled_mask', default=0),
         cfg.StrOpt('user_enabled_default', default='True'),
         cfg.ListOpt('user_attribute_ignore',
