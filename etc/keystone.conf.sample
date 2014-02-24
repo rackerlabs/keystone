@@ -814,6 +814,9 @@
 #  (string value)
 #user_enabled_default=True
 
+# LDAP attribute mapped to the user description (string value)
+#user_description_attribute=description
+
 # List of attributes stripped off the user on update (list
 # value)
 #user_attribute_ignore=default_project_id,tenants
