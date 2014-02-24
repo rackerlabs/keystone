@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//wh8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T22:52:37Z",
+      "side": 1,
+      "message": "(nit) the .all() should really be in L320 rather than L319, since the all() returns a collection, not another query",
+      "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wfo\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T22:52:37Z",
+      "side": 1,
+      "message": "why are federated tokens special such that they should appear in context? ... especially with their own key?",
+      "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wgw\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T22:52:37Z",
+      "side": 1,
+      "message": "user ID\u0027s should be url-safe:\n\n  auth_context[\u0027user_id\u0027] \u003d urllib.quote(mapped_properties[\u0027name\u0027])",
+      "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
