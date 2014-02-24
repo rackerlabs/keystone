@@ -281,6 +281,42 @@ class V2Controller(wsgi.Application):
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
+    @staticmethod
+    def paginate(entities, limit=None, marker=None):
+        '''Returns the subset of entities, bounded by limit and marker.
+
+        :entities: sequence of dicts to apply pagination
+        :param limit: maximum number of items to return
+        :param marker: the id of last item of the previous page; we return
+                        the next results after this value
+
+        :return: subset of entities, bounded by limit and marker.
+        '''
+
+        first_index = 0
+        if marker is not None:
+            for (index, entity) in enumerate(entities):
+                if entity['id'] == marker:
+                    # start pagination after marker
+                    first_index = index + 1
+                    break
+            else:
+                msg = _('Marker could not be found')
+                raise exception.ValidationError(message=msg)
+
+        last_index = None
+        if limit is not None:
+            try:
+                limit = int(limit)
+                if limit <= 0:
+                        raise ValueError()
+            except ValueError:
+                msg = _('Invalid limit value')
+                raise exception.ValidationError(message=msg)
+            last_index = first_index + limit
+
+        return entities[first_index:last_index]
+
 
 @dependency.requires('policy_api', 'token_api')
 class V3Controller(wsgi.Application):

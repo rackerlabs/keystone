@@ -47,7 +47,11 @@ class User(controller.V2Controller):
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        user_list = self.identity_api.list_users()
+        limit = context['query_string'].get('limit')
+        marker = context['query_string'].get('marker')
+        user_list = controller.V2Controller.paginate(self.identity_api.
+                                                     list_users(),
+                                                     limit, marker)
         return {'users': self.v3_to_v2_user(user_list)}
 
     @controller.v2_deprecated
