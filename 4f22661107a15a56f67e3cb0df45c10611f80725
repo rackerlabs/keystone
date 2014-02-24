@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//40I\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "abstract methods added: \n\n- get_roles_for_groups\n- list_projects_for_groups\n- list_domains_for_groups\n\nalso implemented stubs for ldap and kvs backends.",
+      "parentUuid": "AAAAU3///5g\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///88\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 34
@@ -65,6 +83,41 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "put string in _() for translation.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//4z4\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///88\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//zFU\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "removed since in_ is now used instead of sql.or_",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//40Y\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "changed to sql_constraints",
+      "parentUuid": "AAAAU3///78\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///7g\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 34
@@ -99,6 +170,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "I think this query would give you the same role multiple times, if the role is assigned to multiple groups.\n\nso the query should either have UNIQUE or do a set and list on the results.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//48A\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "TBD!\n\nI also changed or_ to in_ and this should actually make the statement more clear.",
+      "parentUuid": "AAAAU3///7g\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//y6k\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//zcA\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///4s\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 34
@@ -133,6 +240,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "why was the comment on the previous line removed? it was\n\n # fill in default_project_id if it is available\n\nthis seems to still apply, the code below fills in the default project if it\u0027s available.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//4qo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "comment added back.",
+      "parentUuid": "AAAAU3///4s\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -167,6 +292,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "Since this is longer an error do we still need to figure out a scope?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//4rA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Brad, if you can think of such situation, it\u0027s probably a good time to shout it out now.\nAll the tests are however passing so I guess it doesn\u0027t break any obvious use-cases.\nHowever, I reverted exception.Unauthorized() case.",
+      "parentUuid": "AAAAUX/+R3M\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -226,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//4ec\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "1) I assume \u0027it\u0027 meant user object in the Identity backend.\n2) Yes, this function is called also in the non-federated case, you suggestion to distinguish.\n3) I changed _check_and_set_default_scoping()  so now:\n   *) function exits when \u0027saml2\u0027 is one of the authn methods\n   *) raises exception.Unauthorized() exception in all the other cases (I\u0027d call them - the typical ones)\n\n\nIf we wanted to automatically assign federated users  default projects we should keep this information either in the IdentityProviderModel objects or ProtocolModel, right? I\u0027d be very reluctant to assign every federated user to the very same project.",
+      "parentUuid": "AAAAU3///5A\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///4U\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -260,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//4dg\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "__init__ removed!",
+      "parentUuid": "AAAAUX/+UvE\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///3I\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -277,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//4dQ\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///3I\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+UuY\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -288,6 +485,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "Suggest \"if \u0027id\u0027 in auth\" feels more precise.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//4XM\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX/+UuY\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -380,6 +595,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//4XU\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///4I\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//4X0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Yes.\nYou initiate federated authn (with methods: [\u0027saml2\u0027]), by hitting good old POST /v3/auth/tokens. In the meantime, Apache module parses SAML assertion and injects parameters into the environment. Since there is no \u0027id\u0027 in the request, self._handle_unscoped_token() will be called. The params are then injected to the RuleProcessor, list of user and Keystone groups are issued and based on that we have a set of roles user can use. We now care only about groups/roles and accessible projects/domains. An unscoped token (with that list of groups is returned to the user). The user can now try to scope the token, and providing his requests are authorized/ not denied he will be granted with brand new, scoped token he can use to play with nova, glance, swift etc.  Of course, before the token is scoped, a user can ask for accessible projects or domains basing on the list of groups. To do so, he must call /v3/OS-FEDERATION/(list_accessible_projects|list_accessible_domains) in order to list projects/domains. Such call must have unscoped token in the HTTP header.",
+      "parentUuid": "AAAAUX/+R2A\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///3U\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -391,6 +642,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "the docstring for authenticate doesn\u0027t mention \"federated_token\" as something that can be in auth_context. suggest update the documentation.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//3tE\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///3U\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -425,6 +694,24 @@
       "writtenOn": "2014-02-24T17:26:34Z",
       "side": 1,
       "message": "This might have to be done at the sql level.",
+      "parentUuid": "AAAAU3///2w\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//4Vw\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "mapping is a dictionary representing whole mapping entity, whereas \u0027rules\u0027 is a plain string (internally  stored in the \u0027extra\u0027 attribute in the backedn), so it need to be deserialized.",
       "parentUuid": "AAAAU3///2w\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -517,6 +804,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//4Uk\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "not at all! :-)",
+      "parentUuid": "AAAAUX/+UtU\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///3A\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 34
@@ -580,6 +885,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "how would expires_at be falsy?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//3ys\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "You are right. I did take a look in  token/backends/sql.create_token() and expires will always be set to a certain date.\nChanged to: \n\n    def _validate_expiration(self, token_ref):\n        expires_at \u003d token_ref[\u0027expires\u0027]\n        if timeutils.utcnow() \u003e expires_at:                                                    \n            raise exception.Unauthorized(_(\u0027Federation token is expired\u0027))",
+      "parentUuid": "AAAAU3///20\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -656,6 +979,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//3qI\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "i think just readability, however reverted to token_data[\u0027user\u0027]",
+      "parentUuid": "AAAAU3//9SQ\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///0M\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 34
@@ -667,6 +1008,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "suggest don\u0027t add \u0027group_ids\u0027 if there\u0027s no \u0027OS-FEDERATION:groups\u0027 rather than have an empty list. Then it will be more like domain and roles.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//3pg\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Is it worth doing this and later adding extra conditions in https://review.openstack.org/#/c/71353/34/keystone/contrib/federation/controllers.py lines 311, 334?",
+      "parentUuid": "AAAAU3///0M\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -708,6 +1067,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//zdk\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAU3//z7s\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///zg\u003d",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 34
@@ -719,6 +1096,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "addition of this method to the federation backend could be split out to a separate commit.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//zdE\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "do you suggest making this method a separated patch as well as a dependency of thecurrent one?",
+      "parentUuid": "AAAAU3///zg\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -742,6 +1137,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//zcw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "OK, let me change the commit message.",
+      "parentUuid": "AAAAU3///yo\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///z8\u003d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 34
@@ -759,6 +1172,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0m4\u003d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///z8\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///yU\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -770,6 +1201,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "remove extra blank line.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0mU\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///yU\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -804,6 +1253,24 @@
       "writtenOn": "2014-02-24T18:05:57Z",
       "side": 1,
       "message": "this was a side-effect of a rebase, we can get rid of this change",
+      "parentUuid": "AAAAU3///yQ\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//zaI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "result of some auto-rebase operation.",
       "parentUuid": "AAAAU3///yQ\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -846,6 +1313,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0lQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//9Tc\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//9TY\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -857,6 +1342,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "I think you can to the same thing here.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0lM\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//9TY\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -880,6 +1383,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0kg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///yA\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///xs\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -891,6 +1412,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "use the normal naming for methods -- _validate_user_object() -- also applies at 801 and 817.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0jQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "actually this method is not used anymore and should be removed (and it\u0027s now).",
+      "parentUuid": "AAAAU3///xs\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -914,6 +1453,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0jI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///xo\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+Tlg\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -925,6 +1482,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "Can\u0027t these next three lines just be:\n\n    if \u0027project\u0027 not in token and \u0027domain\u0027 not in token:",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0f0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "The exception message can be misleading. We should also check  if only domain or project was set. Changing it to use XOR operation.",
+      "parentUuid": "AAAAUX/+Tlg\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -948,6 +1523,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0Vs\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///xI\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///xM\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -959,6 +1552,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "add a blank line after this for rst.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0VI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///xM\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -982,6 +1593,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0UI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///xA\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///w8\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -993,6 +1622,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "add a blank line after this line for rst.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0To\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///w8\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1016,6 +1663,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0Tg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///w4\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//9So\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -1027,6 +1692,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "Are you doing this extra work to make the test failures nicer? Why not just let the KeyError propagate up?",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0RI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "yes, i was. except KeyError removed now.",
+      "parentUuid": "AAAAU3//9So\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1050,6 +1733,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0QM\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///ws\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///wo\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -1061,6 +1762,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "use [] here rather than .get",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0O4\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 964,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///wo\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1084,6 +1803,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0TQ\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 980,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///wg\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///wk\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 34
@@ -1095,6 +1832,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "use [] here rather than .get()",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0Sg\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 988,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///wk\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1118,6 +1873,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0OI\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///wY\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//9Ts\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 34
@@ -1129,6 +1902,24 @@
       "writtenOn": "2014-02-23T14:37:20Z",
       "side": 1,
       "message": "Let\u0027s make this Python3 friendly using something like:\n\n  from six.moves.urllib import parse\n  parse.quote()",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0IE\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//9Ts\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1152,6 +1943,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0H0\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///wQ\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///v8\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 34
@@ -1163,6 +1972,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "the an exception with the message will be raised. Seems like we don\u0027t need to also log it. Let the caller deal with it.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0Hg\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///v8\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -1186,6 +2013,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//0BE\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "I can easily change it, but I was actually trying to follow the convention from other similar functions - _populate_roles(), _populate_user(), _populate_scope() etc.",
+      "parentUuid": "AAAAU3///vQ\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///vg\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 34
@@ -1197,6 +2042,24 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "the method_names parameter isn\u0027t used so remove it.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//z/w\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-24T18:57:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///vg\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
