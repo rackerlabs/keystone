@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//080\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-24T17:35:08Z",
+      "side": 1,
+      "message": "Done. Yep, you\u0027re right, thanks! Fixed in next patch set.",
+      "parentUuid": "AAAAU3//+SI\u003d",
+      "revId": "a23ac89244d86f0202b5211c3dac4d0a5199620d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//nTM\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 7
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//zy0\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-24T17:35:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUX//nTM\u003d",
+      "revId": "a23ac89244d86f0202b5211c3dac4d0a5199620d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//+Rg\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 7
@@ -65,6 +101,24 @@
       "writtenOn": "2014-02-23T07:12:35Z",
       "side": 1,
       "message": "I *think* you can remove this try/except block now. Since your calls will raise exceptions earlier if the keys are not there... Not 100% sure though",
+      "revId": "a23ac89244d86f0202b5211c3dac4d0a5199620d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//zxE\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-24T17:35:08Z",
+      "side": 1,
+      "message": "Done, yes that should now be handled by TrustV3.check_required_params(trust)",
+      "parentUuid": "AAAAU3//+Rg\u003d",
       "revId": "a23ac89244d86f0202b5211c3dac4d0a5199620d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
