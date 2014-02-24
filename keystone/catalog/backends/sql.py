@@ -130,6 +130,7 @@ class Catalog(catalog.Driver):
             session.delete(ref)
             session.flush()
 
+    @sql.handle_conflicts(conflict_type='region')
     def create_region(self, region_ref):
         session = db_session.get_session()
         with session.begin():
