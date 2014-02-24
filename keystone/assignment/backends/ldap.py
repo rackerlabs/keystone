@@ -73,8 +73,6 @@ class Assignment(assignment.Driver):
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
-        if 'description' in data and data['description'] in ['', None]:
-            data.pop('description')
         return self._set_default_domain(self.project.create(data))
 
     def update_project(self, tenant_id, tenant):

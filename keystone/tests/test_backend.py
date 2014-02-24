@@ -2535,19 +2535,32 @@ class IdentityTests(object):
         # pick a key known to be non-existent
         key = 'description'
 
+        def is_equal_or_empty(vdict, key, value):
+            ret = vdict[key] == value
+            if not ret and self._prop_can_be_none(key):
+                ret = vdict[key] is None and value in [None, '']
+            return ret
+
         def assert_key_equals(value):
             project_ref = self.assignment_api.update_project(
                 project['id'], project)
-            self.assertEqual(value, project_ref[key])
+            self.assertTrue(is_equal_or_empty(project_ref, key, value))
             project_ref = self.assignment_api.get_project(project['id'])
-            self.assertEqual(value, project_ref[key])
+            self.assertTrue(is_equal_or_empty(project_ref, key, value),
+                            'Project key %s value %s not equal '
+                            'to expected value %s' % (key, project_ref[key],
+                                                      value))
 
         def assert_get_key_is(value):
             project_ref = self.assignment_api.update_project(
                 project['id'], project)
-            self.assertIs(project_ref.get(key), value)
+            self.assertTrue(is_equal_or_empty(project_ref, key, value))
             project_ref = self.assignment_api.get_project(project['id'])
-            self.assertIs(project_ref.get(key), value)
+            self.assertTrue(is_equal_or_empty(project_ref, key, value),
+                            'Project key %s value %s not equal '
+                            'to expected value %s' % (key,
+                                                      project_ref.get(key),
+                                                      value))
 
         # add an attribute that doesn't exist, set it to a falsey value
         value = ''

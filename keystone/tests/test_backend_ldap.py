@@ -40,6 +40,30 @@ CONF = config.CONF
 
 
 class BaseLDAPIdentity(test_backend.IdentityTests):
+    # these are the list of properties that an object may
+    # have a None value for, if the corresponding LDAP
+    # entry does not have the corresponding attribute
+    _none_val_props = ['description', 'email']
+
+    def _prop_can_be_none(self, prop):
+        return prop in self._none_val_props
+
+    def _remove_empty_valued_props(self, dict_obj):
+        for prop in self._none_val_props:
+            if prop in dict_obj and dict_obj[prop] in [None, '']:
+                dict_obj.pop(prop)
+
+    def assertDictEqual(self, actual, expected):
+        """override default implementation so that we can remove
+        the empty valued properties from the actual dict, to mimic
+        how LDAP works
+        """
+        actual_copy = copy.copy(actual)
+        expected_copy = copy.copy(expected)
+        self._remove_empty_valued_props(actual_copy)
+        self._remove_empty_valued_props(expected_copy)
+        super(BaseLDAPIdentity, self).assertDictEqual(actual_copy,
+                                                      expected_copy)
 
     def setUp(self):
         super(BaseLDAPIdentity, self).setUp()
@@ -1002,7 +1026,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                                                 self.role_member['id'])
         role_ref = self.assignment_api.get_role(self.role_member['id'])
         self.assertEqual(self.role_member['id'], role_ref['id'])
-        self.assertNotIn('name', role_ref)
+        self.assertIsNone(role_ref.get('name'),
+                          'Role name should be missing or None but it is '
+                          'present with value %s' % role_ref['name'])
 
     def test_role_attribute_ignore(self):
         self.config_fixture.config(group='ldap',
@@ -1592,14 +1618,14 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
-        self.assertDictContainsSubset(user_dict, user_ref_dict)
+        self.assertDictContainsSubset(user, user_ref_dict)
 
         user_dict['password'] = uuid.uuid4().hex
         self.identity_api.update_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
-        self.assertDictContainsSubset(user_dict, user_ref_dict)
+        self.assertDictContainsSubset(user, user_ref_dict)
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,

@@ -23,6 +23,7 @@ from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
+from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone import notifications
@@ -1003,7 +1004,8 @@ class Driver(object):
     def _set_default_domain(self, ref):
         """If the domain ID has not been set, set it to the default."""
         if isinstance(ref, dict):
-            if 'domain_id' not in ref:
+            if ('domain_id' not in ref or
+                    utils.is_empty(ref['domain_id'])):
                 ref = ref.copy()
                 ref['domain_id'] = CONF.identity.default_domain_id
             return ref

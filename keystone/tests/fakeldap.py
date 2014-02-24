@@ -30,6 +30,7 @@ import six
 from six import moves
 
 from keystone.common.ldap import core
+from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
@@ -286,6 +287,18 @@ class FakeLdap(core.LDAPHandler):
                       core.utf8_decode(dn))
             raise ldap.ALREADY_EXISTS(dn)
 
+        # LDAP forbids adding an attribute with an empty value, depending
+        # on the syntax - most syntaxes disallow a zero-length value -
+        # reject empty values
+        emptyattrs = []
+        for k, v in modlist:
+            if utils.is_empty(v):
+                emptyattrs.append(k)
+
+        if emptyattrs:
+            raise ldap.INVALID_SYNTAX('empty attribute values for '
+                                      'attributes ' + str(emptyattrs))
+
         self.db[key] = dict([(k, _internal_attr(k, v))
                              for k, v in modlist])
         self.db.sync()
@@ -351,6 +364,10 @@ class FakeLdap(core.LDAPHandler):
             raise ldap.NO_SUCH_OBJECT
 
         for cmd, k, v in modlist:
+            if utils.is_empty(v):
+                # the syntaxes of most LDAP attributes do not allow empty
+                # values
+                raise ldap.INVALID_SYNTAX('empty value for attribute ' + k)
             values = entry.setdefault(k, [])
             if cmd == ldap.MOD_ADD:
                 v = _internal_attr(k, v)

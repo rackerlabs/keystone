@@ -217,12 +217,3 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
             super(LiveLDAPIdentity, self).test_create_user_case_sensitivity()
 
         self.assertRaises(exception.Conflict, call_super)
-
-    def test_project_update_missing_attrs_with_a_falsey_value(self):
-        # The description attribute doesn't allow an empty value.
-
-        def call_super():
-            super(LiveLDAPIdentity, self).\
-                test_project_update_missing_attrs_with_a_falsey_value()
-
-        self.assertRaises(ldap.INVALID_SYNTAX, call_super)
