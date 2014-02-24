@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//wkk\u003d",
+        "filename": "keystone/contrib/kds/api/hooks.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "why was this changed?",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wjU\u003d",
+        "filename": "keystone/contrib/kds/api/v1/controllers/key.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "remove vim line. This applies to all these files.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wfY\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "suggest use with open() here then don\u0027t need the extra close handling.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wek\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "also document key_size.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//weQ\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "key_id isn\u0027t a parameter to this function.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wY0\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "should document the exceptions.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wXk\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "this format looks invalid... %s(name)s should be %(name)s ? \n\nalso, %(generation)s.\n\nThis needs a unit test.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wYE\u003d",
+        "filename": "keystone/contrib/kds/common/exception.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "lowercase \u0027Failure\u0027.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wTw\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "lowercase \"algorithm\" -- also, where do I find out what are the valid options?",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wTk\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "lowercase \"algorithm\" -- also, what are the valid options?",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wTY\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "add . at end of options consistently.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wTQ\u003d",
+        "filename": "keystone/contrib/kds/common/service.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "add . at end of options consistently.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wRk\u003d",
+        "filename": "keystone/contrib/kds/common/storage.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "also document group.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wRI\u003d",
+        "filename": "keystone/contrib/kds/common/storage.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "document exceptions.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wOw\u003d",
+        "filename": "keystone/contrib/kds/common/storage.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "there\u0027s no keyblock parameter. Update these parameters to match the signature.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wKY\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test_key.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "why is it important to assert this?",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wJQ\u003d",
+        "filename": "keystone/tests/contrib/kds/api/v1/test_key.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "probably want to assert that the generation has changed from key1\u0027s.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wI8\u003d",
+        "filename": "keystone/tests/contrib/kds/base.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "tests should be cleaning up after themselves rather than having to clean up after others.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wHY\u003d",
+        "filename": "keystone/tests/contrib/kds/unit/test_crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "suggest use a random string here unless the value really has to be \"test-name\". This comment applies throughout this file.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wGM\u003d",
+        "filename": "keystone/tests/contrib/kds/unit/test_crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "could also assert the permissions on the file are as expected.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wF4\u003d",
+        "filename": "keystone/tests/contrib/kds/unit/test_storage.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:37:35Z",
+      "side": 1,
+      "message": "use assertFalse or assertIs(False, key_data[\u0027group\u0027])",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
