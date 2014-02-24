@@ -104,6 +104,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//v/o\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:54:23Z",
+      "side": 1,
+      "message": "there should be a unit test for this.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v/g\u003d",
+        "filename": "keystone/contrib/kds/common/crypto.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-24T23:54:23Z",
+      "side": 1,
+      "message": "There should be a unit test for this.",
+      "revId": "00b9cae980c0466f970c16984efdf711e698ec09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//wXk\u003d",
         "filename": "keystone/contrib/kds/common/exception.py",
         "patchSetId": 26
