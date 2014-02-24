@@ -100,7 +100,7 @@ class IdentityTests(object):
         #               not be returned by the api
         self.user_sna.pop('password')
         self.user_sna['enabled'] = True
-        self.assertDictEqual(user_ref, self.user_sna)
+        self.assertDictEqualNoneEmpty(user_ref, self.user_sna)
 
     def test_authenticate_and_get_roles_no_metadata(self):
         user = {
@@ -196,7 +196,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictEqualNoneEmpty(user_ref, self.user_foo)
 
     def test_get_user_404(self):
         self.assertRaises(exception.UserNotFound,
@@ -210,7 +210,7 @@ class IdentityTests(object):
         #               it easier to authenticate in tests, but should
         #               not be returned by the api
         self.user_foo.pop('password')
-        self.assertDictEqual(user_ref, self.user_foo)
+        self.assertDictEqualNoneEmpty(user_ref, self.user_foo)
 
     def test_get_user_by_name_404(self):
         self.assertRaises(exception.UserNotFound,
@@ -2506,7 +2506,7 @@ class IdentityTests(object):
         self.assignment_api.update_project(project['id'], project)
 
         project_ref = self.assignment_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        self.assertDictEqualNoneEmpty(project_ref, project)
 
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -2562,16 +2562,16 @@ class IdentityTests(object):
         def assert_key_equals(value):
             project_ref = self.assignment_api.update_project(
                 project['id'], project)
-            self.assertEqual(project_ref[key], value)
+            self.assertEqualNoneEmpty(project_ref[key], value)
             project_ref = self.assignment_api.get_project(project['id'])
-            self.assertEqual(project_ref[key], value)
+            self.assertEqualNoneEmpty(project_ref[key], value)
 
         def assert_get_key_is(value):
             project_ref = self.assignment_api.update_project(
                 project['id'], project)
-            self.assertIs(project_ref.get(key), value)
+            self.assertEqualNoneEmpty(project_ref.get(key), value)
             project_ref = self.assignment_api.get_project(project['id'])
-            self.assertIs(project_ref.get(key), value)
+            self.assertEqualNoneEmpty(project_ref.get(key), value)
 
         # add an attribute that doesn't exist, set it to a falsey value
         value = ''
