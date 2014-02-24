@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//z2w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 34
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T18:04:03Z",
+      "side": 1,
+      "message": "they were just merged into a single commit; while i\u0027d generally prefer to review each change as separately, it might not be worth the overhead here as the changes not documented in this commit message were rather small\n\ni think i\u0027d rather just see the commit message revised to be more comprehensive",
+      "parentUuid": "AAAAU3///u8\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///5g\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 34
@@ -81,6 +99,23 @@
       "writtenOn": "2014-02-22T18:51:36Z",
       "side": 1,
       "message": "I think this query would give you the same role multiple times, if the role is assigned to multiple groups.\n\nso the query should either have UNIQUE or do a set and list on the results.",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//zcA\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T18:04:03Z",
+      "side": 1,
+      "message": "at the driver layer, \"accessible\" doesn\u0027t make sense because there\u0027s no user in context (and no context).\n\nuse the same naming convention used in the other new method call-\n\n  list_projects_for_groups()\n\n  list_domains_for_groups()",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -167,6 +202,24 @@
       "side": 1,
       "message": "Could change the return to a pass, this would allow us to check if the user has a default project",
       "parentUuid": "AAAAU3///5A\u003d",
+      "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//zas\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-24T18:04:03Z",
+      "side": 1,
+      "message": "if you change it to a pass, then the rest of this code will fail",
+      "parentUuid": "AAAAU3//0No\u003d",
       "revId": "4f22661107a15a56f67e3cb0df45c10611f80725",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
