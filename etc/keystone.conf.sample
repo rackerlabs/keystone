@@ -914,7 +914,7 @@
 # format is <ldap_attr>:<user_attr>, where ldap_attr is the
 # attribute in the LDAP entry and user_attr is the Identity
 # API attribute. (list value)
-#user_additional_attribute_mapping=
+#user_additional_attribute_mapping=description:description
 
 # Search base for projects (string value)
 #tenant_tree_dn=<None>

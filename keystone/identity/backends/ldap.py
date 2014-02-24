@@ -263,8 +263,6 @@ class GroupApi(common_ldap.BaseLdap):
         data = values.copy()
         if data.get('id') is None:
             data['id'] = uuid.uuid4().hex
-        if 'description' in data and data['description'] in ['', None]:
-            data.pop('description')
         return super(GroupApi, self).create(data)
 
     def delete(self, group_id):

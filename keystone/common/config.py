@@ -503,7 +503,7 @@ FILE_OPTIONS = {
                    help='DN of the group entry to hold enabled users when '
                         'using enabled emulation.'),
         cfg.ListOpt('user_additional_attribute_mapping',
-                    default=[],
+                    default=['description:description'],
                     help='List of additional LDAP attributes used for mapping '
                          'additional attribute mappings for users. Attribute '
                          'mapping format is <ldap_attr>:<user_attr>, where '
