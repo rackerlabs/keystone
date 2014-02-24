@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//72w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6167
+      },
+      "writtenOn": "2014-02-24T00:20:06Z",
+      "side": 1,
+      "message": "better to write the scope of this patch.",
+      "revId": "c35f1aefbc444ff8b7f57069a428b40934f140f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+Ui8\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
