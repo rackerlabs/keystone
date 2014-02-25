@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//pmI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T13:28:46Z",
+      "side": 1,
+      "message": "import belongs with six and testtools, as it\u0027s an external package",
+      "revId": "1553c3debe5bfcbc4a658c871ea3af5c6358458a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
