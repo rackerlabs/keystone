@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//wcg\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T00:12:45Z",
+      "side": 1,
+      "message": "Patchset 37.",
+      "parentUuid": "AAAAU3//wh8\u003d",
+      "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//wfo\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 35
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//wZc\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T00:12:45Z",
+      "side": 1,
+      "message": "it was for scoping the tokens, where some objects (like \u0027user\u0027) are being reused.  \nDo you suggest removeing it and explicitely puting objects to be reused in the auth_context?",
+      "parentUuid": "AAAAU3//wfo\u003d",
+      "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//wgw\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 35
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-24T22:52:37Z",
       "side": 1,
       "message": "user ID\u0027s should be url-safe:\n\n  auth_context[\u0027user_id\u0027] \u003d urllib.quote(mapped_properties[\u0027name\u0027])",
+      "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//waw\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T00:12:45Z",
+      "side": 1,
+      "message": "...or according to dstanek\u0027s suggestion quote it with use of six packet, so we are Python3 compatible? Again, Patchset 37.",
+      "parentUuid": "AAAAU3//wgw\u003d",
       "revId": "730d7ebe219f0d82e35ff4124eb8e1f9594cd038",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
