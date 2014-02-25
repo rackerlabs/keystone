@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//mDw\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-02-25T18:59:53Z",
+      "side": 1,
+      "message": "These options are not properly documented in mongo doc. You may want to clarify.\n\nMongo server  can be started in 3 modes.  Usage of ssl params in client depends on how the mongo server is started. They are  Non SSL , SSL with  Optional client cert, SSL with mandatory client cert\n\n\nSSL with optional client certs ( What should be client configuration)\n  \n   1) Client only needs to validate  Mongo server certificates. In this case, the CA file should have the CAs\u0027 of mongo server certificate.  e.g if mongo server certificate is signed by verisign, we need  Versign cert in  ssl_ca_cert file. If it is using self signed cert, then we need that file\n\n   2) Pymongo Client doesn\u0027t need to send client cert\n\n   3) In this case, we need only ssl_ca_cert file option. Other options are not required\n\nSSL validation with mandatory client cert ( What should be the client configuraiton)\n    1)  MongoDB documentation doesn\u0027t clarify this.  They may be doing just client validation or doing CN validation.\n\n   2) In this case we need to configure ssl_key_file and ssl_certfile and ssl_ca_cert file\n\n   3) Just client validation\n            Mongo server would have been configured with accepted CAs.  e.g  if it is configured with standard CAs, then client cert signed by any standard CAs can be used.  If that is the case, the client needs to get a client cert from standard CA and populate the  ssl_keyfile and ssl_certfile value.  \n           If you are generating  self singed client cert, then the same certs should be added in mongo server ca file \n\n  4) Client cert used for authentication\n            I\u0027m not sure  mongo is doing this, if in case it does this, then it is same as   3), except when you are requesting client cert the CN of  the client cert should match the usernames configured in mongod server",
+      "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//tOY\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 21
