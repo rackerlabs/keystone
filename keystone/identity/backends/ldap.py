@@ -56,7 +56,6 @@ class Identity(identity.Driver):
             raise AssertionError(_('Invalid user / password'))
         if not user_id or not password:
             raise AssertionError(_('Invalid user / password'))
-        conn = None
         try:
             conn = self.user.get_connection(self.user._id_to_dn(user_id),
                                             password)
@@ -65,8 +64,7 @@ class Identity(identity.Driver):
         except Exception:
             raise AssertionError(_('Invalid user / password'))
         finally:
-            if conn:
-                conn.unbind_s()
+            conn.unbind_s()
         return identity.filter_user(user_ref)
 
     def _get_user(self, user_id):
