@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//lGY\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T20:39:27Z",
+      "side": 1,
+      "message": "i can probably go back to .update() calls like brant mentioned, if we stick to a flat auth_context",
+      "revId": "9f17c8955fec7d1c146d05e9f4cee206f28f9377",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//lFc\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T20:39:27Z",
+      "side": 1,
+      "message": "this can be removed",
+      "revId": "9f17c8955fec7d1c146d05e9f4cee206f28f9377",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//lEw\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T20:39:27Z",
+      "side": 1,
+      "message": "this is not used",
+      "revId": "9f17c8955fec7d1c146d05e9f4cee206f28f9377",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//lHQ\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T20:39:27Z",
+      "side": 1,
+      "message": "should have an \u0027id\u0027 section to comply with the api spec, same with line 503",
+      "revId": "9f17c8955fec7d1c146d05e9f4cee206f28f9377",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
