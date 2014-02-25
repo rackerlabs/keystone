@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//nQY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T17:05:51Z",
+      "side": 1,
+      "message": "(NIT): if this happens to get repushed for review, it could be noted in the commit message that this change also does some minor reordering of imports.",
+      "revId": "1a679e44ea8a5ca83254a07787fed9cd09720110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
