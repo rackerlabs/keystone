@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//uIQ\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:17:29Z",
+      "side": 1,
+      "message": "I thought we were going to make it True?",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uEk\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:17:29Z",
+      "side": 1,
+      "message": "Can you use ENTITY_ID_LEN and TYPE here?",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uHk\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:17:29Z",
+      "side": 1,
+      "message": "Pretty sure we should not do this for Any LDAP backends.  If you are deleting a domain, just un-config it.",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uF0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:17:29Z",
+      "side": 1,
+      "message": "I think it is a mistake to make the default not be Backwards compat.  This is going to trip up a lot of people.  Better to make it an explicit choice to move to the new domain + userid format.",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uBQ\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:17:29Z",
+      "side": 1,
+      "message": "Have you run thise against live database?  I suspect that they will break with the longer strings, and are only passing on SQLite",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
