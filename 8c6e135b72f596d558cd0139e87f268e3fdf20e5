@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//njs\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2073,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:47:14Z",
+      "side": 1,
+      "message": "the first half of this test is the same as the one above it (and below it), i won\u0027t -1 it if everything else is good. we can always refactor the tests later",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ngE\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:47:14Z",
+      "side": 1,
+      "message": "could be done with: ref.setdefault(\u0027remaining_uses\u0027, None)",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ndU\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:47:14Z",
+      "side": 1,
+      "message": "you can put: \n\n  trust.setdefault(\u0027remaining_uses\u0027, None)\n\nand \n\n  if trust.get(\u0027remaining_uses\u0027) and trust[\u0027remaining_uses\u0027] \u003c\u003d 0:\n    msg \u003d _()\n    raise exception.ValidatorError(msg)\n\nhere",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//neY\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:47:14Z",
+      "side": 1,
+      "message": "i doubt this is ever called?",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
