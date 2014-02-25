@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//uJ0\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T04:04:00Z",
+      "side": 1,
+      "message": "copying from previous patch:\n\nI think this query would give you the same role multiple times, if the role is assigned to multiple groups.\nso the query should either have UNIQUE or do a set and list on the results.",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uKE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T04:04:00Z",
+      "side": 1,
+      "message": "copying from previous patch set...\nthere must be a better way to check if it\u0027s a federated user -- how about set something in the auth_context?",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uIA\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T04:04:00Z",
+      "side": 1,
+      "message": "can remove this one, and hopefully remove the other two above.",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uH0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 1203,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T04:04:00Z",
+      "side": 1,
+      "message": "I changed this to actually make a REST call, instead of interacting directly with the api.",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
