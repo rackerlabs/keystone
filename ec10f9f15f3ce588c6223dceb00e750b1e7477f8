@@ -488,6 +488,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//vgo\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-25T01:26:33Z",
+      "side": 1,
+      "message": "it\u0027s a TrustModel, it hasn\u0027t got this method ... at least I am hitting errors when using setdefault",
+      "parentUuid": "AAAAUX/+2v4\u003d",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+zN4\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 17
@@ -522,6 +540,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//vPE\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-25T01:26:33Z",
+      "side": 1,
+      "message": "Thank you so much for this one, I was naively trusting session isolation would save me here.\nI don\u0027t see either how concurrent consumptions can be tested, any suggestions are welcome.",
+      "parentUuid": "AAAAUX/+y/A\u003d",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+2vU\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 17
@@ -533,6 +569,24 @@
       "writtenOn": "2014-02-18T15:57:14Z",
       "side": 1,
       "message": "should be a ValidationError\n\ndo the rest of this work in the manager layer:\n\n  trust.setdefault(\u0027remaining_uses\u0027, None)\n  etc",
+      "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wsw\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-25T01:26:33Z",
+      "side": 1,
+      "message": "Done for ValidationError\n\nI am not sure I get what you mean in the rest of the comment. Could you clarify a bit ?",
+      "parentUuid": "AAAAUX/+2vU\u003d",
       "revId": "ec10f9f15f3ce588c6223dceb00e750b1e7477f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
