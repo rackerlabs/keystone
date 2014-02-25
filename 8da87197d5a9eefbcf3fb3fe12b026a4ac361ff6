@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//nM0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T17:16:21Z",
+      "side": 1,
+      "message": "_NAMES and _EVENT_ARGS have nice comments explains their purpose, could one be added here for _TOKEN_KEYS?",
+      "revId": "8da87197d5a9eefbcf3fb3fe12b026a4ac361ff6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nKA\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T17:16:21Z",
+      "side": 1,
+      "message": "Move this up with library imports.",
+      "revId": "8da87197d5a9eefbcf3fb3fe12b026a4ac361ff6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nJs\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T17:16:21Z",
+      "side": 1,
+      "message": "change # that to #that",
+      "revId": "8da87197d5a9eefbcf3fb3fe12b026a4ac361ff6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

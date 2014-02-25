@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//nOc\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T17:16:21Z",
+      "side": 0,
+      "message": "why remove this?",
+      "revId": "d0b7cada7880d5a50984664a90351ca93bb33109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nJY\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T17:16:21Z",
+      "side": 0,
+      "message": "why remove this?",
+      "revId": "d0b7cada7880d5a50984664a90351ca93bb33109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
