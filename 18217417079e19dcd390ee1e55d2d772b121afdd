@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//uKI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:13:00Z",
+      "side": 1,
+      "message": "filter seem redundant\n\nthe first part \u0027objectclass\u003d*\u0027 will match any objectclass so the second part \u0027objectclass\u003dldapsubentry\u0027 is redundant",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uCU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:13:00Z",
+      "side": 1,
+      "message": "also, if I am looking at the right doc, (objectclass\u003d*) is already the default so no need to specify it. For efficiency, you don\u0027t want all the attributes back. In this case, all you care are the DNs. Maybe you can simplify this?\n\nentries \u003d conn.search_s(dn, scope, attrslist\u003d[\u0027dn\u0027], attrsonly\u003d1)",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
