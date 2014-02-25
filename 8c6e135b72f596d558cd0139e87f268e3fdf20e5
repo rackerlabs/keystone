@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//nhE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 3448,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T16:58:13Z",
+      "side": 1,
+      "message": "++ nice, thanks for doing this",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//njs\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 18
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//nXc\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T16:58:13Z",
+      "side": 1,
+      "message": "(NIT): so, here we have a difference between the logic in the kvs backend and the sql backend. In kvs we are doing the following: \n\n1.) check if trust has remaining uses greater than 0, if so decrement remaining uses and return 2.) check if remaining uses is None, which means remaining uses is unlimited 3.) lastly raise an error because the value of trust is not a positive number and not None. \n\nBut in SQL we are doing the opposite:\n\n1.) first we check if remaining uses is None, if so we just return because remaining uses is unlimited 2.) then we check if remaining uses is less than 0, and throw an exception (this was handled in the else in the KVS backend) 3.) last case if trust.remaining_uses is not None and it\u0027s not less than zero it must be valid. \n\n\nBoth of the above carry out the desired behavior but it would be nice they were the same logic and standardized such that both do the following (for example): \n\n1.) Check if remaining uses is None, if so return because we have unlimited trust use 2.) Check if remaining uses is a positive number, if so consume a use and return 3.) throw a TrustUseLimitReached error since trust.remaining_uses is neither None or a positive int.",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//ndU\u003d",
         "filename": "keystone/trust/core.py",
         "patchSetId": 18
@@ -64,6 +98,23 @@
       "writtenOn": "2014-02-25T16:47:14Z",
       "side": 1,
       "message": "i doubt this is ever called?",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nV8\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-25T16:58:13Z",
+      "side": 1,
+      "message": "if this is kept, can the docstrings be updated to include the parameters?",
       "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
