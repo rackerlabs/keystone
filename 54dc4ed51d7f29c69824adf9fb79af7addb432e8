@@ -456,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//leM\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T19:43:28Z",
+      "side": 1,
+      "message": "agree that the federation specific ones could be namespaced, but i\u0027d prefer a flat dictionary and use the actual extension ID as the standard prefix \"OS-FEDERATION:identity_provider_id\" and \"OS-FEDERATION:protocol_id\"\n\ngroups are a core concept, and although they\u0027re introduced here by federation, i\u0027d rather not make their usage dependent on the presence of federation, so i\u0027d prefer they stay as \"group_ids\" in context",
+      "parentUuid": "AAAAU3//vuk\u003d",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//v5I\u003d",
         "filename": "keystone/auth/core.py",
         "patchSetId": 36
