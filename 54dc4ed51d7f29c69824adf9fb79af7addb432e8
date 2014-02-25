@@ -1,0 +1,531 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//v9M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 36
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "this resource isn\u0027t mentioned in the OS-FEDERATION spec.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v9A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 36
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "this resource isn\u0027t mentioned in the OS-FEDERATION spec.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v8I\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "I think this query would give you the same role multiple times, if the role is assigned to multiple groups.\n\nso the query should either have UNIQUE or do a set and list on the results.\n\n(copying from earlier since this was TBD)",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v6w\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "suggest change \"matching\" to \"assigned to\"\n\nchange \"group ids\" to \"groups\", \"domain_id\" to \"domain\" and \"project_id\" to \"project\"",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v6A\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "suggest remove \"matching\" -- I don\u0027t know what a matching project is.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v6U\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "change \"matcing\" to \"matching\", or just remove it.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v7A\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "change \"accessible from\" to \"accessible to\" -- also applies to 857, 864, 866.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v7w\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "what user? suggest remove \" the user is member of\" -- also applies to line 866.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v7Q\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "change \"accessible from\" to \"accessible to\".",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v5s\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "add a space after # to match the format for comments used throughout this file.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vwA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "there must be a better way to check if it\u0027s a federated user -- how about set something in the auth_context?",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vw8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "revert the change on the previous line since it\u0027s not related.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vtQ\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "this class shouldn\u0027t have to know anything about its subclasses, if it does then that\u0027s a design problem.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vuk\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "suggest put these all in a single attribute, e.g., \n\n {\n     \"federation\": {\"group_ids\": [], \"identity_provider\": \"\", \"protocol\": \"\"\n }",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v5I\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "add \"an\" -- \"issuing an unscoped\"",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v40\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "add \"the\" -- \"stores the unscoped token\"",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vuE\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "would be useful to also provide an example for the 2 federated token cases.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vvs\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "revert this change, it\u0027s unrelated.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v3w\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "shouldn\u0027t call jsonutils.loads on a dict (if there\u0027s no \u0027rules\u0027 in mapping).",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v3Q\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "This will attempt to pass None to RuleProcessor if there\u0027s no \u0027rules\u0027 in rules. There are no tests that I can find that show that you can pass None to RuleProcessor. Looks like if None is passed to RuleProcessor then it\u0027s just going to fail when you call process(). This needs to be changed so that it won\u0027t pass None to RuleProcessor.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vr8\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "rule_processor.process should be verifying that it could map the assertion so that callers don\u0027t have to.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v2I\u003d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "I would prefer it if the change to add a new method to the backend was split out into a separate patch. The change to add new resources and routes should also be split out into a separate patch.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vn8\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "if this is supposed to list the domains for a user then this should be called \"list_domains_for_user\"",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vpM\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "where is KEYSTONE_AUTH_CONTEXT coming from?",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vnw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "if this is supposed to list the project for a user then this should be called \"list_projects_for_user\"",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vmk\u003d",
+        "filename": "keystone/tests/test_overrides.conf",
+        "patchSetId": 36
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "add a blank line after this line.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vmY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "why is this changing?",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v1c\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "use the normal naming for methods -- _check_proects_and_roles()",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v1Q\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "remove _() from these strings. We don\u0027t need to translate test results. This applies throughout this file",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//v0c\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "add a blank line after this line for rst.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vzs\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-25T00:44:41Z",
+      "side": 1,
+      "message": "have this function just return the roles rather than use an in-out parameter -- I think those other methods are flawed, too.",
+      "revId": "54dc4ed51d7f29c69824adf9fb79af7addb432e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
