@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//n3s\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T16:51:46Z",
+      "side": 1,
+      "message": "addded .distinct()",
+      "parentUuid": "AAAAU3//uJ0\u003d",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uKE\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 38
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-25T04:04:00Z",
       "side": 1,
       "message": "copying from previous patch set...\nthere must be a better way to check if it\u0027s a federated user -- how about set something in the auth_context?",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ncQ\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T16:51:46Z",
+      "side": 1,
+      "message": "see patchset 39.",
+      "parentUuid": "AAAAU3//uKE\u003d",
       "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//nb0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T16:51:46Z",
+      "side": 1,
+      "message": "changed this function so it produced more appropriate objects.",
+      "parentUuid": "AAAAU3//uIA\u003d",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uH0\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 38
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-25T04:04:00Z",
       "side": 1,
       "message": "I changed this to actually make a REST call, instead of interacting directly with the api.",
+      "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nbk\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 1203,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-25T16:51:46Z",
+      "side": 1,
+      "message": "reverted so it\u0027s more consistent with the idp/protocol create operations.",
+      "parentUuid": "AAAAU3//uH0\u003d",
       "revId": "e178785cba6d405d82d0f8532a89dfacc9237252",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
