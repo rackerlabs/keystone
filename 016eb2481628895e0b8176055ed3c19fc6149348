@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//tj8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-25T18:06:24Z",
+      "side": 1,
+      "message": "not sure we agreed that…but I think you\u0027re right :-)",
+      "parentUuid": "AAAAU3//uIQ\u003d",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uEk\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-25T04:17:29Z",
       "side": 1,
       "message": "Can you use ENTITY_ID_LEN and TYPE here?",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//tjY\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-25T18:06:24Z",
+      "side": 1,
+      "message": "have a slight circular import problem….idenity imports assignment already (to allow for foreign keys)…and to do that I\u0027d have to import identity here...",
+      "parentUuid": "AAAAU3//uEk\u003d",
       "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//tiQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-25T18:06:24Z",
+      "side": 1,
+      "message": "If the domain is not RO…..and someone has just chosen to use LDAP as their storage technology…why would we not to do this?",
+      "parentUuid": "AAAAU3//uHk\u003d",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uF0\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 12
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//tkg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-25T18:06:24Z",
+      "side": 1,
+      "message": "yeah….I think I agree with you…I\u0027ll switch it",
+      "parentUuid": "AAAAU3//uF0\u003d",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uBQ\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 12
@@ -81,6 +153,24 @@
       "writtenOn": "2014-02-25T04:17:29Z",
       "side": 1,
       "message": "Have you run thise against live database?  I suspect that they will break with the longer strings, and are only passing on SQLite",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//mm4\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-25T18:06:24Z",
+      "side": 1,
+      "message": "I fear you may be right…testing underway...",
+      "parentUuid": "AAAAU3//uBQ\u003d",
       "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
