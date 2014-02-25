@@ -65,8 +65,7 @@ class Identity(identity.Driver):
         except Exception:
             raise AssertionError(_('Invalid user / password'))
         finally:
-            if conn:
-                conn.unbind_s()
+            conn.unbind_s()
         return identity.filter_user(user_ref)
 
     def _get_user(self, user_id):
