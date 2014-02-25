@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//uBE\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:28:43Z",
+      "side": 1,
+      "message": "use dependency injection for identity_api",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uA4\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:28:43Z",
+      "side": 1,
+      "message": "move os.environ to the top as this is static information",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//t/w\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:28:43Z",
+      "side": 1,
+      "message": "warn only? seem like a catastrophic error",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//t/Y\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:28:43Z",
+      "side": 1,
+      "message": "s/Kerberos/Kerberos principal/",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uKw\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 4
@@ -30,6 +98,24 @@
       "writtenOn": "2014-02-25T04:00:45Z",
       "side": 1,
       "message": "this change seems suspect.",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//t9E\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-25T04:28:43Z",
+      "side": 1,
+      "message": "yeah, seem unnecessary. Error/negotiation should be set in\n\nline 590\n\nbody[\u0027error\u0027][\u0027identity\u0027]\n\nthat\u0027s the payload designed for continuation",
+      "parentUuid": "AAAAU3//uKw\u003d",
       "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
