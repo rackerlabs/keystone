@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//whQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///qY\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///tI\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 55
@@ -139,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//wf4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "No, but SQL can easily be merged into this commit., or KVS persistance added.",
+      "parentUuid": "AAAAU3//0CE\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///po\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 55
@@ -150,6 +186,24 @@
       "writtenOn": "2014-02-22T19:58:28Z",
       "side": 1,
       "message": "add a space after # so that it matches the format for comments used throughout this file.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//wCo\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///po\u003d",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +244,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//wew\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done/  was a vestige",
+      "parentUuid": "AAAAU3///pM\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///ok\u003d",
         "filename": "keystone/contrib/revoke/configuration.rst",
         "patchSetId": 55
@@ -218,6 +290,24 @@
       "writtenOn": "2014-02-22T19:17:19Z",
       "side": 1,
       "message": "use \u0027 for strings consistently.\n\nwhat does empty string for revoke mean here?",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vHk\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Dropped this function, as the API it was supporting has been removed.",
+      "parentUuid": "AAAAU3///sw\u003d",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -287,6 +377,24 @@
       "writtenOn": "2014-02-22T21:18:02Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "AAAAU3///sg\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vFE\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAU3///sg\u003d",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -430,6 +538,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//vD0\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "The code with all the stacked lambdas was getting hard to read.  I split them out for clarity.",
+      "parentUuid": "AAAAU3///oA\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///rw\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 55
@@ -441,6 +567,24 @@
       "writtenOn": "2014-02-22T19:17:19Z",
       "side": 1,
       "message": "change \"cb[0], cb[1], cb[2]\" to \"*cb\"",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//vDY\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///rw\u003d",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -583,6 +727,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//vBY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///mo\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///mk\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 55
@@ -651,6 +813,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//vAU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Adding a user to a  group is no longer considered an act that revokes a token.  The new API does not enforce it.",
+      "parentUuid": "AAAAU3///mI\u003d",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///l8\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 55
@@ -696,6 +876,24 @@
       "writtenOn": "2014-02-22T19:58:28Z",
       "side": 1,
       "message": "suggest use self.assertEqual([], events) then will get nicer output if it doesn\u0027t match.",
+      "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//u/Q\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T02:26:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3///mA\u003d",
       "revId": "91352648c940c5fe8f66f6e914784173974bb33e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
