@@ -175,14 +175,21 @@ def remove_test_databases():
         os.unlink(pristine)
 
 
-def generate_paste_config(extension_name):
+def generate_paste_config(extension_name, insert_before=None,
+                          insert_after=None):
     # Generate a file, based on keystone-paste.ini, that is named:
     # extension_name.ini, and includes extension_name in the pipeline
     with open(dirs.etc('keystone-paste.ini'), 'r') as f:
         contents = f.read()
 
-    new_contents = contents.replace(' service_v3',
-                                    ' %s service_v3' % (extension_name))
+    if insert_after is not None:
+        new_contents = contents.replace(
+            '%s ' % insert_after,
+            '%s %s ' % (insert_after, extension_name))
+    if insert_before is not None:
+        new_contents = contents.replace(
+            ' %s' % insert_before,
+            ' %s %s' % (extension_name, insert_before))
 
     new_paste_file = dirs.tmp(extension_name + '.ini')
     with open(new_paste_file, 'w') as f:

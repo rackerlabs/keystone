@@ -12,12 +12,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 import uuid
 
 import six
+import webtest
 
 from keystone.common import extension
 from keystone import config
+from keystone import tests
 from keystone.tests import rest
 
 
@@ -1293,6 +1296,23 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
 class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
     xmlns = 'http://docs.openstack.org/identity/api/v2.0'
     content_type = 'xml'
+
+    def setUp(self, *args, **kwargs):
+        super(XmlTestCase, self).setUp(*args, **kwargs)
+
+        f = tests.generate_paste_config(
+            'xml_body', insert_after='sizelimit')
+        self.addCleanup(os.remove, f)
+
+        self.admin_app = webtest.TestApp(
+            self.loadapp('config://' + tests.dirs.tmp('xml_body.ini'),
+                         name='admin'))
+        self.addCleanup(setattr, self, 'admin_app', None)
+
+        self.public_app = webtest.TestApp(
+            self.loadapp('config://' + tests.dirs.tmp('xml_body.ini'),
+                         name='main'))
+        self.addCleanup(setattr, self, 'public_app', None)
 
     def _get_user_id(self, r):
         return r.get('id')
