@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Approved+1: David Stanek <dstanek@dstanek.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Richard Megginson <rmeggins@redhat.com>
+Code-Review+1: Fabio Morais <fabio@lsd.ufcg.edu.br>
+Submitted-by: Jenkins
+Submitted-at: Tue, 25 Feb 2014 19:57:15 +0000
+Reviewed-on: https://review.openstack.org/71887
+Project: openstack/keystone
+Branch: refs/heads/master
