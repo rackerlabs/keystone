@@ -16,8 +16,6 @@ import fixtures
 from oslo.config import cfg
 
 from keystone.contrib.kds.db import api as db_api
-from keystone.contrib.kds.db.sqlalchemy import migration
-from keystone.openstack.common.db import exception as db_exception
 from keystone import tests
 from keystone.tests.contrib.kds import paths
 
@@ -46,9 +44,3 @@ class SqliteDb(fixtures.Fixture):
         db_api.reset()
 
         tests.setup_database()
-
-        try:
-            migration.db_sync()
-        except db_exception.DbMigrationError:
-            migration.db_version_control(0)
-            migration.db_sync()

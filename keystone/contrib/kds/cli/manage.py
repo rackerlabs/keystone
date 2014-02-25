@@ -20,22 +20,29 @@ gettextutils.install('keystone')
 
 from oslo.config import cfg
 
+from keystone.common import sql
+from keystone.common.sql import migration_helpers
 from keystone.contrib.kds.common import service
-from keystone.contrib.kds.db import migration
+from keystone.contrib.kds.db import sqlalchemy
+from keystone.openstack.common.db.sqlalchemy import migration
 
 CONF = cfg.CONF
 
 
 def do_db_version():
     """Print database's current migration level."""
-    print(migration.db_version())
+    print(migration.db_version(sql.get_engine(),
+                               migration_helpers.find_migrate_repo(sqlalchemy),
+                               CONF.command.version))
 
 
 def do_db_sync():
     """Place a database under migration control and upgrade,
     creating first if necessary.
     """
-    return migration.db_sync(CONF.command.version)
+    return migration.db_sync(sql.get_engine(),
+                             migration_helpers.find_migrate_repo(sqlalchemy),
+                             CONF.command.version)
 
 
 def add_command_parsers(subparsers):

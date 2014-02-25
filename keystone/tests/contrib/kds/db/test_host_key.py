@@ -10,17 +10,35 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from testscenarios import load_tests_apply_scenarios as load_tests  # noqa
+from sqlalchemy import MetaData
 
+import mock
+
+from keystone.common.sql import migration_helpers
 from keystone.contrib.kds.common import exception
+from keystone.contrib.kds.db import sqlalchemy as kds_sqlalchemy
+from keystone.openstack.common.db.sqlalchemy import migration
+from keystone.openstack.common.db.sqlalchemy import session as db_session
+from keystone.openstack.common.db.sqlalchemy import test_base
 from keystone.tests.contrib.kds.db import base
+from testscenarios import load_tests_apply_scenarios as load_tests  # noqa
 
 TEST_NAME = 'test-name'
 TEST_SIG = 'test-sig'
 TEST_KEY = 'test-enc'
 
 
-class KeyDbTestCase(base.BaseTestCase):
+class KeyDbTestCase(base.BaseTestCase, test_base.DbTestCase):
+
+    def setUp(self):
+        super(KeyDbTestCase, self).setUp()
+        session = db_session.get_maker(self.engine)()
+        kds_sqlalchemy.api.get_session = mock.Mock(return_value=session)
+
+        self.meta = MetaData(bind=self.engine)
+        migration.db_sync(self.engine,
+                          migration_helpers.find_migrate_repo(kds_sqlalchemy))
+        self.addCleanup(self.meta.drop_all)
 
     def test_retrieve(self):
         # Set a key and expect to get the same key back.
