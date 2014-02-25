@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//lb4\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-25T20:11:36Z",
+      "side": 1,
+      "message": "IMHO SSL configuration setup details does not belong here. The details are available in mongo docs.\n\nThere is parameter provided `ssl_cert_reqs` (Line 125 in this file only) to indicate the above mentioned behavior in your comments. Will try to add reference link for further details.",
+      "parentUuid": "AAAAU3//mDw\u003d",
+      "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//tOY\u003d",
         "filename": "keystone/common/cache/backends/mongo.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-25T06:27:35Z",
       "side": 1,
       "message": "why _mongo_colls? there\u0027s only one cache_collection right?",
+      "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//mM0\u003d",
+        "filename": "keystone/common/cache/backends/mongo.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-25T20:11:36Z",
+      "side": 1,
+      "message": "Yes..there is one collection per cache region configuration. Name is like that because of dictionary usage as earlier I was thinking of re-using db connection in case the deployment has multiple cache configuration defined. I will address this in next patch to re-use connection pool if database happens to be with same name (across multiple cache configuration).",
+      "parentUuid": "AAAAU3//tOY\u003d",
       "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//nC4\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-25T20:11:36Z",
+      "side": 1,
+      "message": "This is just sample of data structure. Its provided here to give example of how data is stored in mongoDB and in mock collection.",
+      "parentUuid": "AAAAU3//tJ0\u003d",
+      "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//tKE\u003d",
         "filename": "keystone/tests/test_cache_backend_mongo.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-25T06:27:35Z",
       "side": 1,
       "message": "you don\u0027t need to declare arguments in almost every test. Just create one in setUp() and manipulate it in your tests. For example,\n\ndef setUp(self):\n   ...\n   self.arguments \u003d { ... }\n\ndef test_missing_db_name(self):\n    self.arguments.pop(\u0027db_name\u0027)\n    ...",
+      "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nDc\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-25T20:11:36Z",
+      "side": 1,
+      "message": "Some of the tests require different values or require some attribute to be missing as part of test case. So in that case, with setup approach, I will be altering that common data structure to have that behavior which can make it confusing to understand.\n\nThat being said, let me revisit if I can do some re-use of those arguments via setUp",
+      "parentUuid": "AAAAU3//tKE\u003d",
       "revId": "5b0391ac05834d33c9b7b841208fd320366edf58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
