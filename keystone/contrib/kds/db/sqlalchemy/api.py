@@ -20,48 +20,23 @@ from keystone.openstack.common.db.sqlalchemy import session as db_session
 
 
 CONF = cfg.CONF
+_ENGINE_FACADE = None
 
 
 def get_backend():
+    global _ENGINE_FACADE
+    _ENGINE_FACADE = db_session.EngineFacade(CONF.database.connection,
+                                             **dict(CONF.database.iteritems()))
+
     return SqlalchemyDbImpl()
 
 
-_engine = None
-_sessionmaker_expire_on_commit = None
-_sessionmaker_no_expire_on_commit = None
-
-
 def get_engine():
-    global _engine
-
-    if not _engine:
-        # FIXME(blk-u): There's a bunch more options here!
-        _engine = db_session.create_engine(CONF.database.connection)
-
-    return _engine
+    return _ENGINE_FACADE.get_engine()
 
 
-def _get_sessionmaker(expire_on_commit=False):
-    global _sessionmaker_expire_on_commit
-    global _sessionmaker_no_expire_on_commit
-
-    engine = get_engine()
-
-    if expire_on_commit:
-        if not _sessionmaker_expire_on_commit:
-            _sessionmaker_expire_on_commit = db_session.get_maker(
-                engine, expire_on_commit=True)
-        return _sessionmaker_expire_on_commit
-
-    if not _sessionmaker_no_expire_on_commit:
-        _sessionmaker_no_expire_on_commit = db_session.get_maker(
-            engine, expire_on_commit=False)
-
-    return _sessionmaker_no_expire_on_commit
-
-
-def get_session(expire_on_commit=False):
-    return _get_sessionmaker(expire_on_commit=expire_on_commit)()
+def get_session(**kwargs):
+    return _ENGINE_FACADE.get_session(**kwargs)
 
 
 class SqlalchemyDbImpl(connection.Connection):
