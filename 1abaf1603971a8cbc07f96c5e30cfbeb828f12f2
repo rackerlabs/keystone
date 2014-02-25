@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//mG8\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T18:47:26Z",
+      "side": 1,
+      "message": "if we had a federation section in \u0027extras\u0027 we could just query that... and get rid of this whole skip scoping business",
+      "revId": "1abaf1603971a8cbc07f96c5e30cfbeb828f12f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//mHI\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T18:47:26Z",
+      "side": 1,
+      "message": "I think there is still a concern here about including the token in the auth_context",
+      "revId": "1abaf1603971a8cbc07f96c5e30cfbeb828f12f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//mHc\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T18:47:26Z",
+      "side": 1,
+      "message": "it might be best to dump most of this info into extras:\n\n  auth_context[\u0027user_id\u0027] \u003dparse.quote(mapped_properties[\u0027name\u0027])\n  auth_context[\u0027extras\u0027][\u0027federation\u0027] \u003d {\n       \u0027user_name\u0027: mapped_properties[\u0027name\u0027],\n       \u0027group_ids\u0027: mapped_properties[\u0027group_ids\u0027],\n       \u0027identity_provider\u0027: identity_provider,\n       \u0027protocol\u0027: protocol\n    }\n\nat which point, id pass in auth_context instead of calling .update (line 53)",
+      "revId": "1abaf1603971a8cbc07f96c5e30cfbeb828f12f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
