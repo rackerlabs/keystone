@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//uLs\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:00:45Z",
+      "side": 1,
+      "message": "these 3 lines can go away.",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uKw\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:00:45Z",
+      "side": 1,
+      "message": "this change seems suspect.",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uKM\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:00:45Z",
+      "side": 1,
+      "message": "Do we really need a different exception for each form of authentication?  I think you can drop this in favor of just Unauthorized,  or extend it to get the headers.",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uJk\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T04:00:45Z",
+      "side": 1,
+      "message": "This is a pretty significant addition.",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
