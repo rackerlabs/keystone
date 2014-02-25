@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//nYQ\u003d",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:54:08Z",
+      "side": 1,
+      "message": "revert white space change, this might cause pep8 failure",
+      "revId": "59a08af7f2ccdd33d627abfa031d3e5cc26a8971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nak\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:54:08Z",
+      "side": 1,
+      "message": "user_name \u003d assertion.get(\u0027UserName\u0027), goes the tests above too",
+      "revId": "59a08af7f2ccdd33d627abfa031d3e5cc26a8971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//nZo\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1202,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T16:54:08Z",
+      "side": 1,
+      "message": "remove commented out code",
+      "revId": "59a08af7f2ccdd33d627abfa031d3e5cc26a8971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
