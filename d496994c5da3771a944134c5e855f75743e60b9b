@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//uIo\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T04:06:38Z",
+      "side": 1,
+      "message": "keystoneclient import belongs with six, as it\u0027s an external dependency",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uGg\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T04:06:38Z",
+      "side": 1,
+      "message": "i have no idea what this test is asserting... is it asserting that the opt_in_group results in failure at some point? is it asserting that an empty \"token_data\" results in an UnexpectedError? what is the unexpected error, exactly? how does it make sense to assert that a failure is unexpected?",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uGU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T04:06:38Z",
+      "side": 1,
+      "message": "belongs in a group between stdlib and local package imports",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uGM\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T04:06:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uGE\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T04:06:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//uGA\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-25T04:06:38Z",
+      "side": 1,
+      "message": "same",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
