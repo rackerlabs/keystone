@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//lVY\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-25T20:10:12Z",
+      "side": 1,
+      "message": "Actually, it was testing the bogus keyfile\u003d\u0027--please-break-me\u0027  caused the right error to be thrown, to be consistant with what was happening before, due to eventet popen.",
+      "parentUuid": "AAAAU3//uGg\u003d",
+      "revId": "d496994c5da3771a944134c5e855f75743e60b9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uGU\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 5
