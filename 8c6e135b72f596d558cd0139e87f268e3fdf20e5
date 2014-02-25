@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//l2I\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T19:10:39Z",
+      "side": 1,
+      "message": "if we do the change i suggested in core.py, then you can remove this chunk of code entirely",
+      "parentUuid": "AAAAU3//mDo\u003d",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//nXc\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 18
@@ -170,6 +188,24 @@
       "side": 1,
       "message": "This is called in tests only now.",
       "parentUuid": "AAAAU3//neY\u003d",
+      "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//l2c\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-25T19:10:39Z",
+      "side": 1,
+      "message": "then it should probably be moved to tests",
+      "parentUuid": "AAAAU3//mGo\u003d",
       "revId": "8c6e135b72f596d558cd0139e87f268e3fdf20e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
