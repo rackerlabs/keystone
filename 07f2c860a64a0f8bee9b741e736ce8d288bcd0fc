@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//cJ8\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-26T16:21:24Z",
+      "side": 1,
+      "message": "Still learning how to effectively review. After a few hours in the kds module refactoring on top of your patch, I\u0027ve got tips from Roman (@rpodolyaka) and a few more understanding. You can and you should use `openstack.common.db.sqlalchemy.session.EngineFacade` feature to manage engine and session. Please see a snippet on my github https://github.com/I159/keystone/blob/common_db/keystone/contrib/kds/db/sqlalchemy/api.py#L26",
+      "revId": "07f2c860a64a0f8bee9b741e736ce8d288bcd0fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
