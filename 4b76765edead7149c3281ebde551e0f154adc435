@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//ZVs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 59
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "Remove this line?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZVU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 59
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "change \"instead\" to \"also\"",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZMs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 59
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "remove extra \"in\"",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//bW8\u003d",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 59
@@ -54,6 +105,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZMI\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 59
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest remove the \"@\". Would be more consistent since this file uses empty string at line 86.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZLg\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 59
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest remove the \"@\". Would be more consistent since this file uses empty string at line 98.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dHM\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 59
@@ -65,6 +150,40 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Suggest: \"Revoke token by token identifier.\"",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZKg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest put the ] on a separate line and add a , after the StrOpt so that it\u0027s easier to add more options.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZUA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest put the ] on a separate line and add a , after the StrOpt so that it\u0027s easier to add more options.",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -244,6 +363,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZBk\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest change name to \"_get_and_prune\" so it\u0027s obvious that this is also the method used to get the current events.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//abE\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 59
@@ -314,6 +450,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//Y9w\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "remove vim line.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dCo\u003d",
         "filename": "keystone/contrib/revoke/controllers.py",
         "patchSetId": 59
@@ -342,6 +495,40 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Y/8\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest use named parameter for named argument -- last_fetch\u003dlast_fetch",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZRc\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "remove vim line",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +597,74 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Missing newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZQc\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "change \"Events\" to \"events\"",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZQM\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "suggest change the name from \"last_fetch\" to \"newer_than\" or something more obvious.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Y7g\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "looks like there\u0027s an extra space before \"objects\"?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Y8E\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "remove one of these blank lines.",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -859,6 +1114,23 @@
       "side": 1,
       "message": "Its not a test subclass, it is done as a mixin, so it is called by the setup from the actual classes.  It has to do with how deep in the inheritance hierarchy the tests themselves are defined.",
       "parentUuid": "AAAAU3//crE\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZOQ\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 1216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-26T22:05:50Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
