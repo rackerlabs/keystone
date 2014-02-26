@@ -36,6 +36,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_region(self):
         """Call ``POST /regions``."""
         ref = self.new_region_ref()
+        del ref['id']
         r = self.post(
             '/regions',
             body={'region': ref})

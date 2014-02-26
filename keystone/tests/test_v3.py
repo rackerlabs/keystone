@@ -625,7 +625,7 @@ class RestfulTestCase(rest.RestfulTestCase):
             resp,
             'regions',
             self.assertValidRegion,
-            keys_to_check=[],
+            keys_to_check=['description'],
             *args,
             **kwargs)
 

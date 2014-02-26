@@ -141,6 +141,10 @@ class RegionV3(controller.V3Controller):
     collection_name = 'regions'
     member_name = 'region'
 
+    _mutable_parameters = frozenset(['parent_region_id', 'description'])
+    _public_parameters = frozenset(['id', 'parent_region_id', 'description'])
+    _required_parameters = frozenset(['description'])
+
     @controller.protected()
     def create_region_with_id(self, context, region_id, region):
         """Specialized route target for PUT /regions/{region_id}."""
@@ -151,6 +155,8 @@ class RegionV3(controller.V3Controller):
 
     @controller.protected()
     def create_region(self, context, region):
+        RegionV3.check_immutable_params(region)
+        RegionV3.check_required_params(region)
         ref = self._assign_unique_id(self._normalize_dict(region))
 
         ref = self.catalog_api.create_region(ref)
