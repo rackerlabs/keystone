@@ -301,6 +301,17 @@
 # URL to get token from ec2 request. (string value)
 #keystone_ec2_url=http://localhost:5000/v2.0/ec2tokens
 
+# Required if EC2 server requires client certificate (string
+# value)
+#keystone_ec2_keyfile=<None>
+
+# Required if EC2 server requires client certificate (string
+# value)
+#keystone_ec2_certfile=<None>
+
+# Don't verify HTTPS connections. (boolean value)
+#keystone_ec2_insecure=false
+
 
 #
 # Options defined in keystone.openstack.common.db.sqlalchemy.session
