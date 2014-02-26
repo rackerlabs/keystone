@@ -142,6 +142,10 @@ class RegionV3(controller.V3Controller):
     collection_name = 'regions'
     member_name = 'region'
 
+    _mutable_parameters = frozenset(['id', 'parent_region_id', 'description'])
+    _public_parameters = frozenset(['id', 'parent_region_id', 'description'])
+    _required_parameters = frozenset([])
+
     def create_region_with_id(self, context, region_id, region):
         """Create a region with a user-specified ID.
 
@@ -159,6 +163,8 @@ class RegionV3(controller.V3Controller):
 
     @controller.protected()
     def create_region(self, context, region):
+        RegionV3.check_immutable_params(region)
+        RegionV3.check_required_params(region)
         ref = self._normalize_dict(region)
 
         if 'id' not in ref:
