@@ -16,6 +16,24 @@
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dZ8\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-26T14:10:12Z",
+      "side": 1,
+      "message": "so, basically you suggest moving logic for choosing the right assignment_type and so on to the Manager layer, instead of the db layer or the purpose of moving it is slightly different?\n\n@dolph, @stevemar, @bknudson - any hints, comments on that?",
+      "parentUuid": "AAAAU3//h34\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
