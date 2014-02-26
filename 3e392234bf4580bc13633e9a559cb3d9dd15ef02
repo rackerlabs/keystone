@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//sdw\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-02-26T14:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//uLs\u003d",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uBE\u003d",
         "filename": "keystone/auth/plugins/kerberos.py",
         "patchSetId": 4
@@ -122,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//se4\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-02-26T14:33:12Z",
+      "side": 1,
+      "message": "But that\u0027s not how kerberos negotiation works, it needs \u0027WWW-Authenticate: Negotiate\u0027 on the headers.",
+      "parentUuid": "AAAAU3//t9E\u003d",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uKM\u003d",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -139,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//seA\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-02-26T14:33:12Z",
+      "side": 1,
+      "message": "I\u0027ll review this",
+      "parentUuid": "AAAAU3//uKM\u003d",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uJk\u003d",
         "filename": "requirements.txt",
         "patchSetId": 4
@@ -150,6 +204,24 @@
       "writtenOn": "2014-02-25T04:00:45Z",
       "side": 1,
       "message": "This is a pretty significant addition.",
+      "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//sec\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-02-26T14:33:12Z",
+      "side": 1,
+      "message": "any suggestion to avoid it?",
+      "parentUuid": "AAAAU3//uJk\u003d",
       "revId": "3e392234bf4580bc13633e9a559cb3d9dd15ef02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
