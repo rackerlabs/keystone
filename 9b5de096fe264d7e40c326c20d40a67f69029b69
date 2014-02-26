@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//Zfc\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T21:21:16Z",
+      "side": 0,
+      "message": "Shouldn\u0027t we keep the filter? we do that for the other deprecated filters (ec2 and such). \n\nJust remove it from the pipeline by default",
+      "revId": "9b5de096fe264d7e40c326c20d40a67f69029b69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
