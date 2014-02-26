@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//aYQ\u003d",
+        "filename": "keystone/tests/test_v2_controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:36:16Z",
+      "side": 1,
+      "message": "not sure why you need 2 projects, one should be adequate for your test",
+      "revId": "fbc3a3f7f9265cca980232b32b7fdab4274e1bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
