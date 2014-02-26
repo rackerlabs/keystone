@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//dXo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-26T14:14:52Z",
+      "side": 1,
+      "message": "yeah, just thinking that the Manager could take care of this and just pass the correct assignment type to the driver? Just an idea though.",
+      "parentUuid": "AAAAU3//dZ8\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dY8\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 42
