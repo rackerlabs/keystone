@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZF0\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "this is where the token used for authorization on the current call is validated.  If CONF.token.revoke_by_id is True, the token will be loked up in thedatabase, and its lack of presence will indicate that it has been revoked. If that is missing, we have to do the events based validation.",
+      "parentUuid": "AAAAU3//a1I\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dG0\u003d",
         "filename": "keystone/contrib/revoke/__init__.py",
         "patchSetId": 59
@@ -208,6 +226,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//bHM\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "Done.  Yeah.  I was thinking that get should be read only, but since it prunes, it is read-write, and needs to be locked.  Thanks, that would have been nasty.",
+      "parentUuid": "AAAAU3//dDI\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//abE\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 59
@@ -225,6 +261,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZC4\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "Nah, would still need a lock, to make sure two revokes don\u0027;t trample each other.  The goal here is to make sure we don\u0027t have a growing list, but also that a fetch of the list is always \"fresh\"",
+      "parentUuid": "AAAAU3//abE\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dF8\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 59
@@ -236,6 +290,24 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "It would be nice if _prune_expired_events didn\u0027t do its own _get and _set, but I don\u0027t think that\u0027s a show stopper. Maybe a NOTE about it for later cleanup?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//bFE\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//dF8\u003d",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -378,6 +450,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//a4E\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//c+0\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//bDI\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 59
@@ -389,6 +479,24 @@
       "writtenOn": "2014-02-26T19:06:56Z",
       "side": 1,
       "message": "do we used revoked_at anywhere other than use it to set issued_before?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZB4\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "In the sql backend it is used for ordering.",
+      "parentUuid": "AAAAU3//bDI\u003d",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -481,6 +589,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//a20\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "This is subtle.  You don not want to default to true, as that would let a rule where nothing matched actually revoke a token.  All of the if blocks might have been skipped, and that would have the effect of creating a rule that accidentally revoked tokens.  If nothing at all matches, the rule is not applied.",
+      "parentUuid": "AAAAU3//c4Y\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//a9U\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 59
@@ -492,6 +618,24 @@
       "writtenOn": "2014-02-26T19:06:56Z",
       "side": 1,
       "message": "token_values.get(attribute_name)\n\nunless we are expecting token_values is going to always contain those attributes. Moreover, if you can document what in the token_values in docstring that would be awesome.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZBY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "yes, these values are always set.  See the code in the provider",
+      "parentUuid": "AAAAU3//a9U\u003d",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -617,6 +761,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZAQ\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "I know. And with later code that gets all role assignments for a group, we can probably do something more focused.",
+      "parentUuid": "AAAAU3//atE\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//c2A\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 59
@@ -685,6 +847,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZPs\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "Its not a test subclass, it is done as a mixin, so it is called by the setup from the actual classes.  It has to do with how deep in the inheritance hierarchy the tests themselves are defined.",
+      "parentUuid": "AAAAU3//crE\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cls\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 59
@@ -730,6 +910,24 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Do those errors really mean the token is not found and does this break the contract with the callers now that invalid tokens will raise an exception?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZNM\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-26T21:54:53Z",
+      "side": 1,
+      "message": "No, this is how they were treated later on as well, just pushing the logic here to make things consistent. Note that this returns token_data if successful, but was neither throwing not returning if there was an exception.   This keeps the old logic the same, but makes the function usable by a wider array of callers.",
+      "parentUuid": "AAAAU3//cgg\u003d",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
