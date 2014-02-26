@@ -341,14 +341,56 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         self.assignment_api.create_grant(user_id=new_user['id'],
                                          project_id=new_project['id'],
+                                         role_id='member')
+        self.assignment_api.create_grant(user_id=new_user['id'],
+                                         project_id=new_project['id'],
                                          role_id='other')
+
         self.assignment_api.create_grant(group_id=new_group['id'],
                                          project_id=new_project['id'],
                                          role_id='admin')
+        self.assignment_api.create_grant(group_id=new_group['id'],
+                                         project_id=new_project['id'],
+                                         role_id='member')
 
-        # Read back the list of assignments - check it is gone up by 2
-        after_assignments = len(self.assignment_api.list_role_assignments())
-        self.assertEqual(existing_assignments + 2, after_assignments)
+        # Read back the list of assignments - check it is gone up by 4
+        assignment_list = self.assignment_api.list_role_assignments()
+        after_assignments = len(assignment_list)
+        self.assertEqual(after_assignments, existing_assignments + 4)
+
+        # Now check that each of our four new entries are in the list
+        self.assertIn(
+            {'user_id': new_user['id'], 'project_id': new_project['id'],
+             'role_id': 'member'},
+            assignment_list)
+        self.assertIn(
+            {'user_id': new_user['id'], 'project_id': new_project['id'],
+             'role_id': 'other'},
+            assignment_list)
+        self.assertIn(
+            {'group_id': new_group['id'], 'project_id': new_project['id'],
+             'role_id': 'admin'},
+            assignment_list)
+        self.assertIn(
+            {'group_id': new_group['id'], 'project_id': new_project['id'],
+             'role_id': 'member'},
+            assignment_list)
+
+        # Read back the list of assignments for just the admin role, checking
+        # this only goes up by two.
+        assignment_list = self.assignment_api.list_role_assignments_for_role(
+            role_id='member')
+        self.assertEqual(len(assignment_list), 2)
+
+        # Now check that each of our two new entries are in the list
+        self.assertIn(
+            {'group_id': new_group['id'], 'project_id': new_project['id'],
+             'role_id': 'member'},
+            assignment_list)
+        self.assertIn(
+            {'group_id': new_group['id'], 'project_id': new_project['id'],
+             'role_id': 'member'},
+            assignment_list)
 
     def test_list_role_assignments_bad_role(self):
         self.skipTest('Blocked by bug 1221805')

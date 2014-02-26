@@ -106,6 +106,16 @@ class Assignment(assignment.Driver):
                     (self.project._id_to_dn(project_id))
                     if a.user_dn.upper() == group_dn.upper()]
 
+        def _get_global_roles_for_group(group_id):
+            return [self.role._dn_to_id(a.role_dn)
+                    for a in self.role.list_global_roles_for_group
+                    (self.group._id_to_dn(group_id))]
+
+        def _get_global_roles_for_user(user_id):
+            return [self.role._dn_to_id(a.role_dn)
+                    for a in self.role.list_global_roles_for_user
+                    (self.user._id_to_dn(user_id))]
+
         if domain_id is not None:
             msg = _('Domain metadata not supported by LDAP')
             raise exception.NotImplemented(message=msg)
@@ -115,11 +125,24 @@ class Assignment(assignment.Driver):
         if tenant_id is None:
             return {}
         if user_id is None:
-            metadata_ref = _get_roles_for_group_and_project(group_id,
-                                                            tenant_id)
+            metadata_ref = []
+            # Adding group roles by tenant
+            if tenant_id:
+                for r in _get_roles_for_group_and_project(group_id, tenant_id):
+                    metadata_ref.append(r)
+            # Adding global roles for group
+            for r in _get_global_roles_for_group(group_id):
+                metadata_ref.append(r)
         else:
-            metadata_ref = _get_roles_for_just_user_and_project(user_id,
-                                                                tenant_id)
+            metadata_ref = []
+            # Adding user roles by tenant
+            if tenant_id:
+                for r in _get_roles_for_just_user_and_project(user_id,
+                                                              tenant_id):
+                    metadata_ref.append(r)
+            # Adding global roles for user
+            for r in _get_global_roles_for_user(user_id):
+                metadata_ref.append(r)
         if not metadata_ref:
             return {}
         return {'roles': [self._role_to_dict(r, False) for r in metadata_ref]}
@@ -168,23 +191,27 @@ class Assignment(assignment.Driver):
                                  self.project._id_to_dn(tenant_id))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+        tenant_dn = None
+        if tenant_id:
+            self.get_project(tenant_id)
+            tenant_dn = self.project._id_to_dn(tenant_id)
         self.get_role(role_id)
         user_dn = self.user._id_to_dn(user_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         self.role.add_user(role_id, role_dn, user_dn, user_id, tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
         return UserRoleAssociation(role_dn=role_dn,
                                    user_dn=user_dn,
                                    tenant_dn=tenant_dn)
 
     def _add_role_to_group_and_project(self, group_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+        tenant_dn = None
+        if tenant_id:
+            self.get_project(tenant_id)
+            tenant_dn = self.project._id_to_dn(tenant_id)
         self.get_role(role_id)
         group_dn = self.group._id_to_dn(group_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         self.role.add_user(role_id, role_dn, group_dn, group_id, tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
         return GroupRoleAssociation(group_dn=group_dn,
                                     role_dn=role_dn,
                                     tenant_dn=tenant_dn)
@@ -224,18 +251,18 @@ class Assignment(assignment.Driver):
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
+        tenant_dn = self.project._id_to_dn(tenant_id) if tenant_id else None
         return self.role.delete_user(role_dn,
                                      self.user._id_to_dn(user_id),
-                                     self.project._id_to_dn(tenant_id),
-                                     user_id, role_id)
+                                     tenant_dn, user_id, role_id)
 
     def _remove_role_from_group_and_project(self, group_id, tenant_id,
                                             role_id):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
+        tenant_dn = self.project._id_to_dn(tenant_id) if tenant_id else None
         return self.role.delete_user(role_dn,
                                      self.group._id_to_dn(group_id),
-                                     self.project._id_to_dn(tenant_id),
-                                     group_id, role_id)
+                                     tenant_dn, group_id, role_id)
 
     def update_role(self, role_id, role):
         self.role.check_allow_update()
@@ -401,10 +428,19 @@ class Assignment(assignment.Driver):
 
     def list_role_assignments(self):
         role_assignments = []
-        for a in self.role.list_role_assignments(self.project.tree_dn):
-            assignment = {'role_id': self.role._dn_to_id(a.role_dn),
-                          'user_id': self.user._dn_to_id(a.user_dn),
-                          'project_id': self.project._dn_to_id(a.project_dn)}
+        for a in self.role.list_role_assignments(self.project.tree_dn,
+                                                 self.user.tree_dn,
+                                                 self.group.tree_dn):
+            if isinstance(a, UserRoleAssociation):
+                assignment = {'role_id': self.role._dn_to_id(a.role_dn),
+                              'user_id': self.user._dn_to_id(a.user_dn),
+                              'project_id': self.project._dn_to_id(
+                                  a.project_dn)}
+            else:
+                assignment = {'role_id': self.role._dn_to_id(a.role_dn),
+                              'group_id': self.group._dn_to_id(a.group_dn),
+                              'project_id': self.project._dn_to_id(
+                                  a.project_dn)}
             role_assignments.append(assignment)
         return role_assignments
 
@@ -610,10 +646,16 @@ class RoleApi(common_ldap.BaseLdap):
 
         return res
 
+    def list_global_roles_for_group(self, group_dn):
+        roles = self.get_all('(%s=%s)' % (self.member_attribute, group_dn))
+        return [GroupRoleAssociation(
+                role_dn=self._id_to_dn(role['id']),
+                group_dn=group_dn) for role in roles]
+
     def list_global_roles_for_user(self, user_dn):
         roles = self.get_all('(%s=%s)' % (self.member_attribute, user_dn))
         return [UserRoleAssociation(
-                role_dn=role.dn,
+                role_dn=self._id_to_dn(role['id']),
                 user_dn=user_dn) for role in roles]
 
     def list_project_roles_for_user(self, user_dn, project_subtree):
@@ -683,7 +725,8 @@ class RoleApi(common_ldap.BaseLdap):
             conn.unbind_s()
         super(RoleApi, self).delete(role_id)
 
-    def list_role_assignments(self, project_tree_dn):
+    def list_role_assignments(self, project_tree_dn, user_tree_dn,
+                              group_tree_dn):
         """Returns a list of all the role assignments linked to project_tree_dn
         attribute.
         """
@@ -705,9 +748,19 @@ class RoleApi(common_ldap.BaseLdap):
             # It obtains the tenant DN to construct the UserRoleAssociation
             # object.
             tenant_dn = ldap.dn.dn2str(tenant)
+            # NOTE(marcos-fermin-lobo): In Active Directory, for functions
+            # such as "self.role.get_role_assignments", it returns
+            # the key "CN" or "OU" in uppercase.
+            # The group_dn var has "CN" and "OU" in lowercase.
+            # For this reason, it is necessary to use the "upper()"
+            # function so both are consistent.
             for user_dn in role[self.member_attribute]:
-                res.append(UserRoleAssociation(
-                           user_dn=user_dn,
-                           role_dn=role_dn,
-                           tenant_dn=tenant_dn))
+                if user_tree_dn.upper() in user_dn.upper():
+                    res.append(UserRoleAssociation(user_dn=user_dn,
+                                                   role_dn=role_dn,
+                                                   tenant_dn=tenant_dn))
+                if group_tree_dn.upper() in user_dn.upper():
+                    res.append(GroupRoleAssociation(group_dn=user_dn,
+                                                    role_dn=role_dn,
+                                                    tenant_dn=tenant_dn))
         return res
