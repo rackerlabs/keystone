@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//Zs4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//cMI\u003d",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cLo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 20
@@ -48,6 +66,24 @@
       "writtenOn": "2014-02-26T16:32:04Z",
       "side": 1,
       "message": "I don\u0027t think we add the vim modelines in new files anymore.",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Zyc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//cLo\u003d",
       "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//Zyg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//cL0\u003d",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cLc\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 20
@@ -82,6 +136,24 @@
       "writtenOn": "2014-02-26T16:32:04Z",
       "side": 1,
       "message": "Space after # and it would be nice to say why and not just what. Something like: \"# Delete trusts that have remaining uses because we are downgrading and will not track uses anymore.\"\n\nDo we also need to delete the ones with 0 remaining uses? Won\u0027t they become usable after this?",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Zys\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//cLc\u003d",
       "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//Zyk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//bwQ\u003d",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cEg\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 20
@@ -122,6 +212,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//Zxc\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "yes, it does",
+      "parentUuid": "AAAAU3//cEg\u003d",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZtA\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "we still need the conditional here, because there will be trusts whose remaining_uses is set to None. \nIf we remove session.flush from here, we can pass instead.",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cCY\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 20
@@ -133,6 +258,24 @@
       "writtenOn": "2014-02-26T16:32:04Z",
       "side": 1,
       "message": "A more ideamatic what to do this would be:\n \n    if \u0027remaining_uses\u0027 in trust and trust[\u0027remaining_uses\u0027] \u003c\u003d 0\n\nor storing the result of .get()",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Zxg\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T20:52:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//cCY\u003d",
       "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
