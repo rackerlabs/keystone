@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//cuY\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-26T15:33:03Z",
+      "side": 1,
+      "message": "now that you are implemented the code, you can remove my comment!",
+      "revId": "81391e510bbdfbf3846816ad1c25902ef3b7a4a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
