@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//aWE\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 59
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-26T19:55:38Z",
+      "side": 1,
+      "message": "Before Feature Freeze, I believe this is fine.",
+      "parentUuid": "AAAAU3//bW8\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//aVw\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 59
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-26T19:55:38Z",
+      "side": 1,
+      "message": "Does this really need policy around it? Didn\u0027t we decide that revocation events were always public?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dHM\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 59
@@ -121,6 +156,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//adY\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-26T19:55:38Z",
+      "side": 1,
+      "message": "Suggest making this a config option. (probably a later patchset than this one)",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dDI\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 59
@@ -132,6 +184,41 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Don\u0027t you always need a lock? You are protecting against multiple revoke calls below, but you could have pruning happening because of the get_events call. What about the code that adds entries to the KVS?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//acU\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-26T19:55:38Z",
+      "side": 1,
+      "message": "It looks like a lock is always require (should always be required). _prune_expired_events (if it\u0027s doing a set) needs to always be wrapped in a lock",
+      "parentUuid": "AAAAU3//dDI\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//abE\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-26T19:55:38Z",
+      "side": 1,
+      "message": "Suggest not doing get/set in _prune_expired_events. Perhaps the only time you set the pruned event is on new revocations? This would also mitigate the need to lock around it.",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
