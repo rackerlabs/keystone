@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//h8I\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 3458,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-26T04:18:37Z",
+      "side": 1,
+      "message": "Nice!!!",
+      "revId": "b0db18e33be730d99abfe188ac6dd8f2435c644a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//h7Q\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 3463,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-26T04:18:37Z",
+      "side": 1,
+      "message": "need a \"that\" between check and we",
+      "revId": "b0db18e33be730d99abfe188ac6dd8f2435c644a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//h7E\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 3466,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-26T04:18:37Z",
+      "side": 1,
+      "message": "need a \"that\" between check and we",
+      "revId": "b0db18e33be730d99abfe188ac6dd8f2435c644a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//h7s\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 3471,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-26T04:18:37Z",
+      "side": 1,
+      "message": "put an \"a\" between create and trust and also put a \"that\" between check and it",
+      "revId": "b0db18e33be730d99abfe188ac6dd8f2435c644a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//h64\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 3476,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-02-26T04:18:37Z",
+      "side": 1,
+      "message": "to be consistent with your excellence use of comments you could add \"try to create a trust with negative uses, check that it fails",
+      "revId": "b0db18e33be730d99abfe188ac6dd8f2435c644a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//kwE\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 19
