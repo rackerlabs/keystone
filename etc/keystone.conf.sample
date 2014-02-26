@@ -169,6 +169,10 @@
 # (string value)
 #kombu_ssl_ca_certs=
 
+# How long to wait before reconnecting in response to an AMQP
+# consumer cancel notification. (floating point value)
+#kombu_reconnect_delay=1.0
+
 # The RabbitMQ broker address where a single node is used
 # (string value)
 #rabbit_host=localhost
@@ -301,6 +305,21 @@
 
 # URL to get token from ec2 request. (string value)
 #keystone_ec2_url=http://localhost:5000/v2.0/ec2tokens
+
+# Required if EC2 server requires client certificate (string
+# value)
+#keystone_ec2_keyfile=<None>
+
+# Required if EC2 server requires client certificate (string
+# value)
+#keystone_ec2_certfile=<None>
+
+# A PEM encoded Certificate Authority to use when verifying
+# HTTPS connections. Defaults to system CAs. (string value)
+#keystone_ec2_cafile=<None>
+
+# Disable SSL certificate verification (boolean value)
+#keystone_ec2_insecure=false
 
 
 #
