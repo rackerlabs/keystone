@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//h34\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-26T04:26:09Z",
+      "side": 1,
+      "message": "Should these checks live in the Manager before handing down to the backends? If so these method could be copied into the Manager. I think they are just in Driver right now?",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
