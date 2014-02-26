@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//ZaQ\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T21:24:40Z",
+      "side": 1,
+      "message": "this search scheme probably won\u0027t work for \u0027memberOf\u0027 search from user object or nested groups. Anyway, incremental improvements. :)",
+      "revId": "9371f790220262154d3b27f57b7769abca503752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//ZhY\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
