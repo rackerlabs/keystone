@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//b8k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T17:03:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAU3//cMI\u003d",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cLo\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 20
@@ -64,6 +82,23 @@
       "writtenOn": "2014-02-26T16:32:04Z",
       "side": 1,
       "message": "Space after # and it would be nice to say why and not just what. Something like: \"# Delete trusts that have remaining uses because we are downgrading and will not track uses anymore.\"\n\nDo we also need to delete the ones with 0 remaining uses? Won\u0027t they become usable after this?",
+      "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//bwQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T17:03:31Z",
+      "side": 1,
+      "message": "should be \u003e\u003d0",
       "revId": "90efcc27ab7fb651cee6d166ed1afd9c5cd67561",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
