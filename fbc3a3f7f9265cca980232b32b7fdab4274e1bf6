@@ -16,6 +16,24 @@
       "revId": "fbc3a3f7f9265cca980232b32b7fdab4274e1bf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZPI\u003d",
+        "filename": "keystone/tests/test_v2_controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-26T21:28:35Z",
+      "side": 1,
+      "message": "I always like to have 2 so that it is clear a list operation is working as opposed to a single get….but I take your point!",
+      "parentUuid": "AAAAU3//aYQ\u003d",
+      "revId": "fbc3a3f7f9265cca980232b32b7fdab4274e1bf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
