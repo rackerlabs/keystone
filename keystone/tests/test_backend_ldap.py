@@ -250,6 +250,28 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(2, len(user_projects))
 
+        # Now, check number of projects through groups
+        user2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'enabled': True}
+        self.identity_api.create_user(user2['id'], user2)
+
+        group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'domain_id': domain['id']}
+        self.identity_api.create_group(group1['id'], group1)
+
+        self.identity_api.add_user_to_group(user2['id'],
+                                            group1['id'])
+
+        self.assignment_api.create_grant(group_id=group1['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(group_id=group1['id'],
+                                         project_id=self.tenant_baz['id'],
+                                         role_id=self.role_member['id'])
+        user_projects = self.assignment_api.list_projects_for_user(user2['id'])
+        self.assertEqual(len(user_projects), 2)
+
     def test_list_projects_for_user_with_grants(self):
         domain = self._get_domain_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
@@ -288,7 +310,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         user_projects = self.assignment_api.list_projects_for_user(
             new_user['id'])
-        self.assertEqual(2, len(user_projects))
+        self.assertEqual(len(user_projects), 3)
 
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Blocked by bug 1101276')
