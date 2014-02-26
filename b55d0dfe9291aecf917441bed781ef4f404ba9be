@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//Z0w\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T20:52:45Z",
+      "side": 1,
+      "message": "you may be breaking backward compatibility with the default\u003dFalse as httplib never validates server cert. But this is all good as we are fixing a security vulnerability.",
+      "revId": "b55d0dfe9291aecf917441bed781ef4f404ba9be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZtU\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T20:52:45Z",
+      "side": 1,
+      "message": "need to support other cert options for 2-way SSL\n\ncertfile\nkeyfile\ncafile\n\nsee\n\nhttps://github.com/openstack/python-keystoneclient/blob/master/keystoneclient/middleware/s3_token.py#L117",
+      "revId": "b55d0dfe9291aecf917441bed781ef4f404ba9be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
