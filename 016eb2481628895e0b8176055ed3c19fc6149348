@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//lMA\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-26T00:47:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//mbE\u003d",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//mcA\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//lL8\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-26T00:47:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//mcA\u003d",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//mbw\u003d",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-25T18:25:24Z",
       "side": 1,
       "message": "cannot",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//lL0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 12
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-26T00:47:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//mbw\u003d",
       "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -204,6 +258,24 @@
       "writtenOn": "2014-02-25T18:25:24Z",
       "side": 1,
       "message": "don\u0027t import constants like this into a migration - this risks changing the meaning of the migration in the future. define the constants in this module",
+      "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//lP4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_identity_uuid_length.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-02-26T00:47:48Z",
+      "side": 1,
+      "message": "Ah, you\u0027re right.  Nice catch.",
+      "parentUuid": "AAAAU3//mZI\u003d",
       "revId": "016eb2481628895e0b8176055ed3c19fc6149348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
