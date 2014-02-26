@@ -1,0 +1,480 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//dHM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Suggest: \"Revoke token by token identifier.\"",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dG0\u003d",
+        "filename": "keystone/contrib/revoke/__init__.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dGw\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dGk\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Space after #",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dGc\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Missing newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dDI\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Don\u0027t you always need a lock? You are protecting against multiple revoke calls below, but you could have pruning happening because of the get_events call. What about the code that adds entries to the KVS?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dF8\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "It would be nice if _prune_expired_events didn\u0027t do its own _get and _set, but I don\u0027t think that\u0027s a show stopper. Maybe a NOTE about it for later cleanup?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dCo\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dCc\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dBs\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Remove copyright?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dCE\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dB4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Missing newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//dA4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Missing newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c/U\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c+0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Suggest six.iteritems for Python3 compat",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c9Q\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Why do the magic here if it doesn\u0027t really save you any space?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c+U\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Suggest: str(self.id)",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c+E\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Space after #",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c4Y\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Is this useful? At each step if there is no match you return False.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c3w\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Why not store the value instead of doing a getattr twice?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c3I\u003d",
+        "filename": "keystone/contrib/revoke/routers.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c2A\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "So removing a user from a group revokes all of their tokens?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//c1o\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//cxw\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "I don\u0027t think this is ever used.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//crE\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Did this not work as setUp?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//cls\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "I don\u0027t see revoke_api being used anywhere",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//cmY\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Does this change the expectation of the caller that doesn\u0027t have this set?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//cgg\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-26T15:51:13Z",
+      "side": 1,
+      "message": "Do those errors really mean the token is not found and does this break the contract with the callers now that invalid tokens will raise an exception?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
