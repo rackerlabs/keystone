@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAU3//bW8\u003d",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 59
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "I thought extensions are not supposed to be on the default pipeline.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dHM\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 59
@@ -13,6 +30,23 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Suggest: \"Revoke token by token identifier.\"",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//a1I\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "but but token_provider_api.validate_token() also calls token_api.get_token() underneath. So what are we solving by do validate_token() here?",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +291,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//bDI\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "do we used revoked_at anywhere other than use it to set issued_before?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//c9Q\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 59
@@ -325,6 +376,92 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//a54\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "matched is used at the end. Seem like it should be set to True and saved a bunch of code",
+      "parentUuid": "AAAAU3//c4Y\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//a9U\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "token_values.get(attribute_name)\n\nunless we are expecting token_values is going to always contain those attributes. Moreover, if you can document what in the token_values in docstring that would be awesome.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//a7s\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "for attribute_name in [\u0027user_domain_id\u0027, \u0027project_domain_id\u0027, \u0027domain_id\u0027]\n\nneed to account for domain-scoped tokens",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//a60\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "token_values.get(attribute_name)",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ayM\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "should just skip to line 127 from here. matched is not going to set to False from this point on.",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//c3w\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 59
@@ -342,6 +479,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//a50\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "token_values.get(attribute_name)",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//c3I\u003d",
         "filename": "keystone/contrib/revoke/routers.py",
         "patchSetId": 59
@@ -353,6 +507,23 @@
       "writtenOn": "2014-02-26T15:51:13Z",
       "side": 1,
       "message": "Extra newline",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//atE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-02-26T19:06:56Z",
+      "side": 1,
+      "message": "this one is debatable. Adding/removing group member, yes. Deleting the group itself, debatable. Problem is group information is not on the token. This cause all user tokens to be revoked.",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
