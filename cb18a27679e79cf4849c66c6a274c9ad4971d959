@@ -140,6 +140,24 @@
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//cFg\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-26T16:27:42Z",
+      "side": 1,
+      "message": "I don\u0027t think we want to do that at the token level, it\u0027ll be tedious to expand upon. \n\nWe pulled out groups because it\u0027s a first class entity, and has room to grow (we can easily add name or another field).",
+      "parentUuid": "AAAAU3//dY8\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
