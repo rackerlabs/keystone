@@ -132,12 +132,16 @@ class Assignment(assignment.Driver):
         return self.role.get_all()
 
     def list_projects_for_user(self, user_id, group_ids, hints):
-        # NOTE(henry-nash): The LDAP backend is being deprecated, so no
-        # support is provided for projects that the user has a role on solely
-        # by virtue of group membership.
         user_dn = self.user._id_to_dn(user_id)
         associations = (self.role.list_project_roles_for_user
                         (user_dn, self.project.tree_dn))
+
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for a in self.role.list_project_roles_for_group(
+                    group_dn, self.project.tree_dn):
+                associations.append(a)
+
         # Since the LDAP backend doesn't store the domain_id in the LDAP
         # records (and only supports the default domain), we fill in the
         # domain_id before we return the list.
@@ -642,6 +646,35 @@ class RoleApi(common_ldap.BaseLdap):
             tenant_dn = ldap.dn.dn2str(tenant)
             res.append(UserRoleAssociation(
                 user_dn=user_dn,
+                role_dn=role_dn,
+                tenant_dn=tenant_dn))
+        return res
+
+    def list_project_roles_for_group(self, group_dn, project_subtree):
+        conn = self.get_connection()
+        query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
+                                                self.member_attribute,
+                                                group_dn)
+        try:
+            roles = conn.search_s(project_subtree,
+                                  ldap.SCOPE_SUBTREE,
+                                  query)
+        except ldap.NO_SUCH_OBJECT:
+            return []
+        finally:
+            conn.unbind_s()
+
+        res = []
+        for role_dn, _ in roles:
+            # ldap.dn.dn2str returns an array, where the first
+            # element is the first segment.
+            # For a role assignment, this contains the role ID,
+            # The remainder is the DN of the tenant.
+            tenant = ldap.dn.str2dn(role_dn)
+            tenant.pop(0)
+            tenant_dn = ldap.dn.dn2str(tenant)
+            res.append(GroupRoleAssociation(
+                group_dn=group_dn,
                 role_dn=role_dn,
                 tenant_dn=tenant_dn))
         return res
