@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//ZhY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-26T21:09:18Z",
+      "side": 1,
+      "message": "(NIT): we could put \u0027password\u0027, \u0027tenants\u0027, \u0027groups\u0027 and \u0027domains\u0027 in a list and iterate over it\n\n    vals_to_remove \u003d [\u0027password\u0027, \u0027tenants\u0027, \u0027groups\u0027, \u0027domains\u0027]\n    user_ref \u003d user_ref.copy()\n    for val in vals_to_remove:\n         if val in user_ref:\n              user_ref.pop(val, None)\n\nless lines and we can maintain all the resources we want to pop in a list.",
+      "revId": "9371f790220262154d3b27f57b7769abca503752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//Zd8\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-26T21:09:18Z",
+      "side": 1,
+      "message": "This logic is repeated quite a bit, maybe it could be pulled out into a separate method?",
+      "revId": "9371f790220262154d3b27f57b7769abca503752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
