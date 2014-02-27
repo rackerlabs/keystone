@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//3wA\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T17:17:52Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this validation live in the controller?",
+      "revId": "d934792c3cde07f4871b728431d00d3eec34c677",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
