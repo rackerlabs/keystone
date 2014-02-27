@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX///N8\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 42
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "I assume that the resource will actually only be available to a federated user... I think the call will fail with a validation error or something if it\u0027s not.",
+      "parentUuid": "AAAAU3//cyk\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//h34\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 42
@@ -120,6 +138,278 @@
       "side": 1,
       "message": "OK as is.",
       "parentUuid": "AAAAU3//dTI\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///H0\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "suggest use \n\n if \u0027OS-FEDERATION:identity_provider\u0027 in auth_context:\n\nThis code shouldn\u0027t care if it\u0027s an empty dict or whatever.\n\nwould be nice if the \"OS-FEDERATION:identity_provider\" string was defined as a constant somewhere rather than re-typing it everywhere.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///HM\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "add param -\u003e \"param auth_payload\"",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///HE\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "add param \u003d\u003e \"param auth_context\"",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///F0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "could remove some duplication here --\n\n if \u0027id\u0027 in auth_payload:\n     fields \u003d self._handle_scoped_token(auth_payload)\n else:\n    fields \u003d self._handle_unscoped_token(context, auth_payload)\n\n auth_context.update(fields)",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///E0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "suggest change x to group",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///EA\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "this needs to say something about federation, because users can obviously be in groups that aren\u0027t listed here when not federated. Probably should be called federated_group_ids or something.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///K4\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "Use keystone.common.authorizaion.AUTH_CONTEXT_ENV rather than the magic number here since that\u0027s already defined.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///KM\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "Use keystone.common.authorizaion.AUTH_CONTEXT_ENV rather than the magic number here since that\u0027s already defined.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///Jo\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "this should be done in a separate commit.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///CA\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "use \"\u0027name\u0027 in mapped_properties\" since we don\u0027t care about the value, right?",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///Bs\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "nice! wish it was done in a separate commit since it\u0027s unrelated.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///BM\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "This doesn\u0027t test what the server returns since there\u0027s no server involved. The rule processor raises the exception.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///A0\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "sys is a standard library so this should be up with the json import.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///Ac\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "revert unrelated whitespace change on previous line.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///AQ\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "add a comment why should return here.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+/U\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T00:59:19Z",
+      "side": 1,
+      "message": "can we use \"\u0027OS-FEDERATION:identity_provider\u0027 in auth_context\" here to check if using federation rather than checking for explicit method name?\n\nCan auth_context be None here (it defaults to None at line 410...), but that would fail all over the place.",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
