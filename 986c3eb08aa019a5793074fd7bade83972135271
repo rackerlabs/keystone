@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//5bM\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T14:36:28Z",
+      "side": 1,
+      "message": "this needs to say something about federation, because users can obviously be in groups that aren\u0027t listed here when not federated. Probably should be called federated_group_ids or something.",
+      "revId": "986c3eb08aa019a5793074fd7bade83972135271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
