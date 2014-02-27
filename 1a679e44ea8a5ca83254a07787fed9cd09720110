@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//3AA\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T19:09:37Z",
+      "side": 1,
+      "message": "do that in a separate commit.",
+      "parentUuid": "AAAAVX//3J4\u003d",
+      "revId": "1a679e44ea8a5ca83254a07787fed9cd09720110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//4rk\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 22
