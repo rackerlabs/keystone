@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVX//2fg\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T20:33:21Z",
+      "side": 1,
+      "message": "Regenerate the sample.conf using the config_generator tool. \n\nhttp://docs.openstack.org/developer/keystone/developing.html#generating-updated-sample-config-file",
+      "revId": "622839556396811554b87fd6490fa5aabb31e977",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//4xs\u003d",
         "filename": "keystone/auth/plugins/kerberos.py",
         "patchSetId": 6
@@ -30,6 +47,23 @@
       "writtenOn": "2014-02-27T15:35:36Z",
       "side": 1,
       "message": "add a new line between os and kerberos",
+      "revId": "622839556396811554b87fd6490fa5aabb31e977",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//2gs\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T20:33:21Z",
+      "side": 1,
+      "message": "succeeds*",
       "revId": "622839556396811554b87fd6490fa5aabb31e977",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
