@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//93I\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 42
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T04:45:28Z",
+      "side": 1,
+      "message": "i assume this is a comment to ayoung, and not a hint to fix something",
+      "parentUuid": "AAAAVX///N8\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//h34\u003d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 42
@@ -161,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//93A\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T04:45:28Z",
+      "side": 1,
+      "message": "could put that it as a constant in contrib.federation.core.py",
+      "parentUuid": "AAAAVX///H0\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///HM\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 42
@@ -263,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//920\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T04:45:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAVX///K4\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///KM\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 42
@@ -274,6 +328,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "Use keystone.common.authorizaion.AUTH_CONTEXT_ENV rather than the magic number here since that\u0027s already defined.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92w\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T04:45:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAVX///KM\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +380,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "use \"\u0027name\u0027 in mapped_properties\" since we don\u0027t care about the value, right?",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92o\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T04:45:28Z",
+      "side": 1,
+      "message": "correct",
+      "parentUuid": "AAAAVX///CA\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +500,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "can we use \"\u0027OS-FEDERATION:identity_provider\u0027 in auth_context\" here to check if using federation rather than checking for explicit method name?\n\nCan auth_context be None here (it defaults to None at line 410...), but that would fail all over the place.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92E\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T04:45:28Z",
+      "side": 1,
+      "message": "could write it as:\nif auth_context and OS-FEDERATION:identity_provider in auth_context ?",
+      "parentUuid": "AAAAVX//+/U\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
