@@ -2,6 +2,278 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVX//++A\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "change \"track\" to \"tracks\"",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+3k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "why do we have to do this? Add a comment.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+2Q\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3464,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "give a name to the magic number -- remaining_uses\u003d5",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+14\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3475,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "change 0 to \"remaining_uses\u003d0\"",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+10\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3481,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "change -12 to \"remaining_uses\u003d-12\"",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+1w\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3484,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "change 2 to \"remaining_uses\u003d2\" ... this applies throughout these changes.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+1k\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 3492,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "use assertIsNone",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+0w\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "remove this line since the next line does it anyways.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+04\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "use assertIsNone.\n\nAlso, use [] rather than .get()",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+0E\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "this looks like it\u0027s fixing a different problem?",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+0M\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "revert unrelated whitespace change on previous line.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+y0\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "suggest do this check first rather than relying on obscure python behavior to get here.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+zI\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "I think this needs to be trust_id\u003dtrust_id.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+yE\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "do this check first rather than relying on obscure behavior.",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+x0\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "change \"trust_id\" to \"trust_id\u003dtrust_id\"",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+xk\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T01:37:43Z",
+      "side": 1,
+      "message": "how is get_trust going to have a conflict?",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//ZHg\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 21
