@@ -16,6 +16,40 @@
       "revId": "1a679e44ea8a5ca83254a07787fed9cd09720110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//4ss\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T15:47:39Z",
+      "side": 1,
+      "message": "I don\u0027t like this being moved to __init__. Leave it in core.py so it\u0027s easier to find.",
+      "revId": "1a679e44ea8a5ca83254a07787fed9cd09720110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//4rk\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T15:47:39Z",
+      "side": 1,
+      "message": "fixing the order of imports should be done in a separate commit.",
+      "revId": "1a679e44ea8a5ca83254a07787fed9cd09720110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
