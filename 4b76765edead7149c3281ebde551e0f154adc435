@@ -139,6 +139,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//ZeI\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-27T01:36:35Z",
+      "side": 1,
+      "message": "Should revoke_api logic be invoked after driver delete_grant call. I mean what is the expected behavior if driver delete_grant fails for some reason?",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//dHM\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 59
@@ -218,6 +235,24 @@
       "writtenOn": "2014-02-26T21:54:53Z",
       "side": 1,
       "message": "this is where the token used for authorization on the current call is validated.  If CONF.token.revoke_by_id is True, the token will be loked up in thedatabase, and its lack of presence will indicate that it has been revoked. If that is missing, we have to do the events based validation.",
+      "parentUuid": "AAAAU3//a1I\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//ZQ8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-27T01:36:35Z",
+      "side": 1,
+      "message": "As mentioned in earlier comment, validate_token in provider api also goes through caching logic. Also why do we want to force db read for token if specific deployment wants to use caching at token module level?",
       "parentUuid": "AAAAU3//a1I\u003d",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -444,6 +479,23 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAU3//dF8\u003d",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX///AM\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 59
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-27T01:36:35Z",
+      "side": 1,
+      "message": "Should this be keystone.contrib.revoke.backends.sql.Revoke as its mentioned as sql example",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -976,6 +1028,23 @@
       "writtenOn": "2014-02-26T19:06:56Z",
       "side": 1,
       "message": "token_values.get(attribute_name)",
+      "revId": "4b76765edead7149c3281ebde551e0f154adc435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+0o\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 59
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-02-27T01:36:35Z",
+      "side": 1,
+      "message": "How about a shorter version for line 117-125,\n\n\n          if event.role_id in token_values[\u0027roles\u0027]:\n              matched \u003d True\n           else:\n               return False",
       "revId": "4b76765edead7149c3281ebde551e0f154adc435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
