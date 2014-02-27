@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//44I\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-27T15:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//5fk\u003d",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//5VY\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-27T15:04:03Z",
       "side": 1,
       "message": "Why would this only be a problem in SQLite?",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//44k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-27T15:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//5VY\u003d",
       "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//4rc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 3381,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-27T15:42:42Z",
+      "side": 1,
+      "message": "The default behavior as implemented in the Manager is to set this key to None (unlimited use trust) by default if it is not present\n\nOr would you like to see a test where the key doesn\u0027t exist, to make sure the created trust has unlimited uses ?",
+      "parentUuid": "AAAAVX//5d0\u003d",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//5So\u003d",
         "filename": "keystone/trust/backends/kvs.py",
         "patchSetId": 22
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-27T15:04:03Z",
       "side": 1,
       "message": "Is there any reason you are not saving this to a variable so that you don\u0027t have to call .get() more than once?",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//45o\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-27T15:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//5So\u003d",
       "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//47E\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-27T15:42:42Z",
+      "side": 1,
+      "message": "A good question indeed, I took it as it was from the master, assuming there was a good reason for that ... shoud I remove it ?",
+      "parentUuid": "AAAAVX//5N0\u003d",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//5cE\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 22
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-27T15:04:03Z",
       "side": 1,
       "message": "Remove the added whitespace",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//4+Q\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-02-27T15:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//5cE\u003d",
       "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
