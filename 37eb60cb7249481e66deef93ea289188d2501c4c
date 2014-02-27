@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//8gY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "\u0027a post on /v3/auth/tokens\u0027",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8gk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be enabled by default. remove this change, and the ones below. \n\nif you are writing tests, you can modify https://github.com/openstack/keystone/blob/master/keystone/tests/test_overrides.conf",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8mc\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "don\u0027t use foundation",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8mE\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "this rename seems unnecessary",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8lw\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "also, i think os should go above kerberos.\nthe order is:\nstdlib imports, external package imports, then local package imports",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8kU\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "why would this be an error initializing the library?",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8jI\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "definitely need some doc strings for this function",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8i0\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "doc strings here too.",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8kI\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "s/authHeader/auth_header",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//8lo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-27T07:58:06Z",
+      "side": 1,
+      "message": "will a keytab file be checked in?",
+      "revId": "37eb60cb7249481e66deef93ea289188d2501c4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
