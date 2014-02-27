@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//+lM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "Remove this line?",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+lE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "change \"instead\" to \"also\"",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+lA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 60
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "remove extra \"in\"",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+k4\u003d",
+        "filename": "etc/policy.json",
+        "patchSetId": 60
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest remove the \"@\". Would be more consistent since this file uses empty string at line 86.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+k0\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 60
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest remove the \"@\". Would be more consistent since this file uses empty string at line 98.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+ks\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest put the ] on a separate line and add a , after the StrOpt so that it\u0027s easier to add more options.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+ko\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest put the ] on a separate line and add a , after the StrOpt so that it\u0027s easier to add more options.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+j8\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest change name to \"_get_and_prune\" so it\u0027s obvious that this is also the method used to get the current events.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+gc\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest change last_fetch to \"last_fetch\u003dlast_fetch\" since there\u0027s multiple named parameters.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+go\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest change \"lock\u003dlock\" to \"lock\" since it\u0027s a positional parameter now.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+js\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "remove vim line.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+jg\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest use named parameter for named argument -- last_fetch\u003dlast_fetch",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+jQ\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "change \"Events\" to \"events\"",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+jM\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "suggest change the name from \"last_fetch\" to \"newer_than\" or something more obvious.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+jI\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "looks like there\u0027s an extra space before \"objects\"?",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+jA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "remove one of these blank lines.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+iE\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "change \"avaiable\" to \"available\"",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//+hs\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 60
+      },
+      "lineNbr": 1219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T02:22:07Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
+      "revId": "58afd0eb3d3163ec91db6c025e208b1d08ff7922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
