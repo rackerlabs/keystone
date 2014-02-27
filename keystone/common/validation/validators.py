@@ -1,0 +1,49 @@
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+"""Internal implementation of request body validating middleware."""
+
+import jsonschema
+
+from keystone import exception
+from keystone.openstack.common.gettextutils import _
+
+
+class SchemaValidator(object):
+    """Resource reference validator class."""
+
+    validator = None
+
+    def __init__(self, schema):
+        # NOTE(lbragstad): If at some point in the future we want to expand
+        # our validators to include something specific we need to check for,
+        # we can do it here. Nova's V3 API validators extend the validator to
+        # include `self._validate_minimum` and `self._validate_maximum`. This
+        # would be handy if we needed to check for something the jsonschema
+        # didn't by default. See the Nova V3 validator for details on how this
+        # is done.
+        self.validator = jsonschema.validators.create(schema)
+
+    def validate(self, *args, **kwargs):
+        try:
+            self.validator.validate(*args, **kwargs)
+        except jsonschema.ValidationError as ex:
+            # NOTE: For whole OpenStack message consistency, this error
+            # message has been written as the similar format of WSME.
+            if len(ex.path) > 0:
+                detail = _("Invalid input for field/attribute %(path)s."
+                           " Value: %(value)s. %(message)s") % {
+                               'path': ex.path.pop(), 'value': ex.instance,
+                               'message': ex.message
+                           }
+            else:
+                detail = ex.message
+            raise exception.SchemaValidationError(detail=detail)
