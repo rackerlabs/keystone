@@ -197,6 +197,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7jM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "string constant in contrib.federation.IDENITTY_PROVIDER",
+      "parentUuid": "AAAAVX//93A\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///HM\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 42
@@ -208,6 +226,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "add param -\u003e \"param auth_payload\"",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//7iA\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///HM\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -231,6 +267,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7h8\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///HE\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///F0\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 42
@@ -248,6 +302,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7b4\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///F0\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///E0\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 42
@@ -259,6 +331,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "suggest change x to group",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//7ck\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///E0\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -317,6 +407,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7Yw\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///K4\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///KM\u003d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 42
@@ -352,6 +460,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7Ys\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///KM\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///Jo\u003d",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 42
@@ -363,6 +489,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "this should be done in a separate commit.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//7Ww\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "why? Because we are dealing with RuleProcessor related operations?",
+      "parentUuid": "AAAAVX///Jo\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -404,6 +548,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7Xw\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "I think we should stay with mapped_properties.get().\nIn fact we do care whether \u0027name\u0027 is not None, as this value is later urllib.quote()\u0027d and stored in the token data. RuleProcess by default results {\u0027name\u0027: None}, see lines 199-232.",
+      "parentUuid": "AAAAVX///CA\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///Bs\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 42
@@ -438,6 +600,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7Us\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "right, changing the docstring!",
+      "parentUuid": "AAAAVX///BM\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///A0\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 42
@@ -449,6 +629,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "sys is a standard library so this should be up with the json import.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//7Nw\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///A0\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -472,6 +670,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//7OE\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///Ac\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX///AQ\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 42
@@ -483,6 +699,24 @@
       "writtenOn": "2014-02-27T00:59:19Z",
       "side": 1,
       "message": "add a comment why should return here.",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//7Ls\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX///AQ\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -518,6 +752,24 @@
       "side": 1,
       "message": "could write it as:\nif auth_context and OS-FEDERATION:identity_provider in auth_context ?",
       "parentUuid": "AAAAVX//+/U\u003d",
+      "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//7BU\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-02-27T13:17:45Z",
+      "side": 1,
+      "message": "Suggested staying with saml2 in method_names test. Otherwise the test clause is not true during unscoped token scoping operation  as no identity_provider, protocol parameters are present in the auth_context. See: https://review.openstack.org/#/c/71353/42/keystone/auth/plugins/saml2.py lines 63,64.",
+      "parentUuid": "AAAAVX//92E\u003d",
       "revId": "cb18a27679e79cf4849c66c6a274c9ad4971d959",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
