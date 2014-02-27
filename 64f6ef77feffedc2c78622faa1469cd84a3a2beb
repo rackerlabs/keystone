@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//93M\u003d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "exit(1) to match line 94?",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//928\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "are these suppose to be exit(0)\u0027s? I would think we\u0027d want to return an error code?",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//924\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92s\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "if*",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92Q\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "(NIT): # index",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92I\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "(NIT): SQLAlchemy",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//92M\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "(NIT): # sharing",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//91s\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "(NIT): update this to last_fetch to match the method signature",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//91o\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "returns a list of events",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//91U\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 61
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "It is known that kvs is the only backend for the Revoke extension correct?",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//90Y\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "I think I commented on this before but we should explain the reason behind adding 1800 seconds to the configuration value. This *could* be misleading to the users?",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//9z0\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//9zw\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 61
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T04:59:37Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "64f6ef77feffedc2c78622faa1469cd84a3a2beb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
