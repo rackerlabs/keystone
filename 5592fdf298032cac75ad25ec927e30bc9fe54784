@@ -360,6 +360,24 @@
       "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//3w0\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-02-27T17:16:14Z",
+      "side": 1,
+      "message": "++ we are validating other things here right?",
+      "parentUuid": "AAAAVX//5KI\u003d",
+      "revId": "5592fdf298032cac75ad25ec927e30bc9fe54784",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
