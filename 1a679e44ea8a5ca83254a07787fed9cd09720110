@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//3J4\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T18:49:35Z",
+      "side": 1,
+      "message": "I put it here so that it is executed before core is imported. Right now this has to be imported and executed before other stuff in core that uses _(). So this has led us into a situation where you have a list of imports, this code and then more imports. To me this is cleaner because people editing core don\u0027t have to wonder where to put their new import. Since __init__ is really there is initialize a package to makes sense to put this type of code there. I would also argue that the environment setup should go there as well.",
+      "parentUuid": "AAAAVX//4ss\u003d",
+      "revId": "1a679e44ea8a5ca83254a07787fed9cd09720110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//4rk\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 22
