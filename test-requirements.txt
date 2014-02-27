@@ -1,48 +1,24 @@
-hacking>=0.8.0,<0.9
-
-# Optional backend: SQL
-pysqlite
-
-# Optional backend: Memcache
-python-memcached>=1.48
-
-# Optional dogpile backend: MongoDB
-pymongo>=2.4
-
-# Optional backend: LDAP
-# authenticate against an existing LDAP server
-python-ldap==2.3.13
-
-# Testing
-# computes code coverage percentages
-coverage>=3.6
-# fixture stubbing
-fixtures>=0.3.14
-# mock object framework
-mock>=1.0
-mox>=0.5.3
-# required to build documentation
-sphinx>=1.1.2,<1.2
-# test wsgi apps without starting an http server
-WebTest>=2.0
-
+coverage>=3.6  # computes code coverage percentages
 discover
-python-subunit>=0.0.18
-testrepository>=0.0.18
-testtools>=0.9.34
-testscenarios>=0.4
-
-# for python-keystoneclient
-# keystoneclient <0.2.1
+fixtures>=0.3.14  # fixture stubbing
+hacking>=0.8.0,<0.9
+# keystoneclient <0.2.1  # for python-keystoneclient
 httplib2>=0.7.5
-# replaces httplib2 in keystoneclient >=0.2.1
-requests>=1.1
-keyring>=1.6.1,<2.0,>=2.1
-
-# For documentation
-oslosphinx
-
-# Used only by oslo
-kombu>=2.4.8
-lockfile>=0.8
-stevedore>=0.14
+keyring>=1.6.1,<2.0,>=2.1  # replaces httplib2 in keystoneclient >=0.2.1
+kombu>=2.4.8  # Used only by oslo
+lockfile>=0.8  # Used only by oslo
+mock>=1.0  # mock object framework
+mox>=0.5.3  # mock object framework
+oslosphinx  # For documentation
+pymongo>=2.4  # Optional dogpile backend: MongoDB
+pysqlite  # Optional backend: SQL
+python-ldap==2.3.13  # Optional backend: LDAP  authenticate against an existing LDAP server
+python-memcached>=1.48  # Optional backend: Memcache
+python-subunit>=0.0.18
+requests>=1.1  # replaces httplib2 in keystoneclient >=0.2.1
+sphinx>=1.1.2,<1.2  # required to build documentation
+stevedore>=0.14  # Used only by oslo
+testrepository>=0.0.18
+testscenarios>=0.4
+testtools>=0.9.34
+WebTest>=2.0  # test wsgi apps without starting an http server
