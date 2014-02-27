@@ -16,6 +16,24 @@
       "revId": "c10cd818b3aa1230af84e722f72add3a945d802e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//46c\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-27T15:24:02Z",
+      "side": 1,
+      "message": "David - As the comment at line 270 explains, this code is simulating how gettext works as far as is needed to get a \"translated\" string for a message.",
+      "parentUuid": "AAAAU3//0d4\u003d",
+      "revId": "c10cd818b3aa1230af84e722f72add3a945d802e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
