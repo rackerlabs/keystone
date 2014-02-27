@@ -84,6 +84,12 @@ class ValidationError(Error):
     title = 'Bad Request'
 
 
+class SchemaValidationError(Error):
+    message_format = _("%(detail)s")
+    code = 400
+    title = 'Bad Request'
+
+
 class ValidationTimeStampError(Error):
     message_format = _("Timestamp not in expected format."
                        " The server could not comply with the request"
