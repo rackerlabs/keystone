@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//2NU\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-27T21:30:49Z",
+      "side": 1,
+      "message": "if you expose this we probably want to expose an option for the CA certs as well\n\nNote that i\u0027m not sure you need to do these - verify is the only one you need to keep compatible with the current implementation and everything else is a feature addition - then again they\u0027re easy so why not.",
+      "revId": "c7a048fca557e94dbb4b62472ed9b63304b5e04d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
