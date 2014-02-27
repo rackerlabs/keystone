@@ -16,6 +16,24 @@
       "revId": "986c3eb08aa019a5793074fd7bade83972135271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//5RQ\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-27T14:54:26Z",
+      "side": 1,
+      "message": "i\u0027d really rather this one attribute *not* be tied to federation, as it\u0027s for internal use only and it would be completely viable for this to be utilized in more core at some point (for example, including group IDs in the token was originally proposed as a solution to make token revocation more robust, not for federation)",
+      "parentUuid": "AAAAVX//5bM\u003d",
+      "revId": "986c3eb08aa019a5793074fd7bade83972135271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
