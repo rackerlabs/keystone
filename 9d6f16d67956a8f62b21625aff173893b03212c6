@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//8CU\u003d",
+        "filename": "keystone/contrib/kds/db/sqlalchemy/api.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-02-27T09:03:46Z",
+      "side": 1,
+      "message": "There is a bunch of places to use EngineFacade. First I found this particular snippet to refactor. https://github.com/I159/keystone/blob/common_db/keystone/contrib/kds/db/sqlalchemy/api.py#L26",
+      "revId": "9d6f16d67956a8f62b21625aff173893b03212c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
