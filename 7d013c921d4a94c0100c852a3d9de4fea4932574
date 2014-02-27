@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//5fk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T15:04:03Z",
+      "side": 1,
+      "message": "This should be removed.",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//5VY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T15:04:03Z",
+      "side": 1,
+      "message": "Why would this only be a problem in SQLite?",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//5d0\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 3381,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T15:04:03Z",
+      "side": 1,
+      "message": "Do we also need a test where this key doesn\u0027t exist?",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//5So\u003d",
+        "filename": "keystone/trust/backends/kvs.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T15:04:03Z",
+      "side": 1,
+      "message": "Is there any reason you are not saving this to a variable so that you don\u0027t have to call .get() more than once?",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//5N0\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T15:04:03Z",
+      "side": 1,
+      "message": "Brant had a good question about this in a previous review and I didn\u0027t see if there was an answer. What conflict can happen here?",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//5cE\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-27T15:04:03Z",
+      "side": 1,
+      "message": "Remove the added whitespace",
+      "revId": "7d013c921d4a94c0100c852a3d9de4fea4932574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
