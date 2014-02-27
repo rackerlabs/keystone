@@ -67,6 +67,40 @@
       "revId": "622839556396811554b87fd6490fa5aabb31e977",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//2Gw\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-27T21:41:51Z",
+      "side": 1,
+      "message": "The other option here is that you can return your response as a WebOb Response and that way keystone\u0027s rendering won\u0027t try to mangle it.\n\nIt means you don\u0027t need special exception handling.",
+      "revId": "622839556396811554b87fd6490fa5aabb31e977",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//2Hw\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-02-27T21:41:51Z",
+      "side": 1,
+      "message": "Is it easier to just subclass Unauthorized with a KerberosUnautorized?",
+      "revId": "622839556396811554b87fd6490fa5aabb31e977",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
