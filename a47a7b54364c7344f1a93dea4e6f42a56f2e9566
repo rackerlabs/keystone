@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//taw\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:08:11Z",
+      "side": 1,
+      "message": "this test seems unnecessary since it fails with any string.",
+      "revId": "a47a7b54364c7344f1a93dea4e6f42a56f2e9566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tZ8\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:08:11Z",
+      "side": 1,
+      "message": "same remarks as in the create case",
+      "revId": "a47a7b54364c7344f1a93dea4e6f42a56f2e9566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
