@@ -16,6 +16,7 @@ import datetime
 import random
 import uuid
 
+from oslo.db.sqlalchemy import migration
 import six
 
 from keystone.common import sql
@@ -23,7 +24,6 @@ from keystone.common.sql import migration_helpers
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import core
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import timeutils
 

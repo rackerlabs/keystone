@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.db.sqlalchemy import session as db_session
+
 from keystone.common import sql
 from keystone import exception
 from keystone.openstack.common import timeutils

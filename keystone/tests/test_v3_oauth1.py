@@ -15,6 +15,7 @@
 import copy
 import uuid
 
+from oslo.db.sqlalchemy import migration
 from six.moves import urllib
 
 from keystone.common import sql
@@ -24,7 +25,6 @@ from keystone import contrib
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone.tests import test_v3
 

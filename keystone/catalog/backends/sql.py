@@ -13,6 +13,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.db.sqlalchemy import migration
 import six
 
 from keystone import catalog
@@ -21,7 +22,6 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
 
 
 CONF = config.CONF

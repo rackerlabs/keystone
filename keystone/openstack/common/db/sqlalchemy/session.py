@@ -283,6 +283,7 @@ import logging
 import re
 import time
 
+from oslo.db import exception
 import six
 from sqlalchemy import exc as sqla_exc
 from sqlalchemy.interfaces import PoolListener
@@ -290,7 +291,6 @@ import sqlalchemy.orm
 from sqlalchemy.pool import NullPool, StaticPool
 from sqlalchemy.sql.expression import literal_column
 
-from keystone.openstack.common.db import exception
 from keystone.openstack.common.gettextutils import _LE, _LW, _LI
 from keystone.openstack.common import timeutils
 

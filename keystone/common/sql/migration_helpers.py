@@ -15,6 +15,7 @@
 #    under the License.
 
 import os
+import six
 
 import migrate
 import sqlalchemy

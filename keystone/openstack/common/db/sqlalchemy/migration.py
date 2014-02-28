@@ -47,10 +47,10 @@ from migrate.changeset.databases import sqlite
 from migrate import exceptions as versioning_exceptions
 from migrate.versioning import api as versioning_api
 from migrate.versioning.repository import Repository
+from oslo.db import exception
 import sqlalchemy
 from sqlalchemy.schema import UniqueConstraint
 
-from keystone.openstack.common.db import exception
 from keystone.openstack.common.gettextutils import _
 
 

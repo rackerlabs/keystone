@@ -12,11 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.db.sqlalchemy import migration
+
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.contrib import endpoint_filter
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
 
 
 class ProjectEndpoint(sql.ModelBase, sql.DictBase):

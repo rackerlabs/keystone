@@ -25,6 +25,8 @@ import warnings
 
 import fixtures
 import logging
+from oslo.db import options as db_options
+from oslo.db.sqlalchemy import migration
 from paste import deploy
 import six
 import testtools
@@ -59,9 +61,6 @@ from keystone.common import utils as common_utils
 from keystone import config
 from keystone import exception
 from keystone import notifications
-from keystone.openstack.common.db import options as db_options
-from keystone.openstack.common.db.sqlalchemy import migration
-from keystone.openstack.common.db.sqlalchemy import session
 from keystone.openstack.common.fixture import config as config_fixture
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
