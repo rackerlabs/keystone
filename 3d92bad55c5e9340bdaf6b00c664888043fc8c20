@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//slk\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "The documentation for server_default is here: http://docs.sqlalchemy.org/en/rel_0_9/core/defaults.html#server-side-defaults\n\nessentially it means that when the column is defined in SQL it\u0027s defined with WITH DEFAULT \u003cwhatever\u003e.\n\nThe default means that sqlalchemy is always going to pass a value for True when it\u0027s setting a value for the column.",
+      "parentUuid": "AAAAVX//tYw\u003d",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tYM\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-28T21:25:17Z",
       "side": 1,
       "message": "could turn this into a function, _validate_endpoint(endpoint)",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//sk4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//tYM\u003d",
       "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//sjs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//tX8\u003d",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tUs\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-28T21:25:17Z",
       "side": 1,
       "message": "suggest using jsonutils from oslo",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//skU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//tUs\u003d",
       "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//skA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "if the endpoint is enabled then migration doesn\u0027t have to set the value -- it\u0027s true by default. We only have to set the value to False.",
+      "parentUuid": "AAAAVX//tTs\u003d",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tW8\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2014-02-28T21:25:17Z",
       "side": 1,
       "message": "if the comment is true, then why set it to true in the next line?",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//sjk\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "Because self.endpoint isn\u0027t the server version, it\u0027s the version that was sent to the server to create the endpoint.",
+      "parentUuid": "AAAAVX//tW8\u003d",
       "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//sjQ\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "new_endpoint_ref doesn\u0027t set \u0027enabled\u0027 since it\u0027s optional.",
+      "parentUuid": "AAAAVX//tWM\u003d",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tWE\u003d",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 5
@@ -132,6 +258,24 @@
       "writtenOn": "2014-02-28T21:25:17Z",
       "side": 1,
       "message": "same remark as above",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//sjI\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-02-28T23:56:59Z",
+      "side": 1,
+      "message": "new_endpoint_ref doesn\u0027t set \u0027enabled\u0027 since it\u0027s optional.",
+      "parentUuid": "AAAAVX//tWE\u003d",
       "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
