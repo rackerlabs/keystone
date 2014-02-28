@@ -23,12 +23,14 @@ import uuid
 import six
 from six.moves import urllib
 
+from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
+from keystone import validation
 
 
 CONF = config.CONF
@@ -352,6 +354,7 @@ class DomainV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_domain
 
     @controller.protected()
+    @validation.schema(schema.domain_create, 'domain')
     def create_domain(self, context, domain):
         self._require_attribute(domain, 'name')
 
@@ -371,6 +374,7 @@ class DomainV3(controller.V3Controller):
         return DomainV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.domain_update, 'domain')
     def update_domain(self, context, domain_id, domain):
         self._require_matching_id(domain_id, domain)
         ref = self.assignment_api.update_domain(domain_id, domain)
@@ -391,6 +395,7 @@ class ProjectV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_project
 
     @controller.protected()
+    @validation.schema(schema.project_create, 'project')
     def create_project(self, context, project):
         self._require_attribute(project, 'name')
 
@@ -418,6 +423,7 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.project_update, 'project')
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
         self._require_matching_domain_id(
