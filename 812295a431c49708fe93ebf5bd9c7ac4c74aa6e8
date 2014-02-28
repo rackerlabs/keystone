@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//uCc\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "If it isn\u0027t ever exposed and is the PK, do you want it to be UUID or auto_inc? I\u0027m not opposed to uuid, just wondering if we expect this to be used elsewhere, and an INT is, IIRC less storage/quicker index matching.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//uC8\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 63
@@ -98,6 +115,40 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "this isn\u0027t in the spec",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tvE\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Are all of these fields acceptable to be Null?  I believe \"nullable\u003dTrue\" is the default.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uFU\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Out of curiosity, is there a reason you\u0027re not using the context manager form of the session creating a single transaction for the delete?  If there is a reason, please comment. By default (IIRC) auto-commit is on",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +257,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//uAM\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 63
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this file be in doc/source/extensions and linked into the main configuration.rst?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//t9s\u003d",
         "filename": "keystone/contrib/revoke/controllers.py",
         "patchSetId": 63
@@ -217,6 +285,23 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "or, for example, you\u0027re suppressing attribute error \"timeutils doesn\u0027t have normalize_time\" and causing a debugging nightmare because you\u0027re catching Exception instead of something relevant",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t+w\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "(NIT) Suggest newline between 31 and 32 for readability",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -319,6 +404,23 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "this is very alarming -- why is a request attribute being assigned to an instance of a manager?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//txk\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Based on IRC converstion, if this logic needs to be \"looked at\" or possibly \"added\" in, there should be an indication that we should evaluate. If it isn\u0027t needed, could this method merge with _update_revoke_map ?",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -461,6 +563,74 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//txA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "As discussed in IRC, this is a bit too trusting, make sure only the latest of the \"timestamps\" is used.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tuU\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Example of what is expected in token_data might be useful.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//th4\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "If the revoke_map hasn\u0027t changed, do you need to regenerate the tree each time? Could the _syncronize map code be aware if anything changed and if nothing change, use a pre-built tree?\n\nAwesome way of checking revocations, but could be more efficient if you didn\u0027t have to do all the work each time (not sure if the trade off is worth it)",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tlk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Suggest naming \"any_key\" something that indicates it\u0027s the wildcard match, yes kleene_closure is fine (based on IRC), but \"any_key\" is a bad descriptor. Alternatively, a NOTE: any_key is the wildcard match, readup on kleene closure / kleene star for information on what this means.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tyc\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 63
@@ -478,6 +648,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//tek\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "Suggest:\n\n    self.token_api.token_provider_api.validate_token(\n         context[\u0027token_id\u0027]))",
+      "parentUuid": "AAAAVX//tyc\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tyE\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 63
@@ -489,6 +677,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": ".hex ?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tdA\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-02-28T21:04:05Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAVX//tyE\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
