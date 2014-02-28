@@ -16,6 +16,7 @@
 import uuid
 
 import mock
+from oslo.db import exception as db_exception
 import sqlalchemy
 from sqlalchemy import exc
 
@@ -23,7 +24,6 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
-from keystone.openstack.common.db import exception as db_exception
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
