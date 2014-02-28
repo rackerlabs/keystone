@@ -13,6 +13,7 @@
 
 import uuid
 
+from keystone.assignment import schema as assignment_schema
 from keystone.common.validation import parameter_types
 from keystone.common.validation import validators
 from keystone import exception
@@ -35,19 +36,26 @@ _CREATE = {
     'additionalProperties': True,
 }
 
+_UPDATE = {}
 
-class ValidationTestCase(tests.TestCase):
+_VALID_ENABLED_FORMATS = [True, False]
+
+_INVALID_ENABLED_FORMATS = ['some string', 1, 0, 'True', 'False']
+
+
+class BaseValidationTestCase(tests.TestCase):
 
     def setUp(self):
-        super(ValidationTestCase, self).setUp()
+        super(BaseValidationTestCase, self).setUp()
         self.resource_name = 'some resource name'
         self.description = 'Some valid description'
         self.valid_enabled = True
         self.valid_url = 'http://example.com'
         self.valid_email = 'joe@example.com'
-        self.create_schema_validator = validators.SchemaValidator(_CREATE)
         self.config_fixture.config(group='validation',
                                    id_string_regex='^[a-zA-Z0-9-]+$')
+        self.create_schema_validator = validators.SchemaValidator(_CREATE)
+        self.update_schema_validator = validators.SchemaValidator(_UPDATE)
 
     def test_create_schema_with_all_valid_parameters(self):
         """Validate proper values against test schema."""
@@ -198,4 +206,207 @@ class ValidationTestCase(tests.TestCase):
                                'uuid': None}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_schema_validator.validate,
+
+
+class ProjectValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Project API validation."""
+
+    def setUp(self):
+        super(ProjectValidationTestCase, self).setUp()
+
+        self.project_name = 'My Project'
+
+        create = assignment_schema.project_create
+        update = assignment_schema.project_update
+        delete = assignment_schema.project_delete
+        self.create_project_validator = validators.SchemaValidator(create)
+        self.update_project_validator = validators.SchemaValidator(update)
+        self.delete_project_validator = validators.SchemaValidator(delete)
+
+    def test_validate_project_request(self):
+        """Test that we validate a project with `name` in request."""
+        request_to_validate = {'name': self.project_name}
+        self.create_project_validator.validate(request_to_validate)
+
+    def test_validate_project_request_without_name_fails(self):
+        """Validate project request fails without name."""
+        request_to_validate = {'enabled': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_request_with_enabled(self):
+        """Validate `enabled` as boolean-like values for projects."""
+        for valid_enabled in _VALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.project_name,
+                                   'enabled': valid_enabled}
+            self.create_project_validator.validate(request_to_validate)
+
+    def test_validate_project_request_with_invalid_enabled_fails(self):
+        """Exception is raised when `enabled` isn't a boolean-like value."""
+        for invalid_enabled in _INVALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.project_name,
+                                   'enabled': invalid_enabled}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_project_validator.validate,
+                              request_to_validate)
+
+    def test_validate_project_request_with_valid_description(self):
+        """Test that we validate `description` in create project requests."""
+        request_to_validate = {'name': self.project_name,
+                               'description': 'My Project'}
+        self.create_project_validator.validate(request_to_validate)
+
+    def test_validate_project_request_with_invalid_description_fails(self):
+        """Exception is raised when `description` as a non-string value."""
+        request_to_validate = {'name': self.project_name,
+                               'description': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_update_request(self):
+        """Test that we validate a project update request."""
+        request_to_validate = {'domain_id': uuid.uuid4().hex}
+        self.update_schema_validator.validate(request_to_validate)
+
+    def test_validate_project_update_request_with_no_parameters_fails(self):
+        """Exception is raised when updating project without parameters."""
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_delete_request_takes_no_parameters(self):
+        """Test the delete validation schema."""
+        request_to_validate = {}
+        self.delete_project_validator.validate(request_to_validate)
+
+    def test_validate_project_delete_with_parameters_fails(self):
+        """Exception is raised on validate delete request with parameters."""
+        request_to_validate = {'enabled': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.delete_project_validator.validate,
+                          request_to_validate)
+
+
+class DomainValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Domain API validation."""
+
+    def setUp(self):
+        super(DomainValidationTestCase, self).setUp()
+
+        self.domain_name = 'My Domain'
+
+        create = assignment_schema.domain_create
+        update = assignment_schema.domain_update
+        self.create_domain_validator = validators.SchemaValidator(create)
+        self.update_domain_validator = validators.SchemaValidator(update)
+
+    def test_validate_domain_request(self):
+        """Make sure we successfully validate a create domain request."""
+        request_to_validate = {'name': self.domain_name}
+        self.create_domain_validator.validate(request_to_validate)
+
+    def test_validate_domain_request_without_name_fails(self):
+        """Make sure we raise an exception when `name` isn't included."""
+        request_to_validate = {'enabled': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_domain_validator.validate,
+                          request_to_validate)
+
+    def test_validate_domain_request_with_enabled(self):
+        """Validate `enabled` as boolean-like values for domains."""
+        for valid_enabled in _VALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.domain_name,
+                                   'enabled': valid_enabled}
+            self.create_domain_validator.validate(request_to_validate)
+
+    def test_validate_domain_request_with_invalid_enabled_fails(self):
+        """Exception is raised when `enabled` isn't a boolean-like value."""
+        for invalid_enabled in _INVALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.domain_name,
+                                   'enabled': invalid_enabled}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_domain_validator.validate,
+                              request_to_validate)
+
+    def test_validate_domain_request_with_valid_description(self):
+        """Test that we validate `description` in create domain requests."""
+        request_to_validate = {'name': self.domain_name,
+                               'description': 'My Domain'}
+        self.create_domain_validator.validate(request_to_validate)
+
+    def test_validate_domain_request_with_invalid_description_fails(self):
+        """Exception is raised when `description` is a non-string value."""
+        request_to_validate = {'name': self.domain_name,
+                               'description': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_domain_validator.validate,
+                          request_to_validate)
+
+    def test_validate_domain_update_request(self):
+        """Test that we validate a domain update request."""
+        request_to_validate = {'domain_id': uuid.uuid4().hex}
+        self.update_schema_validator.validate(request_to_validate)
+
+    def test_validate_domain_update_request_with_no_parameters_fails(self):
+        """Exception is raised when updating a domain without parameters."""
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_domain_validator.validate,
+                          request_to_validate)
+
+
+class RoleValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Role API validation."""
+
+    def setUp(self):
+        super(RoleValidationTestCase, self).setUp()
+
+        self.role_name = 'My Role'
+
+        create = assignment_schema.role_create
+        update = assignment_schema.role_update
+        self.create_role_validator = validators.SchemaValidator(create)
+        self.update_role_validator = validators.SchemaValidator(update)
+
+    def test_validate_role_request(self):
+        """Test we can successfully validate a create role request."""
+        request_to_validate = {'name': self.role_name}
+        self.create_role_validator.validate(request_to_validate)
+
+    def test_validate_role_create_without_name_raises_exception(self):
+        """Test that we raise an exception when `name` isn't included."""
+        request_to_validate = {'enabled': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_role_validator.validate,
+                          request_to_validate)
+
+    def test_validate_role_create_when_name_is_not_string_fails(self):
+        """Exception is raised on role create with a non-string `name`."""
+        request_to_validate = {'name': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_role_validator.validate,
+                          request_to_validate)
+        request_to_validate = {'name': 24}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_role_validator.validate,
+                          request_to_validate)
+
+    def test_validate_role_update_request(self):
+        """Test that we validate a role update request."""
+        request_to_validate = {'name': 'My New Role'}
+        self.update_role_validator.validate(request_to_validate)
+
+    def test_validate_role_update_fails_with_invalid_name_fails(self):
+        """Exception when validating an update request with invalid `name`."""
+        request_to_validate = {'name': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_role_validator.validate,
+                          request_to_validate)
+
+        request_to_validate = {'name': 24}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_role_validator.validate,
                           request_to_validate)
