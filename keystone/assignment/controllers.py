@@ -23,8 +23,10 @@ import uuid
 import six
 from six.moves import urllib
 
+from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import validation
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
@@ -352,9 +354,8 @@ class DomainV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_domain
 
     @controller.protected()
+    @validation.schema(schema.domain_create, 'domain')
     def create_domain(self, context, domain):
-        self._require_attribute(domain, 'name')
-
         ref = self._assign_unique_id(self._normalize_dict(domain))
         ref = self.assignment_api.create_domain(ref['id'], ref)
         return DomainV3.wrap_member(context, ref)
@@ -371,6 +372,7 @@ class DomainV3(controller.V3Controller):
         return DomainV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.domain_update, 'domain')
     def update_domain(self, context, domain_id, domain):
         self._require_matching_id(domain_id, domain)
         ref = self.assignment_api.update_domain(domain_id, domain)
@@ -391,9 +393,8 @@ class ProjectV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_project
 
     @controller.protected()
+    @validation.schema(schema.project_create, 'project')
     def create_project(self, context, project):
-        self._require_attribute(project, 'name')
-
         ref = self._assign_unique_id(self._normalize_dict(project))
         ref = self._normalize_domain_id(context, ref)
         ref = self.assignment_api.create_project(ref['id'], ref)
@@ -418,6 +419,7 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.project_update, 'project')
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
         self._require_matching_domain_id(
@@ -440,9 +442,8 @@ class RoleV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_role
 
     @controller.protected()
+    @validation.schema(schema.role_create, 'role')
     def create_role(self, context, role):
-        self._require_attribute(role, 'name')
-
         ref = self._assign_unique_id(self._normalize_dict(role))
         ref = self.assignment_api.create_role(ref['id'], ref)
         return RoleV3.wrap_member(context, ref)
@@ -460,6 +461,7 @@ class RoleV3(controller.V3Controller):
         return RoleV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.role_update, 'role')
     def update_role(self, context, role_id, role):
         self._require_matching_id(role_id, role)
 
