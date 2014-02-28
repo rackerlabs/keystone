@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//uHQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T19:37:04Z",
+      "side": 1,
+      "message": "can this default to SQL?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uGY\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T19:37:04Z",
+      "side": 1,
+      "message": "exit early \u0027if not extension\u0027:\n\n  return db_sync(version\u003dversion)\n\nand then you can drop the \u0027else\u0027 and then unindent the rest of this method",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uHE\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T19:37:04Z",
+      "side": 1,
+      "message": "random extra indentation",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uFY\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T19:37:04Z",
+      "side": 1,
+      "message": "it\u0027d be nice if this followed the same patterns as above (if not extension print and return",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
