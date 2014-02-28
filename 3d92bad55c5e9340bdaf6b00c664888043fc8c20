@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//tYw\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "i\u0027m wondering why you added server_default and default?",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tYM\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "could turn this into a function, _validate_endpoint(endpoint)",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tX8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "nit: extra blank line",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tUs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "suggest using jsonutils from oslo",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tTs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "why always set extra_dict[\u0027enabled\u0027] to false?",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tW8\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "if the comment is true, then why set it to true in the next line?",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tWM\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be defaulted to true already?",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tWE\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-02-28T21:25:17Z",
+      "side": 1,
+      "message": "same remark as above",
+      "revId": "3d92bad55c5e9340bdaf6b00c664888043fc8c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
