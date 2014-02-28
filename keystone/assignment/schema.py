@@ -15,25 +15,14 @@ from keystone.validation import common_parameter_types
 create = {
     'type': 'object',
     'properties': {
-        'project': {
-            'type': 'object',
-            'properties': {
-                'name': { common_parameter_types.name,
-                },
-                'domain_id': { common_parameter_types.uuid,
-                },
-                'description': {
-                    'type': 'string',
-                    'minLength': 1,
-                    'maxLength': 255,
-                    'pattern': '^[a-zA-Z0-9-._ ]*$'
-                },
-                'enabled': { common_parameter_types.boolean,
-                },
-            },
-            'required': ['name'],
-            'additionalProperties': True,
+        'name': common_parameter_types.name,
+        'domain_id': common_parameter_types.uuid,
+        'description': {
+            'type': 'string',
+            'pattern': '^[a-zA-Z0-9-._ ]*$'
         },
+        'enabled': common_parameter_types.boolean,
     },
-    'required': ['project'],
+    'required': ['name'],
+    'additionalProperties': True,
 }
