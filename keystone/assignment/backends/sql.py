@@ -20,7 +20,7 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import migration
 
 
 CONF = config.CONF

@@ -24,7 +24,7 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.contrib.kds.common import service
 from keystone.contrib.kds.db import sqlalchemy
-from keystone.openstack.common.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import migration
 
 CONF = cfg.CONF
 

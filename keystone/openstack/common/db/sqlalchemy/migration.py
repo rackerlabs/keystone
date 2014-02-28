@@ -50,7 +50,7 @@ from migrate.versioning.repository import Repository
 import sqlalchemy
 from sqlalchemy.schema import UniqueConstraint
 
-from keystone.openstack.common.db import exception
+from oslo.db import exception
 from keystone.openstack.common.gettextutils import _
 
 

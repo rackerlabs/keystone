@@ -18,7 +18,7 @@ from keystone.common.sql import migration_helpers
 from keystone.common import utils
 from keystone import exception
 from keystone import identity
-from keystone.openstack.common.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import migration
 
 # Import assignment sql to ensure that the models defined in there are
 # available for the reference from User and Group to Domain.id.

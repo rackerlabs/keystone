@@ -15,6 +15,7 @@
 #    under the License.
 
 import os
+import six
 
 import migrate
 import sqlalchemy
@@ -104,5 +105,5 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
     path = os.path.abspath(os.path.join(
         os.path.dirname(package.__file__), repo_name))
     if os.path.isdir(path):
-        return path
+        return six.text_type(path)
     raise exception.MigrationNotProvided(package.__name__, path)

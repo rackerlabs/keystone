@@ -13,7 +13,7 @@
 import sqlalchemy as sql
 from sqlalchemy.ext.declarative import declarative_base
 
-from keystone.openstack.common.db.sqlalchemy import models
+from oslo.db.sqlalchemy import models
 
 
 class KdsBase(models.ModelBase):

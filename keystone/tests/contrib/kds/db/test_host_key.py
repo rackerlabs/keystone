@@ -13,13 +13,13 @@
 from sqlalchemy import MetaData
 
 import mock
+from oslo.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import session as db_session
+from oslo.db.sqlalchemy import test_base
 
 from keystone.common.sql import migration_helpers
 from keystone.contrib.kds.common import exception
 from keystone.contrib.kds.db import sqlalchemy as kds_sqlalchemy
-from keystone.openstack.common.db.sqlalchemy import migration
-from keystone.openstack.common.db.sqlalchemy import session as db_session
-from keystone.openstack.common.db.sqlalchemy import test_base
 from keystone.tests.contrib.kds.db import base
 from testscenarios import load_tests_apply_scenarios as load_tests  # noqa
 

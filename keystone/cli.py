@@ -19,6 +19,7 @@ import os
 from migrate import exceptions
 
 from oslo.config import cfg
+from oslo.db.sqlalchemy import migration
 import pbr.version
 
 from keystone.common import openssl
@@ -28,7 +29,6 @@ from keystone.common import utils
 from keystone import config
 from keystone import contrib
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone import token
 

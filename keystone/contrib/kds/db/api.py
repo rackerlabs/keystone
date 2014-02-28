@@ -12,7 +12,7 @@
 
 from oslo.config import cfg
 
-from keystone.openstack.common.db import api as db_api
+from oslo.db import api as db_api
 
 CONF = cfg.CONF
 

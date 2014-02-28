@@ -13,12 +13,13 @@
 import random
 import uuid
 
+from oslo.db.sqlalchemy import migration
+
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import contrib
 from keystone.contrib.federation import utils as mapping_utils
-from keystone.openstack.common.db.sqlalchemy import migration
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log

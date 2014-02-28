@@ -290,7 +290,7 @@ import sqlalchemy.orm
 from sqlalchemy.pool import NullPool, StaticPool
 from sqlalchemy.sql.expression import literal_column
 
-from keystone.openstack.common.db import exception
+from oslo.db import exception
 from keystone.openstack.common.gettextutils import _LE, _LW, _LI
 from keystone.openstack.common import timeutils
 

@@ -16,7 +16,7 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import credential
 from keystone import exception
-from keystone.openstack.common.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import migration
 
 
 class CredentialModel(sql.ModelBase, sql.DictBase):

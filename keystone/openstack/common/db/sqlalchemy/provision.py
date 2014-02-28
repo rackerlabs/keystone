@@ -23,7 +23,7 @@ import string
 from six import moves
 import sqlalchemy
 
-from keystone.openstack.common.db import exception as exc
+from oslo.db import exception as exc
 
 
 SQL_CONNECTION = os.getenv('OS_TEST_DBAPI_ADMIN_CONNECTION', 'sqlite://')

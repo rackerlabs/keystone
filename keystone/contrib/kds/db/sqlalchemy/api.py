@@ -17,7 +17,7 @@ from sqlalchemy.orm import exc
 from keystone.contrib.kds.common import exception
 from keystone.contrib.kds.db import connection
 from keystone.contrib.kds.db.sqlalchemy import models
-from keystone.openstack.common.db.sqlalchemy import session as db_session
+from oslo.db.sqlalchemy import session as db_session
 
 
 CONF = cfg.CONF

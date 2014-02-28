@@ -25,7 +25,7 @@ from six.moves.urllib import parse
 import sqlalchemy
 import sqlalchemy.exc
 
-from keystone.openstack.common.db.sqlalchemy import utils
+from oslo.db.sqlalchemy import utils
 from keystone.openstack.common.gettextutils import _LE
 from keystone.openstack.common import test
 
