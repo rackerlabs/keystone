@@ -12,28 +12,37 @@
 
 from keystone.validation import common_parameter_types
 
+
 create = {
     'type': 'object',
     'properties': {
-        'project': {
-            'type': 'object',
-            'properties': {
-                'name': { common_parameter_types.name,
-                },
-                'domain_id': { common_parameter_types.uuid,
-                },
-                'description': {
-                    'type': 'string',
-                    'minLength': 1,
-                    'maxLength': 255,
-                    'pattern': '^[a-zA-Z0-9-._ ]*$'
-                },
-                'enabled': { common_parameter_types.boolean,
-                },
-            },
-            'required': ['name'],
-            'additionalProperties': True,
-        },
+        'name': common_parameter_types.name,
+        'domain_id': common_parameter_types.uuid,
+        'description': common_parameter_types.description,
+        'enabled': common_parameter_types.boolean
     },
-    'required': ['project'],
+    # NOTE(lbragstad): A project name is the only parameter required for
+    # project creation according to the Identity V3 API. We should think
+    # about using the maxProperties validator here, and in update.
+    'required': ['name'],
+    'additionalProperties': True,
+}
+
+update = {
+    'type': 'object',
+    'properties': {
+        'name': common_parameter_types.name,
+        'domain_id': common_parameter_types.uuid,
+        'description': common_parameter_types.description,
+        'enabled': common_parameter_types.boolean
+    },
+    # NOTE(lbragstad) Make sure at least one property is being updated
+    'minProperties': 1,
+    'additionalProperties': True,
+}
+
+delete = {
+    'type': 'object',
+    # NOTE(lbragstad): Don't allow any parameters on delete
+    'maxProperties': 0
 }
