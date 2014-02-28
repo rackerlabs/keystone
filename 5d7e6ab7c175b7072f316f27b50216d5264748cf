@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//0NU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10513
+      },
+      "writtenOn": "2014-02-28T04:03:10Z",
+      "side": 1,
+      "message": "ok, thanks for the comments, I will complete the comments here.",
+      "parentUuid": "AAAAVX//2dU\u003d",
+      "revId": "5d7e6ab7c175b7072f316f27b50216d5264748cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//2Jo\u003d",
         "filename": "requirements.txt",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-27T21:33:56Z",
       "side": 1,
       "message": "There were a couple of dependencies under this banner that were purposefully kept separate. Either add this comment to pecan, pycrypto and WSME or delete it.",
+      "revId": "5d7e6ab7c175b7072f316f27b50216d5264748cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//0Mo\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10513
+      },
+      "writtenOn": "2014-02-28T04:03:10Z",
+      "side": 1,
+      "message": "ok, I will remove it due to others have no comments as well, thx :)",
+      "parentUuid": "AAAAVX//2Jo\u003d",
       "revId": "5d7e6ab7c175b7072f316f27b50216d5264748cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
