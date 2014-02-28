@@ -67,6 +67,550 @@
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uDs\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "not if you use a composite primary key instead (look at the new assignments implementation); it\u0027s a lot of columns to key across though. also, none of these are indexed?!",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uC8\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "this isn\u0027t in the spec",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uCE\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "does this have implicit sort one way or the other?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uBE\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "it\u0027s possible to miss events that have the same timestamp as last_fetch but that were written to the db at separate times unless this is \u003e\u003d (so one redundant result should be returned)",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uAc\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "did you just check this?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t/s\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "seems like you\u0027re doing the same thing regardless of last_fetch, so this probably shouldn\u0027t be conditional\n\na kwarg for the False value would be helpful as well",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t/A\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "this looks to be reimplementing from_dict()",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t/c\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t9s\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "or, for example, you\u0027re suppressing attribute error \"timeutils doesn\u0027t have normalize_time\" and causing a debugging nightmare because you\u0027re catching Exception instead of something relevant",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t8s\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "use the collection wrapper instead of re-inventing it",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t8Q\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "why is this uppercase?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t70\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "other hrefs are asolute",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t6s\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "this reads like it\u0027s going to return a boolean, and that it\u0027s a @property on an event object -- suggest renaming or moving",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t7M\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "seems like this should be configurable; if i can guarantee +/- 1s of clock skew, why would i bother holding onto so many extra events?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t6E\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "this is very alarming -- why is a request attribute being assigned to an instance of a manager?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t5k\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "just use dogpile..?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t44\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "if you\u0027re only using that method here, then just do the math here",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t4U\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t18\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "why is this conditional? remove it",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t1c\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "i assume \"dom\" is \"domain\"? can you just spell it out",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t00\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "simplify!\n\n  if event.role_id is not None and event.role_id not in token_values[\u0027roles\u0027]:\n    return False",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t0k\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "i don\u0027t see a need to track \u0027matched\u0027 throughout this whole method... it looks like if you get this far it\u0027s always going to be true, so just return False early on mismatches instead",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tzY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "this is a lot of unprecedented code completely lacking doc strings -- i\u0027m not reviewing it",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tyc\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "please don\u0027t use this line break style - it\u0027s terrible for readability and you\u0027re the only one that uses it",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tyE\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": ".hex ?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tvs\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "an API call to actually result in a token revocation event would be nice here (like disable domain, for example)",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tw0\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "this seems to be defeating the point of having tests",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tww\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tws\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tug\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "remove this prior to merging",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tvQ\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "we talked about having as many attributes as possible in the case of revoke token, to narrow the scope of impact as much as possible",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tvI\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-02-28T20:21:47Z",
+      "side": 1,
+      "message": "seems like you should call delete token either way -- why make it conditional?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
