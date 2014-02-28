@@ -23,12 +23,14 @@ import uuid
 import six
 from six.moves import urllib
 
+from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
+from keystone import validation
 
 
 CONF = config.CONF
@@ -391,6 +393,7 @@ class ProjectV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_project
 
     @controller.protected()
+    @validation.schema(schema.create, 'project')
     def create_project(self, context, project):
         self._require_attribute(project, 'name')
 
