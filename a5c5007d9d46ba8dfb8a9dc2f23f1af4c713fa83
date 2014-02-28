@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//t/g\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-28T19:23:39Z",
+      "side": 1,
+      "message": "Not certain I follow the reasoning for this?  Care to explain?",
+      "parentUuid": "AAAAU3///uQ\u003d",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///uY\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -100,6 +118,24 @@
       "writtenOn": "2014-02-25T17:00:53Z",
       "side": 1,
       "message": "I can change this, though I\u0027d like to point out that this new test is doing the exact same thing as the existing test_list_role_assignments_unfiltered() in terms of user/group creation.  If I modify this new test, then the other test should be modified as well for consistency.",
+      "parentUuid": "AAAAU3///uA\u003d",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//t/0\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-02-28T19:23:39Z",
+      "side": 1,
+      "message": "We were trying to move away from the default fixtures.  Too many tests require them that don\u0027t need them, and we were trying to push the user etc creation down to the tests that actually need them.",
       "parentUuid": "AAAAU3///uA\u003d",
       "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
