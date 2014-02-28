@@ -577,10 +577,6 @@
 
 [database]
 
-#
-# Options defined in keystone.openstack.common.db.options
-#
-
 # The file name to use with SQLite (string value)
 #sqlite_db=keystone.sqlite
 
