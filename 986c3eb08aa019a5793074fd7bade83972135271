@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVX//vHs\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-02-28T17:24:35Z",
+      "side": 1,
+      "message": "I think this documentation is a little out of date. identiity_provider and protocol are not alway set. There is also mention of federated_token and I don\u0027t see that in this file at all.",
+      "revId": "986c3eb08aa019a5793074fd7bade83972135271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//5bM\u003d",
         "filename": "keystone/common/authorization.py",
         "patchSetId": 43
