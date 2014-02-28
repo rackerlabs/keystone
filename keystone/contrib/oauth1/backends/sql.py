@@ -16,6 +16,7 @@ import datetime
 import random
 import uuid
 
+from oslo.db.sqlalchemy import migration
 import six
 
 from keystone.common import sql

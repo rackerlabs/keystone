@@ -17,6 +17,8 @@
 import os
 import sys
 
+import six
+
 import migrate
 from migrate import exceptions
 import sqlalchemy

@@ -13,6 +13,8 @@
 import random
 import uuid
 
+from oslo.db.sqlalchemy import migration
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer

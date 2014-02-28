@@ -17,6 +17,7 @@ from __future__ import absolute_import
 import os
 
 from oslo.config import cfg
+from oslo.db.sqlalchemy import migration
 import pbr.version
 
 from keystone.common import openssl

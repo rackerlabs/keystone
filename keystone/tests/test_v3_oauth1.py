@@ -15,6 +15,7 @@
 import copy
 import uuid
 
+from oslo.db.sqlalchemy import migration
 from six.moves import urllib
 
 from keystone import config
