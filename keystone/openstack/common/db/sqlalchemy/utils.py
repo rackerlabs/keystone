@@ -37,7 +37,6 @@ from sqlalchemy import Table
 from sqlalchemy.types import NullType
 
 from keystone.openstack.common import context as request_context
-from keystone.openstack.common.db.sqlalchemy import models
 from keystone.openstack.common.gettextutils import _, _LI, _LW
 from keystone.openstack.common import timeutils
 

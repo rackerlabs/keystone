@@ -20,13 +20,13 @@ import os
 import subprocess
 
 import lockfile
+from oslo.db.sqlalchemy import utils
 from oslotest import base as test_base
 from six import moves
 from six.moves.urllib import parse
 import sqlalchemy
 import sqlalchemy.exc
 
-from keystone.openstack.common.db.sqlalchemy import utils
 from keystone.openstack.common.gettextutils import _LE
 
 LOG = logging.getLogger(__name__)

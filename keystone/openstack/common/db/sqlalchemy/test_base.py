@@ -18,12 +18,11 @@ import functools
 import os
 
 import fixtures
+from oslo.db.sqlalchemy import provision
+from oslo.db.sqlalchemy import session
+from oslo.db.sqlalchemy import utils
 from oslotest import base as test_base
 import six
-
-from keystone.openstack.common.db.sqlalchemy import provision
-from keystone.openstack.common.db.sqlalchemy import session
-from keystone.openstack.common.db.sqlalchemy import utils
 
 
 class DbFixture(fixtures.Fixture):
