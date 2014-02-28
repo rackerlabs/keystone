@@ -22,10 +22,10 @@ API methods.
 
 import functools
 import logging
+from oslo.db import exception
 import threading
 import time
 
-from keystone.openstack.common.db import exception
 from keystone.openstack.common.gettextutils import _LE
 from keystone.openstack.common import importutils
 

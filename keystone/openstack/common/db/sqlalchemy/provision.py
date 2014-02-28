@@ -21,10 +21,9 @@ import os
 import random
 import string
 
+from oslo.db import exception as exc
 from six import moves
 import sqlalchemy
-
-from keystone.openstack.common.db import exception as exc
 
 
 LOG = logging.getLogger(__name__)

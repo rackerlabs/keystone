@@ -12,6 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import session as db_session
+
 from keystone.common import sql
 from keystone.contrib.federation import core
 from keystone import exception

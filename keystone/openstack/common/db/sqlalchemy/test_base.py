@@ -18,10 +18,10 @@ import functools
 import os
 
 import fixtures
+from oslo.db.sqlalchemy import session
+from oslo.db.sqlalchemy import utils
 import six
 
-from keystone.openstack.common.db.sqlalchemy import session
-from keystone.openstack.common.db.sqlalchemy import utils
 from keystone.openstack.common.fixture import lockutils
 from keystone.openstack.common import test
 

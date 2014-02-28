@@ -283,6 +283,7 @@ import logging
 import re
 import time
 
+from oslo.db import exception
 import six
 from sqlalchemy import exc as sqla_exc
 from sqlalchemy.interfaces import PoolListener

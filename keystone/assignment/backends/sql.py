@@ -15,6 +15,9 @@
 import six
 import sqlalchemy
 
+from oslo.db.sqlalchemy import migration
+from oslo.db.sqlalchemy import session as db_session
+
 from keystone import assignment
 from keystone import clean
 from keystone.common import sql

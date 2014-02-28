@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.db.sqlalchemy import migration
+
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common import utils
