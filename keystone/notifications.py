@@ -18,7 +18,7 @@ import logging
 import socket
 
 from oslo.config import cfg
-from oslo import messaging
+import oslo.messaging as messaging
 import pycadf
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
