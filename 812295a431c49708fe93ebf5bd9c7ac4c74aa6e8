@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//tX4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//uHQ\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//uGY\u003d",
         "filename": "keystone/common/sql/migration.py",
         "patchSetId": 63
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-28T19:37:04Z",
       "side": 1,
       "message": "exit early \u0027if not extension\u0027:\n\n  return db_sync(version\u003dversion)\n\nand then you can drop the \u0027else\u0027 and then unindent the rest of this method",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uAA\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//uGY\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//t2k\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//uHE\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//uFY\u003d",
         "filename": "keystone/common/sql/migration.py",
         "patchSetId": 63
@@ -64,6 +118,24 @@
       "writtenOn": "2014-02-28T19:37:04Z",
       "side": 1,
       "message": "it\u0027d be nice if this followed the same patterns as above (if not extension print and return",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//t2g\u003d",
+        "filename": "keystone/common/sql/migration.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//uFY\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//tXo\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Crud.  It needs to be.",
+      "parentUuid": "AAAAVX//uC8\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tvE\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 63
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//tXk\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Good point,  issued_before and revoke_at are both not nullable",
+      "parentUuid": "AAAAVX//tvE\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//uFU\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 63
@@ -149,6 +257,24 @@
       "writtenOn": "2014-02-28T21:04:05Z",
       "side": 1,
       "message": "Out of curiosity, is there a reason you\u0027re not using the context manager form of the session creating a single transaction for the delete?  If there is a reason, please comment. By default (IIRC) auto-commit is on",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tRU\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Nope.  No reason",
+      "parentUuid": "AAAAVX//uFU\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//tRE\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//uBE\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//uAc\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 63
@@ -223,6 +367,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//tQM\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "last_  adds the filter.",
+      "parentUuid": "AAAAVX//t/s\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//t/A\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 63
@@ -234,6 +396,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "this looks to be reimplementing from_dict()",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//s4E\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "The event.from_dict converts things to strings.  This uses the base types.  Difference is important to SQL",
+      "parentUuid": "AAAAVX//t/A\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -268,6 +448,24 @@
       "writtenOn": "2014-02-28T21:04:05Z",
       "side": 1,
       "message": "Shouldn\u0027t this file be in doc/source/extensions and linked into the main configuration.rst?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//s2E\u003d",
+        "filename": "keystone/contrib/revoke/configuration.rst",
+        "patchSetId": 63
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//uAM\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +523,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//rUs\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Wrappers all assume Ids.",
+      "parentUuid": "AAAAVX//t8s\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//t8Q\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 63
@@ -359,6 +575,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//rh4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Gone",
+      "parentUuid": "AAAAVX//t70\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//t6s\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 63
@@ -387,6 +621,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "seems like this should be configurable; if i can guarantee +/- 1s of clock skew, why would i bother holding onto so many extra events?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//rpE\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//t7M\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -444,6 +696,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//rh8\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//t5k\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//t44\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 63
@@ -455,6 +725,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "if you\u0027re only using that method here, then just do the math here",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//rpY\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Its also used in the backedn to calculcate when we can remove events from the backing store.",
+      "parentUuid": "AAAAVX//t44\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -478,6 +766,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//ruo\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//t4U\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//t18\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 63
@@ -489,6 +795,41 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "why is this conditional? remove it",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//s14\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//t18\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//s1w\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "This whole function is moved to tests.",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -574,6 +915,23 @@
       "writtenOn": "2014-02-28T21:04:05Z",
       "side": 1,
       "message": "As discussed in IRC, this is a bit too trusting, make sure only the latest of the \"timestamps\" is used.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//uAo\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Make sure that an earlier event cannot replace a later one.",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -701,6 +1059,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//rqE\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//tyc\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tyE\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 63
@@ -729,6 +1105,24 @@
       "writtenOn": "2014-02-28T21:04:05Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "AAAAVX//tyE\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tYA\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAVX//tyE\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -770,6 +1164,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//rq8\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "The issued_before time will be set by creating the event.  I can\u0027t guarantee exactly what value it will get.  I\u0027ll write a clearer assert that also confirms the time is reasonable",
+      "parentUuid": "AAAAVX//tw0\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tww\u003d",
         "filename": "keystone/tests/test_v3_os_revoke.py",
         "patchSetId": 63
@@ -804,6 +1216,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//rrI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "This was moved to model.py",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//rrM\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "This was moved to model.py",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tug\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 63
@@ -815,6 +1261,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "remove this prior to merging",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//rrQ\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//tug\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -838,6 +1302,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//ru0\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "This is the right scope:  revoking a token means that we should revoke all tokens for that user that have the same expiration, as that means all fruit from the same tree:  anything more narrow and we miss tokens that should be revoked.",
+      "parentUuid": "AAAAVX//tvQ\u003d",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tvI\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 63
@@ -849,6 +1331,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "seems like you should call delete token either way -- why make it conditional?",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//rvE\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T06:22:38Z",
+      "side": 1,
+      "message": "This is necessary to enforce that the revocation events are actually doing their job.  If the token is deleted from the back end, it won\u0027t be found when user attempts to authenticate, making the revocation events untestable.",
+      "parentUuid": "AAAAVX//tvI\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
