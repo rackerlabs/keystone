@@ -80,6 +80,19 @@ def trunc_password(password):
         raise exception.ValidationError(attribute='string', target='password')
 
 
+def verify_password_length(password):
+    """Verify the max_length of the password."""
+    max_length = CONF.identity.max_password_length
+    try:
+        if len(password) > max_length:
+            raise exception.ValidationError(
+                _('User password length exceeds the max_length '
+                  'to %d characters.'), (len(password) - max_length))
+        return password
+    except TypeError:
+        raise exception.ValidationError(attribute='string', target='password')
+
+
 def hash_access_key(access):
     hash_ = hashlib.sha256()
     hash_.update(access)
@@ -106,14 +119,22 @@ def hash_ldap_user_password(user):
 
 def hash_password(password):
     """Hash a password. Hard."""
-    password_utf8 = trunc_password(password).encode('utf-8')
+    if CONF.strict_password_length:
+        password_utf8 = verify_password_length(password).encode('utf-8')
+    else:
+        password_utf8 = trunc_password(password).encode('utf-8')
+
     return passlib.hash.sha512_crypt.encrypt(
         password_utf8, rounds=CONF.crypt_strength)
 
 
 def ldap_hash_password(password):
     """Hash a password. Hard."""
-    password_utf8 = trunc_password(password).encode('utf-8')
+    if CONF.strict_password_length:
+        password_utf8 = verify_password_length(password).encode('utf-8')
+    else:
+        password_utf8 = trunc_password(password).encode('utf-8')
+
     h = passlib.hash.ldap_salted_sha1.encrypt(password_utf8)
     return h
 
@@ -121,7 +142,12 @@ def ldap_hash_password(password):
 def ldap_check_password(password, hashed):
     if password is None:
         return False
-    password_utf8 = trunc_password(password).encode('utf-8')
+
+    if CONF.strict_password_length:
+        password_utf8 = verify_password_length(password).encode('utf-8')
+    else:
+        password_utf8 = trunc_password(password).encode('utf-8')
+
     return passlib.hash.ldap_salted_sha1.verify(password_utf8, hashed)
 
 
@@ -134,7 +160,12 @@ def check_password(password, hashed):
     """
     if password is None or hashed is None:
         return False
-    password_utf8 = trunc_password(password).encode('utf-8')
+
+    if CONF.strict_password_length:
+        password_utf8 = verify_password_length(password).encode('utf-8')
+    else:
+        password_utf8 = trunc_password(password).encode('utf-8')
+
     return passlib.hash.sha512_crypt.verify(password_utf8, hashed)
 
 

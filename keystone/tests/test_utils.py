@@ -33,10 +33,12 @@ import os
 import time
 
 from keystone.common import utils
+from keystone import config
+from keystone import exception
 from keystone import service
 from keystone import tests
 
-
+CONF = config.CONF
 TZ = None
 
 
@@ -70,10 +72,19 @@ class UtilsTestCase(tests.TestCase):
         self.assertTrue(utils.check_password(password, hashed))
         self.assertFalse(utils.check_password(wrong, hashed))
 
-    def test_hash_long_password(self):
+    def test_hash_long_password_truncation(self):
+        CONF.strict_password_length = False
         bigboy = '0' * 9999999
         hashed = utils.hash_password(bigboy)
         self.assertTrue(utils.check_password(bigboy, hashed))
+
+    def test_hash_long_password_strict(self):
+        CONF.strict_password_length = True
+
+        bigboy = '0' * 9999999
+        self.assertRaises(exception.ValidationError,
+                          utils.hash_password,
+                          bigboy)
 
     def _create_test_user(self, password=OPTIONAL):
         user = {"name": "hthtest"}
