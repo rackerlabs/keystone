@@ -33,8 +33,10 @@ import os
 import time
 
 from keystone.common import utils
+from keystone import exception
 from keystone import service
 from keystone import tests
+#import passlib.utils.handlers as pass_handlers
 
 
 TZ = None
@@ -72,8 +74,9 @@ class UtilsTestCase(tests.TestCase):
 
     def test_hash_long_password(self):
         bigboy = '0' * 9999999
-        hashed = utils.hash_password(bigboy)
-        self.assertTrue(utils.check_password(bigboy, hashed))
+        self.assertRaises(exception.ValidationError,
+                          utils.hash_password,
+                          bigboy)
 
     def _create_test_user(self, password=OPTIONAL):
         user = {"name": "hthtest"}
