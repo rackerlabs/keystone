@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//pqU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-01T23:22:09Z",
+      "side": 1,
+      "message": "Can\u0027t be SQL as is, as the SQL migrations are not run for the Tempest tests.  We can fix that in the future",
+      "revId": "30f458652455449a10d320c7a4062790df8986d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
