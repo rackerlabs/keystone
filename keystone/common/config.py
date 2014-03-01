@@ -126,7 +126,14 @@ FILE_OPTIONS = {
                          'domain_id. Allowing such movement is not '
                          'recommended if the scope of a domain admin is being '
                          'restricted by use of an appropriate policy file '
-                         '(see policy.v3cloudsample as an example).')],
+                         '(see policy.v3cloudsample as an example).'),
+        cfg.BoolOpt('strict_password_length', default=True,
+                    help='Set this to true if you want to strictly check '
+                         'the length of the password. Invalid length of '
+                         'password will throw ValidationError. When it is '
+                         'set to false, passwords are automatically truncated '
+                         'to the maximum length, which is the default '
+                         'behavior in old releases.')],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default',
                    help='This references the domain to use for all '
