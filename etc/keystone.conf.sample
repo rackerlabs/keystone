@@ -760,10 +760,12 @@
 # LDAP server suffix (string value)
 #suffix=cn=example,cn=com
 
-#  (boolean value)
+# Toggle use of the "dumb_member" in the "member" attribute on
+# "groupOfNames" objectClasses. (boolean value)
 #use_dumb_member=false
 
-#  (string value)
+# DN of the "dumb_member" to use when "use_dumb_member" is
+# enabled (string value)
 #dumb_member=cn=dumb,dc=nonexistent
 
 # allow deleting subtrees (boolean value)
@@ -808,10 +810,15 @@
 # LDAP attribute mapped to user enabled flag (string value)
 #user_enabled_attribute=enabled
 
-#  (integer value)
+# Bitmask integer to indicate the bit that the enabled value
+# is stored in if the LDAP server represents "enabled" as a
+# bit on an integer rather than a boolean. (integer value)
 #user_enabled_mask=0
 
-#  (string value)
+# Default value to enable users. This should match an
+# appropriate int value if the LDAP server uses non-boolean
+# (bitmask) values to indicate if a user is enabled or
+# disabled. (string value)
 #user_enabled_default=True
 
 # List of attributes stripped off the user on update (list
@@ -831,10 +838,15 @@
 # Allow user deletion in LDAP backend (boolean value)
 #user_allow_delete=true
 
-#  (boolean value)
+# Enable support for emulating a mechanism to determine the
+# enabled/disabled status of users for LDAP servers that do
+# not provide any "enabled" attributes natively. (boolean
+# value)
 #user_enabled_emulation=false
 
-#  (string value)
+# DN used to support user_enabled_emulation, must be a DN
+# referencing a "groupOfNames". See the Keystone configuration
+# documentation for more information. (string value)
 #user_enabled_emulation_dn=<None>
 
 # List of additional LDAP attributes used for mapping
@@ -885,10 +897,15 @@
 # Allow tenant deletion in LDAP backend (boolean value)
 #tenant_allow_delete=true
 
-#  (boolean value)
+# Enable support for emulating a mechanism to determine the
+# enabled/disabled status of projects for LDAP servers that do
+# not provide any "enabled" attributes natively. (boolean
+# value)
 #tenant_enabled_emulation=false
 
-#  (string value)
+# DN used to support tenant_enabled_emulation, must be a DN
+# referencing a "groupOfNames". See the Keystone configuration
+# documentation for more information. (string value)
 #tenant_enabled_emulation_dn=<None>
 
 # Additional attribute mappings for projects. Attribute
@@ -912,7 +929,7 @@
 # LDAP attribute mapped to role name (string value)
 #role_name_attribute=ou
 
-#  (string value)
+# LDAP attribute mapped to show role membership (string value)
 #role_member_attribute=roleOccupant
 
 # List of attributes stripped off the role on update (list
@@ -1129,7 +1146,7 @@
 # Path of the CA key file for SSL (string value)
 #ca_key=/etc/keystone/ssl/private/cakey.pem
 
-#  (boolean value)
+# Require client certificate. (boolean value)
 #cert_required=false
 
 # SSL Key Length (in bits) (auto generated certificate)
