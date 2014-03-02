@@ -256,7 +256,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('ca_key',
                    default='/etc/keystone/ssl/private/cakey.pem',
                    help='Path of the CA key file for SSL'),
-        cfg.BoolOpt('cert_required', default=False,),
+        cfg.BoolOpt('cert_required', default=False,
+                    help='Require client certificate.'),
         cfg.IntOpt('key_size', default=1024,
                    help='SSL Key Length (in bits) (auto generated '
                         'certificate)'),
@@ -362,8 +363,12 @@ FILE_OPTIONS = {
                    help='Password for the BindDN to query the LDAP server'),
         cfg.StrOpt('suffix', default='cn=example,cn=com',
                    help='LDAP server suffix'),
-        cfg.BoolOpt('use_dumb_member', default=False),
-        cfg.StrOpt('dumb_member', default='cn=dumb,dc=nonexistent'),
+        cfg.BoolOpt('use_dumb_member', default=False,
+                    help='Toggle use of the "dumb_member" in the "member" '
+                         'attribute on "groupOfNames" objectClasses.'),
+        cfg.StrOpt('dumb_member', default='cn=dumb,dc=nonexistent',
+                   help='DN of the "dumb_member" to use when '
+                        '"use_dumb_member" is enabled'),
         cfg.BoolOpt('allow_subtree_delete', default=False,
                     help='allow deleting subtrees'),
         cfg.StrOpt('query_scope', default='one',
@@ -395,8 +400,16 @@ FILE_OPTIONS = {
                    help='LDAP attribute mapped to password'),
         cfg.StrOpt('user_enabled_attribute', default='enabled',
                    help='LDAP attribute mapped to user enabled flag'),
-        cfg.IntOpt('user_enabled_mask', default=0),
-        cfg.StrOpt('user_enabled_default', default='True'),
+        cfg.IntOpt('user_enabled_mask', default=0,
+                   help='Bitmask integer to indicate the bit that the enabled '
+                        'value is stored in if the LDAP server represents '
+                        '"enabled" as a bit on an integer rather than a '
+                        'boolean.'),
+        cfg.StrOpt('user_enabled_default', default='True',
+                   help='Default value to enable users. This should match an '
+                        'appropriate int value if the LDAP server uses '
+                        'non-boolean (bitmask) values to indicate if a user '
+                        'is enabled or disabled.'),
         cfg.ListOpt('user_attribute_ignore',
                     default=['default_project_id', 'tenants'],
                     help='List of attributes stripped off the user on update'),
@@ -409,8 +422,15 @@ FILE_OPTIONS = {
                     help='Allow user updates in LDAP backend'),
         cfg.BoolOpt('user_allow_delete', default=True,
                     help='Allow user deletion in LDAP backend'),
-        cfg.BoolOpt('user_enabled_emulation', default=False),
-        cfg.StrOpt('user_enabled_emulation_dn', default=None),
+        cfg.BoolOpt('user_enabled_emulation', default=False,
+                    help='Enable support for emulating a mechanism to '
+                         'determine the enabled/disabled status of users '
+                         'for LDAP servers that do not provide any "enabled" '
+                         'attributes natively.'),
+        cfg.StrOpt('user_enabled_emulation_dn', default=None,
+                   help='DN used to support user_enabled_emulation, must be '
+                        'a DN referencing a "groupOfNames". See the Keystone '
+                        'configuration documentation for more information.'),
         cfg.ListOpt('user_additional_attribute_mapping',
                     default=[],
                     help='List of additional LDAP attributes used for mapping '
@@ -448,8 +468,15 @@ FILE_OPTIONS = {
                     help='Allow tenant update in LDAP backend'),
         cfg.BoolOpt('tenant_allow_delete', default=True,
                     help='Allow tenant deletion in LDAP backend'),
-        cfg.BoolOpt('tenant_enabled_emulation', default=False),
-        cfg.StrOpt('tenant_enabled_emulation_dn', default=None),
+        cfg.BoolOpt('tenant_enabled_emulation', default=False,
+                    help='Enable support for emulating a mechanism to '
+                         'determine the enabled/disabled status of projects '
+                         'for LDAP servers that do not provide any "enabled" '
+                         'attributes natively.'),
+        cfg.StrOpt('tenant_enabled_emulation_dn', default=None,
+                   help='DN used to support tenant_enabled_emulation, must be '
+                        'a DN referencing a "groupOfNames". See the Keystone '
+                        'configuration documentation for more information.'),
         cfg.ListOpt('tenant_additional_attribute_mapping',
                     default=[],
                     help='Additional attribute mappings for projects. '
@@ -468,7 +495,8 @@ FILE_OPTIONS = {
                    help='LDAP attribute mapped to role id'),
         cfg.StrOpt('role_name_attribute', default='ou',
                    help='LDAP attribute mapped to role name'),
-        cfg.StrOpt('role_member_attribute', default='roleOccupant'),
+        cfg.StrOpt('role_member_attribute', default='roleOccupant',
+                   help='LDAP attribute mapped to show role membership'),
         cfg.ListOpt('role_attribute_ignore', default=[],
                     help='List of attributes stripped off the role on update'),
         cfg.BoolOpt('role_allow_create', default=True,
