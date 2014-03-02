@@ -258,6 +258,10 @@ class Catalog(catalog.Driver):
         catalog = {}
 
         for endpoint in endpoints:
+            if not endpoint.enabled:
+                # Skip disabled endpoints.
+                continue
+
             region = endpoint['region']
             service_type = endpoint.service['type']
             default_service = {
@@ -289,7 +293,7 @@ class Catalog(catalog.Driver):
             return endpoint
 
         catalog = [{'endpoints': [make_v3_endpoint(ep.to_dict())
-                                  for ep in svc.endpoints],
+                                  for ep in svc.endpoints if ep.enabled],
                     'id': svc.id,
                     'type': svc.type} for svc in services]
 
