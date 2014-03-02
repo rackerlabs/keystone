@@ -197,7 +197,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_services(self):
+    def list_services(self, hints):
         """List all services.
 
         :returns: list of service_refs or an empty list.
@@ -255,7 +255,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_endpoints(self):
+    def list_endpoints(self, hints):
         """List all endpoints.
 
         :returns: list of endpoint_refs or an empty list.
