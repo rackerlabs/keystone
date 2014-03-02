@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//obA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-02T10:51:12Z",
+      "side": 1,
+      "message": "should remove this",
+      "revId": "5ae489fe124fa68c445203d00eeb4daa9ddb87f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//oa8\u003d",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-02T10:51:12Z",
+      "side": 1,
+      "message": "remove this comment - it is no longer true",
+      "revId": "5ae489fe124fa68c445203d00eeb4daa9ddb87f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//oaw\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2031,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-02T10:51:12Z",
+      "side": 1,
+      "message": "revert all the other changes in this file but this method",
+      "revId": "5ae489fe124fa68c445203d00eeb4daa9ddb87f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
