@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//0vY\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2086,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T22:52:57Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "120d485a020ea3cd698958b970c0e081f4d72c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//0sM\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T22:52:57Z",
+      "side": 1,
+      "message": "the backslash line continuation police are going to remove that in  favor of extra outer parens :)",
+      "revId": "120d485a020ea3cd698958b970c0e081f4d72c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
