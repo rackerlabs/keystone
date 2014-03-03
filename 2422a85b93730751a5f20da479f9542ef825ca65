@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//+tA\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2036,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T01:27:42Z",
+      "side": 1,
+      "message": "this test is now saying that we can\u0027t create an unscoped trust anymore. Why can\u0027t we create an unscoped trust?",
+      "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
