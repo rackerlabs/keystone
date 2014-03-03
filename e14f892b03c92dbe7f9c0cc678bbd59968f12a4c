@@ -2,6 +2,244 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//96E\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "why do this rather than simply make that the filter?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//94g\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "you will want an index on at least revoked_at, descending.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//93E\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "http://docs.python.org/2/library/functions.html#max",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//92c\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "no attr_keys() here?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//91c\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "nit: not sure you get anything by having nxt in the stack",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//91M\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "return this",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//908\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "\"taking account of\" or remove taking",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//900\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "s/L/:",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//90k\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "\u0027 for strings all through here",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//90E\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "feels like you could do this with something similar to a generic function, but that\u0027s an optimization that can be left for when we have more things to add here.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//90M\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "why the single tuple? (role_id,)",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//90Y\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "over indented",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9zw\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "Do you need the else? there are no break statements above that can fall out early",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9zY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "we need to come up with a means of doing hooks, this pattern of extensions is going to be unsustainable",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//+nk\u003d",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 71
@@ -13,6 +251,91 @@
       "writtenOn": "2014-03-03T02:01:10Z",
       "side": 1,
       "message": "redundant from the first sentence. Also from the first sentence which \u0027two functions return the token in different formats\u0027?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9y0\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "s/alid/allowed",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9yo\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "redundant",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9yw\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "redundant",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9x0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "nit: whitespacce",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9wg\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-03T05:44:07Z",
+      "side": 1,
+      "message": "i\u0027m not sure why this can\u0027t remain as setUp()",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
