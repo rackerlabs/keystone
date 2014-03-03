@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//930\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-03T05:05:20Z",
+      "side": 1,
+      "message": "This comment no longer accurately captures all that is being done below. In addition to making sure the string field does not exceed the length limit it is also ensuring that the string is Unicode.  This comment should be updated to reflect that as well.",
+      "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
