@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//+nk\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T02:01:10Z",
+      "side": 1,
+      "message": "redundant from the first sentence. Also from the first sentence which \u0027two functions return the token in different formats\u0027?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//+l4\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T02:01:10Z",
+      "side": 1,
+      "message": "(NIT): could rename this module to test_v3_revoke, to be consistent with other extension test modules (tests.test_v3_federation.py)",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//+l0\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T02:01:10Z",
+      "side": 1,
+      "message": "s/ill/will/",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//+k4\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T02:01:10Z",
+      "side": 1,
+      "message": "what if all these checks could be turned into a decorator function that just wraps the methods instead of copying the same code in each?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//+ks\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T02:01:10Z",
+      "side": 1,
+      "message": "Maybe throw a token expired error here instead",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
