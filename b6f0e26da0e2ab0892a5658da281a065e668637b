@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//4V8\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T16:59:37Z",
+      "side": 1,
+      "message": "Could this possibly break? The old version check to see if existed and this one assumes that it does.",
+      "revId": "b6f0e26da0e2ab0892a5658da281a065e668637b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
