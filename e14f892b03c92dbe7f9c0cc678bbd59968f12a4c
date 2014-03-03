@@ -241,6 +241,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//3W0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "Do Not Just Rename The Class With Something More Verbose\n\nActually provide a one-line summary of the scope and purpose.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3XM\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "The what?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//5tY\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -354,6 +388,23 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "s/L/:",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3Vc\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "why are assignment_domain_id and identity_domain_id separate here?",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -713,6 +764,74 @@
       "writtenOn": "2014-03-03T15:23:04Z",
       "side": 1,
       "message": "This can be deleted.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3Rw\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "but you\u0027re not going to test the resulting revocation event?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3RU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "same",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3QE\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "this isn\u0027t sufficiently tested -- every project could be in the list, or the scope could be overly narrowed (for example, it could include a specific project_id + user_id pair)",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3P4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:42:34Z",
+      "side": 1,
+      "message": "same -- you should be able to assertEqual quite easily on the entire /events response",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
