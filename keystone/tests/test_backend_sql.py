@@ -44,7 +44,7 @@ class SqlTests(tests.TestCase):
 
         # populate the engine with tables & fixtures
         self.load_fixtures(default_fixtures)
-        #defaulted by the data load
+        # defaulted by the data load
         self.user_foo['enabled'] = True
 
 

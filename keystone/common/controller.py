@@ -596,7 +596,7 @@ class V3Controller(wsgi.Application):
         blocked_keys = ref_keys.difference(cls._mutable_parameters)
 
         if not blocked_keys:
-            #No immutable parameters changed
+            # No immutable parameters changed
             return
 
         exception_args = {'target': cls.__name__,
