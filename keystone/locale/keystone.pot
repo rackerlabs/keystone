@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: keystone "
-"jenkins.keystone.propose.translation.update.503\n"
+"jenkins.keystone.propose.translation.update.504\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-03-02 06:00+0000\n"
+"POT-Creation-Date: 2014-03-03 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -563,6 +563,11 @@ msgstr ""
 msgid "Federation token is expired"
 msgstr ""
 
+#: keystone/catalog/controllers.py:153
+#, python-format
+msgid "Conflicting region IDs specified: \"%(url_id)s\" != \"%(ref_id)s\""
+msgstr ""
+
 #: keystone/catalog/core.py:41
 #, python-format
 msgid "Malformed endpoint %(url)s - unknown key %(keyerror)s"
@@ -640,7 +645,7 @@ msgstr ""
 msgid "RBAC: building auth context from the incoming auth token"
 msgstr ""
 
-#: keystone/common/controller.py:54 keystone/middleware/core.py:231
+#: keystone/common/controller.py:54 keystone/middleware/core.py:240
 msgid "RBAC: Invalid token"
 msgstr ""
 
@@ -728,57 +733,57 @@ msgid ""
 "listening on that port."
 msgstr ""
 
-#: keystone/common/wsgi.py:72
+#: keystone/common/wsgi.py:66
 msgid "No bind information present in token"
 msgstr ""
 
-#: keystone/common/wsgi.py:76
+#: keystone/common/wsgi.py:70
 #, python-format
 msgid "Named bind mode %s not in bind information"
 msgstr ""
 
-#: keystone/common/wsgi.py:83
+#: keystone/common/wsgi.py:77
 msgid "Kerberos credentials required and not present"
 msgstr ""
 
-#: keystone/common/wsgi.py:87
+#: keystone/common/wsgi.py:81
 msgid "Kerberos credentials do not match those in bind"
 msgstr ""
 
-#: keystone/common/wsgi.py:90
+#: keystone/common/wsgi.py:84
 msgid "Kerberos bind authentication successful"
 msgstr ""
 
-#: keystone/common/wsgi.py:93
+#: keystone/common/wsgi.py:87
 #, python-format
 msgid "Ignoring unknown bind for permissive mode: {%(bind_type)s: %(identifier)s}"
 msgstr ""
 
-#: keystone/common/wsgi.py:97
+#: keystone/common/wsgi.py:91
 #, python-format
 msgid "Couldn't verify unknown bind: {%(bind_type)s: %(identifier)s}"
 msgstr ""
 
-#: keystone/common/wsgi.py:186
+#: keystone/common/wsgi.py:180
 #, python-format
 msgid "arg_dict: %s"
 msgstr ""
 
-#: keystone/common/wsgi.py:214
+#: keystone/common/wsgi.py:208
 #, python-format
 msgid "Authorization failed. %(exception)s from %(remote_addr)s"
 msgstr ""
 
-#: keystone/common/wsgi.py:287
+#: keystone/common/wsgi.py:281
 #, python-format
 msgid "%s field is required and cannot be empty"
 msgstr ""
 
-#: keystone/common/wsgi.py:299
+#: keystone/common/wsgi.py:293
 msgid "Invalid token in _get_trust_id_for_request"
 msgstr ""
 
-#: keystone/common/wsgi.py:478 keystone/tests/test_wsgi.py:252
+#: keystone/common/wsgi.py:472 keystone/tests/test_wsgi.py:252
 msgid "The resource could not be found."
 msgstr ""
 
@@ -1337,15 +1342,15 @@ msgstr ""
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr ""
 
-#: keystone/middleware/core.py:236
+#: keystone/middleware/core.py:245
 msgid "Auth token not in the request header. Will not build auth context."
 msgstr ""
 
-#: keystone/middleware/core.py:241
+#: keystone/middleware/core.py:250
 msgid "Auth context already exists in the request environment"
 msgstr ""
 
-#: keystone/middleware/core.py:246
+#: keystone/middleware/core.py:255
 #, python-format
 msgid "RBAC: auth_context: %s"
 msgstr ""
@@ -1755,7 +1760,7 @@ msgstr ""
 msgid "enforce %(action)s: %(credentials)s"
 msgstr ""
 
-#: keystone/tests/core.py:146
+#: keystone/tests/core.py:147
 #, python-format
 msgid "Failed to checkout %s"
 msgstr ""
