@@ -16,6 +16,24 @@
       "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3Lo\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T18:48:16Z",
+      "side": 1,
+      "message": "Actually, stevemar makes a good point, this should be change but I think it can wait for another patch so that it is consistent, in changing all \u0027http\u0027 to \u0027https\u0027",
+      "parentUuid": "AAAAVn//3Sw\u003d",
+      "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
