@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//6hw\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 71
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Either this or the line above is incorrect.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//6hQ\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 71
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Do we capitalize SQL in our documentation or do we always refer to it as sql?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//6O4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Suggest s/By/by/",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//6Ig\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Add spaces after the # and a : after the )",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//6E8\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Why the newline?",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//6Dw\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Instead of sql.DictBase I think you can you the new sql.ModelDictMixin that I added. It would allow you to get rid of attributes on line 28 and your to_dict impl on line 49.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//6Aw\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Do you need to explicitly flush for this to work? I have no idea...it just seems weird not to.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//96E\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 71
@@ -19,6 +138,75 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5/I\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Yeah, I agree. If that was the filter then you\u0027d only need to:\n\n   return [model.RevokeEvent(**e.to_dict()) for e in query]",
+      "parentUuid": "AAAAVn//96E\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//59o\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Is there anything special about the REVOKE_KEYS list? I would have expected lines 115-119 to just be:\n\n    new_event \u003d event.copy()\n    new_event[\u0027id\u0027] \u003d uuid.uuid4().hex\n    record \u003d RevocationEvent(**new_event)",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//59Q\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Remove newline here and put in right before \u0027import six\u0027.  six isn\u0027t in the stdlib.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5fU\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "This should not have a leading underscore since it is used outside of this class.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//94g\u003d",
         "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
         "patchSetId": 71
@@ -30,6 +218,23 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "you will want an index on at least revoked_at, descending.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5tY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "A mutable as a default arg is probably not what you want to do. Better to just default to None and use \u0027revoke_events or []\u0027 in the method body.",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +462,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5zs\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1300,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "If you don\u0027t have any custom setup you can remove this method.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9y0\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 71
@@ -268,6 +490,23 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "s/alid/allowed",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5yc\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Why redefine this? You have a module function above.",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +547,75 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5xw\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "If you don\u0027t have any custom tear down logic this should be deleted.",
+      "parentUuid": "AAAAVn//9yw\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5ws\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Indent and add space after #",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5wg\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5wY\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9x0\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 71
@@ -336,6 +644,58 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "i\u0027m not sure why this can\u0027t remain as setUp()",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5ZY\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "Yes, this should just be setUp.",
+      "parentUuid": "AAAAVn//9wg\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5ZQ\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "This can be deleted.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5ZI\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-03T15:23:04Z",
+      "side": 1,
+      "message": "This can be deleted.",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
