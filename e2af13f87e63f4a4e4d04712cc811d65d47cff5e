@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//+8k\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-03T00:13:16Z",
+      "side": 1,
+      "message": "This much better. A more formal transition :-)",
+      "revId": "e2af13f87e63f4a4e4d04712cc811d65d47cff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
