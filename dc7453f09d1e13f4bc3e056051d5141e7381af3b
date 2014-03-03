@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//+vw\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T01:11:36Z",
+      "side": 1,
+      "message": "200 is the default so suggest remove the argument.",
+      "revId": "dc7453f09d1e13f4bc3e056051d5141e7381af3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
