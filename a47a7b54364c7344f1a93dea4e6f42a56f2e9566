@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//2eY\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T19:57:13Z",
+      "side": 1,
+      "message": "Steve - The reason I have these tests is because I\u0027m not sure how the fix is going to go. The way I\u0027ve gone with the fix is that we\u0027ll actually validate that \u0027enabled\u0027 is  a boolean. Somebody might not think this is a good idea and we have to continue to support non-boolean values.\n\nSo I added tests for a boolean value and a string that looks like a boolean, both of which make sense... we could take those and convert them to booleans somewhere. But what if someone uses a string that doesn\u0027t look like a boolean? Can we fail in that case or do we need to accept it and turn it into a boolean?",
+      "parentUuid": "AAAAVX//taw\u003d",
+      "revId": "a47a7b54364c7344f1a93dea4e6f42a56f2e9566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tZ8\u003d",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 1
