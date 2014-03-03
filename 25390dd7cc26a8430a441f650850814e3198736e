@@ -16,6 +16,24 @@
       "revId": "25390dd7cc26a8430a441f650850814e3198736e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//2W8\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T20:05:52Z",
+      "side": 1,
+      "message": "Lance - This code is taking the v2 catalog that\u0027s returned by get_catalog and converting it to a v3 catalog. The v2 catalog has services like\n\n publicURL\u003d\u0027xxx\u0027 internalURL\u003d\u0027xxx\u0027 adminURL\u003d\u0027xxx\n\nNow that I\u0027ve looked at the catalog code some more, I think that there can be different types of endpoints too, so this should be more dynamic.\n\nAlso, I need to add the enabled field!",
+      "parentUuid": "AAAAVn//2cc\u003d",
+      "revId": "25390dd7cc26a8430a441f650850814e3198736e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
