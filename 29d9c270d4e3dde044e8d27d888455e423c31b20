@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//9dU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-03T06:34:26Z",
+      "side": 1,
+      "message": "Since you dropped the oslo openstack common exception part out of this patch, is this commit message still accurate?",
+      "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//930\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 18
