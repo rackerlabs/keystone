@@ -43,9 +43,10 @@ class RestfulTestCase(rest.RestfulTestCase):
                          tests.dirs.tests('backend_sql.conf'),
                          tests.dirs.tests('backend_sql_disk.conf')]
 
-    #Subclasses can override this to specify the complete list of configuration
-    #files.  The base version makes a copy of the original values, otherwise
-    #additional tests end up appending to them and corrupting other tests.
+    # Subclasses can override this to specify the complete list of
+    # configuration files.  The base version makes a copy of the original
+    # values, otherwise additional tests end up appending to them and
+    # corrupting other tests.
     def config_files(self):
         return copy.copy(self._config_file_list)
 
@@ -85,7 +86,7 @@ class RestfulTestCase(rest.RestfulTestCase):
 
         self.empty_context = {'environment': {}}
 
-        #drop the policy rules
+        # drop the policy rules
         self.addCleanup(rules.reset)
 
         self.addCleanup(self.teardown_database)
@@ -618,14 +619,14 @@ class RestfulTestCase(rest.RestfulTestCase):
     # region validation
 
     def assertValidRegionListResponse(self, resp, *args, **kwargs):
-        #NOTE(jaypipes): I have to pass in a blank keys_to_check parameter
-        #                below otherwise the base assertValidEntity method
-        #                tries to find a "name" and an "enabled" key in the
-        #                returned ref dicts. The issue is, I don't understand
-        #                how the service and endpoint entity assertions below
-        #                actually work (they don't raise assertions), since
-        #                AFAICT, the service and endpoint tables don't have
-        #                a "name" column either... :(
+        # NOTE(jaypipes): I have to pass in a blank keys_to_check parameter
+        #                 below otherwise the base assertValidEntity method
+        #                 tries to find a "name" and an "enabled" key in the
+        #                 returned ref dicts. The issue is, I don't understand
+        #                 how the service and endpoint entity assertions below
+        #                 actually work (they don't raise assertions), since
+        #                 AFAICT, the service and endpoint tables don't have
+        #                 a "name" column either... :(
         return self.assertValidListResponse(
             resp,
             'regions',
@@ -1120,7 +1121,7 @@ class VersionTestCase(RestfulTestCase):
         pass
 
 
-#NOTE(gyee): test AuthContextMiddleware here instead of test_middleware.py
+# NOTE(gyee): test AuthContextMiddleware here instead of test_middleware.py
 # because we need the token
 class AuthContextMiddlewareTestCase(RestfulTestCase):
     def _mock_request_object(self, token_id):

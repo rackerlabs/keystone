@@ -62,7 +62,7 @@ class SqlMigrateBase(tests.TestCase):
                          tests.dirs.tests('test_overrides.conf'),
                          tests.dirs.tests('backend_sql.conf')]
 
-    #override this to specify the complete list of configuration files
+    # override this to specify the complete list of configuration files
     def config_files(self):
         return self._config_file_list
 
