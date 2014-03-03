@@ -70,6 +70,40 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//484\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3451,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T16:13:32Z",
+      "side": 1,
+      "message": "(NIT): add \u0027trust_id\u0027 to the docstrings here to be consistent",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//48U\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3460,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T16:13:32Z",
+      "side": 1,
+      "message": "Won\u0027t get_trust throw a TrustNotFound exception in the driver/backend? If so we could do: \n\n     trust \u003d self.trust_api.get_trust(trust_id)\n     uses \u003d trust[\u0027remaining_uses\u0027]\n     return (uses is None) or (uses \u003e 0)",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//52s\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 24
@@ -132,6 +166,24 @@
       "writtenOn": "2014-03-03T16:06:59Z",
       "side": 1,
       "message": "a similar test for 0 remaining_uses would be nice",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//45Y\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2097,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T16:13:32Z",
+      "side": 1,
+      "message": "and a case for the point made in https://review.openstack.org/#/c/56243/24/keystone/trust/controllers.py with remaining_uses being something greater than 0 but not an integer.",
+      "parentUuid": "AAAAVn//5Kc\u003d",
       "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
