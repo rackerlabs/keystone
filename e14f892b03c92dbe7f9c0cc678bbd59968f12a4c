@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//3Yo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 71
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T18:26:08Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//6hw\u003d",
         "filename": "doc/source/extensions/revoke-configuration.rst",
         "patchSetId": 71
