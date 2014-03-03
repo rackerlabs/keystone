@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//56c\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "this is already here",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//56U\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "undo",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tz0\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 24
@@ -13,6 +47,91 @@
       "writtenOn": "2014-03-03T01:17:08Z",
       "side": 1,
       "message": "why would the column be there already?",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//55E\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "this is a really fragile way to check for the existence of a column... it would probably be more reliable to look before you leap instead",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//52s\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3462,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "this is just testing your private test method...",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5ZM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3488,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "overall this test is great, but i\u0027d be stronger if it was explicitly checking for a specific value of remaining uses (delete the private method above)\n\n  trust \u003d self.trust_api.get_trust(trust_data[\u0027id\u0027])\n  self.assertEqual(1, trust[\u0027remaining_uses\u0027])",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5QE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3489,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "rather than creating more trusts, continue using the same one to test it\u0027s overall state change",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5Kc\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2097,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "a similar test for 0 remaining_uses would be nice",
       "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +155,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5Ck\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "++ remove handle_conflict() -- it shouldn\u0027t be possible here",
+      "parentUuid": "AAAAVX//tyw\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4+g\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "you\u0027re not actually testing that it\u0027s a positive integer (what does it mean if i set remaining_uses\u003d1.2 ?)\n\n  if trust[\u0027remaining_uses\u0027] is not None and (\n        not isinstance(trust[\u0027remaining_uses\u0027], int)\n        or trust[\u0027remaining_uses\u0027] \u003c\u003d 0):\n    msg \u003d _(\u0027remaining_uses must be a positive integer or null.\u0027)\n    raise exception.ValidationError(msg)",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//2m0\u003d",
         "filename": "keystone/trust/core.py",
         "patchSetId": 24
@@ -47,6 +201,41 @@
       "writtenOn": "2014-02-27T20:15:55Z",
       "side": 1,
       "message": "This can probably be removed now that it is in the controller.",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//48w\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "i think it should be here, and not in the controller",
+      "parentUuid": "AAAAVX//2m0\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//48g\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T16:06:59Z",
+      "side": 1,
+      "message": "obviously the documentation for this driver is completely lacking, but this method especially needs to be documented here, as it\u0027s implementation is completely unique",
       "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
