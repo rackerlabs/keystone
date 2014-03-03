@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//32A\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "don\u0027t call private methods on foreign objects like this",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3yA\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "use ModelDictMixin, not DictBase",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3yc\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "remove attributes",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3xc\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "remove the to_dict / from_dict implementations",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3w8\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3xE\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "return query.one().public_id",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3xA\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "return None",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3wc\u003d",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-03T17:57:01Z",
+      "side": 1,
+      "message": "remove this method - there\u0027s no use case for it",
+      "revId": "8939895c42c7c4a4230d7877afdcb7b5c42c10ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
