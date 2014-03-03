@@ -34,6 +34,23 @@
       "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4V0\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T17:11:16Z",
+      "side": 1,
+      "message": "This doesn\u0027t check to make sure the role passed in actually exists, it just throws an error if nothing is provided in \u0027roles\u0027. The API spec says that *if* a project_id is supplied in the POST request there should be at least one role associated with it. This doesn\u0027t fix that since we are not checking for project_id, and this will break the case where we don\u0027t provide a project_id or roles, causing inconsistency with the API spec.\n\n\nThere is some logic that exists to take care of some of this: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/trust/controllers.py#n105 and might be an appropriate seam for a fix.",
+      "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
