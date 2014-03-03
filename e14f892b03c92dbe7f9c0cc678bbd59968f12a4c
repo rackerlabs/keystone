@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//2Nc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 71
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//3Yo\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//6hw\u003d",
         "filename": "doc/source/extensions/revoke-configuration.rst",
         "patchSetId": 71
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5GA\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 71
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "I\u0027d have to do an exhaustive search, but SQL is more correct; its an acronym for   Structured Query Language.  I\u0027ll use that consistently.",
+      "parentUuid": "AAAAVn//6hQ\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//6O4\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 71
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//2N0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//6O4\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//6Ig\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 71
@@ -81,6 +135,24 @@
       "writtenOn": "2014-03-03T15:23:04Z",
       "side": 1,
       "message": "Add spaces after the # and a : after the )",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//2NU\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//6Ig\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5aI\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Ah...removed the comment:  something is not working with the filter.  I suspect either SQLAlchemy or SQLite.  I realy need to see if the filter works with MySQL Postgresql",
+      "parentUuid": "AAAAVn//96E\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//59o\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 71
@@ -207,6 +297,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//3S8\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//59Q\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//5fU\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 71
@@ -235,6 +343,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "you will want an index on at least revoked_at, descending.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3Ro\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done, although not \"descending\" as a quick informal poll deemed it not really necessary.   I didn\u0027t want to have to create the index name myself, as that is something that seems to be RDBMS specific.",
+      "parentUuid": "AAAAVn//94g\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +418,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4VA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//5tY\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//93E\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -303,6 +447,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "http://docs.python.org/2/library/functions.html#max",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4SQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//93E\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -326,6 +488,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4P0\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "No, the key_for_name is in the form \u0027userid\u003dABCD123\"  and attr_keys is not.",
+      "parentUuid": "AAAAVn//92c\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//91c\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -337,6 +517,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "nit: not sure you get anything by having nxt in the stack",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4N4\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Has to be there.  The stack gets reversed and then all items popped in line 154 (nit: maybe this should be done FIFO instead of LIFO) and if the  nxt object is not in there we don\u0027t have it to delete.",
+      "parentUuid": "AAAAVn//91c\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -360,6 +558,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4Ic\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "AAAAVn//91M\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//908\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -377,6 +593,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4MA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//908\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//900\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -388,6 +622,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "s/L/:",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4L8\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//900\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -428,6 +680,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4L4\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//90k\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//90E\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -462,6 +732,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4Ig\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//90M\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//90Y\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -473,6 +761,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "over indented",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4Ik\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//90Y\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -496,6 +802,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4Jk\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Heh.  else on a for loop is a Pythonism.  It means \"if nothing in the loop did a break\"   http://docs.python.org/2/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops",
+      "parentUuid": "AAAAVn//9zw\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9zY\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 71
@@ -507,6 +831,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "we need to come up with a means of doing hooks, this pattern of extensions is going to be unsustainable",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4Is\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Yep.  However, once we get rid of the two token formats, the  build_token_values_v2 function can go away.  At that point, it probably makes sense to redo the tree  using a \"flatten\" approach and the data from the actual token.  It is a pretty significant rework, but it means that the token format will be unmodified.",
+      "parentUuid": "AAAAVn//9zY\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -530,6 +872,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4VU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//+nk\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//5zs\u003d",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 71
@@ -541,6 +901,24 @@
       "writtenOn": "2014-03-03T15:23:04Z",
       "side": 1,
       "message": "If you don\u0027t have any custom setup you can remove this method.",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//2OM\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1300,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//5zs\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -564,6 +942,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//2OE\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//9y0\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//5yc\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 71
@@ -581,6 +977,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4sE\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Gone.",
+      "parentUuid": "AAAAVn//5yc\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9yo\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 71
@@ -592,6 +1006,24 @@
       "writtenOn": "2014-03-03T05:44:07Z",
       "side": 1,
       "message": "redundant",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4qM\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Meant to add in the explicit SQL config.  It wasn\u0027t necessary when SQL was the default. With it, changing the default doesn\u0027t affect this test.",
+      "parentUuid": "AAAAVn//9yo\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -627,6 +1059,24 @@
       "side": 1,
       "message": "If you don\u0027t have any custom tear down logic this should be deleted.",
       "parentUuid": "AAAAVn//9yw\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4o0\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//5xw\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -701,6 +1151,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//2NI\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//9x0\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9wg\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 71
@@ -730,6 +1198,24 @@
       "side": 1,
       "message": "Yes, this should just be setUp.",
       "parentUuid": "AAAAVn//9wg\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4xU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "It can\u0027t.  This is not a test class itself, and it does not get called.  If I make  TokenAPITests a subclass of the testcase, it gets called by the enumerate-tests-in-file code.  As (Object) It has no super class that can be called from this file.  In cases like \"restful test case\" we can get away with it because there are no embedded test_* functions.  I\u0027ll explain this in a comment.",
+      "parentUuid": "AAAAVn//5ZY\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -804,6 +1290,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//2PU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//3RU\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//3QE\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 71
@@ -815,6 +1319,24 @@
       "writtenOn": "2014-03-03T18:42:34Z",
       "side": 1,
       "message": "this isn\u0027t sufficiently tested -- every project could be in the list, or the scope could be overly narrowed (for example, it could include a specific project_id + user_id pair)",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//3EU\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//3QE\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -838,6 +1360,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//3EI\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//3P4\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//+l4\u003d",
         "filename": "keystone/tests/test_v3_os_revoke.py",
         "patchSetId": 71
@@ -849,6 +1389,24 @@
       "writtenOn": "2014-03-03T02:01:10Z",
       "side": 1,
       "message": "(NIT): could rename this module to test_v3_revoke, to be consistent with other extension test modules (tests.test_v3_federation.py)",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4/I\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "true, but this was the suggested name. I like the idea of keeping the extension name clear.",
+      "parentUuid": "AAAAVn//+l4\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -872,6 +1430,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4+s\u003d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//+l0\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//+k4\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 71
@@ -889,6 +1465,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5BE\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "Actually, since the check is done at the start of  delete_tokens_for_user  it doesn\u0027t need to be here.  This just keeps it from executing an empty loop.  This approach lets the check be inside the function, not just at the top, and we can remove when we move to ephemeral tokens.",
+      "parentUuid": "AAAAVn//+k4\u003d",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//+ks\u003d",
         "filename": "keystone/token/provider.py",
         "patchSetId": 71
@@ -900,6 +1494,24 @@
       "writtenOn": "2014-03-03T02:01:10Z",
       "side": 1,
       "message": "Maybe throw a token expired error here instead",
+      "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//5FI\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 71
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-03T21:12:49Z",
+      "side": 1,
+      "message": "No such exception.  This matches Dolph\u0027s advice:  \"raise not found from the backend, and recast as 401 if emitting in response to auth\"",
+      "parentUuid": "AAAAVn//+ks\u003d",
       "revId": "e14f892b03c92dbe7f9c0cc678bbd59968f12a4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
