@@ -33,6 +33,23 @@
       "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//+6U\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T00:24:35Z",
+      "side": 1,
+      "message": "The LDAP specification says that the results can come back in any order, see https://tools.ietf.org/html/rfc4511#section-4.5.2 .\n\n The SearchResultEntry and SearchResultReference messages\n   may come in any order.\n\nSo reversing the order of the entries returned doesn\u0027t make any difference.",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
