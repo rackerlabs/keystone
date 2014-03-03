@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: ayoung <ayoung@redhat.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Code-Review+1: Thomas Goirand <thomas@goirand.fr>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 03 Mar 2014 17:38:42 +0000
+Reviewed-on: https://review.openstack.org/77391
+Project: openstack/keystone
+Branch: refs/heads/master
