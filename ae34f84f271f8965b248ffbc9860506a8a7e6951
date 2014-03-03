@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//3Sw\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T18:43:42Z",
+      "side": 1,
+      "message": "Shouldn\u0027t http://localhost:35357/v2.0/tokens be https://?",
+      "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
