@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVX//tz0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T01:17:08Z",
+      "side": 1,
+      "message": "why would the column be there already?",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//tyw\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-03T01:17:08Z",
+      "side": 1,
+      "message": "how is get_trust going to have a conflict? Is there a test for it?",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//2m0\u003d",
         "filename": "keystone/trust/core.py",
         "patchSetId": 24
