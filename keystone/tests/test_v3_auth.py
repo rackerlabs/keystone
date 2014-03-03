@@ -2004,8 +2004,8 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                           auth_context)
 
     def test_remote_user_and_password(self):
-        #both REMOTE_USER and password methods must pass.
-        #note that they do not have to match
+        # both REMOTE_USER and password methods must pass.
+        # note that they do not have to match
         api = auth.controllers.Auth()
         auth_data = self.build_authentication_request(
             user_domain_id=self.domain['id'],
@@ -2017,8 +2017,8 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         api.authenticate(context, auth_info, auth_context)
 
     def test_remote_user_and_explicit_external(self):
-        #both REMOTE_USER and password methods must pass.
-        #note that they do not have to match
+        # both REMOTE_USER and password methods must pass.
+        # note that they do not have to match
         auth_data = self.build_authentication_request(
             user_domain_id=self.domain['id'],
             username=self.user['name'],
@@ -2035,7 +2035,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                           auth_context)
 
     def test_remote_user_bad_password(self):
-        #both REMOTE_USER and password methods must pass.
+        # both REMOTE_USER and password methods must pass.
         api = auth.controllers.Auth()
         auth_data = self.build_authentication_request(
             user_domain_id=self.domain['id'],
@@ -2059,7 +2059,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         token = self.assertValidUnscopedTokenResponse(r)
         self.assertNotIn('bind', token)
 
-    #TODO(ayoung): move to TestPKITokenAPIs; it will be run for both formats
+    # TODO(ayoung): move to TestPKITokenAPIs; it will be run for both formats
     def test_verify_with_bound_token(self):
         self.opt_in_group('token', bind='kerberos')
         auth_data = self.build_authentication_request(
