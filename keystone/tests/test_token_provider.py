@@ -707,19 +707,19 @@ class TestTokenProvider(tests.TestCase):
 
     def test_get_token_version(self):
         self.assertEqual(
-            token.provider.V2,
-            self.token_provider_api.get_token_version(SAMPLE_V2_TOKEN))
+            self.token_provider_api.get_token_version(SAMPLE_V2_TOKEN),
+            token.provider.V2)
         self.assertEqual(
-            token.provider.V2,
             self.token_provider_api.get_token_version(
-                SAMPLE_V2_TOKEN_WITH_EMBEDED_VERSION))
+                SAMPLE_V2_TOKEN_WITH_EMBEDED_VERSION),
+            token.provider.V2)
         self.assertEqual(
-            token.provider.V3,
-            self.token_provider_api.get_token_version(SAMPLE_V3_TOKEN))
+            self.token_provider_api.get_token_version(SAMPLE_V3_TOKEN),
+            token.provider.V3)
         self.assertEqual(
-            token.provider.V3,
             self.token_provider_api.get_token_version(
-                SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION))
+                SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION),
+            token.provider.V3)
         self.assertRaises(token.provider.UnsupportedTokenVersionException,
                           self.token_provider_api.get_token_version,
                           'bogus')
@@ -757,13 +757,13 @@ class TestTokenProvider(tests.TestCase):
         token.provider.Manager()
 
     def test_default_token_format(self):
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.PKI_PROVIDER)
+        self.assertEqual(token.provider.PKI_PROVIDER,
+                         token.provider.Manager.get_token_provider())
 
     def test_uuid_token_format_and_no_provider(self):
         self.opt_in_group('signing', token_format='UUID')
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.UUID_PROVIDER)
+        self.assertEqual(token.provider.UUID_PROVIDER,
+                         token.provider.Manager.get_token_provider())
 
     def test_default_providers_without_token_format(self):
         self.opt_in_group('token',
@@ -781,32 +781,32 @@ class TestTokenProvider(tests.TestCase):
 
     def test_uuid_provider(self):
         self.opt_in_group('token', provider=token.provider.UUID_PROVIDER)
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.UUID_PROVIDER)
+        self.assertEqual(token.provider.UUID_PROVIDER,
+                         token.provider.Manager.get_token_provider())
 
     def test_provider_override_token_format(self):
         self.opt_in_group('token',
                           provider='keystone.token.providers.pki.Test')
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         'keystone.token.providers.pki.Test')
+        self.assertEqual('keystone.token.providers.pki.Test',
+                         token.provider.Manager.get_token_provider())
 
         self.opt_in_group('signing', token_format='UUID')
         self.opt_in_group('token',
                           provider=token.provider.UUID_PROVIDER)
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.UUID_PROVIDER)
+        self.assertEqual(token.provider.UUID_PROVIDER,
+                         token.provider.Manager.get_token_provider())
 
         self.opt_in_group('signing', token_format='PKI')
         self.opt_in_group('token',
                           provider=token.provider.PKI_PROVIDER)
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.PKI_PROVIDER)
+        self.assertEqual(token.provider.PKI_PROVIDER,
+                         token.provider.Manager.get_token_provider())
 
         self.opt_in_group('signing', token_format='CUSTOM')
         self.opt_in_group('token',
                           provider='my.package.MyProvider')
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         'my.package.MyProvider')
+        self.assertEqual('my.package.MyProvider',
+                         token.provider.Manager.get_token_provider())
 
     def test_provider_token_expiration_validation(self):
         self.assertRaises(exception.TokenNotFound,
