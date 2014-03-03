@@ -281,6 +281,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAVX//svA\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T01:27:02Z",
+      "side": 1,
+      "message": "About Morgan\u0027s comment above, I thought we stumbled across a review were we went through this same thing. Debating on whether or not it was needed. I\u0027ll dig for that and see if I can find it.",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//su4\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T01:27:02Z",
+      "side": 1,
+      "message": "update docstrings to match the method signature",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//suw\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T01:27:02Z",
+      "side": 1,
+      "message": "Update the return value",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//uCE\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 63
@@ -483,6 +534,24 @@
       "writtenOn": "2014-02-28T20:21:47Z",
       "side": 1,
       "message": "or, for example, you\u0027re suppressing attribute error \"timeutils doesn\u0027t have normalize_time\" and causing a debugging nightmare because you\u0027re catching Exception instead of something relevant",
+      "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//stI\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 63
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T01:27:02Z",
+      "side": 1,
+      "message": "++ nice catch",
+      "parentUuid": "AAAAVX//t9s\u003d",
       "revId": "812295a431c49708fe93ebf5bd9c7ac4c74aa6e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
