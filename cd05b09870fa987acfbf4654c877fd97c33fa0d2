@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//5F0\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "good call on test_sql_upgrade, it revealed that the upgrade/downgrade script was flawed. I\u0027ll fix this in the next patch.",
+      "parentUuid": "AAAAVX//tz0\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//55E\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/041_add_remaining_uses_count_to_trusts.py",
         "patchSetId": 24
@@ -138,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4f8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3488,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//5ZM\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//5QE\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 24
@@ -149,6 +185,24 @@
       "writtenOn": "2014-03-03T16:06:59Z",
       "side": 1,
       "message": "rather than creating more trusts, continue using the same one to test it\u0027s overall state change",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4gI\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 3489,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//5QE\u003d",
       "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +244,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4Sg\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2097,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//45Y\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVX//tyw\u003d",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 24
@@ -225,6 +297,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4w4\u003d",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "No prob - it was in master so I didn\u0027t really pay attention to this.",
+      "parentUuid": "AAAAVn//5Ck\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//4+g\u003d",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 24
@@ -236,6 +326,24 @@
       "writtenOn": "2014-03-03T16:06:59Z",
       "side": 1,
       "message": "you\u0027re not actually testing that it\u0027s a positive integer (what does it mean if i set remaining_uses\u003d1.2 ?)\n\n  if trust[\u0027remaining_uses\u0027] is not None and (\n        not isinstance(trust[\u0027remaining_uses\u0027], int)\n        or trust[\u0027remaining_uses\u0027] \u003c\u003d 0):\n    msg \u003d _(\u0027remaining_uses must be a positive integer or null.\u0027)\n    raise exception.ValidationError(msg)",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4e8\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//4+g\u003d",
       "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -277,6 +385,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//4NQ\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//48w\u003d",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//48g\u003d",
         "filename": "keystone/trust/core.py",
         "patchSetId": 24
@@ -288,6 +414,24 @@
       "writtenOn": "2014-03-03T16:06:59Z",
       "side": 1,
       "message": "obviously the documentation for this driver is completely lacking, but this method especially needs to be documented here, as it\u0027s implementation is completely unique",
+      "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4RU\u003d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-03T17:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//48g\u003d",
       "revId": "cd05b09870fa987acfbf4654c877fd97c33fa0d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
