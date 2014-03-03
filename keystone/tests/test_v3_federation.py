@@ -69,13 +69,13 @@ class FederatedIdentityProviderTests(FederationTests):
             self.assertIsNotNone(result)
         return result
 
-    def _fetch_attributes_from_response(self, resp, parameters=[],
+    def _fetch_attributes_from_response(self, resp, parameters=None,
                                         assert_is_not_none=True):
         """Fetch parameters from the TestResponse object."""
 
         result = dict()
         kwargs = {'assert_is_not_none': assert_is_not_none}
-        for parameter in parameters:
+        for parameter in (parameters or []):
             value = self._fetch_attribute_from_response(resp, parameter,
                                                         **kwargs)
             result[parameter] = value
