@@ -16,6 +16,24 @@
       "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9d8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2036,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-03-03T06:39:21Z",
+      "side": 1,
+      "message": "In the past, we can create an unscoped trust because we do not specify \"roles\" parameter. But in this patch, we will raise 403 response if \"roles\" parameter is not specified. So, we can not create an unscoped trust anymore.",
+      "parentUuid": "AAAAVn//+tA\u003d",
+      "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
