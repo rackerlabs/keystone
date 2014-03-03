@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//2cc\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-03T19:59:26Z",
+      "side": 1,
+      "message": "Should these three if statements be one if elif statement for each case? Since according to the documents you can only have one of the three options? https://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#endpoints-v3endpoints",
+      "revId": "25390dd7cc26a8430a441f650850814e3198736e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
