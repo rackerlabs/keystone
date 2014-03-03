@@ -1208,7 +1208,7 @@ class LdapIdentitySqlAssignment(tests.TestCase, BaseLDAPIdentity):
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
 
         self.load_fixtures(default_fixtures)
-        #defaulted by the data load
+        # defaulted by the data load
         self.user_foo['enabled'] = True
 
     def test_domain_crud(self):
