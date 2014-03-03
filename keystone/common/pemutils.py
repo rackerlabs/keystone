@@ -248,8 +248,6 @@ class PEMParseResult(object):
             self._pem_type = pem_type
             self._pem_header = pem_header
 
-#------------------------------------------------------------------------------
-
 
 def pem_search(text, start=0):
     """Search for a block of PEM formatted data
