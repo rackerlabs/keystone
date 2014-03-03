@@ -16,6 +16,24 @@
       "revId": "d481df9e224e6aeb9235289aae1e66b65bf38bb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//4Q0\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 10434
+      },
+      "writtenOn": "2014-03-03T17:32:06Z",
+      "side": 1,
+      "message": "Will address the tenantName value to match \u0027customer-x\u0027. I think the suggestion you made for the IDs should be opened in a separate ticket for book keeping sake.",
+      "parentUuid": "AAAAVX//r2I\u003d",
+      "revId": "d481df9e224e6aeb9235289aae1e66b65bf38bb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
