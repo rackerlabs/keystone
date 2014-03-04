@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//zAk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T03:24:16Z",
+      "side": 1,
+      "message": "suggest \u0027user\u0027 instead of \u0027u\u0027, no need to cut it down",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//y8Y\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T03:24:16Z",
+      "side": 1,
+      "message": "why do we not revoke tokens here?",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
