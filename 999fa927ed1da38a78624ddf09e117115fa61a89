@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zg0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//z1g\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zfo\u003d",
         "filename": "doc/source/extensions/revoke-configuration.rst",
         "patchSetId": 75
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-04T02:02:43Z",
       "side": 1,
       "message": "Suggest rename to: \"Enable Revocation Extension\"\nto be consistent with the other extensions.",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zVc\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zfo\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zgY\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//z1Q\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zfE\u003d",
         "filename": "doc/source/extensions/revoke-configuration.rst",
         "patchSetId": 75
@@ -64,6 +118,24 @@
       "writtenOn": "2014-03-04T02:02:43Z",
       "side": 1,
       "message": "missing \u0027service_v3\u0027 at the end of this pipeline:\n\naccess_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body rev\noke_extension service_v3",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zVY\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zfE\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zgU\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//z1U\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zys\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 75
@@ -98,6 +188,24 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "i assume this should reference the KVS backend? (is this still relevant?)",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zcw\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Dropped the Fake one, finally.  It was necessary back when the revoke_api dependecies were everywhere, but now that they are limited to just a couple points in the Provider, it is easier to remove Fake and state that you can just disable the revoke extension in the pipelines.  Modified this to reference the KVS in memory instead.",
+      "parentUuid": "AAAAVn//zys\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zU0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "I could, just felt this was clearer.  If the value is in second, breaking it down into units makes it easier to process.",
+      "parentUuid": "AAAAVn//zdk\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zvk\u003d",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 75
@@ -132,6 +258,24 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "remove extra whitespace",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zcY\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zvk\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zcU\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Gone",
+      "parentUuid": "AAAAVn//zug\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zcg\u003d",
         "filename": "keystone/contrib/revoke/backends/kvs.py",
         "patchSetId": 75
@@ -166,6 +328,24 @@
       "writtenOn": "2014-03-04T02:02:43Z",
       "side": 1,
       "message": "nit: should this be _get_event?",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zUo\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zcg\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zbs\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done.  I like that.",
+      "parentUuid": "AAAAVn//zlE\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zkU\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 75
@@ -200,6 +398,24 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "extend sql.ModelDictMixin instead of sql.DictBase",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zaE\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zkU\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zaA\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zkM\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zkI\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 75
@@ -234,6 +468,24 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "remove this method",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zZ4\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//zkI\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zWw\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "Yes, the backend handles that for just this reason: to simplify the logic.",
+      "parentUuid": "AAAAVn//za4\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zao\u003d",
         "filename": "keystone/contrib/revoke/controllers.py",
         "patchSetId": 75
@@ -274,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zWk\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "This is correct.",
+      "parentUuid": "AAAAVn//zao\u003d",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zZA\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 75
@@ -285,6 +573,24 @@
       "writtenOn": "2014-03-04T02:02:43Z",
       "side": 1,
       "message": "++, this whole manager class is looking much better",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zRA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T02:28:09Z",
+      "side": 1,
+      "message": "thanks",
+      "parentUuid": "AAAAVn//zZA\u003d",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
