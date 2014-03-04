@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//p+w\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/042_endpoint_enabled.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T20:38:11Z",
+      "side": 1,
+      "message": "Here\u0027s an example: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/sql/migrate_repo/versions/009_normalize_identity.py#n20",
+      "parentUuid": "AAAAVn//quc\u003d",
+      "revId": "0ffc1a92ab48a4c8b1048402fe0ebaf509e3b875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//qpE\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-04T19:14:28Z",
       "side": 1,
       "message": "just curiously why did you use \u0027whatever\u0027 as opposed to uuid.uuid4().hex ? Do we typically try and use uuid.uuid().hex instead of magic values like \u0027whatever\u0027 ?",
+      "revId": "0ffc1a92ab48a4c8b1048402fe0ebaf509e3b875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//p2U\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T20:38:11Z",
+      "side": 1,
+      "message": "switched to uuid.uuid4().hex.",
+      "parentUuid": "AAAAVn//qpE\u003d",
       "revId": "0ffc1a92ab48a4c8b1048402fe0ebaf509e3b875",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
