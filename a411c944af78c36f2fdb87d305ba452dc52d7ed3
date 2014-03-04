@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//tuw\u003d",
+        "filename": "keystone/token/backends/memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T14:38:12Z",
+      "side": 1,
+      "message": "trivially true?",
+      "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//yj0\u003d",
         "filename": "keystone/token/backends/memcache.py",
         "patchSetId": 1
@@ -136,6 +153,23 @@
       "side": 1,
       "message": "Yes, tenant_id\u003d\u003cblah\u003e was 2 characters over. It was easier to line-wrap it there and make it clear what was being done than assign into other values and pass it through.",
       "parentUuid": "AAAAU3//zII\u003d",
+      "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//tsY\u003d",
+        "filename": "tests/test_backend_memcache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T14:38:12Z",
+      "side": 1,
+      "message": "should really be imported down here, as a relative import",
       "revId": "a411c944af78c36f2fdb87d305ba452dc52d7ed3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
