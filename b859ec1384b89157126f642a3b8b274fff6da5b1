@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//rRs\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T18:42:49Z",
+      "side": 1,
+      "message": "AH...CRUD",
+      "parentUuid": "AAAAVn//r8g\u003d",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//r70\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 80
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-04T17:43:49Z",
       "side": 1,
       "message": "you mean this? I would think \u0027revoke_api\u0027 is either getting injected or not.\n\nif getattr(self, \u0027revoke_api\u0027):",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//rRU\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T18:42:49Z",
+      "side": 1,
+      "message": "Supposed to be optional",
+      "parentUuid": "AAAAVn//r70\u003d",
       "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//rQw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T18:42:49Z",
+      "side": 1,
+      "message": "Its an HTTP response code:\n\n410 Gone",
+      "parentUuid": "AAAAVn//r5A\u003d",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//rv4\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 80
@@ -64,6 +118,24 @@
       "writtenOn": "2014-03-04T17:43:49Z",
       "side": 1,
       "message": "validate_token() calls token_api.get_token(), which would eventually hit the caching layer",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//rQQ\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T18:42:49Z",
+      "side": 1,
+      "message": "That is OK, it doesn\u0027t cache the call to actually validate the token via the revocation events.",
+      "parentUuid": "AAAAVn//rv4\u003d",
       "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
