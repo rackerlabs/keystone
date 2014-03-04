@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//uBs\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T14:17:00Z",
+      "side": 1,
+      "message": "Add a . after \"groups\"",
+      "revId": "a1a177a7233cdae473e3ed2314fc40ac4ae62b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//t/8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T14:17:00Z",
+      "side": 1,
+      "message": "Suggest add a . at end for consistency.",
+      "revId": "a1a177a7233cdae473e3ed2314fc40ac4ae62b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
