@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zo4\u003d",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-04T01:26:10Z",
+      "side": 1,
+      "message": "actually it should be f \u003d template_f(f) but in practice it doesn\u0027t matter\n\npecan.expose is generally used as a decorator, but the decorator sets some attributes on the function and then returns the function itself so the return value isn\u0027t required. This isn\u0027t something to rely on though.",
+      "parentUuid": "AAAAU3//6GE\u003d",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//6Rk\u003d",
         "filename": "keystone/service.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2014-02-24T06:04:15Z",
       "side": 1,
       "message": "what does this do?",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zoA\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-04T01:26:10Z",
+      "side": 1,
+      "message": "pecan allows you to hook in to the routing process at various points.\n\nlike on_route, on_error, etc. We can handle a lot of the things from the original controller through these hooks.",
+      "parentUuid": "AAAAU3//6Rk\u003d",
       "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2014-02-24T06:04:15Z",
       "side": 1,
       "message": "how were these headers set previously and why did it need to change?",
+      "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zng\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-04T01:26:10Z",
+      "side": 1,
+      "message": "This was set by the poor way that the old controller handled returning a string.\n\nIf a string was returned it was automatically assumed that it was a text/html type and simply returned. Now that we handle things better i need to force set that old behaviour.",
+      "parentUuid": "AAAAU3//6So\u003d",
       "revId": "b8e429313cc3073eeddf7ea3e23f8b3f2913cddc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
