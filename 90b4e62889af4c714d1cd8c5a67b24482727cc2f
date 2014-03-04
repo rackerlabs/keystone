@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//yy0\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T03:58:45Z",
+      "side": 1,
+      "message": "should the error status be \u00271\u0027 here?",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//yxg\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T03:58:45Z",
+      "side": 1,
+      "message": "remove the return docstring?",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zAk\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 77
@@ -30,6 +64,58 @@
       "writtenOn": "2014-03-04T03:24:16Z",
       "side": 1,
       "message": "why do we not revoke tokens here?",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//yvg\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T03:58:45Z",
+      "side": 1,
+      "message": "because the user is gaining access? A comment would be helpful here.",
+      "parentUuid": "AAAAVn//y8Y\u003d",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//yxA\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T03:58:45Z",
+      "side": 1,
+      "message": "Fix this indentation",
+      "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ywY\u003d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 77
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T03:58:45Z",
+      "side": 1,
+      "message": "Is this something that can be brought up to the manager/controller layer? Right now the same check is in the same method for both the kvs and sql backends",
       "revId": "90b4e62889af4c714d1cd8c5a67b24482727cc2f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
