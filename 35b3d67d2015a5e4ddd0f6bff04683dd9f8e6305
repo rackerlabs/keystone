@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//ork\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "should this be in identity/backends/ldap.py? That\u0027s the only place it\u0027s used.",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pDU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "add a : after entity_ref",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//oog\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "move this down into _ldap_res_to_model and get rid of this function.",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ooI\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "if remove _ldap_res_to_model_with_dn then then don\u0027t have to do this.",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//onw\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "override _ldap_res_to_model like is done in UserApi (see line 229)",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//o6I\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "add a : after user_ref",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//otw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "I don\u0027t understand this change... looks like it\u0027s just doing the same thing it did before, except also popping from \u0027extra\u0027... is this fixing a different bug?",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//o1U\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "what\u0027s this doing here? It should be mentioned in the commit message.",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ovk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T23:01:32Z",
+      "side": 1,
+      "message": "is there something important about adding 3 groups or even more than 1 group?",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
