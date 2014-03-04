@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zfo\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "Suggest rename to: \"Enable Revocation Extension\"\nto be consistent with the other extensions.",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//z1Q\u003d",
         "filename": "doc/source/extensions/revoke-configuration.rst",
         "patchSetId": 75
@@ -30,6 +47,23 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "::",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zfE\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "missing \u0027service_v3\u0027 at the end of this pipeline:\n\naccess_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body rev\noke_extension service_v3",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +104,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zdk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "why not just write 1800?",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//zvk\u003d",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 75
@@ -98,6 +149,23 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "is this module necessary?",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zcg\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "nit: should this be _get_event?",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +234,57 @@
       "writtenOn": "2014-03-04T01:33:17Z",
       "side": 1,
       "message": "remove this method",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//za4\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "this will still work if last_fetch is None?",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zao\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "\u0027OS-REVOKE\u0027 will be in the self link, because it\u0027s in context[\u0027path\u0027]",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zZA\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-04T02:02:43Z",
+      "side": 1,
+      "message": "++, this whole manager class is looking much better",
       "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
