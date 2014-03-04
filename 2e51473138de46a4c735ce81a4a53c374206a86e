@@ -1,0 +1,463 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//p4U\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 82
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "random extra whitespace",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pY8\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "obviously this is a copy/paste from the token backend, but this needs to be revised to avoid talking about tokens, specifically",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pX4\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this is unnecessary",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pXs\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "would be better to extend the parent\u0027s method to not require IDs",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pXQ\u003d",
+        "filename": "keystone/contrib/revoke/controllers.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "you shouldn\u0027t be passing non-dicts back to the controller",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pMc\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this really doesn\u0027t need to be a standalone method",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pHk\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this isn\u0027t used - remove it",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pH0\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this isn\u0027t used - remove it",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pDw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this isn\u0027t used - remove it",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//pC4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "the method signature of check_token should reflect the actual expected attributes, rather than just a dict",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ozA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this doesn\u0027t look like it should be it\u0027s own public method",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//otc\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "extra parens here",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//otA\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "(out of scope) but should this be a @property?",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//osI\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "pass in self.tenant_service[\u0027id\u0027] instead",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//org\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "more detail would be nice; if it\u0027s a pre-existing bug then it should be filed and referenced here with a Related-Bug in this commit message",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//oq8\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "a narrower window would make this a stronger test; same with the above",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//olw\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "why not use a for/else here too?",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ols\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "same",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ojs\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "these don\u0027t need to be _private",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//oi8\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "setUp",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//oio\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "this should be a \"\"\"docstr\"\"\" on setUp\n\nand it actually *could* be called setUp... but that\u0027s out of scope",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ohE\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "don\u0027t need outer parens on this, even in py3... do you?",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//og4\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "works for me! thanks for the extra assertions",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ogk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "these first two assertions are redundant with 1209 and 1210 for example, but i like have them because the feedback on failed tests will be better with them...",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//oeo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 1320,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "these tests would be easier to read if you just built the headers dicts right here",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//obA\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "i\u0027m assuming this would raise an exception if it wasn\u0027t valid...",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//oa8\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T23:26:37Z",
+      "side": 1,
+      "message": "same",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
