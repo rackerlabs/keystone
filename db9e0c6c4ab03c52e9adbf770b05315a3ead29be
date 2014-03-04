@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//zF4\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2082,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T02:52:49Z",
+      "side": 1,
+      "message": "this is using the trust_table from line 2079, which hides the one from 2051.",
+      "parentUuid": "AAAAVn//zOU\u003d",
+      "revId": "db9e0c6c4ab03c52e9adbf770b05315a3ead29be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//0KE\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 26
