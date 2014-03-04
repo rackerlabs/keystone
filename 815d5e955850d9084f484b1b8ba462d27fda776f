@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//tFI\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "I know. right?",
+      "parentUuid": "AAAAVn//xZU\u003d",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//xZQ\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 79
@@ -106,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//tB0\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "https://bugs.launchpad.net/keystone/+bug/1287757",
+      "parentUuid": "AAAAVn//xXU\u003d",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//xWM\u003d",
         "filename": "keystone/contrib/revoke/backends/sql.py",
         "patchSetId": 79
@@ -117,6 +153,24 @@
       "writtenOn": "2014-03-04T07:50:11Z",
       "side": 1,
       "message": "I\u0027m still not clear why this needs to be a uuid vs an int, you don\u0027t reference this anywhere where you need to pre-generate the id. If you made this an INT and auto_inc you could just leave it off when creating the events.",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//sWI\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "Can be done either way.  Just tested out the Integer and it is not much code: about 113 lines, including about 30 for refactor of the migration tests.",
+      "parentUuid": "AAAAVn//xWM\u003d",
       "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//sVM\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "Building the  tree *is* guarded by the syncronize call.  This code is just traversing the tree.  The \"bundle\" can be thought of like the stack, so that this is done in a single method instead of recursively.  It keeps track of position in the tree:  it is a bundle of branches, but the branches are not created here, just collected.",
+      "parentUuid": "AAAAVn//xSc\u003d",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//xMY\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 79
@@ -186,6 +258,24 @@
       "writtenOn": "2014-03-04T07:50:11Z",
       "side": 1,
       "message": "revoke api should be optional here since it is optional in assignment.",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//sPk\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//xMY\u003d",
       "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -209,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//sMc\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//xKU\u003d",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//xJY\u003d",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 79
@@ -220,6 +328,24 @@
       "writtenOn": "2014-03-04T07:50:11Z",
       "side": 1,
       "message": "revoke api should be optional if at all possible (it is optional elsewhere)",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//sHA\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-04T17:28:38Z",
+      "side": 1,
+      "message": "Gone.  Moved the logic to the provider where it belongs",
+      "parentUuid": "AAAAVn//xJY\u003d",
       "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
