@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//sLM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3737,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T16:54:33Z",
+      "side": 1,
+      "message": "i\u0027d rather not override _()\n\nyou could slice the tuple instead:\n\n  enabled_endpoint_ref \u003d self._create_endpoints()[1]",
+      "revId": "34e5cebbf70348c749a202dcfd53285e8b7684fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
