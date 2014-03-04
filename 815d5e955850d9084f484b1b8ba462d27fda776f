@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//upQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T13:52:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//xZQ\u003d",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//xYg\u003d",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 79
@@ -47,6 +65,24 @@
       "writtenOn": "2014-03-04T07:50:11Z",
       "side": 1,
       "message": "Where is exit coming from? is this supposed to be sys.exit? As far as I can tell, while you can call \"exit\" directly everything says use sys.exit instead (heck, builtin exit doesn\u0027t even exist on the python 2 doc site)",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//uno\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T13:52:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//xYg\u003d",
       "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +134,24 @@
       "writtenOn": "2014-03-04T07:50:11Z",
       "side": 1,
       "message": "Suggest perhaps using \u0027os-revoke-syncronize\u0027 instead of \"...driver2\")",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//uis\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T13:52:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//xUc\u003d",
       "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
