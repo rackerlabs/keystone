@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//0HQ\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2051,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T00:11:28Z",
+      "side": 1,
+      "message": "this one is actually not used anymore and should be removed.",
+      "revId": "db9e0c6c4ab03c52e9adbf770b05315a3ead29be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//0KE\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 26
