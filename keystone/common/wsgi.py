@@ -244,8 +244,13 @@ class Application(BaseApplication):
         return str(arg).replace(':', '_').replace('-', '_')
 
     def _normalize_dict(self, d):
-        return dict([(self._normalize_arg(k), v)
-                     for (k, v) in six.iteritems(d)])
+        try:
+            ret = dict([(self._normalize_arg(k), v)
+                        for (k, v) in six.iteritems(d)])
+            return ret
+        except AttributeError:
+            raise exception.ValidationError(attribute='valid JSON',
+                                            target='request body')
 
     def assert_admin(self, context):
         if not context['is_admin']:
