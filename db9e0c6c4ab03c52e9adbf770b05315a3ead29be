@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//0KE\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2087,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T00:08:59Z",
+      "side": 1,
+      "message": "the old session and trust table don\u0027t work anymore?",
+      "revId": "db9e0c6c4ab03c52e9adbf770b05315a3ead29be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
