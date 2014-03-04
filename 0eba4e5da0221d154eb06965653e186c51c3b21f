@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//yfY\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 78
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T04:53:03Z",
+      "side": 1,
+      "message": "I think this one should also exit with a status code of 1, but the better question is where is exit coming from? I think this may have been broken in the original code.",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ye8\u003d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/001_revoke_table.py",
+        "patchSetId": 78
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T04:53:03Z",
+      "side": 1,
+      "message": "nit: why loop over a list of 1 item?",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ydg\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 78
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T04:53:03Z",
+      "side": 1,
+      "message": "Can roles be None?",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ydY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 78
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-04T04:53:03Z",
+      "side": 1,
+      "message": "Why not default to empty list like above?",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//ygY\u003d",
         "filename": "keystone/token/controllers.py.orig",
         "patchSetId": 78
