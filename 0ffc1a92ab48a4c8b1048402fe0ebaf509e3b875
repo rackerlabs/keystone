@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//quc\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/042_endpoint_enabled.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-04T19:14:28Z",
+      "side": 1,
+      "message": "I havent seen this special case before.  Has it been added to all the previous migrations as well or is this something new?",
+      "revId": "0ffc1a92ab48a4c8b1048402fe0ebaf509e3b875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//qpE\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2168,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-04T19:14:28Z",
+      "side": 1,
+      "message": "just curiously why did you use \u0027whatever\u0027 as opposed to uuid.uuid4().hex ? Do we typically try and use uuid.uuid().hex instead of magic values like \u0027whatever\u0027 ?",
+      "revId": "0ffc1a92ab48a4c8b1048402fe0ebaf509e3b875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
