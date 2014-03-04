@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//z1g\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "missing whitespace after L860",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//z1Q\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "::",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//z1U\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 75
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "::",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zys\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "i assume this should reference the KVS backend? (is this still relevant?)",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zvk\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "remove extra whitespace",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zug\u003d",
+        "filename": "keystone/contrib/revoke/backends/fake.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "is this module necessary?",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zlE\u003d",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "simplify!\n\n  if last_fetch is None or revoked_at \u003e last_fetch:\n    results.append(event)",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zkU\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "extend sql.ModelDictMixin instead of sql.DictBase",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zkM\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "remove this method",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zkI\u003d",
+        "filename": "keystone/contrib/revoke/backends/sql.py",
+        "patchSetId": 75
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-04T01:33:17Z",
+      "side": 1,
+      "message": "remove this method",
+      "revId": "999fa927ed1da38a78624ddf09e117115fa61a89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
