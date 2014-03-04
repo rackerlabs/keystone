@@ -52,6 +52,24 @@
       "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//o7w\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-04T22:18:25Z",
+      "side": 1,
+      "message": "Probably should expand this to offer \"If SSL is enabled use \"...\nelse\n...",
+      "parentUuid": "AAAAVn//3Kw\u003d",
+      "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
