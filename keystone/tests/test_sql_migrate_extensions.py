@@ -31,6 +31,7 @@ To run these tests against a live database:
    all data will be lost.
 """
 
+from sqlalchemy.sql import text
 
 from keystone.contrib import endpoint_filter
 from keystone.contrib import example
@@ -38,7 +39,7 @@ from keystone.contrib import federation
 from keystone.contrib import oauth1
 from keystone.contrib import revoke
 from keystone.tests import test_sql_upgrade
-
+from keystone.openstack.common import timeutils
 
 class SqlUpgradeExampleExtension(test_sql_upgrade.SqlMigrateBase):
     def repo_package(self):
@@ -198,6 +199,24 @@ class RevokeExtension(test_sql_upgrade.SqlMigrateBase):
         self.upgrade(1, repository=self.repo_path)
         self.assertTableColumns('revocation_event',
                                 _REVOKE_COLUMN_NAMES)
+
+        #check autoincrement:
+        session = self.Session()
+        new_max = 0
+
+        query_string = 'select max(id) from revocation_event;'
+        max_query = text(query_string)
+
+        now = timeutils.utcnow()
+        for i in range(0, 10):
+            old_max = new_max
+
+            event = {'issued_before': now,
+                     'revoked_at': now}
+            self.insert_dict(session, 'revocation_event', event)
+
+            new_max = session.execute(max_query).first()[0]
+            self.assertTrue(new_max > old_max)
 
     def test_downgrade(self):
         self.upgrade(1, repository=self.repo_path)
