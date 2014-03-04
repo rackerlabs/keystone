@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//r8g\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-04T17:43:49Z",
+      "side": 1,
+      "message": "why \u0027revoke_api\u0027 is both optional and requires? doesn\u0027t seem right",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//r70\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-04T17:43:49Z",
+      "side": 1,
+      "message": "you mean this? I would think \u0027revoke_api\u0027 is either getting injected or not.\n\nif getattr(self, \u0027revoke_api\u0027):",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//r5A\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-04T17:43:49Z",
+      "side": 1,
+      "message": "ha nice! \u0027Gone\u0027 exception? perhaps a more intuitive name, like ByeByeToken? :D",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//rv4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 80
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-04T17:43:49Z",
+      "side": 1,
+      "message": "validate_token() calls token_api.get_token(), which would eventually hit the caching layer",
+      "revId": "b859ec1384b89157126f642a3b8b274fff6da5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
