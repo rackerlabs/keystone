@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//ygY\u003d",
+        "filename": "keystone/token/controllers.py.orig",
+        "patchSetId": 78
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T04:45:00Z",
+      "side": 1,
+      "message": "proper docstrings?\n\n    :returns: auth_token_data ...",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ygU\u003d",
+        "filename": "keystone/token/controllers.py.orig",
+        "patchSetId": 78
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T04:45:00Z",
+      "side": 1,
+      "message": "I must have missed this one",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ygI\u003d",
+        "filename": "keystone/token/controllers.py.orig",
+        "patchSetId": 78
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T04:45:00Z",
+      "side": 1,
+      "message": "and this one",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ygA\u003d",
+        "filename": "keystone/token/controllers.py.orig",
+        "patchSetId": 78
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-04T04:45:00Z",
+      "side": 1,
+      "message": "any this one",
+      "revId": "0eba4e5da0221d154eb06965653e186c51c3b21f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
