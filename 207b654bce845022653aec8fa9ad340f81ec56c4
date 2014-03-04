@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//wxE\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-03-04T08:32:44Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAVn//21g\u003d",
+      "revId": "207b654bce845022653aec8fa9ad340f81ec56c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//2z0\u003d",
         "filename": "keystone/auth/plugins/kerberos.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-03T19:23:46Z",
       "side": 1,
       "message": "is there any way to use the kerberos library without having to set a new env variable?",
+      "revId": "207b654bce845022653aec8fa9ad340f81ec56c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//wyI\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-03-04T08:32:44Z",
+      "side": 1,
+      "message": "If you don\u0027t specify anything, the library takes the keytab of the system located in /etc/krb5.keytab",
+      "parentUuid": "AAAAVn//2z0\u003d",
       "revId": "207b654bce845022653aec8fa9ad340f81ec56c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//wxk\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-03-04T08:32:44Z",
+      "side": 1,
+      "message": "It is supposed to initialize the library with the Kerberos Principal stored in the keytab file",
+      "parentUuid": "AAAAVn//20s\u003d",
+      "revId": "207b654bce845022653aec8fa9ad340f81ec56c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//2zg\u003d",
         "filename": "keystone/auth/plugins/kerberos.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-03-03T19:23:46Z",
       "side": 1,
       "message": "suggest you add a message",
+      "revId": "207b654bce845022653aec8fa9ad340f81ec56c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//wxM\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2014-03-04T08:32:44Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAVn//2zg\u003d",
       "revId": "207b654bce845022653aec8fa9ad340f81ec56c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
