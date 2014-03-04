@@ -70,6 +70,24 @@
       "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//o68\u003d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-04T22:19:15Z",
+      "side": 1,
+      "message": "since its just an example to help new folks learn its best to just leave as http so they can build their confidence.  If they try it and hit the ssl error that can be quite frustrating",
+      "parentUuid": "AAAAVn//3Kw\u003d",
+      "revId": "ae34f84f271f8965b248ffbc9860506a8a7e6951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
