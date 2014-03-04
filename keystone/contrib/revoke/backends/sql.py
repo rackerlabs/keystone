@@ -29,7 +29,7 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
 
     # The id field is not going to be exposed to the outside world.
     # It is, however, necessary for SQLAlchemy.
-    id = sql.Column(sql.String(64), primary_key=True)
+    id = sql.Column(sql.Integer(), primary_key=True, autoincrement=True)
     domain_id = sql.Column(sql.String(64))
     project_id = sql.Column(sql.String(64))
     user_id = sql.Column(sql.String(64))
@@ -106,7 +106,7 @@ class Revoke(revoke.Driver):
         kwargs = dict()
         for attr in model.REVOKE_KEYS:
             kwargs[attr] = getattr(event, attr)
-        kwargs['id'] = uuid.uuid4().hex
+        #kwargs['id'] = uuid.uuid4().hex
         record = RevocationEvent(**kwargs)
         session = db_session.get_session()
         with session.begin():

@@ -151,6 +151,12 @@ class SqlMigrateBase(tests.TestCase):
         actual_cols = [col.name for col in table.columns]
         self.assertEqual(expected_cols, actual_cols, '%s table' % table_name)
 
+    def insert_dict(self, session, table_name, d):
+        """Naively inserts key-value pairs into a table, given a dictionary."""
+        this_table = sqlalchemy.Table(table_name, self.metadata, autoload=True)
+        insert = this_table.insert()
+        insert.execute(d)
+        session.commit()
 
 class SqlUpgradeTests(SqlMigrateBase):
 
@@ -594,13 +600,6 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertEqual(extra['%surl' % interface], expected_url)
         session.commit()
         session.close()
-
-    def insert_dict(self, session, table_name, d):
-        """Naively inserts key-value pairs into a table, given a dictionary."""
-        this_table = sqlalchemy.Table(table_name, self.metadata, autoload=True)
-        insert = this_table.insert()
-        insert.execute(d)
-        session.commit()
 
     def test_upgrade_31_to_32(self):
         self.upgrade(32)
