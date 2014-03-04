@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//tRs\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T15:52:38Z",
+      "side": 1,
+      "message": "I get this error with sqlite:\n\n ArgumentError: Argument \u0027arg\u0027 is expected to be one of type \u0027\u003ctype \u0027basestring\u0027\u003e\u0027 \n or \u0027\u003cclass \u0027sqlalchemy.sql.expression.ClauseElement\u0027\u003e\u0027 or \u0027\u003cclass \n \u0027sqlalchemy.sql.expression.TextClause\u0027\u003e\u0027, got \u0027\u003ctype \u0027bool\u0027\u003e\u0027\n\nI tried devstack and migrations with mysql, postgres, and db2 and they all worked.",
+      "parentUuid": "AAAAVn//2fI\u003d",
+      "revId": "4a652e2e38c301a74f5dc78feb9507f8de772638",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//2cs\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-03T19:59:25Z",
       "side": 1,
       "message": "the setdefault() could be done in the manager to avoid this",
+      "revId": "4a652e2e38c301a74f5dc78feb9507f8de772638",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//s6M\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-04T15:52:38Z",
+      "side": 1,
+      "message": "This code doesn\u0027t use the endpoint returned by the manager.",
+      "parentUuid": "AAAAVn//2cs\u003d",
       "revId": "4a652e2e38c301a74f5dc78feb9507f8de772638",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
