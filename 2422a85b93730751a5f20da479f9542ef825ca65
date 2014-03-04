@@ -51,6 +51,24 @@
       "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//zfg\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-03-04T01:51:41Z",
+      "side": 1,
+      "message": "I think it does not make any sense if we do not specify any role for trust. So I am not checking for project_id. Maybe we should update the API spec?\n\nHere I just throw an error if nothing is provided in roles because there is already some logic in the create function to make sure the roles passed actually exist. It will raise RoleNotFound response if the role passed does not exist.",
+      "parentUuid": "AAAAVn//4V0\u003d",
+      "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
