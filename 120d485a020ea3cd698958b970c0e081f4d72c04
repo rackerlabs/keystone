@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//v3U\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2078,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-04T10:25:24Z",
+      "side": 1,
+      "message": "There are other hard-coded queries around that should be replaced as well; I filed a bug report just in case: https://bugs.launchpad.net/keystone/+bug/1287637",
+      "parentUuid": "AAAAVn//0g0\u003d",
+      "revId": "120d485a020ea3cd698958b970c0e081f4d72c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//0gI\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 25
