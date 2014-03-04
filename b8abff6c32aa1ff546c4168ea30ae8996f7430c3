@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//xfc\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-04T07:02:08Z",
+      "side": 1,
+      "message": "NIT: don\u0027t explain previous functionality in comments, there is no reference unless the developer knows about the change, which is not expected.\n\nSuggest removing comment (see my comment on the review as a whole though as to why this is not a good approach).",
+      "revId": "b8abff6c32aa1ff546c4168ea30ae8996f7430c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
