@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//q70\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 79
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-04T18:49:41Z",
+      "side": 1,
+      "message": "I\u0027m convinced this could be simplified and reduce the \"collection\" logic on every single call.  It\u0027s not -1 worthy... There is potential this code is hit a fair amount.  We just need to keep an eye on it as a potential bottleneck.",
+      "parentUuid": "AAAAVn//sVM\u003d",
+      "revId": "815d5e955850d9084f484b1b8ba462d27fda776f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//xMY\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 79
