@@ -428,13 +428,14 @@ def _raise_if_deadlock_error(operational_error, engine_name):
 
 
 def _wrap_db_error(f):
-    #TODO(rpodolyaka): in a subsequent commit make this a class decorator to
-    # ensure it can only applied to Session subclasses instances (as we use
-    # Session instance bind attribute below)
-
     @functools.wraps(f)
     def _wrap(self, *args, **kwargs):
         try:
+            assert issubclass(
+                self.__class__, sqlalchemy.orm.session.Session
+            ), ('_wrap_db_error() can only be applied to methods of '
+                'subclasses of sqlalchemy.orm.session.Session.')
+
             return f(self, *args, **kwargs)
         except UnicodeEncodeError:
             raise exception.DBInvalidUnicodeParameter()
@@ -509,18 +510,6 @@ def _ping_listener(engine, dbapi_conn, connection_rec, connection_proxy):
             raise
 
 
-def _set_mode_traditional(dbapi_con, connection_rec, connection_proxy):
-    """Set engine mode to 'traditional'.
-
-    Required to prevent silent truncates at insert or update operations
-    under MySQL. By default MySQL truncates inserted string if it longer
-    than a declared field just with warning. That is fraught with data
-    corruption.
-    """
-    _set_session_sql_mode(dbapi_con, connection_rec,
-                          connection_proxy, 'TRADITIONAL')
-
-
 def _set_session_sql_mode(dbapi_con, connection_rec,
                           connection_proxy, sql_mode=None):
     """Set the sql_mode session variable.
@@ -582,7 +571,7 @@ def _raise_if_db_connection_lost(error, engine):
 
 
 def create_engine(sql_connection, sqlite_fk=False, mysql_sql_mode=None,
-                  mysql_traditional_mode=False, idle_timeout=3600,
+                  idle_timeout=3600,
                   connection_debug=0, max_pool_size=None, max_overflow=None,
                   pool_timeout=None, sqlite_synchronous=True,
                   connection_trace=False, max_retries=10, retry_interval=10):
@@ -629,8 +618,6 @@ def create_engine(sql_connection, sqlite_fk=False, mysql_sql_mode=None,
         ping_callback = functools.partial(_ping_listener, engine)
         sqlalchemy.event.listen(engine, 'checkout', ping_callback)
         if engine.name == 'mysql':
-            if mysql_traditional_mode:
-                mysql_sql_mode = 'TRADITIONAL'
             if mysql_sql_mode:
                 mode_callback = functools.partial(_set_session_sql_mode,
                                                   sql_mode=mysql_sql_mode)
@@ -775,15 +762,12 @@ class EngineFacade(object):
     """
 
     def __init__(self, sql_connection,
-                 sqlite_fk=False, mysql_sql_mode=None,
-                 autocommit=True, expire_on_commit=False, **kwargs):
+                 sqlite_fk=False, autocommit=True,
+                 expire_on_commit=False, **kwargs):
         """Initialize engine and sessionmaker instances.
 
         :param sqlite_fk: enable foreign keys in SQLite
         :type sqlite_fk: bool
-
-        :param mysql_sql_mode: set SQL mode in MySQL
-        :type mysql_sql_mode: string
 
         :param autocommit: use autocommit mode for created Session instances
         :type autocommit: bool
@@ -793,6 +777,8 @@ class EngineFacade(object):
 
         Keyword arguments:
 
+        :keyword mysql_sql_mode: the SQL mode to be used for MySQL sessions.
+                                 (defaults to TRADITIONAL)
         :keyword idle_timeout: timeout before idle sql connections are reaped
                                (defaults to 3600)
         :keyword connection_debug: verbosity of SQL debugging information.
@@ -820,7 +806,7 @@ class EngineFacade(object):
         self._engine = create_engine(
             sql_connection=sql_connection,
             sqlite_fk=sqlite_fk,
-            mysql_sql_mode=mysql_sql_mode,
+            mysql_sql_mode=kwargs.get('mysql_sql_mode', 'TRADITIONAL'),
             idle_timeout=kwargs.get('idle_timeout', 3600),
             connection_debug=kwargs.get('connection_debug', 0),
             max_pool_size=kwargs.get('max_pool_size'),
@@ -859,3 +845,31 @@ class EngineFacade(object):
                 del kwargs[arg]
 
         return self._session_maker(**kwargs)
+
+    @classmethod
+    def from_config(cls, connection_string, conf,
+                    sqlite_fk=False, autocommit=True, expire_on_commit=False):
+        """Initialize EngineFacade using oslo.config config instance options.
+
+        :param connection_string: SQLAlchemy connection string
+        :type connection_string: string
+
+        :param conf: oslo.config config instance
+        :type conf: oslo.config.cfg.ConfigOpts
+
+        :param sqlite_fk: enable foreign keys in SQLite
+        :type sqlite_fk: bool
+
+        :param autocommit: use autocommit mode for created Session instances
+        :type autocommit: bool
+
+        :param expire_on_commit: expire session objects on commit
+        :type expire_on_commit: bool
+
+        """
+
+        return cls(sql_connection=connection_string,
+                   sqlite_fk=sqlite_fk,
+                   autocommit=autocommit,
+                   expire_on_commit=expire_on_commit,
+                   **dict(conf.database.items()))
