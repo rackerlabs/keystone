@@ -95,8 +95,12 @@ def upgrade(migrate_engine):
     meta.bind = migrate_engine
 
     endpoint_table = sql.Table('endpoint', meta, autoload=True)
-    enabled_column = sql.Column('enabled', sql.Boolean, nullable=False,
-                                default=True, server_default='1')
+    enabled_column = sql.Column('enabled',
+                                sql.Boolean,
+                                nullable=False,
+                                default=True,
+                                server_default=sql.sql.expression.true()
+                               )
     enabled_column.create(endpoint_table)
 
     _migrate_enabled_from_extra(migrate_engine, endpoint_table)

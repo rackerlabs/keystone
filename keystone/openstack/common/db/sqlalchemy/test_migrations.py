@@ -359,6 +359,12 @@ class ModelsMigrationsSync(object):
 
         return None  # tells alembic to use the default comparison method
 
+    def compare_server_default(context, inspected_column, metadata_column,
+                               inspected_default, metadata_default,
+                               rendered_metadata_default):
+        return
+
+
     def test_models_sync(self):
         # recent versions of sqlalchemy and alembic are needed for running of
         # this test, but we already have them in requirements
@@ -385,7 +391,7 @@ class ModelsMigrationsSync(object):
             opts = {
                 'include_object': self.include_object,
                 'compare_type': self.compare_type,
-                'compare_server_default': True
+                'compare_server_default': self.compare_server_default
             }
             mc = alembic.migration.MigrationContext.configure(conn, opts=opts)
 
