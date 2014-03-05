@@ -34,6 +34,24 @@
       "revId": "790db7f43a4eda5559f828de30203bc057208146",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//h2c\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T15:41:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//jEg\u003d",
+      "revId": "790db7f43a4eda5559f828de30203bc057208146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
