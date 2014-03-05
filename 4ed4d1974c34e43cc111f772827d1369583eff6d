@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//nKQ\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-05T02:55:45Z",
+      "side": 1,
+      "message": "I am checking for either conditions in anticipation that API may not always invoked with a token.",
+      "parentUuid": "AAAAUH/9x+4\u003d",
+      "revId": "4ed4d1974c34e43cc111f772827d1369583eff6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9x/I\u003d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
