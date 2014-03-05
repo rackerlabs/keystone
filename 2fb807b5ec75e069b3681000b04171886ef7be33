@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//gxE\u003d",
+        "filename": "doc/source/extensions/revoke-configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T17:12:22Z",
+      "side": 1,
+      "message": "make it a big red box with:\n\n  .. WARNING::\n\n      The ``OS-REVOKE`` Extension is still considered experimental and will continue to see improvement over the next development cycle.",
+      "revId": "2fb807b5ec75e069b3681000b04171886ef7be33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
