@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//iKI\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:08:55Z",
+      "side": 1,
+      "message": "the use of parens here makes it difficult to see what\u0027s going on; instead:\n\n  for a in self.role.list-project_roles_for_group(\n          group_dn, self.project_tree_dn)\n      associations.append(a)",
+      "revId": "1ef1c38f3d042cca613989c961839553da1062c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//iJM\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:08:55Z",
+      "side": 1,
+      "message": "(pep8) add a single space after each #",
+      "revId": "1ef1c38f3d042cca613989c961839553da1062c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cJY\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
