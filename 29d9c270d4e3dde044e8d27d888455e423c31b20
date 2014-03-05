@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//k0w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-05T09:27:44Z",
+      "side": 1,
+      "message": "Yes it is. Because the handled message is the error message.\n\nexception.StringLengthExceeded(string\u003dv, ...",
+      "parentUuid": "AAAAVn//9dU\u003d",
+      "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//930\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-03T05:05:20Z",
       "side": 1,
       "message": "This comment no longer accurately captures all that is being done below. In addition to making sure the string field does not exceed the length limit it is also ensuring that the string is Unicode.  This comment should be updated to reflect that as well.",
+      "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//k2I\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-05T09:27:44Z",
+      "side": 1,
+      "message": "Raising of UnicodeDecodeError is just side effect of `six.text_type` using. The logic and meaning of the decorator is still the same. I agree that description of Unicode check is missing, but it was missing before the change was done. So I think it should be done in the next patch.",
+      "parentUuid": "AAAAVn//930\u003d",
       "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
