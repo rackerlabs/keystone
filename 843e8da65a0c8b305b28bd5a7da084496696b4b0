@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//ew4\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T20:43:24Z",
+      "side": 1,
+      "message": "do this in the manager instead of in each backend separately",
+      "revId": "843e8da65a0c8b305b28bd5a7da084496696b4b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
