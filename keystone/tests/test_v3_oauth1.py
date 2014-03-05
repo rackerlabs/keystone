@@ -48,7 +48,7 @@ class OAuth1Tests(test_v3.RestfulTestCase):
         super(OAuth1Tests, self).setUp()
 
         # Now that the app has been served, we can query CONF values
-        self.base_url = (CONF.public_endpoint % CONF) + "v3"
+        self.base_url = 'http://localhost/v3'
         self.controller = controllers.OAuthControllerV3()
 
     def _create_single_consumer(self):
