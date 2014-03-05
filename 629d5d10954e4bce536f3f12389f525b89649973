@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//iMM\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:03:33Z",
+      "side": 1,
+      "message": "url should be in this list; it\u0027d also be nice if each list was in the same order to make it easy to compare / maintain them",
+      "revId": "629d5d10954e4bce536f3f12389f525b89649973",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//iME\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:03:33Z",
+      "side": 1,
+      "message": "interface could arguably default to \"public\" -- i\u0027m not sure what the spec says on that, but it could be relaxed if not",
+      "revId": "629d5d10954e4bce536f3f12389f525b89649973",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
