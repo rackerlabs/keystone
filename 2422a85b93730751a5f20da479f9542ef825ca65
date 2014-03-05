@@ -69,6 +69,24 @@
       "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//hs8\u003d",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:53:42Z",
+      "side": 1,
+      "message": "the use case for not requiring a project_id is to allow identity impersonation without explicit authorization. so this should be something like:\n\n  if trust.get(\u0027project_id\u0027) and not trust.get(\u0027roles\u0027):\n    # then roles are required",
+      "parentUuid": "AAAAVn//zfg\u003d",
+      "revId": "2422a85b93730751a5f20da479f9542ef825ca65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
