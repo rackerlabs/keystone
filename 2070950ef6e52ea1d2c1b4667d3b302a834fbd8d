@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//gfY\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T17:43:27Z",
+      "side": 1,
+      "message": "don\u0027t propose commented-out code",
+      "revId": "2070950ef6e52ea1d2c1b4667d3b302a834fbd8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
