@@ -15,6 +15,9 @@
 Enabling the OS-REVOKE Extension
 ================================
 
+WARNING:  The OS-REVOKE Extension is still considered experimental and will
+continue to see improvement over the next development cycle.
+
 To enable the ``OS-REVOKE`` extension:
 
 1. Add the driver fields and values in the ``[revoke]`` section
