@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//gz4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-05T17:08:41Z",
+      "side": 1,
+      "message": "K. Thanks",
+      "parentUuid": "AAAAVn//k0w\u003d",
+      "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//930\u003d",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 18
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Raising of UnicodeDecodeError is just side effect of `six.text_type` using. The logic and meaning of the decorator is still the same. I agree that description of Unicode check is missing, but it was missing before the change was done. So I think it should be done in the next patch.",
       "parentUuid": "AAAAVn//930\u003d",
+      "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//g0o\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-05T17:08:41Z",
+      "side": 1,
+      "message": "K, that\u0027s fine",
+      "parentUuid": "AAAAVn//k2I\u003d",
       "revId": "29d9c270d4e3dde044e8d27d888455e423c31b20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
