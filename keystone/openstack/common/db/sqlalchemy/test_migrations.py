@@ -30,6 +30,7 @@ from six import moves
 from six.moves.urllib import parse
 import sqlalchemy
 import sqlalchemy.exc
+import sqlalchemy.sql.expression as expr
 import sqlalchemy.types as types
 
 from keystone.openstack.common.db.sqlalchemy import utils
@@ -359,6 +360,35 @@ class ModelsMigrationsSync(object):
 
         return None  # tells alembic to use the default comparison method
 
+    def compare_server_default(self, ctxt, ins_col, meta_col,
+                               insp_def, meta_def, rendered_meta_def):
+        """Compare default values between model and db table.
+
+        Return True if the defaults are different, False if not, or None to
+        allow the default implementation to compare these defaults.
+
+        :param ctxt: alembic MigrationContext instance
+        :param insp_col: reflected column
+        :param meta_col: column from model
+        :param insp_def: reflected column default value
+        :param meta_def: column default value from model
+        :param rendered_meta_def: rendered column default value (from model)
+
+        """
+
+        if (ctxt.dialect.name == 'mysql' and
+                issubclass(type(meta_col.type), sqlalchemy.Boolean)):
+
+            if meta_def is None or insp_def is None:
+                return meta_def != insp_def
+
+            return not (
+                isinstance(meta_def.arg, expr.True_) and insp_def == "'1'" or
+                isinstance(meta_def.arg, expr.False_) and insp_def == "'0'"
+            )
+
+        return None  # tells alembic to use the default comparison method
+
     def test_models_sync(self):
         # recent versions of sqlalchemy and alembic are needed for running of
         # this test, but we already have them in requirements
@@ -385,7 +415,7 @@ class ModelsMigrationsSync(object):
             opts = {
                 'include_object': self.include_object,
                 'compare_type': self.compare_type,
-                'compare_server_default': True
+                'compare_server_default': self.compare_server_default
             }
             mc = alembic.migration.MigrationContext.configure(conn, opts=opts)
 
