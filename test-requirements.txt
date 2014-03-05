@@ -46,3 +46,7 @@ tempest-lib>=0.5.0
 
 # Security checks
 bandit>=0.10.1
+
+# Testing on real sql backends
+MySQL-python
+psycopg2

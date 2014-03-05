@@ -50,9 +50,31 @@ def initialize_sql_session():
         connection=tests.IN_MEM_DB_CONN_STRING)
 
 
+def get_sql_modules():
+    """Find and return all modules containing SQLAlchemy models."""
+    sql_modules = []
+
+    keystone_root = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '..', '..', '..'))
+    for root, dirs, files in os.walk(keystone_root):
+        # NOTE(morganfainberg): Slice the keystone_root off the root to ensure
+        # we do not end up with a module name like:
+        # Users.home.openstack.keystone.assignment.backends.sql
+        root = root[len(keystone_root):]
+        if root.endswith('backends') and 'sql.py' in files:
+            # The root will be prefixed with an instance of os.sep, which will
+            # make the root after replacement '.<root>', the 'keystone' part
+            # of the module path is always added to the front
+            module_name = ('keystone.%s.sql' %
+                           root.replace(os.sep, '.').lstrip('.'))
+            sql_modules.append(module_name)
+
+    return sql_modules
+
+
 @run_once
-def _load_sqlalchemy_models():
-    """Find all modules containing SQLAlchemy models and import them.
+def load_sqlalchemy_models():
+    """Import all modules containing SQLAlchemy models.
 
     This creates more consistent, deterministic test runs because tables
     for all core and extension models are always created in the test
@@ -67,20 +89,8 @@ def _load_sqlalchemy_models():
     the test run avoids this problem.
 
     """
-    keystone_root = os.path.normpath(os.path.join(
-        os.path.dirname(__file__), '..', '..', '..'))
-    for root, dirs, files in os.walk(keystone_root):
-        # NOTE(morganfainberg): Slice the keystone_root off the root to ensure
-        # we do not end up with a module name like:
-        # Users.home.openstack.keystone.assignment.backends.sql
-        root = root[len(keystone_root):]
-        if root.endswith('backends') and 'sql.py' in files:
-            # The root will be prefixed with an instance of os.sep, which will
-            # make the root after replacement '.<root>', the 'keystone' part
-            # of the module path is always added to the front
-            module_name = ('keystone.%s.sql' %
-                           root.replace(os.sep, '.').lstrip('.'))
-            __import__(module_name)
+    for module_name in get_sql_modules():
+        __import__(module_name)
 
 
 class Database(fixtures.Fixture):
@@ -91,7 +101,7 @@ class Database(fixtures.Fixture):
     def __init__(self):
         super(Database, self).__init__()
         initialize_sql_session()
-        _load_sqlalchemy_models()
+        load_sqlalchemy_models()
 
     def setUp(self):
         super(Database, self).setUp()
