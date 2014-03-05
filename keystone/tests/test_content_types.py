@@ -679,10 +679,12 @@ class CoreApiTests(object):
         self.assertValidErrorResponse(r)
 
     def test_www_authenticate_header(self):
+        test_url = 'http://server:554'
+        self.config_fixture.config(public_endpoint=test_url)
         r = self.public_request(
             path='/v2.0/tenants',
             expected_status=401)
-        self.assertEqual('Keystone uri="%s"' % (CONF.public_endpoint % CONF),
+        self.assertEqual('Keystone uri="%s"' % test_url,
                          r.headers.get('WWW-Authenticate'))
 
 

@@ -404,19 +404,15 @@ class RestfulTestCase(rest.RestfulTestCase):
     def assertValidListLinks(self, links):
         self.assertIsNotNone(links)
         self.assertIsNotNone(links.get('self'))
-        self.assertIn(CONF.public_endpoint % CONF, links['self'])
+        self.assertIn('http://localhost', links['self'])
 
         self.assertIn('next', links)
         if links['next'] is not None:
-            self.assertIn(
-                CONF.public_endpoint % CONF,
-                links['next'])
+            self.assertIn('http://localhost', links['next'])
 
         self.assertIn('previous', links)
         if links['previous'] is not None:
-            self.assertIn(
-                CONF.public_endpoint % CONF,
-                links['previous'])
+            self.assertIn('http://localhost', links['previous'])
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
                                 expected_length=None, keys_to_check=None):
@@ -476,7 +472,7 @@ class RestfulTestCase(rest.RestfulTestCase):
 
         self.assertIsNotNone(entity.get('links'))
         self.assertIsNotNone(entity['links'].get('self'))
-        self.assertIn(CONF.public_endpoint % CONF, entity['links']['self'])
+        self.assertIn('http://localhost', entity['links']['self'])
         self.assertIn(entity['id'], entity['links']['self'])
 
         if ref:
