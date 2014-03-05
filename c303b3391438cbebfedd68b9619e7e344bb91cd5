@@ -16,6 +16,24 @@
       "revId": "c303b3391438cbebfedd68b9619e7e344bb91cd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//gns\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-05T17:26:03Z",
+      "side": 1,
+      "message": "agreed, especially if we are moving toward discovery. As I mentioned before, TC needs to address this issue first.",
+      "parentUuid": "AAAAVn//h54\u003d",
+      "revId": "c303b3391438cbebfedd68b9619e7e344bb91cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
