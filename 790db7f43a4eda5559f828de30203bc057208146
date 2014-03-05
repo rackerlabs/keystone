@@ -16,6 +16,24 @@
       "revId": "790db7f43a4eda5559f828de30203bc057208146",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//jEg\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T13:45:16Z",
+      "side": 1,
+      "message": "I\u0027d drop the \"Also,\" make \"token\" plural, and add a comma after \"tokens\", and drop \"the\" in the second part of the sentence:\n\n  When handling unscoped tokens, ``OS-FEDERATION:identity_provider`` and ``OS-FEDERATION:protocol`` are set.",
+      "parentUuid": "AAAAVn//jLg\u003d",
+      "revId": "790db7f43a4eda5559f828de30203bc057208146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
