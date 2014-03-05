@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//di0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-05T23:39:12Z",
+      "side": 1,
+      "message": "I think everything from \u0027As the\u0027 all the way to \u0027but generally speaking\u0027 should be deleted. Pretty much everything in Python can be monkey patched if you decide to allow malicious code to run. I don\u0027t think it adds any value and takes away from what this change is about.",
+      "revId": "2070950ef6e52ea1d2c1b4667d3b302a834fbd8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//djk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-05T23:39:12Z",
+      "side": 1,
+      "message": "You\u0027re no longer logging it. This should say that long passwords force a validation error.",
+      "revId": "2070950ef6e52ea1d2c1b4667d3b302a834fbd8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//dic\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-05T23:39:12Z",
+      "side": 1,
+      "message": "Suggest replacing \u0027to %s\u0027 with \u0027by %d\u0027",
+      "revId": "2070950ef6e52ea1d2c1b4667d3b302a834fbd8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//gfY\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 3
