@@ -18,6 +18,7 @@ import uuid
 
 from lxml import etree
 import six
+from testtools import matchers
 
 from keystone import auth
 from keystone.common import authorization
@@ -404,19 +405,17 @@ class RestfulTestCase(rest.RestfulTestCase):
     def assertValidListLinks(self, links):
         self.assertIsNotNone(links)
         self.assertIsNotNone(links.get('self'))
-        self.assertIn(CONF.public_endpoint % CONF, links['self'])
+        self.assertThat(links['self'], matchers.StartsWith('http://localhost'))
 
         self.assertIn('next', links)
         if links['next'] is not None:
-            self.assertIn(
-                CONF.public_endpoint % CONF,
-                links['next'])
+            self.assertThat(links['next'],
+                            matchers.StartsWith('http://localhost'))
 
         self.assertIn('previous', links)
         if links['previous'] is not None:
-            self.assertIn(
-                CONF.public_endpoint % CONF,
-                links['previous'])
+            self.assertThat(links['previous'],
+                            matchers.StartsWith('http://localhost'))
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
                                 expected_length=None, keys_to_check=None):
@@ -476,7 +475,8 @@ class RestfulTestCase(rest.RestfulTestCase):
 
         self.assertIsNotNone(entity.get('links'))
         self.assertIsNotNone(entity['links'].get('self'))
-        self.assertIn(CONF.public_endpoint % CONF, entity['links']['self'])
+        self.assertThat(entity['links']['self'],
+                        matchers.StartsWith('http://localhost'))
         self.assertIn(entity['id'], entity['links']['self'])
 
         if ref:
