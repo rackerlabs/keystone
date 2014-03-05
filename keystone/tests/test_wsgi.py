@@ -12,11 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import gettext
-import socket
+import uuid
 
 from babel import localedata
+import gettext
 import mock
+import socket
 import webob
 
 from keystone.common import environment
@@ -112,6 +113,13 @@ class ApplicationTest(BaseWSGITest):
     def test_render_exception(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
         resp = wsgi.render_exception(e)
+        self.assertEqual(resp.status_int, 401)
+
+    def test_render_exception_host(self):
+        e = exception.Unauthorized(message=u'\u7f51\u7edc')
+        context = {'host_url': 'http://%s:5000' % uuid.uuid4().hex}
+        resp = wsgi.render_exception(e, context=context)
+
         self.assertEqual(resp.status_int, 401)
 
 
