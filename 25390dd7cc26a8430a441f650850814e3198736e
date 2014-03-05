@@ -34,6 +34,24 @@
       "revId": "25390dd7cc26a8430a441f650850814e3198736e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//hxA\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:48:58Z",
+      "side": 1,
+      "message": "enabled shouldn\u0027t be part of the catalog at all, as it should always be true anyway",
+      "parentUuid": "AAAAVn//2W8\u003d",
+      "revId": "25390dd7cc26a8430a441f650850814e3198736e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
