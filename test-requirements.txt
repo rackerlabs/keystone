@@ -28,6 +28,8 @@ sphinx>=1.1.2,<1.2
 WebTest>=2.0
 # Sync models with migrations
 alembic>=0.4.1
+psycopg2
+MySQL-python
 
 discover
 python-subunit>=0.0.18
