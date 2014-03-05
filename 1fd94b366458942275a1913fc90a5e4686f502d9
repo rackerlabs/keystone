@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//hkw\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T16:02:51Z",
+      "side": 1,
+      "message": "re and shelve are stdlib",
+      "revId": "1fd94b366458942275a1913fc90a5e4686f502d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//hk8\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T16:02:51Z",
+      "side": 1,
+      "message": "both six imports belong here -- with 3rd party imports",
+      "revId": "1fd94b366458942275a1913fc90a5e4686f502d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
