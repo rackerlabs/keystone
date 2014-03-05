@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//iGc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:32:39Z",
+      "side": 1,
+      "message": "if ref.get(\u0027domain_id\u0027) is None:",
+      "revId": "27b51c13adf871cac2bf749cf98de68dee4aedd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
