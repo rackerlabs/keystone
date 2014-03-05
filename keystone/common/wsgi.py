@@ -184,6 +184,7 @@ class Application(BaseApplication):
         context['query_string'] = dict(six.iteritems(req.params))
         context['headers'] = dict(six.iteritems(req.headers))
         context['path'] = req.environ['PATH_INFO']
+        context['host_url'] = req.host_url
         params = req.environ.get(PARAMS_ENV, {})
         #authentication and authorization attributes are set as environment
         #values by the container and processed by the pipeline.  the complete
