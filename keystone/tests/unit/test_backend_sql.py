@@ -20,7 +20,6 @@ import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db import options
-import sqlalchemy
 from sqlalchemy import exc
 from testtools import matchers
 
@@ -56,69 +55,6 @@ class SqlTests(tests.SQLDriverOverrides, tests.TestCase):
         config_files = super(SqlTests, self).config_files()
         config_files.append(tests.dirs.tests_conf('backend_sql.conf'))
         return config_files
-
-
-class SqlModels(SqlTests):
-
-    def select_table(self, name):
-        table = sqlalchemy.Table(name,
-                                 sql.ModelBase.metadata,
-                                 autoload=True)
-        s = sqlalchemy.select([table])
-        return s
-
-    def assertExpectedSchema(self, table, cols):
-        table = self.select_table(table)
-        for col, type_, length in cols:
-            self.assertIsInstance(table.c[col].type, type_)
-            if length:
-                self.assertEqual(length, table.c[col].type.length)
-
-    def test_user_model(self):
-        cols = (('id', sql.String, 64),
-                ('name', sql.String, 255),
-                ('password', sql.String, 128),
-                ('domain_id', sql.String, 64),
-                ('enabled', sql.Boolean, None),
-                ('extra', sql.JsonBlob, None))
-        self.assertExpectedSchema('user', cols)
-
-    def test_group_model(self):
-        cols = (('id', sql.String, 64),
-                ('name', sql.String, 64),
-                ('description', sql.Text, None),
-                ('domain_id', sql.String, 64),
-                ('extra', sql.JsonBlob, None))
-        self.assertExpectedSchema('group', cols)
-
-    def test_domain_model(self):
-        cols = (('id', sql.String, 64),
-                ('name', sql.String, 64),
-                ('enabled', sql.Boolean, None))
-        self.assertExpectedSchema('domain', cols)
-
-    def test_project_model(self):
-        cols = (('id', sql.String, 64),
-                ('name', sql.String, 64),
-                ('description', sql.Text, None),
-                ('domain_id', sql.String, 64),
-                ('enabled', sql.Boolean, None),
-                ('extra', sql.JsonBlob, None),
-                ('parent_id', sql.String, 64))
-        self.assertExpectedSchema('project', cols)
-
-    def test_role_assignment_model(self):
-        cols = (('type', sql.Enum, None),
-                ('actor_id', sql.String, 64),
-                ('target_id', sql.String, 64),
-                ('role_id', sql.String, 64),
-                ('inherited', sql.Boolean, False))
-        self.assertExpectedSchema('assignment', cols)
-
-    def test_user_group_membership(self):
-        cols = (('group_id', sql.String, 64),
-                ('user_id', sql.String, 64))
-        self.assertExpectedSchema('user_group_membership', cols)
 
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
