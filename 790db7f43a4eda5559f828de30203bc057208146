@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//jLg\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-05T13:30:13Z",
+      "side": 1,
+      "message": "I can\u0027t put my finger on it, but this sentence still sounds a little clunky. I think the may be the leading \u0027Also\u0027.",
+      "revId": "790db7f43a4eda5559f828de30203bc057208146",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
