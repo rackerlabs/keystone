@@ -35,6 +35,9 @@ from keystone.openstack.common.db.sqlalchemy import session as db_session
 from keystone.openstack.common import jsonutils
 
 
+DB_INIT_VERSION = 35
+
+
 ModelBase = declarative.declarative_base()
 
 

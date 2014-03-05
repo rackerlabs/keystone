@@ -156,7 +156,8 @@ def setup_database():
     if os.path.exists(db):
         os.unlink(db)
     if not os.path.exists(pristine):
-        migration.db_sync(migration_helpers.find_migrate_repo())
+        migration.db_sync(migration_helpers.find_migrate_repo(),
+                          init_version=sql.DB_INIT_VERSION)
         shutil.copyfile(db, pristine)
     else:
         shutil.copyfile(pristine, db)

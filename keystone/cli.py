@@ -70,10 +70,12 @@ class DbSync(BaseApp):
     def main():
         version = CONF.command.version
         extension = CONF.command.extension
+        init_version = sql.DB_INIT_VERSION
         if not extension:
             abs_path = migration_helpers.find_migrate_repo()
         else:
             try:
+                init_version = 0
                 package_name = '.'.join((contrib.__name__, extension))
                 package = importutils.import_module(package_name)
             except ImportError:
@@ -91,7 +93,7 @@ class DbSync(BaseApp):
             except exception.MigrationNotProvided as e:
                 print(e)
                 exit(0)
-        migration.db_sync(abs_path, version=version)
+        migration.db_sync(abs_path, version=version, init_version=init_version)
 
 
 class DbVersion(BaseApp):
