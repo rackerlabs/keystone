@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//h54\u003d",
+        "filename": "etc/default_catalog.templates",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-05T15:37:08Z",
+      "side": 1,
+      "message": "i don\u0027t want keystone to advocate/document versioned service types",
+      "revId": "c303b3391438cbebfedd68b9619e7e344bb91cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
