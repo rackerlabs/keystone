@@ -50,15 +50,17 @@ FILE_OPTIONS = {
                    help='The port number which the public service listens '
                         'on.'),
         cfg.StrOpt('public_endpoint',
-                   default='http://localhost:%(public_port)s/',
                    help='The base public endpoint URL for keystone that are '
                         'advertised to clients (NOTE: this does NOT affect '
-                        'how keystone listens for connections).'),
+                        'how keystone listens for connections). '
+                        'This value does not need to be set if the '
+                        'endpoint is the current server'),
         cfg.StrOpt('admin_endpoint',
-                   default='http://localhost:%(admin_port)s/',
                    help='The base admin endpoint URL for keystone that are '
                         'advertised to clients (NOTE: this does NOT affect '
-                        'how keystone listens for connections).'),
+                        'how keystone listens for connections). '
+                        'This value does not need to be set if the '
+                        'endpoint is the current server'),
         cfg.StrOpt('onready',
                    help='onready allows you to send a notification when the '
                         'process is ready to serve For example, to have it '

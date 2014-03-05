@@ -36,12 +36,16 @@
 
 # The base public endpoint URL for keystone that are
 # advertised to clients (NOTE: this does NOT affect how
-# keystone listens for connections). (string value)
+# keystone listens for connections) (string value).
+# This value does not need to be set if the
+# endpoint is the current server
 #public_endpoint=http://localhost:%(public_port)s/
 
 # The base admin endpoint URL for keystone that are advertised
 # to clients (NOTE: this does NOT affect how keystone listens
-# for connections). (string value)
+# for connections) (string value).
+# This value does not need to be set if the
+# endpoint is the current server
 #admin_endpoint=http://localhost:%(admin_port)s/
 
 # onready allows you to send a notification when the process

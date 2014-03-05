@@ -291,28 +291,21 @@ class V3Controller(wsgi.Application):
     get_member_from_driver = None
 
     @classmethod
-    def base_url(cls, path=None):
-        endpoint = CONF.public_endpoint % CONF
+    def base_url(cls, context, path=None):
+        endpoint = super(V3Controller, cls).base_url('public', context)
+        if not path:
+            path = cls.collection_name
 
-        # allow a missing trailing slash in the config
-        if endpoint[-1] != '/':
-            endpoint += '/'
-
-        url = endpoint + 'v3'
-
-        if path:
-            return url + path
-        else:
-            return url + '/' + cls.collection_name
+        return '%s/%s/%s' % (endpoint, 'v3', path.lstrip('/'))
 
     @classmethod
-    def _add_self_referential_link(cls, ref):
+    def _add_self_referential_link(cls, ref, context):
         ref.setdefault('links', {})
-        ref['links']['self'] = cls.base_url() + '/' + ref['id']
+        ref['links']['self'] = cls.base_url(context) + '/' + ref['id']
 
     @classmethod
     def wrap_member(cls, context, ref):
-        cls._add_self_referential_link(ref)
+        cls._add_self_referential_link(ref, context)
         return {cls.member_name: ref}
 
     @classmethod
@@ -348,7 +341,7 @@ class V3Controller(wsgi.Application):
         container = {cls.collection_name: refs}
         container['links'] = {
             'next': None,
-            'self': cls.base_url(path=context['path']),
+            'self': cls.base_url(context, path=context['path']),
             'previous': None}
 
         if list_limited:

@@ -109,7 +109,9 @@ class ApplicationTest(BaseWSGITest):
 
     def test_render_exception(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
-        resp = wsgi.render_exception(e)
+        context = {'host_url': 'http://localhost:5000'}
+        resp = wsgi.render_exception(e, context=context)
+
         self.assertEqual(resp.status_int, 401)
 
 

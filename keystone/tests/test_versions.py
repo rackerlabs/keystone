@@ -118,6 +118,9 @@ class VersionTestCase(tests.TestCase):
         self.public_app = self.loadapp('keystone', 'main')
         self.admin_app = self.loadapp('keystone', 'admin')
 
+        self.opt(public_endpoint='http://localhost:%(public_port)d')
+        self.opt(admin_endpoint='http://localhost:%(admin_port)d')
+
         port = random.randint(10000, 30000)
         self.opt(public_port=port, admin_port=port)
 
@@ -159,6 +162,25 @@ class VersionTestCase(tests.TestCase):
                     version, 'http://localhost:%s/v2.0/' % CONF.admin_port)
         self.assertEqual(data, expected)
 
+    def test_use_site_url_if_endpoint_unset(self):
+        self.opt(public_endpoint=None, admin_endpoint=None)
+
+        for app in (self.public_app, self.admin_app):
+            client = self.client(app)
+            resp = client.get('/')
+            self.assertEqual(resp.status_int, 300)
+            data = jsonutils.loads(resp.body)
+            expected = VERSIONS_RESPONSE
+            for version in expected['versions']['values']:
+                # localhost happens to be the site url for tests
+                if version['id'] == 'v3.0':
+                    self._paste_in_port(
+                        version, 'http://localhost/v3/')
+                elif version['id'] == 'v2.0':
+                    self._paste_in_port(
+                        version, 'http://localhost/v2.0/')
+            self.assertEqual(data, expected)
+
     def test_public_version_v2(self):
         client = self.client(self.public_app)
         resp = client.get('/v2.0/')
@@ -179,6 +201,17 @@ class VersionTestCase(tests.TestCase):
                             'http://localhost:%s/v2.0/' % CONF.admin_port)
         self.assertEqual(data, expected)
 
+    def test_use_site_url_if_endpoint_unset_v2(self):
+        self.opt(public_endpoint=None, admin_endpoint=None)
+        for app in (self.public_app, self.admin_app):
+            client = self.client(app)
+            resp = client.get('/v2.0/')
+            self.assertEqual(resp.status_int, 200)
+            data = jsonutils.loads(resp.body)
+            expected = v2_VERSION_RESPONSE
+            self._paste_in_port(expected['version'], 'http://localhost/v2.0/')
+            self.assertEqual(data, expected)
+
     def test_public_version_v3(self):
         client = self.client(self.public_app)
         resp = client.get('/v3/')
@@ -198,6 +231,17 @@ class VersionTestCase(tests.TestCase):
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v3/' % CONF.admin_port)
         self.assertEqual(data, expected)
+
+    def test_use_site_url_if_endpoint_unset_v3(self):
+        self.opt(public_endpoint=None, admin_endpoint=None)
+        for app in (self.public_app, self.admin_app):
+            client = self.client(app)
+            resp = client.get('/v3/')
+            self.assertEqual(resp.status_int, 200)
+            data = jsonutils.loads(resp.body)
+            expected = v3_VERSION_RESPONSE
+            self._paste_in_port(expected['version'], 'http://localhost/v3/')
+            self.assertEqual(data, expected)
 
     def test_v2_disabled(self):
         self.stubs.Set(controllers, '_VERSIONS', ['v3'])
@@ -328,6 +372,9 @@ vnd.openstack.identity-v3+xml"/>
         self.public_app = self.loadapp('keystone', 'main')
         self.admin_app = self.loadapp('keystone', 'admin')
 
+        self.opt(public_endpoint='http://localhost:%(public_port)d')
+        self.opt(admin_endpoint='http://localhost:%(admin_port)d')
+
         port = random.randint(10000, 30000)
         self.opt(public_port=port, admin_port=port)
 
@@ -348,6 +395,14 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 300)
         data = resp.body
         expected = self.VERSIONS_RESPONSE % dict(port=CONF.admin_port)
+        self.assertThat(data, matchers.XMLEquals(expected))
+
+    def test_use_site_url_if_endpoint_unset(self):
+        client = self.client(self.public_app)
+        resp = client.get('/', headers=self.REQUEST_HEADERS)
+        self.assertEqual(resp.status_int, 300)
+        data = resp.body
+        expected = self.VERSIONS_RESPONSE % dict(port=CONF.public_port)
         self.assertThat(data, matchers.XMLEquals(expected))
 
     def test_public_version_v2(self):
