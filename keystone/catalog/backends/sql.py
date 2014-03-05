@@ -282,13 +282,18 @@ class Catalog(catalog.Driver):
                     all())
 
         def make_v3_endpoint(endpoint):
+            endpoint = endpoint.to_dict()
             del endpoint['service_id']
             endpoint['url'] = core.format_url(endpoint['url'], d)
             return endpoint
 
-        catalog = [{'endpoints': [make_v3_endpoint(ep.to_dict())
-                                  for ep in svc.endpoints],
-                    'id': svc.id,
-                    'type': svc.type} for svc in services]
+        def make_v3_service(svc):
+            endpoints = [make_v3_endpoint(ep) for ep in svc.endpoints]
+            service = {'endpoints': endpoints, 'id': svc.id, 'type': svc.type}
+            name = svc.extra.get('name')
+            if name:
+                service['name'] = name
+            return service
 
+        catalog = [make_v3_service(svc) for svc in services]
         return catalog
