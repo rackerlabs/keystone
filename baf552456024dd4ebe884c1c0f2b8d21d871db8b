@@ -34,6 +34,24 @@
       "revId": "baf552456024dd4ebe884c1c0f2b8d21d871db8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//drI\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-05T23:07:40Z",
+      "side": 1,
+      "message": "I did just say \"perhaps\"  :-).",
+      "parentUuid": "AAAAVn//dvE\u003d",
+      "revId": "baf552456024dd4ebe884c1c0f2b8d21d871db8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
