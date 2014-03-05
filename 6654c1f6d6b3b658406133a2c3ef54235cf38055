@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//itY\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-05T14:18:20Z",
+      "side": 1,
+      "message": "Maybe we should add a TODO, saying that this check should be upstreamed in pep8?",
+      "parentUuid": "AAAAVn//ixE\u003d",
+      "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//i/s\u003d",
         "filename": "keystone/hacking/checks.py",
         "patchSetId": 1
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//iuw\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-05T14:18:20Z",
+      "side": 1,
+      "message": "Good point, that would break the following case: \n\n    # NOTE(lbragstad): here is some comment that is so detailed\n    #                  it is going to span a few lines.\n\nWhich I would say is probably up to the developer.",
+      "parentUuid": "AAAAVn//ivw\u003d",
+      "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//i+A\u003d",
         "filename": "keystone/hacking/checks.py",
         "patchSetId": 1
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "Yes",
       "parentUuid": "AAAAVn//i+A\u003d",
+      "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//iuU\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-05T14:18:20Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAVn//ivo\u003d",
       "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
