@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//hbw\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T16:12:24Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to be moved",
+      "revId": "0ddd16e5284c1222f008400de5b343a8bcc3ed85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//hbE\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T16:12:24Z",
+      "side": 1,
+      "message": "nit: Is the \u0027o\u0027 in To capitalized?",
+      "revId": "0ddd16e5284c1222f008400de5b343a8bcc3ed85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
