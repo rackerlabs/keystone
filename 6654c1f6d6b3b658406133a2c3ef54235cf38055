@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//jAQ\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-05T13:54:59Z",
+      "side": 1,
+      "message": "Does a check already exist or is this a style guideline? http://legacy.python.org/dev/peps/pep-0008/#inline-comments",
+      "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//i/s\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-05T13:54:59Z",
+      "side": 1,
+      "message": "Do we want to allow #\u003cspace\u003e\u003cspace\u003eComment starts here type comments or be really strict on only allowing one space after the hash?",
+      "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//i+A\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-05T13:54:59Z",
+      "side": 1,
+      "message": "I take it we will be enforcing this on # TODO type comments too, by not allowing #TODO and #NOTE for example?",
+      "revId": "6654c1f6d6b3b658406133a2c3ef54235cf38055",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
