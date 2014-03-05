@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//hTE\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T16:19:38Z",
+      "side": 1,
+      "message": "this function, does not appear to be used, i\u0027ve proposed to remove it in: https://review.openstack.org/78284",
+      "revId": "b993d9529681c16e98465bdf74914baef57866a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
