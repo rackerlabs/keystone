@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//elQ\u003d",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-05T21:10:37Z",
+      "side": 1,
+      "message": "Perhaps also mention that if you must use the admin_token make sure to change the default value and ensure the config file is not public readable",
+      "revId": "baf552456024dd4ebe884c1c0f2b8d21d871db8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
