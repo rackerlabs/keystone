@@ -16,6 +16,57 @@
       "revId": "3ac8f48bf4fdcbe09fd497b949120d66a86b3730",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//iho\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T14:40:14Z",
+      "side": 1,
+      "message": "nit, move this over.",
+      "revId": "3ac8f48bf4fdcbe09fd497b949120d66a86b3730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ig8\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T14:40:14Z",
+      "side": 1,
+      "message": "nit: you fixed the double space at line 40, suggest fix it here, too",
+      "revId": "3ac8f48bf4fdcbe09fd497b949120d66a86b3730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ifE\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-05T14:40:14Z",
+      "side": 1,
+      "message": "nit: delete the commented code",
+      "revId": "3ac8f48bf4fdcbe09fd497b949120d66a86b3730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
