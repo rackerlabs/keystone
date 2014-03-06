@@ -16,6 +16,24 @@
       "revId": "58564740225eb949fe2da431355ec96fd8782c7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//ax8\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7909
+      },
+      "writtenOn": "2014-03-06T07:25:32Z",
+      "side": 1,
+      "message": "Rephrased it to \"Disable SSL certificate verification\".\nIntroduced same config string in neutron for similar SSL verification fixes.",
+      "parentUuid": "AAAAVn//bDQ\u003d",
+      "revId": "58564740225eb949fe2da431355ec96fd8782c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
