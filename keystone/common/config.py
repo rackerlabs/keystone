@@ -178,6 +178,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('user_enabled_attribute', default='enabled'),
         cfg.IntOpt('user_enabled_mask', default=0),
         cfg.StrOpt('user_enabled_default', default='True'),
+        cfg.BoolOpt('chase_referrals', default=None,
+                    help='Override the system\'s default referral chasing '
+                         'behavior for queries.'),
         cfg.ListOpt('user_attribute_ignore',
                     default='default_project_id,tenants'),
         cfg.StrOpt('user_default_project_id_attribute', default=None),
