@@ -870,7 +870,30 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
                                  tls_cacertdir=None,
                                  tls_cacertfile=None,
                                  tls_req_cert=2,
-                                 use_tls=False).AndReturn(conn)
+                                 use_tls=False,
+                                 chase_referrals=True).AndReturn(conn)
+        self.mox.ReplayAll()
+
+        user_api.get_connection(user=None, password=None)
+
+    def test_chase_referrals_off(self):
+        self.config([tests.dirs.etc('keystone.conf.sample'),
+                     tests.dirs.tests('test_overrides.conf')])
+        CONF.ldap.url = "fake://memory"
+        CONF.ldap.chase_referrals = False
+        user_api = identity.backends.ldap.UserApi(CONF)
+        self.stubs.Set(fakeldap, 'FakeLdap',
+                       self.mox.CreateMock(fakeldap.FakeLdap))
+        common_ldap.register_handler('fake://', fakeldap.FakeLdap)
+        conn = self.mox.CreateMockAnything()
+        conn = fakeldap.FakeLdap(CONF.ldap.url,
+                                 0,
+                                 alias_dereferencing=None,
+                                 tls_cacertdir=None,
+                                 tls_cacertfile=None,
+                                 tls_req_cert=2,
+                                 use_tls=False,
+                                 chase_referrals=False).AndReturn(conn)
         self.mox.ReplayAll()
 
         user_api.get_connection(user=None, password=None)

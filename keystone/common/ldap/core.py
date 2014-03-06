@@ -145,6 +145,7 @@ class BaseLdap(object):
         self.tls_cacertdir = conf.ldap.tls_cacertdir
         self.tls_req_cert = parse_tls_cert(conf.ldap.tls_req_cert)
         self.attribute_mapping = {}
+        self.chase_referrals = conf.ldap.chase_referrals
 
         if self.options_name is not None:
             self.suffix = conf.ldap.suffix
@@ -234,7 +235,8 @@ class BaseLdap(object):
                        use_tls=self.use_tls,
                        tls_cacertfile=self.tls_cacertfile,
                        tls_cacertdir=self.tls_cacertdir,
-                       tls_req_cert=self.tls_req_cert)
+                       tls_req_cert=self.tls_req_cert,
+                       chase_referrals=self.chase_referrals)
 
         if user is None:
             user = self.LDAP_USER
@@ -484,7 +486,7 @@ class BaseLdap(object):
 class LdapWrapper(object):
     def __init__(self, url, page_size, alias_dereferencing=None,
                  use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
-                 tls_req_cert='demand'):
+                 tls_req_cert='demand', chase_referrals=True):
         LOG.debug(_("LDAP init: url=%s"), url)
         LOG.debug(_('LDAP init: use_tls=%(use_tls)s\n'
                   'tls_cacertfile=%(tls_cacertfile)s\n'
@@ -551,6 +553,8 @@ class LdapWrapper(object):
         if use_tls:
             self.conn.start_tls_s()
 
+        self.conn.set_option(ldap.OPT_REFERRALS, int(chase_referrals))
+
     def simple_bind_s(self, user, password):
         LOG.debug(_("LDAP bind: dn=%s"), user)
         return self.conn.simple_bind_s(user, password)
@@ -591,8 +595,9 @@ class LdapWrapper(object):
 
         o = []
         for dn, attrs in res:
-            o.append((dn, dict((kind, [ldap2py(x) for x in values])
-                               for kind, values in six.iteritems(attrs))))
+            if dn is not None:
+                o.append((dn, dict((kind, [ldap2py(x) for x in values])
+                                   for kind, values in six.iteritems(attrs))))
         return o
 
     def paged_search_s(self, dn, scope, query, attrlist=None):
