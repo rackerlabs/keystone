@@ -78,6 +78,19 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             expected_status=201)
         self.assertValidRegionResponse(r, ref)
 
+    def test_create_region_without_description(self):
+        """Call ``POST /regions`` without description in the request body."""
+        ref = self.new_region_ref()
+
+        # make sure we don't include a description in the request
+        del ref['description']
+
+        r = self.post(
+            '/regions',
+            body={'region': ref},
+            expected_status=201)
+        self.assertValidRegionResponse(r, ref)
+
     def test_create_region_with_conflicting_ids(self):
         """Call ``PUT /regions/{region_id}`` with conflicting region IDs."""
         # the region ref is created with an ID
