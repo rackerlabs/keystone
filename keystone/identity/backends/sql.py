@@ -302,3 +302,16 @@ class Identity(identity.Driver):
 
             session.delete(ref)
         self.assignment_api.delete_group(group_id)
+
+    def check_groups_presence(self, group_ids):
+        if not group_ids:
+            return []
+
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(Group.id)
+            query = query.filter(Group.id.in_(group_ids))
+            # Need to decapsulate id value, as query is a
+            # list of tuples with group ids inside e.g.:
+            # [(u'group_1',), (u'group_2',), (u'group_3',)]
+            return [g[0] for g in query]

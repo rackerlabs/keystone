@@ -290,3 +290,6 @@ class Identity(kvs.Base, identity.Driver):
         group_list = set(self.db.get('group_list', []))
         group_list.remove(group_id)
         self.db.set('group_list', list(group_list))
+
+    def check_groups_presence(self, group_ids):
+        raise exception.NotImplemented()

@@ -27,7 +27,7 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('token_api', 'federation_api')
+@dependency.requires('federation_api', 'identity_api', 'token_api')
 class Saml2(auth.AuthMethodHandler):
 
     method = 'saml2'
@@ -58,10 +58,12 @@ class Saml2(auth.AuthMethodHandler):
     def _handle_scoped_token(self, auth_payload):
         token_ref = self.token_api.get_token(auth_payload['id'])
         self._validate_expiration(token_ref)
-        groups = token_ref['user'][federation.GROUPS]
+        group_ids = [group['id'] for group in
+                     token_ref['user'][federation.GROUPS]]
+        group_ids = self._validate_groups(group_ids)
         return {
             'user_id': token_ref['user_id'],
-            'group_ids': [group['id'] for group in groups]
+            'group_ids': group_ids
         }
 
     def _handle_unscoped_token(self, context, auth_payload):
@@ -75,9 +77,11 @@ class Saml2(auth.AuthMethodHandler):
         rules = jsonutils.loads(mapping['rules'])
         rule_processor = utils.RuleProcessor(rules)
         mapped_properties = rule_processor.process(assertion)
+        group_ids = self._validate_groups(mapped_properties['group_ids'])
+
         return {
             'user_id': parse.quote(mapped_properties['name']),
-            'group_ids': mapped_properties['group_ids'],
+            'group_ids': group_ids,
             federation.IDENTITY_PROVIDER: identity_provider,
             federation.PROTOCOL: protocol
         }
@@ -85,3 +89,17 @@ class Saml2(auth.AuthMethodHandler):
     def _validate_expiration(self, token_ref):
         if timeutils.utcnow() > token_ref['expires']:
             raise exception.Unauthorized(_('Federation token is expired'))
+
+    def _validate_groups(self, group_ids):
+        group_ids_backend = self.identity_api.check_groups_presence(
+            group_ids)
+        group_ids_backend, group_ids = set(group_ids_backend), set(group_ids)
+        if not group_ids == group_ids_backend:
+            LOG.warning(_("Trying to use groups that don't exist in the "
+                          "backend"))
+
+        # If the group_ids iterable is empty, raise exception.Unauthorized here
+        # and avoid bothering the backend layer.
+        if not group_ids_backend:
+            raise exception.Unauthorized()
+        return group_ids_backend

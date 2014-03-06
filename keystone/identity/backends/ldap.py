@@ -180,6 +180,9 @@ class Identity(identity.Driver):
                 break
         return found
 
+    def check_groups_presence(self, group_ids):
+        raise exception.NotImplemented()
+
 
 # TODO(termie): turn this into a data object and move logic to driver
 class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):

@@ -805,4 +805,21 @@ class Driver(object):
         """Indicates if Driver supports domains."""
         raise exception.NotImplemented()
 
+    @abc.abstractmethod
+    def check_groups_presence(self, group_ids):
+        """Check whether groups are present in the backend.
+
+        Iterate over group ids from group_ids and check what
+        groups are present in the backend.
+        If ``discard_invalid_groups`` parameter is True remove missing
+        group ids from the resulting list of present group_ids.
+
+        :param group_ids: iterable with group ids to be checked.
+
+        :returns: group_ids_backend - list of group ids with all the
+                  group_ids subset present in the backend.
+
+        """
+        raise exception.NotImplemented()
+
     #end of identity
