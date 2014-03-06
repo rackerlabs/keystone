@@ -68,6 +68,11 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.catalog.driver)
 
     def create_region(self, region_ref):
+        # NOTE(lbragstad): The description column of the region database
+        # can not be null. So if the user doesn't pass in a description then
+        # set it to an empty string.
+        if 'description' not in region_ref:
+            region_ref['description'] = ''
         try:
             return self.driver.create_region(region_ref)
         except exception.NotFound:
