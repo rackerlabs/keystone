@@ -52,6 +52,24 @@
       "revId": "9fe1d6d6ca494dc077d8ab5543b3d58d7508e41d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//cWw\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-06T02:16:26Z",
+      "side": 1,
+      "message": "Thinking we will need a migration to fix this... thought?",
+      "parentUuid": "AAAAVn//cbQ\u003d",
+      "revId": "9fe1d6d6ca494dc077d8ab5543b3d58d7508e41d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
