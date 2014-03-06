@@ -157,7 +157,14 @@ class FakeLdap(object):
 
     __prefix = 'ldap:'
 
-    def __init__(self, url):
+    def __init__(self, url,
+                 page_size=0,
+                 alias_dereferencing=None,
+                 tls_cacertdir=None,
+                 tls_cacertfile=None,
+                 tls_req_cert=2,
+                 use_tls=False,
+                 chase_referrals=False):
         LOG.debug(_('FakeLdap initialize url=%s'), url)
         if url.startswith('fake://memory'):
             if url not in FakeShelves:
