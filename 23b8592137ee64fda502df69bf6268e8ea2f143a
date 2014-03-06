@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//Tg8\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-06T23:02:06Z",
+      "side": 1,
+      "message": "(NIT): suggest remove \"as well\". It is superfluous.",
+      "revId": "23b8592137ee64fda502df69bf6268e8ea2f143a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
