@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//W90\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-03-06T16:40:37Z",
+      "side": 1,
+      "message": "Alternately, we could set the description equal to the name?",
+      "revId": "143821c6968dc04dc4a8fcfae7d09f360d19c0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
