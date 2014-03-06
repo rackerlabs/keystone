@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//V2c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-06T18:25:55Z",
+      "side": 1,
+      "message": "The first line of a commit message shouldn\u0027t end in a period",
+      "revId": "f85379d7aef60674a8042b02b19a94b6710a7eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//V1k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-06T18:25:55Z",
+      "side": 1,
+      "message": "This should be rephrased as a statement of what was done. This sounds more like a TODO.",
+      "revId": "f85379d7aef60674a8042b02b19a94b6710a7eed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
