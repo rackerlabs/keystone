@@ -88,6 +88,8 @@ CONF = config.CONF
 
 exception._FATAL_EXCEPTION_FORMAT_ERRORS = True
 
+_TRUE_VALUES = ('True', 'true', '1', 'yes')
+
 
 class dirs:
     @staticmethod
@@ -309,7 +311,17 @@ class NoModule(object):
         sys.meta_path.insert(0, finder)
 
 
-class TestCase(oslotest.BaseTestCase):
+class BaseTestCase(oslotest.BaseTestCase):
+    """Light weight base test class.
+
+    This is a placeholder that will eventually go away once thc
+    setup/teardown in TestCase is properly trimmed down to the bare
+    essentials. This is really just a play to speed up the tests by
+    eliminating unnecessary work.
+    """
+
+
+class TestCase(BaseTestCase):
 
     _config_file_list = [dirs.etc('keystone.conf.sample'),
                          dirs.tests('test_overrides.conf')]
