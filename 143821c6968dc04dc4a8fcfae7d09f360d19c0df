@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//W6s\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 10680
+      },
+      "writtenOn": "2014-03-06T16:50:54Z",
+      "side": 1,
+      "message": "For some reason, if the region_ref is None, it will throw :\n\"TypeError: argument of type \u0027NoneType\u0027 is not iterable\"\n\nTo avoid this, kindly check for None.",
+      "revId": "143821c6968dc04dc4a8fcfae7d09f360d19c0df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//W90\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 1
