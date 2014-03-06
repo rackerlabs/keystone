@@ -16,6 +16,24 @@
       "revId": "9fe1d6d6ca494dc077d8ab5543b3d58d7508e41d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//cdY\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-06T02:01:35Z",
+      "side": 1,
+      "message": "Makes sense according to  the identity V3 API: https://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#regions-v3regions\n\nbut sending a create request without any parameters or description results in the following: \n\nhttp://paste.openstack.org/show/72738/\n\nSQL fails out because the description column is NULL.\n\nSo, I think we should probably make the impl work to fit what the API spec details.",
+      "parentUuid": "AAAAVn//h8Q\u003d",
+      "revId": "9fe1d6d6ca494dc077d8ab5543b3d58d7508e41d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
