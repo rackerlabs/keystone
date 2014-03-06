@@ -130,6 +130,7 @@ class BaseLdap(object):
         self.tls_cacertdir = conf.ldap.tls_cacertdir
         self.tls_req_cert = parse_tls_cert(conf.ldap.tls_req_cert)
         self.attribute_mapping = {}
+        self.chase_referrals = conf.ldap.chase_referrals
 
         if self.options_name is not None:
             self.suffix = conf.ldap.suffix
@@ -211,7 +212,15 @@ class BaseLdap(object):
 
     def get_connection(self, user=None, password=None):
         if self.LDAP_URL.startswith('fake://'):
-            conn = fakeldap.FakeLdap(self.LDAP_URL)
+            conn = fakeldap.FakeLdap(
+                self.LDAP_URL,
+                self.page_size,
+                alias_dereferencing=self.alias_dereferencing,
+                use_tls=self.use_tls,
+                tls_cacertfile=self.tls_cacertfile,
+                tls_cacertdir=self.tls_cacertdir,
+                tls_req_cert=self.tls_req_cert,
+                chase_referrals=self.chase_referrals)
         else:
             conn = LdapWrapper(self.LDAP_URL,
                                self.page_size,
@@ -219,7 +228,8 @@ class BaseLdap(object):
                                use_tls=self.use_tls,
                                tls_cacertfile=self.tls_cacertfile,
                                tls_cacertdir=self.tls_cacertdir,
-                               tls_req_cert=self.tls_req_cert)
+                               tls_req_cert=self.tls_req_cert,
+                               chase_referrals=self.chase_referrals)
 
         if user is None:
             user = self.LDAP_USER
@@ -465,7 +475,7 @@ class BaseLdap(object):
 class LdapWrapper(object):
     def __init__(self, url, page_size, alias_dereferencing=None,
                  use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
-                 tls_req_cert='demand'):
+                 tls_req_cert='demand', chase_referrals=None):
         LOG.debug(_("LDAP init: url=%s"), url)
         LOG.debug(_('LDAP init: use_tls=%(use_tls)s\n'
                   'tls_cacertfile=%(tls_cacertfile)s\n'
@@ -532,6 +542,9 @@ class LdapWrapper(object):
         if use_tls:
             self.conn.start_tls_s()
 
+        if chase_referrals is not None:
+            self.conn.set_option(ldap.OPT_REFERRALS, int(chase_referrals))
+
     def simple_bind_s(self, user, password):
         LOG.debug(_("LDAP bind: dn=%s"), user)
         return self.conn.simple_bind_s(user, password)
@@ -571,9 +584,18 @@ class LdapWrapper(object):
             res = self.conn.search_s(dn, scope, query, attrlist)
 
         o = []
+        at_least_one_referral = False
         for dn, attrs in res:
+            if dn is None:
+                # this is a Referral object, rather than an Entry object
+                at_least_one_referral = True
+                continue
+
             o.append((dn, dict((kind, [ldap2py(x) for x in values])
                                for kind, values in attrs.iteritems())))
+        if at_least_one_referral:
+            LOG.debug(_('Referrals were returned and ignored. Enable referral '
+                        'chasing in keystone.conf via [ldap] chase_referrals'))
         return o
 
     def paged_search_s(self, dn, scope, query, attrlist=None):
