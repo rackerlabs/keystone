@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//Z3o\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-03-06T09:54:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//iKI\u003d",
+      "revId": "1ef1c38f3d042cca613989c961839553da1062c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//iJM\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//Z3g\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-03-06T09:54:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//iJM\u003d",
+      "revId": "1ef1c38f3d042cca613989c961839553da1062c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//cJY\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-26T16:20:48Z",
       "side": 1,
       "message": "Perhaps a sightly better test would be to add the membership to the same user as in the first part of this test, (with the group role on a different project) and hence shows that we return the sum of all such projects",
+      "revId": "1ef1c38f3d042cca613989c961839553da1062c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Z04\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-03-06T09:54:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAU3//cJY\u003d",
       "revId": "1ef1c38f3d042cca613989c961839553da1062c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
