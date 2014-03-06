@@ -354,3 +354,6 @@ class GroupApi(common_ldap.BaseLdap):
                     continue
                 users.append(user_dn)
         return users
+
+    def check_groups_presence(self, group_ids, discard_missing_groups=False):
+        raise exception.NotImplemented()

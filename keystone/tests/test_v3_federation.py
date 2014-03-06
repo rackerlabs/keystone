@@ -813,6 +813,11 @@ class FederatedTokenTests(FederationTests):
         r = self._issue_unscoped_token()
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
+    def test_issue_unscoped_token_no_groups(self):
+        self.assertRaises(exception.Unauthorized,
+                          self._issue_unscoped_token,
+                          assertion='TESTER_ASSERTION')
+
     def test_scope_to_project_once(self):
         r = self.post(self.AUTH_URL,
                       body=self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
@@ -867,10 +872,16 @@ class FederatedTokenTests(FederationTests):
                           context, self.UNSCOPED_V3_SAML2_REQ)
 
     def test_issue_token_with_nonexistent_group(self):
+        """Inject assertion that matches rule issuing bad group id.
+
+        Expect server to discard group not present in the backend
+        and return token only with valid groups.
+
+        """
         r = self._issue_unscoped_token(assertion='CONTRACTOR_ASSERTION')
         groups = r.json['token']['user']['OS-FEDERATION:groups']
         group_ids = set(g['id'] for g in groups)
-        group_ids_ref = set(['bad_group_id'])
+        group_ids_ref = set([self.group_customers['id']])
         self.assertEqual(group_ids, group_ids_ref)
 
     def test_scope_to_domain_once(self):
@@ -970,6 +981,84 @@ class FederatedTokenTests(FederationTests):
         project_id = token_resp['project']['id']
         self.assertEqual(project_id, project['id'])
         self._check_scoped_token_attributes(token_resp)
+
+    def test_workflow_with_groups_deletion(self):
+        """Test full workflow with groups deletion before token scoping.
+
+        The test scenario is as follows:
+         - Create group ``group``
+         - Create and assign roles to ``group`` and ``project_all``
+         - Patch mapping rules for existing IdP so it issues group id
+         - Issue unscoped token with ``group``'s id
+         - Delete group ``group``
+         - Scope token to ``project_all``
+         - Expect 401 HTTP Unauthorized
+
+        """
+        #create group and role
+        group = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.identity_api.create_group(group['id'],
+                                       group)
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'],
+                                        role)
+
+        #assign role to group and project_admins
+        self.assignment_api.create_grant(role['id'],
+                                         group_id=group['id'],
+                                         project_id=self.project_all['id'])
+
+        rules = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': group['id']
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName'
+                        },
+                        {
+                            'type': 'LastName',
+                            'any_one_of': [
+                                'Account'
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+        self.federation_api.update_mapping(self.mapping['id'], rules)
+
+        r = self._issue_unscoped_token(assertion='TESTER_ASSERTION')
+        token_id = r.headers.get('X-Subject-Token')
+
+        #delete group
+        self.identity_api.delete_group(group['id'])
+
+        # scope token to project_all, expect HTTP 401
+        scoped_token = self._scope_request(
+            token_id, 'project',
+            self.project_all['id'])
+
+        self.post(self.AUTH_URL,
+                  body=scoped_token,
+                  expected_status=401)
+
+        #revert to old mapping
+        self.federation_api.update_mapping(self.mapping['id'],
+                                           self.rules)
 
     def load_federation_sample_data(self):
         """Inject additional data."""
@@ -1187,7 +1276,12 @@ class FederatedTokenTests(FederationTests):
                     'local': [
                         {
                             'group': {
-                                'id': 'bad_group_id'
+                                'id': uuid.uuid4().hex
+                            }
+                        },
+                        {
+                            'group': {
+                                'id': self.group_customers['id']
                             }
                         },
                         {
@@ -1214,6 +1308,38 @@ class FederatedTokenTests(FederationTests):
                         }
                     ]
                 },
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': 'this_group_no_longer_exists'
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName',
+                        },
+                        {
+                            'type': 'Email',
+                            'any_one_of': [
+                                'testacct@example.com'
+                            ]
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'Tester'
+                            ]
+                        }
+                    ]
+                },
+
 
             ]
         }
