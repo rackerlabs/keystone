@@ -68,6 +68,15 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.catalog.driver)
 
     def create_region(self, region_ref):
+        # FIXME(lbragstad): region['description'] is not nullable when using
+        # SQL backend, see bug 1284972. This should be fixed with a migration
+        # that modifies the 'description' column to be nullable, but since we
+        # are in feature freeze, the migration will have to wait until
+        # development opens for Juno. For right now, if 'description' is not
+        # provided by the user, set it to the region uuid which should allow
+        # uniqueness and comply with the V3 API.
+        if 'description' not in region_ref:
+            region_ref['description'] = region_ref['id']
         try:
             return self.driver.create_region(region_ref)
         except exception.NotFound:

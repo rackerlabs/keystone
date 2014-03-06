@@ -645,8 +645,19 @@ class RestfulTestCase(rest.RestfulTestCase):
 
     def assertValidRegion(self, entity, ref=None):
         self.assertIsNotNone(entity.get('description'))
+        # FIXME(lbragstad): Let's make sure to revisit this once we have an
+        # SQL migration that makes sure 'description' can be nullable. See
+        # bug 1284972
         if ref:
-            self.assertEqual(ref['description'], entity['description'])
+            # If 'description' is in ref then it was provided by the caller
+            # and we should be checking that the entity matches.
+            if 'description' in ref:
+                self.assertEqual(ref['description'], entity['description'])
+            # If 'description' is not in ref then we need to make sure we test
+            # that 'description' is the uuid of the region, set in the
+            # catalog.Core.Manager
+            else:
+                self.assertEqual(entity['id'], entity['description'])
         return entity
 
     # service validation

@@ -78,6 +78,46 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             expected_status=201)
         self.assertValidRegionResponse(r, ref)
 
+    def test_create_region_without_description(self):
+        """Call ``POST /regions`` without description in the request body."""
+        ref = self.new_region_ref()
+
+        # make sure we don't include a description in the request
+        del ref['description']
+
+        r = self.post(
+            '/regions',
+            body={'region': ref},
+            expected_status=201)
+        self.assertValidRegionResponse(r, ref)
+
+    def test_create_region_description_uniqueness(self):
+        """Call ``POST /regions`` without descriptions in the request bodies.
+        """
+        # since the description column can't be null when using the SQL
+        # backend, we have to make sure that column is still unique
+        # until a migration can be provided to fix that. This test case
+        # ensures when we create two regions, they can be written to the db
+        # without conflicting descriptions.
+        ref1 = self.new_region_ref()
+        ref2 = self.new_region_ref()
+
+        # make sure we don't include a description in the requests
+        del ref1['description']
+        del ref2['description']
+
+        resp1 = self.post(
+            '/regions',
+            body={'region': ref1},
+            expected_status=201)
+        self.assertValidRegionResponse(resp1, ref1)
+
+        resp2 = self.post(
+            '/regions',
+            body={'region': ref2},
+            expected_status=201)
+        self.assertValidRegionResponse(resp2, ref2)
+
     def test_create_region_with_conflicting_ids(self):
         """Call ``PUT /regions/{region_id}`` with conflicting region IDs."""
         # the region ref is created with an ID
