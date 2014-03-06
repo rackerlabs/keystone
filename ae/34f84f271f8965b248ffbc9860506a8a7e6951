@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+1: termie <termie@openstack.org>
+Approved+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: ldbragst <ldbragst@us.ibm.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Forrest Carpenter <forrest@pistoncloud.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 06 Mar 2014 00:59:46 +0000
+Reviewed-on: https://review.openstack.org/77294
+Project: openstack/keystone
+Branch: refs/heads/master
