@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//Zhg\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-06T10:49:47Z",
+      "side": 1,
+      "message": "So I would suggest you do the following:\n- Keep the test above, but:\n\na) use a different role for one of the tenants (e.g. for tenant_bar). and\n\nb) change tenant_baz to one that is user 1 does not have a role on.\n\nThis won\u0027t change the results of this part of the test, but then…\n\n- Add another section of the test that adds user1 to the group1.\n- Then list projects for user1 and you should get back 3 projects for user1 (testing that the list is the sum of tenants with both direct and group membership roles AND that we don\u0027t count a project twice if it has both direct and group roles)",
+      "revId": "377976fa796b5f0afc406ea686d4f3c157376d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
