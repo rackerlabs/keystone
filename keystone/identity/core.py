@@ -805,4 +805,26 @@ class Driver(object):
         """Indicates if Driver supports domains."""
         raise exception.NotImplemented()
 
+    def check_groups_presence(self, group_ids, discard_missing_groups=False):
+        """Check whether groups are present in the backend.
+
+        Iterate over group ids from group_ids and check whether all
+        the groups are present in the backend.
+        If ``discard_invalid_groups`` parameter is True remove missing
+        group ids from the resulting list of present group_ids.
+
+        :param group_ids: iterable with group ids to be checked.
+        :param discard_invalid_groups: boolean parameter
+
+        :returns: a tuple consisting of a boolean parameter
+                  (True if all the groups are present in the
+                  backend, False otherwise.) and a list of group ids equal
+                  to group_ids input parametr if ``discard_invalid_groups``
+                  is False or a subset of group_ids input including group
+                  ids present in the backend if ``discard_invalid_groups``
+                  is set to True.
+
+        """
+        raise exception.NotImplemented()
+
     #end of identity

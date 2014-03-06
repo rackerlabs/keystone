@@ -302,3 +302,24 @@ class Identity(identity.Driver):
 
             session.delete(ref)
         self.assignment_api.delete_group(group_id)
+
+    def check_groups_presence(self, group_ids, discard_missing_groups=False):
+
+        all_groups_present = False
+        if not group_ids:
+            all_groups_present=True
+            return (all_groups_present, [])
+
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(Group)
+            query = query.filter(Group.id.in_(group_ids))
+            group_ids_backend = [group.id for group in query.all()]
+        all_groups_present = bool(group_ids_backend == group_ids)
+
+        if discard_missing_groups:
+            group_ids_result = group_ids_backend
+        else:
+            group_ids_result = group_ids
+
+        return (all_groups_present, group_ids_result)
