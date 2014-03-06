@@ -26,9 +26,9 @@ import warnings
 
 import fixtures
 import logging
+import oslotest.base as oslotest
 from paste import deploy
 import six
-import testtools
 from testtools import testcase
 import webob
 
@@ -309,7 +309,7 @@ class NoModule(object):
         sys.meta_path.insert(0, finder)
 
 
-class TestCase(testtools.TestCase):
+class TestCase(oslotest.BaseTestCase):
 
     _config_file_list = [dirs.etc('keystone.conf.sample'),
                          dirs.tests('test_overrides.conf')]
