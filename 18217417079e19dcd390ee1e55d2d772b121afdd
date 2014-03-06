@@ -50,6 +50,24 @@
       "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//bws\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-03-06T04:02:34Z",
+      "side": 1,
+      "message": "Sorted the DNs by length, in decanding order should work fine. i.e. delete the ones with the longest DN first.",
+      "parentUuid": "AAAAVn//+6U\u003d",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
