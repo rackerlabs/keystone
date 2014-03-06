@@ -34,6 +34,24 @@
       "revId": "9fe1d6d6ca494dc077d8ab5543b3d58d7508e41d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//cbQ\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-06T02:07:31Z",
+      "side": 1,
+      "message": "https://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/037_add_region_table.py#L27",
+      "parentUuid": "AAAAVn//cdY\u003d",
+      "revId": "9fe1d6d6ca494dc077d8ab5543b3d58d7508e41d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
