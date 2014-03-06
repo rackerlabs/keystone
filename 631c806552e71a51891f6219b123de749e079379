@@ -16,6 +16,24 @@
       "revId": "631c806552e71a51891f6219b123de749e079379",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//dCU\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-06T00:35:49Z",
+      "side": 1,
+      "message": "I agree with Dolph, but I don\u0027t think we should accept this because of it. Where the server would always include http://docs.openstack.org/identity/api/v2.0 namespace before, now it wouldn\u0027t include any namespace if the split didn\u0027t result in v2.0.\n\nI think this change should be using Dolph\u0027s suggestion to have middleware configuration option for this, or we could have different middleware in the v3 pipeline than is in the v2 pipeline.",
+      "parentUuid": "AAAAUH//syk\u003d",
+      "revId": "631c806552e71a51891f6219b123de749e079379",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
