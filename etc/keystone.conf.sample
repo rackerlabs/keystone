@@ -325,6 +325,7 @@
 # use_dumb_member = False
 # allow_subtree_delete = False
 # dumb_member = cn=dumb,dc=example,dc=com
+# chase_referrals = None
 
 # Maximum results per page; a value of zero ('0') disables paging (default)
 # page_size = 0
