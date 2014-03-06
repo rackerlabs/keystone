@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//bDQ\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-06T06:28:36Z",
+      "side": 1,
+      "message": "nit: use \" rather than escape the \u0027",
+      "revId": "58564740225eb949fe2da431355ec96fd8782c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
