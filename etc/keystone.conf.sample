@@ -842,6 +842,9 @@
 # Search base for users. (string value)
 #user_tree_dn=<None>
 
+# Whether referrals should be chased for queries.
+#chase_referrals=true
+
 # LDAP search filter for users. (string value)
 #user_filter=<None>
 
