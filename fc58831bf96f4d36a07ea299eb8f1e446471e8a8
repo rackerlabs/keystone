@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//N+8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-07T15:02:07Z",
+      "side": 1,
+      "message": "I\u0027m not certain that this is going to work.  I think it is going to break people that have DNs that end with something other than cn.  I suspect we need a more explicit way to find a user based on something other than DN.",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
