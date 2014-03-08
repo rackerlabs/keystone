@@ -50,6 +50,23 @@
       "revId": "b64d8b27a5b7722d5baecc477be5f1d7fb7930ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//I0g\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-03-08T11:03:06Z",
+      "side": 1,
+      "message": "This is not in stable/havana requirements, not sure why check job didn\u0027t catch that.\n\nMaster requirements changes for oauthlib are:\nI1c14c71fb37d8e164585d785c7755eccb4c9c51e\nIba4beddc8d6e62d1657b68740fcca9d9a8fc7351\n\nNote that stable/havana requirements is blocked on Trove stable/havana Ia8eafb4a5c8b950ae807464b166d44b435b824ad",
+      "revId": "b64d8b27a5b7722d5baecc477be5f1d7fb7930ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
