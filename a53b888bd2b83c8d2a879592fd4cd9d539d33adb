@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//INM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-08T17:37:31Z",
+      "side": 1,
+      "message": "I\u0027ve tried taking this type of approach to alter the region table: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/032_username_length.py\n\nonly with \n\n    region_table.c.description.alter(unique\u003dFalse) \n\nBut that doesn\u0027t seem to change the db schema at all.",
+      "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
