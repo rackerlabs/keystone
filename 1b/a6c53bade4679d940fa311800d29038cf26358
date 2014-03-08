@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Approved+1: Jamie Lennox <jamielennox@redhat.com>
+Code-Review+2: Jamie Lennox <jamielennox@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 08 Mar 2014 09:39:25 +0000
+Reviewed-on: https://review.openstack.org/78284
+Project: openstack/keystone
+Branch: refs/heads/master
