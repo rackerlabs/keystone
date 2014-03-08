@@ -2289,6 +2289,59 @@ class SqlUpgradeTests(SqlMigrateBase):
             extra = fetch_endpoint(endpoint_id)
             self.assertEqual(exp_extra, extra, msg)
 
+    def test_upgrade_region_description(self):
+        """Test upgrade to migration 43.
+
+        Create two regions with the same descritpion.
+
+        """
+        session = self.Session()
+
+        def add_region():
+            region_uuid = uuid.uuid4().hex
+
+            region = {
+                'id': region_uuid,
+                'description': ''
+            }
+
+            self.insert_dict(session, 'region', region)
+            return region_uuid
+
+        self.upgrade(43)
+        # Write one region to the database
+        region_1 = add_region()
+        # Write another region to the database with the same description
+        region_2 = add_region()
+
+    def test_downgrade_region_description(self):
+        """Test downgrade of migration 43.
+
+        Upgrade to migrate 43 and add a few regions with the same description,
+        then ensure we can migrate down to a previous migration without
+        failing.
+
+        """
+        session = self.Session()
+
+        def add_region():
+            region_uuid = uuid.uuid4().hex
+
+            region = {
+                'id': region_uuid,
+                'description': ''
+            }
+
+            self.insert_dict(session, 'region', region)
+            return region_uuid
+
+        self.upgrade(43)
+        # Write one region to the database
+        region_1 = add_region()
+        # Write another region to the database with the same description
+        region_2 = add_region()
+        self.downgrade(42)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
