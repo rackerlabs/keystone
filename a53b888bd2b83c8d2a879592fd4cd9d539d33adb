@@ -16,6 +16,24 @@
       "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//H3k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-03-08T21:25:27Z",
+      "side": 1,
+      "message": "Right, that is because the column definition is not actually where the uniqueness constraint is applied in the database (the uniqueness constraint is applied in the index definition in MySQL and in a UNIQUE CONSTRAINT definition in PostgreSQL). So, technically, the solution above will only work for MySQL properly. PostgreSQL does not have an `ALTER TABLE \u003ctable\u003e DROP INDEX \u003cindex\u003e` construct. It has a `DROP INDEX \u003cfq_index\u003e` custom extension in its SQL, but you will want to drop the constraint like so:\n\n ALTER TABLE \u003ctable\u003e DROP CONSTRAINT \u003cconstraint_name\u003e\n\nI think a more workable solution might be to use SA-migrate functionality to drop the constraint or index, like so:\n\n from migrate.changeset.constraint import UniqueConstraint\n from sqlalchemy import Table\n ...\n\n region_table \u003d Table(\u0027region\u0027, meta\u003dmeta, autoload\u003dTrue)\n duc \u003d UniqueConstraint(\u0027description\u0027, table\u003dregion_table)\n duc.drop()",
+      "parentUuid": "AAAAVn//INM\u003d",
+      "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
