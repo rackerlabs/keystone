@@ -16,6 +16,24 @@
       "revId": "708a09addd166a8826a9f5dadd2e9ef77e008999",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Gto\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-09T17:36:56Z",
+      "side": 1,
+      "message": "Hm. I\u0027ll see what I can cook up.",
+      "parentUuid": "AAAAVn//G0s\u003d",
+      "revId": "708a09addd166a8826a9f5dadd2e9ef77e008999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
