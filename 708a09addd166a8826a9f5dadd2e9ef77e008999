@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//G0s\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T16:09:12Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if the code validated that the code was exercised... maybe by checking that expired events were removed?",
+      "revId": "708a09addd166a8826a9f5dadd2e9ef77e008999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
