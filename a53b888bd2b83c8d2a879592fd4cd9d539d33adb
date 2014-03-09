@@ -34,6 +34,24 @@
       "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Hjs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-09T05:19:24Z",
+      "side": 1,
+      "message": "++ Drop the constraint with SQL-A Migrate, raw ALTER (or sql) will cause nothing but heartache in the future.\n\nJay has hit it dead on, drop the constraint  and create a new one.",
+      "parentUuid": "AAAAVn//H3k\u003d",
+      "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
