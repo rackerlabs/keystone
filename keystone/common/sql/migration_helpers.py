@@ -140,7 +140,7 @@ def sync_database_to_version(extension=None, version=None):
 
 def print_db_version(extension=None):
     if not extension:
-        print(migration.db_version(find_migrate_repo(), 0))
+        print(migration.db_version(sql.get_engine(), find_migrate_repo(), 0))
     else:
         try:
             package_name = '.'.join((contrib.__name__, extension))
@@ -150,7 +150,7 @@ def print_db_version(extension=None):
                               % package_name)
         try:
             print(migration.db_version(
-                find_migrate_repo(package), 0))
+                sql.get_engine(), find_migrate_repo(package), 0))
         except exception.MigrationNotProvided as e:
             print(e)
             sys.exit(1)
