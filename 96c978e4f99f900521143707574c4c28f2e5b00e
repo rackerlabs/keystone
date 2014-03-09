@@ -34,6 +34,24 @@
       "revId": "96c978e4f99f900521143707574c4c28f2e5b00e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//GSs\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T20:49:57Z",
+      "side": 1,
+      "message": "ok, just wondering why the change. Sounds like it\u0027s better for testing.",
+      "parentUuid": "AAAAVn//GUQ\u003d",
+      "revId": "96c978e4f99f900521143707574c4c28f2e5b00e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
