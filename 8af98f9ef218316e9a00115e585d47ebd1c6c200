@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//HfY\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-09T07:06:50Z",
+      "side": 1,
+      "message": "good catch!",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//Heg\u003d",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 1
@@ -31,6 +48,74 @@
       "side": 1,
       "message": "Cool, will do.",
       "parentUuid": "AAAAVn//Heg\u003d",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//He4\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-09T07:06:50Z",
+      "side": 1,
+      "message": "see should be seed",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Heo\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-09T07:06:50Z",
+      "side": 1,
+      "message": "use single quotes instead of double when possible",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//He0\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-09T07:06:50Z",
+      "side": 1,
+      "message": "use single quotes instead of double when possible. Also this is an incredibly helpful comment!!!",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Hcc\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-09T07:06:50Z",
+      "side": 1,
+      "message": "I love how you used mock to manipulate the space time continuum instead of a flux capacitor!!!",
       "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
