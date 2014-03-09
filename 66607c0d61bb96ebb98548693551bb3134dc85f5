@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//Hc4\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-09T06:59:23Z",
+      "side": 1,
+      "message": "this function was removed in https://review.openstack.org/#/c/78284/",
+      "revId": "66607c0d61bb96ebb98548693551bb3134dc85f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
