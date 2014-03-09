@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//Heg\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-09T06:43:14Z",
+      "side": 1,
+      "message": "nit: could reduce this by one line and just write:\n\n  now_plus_2h \u003d now + datetime.timedelta(hours\u003d2)\n\nsince delta is only used once.",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
