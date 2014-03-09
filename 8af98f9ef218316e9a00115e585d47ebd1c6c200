@@ -16,6 +16,24 @@
       "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Hds\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-09T06:45:14Z",
+      "side": 1,
+      "message": "Cool, will do.",
+      "parentUuid": "AAAAVn//Heg\u003d",
+      "revId": "8af98f9ef218316e9a00115e585d47ebd1c6c200",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
