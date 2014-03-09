@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//G4M\u003d",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T15:45:55Z",
+      "side": 1,
+      "message": "why does this test need to do self._consumer_create() now when it didn\u0027t before?",
+      "revId": "96c978e4f99f900521143707574c4c28f2e5b00e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
