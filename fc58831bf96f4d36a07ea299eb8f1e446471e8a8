@@ -16,6 +16,74 @@
       "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//G8A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T15:21:46Z",
+      "side": 1,
+      "message": "why do we need to call _dn_to_id at all? Should be able to always do\n\n obj \u003d self.model(id\u003dres[1][self.id_attr][0])",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//G7Y\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T15:21:46Z",
+      "side": 1,
+      "message": "this should be test_user_id_attr",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//G70\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T15:21:46Z",
+      "side": 1,
+      "message": "use self.opt_in_group for setting the options.",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//G7E\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T15:21:46Z",
+      "side": 1,
+      "message": "suggest use different attributes for name and id so that this test will validate that the code is using the correct config setting for the different attributes.",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
