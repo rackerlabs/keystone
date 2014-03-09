@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//Gzg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T16:37:20Z",
+      "side": 1,
+      "message": "(nit) change \"recieve\" to \"receive\"",
+      "revId": "68dd364a79d7843b990113e0c390b0b4b41aaaa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//GzU\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T16:37:20Z",
+      "side": 1,
+      "message": "Suggest get rid of this comment. It\u0027s pretty obvious as is.",
+      "revId": "68dd364a79d7843b990113e0c390b0b4b41aaaa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//GzM\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T16:37:20Z",
+      "side": 1,
+      "message": "this code should only override keys_to_check if the caller didn\u0027t pass it in, using kwargs.set_default or something.",
+      "revId": "68dd364a79d7843b990113e0c390b0b4b41aaaa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//GzI\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-09T16:37:20Z",
+      "side": 1,
+      "message": "this code should only override keys_to_check if the caller didn\u0027t pass it in.",
+      "revId": "68dd364a79d7843b990113e0c390b0b4b41aaaa7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
