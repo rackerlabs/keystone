@@ -52,6 +52,24 @@
       "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//DdI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-10T11:32:31Z",
+      "side": 1,
+      "message": "Thanks guys, I appreciate the help. I\u0027ll give that a shot and post another patch soon.",
+      "parentUuid": "AAAAVn//Hjs\u003d",
+      "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
