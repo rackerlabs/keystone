@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/++XM\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-10T22:59:11Z",
+      "side": 1,
+      "message": "remove white space?",
+      "revId": "679a9e5a4b338c33cc9e905870a8e3f8cf1042d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
