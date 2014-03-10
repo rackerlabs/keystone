@@ -34,6 +34,24 @@
       "revId": "708a09addd166a8826a9f5dadd2e9ef77e008999",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Fp4\u003d",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-10T17:07:37Z",
+      "side": 1,
+      "message": "Make a token that matches only the first event, and it should be revoked before the event is removed, and pass without revocation afterwards.",
+      "parentUuid": "AAAAVn//Gto\u003d",
+      "revId": "708a09addd166a8826a9f5dadd2e9ef77e008999",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
