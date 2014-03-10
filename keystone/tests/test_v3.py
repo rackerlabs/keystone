@@ -12,7 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import copy
 import datetime
 import uuid
 
@@ -42,12 +41,6 @@ class RestfulTestCase(rest.RestfulTestCase):
                          tests.dirs.tests('test_overrides.conf'),
                          tests.dirs.tests('backend_sql.conf'),
                          tests.dirs.tests('backend_sql_disk.conf')]
-
-    #Subclasses can override this to specify the complete list of configuration
-    #files.  The base version makes a copy of the original values, otherwise
-    #additional tests end up appending to them and corrupting other tests.
-    def config_files(self):
-        return copy.copy(self._config_file_list)
 
     def setup_database(self):
         tests.setup_database()
