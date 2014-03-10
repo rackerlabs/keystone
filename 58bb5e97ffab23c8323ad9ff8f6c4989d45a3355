@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//CPM\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2050,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-10T14:43:55Z",
+      "side": 0,
+      "message": "Make sure this actually works with the live databases.  It was added as they need to load the table for reference sake.  I think it is necessary (maybe the variable name is not, but the call to .Table is",
+      "revId": "58bb5e97ffab23c8323ad9ff8f6c4989d45a3355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
