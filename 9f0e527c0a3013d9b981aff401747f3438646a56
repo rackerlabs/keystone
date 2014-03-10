@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//B6A\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-10T15:33:39Z",
+      "side": 1,
+      "message": "there\u0027s a general convention to pass context as the first parameter to any function that requires it, followed by any parameters specific to that function. when it\u0027s reversed, i find the callers to be confusing to read (it\u0027s not clear what they\u0027re doing with context anymore)\n\nso, just reverse this method signature to \n\n  def _format_entity(self, context, entity)",
+      "revId": "9f0e527c0a3013d9b981aff401747f3438646a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//B54\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-10T15:33:39Z",
+      "side": 1,
+      "message": "same",
+      "revId": "9f0e527c0a3013d9b981aff401747f3438646a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//B4k\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-10T15:33:39Z",
+      "side": 1,
+      "message": "is there a better way you could word this, other than \"the current server\"? (i have no idea what that means)\n\n\"if the actual host is set in the WSGI environment\" maybe?\n\nfor example, i think you could avoid setting the endpoint if running behind nginx by configuring nginx with:\n\n  proxy_set_header Host $host;",
+      "revId": "9f0e527c0a3013d9b981aff401747f3438646a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//B4A\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-10T15:33:39Z",
+      "side": 1,
+      "message": "same",
+      "revId": "9f0e527c0a3013d9b981aff401747f3438646a56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
