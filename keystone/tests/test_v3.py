@@ -88,8 +88,6 @@ class RestfulTestCase(rest.RestfulTestCase):
         self.opt_in_group(group='database', connection=db_conn)
 
     def load_backends(self):
-        self.config(self.config_files())
-
         self.setup_database()
 
         # ensure the cache region instance is setup
