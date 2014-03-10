@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/++r8\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-10T22:18:54Z",
+      "side": 1,
+      "message": "I think this is broken because you are not guaranteed order or the groups returned right? Could you do a len() check instead?",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/++qY\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
