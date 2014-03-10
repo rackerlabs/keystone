@@ -70,6 +70,24 @@
       "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//AsQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-10T18:10:33Z",
+      "side": 1,
+      "message": "per discussion with Jay and Morgan on IRC (#openstack-keystone) we\u0027re having issues with this implementation. I am going to be pushing a new patch consisting of: \n\n    1.) create a tmp region table with \u0027unique\u003dFalse\u0027 \n    2.) migrate all data over from \u0027region\u0027 table to \u0027tmp_region\u0027\n    3.) rename \u0027tmp_region\u0027 table to \u0027region\u0027\n\nfor the upgrade case.",
+      "parentUuid": "AAAAVn//DdI\u003d",
+      "revId": "a53b888bd2b83c8d2a879592fd4cd9d539d33adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
