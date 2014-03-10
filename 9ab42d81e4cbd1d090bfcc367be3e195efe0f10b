@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/++v0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "these should be in alphabetical order.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++tg\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "Why not implement this?",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++tc\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "this needs to be implemented.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++s4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "should be able to indicate here that only the id is needed in the result.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++r4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "shouldn\u0027t need to convert to a bool... what else would it be?",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++qY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "this could be made simpler -- just return the groups that exist. The caller can check if there\u0027s any missing.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++pc\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "change \"paramtr\" to \"parameter\"",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++os\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "remove \"with\"",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++lo\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-10T22:17:45Z",
+      "side": 1,
+      "message": "add space after # for consistency. This applies to all these comments.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
