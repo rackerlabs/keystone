@@ -57,7 +57,6 @@ class NoMethodAuthPlugin(auth.AuthMethodHandler):
 class TestAuthPlugin(tests.TestCase):
     def setUp(self):
         super(TestAuthPlugin, self).setUp()
-        self.config(self.config_files())
         self.load_backends()
 
         # need to register the token provider first because auth controller
@@ -67,10 +66,12 @@ class TestAuthPlugin(tests.TestCase):
         self.api = auth.controllers.Auth()
 
     def config_files(self):
-        return [tests.dirs.etc('keystone.conf.sample'),
-                tests.dirs.tests('test_overrides.conf'),
-                tests.dirs.tests('backend_sql.conf'),
-                tests.dirs.tests('test_auth_plugin.conf')]
+        conf_files = super(TestAuthPlugin, self).config_files()
+        conf_files.extend([
+            tests.dirs.tests('backend_sql.conf'),
+            tests.dirs.tests('test_auth_plugin.conf')
+        ])
+        return conf_files
 
     def config(self, config_files):
         super(TestAuthPlugin, self).config(config_files)
