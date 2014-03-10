@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//Ajc\u003d",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-10T18:42:36Z",
+      "side": 1,
+      "message": "This will be impacted by https://review.openstack.org/#/c/79104/\n\nThe opt_in_group method has been removed.",
+      "revId": "37c1f10e8280af1bc938d7402b9c379e83980349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//AjY\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-10T18:42:36Z",
+      "side": 1,
+      "message": "Same comment as the previous file.",
+      "revId": "37c1f10e8280af1bc938d7402b9c379e83980349",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
