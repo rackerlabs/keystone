@@ -68,7 +68,7 @@ class TestAuthPlugin(tests.TestCase):
 
     def config_files(self):
         config_files = super(TestAuthPlugin, self).config_files()
-        config_files.append(tests.dirs.tests('test_auth_plugin.conf'))
+        config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
         return config_files
 
     def config_overrides(self):
@@ -165,7 +165,7 @@ class TestAuthPluginDynamicOptions(TestAuthPlugin):
 
     def config_files(self):
         config_files = super(TestAuthPluginDynamicOptions, self).config_files()
-        config_files.append(tests.dirs.tests('test_auth_plugin.conf'))
+        config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
         return config_files
 
 
