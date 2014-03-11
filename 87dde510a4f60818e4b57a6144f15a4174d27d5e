@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+0no\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T23:14:13Z",
+      "side": 1,
+      "message": "I looked into this too, but through doing some quick research it looks like we would have to carry specific (raw) SQL for the different cases. This is by no means official documentation, but it\u0027s something I stumbled across: \nhttps://groups.google.com/forum/#!topic/sqlalchemy/f1D1LBkaWCE",
+      "parentUuid": "AAAAVn/+0rc\u003d",
+      "revId": "87dde510a4f60818e4b57a6144f15a4174d27d5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+0u8\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
         "patchSetId": 4
