@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+8u0\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T04:14:44Z",
+      "side": 1,
+      "message": "Order was switched due to MRO lookup",
+      "revId": "17046c4417d20de2580b8e43b8b2d568b08795c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+8uw\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T04:14:44Z",
+      "side": 1,
+      "message": "Order was switched due to MRO lookup",
+      "revId": "17046c4417d20de2580b8e43b8b2d568b08795c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+8uo\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T04:14:44Z",
+      "side": 1,
+      "message": "Order was switched due to MRO lookup",
+      "revId": "17046c4417d20de2580b8e43b8b2d568b08795c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
