@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn/+2O4\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-11T19:11:12Z",
+      "side": 1,
+      "message": "So you have to have groups with a scoped token?",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2MI\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 5
@@ -47,6 +64,23 @@
       "writtenOn": "2014-03-11T19:04:38Z",
       "side": 1,
       "message": "change 401 to 500 otherwise this is confusing.",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2MY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-11T19:11:12Z",
+      "side": 1,
+      "message": "What is the point of doing this in the test? Is this something that may failed based on this feature?",
       "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
