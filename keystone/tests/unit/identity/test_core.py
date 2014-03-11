@@ -59,3 +59,25 @@ class TestDomainConfigs(testtools.TestCase):
         fake_standard_driver = None
         domain_config.setup_domain_drivers(fake_standard_driver,
                                            mock_assignment_api)
+
+    def _mock_load_config(self, assignment_api, file_list, domain_name):
+        if domain_name != 'abc.def.com':
+            raise
+
+    @mock.patch.object(identity.DomainConfigs,
+                       '_load_config',
+                       _mock_load_config)
+    def test_config_for_dot_name_domain(self):
+        # Ensure we can get the right domain name which has dots within it
+        # from filename.
+        domain_config_filename = os.path.join(self.tmp_dir,
+                                              'keystone.abc.def.com.conf')
+        self.addCleanup(lambda: os.remove(domain_config_filename))
+        with open(domain_config_filename, 'w'):
+            """Write an empty config file."""
+
+        domain_config = identity.DomainConfigs()
+        fake_assignment_api = None
+        fake_standard_driver = None
+        domain_config.setup_domain_drivers(fake_standard_driver,
+                                           fake_assignment_api)
