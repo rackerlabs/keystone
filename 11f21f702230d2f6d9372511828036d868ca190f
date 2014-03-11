@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+4ps\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T15:07:31Z",
+      "side": 1,
+      "message": "(NIT): docstrings for these?",
+      "revId": "11f21f702230d2f6d9372511828036d868ca190f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+4gU\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T15:07:31Z",
+      "side": 1,
+      "message": "Should an explanation be added here to detail why this is a module-level function instead of a class like the other two checks here?",
+      "revId": "11f21f702230d2f6d9372511828036d868ca190f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+4kw\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T15:07:31Z",
+      "side": 1,
+      "message": "Should we add: \n\n    Okay:  #!/usr/bin/python",
+      "revId": "11f21f702230d2f6d9372511828036d868ca190f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+4kI\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T15:07:31Z",
+      "side": 1,
+      "message": "Can we always assume that the shebang will be on the first line?",
+      "revId": "11f21f702230d2f6d9372511828036d868ca190f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
