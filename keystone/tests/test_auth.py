@@ -972,7 +972,7 @@ class AuthCatalog(AuthTest):
 
     def config_files(self):
         config_files = super(AuthCatalog, self).config_files()
-        config_files.append(tests.dirs.tests('backend_sql.conf'))
+        config_files.append(tests.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
     def config_overrides(self):
