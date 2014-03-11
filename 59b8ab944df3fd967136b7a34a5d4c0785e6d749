@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+66Y\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:37:10Z",
+      "side": 1,
+      "message": "copy from last patchset: implement.",
+      "revId": "59b8ab944df3fd967136b7a34a5d4c0785e6d749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+66U\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:37:10Z",
+      "side": 1,
+      "message": "copy from the last patchset: implement.",
+      "revId": "59b8ab944df3fd967136b7a34a5d4c0785e6d749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
