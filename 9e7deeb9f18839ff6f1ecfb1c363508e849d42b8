@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+2yI\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T17:50:51Z",
+      "side": 1,
+      "message": "(NIT): so this is really nit picky, but how about: \n\n    TESTCONFDIR \u003d os.path.join(TESTSDIR, \u0027config_files\u0027)",
+      "revId": "9e7deeb9f18839ff6f1ecfb1c363508e849d42b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
