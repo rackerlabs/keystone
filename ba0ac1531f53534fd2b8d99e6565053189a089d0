@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+4r4\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T14:51:18Z",
+      "side": 1,
+      "message": "should these be refactored to be: \n\n    self._set_expected_languages([\u0027it\u0027])\n\n?",
+      "revId": "ba0ac1531f53534fd2b8d99e6565053189a089d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+4rw\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T14:51:18Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "ba0ac1531f53534fd2b8d99e6565053189a089d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
