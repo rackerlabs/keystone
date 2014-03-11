@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+0ww\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T22:43:44Z",
+      "side": 1,
+      "message": "self.opt_in_group is no longer available\n\nuse self.config_fixture.config(group\u003d\u0027ldap\u0027, use_dumb_member\u003dTrue)\n\nSame for other config settings.\n\nThe main reason to use config_fixture (formerly opt_in_group) is because the override isn\u0027t \"removed\" if a config file is reloaded somewhere along the line. It\u0027s a bit more sticky than a direct set on the CONF object.",
+      "parentUuid": "AAAAU3//t/g\u003d",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///uY\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
