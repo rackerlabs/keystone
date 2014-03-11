@@ -67,9 +67,40 @@ class TestAuthPlugin(tests.TestCase):
         self.api = auth.controllers.Auth()
 
     def config_files(self):
-        return [tests.dirs.tests('test_overrides.conf'),
-                tests.dirs.tests('backend_sql.conf'),
-                tests.dirs.tests('test_auth_plugin.conf')]
+        config_files = super(TestAuthPlugin, self).config_files()
+        config_files.append(tests.dirs.tests('test_auth_plugin.conf'))
+        return config_files
+
+    def config_overrides(self):
+        super(TestAuthPlugin, self).config_overrides()
+        self.config_fixture.config(
+            group='auth',
+            methods=[
+                'keystone.auth.plugins.external.DefaultDomain',
+                'keystone.auth.plugins.password.Password',
+                'keystone.auth.plugins.token.Token',
+                'keystone.tests.test_auth_plugin.SimpleChallengeResponse'])
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.sql.Catalog')
+        self.config_fixture.config(
+            group='ec2',
+            driver='keystone.contrib.ec2.backends.sql.Ec2')
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='policy',
+            driver='keystone.policy.backends.sql.Policy')
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.sql.Revoke')
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.sql.Token')
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.trust.backends.sql.Trust')
 
     def config(self, config_files):
         super(TestAuthPlugin, self).config(config_files)
@@ -125,11 +156,17 @@ class TestAuthPlugin(tests.TestCase):
                           auth_context)
 
 
-class TestByClassNameAuthMethodRegistration(TestAuthPlugin):
+class TestAuthPluginDynamicOptions(TestAuthPlugin):
+    def config_overrides(self):
+        super(TestAuthPluginDynamicOptions, self).config_overrides()
+        # Clear the override for the [auth] ``methods`` option so it is
+        # possible to load the options from the config file.
+        self.config_fixture.conf.clear_override('methods', group='auth')
+
     def config_files(self):
-        return [tests.dirs.tests('test_overrides.conf'),
-                tests.dirs.tests('backend_sql.conf'),
-                tests.dirs.tests('test_auth_plugin_by_class_name.conf')]
+        config_files = super(TestAuthPluginDynamicOptions, self).config_files()
+        config_files.append(tests.dirs.tests('test_auth_plugin.conf'))
+        return config_files
 
 
 class TestInvalidAuthMethodRegistration(tests.TestCase):
