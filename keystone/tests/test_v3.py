@@ -12,7 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import copy
 import datetime
 import uuid
 
@@ -38,14 +37,36 @@ TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
 class RestfulTestCase(rest.RestfulTestCase):
-    _config_file_list = [tests.dirs.tests('test_overrides.conf'),
-                         tests.dirs.tests('backend_sql.conf')]
-
-    #Subclasses can override this to specify the complete list of configuration
-    #files.  The base version makes a copy of the original values, otherwise
-    #additional tests end up appending to them and corrupting other tests.
     def config_files(self):
-        return copy.copy(self._config_file_list)
+        config_files = super(RestfulTestCase, self).config_files()
+        config_files.append(tests.dirs.tests('backend_sql.conf'))
+        return config_files
+
+    def config_overrides(self):
+        db_conn = 'sqlite:///%s' % tests.dirs.tmp('test.db')
+        super(RestfulTestCase, self).config_overrides()
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.sql.Catalog')
+        self.config_fixture.config(group='database', connection=db_conn)
+        self.config_fixture.config(
+            group='ec2',
+            driver='keystone.contrib.ec2.backends.sql.Ec2')
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='policy',
+            driver='keystone.policy.backends.sql.Policy')
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.sql.Revoke')
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.sql.Token')
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.trust.backends.sql.Trust')
 
     def setup_database(self):
         tests.setup_database()
@@ -87,11 +108,6 @@ class RestfulTestCase(rest.RestfulTestCase):
         self.addCleanup(rules.reset)
 
         self.addCleanup(self.teardown_database)
-
-    def config(self, config_files):
-        super(RestfulTestCase, self).config(config_files)
-        db_conn = 'sqlite:///%s' % tests.dirs.tmp('test.db')
-        self.config_fixture.config(group='database', connection=db_conn)
 
     def load_backends(self):
         self.setup_database()

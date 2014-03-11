@@ -26,10 +26,34 @@ CONF = config.CONF
 
 
 class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
-    def config(self, config_files):
-        super(KcMasterSqlTestCase, self).config([
-            tests.dirs.tests('test_overrides.conf'),
-            tests.dirs.tests('backend_sql.conf')])
+    def config_files(self):
+        config_files = super(KcMasterSqlTestCase, self).config_files()
+        config_files.append(tests.dirs.tests('backend_sql.conf'))
+        return config_files
+
+    def config_overrides(self):
+        super(KcMasterSqlTestCase, self).config_overrides()
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.sql.Catalog')
+        self.config_fixture.config(
+            group='ec2',
+            driver='keystone.contrib.ec2.backends.sql.Ec2')
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='policy',
+            driver='keystone.policy.backends.sql.Policy')
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.sql.Revoke')
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.sql.Token')
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.trust.backends.sql.Trust')
 
     def setUp(self):
         super(KcMasterSqlTestCase, self).setUp()
