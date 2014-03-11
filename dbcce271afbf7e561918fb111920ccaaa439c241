@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+4tM\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-11T14:49:45Z",
+      "side": 1,
+      "message": "BoolOpt :(",
+      "revId": "dbcce271afbf7e561918fb111920ccaaa439c241",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
