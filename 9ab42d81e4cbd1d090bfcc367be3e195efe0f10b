@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/++R0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/++v0\u003d",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+9mU\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-11T01:26:02Z",
       "side": 1,
       "message": "I think validating the calls at the unscoped level is probbaly good enough, no need to re-validate them here.\n\nA group could be deleted, but how often do we expect that to happen? Or is that being too optimistic?",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+7L0\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "You are right, but I think we should also check the groups here and be able to warn cloud admins. Imagine situation where GROUP_X exists, an unscoped federated token is issued, GROUP_X is now deleted and somebody scopes the token to a project tied only to the GROUP_X. This action will be denied, and without re-validating groups (and what\u0027s more important logging the fact that something\u0027s wrong) 99% of admins will get really confused especially given the fact that logs are \u0027clean\u0027. In other words this re-validation here is not for making the solution safer, but rather being able to give some verbose information to the user.\nAny comments on that?",
+      "parentUuid": "AAAAVn/+9mU\u003d",
       "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+980\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/++s4\u003d",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/++r4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 3
@@ -121,6 +175,42 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/++AU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "possibly yes.\nI\u0027d go even further and compare sets made out of group ids.",
+      "parentUuid": "AAAAVn/++r8\u003d",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/++Ns\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "you are right, just wanted to make more than clear that it\u0027s a boolean value.",
+      "parentUuid": "AAAAVn/++r4\u003d",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/++qY\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 3
@@ -132,6 +222,24 @@
       "writtenOn": "2014-03-10T22:17:45Z",
       "side": 1,
       "message": "this could be made simpler -- just return the groups that exist. The caller can check if there\u0027s any missing.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+904\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/++qY\u003d",
       "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+98k\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/++pc\u003d",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/++os\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 3
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+98Q\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/++os\u003d",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/++lo\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 3
@@ -183,6 +327,24 @@
       "writtenOn": "2014-03-10T22:17:45Z",
       "side": 1,
       "message": "add space after # for consistency. This applies to all these comments.",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+97o\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-11T09:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/++lo\u003d",
       "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
