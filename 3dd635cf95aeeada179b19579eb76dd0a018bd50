@@ -16,6 +16,23 @@
       "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2ek\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-11T18:36:40Z",
+      "side": 1,
+      "message": "cert \u003d None should be initialized here rather than in L83",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
