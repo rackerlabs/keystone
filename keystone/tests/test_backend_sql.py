@@ -38,15 +38,41 @@ class SqlTests(tests.TestCase):
 
     def setUp(self):
         super(SqlTests, self).setUp()
-        self.config([tests.dirs.tests('test_overrides.conf'),
-                     tests.dirs.tests('backend_sql.conf')])
-
         self.load_backends()
 
         # populate the engine with tables & fixtures
         self.load_fixtures(default_fixtures)
         #defaulted by the data load
         self.user_foo['enabled'] = True
+
+    def config_files(self):
+        config_files = super(SqlTests, self).config_files()
+        config_files.append(tests.dirs.tests('backend_sql.conf'))
+        return config_files
+
+    def config_overrides(self):
+        super(SqlTests, self).config_overrides()
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.sql.Catalog')
+        self.config_fixture.config(
+            group='ec2',
+            driver='keystone.contrib.ec2.backends.sql.Ec2')
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='policy',
+            driver='keystone.policy.backends.sql.Policy')
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.sql.Revoke')
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.sql.Token')
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.trust.backends.sql.Trust')
 
 
 class SqlModels(SqlTests):
