@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+1/g\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-11T19:37:32Z",
+      "side": 1,
+      "message": "++ this is more along the lines of not having the resource rather than not having authorization to do something, which *could* misleading to the user.",
+      "parentUuid": "AAAAVn/+2MI\u003d",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2PI\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 5
