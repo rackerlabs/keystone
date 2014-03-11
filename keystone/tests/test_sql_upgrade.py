@@ -59,12 +59,34 @@ class SqlMigrateBase(tests.TestCase):
         self.metadata = sqlalchemy.MetaData()
         self.metadata.bind = self.engine
 
-    _config_file_list = [tests.dirs.tests('test_overrides.conf'),
-                         tests.dirs.tests('backend_sql.conf')]
-
-    #override this to specify the complete list of configuration files
     def config_files(self):
-        return self._config_file_list
+        config_files = super(SqlMigrateBase, self).config_files()
+        config_files.append(tests.dirs.tests('backend_sql.conf'))
+        return config_files
+
+    def config_overrides(self):
+        super(SqlMigrateBase, self).config_overrides()
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.sql.Catalog')
+        self.config_fixture.config(
+            group='ec2',
+            driver='keystone.contrib.ec2.backends.sql.Ec2')
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='policy',
+            driver='keystone.policy.backends.sql.Policy')
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.sql.Revoke')
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.sql.Token')
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.trust.backends.sql.Trust')
 
     def repo_package(self):
         return sql

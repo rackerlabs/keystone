@@ -350,13 +350,54 @@ class BaseTestCase(testtools.TestCase):
 
 class TestCase(BaseTestCase):
 
-    _config_file_list = [dirs.tests('test_overrides.conf')]
+    _config_file_list = []
 
     def config_files(self):
         return copy.copy(self._config_file_list)
 
     def config_overrides(self):
         self.config_fixture.config(policy_file=dirs.etc('policy.json'))
+        self.config_fixture.config(
+            group='auth',
+            methods=['keystone.auth.plugins.external.DefaultDomain',
+                     'keystone.auth.plugins.password.Password',
+                     'keystone.auth.plugins.token.Token',
+                     'keystone.auth.plugins.oauth1.OAuth',
+                     'keystone.auth.plugins.saml2.Saml2'])
+        self.config_fixture.config(
+            # TODO(morganfainberg): Make Cache Testing a separate test case
+            # in tempest, and move it out of the base unit tests.
+            group='cache',
+            backend='dogpile.cache.memory',
+            enabled=True,
+            debug_cache_backend=True,
+            proxies=['keystone.tests.test_cache.CacheIsolatingProxy'])
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.templated.Catalog',
+            template_file=dirs.tests('default_catalog.templates'))
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.kvs.Identity')
+        self.config_fixture.config(
+            group='kvs',
+            backends=[
+                'keystone.tests.test_kvs.KVSBackendForcedKeyMangleFixture',
+                'keystone.tests.test_kvs.KVSBackendFixture'])
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.kvs.Revoke')
+        self.config_fixture.config(
+            group='signing',
+            certfile='examples/pki/certs/signing_cert.pem',
+            keyfile='examples/pki/private/signing_key.pem',
+            ca_certs='examples/pki/certs/cacert.pem')
+        self.config_fixture.config(
+            group='token',
+            driver='keystone.token.backends.kvs.Token')
+        self.config_fixture.config(
+            group='trust',
+            driver='keystone.trust.backends.kvs.Trust')
 
     def setUp(self):
         super(TestCase, self).setUp()
