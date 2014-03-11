@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+9mU\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-11T01:26:02Z",
+      "side": 1,
+      "message": "I think validating the calls at the unscoped level is probbaly good enough, no need to re-validate them here.\n\nA group could be deleted, but how often do we expect that to happen? Or is that being too optimistic?",
+      "revId": "9ab42d81e4cbd1d090bfcc367be3e195efe0f10b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/++tg\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 3
