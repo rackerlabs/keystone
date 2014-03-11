@@ -33,6 +33,40 @@
       "revId": "59b8ab944df3fd967136b7a34a5d4c0785e6d749",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+4oI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-11T17:32:25Z",
+      "side": 1,
+      "message": "this isn\u0027t documented as part of the method signature?",
+      "revId": "59b8ab944df3fd967136b7a34a5d4c0785e6d749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+4nY\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-11T17:32:25Z",
+      "side": 1,
+      "message": "returns aren\u0027t named in the interface, so drop \"group_ids_backend\"",
+      "revId": "59b8ab944df3fd967136b7a34a5d4c0785e6d749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
