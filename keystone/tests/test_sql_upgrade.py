@@ -61,7 +61,7 @@ class SqlMigrateBase(tests.TestCase):
 
     def config_files(self):
         config_files = super(SqlMigrateBase, self).config_files()
-        config_files.append(tests.dirs.tests('backend_sql.conf'))
+        config_files.append(tests.dirs.tests_conf('backend_sql.conf'))
         return config_files
 
     def config_overrides(self):
