@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+2Zs\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-11T18:45:14Z",
+      "side": 1,
+      "message": "This should document that it\u0027s the private key, and end the sentence in a . Suggested text:\n\n Client certificate private key filename. Required if EC2 server requires a\n client certificate.",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2Zg\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-11T18:45:14Z",
+      "side": 1,
+      "message": "This should document that it\u0027s the certificate file:\n\n Client certificate key filename. Required if EC2 server requires a\n client certificate.",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2ZY\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-11T18:45:14Z",
+      "side": 1,
+      "message": "lowercase \"certificate authority\"",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2ZI\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-11T18:45:14Z",
+      "side": 1,
+      "message": "add \"the\" -- \"Defaults to the system CAs.\"",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2Y4\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-11T18:45:14Z",
+      "side": 1,
+      "message": "Add a . at end of sentence.",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2ek\u003d",
         "filename": "keystone/middleware/ec2_token.py",
         "patchSetId": 6
