@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+4II\u003d",
+        "filename": "doc/source/extensions/federation-configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-11T15:43:07Z",
+      "side": 1,
+      "message": "``saml2``",
+      "revId": "f19e627074a5ccd259d0adb6304820051e574502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
