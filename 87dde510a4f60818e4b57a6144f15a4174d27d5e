@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+0vI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T22:50:52Z",
+      "side": 1,
+      "message": "Is there a reason to use raw sql instead of using the SQL-Alchemy query structures to migrate data? I\u0027m concerned that the raw SQL is going to be fragile to maintain especially across multiple engines and the peculiarities of those engines.",
+      "revId": "87dde510a4f60818e4b57a6144f15a4174d27d5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+0vs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T22:50:52Z",
+      "side": 1,
+      "message": "is there a reason not to use region_table.drop() ?\n\nI am not a fan of raw SQL.",
+      "revId": "87dde510a4f60818e4b57a6144f15a4174d27d5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+0v4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T22:50:52Z",
+      "side": 1,
+      "message": "Is there a functional reason to not use table.rename() on the \"temp_table\"?",
+      "revId": "87dde510a4f60818e4b57a6144f15a4174d27d5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+0u8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/043_fixup_region_description.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-11T22:50:52Z",
+      "side": 1,
+      "message": "Same comment as on line 63",
+      "revId": "87dde510a4f60818e4b57a6144f15a4174d27d5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
