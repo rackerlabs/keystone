@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+2OE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4169,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-11T19:05:05Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like _create_test_data returns anything?\nDo we even need the lists? \nentity_lists isn\u0027t used anywhere?\nMaybe we can figure out how to get rid of domain1_entity_list?",
+      "revId": "231014e29724223011813894cfa2d282de049956",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
