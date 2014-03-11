@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn/+2Vw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-11T18:52:39Z",
+      "side": 1,
+      "message": "needs a rebase",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2gc\u003d",
         "filename": "keystone/middleware/ec2_token.py",
         "patchSetId": 6
@@ -115,6 +132,23 @@
       "writtenOn": "2014-03-11T18:36:40Z",
       "side": 1,
       "message": "cert \u003d None should be initialized here rather than in L83",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+2Vk\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-11T18:52:39Z",
+      "side": 1,
+      "message": "++ for using requests",
       "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
