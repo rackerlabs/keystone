@@ -16,6 +16,24 @@
       "revId": "58bb5e97ffab23c8323ad9ff8f6c4989d45a3355",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+834\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2050,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-03-11T03:40:59Z",
+      "side": 0,
+      "message": "see https://review.openstack.org/#/c/56243/26/keystone/tests/test_sql_upgrade.py\n\nDuring the next table loaded at line 2079 there is no any change on the table. I think this line is a small careless mistake.:)",
+      "parentUuid": "AAAAVn//CPM\u003d",
+      "revId": "58bb5e97ffab23c8323ad9ff8f6c4989d45a3355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
