@@ -67,8 +67,7 @@ class TestAuthPlugin(tests.TestCase):
         self.api = auth.controllers.Auth()
 
     def config_files(self):
-        return [tests.dirs.etc('keystone.conf.sample'),
-                tests.dirs.tests('test_overrides.conf'),
+        return [tests.dirs.tests('test_overrides.conf'),
                 tests.dirs.tests('backend_sql.conf'),
                 tests.dirs.tests('test_auth_plugin.conf')]
 
@@ -128,8 +127,7 @@ class TestAuthPlugin(tests.TestCase):
 
 class TestByClassNameAuthMethodRegistration(TestAuthPlugin):
     def config_files(self):
-        return [tests.dirs.etc('keystone.conf.sample'),
-                tests.dirs.tests('test_overrides.conf'),
+        return [tests.dirs.tests('test_overrides.conf'),
                 tests.dirs.tests('backend_sql.conf'),
                 tests.dirs.tests('test_auth_plugin_by_class_name.conf')]
 
