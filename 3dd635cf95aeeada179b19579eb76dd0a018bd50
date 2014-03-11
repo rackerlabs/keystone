@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn/+2gc\u003d",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-11T18:28:34Z",
+      "side": 1,
+      "message": "Default these to let the existing, no-non secure approach work by default.  We can set the defaults to secure in Juno.",
+      "revId": "3dd635cf95aeeada179b19579eb76dd0a018bd50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
