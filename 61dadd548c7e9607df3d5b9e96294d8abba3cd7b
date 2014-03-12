@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH///ZY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-12T14:06:29Z",
+      "side": 1,
+      "message": "Suggest removing the \u0027Bug 1230360\u0027 part from the title. Here is a nice guide for commit messages \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "61dadd548c7e9607df3d5b9e96294d8abba3cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH///ZI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-12T14:06:29Z",
+      "side": 1,
+      "message": "Change to: \n\n    Closes-Bug: 1230360",
+      "revId": "61dadd548c7e9607df3d5b9e96294d8abba3cd7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
