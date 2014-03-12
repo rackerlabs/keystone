@@ -16,6 +16,24 @@
       "revId": "377976fa796b5f0afc406ea686d4f3c157376d95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH///rA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-03-12T13:35:05Z",
+      "side": 1,
+      "message": "I\u0027m sorry Henry, I don\u0027t understand enough the b) part, could you explain it a bit more, please?",
+      "parentUuid": "AAAAVn//Zhg\u003d",
+      "revId": "377976fa796b5f0afc406ea686d4f3c157376d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
