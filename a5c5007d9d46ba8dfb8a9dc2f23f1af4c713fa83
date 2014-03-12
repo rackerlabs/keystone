@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+yAs\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-12T07:34:10Z",
+      "side": 1,
+      "message": "the ldap.dn.str2dn seems to be what we\u0027re using in ``keystone.common.ldap._dn_to_id()``:\n\nSo:\n    \u003e\u003e\u003e ldap.dn.str2dn(\u0027cn\u003ddumb,dc\u003dnonexistent\u0027)\n    [[(\u0027cn\u0027, \u0027dumb\u0027, 1)], [(\u0027dc\u0027, \u0027nonexistent\u0027, 1)]]\n    \u003e\u003e\u003e ldap.dn.str2dn(\u0027cn\u003ddumb,dc\u003dnonexistent\u0027)[0][0][1]\n    \u0027dumb\u0027\n\nYou could use:\n\n    self.assertNotEqual(keystone.common.ldap._dn_to_id(CONF.ldap.dumb_member), \n                        check_assignment[\u0027user_id\u0027])",
+      "parentUuid": "AAAAU3//nVM\u003d",
+      "revId": "a5c5007d9d46ba8dfb8a9dc2f23f1af4c713fa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3///uA\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
