@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+xmA\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-12T14:58:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/+2MI\u003d",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2PI\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 5
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn/+xl8\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-12T14:58:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/+2PI\u003d",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2Oc\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 5
@@ -118,6 +154,24 @@
       "writtenOn": "2014-03-11T19:04:38Z",
       "side": 1,
       "message": "change 401 to 500 otherwise this is confusing.",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn/+x3U\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-12T14:58:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn/+2Oc\u003d",
       "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
