@@ -522,6 +522,7 @@ def _setup_logging_from_conf(project, version):
 
     logpath = _get_log_file_path()
     if logpath:
+        CONF.use_stderr = False
         filelog = logging.handlers.WatchedFileHandler(logpath)
         log_root.addHandler(filelog)
 
