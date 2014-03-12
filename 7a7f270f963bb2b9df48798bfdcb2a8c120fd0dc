@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//7yk\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-03-12T20:45:36Z",
+      "side": 1,
+      "message": "I believe we support cross domain scope token too. (ie) DomainAdmin for Domain A get a  Domain Scoped token for Domain B if he has a role there.  Will this rule support that use case?\n\nI understand that it has nothing to do with your change",
+      "revId": "7a7f270f963bb2b9df48798bfdcb2a8c120fd0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
