@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//8zk\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-12T18:24:25Z",
+      "side": 1,
+      "message": "Are the changes to these rules necessary?",
+      "revId": "36b30c0bad7ecd058a19a6e80d18c19163ce4e6c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
