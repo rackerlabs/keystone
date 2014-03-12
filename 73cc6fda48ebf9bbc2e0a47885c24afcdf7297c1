@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//7Ew\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-12T22:21:28Z",
+      "side": 1,
+      "message": "Related to Morgan\u0027s patch here: \n\nhttps://review.openstack.org/#/c/79525/",
+      "parentUuid": "AAAAVn/+2no\u003d",
+      "revId": "73cc6fda48ebf9bbc2e0a47885c24afcdf7297c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//G3U\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
