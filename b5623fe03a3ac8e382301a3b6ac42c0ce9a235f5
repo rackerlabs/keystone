@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH///Kc\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-12T14:43:27Z",
+      "side": 1,
+      "message": "Yeah, that makes sense. Thanks.",
+      "parentUuid": "AAAAVn/+17c\u003d",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+2MI\u003d",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 5
@@ -135,6 +153,24 @@
       "side": 1,
       "message": "All the tests except this one rely on the objects prepared in the load_federation_sample_data() method. So it\u0027s IdP, protocol, mapping, and rules configured and added to the backend.\nThe aim of this test is to simulate situation where a rule assumes the group exists (in fact it does at that point), an unscoped token is issued, the group is now deleted and the client tries to scope the token. Since I must delete some roles/groups I am also creating some dynamic groups just for this test. If I create the group here, I need to update the mappings to include that groups id in the \u0027local\u0027 object. When the test is done I must revert the mapping to the old one, so the rest of the tests can carry out.\nI could create this extra \u0027group\u0027 just for this test inside the load_federation_sample_data() method, but eventually I would also juggle the mappings and upload a new one and later revert. Otherwise I would have to add another protocol, another maping, just for a single test....",
       "parentUuid": "AAAAVn/+2MY\u003d",
+      "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH///GA\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-12T14:43:27Z",
+      "side": 1,
+      "message": "If you delete this line the tests should still pass because their data is setup before each test runs.",
+      "parentUuid": "AAAAVn/+140\u003d",
       "revId": "b5623fe03a3ac8e382301a3b6ac42c0ce9a235f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
