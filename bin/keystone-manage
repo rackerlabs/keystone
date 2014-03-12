@@ -16,6 +16,7 @@
 
 import os
 import sys
+from oslo.config.cfg import *
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
 # it will override what happens to be installed in /usr/(local/)lib/python...
@@ -47,4 +48,7 @@ if __name__ == '__main__':
     if os.path.exists(dev_conf):
         config_files = [dev_conf]
 
+try:
     cli.main(argv=sys.argv, config_files=config_files)
+except ConfigFilesNotFoundError:
+   print "You dont have sufficient privileges or configuration file does not exist"
