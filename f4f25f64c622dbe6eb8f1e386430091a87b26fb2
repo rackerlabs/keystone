@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//+yI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/037_add_region_table.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-12T15:15:15Z",
+      "side": 1,
+      "message": "revert this change. We don\u0027t want a weird situation where somebody\u0027s got one version of migration 37 and somebody else has a different version.",
+      "revId": "f4f25f64c622dbe6eb8f1e386430091a87b26fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
