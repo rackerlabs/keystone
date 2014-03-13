@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//6Bs\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T01:43:32Z",
+      "side": 1,
+      "message": "suggest do ...\n\n assignment_ids \u003d [a[\u0027user_id\u0027] for a in self.assignment_api.list_role_assignments()]\n dumb_id \u003d common_ldap.BaseLdap._dn_to_id(CONF.ldap.dumb_member)\n self.assertNotIn(dumb_id, assignment_id)\n\nthen don\u0027t have to do the loop yourself, and it\u0027ll print out more info if there\u0027s a mismatch.\n\nAlso, can we assert anything else here, like assignment_ids isn\u0027t empty?\n\n(Alternatively, if we know what assignment_ids is going to be then just assert that)\n\n self.assertEqual([new_user[\u0027id\u0027]], assignment_id)",
+      "revId": "c3f4f80f16f71a66657a4cb3a86394ae84c8c186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//6BQ\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T01:43:32Z",
+      "side": 1,
+      "message": "suggest move getting the dumb member id to a separate line so that this is readable.",
+      "revId": "c3f4f80f16f71a66657a4cb3a86394ae84c8c186",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
