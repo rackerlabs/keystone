@@ -82,6 +82,10 @@ class V2TokenDataHelper(object):
                                     metadata_ref['trustee_user_id'],
                                     'id': metadata_ref['trust_id']
                                     }
+        if CONF.token.hash_algorithm:
+            o['access'].setdefault('metadata', {})
+            o['access']['metadata']['hash_algorithm'] = (
+                CONF.token.hash_algorithm)
         return o
 
     @classmethod
@@ -352,6 +356,8 @@ class V3TokenDataHelper(object):
                                            project_id, trust)
         self._populate_token_dates(token_data, expires=expires, trust=trust)
         self._populate_oauth_section(token_data, access_token)
+        if CONF.token.hash_algorithm:
+            token_data['hash_algorithm'] = CONF.token.hash_algorithm
         return {'token': token_data}
 
 
@@ -467,6 +473,9 @@ class BaseProvider(provider.Provider):
                 metadata_ref.setdefault('trust_id', trust['id'])
                 metadata_ref.setdefault('trustee_user_id',
                                         trust['trustee_user_id'])
+            if 'hash_algorithm' in token_data['token']:
+                metadata_ref.setdefault('hash_algorithm',
+                                        token_data['token']['hash_algorithm'])
             data = dict(key=token_id,
                         id=token_id,
                         expires=expiry,
