@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH//07s\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-13T15:01:58Z",
+      "side": 1,
+      "message": "typo - should be environment",
+      "revId": "c5b053c3c6c7c421efdd9c4cd5e0bd9314e2b19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//07Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-13T15:01:58Z",
+      "side": 1,
+      "message": "\"Before the requests environment is passed to the RuleProcessor, all parameters that are not inheriting from the basestring type should be filtered out.\n\nAdditionally, add an optional assertion_prefix (defaults to empty string - \u0027\u0027), which is used to filter out all keys from the environment before being passed on to the RuleProcessor.\"",
+      "revId": "c5b053c3c6c7c421efdd9c4cd5e0bd9314e2b19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//1VI\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
