@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//wyk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T23:58:48Z",
+      "side": 1,
+      "message": "why are these 2 changes being done in 1 commit? split it up. the assertion prefix doesn\u0027t to have anything to do with the bug.",
+      "revId": "909d6a8f7f0e6a00a26a06e1680cc5d353b4cf10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//wzo\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T23:58:48Z",
+      "side": 1,
+      "message": "remove \u0027, defaults to \"\"\u0027 -- the default is already set.",
+      "revId": "909d6a8f7f0e6a00a26a06e1680cc5d353b4cf10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
