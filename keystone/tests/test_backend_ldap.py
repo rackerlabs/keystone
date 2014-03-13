@@ -472,6 +472,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertDictEqual(group_ref, group)
 
         self.identity_api.delete_group(group['id'])
+
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           group['id'])
@@ -1179,6 +1180,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         self.assertDictEqual(user_ref_dict, user)
 
         self.identity_api.delete_user(user['id'])
+
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           user['id'])

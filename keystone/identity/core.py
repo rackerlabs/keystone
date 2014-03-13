@@ -353,8 +353,6 @@ class Manager(manager.Manager):
     def delete_user(self, user_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         driver.delete_user(user_id)
-        self.credential_api.delete_credentials_for_user(user_id)
-        self.token_api.delete_tokens_for_user(user_id)
 
     @notifications.created('group')
     @domains_configured
