@@ -353,8 +353,9 @@ class Manager(manager.Manager):
     def delete_user(self, user_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
         driver.delete_user(user_id)
-        self.credential_api.delete_credentials_for_user(user_id)
-        self.token_api.delete_tokens_for_user(user_id)
+        self.assignment_api.handle_delete_user(user_id)
+        self.credential_api.handle_delete_user(user_id)
+        self.token_api.handle_delete_user(user_id)
 
     @notifications.created('group')
     @domains_configured
@@ -412,6 +413,7 @@ class Manager(manager.Manager):
         # any tokens for the users who are members of the group.
         self.revoke_tokens_for_group(group_id, domain_scope)
         driver.delete_group(group_id)
+        self.assignment_api.handle_delete_group(group_id)
 
     @domains_configured
     def add_user_to_group(self, user_id, group_id, domain_scope=None):
