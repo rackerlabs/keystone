@@ -16,6 +16,23 @@
       "revId": "c5b053c3c6c7c421efdd9c4cd5e0bd9314e2b19b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//1L0\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 828,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-13T14:37:26Z",
+      "side": 1,
+      "message": "The assertion should not be valid in this context, so why would a token be issued?",
+      "revId": "c5b053c3c6c7c421efdd9c4cd5e0bd9314e2b19b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
