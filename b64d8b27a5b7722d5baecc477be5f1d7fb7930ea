@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH//1cQ\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-13T14:14:52Z",
+      "side": 1,
+      "message": "if there is trouble with specifying the version of oauthlib in requirements.txt as another reviewer seems to point out, you might want to test the signature of create_request_token_response in a try ... except block, since previous versions of the lib actually return 4 values instead of 3, see https://github.com/idan/oauthlib/blob/0.5.1/oauthlib/oauth1/rfc5849/endpoints/request_token.py#L45\nJust to be on the side of caution.",
+      "revId": "b64d8b27a5b7722d5baecc477be5f1d7fb7930ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//1cA\u003d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-13T14:14:52Z",
+      "side": 1,
+      "message": "Same remark as above.",
+      "revId": "b64d8b27a5b7722d5baecc477be5f1d7fb7930ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//kSA\u003d",
         "filename": "keystone/contrib/oauth1/validator.py",
         "patchSetId": 3
