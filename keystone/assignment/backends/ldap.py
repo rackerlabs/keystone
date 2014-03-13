@@ -264,7 +264,7 @@ class Assignment(assignment.Driver):
         return [assignment.calc_default_domain()]
 
 #Bulk actions on User From identity
-    def delete_user(self, user_id):
+    def handle_user_delete(self, user_id):
         user_dn = self.user._id_to_dn(user_id)
         for ref in self.role.list_global_roles_for_user(user_dn):
             self.role.delete_user(ref.role_dn, ref.user_dn, ref.project_dn,
@@ -281,7 +281,7 @@ class Assignment(assignment.Driver):
 
     #LDAP assignments only supports LDAP identity.  Assignments under identity
     #are already deleted
-    def delete_group(self, group_id):
+    def handle_group_delete(self, group_id):
         if not self.group.subtree_delete_enabled:
             # TODO(spzala): this is only placeholder for group and domain
             # role support which will be added under bug 1101287

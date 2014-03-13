@@ -971,8 +971,8 @@ class Driver(object):
 
 #TODO(ayoung): determine what else these two functions raise
     @abc.abstractmethod
-    def delete_user(self, user_id):
-        """Deletes all assignments for a user.
+    def handle_user_delete(self, user_id):
+        """Handles user deletion.
 
         :raises: keystone.exception.RoleNotFound
 
@@ -980,8 +980,8 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def delete_group(self, group_id):
-        """Deletes all assignments for a group.
+    def handle_group_delete(self, group_id):
+        """Handles group deletion.
 
         :raises: keystone.exception.RoleNotFound
 

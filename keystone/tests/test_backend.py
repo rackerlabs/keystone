@@ -2397,7 +2397,11 @@ class IdentityTests(object):
         group_ref = self.identity_api.get_group(group['id'])
         self.assertDictContainsSubset(group, group_ref)
 
-        self.identity_api.delete_group(group['id'])
+        with mock.patch.object(self.assignment_api,
+                               'handle_group_delete') as handle_delete_mock:
+            self.identity_api.delete_group(group['id'])
+
+        handle_delete_mock.assert_called_with(group['id'])
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           group['id'])
@@ -2615,7 +2619,12 @@ class IdentityTests(object):
         user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
         self.assertDictContainsSubset(user, user_ref_dict)
 
-        self.identity_api.delete_user(user['id'])
+        with mock.patch.object(self.assignment_api,
+                               'handle_user_delete') as handle_delete_mock:
+            self.identity_api.delete_user(user['id'])
+
+        handle_delete_mock.assert_called_with(user['id'])
+
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           user['id'])

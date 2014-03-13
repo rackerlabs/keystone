@@ -528,13 +528,13 @@ class Assignment(assignment.Driver):
             q.delete(False)
             session.delete(ref)
 
-    def delete_user(self, user_id):
+    def handle_user_delete(self, user_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=user_id)
             q.delete(False)
 
-    def delete_group(self, group_id):
+    def handle_group_delete(self, group_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=group_id)
