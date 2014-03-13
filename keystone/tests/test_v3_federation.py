@@ -813,6 +813,20 @@ class FederatedTokenTests(FederationTests):
         r = self._issue_unscoped_token()
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
+    def test_issue_unscoped_token_malformed_environment(self):
+        api = auth_controllers.Auth()
+        context = {
+            'environment': {
+                'malformed_object': object(),
+                'another_bad_idea': tuple(xrange(10)),
+                'yet_another_bad_param': dict(zip(uuid.uuid4().hex,
+                                                  range(32)))
+            }
+        }
+        self._inject_assertion(context, 'EMPLOYEE_ASSERTION')
+        r = api.authenticate_for_token(context, self.UNSCOPED_V3_SAML2_REQ)
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
     def test_scope_to_project_once(self):
         r = self.post(self.AUTH_URL,
                       body=self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
