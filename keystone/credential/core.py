@@ -100,7 +100,7 @@ class Driver(object):
         self._delete_credentials(lambda cr: cr['project_id'] == project_id)
 
     @abc.abstractmethod
-    def delete_credentials_for_user(self, user_id):
+    def handle_delete_user(self, user_id):
         """Deletes all credentials for a user."""
         self._delete_credentials(lambda cr: cr['user_id'] == user_id)
 
