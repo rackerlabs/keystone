@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//yiA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-13T19:58:12Z",
+      "side": 1,
+      "message": "Here is a nice guide to git commit messages: \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "19cae23949e3600a354c16468fc3dbfc0ae15c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//yh0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-13T19:58:12Z",
+      "side": 1,
+      "message": "use: \n\n    Closes-Bug: 1230360",
+      "revId": "19cae23949e3600a354c16468fc3dbfc0ae15c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//ydc\u003d",
+        "filename": "keystone/openstack/common/log.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-13T19:58:12Z",
+      "side": 1,
+      "message": "I don\u0027t think this value should be written directly using: \n\n    CONF.use_stderr \u003d False\n\nThat value should be set in the keystone.conf file and it is registered here: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/log.py#L135-L139",
+      "revId": "19cae23949e3600a354c16468fc3dbfc0ae15c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
