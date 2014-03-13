@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//x50\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T21:14:05Z",
+      "side": 1,
+      "message": "The sample config file is generated using tox -e sample_config , so this value just came from wherever this is defined and it isn\u0027t part of this change.",
+      "parentUuid": "AAAAWH//x9g\u003d",
+      "revId": "acb3dc48a08e15edbfc4a7d64f4cd5e401368668",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//x+Y\u003d",
         "filename": "keystone/token/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-13T21:08:40Z",
       "side": 1,
       "message": "Why the additional space here?  All of the existing uses of remove_in don\u0027t have a space like this.",
+      "revId": "acb3dc48a08e15edbfc4a7d64f4cd5e401368668",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//x5o\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T21:14:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//x+Y\u003d",
       "revId": "acb3dc48a08e15edbfc4a7d64f4cd5e401368668",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
