@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//xGk\u003d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-13T23:07:39Z",
+      "side": 1,
+      "message": "the tool is going to check for . too?",
+      "revId": "74df0b6e9a6bf3f1e47d38ffd67b0938e6fcf704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
