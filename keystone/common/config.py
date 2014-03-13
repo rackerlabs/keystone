@@ -194,7 +194,13 @@ FILE_OPTIONS = {
                     'These enumerations are processed to determine the '
                     'list of tokens to revoke.   Only disable if you are '
                     'switching to using the Revoke extension with a '
-                    'backend other than KVS, which stores events in memory.')
+                    'backend other than KVS, which stores events in memory.'),
+        cfg.StrOpt('hash_algorithm', default='md5',
+                   help="The hash algorithm to use. Allowed values are 'md5' "
+                        "and 'sha256'. WARNING: Don't change this value "
+                        "while there are tokens where the expiration has not "
+                        "passed because revocation will not work for those "
+                        "tokens."),
     ],
     'revoke': [
         cfg.StrOpt('driver',
