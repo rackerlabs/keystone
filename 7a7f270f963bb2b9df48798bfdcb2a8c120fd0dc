@@ -33,6 +33,24 @@
       "revId": "7a7f270f963bb2b9df48798bfdcb2a8c120fd0dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//4Qs\u003d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-13T07:24:49Z",
+      "side": 1,
+      "message": "Sure, that is still supported.  Whether a token is issued or not does not depend on policy….it depends on, as you say, whether the the user has a role for the scope being requested (i.e. a specific domain or project).  Policy only comes into play when you try and use that token as proof of authorisation to make an API call.",
+      "parentUuid": "AAAAWH//7yk\u003d",
+      "revId": "7a7f270f963bb2b9df48798bfdcb2a8c120fd0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
