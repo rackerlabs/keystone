@@ -121,7 +121,7 @@ class Manager(manager.Manager):
                   returns the passed-in value (such as a UUID token ID or an
                   existing hash).
         """
-        return cms.cms_hash_token(token_id)
+        return cms.cms_hash_token(token_id, mode=CONF.token.hash_algorithm)
 
     def _assert_valid(self, token_id, token_ref):
         """Raise TokenNotFound if the token is expired."""
@@ -259,7 +259,7 @@ class Manager(manager.Manager):
         self._get_token.invalidate(self, token_id)
         self.token_provider_api.invalidate_individual_token_cache(token_id)
 
-    @versionutils.deprecated(versionutils.deprecated.ICEHOUSE, remove_in=+1)
+    @versionutils.deprecated(versionutils.deprecated.ICEHOUSE, remove_in= +1)
     def list_tokens(self, user_id, tenant_id=None, trust_id=None,
                     consumer_id=None):
         """Returns a list of current token_id's for a user
