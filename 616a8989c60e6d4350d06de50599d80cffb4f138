@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//0lQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-13T15:40:09Z",
+      "side": 1,
+      "message": "from the environment, defaults to \u0027\u0027.\n\nThe rest is implementation detail that doesn\u0027t need to be exposed.",
+      "revId": "616a8989c60e6d4350d06de50599d80cffb4f138",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
