@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//ymI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-13T19:47:51Z",
+      "side": 1,
+      "message": "Suggest condensing down the title of this commit message: \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "f00b662a33127827fa3ee377624a4a77f482ae6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//yl0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-13T19:47:51Z",
+      "side": 1,
+      "message": "Use: \n\n    Closes-Bug: 1273273",
+      "revId": "f00b662a33127827fa3ee377624a4a77f482ae6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//yjw\u003d",
+        "filename": "bin/keystone-manage",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-13T19:47:51Z",
+      "side": 1,
+      "message": "wrap this in parenthesis if the message is too long and spans multiple lines.",
+      "revId": "f00b662a33127827fa3ee377624a4a77f482ae6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
