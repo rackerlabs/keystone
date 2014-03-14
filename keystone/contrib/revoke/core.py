@@ -98,6 +98,7 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.revoke.driver)
         self._register_listeners()
         self._cache = _Cache()
+        self.model = model
 
     def _user_callback(self, service, resource_type, operation,
                        payload):
