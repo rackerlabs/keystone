@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//p+8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-14T17:34:35Z",
+      "side": 1,
+      "message": "I think this should be partial-bug: 1291099",
+      "revId": "9c54bf088af54e2cc069bc01e8ad71085eb57e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
