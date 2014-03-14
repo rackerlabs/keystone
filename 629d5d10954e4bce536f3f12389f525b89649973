@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH//vl4\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-14T03:25:18Z",
+      "side": 1,
+      "message": "Actually quick question here, how do we want to go about handling the \u0027region\u0027 case? Since that was deprecated in identity-api 3.2 \n\nhttps://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#endpoints-v3endpoints\n\nShould we map values passed in as \u0027region\u0027 to \u0027region_id\u0027? Even some of the testw in test_v3_catalog.py create with \u0027region\u0027 instead of \u0027region_id\u0027. \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3_catalog.py#L234\n\nThat all might have to be refactored with this change in order to prevent having: \n\n    _mutable_parameters \u003d frozenset[(..., \u0027region\u0027, \u0027region_id\u0027, ..)] \n\nThoughts? I don\u0027t mind doing the refactor, just wondering how the backwards compatibility should work with using \u0027region\u0027.",
+      "revId": "629d5d10954e4bce536f3f12389f525b89649973",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//iMM\u003d",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 2
@@ -30,6 +47,24 @@
       "writtenOn": "2014-03-05T15:03:33Z",
       "side": 1,
       "message": "interface could arguably default to \"public\" -- i\u0027m not sure what the spec says on that, but it could be relaxed if not",
+      "revId": "629d5d10954e4bce536f3f12389f525b89649973",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//vwU\u003d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-14T03:25:18Z",
+      "side": 1,
+      "message": "The spec doesn\u0027t say anything specific about the default value for endpoints: \n\nhttps://github.com/openstack/identity-api/blob/master/openstack-identity-api/v3/src/markdown/identity-api-v3.md#endpoints-v3endpoints\n\nMaybe this would be something to bring up in an upcoming meeting to see how people weigh in? If we all did agree on a default value, it shouldn\u0027t be too tough to make interface an optional parameter.",
+      "parentUuid": "AAAAVn//iME\u003d",
       "revId": "629d5d10954e4bce536f3f12389f525b89649973",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
