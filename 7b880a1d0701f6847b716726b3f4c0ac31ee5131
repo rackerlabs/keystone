@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//olM\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-14T20:47:11Z",
+      "side": 1,
+      "message": "would it make sense to have all module level checks grouped together after CheckForAssertingNoneEqual? That way when we start to get more check it will make certain checks easier to find.",
+      "revId": "7b880a1d0701f6847b716726b3f4c0ac31ee5131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
