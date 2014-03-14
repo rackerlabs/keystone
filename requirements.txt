@@ -1,4 +1,5 @@
 # keystone dependencies
+alembic>=0.6.3
 pbr>=0.6,<1.0
 pam>=0.1.4
 WebOb>=1.2.3
