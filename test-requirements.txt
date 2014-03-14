@@ -25,6 +25,8 @@ mox>=0.5.3
 sphinx>=1.1.2,<1.2
 # test wsgi apps without starting an http server
 WebTest>=2.0
+# Sync models with migrations
+alembic>=0.4.1
 
 discover
 python-subunit>=0.0.18
