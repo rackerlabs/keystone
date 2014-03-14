@@ -205,7 +205,9 @@ FILE_OPTIONS = {
                    help='This value (calculated in seconds) is added to token '
                         'expiration before a revocation event may be removed '
                         'from the backend.'),
-
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for revocation event cacheing. This has no '
+                         'effect unless global caching is enabled.'),
     ],
     'cache': [
         cfg.StrOpt('config_prefix', default='cache.keystone',
