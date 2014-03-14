@@ -434,6 +434,10 @@ class TestCase(BaseTestCase):
         from keystone.contrib import federation
         drivers['federation_api'] = federation.Manager()
 
+        from keystone.contrib import revoke
+        drivers['revoke_api'] = revoke.Manager()
+
+
         dependency.resolve_future_dependencies()
 
         for manager_name, manager in six.iteritems(drivers):
