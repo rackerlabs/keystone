@@ -14,9 +14,11 @@
 
 """Notifications module for OpenStack Identity Service resources"""
 
+import functools
 import logging
 import socket
 
+import blinker
 from oslo.config import cfg
 from oslo import messaging
 import pycadf
@@ -40,12 +42,26 @@ LOG = log.getLogger(__name__)
 # a new action is supported.
 ACTIONS = frozenset(['created', 'deleted', 'disabled', 'updated'])
 # resource types that can be notified
-_SUBSCRIBERS = {}
 _notifier = None
 
 
 CONF = cfg.CONF
 CONF.register_opts(notifier_opts)
+
+
+created_signal = blinker.signal('created', """\
+A signal send when creating a resource.
+""")
+updated_signal = blinker.signal('updated')
+deleted_signal = blinker.signal('deleted')
+disabled_signal = blinker.signal('disabled')
+
+ACTION_MAP = {
+    'created': created_signal,
+    'deleted': deleted_signal,
+    'disabled': disabled_signal,
+    'updated': updated_signal
+}
 
 
 class ManagerNotificationWrapper(object):
@@ -58,7 +74,7 @@ class ManagerNotificationWrapper(object):
     :param resource_type: type of resource being affected
     :param public:  If True (default), the event will be sent to the notifier
                 API.  If False, the event will only be sent via
-                notify_event_callbacks to in process listeners
+                signal.send to in process listeners
 
     """
     def __init__(self, operation, resource_type, public=True,
@@ -116,11 +132,27 @@ def _get_callback_info(callback):
         return [getattr(callback, '__module__', None), callback.__name__]
 
 
+def blinker_adapter(callback):
+    @functools.wraps(callback)
+    def wrapper(sender, **kwargs):
+        args = tuple([
+            kwargs.get('service'),
+            kwargs.get('resource_type'),
+            kwargs.get('operation'),
+            kwargs.get('payload'),
+        ])
+        return callback(*args)
+    return wrapper
+
+
 def register_event_callback(event, resource_type, callbacks):
     if event not in ACTIONS:
         raise ValueError(_('%(event)s is not a valid notification event, must '
                            'be one of: %(actions)s') %
                          {'event': event, 'actions': ', '.join(ACTIONS)})
+
+    signal = ACTION_MAP[event]
+    #raise Exception('%r %r %r %r' % (event, resource_type, callbacks, signal))
 
     if not hasattr(callbacks, '__iter__'):
         callbacks = [callbacks]
@@ -130,8 +162,7 @@ def register_event_callback(event, resource_type, callbacks):
             msg = _('Method not callable: %s') % callback
             LOG.error(msg)
             raise TypeError(msg)
-        _SUBSCRIBERS.setdefault(event, {}).setdefault(resource_type, set())
-        _SUBSCRIBERS[event][resource_type].add(callback)
+        signal.connect_via(resource_type)(blinker_adapter(callback))
 
         if LOG.logger.getEffectiveLevel() <= logging.INFO:
             # Do this only if its going to appear in the logs.
@@ -142,23 +173,6 @@ def register_event_callback(event, resource_type, callbacks):
                 filter(lambda i: i is not None, callback_info))
             event_str = '.'.join(['identity', resource_type, event])
             LOG.info(msg, {'callback': callback_str, 'event': event_str})
-
-
-def notify_event_callbacks(service, resource_type, operation, payload):
-    """Sends a notification to registered extensions."""
-    if operation in _SUBSCRIBERS:
-        if resource_type in _SUBSCRIBERS[operation]:
-            for cb in _SUBSCRIBERS[operation][resource_type]:
-                subst_dict = {'cb_name': cb.__name__,
-                              'service': service,
-                              'resource_type': resource_type,
-                              'operation': operation,
-                              'payload': payload}
-                LOG.debug(_('Invoking callback %(cb_name)s for event '
-                          '%(service)s %(resource_type)s %(operation)s for'
-                          '%(payload)s'),
-                          subst_dict)
-                cb(service, resource_type, operation, payload)
 
 
 def _get_notifier():
@@ -184,7 +198,8 @@ def _get_notifier():
 
 
 def clear_subscribers():
-    _SUBSCRIBERS.clear()
+    for k in blinker.signal.im_self:
+        blinker.signal.im_self[k].receivers.clear()
 
 
 def reset_notifier():
@@ -203,21 +218,24 @@ def _send_notification(operation, resource_type, resource_id, public=True):
     :param public:  if True (default), the event will be sent
                     to the notifier API.
                     if False, the event will only be sent via
-                    notify_event_callbacks to in process listeners.
+                    signal.send to in process listeners.
     """
     payload = {'resource_info': resource_id}
     service = 'identity'
 
-    notify_event_callbacks(service, resource_type, operation, payload)
+    signal = ACTION_MAP[operation]
+    signal.send(resource_type, operation=operation, service=service,
+                resource_type=resource_type, payload=payload)
 
     if public:
         notifier = _get_notifier()
         if notifier:
             context = {}
             event_type = '%(service)s.%(resource_type)s.%(operation)s' % {
+                'operation': operation,
                 'service': service,
                 'resource_type': resource_type,
-                'operation': operation}
+                'operation': signal.name}
             try:
                 notifier.info(context, event_type, payload)
             except Exception:

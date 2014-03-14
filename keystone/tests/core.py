@@ -24,6 +24,7 @@ import sys
 import time
 import warnings
 
+import blinker
 import fixtures
 import logging
 from paste import deploy
