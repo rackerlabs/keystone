@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//wO4\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-03-14T01:34:32Z",
+      "side": 1,
+      "message": "This comment seems out of place.  Perhaps it should be just before you actually add the disabled endpoint at line 487.",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
