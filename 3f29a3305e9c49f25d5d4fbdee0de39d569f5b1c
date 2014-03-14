@@ -34,6 +34,24 @@
       "revId": "3f29a3305e9c49f25d5d4fbdee0de39d569f5b1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//sIs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-14T13:37:44Z",
+      "side": 1,
+      "message": "Cool, thanks Brant. \n\nIt looks like this pulls in a little more than just that work though, would it be possible to add some documentation in the commit message, detailing what else this is sync\u0027ing from oslo incubator?",
+      "parentUuid": "AAAAWH//sN4\u003d",
+      "revId": "3f29a3305e9c49f25d5d4fbdee0de39d569f5b1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
