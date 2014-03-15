@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//lo8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:24:18Z",
+      "side": 1,
+      "message": "Note for other reviewers, this has no functional impact unless caching is enabled. This should not be a cause for worry late in the cycle.  The default behavior is to enable caching on any section with caching code.",
+      "revId": "3d7a48ad66c2421dd8ffc20271bbb175b4060238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//lo4\u003d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:24:18Z",
+      "side": 1,
+      "message": "NIT: Typically I prefer seeing the literal {} when initializing a dictionary, as there is a significant performance penalty to using the constructor.",
+      "revId": "3d7a48ad66c2421dd8ffc20271bbb175b4060238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//low\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:24:18Z",
+      "side": 1,
+      "message": "We should probably enhance the token revocation caching expiration time configuration option to indicate that it also encompasses the revoke api.",
+      "revId": "3d7a48ad66c2421dd8ffc20271bbb175b4060238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//los\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:24:18Z",
+      "side": 1,
+      "message": "This needs to happen in the opposite order. You want to ensure the revocation event has occurred before you invalidate the cache. In the case of multiple keystones you could repopulate the cache between invalidation and revocation event.",
+      "revId": "3d7a48ad66c2421dd8ffc20271bbb175b4060238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//loc\u003d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:24:18Z",
+      "side": 1,
+      "message": "Ah good catch!",
+      "revId": "3d7a48ad66c2421dd8ffc20271bbb175b4060238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
