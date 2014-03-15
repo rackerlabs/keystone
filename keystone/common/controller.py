@@ -515,6 +515,18 @@ class V3Controller(wsgi.Application):
         if 'id' in ref and ref['id'] != value:
             raise exception.ValidationError('Cannot change ID')
 
+    def _require_matching_domain_id(self, ref_id, ref, get_member,
+                                    domain_scope=None):
+        """Ensures the value matches the reference's Domain ID, if any."""
+        if CONF.domain_id_immutable and 'domain_id' in ref:
+            if domain_scope is not None:
+                existing_ref = get_member(ref_id, domain_scope)
+            else:
+                existing_ref = get_member(ref_id)
+
+            if ref['domain_id'] != existing_ref['domain_id']:
+                raise exception.ValidationError(_('Cannot change Domain ID'))
+
     def _assign_unique_id(self, ref):
         """Generates and assigns a unique identifer to a reference."""
         ref = ref.copy()
