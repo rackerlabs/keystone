@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//lmg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:48:52Z",
+      "side": 1,
+      "message": "This now closes the RC blocker and is related to the bug for the logic/behavior interaction with Horizon",
+      "revId": "7c9746c49b7518f2a000f7e4822e822c6eeee81d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//lmk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T22:48:52Z",
+      "side": 1,
+      "message": "Note to other reviewers: As stated in previous patchset, this is the default behavior and should not affect anything (except making caching for revocation events optional if caching is globally enabled.",
+      "revId": "7c9746c49b7518f2a000f7e4822e822c6eeee81d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
