@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//mhs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T09:53:11Z",
+      "side": 1,
+      "message": "Yes, this should be Closes-Bug: xXXX\nThere should likely be a \"related-bug: YYYY\" for the subsequent fix that is pending as outlined in the commit message.",
+      "parentUuid": "AAAAWH//sMY\u003d",
+      "revId": "7a7f270f963bb2b9df48798bfdcb2a8c120fd0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//7yk\u003d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 3
@@ -84,6 +102,23 @@
       "side": 1,
       "message": "Sure, that is still supported.  Whether a token is issued or not does not depend on policy….it depends on, as you say, whether the the user has a role for the scope being requested (i.e. a specific domain or project).  Policy only comes into play when you try and use that token as proof of authorisation to make an API call.",
       "parentUuid": "AAAAWH//7yk\u003d",
+      "revId": "7a7f270f963bb2b9df48798bfdcb2a8c120fd0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//mho\u003d",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-15T09:53:11Z",
+      "side": 1,
+      "message": "I would have preferred this be a specific test case rather than lumped into a currently existing test.",
       "revId": "7a7f270f963bb2b9df48798bfdcb2a8c120fd0dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
