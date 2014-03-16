@@ -172,6 +172,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//lQU\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 82
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-03-16T07:39:32Z",
+      "side": 1,
+      "message": "This line and lines below it should be 4 spaces to the left.",
+      "revId": "2e51473138de46a4c735ce81a4a53c374206a86e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//ozA\u003d",
         "filename": "keystone/identity/core.py",
         "patchSetId": 82
