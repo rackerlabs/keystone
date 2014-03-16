@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//k6I\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-03-16T12:01:25Z",
+      "side": 1,
+      "message": "s/favor/favor of/",
+      "revId": "8f218031fd0aa3f5cb41828e67235006cb196c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
