@@ -345,6 +345,16 @@ token generation requires a public/private key pair.  The public key must be
 signed in an X509 certificate, and the certificate used to sign it must be
 available as Certificate Authority (CA) certificate.  These files can be
 generated either using the keystone-manage utility, or externally generated.
+
+Use of ``keystone-manage``'s ``pki_setup`` command is discouraged in
+favor of using an external CA. This is because the CA secret key should
+generally be kept apart from the token signing secret keys so that a
+compromise of a node does not lead to an attacker being able to generate
+their own keystone tokens. This seems like a low probability attack
+vector, as compromise of the keystone machines also means direct access
+to the token backend, and thus no need to generate ones' own tokens,
+they can just steal all of the existing tokens.
+
 The files need to be in the locations specified by the top level Keystone
 configuration file as specified in the above section.  Additionally, the
 private key should only be readable by the system user that will run Keystone.
