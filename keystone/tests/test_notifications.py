@@ -375,7 +375,6 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(TestEventCallbacks, self).setUp()
-        notifications.SUBSCRIBERS = {}
         self.has_been_called = False
 
     def _project_deleted_callback(self, service, resource_type, operation,
@@ -394,7 +393,6 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
     def test_notification_method_not_callable(self):
         fake_method = None
-        notifications.SUBSCRIBERS = {}
         self.assertRaises(TypeError,
                           notifications.register_event_callback,
                           UPDATED_OPERATION,
@@ -418,11 +416,10 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
         notifications.register_event_callback(DELETED_OPERATION,
                                               resource_type,
                                               self._project_deleted_callback)
-        self.assertIn(DELETED_OPERATION, notifications.SUBSCRIBERS)
-        self.assertIn(resource_type,
-                      notifications.SUBSCRIBERS[DELETED_OPERATION])
 
     def test_provider_event_callbacks_subscription(self):
+        callback_called = []
+
         @dependency.provider('foo_api')
         class Foo:
             def __init__(self):
@@ -431,11 +428,13 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
             def foo_callback(self, service, resource_type, operation,
                              payload):
-                pass
+                callback_called.append(True)  # uses callback_called
+                                              # from the closure
 
-        notifications.SUBSCRIBERS = {}
         Foo()
-        self.assertIn(CREATED_OPERATION, notifications.SUBSCRIBERS)
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        self.assignment_api.create_project(project_ref['id'], project_ref)
+        self.assertEqual([True], callback_called)
 
     def test_invalid_event_callbacks(self):
         @dependency.provider('foo_api')
@@ -443,7 +442,6 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
             def __init__(self):
                 self.event_callbacks = 'bogus'
 
-        notifications.SUBSCRIBERS = {}
         self.assertRaises(ValueError, Foo)
 
     def test_invalid_event_callbacks_event(self):
@@ -452,7 +450,6 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
             def __init__(self):
                 self.event_callbacks = {CREATED_OPERATION: 'bogus'}
 
-        notifications.SUBSCRIBERS = {}
         self.assertRaises(ValueError, Foo)
 
 
