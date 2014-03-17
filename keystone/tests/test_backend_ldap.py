@@ -902,9 +902,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
 
     def test_user_extra_attribute_mapping_description(self):
         # When have a mapping like description:description, the description
-        # isn't returned.
-
-        # TODO(blk-u): The description should be returned, see bug #1293698.
+        # is returned.
 
         CONF.ldap.user_additional_attribute_mapping = [
             'description:description']
@@ -920,7 +918,7 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         res = self.identity_api.driver.user.get_all()
 
         new_user = [u for u in res if u['id'] == user['id']][0]
-        self.assertNotIn('description', new_user)
+        self.assertEqual(user['description'], new_user['description'])
 
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
