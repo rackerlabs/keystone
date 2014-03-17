@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//iFU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-17T09:35:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//kMA\u003d",
+      "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//kLw\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-16T23:49:55Z",
       "side": 1,
       "message": "rather than require a domain_scope argument and having to check it here, could pass in a functor for get_admin that adds the domain_scope when required...\n\n self._require_matching_domain_id(user_id, user,\n     functools.partial(self.identity_api.get_user, domain_scope\u003ddomain_scope))\n\nThis function and the base controller in general shouldn\u0027t have anything to do with domain_scope.",
+      "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//iFw\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-17T09:35:05Z",
+      "side": 1,
+      "message": "nice!!!!!  Done.",
+      "parentUuid": "AAAAWH//kLw\u003d",
       "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//iK8\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-17T09:35:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//kK4\u003d",
+      "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//kKs\u003d",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//iKw\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-17T09:35:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//kKs\u003d",
+      "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//kKo\u003d",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-03-16T23:49:55Z",
       "side": 1,
       "message": "(nit) move `` after \"/projects/{project_id}\"",
+      "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//iKs\u003d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-17T09:35:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//kKo\u003d",
       "revId": "07b11d597c00009871024764dd5eb8dbeb78543a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
