@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//gVk\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-17T14:22:30Z",
+      "side": 1,
+      "message": "I would rather see this check on the manager class, as it would not be possible to bypass.  I realize that would be a significant reworking of this patch and don\u0027t want to hold it up.  Please add a comment to that effect and I can +2",
+      "revId": "0bcf1337d19c1c653311c7bff2bfa9de5bf9aafe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
