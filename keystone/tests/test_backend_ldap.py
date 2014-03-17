@@ -510,6 +510,23 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_updated_arbitrary_attributes_are_returned_from_update_user(self):
         self.skipTest("Using arbitrary attributes doesn't work under LDAP")
 
+    def test_check_user_in_group(self):
+        group = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
+                     domain_id=CONF.identity.default_domain_id)
+        group_id = self.identity_api.create_group(group['id'], group)['id']
+
+        user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
+                    domain_id=CONF.identity.default_domain_id)
+        user_id = self.identity_api.create_user(user['id'], user)['id']
+
+        self.identity_api.add_user_to_group(user_id, group_id)
+        
+        self.identity_api.check_user_in_group(user_id, group_id)
+        self.assertRaises(exception.NotFound,
+                          self.identity_api.check_user_in_group,
+                          uuid.uuid4().hex,
+                          group_id)
+
 
 class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
     def setUp(self):
