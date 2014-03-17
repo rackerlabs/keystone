@@ -19,6 +19,7 @@ import uuid
 
 import ldap
 import mock
+from testtools import matchers
 
 from keystone import assignment
 from keystone.common import cache
@@ -957,6 +958,29 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.identity_api.create_user(user['id'], user)
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
         self.assertTrue(user['name'] in attrs['description'])
+
+    def test_user_extra_attribute_mapping_description(self):
+        # Given a mapping like description:description, the description isn't
+        # returned.
+
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=['description:name'])
+        self.load_backends()
+        user = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'password': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id
+        }
+        self.identity_api.create_user(user['id'], user)
+        res = self.identity_api.driver.user.get_all()
+
+        new_user = [u for u in res if u['id'] == user['id']][0]
+        # TODO(blk-u): The description should be returned, see bug #1293698.
+        self.assertThat(new_user,
+                        matchers.Not(matchers.Contains('description')))
 
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
