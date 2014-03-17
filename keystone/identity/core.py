@@ -446,7 +446,7 @@ class Manager(manager.Manager):
     @domains_configured
     def check_user_in_group(self, user_id, group_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        return driver.check_user_in_group(user_id, group_id)
+        driver.check_user_in_group(user_id, group_id)
 
     # TODO(henry-nash, ayoung) The following cross calls to the assignment
     # API should be removed, with the controller and tests making the correct
