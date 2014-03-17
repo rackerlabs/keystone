@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//eOI\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6771
+      },
+      "writtenOn": "2014-03-17T17:45:30Z",
+      "side": 1,
+      "message": "Isn\u0027t faster if we do fname.count(\u0027.\u0027) instead of a split and a count? If fnames have more than 2 \".\"; then len(name) will be more than 3.",
+      "revId": "231ded3ac6918afa51f629d772b00ec170edef92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
