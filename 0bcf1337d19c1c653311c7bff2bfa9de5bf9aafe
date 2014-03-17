@@ -16,6 +16,24 @@
       "revId": "0bcf1337d19c1c653311c7bff2bfa9de5bf9aafe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//f50\u003d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-17T14:44:44Z",
+      "side": 1,
+      "message": "I added a comment to the common checkin \"controllers.py\" to this effect",
+      "parentUuid": "AAAAWH//gVk\u003d",
+      "revId": "0bcf1337d19c1c653311c7bff2bfa9de5bf9aafe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
