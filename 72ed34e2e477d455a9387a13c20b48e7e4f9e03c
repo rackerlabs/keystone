@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//d+c\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-17T18:18:56Z",
+      "side": 1,
+      "message": "is_empty",
+      "revId": "72ed34e2e477d455a9387a13c20b48e7e4f9e03c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//d+8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-17T18:18:56Z",
+      "side": 1,
+      "message": "of?",
+      "revId": "72ed34e2e477d455a9387a13c20b48e7e4f9e03c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//d8Q\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-17T18:18:56Z",
+      "side": 1,
+      "message": "use the exact same string on both debug statements so that you\u0027re not introducing two string translations for the same thing",
+      "revId": "72ed34e2e477d455a9387a13c20b48e7e4f9e03c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//d8E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-17T18:18:56Z",
+      "side": 1,
+      "message": "compare to above",
+      "revId": "72ed34e2e477d455a9387a13c20b48e7e4f9e03c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//d7Y\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-17T18:18:56Z",
+      "side": 1,
+      "message": "i\u0027m not sure what this last sentence is trying to say",
+      "revId": "72ed34e2e477d455a9387a13c20b48e7e4f9e03c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//d6U\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-17T18:18:56Z",
+      "side": 1,
+      "message": "with the new assertion methods, it\u0027s not really clear what you\u0027re testing here anymore (the assertions are much weaker) -- i\u0027d suggest explicitly asserting the state of one object, mutating it to look like the other, and then using assertDictEqual per usual",
+      "revId": "72ed34e2e477d455a9387a13c20b48e7e4f9e03c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
