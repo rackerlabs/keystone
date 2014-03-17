@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH//kBk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-17T01:19:41Z",
+      "side": 1,
+      "message": "change \"overriable\" to \"overridable\"",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//wO4\u003d",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 7
@@ -49,6 +66,74 @@
       "side": 1,
       "message": "Sure, it can be separate.  I\u0027ll go ahead and +1 this.",
       "parentUuid": "AAAAWH//qCY\u003d",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//j+g\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-17T01:19:41Z",
+      "side": 1,
+      "message": "suggest leave the comment here since it\u0027s not obvious to me why these tests should be using the sql catalog and not a kvs catalog.",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//j9Y\u003d",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-17T01:19:41Z",
+      "side": 1,
+      "message": "this code is copy-pasted all over the place now. Suggest put it in a function.",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//j8g\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-17T01:19:41Z",
+      "side": 1,
+      "message": "why change the order?",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//j8I\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-17T01:19:41Z",
+      "side": 1,
+      "message": "why change the order?",
       "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
