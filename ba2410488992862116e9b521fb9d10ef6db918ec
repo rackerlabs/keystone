@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//jQw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-17T05:41:27Z",
+      "side": 1,
+      "message": "Done in next patch.",
+      "parentUuid": "AAAAWH//kBk\u003d",
+      "revId": "ba2410488992862116e9b521fb9d10ef6db918ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//wO4\u003d",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 7
