@@ -978,9 +978,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         res = self.identity_api.driver.user.get_all()
 
         new_user = [u for u in res if u['id'] == user['id']][0]
-        # TODO(blk-u): The description should be returned, see bug #1293698.
-        self.assertThat(new_user,
-                        matchers.Not(matchers.Contains('description')))
+        self.assertThat(new_user, matchers.Contains('description'))
 
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
