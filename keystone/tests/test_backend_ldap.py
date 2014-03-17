@@ -959,8 +959,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
         self.assertTrue(user['name'] in attrs['description'])
 
-    def test_user_extra_attribute_mapping_description(self):
-        # Given a mapping like description:description, the description isn't
+    def test_user_extra_attribute_mapping_description_is_returned(self):
+        # Given a mapping like description:description, the description is
         # returned.
 
         self.config_fixture.config(
@@ -978,9 +978,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         res = self.identity_api.driver.user.get_all()
 
         new_user = [u for u in res if u['id'] == user['id']][0]
-        # TODO(blk-u): The description should be returned, see bug #1293698.
-        self.assertThat(new_user,
-                        matchers.Not(matchers.Contains('description')))
+        self.assertThat(new_user, matchers.Contains('description'))
 
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
