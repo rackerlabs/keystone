@@ -109,7 +109,17 @@ class Manager(manager.Manager):
     """
 
     def __init__(self):
+        self.event_callbacks = {
+            'deleted': {
+                'user': [self._delete_user_callback]
+            }
+        }
+
         super(Manager, self).__init__(CONF.token.driver)
+
+    def _delete_user_callback(self, service, resource_type,
+                              operation, payload):
+        self.delete_tokens_for_user(payload['resource_info']['id'])
 
     def unique_id(self, token_id):
         """Return a unique ID for a token.
@@ -205,6 +215,9 @@ class Manager(manager.Manager):
                         project['id']):
                     self.delete_tokens_for_user(user_id, project['id'])
         # TODO(morganfainberg): implement deletion of domain_scoped tokens.
+
+    def handle_delete_user(self, user):
+        self.delete_tokens_for_user(user['id'])
 
     def delete_tokens_for_user(self, user_id, project_id=None):
         """Delete all tokens for a given user or user-project combination.

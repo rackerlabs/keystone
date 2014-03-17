@@ -2398,6 +2398,7 @@ class IdentityTests(object):
         self.assertDictContainsSubset(group, group_ref)
 
         self.identity_api.delete_group(group['id'])
+
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           group['id'])
@@ -2616,6 +2617,7 @@ class IdentityTests(object):
         self.assertDictContainsSubset(user, user_ref_dict)
 
         self.identity_api.delete_user(user['id'])
+
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           user['id'])

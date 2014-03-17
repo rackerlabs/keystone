@@ -234,7 +234,8 @@ class Identity(identity.Driver):
 
         return [identity.filter_user(u.to_dict()) for u in query]
 
-    def delete_user(self, user_id):
+    def delete_user(self, user):
+        user_id = user['id']
         session = sql.get_session()
 
         with session.begin():
@@ -245,7 +246,6 @@ class Identity(identity.Driver):
             q.delete(False)
 
             session.delete(ref)
-        self.assignment_api.delete_user(user_id)
 
     # group crud
 
@@ -301,4 +301,3 @@ class Identity(identity.Driver):
             q.delete(False)
 
             session.delete(ref)
-        self.assignment_api.delete_group(group_id)

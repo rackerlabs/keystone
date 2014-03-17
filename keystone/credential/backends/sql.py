@@ -96,10 +96,10 @@ class Credential(credential.Driver):
             query = query.filter_by(project_id=project_id)
             query.delete()
 
-    def delete_credentials_for_user(self, user_id):
+    def handle_delete_user(self, user):
         session = sql.get_session()
 
         with session.begin():
             query = session.query(CredentialModel)
-            query = query.filter_by(user_id=user_id)
+            query = query.filter_by(user_id=user['id'])
             query.delete()

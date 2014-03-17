@@ -199,7 +199,8 @@ class Identity(kvs.Base, identity.Driver):
         group_ids = user_ref.get('groups', [])
         return [self.get_group(x) for x in group_ids]
 
-    def delete_user(self, user_id):
+    def delete_user(self, user):
+        user_id = user['id']
         try:
             old_user = self.db.get('user-%s' % user_id)
         except exception.NotFound:
