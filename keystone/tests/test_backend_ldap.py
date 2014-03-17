@@ -900,6 +900,28 @@ class LDAPIdentity(tests.TestCase, BaseLDAPIdentity):
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
         self.assertTrue(user['name'] in attrs['description'])
 
+    def test_user_extra_attribute_mapping_description(self):
+        # When have a mapping like description:description, the description
+        # isn't returned.
+
+        # TODO(blk-u): The description should be returned, see bug #1293698.
+
+        CONF.ldap.user_additional_attribute_mapping = [
+            'description:description']
+        self.load_backends()
+        user = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'password': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id
+        }
+        self.identity_api.create_user(user['id'], user)
+        res = self.identity_api.driver.user.get_all()
+
+        new_user = [u for u in res if u['id'] == user['id']][0]
+        self.assertNotIn('description', new_user)
+
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
                        'fake:invalid', 'invalid1', 'invalid2:',
