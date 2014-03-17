@@ -350,13 +350,15 @@ class Manager(manager.Manager):
             ref = self._set_domain_id(ref, domain_id)
         return ref
 
-    @notifications.deleted(_USER)
     @domains_configured
     def delete_user(self, user_id, domain_scope=None):
         domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+        self._about_to_delete_user(user_id);
         driver.delete_user(user_id)
-        self.credential_api.delete_credentials_for_user(user_id)
-        self.token_api.delete_tokens_for_user(user_id)
+
+    @notifications.deleted(_USER)
+    def _about_to_delete_user(self, user_id):
+        return None
 
     @notifications.created(_GROUP)
     @domains_configured

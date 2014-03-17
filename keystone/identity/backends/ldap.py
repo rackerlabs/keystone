@@ -105,8 +105,8 @@ class Identity(identity.Driver):
 
     def delete_user(self, user_id):
         self.user.check_allow_delete()
-        self.assignment_api.delete_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
+        print user_dn
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
             self.group.remove_user(user_dn, group['id'], user_id)
