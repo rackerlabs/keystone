@@ -72,8 +72,8 @@ class CredentialTestCase(CredentialBaseTestCase):
                           self.credential_api.get_credential,
                           credential_id=self.credential_id)
 
-    def test_credential_api_delete_credentials_for_user(self):
-        self.credential_api.delete_credentials_for_user(self.user_id)
+    def test_credential_api_handle_delete_user(self):
+        self.credential_api.handle_delete_user(self.user)
         # Test that the credential that we created in .setUp no longer exists
         # once we delete all credentials for self.user_id
         self.assertRaises(exception.CredentialNotFound,

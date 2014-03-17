@@ -103,15 +103,14 @@ class Identity(identity.Driver):
         self.user.update(user_id, user, old_obj)
         return self.user.get_filtered(user_id)
 
-    def delete_user(self, user_id):
+    def delete_user(self, user):
+        user_id = user['id']
         self.user.check_allow_delete()
-        self.assignment_api.delete_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
             self.group.remove_user(user_dn, group['id'], user_id)
 
-        user = self.user.get(user_id)
         if hasattr(user, 'tenant_id'):
             self.project.remove_user(user.tenant_id,
                                      self.user._id_to_dn(user_id))

@@ -276,7 +276,12 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         user_ref = self.new_user_ref(domain_id=self.domain_id)
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.delete_user(user_ref['id'])
-        self._assertLastNotify(user_ref['id'], 'deleted', 'user')
+        self.assertTrue(len(self._notifications) > 0)
+        note = self._notifications[-1]
+        self.assertEqual(note['operation'], 'deleted')
+        self.assertEqual(note['resource_id']['id'], user_ref['id'])
+        self.assertEqual(note['resource_type'], 'user')
+        self.assertTrue(note['send_notification_called'])
 
     def test_update_domain(self):
         domain_ref = self.new_domain_ref()

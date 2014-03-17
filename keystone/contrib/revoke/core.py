@@ -103,6 +103,10 @@ class Manager(manager.Manager):
                        payload):
         self.revoke_by_user(payload['resource_info'])
 
+    def _delete_user_callback(self, service, resource_type,
+                              operation, payload):
+        self.revoke_by_user(payload['resource_info']['id'])
+
     def _role_callback(self, service, resource_type, operation,
                        payload):
         self.driver.revoke(
@@ -140,7 +144,7 @@ class Manager(manager.Manager):
             ['deleted', 'OS-OAUTH1:access_token',
              self._access_token_callback],
             ['deleted', 'role', self._role_callback],
-            ['deleted', 'user', self._user_callback],
+            ['deleted', 'user', self._delete_user_callback],
             ['disabled', 'user', self._user_callback],
             ['deleted', 'project', self._project_callback],
             ['disabled', 'project', self._project_callback],
