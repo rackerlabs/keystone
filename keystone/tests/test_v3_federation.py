@@ -1054,6 +1054,24 @@ class FederatedTokenTests(FederationTests):
                   body=scoped_token,
                   expected_status=500)
 
+    def test_assertion_prefix_parameter(self):
+        """Test parameters filtering based on the prefix.
+
+        With ``assertion_prefix`` default value set to empty string
+        issue an unscoped from assertion EMPLOYEE_ASSERTION.
+        Next, configure ``assertion_prefix`` to value ``UserName``.
+        Try issuing unscoped token with EMPLOYEE_ASSERTION.
+        Expect server to raise exception.Unathorized exception.
+
+        """
+        r = self._issue_unscoped_token()
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+        self.config_fixture.config(group='federation',
+                                   assertion_prefix='UserName')
+
+        self.assertRaises(exception.Unauthorized,
+                          self._issue_unscoped_token)
+
     def load_federation_sample_data(self):
         """Inject additional data."""
 
