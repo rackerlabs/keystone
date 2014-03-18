@@ -280,14 +280,16 @@ class Catalog(catalog.Driver):
                     options(sql.joinedload(Service.endpoints)).
                     all())
 
-        def make_v3_endpoint(endpoint):
-            del endpoint['service_id']
-            endpoint['url'] = core.format_url(endpoint['url'], d)
-            return endpoint
+        def make_v3_endpoints(endpoints):
+            for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
+                del endpoint['service_id']
+                try:
+                    endpoint['url'] = core.format_url(endpoint['url'], d)
+                except exception.MalformedEndpoint:
+                    continue  # this failure is already logged in format_url()
 
-        catalog = [{'endpoints': [make_v3_endpoint(ep.to_dict())
-                                  for ep in svc.endpoints if ep.enabled],
-                    'id': svc.id,
-                    'type': svc.type} for svc in services]
+                yield endpoint
 
-        return catalog
+        return [{'endpoints': list(make_v3_endpoints(svc.endpoints)),
+                 'id': svc.id,
+                 'type': svc.type} for svc in services]
