@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//UkE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-03-18T16:34:40Z",
+      "side": 1,
+      "message": "Is None \u003d\u003d False?  Is it ok to have None as the default for a BoolOpt?",
+      "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//Ujo\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-03-18T16:34:40Z",
+      "side": 1,
+      "message": "dn is None when res is a Referral object, not an Entry object.",
+      "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
