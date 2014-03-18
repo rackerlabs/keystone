@@ -26,6 +26,7 @@ from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 from keystone.tests import mapping_fixtures
+from keystone.tests import test_serializer
 from keystone.tests import test_v3
 
 
@@ -741,7 +742,8 @@ class MappingRuleEngineTests(FederationTests):
                           rp.process, assertion)
 
 
-class FederatedTokenTests(FederationTests):
+class FederatedTokenTests(FederationTests,
+                          test_serializer.XmlSerializerTestCase):
 
     IDP = 'ORG_IDP'
     PROTOCOL = 'saml2'
@@ -849,6 +851,21 @@ class FederatedTokenTests(FederationTests):
     def test_issue_unscoped_token(self):
         r = self._issue_unscoped_token()
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_issue_unscoped_token_serialize_to_xml(self):
+        """Issue unscoped token and serialize to XML.
+
+        Make sure common.serializer doesn't complain about
+        the response structure and tag names.
+
+        """
+        r = self._issue_unscoped_token()
+        token_resp = r.json_body
+        # Remove 'extras' if empty or None, otherwise
+        # XML (de)serializer return non-equal results
+        if not token_resp['token'].get('extras'):
+            token_resp['token'].pop('extras')
+        self.assertSerializeToXML(token_resp)
 
     def test_issue_unscoped_token_no_groups(self):
         self.assertRaises(exception.Unauthorized,

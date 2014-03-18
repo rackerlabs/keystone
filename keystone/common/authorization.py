@@ -83,7 +83,8 @@ def v3_token_to_auth_context(token):
         for role in token_data['roles']:
             creds['roles'].append(role['name'])
     creds['group_ids'] = [
-        g['id'] for g in token_data['user'].get('OS-FEDERATION:groups', [])]
+        g['id'] for g in token_data['user'].get('OS-FEDERATION', {}).get(
+            'groups', [])]
     return creds
 
 

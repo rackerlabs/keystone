@@ -36,6 +36,17 @@ class XmlSerializerTestCase(tests.TestCase):
             serializer.to_xml(serializer.from_xml(xml), xmlns),
             ksmatchers.XMLEquals(xml))
 
+    def assertSerializeToXML(self, json_body):
+        """Serialize JSON body to XML.
+
+        Serialize JSON body to XML, then deserialize to JSON
+        again. Expect both JSON dictionaries to be equal.
+
+        """
+        xml_body = serializer.to_xml(copy.deepcopy(json_body))
+        json_deserialized = serializer.from_xml(xml_body)
+        self.assertDictEqual(json_deserialized, json_body)
+
     def test_auth_request(self):
         d = {
             "auth": {
