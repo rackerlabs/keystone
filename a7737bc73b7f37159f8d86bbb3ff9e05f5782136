@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//UfY\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-18T16:46:14Z",
+      "side": 1,
+      "message": "This change seems unrelated to the proposed change, but aside from that, what\u0027s the point of it?",
+      "revId": "a7737bc73b7f37159f8d86bbb3ff9e05f5782136",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
