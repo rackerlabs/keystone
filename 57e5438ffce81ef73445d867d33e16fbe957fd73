@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//TzE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-18T17:54:47Z",
+      "side": 1,
+      "message": "None does not equal False, but both are \"falsey\" if cast to a boolean first. for example, both of these are true:\n\n  None !\u003d False\n  bool(None) \u003d\u003d bool(False)\n\nand null is a reasonable default for any type of option, but users wouldn\u0027t be able to manually specify it in most cases",
+      "parentUuid": "AAAAWH//UkE\u003d",
+      "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//Ujo\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-18T16:34:40Z",
       "side": 1,
       "message": "dn is None when res is a Referral object, not an Entry object.",
+      "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//Tx4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-18T17:54:47Z",
+      "side": 1,
+      "message": "ah, that makes sense. so if you get back a referral but chasing referrals is disabled, then you essentially get no search results? should that emit a log message to warn the operator?",
+      "parentUuid": "AAAAWH//Ujo\u003d",
       "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
