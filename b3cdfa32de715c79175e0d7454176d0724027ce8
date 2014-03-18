@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//SXA\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-18T21:20:38Z",
+      "side": 1,
+      "message": "Suggest\n\n1: Keep the current filter logic\n\nor \n\n2: use the following check before each append:\n\n    if key in branch:\n        bundle.append(branch[key])\n\nUsing an instance method isn\u0027t making this any more clear.  I also don\u0027t particularly like the exception based logic flow in this case.",
+      "revId": "b3cdfa32de715c79175e0d7454176d0724027ce8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
