@@ -63,7 +63,10 @@ class Catalog(kvs.Base, catalog.Driver):
         return [self.get_region(x) for x in self.db.get('region_list', [])]
 
     def get_region(self, region_id):
-        return self.db.get('region-%s' % region_id)
+        try:
+            return self.db.get('region-%s' % region_id)
+        except exception.NotFound:
+            raise exception.RegionNotFound(region_id=region_id)
 
     def update_region(self, region_id, region):
         region.setdefault('parent_region_id')
@@ -73,7 +76,10 @@ class Catalog(kvs.Base, catalog.Driver):
 
     def delete_region(self, region_id):
         self._delete_child_regions(region_id)
-        self.db.delete('region-%s' % region_id)
+        try:
+            self.db.delete('region-%s' % region_id)
+        except exception.NotFound:
+            raise exception.RegionNotFound(region_id=region_id)
         region_list = set(self.db.get('region_list', []))
         region_list.remove(region_id)
         self.db.set('region_list', list(region_list))
@@ -91,7 +97,10 @@ class Catalog(kvs.Base, catalog.Driver):
         return [self.get_service(x) for x in self.db.get('service_list', [])]
 
     def get_service(self, service_id):
-        return self.db.get('service-%s' % service_id)
+        try:
+            return self.db.get('service-%s' % service_id)
+        except exception.NotFound:
+            raise exception.ServiceNotFound(service_id=service_id)
 
     def update_service(self, service_id, service):
         self.db.set('service-%s' % service_id, service)
@@ -103,7 +112,10 @@ class Catalog(kvs.Base, catalog.Driver):
             if self.get_endpoint(endpoint_id)['service_id'] == service_id:
                 self.delete_endpoint(endpoint_id)
 
-        self.db.delete('service-%s' % service_id)
+        try:
+            self.db.delete('service-%s' % service_id)
+        except exception.NotFound:
+            raise exception.ServiceNotFound(service_id=service_id)
         service_list = set(self.db.get('service_list', []))
         service_list.remove(service_id)
         self.db.set('service_list', list(service_list))
@@ -122,14 +134,20 @@ class Catalog(kvs.Base, catalog.Driver):
         return [self.get_endpoint(x) for x in self.db.get('endpoint_list', [])]
 
     def get_endpoint(self, endpoint_id):
-        return self.db.get('endpoint-%s' % endpoint_id)
+        try:
+            return self.db.get('endpoint-%s' % endpoint_id)
+        except exception.NotFound:
+            raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
     def update_endpoint(self, endpoint_id, endpoint):
         self.db.set('endpoint-%s' % endpoint_id, endpoint)
         return endpoint
 
     def delete_endpoint(self, endpoint_id):
-        self.db.delete('endpoint-%s' % endpoint_id)
+        try:
+            self.db.delete('endpoint-%s' % endpoint_id)
+        except exception.NotFound:
+            raise exception.EndpointNotFound(endpoint_id=endpoint_id)
         endpoint_list = set(self.db.get('endpoint_list', []))
         endpoint_list.remove(endpoint_id)
         self.db.set('endpoint_list', list(endpoint_list))

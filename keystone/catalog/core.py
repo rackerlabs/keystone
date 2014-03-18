@@ -68,68 +68,39 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.catalog.driver)
 
     def create_region(self, region_ref):
-        try:
-            return self.driver.create_region(region_ref)
-        except exception.NotFound:
-            parent_region_id = region_ref.get('parent_region_id')
-            raise exception.RegionNotFound(region_id=parent_region_id)
+        return self.driver.create_region(region_ref)
 
     def get_region(self, region_id):
-        try:
-            return self.driver.get_region(region_id)
-        except exception.NotFound:
-            raise exception.RegionNotFound(region_id=region_id)
+        return self.driver.get_region(region_id)
 
     def delete_region(self, region_id):
-        try:
-            return self.driver.delete_region(region_id)
-        except exception.NotFound:
-            raise exception.RegionNotFound(region_id=region_id)
+        return self.driver.delete_region(region_id)
 
     def get_service(self, service_id):
-        try:
-            return self.driver.get_service(service_id)
-        except exception.NotFound:
-            raise exception.ServiceNotFound(service_id=service_id)
+        return self.driver.get_service(service_id)
 
     def delete_service(self, service_id):
-        try:
-            return self.driver.delete_service(service_id)
-        except exception.NotFound:
-            raise exception.ServiceNotFound(service_id=service_id)
+        return self.driver.delete_service(service_id)
 
     @manager.response_truncated
     def list_services(self, hints=None):
         return self.driver.list_services(hints or driver_hints.Hints())
 
     def create_endpoint(self, endpoint_id, endpoint_ref):
-        try:
-            return self.driver.create_endpoint(endpoint_id, endpoint_ref)
-        except exception.NotFound:
-            service_id = endpoint_ref.get('service_id')
-            raise exception.ServiceNotFound(service_id=service_id)
+        return self.driver.create_endpoint(endpoint_id, endpoint_ref)
 
     def delete_endpoint(self, endpoint_id):
-        try:
-            return self.driver.delete_endpoint(endpoint_id)
-        except exception.NotFound:
-            raise exception.EndpointNotFound(endpoint_id=endpoint_id)
+        return self.driver.delete_endpoint(endpoint_id)
 
     def get_endpoint(self, endpoint_id):
-        try:
-            return self.driver.get_endpoint(endpoint_id)
-        except exception.NotFound:
-            raise exception.EndpointNotFound(endpoint_id=endpoint_id)
+        return self.driver.get_endpoint(endpoint_id)
 
     @manager.response_truncated
     def list_endpoints(self, hints=None):
         return self.driver.list_endpoints(hints or driver_hints.Hints())
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        try:
-            return self.driver.get_catalog(user_id, tenant_id, metadata)
-        except exception.NotFound:
-            raise exception.NotFound('Catalog not found for user and tenant')
+        return self.driver.get_catalog(user_id, tenant_id, metadata)
 
 
 @six.add_metaclass(abc.ABCMeta)
