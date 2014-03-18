@@ -15,6 +15,7 @@ import uuid
 
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
+from keystone.common import serializer
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import config
@@ -844,6 +845,8 @@ class FederatedTokenTests(FederationTests):
         context = {'environment': {}}
         self._inject_assertion(context, assertion)
         r = api.authenticate_for_token(context, self.UNSCOPED_V3_SAML2_REQ)
+        # Make sure output can be serialized to XML
+        serializer.to_xml(r.json_body)
         return r
 
     def test_issue_unscoped_token(self):
