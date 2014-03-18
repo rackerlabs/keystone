@@ -171,32 +171,62 @@ class RevokeTree(object):
            'consumer_id', 'access_token_id'
 
         """
+        # Alternative names to be checked in token for every field in
+        # revoke tree.
         alternatives = {
             'user_id': ['user_id', 'trustor_id', 'trustee_id'],
-            'domain_id': ['identity_domain_id', 'assignment_domain_id']}
-        subnode = [self.revoke_map]
+            'domain_id': ['identity_domain_id', 'assignment_domain_id'],
+        }
+        # Contains current forest (collection of trees) to be checked.
+        forest = [self.revoke_map]
+        # We iterate over every layer of our revoke tree (except the last one).
         for name in _NAMES:
+            # Here we will collect branches (subtrees) of every tree in current
+            # forest that have to do with our token.
             bundle = []
             wildcard = '%s=*' % (name,)
-            for tree in subnode:
+            # For every tree in current forest.
+            for tree in forest:
+                # If there is wildcard node on current level we take it.
                 bundle.append(tree.get(wildcard))
                 if name == 'role_id':
+                    # Roles are very special since token have a list of them
+                    # and any one of them will suffice.
                     for role_id in token_data.get('roles', []):
                         bundle.append(tree.get('role_id=%s' % role_id))
                 else:
+                    # For other fields we try to get any branch that concur
+                    # with any alternative field in the token.
                     for alt_name in alternatives.get(name, [name]):
                         bundle.append(
                             tree.get('%s=%s' % (name, token_data[alt_name])))
-                bundle = filter(None, bundle)
-                if not bundle:
-                    return False
-                subnode = bundle
-            else:
-                for leaf in subnode:
-                    issued_before = leaf.get('issued_before')
-                    if issued_before is not None:
-                        if issued_before > token_data['issued_at']:
-                            return True
+            # Since we use only tree.get in previous loop we can end up with
+            # lots of None values in our bundle that represent branches that
+            # would relate to our token but were not there. This call filters
+            # them out.
+            bundle = filter(None, bundle)
+            # If we end up with no branches to follow means that the token is
+            # definitelly not in the revoke tree and all further iterations
+            # will be for nothing.
+            if not bundle:
+                # Note that else: branch will not happen after this.
+                break
+            # On the next iteration we walk through collected branches and
+            # collect their subbranches.
+            forest = bundle
+        # The last (leaf) level is checked in a special way because we verify
+        # issued_at field differently.
+        else:
+            for leaf in forest:
+                issued_before = leaf.get('issued_before')
+                # It might happen that leaf node lacks 'issued_before' key.
+                if issued_before is not None:
+                    # But if it does, we throw away tokens that conform it.
+                    if issued_before > token_data['issued_at']:
+                        return True
+        # If we made it out of the loop then no element in revokation tree
+        # corresponds to our token and it is good.
+        return False
 
 
 def build_token_values_v2(access, default_domain_id):
