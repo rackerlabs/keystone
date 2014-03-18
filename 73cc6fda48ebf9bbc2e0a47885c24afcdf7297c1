@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//Xck\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-18T11:20:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//G2M\u003d",
+      "revId": "73cc6fda48ebf9bbc2e0a47885c24afcdf7297c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//G2E\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//XMI\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-18T11:20:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//7Ew\u003d",
+      "revId": "73cc6fda48ebf9bbc2e0a47885c24afcdf7297c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//G3U\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -100,6 +136,24 @@
       "writtenOn": "2014-03-09T16:01:19Z",
       "side": 1,
       "message": "Why passing user\u003dNone, password\u003dNone? I don\u0027t think this is how keystone is typically configured. Pass a user and password.",
+      "revId": "73cc6fda48ebf9bbc2e0a47885c24afcdf7297c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//XMM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-18T11:20:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//G3U\u003d",
       "revId": "73cc6fda48ebf9bbc2e0a47885c24afcdf7297c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
