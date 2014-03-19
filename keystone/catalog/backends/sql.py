@@ -255,6 +255,10 @@ class Catalog(catalog.Driver):
         catalog = {}
 
         for endpoint in endpoints:
+            try:
+                url = core.format_url(endpoint['url'], d)
+            except exception.MalformedEndpoint:
+                continue  # this failure is already logged in format_url()
             region = endpoint['region']
             service_type = endpoint.service['type']
             default_service = {
@@ -264,7 +268,6 @@ class Catalog(catalog.Driver):
             }
             catalog.setdefault(region, {})
             catalog[region].setdefault(service_type, default_service)
-            url = core.format_url(endpoint['url'], d)
             interface_url = '%sURL' % endpoint['interface']
             catalog[region][service_type][interface_url] = url
 
