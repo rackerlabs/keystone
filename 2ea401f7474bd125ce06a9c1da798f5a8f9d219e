@@ -33,6 +33,24 @@
       "revId": "2ea401f7474bd125ce06a9c1da798f5a8f9d219e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//I8Q\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-19T23:57:43Z",
+      "side": 1,
+      "message": "Dolph - Adam, Jamie and I were discussing this in irc... they suggested that th auth_token middleware should reject tokens that don\u0027t use the expected hash algorithm, so I thought I\u0027d at least try it out.",
+      "parentUuid": "AAAAWH//Vvc\u003d",
+      "revId": "2ea401f7474bd125ce06a9c1da798f5a8f9d219e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
