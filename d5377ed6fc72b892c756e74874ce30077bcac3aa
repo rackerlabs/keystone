@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//MCU\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-19T16:07:14Z",
+      "side": 1,
+      "message": "Done.\nThought about using constant here too, but decided to preserve format, where no constants are used....",
+      "parentUuid": "AAAAWH//MVQ\u003d",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//MTU\u003d",
         "filename": "keystone/tests/test_serializer.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-19T15:28:34Z",
       "side": 1,
       "message": "Is there any reason to have this defined here instead of in test_v3_federation? If nothing else is using it yet I think it would be nicer to put it closer to where it is used. It can always be moved in a refactoring later if we see a place to reuse.",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//MA8\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-19T16:07:14Z",
+      "side": 1,
+      "message": "Nothing but my test is using it at the moment.\nI just wanted to preserve the proper structure (so XML related stuff is added to appropriate classes). I think Dolph was suggesting such thing...",
+      "parentUuid": "AAAAWH//MTU\u003d",
       "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//MAM\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-19T16:07:14Z",
+      "side": 1,
+      "message": "Didn\u0027t investigate that much, I simply followed the patter from the method above this one.",
+      "parentUuid": "AAAAWH//MRI\u003d",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//MRA\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//MAE\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-19T16:07:14Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "AAAAWH//MRA\u003d",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//MQc\u003d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-03-19T15:28:34Z",
       "side": 1,
       "message": "Is this a problem in production too? Or is it only in tests because of the way we do comparisons?",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//L+A\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-03-19T16:07:14Z",
+      "side": 1,
+      "message": "I am removing this object since it\u0027s None in Python terms and one engine converts this value to {} whereas the other to an empty string , making assertDictEqual() fail.\nMy only goal here is to check whether XML is serialized properly and there are no complains about tag names etc.",
+      "parentUuid": "AAAAWH//MQc\u003d",
       "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
