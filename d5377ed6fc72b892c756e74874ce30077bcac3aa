@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//MVQ\u003d",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-19T15:28:34Z",
+      "side": 1,
+      "message": "I would rather see the constant `federation.FEDERATION` used here.",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//MTU\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-19T15:28:34Z",
+      "side": 1,
+      "message": "Is there any reason to have this defined here instead of in test_v3_federation? If nothing else is using it yet I think it would be nicer to put it closer to where it is used. It can always be moved in a refactoring later if we see a place to reuse.",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//MRI\u003d",
+        "filename": "keystone/tests/test_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-19T15:28:34Z",
+      "side": 1,
+      "message": "Why the deepcopy here? Does to_xml modify the input? Not advocating for a change here, just curious.",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//MRA\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-19T15:28:34Z",
+      "side": 1,
+      "message": "Was this added only to get access to the new assert* method?",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//MQc\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-19T15:28:34Z",
+      "side": 1,
+      "message": "Is this a problem in production too? Or is it only in tests because of the way we do comparisons?",
+      "revId": "d5377ed6fc72b892c756e74874ce30077bcac3aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
