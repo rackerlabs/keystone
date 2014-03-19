@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//M3o\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-19T14:05:34Z",
+      "side": 1,
+      "message": "Does this mess up our translators now since we are in a string freeze?",
+      "revId": "319ebe1571c8012aa2f1e6c2b4ec2e79c891556f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
