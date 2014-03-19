@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//LOw\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-19T17:59:00Z",
+      "side": 1,
+      "message": "update the sample config",
+      "revId": "e1db68b2fb623ed3f5df5e66122537bd79e3d213",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
