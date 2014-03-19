@@ -69,6 +69,24 @@
       "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//TvY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-03-19T17:46:53Z",
+      "side": 1,
+      "message": "You can have mixed results containing both Entry and Referral objects.  For example, Active Directory sends back both search result entries and continuation references (referrals).  So I suppose, in the case where chasing referrals is disabled, and the search returns only referrals and no search entries, it would be useful to log a message to that effect.",
+      "parentUuid": "AAAAWH//Tx4\u003d",
+      "revId": "57e5438ffce81ef73445d867d33e16fbe957fd73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
