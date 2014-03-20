@@ -1407,6 +1407,8 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertEqual(cred.user_id, ec2_credential['user_id'])
         self.assertEqual(cred.project_id, ec2_credential['tenant_id'])
         # test list credential using credential manager.
+        # NOTE(morganfainberg): explicitly load the credential_api here as
+        # dependency injection does not take place on the sql_upgrade testcase.
         credential_api = credential.Manager()
         self.assertNotEmpty(credential_api.
                             list_credentials(
