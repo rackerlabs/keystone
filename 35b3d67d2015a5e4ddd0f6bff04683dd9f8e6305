@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//FLM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-20T13:43:34Z",
+      "side": 1,
+      "message": "No, becasue it will be used in assignments later as well",
+      "parentUuid": "AAAAVn//ork\u003d",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//pDU\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//E7k\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-20T13:43:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//pDU\u003d",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//oog\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2014-03-04T23:01:32Z",
       "side": 1,
       "message": "move this down into _ldap_res_to_model and get rid of this function.",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//Els\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-20T13:43:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//oog\u003d",
       "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//Ez4\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-20T13:43:34Z",
+      "side": 1,
+      "message": "It was just a code clean up done as part of adding in the extra values to be popped.  It should also be popping the dn field but that ended up moved into another file because it needs to be filtered out from other entities.  I think this change is worth keeping.",
+      "parentUuid": "AAAAVn//otw\u003d",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//o1U\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 8
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//Exw\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-20T13:43:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//o1U\u003d",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//ovk\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 8
@@ -149,6 +239,24 @@
       "writtenOn": "2014-03-04T23:01:32Z",
       "side": 1,
       "message": "is there something important about adding 3 groups or even more than 1 group?",
+      "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//ExM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-20T13:43:34Z",
+      "side": 1,
+      "message": "Just needed to be more than one.",
+      "parentUuid": "AAAAVn//ovk\u003d",
       "revId": "35b3d67d2015a5e4ddd0f6bff04683dd9f8e6305",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
