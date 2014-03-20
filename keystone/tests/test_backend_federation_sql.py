@@ -14,6 +14,7 @@
 
 from keystone.common import sql
 from keystone import config
+from keystone.contrib import federation
 from keystone.tests import test_backend_sql
 
 CONF = config.CONF
@@ -21,6 +22,10 @@ CONF = config.CONF
 
 class SqlFederation(test_backend_sql.SqlModels):
     """Set of tests for checking SQL Federation."""
+
+    def load_optional_backends(self):
+        super(SqlFederation, self).load_optional_backends()
+        federation.Manager()
 
     def test_identity_provider(self):
         cols = (('id', sql.String, 64),

@@ -34,7 +34,6 @@ REGISTRY = {}
 
 _future_dependencies = {}
 _future_optionals = {}
-_factories = {}
 
 
 class UnresolvableDependencyException(Exception):
@@ -112,7 +111,6 @@ def provider(name):
             return __wrapped_init__
 
         cls.__init__ = wrapped(cls.__init__)
-        _factories[name] = cls
         return cls
     return wrapper
 
@@ -237,34 +235,27 @@ def resolve_future_dependencies(provider_name=None):
 
     # Resolve optional dependencies, sets the attribute to None if there's no
     # provider registered.
-    for dependency, targets in six.iteritems(_future_optionals.copy()):
+    for dependency, targets in six.iteritems(_future_optionals):
         provider = REGISTRY.get(dependency)
-        if provider is None:
-            factory = _factories.get(dependency)
-            if factory:
-                provider = factory()
-                REGISTRY[dependency] = provider
-                new_providers[dependency] = provider
         for target in targets:
             setattr(target, dependency, provider)
+    _future_optionals.clear()
 
     # Resolve future dependencies, raises UnresolvableDependencyException if
     # there's no provider registered.
     try:
+        unresolved = set()
         for dependency, targets in six.iteritems(_future_dependencies.copy()):
             if dependency not in REGISTRY:
-                # a Class was registered that could fulfill the dependency, but
-                # it has not yet been initialized.
-                factory = _factories.get(dependency)
-                if factory:
-                    provider = factory()
-                    REGISTRY[dependency] = provider
-                    new_providers[dependency] = provider
-                else:
-                    raise UnresolvableDependencyException(dependency)
+                unresolved.add(dependency)
+                continue
 
             for target in targets:
                 setattr(target, dependency, REGISTRY[dependency])
+
+        if unresolved:
+            raise UnresolvableDependencyException(', '.join(unresolved))
+
     finally:
         _future_dependencies.clear()
     return new_providers
