@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//BFs\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "Why rename to handle_* ?",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//BFg\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "see comment on 147, suggest not duplicating code.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//LCw\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "suggest use the same callback as disabled, there isn\u0027t a need to duplicate code. They should be doing the same thing.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//K7o\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "Notification code shows that the payload[\u0027resource_info\u0027] should be the ID, the additional lookup user[\u0027id] shouldn\u0027t be needed, and likely will raise an exception.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//BGE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "Why was this changed to do a .get_user first? If this is to guard the callback against errors, in theory the callback should be smart enough / handle the exception. I would rather not see the driver interface changed.\n\nNotifications are sent after the action is taken in either case, and if the user doesn\u0027t exist there will be an exception before you get into the notification event callback",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//K5c\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2401,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "Revert whitespace change.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//K5U\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2620,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:17:54Z",
+      "side": 1,
+      "message": "Revert whitespace change.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
