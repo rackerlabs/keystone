@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//IxE\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-20T00:44:11Z",
+      "side": 1,
+      "message": "I\u0027d prefer this was left as a positive check like it was before.",
+      "revId": "2b9d4a952a0de5850dd1cef3ea8b33238a8af2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
