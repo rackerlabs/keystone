@@ -11,6 +11,7 @@
 # under the License.
 
 from keystone.common import wsgi
+from keystone.contrib import revoke
 from keystone.contrib.revoke import controllers
 
 
@@ -19,6 +20,7 @@ class RevokeExtension(wsgi.ExtensionRouter):
     PATH_PREFIX = '/OS-REVOKE'
 
     def add_routes(self, mapper):
+        revoke.Manager()
         revoke_controller = controllers.RevokeController()
         mapper.connect(self.PATH_PREFIX + '/events',
                        controller=revoke_controller,

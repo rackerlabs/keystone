@@ -354,7 +354,6 @@ class BaseTestCase(testtools.TestCase):
         return cleanup
 
 
-@dependency.optional('revoke_api')
 class TestCase(BaseTestCase):
 
     _config_file_list = []
@@ -369,8 +368,7 @@ class TestCase(BaseTestCase):
             methods=['keystone.auth.plugins.external.DefaultDomain',
                      'keystone.auth.plugins.password.Password',
                      'keystone.auth.plugins.token.Token',
-                     'keystone.auth.plugins.oauth1.OAuth',
-                     'keystone.auth.plugins.saml2.Saml2'])
+                     ])
         self.config_fixture.config(
             # TODO(morganfainberg): Make Cache Testing a separate test case
             # in tempest, and move it out of the base unit tests.
@@ -471,13 +469,17 @@ class TestCase(BaseTestCase):
         kvs_core.KEY_VALUE_STORE_REGISTRY.clear()
 
         self.clear_auth_plugin_registry()
-        drivers = service.load_backends()
+        service.load_backends()
 
-        drivers.update(dependency.resolve_future_dependencies())
+        # TODO(morganfainberg): Make dependency injection better and remove
+        # the need to provide a helper to load the optional backends
+        self.load_optional_backends()
 
-        for manager_name, manager in six.iteritems(drivers):
+        dependency.resolve_future_dependencies()
+
+        for manager_name, manager in six.iteritems(dependency.REGISTRY):
             setattr(self, manager_name, manager)
-        self.addCleanup(self.cleanup_instance(*drivers.keys()))
+        self.addCleanup(self.cleanup_instance(*dependency.REGISTRY.keys()))
 
         # The credential backend only supports SQL, so we always have to load
         # the tables.
@@ -487,6 +489,17 @@ class TestCase(BaseTestCase):
 
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+
+    def load_optional_backends(self):
+        """Instantiate the needed providers for optional dependencies.
+
+        Optional dependencies will be properly injected provided that they are
+        instantiated. This is a helper method that can be overridden by a
+        subclass to instantiate these optional backends for testing purposes.
+        """
+        # NOTE(morganfainberg): There are no "default" optionally loaded
+        # dependencies.
+        pass
 
     def load_fixtures(self, fixtures):
         """Hacky basic and naive fixture loading based on a python module.

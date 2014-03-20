@@ -54,6 +54,19 @@ class OAuth1Tests(test_v3.RestfulTestCase):
         self.base_url = (CONF.public_endpoint % CONF) + "v3"
         self.controller = controllers.OAuthControllerV3()
 
+    def load_optional_backends(self):
+        super(OAuth1Tests, self).load_optional_backends()
+        oauth1.Manager()
+
+    def config_overrides(self):
+        super(OAuth1Tests, self).config_overrides()
+        self.config_fixture.config(
+            group='auth',
+            methods=['keystone.auth.plugins.external.DefaultDomain',
+                     'keystone.auth.plugins.password.Password',
+                     'keystone.auth.plugins.token.Token',
+                     'keystone.auth.plugins.oauth1.OAuth'])
+
     def _create_single_consumer(self):
         ref = {'description': uuid.uuid4().hex}
         resp = self.post(

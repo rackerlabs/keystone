@@ -13,7 +13,7 @@
 import datetime
 import uuid
 
-from keystone.common import dependency
+from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 from keystone.openstack.common import timeutils
 from keystone.tests import test_v3
@@ -26,10 +26,13 @@ def _future_time_string():
     return timeutils.isotime(future_time)
 
 
-@dependency.requires('revoke_api')
 class OSRevokeTests(test_v3.RestfulTestCase):
     EXTENSION_NAME = 'revoke'
     EXTENSION_TO_ADD = 'revoke_extension'
+
+    def load_optional_backends(self):
+        super(OSRevokeTests, self).load_optional_backends()
+        revoke.Manager()
 
     def test_get_empty_list(self):
         resp = self.get('/OS-REVOKE/events')

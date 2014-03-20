@@ -16,8 +16,8 @@ import uuid
 
 import mock
 
-from keystone.common import dependency
 from keystone import config
+from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 from keystone import exception
 from keystone.openstack.common import timeutils
@@ -114,8 +114,11 @@ def _matches(event, token_values):
     return True
 
 
-@dependency.requires('revoke_api')
 class RevokeTests(object):
+    def load_optional_backends(self):
+        super(RevokeTests, self).load_optional_backends()
+        revoke.Manager()
+
     def test_list(self):
         self.revoke_api.revoke_by_user(user_id=1)
         self.assertEqual(1, len(self.revoke_api.get_events()))
@@ -171,7 +174,7 @@ class RevokeTests(object):
         self.revoke_api.check_token(token_values)
 
 
-class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
+class SqlRevokeTests(RevokeTests, test_backend_sql.SqlTests):
     def config_overrides(self):
         super(SqlRevokeTests, self).config_overrides()
         self.config_fixture.config(
@@ -183,7 +186,7 @@ class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
             revoke_by_id=False)
 
 
-class KvsRevokeTests(tests.TestCase, RevokeTests):
+class KvsRevokeTests(RevokeTests, tests.TestCase):
     def config_overrides(self):
         super(KvsRevokeTests, self).config_overrides()
         self.config_fixture.config(

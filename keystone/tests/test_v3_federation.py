@@ -14,11 +14,11 @@ import random
 import uuid
 
 from keystone.auth import controllers as auth_controllers
-from keystone.common import dependency
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import contrib
+from keystone.contrib import federation
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common.db.sqlalchemy import migration
@@ -37,7 +37,6 @@ def dummy_validator(*args, **kwargs):
     pass
 
 
-@dependency.requires('federation_api')
 class FederationTests(test_v3.RestfulTestCase):
 
     EXTENSION_NAME = 'federation'
@@ -50,6 +49,19 @@ class FederationTests(test_v3.RestfulTestCase):
         abs_path = migration_helpers.find_migrate_repo(package)
         migration.db_version_control(sql.get_engine(), abs_path)
         migration.db_sync(sql.get_engine(), abs_path)
+
+    def config_overrides(self):
+        super(FederationTests, self).config_overrides()
+        self.config_fixture.config(
+            group='auth',
+            methods=['keystone.auth.plugins.external.DefaultDomain',
+                     'keystone.auth.plugins.password.Password',
+                     'keystone.auth.plugins.token.Token',
+                     'keystone.auth.plugins.saml2.Saml2'])
+
+    def load_optional_backends(self):
+        super(FederationTests, self).load_optional_backends()
+        federation.Manager()
 
 
 class FederatedIdentityProviderTests(FederationTests):

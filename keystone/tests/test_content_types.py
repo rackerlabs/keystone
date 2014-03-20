@@ -18,6 +18,7 @@ import six
 
 from keystone.common import extension
 from keystone import config
+from keystone.contrib import revoke
 from keystone.tests import rest
 
 
@@ -1321,6 +1322,10 @@ class RevokeApiJsonTestCase(JsonTestCase):
             group='token',
             provider='keystone.token.providers.pki.Provider',
             revoke_by_id=False)
+
+    def load_optional_backends(self):
+        super(RevokeApiJsonTestCase, self).load_optional_backends()
+        revoke.Manager()
 
     def test_fetch_revocation_list_admin_200(self):
         self.skipTest('Revoke API disables revocation_list.')

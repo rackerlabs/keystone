@@ -20,8 +20,8 @@ import uuid
 from keystoneclient.common import cms
 
 from keystone import auth
-from keystone.common import dependency
 from keystone import config
+from keystone.contrib import revoke
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import tests
@@ -570,7 +570,6 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                     token=adminB_token)
 
 
-@dependency.requires('revoke_api')
 class TestTokenRevokeById(test_v3.RestfulTestCase):
     """Test token revocation on the v3 Identity API."""
 
@@ -674,6 +673,10 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         self.assignment_api.create_grant(self.role1['id'],
                                          group_id=self.group1['id'],
                                          project_id=self.projectA['id'])
+
+    def load_optional_backends(self):
+        super(TestTokenRevokeById, self).load_optional_backends()
+        revoke.Manager()
 
     def test_unscoped_token_remains_valid_after_role_assignment(self):
         r = self.post(
@@ -1190,7 +1193,6 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         self.head(role_path, expected_status=404)
 
 
-@dependency.requires('revoke_api')
 class TestTokenRevokeApi(TestTokenRevokeById):
     EXTENSION_NAME = 'revoke'
     EXTENSION_TO_ADD = 'revoke_extension'
@@ -2281,7 +2283,6 @@ class TestTrustOptional(test_v3.RestfulTestCase):
         self.post('/auth/tokens', body=auth_data, expected_status=403)
 
 
-@dependency.requires('revoke_api')
 class TestTrustAuth(TestAuthInfo):
     EXTENSION_NAME = 'revoke'
     EXTENSION_TO_ADD = 'revoke_extension'
@@ -2305,6 +2306,10 @@ class TestTrustAuth(TestAuthInfo):
         self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
         self.trustee_user['id'] = self.trustee_user_id
         self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
+
+    def load_optional_backends(self):
+        super(TestTrustAuth, self).load_optional_backends()
+        revoke.Manager()
 
     def test_create_trust_400(self):
         # The server returns a 403 Forbidden rather than a 400, see bug 1133435
