@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//GRg\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-20T10:12:45Z",
+      "side": 1,
+      "message": "nit: we usually import modules rather than classes",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//GQo\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-20T10:12:45Z",
+      "side": 1,
+      "message": "I\u0027m not sure why you need reflection here, as you already have metadata defined in terms of model definitions",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//GQ4\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-20T10:12:45Z",
+      "side": 1,
+      "message": "nit: this is done in ModelsMigrationsSync",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//GQA\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-20T10:12:45Z",
+      "side": 1,
+      "message": "do all modules in keystone follow this naming convention?\n\nI\u0027d rather we load modules explicitly by name here instead of relying on any naming convention (this would actually allow to make this code much easier)",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//GEI\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-20T10:12:45Z",
+      "side": 1,
+      "message": "(unrelated) filter + map in 99% of times look better when replaced with a list comprehension",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//GHc\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-20T10:12:45Z",
+      "side": 1,
+      "message": "not sure why this skip is needed and module can be None",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
