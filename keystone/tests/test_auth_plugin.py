@@ -59,10 +59,6 @@ class TestAuthPlugin(tests.SQLDriverOverrides, tests.TestCase):
         super(TestAuthPlugin, self).setUp()
         self.load_backends()
 
-        # need to register the token provider first because auth controller
-        # depends on it
-        token.provider.Manager()
-
         self.api = auth.controllers.Auth()
 
     def config_files(self):
