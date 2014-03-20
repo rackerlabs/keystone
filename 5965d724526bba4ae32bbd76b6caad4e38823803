@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//Ij8\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-03-20T01:27:01Z",
+      "side": 1,
+      "message": "Need to snip the above.",
+      "revId": "5965d724526bba4ae32bbd76b6caad4e38823803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//Ikg\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2014-03-20T01:27:01Z",
+      "side": 1,
+      "message": "There are two keys called operation.",
+      "revId": "5965d724526bba4ae32bbd76b6caad4e38823803",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
