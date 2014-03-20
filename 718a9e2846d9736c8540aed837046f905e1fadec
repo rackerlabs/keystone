@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//F18\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-20T14:27:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//GRg\u003d",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//GQo\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 5
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//EaE\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-20T14:27:55Z",
+      "side": 1,
+      "message": "Yep, I forgot it and found it today. Fixed.",
+      "parentUuid": "AAAAWH//GQ4\u003d",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//GQA\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 5
@@ -64,6 +100,24 @@
       "writtenOn": "2014-03-20T10:12:45Z",
       "side": 1,
       "message": "do all modules in keystone follow this naming convention?\n\nI\u0027d rather we load modules explicitly by name here instead of relying on any naming convention (this would actually allow to make this code much easier)",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//EX8\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-20T14:27:55Z",
+      "side": 1,
+      "message": "Yes all the modules follow this convention. Hmmm... if we will have hardcoded  imports we are risking to loose models which can be added during further project development. So I\u0027m sure we should search and load modules accordingly to the naming convention to avoid difficult detecting bugs.",
+      "parentUuid": "AAAAWH//GQA\u003d",
       "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//EXg\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-20T14:27:55Z",
+      "side": 1,
+      "message": "No prob.",
+      "parentUuid": "AAAAWH//GEI\u003d",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//GHc\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 5
@@ -98,6 +170,24 @@
       "writtenOn": "2014-03-20T10:12:45Z",
       "side": 1,
       "message": "not sure why this skip is needed and module can be None",
+      "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//EUg\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-20T14:27:55Z",
+      "side": 1,
+      "message": "Module can be None in the basic (particular) test case. Maybe I should make it with default value, it will rid from skipping.",
+      "parentUuid": "AAAAWH//GHc\u003d",
       "revId": "718a9e2846d9736c8540aed837046f905e1fadec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
