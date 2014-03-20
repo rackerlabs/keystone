@@ -16,6 +16,24 @@
       "revId": "1a4e4cc8118fa3b6974228812b97aaee4394d212",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//Cls\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1413,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T18:19:23Z",
+      "side": 1,
+      "message": "This could probably be changed to look at the table contents instead.",
+      "parentUuid": "AAAAWH//EaM\u003d",
+      "revId": "1a4e4cc8118fa3b6974228812b97aaee4394d212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
