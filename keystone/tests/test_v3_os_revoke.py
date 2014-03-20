@@ -44,9 +44,9 @@ class OSRevokeTests(test_v3.RestfulTestCase):
         after_time = timeutils.utcnow()
         event_issued_before = timeutils.normalize_time(
             timeutils.parse_isotime(event['issued_before']))
-        self.assertTrue(before_time < event_issued_before,
+        self.assertTrue(before_time <= event_issued_before,
                         'invalid event issued_before time; Too early')
-        self.assertTrue(event_issued_before < after_time,
+        self.assertTrue(event_issued_before <= after_time,
                         'invalid event issued_before time; too late')
         del (event['issued_before'])
         self.assertEqual(sample, event)
