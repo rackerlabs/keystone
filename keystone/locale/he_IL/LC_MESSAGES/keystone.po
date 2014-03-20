@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
 "POT-Creation-Date: 2014-03-05 06:00+0000\n"
-"PO-Revision-Date: 2014-03-01 20:03+0000\n"
+"PO-Revision-Date: 2014-03-20 22:27+0100\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Hebrew (Israel) "
 "(http://www.transifex.com/projects/p/openstack/language/he_IL/)\n"
@@ -1860,47 +1860,4 @@ msgstr ""
 #: keystone/trust/core.py:57
 msgid "remaining_uses must be a positive integer or null."
 msgstr ""
-
-#~ msgid "Serving on http://%(host)s:%(port)d"
-#~ msgstr ""
-
-#~ msgid "An unknown exception occurred"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Failed to load the '%(backend)s' backend"
-#~ " because it is not allowed. Allowed"
-#~ " backends are: %(allowed)s"
-#~ msgstr ""
-
-#~ msgid "Cannot set key data for %(name)s: %(reason)s"
-#~ msgstr ""
-
-#~ msgid "Unable to find cert_file : %s"
-#~ msgstr ""
-
-#~ msgid "Unable to find ca_file : %s"
-#~ msgstr ""
-
-#~ msgid "Unable to find key_file : %s"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "When running server in SSL mode, "
-#~ "you must specify both a cert_file "
-#~ "and key_file option value in your "
-#~ "configuration file"
-#~ msgstr ""
-
-#~ msgid "Invalid SSL version : %s"
-#~ msgstr ""
-
-#~ msgid "An unknown error occurred in crypto utils."
-#~ msgstr ""
-
-#~ msgid "Block size of %(given)d is too big, max = %(maximum)d"
-#~ msgstr ""
-
-#~ msgid "Length of %(given)d is too long, max = %(maximum)d"
-#~ msgstr ""
 
