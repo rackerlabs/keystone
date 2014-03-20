@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//BD4\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-20T22:20:20Z",
+      "side": 1,
+      "message": "++ Yay! more config_fixture fixes!",
+      "revId": "aa89e074f7ccc67882875394f9d054246b71b9e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
