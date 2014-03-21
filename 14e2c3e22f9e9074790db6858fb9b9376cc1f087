@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+7oM\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T15:40:57Z",
+      "side": 1,
+      "message": "L178 isn\u0027t tested",
+      "revId": "14e2c3e22f9e9074790db6858fb9b9376cc1f087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+7og\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T15:40:57Z",
+      "side": 1,
+      "message": "surprise! along with anything else that\u0027s falsey",
+      "revId": "14e2c3e22f9e9074790db6858fb9b9376cc1f087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
