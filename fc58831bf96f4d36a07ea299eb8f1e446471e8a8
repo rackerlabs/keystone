@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH//AD4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-21T01:43:15Z",
+      "side": 1,
+      "message": "_dn_to_id is far less necessary with the Remember The DN Patch.  It would be necessary in cases where you look up a user by username and then use this to translate to the user id when populating the object.",
+      "parentUuid": "AAAAVn//G8A\u003d",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//G7Y\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
