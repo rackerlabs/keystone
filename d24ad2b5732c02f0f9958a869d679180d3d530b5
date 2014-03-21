@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+72U\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-21T15:19:19Z",
+      "side": 1,
+      "message": "domain_id is translated into the identity_domain_id for the user and the assignment_domain_id for the domain.  From the user it is:\nuser{\n    id:blah\n    domain:{\n     id:blahblah\n     }\n}\n\nuser_id is directly matched in the token, but also needs to match the trustor and trustee fields.",
+      "parentUuid": "AAAAWH/+8JQ\u003d",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+8CQ\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-21T14:56:17Z",
       "side": 1,
       "message": "this behaves VERY differently from the previous implementation, and makes the inline comment above a complete lie.\n\n  $ python -c \"print filter(None, [\u0027a\u0027, \u0027\u0027, True, False, 1, 0, None])\"\n  [\u0027a\u0027, True, 1]",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+71M\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-21T15:19:19Z",
+      "side": 1,
+      "message": "Previous merely reset the bundle value, and then assigned to subnode.  This keeps the original value of bundle. The reassignment was not necessary.\n\nAs far as how it behaves, it removes \"Falsy\" values from the collection, which is what you are seeing.  In the case of an object assignment, that means None.  We don\u0027t add anything to bundle that isn\u0027t either a subnode or None.  A subnode that evaluates to False would be an empty list, and it would  be correct to remove that.",
+      "parentUuid": "AAAAWH/+8CQ\u003d",
       "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+7zg\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-21T15:19:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+8EE\u003d",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+8FY\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2014-03-21T14:56:17Z",
       "side": 1,
       "message": "combine L222 and L223 to avoid the unnecessary indirection",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+7zc\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-21T15:19:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+8FY\u003d",
       "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
