@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+9X4\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 10521
+      },
+      "writtenOn": "2014-03-21T15:15:53Z",
+      "side": 1,
+      "message": "That was one of the comments in the bug. \"assignment_api.delete_user and assignment_api.delete_group are also not very intuitively named :( they handle the consequences of deleting users \u0026 groups, rather than actually deleting a user or group.\"",
+      "parentUuid": "AAAAWH//BFs\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//BFg\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2014-03-20T22:17:54Z",
       "side": 1,
       "message": "suggest use the same callback as disabled, there isn\u0027t a need to duplicate code. They should be doing the same thing.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+9W4\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 10521
+      },
+      "writtenOn": "2014-03-21T15:15:53Z",
+      "side": 1,
+      "message": "Yes but the delete_user event is now getting a user_ref in the payload instead of a user id. I think we need this extra one.",
+      "parentUuid": "AAAAWH//LCw\u003d",
       "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+9Uo\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 10521
+      },
+      "writtenOn": "2014-03-21T15:15:53Z",
+      "side": 1,
+      "message": "The situation is that after the user/group is deleted the other actions are looking for it in the DB and are all failing since is not there anymore. I tried to keep the reference before delete the user so any observer of that event can execute code based on the deleted user. In the previous approach these actions were executed by the drivers before the deletion",
+      "parentUuid": "AAAAWH//BGE\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//K5c\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+9Uc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2401,
+      "author": {
+        "id": 10521
+      },
+      "writtenOn": "2014-03-21T15:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//K5c\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//K5U\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -115,6 +187,24 @@
       "writtenOn": "2014-03-20T22:17:54Z",
       "side": 1,
       "message": "Revert whitespace change.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+9UM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2620,
+      "author": {
+        "id": 10521
+      },
+      "writtenOn": "2014-03-21T15:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH//K5U\u003d",
       "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
