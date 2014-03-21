@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+7Cw\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-21T17:00:13Z",
+      "side": 1,
+      "message": "I doubt that this is really correct. If some table existing in DB is absent in the model we will ignore it.",
+      "revId": "de9dc78486f5e0a9fd2097d647ce02fcef95f13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
