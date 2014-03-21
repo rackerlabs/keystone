@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+9mo\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-21T11:01:31Z",
+      "side": 1,
+      "message": "Do we really need this property declared here?\n\nWhy not to remove \u0027Test\u0027 prefix from the name and allow subclasses to provide module attribute?",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+9mc\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-21T11:01:31Z",
+      "side": 1,
+      "message": "IMO, you could replace this with a nice list comprehension.",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+9mA\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-21T11:01:31Z",
+      "side": 1,
+      "message": "The caveat here is that include_object is called not only for tables, but also for columns. \n\nI.e., you silently ignore all the columns here when telling alembic, what it should compare.",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+9ls\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-21T11:01:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we also have a test case for core models?",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
