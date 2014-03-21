@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+7ho\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-21T15:56:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+9mo\u003d",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+9mc\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+9kk\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-21T15:56:59Z",
+      "side": 1,
+      "message": "This is it, I think so!",
+      "parentUuid": "AAAAWH/+9mA\u003d",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+9ls\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 7
@@ -64,6 +100,24 @@
       "writtenOn": "2014-03-21T11:01:31Z",
       "side": 1,
       "message": "Shouldn\u0027t we also have a test case for core models?",
+      "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+9j8\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-21T15:56:59Z",
+      "side": 1,
+      "message": "Unfortunately, there is no core models.",
+      "parentUuid": "AAAAWH/+9ls\u003d",
       "revId": "2cc2e6d619be78eb3b39f8622c206e1e7a350703",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
