@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+7Kg\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-21T16:44:33Z",
+      "side": 1,
+      "message": "It seems to be impossible to rid test skipping in the base test case. The test which is declared in the parent test case, named `test_models_sync`, so it is still appropriate to naming convention of test runners. I cant set default module because there is no core module with models in Keystone. If I will choose random module as default it will be weird.",
+      "revId": "2ba74840edf1fbb5279e89229d7e818d1c2b13a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
