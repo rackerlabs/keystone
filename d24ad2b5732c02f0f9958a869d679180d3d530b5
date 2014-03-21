@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+7ts\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T15:31:51Z",
+      "side": 1,
+      "message": "L178 isn\u0027t tested",
+      "parentUuid": "AAAAWH/+72U\u003d",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+8CQ\u003d",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 4
