@@ -3577,6 +3577,7 @@ class CatalogTests(object):
         service_id = uuid.uuid4().hex
         new_service = {
             'id': service_id,
+            'enabled': True,
             'type': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
