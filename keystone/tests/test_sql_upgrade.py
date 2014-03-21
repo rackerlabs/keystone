@@ -2095,6 +2095,176 @@ class SqlUpgradeTests(SqlMigrateBase):
             unlimited_trust['id'],
             session.query(trust_table.columns.id).one()[0])
 
+    def test_upgrade_service_enabled_cols(self):
+        """Migration 44 added `enabled` column to `service` table."""
+
+        self.upgrade(44)
+
+        # Verify that there's an 'enabled' field.
+        exp_cols = ['id', 'type', 'extra', 'enabled']
+        self.assertTableColumns('service', exp_cols)
+
+    def test_downgrade_service_enabled_cols(self):
+        """Check columns when downgrade to migration 43.
+
+        The downgrade from migration 44 removes the `enabled` column from the
+        `service` table.
+
+        """
+
+        self.upgrade(44)
+        self.downgrade(43)
+
+        exp_cols = ['id', 'type', 'extra']
+        self.assertTableColumns('service', exp_cols)
+
+    def test_upgrade_service_enabled_data(self):
+        """Migration 44 has to migrate data from `extra` to `enabled`."""
+
+        session = self.Session()
+
+        def add_service(**extra_data):
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex,
+                'extra': json.dumps(extra_data),
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        self.upgrade(43)
+
+        # Insert some services using the old format where `enabled` is in
+        # `extra` JSON.
+
+        # We'll need a service entry since it's the foreign key for services.
+        service_id = add_service()
+
+        new_ep = lambda **extra_data: add_service(**extra_data)
+
+        # Different services with expected enabled and extra values, and a
+        # description.
+        random_attr_name = uuid.uuid4().hex
+        random_attr_value = uuid.uuid4().hex
+        random_attr = {random_attr_name: random_attr_value}
+        random_attr_str = "%s='%s'" % (random_attr_name, random_attr_value)
+        random_attr_enabled_false = {random_attr_name: random_attr_value,
+                                     'enabled': False}
+        random_attr_enabled_false_str = 'enabled=False,%s' % random_attr_str
+
+        services = [
+            # Some values for True.
+            (new_ep(), (True, {}), 'no enabled'),
+            (new_ep(enabled=True), (True, {}), 'enabled=True'),
+            (new_ep(enabled='true'), (True, {}), "enabled='true'"),
+            (new_ep(**random_attr),
+             (True, random_attr), random_attr_str),
+            (new_ep(enabled=None), (True, {}), 'enabled=None'),
+
+            # Some values for False.
+            (new_ep(enabled=False), (False, {}), 'enabled=False'),
+            (new_ep(enabled='false'), (False, {}), "enabled='false'"),
+            (new_ep(enabled='0'), (False, {}), "enabled='0'"),
+            (new_ep(**random_attr_enabled_false),
+             (False, random_attr), random_attr_enabled_false_str),
+        ]
+
+        self.upgrade(44)
+
+        # Verify that the services have the expected values.
+
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def fetch_service(service_id):
+            cols = [service_table.c.enabled, service_table.c.extra]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return ep.enabled, json.loads(ep.extra)
+
+        for service_id, exp, msg in services:
+            exp_enabled, exp_extra = exp
+
+            enabled, extra = fetch_service(service_id)
+
+            self.assertIs(exp_enabled, enabled, msg)
+            self.assertEqual(exp_extra, extra, msg)
+
+    def test_downgrade_service_enabled_data(self):
+        """Downgrade from migration 44 migrates data.
+
+        Downgrade from migration 44 migrates data from `enabled` to
+        `extra`. Any disabled services have 'enabled': False put into 'extra'.
+
+        """
+
+        session = self.Session()
+
+        def add_service(enabled=True, **extra_data):
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex,
+                'extra': json.dumps(extra_data),
+                'enabled': enabled
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        self.upgrade(44)
+
+        # Insert some services using the new format.
+
+        # We'll need a service entry since it's the foreign key for services.
+        service_id = add_service(True)
+
+        new_service = (lambda enabled, **extra_data:
+                       add_service(enabled, **extra_data))
+
+        # Different services with expected extra values, and a
+        # description.
+        services = [
+            # True tests
+            (new_service(True), {}, 'enabled'),
+            (new_service(True, something='whatever'),
+             {'something': 'whatever'},
+             "something='whatever'"),
+
+            # False tests
+            (new_service(False), {'enabled': False}, 'enabled=False'),
+            (new_service(False, something='whatever'),
+             {'enabled': False, 'something': 'whatever'},
+             "enabled=False, something='whatever'"),
+        ]
+
+        self.downgrade(43)
+
+        # Verify that the services have the expected values.
+
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def fetch_service(service_id):
+            cols = [service_table.c.extra]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return json.loads(ep.extra)
+
+        for service_id, exp_extra, msg in services:
+            extra = fetch_service(service_id)
+            self.assertEqual(exp_extra, extra, msg)
+
     def test_upgrade_endpoint_enabled_cols(self):
         """Migration 42 added `enabled` column to `endpoint` table."""
 
@@ -2113,7 +2283,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         """
 
-        self.upgrade(self.max_version)
+        self.upgrade(42)
         self.downgrade(41)
 
         exp_cols = ['id', 'legacy_endpoint_id', 'interface', 'region',
@@ -2248,7 +2418,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             return endpoint_id
 
-        self.upgrade(self.max_version)
+        self.upgrade(42)
 
         # Insert some endpoints using the new format.
 
@@ -2537,8 +2707,8 @@ class VersionTests(SqlMigrateBase):
         self.assertTrue(version > 0, "Version didn't change after migrated?")
 
     def test_unexpected_extension(self):
-        """When get the version for an extension that doesn't exist, raises
-           ImportError.
+        """The version for an extension that doesn't exist raises ImportError.
+
         """
 
         extension_name = uuid.uuid4().hex
@@ -2547,8 +2717,8 @@ class VersionTests(SqlMigrateBase):
                           extension=extension_name)
 
     def test_unversioned_extension(self):
-        """When get the version for an extension that doesn't provide
-           migrations, raises MigrationNotProvided.
+        """The version for extensions without migrations raise an exception.
+
         """
 
         self.assertRaises(exception.MigrationNotProvided,
