@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+8JQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T14:56:17Z",
+      "side": 1,
+      "message": "why is \u0027user_id\u0027 an alternative for \u0027user_id\u0027, but \u0027domain_id\u0027 isn\u0027t an alternative for \u0027domain_id\u0027?",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+8CQ\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T14:56:17Z",
+      "side": 1,
+      "message": "this behaves VERY differently from the previous implementation, and makes the inline comment above a complete lie.\n\n  $ python -c \"print filter(None, [\u0027a\u0027, \u0027\u0027, True, False, 1, 0, None])\"\n  [\u0027a\u0027, True, 1]",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+8Do\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T14:56:17Z",
+      "side": 1,
+      "message": "this comment is basically repeated twice -- and this one has a spelling error. remove this one.",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+8EE\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T14:56:17Z",
+      "side": 1,
+      "message": "... follow, then that means ...",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+8FY\u003d",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-21T14:56:17Z",
+      "side": 1,
+      "message": "combine L222 and L223 to avoid the unnecessary indirection",
+      "revId": "d24ad2b5732c02f0f9958a869d679180d3d530b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
