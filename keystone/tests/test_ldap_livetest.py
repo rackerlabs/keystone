@@ -17,7 +17,6 @@ import ldap.modlist
 import subprocess
 import uuid
 
-from keystone.common import ldap as ldap_common
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import ldap as identity_ldap
