@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+3G4\u003d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T16:18:32Z",
+      "side": 1,
+      "message": "there should also be a test that shows you can get a token when the assertion_prefix is a valid string that\u0027s not the default.",
+      "revId": "665dc5c35e22637d48d041f86766135c58b6c3c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
