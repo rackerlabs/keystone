@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+3Lg\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:37:27Z",
+      "side": 1,
+      "message": "should be be using assertIn so we get a better error message.",
+      "revId": "1564bbe962d92028c59c4b019c04c6fa4ecbddce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
