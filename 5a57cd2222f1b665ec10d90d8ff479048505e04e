@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+3cc\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-22T11:53:25Z",
+      "side": 1,
+      "message": "Sounds good to me!",
+      "parentUuid": "AAAAWH/+9X4\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//BFg\u003d",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 7
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+3b0\u003d",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-22T11:53:25Z",
+      "side": 1,
+      "message": "See my response to the change to pass the user_ref around instead of the id.",
+      "parentUuid": "AAAAWH/+9W4\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//K7o\u003d",
         "filename": "keystone/credential/core.py",
         "patchSetId": 7
@@ -135,6 +171,24 @@
       "side": 1,
       "message": "The situation is that after the user/group is deleted the other actions are looking for it in the DB and are all failing since is not there anymore. I tried to keep the reference before delete the user so any observer of that event can execute code based on the deleted user. In the previous approach these actions were executed by the drivers before the deletion",
       "parentUuid": "AAAAWH//BGE\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3cE\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-22T11:53:25Z",
+      "side": 1,
+      "message": "If the other actions are looking for it in the DB, likely we have a cross dependency that needs to be split apart. I\u0027ll take a closer look at the places we do this, but I would rather see (if at all possible) no dependency on the user / group existing in Identity. This is so that we are less tied to the identity service having all of our data to perform these actions.",
+      "parentUuid": "AAAAWH/+9Uo\u003d",
       "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
