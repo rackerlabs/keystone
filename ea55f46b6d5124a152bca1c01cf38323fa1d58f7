@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+3MI\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:31:28Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be domain_id \u003d\u003d ref[\u0027domain_id\u0027] ?",
+      "revId": "ea55f46b6d5124a152bca1c01cf38323fa1d58f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
