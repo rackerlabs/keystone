@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+3LM\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "this looks like it\u0027s fixing a bigger bug, suggest put it in a separate commit.",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3LI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "seems like a bad idea to change the default... for somebody using the default before it wouldn\u0027t work anymore.",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3LA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "suggest document the function with a docstring.",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3K4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "suggest change this to a positive test rather than a negative one...\n\n if self.is_empty(v):\n    LOG.debug(_(\u0027Skipping empty value for attribute %s\u0027), k)\n    continue",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3Kc\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2572,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "use () to continue a line rather than \\",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3KQ\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2574,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "this needs a better error message... it\u0027s just going to say \"false is not true\"... have it print out something useful instead.",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+3KU\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2580,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-22T15:48:53Z",
+      "side": 1,
+      "message": "this needs a better error message... it\u0027s just going to say \"false is not true\"... have it print out something useful instead.",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
