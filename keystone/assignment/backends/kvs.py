@@ -68,7 +68,7 @@ class Assignment(kvs.Base, assignment.Driver):
     def list_projects_in_domain(self, domain_id):
         project_refs = self._build_project_refs()
         self.get_domain(domain_id)
-        project_refs = filter(lambda x: domain_id in x['domain_id'],
+        project_refs = filter(lambda x: domain_id == x['domain_id'],
                               project_refs)
         return project_refs
 
