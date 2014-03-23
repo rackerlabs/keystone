@@ -488,13 +488,13 @@ class LdapWrapper(object):
     def __init__(self, url, page_size, alias_dereferencing=None,
                  use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                  tls_req_cert='demand', chase_referrals=None):
-        LOG.debug(_("LDAP init: url=%s"), url)
-        LOG.debug(_('LDAP init: use_tls=%(use_tls)s\n'
-                  'tls_cacertfile=%(tls_cacertfile)s\n'
-                  'tls_cacertdir=%(tls_cacertdir)s\n'
-                  'tls_req_cert=%(tls_req_cert)s\n'
-                  'tls_avail=%(tls_avail)s\n'),
-                  {'use_tls': use_tls,
+        LOG.debug('LDAP init: url=%(url)s use_tls=%(use_tls)s '
+                  'tls_cacertfile=%(tls_cacertfile)s '
+                  'tls_cacertdir=%(tls_cacertdir)s '
+                  'tls_req_cert=%(tls_req_cert)s '
+                  'tls_avail=%(tls_avail)s',
+                  {'url': url,
+                   'use_tls': use_tls,
                    'tls_cacertfile': tls_cacertfile,
                    'tls_cacertdir': tls_cacertdir,
                    'tls_req_cert': tls_req_cert,
