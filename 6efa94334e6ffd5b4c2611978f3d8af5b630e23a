@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+1Ag\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T23:48:53Z",
+      "side": 1,
+      "message": "this would be easier to review if these were separate commits.",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1BA\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T23:48:53Z",
+      "side": 1,
+      "message": "as far as I can tell this is the only place that serviceId is mentioned in keystone.",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1Ak\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T23:48:53Z",
+      "side": 1,
+      "message": "why is this moving? Does it fix a problem? I don\u0027t see it mentioned in the commit message that the key calculation had to be moved.",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
