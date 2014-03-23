@@ -46,6 +46,9 @@ class FederationExtension(wsgi.ExtensionRouter):
         GET /OS-FEDERATION/projects
         GET /OS-FEDERATION/domains
 
+        GET /OS-FEDERATION/identity_provider/$identity_provider/
+            protocol/$protocol
+
     """
 
     def _construct_url(self, suffix):
@@ -55,6 +58,7 @@ class FederationExtension(wsgi.ExtensionRouter):
         # This is needed for dependency injection
         # it loads the Federation driver which registers it as a dependency.
         federation.Manager()
+        auth_controller = controllers.Auth()
         idp_controller = controllers.IdentityProvider()
         protocol_controller = controllers.FederationProtocol()
         mapping_controller = controllers.MappingController()
@@ -172,4 +176,12 @@ class FederationExtension(wsgi.ExtensionRouter):
             self._construct_url('projects'),
             controller=project_controller,
             action='list_projects_for_groups',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('/auth/identity_provider/'
+                                '{identity_provider}/protocol/'
+                                '{protocol}'),
+            controller=auth_controller,
+            action='federated_authentication',
             conditions=dict(method=['GET']))
