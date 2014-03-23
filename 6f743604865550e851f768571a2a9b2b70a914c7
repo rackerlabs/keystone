@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+1Vg\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "remove the __init__ method completely if you\u0027re not going to use it",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1Vc\u003d",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "good compromise",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1WM\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "/identity_providers/",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1WI\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "/protocols/",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1V8\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "this example is missing the /auth/ component that appears in the router below",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1V4\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "/identity_providers/\n\n/protocols/\n\nalso move /auth/ to the end, so it\u0027s just /auth ...  for example:\n\n  /identity_providers/{identity_provider}/protocols/{protocol}/auth",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1Vs\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-23T21:04:20Z",
+      "side": 1,
+      "message": "this should really be a GET, rather than a POST?",
+      "revId": "6f743604865550e851f768571a2a9b2b70a914c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
