@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+1xc\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T15:30:35Z",
+      "side": 1,
+      "message": "The methods like this that just forward on the request to the driver should be removed. The forwarding happens automagically.",
+      "revId": "e1d01f7f51145be8e26eae6f6e8413323ba38130",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
