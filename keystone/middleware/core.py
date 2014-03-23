@@ -278,5 +278,6 @@ class AuthContextMiddleware(wsgi.Middleware):
             return
 
         auth_context = self._build_auth_context(request)
-        LOG.debug(_('RBAC: auth_context: %s'), auth_context)
+        if auth_context:
+            LOG.debug('RBAC: auth_context: %s', auth_context)
         request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context

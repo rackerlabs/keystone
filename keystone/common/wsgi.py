@@ -178,7 +178,8 @@ class Application(BaseApplication):
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
         del arg_dict['controller']
-        LOG.debug(_('arg_dict: %s'), arg_dict)
+        if arg_dict:
+            LOG.debug('arg_dict: %s', arg_dict)
 
         # allow middleware up the stack to provide context, params and headers.
         context = req.environ.get(CONTEXT_ENV, {})
