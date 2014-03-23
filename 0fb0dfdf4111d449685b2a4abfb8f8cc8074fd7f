@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+1Jw\u003d",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-23T22:55:56Z",
+      "side": 0,
+      "message": "I\u0027d love to see all of this go away eventually. It won\u0027t make sense to anyone, outside of those that have seen this review, why some things are imported directly from sqlalchemy and some are imported from here.",
+      "revId": "0fb0dfdf4111d449685b2a4abfb8f8cc8074fd7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
