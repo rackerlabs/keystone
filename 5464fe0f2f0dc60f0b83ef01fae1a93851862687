@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+1sU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T16:10:59Z",
+      "side": 1,
+      "message": "why do we need more unit tests?",
+      "revId": "5464fe0f2f0dc60f0b83ef01fae1a93851862687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1s8\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T16:10:59Z",
+      "side": 1,
+      "message": "why was this line removed? was\n\n notifications._send_notification(operation, resource_type, resource)",
+      "revId": "5464fe0f2f0dc60f0b83ef01fae1a93851862687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1so\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T16:10:59Z",
+      "side": 1,
+      "message": "give a name to the \u0027thing\u0027 magic number so that reviewers know what it is. Also, could use random value --\n\n resource_type \u003d uuid.uuid4().hex\n notifications.register_event_callback(\n     CREATED_OPERATION, resource_type, callback)",
+      "revId": "5464fe0f2f0dc60f0b83ef01fae1a93851862687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+1sY\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-23T16:10:59Z",
+      "side": 1,
+      "message": "the plan is to test that the code works based on the logs that were written? the code needs to be more testable than this.",
+      "revId": "5464fe0f2f0dc60f0b83ef01fae1a93851862687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
