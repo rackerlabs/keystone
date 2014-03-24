@@ -16,6 +16,24 @@
       "revId": "34396f3a859d08e5ff3fd5a19d9278dc4b59f012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+wWE\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T15:38:37Z",
+      "side": 1,
+      "message": "remove this and the comment... an endpoint needs a service but a service doesn\u0027t need another service.",
+      "parentUuid": "AAAAWH/+wjo\u003d",
+      "revId": "34396f3a859d08e5ff3fd5a19d9278dc4b59f012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
