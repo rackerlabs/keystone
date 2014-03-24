@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+000\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "is this a TODO? I don\u0027t see it happening anywhere.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+07c\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "change \"execption\" to \"exception\"",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+07M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "change \"attirbute\" to \"attribute\" (or parameter)",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+06w\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "why no search_ext_s?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+06s\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "this is the default, so suggest remove it",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+04M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "my python-ldap doesn\u0027t have a resp_ctrl_classes argument to result3. http://www.python-ldap.org/doc/html/ldap.html#ldap.LDAPObject.result3",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+03s\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "we could probably simplify this interface by only supporting delete_ext_s.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+03c\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "A docstring would be nice.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+03g\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "suggest don\u0027t wrap strings in _() when there\u0027s nothing to translate (this applies throughout these changes, e.g., 424). Save the translators some time.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+02g\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "No logging?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+018\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "this should probably be private (prefix with _)",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+01s\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "no logging?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+01U\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "could change the name of get_handler to _get_connection... would probably make more sense.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+01o\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "suggest remove this blank line then it\u0027ll be more obvious that handler is being used.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+01Y\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "suggest change the name from handler to conn.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+080\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "don\u0027t mark strings in test modules for translation.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+08w\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "don\u0027t mark strings in test modules for translation.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+0z8\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "shouldn\u0027t a fake used for testing raise an exception on bad input? nobody\u0027s going to be looking for debug output in the test output.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+0zU\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "how do we get away with this?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+0zQ\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T00:45:09Z",
+      "side": 1,
+      "message": "this should use the conf fixture, if it can\n\n self.config_fixture.config(group\u003d\u0027ldap\u0027, alias_dereferencing\u003dderef_name)",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
