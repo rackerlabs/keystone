@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+xjM\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3580,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-24T13:35:44Z",
+      "side": 1,
+      "message": "the input to create_service shouldn\u0027t have to change.\n\nThe test would fail only because now the create_service includes \u0027enabled\u0027 in the response. So the change to this test should be to add \u0027enabled\u0027 to new_service after create so that assertDictEqual works. e.g., remove this line and at line 3588 do\n\n new_service[\u0027enabled\u0027] \u003d True",
+      "revId": "067f2e52286773c2e09694030ff5b7d66dbd8f19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
