@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+0FI\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-24T04:58:43Z",
+      "side": 1,
+      "message": "Is it not helpful to know in certain situations that arg_dict is None?  Would someone who was debugging (but wasnt aware of this optimization) not get frustrated by the fact that sometimes arg_dict shows up in the debug log and sometimes it does not.  I think this perceived non-determinism is not worth this optimization.  Especially since it is debug level logging",
+      "revId": "14ffc5911bbd5b246a3ab6818599876f121fb2b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
