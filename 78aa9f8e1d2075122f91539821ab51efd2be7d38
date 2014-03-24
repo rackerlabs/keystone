@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+uSs\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-24T21:01:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+3RY\u003d",
+      "revId": "78aa9f8e1d2075122f91539821ab51efd2be7d38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+3RA\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-22T14:55:22Z",
       "side": 1,
       "message": "what do the changes on lines 91-93 have to do with remembering the DN?",
+      "revId": "78aa9f8e1d2075122f91539821ab51efd2be7d38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+uAM\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-03-24T21:01:40Z",
+      "side": 1,
+      "message": "These should not be here: bad git merge.  They were removed in.\n\ndda19c3977cd12bd6694a3bc932539ca2b08aee9",
+      "parentUuid": "AAAAWH/+3RA\u003d",
       "revId": "78aa9f8e1d2075122f91539821ab51efd2be7d38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
