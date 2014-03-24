@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+wjo\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2157,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-24T15:28:10Z",
+      "side": 1,
+      "message": "Is this actually needed? I don\u0027t see it used anywhere.",
+      "revId": "34396f3a859d08e5ff3fd5a19d9278dc4b59f012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
