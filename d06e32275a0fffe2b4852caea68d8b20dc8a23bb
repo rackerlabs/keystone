@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+0oA\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-03-24T01:45:56Z",
+      "side": 1,
+      "message": "This method is mocked as identity.DomainConfigs._load_config using @mock.patch.object. So, I can verify the parameters that setup_domain_drivers  passed.",
+      "parentUuid": "AAAAWH/+10w\u003d",
+      "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+11E\u003d",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-23T14:47:19Z",
       "side": 1,
       "message": "the file hasn\u0027t been written yet so the cleanup should be after line 77.",
+      "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+0m0\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-03-24T01:45:56Z",
+      "side": 1,
+      "message": "I think the self.addCleanup method just registers the cleapup method. Actually, the cleanup method will be called when tearDown.",
+      "parentUuid": "AAAAWH/+11E\u003d",
       "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
