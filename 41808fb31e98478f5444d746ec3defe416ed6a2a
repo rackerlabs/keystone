@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+wOQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/044_service_enabled.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-24T15:55:27Z",
+      "side": 1,
+      "message": "(nit) services instead of eps?",
+      "revId": "41808fb31e98478f5444d746ec3defe416ed6a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+wOE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/044_service_enabled.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-24T15:55:27Z",
+      "side": 1,
+      "message": "(nit) for service in services?",
+      "revId": "41808fb31e98478f5444d746ec3defe416ed6a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+wNs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/044_service_enabled.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-24T15:55:27Z",
+      "side": 1,
+      "message": "Same nits as above",
+      "revId": "41808fb31e98478f5444d746ec3defe416ed6a2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
