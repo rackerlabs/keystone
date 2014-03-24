@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+s6M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-24T23:44:07Z",
+      "side": 1,
+      "message": "nit: \u0027and\u0027 should \u0027or\u0027.",
+      "revId": "983d8aac2cb52e180d3fbacb163699976c809ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
