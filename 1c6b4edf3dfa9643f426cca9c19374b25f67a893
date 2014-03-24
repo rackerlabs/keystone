@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+y8s\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-03-24T09:42:50Z",
+      "side": 1,
+      "message": "So as per my previous comment, I\u0027d like us to improve this test.  I think it would be beneficial to have an additional test (or adapt this test) that:\n\na) returned a list of projects which was the combination of projects that a user has a direct role on as well as by group membership. For example, if your new code to check for group membership in backends/ldap.py overwrote the projects the user had direct roles on, then your tests would still pass\n\nb) Ensued the new test above included a project that the user has both a direct role and a group role on...to make sure that project only appears in the list once.",
+      "revId": "1c6b4edf3dfa9643f426cca9c19374b25f67a893",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
