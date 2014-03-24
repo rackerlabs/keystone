@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+0EY\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-24T05:07:17Z",
+      "side": 1,
+      "message": "I would have preferred this as two separate patches as well.  Confusing to shove it into one potpourri patch",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+1Ak\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 1
@@ -47,6 +64,23 @@
       "writtenOn": "2014-03-23T23:48:53Z",
       "side": 1,
       "message": "why is this moving? Does it fix a problem? I don\u0027t see it mentioned in the commit message that the key calculation had to be moved.",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+0DY\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-03-24T05:07:17Z",
+      "side": 1,
+      "message": "Would be helpful for you to add a comment on why the escaping was needed for certain metacharacters like you point out in the commit.  3 months from now folks won\u0027t remember why this was added",
       "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
