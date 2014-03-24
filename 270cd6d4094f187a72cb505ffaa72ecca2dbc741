@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+uVk\u003d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-03-24T20:27:25Z",
+      "side": 1,
+      "message": "Following the same logic, it would be ideal to include a try/catch at this point?",
+      "revId": "270cd6d4094f187a72cb505ffaa72ecca2dbc741",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
