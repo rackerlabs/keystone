@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+yWc\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-24T11:25:27Z",
+      "side": 1,
+      "message": "GET conflicts with the actual route below",
+      "revId": "775c3b2aa76a860e869b9b20ef312825fbd1a135",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+yWg\u003d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-24T11:25:27Z",
+      "side": 1,
+      "message": "POST conflicts with the docstr above",
+      "revId": "775c3b2aa76a860e869b9b20ef312825fbd1a135",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
