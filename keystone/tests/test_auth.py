@@ -1007,6 +1007,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
             return ref
 
         enabled_service_ref = create_service(enabled=True)
+        disabled_service_ref = create_service(enabled=False)
 
         region = uuid.uuid4().hex
 
@@ -1016,10 +1017,13 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         disabled_endpoint_ref = create_endpoint(
             enabled_service_ref['id'], region, enabled=False,
             interface='internal')
+        disabled_service_endpoint_ref = create_endpoint(
+            disabled_service_ref['id'], region)
 
         return dict(
             enabled=enabled_endpoint_ref,
-            disabled=disabled_endpoint_ref)
+            disabled=disabled_endpoint_ref,
+            disabled_service=disabled_service_endpoint_ref)
 
     def test_auth_catalog_disabled_endpoint(self):
         """On authenticate, get a catalog that excludes disabled endpoints."""
@@ -1034,6 +1038,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         token = self.controller.authenticate({}, body_dict)
 
         # Check the catalog
+        self.assertEqual(1, len(token['access']['serviceCatalog']))
         endpoint = token['access']['serviceCatalog'][0]['endpoints'][0]
 
         exp_endpoint = {
@@ -1063,6 +1068,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
             token_id=token_id)
 
         # Check the catalog
+        self.assertEqual(1, len(token['access']['serviceCatalog']))
         endpoint = validate_ref['access']['serviceCatalog'][0]['endpoints'][0]
 
         exp_endpoint = {
