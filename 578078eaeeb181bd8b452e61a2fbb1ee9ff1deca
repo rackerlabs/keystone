@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH/+mGs\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "typo?",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mBc\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "nc_bases \u003d (bc, ) + bases ?",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mBk\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "a shallow copy of a dict can be created by the means of dict.copy() method",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mGo\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "you must have meant nc_attrs here",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mDY\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "explicit for loop would be more readable, IMO",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mFs\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "we could use metaclass for this class instead",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mGM\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-03-25T17:13:03Z",
+      "side": 1,
+      "message": "Do we need this class at all?",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+miw\u003d",
         "filename": "tox.ini",
         "patchSetId": 10
