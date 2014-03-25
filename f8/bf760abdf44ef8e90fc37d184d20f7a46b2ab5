@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Morgan Fainberg <m@metacloud.com>
+Code-Review+2: Jamie Lennox <jamielennox@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 25 Mar 2014 11:56:26 +0000
+Reviewed-on: https://review.openstack.org/82686
+Project: openstack/keystone
+Branch: refs/heads/master
