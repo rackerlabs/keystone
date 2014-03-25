@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+myc\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-25T15:58:16Z",
+      "side": 1,
+      "message": "I agree. Done",
+      "parentUuid": "AAAAWH/+m+w\u003d",
+      "revId": "7e47ca48c985093ee77ed84b18841cd2902b3bc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+m/o\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+mwA\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-25T15:58:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+m/o\u003d",
+      "revId": "7e47ca48c985093ee77ed84b18841cd2902b3bc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+m20\u003d",
         "filename": "doc/source/developing.rst",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-03-25T15:49:10Z",
       "side": 1,
       "message": "i think the wording is off here",
+      "revId": "7e47ca48c985093ee77ed84b18841cd2902b3bc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+mvY\u003d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-25T15:58:16Z",
+      "side": 1,
+      "message": "Any suggestions? I\u0027ve done some edits above for this next revision.",
+      "parentUuid": "AAAAWH/+m20\u003d",
       "revId": "7e47ca48c985093ee77ed84b18841cd2902b3bc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
