@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+m8Y\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-25T15:52:11Z",
+      "side": 1,
+      "message": "why isn\u0027t it set like tenants, see line 944 : tenant_desc_attribute ?",
+      "revId": "b11a84decef2deb9ed179c5ee6c6b097dcead75f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
