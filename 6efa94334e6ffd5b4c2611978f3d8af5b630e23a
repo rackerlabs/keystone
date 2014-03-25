@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+wic\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:11:39Z",
+      "side": 1,
+      "message": "I was trying not to change any existing behavior not related to handling non-ascii values (the ultimate goal). I really don\u0027t know if special casing \u0027serviceId\u0027 is necessary or not. I think this module was originally copied from heat, maybe it\u0027s left over cruft.\n\nFWIW, serviceId is mentioned here\n\nkeystone/doc/source/api_curl_examples.rst\n\nnot sure if that attribute name will ever show up in LDAP or not.\n\nMy suggestion would be to open a separate bug if you think special casing serviceId needs to be removed, that way we can keep the issues independent.",
+      "parentUuid": "AAAAWH/+1BA\u003d",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+0EY\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2014-03-24T05:07:17Z",
       "side": 1,
       "message": "I would have preferred this as two separate patches as well.  Confusing to shove it into one potpourri patch",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+w3w\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:11:39Z",
+      "side": 1,
+      "message": "The entire set of changes was already broken down into 4 smaller incremental patches of which this is the first. I don\u0027t really see the value in splitting this yet again into smaller increments. I think what\u0027s going on here is simple enough it doesn\u0027t need to be split further.",
+      "parentUuid": "AAAAWH/+0EY\u003d",
       "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+wto\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:11:39Z",
+      "side": 1,
+      "message": "Done. \n\nIt was moved for a couple of reasons none of which are relevant to the final outcome. So rather than explain the reasoning for the move I restored their original location. The debug messages are removed in a subsequent patch, so ultimately it works out the same.",
+      "parentUuid": "AAAAWH/+1Ak\u003d",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+0DY\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 1
@@ -99,6 +153,24 @@
       "writtenOn": "2014-03-24T05:07:17Z",
       "side": 1,
       "message": "Would be helpful for you to add a comment on why the escaping was needed for certain metacharacters like you point out in the commit.  3 months from now folks won\u0027t remember why this was added",
+      "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+wtM\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:11:39Z",
+      "side": 1,
+      "message": "My feeling is if as a programmer you can\u0027t understand why one needs to escape user supplied input we\u0027ve got bigger problems than the lack of a comment explaining the necessity for escaping. Superfluous comments for things which are supposed to be obvious are considered bad form. But if one is still befuddled there is always the commit message :-)\n\nHowever I did try to accommodate this request. The problem I ran into was I couldn\u0027t find any wording that would fit in a single line comment that adhered to PEP-8 indentation and line length rules. A multi-line comment seemed too invasive and then shouldn\u0027t there be a comment for each location that performs escaping? Just seemed overkill. If you feel strongly we can revisit.",
+      "parentUuid": "AAAAWH/+0DY\u003d",
       "revId": "6efa94334e6ffd5b4c2611978f3d8af5b630e23a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
