@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+soQ\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-03-25T00:31:42Z",
+      "side": 1,
+      "message": "It is a direct consequence of \u0027domain_id\u0027 being in the attribute_options_name list in ProjectApi.  This is the list that the LDAP backend uses to determine if the property must always be present in the object, even if the attribute does not exist in LDAP.  If the attribute does not exist in LDAP, and the name is in that list, the ldap backend adds the property to the object with a None value.",
+      "parentUuid": "AAAAWH/+3LM\u003d",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+3LI\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-22T15:48:53Z",
       "side": 1,
       "message": "seems like a bad idea to change the default... for somebody using the default before it wouldn\u0027t work anymore.",
+      "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+uLI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-03-25T00:31:42Z",
+      "side": 1,
+      "message": "I can\u0027t add description as another user attribute e.g. user_description_attribute.  I can\u0027t add it to the additional attributes.  How should I denote, in the User object, that the description attribute should always be present, and may not be None when using LDAP?",
+      "parentUuid": "AAAAWH/+3LI\u003d",
       "revId": "3f67d80dd3610e0a0096ed8060a0a52530fc97a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
