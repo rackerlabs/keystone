@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+miw\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-03-25T16:20:11Z",
+      "side": 1,
+      "message": "Forgot about it. I think it should be separated patch.",
+      "revId": "578078eaeeb181bd8b452e61a2fbb1ee9ff1deca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
