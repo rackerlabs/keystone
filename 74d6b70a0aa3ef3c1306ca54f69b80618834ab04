@@ -16,6 +16,24 @@
       "revId": "74d6b70a0aa3ef3c1306ca54f69b80618834ab04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+oO0\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-25T13:36:00Z",
+      "side": 1,
+      "message": "In the kvs and templated backends do not implement get_v3_catalog.\n\nThe endpoint_filter may need a similar modification, but I wanted to do that in a separate commit.",
+      "parentUuid": "AAAAWH/+1vk\u003d",
+      "revId": "74d6b70a0aa3ef3c1306ca54f69b80618834ab04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
