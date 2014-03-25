@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+nLY\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-25T15:22:06Z",
+      "side": 1,
+      "message": "why would there not be a dn at this point?",
+      "revId": "964e4c336e021cdca7d193093e674820ddf75b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+nLQ\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-25T15:22:06Z",
+      "side": 1,
+      "message": "no filtering on the result object?",
+      "revId": "964e4c336e021cdca7d193093e674820ddf75b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+nL8\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-25T15:22:06Z",
+      "side": 1,
+      "message": "no filtering here?",
+      "revId": "964e4c336e021cdca7d193093e674820ddf75b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+nKI\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-25T15:22:06Z",
+      "side": 1,
+      "message": "it seems like you need to add an \"assertNotIn(\u0027dn\u0027, whatever) into almost every test in this module, not to mention all the tests you\u0027re not overriding",
+      "revId": "964e4c336e021cdca7d193093e674820ddf75b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
