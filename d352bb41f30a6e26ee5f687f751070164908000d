@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+r1U\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-25T03:37:29Z",
+      "side": 1,
+      "message": "http://docs.sqlalchemy.org/en/rel_0_9/orm/tutorial.html#explicit-join-eagerload but i think it\u0027s fine to just do the check",
+      "revId": "d352bb41f30a6e26ee5f687f751070164908000d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+r08\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1672,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-03-25T03:37:29Z",
+      "side": 1,
+      "message": "would be good to have a mix or enabled/disabled but this matches other tests around here.",
+      "revId": "d352bb41f30a6e26ee5f687f751070164908000d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
