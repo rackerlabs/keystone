@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+uxg\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "The next patch in the series implements this.",
+      "parentUuid": "AAAAWH/+000\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+07c\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "change \"execption\" to \"exception\"",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+uvY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+07c\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+uuc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+07M\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+06w\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "why no search_ext_s?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+usU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Because its not currently used. The full python-ldap API is quite large, there didn\u0027t seem to be any need to implement things at this stage which aren\u0027t currently used.",
+      "parentUuid": "AAAAWH/+06w\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+unM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "The method signatures should be the same. The base abstract class defines it this way which is useful for chaining,",
+      "parentUuid": "AAAAWH/+06s\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+04M\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "my python-ldap doesn\u0027t have a resp_ctrl_classes argument to result3. http://www.python-ldap.org/doc/html/ldap.html#ldap.LDAPObject.result3",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+uRY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Hmm... researching upstream python-ldap indicates the parameter was added in their CVS revision 1.117 on 3/31/2011, just shy of 3 years ago. Looks like that change would have appeared in the 2.3.13 release dated 6/2/2011, 2 3/4 years ago. So it\u0027s been a while. What release do you have? FWIW the test-requirements specify 2.3.13. So as far as I can tell this should be o.k.\n\nIt\u0027s not a big deal though, if we have to we can just let this parameter default, I don\u0027t see an immediate use for it but if we can export the same API we should.",
+      "parentUuid": "AAAAWH/+04M\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+uJ0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Sure, that\u0027s true. FWIW the entire python-ldap API could probably be reduced to 1/3 it\u0027s current size because there are a lot methods which simply call their sister entry point which have additional parameters. But to understand which methods can be substituted one has to look at the API implementation.\n\nI can see an argument for retaining the simple entry points which are the ones used 99% of the time but I\u0027m not wed to that. If you feel strongly we can remove the \"simple\" entry points and only keep the more functional entry points. At the moment I\u0027m leaning to keeping the simple entry points.",
+      "parentUuid": "AAAAWH/+03s\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+03c\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "A docstring would be nice.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+ta8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done\n\nOpps, of course, thanks for the catch. FWIW the doc string will document the final intent of the class, not it\u0027s stub implementation as it appears in this intermediary patch.",
+      "parentUuid": "AAAAWH/+03c\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+tY8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "I agree. But I\u0027ve been criticized in the past for making changes not fundamental to the purpose of the change set. This is how things were logged in the existing code so I avoided changing it.\n\nBut since I happen to agree with you :-) I\u0027ll make the change. At the same time I\u0027ll remove the use of named substitutions and dictionaries in the log messages which won\u0027t be translated. Named substitutions are only necessary for translators and if the message is not going to be translated then the extra dictionary object is needless overhead and complexity.",
+      "parentUuid": "AAAAWH/+03g\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+02g\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "No logging?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+og0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "AAAAWH/+02g\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+ogk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done\n\nWasn\u0027t part of the original code but I agree this is correct.",
+      "parentUuid": "AAAAWH/+018\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+01s\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -200,6 +398,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "no logging?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+ofc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+01s\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+obA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done. Good suggestion.",
+      "parentUuid": "AAAAWH/+01U\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+01o\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -234,6 +468,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "suggest remove this blank line then it\u0027ll be more obvious that handler is being used.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+oZ8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+01o\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+oZM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done. Good suggestion.",
+      "parentUuid": "AAAAWH/+01Y\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+080\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 1
@@ -268,6 +538,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "don\u0027t mark strings in test modules for translation.",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+kgE\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done. Agree, but FWIW this was the original code and I try to avoid changing things not relevant to the bug.",
+      "parentUuid": "AAAAWH/+080\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+kd8\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+08w\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+0z8\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 1
@@ -308,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+kdg\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+0z8\u003d",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+0zU\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 1
@@ -319,6 +643,24 @@
       "writtenOn": "2014-03-24T00:45:09Z",
       "side": 1,
       "message": "how do we get away with this?",
+      "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+kZU\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-25T23:12:01Z",
+      "side": 1,
+      "message": "These are not used with the fake ldap API, only with the real python-ldap API, but they are part of the interface and must have an implementation. In the future if these methods are used we\u0027ll have to implement them, probably by doing a search, caching the result and assigning it an id, then result3 would read from the cache. But that\u0027s for another day, the code will not get called so I see no point in implementing something that isn\u0027t used.",
+      "parentUuid": "AAAAWH/+0zU\u003d",
       "revId": "147fad2cef8f5c3f8e9bfacf3284909a4d3a3a78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
