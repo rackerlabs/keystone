@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH/+scI\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-25T01:26:28Z",
+      "side": 1,
+      "message": "Any particular reason why these need to be in lists? It doesn\u0027t look like the backends return anything for these calls.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//BFs\u003d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
@@ -125,6 +142,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+sao\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-25T01:26:28Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//K7o\u003d",
         "filename": "keystone/credential/core.py",
         "patchSetId": 7
@@ -136,6 +170,24 @@
       "writtenOn": "2014-03-20T22:17:54Z",
       "side": 1,
       "message": "Notification code shows that the payload[\u0027resource_info\u0027] should be the ID, the additional lookup user[\u0027id] shouldn\u0027t be needed, and likely will raise an exception.",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+sZ8\u003d",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-25T01:26:28Z",
+      "side": 1,
+      "message": "++ agreed, resource_id should be the UUID of the Keystone resource and resource_type is the Keystone resource, suck as \u0027project\u0027, \u0027user\u0027, \u0027region\u0027 and so on. From those two pieces of information a third party plugin should be able to do a GET and retrieve more information depending on what they are looking for.",
+      "parentUuid": "AAAAWH//K7o\u003d",
       "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -259,6 +311,23 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAWH//K5U\u003d",
+      "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+sZI\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-03-25T01:26:28Z",
+      "side": 1,
+      "message": "Same comment here as previous.",
       "revId": "5a57cd2222f1b665ec10d90d8ff479048505e04e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
