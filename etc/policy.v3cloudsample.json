@@ -153,5 +153,10 @@
     "identity:list_projects_for_groups": "",
     "identity:list_domains_for_groups": "",
 
-    "identity:list_revoke_events": ""
+    "identity:list_revoke_events": "",
+
+    "identity:create_endpoint_group": "rule:admin_required",
+    "identity:get_endpoint_group": "rule:admin_required",
+    "identity:update_endpoint_group": "rule_admin_required",
+    "identity:remove_endpoint_group": "rule_admin_required"
 }
