@@ -16,6 +16,24 @@
       "revId": "f1f7cc3cf8d89e361ce32df9d17c14f78c6049c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+csc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-26T17:55:32Z",
+      "side": 1,
+      "message": "I\u0027ll update the commit message shortly.",
+      "parentUuid": "AAAAWH/+dcs\u003d",
+      "revId": "f1f7cc3cf8d89e361ce32df9d17c14f78c6049c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
