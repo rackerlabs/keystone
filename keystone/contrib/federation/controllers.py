@@ -75,20 +75,6 @@ class IdentityProvider(_ControllerBase):
         ref = cls.filter_params(ref)
         return {cls.member_name: ref}
 
-    #TODO(marek-denis): Implement, when mapping engine is ready
-    def _delete_tokens_issued_by_idp(self, idp_id):
-        """Delete tokens created upon authentication from an IdP
-
-        After the IdP is deregistered, users authenticating via such IdP should
-        no longer be allowed to use federated services. Thus, delete all the
-        tokens issued upon authentication from IdP with idp_id id
-
-        :param idp_id: id of Identity Provider for which related tokens should
-                       be removed.
-
-        """
-        raise exception.NotImplemented()
-
     @controller.protected()
     def create_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
