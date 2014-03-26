@@ -722,6 +722,15 @@
 # (boolean value)
 #return_all_endpoints_if_no_filter=true
 
+[endpoint_grouping]
+
+#
+# Options defined in keystone
+#
+
+# Keystone Endpoint Grouping backend driver (string value)
+#driver=keystone.contrib.endpoint_grouping.backends.sql.EndpointGrouping
+
 
 [federation]
 

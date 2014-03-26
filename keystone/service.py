@@ -24,6 +24,7 @@ from keystone.common import cache
 from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import endpoint_filter
+from keystone.contrib import endpoint_grouping
 from keystone import controllers
 from keystone import credential
 from keystone import identity
@@ -53,6 +54,7 @@ def load_backends():
         catalog_api=catalog.Manager(),
         credential_api=credential.Manager(),
         endpoint_filter_api=endpoint_filter.Manager(),
+        endpoint_grouping_api=endpoint_grouping.Manager(),
         identity_api=_IDENTITY_API,
         policy_api=policy.Manager(),
         token_api=token.Manager(),
