@@ -399,7 +399,13 @@ FILE_OPTIONS = {
                    help='Endpoint Filter backend driver'),
         cfg.BoolOpt('return_all_endpoints_if_no_filter', default=True,
                     help='Toggle to return all active endpoints if no filter '
-                         'exists.'),
+                         'exists.')
+    ],
+    'endpoint_grouping': [
+        cfg.StrOpt('driver',
+                   default='keystone.contrib.endpoint_grouping.backends'
+                           '.sql.EndpointGrouping',
+                   help='Keystone Endpoint Grouping backend driver')
     ],
     'stats': [
         cfg.StrOpt('driver',
