@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+eYM\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-26T15:06:12Z",
+      "side": 1,
+      "message": "raise anything explicitly rather than implicitly raising None",
+      "parentUuid": "AAAAWH/+0oA\u003d",
+      "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+11E\u003d",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 2
