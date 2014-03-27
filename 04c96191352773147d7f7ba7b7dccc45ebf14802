@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+TXk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T18:40:32Z",
+      "side": 1,
+      "message": "I\u0027d expect this to be done with a @mock.patch.object decorator on the method.",
+      "revId": "04c96191352773147d7f7ba7b7dccc45ebf14802",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+TYA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T18:40:32Z",
+      "side": 1,
+      "message": "use mock.called rather than call_count",
+      "revId": "04c96191352773147d7f7ba7b7dccc45ebf14802",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+TWM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T18:40:32Z",
+      "side": 1,
+      "message": "My opinion here is that the mock.patch.object should be done on the test methods so that it\u0027s done up front and lasts for the entire test. I think this would be safer in terms of changes to the code.\n\nThen there\u0027s probably not a need for this method since there\u0027d only be the 2 functions called in here.",
+      "revId": "04c96191352773147d7f7ba7b7dccc45ebf14802",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
