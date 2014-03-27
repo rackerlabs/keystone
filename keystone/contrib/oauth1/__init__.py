@@ -12,4 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from keystone.contrib.oauth1.core import *  # flake8: noqa
+# flake8: noqa
+
+from keystone.contrib.oauth1.core import *

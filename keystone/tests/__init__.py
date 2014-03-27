@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+# flake8: noqa
+
 # NOTE(dstanek): gettextutils.enable_lazy() must be called before
 # gettextutils._() is called to ensure it has the desired lazy lookup
 # behavior. This includes cases, like keystone.exceptions, where
@@ -20,4 +22,4 @@ from keystone.openstack.common import gettextutils as _gettextutils
 
 _gettextutils.enable_lazy()
 
-from keystone.tests.core import *  # flake8: noqa
+from keystone.tests.core import *
