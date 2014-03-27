@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+Ric\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-27T22:31:14Z",
+      "side": 1,
+      "message": "You can verify parameters from the magic mock object itself. Don\u0027t use a raise method like this, use the assertEqual (etc) that is part of the test cases.\n\nYou can see an example of arg introspection in this patchset https://review.openstack.org/#/c/83235/ where the use of the mox module is removed (look at the new tests).",
+      "parentUuid": "AAAAWH/+0oA\u003d",
+      "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+11E\u003d",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 2
@@ -120,6 +138,24 @@
       "side": 1,
       "message": "The functions registered in addCleanup are called even if the method raises. In this case, if the open() at line 76 raises (because it can\u0027t open the file for some reason), then the cleanup function will run and attempt to delete the file, which will also fail, so you\u0027ll get another failure that will be confusing.",
       "parentUuid": "AAAAWH/+jCU\u003d",
+      "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+RiA\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-27T22:31:14Z",
+      "side": 1,
+      "message": "Don\u0027t pass this as a lambda, addCleanup calls the first argument with the values from the subsequent argument, so this should be:\n\n    self.addCleanup(os.remove, domain_config_filename)",
+      "parentUuid": "AAAAWH/+aXs\u003d",
       "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
