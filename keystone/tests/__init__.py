@@ -12,6 +12,23 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import six
+
+
+if six.PY3:
+    # NOTE(dstanek): I am a bad person
+    import sys
+    from unittest import mock
+    import oslo.config
+    sys.modules['eventlet'] = mock.Mock()
+    sys.modules['eventlet.green'] = mock.Mock()
+    sys.modules['eventlet.wsgi'] = mock.Mock()
+    sys.modules['oslo'] = mock.Mock()
+    sys.modules['oslo.messaging'] = mock.Mock()
+    sys.modules['pycadf'] = mock.Mock()
+    sys.modules['paste'] = mock.Mock()
+
+
 # NOTE(dstanek): gettextutils.enable_lazy() must be called before
 # gettextutils._() is called to ensure it has the desired lazy lookup
 # behavior. This includes cases, like keystone.exceptions, where
