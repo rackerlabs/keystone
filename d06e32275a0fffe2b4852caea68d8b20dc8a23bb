@@ -105,6 +105,24 @@
       "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+aXs\u003d",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T00:12:54Z",
+      "side": 1,
+      "message": "The functions registered in addCleanup are called even if the method raises. In this case, if the open() at line 76 raises (because it can\u0027t open the file for some reason), then the cleanup function will run and attempt to delete the file, which will also fail, so you\u0027ll get another failure that will be confusing.",
+      "parentUuid": "AAAAWH/+jCU\u003d",
+      "revId": "d06e32275a0fffe2b4852caea68d8b20dc8a23bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
