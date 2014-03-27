@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+aNQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T00:38:28Z",
+      "side": 1,
+      "message": "Should reference bug: https://bugs.launchpad.net/keystone/+bug/1172106\n\n Partial-Bug: #1172106",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+aPc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T00:38:28Z",
+      "side": 1,
+      "message": "Here\u0027s the source -- it\u0027s got resp_ctrl_classes -- http://python-ldap.cvs.sourceforge.net/viewvc/python-ldap/python-ldap/Lib/ldap/ldapobject.py?view\u003dmarkup\n\nHere\u0027s my version, installed via pip, it\u0027s 2.3.13.\n\n $ .tox/py27/bin/pip freeze | grep -i ldap\n python-ldap\u003d\u003d2.3.13\n\nI\u0027m fine with this as is. I assume we don\u0027t use it... would be weird if we had to.",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+aO0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T00:38:28Z",
+      "side": 1,
+      "message": ". at end of sentence.\n\nAlso, suggest change \"API\u0027s\" to \"APIs\"",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+aOw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-27T00:38:28Z",
+      "side": 1,
+      "message": ". at and of sentence",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
