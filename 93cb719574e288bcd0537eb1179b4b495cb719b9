@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+WmA\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-27T14:31:45Z",
+      "side": 1,
+      "message": "Done.\n\nRemoved passing the resp_ctrl_classes parameter and added a comment.",
+      "parentUuid": "AAAAWH/+aPc\u003d",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+aO0\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+WlI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-27T14:31:45Z",
+      "side": 1,
+      "message": "Done.\n\nAnd changed it in the 2 other places it occurred.",
+      "parentUuid": "AAAAWH/+aO0\u003d",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+aOw\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -64,6 +100,24 @@
       "writtenOn": "2014-03-27T00:38:28Z",
       "side": 1,
       "message": ". at and of sentence",
+      "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+WkY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-03-27T14:31:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+aOw\u003d",
       "revId": "93cb719574e288bcd0537eb1179b4b495cb719b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
