@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 27 Mar 2014 02:16:20 +0000
+Reviewed-on: https://review.openstack.org/78116
+Project: openstack/keystone
+Branch: refs/heads/master
