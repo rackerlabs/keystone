@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Approved+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Nathan Kinder <nkinder@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 27 Mar 2014 02:08:36 +0000
+Reviewed-on: https://review.openstack.org/82396
+Project: openstack/keystone
+Branch: refs/heads/master
