@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+JdQ\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-28T19:42:04Z",
+      "side": 1,
+      "message": "Let\u0027s suggest to use a matcher -- assertThat(..., matchers.Is(None))",
+      "revId": "31bf7c93e83686339118296297afbde3bb3edbb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+sWA\u003d",
         "filename": "keystone/tests/test_hacking_checks.py",
         "patchSetId": 7
@@ -30,6 +47,23 @@
       "writtenOn": "2014-03-25T01:41:06Z",
       "side": 1,
       "message": "actually*",
+      "revId": "31bf7c93e83686339118296297afbde3bb3edbb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+Jcc\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-28T19:42:04Z",
+      "side": 1,
+      "message": "Make sure there\u0027s also a test where # noqa is used, this seems to not work all the time.",
       "revId": "31bf7c93e83686339118296297afbde3bb3edbb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
