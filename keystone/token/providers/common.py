@@ -81,6 +81,10 @@ class V2TokenDataHelper(object):
                                     metadata_ref['trustee_user_id'],
                                     'id': metadata_ref['trust_id']
                                     }
+
+        o['access'].setdefault('metadata', {})
+        o['access']['metadata']['hash_algorithm'] = CONF.token.hash_algorithm
+
         return o
 
     @classmethod
@@ -326,6 +330,10 @@ class V3TokenDataHelper(object):
                        domain_id=None, project_id=None, expires=None,
                        trust=None, token=None, include_catalog=True,
                        bind=None, access_token=None):
+        if extras is None:
+            extras = {}
+        extras['hash_algorithm'] = CONF.token.hash_algorithm
+
         token_data = {'methods': method_names,
                       'extras': extras}
 
