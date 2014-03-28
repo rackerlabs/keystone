@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+Kg0\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-28T18:05:07Z",
+      "side": 1,
+      "message": "No space after the comma? Or should this be \u0027kerberos or x509\u0027 like the next option?",
+      "revId": "b5c5354f43eb16b18851de7a25bff392096d0da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+Kfc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-28T18:05:07Z",
+      "side": 1,
+      "message": "Should this newline be removed too?",
+      "revId": "b5c5354f43eb16b18851de7a25bff392096d0da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
