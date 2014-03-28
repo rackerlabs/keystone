@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+K/E\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:37:59Z",
+      "side": 1,
+      "message": "use the one liner\n\n  region_ref.setdefault(\u0027description\u0027, \u0027\u0027)",
+      "revId": "533dd148833abd8f25489c2907a071c329bdba3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+K+I\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:37:59Z",
+      "side": 1,
+      "message": "not really a fan of the conditional here, see comment in next module",
+      "revId": "533dd148833abd8f25489c2907a071c329bdba3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+K+U\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:37:59Z",
+      "side": 1,
+      "message": "i think i prefer brant\u0027s approach to testing this behavior, which is to have to the test set ref[\u0027description\u0027] \u003d \u0027\u0027 here, so that the assertValidRegionResponse can do a strict, non-conditional check",
+      "revId": "533dd148833abd8f25489c2907a071c329bdba3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
