@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Adam Gandelman <adamg@ubuntu.com>
+Code-Review+2: Adam Gandelman <adamg@ubuntu.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Eric Brown <browne@vmware.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 28 Mar 2014 05:03:31 +0000
+Reviewed-on: https://review.openstack.org/72609
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
