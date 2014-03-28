@@ -429,7 +429,11 @@ class Auth(controller.V2Controller):
             expires = t['expires']
             if expires and isinstance(expires, datetime.datetime):
                     t['expires'] = timeutils.isotime(expires)
-        data = {'revoked': tokens}
+        data = {
+            'revoked': tokens
+        }
+        if CONF.token.hash_algorithm:
+            data['hash_algorithm'] = CONF.token.hash_algorithm
         json_data = json.dumps(data)
         signed_text = cms.cms_sign_text(json_data,
                                         CONF.signing.certfile,
