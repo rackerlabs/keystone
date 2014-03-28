@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+KBo\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-28T18:27:52Z",
+      "side": 1,
+      "message": "Couldn\u0027t this be done with:\n    self.assertEqual(ref.get(\u0027description\u0027, \u0027\u0027), entity[\u0027description\u0027])",
+      "parentUuid": "AAAAWH/+K+I\u003d",
+      "revId": "533dd148833abd8f25489c2907a071c329bdba3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+K+U\u003d",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2014-03-28T16:37:59Z",
       "side": 1,
       "message": "i think i prefer brant\u0027s approach to testing this behavior, which is to have to the test set ref[\u0027description\u0027] \u003d \u0027\u0027 here, so that the assertValidRegionResponse can do a strict, non-conditional check",
+      "revId": "533dd148833abd8f25489c2907a071c329bdba3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+KBE\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-28T18:27:52Z",
+      "side": 1,
+      "message": "Either as dolph suggested this or see my comment in the previous module.",
+      "parentUuid": "AAAAWH/+K+U\u003d",
       "revId": "533dd148833abd8f25489c2907a071c329bdba3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
