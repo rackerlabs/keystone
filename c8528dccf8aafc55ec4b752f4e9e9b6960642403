@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+K9M\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:40:23Z",
+      "side": 1,
+      "message": "``keystone-manage``\u0027s ``pki_setup``",
+      "revId": "c8528dccf8aafc55ec4b752f4e9e9b6960642403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
