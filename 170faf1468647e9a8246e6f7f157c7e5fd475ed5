@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+LBA\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:34:42Z",
+      "side": 1,
+      "message": "why not update all these and drop CURRENT_DATE?",
+      "revId": "170faf1468647e9a8246e6f7f157c7e5fd475ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+LA4\u003d",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:34:42Z",
+      "side": 1,
+      "message": "^",
+      "revId": "170faf1468647e9a8246e6f7f157c7e5fd475ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
