@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+KvQ\u003d",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-28T17:09:23Z",
+      "side": 1,
+      "message": "Yeah, I don\u0027t understand how yet, but that\u0027s a work item on my blueprint that needs to be looked at.",
+      "parentUuid": "AAAAWH/+Kyw\u003d",
+      "revId": "5a09c2eddf9ab1dc870e5567c54373dc953c1a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+Kxo\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-28T17:04:51Z",
       "side": 1,
       "message": "space after the semicolon?",
+      "revId": "5a09c2eddf9ab1dc870e5567c54373dc953c1a7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+Ku4\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-03-28T17:09:23Z",
+      "side": 1,
+      "message": "I can add that on my next push.",
+      "parentUuid": "AAAAWH/+Kxo\u003d",
       "revId": "5a09c2eddf9ab1dc870e5567c54373dc953c1a7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
