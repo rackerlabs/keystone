@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+KD4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-28T18:25:17Z",
+      "side": 1,
+      "message": "David - There\u0027s no spaces in the list for the default value in the generated sample, so without the space matches how the defaults look. For example,\n\n #user_attribute_ignore\u003ddefault_project_id,tenants\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone.conf.sample?id\u003d6c6046b79ec5669b81c3c427fab2b8102945e3ed#n905",
+      "parentUuid": "AAAAWH/+Kg0\u003d",
+      "revId": "b5c5354f43eb16b18851de7a25bff392096d0da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+Kfc\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-28T18:05:07Z",
       "side": 1,
       "message": "Should this newline be removed too?",
+      "revId": "b5c5354f43eb16b18851de7a25bff392096d0da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+KDE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-28T18:25:17Z",
+      "side": 1,
+      "message": "that\u0027s fixed in the next review in the set -- https://review.openstack.org/#/c/81671/3/keystone/common/config.py\n\nI guess I mixed some of these together.",
+      "parentUuid": "AAAAWH/+Kfc\u003d",
       "revId": "b5c5354f43eb16b18851de7a25bff392096d0da4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
