@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+J/M\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-28T18:35:35Z",
+      "side": 1,
+      "message": "suggest: attacker being able to create valid signed Keystone tokens.\n\n\"their own keystone tokens\" is not very descriptive.\n\nAlso suggest \"This seems like a\" to \"This is a\"",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+J+0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-28T18:35:35Z",
+      "side": 1,
+      "message": "capital K in keystone",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+J+c\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-28T18:35:35Z",
+      "side": 1,
+      "message": "Suggest ending the paragraph and sentence after \"to the token backend\" (remove the rest of the sentence)",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
