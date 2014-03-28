@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+LDM\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:32:45Z",
+      "side": 1,
+      "message": "use iteritems",
+      "revId": "2abdd3b2ac343ca2c0ae1696f6df1e4183477e32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+LCs\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:32:45Z",
+      "side": 1,
+      "message": "same",
+      "revId": "2abdd3b2ac343ca2c0ae1696f6df1e4183477e32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+LCk\u003d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-03-28T16:32:45Z",
+      "side": 1,
+      "message": "off \"URL\"",
+      "revId": "2abdd3b2ac343ca2c0ae1696f6df1e4183477e32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
