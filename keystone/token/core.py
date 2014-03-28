@@ -122,7 +122,10 @@ class Manager(manager.Manager):
                   returns the passed-in value (such as a UUID token ID or an
                   existing hash).
         """
-        return cms.cms_hash_token(token_id)
+        args = {}
+        if CONF.token.hash_algorithm:
+            args['mode'] = CONF.token.hash_algorithm
+        return cms.cms_hash_token(token_id, **args)
 
     def _assert_valid(self, token_id, token_ref):
         """Raise TokenNotFound if the token is expired."""
