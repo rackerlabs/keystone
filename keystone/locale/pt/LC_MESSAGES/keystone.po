@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-03-28 06:00+0000\n"
+"POT-Creation-Date: 2014-03-29 06:02+0000\n"
 "PO-Revision-Date: 2013-07-29 22:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Portuguese "
@@ -426,13 +426,13 @@ msgid "Domain metadata not supported by LDAP"
 msgstr ""
 
 #: keystone/assignment/backends/ldap.py:200
-#: keystone/assignment/backends/ldap.py:248 keystone/common/ldap/core.py:810
+#: keystone/assignment/backends/ldap.py:248 keystone/common/ldap/core.py:863
 #: keystone/identity/backends/kvs.py:117 keystone/identity/backends/kvs.py:224
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:208 keystone/common/ldap/core.py:800
+#: keystone/assignment/backends/ldap.py:208 keystone/common/ldap/core.py:853
 #: keystone/identity/backends/kvs.py:125 keystone/identity/backends/kvs.py:152
 #: keystone/identity/backends/kvs.py:231 keystone/identity/backends/kvs.py:259
 #, python-format
@@ -1041,87 +1041,87 @@ msgstr ""
 msgid "`key_mangler` functions must be callable."
 msgstr ""
 
-#: keystone/common/ldap/core.py:78
-#, python-format
-msgid "Invalid LDAP deref option: %(option)s. Choose one of: %(options)s"
-msgstr ""
-
-#: keystone/common/ldap/core.py:88
-#, python-format
-msgid "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
-msgstr ""
-
-#: keystone/common/ldap/core.py:100
-#, python-format
-msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
-msgstr ""
-
-#: keystone/common/ldap/core.py:285
-msgid "Invalid TLS / LDAPS combination"
-msgstr ""
-
-#: keystone/common/ldap/core.py:289
-#, python-format
-msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
-msgstr ""
-
-#: keystone/common/ldap/core.py:299
-#, python-format
-msgid "tls_cacertfile %s not found or is not a file"
-msgstr ""
-
-#: keystone/common/ldap/core.py:311
-#, python-format
-msgid "tls_cacertdir %s not found or is not a directory"
-msgstr ""
-
-#: keystone/common/ldap/core.py:318
-#, python-format
-msgid "LDAP TLS: invalid TLS_REQUIRE_CERT Option=%s"
-msgstr ""
-
-#: keystone/common/ldap/core.py:480
+#: keystone/common/ldap/core.py:97
 msgid ""
 "Referrals were returned and ignored. Enable referral chasing in "
 "keystone.conf via [ldap] chase_referrals"
 msgstr ""
 
-#: keystone/common/ldap/core.py:538
+#: keystone/common/ldap/core.py:117
+#, python-format
+msgid "Invalid LDAP deref option: %(option)s. Choose one of: %(options)s"
+msgstr ""
+
+#: keystone/common/ldap/core.py:127
+#, python-format
+msgid "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
+msgstr ""
+
+#: keystone/common/ldap/core.py:139
+#, python-format
+msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
+msgstr ""
+
+#: keystone/common/ldap/core.py:324
+msgid "Invalid TLS / LDAPS combination"
+msgstr ""
+
+#: keystone/common/ldap/core.py:328
+#, python-format
+msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
+msgstr ""
+
+#: keystone/common/ldap/core.py:338
+#, python-format
+msgid "tls_cacertfile %s not found or is not a file"
+msgstr ""
+
+#: keystone/common/ldap/core.py:350
+#, python-format
+msgid "tls_cacertdir %s not found or is not a directory"
+msgstr ""
+
+#: keystone/common/ldap/core.py:357
+#, python-format
+msgid "LDAP TLS: invalid TLS_REQUIRE_CERT Option=%s"
+msgstr ""
+
+#: keystone/common/ldap/core.py:580
 msgid ""
 "LDAP Server does not support paging. Disable paging in keystone.conf to "
 "avoid this message."
 msgstr ""
 
-#: keystone/common/ldap/core.py:690
+#: keystone/common/ldap/core.py:741
 #, python-format
 msgid ""
 "Invalid additional attribute mapping: \"%s\". Format must be "
 "<ldap_attribute>:<keystone_attribute>"
 msgstr ""
 
-#: keystone/common/ldap/core.py:696
+#: keystone/common/ldap/core.py:747
 #, python-format
 msgid ""
 "Invalid additional attribute mapping: \"%(item)s\". Value "
 "\"%(attr_map)s\" must use one of %(keys)s."
 msgstr ""
 
-#: keystone/common/ldap/core.py:779
+#: keystone/common/ldap/core.py:832
 #, python-format
 msgid "LDAP %s create"
 msgstr ""
 
-#: keystone/common/ldap/core.py:784
+#: keystone/common/ldap/core.py:837
 #, python-format
 msgid "LDAP %s update"
 msgstr ""
 
-#: keystone/common/ldap/core.py:789
+#: keystone/common/ldap/core.py:842
 #, python-format
 msgid "LDAP %s delete"
 msgstr ""
 
-#: keystone/common/ldap/core.py:910
+#: keystone/common/ldap/core.py:965
 #, python-format
 msgid "Cannot change %(option_name)s %(attr)s"
 msgstr ""
@@ -1702,7 +1702,7 @@ msgstr ""
 msgid "Failed to checkout %s"
 msgstr ""
 
-#: keystone/tests/fakeldap.py:306
+#: keystone/tests/fakeldap.py:311
 #, python-format
 msgid "FakeLdap delete item: dn=%s"
 msgstr ""
@@ -2349,23 +2349,10 @@ msgstr ""
 #~ msgid "LDAP init: url=%s"
 #~ msgstr ""
 
-#~ msgid ""
-#~ "LDAP init: use_tls=%(use_tls)s\n"
-#~ "tls_cacertfile=%(tls_cacertfile)s\n"
-#~ "tls_cacertdir=%(tls_cacertdir)s\n"
-#~ "tls_req_cert=%(tls_req_cert)s\n"
-#~ "tls_avail=%(tls_avail)s\n"
-#~ msgstr ""
-
 #~ msgid "LDAP bind: dn=%s"
 #~ msgstr ""
 
 #~ msgid "LDAP add: dn=%(dn)s, attrs=%(attrs)s"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "LDAP search: dn=%(dn)s, scope=%(scope)s, "
-#~ "query=%(query)s, attrs=%(attrlist)s"
 #~ msgstr ""
 
 #~ msgid "LDAP modify: dn=%(dn)s, modlist=%(modlist)s"
