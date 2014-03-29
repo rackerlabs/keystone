@@ -15,9 +15,10 @@
 
 import random
 
+from oslotest import moxstubout
+
 from keystone import config
 from keystone import controllers
-from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common import jsonutils
 from keystone import tests
 from keystone.tests import matchers

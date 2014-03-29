@@ -18,12 +18,12 @@ import uuid
 
 from babel import localedata
 import mock
+from oslotest import moxstubout
 import webob
 
 from keystone.common import environment
 from keystone.common import wsgi
 from keystone import exception
-from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common import gettextutils
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import jsonutils

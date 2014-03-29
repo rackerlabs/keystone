@@ -15,6 +15,7 @@
 
 import uuid
 
+from oslotest import moxstubout
 import sqlalchemy
 from sqlalchemy import exc
 
@@ -23,7 +24,6 @@ from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
 from keystone.openstack.common.db import exception as db_exception
-from keystone.openstack.common.fixture import moxstubout
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests import test_backend

@@ -16,13 +16,13 @@
 import json
 import tempfile
 
+from oslotest import moxstubout
 import six
 from six.moves.urllib import request as urlrequest
 from testtools import matchers
 
 from keystone import config
 from keystone import exception
-from keystone.openstack.common.fixture import moxstubout
 from keystone.openstack.common import policy as common_policy
 from keystone.policy.backends import rules
 from keystone import tests
