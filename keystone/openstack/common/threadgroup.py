@@ -11,10 +11,10 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+import threading
 
 import eventlet
 from eventlet import greenpool
-from eventlet import greenthread
 
 from keystone.openstack.common import log as logging
 from keystone.openstack.common import loopingcall
@@ -51,7 +51,7 @@ class Thread(object):
 
 
 class ThreadGroup(object):
-    """The point of the ThreadGroup classis to:
+    """The point of the ThreadGroup class is to:
 
     * keep track of timers and greenthreads (making it easier to stop them
       when need be).
@@ -86,8 +86,11 @@ class ThreadGroup(object):
         self.threads.remove(thread)
 
     def stop(self):
-        current = greenthread.getcurrent()
-        for x in self.threads:
+        current = threading.current_thread()
+
+        # Iterate over a copy of self.threads so thread_done doesn't
+        # modify the list while we're iterating
+        for x in self.threads[:]:
             if x is current:
                 # don't kill the current thread.
                 continue
@@ -111,8 +114,11 @@ class ThreadGroup(object):
                 pass
             except Exception as ex:
                 LOG.exception(ex)
-        current = greenthread.getcurrent()
-        for x in self.threads:
+        current = threading.current_thread()
+
+        # Iterate over a copy of self.threads so thread_done doesn't
+        # modify the list while we're iterating
+        for x in self.threads[:]:
             if x is current:
                 continue
             try:
