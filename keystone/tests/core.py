@@ -26,6 +26,7 @@ import warnings
 
 import fixtures
 import logging
+import mock
 import oslotest.base as oslotest
 from paste import deploy
 import six
