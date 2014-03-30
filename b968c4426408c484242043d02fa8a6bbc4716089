@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+FlA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-30T17:00:36Z",
+      "side": 1,
+      "message": "This overrides and modifies the test in test_backend. Rather than change a test that works and makes maintenance more difficult, add a new test to test_backend IdentityTests that shows that NotFound is raised for all backends when the user isn\u0027t in the group.",
+      "revId": "b968c4426408c484242043d02fa8a6bbc4716089",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
