@@ -276,12 +276,29 @@ class UserV3(controller.V3Controller):
         ref = self.identity_api.create_user(ref['id'], ref)
         return UserV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
+    @controller.filterprotected('domain_id',
+                                'email', 'project_id',
+                                'enabled', 'name')
     def list_users(self, context, filters):
         hints = UserV3.build_driver_hints(context, filters)
-        refs = self.identity_api.list_users(
-            domain_scope=self._get_domain_id_for_request(context),
-            hints=hints)
+        filters_hint = []
+        hint_name = ""
+        hint_value = ""
+        if hints:
+            filters_hint = hints[0]
+        if filters_hint:
+            hint_name = filters_hint['name']
+            hint_value = filters_hint['value']
+        if hint_name == "project_id":
+            user_ids = self.assignment_api.list_user_ids_for_project(
+                hint_value)
+            refs = {}
+            refs = [
+                self.identity_api.get_user(user_id) for user_id in user_ids]
+        else:
+            refs = self.identity_api.list_users(
+                domain_scope=self._get_domain_id_for_request(context),
+                hints=hints)
         return UserV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
