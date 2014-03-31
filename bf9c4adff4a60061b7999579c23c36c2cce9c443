@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/99bo\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-31T22:47:54Z",
+      "side": 1,
+      "message": "This raises RoleNotFound? suggest fixing docstring, possibly a comment why there is no code executed here.",
+      "revId": "bf9c4adff4a60061b7999579c23c36c2cce9c443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/99bg\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-31T22:47:54Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "bf9c4adff4a60061b7999579c23c36c2cce9c443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/99bU\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-31T22:47:54Z",
+      "side": 1,
+      "message": "See my larger comment on when notifications happen, this might not be required, and likely is broken if it is required.",
+      "revId": "bf9c4adff4a60061b7999579c23c36c2cce9c443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/99ac\u003d",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-31T22:47:54Z",
+      "side": 1,
+      "message": "Does this require locking the rows with a .with_lockmode(\u0027update\u0027)? or is the user being already deleted (in theory) by this time sufficient?",
+      "revId": "bf9c4adff4a60061b7999579c23c36c2cce9c443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/99bw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-03-31T22:47:54Z",
+      "side": 1,
+      "message": "Notifications should occur only after the delete occurs, my guess is that the reason for changing this is the keystone.assignment.backends.ldap.Assignment._handle_delete_user makes a call to ProjectApi.remove_user based upon the \"tenantId\". From what I can see in the code, \"remove_user\" on ProjectAPI is only called from tests.\n\nThe real requirement here is that the user should not need to be looked up from within an assignment backend. If it does, we need to fix that rather than change when the notification is issued.\n\nThis change is potentially introducing a security risk where deletion of a user\u0027s elements (e.g. trusts, tokens) happens before the user is actually removed, allowing for new tokens etc to be issued when running in a multi-keystone (e.g. mod_wsgi) environment.\n\nIn short, notifications need to occur after deletion. If that is not possible in the current code base, we need to fix that first.",
+      "revId": "bf9c4adff4a60061b7999579c23c36c2cce9c443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
