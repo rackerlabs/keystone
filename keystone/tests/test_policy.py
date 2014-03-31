@@ -18,7 +18,6 @@ import tempfile
 
 import mock
 import six
-from six.moves.urllib import request as urlrequest
 from testtools import matchers
 
 from keystone import config
@@ -209,7 +208,7 @@ class DefaultPolicyTestCase(tests.TestCase):
 class PolicyJsonTestCase(tests.TestCase):
 
     def _load_entries(self, filename):
-        return set(json.load(file(filename)))
+        return set(json.load(open(filename)))
 
     def test_json_examples_have_matching_entries(self):
         policy_keys = self._load_entries(tests.dirs.etc('policy.json'))
