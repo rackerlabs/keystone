@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/99mk\u003d",
+        "filename": "keystone/tests/test_contrib_ec2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-03-31T22:06:29Z",
+      "side": 1,
+      "message": "the test doesn\u0027t have to validate that the function returns None, and it makes the test confusing.",
+      "revId": "2f969b08253c25e3f8269cba00e9aae4a1029eb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
