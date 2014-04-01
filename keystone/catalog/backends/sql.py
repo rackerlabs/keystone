@@ -59,7 +59,7 @@ class Service(sql.ModelBase, sql.DictBase):
     id = sql.Column(sql.String(64), primary_key=True)
     type = sql.Column(sql.String(255))
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
-                         server_default='1')
+                         server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
     endpoints = sqlalchemy.orm.relationship("Endpoint", backref="service")
 
@@ -77,7 +77,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
                             nullable=False)
     url = sql.Column(sql.Text(), nullable=False)
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
-                         server_default='1')
+                         server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
     __table_args__ = (
         sqlalchemy.Index('endpoint_service_id_fkey', 'service_id'),)
