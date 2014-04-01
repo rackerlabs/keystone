@@ -30,7 +30,6 @@ class FederationProtocolModel(sql.ModelBase, sql.DictBase):
     idp_id = sql.Column(sql.String(64), sql.ForeignKey('identity_provider.id',
                         ondelete='CASCADE'), primary_key=True)
     mapping_id = sql.Column(sql.String(64), nullable=True)
-    __table_args__ = (sql.UniqueConstraint('id', 'idp_id'), dict())
 
     @classmethod
     def from_dict(cls, dictionary):
