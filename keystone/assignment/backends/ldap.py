@@ -275,14 +275,9 @@ class Assignment(assignment.Driver):
             self.role.delete_user(ref.role_dn, ref.user_dn, ref.project_dn,
                                   user_id, self.role._dn_to_id(ref.role_dn))
 
-        user = self.user.get(user_id)
-        if hasattr(user, 'tenant_id'):
-            self.project.remove_user(user.tenant_id,
-                                     self.user._id_to_dn(user_id))
-
-    # LDAP assignments only supports LDAP identity.  Assignments under
-    # identity are already deleted
-    def delete_group(self, group_id):
+    #LDAP assignments only supports LDAP identity.  Assignments under identity
+    #are already deleted
+    def handle_delete_group(self, group_id):
         if not self.group.subtree_delete_enabled:
             # TODO(spzala): this is only placeholder for group and domain
             # role support which will be added under bug 1101287

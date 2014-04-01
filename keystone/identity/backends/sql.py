@@ -246,7 +246,6 @@ class Identity(identity.Driver):
             q.delete(False)
 
             session.delete(ref)
-        self.assignment_api.delete_user(user_id)
 
     # group crud
 
@@ -302,4 +301,3 @@ class Identity(identity.Driver):
             q.delete(False)
 
             session.delete(ref)
-        self.assignment_api.delete_group(group_id)
