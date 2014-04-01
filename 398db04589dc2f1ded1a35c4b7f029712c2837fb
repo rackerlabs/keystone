@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/92bE\u003d",
+        "filename": "keystone/tests/config_files/test_kerberos_auth.conf",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-01T17:03:47Z",
+      "side": 1,
+      "message": "instead of this new file, make a change to: \n\nhttps://github.com/openstack/keystone/blob/ebb11e4861c6804effabf92d11ffd9112b1a162a/keystone/tests/core.py#L350",
+      "revId": "398db04589dc2f1ded1a35c4b7f029712c2837fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/92dU\u003d",
+        "filename": "keystone/tests/test_kerberos_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-01T17:03:47Z",
+      "side": 1,
+      "message": "extra line, remove",
+      "revId": "398db04589dc2f1ded1a35c4b7f029712c2837fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/93U8\u003d",
+        "filename": "keystone/tests/test_kerberos_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-01T17:03:47Z",
+      "side": 1,
+      "message": "uuid is standard lib, so it should be above kerberos and mock, with a blank line between standard and imported libs.",
+      "revId": "398db04589dc2f1ded1a35c4b7f029712c2837fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/92aQ\u003d",
+        "filename": "keystone/tests/test_kerberos_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-01T17:03:47Z",
+      "side": 1,
+      "message": "this can be removed if you add to: \nhttps://github.com/openstack/keystone/blob/ebb11e4861c6804effabf92d11ffd9112b1a162a/keystone/tests/core.py#L350",
+      "revId": "398db04589dc2f1ded1a35c4b7f029712c2837fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/92aE\u003d",
+        "filename": "keystone/tests/test_kerberos_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-01T17:03:47Z",
+      "side": 1,
+      "message": "this can likely be removed too",
+      "revId": "398db04589dc2f1ded1a35c4b7f029712c2837fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
