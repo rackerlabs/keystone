@@ -73,7 +73,7 @@ for arg in "$@"; do
   process_option $arg
 done
 
-TESTRTESTS="python setup.py testr"
+TESTRTESTS="python -m keystone.openstack.common.lockutils python setup.py testr"
 
 # If enabled, tell nose to collect coverage data
 if [ $coverage -eq 1 ]; then
