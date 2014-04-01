@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/92I4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-01T17:42:49Z",
+      "side": 1,
+      "message": ", default\u003d\u0027md5\u0027",
+      "revId": "04c74b30d25e3a02aa25b30d1b6145574dbd9c06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/92Jc\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-01T17:42:49Z",
+      "side": 1,
+      "message": "Why not always add the algorithm.  Hving MD5 in there won\u0027t break anything, and it can be a check on the AT-M side to know that we have an upgraded server.",
+      "revId": "04c74b30d25e3a02aa25b30d1b6145574dbd9c06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/92JE\u003d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-01T17:42:49Z",
+      "side": 1,
+      "message": "Instead, make CONF.token.hash_algorithm  always exist and default to MD5.",
+      "revId": "04c74b30d25e3a02aa25b30d1b6145574dbd9c06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
