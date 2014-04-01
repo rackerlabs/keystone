@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/98xg\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "suggest use mock.patch.object decorator instead.\n\nhttp://www.voidspace.org.uk/python/mock/patch.html#patch-object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98xM\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "remove #, change \"th\" to \"the\", \"rewrite\" to \"rewrote\"",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98xI\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "change \"the have\" to \"they have\"",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98w4\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "these should be separate methods.",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98ww\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "Use PatchObject",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98wg\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use PatchObject",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98wc\u003d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use PatchObject",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98wQ\u003d",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use mock.patch.object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98wM\u003d",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use mock.patch.object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98wE\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use mock.patch.object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98wA\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use mock.patch.object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98v4\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use mock.patch.object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98v0\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use mock.patch.object",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98vo\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "use PatchObject",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/98vk\u003d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-01T01:39:40Z",
+      "side": 1,
+      "message": "PatchObject",
+      "revId": "e202e47a10755925330c1687615b0992fca3ff1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
