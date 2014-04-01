@@ -16,6 +16,24 @@
       "revId": "b11a84decef2deb9ed179c5ee6c6b097dcead75f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/92P0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-04-01T17:29:01Z",
+      "side": 1,
+      "message": "I had it that way originally, but was told to use the user_additional_attribute_mapping instead.",
+      "parentUuid": "AAAAWH/+m8Y\u003d",
+      "revId": "b11a84decef2deb9ed179c5ee6c6b097dcead75f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
