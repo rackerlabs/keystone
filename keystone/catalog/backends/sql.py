@@ -77,6 +77,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default='1')
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sqlalchemy.Index('service_id', 'service_id'),)
 
 
 class Catalog(catalog.Driver):
