@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/93Js\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-01T15:29:35Z",
+      "side": 1,
+      "message": "I like the commit, but your reasoning in the commit message seems to be misleading for me.\n\nThe problem we\u0027ve got here is that we want to be able to compare the database schema obtained by running migration scripts on a given backend to be equal to the one generated from model definitions. This particular case is about comparing default values for columns. Reflection of a boolean column default value will return either \u0027true\u0027 or \u0027false\u0027, but what we\u0027ve got here is \u00271\u0027, so the test will fail for PostgreSQL (while it\u0027s completely ok for MySQL, e.g.).",
+      "revId": "554aa724ac9e8cbbab8d18ca06ce49b79506f00b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
