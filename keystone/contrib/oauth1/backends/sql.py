@@ -17,6 +17,7 @@ import random
 import uuid
 
 import six
+import sqlalchemy
 
 from keystone.common import sql
 from keystone.contrib.oauth1 import core
@@ -72,6 +73,7 @@ class AccessToken(sql.ModelBase, sql.DictBase):
     consumer_id = sql.Column(sql.String(64), sql.ForeignKey('consumer.id'),
                              nullable=False)
     expires_at = sql.Column(sql.String(64), nullable=True)
+    __table_args__ = (sqlalchemy.Index('consumer_id', 'consumer_id'), )
 
     @classmethod
     def from_dict(cls, user_dict):
