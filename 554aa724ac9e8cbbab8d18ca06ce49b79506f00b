@@ -34,6 +34,24 @@
       "revId": "554aa724ac9e8cbbab8d18ca06ce49b79506f00b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9vKI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-02T13:35:55Z",
+      "side": 1,
+      "message": "I\u0027d argue that psycopg2 returning proper Python bool values has nothing to do with column defaults which are reflected by SQLAlchemy (that, in fact, will be strings - \"\u0027true\u0027\"/\"\u0027false\u0027\").\n\nAnyway, the commit itself is correct. But I still think it would benefit from describing the reason of the problem in details. Not going to insist on this though, so, core reviewers, feel free to approve this without waiting for me to remove -1 :)",
+      "parentUuid": "AAAAWH/9vTQ\u003d",
+      "revId": "554aa724ac9e8cbbab8d18ca06ce49b79506f00b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
