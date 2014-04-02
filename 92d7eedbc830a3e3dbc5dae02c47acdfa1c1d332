@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9xDo\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "It could be. But the problem with a path different from backends/sql is stipulated in LoaderSynchronizer class with attribute models_path, which can be easily overrided in subclasses. So casting to an absolute path could be done at any step, if it really necessary.",
+      "parentUuid": "AAAAWH/9xTA\u003d",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9xSM\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-02T08:56:05Z",
       "side": 1,
       "message": "nit: it is necessary\n\ns/amount/a number/",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9wms\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9xSM\u003d",
       "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9wmk\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9xSQ\u003d",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9xfY\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-02T08:56:05Z",
       "side": 1,
       "message": "I\u0027m not sure, if there is a profit in yielding values from _produce() method, if you still need to create a dictionary instance here. I\u0027d rather see this implemented as simply as possible: no _produce() method, but a plain for loop in __new__() instead, adding classes to the global scope",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9wjM\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "No problem to squash it into the one method. It looks ugly to me, but it is my own opinion. I\u0027m not sure is it possible to make workable produced classes without patching the global scope. I\u0027ll try it.",
+      "parentUuid": "AAAAWH/9xfY\u003d",
       "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9wf0\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "I figured that the class loads module (in setUp) and syncs migrations. But I mess that the class overrides several other methods. I\u0027ll thinking about more common name.",
+      "parentUuid": "AAAAWH/9xYU\u003d",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9xiQ\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 16
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9wfw\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9xiQ\u003d",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9xhw\u003d",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 16
@@ -115,6 +223,24 @@
       "writtenOn": "2014-04-02T08:56:05Z",
       "side": 1,
       "message": "nit: for the sake of Python 3 compatibility, please use values() instead of itervalues()",
+      "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9wfs\u003d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-02T10:25:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9xhw\u003d",
       "revId": "92d7eedbc830a3e3dbc5dae02c47acdfa1c1d332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
