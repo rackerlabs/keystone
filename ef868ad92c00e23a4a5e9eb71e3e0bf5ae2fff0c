@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uy4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-02T14:17:22Z",
+      "side": 1,
+      "message": "that was my intuition as well, but that wouldn\u0027t preserve order!",
+      "parentUuid": "AAAAWH/9u7A\u003d",
+      "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9u6c\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-02T14:01:20Z",
       "side": 1,
       "message": "does the order matter?",
+      "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uyY\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-02T14:17:22Z",
+      "side": 1,
+      "message": "it may - they\u0027re processed in order. it\u0027s basically the only use case for asking clients to specifically enumerate \u0027methods\u0027 at all",
+      "parentUuid": "AAAAWH/9u6c\u003d",
       "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
