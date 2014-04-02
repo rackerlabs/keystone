@@ -69,6 +69,24 @@
       "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uv0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-02T14:22:02Z",
+      "side": 1,
+      "message": "If the order matters then that might be an argument for rejecting the request (as in 403 Forbidden) if there are duplicate method names, since Keystone doesn\u0027t really know what the user was trying to do.\n\nI\u0027m also fine with handling it this way. We can switch to rejecting the request later.",
+      "parentUuid": "AAAAWH/9uyY\u003d",
+      "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
