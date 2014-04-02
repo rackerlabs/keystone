@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9x5I\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-02T07:41:13Z",
+      "side": 1,
+      "message": "so str(blocked_keys) instead of \u0027, \u0027.join() ? This all go to the human-readable message, so I wanted to avoid str()\u0027ed Python structures.",
+      "parentUuid": "AAAAWH/9x7I\u003d",
+      "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9x6w\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-02T07:37:46Z",
       "side": 1,
       "message": "same as above",
+      "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9x48\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-02T07:41:13Z",
+      "side": 1,
+      "message": "same as above :-)",
+      "parentUuid": "AAAAWH/9x6w\u003d",
       "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
