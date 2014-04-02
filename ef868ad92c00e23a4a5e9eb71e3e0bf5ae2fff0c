@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9u7A\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-02T14:01:20Z",
+      "side": 1,
+      "message": "isn\u0027t this\n\n return list(set(self.auth[\u0027identity\u0027][\u0027methods\u0027]))\n\n?",
+      "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9u6c\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-02T14:01:20Z",
+      "side": 1,
+      "message": "does the order matter?",
+      "revId": "ef868ad92c00e23a4a5e9eb71e3e0bf5ae2fff0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
