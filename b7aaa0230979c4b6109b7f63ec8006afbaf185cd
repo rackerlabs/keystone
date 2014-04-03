@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9mPM\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-03T13:09:18Z",
+      "side": 1,
+      "message": "This is the thing I hate most in our migrations scripts: they are \u0027smart\u0027 when they they should really be \u0027dumb\u0027 - schema reflection shouldn\u0027t be needed...\n\nSo yes, this makes the test suite pass on CI, but doesn\u0027t answer the question, why we can\u0027t reproduce the problem on local environments.\n\nI\u0027d suggest to spend a bit more time to find the reason of the problem, rather than fix symptoms here.",
+      "revId": "b7aaa0230979c4b6109b7f63ec8006afbaf185cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9mOw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-03T13:09:18Z",
+      "side": 1,
+      "message": "why would we need to use reflection here? we know, that upgrade() creates the index, if one doesn\u0027t exist",
+      "revId": "b7aaa0230979c4b6109b7f63ec8006afbaf185cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
