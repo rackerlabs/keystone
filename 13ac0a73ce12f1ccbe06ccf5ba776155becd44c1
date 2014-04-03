@@ -87,6 +87,23 @@
       "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9qT4\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-03T00:53:04Z",
+      "side": 1,
+      "message": "this needs to be attributes and not attribute.\n\nWhy don\u0027t the tests fail?",
+      "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
