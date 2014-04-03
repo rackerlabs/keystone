@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9h7c\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-03T21:42:47Z",
+      "side": 1,
+      "message": "I think you may want to put the attributes in some sort of container like \u0027 or (). I think it\u0027ll make it easier to read.\n\n - Could not change immutable attributes attr1 in target t\n - Could not change immutable attributes attr1, attr2 in target t\n vs.\n - Could not change immutable attribute(s) \u0027attr1\u0027 in target t\n - Could not change immutable attribute(s) \u0027attr1, attr2\u0027 in target t",
+      "revId": "eb663a291cebc77a521b88738c2c4aa88a919442",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
