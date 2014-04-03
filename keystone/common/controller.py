@@ -660,7 +660,7 @@ class V3Controller(wsgi.Application):
             if required not in ref_keys:
                 missing_args.append(required)
 
-        if len(missing_args) > 0:
+        if missing_args:
             exception_args = {'target': cls.__name__,
                               'attribute': missing_args.pop()}
             raise exception.ValidationError(**exception_args)
