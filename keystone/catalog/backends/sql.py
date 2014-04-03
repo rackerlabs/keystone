@@ -247,9 +247,7 @@ class Catalog(catalog.Driver):
         return ref.to_dict()
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(six.iteritems(CONF))
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
+        d = get_url_data(tenant_id, user_id)
 
         session = sql.get_session()
         t = True  # variable for singleton for PEP8, E712.
@@ -278,29 +276,45 @@ class Catalog(catalog.Driver):
 
         return catalog
 
-    def get_v3_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(six.iteritems(CONF))
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
-
+    def get_raw_catalog(self):
         session = sql.get_session()
         t = True  # variable for singleton for PEP8, E712.
         services = (session.query(Service).filter(Service.enabled == t).
                     options(sql.joinedload(Service.endpoints)).
                     all())
+        return services
 
-        def make_v3_endpoint(endpoint):
-            endpoint = endpoint.to_dict()
-            del endpoint['service_id']
-            endpoint['url'] = core.format_url(endpoint['url'], d)
-            return endpoint
+    def get_v3_catalog(self, user_id, tenant_id, metadata=None):
+        d = get_url_data(tenant_id, user_id)
+        services = self.get_raw_catalog()
+        v3catalog = format_v3_catalog(d, services)
+        return v3catalog
 
-        def make_v3_service(svc):
-            eps = [make_v3_endpoint(ep) for ep in svc.endpoints if ep.enabled]
-            service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
-            name = svc.extra.get('name')
-            if name:
-                service['name'] = name
-            return service
 
-        return [make_v3_service(svc) for svc in services]
+def format_v3_catalog(d, services):
+    def make_v3_endpoint(endpoint):
+        endpoint = endpoint.to_dict()
+        del endpoint['service_id']
+        del endpoint['legacy_endpoint_id']
+        del endpoint['enabled']
+
+        endpoint['url'] = core.format_url(endpoint['url'], d)
+        return endpoint
+
+    def make_v3_service(svc):
+        eps = [make_v3_endpoint(ep) for ep in svc.endpoints if ep.enabled]
+        service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+        name = svc.extra.get('name')
+        if name:
+            service['name'] = name
+        return service
+
+    v3catalog = [make_v3_service(svc) for svc in services]
+    return v3catalog
+
+
+def get_url_data(tenant_id, user_id):
+    d = dict(six.iteritems(CONF))
+    d.update({'tenant_id': tenant_id,
+              'user_id': user_id})
+    return d

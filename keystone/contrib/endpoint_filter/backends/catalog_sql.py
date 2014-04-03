@@ -15,10 +15,8 @@
 import six
 
 from keystone.catalog.backends import sql
-from keystone.catalog import core as catalog_core
 from keystone.common import dependency
 from keystone import config
-from keystone import exception
 
 CONF = config.CONF
 
@@ -28,47 +26,27 @@ class EndpointFilterCatalog(sql.Catalog):
     def get_v3_catalog(self, user_id, project_id, metadata=None):
         d = dict(six.iteritems(CONF))
         d.update({'tenant_id': project_id, 'user_id': user_id})
-
-        services = {}
-
         refs = self.endpoint_filter_api.list_endpoints_for_project(project_id)
+        raw_catalog = self.get_raw_catalog()
 
+        d = sql.get_url_data(user_id, project_id)
         if (not refs and
                 CONF.endpoint_filter.return_all_endpoints_if_no_filter):
-            return super(EndpointFilterCatalog, self).get_v3_catalog(
-                user_id, project_id, metadata=metadata)
+            v3catalog = sql.format_v3_catalog(d, raw_catalog)
+            return v3catalog
 
-        for entry in refs:
-            try:
-                endpoint = self.get_endpoint(entry.endpoint_id)
-                if not endpoint['enabled']:
-                    # Skip disabled endpoints.
-                    continue
-                service_id = endpoint['service_id']
-                services.setdefault(
-                    service_id,
-                    self.get_service(service_id))
-                service = services[service_id]
-                del endpoint['service_id']
-                endpoint['url'] = catalog_core.format_url(
-                    endpoint['url'], d)
-                # populate filtered endpoints
-                if 'endpoints' in services[service_id]:
-                    service['endpoints'].append(endpoint)
-                else:
-                    service['endpoints'] = [endpoint]
-            except exception.EndpointNotFound:
-                # remove bad reference from association
-                self.endpoint_filter_api.remove_endpoint_from_project(
-                    entry.endpoint_id, project_id)
+        #carry over entries from raw that have corresponding entries in refs
 
-        # format catalog
-        catalog = []
-        for service_id, service in six.iteritems(services):
-            formatted_service = {}
-            formatted_service['id'] = service['id']
-            formatted_service['type'] = service['type']
-            formatted_service['endpoints'] = service['endpoints']
-            catalog.append(formatted_service)
+        endpoint_id_list = [entry.endpoint_id for entry in refs]
+        service_list = []
+        for service in raw_catalog:
+            endpoint_list = [endpoint
+                             for endpoint in service.endpoints
+                             if endpoint.id in endpoint_id_list]
+        if endpoint_list:
+            service.endpoint = endpoint_list
+            service_list.append(service)
 
-        return catalog
+        v3catalog = sql.format_v3_catalog(d, service_list)
+
+        return v3catalog
