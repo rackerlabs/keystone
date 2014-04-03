@@ -1250,6 +1250,37 @@
 #driver=keystone.contrib.stats.backends.kvs.Stats
 
 
+[swift]
+
+#
+# Options defined in keystone
+#
+
+# Authentication version to use. (string value)
+#swift_auth_version=1
+
+# Pre-auth URL. (string value)
+#swift_preauthurl=<None>
+
+# Authentication URL. (string value)
+#swift_authurl=http://localhost:8080/auth/v1.0
+
+# Token to use to authenticate. (string value)
+#swift_preauthtoken=<None>
+
+# Swift user. (string value)
+#swift_user=admin:admin
+
+# Key/password. (string value)
+#swift_key=admin
+
+# Tenant name, only used in v2 auth. (string value)
+#swift_tenant_name=<None>
+
+# Container name to store tokens. (string value)
+#swift_token_container=tokens
+
+
 [token]
 
 #
