@@ -16,6 +16,24 @@
       "revId": "7e6658c86a78c8291966989a27d78b9188c1bf46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9iuQ\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-03T20:02:59Z",
+      "side": 1,
+      "message": "config fixture is not part of oslotest. It\u0027ll eventually move into oslo.cfg based upon a convo i had with dhellmann",
+      "parentUuid": "AAAAWH/9kGE\u003d",
+      "revId": "7e6658c86a78c8291966989a27d78b9188c1bf46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
