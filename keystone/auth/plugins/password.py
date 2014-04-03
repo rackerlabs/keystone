@@ -123,5 +123,4 @@ class Password(auth.AuthMethodHandler):
             msg = _('Invalid username or password')
             raise exception.Unauthorized(msg)
 
-        if 'user_id' not in user_context:
-            user_context['user_id'] = user_info.user_id
+        self.set_identity_attributes(user_context, user_id=user_info.user_id)

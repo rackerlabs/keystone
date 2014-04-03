@@ -53,7 +53,7 @@ class Saml2(auth.AuthMethodHandler):
         else:
             fields = self._handle_unscoped_token(context, auth_payload)
 
-        auth_context.update(fields)
+        self.set_identity_attributes(auth_context, **fields)
 
     def _handle_scoped_token(self, auth_payload):
         token_ref = self.token_api.get_token(auth_payload['id'])

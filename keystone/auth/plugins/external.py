@@ -47,7 +47,7 @@ class Base(auth.AuthMethodHandler):
             raise exception.Unauthorized(msg)
         try:
             user_ref = self._authenticate(REMOTE_USER, context)
-            auth_context['user_id'] = user_ref['id']
+            self.set_identity_attributes(auth_context, user_id=user_ref['id'])
             if ('kerberos' in CONF.token.bind and
                 (context['environment'].get('AUTH_TYPE', '').lower()
                  == 'negotiate')):

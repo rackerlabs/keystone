@@ -17,6 +17,7 @@ import abc
 import six
 
 from keystone import exception
+from keystone.openstack.common.gettextutils import _
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -26,16 +27,41 @@ class AuthMethodHandler(object):
     def __init__(self):
         pass
 
+    def set_identity_attributes(self, auth_context, **attrs):
+        """Set the identity attributes for auth context.
+
+        For a given identity attribute, add it to the auth context if it does
+        not already exist. If the attribute already exist in auth context,
+        their values must be the same. Otherwise, an Unauthorized exception
+        is raised.
+
+        :param auth_context: user authentication context, a dictionary shared
+                             by all plugins. It contains "method_names" and
+                             "extras" by default. "method_names" is a list and
+                             "extras" is a dictionary.
+        :param attrs: identity attributes to be added to the auth context
+
+        :raises: exception.Unauthorized for authentication failure
+        """
+        for k, v in attrs.iteritems():
+            if k in auth_context:
+                if auth_context[k] != v:
+                    msg = _('Unable to reconcile identity attribute %s') % (k)
+                    raise exception.Unauthorized(msg)
+            else:
+                auth_context[k] = v
+
     @abc.abstractmethod
     def authenticate(self, context, auth_payload, auth_context):
         """Authenticate user and return an authentication context.
 
         :param context: keystone's request context
-        :auth_payload: the content of the authentication for a given method
-        :auth_context: user authentication context, a dictionary shared
-                       by all plugins. It contains "method_names" and "extras"
-                       by default. "method_names" is a list and "extras" is
-                       a dictionary.
+        :param auth_payload: the content of the authentication for a given
+                             method
+        :param auth_context: user authentication context, a dictionary shared
+                             by all plugins. It contains "method_names" and
+                             "extras" by default. "method_names" is a list and
+                             "extras" is a dictionary.
 
         If successful, plugin must set ``user_id`` in ``auth_context``.
         ``method_name`` is used to convey any additional authentication methods

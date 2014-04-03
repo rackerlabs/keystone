@@ -65,8 +65,9 @@ class Token(auth.AuthMethodHandler):
                 expires_at = timeutils.normalize_time(
                     timeutils.parse_isotime(token_ref['token']['expires']))
 
-            user_context.setdefault('expires_at', expires_at)
-            user_context.setdefault('user_id', token_ref['user']['id'])
+            self.set_identity_attributes(user_context,
+                                         expires_at=expires_at,
+                                         user_id=token_ref['user']['id'])
             user_context['extras'].update(token_ref.get('extras', {}))
             user_context['method_names'].extend(token_ref.get('methods', []))
 

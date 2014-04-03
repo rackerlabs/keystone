@@ -69,6 +69,7 @@ class OAuth(auth.AuthMethodHandler):
         if not result:
             msg = _('Could not validate the access token')
             raise exception.Unauthorized(msg)
-        auth_context['user_id'] = acc_token['authorizing_user_id']
-        auth_context['access_token_id'] = access_token_id
-        auth_context['project_id'] = acc_token['project_id']
+        self.set_identity_attributes(auth_context,
+                                     user_id=acc_token['authorizing_user_id'],
+                                     access_token_id=access_token_id,
+                                     project_id=acc_token['project_id'])
