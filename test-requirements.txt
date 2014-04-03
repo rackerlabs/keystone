@@ -6,6 +6,9 @@ pysqlite
 # Optional backend: Memcache
 python-memcached>=1.48
 
+# Optional backend: Swift
+python-swiftclient>=1.6
+
 # Optional dogpile backend: MongoDB
 pymongo>=2.4
 
