@@ -16,6 +16,24 @@
       "revId": "b803fe85ba53a9c666b9badd0923502fcb5c3b0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9hdc\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-03T22:57:45Z",
+      "side": 0,
+      "message": "in fact, there is: https://github.com/openstack/keystone/blob/master/keystone/tests/test_v3_federation.py#L266 . We are trying to update attributes \u0027id\u0027 and \u0027protocols\u0027 whereas mutable parameters are \u0027description\u0027 and \u0027enabled\u0027 . However, I think to make the test more \u0027generic\u0027 I can change fixed key names to uuids.\nDo you think it should be within the scope of this patch?",
+      "parentUuid": "AAAAWH/9h60\u003d",
+      "revId": "b803fe85ba53a9c666b9badd0923502fcb5c3b0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
