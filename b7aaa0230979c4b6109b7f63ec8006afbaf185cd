@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9kYY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-03T16:22:30Z",
+      "side": 1,
+      "message": "some migrations scripts try to be smart because we\u0027re aware of operators that have already introduced a specific index, for example. in this case, i don\u0027t see a reason for this migration to be defensive like that",
+      "parentUuid": "AAAAWH/9mNQ\u003d",
+      "revId": "b7aaa0230979c4b6109b7f63ec8006afbaf185cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9mOw\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
         "patchSetId": 3
