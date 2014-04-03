@@ -140,6 +140,24 @@
       "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9o0o\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-03T06:56:33Z",
+      "side": 1,
+      "message": "removed, as indeed it\u0027s not used for now.",
+      "parentUuid": "AAAAWH/9qNc\u003d",
+      "revId": "13ac0a73ce12f1ccbe06ccf5ba776155becd44c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
