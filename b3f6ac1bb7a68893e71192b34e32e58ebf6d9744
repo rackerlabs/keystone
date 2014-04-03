@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9m54\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-04-03T11:48:03Z",
+      "side": 1,
+      "message": "AFAIK, this command should be modified also",
+      "revId": "b3f6ac1bb7a68893e71192b34e32e58ebf6d9744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
