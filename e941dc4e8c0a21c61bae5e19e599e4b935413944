@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9prI\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-03T03:22:53Z",
+      "side": 1,
+      "message": "why is SUBSCRIBERS all caps but notifier is not?  Seems inconsistent. What is the convention we are trying to follow here?",
+      "revId": "e941dc4e8c0a21c61bae5e19e599e4b935413944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9prg\u003d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-03T03:22:53Z",
+      "side": 1,
+      "message": "So why did you move this code here?  Just to put it closer to the spot where it was used?  Was there any other reason why?",
+      "revId": "e941dc4e8c0a21c61bae5e19e599e4b935413944",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
