@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import json
 
 from keystoneclient.common import cms
@@ -36,6 +37,10 @@ CONF = config.CONF
 # registry of authentication methods
 AUTH_METHODS = {}
 AUTH_PLUGINS_LOADED = False
+
+# identity attributes need to be reconciled among the auth plugins
+IDENTITY_ATTRIBUTES = ['user_id', 'project_id', 'access_token_id',
+                       'domain_id', 'expires_at']
 
 
 def load_auth_methods():
@@ -83,6 +88,44 @@ def get_auth_method(method_name):
     if method_name not in AUTH_METHODS:
         raise exception.AuthMethodNotSupported()
     return AUTH_METHODS[method_name]
+
+
+def set_identity_attributes(auth_context, **attrs):
+    """Set the attributes for auth context.
+
+    For a given identity attribute, add it to the auth context if it does
+    not already exist. If the attribute already exist in auth context,
+    their values must be the same. Otherwise, an Unauthorized exception
+    is raised.
+
+    :param auth_context: user authentication context, a dictionary shared
+                         by all plugins. It contains "method_names" and
+                         "extras" by default. "method_names" is a list and
+                         "extras" is a dictionary.
+    :param attrs: attributes to be added to the auth context
+
+    :raises: exception.Unauthorized for authentication failure
+    """
+    for k, v in six.iteritems(attrs):
+        if k in IDENTITY_ATTRIBUTES and k in auth_context:
+            if k == 'expires_at':
+                # special treatment for 'expires_at', we are going to take
+                # the shortest expiration instead.
+                auth_context[k] = min(v, auth_context[k])
+                if auth_context[k] != v:
+                    msg = _('"expires_at" is different among the auth '
+                            'plug-ins. Will use the smallest value %s') % (
+                                auth_context[k])
+                    LOG.warning(msg)
+            elif auth_context[k] != v:
+                msg = _('Unable to reconcile identity attribute %(attribute)s '
+                        'as it has conflicting values %(new)s and %(old)s') % (
+                            {'attribute': k,
+                             'new': v,
+                             'old': auth_context[k]})
+                raise exception.Unauthorized(msg)
+        else:
+            auth_context[k] = v
 
 
 # TODO(blk-u): this class doesn't use identity_api directly, but makes it
@@ -418,12 +461,14 @@ class Auth(controller.V3Controller):
         auth_response = {'methods': []}
         for method_name in auth_info.get_method_names():
             method = get_auth_method(method_name)
+            local_auth_context = copy.deepcopy(auth_context)
             resp = method.authenticate(context,
                                        auth_info.get_method_data(method_name),
-                                       auth_context)
+                                       local_auth_context)
             if resp:
                 auth_response['methods'].append(method_name)
                 auth_response[method_name] = resp
+            set_identity_attributes(auth_context, **local_auth_context)
 
         if auth_response["methods"]:
             # authentication continuation required
