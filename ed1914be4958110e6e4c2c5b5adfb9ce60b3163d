@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9itA\u003d",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-03T20:05:01Z",
+      "side": 1,
+      "message": "I always wondered about this use of the wrapper. I hadn\u0027t gotten around to determining if it was useful or just pointless.",
+      "revId": "ed1914be4958110e6e4c2c5b5adfb9ce60b3163d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
