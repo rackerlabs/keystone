@@ -561,6 +561,16 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             self.assertEqual(user['name'], token['user']['name'])
             self.assertEqual(user['domain_id'], token['user']['domain']['id'])
 
+        catalog = token.get('catalog')
+        if catalog:
+            for service in catalog:
+                #Bypass the check for XML
+                if isinstance(service, six.string_types):
+                    continue
+                for endpoint in service['endpoints']:
+                    self.assertNotIn('legacy_endpoint_id', endpoint)
+                    self.assertNotIn('enabled', endpoint)
+
         return token
 
     def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
