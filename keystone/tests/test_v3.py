@@ -1036,6 +1036,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def assertValidTrust(self, entity, ref=None, summary=False):
         self.assertIsNotNone(entity.get('trustor_user_id'))
         self.assertIsNotNone(entity.get('trustee_user_id'))
+        self.assertIsNotNone(entity.get('impersonation'))
 
         self.assertIn('expires_at', entity)
         if entity['expires_at'] is not None:
