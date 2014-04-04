@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Thierry Carrez <thierry@openstack.org>
+Code-Review+2: Thierry Carrez <thierry@openstack.org>
+Code-Review+1: wanghong <w.wanghong@huawei.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 04 Apr 2014 13:35:48 +0000
+Reviewed-on: https://review.openstack.org/85103
+Project: openstack/keystone
+Branch: refs/heads/milestone-proposed
