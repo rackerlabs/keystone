@@ -16,6 +16,24 @@
       "revId": "a6acdedd96832ceea503d806cf2e5c2beaaa05de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aRw\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-04T17:49:25Z",
+      "side": 1,
+      "message": "Artifact of the rebase.  Fixed in the next patchset.",
+      "parentUuid": "AAAAWH/9hAA\u003d",
+      "revId": "a6acdedd96832ceea503d806cf2e5c2beaaa05de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
