@@ -20,6 +20,7 @@ import calendar
 import grp
 import hashlib
 import json
+import multiprocessing
 import os
 import pwd
 
@@ -525,3 +526,10 @@ def make_dirs(path, mode=None, user=None, group=None, log=None):
             raise EnvironmentError("makedirs('%s'): %s" % (path, exc.strerror))
 
     set_permissions(path, mode, user, group, log)
+
+
+def cpu_count():
+    try:
+        return multiprocessing.cpu_count()
+    except NotImplementedError:
+        return 1
