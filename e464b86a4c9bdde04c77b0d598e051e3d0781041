@@ -16,6 +16,23 @@
       "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aKU\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-04T18:09:08Z",
+      "side": 1,
+      "message": "Is there a test missing? This shouldn\u0027t work because ldap.filter isn\u0027t imported. In my version of ldap I have to explicitly \u0027import ldap.filter\u0027.",
+      "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
