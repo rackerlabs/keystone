@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH/9aYc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-04T17:41:05Z",
+      "side": 1,
+      "message": "How about \u0027Given a mapping like\u0027 or \u0027When we have a\u0027?",
+      "revId": "c17f75476975fed76f01f247dcf6f490c1a90ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+Kd0\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2014-03-28T17:39:59Z",
       "side": 1,
       "message": "i prefer it when the \"this is broken\" comment appears immediately before the line that needs to be changed (assertNotIn(\u0027description\u0027)) when a fix is proposed :)",
+      "revId": "c17f75476975fed76f01f247dcf6f490c1a90ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aWM\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-04T17:41:05Z",
+      "side": 1,
+      "message": "I don\u0027t think it needs to be done here, but I hope we can eventually get a patch in to convert this module to use the config_fixture setup in TestCase.",
       "revId": "c17f75476975fed76f01f247dcf6f490c1a90ea0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
