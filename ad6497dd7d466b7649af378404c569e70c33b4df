@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9g5o\u003d",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T00:55:40Z",
+      "side": 1,
+      "message": "should be assertIsNotNone",
+      "revId": "ad6497dd7d466b7649af378404c569e70c33b4df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9g50\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T00:55:40Z",
+      "side": 1,
+      "message": "change \"actuall\" to \"actually\"",
+      "revId": "ad6497dd7d466b7649af378404c569e70c33b4df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9g5Q\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T00:55:40Z",
+      "side": 1,
+      "message": "Make sure there\u0027s also a test where # noqa is used, this seems to not work all the time.",
+      "revId": "ad6497dd7d466b7649af378404c569e70c33b4df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9g5U\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T00:55:40Z",
+      "side": 1,
+      "message": "Make sure there\u0027s also a test where # noqa is used, this seems to not work all the time.",
+      "revId": "ad6497dd7d466b7649af378404c569e70c33b4df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9g6E\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T00:55:40Z",
+      "side": 1,
+      "message": "Make sure there\u0027s also a test where # noqa is used, this seems to not work all the time.",
+      "revId": "ad6497dd7d466b7649af378404c569e70c33b4df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
