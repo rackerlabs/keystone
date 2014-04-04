@@ -46,6 +46,12 @@ FILE_OPTIONS = {
         cfg.IntOpt('admin_port', default=35357,
                    help='The port number which the admin service listens '
                         'on.'),
+        cfg.IntOpt('admin_workers',
+                   help='Number of workers for admin service. The default '
+                        'will be the number of CPUs available.'),
+        cfg.IntOpt('public_workers',
+                   help='Number of workers for public service. The default '
+                        'will be the number of CPUs available.'),
         cfg.IntOpt('public_port', default=5000,
                    help='The port number which the public service listens '
                         'on.'),
