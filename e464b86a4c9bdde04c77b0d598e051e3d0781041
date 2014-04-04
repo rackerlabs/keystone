@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9aLg\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T18:06:36Z",
+      "side": 1,
+      "message": "should this not use escape_mode\u003d1 ? http://pasteraw.com/g9hrd46szkix6aw7ek64s2fisahumm1",
+      "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
