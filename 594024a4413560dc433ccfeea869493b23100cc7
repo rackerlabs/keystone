@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9ZqM\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T19:30:22Z",
+      "side": 1,
+      "message": "++ this is how i was importing it when testing\n\nif keystone was importing this somewhere else, i suspect it may have been an available attribute of \u0027ldap\u0027",
+      "revId": "594024a4413560dc433ccfeea869493b23100cc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
