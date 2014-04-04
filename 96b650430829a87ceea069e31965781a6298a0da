@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9cTs\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T13:57:31Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "96b650430829a87ceea069e31965781a6298a0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9cYQ\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T13:57:31Z",
+      "side": 1,
+      "message": "assert against service_id",
+      "revId": "96b650430829a87ceea069e31965781a6298a0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9cTo\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T13:57:31Z",
+      "side": 1,
+      "message": "move the above check here",
+      "revId": "96b650430829a87ceea069e31965781a6298a0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
