@@ -33,6 +33,24 @@
       "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aIo\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T18:12:32Z",
+      "side": 1,
+      "message": "or i guess this would be a better example:\n\n  \u003e\u003e\u003e import ldap.filter\n  \u003e\u003e\u003e dn \u003d \u0027cn\u003dDoe, John,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027;\n  \u003e\u003e\u003e ldap.filter.escape_filter_chars(dn) \u003d\u003d dn\n  True\n  \u003e\u003e\u003e ldap.filter.escape_filter_chars(dn, escape_mode\u003d0) \u003d\u003d dn\n  True\n  \u003e\u003e\u003e ldap.filter.escape_filter_chars(dn, escape_mode\u003d1) \u003d\u003d dn\n  False\n  \u003e\u003e\u003e ldap.filter.escape_filter_chars(dn, escape_mode\u003d2) \u003d\u003d dn\n  False\n\nif this change has an impact on the intended use case, shouldn\u0027t it use one of the escape_modes that produces False?",
+      "parentUuid": "AAAAWH/9aLg\u003d",
+      "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
