@@ -51,6 +51,42 @@
       "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aAE\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T18:31:10Z",
+      "side": 1,
+      "message": "Dolph - the string that\u0027s getting escaped is actually \n\n (Pdb) p user_dn\n u\u0027cn\u003dDoe\\\\, John,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027\n (Pdb) ldap.filter.escape_filter_chars(user_dn)\n u\u0027cn\u003dDoe\\\\5c, John,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027\n (Pdb) ldap.filter.escape_filter_chars(user_dn) \u003d\u003d user_dn\n False",
+      "parentUuid": "AAAAWH/9aIo\u003d",
+      "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9Z/Q\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T18:31:10Z",
+      "side": 1,
+      "message": "David -\n\nThere is a test missing -- fakeldap doesn\u0027t support dn with a ,. I\u0027ll look into it.\n\nI\u0027ve been running this and have not hit an import error... not sure why.",
+      "parentUuid": "AAAAWH/9aKU\u003d",
+      "revId": "e464b86a4c9bdde04c77b0d598e051e3d0781041",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
