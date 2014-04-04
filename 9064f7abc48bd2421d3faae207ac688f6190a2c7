@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9kAM\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T17:55:55Z",
+      "side": 1,
+      "message": "six.iteritems(attrs)",
+      "revId": "9064f7abc48bd2421d3faae207ac688f6190a2c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aUE\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T17:55:55Z",
+      "side": 1,
+      "message": "it\u0027d be helpful to include the two conflicting values here",
+      "revId": "9064f7abc48bd2421d3faae207ac688f6190a2c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9aPY\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T17:55:55Z",
+      "side": 1,
+      "message": "i\u0027d *really* prefer for this work to be done *not* by the plugins, but by keystone itself between calls to plugins.",
+      "revId": "9064f7abc48bd2421d3faae207ac688f6190a2c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
