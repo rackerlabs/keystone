@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9c0w\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T12:48:01Z",
+      "side": 1,
+      "message": "you\u0027re introducing a new public method to the driver -- make it private",
+      "revId": "d6c1e6dc43fe00bf1adb6a349c3fe99e4c60f2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9c04\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T12:48:01Z",
+      "side": 1,
+      "message": "is service_id actually appearing in the catalog too? that\u0027s not part of the bug report",
+      "revId": "d6c1e6dc43fe00bf1adb6a349c3fe99e4c60f2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9czc\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T12:48:01Z",
+      "side": 1,
+      "message": "not all tokens have catalogs, but...",
+      "revId": "d6c1e6dc43fe00bf1adb6a349c3fe99e4c60f2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9czU\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T12:48:01Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "d6c1e6dc43fe00bf1adb6a349c3fe99e4c60f2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9czk\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T12:48:01Z",
+      "side": 1,
+      "message": "scoped tokens have catalogs",
+      "revId": "d6c1e6dc43fe00bf1adb6a349c3fe99e4c60f2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9czw\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-04T12:48:01Z",
+      "side": 1,
+      "message": "you should write tests for the catalog here, where it\u0027s always present",
+      "revId": "d6c1e6dc43fe00bf1adb6a349c3fe99e4c60f2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
