@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH/9bvU\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-04T15:02:17Z",
+      "side": 1,
+      "message": "nit: add a comment that these are for internal use only?",
+      "revId": "96b650430829a87ceea069e31965781a6298a0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9cTs\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 3
@@ -19,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9buM\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-04T15:02:17Z",
+      "side": 1,
+      "message": "reminder that comments should have a space between # and character.",
+      "parentUuid": "AAAAWH/9cTs\u003d",
+      "revId": "96b650430829a87ceea069e31965781a6298a0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9cYQ\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 3
@@ -30,6 +65,24 @@
       "writtenOn": "2014-04-04T13:57:31Z",
       "side": 1,
       "message": "assert against service_id",
+      "revId": "96b650430829a87ceea069e31965781a6298a0da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9buc\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-04T15:02:17Z",
+      "side": 1,
+      "message": "@dolph, the service_id was deleted in the endpoint",
+      "parentUuid": "AAAAWH/9cYQ\u003d",
       "revId": "96b650430829a87ceea069e31965781a6298a0da",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
