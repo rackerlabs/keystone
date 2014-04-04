@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9hAA\u003d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-04T00:22:22Z",
+      "side": 1,
+      "message": "revert the whitespace change on previous line -- https://wiki.openstack.org/wiki/GitCommitMessages#Executive_Summary",
+      "revId": "a6acdedd96832ceea503d806cf2e5c2beaaa05de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
