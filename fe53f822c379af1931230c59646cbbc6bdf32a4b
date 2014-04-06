@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9VOo\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:39:08Z",
+      "side": 1,
+      "message": "if there is an error here do we need to remove kerberos from the available plugins list?",
+      "revId": "fe53f822c379af1931230c59646cbbc6bdf32a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9VOw\u003d",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:39:08Z",
+      "side": 1,
+      "message": "pass is unnecessary",
+      "revId": "fe53f822c379af1931230c59646cbbc6bdf32a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9VOM\u003d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:39:08Z",
+      "side": 1,
+      "message": "what happens when this and negotiate are both set?",
+      "revId": "fe53f822c379af1931230c59646cbbc6bdf32a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9VPY\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:39:08Z",
+      "side": 1,
+      "message": "this should go into __init__, objects on the class like that are going to get misused",
+      "revId": "fe53f822c379af1931230c59646cbbc6bdf32a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9VOc\u003d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:39:08Z",
+      "side": 1,
+      "message": "like here, where you are going to end up with an additional WWW-Authenticate header every time you raise the error",
+      "revId": "fe53f822c379af1931230c59646cbbc6bdf32a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
