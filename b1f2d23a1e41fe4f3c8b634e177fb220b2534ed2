@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9VP4\u003d",
+        "filename": "keystone/tests/test_v3_controller.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:22:33Z",
+      "side": 1,
+      "message": "you should check that the keys in the dictionary are contained in the exception message.\n\n(normally this would be a nit, but this is the change you are making)",
+      "revId": "b1f2d23a1e41fe4f3c8b634e177fb220b2534ed2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
