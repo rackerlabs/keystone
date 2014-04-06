@@ -14,16 +14,13 @@ from six.moves.urllib import parse
 
 from keystone import auth
 from keystone.common import dependency
-from keystone import config
 from keystone.contrib import federation
 from keystone.contrib.federation import utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
-from keystone.openstack.common import timeutils
 
 
-CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -57,7 +54,7 @@ class Saml2(auth.AuthMethodHandler):
 
     def _handle_scoped_token(self, auth_payload):
         token_ref = self.token_api.get_token(auth_payload['id'])
-        self._validate_expiration(token_ref)
+        utils.validate_expiration(token_ref)
         _federation = token_ref['user'][federation.FEDERATION]
         identity_provider = _federation['identity_provider']['id']
         protocol = _federation['protocol']['id']
@@ -71,7 +68,7 @@ class Saml2(auth.AuthMethodHandler):
         }
 
     def _handle_unscoped_token(self, context, auth_payload):
-        assertion = dict(self._get_assertion_params_from_env(context))
+        assertion = dict(utils.get_assertion_params_from_env(context))
 
         identity_provider = auth_payload['identity_provider']
         protocol = auth_payload['protocol']
@@ -90,10 +87,6 @@ class Saml2(auth.AuthMethodHandler):
             federation.PROTOCOL: protocol
         }
 
-    def _validate_expiration(self, token_ref):
-        if timeutils.utcnow() > token_ref['expires']:
-            raise exception.Unauthorized(_('Federation token is expired'))
-
     def _validate_groups(self, group_ids, mapping_id):
         if not group_ids:
             raise exception.MissingGroups(mapping_id=mapping_id)
@@ -104,9 +97,3 @@ class Saml2(auth.AuthMethodHandler):
             except exception.GroupNotFound:
                 raise exception.MappedGroupNotFound(
                     group_id=group_id, mapping_id=mapping_id)
-
-    def _get_assertion_params_from_env(self, context):
-        prefix = CONF.federation.assertion_prefix
-        for k, v in context['environment'].items():
-            if k.startswith(prefix):
-                yield (k, v)
