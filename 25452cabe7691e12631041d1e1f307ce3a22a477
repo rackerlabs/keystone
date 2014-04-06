@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9VRE\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-06T22:15:45Z",
+      "side": 1,
+      "message": "yield? need to refactor some stuff here.",
+      "revId": "25452cabe7691e12631041d1e1f307ce3a22a477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
