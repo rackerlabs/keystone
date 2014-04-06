@@ -17,11 +17,14 @@ import re
 import jsonschema
 import six
 
+from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
+from keystone.openstack.common import timeutils
 
 
+CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
@@ -112,6 +115,30 @@ def validate_mapping_structure(ref):
 
         if messages:
             raise exception.ValidationError(messages)
+
+
+def validate_expiration(self, token_ref):
+    if timeutils.utcnow() > token_ref['expires']:
+        raise exception.Unauthorized(_('Federation token is expired'))
+
+
+def validate_groups(self, group_ids, mapping_id):
+    if not group_ids:
+        raise exception.MissingGroups(mapping_id=mapping_id)
+
+    for group_id in group_ids:
+        try:
+            self.identity_api.get_group(group_id)
+        except exception.GroupNotFound:
+            raise exception.MappedGroupNotFound(
+                group_id=group_id, mapping_id=mapping_id)
+
+
+def get_assertion_params_from_env(self, context):
+    prefix = CONF.federation.assertion_prefix
+    for k, v in context['environment'].items():
+        if k.startswith(prefix):
+            yield (k, v)
 
 
 class RuleProcessor(object):
