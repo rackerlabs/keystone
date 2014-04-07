@@ -32,6 +32,7 @@ from keystone import identity
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests import fakeldap
+from keystone.tests.ksfixtures import database
 from keystone.tests import test_backend
 
 
@@ -592,6 +593,13 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
+
+    def setUp(self):
+        # NOTE(dstanek): the database must be setup prior to calling the
+        # parent's setUp because it expects to use it.
+        self.useFixture(database.Database())
+        super(LDAPIdentity, self).setUp()
+
     def test_configurable_allowed_project_actions(self):
         tenant = {'id': u'fäké1', 'name': u'fäké1', 'enabled': True}
         self.assignment_api.create_project(u'fäké1', tenant)
@@ -1332,6 +1340,9 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
         return config_files
 
     def setUp(self):
+        # NOTE(dstanek): the database must be setup prior to calling the
+        # parent's setUp because it expects to use it.
+        self.useFixture(database.Database())
         super(LdapIdentitySqlAssignment, self).setUp()
         self.clear_database()
         self.load_backends()
@@ -1416,6 +1427,9 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
 
     """
     def setUp(self):
+        # NOTE(dstanek): the database must be setup prior to calling the
+        # parent's setUp because it expects to use it.
+        self.useFixture(database.Database())
         super(MultiLDAPandSQLIdentity, self).setUp()
 
         self.load_backends()
