@@ -68,6 +68,24 @@
       "revId": "9064f7abc48bd2421d3faae207ac688f6190a2c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9SCE\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-07T12:51:01Z",
+      "side": 1,
+      "message": "++; if you\u0027re going to provide special treatment for expires_at, i\u0027d take the min() expiration (earliest date)",
+      "parentUuid": "AAAAWH/9UYk\u003d",
+      "revId": "9064f7abc48bd2421d3faae207ac688f6190a2c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
