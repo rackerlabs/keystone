@@ -459,15 +459,6 @@ class TestCase(BaseTestCase):
             setattr(self, manager_name, manager)
         self.addCleanup(self.cleanup_instance(*drivers.keys()))
 
-        # The credential backend only supports SQL, so we always have to load
-        # the tables.
-        self.engine = sql.get_engine()
-        self.addCleanup(sql.cleanup)
-        self.addCleanup(self.cleanup_instance('engine'))
-
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
-
     def load_fixtures(self, fixtures):
         """Hacky basic and naive fixture loading based on a python module.
 
