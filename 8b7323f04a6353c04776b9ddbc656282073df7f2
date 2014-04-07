@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9SA8\u003d",
+        "filename": "keystone/tests/test_v3_controller.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-07T12:58:11Z",
+      "side": 1,
+      "message": "You should be able to get rid of most of this code and do something like:\n\n    # untested\n    ref \u003d dict([(uuid.uuid4().hex, uuid.uuid4().hex) for _ in range(3)])\n\n    ex \u003d self.assertRaises(exception.ImmutableAttributeError,\n                           self.api.check_immutable_params, ref)\n    ex_msg \u003d unicode(ex)\n    self.assertThat(ex_msg, matchers.Contains(self.api.__class__.__name__))\n    for key in ref:\n        self.assertThat(ex_msg, matchers.Contains(key))",
+      "revId": "8b7323f04a6353c04776b9ddbc656282073df7f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
