@@ -20,11 +20,13 @@ from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import tests
 from keystone.tests import default_fixtures
+from keystone.tests.ksfixtures import database
 from keystone.tests import test_backend
 
 
 class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
     def setUp(self):
+        self.useFixture(database.Database())
         super(KvsIdentity, self).setUp()
         self.load_backends()
         self.load_fixtures(default_fixtures)
