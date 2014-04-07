@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9Tuk\u003d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-07T08:15:16Z",
+      "side": 1,
+      "message": "Just wondering: How about moving this to the utils too and change its signature to pass identity_api object(or even the Saml2 instance)? I think this method could also be re-used if we suddently decided to support OpenID or similar protocols.\n\ndef _validate_groups(identity_api, group_ids, mapping_id):\n    ...\n    for group_id in group_ids:\n        try:\n            identity_api.get_group(group_id)\n        [...]",
+      "revId": "ebf85f73c85b4ef67e830b1c653cce9df2ed220c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
