@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9RAA\u003d",
+        "filename": "keystone/tests/test_v3_controller.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-07T14:47:24Z",
+      "side": 1,
+      "message": "This is a third party library and should be moved into its own section in between the stdlib section and the keystone section.",
+      "revId": "028d632cbdb28b18a51f4d7c01d8b55e469624e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
