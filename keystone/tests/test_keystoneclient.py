@@ -25,6 +25,7 @@ from keystone.openstack.common import timeutils
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import appserver
+from keystone.tests.ksfixtures import database
 
 
 CONF = config.CONF
@@ -37,6 +38,8 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
 
     def setUp(self):
         super(CompatTestCase, self).setUp()
+
+        self.useFixture(database.Database())
 
         # FIXME(morganfainberg): Since we are running tests through the
         # controllers and some internal api drivers are SQL-only, the correct
