@@ -29,6 +29,9 @@ from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 
 
+DB_INIT_VERSION = 35
+
+
 #  Different RDBMSs use different schemes for naming the Foreign Key
 #  Constraints.  SQLAlchemy does not yet attempt to determine the name
 #  for the constraint, and instead attempts to deduce it from the column.
@@ -117,7 +120,9 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
 def sync_database_to_version(extension=None, version=None):
     if not extension:
         abs_path = find_migrate_repo()
+        init_version = DB_INIT_VERSION
     else:
+        init_version = 0
         try:
             package_name = '.'.join((contrib.__name__, extension))
             package = importutils.import_module(package_name)
@@ -136,7 +141,8 @@ def sync_database_to_version(extension=None, version=None):
         except exception.MigrationNotProvided as e:
             print(e)
             sys.exit(1)
-    migration.db_sync(sql.get_engine(), abs_path, version=version)
+    migration.db_sync(sql.get_engine(), abs_path, version=version,
+                      init_version=init_version)
 
 
 def get_db_version(extension=None):
