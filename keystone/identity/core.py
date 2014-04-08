@@ -645,6 +645,15 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
+    def get_group_project_roles(self, user_id, project_ref):
+        """Get group roles of the user for a specific project.
+
+        :returns: a list of roles or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
     def get_group(self, group_id):
         """Get a group by ID.
 
