@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWn//6UA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-04-08T14:53:21Z",
+      "side": 1,
+      "message": "Just a question (because I\u0027m not sure), Its implementation has some improvement over the previous code?",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//62U\u003d",
         "filename": "keystone/identity/backends/kvs.py",
         "patchSetId": 2
@@ -19,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//6Xk\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-04-08T14:53:21Z",
+      "side": 1,
+      "message": "You need to be sure if tenant_id exists. The tests are failing.",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//680\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 2
@@ -30,6 +64,23 @@
       "writtenOn": "2014-04-08T13:58:09Z",
       "side": 1,
       "message": "If this function is only used here, perhaps it could be \"private\", meaning, it could have an underscore prepended to the name.",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//6ZQ\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-04-08T14:53:21Z",
+      "side": 1,
+      "message": "I would like you comment this function",
       "revId": "acc5bca4a802198c57082d5b59b027967af66253",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
