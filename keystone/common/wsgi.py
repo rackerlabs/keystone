@@ -646,7 +646,8 @@ def render_exception(error, context=None, request=None, user_locale=None):
         else:
             url = url % CONF
 
-        headers.append(('WWW-Authenticate', 'Keystone uri="%s"' % url))
+        if error.www_authenticate:
+            headers.append(('WWW-Authenticate', error.www_authtenticate))
     return render_response(status=(error.code, error.title),
                            body=body,
                            headers=headers)
