@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//3Ws\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "I set the author to Nathan in line 2.",
+      "parentUuid": "AAAAWn//3qY\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3ps\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-08T20:45:19Z",
       "side": 1,
       "message": "Should clarify here just saying something like \"Keystone doesn\u0027t have an home-brewed encryption implementations, everything is used from Python Standard libraries or third party libraries\" (if that\u0027s accurate)",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3WE\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "agree, if that\u0027s accurate.",
+      "parentUuid": "AAAAWn//3ps\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//3VE\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "I\u0027m okay with that notation, if others want it that way, i\u0027ll change it up.",
+      "parentUuid": "AAAAWn//3nE\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3mc\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//3SQ\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "we should reference the config options like CONF.config_option, it\u0027s already done one below.",
+      "parentUuid": "AAAAWn//3mQ\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3j8\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//3T0\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "i\u0027ll change md5 to sha1",
+      "parentUuid": "AAAAWn//3j8\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3f0\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -132,6 +222,24 @@
       "writtenOn": "2014-04-08T20:50:01Z",
       "side": 1,
       "message": "I wonder if it would be useful to add a field for every section that clarifies if the encryption can be leveraged from the CLI, or if it pretty much stays internal to Keystone. \n\nLike here we could document that a user can grab EC2 generated certificates from the CLI, but they can\u0027t increase their strength. \n\nOr maybe that would be best in another section, specifically for what an end user can get at?",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3TM\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "I think that is the intention of the \"Configurable: Yes/No\" section.",
+      "parentUuid": "AAAAWn//3f0\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +274,24 @@
       "writtenOn": "2014-04-08T20:45:19Z",
       "side": 1,
       "message": "(NIT): maybe it would be worth noting if some backends are more \u0027secure\u0027 than others.. from an end user perspective.",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3R4\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-08T21:21:33Z",
+      "side": 1,
+      "message": "elaborate?",
+      "parentUuid": "AAAAWn//3ic\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
