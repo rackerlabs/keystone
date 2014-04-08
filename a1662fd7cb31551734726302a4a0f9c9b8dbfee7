@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWn//3l4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-08T20:39:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this else block be executed if trust_ref[\u0027project_id\u0027] is None? if so, combine the two conditions above into one",
+      "revId": "a1662fd7cb31551734726302a4a0f9c9b8dbfee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
