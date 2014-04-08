@@ -69,6 +69,7 @@ Developers Documentation
    external-auth
    event_notifications
    extension_development
+   security_details
 
 Code Documentation
 ==================
