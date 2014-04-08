@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWn//3q4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/036_havana.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-08T20:32:58Z",
+      "side": 1,
+      "message": "i\u0027d prefer this to be one log line using .exception()",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
