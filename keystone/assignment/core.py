@@ -128,31 +128,8 @@ class Manager(manager.Manager):
 
         """
         def _get_group_project_roles(user_id, project_ref):
-            role_list = []
-            group_refs = self.identity_api.list_groups_for_user(user_id)
-            for x in group_refs:
-                try:
-                    metadata_ref = self._get_metadata(
-                        group_id=x['id'], tenant_id=project_ref['id'])
-                    role_list += self._roles_from_role_dicts(
-                        metadata_ref.get('roles', {}), False)
-                except exception.MetadataNotFound:
-                    # no group grant, skip
-                    pass
-
-                if CONF.os_inherit.enabled:
-                    # Now get any inherited group roles for the owning domain
-                    try:
-                        metadata_ref = self._get_metadata(
-                            group_id=x['id'],
-                            domain_id=project_ref['domain_id'])
-                        role_list += self._roles_from_role_dicts(
-                            metadata_ref.get('roles', {}), True)
-                    except (exception.MetadataNotFound,
-                            exception.NotImplemented):
-                        pass
-
-            return role_list
+            return self.identity_api.get_group_project_roles(user_id,
+                                                             project_ref)
 
         def _get_user_project_roles(user_id, project_ref):
             role_list = []

@@ -15,6 +15,7 @@
 from keystone.common import dependency
 from keystone.common import sql
 from keystone.common import utils
+from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common.gettextutils import _
@@ -22,6 +23,8 @@ from keystone.openstack.common.gettextutils import _
 # Import assignment sql to ensure that the models defined in there are
 # available for the reference from User and Group to Domain.id.
 from keystone.assignment.backends import sql as assignment_sql  # noqa
+
+CONF = config.CONF
 
 
 class User(sql.ModelBase, sql.DictBase):
@@ -178,6 +181,22 @@ class Identity(identity.Driver):
         with session.begin():
             session.add(UserGroupMembership(user_id=user_id,
                                             group_id=group_id))
+
+    def get_group_project_roles(self, user_id, project_ref):
+        session = sql.get_session()
+        self.get_user(user_id)
+        query = session.query(Group).join(UserGroupMembership)
+        query = query.filter_by(UserGroupMembership.user_id == user_id)
+        query = query.filter_by(Group.extra['project_id'] == project_ref['id'])
+        roles = [g.to_dict() for g in query]
+        if CONF.os_inherit.enabled:
+            query = session.query(Group).join(UserGroupMembership)
+            query = query.filter_by(UserGroupMembership.user_id == user_id)
+            query = query.filter_by(Group.domain_id ==
+                                    project_ref['domain_id'])
+            roles += [g.to_dict() for g in query]
+
+        return roles
 
     def check_user_in_group(self, user_id, group_id):
         session = sql.get_session()

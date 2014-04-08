@@ -14,9 +14,12 @@
 
 from keystone.common import kvs
 from keystone.common import utils
+from keystone import config
 from keystone import exception
 from keystone import identity
 from keystone.openstack.common.gettextutils import _
+
+CONF = config.CONF
 
 
 class _UserIdToDomainId(object):
@@ -212,6 +215,19 @@ class Identity(kvs.Base, identity.Driver):
         user_list = set(self.db.get('user_list', []))
         user_list.remove(user_id)
         self.db.set('user_list', list(user_list))
+
+    def get_group_project_roles(self, user_id, project_ref):
+        user_ref = self._get_user(user_id)
+        group_ids = user_ref.get('groups', [])
+        roles = [self.get_group(x) for x in group_ids if
+                 self.get_group(x)['tenant_id'] == project_ref['id']]
+
+        if CONF.os_inherit.enabled:
+            roles += [self.get_group(x) for x in group_ids if
+                      self.get_group(x)['domain_id'] ==
+                      project_ref['domain_id']]
+
+        return roles
 
     # group crud
 

@@ -149,6 +149,11 @@ class Identity(identity.Driver):
         user_dn = self.user._id_to_dn(user_id)
         self.group.remove_user(user_dn, group_id, user_id)
 
+    def get_group_project_roles(self, user_id, project_ref):
+        self.get_user(user_id)
+        user_dn = self.user._id_to_dn(user_id)
+        return self.group.get_group_project_roles(user_dn, project_ref)
+
     def list_groups_for_user(self, user_id, hints):
         self.get_user(user_id)
         user_dn = self.user._id_to_dn(user_id)
@@ -335,6 +340,26 @@ class GroupApi(common_ldap.BaseLdap):
                                                   user_dn_esc,
                                                   self.ldap_filter or '')
         memberships = self.get_all(query)
+        return memberships
+
+    def get_group_project_roles(self, user_dn, project_ref):
+        query = '(&(objectClass=%s)(%s=%s)' \
+            '(project_id=%s)%s)' % (self.object_class,
+                self.member_attribute,
+                user_dn,
+                project_ref['id'],
+                self.ldap_filter or '')
+        memberships = self.get_all(query)
+
+        if CONF.os_inherit.enabled:
+            query = '(&(objectClass=%s)(%s=%s)' \
+                '(domain_id=%s)%s)' % (self.object_class,
+                    self.member_attribute,
+                    user_dn,
+                    project_ref['domain_id'],
+                    self.ldap_filter or '')
+            memberships += self.get_all(query)
+
         return memberships
 
     def list_group_users(self, group_id):
