@@ -33,6 +33,74 @@
       "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//7HU\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-04-08T13:42:38Z",
+      "side": 1,
+      "message": "you probably want to add that it\u0027s only used in v1",
+      "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//7Hc\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-04-08T13:42:38Z",
+      "side": 1,
+      "message": "check if the configuration is defined?",
+      "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//7aM\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-04-08T13:42:38Z",
+      "side": 1,
+      "message": "You are not handlng the failures here? if we can\u0027t connect or not.",
+      "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//7OU\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-04-08T13:42:38Z",
+      "side": 1,
+      "message": "Bad indent :\n\nIn [1]: import keystone.token.backends.swift.Token\n  File \"/home/stack/keystone/keystone/token/backends/swift.py\", line 110\n    except swexc.ClientException:\n    ^\nIndentationError: unexpected unindent",
+      "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
