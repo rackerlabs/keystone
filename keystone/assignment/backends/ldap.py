@@ -83,6 +83,16 @@ class Assignment(assignment.Driver):
             tenant['name'] = clean.project_name(tenant['name'])
         return self._set_default_domain(self.project.update(tenant_id, tenant))
 
+    def get_group_project_roles(self, user_id, group_refs, project_ref):
+        self.get_project(project_ref['id'])
+        group_dns = [self.group._id_to_dn(group['id']) for group in group_refs]
+
+        return [self.role._dn_to_id(role_assignment.role_dn)
+                for role_assignment in self.role.get_role_assignments
+                (self.project._id_to_dn(project_ref['id']))
+                if self.user._dn_to_id(role_assignment.user_dn) == user_id or
+                role_assignment.user_dn.upper() in group_dns]
+
     def _get_metadata(self, user_id=None, tenant_id=None,
                       domain_id=None, group_id=None):
 

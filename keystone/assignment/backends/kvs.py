@@ -119,6 +119,32 @@ class Assignment(kvs.Base, assignment.Driver):
         except exception.NotFound:
             raise exception.RoleNotFound(role_id=role_id)
 
+    def get_group_project_roles(self, group_refs, user_id, project_ref):
+        role_list = []
+        for group in group_refs:
+            try:
+                metadata_ref = self._get_metadata(
+                    group_id=group['id'], tenant_id=project_ref['id'])
+                role_list += self._roles_from_role_dicts(
+                    metadata_ref.get('roles', {}), False)
+            except exception.MetadataNotFound:
+                # no group grant, skip
+                pass
+
+            # if CONF.os_inherit.enabled:
+            #     # Now get any inherited group roles for the owning domain
+            #     try:
+            #         metadata_ref = self._get_metadata(
+            #             group_id=x['id'],
+            #             domain_id=project_ref['domain_id'])
+            #         role_list += self._roles_from_role_dicts(
+            #             metadata_ref.get('roles', {}), True)
+            #     except (exception.MetadataNotFound,
+            #             exception.NotImplemented):
+            #         pass
+
+        return role_list
+
     def list_roles(self, hints):
         return self._list_roles()
 
