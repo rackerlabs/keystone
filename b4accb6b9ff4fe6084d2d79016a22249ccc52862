@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWn//3qY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "Co-Authored by Nathan Kinder?",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3ps\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "Should clarify here just saying something like \"Keystone doesn\u0027t have an home-brewed encryption implementations, everything is used from Python Standard libraries or third party libraries\" (if that\u0027s accurate)",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3pQ\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "We use base64 encoding, wondering where that fits in here? \n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/pemutils.py#L508",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3nE\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "Should we add class notation to this? \n\nkeystone.common.openssl.BaseCertificateConfigure\n\nMight make things a little easier to find if we document some of the bigger modules.",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3mc\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "and configurable through the keystone.conf: \n\nhttps://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L1209",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3mQ\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "Should we list the configuration options this can be done with? \n\nhttps://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L1196-L1205",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3j8\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "doesn\u0027t this use sha1 salted? \nhttps://github.com/openstack/keystone/blob/master/keystone/common/utils.py#L117",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3i0\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "I like having the configuration option here, makes it easier if you need to reference something in your deployment.",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//3ic\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:45:19Z",
+      "side": 1,
+      "message": "(NIT): maybe it would be worth noting if some backends are more \u0027secure\u0027 than others.. from an end user perspective.",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
