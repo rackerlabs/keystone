@@ -121,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//3f0\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-08T20:50:01Z",
+      "side": 1,
+      "message": "I wonder if it would be useful to add a field for every section that clarifies if the encryption can be leveraged from the CLI, or if it pretty much stays internal to Keystone. \n\nLike here we could document that a user can grab EC2 generated certificates from the CLI, but they can\u0027t increase their strength. \n\nOr maybe that would be best in another section, specifically for what an end user can get at?",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3i0\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
