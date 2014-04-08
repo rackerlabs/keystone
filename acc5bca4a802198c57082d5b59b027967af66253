@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWn//62U\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-04-08T13:58:09Z",
+      "side": 1,
+      "message": "perhaps a more descriptive name could be given to the \"x\" variable.",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//680\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-04-08T13:58:09Z",
+      "side": 1,
+      "message": "If this function is only used here, perhaps it could be \"private\", meaning, it could have an underscore prepended to the name.",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//64M\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-04-08T13:58:09Z",
+      "side": 1,
+      "message": "I think this function call is not needed here. At least the way it is used now.",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//63A\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-04-08T13:58:09Z",
+      "side": 1,
+      "message": "perhaps a more descriptive name could be given to the \"g\" variable.",
+      "revId": "acc5bca4a802198c57082d5b59b027967af66253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
