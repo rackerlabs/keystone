@@ -831,6 +831,12 @@ FILE_OPTIONS = {
                    help='Path of the keyfile for SAML signing. Note, the path '
                         'cannot contain a comma.'),
     ],
+    'kerberos': [
+        cfg.StrOpt('service_name', default='keystone.example.com',
+                   help='Name of the service in the keytab file.'),
+        cfg.StrOpt('keytab_file', default='/etc/keystone/keystone.keytab',
+                   help='Location of the keytab file for the service.')
+    ]
 }
 
 
