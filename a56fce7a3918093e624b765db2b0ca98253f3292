@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWn//7j4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-04-08T12:43:18Z",
+      "side": 1,
+      "message": "useS",
+      "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//7l8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-04-08T12:43:18Z",
+      "side": 1,
+      "message": "redundant with l.664 ?",
+      "revId": "a56fce7a3918093e624b765db2b0ca98253f3292",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
