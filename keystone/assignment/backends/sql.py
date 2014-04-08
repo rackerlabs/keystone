@@ -296,6 +296,31 @@ class Assignment(assignment.Driver):
                 sql_constraints).distinct()
         return [role.to_dict() for role in query.all()]
 
+    def get_group_project_roles(self, user_id, group_refs, project_ref):
+        role_list = []
+        for group in group_refs:
+            try:
+                metadata_ref = self._get_metadata(
+                    group_id=group['id'], tenant_id=project_ref['id'])
+                role_list += self._roles_from_role_dicts(
+                    metadata_ref.get('roles', {}), False)
+            except exception.MetadataNotFound:
+                # no group grant, skip
+                pass
+            if CONF.os_inherit.enabled:
+            # Now get any inherited group roles for the owning domain
+                try:
+                    metadata_ref = self._get_metadata(
+                        group_id=group['id'],
+                        domain_id=project_ref['domain_id'])
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), True)
+                except (exception.MetadataNotFound,
+                        exception.NotImplemented):
+                    pass
+
+        return role_list
+
     def _list_entities_for_groups(self, group_ids, entity):
         if entity == Domain:
             assignment_type = AssignmentType.GROUP_DOMAIN
