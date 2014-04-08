@@ -824,6 +824,19 @@
 #backward_compatible_ids=true
 
 
+[kerberos]
+
+#
+# Options defined in keystone
+#
+
+# Name of the service in the keytab file. (string value)
+#service_name=keystone.example.com
+
+# Location of the keytab file for the service. (string value)
+#keytab_file=/etc/keystone/keystone.keytab
+
+
 [kvs]
 
 #
