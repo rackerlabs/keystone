@@ -31,6 +31,7 @@ FILE_OPTIONS = {
         cfg.IntOpt('compute_port', default=8774),
         cfg.IntOpt('admin_port', default=35357),
         cfg.IntOpt('public_port', default=5000),
+        cfg.IntOpt('max_url_length', default=16384),
         cfg.StrOpt('public_endpoint',
                    default='http://localhost:%(public_port)s/'),
         cfg.StrOpt('admin_endpoint',

@@ -50,9 +50,10 @@ from keystone.openstack.common import importutils
 CONF = config.CONF
 
 
-def create_server(conf, name, host, port):
+def create_server(conf, name, host, port, max_url_length):
     app = deploy.loadapp('config:%s' % conf, name=name)
-    server = environment.Server(app, host=host, port=port)
+    server = environment.Server(app, host=host, port=port,
+                                max_url_length=max_url_length)
     if CONF.ssl.enable:
         server.set_ssl(CONF.ssl.certfile, CONF.ssl.keyfile,
                        CONF.ssl.ca_certs, CONF.ssl.cert_required)
@@ -120,9 +121,11 @@ if __name__ == '__main__':
     servers.append(create_server(paste_config,
                                  'admin',
                                  CONF.bind_host,
-                                 int(CONF.admin_port)))
+                                 int(CONF.admin_port),
+                                 int(CONF.max_url_length)))
     servers.append(create_server(paste_config,
                                  'main',
                                  CONF.bind_host,
-                                 int(CONF.public_port)))
+                                 int(CONF.public_port),
+                                 int(CONF.max_url_length)))
     serve(*servers)

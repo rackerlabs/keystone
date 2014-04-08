@@ -35,10 +35,12 @@ LOG = logging.getLogger(__name__)
 class Server(object):
     """Server class to manage multiple WSGI sockets and applications."""
 
-    def __init__(self, application, host=None, port=None, threads=1000):
+    def __init__(self, application, host=None, port=None,
+                 max_url_length=8192, threads=1000):
         self.application = application
         self.host = host or '0.0.0.0'
         self.port = port or 0
+        self.max_url_length = max_url_length
         self.pool = eventlet.GreenPool(threads)
         self.socket_info = {}
         self.greenthread = None
@@ -107,7 +109,8 @@ class Server(object):
         log = logging.getLogger('eventlet.wsgi.server')
         try:
             eventlet.wsgi.server(socket, application, custom_pool=self.pool,
-                                 log=logging.WritableLogger(log))
+                                 log=logging.WritableLogger(log),
+                                 url_length_limit=self.max_url_length)
         except Exception:
             LOG.exception(_('Server error'))
             raise
