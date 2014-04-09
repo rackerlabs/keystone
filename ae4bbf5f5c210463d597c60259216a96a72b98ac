@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3///jU\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1246,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T00:19:19Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this more realistically mimic the client if we did the following?\n\n  token_hash \u003d cms.cms_hash_token(token, mode\u003ddata[\u0027hash_algorithm\u0027])\n\nI realize that the result with be the same as what you already have in the patch due to the assertions below, but it seems that this would better mimic the client.",
+      "revId": "ae4bbf5f5c210463d597c60259216a96a72b98ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///jI\u003d",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1261,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T00:19:19Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "ae4bbf5f5c210463d597c60259216a96a72b98ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
