@@ -658,6 +658,7 @@ class BaseLdap(object):
     immutable_attrs = []
     attribute_ignore = []
     tree_dn = None
+    member_attribute = None
 
     def __init__(self, conf):
         self.LDAP_URL = conf.ldap.url
@@ -1011,6 +1012,28 @@ class BaseLdap(object):
                               serverctrls=[tree_delete_control])
         except ldap.NO_SUCH_OBJECT:
             raise self._not_found(object_id)
+        finally:
+            conn.unbind_s()
+
+    def add_member(self, member_dn, member_list_dn):
+        conn = self.get_connection()
+        try:
+            conn.modify_s(
+                member_list_dn,
+                [(ldap.MOD_ADD,
+                  self.member_attribute,
+                  member_dn)])
+        except ldap.TYPE_OR_VALUE_EXISTS:
+            raise exception.Conflict(_('User %s has already been added')
+                                     % self._dn_to_id(member_dn))
+        finally:
+            conn.unbind_s()
+
+    def remove_member(self, member_dn, member_list_dn):
+        conn = self.get_connection()
+        try:
+            conn.modify_s(member_list_dn, [(ldap.MOD_DELETE,
+                                            self.member_attribute, member_dn)])
         finally:
             conn.unbind_s()
 

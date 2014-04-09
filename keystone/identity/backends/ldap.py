@@ -141,7 +141,7 @@ class Identity(identity.Driver):
         self.get_user(user_id)
         self.get_group(group_id)
         user_dn = self.user._id_to_dn(user_id)
-        self.group.add_user(user_dn, group_id, user_id)
+        self.group.add_user(user_dn, group_id)
 
     def remove_user_from_group(self, user_id, group_id):
         self.get_user(user_id)
@@ -257,6 +257,7 @@ class GroupApi(common_ldap.BaseLdap):
                                'name': 'name'}
     immutable_attrs = ['name']
     model = models.Group
+    member_attribute = None
 
     def __init__(self, conf):
         super(GroupApi, self).__init__(conf)
@@ -298,33 +299,16 @@ class GroupApi(common_ldap.BaseLdap):
         old_obj = self.get(group_id)
         return super(GroupApi, self).update(group_id, values, old_obj)
 
-    def add_user(self, user_dn, group_id, user_id):
-        conn = self.get_connection()
-        try:
-            conn.modify_s(
-                self._id_to_dn(group_id),
-                [(ldap.MOD_ADD,
-                  self.member_attribute,
-                  user_dn)])
-        except ldap.TYPE_OR_VALUE_EXISTS:
-            raise exception.Conflict(_(
-                'User %(user_id)s is already a member of group %(group_id)s') %
-                {'user_id': user_id, 'group_id': group_id})
-        finally:
-            conn.unbind_s()
+    def add_user(self, user_dn, group_id):
+        return super(GroupApi, self).add_member(user_dn,
+                                                self._id_to_dn(group_id))
 
     def remove_user(self, user_dn, group_id, user_id):
-        conn = self.get_connection()
         try:
-            conn.modify_s(
-                self._id_to_dn(group_id),
-                [(ldap.MOD_DELETE,
-                  self.member_attribute,
-                  user_dn)])
+            super(GroupApi, self).remove_member(user_dn,
+                                                self._id_to_dn(group_id))
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.UserNotFound(user_id=user_id)
-        finally:
-            conn.unbind_s()
 
     def list_user_groups(self, user_dn):
         """Return a list of groups for which the user is a member."""

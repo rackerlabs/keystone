@@ -173,7 +173,7 @@ class Assignment(assignment.Driver):
         self.get_role(role_id)
         user_dn = self.user._id_to_dn(user_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
-        self.role.add_user(role_id, role_dn, user_dn, user_id, tenant_id)
+        self.role.add_user(role_id, role_dn, user_dn, tenant_id)
         tenant_dn = self.project._id_to_dn(tenant_id)
         return UserRoleAssociation(role_dn=role_dn,
                                    user_dn=user_dn,
@@ -184,7 +184,7 @@ class Assignment(assignment.Driver):
         self.get_role(role_id)
         group_dn = self.group._id_to_dn(group_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
-        self.role.add_user(role_id, role_dn, group_dn, group_id, tenant_id)
+        self.role.add_user(role_id, role_dn, group_dn, tenant_id)
         tenant_dn = self.project._id_to_dn(tenant_id)
         return GroupRoleAssociation(group_dn=group_dn,
                                     role_dn=role_dn,
@@ -545,16 +545,9 @@ class RoleApi(common_ldap.BaseLdap):
     def create(self, values):
         return super(RoleApi, self).create(values)
 
-    def add_user(self, role_id, role_dn, user_dn, user_id, tenant_id=None):
-        conn = self.get_connection()
+    def add_user(self, role_id, role_dn, user_dn, tenant_id=None):
         try:
-            conn.modify_s(role_dn, [(ldap.MOD_ADD,
-                                     self.member_attribute, user_dn)])
-        except ldap.TYPE_OR_VALUE_EXISTS:
-            msg = (_('User %(user_id)s already has role %(role_id)s in '
-                     'tenant %(tenant_id)s') %
-                   dict(user_id=user_id, role_id=role_id, tenant_id=tenant_id))
-            raise exception.Conflict(type='role grant', details=msg)
+            super(RoleApi, self).add_member(user_dn, role_dn)
         except ldap.NO_SUCH_OBJECT:
             if tenant_id is None or self.get(role_id) is None:
                 raise Exception(_("Role %s not found") % (role_id,))
@@ -564,25 +557,22 @@ class RoleApi(common_ldap.BaseLdap):
 
             if self.use_dumb_member:
                 attrs[1][1].append(self.dumb_member)
+            conn = self.get_connection()
             try:
                 conn.add_s(role_dn, attrs)
             except Exception as inst:
                     raise inst
-        finally:
-            conn.unbind_s()
+            finally:
+                conn.unbind_s()
 
     def delete_user(self, role_dn, user_dn, tenant_dn,
                     user_id, role_id):
-        conn = self.get_connection()
         try:
-            conn.modify_s(role_dn, [(ldap.MOD_DELETE,
-                                     self.member_attribute, user_dn)])
+            super(RoleApi, self).remove_member(user_dn, role_dn)
         except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):
             raise exception.RoleNotFound(message=_(
                 'Cannot remove role that has not been granted, %s') %
                 role_id)
-        finally:
-            conn.unbind_s()
 
     def get_role_assignments(self, tenant_dn):
         conn = self.get_connection()
