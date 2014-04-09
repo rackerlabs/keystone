@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//9ZI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-09T08:55:40Z",
+      "side": 1,
+      "message": "This is not needed.",
+      "revId": "3c0d70bbed27f452e8a8c55198136329228304e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//9XI\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-09T08:55:40Z",
+      "side": 1,
+      "message": "Perhaps, checking of the index columns is more explicit than checking that the index name contains \u0027service_id\u0027:\n\nif i.columns.keys() \u003d\u003d [\u0027service_id\u0027] and i.name !\u003d \u0027service_id\u0027:\n    i.rename(\u0027service_id\u0027)\n    break\n\nAnd we definitely don\u0027t need old_name global variable here.",
+      "revId": "3c0d70bbed27f452e8a8c55198136329228304e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//9Tk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-09T08:55:40Z",
+      "side": 1,
+      "message": "I\u0027d actually suggest to make this no-op for MySQL: this is a MySQL specific index and the only thing we care about is that it has a consistent name across all MySQL versions; I see no point in restoring the old, probably incorrect name - let\u0027s just keep it called \u0027service_id\u0027.",
+      "revId": "3c0d70bbed27f452e8a8c55198136329228304e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//9Sk\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-09T08:55:40Z",
+      "side": 1,
+      "message": "ditto here and below",
+      "revId": "3c0d70bbed27f452e8a8c55198136329228304e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
