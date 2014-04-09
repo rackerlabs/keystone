@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//4x8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 915,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-09T17:45:52Z",
+      "side": 1,
+      "message": "This is to ensure there are no duplicates. We do the same thing at line 897.",
+      "parentUuid": "AAAAW3//5Ik\u003d",
+      "revId": "463fc83d5d8c112bd17be4eebb2e4c713157129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//5GY\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//4xY\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-09T17:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//5GY\u003d",
+      "revId": "463fc83d5d8c112bd17be4eebb2e4c713157129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//5II\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-04-09T16:45:47Z",
       "side": 1,
       "message": "Shouldn\u0027t this comment be updated? \n\n    #Given a mapping like description:description, the description should be returned",
+      "revId": "463fc83d5d8c112bd17be4eebb2e4c713157129c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//4xc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-09T17:45:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//5II\u003d",
       "revId": "463fc83d5d8c112bd17be4eebb2e4c713157129c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
