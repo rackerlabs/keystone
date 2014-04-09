@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3///dA\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "As far as I could see, that is indeed accurate.",
+      "parentUuid": "AAAAWn//3WE\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3pQ\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -83,6 +101,24 @@
       "writtenOn": "2014-04-08T20:45:19Z",
       "side": 1,
       "message": "We use base64 encoding, wondering where that fits in here? \n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/pemutils.py#L508",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///ZY\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "Base64 encoding does not count as encryption.  It really should be thought of as plain text, as it provides zero security.  Think of it the same as representing characters as Unicode escape sequences instead of ASCII to represent strings (\"ABC\" \u003d \"\\u0041\\u0042\\u0043\").\n\nThere is no purpose in calling out base64 in this document.",
+      "parentUuid": "AAAAWn//3pQ\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -118,6 +154,24 @@
       "side": 1,
       "message": "I\u0027m okay with that notation, if others want it that way, i\u0027ll change it up.",
       "parentUuid": "AAAAWn//3nE\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///ZI\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "Yeah, class notation would be much better than source file names IMHO.",
+      "parentUuid": "AAAAWn//3VE\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -170,6 +224,24 @@
       "side": 1,
       "message": "we should reference the config options like CONF.config_option, it\u0027s already done one below.",
       "parentUuid": "AAAAWn//3mQ\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///Y0\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "AAAAWn//3SQ\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -246,6 +318,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3///VQ\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "My intention of \"configurable\" was so a deployer would be able to know if they can control the algorithm used for a particular purpose.  For example, someone may have a requirement that says md5 can\u0027t be used at all in their environment.  The \"configurable\" section is to let them know if they can do anything about it.  If there is a strong reason why it can\u0027t be configurable (like EC2 and S3 compatibility), it\u0027s important for us to call out so deployers understand why.\n\nIf we want to describe end-user facing vs. server side only, we should probably list that separately somehow.",
+      "parentUuid": "AAAAWn//3TM\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3i0\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -257,6 +347,24 @@
       "writtenOn": "2014-04-08T20:45:19Z",
       "side": 1,
       "message": "I like having the configuration option here, makes it easier if you need to reference something in your deployment.",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///VA\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "+1.  It avoids sending people off to dig for how they can change things.",
+      "parentUuid": "AAAAWn//3i0\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +399,24 @@
       "writtenOn": "2014-04-08T21:21:33Z",
       "side": 1,
       "message": "elaborate?",
+      "parentUuid": "AAAAWn//3ic\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///Ts\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-09T01:26:41Z",
+      "side": 1,
+      "message": "If we know that a particular backend is more secure, we should call that out.  It would hopefully be clear from the security options listed under each backend.\n\nFor each backend, it would be nice to explain how access to the backend is controlled (authentication and authorization) and how the data is protected (encryption and signing).  I was able to determine some of this above, but not all of it. Any help filling those details in would be great.  For example:\n\n- How is access to memcached controlled?  Is there any authentication, or do we just rely on local (or network) access?\n\n- Where are encryption/signing keys set for memcached?  How are they protected?\n\n- SQL details on authentication needs to be added (the \"connection\" setting in the \"[sql]\" section of keystone.conf).  Are there more secure authentication options that we can use other than putting a clear-text password in keystone.conf?\n\n- KVS has no details, as I wasn\u0027t sure of how to protect it.",
       "parentUuid": "AAAAWn//3ic\u003d",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
