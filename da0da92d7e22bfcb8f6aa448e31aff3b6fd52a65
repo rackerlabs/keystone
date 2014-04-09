@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//5f0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-09T16:12:07Z",
+      "side": 1,
+      "message": "2 small requests here:\n\n1) Add a new line between lines 7 and 8, this way the title and the description are separated.\n\n2) Can you re-write line 8 as \"Closes-Bug: #1304834\"\n\nYou can change this by issuing the command:\n  `git commit --amend`\nmake your changes...\nthen \n  `git review`\nagain to resubmit",
+      "revId": "da0da92d7e22bfcb8f6aa448e31aff3b6fd52a65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
