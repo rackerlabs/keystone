@@ -16,6 +16,24 @@
       "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//3rE\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/036_havana.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-09T19:33:36Z",
+      "side": 1,
+      "message": "If there is another patchset, I\u0027ll collapse this down to a single log line.",
+      "parentUuid": "AAAAWn//3q4\u003d",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
