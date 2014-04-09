@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//49s\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-09T17:13:21Z",
+      "side": 1,
+      "message": "suggest passing the optional attributes as named. Is {self.member_attribute: user_dn} the search query_params or attrlist?",
+      "revId": "2dca945979e6ba484eb7b0cf3e66ad682d92a9de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//44E\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-09T17:13:21Z",
+      "side": 1,
+      "message": "Should a test be added in /keystone/tests/test_backend_ldap.py to make sure this specific method in BaseLdap doesn\u0027t regress, since backend code relies on it.",
+      "revId": "2dca945979e6ba484eb7b0cf3e66ad682d92a9de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
