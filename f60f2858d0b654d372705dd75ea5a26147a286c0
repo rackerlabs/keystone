@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//yOQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:09:24Z",
+      "side": 1,
+      "message": "We should give a specific release here, instead of \u0027old release\u0027 use pre-Juno or something along those lines, which will be more informative for the end user.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//yKo\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:09:24Z",
+      "side": 1,
+      "message": "(NIT): \ns/max_length/max_password_length/ \n\nReference the configuration option.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//yMQ\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:09:24Z",
+      "side": 1,
+      "message": "(NIT): suggest substituting \u0027to\u0027 with \u0027by\u0027.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//yEk\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:09:24Z",
+      "side": 1,
+      "message": "Since we are checking the same flow in all four methods, wouldn\u0027t it make sense to combine both verify_password_length and trunc_password? \n\nThat way the hash_passwords methods just have to call def verify_and_trunc_password() and they get back what ever is appropriate. Then we only have to check CONF.strict_password_length in one place too. This might make it easier to maintain in the future and should prevent regression. \n\n    def hash_password(password):\n        \"\"\"Hash a password. Hard.\"\"\"\n        password_utf8 \u003d verify_and_trunc_password(password).encode(\u0027utf-8\u0027)\n        return passlib.hash.sha512_crypt.encrypt(password_utf8, rounds\u003dCONF.crypt_strength)\n\n    def verify_and_trunc_password(password):\n        max_length \u003d CONF.identity.max_password_length\n        try:\n            if len(password) \u003e max_length and CONF.strict_password_length:\n                #raise because we have strict password checking enabled\n                raise exception.ValidationError\n            elif len(password) \u003e max_length and not CONF.strict_password_length:\n                #go ahead and truncate since we don\u0027t have strict password checking enabled.\n                LOG.warning()\n                return password[:max_length]\n            else:\n                #password length checks out\n                return password\n        except TypeError:\n            ....\n\nThoughts?",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//yAE\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:09:24Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we use config_fixtures here?",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//x/8\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:09:24Z",
+      "side": 1,
+      "message": "Same comment as above",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
