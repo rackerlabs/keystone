@@ -34,6 +34,91 @@
       "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//16o\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-10T01:33:58Z",
+      "side": 1,
+      "message": "this isn\u0027t really what it\u0027s doing anymore.",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//16U\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-10T01:33:58Z",
+      "side": 1,
+      "message": "the initial migration also creates the default domain -- there should be an assertion for that.",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//17c\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-10T01:33:58Z",
+      "side": 1,
+      "message": "a comment for what this is for would be useful... one thing should note is that this shouldn\u0027t change until another migration collapse.",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//17Q\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-10T01:33:58Z",
+      "side": 1,
+      "message": "this list is the same as the list in check_initial_tables -- suggest make a dict and use keys()",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//17A\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-10T01:33:58Z",
+      "side": 1,
+      "message": "add a comment why it\u0027s correct to raise here.",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
