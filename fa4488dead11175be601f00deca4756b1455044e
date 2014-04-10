@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//zgM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-10T13:08:18Z",
+      "side": 1,
+      "message": "Some typos and precisions in the second sentence :\nIf the attribute already exists in auth context, its value must be the same (except for the expires_at attribute).",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//zaM\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-10T13:08:18Z",
+      "side": 1,
+      "message": "The Warning should be displayed even if v \u003c auth_context[k]. To do that, the assignment `auth_context[k] \u003d min(v, auth_context[k])` should be done after the `if` block.",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//zSM\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-10T13:08:18Z",
+      "side": 1,
+      "message": "I think it should be ``method_names``.",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//ytA\u003d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-10T13:08:18Z",
+      "side": 1,
+      "message": "Wording: They should not require the token header.",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//yC0\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2166,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-10T13:08:18Z",
+      "side": 1,
+      "message": "BTW, I couldn\u0027t find where this noauth parameter was consumed.",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
