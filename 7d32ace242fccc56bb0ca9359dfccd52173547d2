@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//xnY\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:47:49Z",
+      "side": 1,
+      "message": "Add keyword for optional parameters.",
+      "revId": "7d32ace242fccc56bb0ca9359dfccd52173547d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//xoc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:47:49Z",
+      "side": 1,
+      "message": "If this is a public method, we should add doc strings.",
+      "revId": "7d32ace242fccc56bb0ca9359dfccd52173547d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//xn8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1028,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:47:49Z",
+      "side": 1,
+      "message": "Should something be logged here?",
+      "revId": "7d32ace242fccc56bb0ca9359dfccd52173547d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//xpI\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:47:49Z",
+      "side": 1,
+      "message": "In this review, \n\nhttps://review.openstack.org/#/c/86302/2/keystone/assignment/backends/ldap.py\n\nself._ldap_get_list is private, shouldn\u0027t we be doing something similar here?",
+      "revId": "7d32ace242fccc56bb0ca9359dfccd52173547d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
