@@ -1014,6 +1014,21 @@ class BaseLdap(object):
         finally:
             conn.unbind_s()
 
+    def delete_tree_nodes(self, obj_dn, scope, query_params=None):
+        conn = self.get_connection()
+        query = u'(objectClass=%s)' % self.object_class
+        if query_params:
+            query = (u'(&%s%s)' %
+                     (query, ''.join(['(%s=%s)' % (k, v)
+                                      for k, v in query_params.iteritems()])))
+        try:
+            for node_dn, _ in conn.search_s(obj_dn, scope, query):
+                conn.delete_s(node_dn)
+        except ldap.NO_SUCH_OBJECT:
+            pass
+        finally:
+            conn.unbind_s()
+
 
 class EnabledEmuMixIn(BaseLdap):
     """Emulates boolean 'enabled' attribute if turned on.
