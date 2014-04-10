@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//10A\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-10T02:03:02Z",
+      "side": 1,
+      "message": "Fixed in next patchset.",
+      "parentUuid": "AAAAW3//16o\u003d",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//16U\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 6
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//1z8\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-10T02:03:02Z",
+      "side": 1,
+      "message": "fixed in next patchset.",
+      "parentUuid": "AAAAW3//16U\u003d",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//17c\u003d",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 6
@@ -82,6 +118,24 @@
       "writtenOn": "2014-04-10T01:33:58Z",
       "side": 1,
       "message": "a comment for what this is for would be useful... one thing should note is that this shouldn\u0027t change until another migration collapse.",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//1zw\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-10T02:03:02Z",
+      "side": 1,
+      "message": "I\u0027ll clean this up as well and make it so we can use the same data structure for the downgrade test (259)",
+      "parentUuid": "AAAAW3//17c\u003d",
       "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +170,24 @@
       "writtenOn": "2014-04-10T01:33:58Z",
       "side": 1,
       "message": "add a comment why it\u0027s correct to raise here.",
+      "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//1zs\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-10T02:03:02Z",
+      "side": 1,
+      "message": "done in next patch",
+      "parentUuid": "AAAAW3//17A\u003d",
       "revId": "47add90abc3dfd588e814e04e51a9fdb8d4cda62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
