@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//x7Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-10T13:35:46Z",
+      "side": 1,
+      "message": "Closes-Bug: 1299012",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//zgM\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 2
