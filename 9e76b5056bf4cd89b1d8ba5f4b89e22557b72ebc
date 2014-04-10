@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//y0I\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-10T11:24:41Z",
+      "side": 1,
+      "message": "Ohhh! I mess this typo...",
+      "parentUuid": "AAAAW3//y1s\u003d",
+      "revId": "9e76b5056bf4cd89b1d8ba5f4b89e22557b72ebc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//y1M\u003d",
         "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
         "patchSetId": 7
