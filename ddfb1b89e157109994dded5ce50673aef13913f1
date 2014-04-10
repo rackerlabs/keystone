@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//v3M\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-10T16:50:43Z",
+      "side": 1,
+      "message": "You don\u0027t want to use string.lower here. The string module shouldn\u0027t be used for much in Py2 and was gutted in Py3. How about (untested, but you get the idea):\n\n    lower_res \u003d dict((k.lower(), v) for k, v in six.iteritems(res[1])",
+      "revId": "ddfb1b89e157109994dded5ce50673aef13913f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//v28\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-10T16:50:43Z",
+      "side": 1,
+      "message": "Same thing. How about:\n\n    v \u003d lower_res[self.attribute_mapping.get(k, k).lower()]",
+      "revId": "ddfb1b89e157109994dded5ce50673aef13913f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
