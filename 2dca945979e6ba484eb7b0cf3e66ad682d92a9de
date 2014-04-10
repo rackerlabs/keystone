@@ -69,6 +69,24 @@
       "revId": "2dca945979e6ba484eb7b0cf3e66ad682d92a9de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//0NY\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-10T08:27:56Z",
+      "side": 1,
+      "message": "Well, I checked code coverage of BaseLdap and found out that methods like _ldap_get, _ladp_get_all and _ldap_get_list are covered by tests indirectly. That\u0027s why I want to add direct tests for this methods in another patch soon.",
+      "parentUuid": "AAAAW3//33U\u003d",
+      "revId": "2dca945979e6ba484eb7b0cf3e66ad682d92a9de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
