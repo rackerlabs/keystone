@@ -274,19 +274,8 @@ class GroupApi(common_ldap.BaseLdap):
             # TODO(spzala): this is only placeholder for group and domain
             # role support which will be added under bug 1101287
 
-            query = '(objectClass=%s)' % self.object_class
-            dn = self._id_to_dn(group_id)
-            if dn:
-                try:
-                    conn = self.get_connection()
-                    roles = conn.search_s(dn, ldap.SCOPE_ONELEVEL,
-                                          query, ['%s' % '1.1'])
-                    for role_dn, _ in roles:
-                        conn.delete_s(role_dn)
-                except ldap.NO_SUCH_OBJECT:
-                    pass
-                finally:
-                    conn.unbind_s()
+            self._delete_tree_nodes(self._id_to_dn(group_id),
+                                    ldap.SCOPE_ONELEVEL)
             super(GroupApi, self).delete(group_id)
 
     def update(self, group_id, values):
