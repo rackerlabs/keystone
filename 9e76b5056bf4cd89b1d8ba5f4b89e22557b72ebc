@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//y1s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-10T11:21:47Z",
+      "side": 1,
+      "message": "This will probably fail (as MySQL requires at least one index to exist on the referencing column). I think, we could go for a no-op downgrade here.\n\nDo we test downgrades in tests?",
+      "revId": "9e76b5056bf4cd89b1d8ba5f4b89e22557b72ebc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//y1M\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-10T11:21:47Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9e76b5056bf4cd89b1d8ba5f4b89e22557b72ebc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
