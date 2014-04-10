@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//vkc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-10T17:23:39Z",
+      "side": 1,
+      "message": "Could you use two different uuids here and check or their value in user below?",
+      "revId": "2d931f3ef90a14f8289864608cac3e9497735c88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
