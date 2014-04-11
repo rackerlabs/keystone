@@ -16,6 +16,58 @@
       "revId": "12c0f51b80473b136b88fbe7dc1d96ddec41b6a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l04\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:45:51Z",
+      "side": 1,
+      "message": "If this is set to 0 are passwords valid forever? What about negative numbers [ i know, should be in tests but random thought ]",
+      "parentUuid": "AAAAW3//l7s\u003d",
+      "revId": "12c0f51b80473b136b88fbe7dc1d96ddec41b6a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l0k\u003d",
+        "filename": "keystone/contrib/password_rotation/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:45:51Z",
+      "side": 1,
+      "message": "This file should be in the docs directory for extensions and linked in appropriately.\n\nLooks like some boilerplate values in here as well \"set the ``blah`` config value\"?",
+      "revId": "12c0f51b80473b136b88fbe7dc1d96ddec41b6a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l0M\u003d",
+        "filename": "keystone/contrib/password_rotation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:45:51Z",
+      "side": 1,
+      "message": "If this is not protected, please remove the decorator vs. commenting out. (same comment on 45)",
+      "revId": "12c0f51b80473b136b88fbe7dc1d96ddec41b6a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
