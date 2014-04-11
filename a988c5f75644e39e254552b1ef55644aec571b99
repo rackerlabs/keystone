@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//lt4\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T23:05:26Z",
+      "side": 1,
+      "message": "This one is needed because it overrides the default values so we get in-mem db and allows this to be overridden in other cases.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
