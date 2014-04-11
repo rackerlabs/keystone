@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//lxg\u003d",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 8276
+      },
+      "writtenOn": "2014-04-11T23:39:10Z",
+      "side": 1,
+      "message": "Remove unused code.",
+      "revId": "5cc52d6936ab444b06f5082eed69a838f3ec8b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//luY\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8276
+      },
+      "writtenOn": "2014-04-11T23:39:10Z",
+      "side": 1,
+      "message": "default_project_id is no necessary in the test case.",
+      "revId": "5cc52d6936ab444b06f5082eed69a838f3ec8b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//luU\u003d",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8276
+      },
+      "writtenOn": "2014-04-11T23:39:10Z",
+      "side": 1,
+      "message": "default_project_id is no necessary in the test case.",
+      "revId": "5cc52d6936ab444b06f5082eed69a838f3ec8b1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
