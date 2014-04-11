@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//l+o\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:23:21Z",
+      "side": 1,
+      "message": "This should be optional and defaulted to off.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l78\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:23:21Z",
+      "side": 1,
+      "message": "Suggest changing the help string to: \"If set to True, strict password length checking is performed. If a password exceeds the maximum length a ValidationError will be raised. If set to False, passwords are automatically truncated to the maximum length.\"\n\nThe extra information about pre-Juno old releases, etc is superfluous in this case, see my comment below about why this needs to default to False.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//yOQ\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//l+Q\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:23:21Z",
+      "side": 1,
+      "message": "Set default to False with the way the code is structured, this would prevent users from logging in if their password was truncated in the past. This will need to be (unfortunately) an opt-in bit of functionality that the operator/deployer will need to communicate to their users when/if enabled.",
+      "parentUuid": "AAAAW3//yOQ\u003d",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//yKo\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
@@ -30,6 +82,24 @@
       "writtenOn": "2014-04-10T13:09:24Z",
       "side": 1,
       "message": "(NIT): \ns/max_length/max_password_length/ \n\nReference the configuration option.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l70\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:23:21Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAW3//yKo\u003d",
       "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +151,24 @@
       "writtenOn": "2014-04-10T13:09:24Z",
       "side": 1,
       "message": "Shouldn\u0027t we use config_fixtures here?",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l7Q\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:23:21Z",
+      "side": 1,
+      "message": "Do not set CONF values directly, use:\n\n    self.config_fixture.config(strict_password_length\u003dFalse)",
+      "parentUuid": "AAAAW3//yAE\u003d",
       "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
