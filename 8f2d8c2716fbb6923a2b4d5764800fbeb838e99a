@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//lv0\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:55:05Z",
+      "side": 1,
+      "message": "Suggest mirroring the comment only 963 with the attribute_mapping actually used.",
+      "revId": "8f2d8c2716fbb6923a2b4d5764800fbeb838e99a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
