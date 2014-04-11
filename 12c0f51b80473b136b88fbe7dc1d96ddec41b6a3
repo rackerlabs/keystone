@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//l7s\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 8276
+      },
+      "writtenOn": "2014-04-11T22:21:13Z",
+      "side": 1,
+      "message": "Add \u0027password_rotation\u0027 group into keystone.conf.sample, by the way, 120s maybe too short.",
+      "revId": "12c0f51b80473b136b88fbe7dc1d96ddec41b6a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
