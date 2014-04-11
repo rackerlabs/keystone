@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//mLM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8276
+      },
+      "writtenOn": "2014-04-11T21:49:50Z",
+      "side": 1,
+      "message": "I also think new feature should be disabled by default. Maybe need a option.",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//mdo\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
