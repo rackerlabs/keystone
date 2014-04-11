@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//oRg\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-11T15:21:09Z",
+      "side": 1,
+      "message": "Yes, you are right, it shouldn\u0027t be a generator. This check trying to find renamed index, i.e. the index containing correct name but not equal to the correct name. There is a couple of problems:\n\n* Index would be renamed with MySQL 5.5\n* Index wouldn\u0027t be renamed with MySQL 5.1\n* We cant substitute an index to another one with the same name, this will cause an error.\n\nI\u0027ll fix my mess and document this difficult behavior in the code.\nThanks!",
+      "parentUuid": "AAAAW3//okw\u003d",
+      "revId": "813730b58cb241dd475b87d376ec2adb43797329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//okg\u003d",
         "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
         "patchSetId": 9
