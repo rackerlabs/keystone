@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//okw\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-11T14:42:54Z",
+      "side": 1,
+      "message": "This will return a generator object so I would expect this if to always execute. Is this just trying to look for the index and execute if it doesn\u0027t exist?",
+      "revId": "813730b58cb241dd475b87d376ec2adb43797329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//okg\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-11T14:42:54Z",
+      "side": 1,
+      "message": "Same problem here",
+      "revId": "813730b58cb241dd475b87d376ec2adb43797329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
