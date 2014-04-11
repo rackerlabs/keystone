@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//nJc\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-11T18:47:12Z",
+      "side": 1,
+      "message": "change \"COLUMN\" to \"COLUMN_NAME\"",
+      "revId": "87d0e0fb3731c45ed0ee0dea83297858addfbb7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//nJo\u003d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-11T18:47:12Z",
+      "side": 1,
+      "message": "there\u0027s a HasLength matcher for this: http://testtools.readthedocs.org/en/latest/for-test-authors.html#haslength",
+      "revId": "87d0e0fb3731c45ed0ee0dea83297858addfbb7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
