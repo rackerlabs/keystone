@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//l4k\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_add_rotated_passwords_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:34:23Z",
+      "side": 1,
+      "message": "As much as I like to use reflection because it\u0027s simple (this code is super clean!), this is a bad idea as the model definition might change and someone will forget to change this migration. Please don\u0027t use reflection to create tables in migration files it will cause nothing but pain and suffering later.",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//me4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
@@ -64,6 +81,24 @@
       "writtenOn": "2014-04-11T21:08:08Z",
       "side": 1,
       "message": "Nice. cool to see the expires checking done completely in the filter",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//l4M\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-11T22:34:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAW3//mZM\u003d",
       "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
