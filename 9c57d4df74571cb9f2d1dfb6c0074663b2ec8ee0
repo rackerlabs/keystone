@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//me4\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-11T21:08:08Z",
+      "side": 1,
+      "message": "for consistency with previous versions, wouldnt it it be best that the default be not be enabled.  Thus no surprises?",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//mdo\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-11T21:08:08Z",
+      "side": 1,
+      "message": "No matter how many times I see it, I find the for ... else: construct in python CREEPY :-).",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//mZM\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-11T21:08:08Z",
+      "side": 1,
+      "message": "Nice. cool to see the expires checking done completely in the filter",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
