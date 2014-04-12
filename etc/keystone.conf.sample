@@ -857,6 +857,12 @@
 # queries. (boolean value)
 #chase_referrals=<None>
 
+# Optionally sets the debug level for LDAP queries.
+# A value of (default) disables LDAP debugging,
+# while a value of 4095 provides a verbose level of
+# debugging. (integer value)
+#debug_level=<None>
+
 # Search base for users. (string value)
 #user_tree_dn=<None>
 
