@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//kRQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-12T13:56:44Z",
+      "side": 1,
+      "message": "change \"opensldap-devel\" to \"openldap-devel\"",
+      "revId": "86bbbb71e5d398b952f2a6935bf3fb7b5354bc5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
