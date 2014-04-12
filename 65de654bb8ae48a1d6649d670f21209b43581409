@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//kQM\u003d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-12T14:06:02Z",
+      "side": 1,
+      "message": "If these functions are going to be reusable then they should have docstrings.",
+      "revId": "65de654bb8ae48a1d6649d670f21209b43581409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
