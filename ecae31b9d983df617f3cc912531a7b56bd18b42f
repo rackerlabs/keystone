@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//kF0\u003d",
+        "filename": "keystone/backends.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-12T15:41:08Z",
+      "side": 1,
+      "message": "can we rename this to identity_api ?",
+      "revId": "ecae31b9d983df617f3cc912531a7b56bd18b42f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
