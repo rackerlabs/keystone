@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//iG0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:06:40Z",
+      "side": 1,
+      "message": "There should be a bug report. We need to advertise that this was fixed.",
+      "revId": "71f557139dbf626fc69c4aa7c1213d7ff4d2ac11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iGw\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:06:40Z",
+      "side": 1,
+      "message": "use\n\n trust_ref.get(\u0027project_id\u0027) is not None",
+      "revId": "71f557139dbf626fc69c4aa7c1213d7ff4d2ac11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
