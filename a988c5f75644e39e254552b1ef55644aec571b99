@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//hxM\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-13T19:26:36Z",
+      "side": 1,
+      "message": "I discussed this on IRC, and with exception of the migration tests it doesn\u0027t really make sense exclude creation the tables for any/all extensions. Due to the way SQLA reflection works, if you import a file that has a table definition, it will create that table, so you will get different db schemas depending on what you import.\n\nSince we don\u0027t care if a table exists/not exists (we want it to exist when we test the extension) except when we\u0027re doing migration specific validation, it makes sense to always include them.",
+      "parentUuid": "AAAAW3//iP0\u003d",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iPo\u003d",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 4
@@ -81,6 +99,24 @@
       "writtenOn": "2014-04-13T15:06:55Z",
       "side": 1,
       "message": "could we have ksfixtures export Database?",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//hxI\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-13T19:26:36Z",
+      "side": 1,
+      "message": "I think we should start doing that for all of our fixtures.",
+      "parentUuid": "AAAAW3//iPo\u003d",
       "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
