@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//h/4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "change \"changes\" to \"change\"",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iAA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest add a DocImpact",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h/g\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest have no default value, and have the server not set the value if it\u0027s not set.\n\nAlso, the default here is a string but it\u0027s an IntOpt.",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h/c\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest use debug_level\u003dNone",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h/Y\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest use debug_level\u003dNone",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h/U\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest \n\n if debug_level is not None:",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h/Q\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest use debug_level\u003dNone",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h/A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "suggest do debug_level\u003ddebug_level",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h+8\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:50:06Z",
+      "side": 1,
+      "message": "debug_level\u003dNone",
+      "revId": "c47b1ca0b5d73615c34825886ac77d72723434cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
