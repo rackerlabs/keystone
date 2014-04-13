@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//hyA\u003d",
+        "filename": "keystone/tests/ksfixtures/hacking.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-13T19:17:29Z",
+      "side": 1,
+      "message": "Did this as a comment instead of a docstring on line 13. I\u0027ll convert to a docstring if another patchset is warranted.",
+      "parentUuid": "AAAAW3//iB4\u003d",
+      "revId": "cf78ff71a939bf91fa658d13e607de9f2863fbdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iB8\u003d",
         "filename": "keystone/tests/test_hacking_checks.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-13T16:36:34Z",
       "side": 1,
       "message": "why is this line necessary? add a comment.",
+      "revId": "cf78ff71a939bf91fa658d13e607de9f2863fbdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//hx4\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-13T19:17:29Z",
+      "side": 1,
+      "message": "It\u0027s the same semantics as we use elsewhere, it\u0027s to ensure we don\u0027t leave refs of objects around after we\u0027re done with testing (limiting memory bloat). In this case there isn\u0027t a large amount of code being left around, but if the checks expand, we want to not leave the data around.\n\nIt stems from unit tests not deleting the testcase when done (afaik).",
+      "parentUuid": "AAAAW3//iB8\u003d",
       "revId": "cf78ff71a939bf91fa658d13e607de9f2863fbdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
