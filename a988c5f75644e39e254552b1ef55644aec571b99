@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//iPs\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "I don\u0027t know what \"this\" is referring to -- the function? the next line? the pristine database?",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iPw\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "suggest return if CONF.database.connection \u003d\u003d tests.IN_MEM_DB_CONN_STRING -- then it will be easier for reviewers to see that in this case there\u0027s nothing to do.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//lt4\u003d",
         "filename": "keystone/tests/ksfixtures/database.py",
         "patchSetId": 4
@@ -13,6 +47,91 @@
       "writtenOn": "2014-04-11T23:05:26Z",
       "side": 1,
       "message": "This one is needed because it overrides the default values so we get in-mem db and allows this to be overridden in other cases.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iP0\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "isn\u0027t this going to import extension models even when the extension isn\u0027t enabled? That would be different than how the server runs.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iPo\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "could we have ksfixtures export Database?",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iPg\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "why do useFixture before super setUp? Add a comment.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iPc\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "the LDAPIdentity does this in its setup -- why does the subclass need to do it?",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iPU\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:06:55Z",
+      "side": 1,
+      "message": "shouldn\u0027t we have the database before we load backends? that would be more consistent with how the server runs.",
       "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
