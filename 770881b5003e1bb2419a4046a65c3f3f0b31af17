@@ -16,6 +16,24 @@
       "revId": "770881b5003e1bb2419a4046a65c3f3f0b31af17",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iAI\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2014-04-13T16:45:42Z",
+      "side": 1,
+      "message": "That was my first iteration - but it does not work - the call will always sucee even if the msgfmt fails. And we want the call to failed.\n\nTestcase on my Linux system, \"find -exec false {} \\;\" will return 0 while \"false\" will return \"1\".",
+      "parentUuid": "AAAAW3//iJE\u003d",
+      "revId": "770881b5003e1bb2419a4046a65c3f3f0b31af17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
