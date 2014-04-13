@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//h2s\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-13T18:34:04Z",
+      "side": 1,
+      "message": "While I understand your problem here, I don\u0027t think it\u0027s a valid argument. From your statement it seems that alembic is to blame, rather than mysql :)\n\nSo I\u0027d suggest to rephrase your note: IMO, all you need to mention here, is that MySQL requires indexes on referencing columns, and those indexes are created automatically. The problem is, that those indexes will have different names, depending on version of MySQL used. All we want to do here is to make this naming consistent. In order to achieve this we check existing indexes on the column we are interested in, and rename the index (curiously, MySQL will rename the index automatically when we try to create an index explicitly)",
+      "revId": "a0a97ba376db93237180f3e6513eed934325f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h2c\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-13T18:34:04Z",
+      "side": 1,
+      "message": "The predicate should really be:\n\n  if i.columns \u003d\u003d (\u0027service_id\u0027,) and i.name !\u003d \u0027service_id\u0027\n\nA \u0027stylistic\u0027 note. I\u0027d rather see this written like this:\n\n    if any(i for i in table.indexes if i.columns \u003d\u003d (\u0027service_id\u0027,) and i.name !\u003d \u0027service_id\u0027):",
+      "revId": "a0a97ba376db93237180f3e6513eed934325f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h2M\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-13T18:34:04Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a0a97ba376db93237180f3e6513eed934325f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
