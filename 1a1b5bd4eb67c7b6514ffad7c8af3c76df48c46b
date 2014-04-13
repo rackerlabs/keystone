@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//iGE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "change \"get\" to \"gets\"\n\nchange \"one common\" to \"a common\"",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iF8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "change \"use\" to \"uses\"\n\nalso, remove extra space after search_s",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iGA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "change \"escape\" to \"remove\"",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//xmE\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -31,6 +82,75 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAW3//xmE\u003d",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iFs\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "I\u0027m fine with this as a \"private\" method, since that matches the convention set by _ldap_get_all.\n\nchange \"obj_dn\" to \"search_base\"",
+      "parentUuid": "AAAAW3//rd4\u003d",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iE4\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "use six.iteritems for py3 compat -- https://pythonhosted.org/six/#six.iteritems",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iEk\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "suggest leave the group_dn \u003d self._id_to_dn(group_id) on a separate line. It\u0027ll be easier to debug and there will be fewer changes.",
+      "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iEo\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:18:26Z",
+      "side": 1,
+      "message": "should be able to pass a tuple here rather than a list.",
       "revId": "1a1b5bd4eb67c7b6514ffad7c8af3c76df48c46b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
