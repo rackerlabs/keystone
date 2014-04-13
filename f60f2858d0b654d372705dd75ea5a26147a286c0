@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//igk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//l+o\u003d",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//l78\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-11T22:23:21Z",
       "side": 1,
       "message": "Suggest changing the help string to: \"If set to True, strict password length checking is performed. If a password exceeds the maximum length a ValidationError will be raised. If set to False, passwords are automatically truncated to the maximum length.\"\n\nThe extra information about pre-Juno old releases, etc is superfluous in this case, see my comment below about why this needs to default to False.",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//igg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//l78\u003d",
       "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//igY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Yes, we need to deal with it carefully. Thanks for reminding. I\u0027ll fix it soon.",
+      "parentUuid": "AAAAW3//l+Q\u003d",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//yKo\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//igw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//yKo\u003d",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//yMQ\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//igs\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//yMQ\u003d",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//yEk\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 5
@@ -134,6 +224,24 @@
       "writtenOn": "2014-04-10T13:09:24Z",
       "side": 1,
       "message": "Since we are checking the same flow in all four methods, wouldn\u0027t it make sense to combine both verify_password_length and trunc_password? \n\nThat way the hash_passwords methods just have to call def verify_and_trunc_password() and they get back what ever is appropriate. Then we only have to check CONF.strict_password_length in one place too. This might make it easier to maintain in the future and should prevent regression. \n\n    def hash_password(password):\n        \"\"\"Hash a password. Hard.\"\"\"\n        password_utf8 \u003d verify_and_trunc_password(password).encode(\u0027utf-8\u0027)\n        return passlib.hash.sha512_crypt.encrypt(password_utf8, rounds\u003dCONF.crypt_strength)\n\n    def verify_and_trunc_password(password):\n        max_length \u003d CONF.identity.max_password_length\n        try:\n            if len(password) \u003e max_length and CONF.strict_password_length:\n                #raise because we have strict password checking enabled\n                raise exception.ValidationError\n            elif len(password) \u003e max_length and not CONF.strict_password_length:\n                #go ahead and truncate since we don\u0027t have strict password checking enabled.\n                LOG.warning()\n                return password[:max_length]\n            else:\n                #password length checks out\n                return password\n        except TypeError:\n            ....\n\nThoughts?",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//igo\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Good point. This is more concise. Thanks.",
+      "parentUuid": "AAAAW3//yEk\u003d",
       "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//igA\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//l7Q\u003d",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//x/8\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 5
@@ -186,6 +312,24 @@
       "writtenOn": "2014-04-10T13:09:24Z",
       "side": 1,
       "message": "Same comment as above",
+      "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//if8\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-04-13T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//x/8\u003d",
       "revId": "f60f2858d0b654d372705dd75ea5a26147a286c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
