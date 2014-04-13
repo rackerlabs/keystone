@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//h1g\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-13T18:40:05Z",
+      "side": 1,
+      "message": "This seems to have nothing to do with the change in the other file. I\u0027d rather see this change split into two patches, or at least mentioned in the commit message.",
+      "revId": "96ce521760dd22baad8503f57da86d5730d7fe1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//h10\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-13T18:40:05Z",
+      "side": 1,
+      "message": "column name seems to be missing here",
+      "revId": "96ce521760dd22baad8503f57da86d5730d7fe1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
