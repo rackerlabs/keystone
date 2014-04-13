@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//iEM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:32:07Z",
+      "side": 1,
+      "message": "change \"escape\" to \"remove\" or \"eliminate\"",
+      "revId": "332c4986d2d8270a791bc9af271a3ae321c7ae7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iCc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:32:07Z",
+      "side": 1,
+      "message": "change obj_dn to search_base",
+      "revId": "332c4986d2d8270a791bc9af271a3ae321c7ae7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iCU\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:32:07Z",
+      "side": 1,
+      "message": "use six.iteritems -- https://pythonhosted.org/six/#six.iteritems",
+      "revId": "332c4986d2d8270a791bc9af271a3ae321c7ae7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iCI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:32:07Z",
+      "side": 1,
+      "message": "this search should be done with attributes\u003d[\u00271.1\u0027] since we only care about the DN.",
+      "revId": "332c4986d2d8270a791bc9af271a3ae321c7ae7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iCQ\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:32:07Z",
+      "side": 1,
+      "message": "should we break out of the loop if delete_s fails? Seems like we should continue on to the next entry.\n\nAlso, since we failed to delete all the entries, an exception should be raised so that the server can report the error rather than indicating success.",
+      "revId": "332c4986d2d8270a791bc9af271a3ae321c7ae7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iCE\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:32:07Z",
+      "side": 1,
+      "message": "we need to keep the attributes\u003d[\u00271.1\u0027] like we had before for efficiency.",
+      "revId": "332c4986d2d8270a791bc9af271a3ae321c7ae7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
