@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//iII\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:52:59Z",
+      "side": 1,
+      "message": "users can have a tenant_id attribute, it depends on the mapping. It\u0027s supposed to be the user\u0027s default project. Although if we never do add_user then no reason to do remove_user. and the code is obviously not tested.",
+      "revId": "8f5ba2215f84251d4f8a25aedfeb4960e61071c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
