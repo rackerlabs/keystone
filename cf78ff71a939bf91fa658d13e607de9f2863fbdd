@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//iB4\u003d",
+        "filename": "keystone/tests/ksfixtures/hacking.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:36:34Z",
+      "side": 1,
+      "message": "add a comment why we\u0027re doing this -- so we can flake8 test\nthe test_hacking_checks test cases.",
+      "revId": "cf78ff71a939bf91fa658d13e607de9f2863fbdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iB8\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T16:36:34Z",
+      "side": 1,
+      "message": "why is this line necessary? add a comment.",
+      "revId": "cf78ff71a939bf91fa658d13e607de9f2863fbdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
