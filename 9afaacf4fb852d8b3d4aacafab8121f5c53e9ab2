@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//iHQ\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:59:51Z",
+      "side": 1,
+      "message": "the code that was removed had a useful error message that we don\u0027t want to lose. It\u0027s hard enough as it is to figure out what\u0027s going wrong.",
+      "revId": "9afaacf4fb852d8b3d4aacafab8121f5c53e9ab2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iHo\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1018,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:59:51Z",
+      "side": 1,
+      "message": "add a docstring that says what exceptions are raised.",
+      "revId": "9afaacf4fb852d8b3d4aacafab8121f5c53e9ab2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iHk\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:59:51Z",
+      "side": 1,
+      "message": "add a docstring that says what exceptions are raised.",
+      "revId": "9afaacf4fb852d8b3d4aacafab8121f5c53e9ab2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iHA\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:59:51Z",
+      "side": 1,
+      "message": "we need to have useful error messages so keep the error message that was originally reported.",
+      "revId": "9afaacf4fb852d8b3d4aacafab8121f5c53e9ab2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
