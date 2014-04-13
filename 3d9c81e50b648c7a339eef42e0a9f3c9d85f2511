@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//iR0\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T14:48:21Z",
+      "side": 1,
+      "message": "what do you think about a name like \"notify_user_deleted\"?\n\nhandle_delete_user means the same as delete_user to me.",
+      "revId": "3d9c81e50b648c7a339eef42e0a9f3c9d85f2511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iRw\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T14:48:21Z",
+      "side": 1,
+      "message": "add  a comment why this shouldn\u0027t do anything.",
+      "revId": "3d9c81e50b648c7a339eef42e0a9f3c9d85f2511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iRs\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T14:48:21Z",
+      "side": 1,
+      "message": "suggest notify_group_deleted",
+      "revId": "3d9c81e50b648c7a339eef42e0a9f3c9d85f2511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iRo\u003d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T14:48:21Z",
+      "side": 1,
+      "message": "add a comment why this shouldn\u0027t do anything.",
+      "revId": "3d9c81e50b648c7a339eef42e0a9f3c9d85f2511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
