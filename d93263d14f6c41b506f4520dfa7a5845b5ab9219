@@ -50,6 +50,40 @@
       "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iOk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:14:48Z",
+      "side": 1,
+      "message": "I think that being able to generate your own tokens with whatever authorities you want is a bigger threat than being limited to whatever tokens currently exist.\n\nAlso, I don\u0027t see how having access to the CA secret key means that they necessarily have access to the token backend.\n\nSuggest remove this sentence.",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iOA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-13T15:14:48Z",
+      "side": 1,
+      "message": "Also, I think this information should be in the pki_setup command -- print out a warning when it\u0027s used and also in the keystone-manage man page.",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
