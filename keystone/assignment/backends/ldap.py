@@ -676,7 +676,8 @@ class RoleApi(common_ldap.BaseLdap):
         try:
             for role_dn, _ in conn.search_s(tenant_dn,
                                             ldap.SCOPE_SUBTREE,
-                                            query):
+                                            query,
+                                            attrlist=['1.1']):
                 conn.delete_s(role_dn)
         except ldap.NO_SUCH_OBJECT:
             pass
