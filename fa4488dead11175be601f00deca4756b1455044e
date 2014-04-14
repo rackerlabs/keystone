@@ -140,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//cA8\u003d",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-04-14T15:39:22Z",
+      "side": 1,
+      "message": "Good catch! I\u0027ll submit a separate doc cleanup patch as Morgan suggested.",
+      "parentUuid": "AAAAW3//mMw\u003d",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//ytA\u003d",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 2
@@ -185,6 +203,24 @@
       "writtenOn": "2014-04-10T13:08:18Z",
       "side": 1,
       "message": "BTW, I couldn\u0027t find where this noauth parameter was consumed.",
+      "revId": "fa4488dead11175be601f00deca4756b1455044e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//b+w\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2166,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-04-14T15:39:22Z",
+      "side": 1,
+      "message": "It was used in test_v3.py line 397",
+      "parentUuid": "AAAAW3//yC0\u003d",
       "revId": "fa4488dead11175be601f00deca4756b1455044e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
