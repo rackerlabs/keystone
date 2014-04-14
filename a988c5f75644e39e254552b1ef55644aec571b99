@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//dVo\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "Comment fixed to be more explicit",
+      "parentUuid": "AAAAW3//iPs\u003d",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iPw\u003d",
         "filename": "keystone/tests/ksfixtures/database.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//dU4\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "I didn\u0027t want to change this since it was just moved from keystone/tests/test_v3.py.",
+      "parentUuid": "AAAAW3//iPw\u003d",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//lt4\u003d",
         "filename": "keystone/tests/ksfixtures/database.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-04-11T23:05:26Z",
       "side": 1,
       "message": "This one is needed because it overrides the default values so we get in-mem db and allows this to be overridden in other cases.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//dUQ\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "I removed this comment, but in a future changeset I want to come up with a better way to do this. I don\u0027t like that there is an side effect on import.",
+      "parentUuid": "AAAAW3//lt4\u003d",
       "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//dR8\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "Yes, the problem is that we have tests that do imported and enable the extensions. So some tests would have the extra tables and some would not. It just depends on the order of execution in many cases.",
+      "parentUuid": "AAAAW3//hxM\u003d",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iPo\u003d",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 4
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//dRY\u003d",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "I am planning on doing this in a later commit that I\u0027ve already started. It\u0027s not as easy as adding the import to the ksfixture package because that creates a circular import. I\u0027ve been doing a bit of refactoring that will make this possible in the future.",
+      "parentUuid": "AAAAW3//iPo\u003d",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iPg\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -134,6 +224,24 @@
       "writtenOn": "2014-04-13T15:06:55Z",
       "side": 1,
       "message": "why do useFixture before super setUp? Add a comment.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//dQU\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//iPg\u003d",
       "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//cJA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//iPc\u003d",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iPU\u003d",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 4
@@ -168,6 +294,24 @@
       "writtenOn": "2014-04-13T15:06:55Z",
       "side": 1,
       "message": "shouldn\u0027t we have the database before we load backends? that would be more consistent with how the server runs.",
+      "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//byY\u003d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T16:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//iPU\u003d",
       "revId": "a988c5f75644e39e254552b1ef55644aec571b99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
