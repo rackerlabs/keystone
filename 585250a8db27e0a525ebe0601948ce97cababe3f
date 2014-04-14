@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//hQo\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-14T01:17:11Z",
+      "side": 1,
+      "message": "Fixed the docstring. The caller of this method always passes hints, so I don\u0027t think it can be optional.",
+      "parentUuid": "AAAAWH/9VNY\u003d",
+      "revId": "585250a8db27e0a525ebe0601948ce97cababe3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9VNU\u003d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-06T22:45:23Z",
       "side": 1,
       "message": "doc",
+      "revId": "585250a8db27e0a525ebe0601948ce97cababe3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//hQk\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-14T01:17:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9VNU\u003d",
       "revId": "585250a8db27e0a525ebe0601948ce97cababe3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
