@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//fFA\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-14T09:45:50Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll rephrase it.\n\nPlease, see my point to leave it as is.\n\nI\u0027m not blaming nothing here, really. If I will remove the point about Alembic, several questions could be arised: \"why do we care only about MySQL?\", \"Why do we care about it at all, if Alembic can help us with this problem?\". If I will remove detailed description about versions, questions could be arised too. Such as: \"Why do we suggest the index may have the same name with the column and may differ?\", \"Why do we care about the case when the name matches?\".",
+      "parentUuid": "AAAAW3//h2s\u003d",
+      "revId": "a0a97ba376db93237180f3e6513eed934325f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//h2c\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-13T18:34:04Z",
       "side": 1,
       "message": "The predicate should really be:\n\n  if i.columns \u003d\u003d (\u0027service_id\u0027,) and i.name !\u003d \u0027service_id\u0027\n\nA \u0027stylistic\u0027 note. I\u0027d rather see this written like this:\n\n    if any(i for i in table.indexes if i.columns \u003d\u003d (\u0027service_id\u0027,) and i.name !\u003d \u0027service_id\u0027):",
+      "revId": "a0a97ba376db93237180f3e6513eed934325f15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//fVU\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-14T09:45:50Z",
+      "side": 1,
+      "message": "Hmm... Yep. I had wanted to prevent undesired renaming of an indexes on the table. But, we know for sure that the table have a single index. From other side, we cant even create several indexes for the same columns list (ridiculous idea, hehe). So, I agree.",
+      "parentUuid": "AAAAW3//h2c\u003d",
       "revId": "a0a97ba376db93237180f3e6513eed934325f15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
