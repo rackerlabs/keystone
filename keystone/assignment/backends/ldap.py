@@ -16,6 +16,7 @@ from __future__ import absolute_import
 import uuid
 
 import ldap as ldap
+import ldap.filter
 
 from keystone import assignment
 from keystone import clean
@@ -612,16 +613,18 @@ class RoleApi(common_ldap.BaseLdap):
         return res
 
     def list_global_roles_for_user(self, user_dn):
-        roles = self.get_all('(%s=%s)' % (self.member_attribute, user_dn))
+        user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
+        roles = self.get_all('(%s=%s)' % (self.member_attribute, user_dn_esc))
         return [UserRoleAssociation(
                 role_dn=role.dn,
                 user_dn=user_dn) for role in roles]
 
     def list_project_roles_for_user(self, user_dn, project_subtree):
         conn = self.get_connection()
+        user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
         query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
                                                 self.member_attribute,
-                                                user_dn)
+                                                user_dn_esc)
         try:
             roles = conn.search_s(project_subtree,
                                   ldap.SCOPE_SUBTREE,
@@ -671,8 +674,9 @@ class RoleApi(common_ldap.BaseLdap):
 
     def delete(self, role_id, tenant_dn):
         conn = self.get_connection()
+        role_id_esc = ldap.filter.escape_filter_chars(role_id)
         query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
-                                                self.id_attr, role_id)
+                                                self.id_attr, role_id_esc)
         try:
             for role_dn, _ in conn.search_s(tenant_dn,
                                             ldap.SCOPE_SUBTREE,
