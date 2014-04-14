@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//hd4\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_add_rotated_passwords_table.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T00:29:55Z",
+      "side": 1,
+      "message": "It\u0027s very unfortunate that we have to build both. There are a couple of current patches that fixes some issues with them being different and I was hoping to avoid that problem. I can restore my original work that used explicit migrations.",
+      "parentUuid": "AAAAW3//l4k\u003d",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//me4\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-11T21:08:08Z",
       "side": 1,
       "message": "for consistency with previous versions, wouldnt it it be best that the default be not be enabled.  Thus no surprises?",
+      "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//hdY\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-14T00:29:55Z",
+      "side": 1,
+      "message": "That\u0027s not what this comment is saying. I\u0027m saying that before I do the extra work of looking through the rotated passwords that maybe we need to see if the extension was enabled. If it\u0027s not enabled then maybe we shouldn\u0027t even check. I\u0027ll make it more obvious in the next patch.",
+      "parentUuid": "AAAAW3//me4\u003d",
       "revId": "9c57d4df74571cb9f2d1dfb6c0074663b2ec8ee0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
