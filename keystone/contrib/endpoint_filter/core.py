@@ -19,8 +19,10 @@ import six
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
+from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import exception
+from keystone import notifications
 from keystone.openstack.common import log
 
 
@@ -58,6 +60,18 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.endpoint_filter.driver)
+        is_enabled = True
+        try:
+            migration_helpers.print_db_version('revoke')
+        except ImportError:
+            is_enabled = False
+        if is_enabled:
+            notifications.register_event_callback('deleted', 'project',
+                                                  self._on_project_delete)
+
+    def _on_project_delete(self, service, resource_type, operation,
+                           payload):
+        self.driver.delete_association_by_project(payload['resource_info'])
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -124,6 +138,28 @@ class Driver(object):
         :param endpoint_id: identity of endpoint to check
         :type endpoint_id: string
         :returns: a list of projects or an empty list.
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def remove_endpoint_from_project_for_endpoint(self, endpoint_id):
+        """Removes all the endpoints to project association with endpoint.
+
+        :param endpoint_id: identity of endpoint to check
+        :type endpoint_id: string
+        :returns: None
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def remove_endpoint_from_project_for_project(self, project_id):
+        """Removes all the endpoints to project association with project.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :returns: None
 
         """
         raise exception.NotImplemented()
