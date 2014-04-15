@@ -73,3 +73,17 @@ class EndpointFilter(object):
         query = query.filter_by(endpoint_id=endpoint_id)
         endpoint_filter_refs = query.all()
         return endpoint_filter_refs
+
+    def remove_endpoint_from_project_for_endpoint(self, endpoint_id):
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(ProjectEndpoint)
+            query = query.filter_by(endpoint_id=endpoint_id)
+            query.delete(synchronize_session=False)
+
+    def remove_endpoint_from_project_for_project(self, project_id):
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(ProjectEndpoint)
+            query = query.filter_by(project_id=project_id)
+            query.delete(synchronize_session=False)
