@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//Wis\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-15T09:32:02Z",
+      "side": 1,
+      "message": "typo: \"reconcile\"",
+      "revId": "93f4e85649a2e144ba479adf54e7e93f96e894be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//WXc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-15T09:32:02Z",
+      "side": 1,
+      "message": "wording: The only exception is `expires_at`, which is set to its lowest value.",
+      "revId": "93f4e85649a2e144ba479adf54e7e93f96e894be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//WeA\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8996
+      },
+      "writtenOn": "2014-04-15T09:32:02Z",
+      "side": 1,
+      "message": "IMHO, displaying the \u0027conflicting\u0027 expires_at values in the Warning message may be useful.",
+      "revId": "93f4e85649a2e144ba479adf54e7e93f96e894be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
