@@ -17,10 +17,21 @@ from keystone import assignment
 from keystone.catalog import controllers as catalog_controllers
 from keystone.common import controller
 from keystone.common import dependency
+from keystone import notifications
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'endpoint_filter_api')
 class EndpointFilterV3Controller(controller.V3Controller):
+
+    def __init__(self):
+        super(EndpointFilterV3Controller, self).__init__()
+        notifications.register_event_callback('deleted', 'project',
+                                              self._on_project_delete)
+
+    def _on_project_delete(self, service, resource_type, operation,
+                           payload):
+        self.endpoint_filter_api.delete_association_by_project(
+            payload['resource_info'])
 
     @controller.protected()
     def add_endpoint_to_project(self, context, project_id, endpoint_id):

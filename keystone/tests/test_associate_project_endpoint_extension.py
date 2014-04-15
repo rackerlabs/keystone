@@ -227,6 +227,28 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
                     body='',
                     expected_status=404)
 
+    def test_remove_endpoint_project_assoc_when_delete_project(self):
+        self.put(self.default_request_url)
+
+        self.delete('/projects/%(project_id)s' % {
+            'project_id': self.default_domain_project_id})
+
+        r = self.get('/OS-EP-FILTER/endpoints/%(endpoint_id)s/projects' %
+                     {'endpoint_id': self.endpoint_id},
+                     expected_status=200)
+        self.assertValidProjectListResponse(r, expected_length=0)
+
+    def test_remove_endpoint_project_assoc_when_delete_endpoint(self):
+        self.put(self.default_request_url)
+
+        self.delete('/endpoints/%(endpoint_id)s' % {
+            'endpoint_id': self.endpoint_id})
+
+        r = self.get('/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+                     'project_id': self.default_domain_project_id},
+                     expected_status=200)
+        self.assertValidEndpointListResponse(r, expected_length=0)
+
 
 class AssociateProjectEndpointFilterTokenRequestTestCase(TestExtensionCase):
     """Test OS-EP-FILTER catalog filtering extension."""

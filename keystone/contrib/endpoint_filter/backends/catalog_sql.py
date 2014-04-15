@@ -74,3 +74,8 @@ class EndpointFilterCatalog(sql.Catalog):
             catalog.append(formatted_service)
 
         return catalog
+
+    def delete_endpoint(self, endpoint_id):
+        self.endpoint_filter_api.delete_association_by_endpoint(endpoint_id)
+
+        super(EndpointFilterCatalog, self).delete_endpoint(endpoint_id)
