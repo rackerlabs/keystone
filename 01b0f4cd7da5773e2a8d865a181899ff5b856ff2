@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//Qv0\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-15T17:57:35Z",
+      "side": 1,
+      "message": "Oh this is cool. I like it.",
+      "parentUuid": "AAAAW3//Q1Y\u003d",
+      "revId": "01b0f4cd7da5773e2a8d865a181899ff5b856ff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//QrA\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-15T17:57:35Z",
+      "side": 1,
+      "message": "Suggest  a comment about the fact that all models are expected in the reflection based DBs regardless of extension(s) being enabled.",
+      "revId": "01b0f4cd7da5773e2a8d865a181899ff5b856ff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//Q2w\u003d",
         "filename": "keystone/tests/test_backend_kvs.py",
         "patchSetId": 7
@@ -30,6 +65,23 @@
       "writtenOn": "2014-04-15T17:40:32Z",
       "side": 1,
       "message": "suggest change \"do not have a KVS backend\" to \"only have an SQL backend\"",
+      "revId": "01b0f4cd7da5773e2a8d865a181899ff5b856ff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//Qp4\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1344,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-15T17:57:35Z",
+      "side": 1,
+      "message": "Could this be moved to BaseLDAPIdentity?",
       "revId": "01b0f4cd7da5773e2a8d865a181899ff5b856ff2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
