@@ -173,12 +173,13 @@ class Manager(manager.Manager):
         self.invalidate_revocation_list()
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, credential_id=None):
         if not CONF.token.revoke_by_id:
             return
         token_list = self.driver._list_tokens(user_id, tenant_id, trust_id,
-                                              consumer_id)
-        self.driver.delete_tokens(user_id, tenant_id, trust_id, consumer_id)
+                                              consumer_id, credential_id)
+        self.driver.delete_tokens(user_id, tenant_id, trust_id,
+                                  consumer_id, credential_id)
         for token_id in token_list:
             unique_id = self.unique_id(token_id)
             self._invalidate_individual_token_cache(unique_id)
@@ -262,7 +263,7 @@ class Manager(manager.Manager):
 
     @versionutils.deprecated(versionutils.deprecated.ICEHOUSE, remove_in=+1)
     def list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                    consumer_id=None):
+                    consumer_id=None, credential_id=None):
         """Returns a list of current token_id's for a user
 
         This is effectively a private method only used by the ``delete_tokens``
@@ -277,13 +278,16 @@ class Manager(manager.Manager):
         :type trust_id: string
         :param consumer_id: identity of the consumer
         :type consumer_id: string
+        :param credential_id: ec2 credential id
+        :type credential_id: string
         :returns: list of token_id's
 
         """
         return self.driver._list_tokens(user_id,
                                         tenant_id=tenant_id,
                                         trust_id=trust_id,
-                                        consumer_id=consumer_id)
+                                        consumer_id=consumer_id,
+                                        credential_id=credential_id)
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -340,7 +344,7 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, credential_id=None):
         """Deletes tokens by user.
 
         If the tenant_id is not None, only delete the tokens by user id under
@@ -360,6 +364,8 @@ class Driver(object):
         :type trust_id: string
         :param consumer_id: identity of the consumer
         :type consumer_id: string
+        :param credential_id: ec2 credential id
+        :type credential_id: string
         :returns: None.
         :raises: keystone.exception.TokenNotFound
 
@@ -369,7 +375,8 @@ class Driver(object):
         token_list = self._list_tokens(user_id,
                                        tenant_id=tenant_id,
                                        trust_id=trust_id,
-                                       consumer_id=consumer_id)
+                                       consumer_id=consumer_id,
+                                       credential_id=credential_id)
 
         for token in token_list:
             try:
@@ -379,7 +386,7 @@ class Driver(object):
 
     @abc.abstractmethod
     def _list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                     consumer_id=None):
+                     consumer_id=None, credential_id=None):
         """Returns a list of current token_id's for a user
 
         This is effectively a private method only used by the ``delete_tokens``
@@ -394,6 +401,8 @@ class Driver(object):
         :type trust_id: string
         :param consumer_id: identity of the consumer
         :type consumer_id: string
+        :param credential_id: ec2 credential id
+        :type credential_id: string
         :returns: list of token_id's
 
         """

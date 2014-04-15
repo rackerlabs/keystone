@@ -280,8 +280,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
     def setUp(self):
         super(TestCredentialEc2, self).setUp()
 
-    def _validate_signature(self, access, secret):
-        """Test signature validation with the access/secret provided."""
+    def _authenticate_ec2_credential(self, access, secret):
         signer = ec2_utils.Ec2Signer(secret)
         params = {'SignatureMethod': 'HmacSHA256',
                   'SignatureVersion': '2',
@@ -304,7 +303,12 @@ class TestCredentialEc2(CredentialBaseTestCase):
             '/ec2tokens',
             body={'ec2Credentials': sig_ref},
             expected_status=200)
-        self.assertValidTokenResponse(r)
+        return r
+
+    def _validate_signature(self, access, secret):
+        """Test signature validation with the access/secret provided."""
+        token_response = self._authenticate_ec2_credential(access, secret)
+        self.assertValidTokenResponse(token_response)
 
     def test_ec2_credential_signature_validate(self):
         """Test signature validation with a v3 ec2 credential."""
@@ -379,3 +383,25 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           cred_from_credential_api[0]['id'])
+
+    def test_ec2_delete_credential_also_revoke_token(self):
+        ec2_cred = self._get_ec2_cred()
+        uri = '/'.join([self._get_ec2_cred_uri(), ec2_cred['access']])
+        cred_from_credential_api = self.credential_api.list_credentials(
+            user_id=self.user_id)
+        self.assertEqual(1, len(cred_from_credential_api))
+
+        token_response = self._authenticate_ec2_credential(
+            access=ec2_cred['access'], secret=ec2_cred['secret'])
+        token_id = token_response.headers.get('X-Subject-Token')
+
+        self.delete(uri)
+        self.assertRaises(exception.CredentialNotFound,
+                          self.credential_api.get_credential,
+                          cred_from_credential_api[0]['id'])
+
+        # Check Keystone Token no longer exists
+        headers = {'X-Subject-Token': token_id,
+                   'X-Auth-Token': token_id}
+        self.head('/auth/tokens', headers=headers,
+                  expected_status=404)
