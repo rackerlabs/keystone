@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//YUE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T01:25:13Z",
+      "side": 1,
+      "message": "change \"\u0027project_id\u0027 in trust_ref and trust_ref.get(\u0027project_id\u0027) is not None\" to \"trust_ref.get(\u0027project_id\u0027) is not None\"",
+      "revId": "dcb7cbb55402962567ae210df496e013e12b35c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
