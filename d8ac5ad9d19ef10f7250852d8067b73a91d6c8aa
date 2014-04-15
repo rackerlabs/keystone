@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//YPU\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T01:52:43Z",
+      "side": 1,
+      "message": "why do you think it\u0027s not needed?",
+      "revId": "d8ac5ad9d19ef10f7250852d8067b73a91d6c8aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YO4\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T01:52:43Z",
+      "side": 1,
+      "message": "do we have to do this every time?",
+      "revId": "d8ac5ad9d19ef10f7250852d8067b73a91d6c8aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YOc\u003d",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T01:52:43Z",
+      "side": 1,
+      "message": "why does kvs need the database? Add a comment.",
+      "revId": "d8ac5ad9d19ef10f7250852d8067b73a91d6c8aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YOo\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T01:52:43Z",
+      "side": 1,
+      "message": "there\u0027s 2 \"it\"s in this sentence that refer to different things. This needs to be clearer.\n\n because the superclass uses the database\n\nalso, could remove the comment since it wasn\u0027t done in test_auth or test_backend_kvs... it just sticks out here because it\u0027s the only thing done in setUp.",
+      "revId": "d8ac5ad9d19ef10f7250852d8067b73a91d6c8aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YNQ\u003d",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T01:52:43Z",
+      "side": 1,
+      "message": "suggest move this line after the FIXME comment, since I think it\u0027s related.",
+      "revId": "d8ac5ad9d19ef10f7250852d8067b73a91d6c8aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
