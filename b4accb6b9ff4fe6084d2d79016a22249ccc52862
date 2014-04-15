@@ -90,6 +90,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//Qo8\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T19:27:54Z",
+      "side": 1,
+      "message": "Requests uses stdlib - https://github.com/kennethreitz/requests/blob/master/requests/packages/urllib3/connection.py",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//3pQ\u003d",
         "filename": "doc/source/security_details.rst",
         "patchSetId": 2
@@ -277,6 +294,40 @@
       "side": 1,
       "message": "i\u0027ll change md5 to sha1",
       "parentUuid": "AAAAWn//3j8\u003d",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//QBE\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T19:27:54Z",
+      "side": 1,
+      "message": "Maybe callout the implementation like:\n\n  PassLib (sha1 from hashlib; salting from PassLib)",
+      "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//QAk\u003d",
+        "filename": "doc/source/security_details.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T19:27:54Z",
+      "side": 1,
+      "message": "I think this also uses hashlib for the actual algorithm.",
       "revId": "b4accb6b9ff4fe6084d2d79016a22249ccc52862",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
