@@ -104,10 +104,8 @@ class Ec2ControllerCommon(object):
         if not credentials and ec2credentials:
             credentials = ec2credentials
 
-        if 'access' not in credentials:
-            raise exception.Unauthorized(message='EC2 signature not supplied.')
-
-        creds_ref = self._get_credentials(credentials['access'])
+        credential_id = self._get_credential_id(credentials=credentials)
+        creds_ref = self._get_credentials(credential_id)
         self.check_signature(creds_ref, credentials)
 
         # TODO(termie): don't create new tokens every time
@@ -235,6 +233,16 @@ class Ec2ControllerCommon(object):
         if not creds:
             raise exception.Unauthorized(message='EC2 access key not found.')
         return self._convert_v3_to_ec2_credential(creds)
+
+    def _get_credential_id(self, credentials=None, ec2credentials=None):
+        # NOTE(termie): backwards compat hack
+        if not credentials and ec2credentials:
+            credentials = ec2credentials
+
+        if 'access' not in credentials:
+            raise exception.Unauthorized(message='EC2 signature not supplied.')
+
+        return credentials['access']
 
 
 @dependency.requires('policy_api', 'token_provider_api')
@@ -364,10 +372,12 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
                                            ec2credentials=ec2Credentials)
 
         method_names = ['ec2credential']
+        credential_id = self._get_credential_id(credentials, ec2Credentials)
+        auth_context = {'credential_id': credential_id}
 
         token_id, token_data = self.token_provider_api.issue_v3_token(
             user_ref['id'], method_names, project_id=project_ref['id'],
-            metadata_ref=metadata_ref)
+            auth_context=auth_context, metadata_ref=metadata_ref)
         return render_token_data_response(token_id, token_data)
 
     @controller.protected()
@@ -386,6 +396,7 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
 
     @controller.protected(callback=_check_credential_owner_and_user_id_match)
     def ec2_delete_credential(self, context, user_id, credential_id):
+        self.token_api.delete_tokens(user_id, credential_id=credential_id)
         return super(Ec2ControllerV3, self).delete_credential(user_id,
                                                               credential_id)
 
