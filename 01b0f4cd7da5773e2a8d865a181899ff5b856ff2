@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//Q1Y\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T17:40:32Z",
+      "side": 1,
+      "message": "a docstring for this wrapper would be useful.",
+      "revId": "01b0f4cd7da5773e2a8d865a181899ff5b856ff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//Q2w\u003d",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T17:40:32Z",
+      "side": 1,
+      "message": "suggest change \"do not have a KVS backend\" to \"only have an SQL backend\"",
+      "revId": "01b0f4cd7da5773e2a8d865a181899ff5b856ff2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
