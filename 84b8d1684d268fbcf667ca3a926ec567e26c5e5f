@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//WIk\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-15T08:54:37Z",
+      "side": 1,
+      "message": "Note for other reviewers.\n\nCuriously, MySQL will automatically rename the implicitly created index on the referencing column here. Thus we achieve the consistent naming across all versions of MySQL.",
+      "revId": "84b8d1684d268fbcf667ca3a926ec567e26c5e5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
