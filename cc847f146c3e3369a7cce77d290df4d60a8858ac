@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//RaI\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T16:35:18Z",
+      "side": 1,
+      "message": "It seems like this should be reworded a little bit. While technically true, I think this is too detailed. Someone setting this option won\u0027t care that a certain exception is raised, only that the request will be rejected with a certain HTTP status code.",
+      "revId": "cc847f146c3e3369a7cce77d290df4d60a8858ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//TAw\u003d",
         "filename": "keystone/common/utils.py",
         "patchSetId": 7
@@ -13,6 +30,58 @@
       "writtenOn": "2014-04-15T14:10:03Z",
       "side": 1,
       "message": "Here we checked length of password twice. I think it would be better If you will use:\n\n if len(password) \u003e max_length:\n     if CONF.strict_password_length:\n          ...\n     else \n          ...\n else\n     return password",
+      "revId": "cc847f146c3e3369a7cce77d290df4d60a8858ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//Rcg\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T16:35:18Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAW3//TAw\u003d",
+      "revId": "cc847f146c3e3369a7cce77d290df4d60a8858ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//RcA\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T16:35:18Z",
+      "side": 1,
+      "message": "Is this actually needed? It\u0027s not used in you changes at all.",
+      "revId": "cc847f146c3e3369a7cce77d290df4d60a8858ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//RcI\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-15T16:35:18Z",
+      "side": 1,
+      "message": "Is this actually needed? It\u0027s not used in your changes at all.",
       "revId": "cc847f146c3e3369a7cce77d290df4d60a8858ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
