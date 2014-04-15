@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//YL8\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T02:00:24Z",
+      "side": 1,
+      "message": "passing the message is not pretty. Have add_member raise Conflict (or a new exception, whatever works) and have this function raise Conflict with the new message if add_member raises Conflict.",
+      "revId": "d8230b9b09085c1ef042a0dd4ed40623d6536804",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YLM\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T02:00:24Z",
+      "side": 1,
+      "message": "change \"Dn\" to \"DN\" -- this applies to all these comments.",
+      "revId": "d8230b9b09085c1ef042a0dd4ed40623d6536804",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YKo\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1028,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T02:00:24Z",
+      "side": 1,
+      "message": "add a description when these are raised -- e.g., \n\n exception.Conflict if the user was already a member\n ldap.NO_SUCH_OBJECT if the group entry didn\u0027t exist",
+      "revId": "d8230b9b09085c1ef042a0dd4ed40623d6536804",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//YK8\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-15T02:00:24Z",
+      "side": 1,
+      "message": "add a description when these are raised -- e.g., \n\n ldap.NO_SUCH_OBJECT if the group entry didn\u0027t exist.\n\n ldap.NO_SUCH_ATTRIBUTE if the user wasn\u0027t a member",
+      "revId": "d8230b9b09085c1ef042a0dd4ed40623d6536804",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
