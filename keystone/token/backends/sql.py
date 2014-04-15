@@ -73,7 +73,7 @@ class Token(token.Driver):
             token_ref.valid = False
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, credential_id=None):
         """Deletes all tokens in one session
 
         The user_id will be ignored if the trust_id is specified. user_id
@@ -102,6 +102,11 @@ class Token(token.Driver):
                     token_ref_dict = token_ref.to_dict()
                     if not self._consumer_matches(consumer_id, token_ref_dict):
                         continue
+                if credential_id:
+                    token_ref_dict = token_ref.to_dict()
+                    if not self._credential_matches(credential_id,
+                                                    token_ref_dict):
+                        continue
 
                 token_ref.valid = False
 
@@ -119,6 +124,15 @@ class Token(token.Driver):
                 return oauth and oauth['consumer_id'] == consumer_id
             except KeyError:
                 return False
+
+    def _credential_matches(self, credential_id, ref):
+        if credential_id is None:
+            return True
+        try:
+            credential = ref['token_data']['token'].get('OS-EC2', {})
+            return credential.get('credential_id') == credential_id
+        except KeyError:
+            return False
 
     def _list_tokens_for_trust(self, trust_id):
         session = sql.get_session()
@@ -165,14 +179,32 @@ class Token(token.Driver):
                     tokens.append(token_ref_dict['id'])
         return tokens
 
+    def _list_tokens_for_credential(self, user_id, credential_id):
+        tokens = []
+        session = sql.get_session()
+        with session.begin():
+            now = timeutils.utcnow()
+            query = session.query(TokenModel)
+            query = query.filter(TokenModel.expires > now)
+            query = query.filter(TokenModel.user_id == user_id)
+            token_references = query.filter_by(valid=True)
+
+            for token_ref in token_references:
+                token_ref_dict = token_ref.to_dict()
+                if self._credential_matches(credential_id, token_ref_dict):
+                    tokens.append(token_ref_dict['id'])
+        return tokens
+
     def _list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                     consumer_id=None):
+                     consumer_id=None, credential_id=None):
         if not CONF.token.revoke_by_id:
             return []
         if trust_id:
             return self._list_tokens_for_trust(trust_id)
         if consumer_id:
             return self._list_tokens_for_consumer(user_id, consumer_id)
+        if credential_id:
+            return self._list_tokens_for_credential(user_id, credential_id)
         else:
             return self._list_tokens_for_user(user_id, tenant_id)
 
