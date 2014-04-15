@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//TAw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-15T14:10:03Z",
+      "side": 1,
+      "message": "Here we checked length of password twice. I think it would be better If you will use:\n\n if len(password) \u003e max_length:\n     if CONF.strict_password_length:\n          ...\n     else \n          ...\n else\n     return password",
+      "revId": "cc847f146c3e3369a7cce77d290df4d60a8858ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
