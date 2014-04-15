@@ -252,12 +252,13 @@ class Token(token.Driver):
         return result
 
     def delete_tokens(self, user_id, tenant_id=None, trust_id=None,
-                      consumer_id=None):
+                      consumer_id=None, credential_id=None):
         return super(Token, self).delete_tokens(
             user_id=user_id,
             tenant_id=tenant_id,
             trust_id=trust_id,
             consumer_id=consumer_id,
+            credential_id=credential_id,
         )
 
     def _format_token_index_item(self, item):
@@ -296,8 +297,15 @@ class Token(token.Driver):
         except KeyError:
             return False
 
+    def _token_match_credential(self, token_ref, credential_id):
+        try:
+            credential = token_ref['token_data']['token']['OS-EC2']
+            return credential.get('credential_id') == credential_id
+        except KeyError:
+            return False
+
     def _list_tokens(self, user_id, tenant_id=None, trust_id=None,
-                     consumer_id=None):
+                     consumer_id=None, credential_id=None):
         # This function is used to generate the list of tokens that should be
         # revoked when revoking by token identifiers.  This approach will be
         # deprecated soon, probably in the Juno release.  Setting revoke_by_id
@@ -336,6 +344,10 @@ class Token(token.Driver):
                         continue
                 if consumer_id is not None:
                     if not self._token_match_consumer(token_ref, consumer_id):
+                        continue
+                if (credential_id is not None and
+                    not self._token_match_credential(token_ref,
+                                                     credential_id)):
                         continue
 
                 tokens.append(token_id)
