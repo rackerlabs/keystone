@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//3yA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T19:26:16Z",
+      "side": 1,
+      "message": "You should probably say something about adding msgfmt to list of requirements in the setup doc.",
+      "revId": "43796fa5ac55820a64f8622f7d7645ee91c659d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//3xQ\u003d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T19:26:16Z",
+      "side": 1,
+      "message": "Having the trailing underscore means that you\u0027ll be providing a link. See lines 50 and 51. If you don\u0027t actually want a link, just remove the underscore.",
+      "revId": "43796fa5ac55820a64f8622f7d7645ee91c659d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
