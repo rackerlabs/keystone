@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//4jI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T17:52:07Z",
+      "side": 1,
+      "message": "I mean this patch only applies the index to MySQL. Are you saying that you must explicitly specify the index for other engines?",
+      "parentUuid": "AAAAXH//6xY\u003d",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//78E\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
         "patchSetId": 12
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "\u003e\u003e\u003e What is driving this naming convention?\n\nIf you mean naming convention used at renaming, it is MySQL, only 5.5. \n\n\n\u003e\u003e\u003e  It is different from other indexes that the explicitly declare.\n\nYes it is.\n\n\n\u003e\u003e\u003e Also, does this actually rename the existing index or just create another?\n\nMySQL cant rename indexes. It just create another.",
       "parentUuid": "AAAAXH//78E\u003d",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//4hY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T17:52:07Z",
+      "side": 1,
+      "message": "Should it be different? Why not follow the convention which I think would make it \u0027ix_service_id\u0027? I\u0027m just curious about how you chose this name.",
+      "parentUuid": "AAAAXH//6rs\u003d",
       "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
