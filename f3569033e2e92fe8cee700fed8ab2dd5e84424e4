@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH///hc\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-16T01:35:32Z",
+      "side": 1,
+      "message": "suggest change \"search base\" to \"entry\"",
+      "revId": "f3569033e2e92fe8cee700fed8ab2dd5e84424e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH///hE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1049,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-16T01:35:32Z",
+      "side": 1,
+      "message": "change \"objects\" to \"entries\"",
+      "revId": "f3569033e2e92fe8cee700fed8ab2dd5e84424e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
