@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//49E\u003d",
+        "filename": "keystone/tests/test_contrib_ec2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T17:04:00Z",
+      "side": 1,
+      "message": "Remove the copyright line and the line below it.",
+      "revId": "f5c6deca68d3d062d70e2c5fe7871cbca4941289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
