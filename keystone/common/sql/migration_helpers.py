@@ -22,6 +22,7 @@ from migrate import exceptions
 import sqlalchemy
 
 from keystone.common import sql
+from keystone.common.sql import migrate_repo
 from keystone import config
 from keystone import contrib
 from keystone import exception
@@ -31,7 +32,7 @@ from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 
 
-DB_INIT_VERSION = 35
+DB_INIT_VERSION = migrate_repo.DB_INIT_VERSION
 CONF = config.CONF
 
 
