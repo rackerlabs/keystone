@@ -19,13 +19,22 @@ from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
 from keystone.contrib.federation import utils
+from keystone import exception
 
 
 CONF = config.CONF
 
 
 class _ControllerBase(controller.V3Controller):
-    """Base behaviors for federation controllers."""
+    """Base behaviours for federation controllers.
+
+    Class parameters:
+
+    * `_mutable_parameters` - set of parameters that can be changed by users.
+                              Usually used by cls.check_immutable_params()
+    * `_public_parameters` - set of parameters that are exposed to the user.
+                             Usually used by cls.filter_params()
+    """
 
     @classmethod
     def base_url(cls, context, path=None):
@@ -33,6 +42,48 @@ class _ControllerBase(controller.V3Controller):
 
         path = '/OS-FEDERATION/' + cls.collection_name
         return super(_ControllerBase, cls).base_url(context, path=path)
+
+    @classmethod
+    def filter_params(cls, ref):
+        """Remove unspecified parameters from the dictionary.
+
+        This function removes unspecified parameters from the dictionary. See
+        check_immutable_parameters for corresponding function that raises
+        exceptions. This method checks only root-level keys from a ref
+        dictionary.
+
+        :param ref: a dictionary representing deserialized response to be
+                    serialized
+        """
+        ref_keys = set(ref.keys())
+        blocked_keys = ref_keys - cls._public_parameters
+        for blocked_param in blocked_keys:
+            del ref[blocked_param]
+        return ref
+
+    @classmethod
+    def check_immutable_params(cls, ref):
+        """Raise exception when disallowed parameter is in ref.
+
+        Check whether the ref dictionary representing a request has only
+        mutable parameters included. If not, raise an exception. This method
+        checks only root-level keys from a ref dictionary.
+
+        :param ref: a dictionary representing deserialized request to be
+                    stored
+        :raises: :class:`keystone.exception.ImmutableAttributeError`
+
+        """
+        ref_keys = set(ref.keys())
+        blocked_keys = ref_keys.difference(cls._mutable_parameters)
+
+        if not blocked_keys:
+            # No immutable parameters changed
+            return
+
+        exception_args = {'target': cls.__name__,
+                          'attributes': ', '.join(blocked_keys)}
+        raise exception.ImmutableAttributeError(**exception_args)
 
 
 @dependency.requires('federation_api')
@@ -78,7 +129,7 @@ class IdentityProvider(_ControllerBase):
     def create_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
         identity_provider.setdefault('enabled', False)
-        IdentityProvider.check_immutable_params(identity_provider)
+        self.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(context, idp_ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
@@ -101,7 +152,7 @@ class IdentityProvider(_ControllerBase):
     @controller.protected()
     def update_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
-        IdentityProvider.check_immutable_params(identity_provider)
+        self.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
         return IdentityProvider.wrap_member(context, idp_ref)
 
@@ -164,7 +215,7 @@ class FederationProtocol(_ControllerBase):
     @controller.protected()
     def create_protocol(self, context, idp_id, protocol_id, protocol):
         ref = self._normalize_dict(protocol)
-        FederationProtocol.check_immutable_params(ref)
+        self.check_immutable_params(ref)
         ref = self.federation_api.create_protocol(idp_id, protocol_id, ref)
         response = FederationProtocol.wrap_member(context, ref)
         return wsgi.render_response(body=response, status=('201', 'Created'))
@@ -172,7 +223,7 @@ class FederationProtocol(_ControllerBase):
     @controller.protected()
     def update_protocol(self, context, idp_id, protocol_id, protocol):
         ref = self._normalize_dict(protocol)
-        FederationProtocol.check_immutable_params(ref)
+        self.check_immutable_params(ref)
         ref = self.federation_api.update_protocol(idp_id, protocol_id,
                                                   protocol)
         return FederationProtocol.wrap_member(context, ref)
