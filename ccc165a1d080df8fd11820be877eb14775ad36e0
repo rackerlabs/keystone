@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//2sA\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-16T23:00:10Z",
+      "side": 1,
+      "message": "I don\u0027t think this is something that needs to be a WARNING. There is nothing that the operator can do besides tell the users \"hey, that\u0027s a long password\". Suggest downgrade to INFO. I just don\u0027t see this as something the operator cares to see anytime a long password is hashed / used.\n\nEven though previously we warned on this, I think we should be more selective about use of the higher log levels (to indicate legitimate errors / things the deployer or operator needs to act upon)\n\nI would like input from other keystone core members on this topic.",
+      "revId": "ccc165a1d080df8fd11820be877eb14775ad36e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2sk\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-16T23:00:10Z",
+      "side": 1,
+      "message": "revert whitespace change on previous line. https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits",
+      "revId": "ccc165a1d080df8fd11820be877eb14775ad36e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
