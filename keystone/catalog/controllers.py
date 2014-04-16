@@ -19,6 +19,7 @@ import six
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import wsgi
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
@@ -218,7 +219,7 @@ class ServiceV3(controller.V3Controller):
 
     @controller.filterprotected('type')
     def list_services(self, context, filters):
-        hints = ServiceV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.catalog_api.list_services(hints=hints)
         return ServiceV3.wrap_collection(context, refs, hints=hints)
 
@@ -280,7 +281,7 @@ class EndpointV3(controller.V3Controller):
 
     @controller.filterprotected('interface', 'service_id')
     def list_endpoints(self, context, filters):
-        hints = EndpointV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.catalog_api.list_endpoints(hints=hints)
         return EndpointV3.wrap_collection(context, refs, hints=hints)
 

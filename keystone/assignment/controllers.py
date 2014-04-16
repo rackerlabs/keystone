@@ -25,6 +25,7 @@ from six.moves import urllib
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
@@ -361,7 +362,7 @@ class DomainV3(controller.V3Controller):
 
     @controller.filterprotected('enabled', 'name')
     def list_domains(self, context, filters):
-        hints = DomainV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.assignment_api.list_domains(hints=hints)
         return DomainV3.wrap_collection(context, refs, hints=hints)
 
@@ -401,13 +402,13 @@ class ProjectV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
     def list_projects(self, context, filters):
-        hints = ProjectV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.assignment_api.list_projects(hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('enabled', 'name')
     def list_user_projects(self, context, filters, user_id):
-        hints = ProjectV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.assignment_api.list_projects_for_user(user_id,
                                                           hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
@@ -449,7 +450,7 @@ class RoleV3(controller.V3Controller):
 
     @controller.filterprotected('name')
     def list_roles(self, context, filters):
-        hints = RoleV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.assignment_api.list_roles(
             hints=hints)
         return RoleV3.wrap_collection(context, refs, hints=hints)
@@ -862,7 +863,7 @@ class RoleAssignmentV3(controller.V3Controller):
         # to pass the filters into the driver call, so that the list size is
         # kept a minimum.
 
-        hints = self.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.assignment_api.list_role_assignments()
         formatted_refs = (
             [self._format_entity(context, x) for x in refs

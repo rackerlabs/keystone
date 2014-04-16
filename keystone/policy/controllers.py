@@ -14,6 +14,7 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import driver_hints
 
 
 @dependency.requires('policy_api')
@@ -32,7 +33,7 @@ class PolicyV3(controller.V3Controller):
 
     @controller.filterprotected('type')
     def list_policies(self, context, filters):
-        hints = PolicyV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.policy_api.list_policies(hints=hints)
         return PolicyV3.wrap_collection(context, refs, hints=hints)
 

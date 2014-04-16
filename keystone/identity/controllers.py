@@ -19,6 +19,7 @@ import uuid
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
@@ -216,7 +217,7 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users(self, context, filters):
-        hints = UserV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.identity_api.list_users(
             domain_scope=self._get_domain_id_for_request(context),
             hints=hints)
@@ -224,7 +225,7 @@ class UserV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'email', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):
-        hints = UserV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.identity_api.list_users_in_group(
             group_id,
             domain_scope=self._get_domain_id_for_request(context),
@@ -320,7 +321,7 @@ class GroupV3(controller.V3Controller):
 
     @controller.filterprotected('domain_id', 'name')
     def list_groups(self, context, filters):
-        hints = GroupV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.identity_api.list_groups(
             domain_scope=self._get_domain_id_for_request(context),
             hints=hints)
@@ -328,7 +329,7 @@ class GroupV3(controller.V3Controller):
 
     @controller.filterprotected('name')
     def list_groups_for_user(self, context, filters, user_id):
-        hints = GroupV3.build_driver_hints(context, filters)
+        hints = driver_hints.Hints.build(context, filters)
         refs = self.identity_api.list_groups_for_user(
             user_id,
             domain_scope=self._get_domain_id_for_request(context),
