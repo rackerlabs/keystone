@@ -13,6 +13,8 @@
 import random
 import uuid
 
+from testtools import matchers
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
@@ -22,6 +24,7 @@ from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone import tests
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
 
@@ -1562,3 +1565,33 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class FederationControllerImmutabilityTests(tests.TestCase):
+    """Tests for the V3Controller class."""
+    def setUp(self):
+        super(FederationControllerImmutabilityTests, self).setUp()
+
+        class ControllerUnderTest(federation_controllers._ControllerBase):
+            _mutable_parameters = frozenset(['hello', 'world'])
+
+        self.api = ControllerUnderTest()
+
+    def test_check_immutable_params(self):
+        """Pass valid parameters to the method and expect no failure."""
+        ref = {
+            'hello': uuid.uuid4().hex,
+            'world': uuid.uuid4().hex
+        }
+        self.api.check_immutable_params(ref)
+
+    def test_check_immutable_params_fail(self):
+        """Pass invalid parameter to the method and expect failure."""
+        ref = dict([(uuid.uuid4().hex, uuid.uuid4().hex) for _ in range(3)])
+
+        ex = self.assertRaises(exception.ImmutableAttributeError,
+                               self.api.check_immutable_params, ref)
+        ex_msg = unicode(ex)
+        self.assertThat(ex_msg, matchers.Contains(self.api.__class__.__name__))
+        for key in ref.keys():
+            self.assertThat(ex_msg, matchers.Contains(key))
