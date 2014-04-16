@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//59w\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T17:00:35Z",
+      "side": 1,
+      "message": "(nit) Suggest renaming a to role or role_id to show what it is. Looking at this code I can\u0027t tell.",
+      "revId": "3f525074184241e8a06d198bb443c7b2a4475e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//548\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T17:00:35Z",
+      "side": 1,
+      "message": "Why switch the order here? I thought the call order was (expected, actual).",
+      "revId": "3f525074184241e8a06d198bb443c7b2a4475e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
