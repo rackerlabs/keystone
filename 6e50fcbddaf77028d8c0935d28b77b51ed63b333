@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//8p0\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-16T10:46:49Z",
+      "side": 1,
+      "message": "You are right.",
+      "parentUuid": "AAAAXH///nY\u003d",
+      "revId": "6e50fcbddaf77028d8c0935d28b77b51ed63b333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH///mc\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-16T01:26:28Z",
       "side": 1,
       "message": "suggest put the mod on a separate line so that this statement is simpler --\n\n mod \u003d (ldap.MOD_ADD, self.member_attribute, member_dn)",
+      "revId": "6e50fcbddaf77028d8c0935d28b77b51ed63b333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//8b0\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-16T10:46:49Z",
+      "side": 1,
+      "message": "Yes, It\u0027s good idea",
+      "parentUuid": "AAAAXH///mc\u003d",
       "revId": "6e50fcbddaf77028d8c0935d28b77b51ed63b333",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//8bE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-16T10:46:49Z",
+      "side": 1,
+      "message": "good idea too, butI think you mean  \n ldap.MOD_DELETE",
+      "parentUuid": "AAAAXH///mQ\u003d",
+      "revId": "6e50fcbddaf77028d8c0935d28b77b51ed63b333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH///lQ\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 4
@@ -98,6 +152,24 @@
       "writtenOn": "2014-04-16T01:26:28Z",
       "side": 1,
       "message": "I don\u0027t think these lines needed to change... was\n\n raise exception.Conflict(_(\n     \u0027User %(user_id)s is already a member of group %(group_id)s\u0027) %\n     {\u0027user_id\u0027: user_id, \u0027group_id\u0027: group_id})",
+      "revId": "6e50fcbddaf77028d8c0935d28b77b51ed63b333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//8a0\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-16T10:46:49Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAXH///lA\u003d",
       "revId": "6e50fcbddaf77028d8c0935d28b77b51ed63b333",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
