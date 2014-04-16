@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//79w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T12:01:40Z",
+      "side": 1,
+      "message": "We don\u0027t use Alembic. Is this only a problem if we do?",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//77o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T12:01:40Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment because we are only taking action on MySQL here.",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//78E\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T12:01:40Z",
+      "side": 1,
+      "message": "What is driving this naming convention? It is different from other indexes that the explicitly declare. Also, does this actually rename the existing index or just create another?",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//77w\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-16T12:01:40Z",
+      "side": 1,
+      "message": "Same comment as other file.",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
