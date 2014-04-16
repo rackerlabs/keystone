@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//4aI\u003d",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-04-16T18:06:05Z",
+      "side": 1,
+      "message": "_prop_can_be_none and _mutate_test_obj are both used in test_backend.py, which is not LDAP specific - should I put this code in test_backend.py?",
+      "parentUuid": "AAAAXH//4uE\u003d",
+      "revId": "82c5e73efaad971e5907f34d0f9adf85f90ef15e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//43c\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-16T17:48:09Z",
       "side": 1,
       "message": "I think you want to add a bit to the comment to say it should be missing or equal to None.",
+      "revId": "82c5e73efaad971e5907f34d0f9adf85f90ef15e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//4Z8\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-04-16T18:06:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//43c\u003d",
       "revId": "82c5e73efaad971e5907f34d0f9adf85f90ef15e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
