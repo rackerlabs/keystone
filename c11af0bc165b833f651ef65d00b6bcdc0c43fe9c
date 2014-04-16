@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//6uk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-16T14:25:16Z",
+      "side": 1,
+      "message": "Actually yes, we haven\u0027t used yet. But in this case we use. Please see https://review.openstack.org/#/c/80618/28/keystone/openstack/common/db/sqlalchemy/test_migrations.py",
+      "parentUuid": "AAAAXH//79w\u003d",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//77o\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//6xY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-16T14:25:16Z",
+      "side": 1,
+      "message": "Are we? Aren\u0027t we using PostgreSQL and DB2? Please show me where I can find a list of engines which we are using?\nAnd, thanks you, this part is really redundant.",
+      "parentUuid": "AAAAXH//77o\u003d",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//78E\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2014-04-16T12:01:40Z",
       "side": 1,
       "message": "What is driving this naming convention? It is different from other indexes that the explicitly declare. Also, does this actually rename the existing index or just create another?",
+      "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//6rs\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_service_id_index.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-16T14:25:16Z",
+      "side": 1,
+      "message": "\u003e\u003e\u003e What is driving this naming convention?\n\nIf you mean naming convention used at renaming, it is MySQL, only 5.5. \n\n\n\u003e\u003e\u003e  It is different from other indexes that the explicitly declare.\n\nYes it is.\n\n\n\u003e\u003e\u003e Also, does this actually rename the existing index or just create another?\n\nMySQL cant rename indexes. It just create another.",
+      "parentUuid": "AAAAXH//78E\u003d",
       "revId": "c11af0bc165b833f651ef65d00b6bcdc0c43fe9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
