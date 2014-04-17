@@ -16,6 +16,24 @@
       "revId": "cc52bd3f749b68866cefe378b4987be70fafc806",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//wUg\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-17T17:27:04Z",
+      "side": 1,
+      "message": "otherwise it\u0027s ambiguous as to whether you meant\n\n  not (cred \u003d\u003d db_password)\n\nor \n\n  (not cred) \u003d\u003d db_password\"",
+      "parentUuid": "AAAAXH//wVo\u003d",
+      "revId": "cc52bd3f749b68866cefe378b4987be70fafc806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
