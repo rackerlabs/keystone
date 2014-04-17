@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//6mY\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T22:58:50Z",
+      "side": 1,
+      "message": "This logic is now duplicated.",
+      "revId": "f025ab31e26a53de3bac48bb6bd0957bf0f6d9ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//66A\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T22:58:50Z",
+      "side": 1,
+      "message": "I think you should make credentials required. Maybe drop the need for ec2credentials because it\u0027s already handled in one caller and it would be easy to call this with:\n\n  _get_credential_id(credentials or ec2credentials)",
+      "revId": "f025ab31e26a53de3bac48bb6bd0957bf0f6d9ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//65o\u003d",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T22:58:50Z",
+      "side": 1,
+      "message": "This logic is already handled in one of the callers.",
+      "revId": "f025ab31e26a53de3bac48bb6bd0957bf0f6d9ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
