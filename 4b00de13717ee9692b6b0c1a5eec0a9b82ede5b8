@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//2SM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "change \"waits for\" to \"expects\"",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2SI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "change \"leaves an\" to \"leaves the\"\n\nMySQL changes the name? or is alembic?",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2R4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "change \"index\" to \"indexes\"",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2Rg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "suggest add a paragraph that describes the changes we should expect to see that fixes the problem, because I have no idea what to expect.",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2RQ\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "since the previous lines don\u0027t do anything by themselves, move them into the \u0027if\u0027 leg.\n\nAlso, might as well\n\n if migrate_engine.name !\u003d \u0027mysql\u0027:\n    # This migration only applies to MySQL\n    return\n\nthen can unindent",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2Q8\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "this needs a comment why there\u0027s no downgrade.",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2Q0\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "similar comment on the other part. the previous code doesn\u0027t have any side effects so don\u0027t do it if we don\u0027t need to.",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//2Q4\u003d",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/005_consumer_id_index.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T01:00:19Z",
+      "side": 1,
+      "message": "this needs a comment why there\u0027s no downgrade.",
+      "revId": "4b00de13717ee9692b6b0c1a5eec0a9b82ede5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
