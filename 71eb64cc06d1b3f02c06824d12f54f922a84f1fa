@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//xvA\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T14:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//xyk\u003d",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//x3U\u003d",
         "filename": "keystone/token/backends/swift.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-17T14:32:31Z",
       "side": 1,
       "message": "Add a newline here.",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//xug\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T14:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//x3U\u003d",
       "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//xuI\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T14:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//x00\u003d",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//x1o\u003d",
         "filename": "keystone/token/backends/swift.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-17T14:32:31Z",
       "side": 1,
       "message": "Does this mean that you don\u0027t support revoking tokens if you use this backend?",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//xtY\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T14:39:46Z",
+      "side": 1,
+      "message": "No, it means there no use of that method in this driver. Is a token is expired, it has been deleted, so there\u0027s no need to have a separate list of revoked tokens.",
+      "parentUuid": "AAAAXH//x1o\u003d",
       "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
