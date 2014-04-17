@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//124\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-17T02:31:49Z",
+      "side": 0,
+      "message": "So I tracked this down and this function came in originally with the fakeldap unit testing code. So ideally once you refactor the code as recommended by ayoung I think you can safely pull this out. I vagely recall someone adding it here to add \"extra security\" but can\u0027t remember the details. But if it causing your LDAP real bugs I think it can be removed. Might be worth getting bknudson\u0027s opinion as well.",
+      "revId": "0473e5ab75ece62df8b7bb429c9e75db34ce71f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
