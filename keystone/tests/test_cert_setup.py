@@ -84,22 +84,22 @@ class CertSetupTestCase(rest.RestfulTestCase):
                           controller.authenticate,
                           {}, body_dict)
 
-    def test_create_pki_certs(self):
-        pki = openssl.ConfigurePKI(None, None)
+    def test_create_pki_certs(self, is_rebuild=False):
+        pki = openssl.ConfigurePKI(None, None, is_rebuild=is_rebuild)
         pki.run()
         self.assertTrue(os.path.exists(CONF.signing.certfile))
         self.assertTrue(os.path.exists(CONF.signing.ca_certs))
         self.assertTrue(os.path.exists(CONF.signing.keyfile))
 
-    def test_create_ssl_certs(self):
-        ssl = openssl.ConfigureSSL(None, None)
+    def test_create_ssl_certs(self, is_rebuild=False):
+        ssl = openssl.ConfigureSSL(None, None, is_rebuild=is_rebuild)
         ssl.run()
         self.assertTrue(os.path.exists(CONF.ssl.ca_certs))
         self.assertTrue(os.path.exists(CONF.ssl.certfile))
         self.assertTrue(os.path.exists(CONF.ssl.keyfile))
 
-    def test_fetch_signing_cert(self):
-        pki = openssl.ConfigurePKI(None, None)
+    def test_fetch_signing_cert(self, is_rebuild=False):
+        pki = openssl.ConfigurePKI(None, None, is_rebuild=is_rebuild)
         pki.run()
 
         # NOTE(jamielennox): Use request directly because certificate
@@ -131,7 +131,56 @@ class CertSetupTestCase(rest.RestfulTestCase):
 
                 self.assertEqual('text/html', resp.content_type)
 
+    def test_fetch_signing_cert_when_rebuild(self):
+        pki = openssl.ConfigurePKI(None, None)
+        pki.run()
+        self.test_fetch_signing_cert(is_rebuild=True)
+
     def test_failure(self):
         for path in ['/v2.0/certificates/signing', '/v2.0/certificates/ca']:
             self.request(self.public_app, path, method='GET',
                          expected_status=500)
+
+    def test_pki_certs_rebuild(self):
+        self.test_create_pki_certs()
+        with open(CONF.signing.certfile) as f:
+            cert_file1 = f.read()
+
+        self.test_create_pki_certs(is_rebuild=True)
+        with open(CONF.signing.certfile) as f:
+            cert_file2 = f.read()
+
+        self.assertNotEqual(cert_file1, cert_file2)
+
+    def test_ssl_certs_rebuild(self):
+        self.test_create_ssl_certs()
+        with open(CONF.ssl.certfile) as f:
+            cert_file1 = f.read()
+
+        self.test_create_ssl_certs(is_rebuild=True)
+        with open(CONF.ssl.certfile) as f:
+            cert_file2 = f.read()
+
+        self.assertNotEqual(cert_file1, cert_file2)
+
+    def test_create_pki_certs_twice_without_rebuild(self):
+        self.test_create_pki_certs()
+        with open(CONF.signing.certfile) as f:
+            cert_file1 = f.read()
+
+        self.test_create_pki_certs()
+        with open(CONF.signing.certfile) as f:
+            cert_file2 = f.read()
+
+        self.assertEqual(cert_file1, cert_file2)
+
+    def test_create_ssl_certs_twice_without_rebuild(self):
+        self.test_create_ssl_certs()
+        with open(CONF.ssl.certfile) as f:
+            cert_file1 = f.read()
+
+        self.test_create_ssl_certs()
+        with open(CONF.ssl.certfile) as f:
+            cert_file2 = f.read()
+
+        self.assertEqual(cert_file1, cert_file2)
