@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//ubg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-04-17T21:49:18Z",
+      "side": 1,
+      "message": "Like this?\n            if ((\u0027domain_id\u0027 not in ref) or\n                ldap.core.BaseLdap.is_empty(ref[\u0027domain_id\u0027])):\n?",
+      "parentUuid": "AAAAXH//ugA\u003d",
+      "revId": "7b4e1950b384ebba457096c4d3490a35bc43a653",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//uco\u003d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 14
@@ -48,6 +66,24 @@
       "writtenOn": "2014-04-17T21:44:14Z",
       "side": 1,
       "message": "This name is a pretty poor description of what it does.  Would \"remove_falsey_values\" be better?",
+      "revId": "7b4e1950b384ebba457096c4d3490a35bc43a653",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//uZE\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-04-17T21:49:18Z",
+      "side": 1,
+      "message": "new name will be _remove_empty_valued_props",
+      "parentUuid": "AAAAXH//uco\u003d",
       "revId": "7b4e1950b384ebba457096c4d3490a35bc43a653",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
