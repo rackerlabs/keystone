@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//yKs\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T13:45:48Z",
+      "side": 1,
+      "message": "Why are you checking if the revoke extension is enabled?",
+      "revId": "34f5c70b147255553da46091dc92a3d32881a96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//yK4\u003d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T13:45:48Z",
+      "side": 1,
+      "message": "these terms would need to be updated too",
+      "revId": "34f5c70b147255553da46091dc92a3d32881a96e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
