@@ -45,6 +45,7 @@ Getting Started
     installing
     configuration
     configuringservices
+    configurefederation
     community
 
 Man Pages
