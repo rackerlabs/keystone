@@ -34,6 +34,24 @@
       "revId": "cc52bd3f749b68866cefe378b4987be70fafc806",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//wQQ\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-17T17:36:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//wUg\u003d",
+      "revId": "cc52bd3f749b68866cefe378b4987be70fafc806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
