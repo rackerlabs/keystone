@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//vLg\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T20:03:41Z",
+      "side": 1,
+      "message": "David - let\u0027s not waste the translator\u0027s time by marking test code for translation.",
+      "parentUuid": "AAAAXH//vwQ\u003d",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//vwI\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 12
