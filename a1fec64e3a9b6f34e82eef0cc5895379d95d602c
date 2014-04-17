@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//1CA\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "s/user/use",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//1BY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "write out authentication instead of auth",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//1Bc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "s/user/use",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//1As\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "what would secret\u003dTrue do? I am seeing it in the conf file",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//1BE\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "no default?",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//1BQ\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "I think you can drop Swift from all the help messages, since we\u0027re already in the Swift config specific settings",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//09Q\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "remove vim header",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//02w\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "is user_id supposed to be used here, and all the other spots? I\u0027m not seeing tenant_id being used",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//040\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:09:50Z",
+      "side": 1,
+      "message": "could raise NotImplemented",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
