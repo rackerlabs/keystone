@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//0wc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:41:57Z",
+      "side": 1,
+      "message": "Replace dp with ep.",
+      "revId": "6cbae973ccb54eff07064d076789b0026732371f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0uE\u003d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:41:57Z",
+      "side": 1,
+      "message": "I don\u0027t like the naming convention used. How about \u0027update_association_for_project_deletion\u0027\n\nOr you could make the two methods into one, since they are mostly the same.",
+      "revId": "6cbae973ccb54eff07064d076789b0026732371f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
