@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//xp4\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "I think this grouping needs a little cleanup. If nothing else periods at the end of each sentence and maybe a newline between each one or make them a bulleted list. It\u0027s very hard to read.",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vyg\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "Is there any reason to not use the new is_empty method instead of just checking against None?",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vwQ\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "Should this be internationalized? _()?\n\nShould use single quotes.",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vwI\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "Should this be internationalized? _()?\n\nShould use single quotes.",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vP8\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "Should use single quotes.",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vPw\u003d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2622,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "Should use single quotes.",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vPo\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T19:54:08Z",
+      "side": 1,
+      "message": "Should use single quotes.",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
