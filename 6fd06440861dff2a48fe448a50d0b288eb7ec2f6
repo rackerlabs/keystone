@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//vI0\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T20:08:41Z",
+      "side": 1,
+      "message": "Brant, yep, you\u0027re right.",
+      "parentUuid": "AAAAXH//vLg\u003d",
+      "revId": "6fd06440861dff2a48fe448a50d0b288eb7ec2f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//vwI\u003d",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 12
