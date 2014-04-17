@@ -16,6 +16,24 @@
       "revId": "c94d19b486a54eb889585ce03aac58d644a9599c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//vdk\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-17T19:25:46Z",
+      "side": 1,
+      "message": "I don\u0027t think we can/should rely on the LDAP server exposing the password hash to Keystone.\n\nActive Directory doesn\u0027t expose the password hash, and best practice is to lock down access to the hashed \"userPassword\" value with any LDAP server.  In operation, Keystone doesn\u0027t ever need to directly access the \"userPassword\" attribute value, so I don\u0027t think that our tests should rely on it.\n\nMoving test_password_hashed to the KVS driver test makes a lot of sense to me.",
+      "parentUuid": "AAAAXH//wGE\u003d",
+      "revId": "c94d19b486a54eb889585ce03aac58d644a9599c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
