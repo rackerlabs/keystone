@@ -14,6 +14,7 @@
 #
 
 import os
+import shutil
 
 from keystone.common import environment
 from keystone.common import utils
@@ -31,6 +32,12 @@ PRIVATE_FILE_PERMS = 0o640      # -rw-r-----
 
 def file_exists(file_path):
     return os.path.exists(file_path)
+
+
+def remove_path_by_file(file_name):
+    path = os.path.dirname(file_name)
+    if os.path.exists(path):
+        shutil.rmtree(path)
 
 
 class BaseCertificateConfigure(object):
@@ -76,6 +83,13 @@ class BaseCertificateConfigure(object):
             to_exec.append(cmd_part % self.ssl_dictionary)
         LOG.info(' '.join(to_exec))
         environment.subprocess.check_call(to_exec)
+
+    def clean_files(self):
+        remove_path_by_file(self.ssl_config_file_name)
+        remove_path_by_file(self.ssl_dictionary['ca_private_key'])
+        remove_path_by_file(self.ssl_dictionary['ca_cert'])
+        remove_path_by_file(self.ssl_dictionary['signing_key'])
+        remove_path_by_file(self.ssl_dictionary['signing_cert'])
 
     def build_ssl_config_file(self):
         utils.make_dirs(os.path.dirname(self.ssl_config_file_name),
@@ -180,6 +194,7 @@ class BaseCertificateConfigure(object):
                                '-infiles', '%(request_file)s'])
 
     def run(self):
+        self.clean_files()
         self.build_ssl_config_file()
         self.build_ca_cert()
         self.build_private_key()

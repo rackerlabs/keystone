@@ -133,7 +133,34 @@ class CertSetupTestCase(rest.RestfulTestCase):
 
                 self.assertEqual('text/html', resp.content_type)
 
+    def test_fetch_signing_cert_when_rebuild(self):
+        pki = openssl.ConfigurePKI(None, None)
+        pki.run()
+        self.test_fetch_signing_cert()
+
     def test_failure(self):
         for path in ['/v2.0/certificates/signing', '/v2.0/certificates/ca']:
             self.request(self.public_app, path, method='GET',
                          expected_status=500)
+
+    def test_pki_certs_rebuild(self):
+        self.test_create_pki_certs()
+        with open(CONF.signing.certfile) as f:
+            cert_file1 = f.read()
+
+        self.test_create_pki_certs()
+        with open(CONF.signing.certfile) as f:
+            cert_file2 = f.read()
+
+        self.assertNotEqual(cert_file1, cert_file2)
+
+    def test_ssl_certs_rebuild(self):
+        self.test_create_ssl_certs()
+        with open(CONF.ssl.certfile) as f:
+            cert_file1 = f.read()
+
+        self.test_create_ssl_certs()
+        with open(CONF.ssl.certfile) as f:
+            cert_file2 = f.read()
+
+        self.assertNotEqual(cert_file1, cert_file2)
