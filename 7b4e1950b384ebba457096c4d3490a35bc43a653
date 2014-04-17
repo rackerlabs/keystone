@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//ugA\u003d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T21:38:25Z",
+      "side": 1,
+      "message": "(nit) instead of line continuation you should use parens.",
+      "revId": "7b4e1950b384ebba457096c4d3490a35bc43a653",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
