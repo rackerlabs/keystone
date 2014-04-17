@@ -40,10 +40,12 @@ class BaseCertificateConfigure(object):
 
     """
 
-    def __init__(self, conf_obj, keystone_user, keystone_group, **kwargs):
+    def __init__(self, conf_obj, keystone_user, keystone_group,
+                 rebuild, **kwargs):
         self.conf_dir = os.path.dirname(conf_obj.ca_certs)
         self.use_keystone_user = keystone_user
         self.use_keystone_group = keystone_group
+        self.rebuild = rebuild
         self.ssl_config_file_name = os.path.join(self.conf_dir, "openssl.conf")
         self.request_file_name = os.path.join(self.conf_dir, "req.pem")
         self.ssl_dictionary = {'conf_dir': self.conf_dir,
@@ -76,6 +78,26 @@ class BaseCertificateConfigure(object):
             to_exec.append(cmd_part % self.ssl_dictionary)
         LOG.info(' '.join(to_exec))
         environment.subprocess.check_call(to_exec)
+
+    def clean_up_exist_files(self):
+        files_to_clean = [self.ssl_dictionary['ca_private_key'],
+                          self.ssl_dictionary['ca_cert'],
+                          self.ssl_dictionary['signing_key'],
+                          self.ssl_dictionary['signing_cert']]
+
+        exist_file_num = 0
+        for file_path in files_to_clean:
+            if file_exists(file_path) and self.rebuild:
+                # The file exists but users want to rebuild it, so blow it away
+                os.remove(file_path)
+            elif file_exists(file_path) and not self.rebuild:
+                exist_file_num += 1
+            else:
+                # If we hit this the file doesn't exist and needs to be
+                # created regardless
+                continue
+
+        return exist_file_num
 
     def build_ssl_config_file(self):
         utils.make_dirs(os.path.dirname(self.ssl_config_file_name),
@@ -180,6 +202,11 @@ class BaseCertificateConfigure(object):
                                '-infiles', '%(request_file)s'])
 
     def run(self):
+        exist_file_num = self.clean_up_exist_files()
+        if exist_file_num != 0:
+            print('Configuration files exist, use --rebuild option to'
+                  ' rebuild.')
+            return
         self.build_ssl_config_file()
         self.build_ca_cert()
         self.build_private_key()
@@ -195,9 +222,10 @@ class ConfigurePKI(BaseCertificateConfigure):
 
     """
 
-    def __init__(self, keystone_user, keystone_group):
+    def __init__(self, keystone_user, keystone_group, rebuild=False):
         super(ConfigurePKI, self).__init__(CONF.signing,
-                                           keystone_user, keystone_group)
+                                           keystone_user, keystone_group,
+                                           rebuild=rebuild)
 
 
 class ConfigureSSL(BaseCertificateConfigure):
@@ -207,9 +235,10 @@ class ConfigureSSL(BaseCertificateConfigure):
     one will be generated using provided arguments.
     """
 
-    def __init__(self, keystone_user, keystone_group):
+    def __init__(self, keystone_user, keystone_group, rebuild=False):
         super(ConfigureSSL, self).__init__(CONF.ssl,
-                                           keystone_user, keystone_group)
+                                           keystone_user, keystone_group,
+                                           rebuild=rebuild)
 
 
 BaseCertificateConfigure.sslconfig = """
