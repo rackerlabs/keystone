@@ -16,6 +16,24 @@
       "revId": "0473e5ab75ece62df8b7bb429c9e75db34ce71f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//wWQ\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-17T17:24:13Z",
+      "side": 0,
+      "message": "as far as i can tell, ayoung originally included hashing here https://review.openstack.org/#/c/4362/",
+      "parentUuid": "AAAAXH//124\u003d",
+      "revId": "0473e5ab75ece62df8b7bb429c9e75db34ce71f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
