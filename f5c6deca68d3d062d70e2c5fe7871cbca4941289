@@ -16,6 +16,23 @@
       "revId": "f5c6deca68d3d062d70e2c5fe7871cbca4941289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//00E\u003d",
+        "filename": "keystone/tests/test_contrib_ec2.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T06:20:11Z",
+      "side": 1,
+      "message": "line 33-42, 52-60 and 72-80 are mostly repeated, suggest putting these in setup, or somewhere common? \n\nI think the only part that is changed is the host value in the second test, which you can override",
+      "revId": "f5c6deca68d3d062d70e2c5fe7871cbca4941289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
