@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//wVo\u003d",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-17T17:25:03Z",
+      "side": 1,
+      "message": "cred !\u003d db_password",
+      "revId": "cc52bd3f749b68866cefe378b4987be70fafc806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
