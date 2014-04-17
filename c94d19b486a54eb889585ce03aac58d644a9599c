@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//wGE\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-17T18:46:27Z",
+      "side": 1,
+      "message": "Can we do this test for the live ldap tests (test_ldap_livetest)? (which it looks like the live tests are broken now...)\n\nI think we should move test_password_hashed down into the different driver tests rather than putting it in test_backend.\n\ntest_backend_sql reimplements it, test_backend_ldap skips it... so it\u0027s really only usable for KVS, and it uses a private method of the driver, which a general backend test shouldn\u0027t do.\n\nThat change can be made separately.",
+      "revId": "c94d19b486a54eb889585ce03aac58d644a9599c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
