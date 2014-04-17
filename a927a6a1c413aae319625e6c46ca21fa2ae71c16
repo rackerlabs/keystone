@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//1LY\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-17T05:23:11Z",
+      "side": 1,
+      "message": "I don\u0027t see any benefits in moving this to another module. How is this different?",
+      "revId": "a927a6a1c413aae319625e6c46ca21fa2ae71c16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
