@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//yBk\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T14:33:50Z",
+      "side": 1,
+      "message": "I agree with this. We should definitely highlight this new setting in the release notes so that the operator can decide whether to use it or not. If they decide not use enforce strict password length I see no reason to keep reminding them.",
+      "parentUuid": "AAAAXH//2sA\u003d",
+      "revId": "ccc165a1d080df8fd11820be877eb14775ad36e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//2sk\u003d",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 8
