@@ -16,6 +16,24 @@
       "revId": "a927a6a1c413aae319625e6c46ca21fa2ae71c16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0EM\u003d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-17T08:36:31Z",
+      "side": 1,
+      "message": "We need an access to the init version value, from tests. https://review.openstack.org/#/c/80630/31/keystone/tests/test_sync_migrations.py +92 . It looks weird and unobvious, to import this variable from migration_helpers. Actually I\u0027d rather implement a method to get init version from any migrate repo in a project. It could be implemented in oslo.db or migration_helpers. What do you think about this initiative?",
+      "parentUuid": "AAAAXH//1LY\u003d",
+      "revId": "a927a6a1c413aae319625e6c46ca21fa2ae71c16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
