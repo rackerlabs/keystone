@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//xyk\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T14:32:31Z",
+      "side": 1,
+      "message": "Do you actually need this? I don\u0027t think there are any non-ASCII characters in here.",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//x3U\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T14:32:31Z",
+      "side": 1,
+      "message": "Add a newline here.",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//x00\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T14:32:31Z",
+      "side": 1,
+      "message": "Single quotes here",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//x1o\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-17T14:32:31Z",
+      "side": 1,
+      "message": "Does this mean that you don\u0027t support revoking tokens if you use this backend?",
+      "revId": "71eb64cc06d1b3f02c06824d12f54f922a84f1fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
