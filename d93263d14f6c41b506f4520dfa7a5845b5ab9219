@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//1EM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-17T05:53:51Z",
+      "side": 1,
+      "message": "capitalize K in keystone here, too",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+J+0\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
