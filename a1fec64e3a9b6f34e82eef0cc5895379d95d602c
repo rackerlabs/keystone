@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//zq8\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//1CA\u003d",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//1BY\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-17T06:09:50Z",
       "side": 1,
       "message": "write out authentication instead of auth",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//zq4\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//1BY\u003d",
       "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//zqs\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//1Bc\u003d",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//1As\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-17T06:09:50Z",
       "side": 1,
       "message": "what would secret\u003dTrue do? I am seeing it in the conf file",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//zqk\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "It does not print it out if you dump the config IIRC.",
+      "parentUuid": "AAAAXH//1As\u003d",
       "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//zqg\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Not used by default in v1 auth.",
+      "parentUuid": "AAAAXH//1BE\u003d",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//1BQ\u003d",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-17T06:09:50Z",
       "side": 1,
       "message": "I think you can drop Swift from all the help messages, since we\u0027re already in the Swift config specific settings",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//zqc\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//1BQ\u003d",
       "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//zp8\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Too bad, it\u0027s not a vim header. :)\nIt\u0027s a header indicating the encoding of the file so Python 2 does not crash when trying to read it if it has utf-8 content in it.",
+      "parentUuid": "AAAAXH//09Q\u003d",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//02w\u003d",
         "filename": "keystone/token/backends/swift.py",
         "patchSetId": 6
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//zp0\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "AAAAXH//02w\u003d",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//040\u003d",
         "filename": "keystone/token/backends/swift.py",
         "patchSetId": 6
@@ -149,6 +293,24 @@
       "writtenOn": "2014-04-17T06:09:50Z",
       "side": 1,
       "message": "could raise NotImplemented",
+      "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//zls\u003d",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1669
+      },
+      "writtenOn": "2014-04-17T09:59:36Z",
+      "side": 1,
+      "message": "It is implemented, it just has nothing to do.",
+      "parentUuid": "AAAAXH//040\u003d",
       "revId": "a1fec64e3a9b6f34e82eef0cc5895379d95d602c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
