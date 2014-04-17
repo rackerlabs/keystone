@@ -96,6 +96,8 @@ class BaseCertificateSetup(BaseApp):
         running_as_root = (os.geteuid() == 0)
         parser.add_argument('--keystone-user', required=running_as_root)
         parser.add_argument('--keystone-group', required=running_as_root)
+        parser.add_argument('--rebuild', default=False, action='store_true',
+                            help=('Rebuild the configure files.'))
         return parser
 
     @staticmethod
@@ -128,7 +130,8 @@ class PKISetup(BaseCertificateSetup):
     @classmethod
     def main(cls):
         keystone_user_id, keystone_group_id = cls.get_user_group()
-        conf_pki = openssl.ConfigurePKI(keystone_user_id, keystone_group_id)
+        conf_pki = openssl.ConfigurePKI(keystone_user_id, keystone_group_id,
+                                        rebuild=CONF.command.rebuild)
         conf_pki.run()
 
 
@@ -140,7 +143,8 @@ class SSLSetup(BaseCertificateSetup):
     @classmethod
     def main(cls):
         keystone_user_id, keystone_group_id = cls.get_user_group()
-        conf_ssl = openssl.ConfigureSSL(keystone_user_id, keystone_group_id)
+        conf_ssl = openssl.ConfigureSSL(keystone_user_id, keystone_group_id,
+                                        rebuild=CONF.command.rebuild)
         conf_ssl.run()
 
 
