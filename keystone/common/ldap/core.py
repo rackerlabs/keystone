@@ -752,6 +752,14 @@ class BaseLdap(object):
             mapping[ldap_attr] = attr_map
         return mapping
 
+    def _is_dumb_member(self, user_dn, ignore_case=False):
+        if self.use_dumb_member:
+            if ignore_case:
+                return user_dn.lower() == self.dumb_member.lower()
+            else:
+                return user_dn == self.dumb_member
+        return False
+
     def get_connection(self, user=None, password=None):
         conn = _get_connection(self.LDAP_URL)
 
