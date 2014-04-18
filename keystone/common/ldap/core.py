@@ -746,6 +746,40 @@ class BaseLdap(object):
             mapping[ldap_attr] = attr_map
         return mapping
 
+    def _is_dumb_member(self, member_dn):
+        """Checks that member is a dumb member.
+
+        :param member_dn: DN of member to be checked.
+        """
+        return (self.use_dumb_member
+                and self._is_dns_equal(member_dn, self.dumb_member))
+
+    @staticmethod
+    def _is_dns_equal(first_dn, second_dn):
+        """Checks that DNs are equal. When comparing the case of
+        keys (cn, ou, etc) ignored.
+
+        :param first_dn: DN of first member to be compared.
+        :param second_dn: DN of second member to be compared.
+        """
+        first_parsed_dn = ldap.dn.str2dn(first_dn)
+        second_parsed_dn = ldap.dn.str2dn(second_dn)
+
+        if len(first_parsed_dn) != len(second_parsed_dn):
+            return False
+
+        for i in xrange(len(first_parsed_dn)):
+            first_tuple = first_parsed_dn[i][0]
+            second_tuple = second_parsed_dn[i][0]
+
+            if first_tuple[0].lower() != second_tuple[0].lower():
+                return False
+
+            for j in xrange(1, len(first_tuple)):
+                if first_tuple[j] != second_tuple[j]:
+                    return False
+        return True
+
     def get_connection(self, user=None, password=None):
         conn = _get_connection(self.LDAP_URL)
 
