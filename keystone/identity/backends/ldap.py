@@ -312,12 +312,10 @@ class GroupApi(common_ldap.BaseLdap):
         """Return a list of groups for which the user is a member."""
 
         user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(&(objectClass=%s)(%s=%s)%s)' % (self.object_class,
-                                                  self.member_attribute,
-                                                  user_dn_esc,
-                                                  self.ldap_filter or '')
-        memberships = self.get_all(query)
-        return memberships
+        query = '(&(%s=%s)%s)' % (self.member_attribute,
+                                  user_dn_esc,
+                                  self.ldap_filter or '')
+        return self.get_all(query)
 
     def list_group_users(self, group_id):
         """Return a list of user dns which are members of a group."""
@@ -328,7 +326,6 @@ class GroupApi(common_ldap.BaseLdap):
         for dn, member in attrs:
             user_dns = member.get(self.member_attribute, [])
             for user_dn in user_dns:
-                if self.use_dumb_member and user_dn == self.dumb_member:
-                    continue
-                users.append(user_dn)
+                if not self._is_dumb_member(user_dn):
+                    users.append(user_dn)
         return users

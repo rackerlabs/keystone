@@ -749,6 +749,46 @@ class BaseLdap(object):
             mapping[ldap_attr] = attr_map
         return mapping
 
+    def _is_dumb_member(self, member_dn):
+        """Checks that member is a dumb member.
+
+        :param member_dn: DN of member to be checked.
+        """
+        return (self.use_dumb_member
+                and self._is_dns_equal(member_dn, self.dumb_member))
+
+    @staticmethod
+    def _is_dns_equal(first_dn, second_dn):
+        """Checks that DNs are equal. When comparing the case of
+        keys (cn, ou, etc) ignored.
+
+        :param first_dn: DN of first member to be compared.
+        :param second_dn: DN of second member to be compared.
+        """
+        parsed_dn1 = ldap.dn.str2dn(first_dn)
+        parsed_dn2 = ldap.dn.str2dn(second_dn)
+
+        if len(parsed_dn1) != len(parsed_dn2):
+            return False
+
+        # NOTE(nkinder): Ideally, this comparison would be aware of the
+        # Distinguished Name LDAP syntax. Since Keystone is responsible
+        # for setting the dumb member DN, we are relatively sure that
+        # it is returned in the same form. We still need to do a case
+        # insensitive comparison of attribute names since them will
+        # be upper case for AD. We already do this elsewhere in the LDAP
+        # driver, so it's OK until we decide to become syntax aware.
+
+        for (rdn1,), (rdn2,) in zip(parsed_dn1, parsed_dn2):
+            # Keys should be compared case-insensitive
+            if rdn1[0].lower() != rdn2[0].lower():
+                return False
+
+            # Values should be compared case sensitive
+            if rdn1[1] != rdn2[1]:
+                return False
+        return True
+
     def get_connection(self, user=None, password=None):
         conn = _get_connection(self.LDAP_URL)
 
