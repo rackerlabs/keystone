@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//tMs\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1003,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-18T03:18:55Z",
+      "side": 1,
+      "message": "Nice! Following convention!",
+      "revId": "ebfdab034f2b35074f1645b70c1f07d0c4dfd337",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
