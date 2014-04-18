@@ -16,6 +16,24 @@
       "revId": "10051adace7cd728d46cd4c999e3019fdbf2d961",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//mgE\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-18T22:19:16Z",
+      "side": 1,
+      "message": "Since this change is a change in how the server works I wanted to make as few changes as possible to the existing tests; that way it\u0027s clear to reviewers the change in behavior.\n\nIf I also changed the test to use uuid\u0027s for the values it wouldn\u0027t be as clear what the current change is doing.",
+      "parentUuid": "AAAAXH//tOI\u003d",
+      "revId": "10051adace7cd728d46cd4c999e3019fdbf2d961",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
