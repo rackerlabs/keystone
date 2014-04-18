@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//tW8\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-04-18T03:18:05Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "AAAAXH//tqo\u003d",
+      "revId": "392ca11ccadb0312dd8b80ce5bfcbf833498b14f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//tqk\u003d",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//tXk\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-04-18T03:18:05Z",
+      "side": 1,
+      "message": "assertValidProjectListResponse will assert the length equals 0 via \u0027expected_length\u0027 parameter.",
+      "parentUuid": "AAAAXH//tqk\u003d",
+      "revId": "392ca11ccadb0312dd8b80ce5bfcbf833498b14f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//tqc\u003d",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2014-04-18T01:03:57Z",
       "side": 1,
       "message": "check that the endpoint is not in the list",
+      "revId": "392ca11ccadb0312dd8b80ce5bfcbf833498b14f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//tXQ\u003d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-04-18T03:18:05Z",
+      "side": 1,
+      "message": "Here assertValidEndpointListResponse will assert the length of the endpoint list equals 0.",
+      "parentUuid": "AAAAXH//tqc\u003d",
       "revId": "392ca11ccadb0312dd8b80ce5bfcbf833498b14f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
