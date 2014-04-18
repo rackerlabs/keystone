@@ -187,6 +187,37 @@ class IdentityTests(object):
         self.assertIn(self.user_two['id'], user_ids)
         self.assertIn(self.user_badguy['id'], user_ids)
 
+    def test_list_user_ids_for_project_user_has_many_roles(self):
+        tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'domain_id': DEFAULT_DOMAIN_ID}
+        new_project = self.assignment_api.create_project(tenant['id'], tenant)
+
+        project_id = new_project['id']
+        self.assignment_api.add_role_to_user_and_project(
+            tenant_id=project_id,
+            user_id=self.user_two['id'],
+            role_id='member')
+
+        self.assignment_api.add_role_to_user_and_project(
+            tenant_id=project_id,
+            user_id=self.user_two['id'],
+            role_id='service')
+
+        user_ids = self.assignment_api.list_user_ids_for_project(project_id)
+
+        self.assertEqual(1, len(user_ids))
+        self.assertIn(self.user_two['id'], user_ids)
+
+        self.assignment_api.add_role_to_user_and_project(
+            tenant_id=project_id,
+            user_id=self.user_badguy['id'],
+            role_id='member')
+
+        user_ids = self.assignment_api.list_user_ids_for_project(project_id)
+        self.assertEqual(2, len(user_ids))
+        self.assertIn(self.user_two['id'], user_ids)
+        self.assertIn(self.user_badguy['id'], user_ids)
+
     def test_get_project_user_ids_404(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.list_user_ids_for_project,

@@ -63,7 +63,10 @@ class Assignment(assignment.Driver):
             query = query.filter_by(type=AssignmentType.USER_PROJECT)
             query = query.filter_by(target_id=tenant_id)
             assignments = query.all()
-            return [assignment.actor_id for assignment in assignments]
+            all_user_ids = set()
+            for assignment in assignments:
+                all_user_ids.add(assignment.actor_id)
+            return [user_id for user_id in all_user_ids]
 
     def _get_metadata(self, user_id=None, tenant_id=None,
                       domain_id=None, group_id=None, session=None):
