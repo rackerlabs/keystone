@@ -746,6 +746,20 @@ class BaseLdap(object):
             mapping[ldap_attr] = attr_map
         return mapping
 
+    def _is_dumb_member(self, member_dn, ignore_case=False):
+        """Checks that member is a dumb member.
+
+        :param member_dn: DN of member to be checked.
+        :param ignore_case: Flag to compare member DNs ignoring case.
+                            If 'True' case will be ignored. Default is 'False'.
+        """
+        if self.use_dumb_member:
+            if ignore_case:
+                return member_dn.lower() == self.dumb_member.lower()
+            else:
+                return member_dn == self.dumb_member
+        return False
+
     def get_connection(self, user=None, password=None):
         conn = _get_connection(self.LDAP_URL)
 
