@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//qVE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-18T13:05:11Z",
+      "side": 1,
+      "message": "I think, it actually makes more sense to use the hash of the oslo commit you\u0027ve synced code from (as more than one patch might have been merged to oslo-incubator since the latest patch was uploaded to the review you are referring to).",
+      "revId": "6f9968995e9eadaee088fdf9324ae0f11d90c0ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
