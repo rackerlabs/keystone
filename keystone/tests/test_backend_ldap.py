@@ -398,6 +398,27 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         dumb_id = common_ldap.BaseLdap._dn_to_id(CONF.ldap.dumb_member)
         self.assertNotIn(dumb_id, assignment_ids)
 
+    def test_list_user_ids_for_project_dumb_member(self):
+        self.config_fixture.config(group='ldap', use_dumb_member=True)
+        self.clear_database()
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+        user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                'password': uuid.uuid4().hex, 'enabled': True,
+                'domain_id': test_backend.DEFAULT_DOMAIN_ID}
+
+        self.identity_api.create_user(user['id'], user)
+        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
+                                                user['id'])
+        user_ids = self.assignment_api.list_user_ids_for_project(
+            self.tenant_baz['id'])
+
+        self.assertIn(user['id'], user_ids)
+
+        dumb_id = common_ldap.BaseLdap._dn_to_id(CONF.ldap.dumb_member)
+        self.assertNotIn(dumb_id, user_ids)
+
     def test_list_role_assignments_bad_role(self):
         self.skipTest('Blocked by bug 1221805')
 
@@ -458,6 +479,32 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         # If this doesn't raise, then the test is successful.
         self.identity_api.list_users_in_group(group['id'])
+
+    def test_list_group_members_dumb_member(self):
+        self.config_fixture.config(group='ldap', use_dumb_member=True)
+        self.clear_database()
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+        # Create a group
+        group_id = None
+        group = dict(name=uuid.uuid4().hex,
+                     domain_id=CONF.identity.default_domain_id)
+        group_id = self.identity_api.create_group(group_id, group)['id']
+
+        # Create a user
+        user_id = None
+        user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
+                    domain_id=CONF.identity.default_domain_id)
+        user_id = self.identity_api.create_user(user_id, user)['id']
+
+        # Add user to the group
+        self.identity_api.add_user_to_group(user_id, group_id)
+
+        user_ids = self.identity_api.list_users_in_group(group_id)
+        dumb_id = common_ldap.BaseLdap._dn_to_id(CONF.ldap.dumb_member)
+
+        self.assertNotIn(dumb_id, user_ids)
 
     def test_list_domains(self):
         domains = self.assignment_api.list_domains()
