@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//tOI\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-18T03:12:20Z",
+      "side": 1,
+      "message": "I believe it is preferred if you use\nfake_invalid_value \u003d uuid.uuid4().hex\nexpected_dict \u003d {\u0027description\u0027: \u0027name\u0027, \u0027gecos\u0027: \u0027password\u0027,\n\t\t\t \u0027fake\u0027: fake_invalid_value, \u0027invalid2\u0027: \u0027\u0027}\n\nOr since the rest of the example didn\u0027t do this, did it just seemed annoying to do this?",
+      "revId": "10051adace7cd728d46cd4c999e3019fdbf2d961",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
