@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 19 Apr 2014 01:20:58 +0000
+Reviewed-on: https://review.openstack.org/87151
+Project: openstack/keystone
+Branch: refs/heads/master
