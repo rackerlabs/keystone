@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//k/g\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-04-19T04:14:05Z",
+      "side": 1,
+      "message": "Also don\u0027t we need to mention, that existing tokens which are hashed using previous algorithm  won\u0027t work",
+      "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
