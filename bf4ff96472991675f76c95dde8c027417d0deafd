@@ -16,6 +16,24 @@
       "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//jU4\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-19T15:28:13Z",
+      "side": 1,
+      "message": "Haneef - Existing tokens will work. If you have some text that you would like to see here please provide the text.",
+      "parentUuid": "AAAAXH//k/g\u003d",
+      "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
