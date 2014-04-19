@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//ilA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-19T21:51:41Z",
+      "side": 1,
+      "message": "So there is a typo here.  Is compated supposed to compared?  This typo needs to be fixed and a little more detail would be helpful",
+      "revId": "c576cf44361043e8c3138c7562bdc55afe75cd5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//ijk\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-19T21:51:41Z",
+      "side": 1,
+      "message": "Interesting. So in python 3 checking if a None value is greater than something gets flagged but this is not caught in python 2.x correct?",
+      "revId": "c576cf44361043e8c3138c7562bdc55afe75cd5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//ijg\u003d",
+        "filename": "keystone/tests/test_sizelimit.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-19T21:51:41Z",
+      "side": 1,
+      "message": "would be helpful to have a comment that states why in python 3 you need to declare the \"0\" as a bytes type string object to get the proper calculation you desire",
+      "revId": "c576cf44361043e8c3138c7562bdc55afe75cd5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
