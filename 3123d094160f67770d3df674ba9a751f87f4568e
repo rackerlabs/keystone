@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//imw\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-19T21:02:46Z",
+      "side": 1,
+      "message": "I prefer that this be called verify_and_trunc_password_length.  trunc is an easier to understand abbreviation for truncate than truc",
+      "revId": "3123d094160f67770d3df674ba9a751f87f4568e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
