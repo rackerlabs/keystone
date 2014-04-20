@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//hI0\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "Should it be included here, since I think we don\u0027t work for them (well, for sure I don\u0027t)",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hMM\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "remove whitespace",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hMI\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "remove whitespace",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hJA\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "I think you skipped part where I pasted link to examplous vhost configuration with  WSGIScriptAliasMatc directives and so on. I think it\u0027s not included in the apache-httpd.html file.",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hI8\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "I this in docs here we should not mention any names like testshib. I\u0027d rather a place for some tutorial-like doc like the on on the Google drive.",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hL8\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "s/shibboleth2.x/shibboleth2.xml/\n\n+ I will explain WHY this should be removed (for now)",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hLE\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "We must mention here that mapping to rules[local][user][name] name must be present in the rules and preferably mention that usually in the SAML2 assertion THERE IS a parameter that can be used as a unique identifier of (something like domain login name or something like this).",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//hLA\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-20T18:31:39Z",
+      "side": 1,
+      "message": "Initially I skipped this, but of course this is crucial!",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
