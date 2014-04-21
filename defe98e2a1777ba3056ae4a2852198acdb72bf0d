@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//b/A\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-21T19:54:02Z",
+      "side": 1,
+      "message": "Nothing uses this anymore. Should it be deleted and the param removed? It looks like use disappeared between patchset 2 and 3.",
+      "revId": "defe98e2a1777ba3056ae4a2852198acdb72bf0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
