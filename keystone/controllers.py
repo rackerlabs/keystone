@@ -111,16 +111,26 @@ class Version(wsgi.Application):
             }
 
         if 'v3' in _VERSIONS:
+            v3_base = self._get_identity_url(context, 'v3')
+            links = [
+                {
+                    'rel': 'self',
+                    'href': v3_base,
+                }
+            ]
+
+            for ext_prefix in extension.V3_EXTENSIONS:
+                ext = extension.V3_EXTENSIONS[ext_prefix]
+                new_link = ext.copy()
+                new_link['rel'] = 'extension'
+                new_link['href'] = v3_base.rstrip('/') + '/' + ext_prefix
+                links.append(new_link)
+
             versions['v3'] = {
                 'id': 'v3.0',
                 'status': 'stable',
                 'updated': '2013-03-06T00:00:00Z',
-                'links': [
-                    {
-                        'rel': 'self',
-                        'href': self._get_identity_url(context, 'v3'),
-                    }
-                ],
+                'links': links,
                 'media-types': [
                     {
                         'base': 'application/json',
