@@ -15,6 +15,7 @@
 
 ADMIN_EXTENSIONS = {}
 PUBLIC_EXTENSIONS = {}
+V3_EXTENSIONS = {}
 
 
 def register_admin_extension(url_prefix, extension_data):
@@ -43,3 +44,19 @@ def register_public_extension(url_prefix, extension_data):
     """Same as register_admin_extension but for public extensions."""
 
     PUBLIC_EXTENSIONS[url_prefix] = extension_data
+
+
+def register_v3_extension(url_prefix, extension_data):
+    """Same as register_admin_extension but for v3 extensions."""
+
+    V3_EXTENSIONS[url_prefix] = extension_data
+
+
+def reset():
+    global ADMIN_EXTENSIONS
+    global PUBLIC_EXTENSIONS
+    global V3_EXTENSIONS
+
+    ADMIN_EXTENSIONS = {}
+    PUBLIC_EXTENSIONS = {}
+    V3_EXTENSIONS = {}
