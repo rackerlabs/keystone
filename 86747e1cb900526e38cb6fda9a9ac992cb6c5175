@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//dYI\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-21T16:01:05Z",
+      "side": 1,
+      "message": "Lines 78-98 should actually be in this sections. \n\nAnd the next section should just point to the link \u0027extensions/federation-configuration.html\u0027",
+      "revId": "86747e1cb900526e38cb6fda9a9ac992cb6c5175",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
