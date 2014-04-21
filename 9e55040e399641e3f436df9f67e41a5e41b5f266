@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//cR8\u003d",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-21T18:44:55Z",
+      "side": 1,
+      "message": "K, sounds like we need to wait till we are sure this value is avail before this code can merge. I will plus 1 assuming a very knowledgable core will wait till its OK to +2 :-)",
+      "revId": "9e55040e399641e3f436df9f67e41a5e41b5f266",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
