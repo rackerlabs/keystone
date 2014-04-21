@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//dY8\u003d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-21T16:03:47Z",
+      "side": 1,
+      "message": "This seems overly invasive. Why not just delete the file they want deleted? If they happen to put their cert in a directory with other files, you will wipe those out too?",
+      "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
