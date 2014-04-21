@@ -70,6 +70,24 @@
       "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//b5g\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-21T20:10:56Z",
+      "side": 1,
+      "message": "I think that case should be covered here: \n\nhttps://review.openstack.org/#/c/80398/19/keystoneclient/middleware/auth_token.py\n\nwhere the token is checked against all hash_algorithms provided",
+      "parentUuid": "AAAAXH//dbo\u003d",
+      "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
