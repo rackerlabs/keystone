@@ -69,20 +69,20 @@ def _initialize_sql_session():
 # A list of all of the plugin namespaces from which we need to try to
 # load a SQL backend to ensure we have all of the models loaded.
 _MODEL_BACKEND_NAMESPACES = [
-    "keystone.catalog",
-    "keystone.contrib.stats",
-    "keystone.contrib.federation",
-    "keystone.contrib.revoke",
-    "keystone.contrib.oauth1",
-    "keystone.contrib.endpoint_filter",
-    "keystone.trust",
     "keystone.assignment",
-    "keystone.identity",
-    "keystone.token",
-    "keystone.policy",
-    "keystone.credential",
-    "keystone.common.kvs",
+    "keystone.catalog",
     "keystone.common.cache",
+    "keystone.common.kvs",
+    "keystone.contrib.endpoint_filter",
+    "keystone.contrib.federation",
+    "keystone.contrib.oauth1",
+    "keystone.contrib.revoke",
+    "keystone.contrib.stats",
+    "keystone.credential",
+    "keystone.identity",
+    "keystone.policy",
+    "keystone.token",
+    "keystone.trust",
 ]
 
 

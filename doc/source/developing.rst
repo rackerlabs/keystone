@@ -661,3 +661,20 @@ The documentation is generated with Sphinx uning the tox command.  To create HTM
     $ tox -e docs
 
 The results are in the docs/build/html and docs/build/man directories respectively.
+
+
+Adding a New Plugin
+-------------------
+
+Keystone uses `setuptools entry points`_ to dynamically find and load
+backends for each pluggable API. New plugins should be registered as
+entry points in ``setup.cfg`` using the appropriate namespace and
+choosing a unique name.
+
+.. _setuptools entry points: https://pythonhosted.org/setuptools/setuptools.html#dynamic-discovery-of-services-and-plugins
+
+For example:
+
+.. literalinclude:: ../../setup.cfg
+   :start-after: [entry_points]
+   :prepend: [entry_points]
