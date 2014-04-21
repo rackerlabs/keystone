@@ -19,6 +19,109 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//e6g\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "++ should be removed",
+      "parentUuid": "AAAAXH//hI0\u003d",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e4k\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "s/providing/provides/",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e4c\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "s/server/service/",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e6k\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "extraneous whitespace",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e6w\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "missing whitespace, extra hyphens",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e4Y\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "this isn\u0027t actually a complete sentence",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//hMM\u003d",
         "filename": "doc/source/configurefederation.rst",
         "patchSetId": 1
@@ -30,6 +133,24 @@
       "writtenOn": "2014-04-20T18:31:39Z",
       "side": 1,
       "message": "remove whitespace",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e6c\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAXH//hMM\u003d",
       "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +174,92 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//e6Y\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "AAAAXH//hMI\u003d",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e4U\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "no need to abbreviate section titles like that",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e4I\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "numbered lists with parens like this don\u0027t work in RST - use periods instead\n\n  1.\n  2.\n  3.",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e60\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "double colon",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e6U\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "start",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//hJA\u003d",
         "filename": "doc/source/configurefederation.rst",
         "patchSetId": 1
@@ -64,6 +271,108 @@
       "writtenOn": "2014-04-20T18:31:39Z",
       "side": 1,
       "message": "I think you skipped part where I pasted link to examplous vhost configuration with  WSGIScriptAliasMatc directives and so on. I think it\u0027s not included in the apache-httpd.html file.",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d/Y\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "i think you\u0027re suggesting people enable shib before it\u0027s installed, below",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e6Q\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "double colon",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e6A\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "s/’/\u0027/g",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e5k\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "double colon",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e5o\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "add whitespace and indent",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e5U\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "``double backticks``",
       "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +396,91 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//e5M\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "why is Metadata capitalized? That like capitalizing Stuff for no reason",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e50\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "double colon",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e5w\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "add whitespace and indent",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e4o\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "get *a*",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e5I\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "configuration",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//hL8\u003d",
         "filename": "doc/source/configurefederation.rst",
         "patchSetId": 1
@@ -98,6 +492,211 @@
       "writtenOn": "2014-04-20T18:31:39Z",
       "side": 1,
       "message": "s/shibboleth2.x/shibboleth2.xml/\n\n+ I will explain WHY this should be removed (for now)",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//e48\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "i don\u0027t understand who this is \"ATTENTION\" to? is this actually a TODO / FIXME?",
+      "parentUuid": "AAAAXH//hL8\u003d",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d7U\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "use periods for numbered lists\n\n  1.",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d7k\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "use commas",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d68\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "s/grant/assign/",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d6s\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "requires what?",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d6I\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "second comma isn\u0027t necessary",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d48\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "\"that correspond to the Identity Provider\u0027s groups\" isn\u0027t really necessary - the groups can be whatever you want, and the correspondence is handled by the mapping",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d4s\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "on one or more projects or domains.",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d4o\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "role assignments",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d3w\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "s/fully//",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d3c\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "s/it/which/",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d2o\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "idps",
       "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +720,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//d2k\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "protocols",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//hLA\u003d",
         "filename": "doc/source/configurefederation.rst",
         "patchSetId": 1
@@ -132,6 +748,23 @@
       "writtenOn": "2014-04-20T18:31:39Z",
       "side": 1,
       "message": "Initially I skipped this, but of course this is crucial!",
+      "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//d0E\u003d",
+        "filename": "doc/source/configurefederation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-21T15:14:08Z",
+      "side": 1,
+      "message": "this should really just refer to the appropriate section of the v3 api doc, or whatever",
       "revId": "f62cddc261e7e54a9731e4ce02197aed71f65393",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
