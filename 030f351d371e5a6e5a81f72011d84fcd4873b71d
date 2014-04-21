@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//cKY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-21T19:33:20Z",
+      "side": 1,
+      "message": "is there a bug open for this?",
+      "revId": "030f351d371e5a6e5a81f72011d84fcd4873b71d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//cE0\u003d",
+        "filename": "keystone/tests/test_contrib_ec2.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-21T19:33:20Z",
+      "side": 1,
+      "message": "these *could* be moved to setup() but I can let stevemar follow up on that since he had the original comment.",
+      "revId": "030f351d371e5a6e5a81f72011d84fcd4873b71d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
