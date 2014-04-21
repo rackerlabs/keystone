@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//cpk\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2238,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-04-21T18:28:08Z",
+      "side": 1,
+      "message": "No because this is for token validation. Token validation is a protected API.",
+      "parentUuid": "AAAAXH//9KY\u003d",
+      "revId": "a02d6f5d37a47b08a088203710a66c34f8fe823b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//8xg\u003d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -64,6 +82,24 @@
       "writtenOn": "2014-04-16T10:08:55Z",
       "side": 1,
       "message": "I think that this try except block doesn\u0027t ensure that assigning different values to an identity attribute actually raises an exception. If the assignment `self.auth_context[identity_attr] \u003d uuid.uuid4().hex` in your try block doesn\u0027t raise anything, the test will pass anyway.\n\nI think you should use self.assertRaises to ensure that the Unauthorized exception is properly raised.",
+      "revId": "a02d6f5d37a47b08a088203710a66c34f8fe823b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//cYo\u003d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3064,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-04-21T18:28:08Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "AAAAXH//93A\u003d",
       "revId": "a02d6f5d37a47b08a088203710a66c34f8fe823b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
