@@ -17,6 +17,7 @@ import random
 
 import mock
 
+from keystone.common import extension
 from keystone import config
 from keystone import controllers
 from keystone.openstack.common import jsonutils
@@ -122,6 +123,12 @@ class VersionTestCase(tests.TestCase):
         self.config_fixture.config(
             public_endpoint='http://localhost:%(public_port)d',
             admin_endpoint='http://localhost:%(admin_port)d')
+
+        # Clear out all extensions since they're not in v3_VERSION_RESPONSE
+        orig_v3_extensions = extension.V3_EXTENSIONS
+        extension.V3_EXTENSIONS = {}
+        self.addCleanup(setattr, extension, 'V3_EXTENSIONS',
+                        orig_v3_extensions)
 
     def config_overrides(self):
         super(VersionTestCase, self).config_overrides()
@@ -377,6 +384,12 @@ vnd.openstack.identity-v3+xml"/>
         self.config_fixture.config(
             public_endpoint='http://localhost:%(public_port)d',
             admin_endpoint='http://localhost:%(admin_port)d')
+
+        # Clear out all extensions since they're not in v3_VERSION_RESPONSE
+        orig_v3_extensions = extension.V3_EXTENSIONS
+        extension.V3_EXTENSIONS = {}
+        self.addCleanup(setattr, extension, 'V3_EXTENSIONS',
+                        orig_v3_extensions)
 
     def config_overrides(self):
         super(XmlVersionTestCase, self).config_overrides()
