@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//dBw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-04-21T16:42:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//1EM\u003d",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+J+0\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2014-03-28T18:35:35Z",
       "side": 1,
       "message": "capital K in keystone",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//dB0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-04-21T16:42:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+J+0\u003d",
       "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//dB4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-04-21T16:42:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+J+c\u003d",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iOk\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//dCY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-04-21T16:42:07Z",
+      "side": 1,
+      "message": "The sentence above does not imply that access to the CA secret key means that they have access to the token backend. It suggests that access to the keystone machine means direct access to the token backend.\n\nI\u0027ve clarified it to say that compromise of a Keystone service machine\u0027s filesystem security would likely mean direct access to the token backend.\n\nAnyway, it seems unlikely to me that one would set up a machine in such a way where an attacker would be able to read the CA secret key, but not /etc/keystone/keystone.conf.",
+      "parentUuid": "AAAAW3//iOk\u003d",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//iOA\u003d",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -98,6 +170,24 @@
       "writtenOn": "2014-04-13T15:14:48Z",
       "side": 1,
       "message": "Also, I think this information should be in the pki_setup command -- print out a warning when it\u0027s used and also in the keystone-manage man page.",
+      "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//dCE\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-04-21T16:42:07Z",
+      "side": 1,
+      "message": "Perhaps this could be a follow-up patch?",
+      "parentUuid": "AAAAW3//iOA\u003d",
       "revId": "d93263d14f6c41b506f4520dfa7a5845b5ab9219",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
