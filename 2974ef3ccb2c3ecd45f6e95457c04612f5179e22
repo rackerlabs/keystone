@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//cVQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-04-21T18:34:22Z",
+      "side": 1,
+      "message": "I think this statement is rather vague. So we don\u0027t encourage self-signed CA. But we don\u0027t recommend a practical alternative for key management. I don\u0027t think (auth_token) middleware does CRL checking either so revoking a compromised token signing certificate likely constitutes a redeployment of Keystone.",
+      "revId": "2974ef3ccb2c3ecd45f6e95457c04612f5179e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
