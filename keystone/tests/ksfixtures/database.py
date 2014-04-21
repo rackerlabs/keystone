@@ -16,6 +16,7 @@ import os
 import shutil
 
 import fixtures
+import stevedore
 
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
@@ -65,6 +66,26 @@ def _initialize_sql_session():
         sqlite_db=tests.DEFAULT_TEST_DB_FILE)
 
 
+# A list of all of the plugin namespaces from which we need to try to
+# load a SQL backend to ensure we have all of the models loaded.
+_MODEL_BACKEND_NAMESPACES = [
+    "keystone.assignment",
+    "keystone.catalog",
+    "keystone.common.cache",
+    "keystone.common.kvs",
+    "keystone.contrib.endpoint_filter",
+    "keystone.contrib.federation",
+    "keystone.contrib.oauth1",
+    "keystone.contrib.revoke",
+    "keystone.contrib.stats",
+    "keystone.credential",
+    "keystone.identity",
+    "keystone.policy",
+    "keystone.token",
+    "keystone.trust",
+]
+
+
 @run_once
 def _load_sqlalchemy_models():
     """Find all modules containing SQLAlchemy models and import them.
@@ -76,12 +97,14 @@ def _load_sqlalchemy_models():
     the same.
 
     """
-    keystone_root = os.path.normpath(os.path.join(
-        os.path.dirname(__file__), '..', '..'))
-    for root, dirs, files in os.walk(keystone_root):
-        if root.endswith('backends') and 'sql.py' in files:
-            module_name = root.replace(os.sep, '.') + '.sql'
-            __import__(module_name)
+    for namespace in _MODEL_BACKEND_NAMESPACES:
+        # Importing the module is sufficient, so we don't need
+        # to instantiate it or save the manager.
+        stevedore.NamedExtensionManager(
+            namespace=namespace,
+            names=['sql'],
+            invoke_on_load=False,
+        )
 
 
 class Database(fixtures.Fixture):
