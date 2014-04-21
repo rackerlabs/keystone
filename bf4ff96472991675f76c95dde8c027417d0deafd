@@ -52,6 +52,24 @@
       "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//dbo\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-21T15:50:55Z",
+      "side": 1,
+      "message": "existing tokens that were issued with md5 will work as long as the instructions that are documented here are followed (setting the hash_algorithms in the auth_token middleware).",
+      "parentUuid": "AAAAXH//gGY\u003d",
+      "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
