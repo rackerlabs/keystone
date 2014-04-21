@@ -74,8 +74,7 @@ EXTENSION_DATA = {
             'href': 'https://github.com/openstack/identity-api',
         }
     ]}
-extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
-extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
+extension.register_v3_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
 def filter_consumer(consumer_ref):

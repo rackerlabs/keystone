@@ -44,7 +44,7 @@ extension_data = {
                     'identity-api-v3-os-ep-filter-ext.md',
         }
     ]}
-extension.register_admin_extension(extension_data['alias'], extension_data)
+extension.register_v3_extension(extension_data['alias'], extension_data)
 
 
 @dependency.provider('endpoint_filter_api')

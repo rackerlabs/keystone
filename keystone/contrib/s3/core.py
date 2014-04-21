@@ -50,6 +50,7 @@ EXTENSION_DATA = {
         }
     ]}
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
+extension.register_v3_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
 class S3Extension(wsgi.ExtensionRouter):

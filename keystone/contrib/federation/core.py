@@ -38,8 +38,7 @@ EXTENSION_DATA = {
         'type': 'text/html',
         'href': 'https://github.com/openstack/identity-api'
     }]}
-extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
-extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
+extension.register_v3_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 FEDERATION = 'OS-FEDERATION'
 IDENTITY_PROVIDER = 'OS-FEDERATION:identity_provider'
