@@ -15,6 +15,7 @@
 """oAuthlib request validator."""
 
 import six
+import string
 
 from keystone.common import dependency
 from keystone.contrib.oauth1 import core as oauth1
@@ -58,8 +59,9 @@ class OAuthValidator(oauth1.RequestValidator):
         return set(nonce) <= self.safe_characters
 
     def check_verifier(self, verifier):
+        chars = string.ascii_letters + string.digits
         try:
-            return 1000 <= int(verifier) <= 9999
+            return all(i in chars for i in verifier) and (len(verifier) == 8)
         except ValueError:
             return False
 
