@@ -106,6 +106,24 @@
       "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//RY0\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-22T20:48:59Z",
+      "side": 1,
+      "message": "The auth_token middleware allows a list of values -- this allows you to validate the old unexpired tokens that were generated when the keystone server was set to the old value and the new tokens that were generated with the keystone server set to the new value. Once the old tokens have all expired then the auth_token middleware is set to a single algorithm.\n\nThe server doesn\u0027t need a list -- it generates new tokens using the current hash algorithm. It can validate old tokens with the old hash because the database contains the old hash (the tokens in the db aren\u0027t updated).",
+      "parentUuid": "AAAAXH//ZSk\u003d",
+      "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
