@@ -88,6 +88,24 @@
       "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//ZSk\u003d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 13
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-04-22T05:05:21Z",
+      "side": 1,
+      "message": "Thanks Lance.  Your explanation was much more clear..  Your link suggests that the value can be a list. But the comment here doesn\u0027t hint that. Is this going to be a list?.",
+      "parentUuid": "AAAAXH//b5g\u003d",
+      "revId": "bf4ff96472991675f76c95dde8c027417d0deafd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
