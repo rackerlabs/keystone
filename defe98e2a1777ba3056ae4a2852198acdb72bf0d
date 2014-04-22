@@ -16,6 +16,24 @@
       "revId": "defe98e2a1777ba3056ae4a2852198acdb72bf0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Yho\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-22T07:15:40Z",
+      "side": 1,
+      "message": "But query_params uses here \nhttps://review.openstack.org/#/c/86302/3/keystone/assignment/backends/ldap.py\n\nline 613-614",
+      "parentUuid": "AAAAXH//b/A\u003d",
+      "revId": "defe98e2a1777ba3056ae4a2852198acdb72bf0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
