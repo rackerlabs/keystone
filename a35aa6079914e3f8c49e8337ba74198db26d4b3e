@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//aUE\u003d",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-22T01:10:56Z",
+      "side": 1,
+      "message": "I\u0027d argue developing.rst vs configuration.rst.",
+      "parentUuid": "AAAAXH//aWE\u003d",
+      "revId": "a35aa6079914e3f8c49e8337ba74198db26d4b3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//aWI\u003d",
         "filename": "keystone/tests/ksfixtures/database.py",
         "patchSetId": 2
