@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//VjY\u003d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-22T13:04:28Z",
+      "side": 1,
+      "message": "It looks like \u0027True\u0027 should be \u0027true\u0027 to match the other help entries.",
+      "revId": "147118a6a485ee0f5a51322ee201e806be3d3879",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//VbQ\u003d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-22T13:04:28Z",
+      "side": 1,
+      "message": "This code doesn\u0027t actually work. It doesn\u0027t actually raise a ValidationError it raises a TypeError. This TypeError is then caught by the except below. The test passes because a ValidationError is eventually raised, but it\u0027s not the one with the correct message.",
+      "revId": "147118a6a485ee0f5a51322ee201e806be3d3879",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
