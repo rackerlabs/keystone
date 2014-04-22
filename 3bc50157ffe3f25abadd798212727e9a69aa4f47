@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//VUo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-22T13:23:39Z",
+      "side": 1,
+      "message": "(NIT): \u0027where an auth request consists of\u0027",
+      "revId": "3bc50157ffe3f25abadd798212727e9a69aa4f47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
