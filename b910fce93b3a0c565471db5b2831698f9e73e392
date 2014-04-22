@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//Qm8\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-22T23:11:46Z",
+      "side": 1,
+      "message": "This might need to be a fixme instead.\n\nAll joking aside, this comment needs to be updated/removed.",
+      "parentUuid": "AAAAXH//QuE\u003d",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//Qts\u003d",
         "filename": "keystone/tests/__init__.py",
         "patchSetId": 6
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//Qmo\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-22T23:11:46Z",
+      "side": 1,
+      "message": "This should only be imported if six.PY3?  Is there anything in this block that shouldn\u0027t be specific to py3?",
+      "parentUuid": "AAAAXH//Qts\u003d",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//QsA\u003d",
         "filename": "keystone/tests/test_cache_backend_mongo.py",
         "patchSetId": 6
@@ -64,6 +100,23 @@
       "writtenOn": "2014-04-22T23:05:02Z",
       "side": 1,
       "message": "I can\u0027t wait until all the six compatibility stuff is no longer needed.  I\u0027m scared to think how long that will take",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Qmc\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-22T23:11:46Z",
+      "side": 1,
+      "message": "testr isn\u0027t where we\u0027re starting from?",
       "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
