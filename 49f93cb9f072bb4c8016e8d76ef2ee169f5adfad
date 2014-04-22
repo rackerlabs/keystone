@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Qic\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T23:25:09Z",
+      "side": 1,
+      "message": "Getting better.  Keep going!",
+      "revId": "49f93cb9f072bb4c8016e8d76ef2ee169f5adfad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
