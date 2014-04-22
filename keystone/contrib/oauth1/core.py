@@ -21,6 +21,7 @@ import abc
 import oauthlib.common
 from oauthlib import oauth1
 import six
+import string
 import uuid
 
 from keystone.common import dependency
@@ -39,6 +40,7 @@ AuthorizationEndpoint = oauth1.AuthorizationEndpoint
 SIG_HMAC = oauth1.SIGNATURE_HMAC
 RequestTokenEndpoint = oauth1.RequestTokenEndpoint
 oRequest = oauthlib.common.Request
+VERIFIER_CHARS = string.ascii_letters + string.digits
 
 
 class Token(object):
