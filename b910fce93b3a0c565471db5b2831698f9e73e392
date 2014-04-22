@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//QwA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T23:05:02Z",
+      "side": 1,
+      "message": "Great commit message!  Very helpful!",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//QuE\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T23:05:02Z",
+      "side": 1,
+      "message": "I assume the brutal and humorous self-assessment will be removed before merging correct?",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Qts\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T23:05:02Z",
+      "side": 1,
+      "message": "why is the warning suppression needed? oslo.config spews warnings when running under PY3?",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//QsA\u003d",
+        "filename": "keystone/tests/test_cache_backend_mongo.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T23:05:02Z",
+      "side": 1,
+      "message": "I can\u0027t wait until all the six compatibility stuff is no longer needed.  I\u0027m scared to think how long that will take",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Qrc\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T23:05:02Z",
+      "side": 1,
+      "message": "every journey starts with a first step.  Or about 4 steps in this case :-)",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
