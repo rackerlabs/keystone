@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Zsc\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-22T03:29:59Z",
+      "side": 1,
+      "message": "maybe put these on the object unless they are used somewhere else.",
+      "revId": "010c52e539ec90f23d5a7cfdfd8a33bcee1d518f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Zso\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-22T03:29:59Z",
+      "side": 1,
+      "message": "is None a safe check here - what if some plugin sets the value to None? I think you want to try/except KeyError",
+      "revId": "010c52e539ec90f23d5a7cfdfd8a33bcee1d518f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//ZuE\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-22T03:29:59Z",
+      "side": 1,
+      "message": "i don\u0027t think this should be a warning - it\u0027s debug or info at best.",
+      "revId": "010c52e539ec90f23d5a7cfdfd8a33bcee1d518f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
