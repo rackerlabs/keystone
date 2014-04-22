@@ -59,7 +59,8 @@ class OAuthValidator(oauth1.RequestValidator):
 
     def check_verifier(self, verifier):
         try:
-            return 1000 <= int(verifier) <= 9999
+            return (all(i in oauth1.VERIFIER_CHARS for i in verifier) and
+                    len(verifier) == 8)
         except ValueError:
             return False
 
