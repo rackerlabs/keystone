@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Sxk\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-22T17:41:12Z",
+      "side": 1,
+      "message": "string.ascii_letters + string.digits is declared in both changed files.\n\nI think you can declare this in keystone.contrib.oauth1.core and call it from here, and the sql backend.",
+      "revId": "bd993ea43e95ebda54611e0f5c6e1554ef4ae719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
