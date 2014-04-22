@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//S7U\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T17:32:50Z",
+      "side": 1,
+      "message": "do not need is a little misleading.  Isn\u0027t it a little  stronger than that. Basically federated users are not mirrored in the Keystone identity backend due to....   Do not need makes it sound like they could be optionally mirrored which I dont think is the case",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//S6c\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T17:32:50Z",
+      "side": 1,
+      "message": "I would add a sentence describing what SAML assertions typically contain in them before mentioning that Keystone maps them",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//S5w\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T17:32:50Z",
+      "side": 1,
+      "message": "whata re you doing with the ssl and shib2?  Ensuring they are enabled as well?  This is a little unclear",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//S5g\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T17:32:50Z",
+      "side": 1,
+      "message": "it\u0027s then as opposed then it\u0027s",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//S2s\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-22T17:32:50Z",
+      "side": 1,
+      "message": "rules, and protocols as shown below",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
