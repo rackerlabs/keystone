@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//QUA\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T00:11:48Z",
+      "side": 1,
+      "message": "put these in alphabetical order. e.g., keystone.assignment should be first.",
+      "revId": "58dfc3ad7ad5e2f45d1396d47bb18a7d84a1cd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
