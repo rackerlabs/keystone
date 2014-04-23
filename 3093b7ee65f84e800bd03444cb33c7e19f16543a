@@ -19,6 +19,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//HQE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:48:40Z",
+      "side": 1,
+      "message": "Add SecurityImpact",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HO4\u003d",
+        "filename": "keystone/contrib/oauth1/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:48:40Z",
+      "side": 1,
+      "message": "http://tools.ietf.org/html/rfc5849 has a verifier strings which are 16 bytes (and also has 8 bytes, so I don\u0027t know what a good length is).",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HMg\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:48:40Z",
+      "side": 1,
+      "message": "add a comment why this has to be limited to ascii chars and digits.",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//Ldc\u003d",
         "filename": "keystone/contrib/oauth1/validator.py",
         "patchSetId": 2
@@ -30,6 +81,40 @@
       "writtenOn": "2014-04-23T14:23:16Z",
       "side": 1,
       "message": "nit: i think you can wrap this in () instead of using \\",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HMM\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:48:40Z",
+      "side": 1,
+      "message": "use () rather than \\.",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HLY\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:48:40Z",
+      "side": 1,
+      "message": "why do we need to check the verifier in this way? Couldn\u0027t a different oauth server generate a different verifier?",
       "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
