@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//I/4\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-23T18:35:13Z",
+      "side": 1,
+      "message": "Is this call doing anything?",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//I/c\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-23T18:35:13Z",
+      "side": 1,
+      "message": "Is this call doing anything?",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//I7k\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-23T18:35:13Z",
+      "side": 1,
+      "message": "The above two lines should be removed.  Lines 156-157 are intended to replace them.",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
