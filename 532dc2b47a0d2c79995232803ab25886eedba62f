@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//LT8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:37:35Z",
+      "side": 1,
+      "message": "re-wrote to \u0027are not mirrored in the Keystone identity backend\u0027",
+      "parentUuid": "AAAAXH//S7U\u003d",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//S6c\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-22T17:32:50Z",
       "side": 1,
       "message": "I would add a sentence describing what SAML assertions typically contain in them before mentioning that Keystone maps them",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//LTc\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:37:35Z",
+      "side": 1,
+      "message": "they are defined on line 24",
+      "parentUuid": "AAAAXH//S6c\u003d",
       "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//LR4\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:37:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//S5g\u003d",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//S2s\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -81,6 +135,24 @@
       "writtenOn": "2014-04-22T17:32:50Z",
       "side": 1,
       "message": "rules, and protocols as shown below",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//LR8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:37:35Z",
+      "side": 1,
+      "message": "changed this line to match that of the title below",
+      "parentUuid": "AAAAXH//S2s\u003d",
       "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
