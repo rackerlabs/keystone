@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//IWI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-23T19:49:30Z",
+      "side": 1,
+      "message": "Nice catch to make sure you handled self.attribute_mapping as well!",
+      "revId": "1716748df15443f1141f69ea620c4bc33758433d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//IVA\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-23T19:49:30Z",
+      "side": 1,
+      "message": "Thanks for using uuid.uuid4().hex",
+      "revId": "1716748df15443f1141f69ea620c4bc33758433d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//IVg\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1003,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-23T19:49:30Z",
+      "side": 1,
+      "message": "Nice",
+      "revId": "1716748df15443f1141f69ea620c4bc33758433d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
