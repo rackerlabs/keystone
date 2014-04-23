@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//Ok0\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-23T07:28:12Z",
+      "side": 1,
+      "message": "Why we need local variable \u0027memberships\u0027 here?\nMaybe it\u0027s better to use:\n\n return self.get_all_filtered(query)",
+      "revId": "964e4c336e021cdca7d193093e674820ddf75b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+nKI\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 11
