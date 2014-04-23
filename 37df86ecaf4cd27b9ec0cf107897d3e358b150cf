@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//JTc\u003d",
+        "filename": "keystone/contrib/password_rotation/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-23T18:08:06Z",
+      "side": 1,
+      "message": "if we aren\u0027t using this wrapper we should probably remove.",
+      "revId": "37df86ecaf4cd27b9ec0cf107897d3e358b150cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//JTU\u003d",
+        "filename": "keystone/contrib/password_rotation/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-23T18:08:06Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "37df86ecaf4cd27b9ec0cf107897d3e358b150cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//JKo\u003d",
+        "filename": "keystone/tests/integration/password_rotation/test_password_rotation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-23T18:08:06Z",
+      "side": 1,
+      "message": "I think the expected status and expiration of the old password could be passed into _test_rotating_password() as parameters, which would make _test_rotating_password a little more flexible and make this case more like the test_rotating_password_where_old_password_is_not_yet_expired test case.\n\nThat way _test_rotating_password() could handle the case it\u0027s testing depending on the parameters passed in, might be a little more reusable in the future?",
+      "revId": "37df86ecaf4cd27b9ec0cf107897d3e358b150cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
