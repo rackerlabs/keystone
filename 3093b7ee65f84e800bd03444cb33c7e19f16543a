@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Ldc\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T14:23:16Z",
+      "side": 1,
+      "message": "nit: i think you can wrap this in () instead of using \\",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
