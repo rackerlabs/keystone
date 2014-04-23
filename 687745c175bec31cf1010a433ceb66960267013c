@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//KtY\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:40:16Z",
+      "side": 1,
+      "message": "++, will add this next go-around",
+      "parentUuid": "AAAAXH//KyA\u003d",
+      "revId": "687745c175bec31cf1010a433ceb66960267013c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//Kv0\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 7
@@ -30,6 +48,41 @@
       "writtenOn": "2014-04-23T15:35:52Z",
       "side": 1,
       "message": "Should probably mention that federated users can also be mapped into existing users ?",
+      "revId": "687745c175bec31cf1010a433ceb66960267013c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Kr8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:40:16Z",
+      "side": 1,
+      "message": "sort of, the federated users information is used to craft an id/name to place in the token for auditing. I should at least mention something like that though.",
+      "parentUuid": "AAAAXH//Kv0\u003d",
+      "revId": "687745c175bec31cf1010a433ceb66960267013c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Ksc\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-23T15:40:16Z",
+      "side": 1,
+      "message": "I don\u0027t recall who wrote this (dolphm?) but thanks for the shout out to osclient",
       "revId": "687745c175bec31cf1010a433ceb66960267013c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
