@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//G6Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "re-creation? when does that happen?\n\nSeems like if we try to change the name of the indexes then mysql is just going to change it back sometime?",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G5M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "why does this affect Keystone? We don\u0027t use alembic.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G7s\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "change to\n\n A new migration script renames incorrectly named fk indexes on MySQL.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G7k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "Reproducing this doesn\u0027t require this much work. Just look at the schema.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G7Y\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "which migration renamed the indexes?",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G68\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "change \"trys\" to \"tries\"\n\nchange \"it can\u0027t do nothing with\" to \"it doesn\u0027t support the\"",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G60\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "why isn\u0027t this a bug in alembic? Doesn\u0027t it need to support MySQL 5.5?",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G5A\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "suggest move this down to where it\u0027s used.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G5E\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T23:47:47Z",
+      "side": 1,
+      "message": "Add a comment that this actually renames the existing index rather than creating a new one. Or, move the comment at line 37-39 to before line 31 here... \n\n \"Creating\" an index with the same cols as an existing index renames the index\n on mysql. A new index isn\u0027t created.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
