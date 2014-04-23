@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH//IQg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-23T19:59:31Z",
+      "side": 1,
+      "message": "Nice commit message!  Great description!",
+      "revId": "3093b7ee65f84e800bd03444cb33c7e19f16543a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//Ldc\u003d",
         "filename": "keystone/contrib/oauth1/validator.py",
         "patchSetId": 2
