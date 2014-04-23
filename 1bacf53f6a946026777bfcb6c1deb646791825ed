@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//aZA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "change \"search projects\" to \"listed projects\"",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HYw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "escape values in filters so that it\u0027s valid -- http://www.python-ldap.org/doc/html/ldap-filter.html#ldap.filter.escape_filter_chars",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HW0\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "this query should have attrlist\u003d[\u00271.1\u0027] since we don\u0027t care about the attributes here, just the DNs.",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HXw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "should be str2dn not dn2str\n\nalso, change array to list.",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HUw\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "not sure what a segment is... change \"segment\" to \"RDN\".",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HT8\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "the parent of the role entry would only be the project if the role entry was found directly under the tenant entry, but since a SUBTREE search was done that\u0027s not necessarily the case.",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//HXE\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-23T22:33:16Z",
+      "side": 1,
+      "message": "change tenant to project",
+      "revId": "1bacf53f6a946026777bfcb6c1deb646791825ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
