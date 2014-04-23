@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//KyA\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-04-23T15:35:52Z",
+      "side": 1,
+      "message": "I\u0027d strongly suggest to provide a sample wsgi-keystone.conf file showing how to configure mod_shib to protect the unscoped token URL, as it is not trivial. This should be either done here in the conf, or a specific sample apache conf file for federation should be added in keystone.\nMarek Denis shared a sample config that might need to be adapted a bit : https://github.com/zaccone/keystone-federation/blob/master/etc/apache2/sites-available/wsgi-keystone.conf",
+      "revId": "687745c175bec31cf1010a433ceb66960267013c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Kv0\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-04-23T15:35:52Z",
+      "side": 1,
+      "message": "Should probably mention that federated users can also be mapped into existing users ?",
+      "revId": "687745c175bec31cf1010a433ceb66960267013c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
