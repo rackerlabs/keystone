@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//Nkc\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "Yes, it\u0027s here to outline that ssl and shibd2 modules should be enabled.",
+      "parentUuid": "AAAAXH//S5w\u003d",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//S5g\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -124,6 +142,57 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//NlA\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "Add link with suggested reading (https://wiki.shibboleth.net/confluence/display/SHIB2/MetadataForSP) and example, that typically such Metadata file can be fetched from https://service.example.org/Shibboleth.sso/Metadata",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Nvg\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "add something like https://service.example.org/Shibboleth.sso/Metadata, otherwise wget command is invalid.",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//NuU\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "I would generalize it here - write something like: \u0027upload your service provider\u0027s metadata file to federated Identity Provider\u0027 and maybe mention a link with shibboleth\u0027s IdP reading, as one existing software on the market. In my initial doc I wrote about testshib, because it was more like a tutorial/blog post not a \u0027generic\u0027 documentation.",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//S2s\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 6
@@ -153,6 +222,57 @@
       "side": 1,
       "message": "changed this line to match that of the title below",
       "parentUuid": "AAAAXH//S2s\u003d",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Nsk\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "\"should be assigned TO roles [...]\" ?",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//NqE\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "also add: Every mapping object must containt a rule that uniquely identifies federated user. This usually can be achieved by direct mapping of a single attrbute from the SAML assertion. Missing such rule results in HTTP 401 Unauthorized error.",
+      "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Npg\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-23T15:41:34Z",
+      "side": 1,
+      "message": "\u0027an\u0027 or \u0027a\u0027 ?",
       "revId": "532dc2b47a0d2c79995232803ab25886eedba62f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
