@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//JJk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-23T18:19:11Z",
+      "side": 1,
+      "message": "passwords*",
+      "revId": "6a3a5faca8bfe0edfa8abe60aed303e53c385c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//JIU\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-23T18:19:11Z",
+      "side": 1,
+      "message": "I think so, that way if we aren\u0027t using OS-PW_ROTATE then we can just break and use the old impl and only use the extension if it\u0027s enabled. Thoughts?",
+      "revId": "6a3a5faca8bfe0edfa8abe60aed303e53c385c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//JE0\u003d",
+        "filename": "keystone/tests/integration/identity/test_passwords.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-04-23T18:19:11Z",
+      "side": 1,
+      "message": "Is a test case going to be added here?",
+      "revId": "6a3a5faca8bfe0edfa8abe60aed303e53c385c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
