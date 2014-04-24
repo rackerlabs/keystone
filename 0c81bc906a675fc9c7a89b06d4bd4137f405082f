@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//F7M\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T04:06:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G18\u003d",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G1s\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-24T00:03:27Z",
       "side": 1,
       "message": "as far as I can tell this new method isn\u0027t used, so remove it.",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//F7Q\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T04:06:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G1s\u003d",
       "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//F7I\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T04:06:34Z",
+      "side": 1,
+      "message": "It\u0027s not needed.  We can use the exception returned from the failed modify operation to determine if the group exists or not.  See the latest patch.",
+      "parentUuid": "AAAAXH//Ig8\u003d",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//I/c\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 13
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "same as above",
       "parentUuid": "AAAAXH//I/c\u003d",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//F7E\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T04:06:34Z",
+      "side": 1,
+      "message": "...also not needed.",
+      "parentUuid": "AAAAXH//IgQ\u003d",
       "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//F7Y\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T04:06:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G0Y\u003d",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G0A\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 13
@@ -169,6 +259,24 @@
       "writtenOn": "2014-04-24T00:03:27Z",
       "side": 1,
       "message": "this looks unrelated.",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//F6g\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T04:06:34Z",
+      "side": 1,
+      "message": "This was discussed in a previous patch revision, and it was decided that it can just be called out in the commit message.  I\u0027m fine splitting it out as a separate patch if desired.",
+      "parentUuid": "AAAAXH//G0A\u003d",
       "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
