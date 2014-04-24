@@ -24,7 +24,11 @@ from keystone.common import dependency
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import versionutils
-
+# mapping
+from six.moves.urllib import parse
+from keystone.contrib import federation
+from keystone.contrib.federation import utils
+from keystone.openstack.common import jsonutils
 
 CONF = config.CONF
 
@@ -46,7 +50,10 @@ class Base(auth.AuthMethodHandler):
             msg = _('No authenticated user')
             raise exception.Unauthorized(msg)
         try:
-            user_ref = self._authenticate(REMOTE_USER, context)
+            user_ref = self._authenticate(REMOTE_USER,
+                                          context,
+                                          auth_info,
+                                          auth_context)
             auth_context['user_id'] = user_ref['id']
             if ('kerberos' in CONF.token.bind and
                 (context['environment'].get('AUTH_TYPE', '').lower()
@@ -57,7 +64,7 @@ class Base(auth.AuthMethodHandler):
             raise exception.Unauthorized(msg)
 
     @abc.abstractmethod
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Look up the user in the identity backend.
 
         Return user_ref
@@ -67,16 +74,40 @@ class Base(auth.AuthMethodHandler):
 
 @dependency.requires('identity_api')
 class DefaultDomain(Base):
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Use remote_user to look up the user in the identity backend."""
         domain_id = CONF.identity.default_domain_id
         user_ref = self.identity_api.get_user_by_name(remote_user, domain_id)
         return user_ref
 
 
+@dependency.requires('federation_api', 'identity_api')
+class Mapping(DefaultDomain):
+    def _authenticate(self, remote_user, context, auth_info, *args, **kwargs):
+        mapping_info = auth_info.get_method_data('saml2')
+        identity_provider = mapping_info['identity_provider']
+        protocol = mapping_info['protocol']
+        mapping = self.federation_api.get_mapping_from_idp_and_protocol(
+            identity_provider, protocol)
+        rules = jsonutils.loads(mapping['rules'])
+        rule_processor = utils.RuleProcessor(rules)
+        assertion = {'REMOTE_USER': remote_user}
+        mapped_properties = rule_processor.process(assertion)
+        utils.validate_groups(mapped_properties['group_ids'],
+                              mapping['id'], self.identity_api)
+
+        return {
+            #'user_id': parse.quote(mapped_properties['name']),
+            'id': parse.quote(mapped_properties['name']),
+            'group_ids': mapped_properties['group_ids'],
+            federation.IDENTITY_PROVIDER: identity_provider,
+            federation.PROTOCOL: protocol
+        }
+
+
 @dependency.requires('assignment_api', 'identity_api')
 class Domain(Base):
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Use remote_user to look up the user in the identity backend.
 
         The domain will be extracted from the REMOTE_DOMAIN environment
