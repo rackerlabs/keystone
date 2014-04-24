@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//AWI\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-24T18:08:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//Qm8\u003d",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//Qts\u003d",
         "filename": "keystone/tests/__init__.py",
         "patchSetId": 6
@@ -82,6 +100,24 @@
       "writtenOn": "2014-04-22T23:11:46Z",
       "side": 1,
       "message": "This should only be imported if six.PY3?  Is there anything in this block that shouldn\u0027t be specific to py3?",
+      "parentUuid": "AAAAXH//Qts\u003d",
+      "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//AVc\u003d",
+        "filename": "keystone/tests/__init__.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-24T18:08:38Z",
+      "side": 1,
+      "message": "This is needed because flake 8 complains that I am not actually using the imported module. Added a comment to clarify.",
       "parentUuid": "AAAAXH//Qts\u003d",
       "revId": "b910fce93b3a0c565471db5b2831698f9e73e392",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
