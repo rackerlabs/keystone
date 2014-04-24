@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//BqE\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T15:09:19Z",
+      "side": 1,
+      "message": "simplify the driver interface as much as possible to make it explicit:\n\n- you\u0027re \"listing roles\" so that should clearly be in the method name\n- you don\u0027t use the \"user_id\", so remove it\n- you don\u0027t need to pass group \"refs\" here, you just need a list of \"group_ids\"\n- you don\u0027t need a complete project \"ref\" here, you just need a \"project_id\" (and from that, the domain_id could be looked up, or passed in as \"project_domain_id\")",
+      "revId": "3ed9049d61e41883bd48d6d325f44e0e041e128f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Bow\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T15:09:19Z",
+      "side": 1,
+      "message": "s/grant/assignment/",
+      "revId": "3ed9049d61e41883bd48d6d325f44e0e041e128f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//Bpo\u003d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T15:09:19Z",
+      "side": 1,
+      "message": "this comment should be indented once more",
+      "revId": "3ed9049d61e41883bd48d6d325f44e0e041e128f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//BtY\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T15:09:19Z",
+      "side": 1,
+      "message": "undo changes to this file?",
+      "revId": "3ed9049d61e41883bd48d6d325f44e0e041e128f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
