@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//C5s\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "This is mistake, furthermore this is complicated description. MySQL gives different indexes names, in dependence from version. I\u0027ll fix it.",
+      "parentUuid": "AAAAXH//G6Y\u003d",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G5M\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-23T23:47:47Z",
       "side": 1,
       "message": "why does this affect Keystone? We don\u0027t use alembic.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//C48\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "We want to check models and database for consistency with Alembic. Please see https://review.openstack.org/#/c/74081/ and review it, if your kindness. I\u0027ll note it in the message.",
+      "parentUuid": "AAAAXH//G5M\u003d",
       "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//C44\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G7s\u003d",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G7k\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-23T23:47:47Z",
       "side": 1,
       "message": "Reproducing this doesn\u0027t require this much work. Just look at the schema.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//C3Q\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "Do you want just to look how MySQL behaves? Without tests running?",
+      "parentUuid": "AAAAXH//G7k\u003d",
       "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//C3c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "Same mistake. I\u0027ll fix it.",
+      "parentUuid": "AAAAXH//G7Y\u003d",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G68\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 18
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-23T23:47:47Z",
       "side": 1,
       "message": "change \"trys\" to \"tries\"\n\nchange \"it can\u0027t do nothing with\" to \"it doesn\u0027t support the\"",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//C34\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G68\u003d",
       "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//C3w\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "It is, but this has not fixed yet.",
+      "parentUuid": "AAAAXH//G60\u003d",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G5A\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
         "patchSetId": 18
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//EYY\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G5A\u003d",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//G5E\u003d",
         "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
         "patchSetId": 18
@@ -149,6 +293,24 @@
       "writtenOn": "2014-04-23T23:47:47Z",
       "side": 1,
       "message": "Add a comment that this actually renames the existing index rather than creating a new one. Or, move the comment at line 37-39 to before line 31 here... \n\n \"Creating\" an index with the same cols as an existing index renames the index\n on mysql. A new index isn\u0027t created.",
+      "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//C2c\u003d",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_fk_consistent_indexes.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-24T12:35:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//G5E\u003d",
       "revId": "fecfb1c9b4db2e9d83f91f738a1297c3e6fd8cfa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
