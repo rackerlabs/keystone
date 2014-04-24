@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Aw4\u003d",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-24T17:04:06Z",
+      "side": 1,
+      "message": "Why remove the versions here if they are still listed below?",
+      "revId": "3eccdd14563b933dadb0e4b328d4c59d28f78448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
