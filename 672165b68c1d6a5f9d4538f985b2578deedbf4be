@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//CQU\u003d",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T14:01:08Z",
+      "side": 1,
+      "message": "should remove the characters from this collection that are commonly confused, like j i I l 1 o O 0",
+      "revId": "672165b68c1d6a5f9d4538f985b2578deedbf4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
