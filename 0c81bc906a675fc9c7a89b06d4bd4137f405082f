@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH//G18\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-24T00:03:27Z",
+      "side": 1,
+      "message": "revert this change it\u0027s unrelated.",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G1s\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-24T00:03:27Z",
+      "side": 1,
+      "message": "as far as I can tell this new method isn\u0027t used, so remove it.",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//I/4\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 13
@@ -101,6 +135,40 @@
       "side": 1,
       "message": "good catch!",
       "parentUuid": "AAAAXH//I7k\u003d",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G0Y\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-24T00:03:27Z",
+      "side": 1,
+      "message": "escape the user_dn string for a filter -- see line 348",
+      "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//G0A\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-24T00:03:27Z",
+      "side": 1,
+      "message": "this looks unrelated.",
       "revId": "0c81bc906a675fc9c7a89b06d4bd4137f405082f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
