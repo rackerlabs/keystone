@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//FJ0\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-24T07:04:58Z",
+      "side": 1,
+      "message": "Maybe if you care about exception accuracy you should insert in to this exception message information about user ID and group ID",
+      "revId": "9629e05f46bfdebaa362423cb495fd730410f687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//FYY\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-24T07:04:58Z",
+      "side": 1,
+      "message": "Why we need local variable \u0027memberships\u0027 here? Maybe it\u0027s better to use:\n\n return self.get_all_filtered(query)",
+      "revId": "9629e05f46bfdebaa362423cb495fd730410f687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
