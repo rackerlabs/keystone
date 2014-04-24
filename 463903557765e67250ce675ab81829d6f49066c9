@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Anc\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T17:34:23Z",
+      "side": 1,
+      "message": "I assume the first part of this is intended to match all the .po and .pot files? it doesn\u0027t match anything for me... is it supposed to be an asterisk instead of a question mark?\n\n  find keystone -type f -regex \u0027.*\\.pot*\u0027",
+      "revId": "463903557765e67250ce675ab81829d6f49066c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
