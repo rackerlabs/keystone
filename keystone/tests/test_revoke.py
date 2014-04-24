@@ -11,6 +11,7 @@
 # under the License.
 
 
+import copy
 import datetime
 import uuid
 
@@ -446,6 +447,7 @@ class RevokeTreeTests(tests.TestCase):
                 self._revoke_by_user(_new_id()))
 
             args = (_new_id(), _future_time())
+            revoke_map_struct = copy.deepcopy(self.tree.revoke_map)
             events.append(
                 self._revoke_by_expiration(*args))
 
@@ -453,8 +455,8 @@ class RevokeTreeTests(tests.TestCase):
                                         ['trust_id=*']
                                         ['consumer_id=*']
                                         ['access_token_id=*']),
-                             'adding %s to %s' % (args,
-                                                  self.tree.revoke_map))
+                             'adding: %s | new_struct: %s | orig_struct: %s' %
+                             (args, self.tree.revoke_map, revoke_map_struct))
 
             events.append(
                 self._revoke_by_project_role_assignment(_new_id(), _new_id()))
