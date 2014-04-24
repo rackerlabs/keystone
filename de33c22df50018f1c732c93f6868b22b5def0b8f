@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//+I8\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-24T23:37:18Z",
+      "side": 0,
+      "message": "is it? or is it trying to make up for a limitation in the drivers?",
+      "parentUuid": "AAAAXH//A50\u003d",
+      "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//A5k\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//+JE\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-24T23:37:18Z",
+      "side": 0,
+      "message": "is it? or is it trying to make up for a limitation in the drivers?",
+      "parentUuid": "AAAAXH//A5k\u003d",
+      "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//A5U\u003d",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-04-24T16:51:39Z",
       "side": 0,
       "message": "query_string is very much within scope for the controllers to handle - it\u0027s certainly not a driver responsibility.",
+      "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//98g\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-24T23:37:18Z",
+      "side": 0,
+      "message": "right - but only because we call it query string. It\u0027s converted to a proper dictionary in the base application controller already so if we called it filter_args or something it would be ok.",
+      "parentUuid": "AAAAXH//A5U\u003d",
       "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

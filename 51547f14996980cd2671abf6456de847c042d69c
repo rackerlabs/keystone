@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//98I\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-24T23:37:18Z",
+      "side": 1,
+      "message": "that\u0027s only because the v2 API doesn\u0027t implement filtering - which is a limitation of the v2 api. \n\nIf we were to have a concurrent v4 API then likely we would want this external to the controller because it\u0027s dealing with the models and not the controller.",
+      "parentUuid": "AAAAXH//A5A\u003d",
+      "revId": "51547f14996980cd2671abf6456de847c042d69c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//A40\u003d",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-24T16:51:39Z",
       "side": 1,
       "message": "this should belong to the v3 controller as it\u0027s implementing v3 api",
+      "revId": "51547f14996980cd2671abf6456de847c042d69c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//97w\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-04-24T23:37:18Z",
+      "side": 1,
+      "message": "Again, is it? it would appear to be limiting the results returned from a driver. This is not unique to a v3 controller other than the fact that the v2 API doesn\u0027t do it. \n\nIf we had a v4 api (which would have limiting) this would be a reusable function because there is nothing specific to the v3 object representation in this function.",
+      "parentUuid": "AAAAXH//A40\u003d",
       "revId": "51547f14996980cd2671abf6456de847c042d69c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
