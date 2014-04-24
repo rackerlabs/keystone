@@ -16,6 +16,24 @@
       "revId": "463903557765e67250ce675ab81829d6f49066c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//AJQ\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2014-04-24T18:25:52Z",
+      "side": 1,
+      "message": "Strange, this works for me:\n$ find keystone -type f -regex \u0027.*\\.pot?\u0027 \nkeystone/locale/ka_GE/LC_MESSAGES/keystone.po\nkeystone/locale/zh_HK/LC_MESSAGES/keystone.po\nkeystone/locale/tl_PH/LC_MESSAGES/keystone.po\n....\nYes, it should match all po and pot files - the \"t?\" means optionally a \"t\".\n\nWhat kind of find is this? I can change this to an asterisk if you prefer.",
+      "parentUuid": "AAAAXH//Anc\u003d",
+      "revId": "463903557765e67250ce675ab81829d6f49066c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
