@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Ago\u003d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T17:40:20Z",
+      "side": 1,
+      "message": "thank you",
+      "revId": "52d1fbfbe1476c01685c86a0b91f3fe8b110eaa5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
