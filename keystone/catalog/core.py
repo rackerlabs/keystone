@@ -116,12 +116,33 @@ class Manager(manager.Manager):
     def list_services(self, hints=None):
         return self.driver.list_services(hints or driver_hints.Hints())
 
+    def _validate_endpoint(self, endpoint_ref):
+        if 'enabled' in endpoint_ref and not isinstance(endpoint_ref['enabled'], bool):
+            msg = _('Enabled field must be a boolean')
+            raise exception.ValidationError(message=msg)
+
+        d = dict(six.iteritems(CONF))
+        d.update({'tenant_id': '', 'user_id': ''})
+        #if 'url' not in endpoint_ref:
+        #    raise exception.ValidationError(message='url missing')
+        endpoint_url = endpoint_ref.get('url')
+        try:
+            format_url(endpoint_url, d)
+        except exception.MalformedEndpoint as e:
+            msg = _('Invalid endpoint URL: %s. Can you guess why?')
+            raise exception.ValidationError(message=msg)
+
     def create_endpoint(self, endpoint_id, endpoint_ref):
+        self._validate_endpoint(endpoint_ref)
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
         except exception.NotFound:
             service_id = endpoint_ref.get('service_id')
             raise exception.ServiceNotFound(service_id=service_id)
+
+    def update_endpoint(self, endpoint_id, endpoint_ref):
+        self._validate_endpoint(endpoint_ref)
+        return self.driver.update_endpoint(endpoint_id, endpoint_ref)
 
     def delete_endpoint(self, endpoint_id):
         try:

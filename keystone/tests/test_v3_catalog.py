@@ -466,12 +466,14 @@ class TestCatalogAPISQL(tests.TestCase):
         # create a new, invalid endpoint - malformed type declaration
         ref = self.new_endpoint_ref(self.service_id)
         ref['url'] = 'http://keystone/%(tenant_id)'
-        self.catalog_api.create_endpoint(ref['id'], ref)
+        # NOTE(dstanek): use driver to get around validation in the manager
+        self.catalog_api.driver.create_endpoint(ref['id'], ref)
 
         # create a new, invalid endpoint - nonexistent key
         ref = self.new_endpoint_ref(self.service_id)
         ref['url'] = 'http://keystone/%(you_wont_find_me)s'
-        self.catalog_api.create_endpoint(ref['id'], ref)
+        # NOTE(dstanek): use driver to get around validation in the manager
+        self.catalog_api.driver.create_endpoint(ref['id'], ref)
 
         # verify that the invalid endpoints don't appear in the catalog
         catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id)
