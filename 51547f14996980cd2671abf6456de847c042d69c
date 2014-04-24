@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//A5A\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T16:51:39Z",
+      "side": 1,
+      "message": "this should belong to the v3 controller as it\u0027s implementing v3 api",
+      "revId": "51547f14996980cd2671abf6456de847c042d69c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//A40\u003d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T16:51:39Z",
+      "side": 1,
+      "message": "this should belong to the v3 controller as it\u0027s implementing v3 api",
+      "revId": "51547f14996980cd2671abf6456de847c042d69c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

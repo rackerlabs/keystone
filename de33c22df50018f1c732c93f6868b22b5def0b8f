@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//A50\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T16:51:39Z",
+      "side": 0,
+      "message": "the limit implementation is really a v3 api feature",
+      "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//A5k\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T16:51:39Z",
+      "side": 0,
+      "message": "this is implementing v3 api functionality",
+      "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//A5U\u003d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T16:51:39Z",
+      "side": 0,
+      "message": "query_string is very much within scope for the controllers to handle - it\u0027s certainly not a driver responsibility.",
+      "revId": "de33c22df50018f1c732c93f6868b22b5def0b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
