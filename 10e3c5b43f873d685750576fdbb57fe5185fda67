@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//CV4\u003d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T13:45:47Z",
+      "side": 1,
+      "message": "the tests don\u0027t actually seem to exercise this at all as they always include an empty string description too",
+      "revId": "10e3c5b43f873d685750576fdbb57fe5185fda67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//CXA\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T13:45:47Z",
+      "side": 1,
+      "message": "the method name and docstr don\u0027t reflect the reality of this test - it\u0027s not testing \"without\" a description, it\u0027s testing *with* an *empty* string description",
+      "revId": "10e3c5b43f873d685750576fdbb57fe5185fda67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//CWg\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T13:45:47Z",
+      "side": 1,
+      "message": "similar comment as above",
+      "revId": "10e3c5b43f873d685750576fdbb57fe5185fda67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//CWU\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T13:45:47Z",
+      "side": 1,
+      "message": "that both have empty strings as descriptions?",
+      "revId": "10e3c5b43f873d685750576fdbb57fe5185fda67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//CWM\u003d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T13:45:47Z",
+      "side": 1,
+      "message": "a similar test to this one without descriptions in the request body at all would be nice",
+      "revId": "10e3c5b43f873d685750576fdbb57fe5185fda67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
