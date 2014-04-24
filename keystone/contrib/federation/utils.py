@@ -24,8 +24,9 @@ from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 
 
-CONF = config.CONF
 LOG = log.getLogger(__name__)
+
+CONF = config.CONF
 
 
 MAPPING_SCHEMA = {

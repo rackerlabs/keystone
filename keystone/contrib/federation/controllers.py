@@ -237,10 +237,18 @@ class Auth(auth_controllers.Auth):
         it into the ``authenticate_for_token`` function.
 
         """
+        try:
+            REMOTE_USER = context['environment']['REMOTE_USER']
+            if REMOTE_USER:
+                method = 'external'
+            else:
+                method = 'saml2'
+        except KeyError:
+            method = 'saml2'
         auth = {
             'identity': {
-                'methods': ['saml2'],
-                'saml2': {
+                'methods': [method],
+                method: {
                     'identity_provider': identity_provider,
                     'protocol': protocol
                 }

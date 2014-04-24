@@ -17,12 +17,16 @@
 import abc
 
 import six
+from six.moves.urllib import parse
 
 from keystone import auth
 from keystone.common import config
 from keystone.common import dependency
+from keystone.contrib import federation
+from keystone.contrib.federation import utils
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import versionutils
 
 
@@ -46,8 +50,19 @@ class Base(auth.AuthMethodHandler):
             msg = _('No authenticated user')
             raise exception.Unauthorized(msg)
         try:
-            user_ref = self._authenticate(REMOTE_USER, context)
+            user_ref = self._authenticate(REMOTE_USER,
+                                          context,
+                                          auth_info,
+                                          auth_context)
             auth_context['user_id'] = user_ref['id']
+            if 'group_ids' in user_ref:
+                auth_context['group_ids'] = user_ref['group_ids']
+            if federation.IDENTITY_PROVIDER in user_ref:
+                auth_context[federation.IDENTITY_PROVIDER] =\
+                    user_ref[federation.IDENTITY_PROVIDER]
+                auth_context[federation.PROTOCOL] =\
+                    user_ref[federation.PROTOCOL]
+
             if ('kerberos' in CONF.token.bind and
                 (context['environment'].get('AUTH_TYPE', '').lower()
                  == 'negotiate')):
@@ -57,7 +72,7 @@ class Base(auth.AuthMethodHandler):
             raise exception.Unauthorized(msg)
 
     @abc.abstractmethod
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Look up the user in the identity backend.
 
         Return user_ref
@@ -67,16 +82,46 @@ class Base(auth.AuthMethodHandler):
 
 @dependency.requires('identity_api')
 class DefaultDomain(Base):
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Use remote_user to look up the user in the identity backend."""
         domain_id = CONF.identity.default_domain_id
         user_ref = self.identity_api.get_user_by_name(remote_user, domain_id)
         return user_ref
 
 
+@dependency.requires('federation_api', 'identity_api')
+class Mapping(DefaultDomain):
+    def _authenticate(self, remote_user, context, auth_info, *args, **kwargs):
+        # auth_info type is not always consistent, it can be AuthInfo ...
+        try:
+            federation_info = auth_info.get_method_data('external')
+        except AttributeError:
+        # ... or a dictionary
+            federation_info = auth_info
+        identity_provider = federation_info['identity_provider']
+        protocol = federation_info['protocol']
+        mapping = self.federation_api.get_mapping_from_idp_and_protocol(
+            identity_provider, protocol)
+        rules = jsonutils.loads(mapping['rules'])
+        rule_processor = utils.RuleProcessor(rules)
+        assertions = dict(utils.get_assertion_params_from_env(context))
+        assertions['REMOTE_USER'] = remote_user
+        mapped_properties = rule_processor.process(assertions)
+        utils.validate_groups(mapped_properties['group_ids'],
+                              mapping['id'], self.identity_api)
+
+        return {
+            # 'user_id': parse.quote(mapped_properties['name']),
+            'id': parse.quote(mapped_properties['name']),
+            'group_ids': mapped_properties['group_ids'],
+            federation.IDENTITY_PROVIDER: identity_provider,
+            federation.PROTOCOL: protocol
+        }
+
+
 @dependency.requires('assignment_api', 'identity_api')
 class Domain(Base):
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Use remote_user to look up the user in the identity backend.
 
         The domain will be extracted from the REMOTE_DOMAIN environment
@@ -134,7 +179,7 @@ class LegacyDefaultDomain(Base):
     def __init__(self):
         super(LegacyDefaultDomain, self).__init__()
 
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Use remote_user to look up the user in the identity backend."""
         # NOTE(dolph): this unintentionally discards half the REMOTE_USER value
         names = remote_user.split('@')
@@ -155,7 +200,7 @@ class LegacyDomain(Base):
     def __init__(self):
         super(LegacyDomain, self).__init__()
 
-    def _authenticate(self, remote_user, context):
+    def _authenticate(self, remote_user, context, *args, **kwargs):
         """Use remote_user to look up the user in the identity backend.
 
         If remote_user contains an `@` assume that the substring before the
