@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//ASM\u003d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-24T18:12:41Z",
+      "side": 1,
+      "message": "Yep:\n\nIn 2:\n   \u003e\u003e\u003e None \u003e 2\n   False\n\nIn 3:\n    \u003e\u003e\u003e None \u003e 2\n    Traceback (most recent call last):\n      File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n    TypeError: unorderable types: NoneType() \u003e int()\n    \u003e\u003e\u003e",
+      "parentUuid": "AAAAXH//ijk\u003d",
+      "revId": "c576cf44361043e8c3138c7562bdc55afe75cd5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//ijg\u003d",
         "filename": "keystone/tests/test_sizelimit.py",
         "patchSetId": 5
