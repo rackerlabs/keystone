@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Doug Hellmann <doug.hellmann@dreamhost.com>
+Code-Review+1: Victor Howard <victor.r.howard@gmail.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 25 Apr 2014 19:16:36 +0000
+Reviewed-on: https://review.openstack.org/90173
+Project: openstack/keystone
+Branch: refs/heads/master
