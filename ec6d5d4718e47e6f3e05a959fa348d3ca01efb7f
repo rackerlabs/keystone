@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//0+c\u003d",
+        "filename": "keystone/tests/test_hacking_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-25T23:41:47Z",
+      "side": 0,
+      "message": "if these aren\u0027t being used in more than one place (and there\u0027s no subsequent patchset to do so either), what\u0027s the point of this patchset?",
+      "revId": "ec6d5d4718e47e6f3e05a959fa348d3ca01efb7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
