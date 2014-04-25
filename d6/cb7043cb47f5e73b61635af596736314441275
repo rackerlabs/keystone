@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Nathanael I Burton <nathanael.i.burton.work@gmail.com>
+Code-Review+1: Travis Ankrom <crabbytravvy@gmail.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 25 Apr 2014 20:44:16 +0000
+Reviewed-on: https://review.openstack.org/88621
+Project: openstack/keystone
+Branch: refs/heads/master
