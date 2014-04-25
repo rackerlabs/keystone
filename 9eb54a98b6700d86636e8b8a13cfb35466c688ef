@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//7xU\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXX//9IM\u003d",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//9E4\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-25T03:50:34Z",
       "side": 1,
       "message": "The Identity Provider created on Keystone should represent the same Identity Provider mentioned on line 90, right? If so, I\u0027d rather use a definite instead of an indefinite article. Or you could make it even clearer: \".. which represents the Identity Provider we will use to authenticate end users.\"",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//7vA\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "Answering your question: yes. You federate Idps with your Service Provider (Keystone) but you must also make Keystone aware there are Identity Providers along with certain Protocols and Mappings.\nI am, however not changing the articles and will leave it to my native English speaking colleagues.",
+      "parentUuid": "AAAAXX//9E4\u003d",
       "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//7uM\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "In fact, the Protocol is an object that ties mapping with identity provider, so adding a mapping after a protocol is simply impossible.",
+      "parentUuid": "AAAAXX//9Ag\u003d",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//9C0\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-25T03:50:34Z",
       "side": 1,
       "message": "Just a single mapping? -\u003e can only have a single/can have just a single; At least one mapping? -\u003e should have at least one mapping; Might have no mappings? -\u003e does it make sense to mention?",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//7m8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "changing to \u0027has\u0027 so I think clearly states that IdP will have exactly one mapping per protocol.",
+      "parentUuid": "AAAAXX//9C0\u003d",
       "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//7ok\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "moved to the beginning of the section.",
+      "parentUuid": "AAAAXX//9B4\u003d",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//9A8\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-25T03:50:34Z",
       "side": 1,
       "message": "Ok, it\u0027s a good definition for Protocol, but what should be done?",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//7mo\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "added some more explanation.",
+      "parentUuid": "AAAAXX//9A8\u003d",
       "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//7jw\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXX//8+A\u003d",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//8/I\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2014-04-25T03:50:34Z",
       "side": 1,
       "message": "s/a HTTP/an HTTP/",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//7js\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXX//8/I\u003d",
       "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//7f8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXX//8+g\u003d",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//9Jw\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 8
@@ -166,6 +328,24 @@
       "writtenOn": "2014-04-25T03:50:34Z",
       "side": 1,
       "message": "s/an unscoped/a scoped/",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//7e8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T08:29:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXX//9Jw\u003d",
       "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
