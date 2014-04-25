@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//9IM\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "Remove the first \"then\".",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//9E4\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "The Identity Provider created on Keystone should represent the same Identity Provider mentioned on line 90, right? If so, I\u0027d rather use a definite instead of an indefinite article. Or you could make it even clearer: \".. which represents the Identity Provider we will use to authenticate end users.\"",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//9Ag\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "Can one define a Mapping before creating the Protocol? If not, move this after Protocol.",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//9C0\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "Just a single mapping? -\u003e can only have a single/can have just a single; At least one mapping? -\u003e should have at least one mapping; Might have no mappings? -\u003e does it make sense to mention?",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//9B4\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "Define what a mapping is before saying how many of them can/should be specified.",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//9A8\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "Ok, it\u0027s a good definition for Protocol, but what should be done?",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//8+A\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "If we finished configuring in the last step, start a \"Using federation\" section.",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//8/I\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "s/a HTTP/an HTTP/",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//8+g\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "s/is a member of/belongs to/",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//9Jw\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T03:50:34Z",
+      "side": 1,
+      "message": "s/an unscoped/a scoped/",
+      "revId": "9eb54a98b6700d86636e8b8a13cfb35466c688ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
