@@ -33,6 +33,24 @@
       "revId": "289b85ed080275707311e658105d7cc56cb9fec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//6Yw\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-04-25T11:00:03Z",
+      "side": 1,
+      "message": "an, because HTTP (aitch tee tee pee) begins with a vowel sound -- see http://en.wikipedia.org/wiki/H#Name_in_English",
+      "parentUuid": "AAAAXX//7bc\u003d",
+      "revId": "289b85ed080275707311e658105d7cc56cb9fec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
