@@ -51,6 +51,24 @@
       "revId": "289b85ed080275707311e658105d7cc56cb9fec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//55I\u003d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-25T12:05:35Z",
+      "side": 1,
+      "message": "ok!",
+      "parentUuid": "AAAAXX//6Yw\u003d",
+      "revId": "289b85ed080275707311e658105d7cc56cb9fec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
