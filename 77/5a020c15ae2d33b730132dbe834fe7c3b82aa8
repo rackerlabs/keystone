@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Approved+1: David Stanek <dstanek@dstanek.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 25 Apr 2014 08:12:49 +0000
+Reviewed-on: https://review.openstack.org/87071
+Project: openstack/keystone
+Branch: refs/heads/master
