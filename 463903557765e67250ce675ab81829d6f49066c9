@@ -52,6 +52,24 @@
       "revId": "463903557765e67250ce675ab81829d6f49066c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//2gw\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-25T19:19:21Z",
+      "side": 1,
+      "message": "On OS X 10.9, find requires the -E argument to properly process full regexes (BRE/POSIX.2) after the -regex argument. Linux has no such option.\n\nIt would be better to use the .*\\.pot* regex if we want to support this operation on OS X",
+      "parentUuid": "AAAAXX//27c\u003d",
+      "revId": "463903557765e67250ce675ab81829d6f49066c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
