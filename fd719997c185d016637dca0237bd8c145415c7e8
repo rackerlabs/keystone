@@ -16,6 +16,24 @@
       "revId": "fd719997c185d016637dca0237bd8c145415c7e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//7nI\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-04-25T08:15:29Z",
+      "side": 1,
+      "message": "True, I can turn it into a TypeError in the unlikely case verifier isn\u0027t iterable or an object with no len(), or simply remove the try-except",
+      "parentUuid": "AAAAXX//8mQ\u003d",
+      "revId": "fd719997c185d016637dca0237bd8c145415c7e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
