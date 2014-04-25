@@ -34,9 +34,9 @@ LOG = log.getLogger(__name__)
 class Provider(common.BaseProvider):
     def _get_token_id(self, token_data):
         try:
-            token_id = cms.cms_sign_token(json.dumps(token_data),
-                                          CONF.signing.certfile,
-                                          CONF.signing.keyfile)
+            token_id = str(cms.cms_sign_token(json.dumps(token_data),
+                                              CONF.signing.certfile,
+                                              CONF.signing.keyfile))
             return token_id
         except environment.subprocess.CalledProcessError:
             LOG.exception(_('Unable to sign token'))
