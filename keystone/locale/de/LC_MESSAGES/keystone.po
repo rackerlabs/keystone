@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-04-24 06:00+0000\n"
-"PO-Revision-Date: 2014-04-23 13:50+0000\n"
+"POT-Creation-Date: 2014-04-25 06:00+0000\n"
+"PO-Revision-Date: 2014-04-24 12:52+0000\n"
 "Last-Translator: rsimai\n"
 "Language-Team: German "
 "(http://www.transifex.com/projects/p/keystone/language/de/)\n"
@@ -1332,13 +1332,16 @@ msgstr ""
 
 #: keystone/openstack/common/gettextutils.py:271
 msgid "Message objects do not support addition."
-msgstr ""
+msgstr "Das Nachrichtenobjekt unterstützt kein Hinzufügen."
 
 #: keystone/openstack/common/gettextutils.py:280
 msgid ""
 "Message objects do not support str() because they may contain non-ascii "
 "characters. Please use unicode() or translate() instead."
 msgstr ""
+"Nachrichtenobjekte unterstützen kein str() denn sie können nicht-ASCII "
+"Zeichen enthalten. Bitte verwenden Sie statt dessen unicode() oder "
+"translate()."
 
 #: keystone/openstack/common/lockutils.py:102
 #, python-format
@@ -1430,12 +1433,16 @@ msgid ""
 "Tables \"%s\" have non utf8 collation, please make sure all tables are "
 "CHARSET=utf8"
 msgstr ""
+"Tabellen \"%s\" verwenden eine nicht-utf8 Kollation. Bitte stellen Sie "
+"sicher, dass alle Tabellen CHARSET=utf8 verwenden"
 
 #: keystone/openstack/common/db/sqlalchemy/migration.py:250
 msgid ""
 "The database is not under version control, but has tables. Please stamp "
 "the current version of the schema manually."
 msgstr ""
+"Die Datenbank hat keine Versionskontrolle aber Tabellen. Bitte "
+"\"stempeln\" Sie die aktuelle Version des Schemas manuell."
 
 #: keystone/openstack/common/db/sqlalchemy/utils.py:58
 msgid "Sort key supplied was not valid."
@@ -1472,6 +1479,9 @@ msgid ""
 "Please specify column %s in col_name_col_instance param. It is required "
 "because column has unsupported type by sqlite)."
 msgstr ""
+"Bitte geben Sie die Spalte %s im col_name_col_instance Parameter an. Dies"
+" ist erforderlich, denn der Typ dieser Spalte wird von sqlite nicht "
+"unterstützt."
 
 #: keystone/openstack/common/db/sqlalchemy/utils.py:292
 #, python-format
@@ -1479,10 +1489,13 @@ msgid ""
 "col_name_col_instance param has wrong type of column instance for column "
 "%s It should be instance of sqlalchemy.Column."
 msgstr ""
+"col_name_col_instance Parameter hat einen falschen Typ der Spalteninstanz"
+" für die Spalte column %s. Es sollte eine Instanz von sqlalchemy.Column "
+"sein."
 
 #: keystone/openstack/common/db/sqlalchemy/utils.py:400
 msgid "Unsupported id columns type"
-msgstr ""
+msgstr "Nicht unterstützter Spaltentyp"
 
 #: keystone/policy/backends/rules.py:99
 #, python-format

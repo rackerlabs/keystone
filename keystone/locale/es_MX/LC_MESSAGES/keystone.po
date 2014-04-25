@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-04-24 06:00+0000\n"
-"PO-Revision-Date: 2014-04-19 01:30+0000\n"
+"POT-Creation-Date: 2014-04-25 06:00+0000\n"
+"PO-Revision-Date: 2014-04-24 21:40+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Spanish (Mexico) "
 "(http://www.transifex.com/projects/p/keystone/language/es_MX/)\n"
@@ -1411,7 +1411,7 @@ msgstr ""
 
 #: keystone/openstack/common/db/sqlalchemy/migration.py:190
 msgid "version should be an integer"
-msgstr ""
+msgstr "La versión debe ser un entero"
 
 #: keystone/openstack/common/db/sqlalchemy/migration.py:226
 #, python-format
