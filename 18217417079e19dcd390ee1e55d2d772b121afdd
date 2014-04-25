@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//3hw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-25T17:04:57Z",
+      "side": 1,
+      "message": "The \u0027ldapsubentry\u0027 objectclass is used to flag entries as operational.  As with operational attributes, an \u0027ldapsubentry\u0027 will not be returned unless you specifically ask for it.  If we only use \u0027objectclass\u003d*\u0027 here, the subentries will be left behind, causing deletion of the non-leaf entry to fail since it will still have children.",
+      "parentUuid": "AAAAU3//uKI\u003d",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uCU\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-25T04:13:00Z",
       "side": 1,
       "message": "also, if I am looking at the right doc, (objectclass\u003d*) is already the default so no need to specify it. For efficiency, you don\u0027t want all the attributes back. In this case, all you care are the DNs. Maybe you can simplify this?\n\nentries \u003d conn.search_s(dn, scope, attrslist\u003d[\u0027dn\u0027], attrsonly\u003d1)",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//3kE\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-25T17:04:57Z",
+      "side": 1,
+      "message": "Asking for the \u00271.1\u0027 attribute causes no attributes to be returned.  It\u0027s basically the opposite of \u0027*\u0027.  See section 4.5.1.8 of RFC 4511 for details:\n\n   noattrs \u003d %x31.2E.31 ; \"1.1\"",
+      "parentUuid": "AAAAU3//uCU\u003d",
       "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
