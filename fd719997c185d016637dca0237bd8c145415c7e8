@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//8mQ\u003d",
+        "filename": "keystone/contrib/oauth1/validator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-25T06:08:26Z",
+      "side": 1,
+      "message": "Do we still need this? I removed the try-except and the tests I ran passed. I don\u0027t see what would raise a ValueError anymore.",
+      "revId": "fd719997c185d016637dca0237bd8c145415c7e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
