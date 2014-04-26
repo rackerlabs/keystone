@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//zUA\u003d",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 1,
+      "message": "++",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//zT8\u003d",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 1,
+      "message": "Could we make this something more geneirc, such that another project could pick it up and use it the same way, something like:  get_root_url?",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//zTU\u003d",
+        "filename": "keystone/api/v3/root.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 1,
+      "message": "I think that would be more reusable as \"root_url\"",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//zTg\u003d",
+        "filename": "keystone/service.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 1,
+      "message": "Much better.",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//zTw\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 1,
+      "message": "probably should state what the appropriate content type is for a cert.  It is not HTML.",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

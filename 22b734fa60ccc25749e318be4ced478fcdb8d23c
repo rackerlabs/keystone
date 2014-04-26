@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//zTk\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 0,
+      "message": "does not fail now?",
+      "revId": "22b734fa60ccc25749e318be4ced478fcdb8d23c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//zTo\u003d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:15:37Z",
+      "side": 0,
+      "message": "why is this gone?",
+      "revId": "22b734fa60ccc25749e318be4ced478fcdb8d23c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
