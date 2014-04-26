@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//zSk\u003d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-26T20:23:52Z",
+      "side": 1,
+      "message": "if you do an option dependency, then the checkout would be  if self.password_rotation_api:",
+      "revId": "6a3a5faca8bfe0edfa8abe60aed303e53c385c95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//JIU\u003d",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
