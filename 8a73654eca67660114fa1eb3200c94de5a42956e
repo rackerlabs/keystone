@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//0m4\u003d",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-04-26T03:19:42Z",
+      "side": 1,
+      "message": "I know you are just following what was here but since you are updating the code anyway please update the bigboy  variable to something like invalid_length_password in both test_hash_long_password_truncation and test_hash_long_password_strict.  I\u0027m not sure how bigboy got in as a variable name in the first place but it really shouldn\u0027t be there.",
+      "revId": "8a73654eca67660114fa1eb3200c94de5a42956e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
