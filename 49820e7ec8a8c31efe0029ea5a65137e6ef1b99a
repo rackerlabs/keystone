@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//x7g\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-27T23:22:58Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t make any sense.",
+      "revId": "49820e7ec8a8c31efe0029ea5a65137e6ef1b99a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//x6s\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-27T23:22:58Z",
+      "side": 1,
+      "message": "why is 0 used here? Add a comment.\n\nAlso, why not change the model?",
+      "revId": "49820e7ec8a8c31efe0029ea5a65137e6ef1b99a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
