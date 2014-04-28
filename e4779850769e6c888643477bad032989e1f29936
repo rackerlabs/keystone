@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//uMk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-28T13:18:22Z",
+      "side": 1,
+      "message": "IMO, this should be a commit title, and line 7 should go away. Backticks also look weird.",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//uMY\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-28T13:18:22Z",
+      "side": 1,
+      "message": "is already declared",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//uMU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-28T13:18:22Z",
+      "side": 1,
+      "message": "is changed",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//uMA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-28T13:18:22Z",
+      "side": 1,
+      "message": "FederationProtocol.mapping_id must logically be not nullable. Provide a migration script to add the NOT NULL constraint to the column.",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//uT0\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-04-28T13:18:22Z",
+      "side": 1,
+      "message": "s/will be/is",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
