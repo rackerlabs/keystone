@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//8Io\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-28T09:38:34Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "AAAAXH//Aic\u003d",
+      "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//AiQ\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -48,6 +66,41 @@
       "side": 1,
       "message": "++",
       "parentUuid": "AAAAXH//AiQ\u003d",
+      "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//8Iw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-28T09:38:34Z",
+      "side": 1,
+      "message": "Yea, docstring would be helpful",
+      "parentUuid": "AAAAXX///9U\u003d",
+      "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//sY4\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-18T06:52:57Z",
+      "side": 1,
+      "message": "objectClass was removed because it will be added to the query string in LdapBase._ldap_get_all.",
       "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
