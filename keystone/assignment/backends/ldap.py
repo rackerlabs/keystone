@@ -88,24 +88,54 @@ class Assignment(assignment.Driver):
 
         def _get_roles_for_just_user_and_project(user_id, tenant_id):
             self.get_project(tenant_id)
-            return [self.role._dn_to_id(a.role_dn)
-                    for a in self.role.get_role_assignments
-                    (self.project._id_to_dn(tenant_id))
-                    if self.user._dn_to_id(a.user_dn) == user_id]
+
+            proj_dn = self.project._id_to_dn(tenant_id)
+            assignments = self.role.get_role_assignments(proj_dn)
+
+            roles = []
+            for assignment in assignments:
+                assignment_id = self.user._dn_to_id(assignment.user_dn)
+
+                if assignment_id != user_id:
+                    # Skip this assignment, it's not the target user id.
+                    continue
+
+                # "normalize" DN by uppercase, then see if the entry is in the
+                # tree by checking if the entry DN ends with the tree DN.
+                assignment_dn_norm = assignment.user_dn.upper()
+                user_tree_dn_norm = self.user.tree_dn.upper()
+                if not assignment_dn_norm.endswith(user_tree_dn_norm):
+                    # Skip this assignment, it's not a user assignment.
+                    continue
+
+                role_id = self.role._dn_to_id(assignment.role_dn)
+                roles.append(role_id)
+            return roles
 
         def _get_roles_for_group_and_project(group_id, project_id):
             self.get_project(project_id)
-            group_dn = self.group._id_to_dn(group_id)
-            # NOTE(marcos-fermin-lobo): In Active Directory, for functions
-            # such as "self.role.get_role_assignments", it returns
-            # the key "CN" or "OU" in uppercase.
-            # The group_dn var has "CN" and "OU" in lowercase.
-            # For this reason, it is necessary to use the "upper()"
-            # function so both are consistent.
-            return [self.role._dn_to_id(a.role_dn)
-                    for a in self.role.get_role_assignments
-                    (self.project._id_to_dn(project_id))
-                    if a.user_dn.upper() == group_dn.upper()]
+
+            project_dn = self.project._id_to_dn(project_id)
+            assignments = self.role.get_role_assignments(project_dn)
+
+            roles = []
+            for assignment in assignments:
+                assignment_id = self.group._dn_to_id(assignment.user_dn)
+
+                if assignment_id != group_id:
+                    # Skip this assignment, it's not the target group id.
+                    continue
+
+                # "normalize" DN by uppercase, then see if the entry is in the
+                # tree by checking if the entry DN ends with the tree DN.
+                assignment_dn_norm = assignment.user_dn.upper()
+                group_tree_dn_norm = self.group.tree_dn.upper()
+                if not assignment_dn_norm.endswith(group_tree_dn_norm):
+                    # Skip this assignment, it's not a group assignment.
+                    continue
+
+                roles.append(self.role._dn_to_id(assignment.role_dn))
+            return roles
 
         if domain_id is not None:
             msg = _('Domain metadata not supported by LDAP')
