@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//tUc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-28T14:55:34Z",
+      "side": 1,
+      "message": "No, it closes the bug.  The bug is that Keystone HTTPD breaks with the token in this format.",
+      "parentUuid": "AAAAXX//wzc\u003d",
+      "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//uSY\u003d",
         "filename": "keystone/token/providers/pki.py",
         "patchSetId": 3
@@ -64,6 +82,42 @@
       "writtenOn": "2014-04-28T14:33:45Z",
       "side": 1,
       "message": "it seems this addition should also have a comment so it can be removed later, once keystoneclient has actually solved the issue",
+      "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//teY\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-28T14:55:34Z",
+      "side": 1,
+      "message": "No idea, and I don\u0027t really have a way to test it as Python33 is not really an option for Keystone server yet.",
+      "parentUuid": "AAAAXX//uSY\u003d",
+      "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//teQ\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-04-28T14:55:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXX//ti0\u003d",
       "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
