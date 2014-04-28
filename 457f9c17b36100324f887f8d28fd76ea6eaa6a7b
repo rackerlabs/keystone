@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9K1E\u003d",
+        "filename": "keystone/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T01:54:59Z",
+      "side": 1,
+      "message": "I think I should switch to openstack logging.",
+      "revId": "457f9c17b36100324f887f8d28fd76ea6eaa6a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9K0c\u003d",
+        "filename": "keystone/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T01:54:59Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of calling exit() from a library could this raise an exception, or should the caller of run() set this up?",
+      "revId": "457f9c17b36100324f887f8d28fd76ea6eaa6a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9K00\u003d",
+        "filename": "keystone/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2013-12-16T01:54:59Z",
+      "side": 1,
+      "message": "could change from function to inline since only called from one place.",
+      "revId": "457f9c17b36100324f887f8d28fd76ea6eaa6a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
