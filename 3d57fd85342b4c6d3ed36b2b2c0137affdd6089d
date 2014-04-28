@@ -51,6 +51,23 @@
       "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//+WU\u003d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-24T22:38:25Z",
+      "side": 1,
+      "message": "Nice catch!  I missed this comparison in my earlier patch... :(\n\nThere are two other areas when you should call _is_dumb_member() in keystone/assignment/backends/ldap.py:\n\n  get_user_dns()\n  get_role_assignments()\n\nIt would also be great if you can add tests for each function that uses _is_dumb_member() to ensure that the dumb member is filtered out when the case is different between what fakeldap returns and what the config defines.",
+      "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
