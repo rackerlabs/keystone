@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "facab960_d6cd645f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-28T23:13:20Z",
+      "side": 1,
+      "message": "remove \"already\"",
+      "parentUuid": "AAAAXX//uMY\u003d",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//uMU\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 22
@@ -47,6 +65,24 @@
       "writtenOn": "2014-04-28T13:18:22Z",
       "side": 1,
       "message": "is changed",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_16d8ac1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-28T23:13:20Z",
+      "side": 1,
+      "message": "also, change \"model\" to \"the model\"",
+      "parentUuid": "AAAAXX//uMU\u003d",
       "revId": "e4779850769e6c888643477bad032989e1f29936",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,40 @@
       "writtenOn": "2014-04-28T13:18:22Z",
       "side": 1,
       "message": "s/will be/is",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_3604d07d",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-28T23:13:20Z",
+      "side": 1,
+      "message": "why should they be filled with empty strings?",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_b6f7008c",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-04-28T23:13:20Z",
+      "side": 1,
+      "message": "should the column be made not nullable with default \u0027\u0027 ?\n\nAlso, there should be a unit test for this migration. Add some values and then make them nullable.\n\nAlso, the unit test should do a downgrade.",
       "revId": "e4779850769e6c888643477bad032989e1f29936",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
