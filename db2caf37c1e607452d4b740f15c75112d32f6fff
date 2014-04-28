@@ -106,6 +106,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+Mto\u003d",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-03-28T16:45:58Z",
+      "side": 1,
+      "message": "what service is this URL pointing at ? I\u0027d like to test your code with my own setup, so I need to know what extra services I need to deploy",
+      "revId": "db2caf37c1e607452d4b740f15c75112d32f6fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+K1I\u003d",
         "filename": "keystone/auth/plugins/oidc.py",
         "patchSetId": 7
