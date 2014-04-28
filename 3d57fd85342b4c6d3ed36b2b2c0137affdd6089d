@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Aic\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T17:37:18Z",
+      "side": 1,
+      "message": "pass True as a kwarg since it\u0027s optional (and not obvious what True means here)",
+      "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//AiQ\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-24T17:37:18Z",
+      "side": 1,
+      "message": "docstr would be appreciated",
+      "revId": "3d57fd85342b4c6d3ed36b2b2c0137affdd6089d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
