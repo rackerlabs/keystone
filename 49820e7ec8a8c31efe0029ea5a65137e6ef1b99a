@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//wI0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-28T08:37:04Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll try to rephrase more clear.",
+      "parentUuid": "AAAAXX//x7g\u003d",
+      "revId": "49820e7ec8a8c31efe0029ea5a65137e6ef1b99a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//x6s\u003d",
         "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-27T23:22:58Z",
       "side": 1,
       "message": "why is 0 used here? Add a comment.\n\nAlso, why not change the model?",
+      "revId": "49820e7ec8a8c31efe0029ea5a65137e6ef1b99a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//wPQ\u003d",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-28T08:37:04Z",
+      "side": 1,
+      "message": "\u003e\u003e\u003e Also, why not change the model?\nPlease see patch-set #3 and Dolph\u0027s comment https://review.openstack.org/#/c/84446/3/keystone/contrib/federation/backends/sql.py\n\n\u003e\u003e\u003ewhy is 0 used here? Add a comment.\n\nHmm, I have tried to prevent database errors when the field will be changed to non-nullable. This is really wrong solution, it should be an empty string, because of mapping_id \u003d sql.Column(sql.String(64). Thanks you! Comment will be added.",
+      "parentUuid": "AAAAXX//x6s\u003d",
       "revId": "49820e7ec8a8c31efe0029ea5a65137e6ef1b99a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
