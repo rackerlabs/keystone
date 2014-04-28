@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-04-24 06:00+0000\n"
-"PO-Revision-Date: 2014-04-23 13:50+0000\n"
+"POT-Creation-Date: 2014-04-28 06:00+0000\n"
+"PO-Revision-Date: 2014-04-26 08:35+0000\n"
 "Last-Translator: rsimai\n"
 "Language-Team: German "
 "(http://www.transifex.com/projects/p/keystone/language/de/)\n"
@@ -419,7 +419,7 @@ msgstr ""
 
 #: keystone/assignment/backends/kvs.py:199
 #: keystone/assignment/backends/ldap.py:540
-#: keystone/assignment/backends/sql.py:345
+#: keystone/assignment/backends/sql.py:346
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "Nicht gewährte Rolle kann nicht entfernt werden, %s"
@@ -450,7 +450,7 @@ msgid "Domains are read-only against LDAP"
 msgstr ""
 
 #: keystone/assignment/backends/ldap.py:306
-#: keystone/assignment/backends/sql.py:129
+#: keystone/assignment/backends/sql.py:130
 msgid "Inherited roles can only be assigned to domains"
 msgstr ""
 
@@ -469,18 +469,18 @@ msgstr "Rolle %s nicht gefunden"
 msgid "Cannot duplicate name %s"
 msgstr ""
 
-#: keystone/assignment/backends/sql.py:116
+#: keystone/assignment/backends/sql.py:117
 #, python-format
 msgid ""
 "Unexpected combination of grant attributes - User, Group, Project, "
 "Domain: %s"
 msgstr ""
 
-#: keystone/assignment/backends/sql.py:285
+#: keystone/assignment/backends/sql.py:286
 msgid "Must specify either domain or project"
 msgstr ""
 
-#: keystone/assignment/backends/sql.py:366
+#: keystone/assignment/backends/sql.py:367
 #, python-format
 msgid "Unexpected assignment type encountered, %s"
 msgstr ""
@@ -827,7 +827,7 @@ msgstr ""
 msgid "Invalid token in _get_trust_id_for_request"
 msgstr ""
 
-#: keystone/common/wsgi.py:501 keystone/tests/test_wsgi.py:273
+#: keystone/common/wsgi.py:501 keystone/tests/test_wsgi.py:274
 msgid "The resource could not be found."
 msgstr "Die Ressource konnte nicht gefunden werden."
 
@@ -1216,7 +1216,7 @@ msgstr ""
 msgid "authorizing user does not have role required"
 msgstr ""
 
-#: keystone/contrib/oauth1/controllers.py:353
+#: keystone/contrib/oauth1/controllers.py:351
 msgid "User is not a member of the requested project"
 msgstr ""
 
@@ -1292,7 +1292,7 @@ msgid "Invalid user / password"
 msgstr ""
 
 #: keystone/identity/backends/kvs.py:178 keystone/identity/backends/kvs.py:187
-#: keystone/identity/backends/ldap.py:183 keystone/identity/backends/sql.py:190
+#: keystone/identity/backends/ldap.py:181 keystone/identity/backends/sql.py:190
 #: keystone/identity/backends/sql.py:201
 msgid "User not found in group"
 msgstr "Benutzer nicht in Gruppe gefunden"
@@ -1312,7 +1312,7 @@ msgid ""
 "be removed from the group. The user will be ignored."
 msgstr ""
 
-#: keystone/identity/backends/ldap.py:307
+#: keystone/identity/backends/ldap.py:305
 #, python-format
 msgid "User %(user_id)s is already a member of group %(group_id)s"
 msgstr ""
@@ -1332,13 +1332,16 @@ msgstr ""
 
 #: keystone/openstack/common/gettextutils.py:271
 msgid "Message objects do not support addition."
-msgstr ""
+msgstr "Das Nachrichtenobjekt unterstützt kein Hinzufügen."
 
-#: keystone/openstack/common/gettextutils.py:280
+#: keystone/openstack/common/gettextutils.py:281
 msgid ""
 "Message objects do not support str() because they may contain non-ascii "
 "characters. Please use unicode() or translate() instead."
 msgstr ""
+"Nachrichtenobjekte unterstützen kein str() denn sie können nicht-ASCII "
+"Zeichen enthalten. Bitte verwenden Sie statt dessen unicode() oder "
+"translate()."
 
 #: keystone/openstack/common/lockutils.py:102
 #, python-format
@@ -1360,7 +1363,7 @@ msgstr "Fehler beim laden der Logging Konfiguration %(log_config)s: %(err_msg)s"
 msgid "syslog facility must be one of: %s"
 msgstr "syslog-Funktion muss einer der folgenden Werte sein: %s"
 
-#: keystone/openstack/common/log.py:710
+#: keystone/openstack/common/log.py:716
 #, python-format
 msgid "Fatal call to deprecated config: %(msg)s"
 msgstr "Schwerwiegender Aufruf an veraltete Konfiguration: %(msg)s"
@@ -1390,12 +1393,12 @@ msgstr ""
 msgid "Unrecognized value '%(val)s', acceptable values are: %(acceptable)s"
 msgstr ""
 
-#: keystone/openstack/common/strutils.py:203
+#: keystone/openstack/common/strutils.py:197
 #, python-format
 msgid "Invalid unit system: \"%s\""
 msgstr ""
 
-#: keystone/openstack/common/strutils.py:212
+#: keystone/openstack/common/strutils.py:206
 #, python-format
 msgid "Invalid string format: %s"
 msgstr ""
@@ -1430,12 +1433,16 @@ msgid ""
 "Tables \"%s\" have non utf8 collation, please make sure all tables are "
 "CHARSET=utf8"
 msgstr ""
+"Tabellen \"%s\" verwenden eine nicht-utf8 Kollation. Bitte stellen Sie "
+"sicher, dass alle Tabellen CHARSET=utf8 verwenden"
 
 #: keystone/openstack/common/db/sqlalchemy/migration.py:250
 msgid ""
 "The database is not under version control, but has tables. Please stamp "
 "the current version of the schema manually."
 msgstr ""
+"Die Datenbank hat keine Versionskontrolle aber Tabellen. Bitte "
+"\"stempeln\" Sie die aktuelle Version des Schemas manuell."
 
 #: keystone/openstack/common/db/sqlalchemy/utils.py:58
 msgid "Sort key supplied was not valid."
@@ -1466,23 +1473,29 @@ msgstr ""
 msgid "model should be a subclass of ModelBase"
 msgstr ""
 
-#: keystone/openstack/common/db/sqlalchemy/utils.py:286
+#: keystone/openstack/common/db/sqlalchemy/utils.py:294
 #, python-format
 msgid ""
 "Please specify column %s in col_name_col_instance param. It is required "
 "because column has unsupported type by sqlite)."
 msgstr ""
+"Bitte geben Sie die Spalte %s im col_name_col_instance Parameter an. Dies"
+" ist erforderlich, denn der Typ dieser Spalte wird von sqlite nicht "
+"unterstützt."
 
-#: keystone/openstack/common/db/sqlalchemy/utils.py:292
+#: keystone/openstack/common/db/sqlalchemy/utils.py:300
 #, python-format
 msgid ""
 "col_name_col_instance param has wrong type of column instance for column "
 "%s It should be instance of sqlalchemy.Column."
 msgstr ""
+"col_name_col_instance Parameter hat einen falschen Typ der Spalteninstanz"
+" für die Spalte column %s. Es sollte eine Instanz von sqlalchemy.Column "
+"sein."
 
-#: keystone/openstack/common/db/sqlalchemy/utils.py:400
+#: keystone/openstack/common/db/sqlalchemy/utils.py:408
 msgid "Unsupported id columns type"
-msgstr ""
+msgstr "Nicht unterstützter Spaltentyp"
 
 #: keystone/policy/backends/rules.py:99
 #, python-format
