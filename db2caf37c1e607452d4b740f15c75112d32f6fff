@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH/+Pa4\u003d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-28T06:23:36Z",
+      "side": 1,
+      "message": "if we use full federation flow, then we can remove this.",
+      "revId": "db2caf37c1e607452d4b740f15c75112d32f6fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9Xtw\u003d",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
@@ -101,6 +118,40 @@
       "side": 1,
       "message": "Hey Matthieu, I intend to make that url configurable, but we have it pointing to (in open id connect terms) an authorization endpoint.\n\nYou can see more information here: https://developers.google.com/accounts/docs/OAuth2Login#sendauthrequest\n\nFor Google, it would be: https://accounts.google.com/o/oauth2/auth\n\nTo get things started, I set up my own with, which is why i used the value that you see there.",
       "parentUuid": "AAAAWH/+Mto\u003d",
+      "revId": "db2caf37c1e607452d4b740f15c75112d32f6fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+Pds\u003d",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-28T06:23:36Z",
+      "side": 1,
+      "message": "this is just temporary, as it should mimic the saml2 plugin, where the admin must create an idp/protocol, and associate it with a mapping.",
+      "revId": "db2caf37c1e607452d4b740f15c75112d32f6fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+PbE\u003d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-03-28T06:23:36Z",
+      "side": 1,
+      "message": "might be able to just use the saml2 handler, add in some extra code to add the issuer.",
       "revId": "db2caf37c1e607452d4b740f15c75112d32f6fff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
