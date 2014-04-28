@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//wzc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-28T06:35:15Z",
+      "side": 1,
+      "message": "this patch doesn\u0027t close the bug, the bug is still there whether we enforce token to be string or not. \n\nChange to: Partial-Bug: #1312971\n\nso the bug is not closed",
+      "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
