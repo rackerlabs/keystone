@@ -50,6 +50,23 @@
       "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//ti0\u003d",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-04-28T14:33:45Z",
+      "side": 1,
+      "message": "it seems this addition should also have a comment so it can be removed later, once keystoneclient has actually solved the issue",
+      "revId": "f6cb493f3fd579fe65c0cfca42c79369bfe60a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
