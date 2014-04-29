@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_fb95e188",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-29T15:34:52Z",
+      "side": 1,
+      "message": "I know it wasn\u0027t there before, but i think a message here would be really useful",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_db465d23",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-29T15:34:52Z",
+      "side": 1,
+      "message": "the name of this function is confusion, since it\u0027s only required IIF project_id is specified.",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_3bc82974",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-04-29T15:34:52Z",
+      "side": 1,
+      "message": "nit: rename to user_roles since many can come back",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
