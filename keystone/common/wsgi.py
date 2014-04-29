@@ -281,10 +281,22 @@ class Application(BaseApplication):
             # Accept either is_admin or the admin role
             self.policy_api.enforce(creds, 'admin_required', {})
 
-    def _require_attribute(self, ref, attr):
+    def _attribute_is_empty(self, ref, attribute):
+        return ref.get(attribute) is None or ref.get(attribute) == ''
+
+    def _require_attribute(self, ref, attribute):
         """Ensures the reference contains the specified attribute."""
-        if ref.get(attr) is None or ref.get(attr) == '':
-            msg = _('%s field is required and cannot be empty') % attr
+        if self._attribute_is_empty(ref, attribute):
+            msg = _('%s field is required and cannot be empty') % attribute
+            raise exception.ValidationError(message=msg)
+
+    def _require_attributes(self, ref, attrs):
+        """Ensures the reference contains the specified attributes."""
+        missing_attrs = [attribute for attribute in attrs
+                         if self._attribute_is_empty(ref, attribute)]
+
+        if missing_attrs:
+            msg = _('%s field(s) cannot be empty') % ', '.join(missing_attrs)
             raise exception.ValidationError(message=msg)
 
     def _get_trust_id_for_request(self, context):
