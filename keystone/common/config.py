@@ -189,7 +189,8 @@ FILE_OPTIONS = {
         cfg.IntOpt('expiration', default=3600,
                    help='Amount of time a token should remain valid '
                         '(in seconds).'),
-        cfg.StrOpt('provider', default=None,
+        cfg.StrOpt('provider',
+                   default='keystone.token.providers.pkiz.Provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
                         '"keystone.token.providers.[pki|uuid].Provider".'),
