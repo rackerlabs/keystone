@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "bad4c104_2ac5405b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-29T09:57:17Z",
+      "side": 1,
+      "message": "Done for all.",
+      "parentUuid": "AAAAXX//uMA\u003d",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//uT0\u003d",
         "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
         "patchSetId": 22
@@ -140,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "bad4c104_6a3108a2",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-29T09:57:17Z",
+      "side": 1,
+      "message": "Why is it should be filled? Because of the column was nullable and it is possible that empty records are existing in a database.\n\nWhy empty? If it was not filled, so it should be not null, but formally it should be empty.\n\nWhy string? https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/backends/sql.py#L29 The field is string type.",
+      "parentUuid": "facab960_3604d07d",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "facab960_b6f7008c",
         "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
         "patchSetId": 22
@@ -151,6 +187,24 @@
       "writtenOn": "2014-04-28T23:13:20Z",
       "side": 1,
       "message": "should the column be made not nullable with default \u0027\u0027 ?\n\nAlso, there should be a unit test for this migration. Add some values and then make them nullable.\n\nAlso, the unit test should do a downgrade.",
+      "revId": "e4779850769e6c888643477bad032989e1f29936",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_8ab48cf3",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/003_mapping_id_nullable_false.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-04-29T09:57:17Z",
+      "side": 1,
+      "message": "should the column be made not nullable with default \u0027\u0027 ? I think it shouldn\u0027t. Because of it is not creation, it is alter and we have filled all potentially empty records.\n\nOk, I\u0027ll write the test with downgrade.",
+      "parentUuid": "facab960_b6f7008c",
       "revId": "e4779850769e6c888643477bad032989e1f29936",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
