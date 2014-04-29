@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_61ba02e3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-29T16:27:15Z",
+      "side": 1,
+      "message": "It would be nice to add a comment to point out that this is not a fully \"Distinguished Name\" syntax aware comparison. You can probably just use my comment that you removed from keystone/assignment/backends/ldap.py here.",
+      "revId": "f5713671a8a70348ab281ebde9246b16f6b4d3cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
