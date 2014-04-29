@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_f10fc72c",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T13:11:09Z",
+      "side": 1,
+      "message": "This should be move up to the stdlib import section.",
+      "revId": "9453203bf1b772de93c34680f4e782c55dd7a71e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_362cc5ab",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T13:11:09Z",
+      "side": 1,
+      "message": "The translate method in Py3 only take a table argument now. Another way to do this is:\n\n    VERIFIER_CHARS \u003d (string.ascii_letters + string.digits)\n    VERIFIER_CHARS \u003d \u0027\u0027.join(c for c in VERIFIER_CHARS if c not in \u0027jiIl1oO0\u0027)\n\nYou could even name the string \u0027delchars\u0027 or something similar for more clarity.",
+      "revId": "9453203bf1b772de93c34680f4e782c55dd7a71e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
