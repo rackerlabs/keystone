@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bad4c104_0148562c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T16:22:45Z",
+      "side": 1,
+      "message": "Tests for the new method?",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad4c104_fb95e188",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -36,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "bad4c104_c6176450",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T16:22:45Z",
+      "side": 1,
+      "message": "(nit) if \u0027trust\u0027 is a dict and we don\u0027t plan on using the return from .get(), i\u0027d rather see \"if \u0027project_id\u0027 in trust\u0027.",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad4c104_3bc82974",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -47,6 +81,23 @@
       "writtenOn": "2014-04-29T15:34:52Z",
       "side": 1,
       "message": "nit: rename to user_roles since many can come back",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_86c1dce6",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T16:22:45Z",
+      "side": 1,
+      "message": "(nit) extra parens",
       "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
