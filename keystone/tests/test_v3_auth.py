@@ -404,6 +404,18 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
         self.doSetUp()
 
 
+class TestPKIZTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
+    def config_overrides(self):
+        super(TestPKIZTokenAPIs, self).config_overrides()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.pkiz.Provider')
+
+    def setUp(self):
+        super(TestPKIZTokenAPIs, self).setUp()
+        self.doSetUp()
+
+
 class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestUUIDTokenAPIs, self).config_overrides()
