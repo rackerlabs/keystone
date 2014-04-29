@@ -16,6 +16,24 @@
       "revId": "081cf1be8c711d4ebaab2ee138587e118b8655cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_3b03c9b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9656
+      },
+      "writtenOn": "2014-04-29T15:29:11Z",
+      "side": 1,
+      "message": "It\u0027s the git HEAD of my oslo-incubator checkout, not Change-Id.",
+      "parentUuid": "bad4c104_58eed3ed",
+      "revId": "081cf1be8c711d4ebaab2ee138587e118b8655cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
