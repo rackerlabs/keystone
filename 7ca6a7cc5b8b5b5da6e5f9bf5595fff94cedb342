@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_72aacb71",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-04-29T19:49:56Z",
+      "side": 1,
+      "message": "By the test title, isn\u0027t the descriptions suppose to be unique?",
+      "revId": "7ca6a7cc5b8b5b5da6e5f9bf5595fff94cedb342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
