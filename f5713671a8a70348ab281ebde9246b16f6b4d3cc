@@ -33,6 +33,24 @@
       "revId": "f5713671a8a70348ab281ebde9246b16f6b4d3cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_87047616",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-04-29T17:14:23Z",
+      "side": 1,
+      "message": "A parsed DN of \"uid\u003dfoo,dc\u003dexample,dc\u003dcom\" should look like this:\n\n  [[(\u0027uid\u0027, \u0027foo\u0027, 1)], [(\u0027dc\u0027, \u0027example\u0027, 1)], [(\u0027dc\u0027, \u0027com\u0027, 1)]]\n\nI agree that tests would be good here.  I think at a minimum we want a positive and negative test.  Something like the following would cover this:\n\nEvaluate that the following compare as equal:\n\n  \"uid\u003dfoo,dc\u003dexample,dc\u003dcom\"\n  \"UID\u003dfoo,DC\u003dexample,DC\u003dcom\"\n\nEvaluate that the following compare as NOT equal:\n\n  \"uid\u003dfoo,dc\u003dexample,dc\u003dcom\"\n  \"uid\u003dFOO,dc\u003dEXAMPLE,dc\u003dCOM\"",
+      "parentUuid": "bad4c104_21771a04",
+      "revId": "f5713671a8a70348ab281ebde9246b16f6b4d3cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
