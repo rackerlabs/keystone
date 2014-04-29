@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "bad4c104_db3add35",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T15:56:48Z",
+      "side": 1,
+      "message": "xrange isn\u0027t available in Python3. Just use range as there really isn\u0027t that great of a performance advantage for a small iterable.",
+      "revId": "1fc045158b0ab32bac5327b9a2750a5b9188d8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_db03bd71",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-29T15:56:48Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "1fc045158b0ab32bac5327b9a2750a5b9188d8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad4c104_58c5f359",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 5
