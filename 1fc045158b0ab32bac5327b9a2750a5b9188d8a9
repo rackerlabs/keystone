@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_58c5f359",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-29T15:05:35Z",
+      "side": 1,
+      "message": "objectClass was removed because it will be added to the query string in LdapBase._ldap_get_all.",
+      "revId": "1fc045158b0ab32bac5327b9a2750a5b9188d8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
