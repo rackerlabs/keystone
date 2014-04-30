@@ -16,6 +16,24 @@
       "revId": "7ca6a7cc5b8b5b5da6e5f9bf5595fff94cedb342",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_f125060b",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-30T12:25:25Z",
+      "side": 1,
+      "message": "Rather the name of the test should be changed, because description of the test is right",
+      "parentUuid": "bad4c104_72aacb71",
+      "revId": "7ca6a7cc5b8b5b5da6e5f9bf5595fff94cedb342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
