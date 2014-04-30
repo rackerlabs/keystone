@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_be889923",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-04-30T22:19:54Z",
+      "side": 1,
+      "message": "that\u0027s fine, but the sections below need to be changed to ---------, otherwise tox -edocs complain.",
+      "parentUuid": "9ad9bd40_fbe793e2",
+      "revId": "289b85ed080275707311e658105d7cc56cb9fec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//7bc\u003d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 9
