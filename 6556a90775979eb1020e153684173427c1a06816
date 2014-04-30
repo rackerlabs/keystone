@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_444b4559",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-30T19:43:58Z",
+      "side": 1,
+      "message": "A \u0027,\u0027 should be used in log statements instead of \u0027%\u0027.",
+      "revId": "6556a90775979eb1020e153684173427c1a06816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
