@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_e9a43259",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-30T19:33:46Z",
+      "side": 1,
+      "message": "It would be nice to see the decorator being tested so that there is some sample usage.",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_89180686",
+        "filename": "keystone/validation/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-04-30T19:33:46Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of naming things with an underscore if they are not private or protected.\n\nAnother thought is to create a factory to return validator objects so that we can reuse them.",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
