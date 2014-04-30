@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_7ad0eb53",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-30T14:12:36Z",
+      "side": 1,
+      "message": "I think we need not brackets here:\n\n (\u0027domain id\u0027 not in ref)",
+      "revId": "f5491713d3e087368cba0a8722e264044f756a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_7ab62bde",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-30T14:12:36Z",
+      "side": 1,
+      "message": "May be it\u0027s better to use:\n\n if prop in dict_obj and dict_obj[prop] in [None, \u0027\u0027]\n\nto have shorter condition and to escape double getting from the dictionary",
+      "revId": "f5491713d3e087368cba0a8722e264044f756a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_c5cf5caf",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2598,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-30T14:12:36Z",
+      "side": 1,
+      "message": "To get \u0027is_equal\u0027 you use the same code four times. May be you should move it to some method?\n\nAlso you can use:\n\n value in [None, \u0027\u0027]\n\ninstead of:\n\n((value is None) or (value \u003d\u003d \u0027\u0027))",
+      "revId": "f5491713d3e087368cba0a8722e264044f756a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_45034c0f",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-04-30T14:12:36Z",
+      "side": 1,
+      "message": "You can use here:\n\n assertTrue(role_ref.get(\u0027name\u0027) is None, ...)\n\nrole_ref.get(\u0027name\u0027) will return None in both cases if role_ref has no key \u0027name\u0027 and if value for key \u0027name\u0027 is None",
+      "revId": "f5491713d3e087368cba0a8722e264044f756a6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
