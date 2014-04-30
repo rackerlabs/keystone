@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_ae4f9091",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-04-30T18:35:14Z",
+      "side": 1,
+      "message": "This can\u0027t be six.text_type, text_type will maintain unicode if unicode it passed to it:\n\n    \u003e\u003e\u003e import six\n    \u003e\u003e\u003e six.text_type(u\u0027testing\u0027)\n    u\u0027testing\u0027\n    \u003e\u003e\u003e \n\nThis is a case where we legitimately want byte_str in all cases. I am guessing that for py33 compat, we will need to use bytes() with an encoding. A \"TODO\" should be sufficient for handling the py33 case (py33 isn\u0027t viable server side now).\n\nsuggest reverting to using str()",
+      "revId": "be6fc247251883317e02d188e662b1f142fcc043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
