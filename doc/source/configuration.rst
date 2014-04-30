@@ -120,6 +120,10 @@ configuration file.
 Authentication Plugins
 ----------------------
 
+.. WARNING::
+
+    This feature is only supported in Keystone Controller Version v3.0.
+
 Keystone supports authentication plugins and they are specified
 in the ``[auth]`` section of the configuration file. However, an
 authentication plugin may also have its own section in the configuration
