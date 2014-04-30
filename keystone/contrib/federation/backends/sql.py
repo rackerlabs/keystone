@@ -26,7 +26,8 @@ class FederationProtocolModel(sql.ModelBase, sql.DictBase):
     id = sql.Column(sql.String(64), primary_key=True)
     idp_id = sql.Column(sql.String(64), sql.ForeignKey('identity_provider.id',
                         ondelete='CASCADE'), primary_key=True)
-    mapping_id = sql.Column(sql.String(64), nullable=False)
+    mapping_id = sql.Column(sql.String(64), sql.ForeignKey('mapping.id',
+                            ondelete='CASCADE'))
 
     @classmethod
     def from_dict(cls, dictionary):
