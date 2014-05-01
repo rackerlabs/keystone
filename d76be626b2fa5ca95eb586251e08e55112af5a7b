@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9ad9bd40_2dd61350",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-01T14:51:01Z",
+      "side": 1,
+      "message": "unnecessary new line",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_e9a43259",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 3
@@ -13,6 +30,40 @@
       "writtenOn": "2014-04-30T19:33:46Z",
       "side": 1,
       "message": "It would be nice to see the decorator being tested so that there is some sample usage.",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_8d72bf7a",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-01T14:51:01Z",
+      "side": 1,
+      "message": "s/doensn\u0027t/doesn\u0027t",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_4d5997fd",
+        "filename": "keystone/validation/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-01T14:51:01Z",
+      "side": 1,
+      "message": "lower case body and resources. they seem random",
       "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -48,6 +99,57 @@
       "side": 1,
       "message": "Sounds good, I can tweak this to fit.",
       "parentUuid": "9ad9bd40_89180686",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_2d6453b8",
+        "filename": "keystone/validation/common_parameter_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-01T14:51:01Z",
+      "side": 1,
+      "message": "I think it would be best if folks using jsonschema validators, could just add to this file in the future, for any parameter type (not just common). so i\u0027d be inclined to rename it to just parameter_types.",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_8d963f93",
+        "filename": "keystone/validation/common_parameter_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-01T14:51:01Z",
+      "side": 1,
+      "message": "wasn\u0027t there an issue recently where the user name (or was it id) had a comma? because it was ldap based. \n\njust something to think about",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_8903940e",
+        "filename": "keystone/validation/validators.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-01T14:51:01Z",
+      "side": 1,
+      "message": "s/Body/body",
       "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
