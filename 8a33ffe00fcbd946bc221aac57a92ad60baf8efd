@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_04b77887",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-01T01:44:40Z",
+      "side": 1,
+      "message": "This should probably be: LOG.info(msg, {...})",
+      "revId": "8a33ffe00fcbd946bc221aac57a92ad60baf8efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_84aaa817",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-01T01:44:40Z",
+      "side": 1,
+      "message": "I don\u0027t think that this will work in Python3 because existing_val can be None.",
+      "revId": "8a33ffe00fcbd946bc221aac57a92ad60baf8efd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
