@@ -16,6 +16,24 @@
       "revId": "6397d6c58c2807f1cd0642d3506d4a19225622c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_49c7cc45",
+        "filename": "requirements.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-01T14:22:53Z",
+      "side": 1,
+      "message": "Different review for that, and it solves a different purpose.  This is s the server side piece.\nrequests-kerberos is the client piece and we are waiting for an updated release that supports py33 from them.",
+      "parentUuid": "9ad9bd40_099f8453",
+      "revId": "6397d6c58c2807f1cd0642d3506d4a19225622c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
