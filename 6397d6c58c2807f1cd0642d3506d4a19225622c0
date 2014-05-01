@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_099f8453",
+        "filename": "requirements.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-01T14:20:17Z",
+      "side": 1,
+      "message": "what about using requests_kerberos? \n\nhttps://pypi.python.org/pypi/requests-kerberos/\n\nIt seems like there is more documentation for requests kerberos",
+      "revId": "6397d6c58c2807f1cd0642d3506d4a19225622c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
