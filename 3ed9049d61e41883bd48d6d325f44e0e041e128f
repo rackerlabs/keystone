@@ -67,6 +67,23 @@
       "revId": "3ed9049d61e41883bd48d6d325f44e0e041e128f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//cZg\u003d",
+        "filename": "keystone/identity/backends/kvs.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-01T01:54:17Z",
+      "side": 1,
+      "message": "Why add this if nothing uses it?",
+      "revId": "3ed9049d61e41883bd48d6d325f44e0e041e128f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
