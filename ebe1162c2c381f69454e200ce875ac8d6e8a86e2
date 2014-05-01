@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_ee6d0606",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-01T13:55:23Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure that this won\u0027t work in Python3. I know you can\u0027t test it, but I\u0027ve done a little manual testing to prove to myself that it won\u0027t work. It should it be six.binary_type() instead of str().",
+      "revId": "ebe1162c2c381f69454e200ce875ac8d6e8a86e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
