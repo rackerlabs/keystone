@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_2eca8e4f",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-01T13:48:07Z",
+      "side": 1,
+      "message": "Sounds good, will have another patch pushed up soon.",
+      "parentUuid": "9ad9bd40_49ad1e88",
+      "revId": "7ca6a7cc5b8b5b5da6e5f9bf5595fff94cedb342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_49f27e9b",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 8
@@ -66,6 +84,24 @@
       "writtenOn": "2014-04-30T19:12:56Z",
       "side": 1,
       "message": "Is this testing to make sure you can have two descriptions with an empty string?",
+      "revId": "7ca6a7cc5b8b5b5da6e5f9bf5595fff94cedb342",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_4ef51282",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-01T13:48:07Z",
+      "side": 1,
+      "message": "Yes, if a user doesn\u0027t include a description when creating a region (following the identity V3 api spec for regions) we need to be able to make sure we handle that case. @dolphm wanted to handle that case in the Manger: \n\nhttps://review.openstack.org/#/c/78658/8/keystone/catalog/core.py\n\nWhere we just set description to an empty string when one isn\u0027t provided.",
+      "parentUuid": "9ad9bd40_49f27e9b",
       "revId": "7ca6a7cc5b8b5b5da6e5f9bf5595fff94cedb342",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
