@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_44dd0070",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-01T00:34:49Z",
+      "side": 1,
+      "message": "format_url can return None, then the catalog would have a bunch of interfaces\u003dNone -- should url is None also be skipped?",
+      "revId": "9e71793c3acca5f0f0df938620f87e7f102290f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
