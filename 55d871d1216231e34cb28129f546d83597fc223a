@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_7382ba50",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-05-01T16:19:54Z",
+      "side": 1,
+      "message": "This is for API v3, not controller v3. And it\u0027s v3, not v3.0.",
+      "revId": "55d871d1216231e34cb28129f546d83597fc223a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
