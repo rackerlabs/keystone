@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_99daf876",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1080,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-01T21:15:13Z",
+      "side": 1,
+      "message": "The commit message makes this sound like a refactoring, but I think the behavior is actually different. A NotFound exception is raised if the search failed. Previously this was ignored. Also delete failures are caught and handled differently.\n\nI don\u0027t think these changes are bad, actually the delete handling is great. I do think, however, that the comment message need reflect the new behavior, tests should show the new behavior and ideally a bug could document why.\n\nAs far as the actual implementation of this method, I don\u0027t think that a 404 is the right error for the delete.",
+      "revId": "b39dbf2f8a1363b7932dc83686889557603fea2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_b9625cd6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1096,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-01T21:15:13Z",
+      "side": 1,
+      "message": "Remove the % and replace it with a comma. There is no reason to do string manipulation before we know that the string will be written to the log.",
+      "revId": "b39dbf2f8a1363b7932dc83686889557603fea2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
