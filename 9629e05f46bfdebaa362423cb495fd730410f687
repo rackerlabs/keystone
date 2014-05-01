@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_307ae888",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-01T15:24:19Z",
+      "side": 1,
+      "message": "++ giving the UUIDs of the group and the user here would be helpful for the end user.",
+      "parentUuid": "AAAAXH//FJ0\u003d",
+      "revId": "9629e05f46bfdebaa362423cb495fd730410f687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//FYY\u003d",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 16
@@ -30,6 +48,23 @@
       "writtenOn": "2014-04-24T07:04:58Z",
       "side": 1,
       "message": "Why we need local variable \u0027memberships\u0027 here? Maybe it\u0027s better to use:\n\n return self.get_all_filtered(query)",
+      "revId": "9629e05f46bfdebaa362423cb495fd730410f687",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_6d4adb81",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-01T15:24:19Z",
+      "side": 1,
+      "message": "Since we have the user_id and group_id we could update the exception to include the ID. That way the user knows what user wasn\u0027t found in what group.",
       "revId": "9629e05f46bfdebaa362423cb495fd730410f687",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
