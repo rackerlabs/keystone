@@ -122,7 +122,7 @@ Authentication Plugins
 
 .. WARNING::
 
-    This feature is only supported in Keystone Controller Version v3.0.
+    This feature is only supported in the Keystone V3 API.
 
 Keystone supports authentication plugins and they are specified
 in the ``[auth]`` section of the configuration file. However, an
