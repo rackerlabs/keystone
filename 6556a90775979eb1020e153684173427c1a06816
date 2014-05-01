@@ -16,6 +16,23 @@
       "revId": "6556a90775979eb1020e153684173427c1a06816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_1c9b3b19",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-01T19:12:14Z",
+      "side": 1,
+      "message": "Would it be possible to elaborate on this test case a little more? Something like: \n\nhttp://paste.openstack.org/show/78287/\n\nWhere we can test with both max_password_length and strict_password_length config values and calling utils.verify_and_trunc_password_length directly instead of through utils.check_password and utils.hash_password.",
+      "revId": "6556a90775979eb1020e153684173427c1a06816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
