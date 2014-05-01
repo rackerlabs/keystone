@@ -16,6 +16,24 @@
       "revId": "ebe1162c2c381f69454e200ce875ac8d6e8a86e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_7c95273f",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-01T18:51:53Z",
+      "side": 1,
+      "message": "There is more at play here, you need to explicitly provide an encoding for py33:\n\n    \u003e\u003e\u003e import six\n    \u003e\u003e\u003e six.binary_type\n    \u003cclass \u0027bytes\u0027\u003e\n    \u003e\u003e\u003e a \u003d u\u0027testing\u0027\n    \u003e\u003e\u003e six.binary_type(a)\n    Traceback (most recent call last):\n      File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n    TypeError: string argument without an encoding\n\nSince we aren\u0027t able to run keystone behind mod_wsgi with py33 at the moment, I think this is fine. Maybe a TODO or FIXME?",
+      "parentUuid": "9ad9bd40_ee6d0606",
+      "revId": "ebe1162c2c381f69454e200ce875ac8d6e8a86e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
