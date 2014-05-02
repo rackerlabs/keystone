@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_2078c32a",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T14:34:16Z",
+      "side": 1,
+      "message": "why does this not use assertequal?",
+      "revId": "01a0faacad31deb6c5504aeda704870e52f76981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
