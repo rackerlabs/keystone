@@ -50,6 +50,24 @@
       "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_98c49793",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T19:09:38Z",
+      "side": 1,
+      "message": "complain in the upstream patch ASAP :)",
+      "parentUuid": "9ad9bd40_9df8097e",
+      "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
