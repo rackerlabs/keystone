@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_8cd70b23",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1228
+      },
+      "writtenOn": "2014-05-02T14:00:11Z",
+      "side": 1,
+      "message": "s/protocol/protocols/",
+      "revId": "aa02e440b91c3cf1058ad82e03e698cee1d023ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_0ce3fb05",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1228
+      },
+      "writtenOn": "2014-05-02T14:00:11Z",
+      "side": 1,
+      "message": "s/generated/generate/",
+      "revId": "aa02e440b91c3cf1058ad82e03e698cee1d023ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
