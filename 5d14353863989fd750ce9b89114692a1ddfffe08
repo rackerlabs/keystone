@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_6319f578",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T14:54:50Z",
+      "side": 1,
+      "message": "this should just a be a .. NOTE:: ... warning doesn\u0027t seem appropriate, as this is entirely by design and shouldn\u0027t be surprising.",
+      "revId": "5d14353863989fd750ce9b89114692a1ddfffe08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_e30d0539",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T14:54:50Z",
+      "side": 1,
+      "message": "there is no \"keystone API\"; rather \"Keystone implements the Identity API\", so this should read something like:\n\n  ... only supported by Keystone for Identity API v3 clients.",
+      "revId": "5d14353863989fd750ce9b89114692a1ddfffe08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
