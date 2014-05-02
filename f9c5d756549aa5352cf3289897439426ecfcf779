@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_7d3fc5d6",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-02T18:57:55Z",
+      "side": 1,
+      "message": "This comment is no longer needed and should be removed.",
+      "revId": "f9c5d756549aa5352cf3289897439426ecfcf779",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
