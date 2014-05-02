@@ -14,6 +14,7 @@
 
 import os.path
 
+import codecs
 import ldap
 import ldap.filter
 import six
@@ -39,16 +40,72 @@ LDAP_TLS_CERTS = {'never': ldap.OPT_X_TLS_NEVER,
                   'allow': ldap.OPT_X_TLS_ALLOW}
 
 
-def py2ldap(val):
-    if isinstance(val, str):
-        return val
-    elif isinstance(val, bool):
-        return 'TRUE' if val else 'FALSE'
+_utf8_encoder = codecs.getencoder('utf-8')
+
+
+def utf8_encode(value):
+    '''Encode  a basestring to UTF-8.
+
+    If the string is unicode encode it to UTF-8, if the string is
+    str then assume it's already encoded. Otherwise raise a TypeError.
+
+    :param value: A basestring
+    :returns: UTF-8 encoded version of value
+    :raises: TypeError
+    '''
+    if isinstance(value, six.text_type):
+        return _utf8_encoder(value)[0]
+    elif isinstance(value, six.binary_type):
+        return value
     else:
-        return str(val)
+        raise TypeError("value must be basestring, "
+                        "not %s" % value.__class__.__name__)
+
+_utf8_decoder = codecs.getdecoder('utf-8')
+
+
+def utf8_decode(value):
+    '''Decode a from UTF-8 into unicode.
+
+    If the value is a binary string assume it's UTF-8 encoded and decode
+    it into a unicode string. Otherwise convert the value from it's
+    type into a unicode string.
+
+    :param val: value to be returned as unicode
+    :returns: value as unicode
+    '''
+    if isinstance(value, six.binary_type):
+        return _utf8_decoder(value)[0]
+    return six.text_type(value)
+
+
+def py2ldap(val):
+    '''Type convert a Python value to a type accepted by LDAP (unicode).
+
+    The LDAP API only accepts strings for values therefore convert
+    the value's type to a unicode string. A subsequent type conversion
+    will encode the unicode as UTF-8 as required by the python-ldap API,
+    but for now we just want a string representation of the value.
+
+    :param val: The value to convert to a LDAP string representation
+    :returns: unicode string rerpresentation of value.
+    '''
+    if isinstance(val, bool):
+        return u'TRUE' if val else u'FALSE'
+    else:
+        return six.text_type(val)
 
 
 def ldap2py(val):
+    '''Convert an LDAP formatted value to Python type used by OpenStack.
+
+    Virtually all LDAP values are stored as UTF-8 encoded strings.
+    OpenStack prefers values which are Python types, e.g. unicode,
+    boolean, integer, etc.
+
+    :param val: LDAP formatted value
+    :returns: val converted to preferred Python type
+    '''
     try:
         return LDAP_VALUES[val]
     except KeyError:
@@ -57,7 +114,43 @@ def ldap2py(val):
         return int(val)
     except ValueError:
         pass
-    return val
+    return utf8_decode(val)
+
+
+def convert_ldap_result(ldap_result):
+    '''Convert LDAP search result to Python types used by OpenStack.
+
+    Each result tuple is of the form (dn, attrs), where dn is a string
+    containing the DN (distinguished name) of the entry, and attrs is
+    a dictionary containing the attributes associated with the
+    entry. The keys of attrs are strings, and the associated values
+    are lists of strings.
+
+    OpenStack wants to use Python types of it's choosing. Strings will
+    be unicode, truth values boolean, whole numbers int's, etc. DN's will
+    also be decoded from UTF-8 to unicode.
+
+    :param ldap_result: LDAP search result
+    :returns: list of 2-tuples containing (dn, attrs) where dn is unicode
+              and attrs is a dict whose values are type converted to
+              OpenStack preferred types.
+    '''
+    py_result = []
+    at_least_one_referral = False
+    for dn, attrs in ldap_result:
+        if dn is None:
+            # this is a Referral object, rather than an Entry object
+            at_least_one_referral = True
+            continue
+
+        py_result.append((utf8_decode(dn),
+                          dict((kind, [ldap2py(x) for x in values])
+                               for kind, values in six.iteritems(attrs))))
+    if at_least_one_referral:
+        LOG.debug(_('Referrals were returned and ignored. Enable referral '
+                    'chasing in keystone.conf via [ldap] chase_referrals'))
+
+    return py_result
 
 
 def safe_iter(attrs):
@@ -565,7 +658,9 @@ class LdapWrapper(object):
 
     def simple_bind_s(self, user, password):
         LOG.debug(_("LDAP bind: dn=%s"), user)
-        return self.conn.simple_bind_s(user, password)
+        user_utf8 = utf8_encode(user)
+        password_utf8 = utf8_encode(password)
+        return self.conn.simple_bind_s(user_utf8, password_utf8)
 
     def unbind_s(self):
         LOG.debug("LDAP unbind")
@@ -580,7 +675,10 @@ class LdapWrapper(object):
                       for kind, values in ldap_attrs]
         LOG.debug(_('LDAP add: dn=%(dn)s, attrs=%(attrs)s'), {
             'dn': dn, 'attrs': sane_attrs})
-        return self.conn.add_s(dn, ldap_attrs)
+        dn_utf8 = utf8_encode(dn)
+        ldap_attrs_utf8 = [(kind, [utf8_encode(x) for x in safe_iter(values)])
+                           for kind, values in ldap_attrs]
+        return self.conn.add_s(dn_utf8, ldap_attrs_utf8)
 
     def search_s(self, dn, scope, query, attrlist=None):
         # NOTE(morganfainberg): Remove "None" singletons from this list, which
@@ -597,26 +695,20 @@ class LdapWrapper(object):
                 'query': query,
                 'attrlist': attrlist})
         if self.page_size:
-            res = self.paged_search_s(dn, scope, query, attrlist)
+            ldap_result = self.paged_search_s(dn, scope, query, attrlist)
         else:
-            res = self.conn.search_s(dn, scope, query, attrlist)
+            dn_utf8 = utf8_encode(dn)
+            query_utf8 = utf8_encode(query)
+            if attrlist is None:
+                attrlist_utf8 = None
+            else:
+                attrlist_utf8 = map(utf8_encode, attrlist)
+            ldap_result = self.conn.search_s(dn_utf8, scope,
+                                             query_utf8, attrlist_utf8)
 
-        o = []
-        at_least_one_referral = False
-        for dn, attrs in res:
-            if dn is None:
-                # this is a Referral object, rather than an Entry object
-                at_least_one_referral = True
-                continue
+        py_result = convert_ldap_result(ldap_result)
 
-            o.append((dn, dict((kind, [ldap2py(x) for x in values])
-                               for kind, values in six.iteritems(attrs))))
-
-        if at_least_one_referral:
-            LOG.debug(_('Referrals were returned and ignored. Enable referral '
-                        'chasing in keystone.conf via [ldap] chase_referrals'))
-
-        return o
+        return py_result
 
     def paged_search_s(self, dn, scope, query, attrlist=None):
         res = []
@@ -624,10 +716,17 @@ class LdapWrapper(object):
             controlType=ldap.LDAP_CONTROL_PAGE_OID,
             criticality=True,
             controlValue=(self.page_size, ''))
-        msgid = self.conn.search_ext(dn,
+        dn_utf8 = utf8_encode(dn)
+        query_utf8 = utf8_encode(query)
+        if attrlist is None:
+            attrlist_utf8 = None
+        else:
+            attrlist = [attr for attr in attrlist if attr is not None]
+            attrlist_utf8 = map(utf8_encode, attrlist)
+        msgid = self.conn.search_ext(dn_utf8,
                                      scope,
-                                     query,
-                                     attrlist,
+                                     query_utf8,
+                                     attrlist_utf8,
                                      serverctrls=[lc])
         # Endless loop request pages on ldap server until it has no data
         while True:
@@ -644,10 +743,10 @@ class LdapWrapper(object):
                     # There is more data still on the server
                     # so we request another page
                     lc.controlValue = (self.page_size, cookie)
-                    msgid = self.conn.search_ext(dn,
+                    msgid = self.conn.search_ext(dn_utf8,
                                                  scope,
-                                                 query,
-                                                 attrlist,
+                                                 query_utf8,
+                                                 attrlist_utf8,
                                                  serverctrls=[lc])
                 else:
                     # Exit condition no more data on server
@@ -672,17 +771,24 @@ class LdapWrapper(object):
         LOG.debug(_('LDAP modify: dn=%(dn)s, modlist=%(modlist)s'), {
             'dn': dn, 'modlist': sane_modlist})
 
-        return self.conn.modify_s(dn, ldap_modlist)
+        dn_utf8 = utf8_encode(dn)
+        ldap_modlist_utf8 = [
+            (op, kind, (None if values is None
+                        else [utf8_encode(x) for x in safe_iter(values)]))
+            for op, kind, values in ldap_modlist]
+        return self.conn.modify_s(dn_utf8, ldap_modlist_utf8)
 
     def delete_s(self, dn):
         LOG.debug(_("LDAP delete: dn=%s"), dn)
-        return self.conn.delete_s(dn)
+        dn_utf8 = utf8_encode(dn)
+        return self.conn.delete_s(dn_utf8)
 
     def delete_ext_s(self, dn, serverctrls):
         LOG.debug(
             _('LDAP delete_ext: dn=%(dn)s, serverctrls=%(serverctrls)s'), {
                 'dn': dn, 'serverctrls': serverctrls})
-        return self.conn.delete_ext_s(dn, serverctrls)
+        dn_utf8 = utf8_encode(dn)
+        return self.conn.delete_ext_s(dn_utf8, serverctrls)
 
     def _disable_paging(self):
         # Disable the pagination from now on
