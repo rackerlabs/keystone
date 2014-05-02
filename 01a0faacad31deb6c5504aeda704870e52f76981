@@ -34,6 +34,24 @@
       "revId": "01a0faacad31deb6c5504aeda704870e52f76981",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_f29304f8",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-02T18:21:34Z",
+      "side": 1,
+      "message": "More and more of our code has been moving toward matchers because they read more like natural text. Unfortunately the rule to import only modules dampens the effect.\n\nThe resulting error message isn\u0027t any different.",
+      "parentUuid": "9ad9bd40_2fbd0769",
+      "revId": "01a0faacad31deb6c5504aeda704870e52f76981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
