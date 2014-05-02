@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_5db121e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-02T18:46:51Z",
+      "side": 1,
+      "message": "put the hash of the commit so that it\u0027s easy to figure out which changes we\u0027re picking up with the next sync.",
+      "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_1ddeb911",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-02T18:46:51Z",
+      "side": 1,
+      "message": "should be able to list the changes that are being picked up in this sync. I do something like git log --oneline --no-merges (old commit).. -- (the parts that changed in the sync)",
+      "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_9df8097e",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-02T18:46:51Z",
+      "side": 1,
+      "message": "We need to add the dependencies ourselves? this is going to make things more difficult for us to know when we\u0027re not using something anymore. Currently we can just remove the one line when keystone isn\u0027t using the module anymore... now we\u0027ll have to figure out the dependencies.",
+      "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
