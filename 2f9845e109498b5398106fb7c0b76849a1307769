@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_80198f8a",
+        "filename": "requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T14:51:52Z",
+      "side": 1,
+      "message": "https://bugs.launchpad.net/python-keystoneclient/+bug/1312858",
+      "revId": "2f9845e109498b5398106fb7c0b76849a1307769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
