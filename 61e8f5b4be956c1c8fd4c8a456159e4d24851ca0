@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_e0725bac",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T14:22:51Z",
+      "side": 1,
+      "message": "v3_catalog \u003d []",
+      "revId": "61e8f5b4be956c1c8fd4c8a456159e4d24851ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_0042df3d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T14:22:51Z",
+      "side": 1,
+      "message": "name !\u003d type",
+      "revId": "61e8f5b4be956c1c8fd4c8a456159e4d24851ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
