@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_f284dfb2",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T21:31:14Z",
+      "side": 1,
+      "message": "so, py2ldap() and ldap2py() are already terribly named methods, but tossing in convert_ldap_result() basically doubles the ambiguity of these method names. furthermore, all of them lack docstrings to justify themselves.",
+      "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_92b71386",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T21:31:14Z",
+      "side": 1,
+      "message": "prefixing this with py_ is redundant with the fact that this is written in python... \"result\" would be sufficient",
+      "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_f2205fb2",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-02T21:31:14Z",
+      "side": 1,
+      "message": "is None really preferred over an empty list if values is None?",
+      "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
