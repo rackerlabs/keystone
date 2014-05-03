@@ -16,6 +16,24 @@
       "revId": "d006469d1f8357308087f3e37d4d70de3cdbba4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_6bbe1ad6",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2014-05-03T00:06:26Z",
+      "side": 0,
+      "message": "Better change to # The list of modules to copy from oslo-incubator",
+      "parentUuid": "9ad9bd40_dd76113e",
+      "revId": "d006469d1f8357308087f3e37d4d70de3cdbba4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
