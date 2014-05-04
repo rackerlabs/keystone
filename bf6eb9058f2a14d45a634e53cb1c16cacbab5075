@@ -122,6 +122,24 @@
       "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_480b0f25",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2014-05-04T13:41:11Z",
+      "side": 1,
+      "message": "I can change \"WARNING\" to \"INFO\" ;)",
+      "parentUuid": "9ad9bd40_36ad529d",
+      "revId": "bf6eb9058f2a14d45a634e53cb1c16cacbab5075",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
