@@ -16,6 +16,41 @@
       "revId": "3eccdd14563b933dadb0e4b328d4c59d28f78448",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_d0e34131",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-05-04T22:55:34Z",
+      "side": 1,
+      "message": "Removing these makes sense to me.  Down below you could have specific instructions for different versions of Fedora or Ubuntu so you might as well remove them from above (because which do you list?  All of them?)  but still allow them for below because its helpful if you end up with version specific instructions",
+      "parentUuid": "AAAAXH//Aw4\u003d",
+      "revId": "3eccdd14563b933dadb0e4b328d4c59d28f78448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_70def56e",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-05-04T22:55:34Z",
+      "side": 1,
+      "message": "Since you are updating the file can you fix the typo on this line as well?  depdendencies should be dependencies",
+      "revId": "3eccdd14563b933dadb0e4b328d4c59d28f78448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
