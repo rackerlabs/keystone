@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_752187b3",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-05-04T22:26:00Z",
+      "side": 1,
+      "message": "So this is really cool and with a little investigation I was able to determine that create_delete_user was an existing keystone benchmark provided by Rally.  So I did not have to dig much but could we add a comment here that provides a reference to some type of doc in the Rally project so folks have a quick pointer to be able to find what the available options are.  This will keep newbies from thinking this is perhaps defined somewhere in keystone.",
+      "revId": "3c501b7c711164b99e4a36f8c19fafc79c67783b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
