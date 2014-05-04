@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_d030a1ea",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-05-04T22:42:06Z",
+      "side": 1,
+      "message": "This section is begging for a concrete example, even a simple one.  The instructions in this section are written in an abstract way and I can see how a keystone core could absorb all this material and configure this properly. But an operator with limited familiarity to this would in my opinion struggle to feel confident that they could read this and understand enough to configure it.  Either this needs to add a concrete example or point to another document with a concrete example if you feel that such an example is not appropriate in this document.",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
