@@ -35,3 +35,16 @@ def schema(request_body_schema, resource_to_validate):
             return func(*args, **kwargs)
         return wrapper
     return add_validator
+
+
+def request(klass):
+    def inner(func):
+        @functools.wraps(func)
+        def wrapper(self, *args, **kwargs):
+            obj = klass(kwargs[self.member_name])
+            obj.validate()
+            kwargs[self.member_name] = obj
+            return func(self, *args, **kwargs)
+
+        return wrapper
+    return inner

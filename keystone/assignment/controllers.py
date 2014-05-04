@@ -354,7 +354,7 @@ class DomainV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_domain
 
     @controller.protected()
-    @validation.schema(schema.domain_create, 'domain')
+    @validation.request(schema.DomainCreate)
     def create_domain(self, context, domain):
         ref = self._assign_unique_id(self._normalize_dict(domain))
         ref = self.assignment_api.create_domain(ref['id'], ref)
@@ -372,7 +372,7 @@ class DomainV3(controller.V3Controller):
         return DomainV3.wrap_member(context, ref)
 
     @controller.protected()
-    @validation.schema(schema.domain_update, 'domain')
+    @validation.request(schema.DomainUpdate)
     def update_domain(self, context, domain_id, domain):
         self._require_matching_id(domain_id, domain)
         ref = self.assignment_api.update_domain(domain_id, domain)
@@ -393,7 +393,7 @@ class ProjectV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_project
 
     @controller.protected()
-    @validation.schema(schema.project_create, 'project')
+    @validation.request(schema.ProjectCreate)
     def create_project(self, context, project):
         ref = self._assign_unique_id(self._normalize_dict(project))
         ref = self._normalize_domain_id(context, ref)
@@ -419,7 +419,7 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
-    @validation.schema(schema.project_update, 'project')
+    @validation.request(schema.ProjectUpdate)
     def update_project(self, context, project_id, project):
         self._require_matching_id(project_id, project)
         self._require_matching_domain_id(
@@ -442,7 +442,7 @@ class RoleV3(controller.V3Controller):
         self.get_member_from_driver = self.assignment_api.get_role
 
     @controller.protected()
-    @validation.schema(schema.role_create, 'role')
+    @validation.request(schema.RoleCreate)
     def create_role(self, context, role):
         ref = self._assign_unique_id(self._normalize_dict(role))
         ref = self.assignment_api.create_role(ref['id'], ref)
@@ -461,7 +461,7 @@ class RoleV3(controller.V3Controller):
         return RoleV3.wrap_member(context, ref)
 
     @controller.protected()
-    @validation.schema(schema.role_update, 'role')
+    @validation.request(schema.RoleUpdate)
     def update_role(self, context, role_id, role):
         self._require_matching_id(role_id, role)
 

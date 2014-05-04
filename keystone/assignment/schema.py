@@ -10,90 +10,115 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.validation import models
 from keystone.validation import parameter_types
 
 
-project_create = {
-    'type': 'object',
-    'properties': {
-        'name': parameter_types.name,
-        'domain_id': {
-            'type': 'string'
-        },
-        'description': parameter_types.description,
-        'enabled': parameter_types.boolean
-    },
-    # NOTE(lbragstad): A project name is the only parameter required for
-    # project creation according to the Identity V3 API. We should think
-    # about using the maxProperties validator here, and in update.
-    'required': ['name'],
-    'additionalProperties': True
-}
+class ProjectCreate(models.Request):
 
-project_update = {
-    'type': 'object',
-    'properties': {
-        'name': parameter_types.name,
-        'domain_id': {
-            'type': 'string'
+    schema = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'domain_id': {
+                'type': 'string'
+            },
+            'description': parameter_types.description,
+            'enabled': parameter_types.boolean
         },
-        'description': parameter_types.description,
-        'enabled': parameter_types.boolean
-    },
-    # NOTE(lbragstad) Make sure at least one property is being updated
-    'minProperties': 1,
-    'additionalProperties': True
-}
+        # NOTE(lbragstad): A project name is the only parameter required for
+        # project creation according to the Identity V3 API. We should think
+        # about using the maxProperties validator here, and in update.
+        'required': ['name'],
+        'additionalProperties': True
+    }
+
+    @property
+    def name(self):
+        return self['name']
+
+
+class ProjectUpdate(models.Request):
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'domain_id': {
+                'type': 'string'
+            },
+            'description': parameter_types.description,
+            'enabled': parameter_types.boolean
+        },
+        # NOTE(lbragstad) Make sure at least one property is being updated
+        'minProperties': 1,
+        'additionalProperties': True
+    }
+
 
 # NOTE(lbragstad): Not sure if the delete schema for projects is needed at
 # this time since the controller only uses the project_id. There is no
 # project reference passed to delete on the server side for V3.
-project_delete = {
-    'type': 'object',
-    # NOTE(lbragstad): Don't allow any parameters on delete
-    'maxProperties': 0
-}
+class ProjectDelete(models.Request):
+
+    schema = {
+        'type': 'object',
+        # NOTE(lbragstad): Don't allow any parameters on delete
+        'maxProperties': 0
+    }
 
 
-domain_create = {
-    'type': 'object',
-    'properties': {
-        'name': parameter_types.name,
-        'description': parameter_types.description,
-        'enabled': parameter_types.boolean
-    },
-    # TODO(lbragstad): According to the V3 API spec, name isn't required but
-    # the current implementation in assignment.controller:DomainV3 requires a
-    # name for the domain.
-    'required': ['name'],
-    'additionalProperties': True
-}
+class DomainCreate(models.Request):
 
-domain_update = {
-    'type': 'object',
-    'properties': {
-        'name': parameter_types.name,
-        'description': parameter_types.description,
-        'enabled': parameter_types.boolean
-    },
-    'minProperties': 1,
-    'additionalProperties': True
-}
+    schema = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'description': parameter_types.description,
+            'enabled': parameter_types.boolean
+        },
+        # TODO(lbragstad): According to the V3 API spec, name isn't required
+        # but the current implementation in assignment.controller:DomainV3
+        # requires a name for the domain.
+        'required': ['name'],
+        'additionalProperties': True
+    }
 
-role_create = {
-    'type': 'object',
-    'properties': {
-        'name': parameter_types.name
-    },
-    'required': ['name'],
-    'additionalProperties': True
-}
 
-role_update = {
-    'type': 'object',
-    'properties': {
-        'name': parameter_types.name
-    },
-    'minProperties': 1,
-    'additionalProperties': True
-}
+class DomainUpdate(models.Request):
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'description': parameter_types.description,
+            'enabled': parameter_types.boolean
+        },
+        'minProperties': 1,
+        'additionalProperties': True
+    }
+
+
+class RoleCreate(models.Request):
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'enabled': parameter_types.boolean
+        },
+        'required': ['name'],
+        'additionalProperties': True
+    }
+
+
+class RoleUpdate(models.Request):
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name
+        },
+        'minProperties': 1,
+        'additionalProperties': True
+    }
