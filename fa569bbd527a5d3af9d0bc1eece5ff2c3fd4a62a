@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_e455d0fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-05T19:05:40Z",
+      "side": 1,
+      "message": "aren\u0027t we logging a warning now with the latest patchset?",
+      "revId": "fa569bbd527a5d3af9d0bc1eece5ff2c3fd4a62a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
