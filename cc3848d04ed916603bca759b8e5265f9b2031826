@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9ad9bd40_f83f3ad4",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-05-05T14:38:01Z",
+      "side": 1,
+      "message": "Does one also need to run Keystone with v3 policies? If so, I think it is worth mentioning it. I\u0027m trying to deploy a federated devstack and copying keystone/etc/policy.v3cloudsample.json to /etc/keystone/policy.json seems to be a necessary step.",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_d030a1ea",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 13
