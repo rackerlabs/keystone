@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_c22fe9f4",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-05T13:16:43Z",
+      "side": 1,
+      "message": "I don\u0027t think we need a delete schema, we don\u0027t actually check the body in any of the controllers for delete functions. \n\nI fear that if we start checking it for delete, then why not get/list. \n\nLet\u0027s try to keep our scope narrow for now and concentrate on create/update.",
+      "revId": "e4a4e41fb3e3b1555e2aee2d7b4f497ec93c4297",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
