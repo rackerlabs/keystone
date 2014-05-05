@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_a3d5821d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-05-05T17:28:07Z",
+      "side": 1,
+      "message": "I\u0027m not saying this is how it resolved my problem -- I actually haven\u0027t even resolved it yet. I was just wondering if the v3 policy file was necessary as federation is under **/v3/**OS-FEDERATION/. That\u0027s why I just left the question and didn\u0027t vote against the patch.",
+      "parentUuid": "9ad9bd40_18df796a",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_d030a1ea",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 13
