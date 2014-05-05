@@ -141,6 +141,57 @@
       "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_0e456e16",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-05T21:09:51Z",
+      "side": 1,
+      "message": "I think maybe, a note should be made about this one, as it\u0027s a protected apache URL\n\n~~~~~~\n\nExample cURL\n\n~~~~~~\n\n  curl -X GET -D - http://localhost:5000/v3/OS-FEDERATION/identity_providers/{identity_provider}/protocols/{protocol}/auth",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_ae6002a6",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-05T21:09:51Z",
+      "side": 1,
+      "message": "~~~~~~\n\nExample cURL\n\n~~~~~~\n\n  curl -X GET http://localhost:5000/v3/OS-FEDERATION/projects",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_6e6a7a82",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-05T21:09:51Z",
+      "side": 1,
+      "message": "~~~~~~\n\nExample cURL\n\n~~~~~~\n\n  curl -X POST -H \"Content-Type: application/json\" -d \u0027{\"auth\":{\"identity\":{\"methods\":[\"saml2\"],\"saml2\":{\"id\":\"\u003cunscoped_token_id\u003e\"}},\"scope\":{\"project\":{\"domain\": {\"name\": \"Default\"},\"name\":\"service\"}}}}\u0027 -D - http://localhost:5000/v3/auth/tokens",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
