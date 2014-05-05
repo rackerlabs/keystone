@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_cf3f0d86",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-05T15:10:51Z",
+      "side": 1,
+      "message": "I will add doc strings, that was an oversight. FWIW these patches are the bare bones minimum changes to get rid of the bug in Icehouse from a 4 patch set just recently accepted into master. Adam Young tried to apply those patches from master as a backport to Icehouse and the patches were rejected as being too invasive and containing too much refactoring. This patch is the absolute minimum that was distilled from what was accepted into master.\n\nThe names could be better but for better or worse they are what was in the existing icehouse code and what is still currently in master. Making name changes in a backport and deviating further from master doesn\u0027t seem to add value.\n\nFWIW the names py2ldap and ldap2py indicate how attributes are type converted from what is used in Python to what is used in LDAP, as such they make sense to me. Strictly speaking it\u0027s not \"Python\" types, rather it\u0027s types as used in OpenStack (which happens to be written in Python). There are several Python types that could be used by OpenStack so saying a conversion occurs between LDAP and Python is a bit weak, it\u0027s really a conversion between LDAP and the Python types as selected by OpenStack, so maybe \"os\" should have been used instead of \"py\".\n\nThe other aspect the py2ldap and ldap2py names do not capture is that the conversion is being applied to one value, not a collection of values, i.e. it\u0027s scalar, but do we need that in the name? convert_ldap_result applies ldap2py to a collection of values as returned by LDAP for use in OpenStack, perhaps ldap_result_2_py or ldap_result_2_os would have been better.\n\nBut, if we do go down the road of making name changes shouldn\u0027t it been done in each branch for consistency sake?",
+      "parentUuid": "9ad9bd40_f284dfb2",
+      "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_92b71386",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_b3e155d2",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-05T15:10:51Z",
+      "side": 1,
+      "message": "The idea here was to distinguish between values in LDAP format and values to be used by the OpenStack Python code, hence Python format. Strictly speaking the prefix, if one were to be used should probably have been os_ for OpenStack. FWIW the code currently in master uses the same py_ prefix. I see a value in keeping the code between the branches as close as possible.\n\nBut if you feel strongly in Icehouse the variable should be named differently I\u0027m happy to redo the patch.",
+      "parentUuid": "9ad9bd40_92b71386",
+      "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_f2205fb2",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-05-02T21:31:14Z",
       "side": 1,
       "message": "is None really preferred over an empty list if values is None?",
+      "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_535649d3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-05T15:10:51Z",
+      "side": 1,
+      "message": "Yes, None is correct, see\n\nhttp://www.python-ldap.org/doc/html/ldap.html#ldap.LDAPObject.modify\n\nNone is permitted when the operation is Delete.\n\nPlus the intent was not to change code unrelated to utf-8 encoding, this was the logic of the existing code.",
+      "parentUuid": "9ad9bd40_f2205fb2",
       "revId": "2901ca02126efb1f8466dfa2e5b58ed4cc0f507f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
