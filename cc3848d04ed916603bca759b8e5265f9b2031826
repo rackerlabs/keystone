@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_18df796a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-05T16:40:05Z",
+      "side": 1,
+      "message": "I think this is still here: https://github.com/openstack/keystone/blob/master/etc/policy.json#L122 and https://github.com/openstack/keystone/blob/master/etc/policy.v3cloudsample.json#L135\n\nI was able to setup a federated Keystone on at least 2 virtual machines  (Ubuntu 12.04) and I don\u0027t recall having to play with policies.",
+      "parentUuid": "9ad9bd40_9828e987",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_d030a1ea",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 13
