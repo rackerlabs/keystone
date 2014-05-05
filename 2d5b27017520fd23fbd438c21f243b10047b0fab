@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//xwg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-05T22:52:05Z",
+      "side": 1,
+      "message": "Should be Closes-Bug:",
+      "revId": "2d5b27017520fd23fbd438c21f243b10047b0fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_0c82d6c7",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-05T22:52:05Z",
+      "side": 1,
+      "message": "on top of this, if their plugin has an sql backend, they have to add it to keystone.tests.ksfixtures.database._MODEL_BACKEND_NAMESPACES",
+      "revId": "2d5b27017520fd23fbd438c21f243b10047b0fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_8c4c26ca",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-05T22:52:05Z",
+      "side": 1,
+      "message": "prefer \u0027 to \" -- https://github.com/openstack/keystone/blob/master/HACKING.rst#keystone-specific-commandments",
+      "revId": "2d5b27017520fd23fbd438c21f243b10047b0fab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
