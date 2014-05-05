@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_ebd13858",
+        "filename": "keystone/validation/__init__.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-05-05T00:55:11Z",
+      "side": 1,
+      "message": "nit: you can find resource_to_validate from the self.member_name of \u0027wrapper\u0027. That\u0027s how the controller works now to set this name, and that\u0027s how @protected works.",
+      "revId": "4a4c831c5f4a6fad97645e174357c6e00e4e77ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
