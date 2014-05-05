@@ -14,8 +14,12 @@
 
 import webob
 
+from keystone.common import dependency
 from keystone import config
+from keystone import exception
 from keystone import middleware
+from keystone.middleware import basic_auth
+
 from keystone.openstack.common import jsonutils
 from keystone import tests
 
@@ -158,3 +162,57 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(body, req.body)
         self.assertEqual(content_type, req.content_type)
+
+
+@dependency.provider('identity_api')
+class MockIdentity(object):
+    _users = dict()
+
+    def valid_user(self, user_id, password):
+        self._users[user_id] = password
+
+    def authenticate(self, context, user_id, password, domain_scope=None):
+        test_user_password = self._users.get(user_id)
+        if test_user_password is None:
+            raise(exception.UserNotFound(user_id))
+        if test_user_password != password:
+            raise(exception.UserNotFound(user_id))
+
+
+class BasicAuthMiddlewareTest(tests.TestCase):
+        def test_basic_auth_success(self):
+            id = MockIdentity()
+            id.valid_user('Aladdin', 'open sesame')
+
+            req = make_request(body='{}',
+                               content_type='application/json',
+                               method='POST')
+            req.headers['Authorization'] = 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='
+            basic_auth.BasicAuthMiddleware(None).process_request(req)
+            self.assertEqual('Aladdin', req.environ['REMOTE_USER'])
+
+        def test_basic_auth_bad_password(self):
+            id = MockIdentity()
+            id.valid_user('Aladdin', 'bad password')
+
+            req = make_request(body='{}',
+                               content_type='application/json',
+                               method='POST')
+            req.headers['Authorization'] = 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='
+            middleware = basic_auth.BasicAuthMiddleware(None)
+            self.assertRaises(exception.UserNotFound,
+                              middleware.process_request,
+                              req)
+
+        def test_basic_auth_missing_user(self):
+            id = MockIdentity()
+            id.valid_user('Jaffar', 'bad password')
+
+            req = make_request(body='{}',
+                               content_type='application/json',
+                               method='POST')
+            req.headers['Authorization'] = 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='
+            middleware = basic_auth.BasicAuthMiddleware(None)
+            self.assertRaises(exception.UserNotFound,
+                              middleware.process_request,
+                              req)
