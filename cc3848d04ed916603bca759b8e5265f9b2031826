@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_9828e987",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-05T16:32:36Z",
+      "side": 1,
+      "message": "Do you recall what was in /etc/keystone/policy.json previously? It could have just been a matter of not having the latest entries.\n\nBoth keystone.etc.policy.json and keystone.etc.policy.v3cloudsample.json that live in the master branch have entries for idps, mappings and protocols. \n\nIf these entries are not in /etc/keystone/policy.json I could see how things could be bad.\n\nWhat were the errors you saw? Just 401 Unauthorized? \nI believe that updating the policy file should be documented but in a more general spot (not this file), since this doc is extension specific.",
+      "parentUuid": "9ad9bd40_f83f3ad4",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_d030a1ea",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 13
