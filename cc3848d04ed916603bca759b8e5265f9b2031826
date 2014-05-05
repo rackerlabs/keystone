@@ -123,6 +123,24 @@
       "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_9b2a9e8e",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-05-05T21:00:28Z",
+      "side": 1,
+      "message": "curl would work for me.  That would certainly be concrete",
+      "parentUuid": "9ad9bd40_f8e650af",
+      "revId": "cc3848d04ed916603bca759b8e5265f9b2031826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
