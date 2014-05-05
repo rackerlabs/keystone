@@ -12,10 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
+import uuid
+
 import webob
 
+from keystone.common import dependency
 from keystone import config
+from keystone import exception
 from keystone import middleware
+from keystone.middleware import basic_auth
 from keystone.openstack.common import jsonutils
 from keystone import tests
 
@@ -158,3 +164,80 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(body, req.body)
         self.assertEqual(content_type, req.content_type)
+
+
+@dependency.provider('identity_api')
+class MockIdentity(object):
+    _users = dict()
+
+    def valid_user(self, user_id, password):
+        self._users[user_id] = password
+
+    def authenticate(self, context, user_id, password, domain_scope=None):
+        test_user_password = self._users.get(user_id)
+        if test_user_password is None:
+            raise exception.UserNotFound(user_id=user_id)
+        if test_user_password != password:
+            raise exception.UserNotFound(user_id=user_id)
+
+
+class BasicAuthMiddlewareTest(tests.TestCase):
+    def setUp(self):
+        super(BasicAuthMiddlewareTest, self).setUp()
+        self.mock_id = MockIdentity()
+        self.username = uuid.uuid4().hex
+        self.password = uuid.uuid4().hex
+        self.mock_id.valid_user(self.username, self.password)
+
+    def make_request(self, username, password):
+        req = make_request(body='{}',
+                           content_type='application/json',
+                           method='POST')
+        encoded_creds = base64.b64encode(username + ':' + password)
+        req.headers['Authorization'] = 'Basic ' + encoded_creds
+        return req
+
+    def test_basic_auth_success(self):
+        req = self.make_request(self.username, self.password)
+        basic_auth.BasicAuthMiddleware(None).process_request(req)
+        self.assertEqual(self.username, req.environ['REMOTE_USER'])
+
+    def test_basic_auth_bad_password(self):
+        invalid_password = uuid.uuid4().hex
+        req = self.make_request(self.username, invalid_password)
+        basic_auth_middleware = basic_auth.BasicAuthMiddleware(None)
+        self.assertRaises(exception.UserNotFound,
+                          basic_auth_middleware.process_request,
+                          req)
+
+    def test_basic_auth_incorrect_user(self):
+        invalid_user = uuid.uuid4().hex
+        req = self.make_request(invalid_user, self.password)
+        basic_auth_middleware = basic_auth.BasicAuthMiddleware(None)
+        self.assertRaises(exception.UserNotFound,
+                          basic_auth_middleware.process_request,
+                          req)
+
+    def test_invalid_auth_header(self):
+        req = self.make_request(self.username, self.password)
+        req.headers['Authorization'] = 'abcd'
+        basic_auth_middleware = basic_auth.BasicAuthMiddleware(None)
+        self.assertRaises(exception.Unauthorized,
+                          basic_auth_middleware.process_request,
+                          req)
+
+    def test_invalid_encoded_creds_auth_header(self):
+        req = self.make_request(self.username, self.password)
+        req.headers['Authorization'] = 'Basic ' + base64.b64encode('abcd')
+        basic_auth_middleware = basic_auth.BasicAuthMiddleware(None)
+        self.assertRaises(exception.Unauthorized,
+                          basic_auth_middleware.process_request,
+                          req)
+
+    def test_invalid_scheme_in_auth_header(self):
+        req = self.make_request(self.username, self.password)
+        req.headers['Authorization'] = 'Complex ' + base64.b64encode(':abcd')
+        basic_auth_middleware = basic_auth.BasicAuthMiddleware(None)
+        self.assertRaises(exception.Unauthorized,
+                          basic_auth_middleware.process_request,
+                          req)
