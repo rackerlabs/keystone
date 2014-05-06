@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_8afb1cc0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-05-06T09:46:12Z",
+      "side": 1,
+      "message": "If you will use here \"Closes bug 1172106\" it will become a link to Launchpad.net page with this bug",
+      "revId": "5626a3e49522915320278a3abfdcd14152341072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
