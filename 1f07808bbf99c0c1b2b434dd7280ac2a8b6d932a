@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_fa7e29ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-06T19:54:41Z",
+      "side": 1,
+      "message": "remove \u0027is\u0027",
+      "revId": "1f07808bbf99c0c1b2b434dd7280ac2a8b6d932a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_1a010d06",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-06T19:54:41Z",
+      "side": 1,
+      "message": "Should a bug be opened for this and referenced here?",
+      "revId": "1f07808bbf99c0c1b2b434dd7280ac2a8b6d932a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
