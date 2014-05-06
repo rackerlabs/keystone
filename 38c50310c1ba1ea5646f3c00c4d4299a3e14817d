@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_fb8f1d28",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-06T08:42:20Z",
+      "side": 1,
+      "message": "Change \"allows setting nd testing\" by \"allows setting and testing\".\nChange \"basedon\" by \"based on\"",
+      "revId": "38c50310c1ba1ea5646f3c00c4d4299a3e14817d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
