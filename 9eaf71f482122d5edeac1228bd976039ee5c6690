@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_0a08ecd8",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-06T09:46:46Z",
+      "side": 1,
+      "message": "It could be the case that the \u0027project_id\u0027 attribute exists but is empty.",
+      "parentUuid": "bad4c104_c6176450",
+      "revId": "9eaf71f482122d5edeac1228bd976039ee5c6690",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad4c104_3bc82974",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
