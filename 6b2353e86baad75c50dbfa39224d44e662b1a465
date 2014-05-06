@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_bd8af218",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-06T01:19:06Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "9ad9bd40_227163e0",
+      "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_8256af28",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_dd8fb628",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-06T01:19:06Z",
+      "side": 1,
+      "message": "Matter of style preference I guess. With Python, there are many ways to do things.",
+      "parentUuid": "9ad9bd40_8256af28",
+      "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_023a9fe6",
         "filename": "keystone/auth/core.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2014-05-06T00:36:59Z",
       "side": 1,
       "message": "good fix, but unrelated.",
+      "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_fdfc7a74",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-06T01:19:06Z",
+      "side": 1,
+      "message": "just corrected some minor docstring error. Probably don\u0027t need a separate bug and patch for this.",
+      "parentUuid": "9ad9bd40_023a9fe6",
       "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
