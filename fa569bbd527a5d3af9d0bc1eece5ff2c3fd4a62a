@@ -16,6 +16,24 @@
       "revId": "fa569bbd527a5d3af9d0bc1eece5ff2c3fd4a62a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_2a6db5cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-05-06T05:44:32Z",
+      "side": 1,
+      "message": "We are, but if there is no search base we raise a NotFound. \nAs to warning we use it when handling an exception from delete_s not when we couldn\u0027t find a search base.",
+      "parentUuid": "9ad9bd40_e455d0fa",
+      "revId": "fa569bbd527a5d3af9d0bc1eece5ff2c3fd4a62a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
