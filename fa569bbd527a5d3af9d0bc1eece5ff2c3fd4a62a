@@ -34,6 +34,23 @@
       "revId": "fa569bbd527a5d3af9d0bc1eece5ff2c3fd4a62a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_ca8b6966",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-05-06T05:45:52Z",
+      "side": 1,
+      "message": "In this situation we logging warning",
+      "revId": "fa569bbd527a5d3af9d0bc1eece5ff2c3fd4a62a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
