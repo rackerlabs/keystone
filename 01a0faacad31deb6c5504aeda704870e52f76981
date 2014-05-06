@@ -52,6 +52,24 @@
       "revId": "01a0faacad31deb6c5504aeda704870e52f76981",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_9de28e2d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-06T00:54:49Z",
+      "side": 1,
+      "message": "The assert* methods (other than assertThat) are not the future of testtools. As you can imagine there\u0027s an infinite number of assertions that one might want to do and adding them all to the test class adds unnecessary coupling. There\u0027s already several useful matchers that don\u0027t have an assert* equivalent, e.g., HasLength. We should switch to using matchers.",
+      "parentUuid": "9ad9bd40_f29304f8",
+      "revId": "01a0faacad31deb6c5504aeda704870e52f76981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
