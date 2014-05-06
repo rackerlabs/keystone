@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_118bb868",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-06T17:00:16Z",
+      "side": 1,
+      "message": "also returns true if the attribute doesn\u0027t exist on ref",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_b1212c4f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-06T17:00:16Z",
+      "side": 1,
+      "message": "seems odd to return a truthy object on failure as compared to a successful result of... True.",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_71db244f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-06T17:00:16Z",
+      "side": 1,
+      "message": "and then this is just asserting that a falsey appears in a truthy object",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
