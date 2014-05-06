@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_f452c2dc",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-06T16:03:20Z",
+      "side": 1,
+      "message": "is comma between \u0027groups\u0027 and \u0027assignment\u0027 required?",
+      "revId": "228d703300ad6ed54cbe8ffe2af6cceb72282065",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
