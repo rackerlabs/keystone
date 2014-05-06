@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_227163e0",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-05-06T00:36:59Z",
+      "side": 1,
+      "message": "nit: existing_val should be declared within if",
+      "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_8256af28",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-05-06T00:36:59Z",
+      "side": 1,
+      "message": "unrelated? \n\nAlso why do people dislike the KeyError?",
+      "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_023a9fe6",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-05-06T00:36:59Z",
+      "side": 1,
+      "message": "good fix, but unrelated.",
+      "revId": "6b2353e86baad75c50dbfa39224d44e662b1a465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
