@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_701727ee",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-06T14:39:05Z",
+      "side": 1,
+      "message": "A correct syntax aware DN comparison has to deal with a lot more than just case-sensitivity.  For example, characters may be escaped or multi-part RDNs may be specified in different orders.\n\nThe following DNs are all equal according to the RFC 4514:\n\n  cn\u003dfoo+cn\u003dbar,dc\u003dexample,dc\u003dcom\n  cn\u003dFoo+cn\u003dbar,dc\u003dexample,dc\u003dcom\n  cn\u003dbar+cn\u003dfoo,dc\u003dexample,dc\u003dcom\n  cn\u003d\\66\\6f\\6f+cn\u003dbar,dc\u003dexample,dc\u003dcom\n\nAlso, case-sensitivity of LDAP attribute values is dependent on the actual attribute as defined in the schema (and it\u0027s matching rule).  In general, values are not case-sensitive with most standard attributes (though most LDAP servers are case-preserving).  Here is an example showing this:\n\n  [nkinder@localhost]$ ldapsearch -x -D \"cn\u003ddirectory manager\" -W -b \"dc\u003dexample,dc\u003dcom\" \"cn\u003dfoo\" dn\n  dn: cn\u003dbar+cn\u003dfoo,dc\u003dexample,dc\u003dcom\n  \n  [nkinder@localhost KDS]$ ldapmodify -x -D \"cn\u003ddirectory manager\" -W\n  dn: cn\u003dFoo+cn\u003dbar,dc\u003dexample,dc\u003dcom\n  changetype: add\n  cn: Foo\n  cn: bar\n  objectclass: inetorgperson\n  sn: user\n  \n  adding new entry \"cn\u003dFoo+cn\u003dbar,dc\u003dexample,dc\u003dcom\"\n  ldap_add: Already exists (68)\n\nI am not suggesting that you make this function be truly syntax aware, as that is a large undertaking that is not necessary for the \"dumb member\" check.  I would merely like to see a comment so others know that this is not performing a true DN comparison that takes syntaxes and standards around DN string representation into account.",
+      "parentUuid": "9ad9bd40_d28805c9",
+      "revId": "f5713671a8a70348ab281ebde9246b16f6b4d3cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad4c104_21771a04",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 6
