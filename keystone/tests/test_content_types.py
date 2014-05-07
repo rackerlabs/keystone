@@ -1260,6 +1260,29 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
         token_hash = cms.cms_hash_token(token, mode=hash_algorithm)
         self.assertThat(token_hash, matchers.Equals(data['revoked'][0]['id']))
 
+    def test_fetch_revocation_list_unsigned(self):
+        """If the server is configured for unsigned revocation list, then the
+           revocation list isn't signed.
+        """
+
+        self.config_fixture.config(group='token', sign_revocation_list=False)
+
+        token1 = self.get_scoped_token()
+
+        token2 = self.get_scoped_token()
+        self.admin_request(method='DELETE',
+                           path='/v2.0/tokens/%s' % token2,
+                           token=token1)
+
+        r = self.admin_request(
+            method='GET',
+            path='/v2.0/tokens/revoked',
+            token=token1,
+            expected_status=200)
+        data = r.result
+        token_hash = cms.cms_hash_token(token2)
+        self.assertThat(token_hash, matchers.Equals(data['revoked'][0]['id']))
+
     def test_create_update_user_json_invalid_enabled_type(self):
         # Enforce usage of boolean for 'enabled' field in JSON
         token = self.get_scoped_token()
@@ -1389,6 +1412,9 @@ class RevokeApiJsonTestCase(JsonTestCase):
         self.skipTest('Revoke API disables revocation_list.')
 
     def test_fetch_revocation_list_sha256(self):
+        self.skipTest('Revoke API disables revocation_list.')
+
+    def test_fetch_revocation_list_unsigned(self):
         self.skipTest('Revoke API disables revocation_list.')
 
 

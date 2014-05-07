@@ -430,12 +430,14 @@ class Auth(controller.V2Controller):
             if expires and isinstance(expires, datetime.datetime):
                     t['expires'] = timeutils.isotime(expires)
         data = {'revoked': tokens}
-        json_data = json.dumps(data)
-        signed_text = cms.cms_sign_text(json_data,
-                                        CONF.signing.certfile,
-                                        CONF.signing.keyfile)
+        if CONF.token.sign_revocation_list:
+            json_data = json.dumps(data)
+            signed_text = cms.cms_sign_text(json_data,
+                                            CONF.signing.certfile,
+                                            CONF.signing.keyfile)
 
-        return {'signed': signed_text}
+            return {'signed': signed_text}
+        return data
 
     @controller.v2_deprecated
     def endpoints(self, context, token_id):

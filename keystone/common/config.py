@@ -216,6 +216,10 @@ FILE_OPTIONS = {
                         "middleware must be configured with the "
                         "hash_algorithms, otherwise token revocation will "
                         "not be processed correctly."),
+        cfg.BoolOpt('sign_revocation_list', default=True,
+                    help="Sign the revocation list. If this is False then "
+                    "the revocation list will not be CMS-encrypted but instead"
+                    "be a JSON object containing the list of tokens.")
     ],
     'revoke': [
         cfg.StrOpt('driver',
