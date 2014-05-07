@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_12aa7c70",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-07T14:52:31Z",
+      "side": 1,
+      "message": "you could remove the return True from the helper functions above, and get rid of assertTrue here. If the function blows up then the test fails. just a thought",
+      "revId": "21df11a7fd2edc4692ae678d818abb124bdc2441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
