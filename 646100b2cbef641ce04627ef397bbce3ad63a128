@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_ef78be2d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-07T20:43:01Z",
+      "side": 1,
+      "message": "so everything has to point to http://docs.openstack.org now?\n\nhttp://docs.openstack.org/api/openstack-identity-service/2.0/content/ still works",
+      "revId": "646100b2cbef641ce04627ef397bbce3ad63a128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
