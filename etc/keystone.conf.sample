@@ -1302,6 +1302,11 @@
 # revocation will not be processed correctly. (string value)
 #hash_algorithm=md5
 
+# Sign the revocation list. If this is False then the
+# revocation list will not be CMS-encrypted but insteadbe a
+# JSON object containing the list of tokens. (boolean value)
+#sign_revocation_list=true
+
 
 [trust]
 
