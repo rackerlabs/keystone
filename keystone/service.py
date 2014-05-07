@@ -20,6 +20,7 @@ import routes
 from keystone import assignment
 from keystone import auth
 from keystone import catalog
+from keystone.common import extension
 from keystone.common import wsgi
 from keystone import config
 from keystone import controllers
@@ -52,9 +53,30 @@ def fail_gracefully(f):
     return wrapper
 
 
+TOKENS_EXTENSION_DATA = {
+    'name': 'OpenStack v2.0 tokens API',
+    'namespace': 'http://docs.openstack.org/api/'
+    'openstack-identity-service/2.0',
+    'alias': 'tokens',
+    'updated': '2014-05-08T12:00:0-00:00',
+    'description': 'OpenStack v2.0 tokens API.',
+    'links': [
+        {
+            'rel': 'describedby',
+            'type': 'text/html',
+            'href': 'https://github.com/openstack/identity-api',
+        }
+    ],
+    'capabilities': {
+        'unsigned_revocation_list': True,
+    },
+}
+
+
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
     controllers.register_version('v2.0')
+    extension.register_public_extension('/v2.0/tokens', TOKENS_EXTENSION_DATA)
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [assignment.routers.Public(),
                                  token.routers.Router(),
@@ -64,6 +86,7 @@ def public_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    extension.register_admin_extension('/v2.0/tokens', TOKENS_EXTENSION_DATA)
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [identity.routers.Admin(),
                                  assignment.routers.Admin(),
