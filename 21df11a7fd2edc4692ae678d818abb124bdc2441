@@ -16,6 +16,24 @@
       "revId": "21df11a7fd2edc4692ae678d818abb124bdc2441",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c5e68916",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-07T16:50:37Z",
+      "side": 1,
+      "message": "Yeah, that could have been, and in that case I could have named it assert instead of ensure, since it\u0027s the behaviour of an assertion, but then it would be some sort of \"null test\", and I\u0027ve never really liked those to be honest, that\u0027s why I decided to return something. Just a matter of style I guess.",
+      "parentUuid": "7adec928_12aa7c70",
+      "revId": "21df11a7fd2edc4692ae678d818abb124bdc2441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
