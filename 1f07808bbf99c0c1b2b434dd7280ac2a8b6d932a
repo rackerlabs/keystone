@@ -33,6 +33,24 @@
       "revId": "1f07808bbf99c0c1b2b434dd7280ac2a8b6d932a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_4f88d222",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-07T20:43:19Z",
+      "side": 1,
+      "message": "https://bugs.launchpad.net/keystone/+bug/1317261",
+      "parentUuid": "9ad9bd40_1a010d06",
+      "revId": "1f07808bbf99c0c1b2b434dd7280ac2a8b6d932a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
