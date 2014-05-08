@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_3fac7ced",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1582,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-08T18:45:41Z",
+      "side": 1,
+      "message": "Potential refinement:  merge the remote and the assert together into a single assertion:  self.assertDictEqualNoEmptyValuesProperties()\n\nBut that is not a reason to not approve",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
