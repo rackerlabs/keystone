@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_7d90cc95",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-08T20:23:54Z",
+      "side": 1,
+      "message": "unrelated, but the if statement should be done priority to user lookup to save us a cycle. Maybe we can do this in a separate patch.",
+      "revId": "401294da9a7babdd6be5c7f19aef0e07811ba09e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
