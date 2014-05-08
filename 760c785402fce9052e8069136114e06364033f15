@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_e688e0c8",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "Examples in this file appear to be ubuntu specific (a2ensite, etc) suggest being clear about that.",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c6eda48d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "suggest removing \"then\" from \"keystone then maps the SAML...\"",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_e6af002a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "Might be better to use apache config terminology \"vhost\" instead of \"virtual host\" (yeah I know \"virtual host\" is the long-form name).",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_8668fcf6",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "Suggest removing Thus here or the Thus on line 161 (requires minor rephrasing)",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a120829c",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "see comment on 272\n\napplies to all other github.com links.",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_812b8681",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "see comment on 272",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_2681e88f",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "remove \"simply\"",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_e65d404a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "You might combine this sentence with the first sentence on line 198. (not sure if it would be a bit clearer or not)",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_61267abc",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "see comment on 272",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_065b0c55",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "This sentence is inconsistent with the ones above defining \"mapping\". Suggest starting with \"A protocol\" or eliminate \"A mapping\" above. [This is a sentence fragment]",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0110564d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "see comment on 272",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c10e6e34",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "see comment on 272",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_4603540f",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "Do we want to link to github? is there a more \"official\" openstack.org based location to link to?",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a109622e",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-08T04:03:26Z",
+      "side": 1,
+      "message": "same comment as on 272",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
