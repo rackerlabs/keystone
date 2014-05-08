@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "7adec928_a874dbfd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-08T13:58:34Z",
+      "side": 1,
+      "message": "also s/redability/readability",
+      "revId": "21df11a7fd2edc4692ae678d818abb124bdc2441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_12aa7c70",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 2
