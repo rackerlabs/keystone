@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_16f97bc8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-08T06:19:48Z",
+      "side": 1,
+      "message": "I uploaded these tests in a past commit, and it was mentioned in the comments that the tests were a bit confusing; Yet the code was merged to master. So I decided to try and make them more readable or understandable. So, in this case, there is no bug associated with this.",
+      "parentUuid": "7adec928_4fb612de",
+      "revId": "21df11a7fd2edc4692ae678d818abb124bdc2441",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_12aa7c70",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 2
