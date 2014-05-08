@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_00513462",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-08T01:15:27Z",
+      "side": 1,
+      "message": "I believe that this is causing your tempest test failures.  This will indirectly require python-ldap to be installed, even when LDAP is not actually being used.  It seems that python-ldap isn\u0027t installed when tempest sets up devstack, so the tests fail with import errors.\n\nDo we really need to call the keystone.common.ldap code from here?  It seems like it would be better to contain anything that would load python-ldap to code that is only used when LDAP is actually configured.  I think is_empty() needs to be put somewhere outside of keystone.common.ldap if it is truly general purpose.",
+      "revId": "201222c54c6adf89695c91aba8a81840a362e3d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
