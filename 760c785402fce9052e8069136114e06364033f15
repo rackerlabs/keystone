@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_3d49f2d0",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T12:09:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_c6eda48d",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_e6af002a",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 15
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_bd0c2296",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T12:09:25Z",
+      "side": 1,
+      "message": "used both :-)",
+      "parentUuid": "7adec928_e6af002a",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_8668fcf6",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 15
@@ -64,6 +100,24 @@
       "writtenOn": "2014-05-08T04:03:26Z",
       "side": 1,
       "message": "Suggest removing Thus here or the Thus on line 161 (requires minor rephrasing)",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fd25ca0a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T12:09:25Z",
+      "side": 1,
+      "message": "changed to: The federation mapping function will map the user into local\nIdentity Service groups objects, and *hence* to local role assignments.",
+      "parentUuid": "7adec928_8668fcf6",
       "revId": "760c785402fce9052e8069136114e06364033f15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_1d235606",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T12:09:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_2681e88f",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_e65d404a",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 15
@@ -166,6 +238,24 @@
       "writtenOn": "2014-05-08T04:03:26Z",
       "side": 1,
       "message": "This sentence is inconsistent with the ones above defining \"mapping\". Suggest starting with \"A protocol\" or eliminate \"A mapping\" above. [This is a sentence fragment]",
+      "revId": "760c785402fce9052e8069136114e06364033f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_1dad1632",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T12:09:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_065b0c55",
       "revId": "760c785402fce9052e8069136114e06364033f15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
