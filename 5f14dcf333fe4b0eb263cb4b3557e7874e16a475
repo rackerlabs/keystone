@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_882f1fa1",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-05-08T14:09:54Z",
+      "side": 1,
+      "message": "minor issue: \"getting back the a user in that project\", it may be: \"... the user ...\"",
+      "revId": "5f14dcf333fe4b0eb263cb4b3557e7874e16a475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_28bc4b69",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-05-08T14:09:54Z",
+      "side": 1,
+      "message": "It may be good to do more tests:\n- Use the same projects but in the same domain (both in Domain A or Domain B);\n- Add a new user to a project and then list this project\u0027s users to retrieve more than on user;",
+      "revId": "5f14dcf333fe4b0eb263cb4b3557e7874e16a475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
