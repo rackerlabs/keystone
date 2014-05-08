@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_a51de4bf",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T13:18:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_a50084ab",
+      "revId": "1fcef8218c3029031b637aaf5bd892e517085cbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_e5d8cc55",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-08T12:51:29Z",
       "side": 1,
       "message": "This really started up above...",
+      "revId": "1fcef8218c3029031b637aaf5bd892e517085cbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_456d0032",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-08T13:18:49Z",
+      "side": 1,
+      "message": "yes, here we are configuring shibd daemon (mod_shib doesn\u0027t do all the job, it requires shibd daemon to be running).",
+      "parentUuid": "7adec928_e5d8cc55",
       "revId": "1fcef8218c3029031b637aaf5bd892e517085cbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
