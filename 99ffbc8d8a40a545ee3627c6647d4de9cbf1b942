@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_363bcc3b",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-08T14:58:20Z",
+      "side": 1,
+      "message": "I think we should add a sentence here stating that the steps here are performed on a Ubuntu machine.",
+      "revId": "99ffbc8d8a40a545ee3627c6647d4de9cbf1b942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_76f55482",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-08T14:58:20Z",
+      "side": 1,
+      "message": "haha, i think we can reword this to sound a bit less sassy. \n\n\u0027The example shown below is for reference only, not to be used in a production environment\u0027",
+      "revId": "99ffbc8d8a40a545ee3627c6647d4de9cbf1b942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
