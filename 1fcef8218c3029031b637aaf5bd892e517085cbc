@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7adec928_a50084ab",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-08T12:51:29Z",
+      "side": 1,
+      "message": "Rename this \"configuring Apache HTTPD for mod_shibboleth\" and add a line before and saying that, while there are many ways to perform Federation, mod_shibolleth is the only one yet documented.",
+      "revId": "1fcef8218c3029031b637aaf5bd892e517085cbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_e5d8cc55",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-08T12:51:29Z",
+      "side": 1,
+      "message": "This really started up above...",
+      "revId": "1fcef8218c3029031b637aaf5bd892e517085cbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_c2602638",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 16
