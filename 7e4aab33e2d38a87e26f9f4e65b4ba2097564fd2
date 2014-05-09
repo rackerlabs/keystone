@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_9c62e8d6",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-09T15:41:41Z",
+      "side": 0,
+      "message": "There should still be a test for malformed with the new behavior",
+      "revId": "7e4aab33e2d38a87e26f9f4e65b4ba2097564fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
