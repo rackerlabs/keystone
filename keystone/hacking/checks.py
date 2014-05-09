@@ -135,7 +135,24 @@ class CheckForAssertingNoneEquality(BaseASTChecker):
         super(CheckForAssertingNoneEquality, self).generic_visit(node)
 
 
+def no_translate_debug_logs(logical_line, filename):
+    """Check for 'LOG.debug(_('
+
+    As per our translation policy,
+    https://wiki.openstack.org/wiki/LoggingStandards#Log_Translation
+    we shouldn't translate debug level logs.
+
+    * This check assumes that 'LOG' is a logger.
+
+    K005
+    """
+
+    if logical_line.startswith("LOG.debug(_("):
+        yield(0, "K005 Don't translate debug level logs")
+
+
 def factory(register):
     register(CheckForMutableDefaultArgs)
     register(block_comments_begin_with_a_space)
     register(CheckForAssertingNoneEquality)
+    register(no_translate_debug_logs)
