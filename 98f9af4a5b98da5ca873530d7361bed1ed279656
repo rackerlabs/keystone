@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_b0934bf9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-09T13:05:51Z",
+      "side": 1,
+      "message": "Please, change the URL from \"https://wiki.openstack.org/wiki/LoggingStandards,\" to \"https://wiki.openstack.org/wiki/LoggingStandards\" (without coma)",
+      "revId": "98f9af4a5b98da5ca873530d7361bed1ed279656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
