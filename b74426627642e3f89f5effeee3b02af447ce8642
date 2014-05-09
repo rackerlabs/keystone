@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_394563b3",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-05-09T17:34:53Z",
+      "side": 1,
+      "message": "How should one deal with it on Apache 2.4+?\n\nFrom: https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPApacheConfig\n\n\"\"\"\nShibRequireAll On|Off [...]\n\n**Not supported on Apache 2.4+: This command is subsumed by Apache 2.4\u0027s own support for controlling authorization rule composition.**\n\"\"\"\n\nI think you should at least make clear that it won\u0027t work on those versions of Apache.",
+      "revId": "b74426627642e3f89f5effeee3b02af447ce8642",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
