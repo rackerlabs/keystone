@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_4aeecbb5",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-09T19:40:36Z",
+      "side": 1,
+      "message": "\"Configure apache to use a Federation Capable  Authentication method.\"",
+      "revId": "6ca231e156b4ff8c7548cd48e8f6a268038739ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_ea26b715",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-09T19:40:36Z",
+      "side": 1,
+      "message": "Please extract this whole section into a stand along document:  shibboleth.rst  and then just refer to that here.",
+      "revId": "6ca231e156b4ff8c7548cd48e8f6a268038739ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_2a217ffb",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-09T19:40:36Z",
+      "side": 1,
+      "message": "From this point on, things should stay in this document.",
+      "revId": "6ca231e156b4ff8c7548cd48e8f6a268038739ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_6a61c738",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-09T19:40:36Z",
+      "side": 1,
+      "message": "I\u0027m explicitly not asking you to remove 5000 from here, but in the future, when we move to HTTPD default, we should clean up these URLs to reflect everything running on HTTPS standard port of 443",
+      "revId": "6ca231e156b4ff8c7548cd48e8f6a268038739ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
