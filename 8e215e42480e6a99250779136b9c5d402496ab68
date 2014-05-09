@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_c5872cd6",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-09T20:41:31Z",
+      "side": 1,
+      "message": "I had to make this file an \u0027orphan\u0027 wrt rst, since he\u0027s just linked and not actually included in any table of contents.\n\nI guess, when we eventually add more examples, we can get create a table of contents somewhere and link more than 1.",
+      "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
