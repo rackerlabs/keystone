@@ -287,10 +287,10 @@ class V3TokenDataHelper(object):
                                 'user_id': user_id,
                                 'project_id': token_project_id}
                 else:
-                    msg = _('User %(user_id)s has no access '
-                            'to domain %(domain_id)s') % {
-                                'user_id': user_id,
-                                'domain_id': token_domain_id}
+                    msg = ('User %(user_id)s has no access '
+                           'to domain %(domain_id)s' % {
+                               'user_id': user_id,
+                               'domain_id': token_domain_id})
                 LOG.debug(msg)
                 raise exception.Unauthorized(msg)
 
