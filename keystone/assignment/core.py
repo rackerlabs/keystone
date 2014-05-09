@@ -271,8 +271,8 @@ class Manager(manager.Manager):
                                                     project_id=tenant_id)
 
             except exception.RoleNotFound:
-                LOG.debug(_("Removing role %s failed because it does not "
-                            "exist."),
+                LOG.debug("Removing role %s failed because it does not "
+                          "exist.",
                           role_id)
 
     # TODO(henry-nash): We might want to consider list limiting this at some
@@ -381,9 +381,9 @@ class Manager(manager.Manager):
                 try:
                     self.delete_project(project['id'])
                 except exception.ProjectNotFound:
-                    LOG.debug(_('Project %(projectid)s not found when '
-                                'deleting domain contents for %(domainid)s, '
-                                'continuing with cleanup.'),
+                    LOG.debug('Project %(projectid)s not found when '
+                              'deleting domain contents for %(domainid)s, '
+                              'continuing with cleanup.',
                               {'projectid': project['id'],
                                'domainid': domain_id})
 
@@ -394,9 +394,9 @@ class Manager(manager.Manager):
                     self.identity_api.delete_group(group['id'],
                                                    domain_scope=domain_id)
                 except exception.GroupNotFound:
-                    LOG.debug(_('Group %(groupid)s not found when deleting '
-                                'domain contents for %(domainid)s, continuing '
-                                'with cleanup.'),
+                    LOG.debug('Group %(groupid)s not found when deleting '
+                              'domain contents for %(domainid)s, continuing '
+                              'with cleanup.',
                               {'groupid': group['id'], 'domainid': domain_id})
 
         # And finally, delete the users themselves
@@ -406,9 +406,9 @@ class Manager(manager.Manager):
                     self.identity_api.delete_user(user['id'],
                                                   domain_scope=domain_id)
                 except exception.UserNotFound:
-                    LOG.debug(_('User %(userid)s not found when '
-                                'deleting domain contents for %(domainid)s, '
-                                'continuing with cleanup.'),
+                    LOG.debug('User %(userid)s not found when '
+                              'deleting domain contents for %(domainid)s, '
+                              'continuing with cleanup.',
                               {'userid': user['id'],
                                'domainid': domain_id})
 
@@ -518,7 +518,7 @@ class Manager(manager.Manager):
                                 user_id=user['id'], role_id=role_id,
                                 domain_id=domain_id, project_id=project_id)
             except exception.GroupNotFound:
-                LOG.debug(_('Group %s not found, no tokens to invalidate.'),
+                LOG.debug('Group %s not found, no tokens to invalidate.',
                           group_id)
 
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
@@ -556,13 +556,13 @@ class Manager(manager.Manager):
                 except exception.GroupNotFound:
                     # Ignore it, but log a debug message
                     if 'project_id' in assignment:
-                        target = _('Project (%s)') % assignment['project_id']
+                        target = 'Project (%s)' % assignment['project_id']
                     elif 'domain_id' in assignment:
-                        target = _('Domain (%s)') % assignment['domain_id']
+                        target = 'Domain (%s)' % assignment['domain_id']
                     else:
-                        target = _('Unknown Target')
-                    msg = _('Group (%(group)s), referenced in assignment '
-                            'for %(target)s, not found - ignoring.')
+                        target = 'Unknown Target'
+                    msg = ('Group (%(group)s), referenced in assignment '
+                           'for %(target)s, not found - ignoring.')
                     LOG.debug(msg, {'group': assignment['group_id'],
                                     'target': target})
                     continue
