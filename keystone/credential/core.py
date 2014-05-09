@@ -117,5 +117,5 @@ class Driver(object):
                 try:
                     self.credential_api.delete_credential(cr['id'])
                 except exception.CredentialNotFound:
-                    LOG.debug(_('Deletion of credential is not required: %s'),
+                    LOG.debug('Deletion of credential is not required: %s',
                               cr['id'])
