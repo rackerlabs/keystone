@@ -33,6 +33,23 @@
       "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0bf4d059",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-09T14:05:19Z",
+      "side": 1,
+      "message": "Hmmm...should not do this, as it will leave you in an unstable state if you try to install and don\u0027t succeed in generating the new files.  Why does overwriting not work?",
+      "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
