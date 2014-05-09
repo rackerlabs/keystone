@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_bc7241ab",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-05-09T17:55:53Z",
+      "side": 1,
+      "message": "Using the encoded string directly here makes the test to not seem \"real\" to me, wouldn\u0027t be better do something like:\n\nusername \u003d \u0027Alladin\u0027\n\npassword \u003d \u0027open sesame\u0027\n\nreq.headers[\u0027Authorization\u0027] \u003d \u0027Basic \u0027 + base64.b64encode(username + \u0027:\u0027 + password)",
+      "revId": "d4d1abfe005bd931ce455ce11aa6d04e8a90b2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
