@@ -16,6 +16,24 @@
       "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_7d619038",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-05-10T00:06:01Z",
+      "side": 1,
+      "message": "Sounds good.  Thanks for mentioning this!",
+      "parentUuid": "7adec928_c5872cd6",
+      "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
