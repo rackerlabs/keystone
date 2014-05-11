@@ -34,6 +34,40 @@
       "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_e7d505ba",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-11T02:45:48Z",
+      "side": 1,
+      "message": "are we dropping this?",
+      "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_07dcb1e3",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-11T02:45:48Z",
+      "side": 1,
+      "message": "suggest adding a comment that restarting apache may be a good practice (I am not 100% sure it\u0027s require, but it\u0027s later to execute extra command rather that spend way more time on looking for bugs that doesn\u0027t exist and the services are not restarted).",
+      "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
