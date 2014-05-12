@@ -54,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "7adec928_10b5bb30",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-05-12T21:44:58Z",
+      "side": 1,
+      "message": "Isn\u0027t it necessary to restart the service or configure the service provider before getting this file? I could see that my Metadata changed after a service shibd restart.",
+      "revId": "8e215e42480e6a99250779136b9c5d402496ab68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_07dcb1e3",
         "filename": "doc/source/extensions/shibboleth.rst",
         "patchSetId": 21
