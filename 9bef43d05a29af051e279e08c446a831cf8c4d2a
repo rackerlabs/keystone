@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_81f5f5cc",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-13T13:48:49Z",
+      "side": 1,
+      "message": "Is there a link to this doc? If so maybe we should include it here. Or is it the link on line 52?",
+      "revId": "9bef43d05a29af051e279e08c446a831cf8c4d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_61cb8953",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-13T13:48:49Z",
+      "side": 1,
+      "message": "The following Identity API objects support mapping: \n        - Groups\n        - Users\n\nOr something along those lines",
+      "revId": "9bef43d05a29af051e279e08c446a831cf8c4d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a1dcb113",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-13T13:48:49Z",
+      "side": 1,
+      "message": "(NIT): remove \u0027to\u0027",
+      "revId": "9bef43d05a29af051e279e08c446a831cf8c4d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
