@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_f762fbab",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-13T15:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_61cb8953",
+      "revId": "9bef43d05a29af051e279e08c446a831cf8c4d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_a1dcb113",
         "filename": "doc/source/extensions/shibboleth.rst",
         "patchSetId": 22
@@ -47,6 +65,24 @@
       "writtenOn": "2014-05-13T13:48:49Z",
       "side": 1,
       "message": "(NIT): remove \u0027to\u0027",
+      "revId": "9bef43d05a29af051e279e08c446a831cf8c4d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_776eeb97",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-13T15:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_a1dcb113",
       "revId": "9bef43d05a29af051e279e08c446a831cf8c4d2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
