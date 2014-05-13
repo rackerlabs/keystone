@@ -1426,6 +1426,47 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         self.skipTest(
             "Enabled emulation conflicts with enabled mask")
 
+    def test_project_update_and_project_get_return_same_response(self):
+        project = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'description': uuid.uuid4().hex,
+            'enabled': True}
+
+        project_ref = self.assignment_api.create_project(project['id'],
+                                                         project)
+        self.assertDictEqual(project_ref, project)
+
+        updated_project = {'enabled': False}
+        updated_project_ref = self.assignment_api.update_project(
+            project['id'], updated_project)
+
+        self.assertFalse(updated_project_ref['enabled'])
+
+        project_ref = self.assignment_api.get_project(project['id'])
+        self.assertDictEqual(project_ref, updated_project_ref)
+
+    def test_user_update_and_project_get_return_same_response(self):
+        user = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id,
+            'description': uuid.uuid4().hex,
+            'enabled': True}
+
+        user_ref = self.identity_api.create_user(user['id'], user)
+        self.assertDictEqual(user_ref, user)
+
+        updated_user = {'enabled': False}
+        updated_user_ref = self.identity_api.update_user(
+            user['id'], updated_user)
+
+        self.assertFalse(updated_user_ref['enabled'])
+
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertDictEqual(user_ref, updated_user_ref)
+
 
 class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
                                 tests.TestCase):
