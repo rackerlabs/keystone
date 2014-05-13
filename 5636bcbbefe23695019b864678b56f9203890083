@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_a4775f39",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-13T14:35:21Z",
+      "side": 1,
+      "message": "We could probably leverage the jsonschema validator to do this instead \n\nhttps://review.openstack.org/#/c/86483/\n\nhttps://review.openstack.org/#/c/86484/\n\nThat way we could validate everything for Endpoints in one shot.",
+      "revId": "5636bcbbefe23695019b864678b56f9203890083",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
