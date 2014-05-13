@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_4173edb0",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-13T13:31:38Z",
+      "side": 1,
+      "message": "I would prefer you rename this function to something more intuitive, like \"url_is_valid\" or something of the sort. Since the current name doesn\u0027t really make much sense, at least to me.",
+      "revId": "a2c46f36e89c10ecf5fa5f9c13acdb2ee291d70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
