@@ -889,7 +889,14 @@
 # LDAP objectclass for users. (string value)
 #user_objectclass=inetOrgPerson
 
-# LDAP attribute mapped to user id. (string value)
+# LDAP attribute mapped to user id.  If "query_scope" is set
+# to "one", then this option must be set to the attribute that
+# is used as the left-most relative distinguished name (RDN)
+# of the user entry.  If "query_scope" is set to "sub", then
+# this option may be set to any LDAP attribute; however,
+# listing user information will still result in displaying the
+# user's id as the user entry's left-most RDN value. (string
+# value)
 #user_id_attribute=cn
 
 # LDAP attribute mapped to user name. (string value)
@@ -1273,7 +1280,7 @@
 # backend. (integer value)
 #expiration_buffer=1800
 
-# Toggle for revocation event cacheing. This has no effect
+# Toggle for revocation event caching. This has no effect
 # unless global caching is enabled. (boolean value)
 #caching=true
 
@@ -1468,13 +1475,13 @@
 # Controls the token construction, validation, and revocation
 # operations. Core providers are
 # "keystone.token.providers.[pkiz|pki|uuid].Provider". The
-# default provider is pkiz. (string value)
+# default provider is uuid. (string value)
 #provider=<None>
 
 # Token persistence backend driver. (string value)
 #driver=keystone.token.persistence.backends.sql.Token
 
-# Toggle for token system cacheing. This has no effect unless
+# Toggle for token system caching. This has no effect unless
 # global caching is enabled. (boolean value)
 #caching=true
 
