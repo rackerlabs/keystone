@@ -275,8 +275,23 @@ class EndpointV3(controller.V3Controller):
         self._require_attribute(ref, 'url')
         self.catalog_api.get_service(ref['service_id'])
 
+        if self.check_url_create_url(ref['url']):
+            msg = _('The endpoint url is not valid')
+            raise exception.ValidationError(message=msg)
+
         ref = self.catalog_api.create_endpoint(ref['id'], ref)
         return EndpointV3.wrap_member(context, ref)
+
+    def check_url_create_url(self, url):
+        import re
+        regex = re.compile(
+            r'^https?://'
+            r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,6}\.?|'
+            r'localhost|'
+            r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+            r'(?::\d+)?'
+            r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+        return (url is not None and regex.search(url)) is None
 
     @controller.filterprotected('interface', 'service_id')
     def list_endpoints(self, context, filters):
