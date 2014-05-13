@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_f7bafbbe",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 8340
+      },
+      "writtenOn": "2014-05-13T15:18:53Z",
+      "side": 1,
+      "message": "This came up in the original (non-backport) review as well. We chose default\u003dNone so that by default the value configured  in ldap.conf will be respected (or openldap\u0027s default which is true). Explicitly setting this value to true/false will override what is set in ldap.conf.",
+      "parentUuid": "7adec928_64039742",
+      "revId": "350088c57b26a5f397977e0592abdd403f1dc121",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_b65c20ef",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
