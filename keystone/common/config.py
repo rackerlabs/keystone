@@ -461,7 +461,15 @@ FILE_OPTIONS = {
         cfg.StrOpt('user_objectclass', default='inetOrgPerson',
                    help='LDAP objectclass for users.'),
         cfg.StrOpt('user_id_attribute', default='cn',
-                   help='LDAP attribute mapped to user id.'),
+                   help='LDAP attribute mapped to user id.  If "query_scope" '
+                        'is set to "one", then this attribute must be set to '
+                        'the attribute that is used as the left-most relative '
+                        'distinguished name (RDN) of the user entry.  If '
+                        '"query_scope" is set to "sub", then this attribute '
+                        'may be set to any LDAP attribute; however, listing '
+                        'user information will still result in displaying the '
+                        'user\'s id as the user entry\'s left-most RDN '
+                        'value.'),
         cfg.StrOpt('user_name_attribute', default='sn',
                    help='LDAP attribute mapped to user name.'),
         cfg.StrOpt('user_mail_attribute', default='email',
