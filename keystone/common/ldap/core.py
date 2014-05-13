@@ -1203,6 +1203,7 @@ class EnabledEmuMixIn(BaseLdap):
                     self._add_enabled(object_id)
                 else:
                     self._remove_enabled(object_id)
+                ref['enabled'] = enabled_value
             return ref
         else:
             return super(EnabledEmuMixIn, self).update(
