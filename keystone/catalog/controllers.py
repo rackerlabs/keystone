@@ -20,6 +20,8 @@ import six
 from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common.validation import parameter_types
+from keystone.common.validation import validators
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
@@ -275,10 +277,19 @@ class ServiceV3(controller.V3Controller):
 class EndpointV3(controller.V3Controller):
     collection_name = 'endpoints'
     member_name = 'endpoint'
+    url_schema_validator = None
 
     def __init__(self):
         super(EndpointV3, self).__init__()
         self.get_member_from_driver = self.catalog_api.get_endpoint
+        url_schema = {
+            'type': 'object',
+            'properties': {
+                'url': parameter_types.url
+            },
+            'required': ['url']
+        }
+        self.url_schema_validator = validators.SchemaValidator(url_schema)
 
     @classmethod
     def filter_endpoint(cls, ref):
@@ -306,8 +317,20 @@ class EndpointV3(controller.V3Controller):
         self._require_attribute(ref, 'url')
         self.catalog_api.get_service(ref['service_id'])
 
+        if self.is_valid_url(ref['url']):
+            msg = _('The endpoint url is not valid')
+            raise exception.ValidationError(message=msg)
+
         ref = self.catalog_api.create_endpoint(ref['id'], ref)
         return EndpointV3.wrap_member(context, ref)
+
+    def is_valid_url(self, url):
+        request_to_validate = {'url': url}
+        try:
+            self.create_schema_validator.validate(request_to_validate)
+        except exception.SchemaValidationError:
+            return False
+        return True
 
     @controller.filterprotected('interface', 'service_id')
     def list_endpoints(self, context, filters):
