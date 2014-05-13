@@ -407,6 +407,12 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         del ref["url"]
         self.post('/endpoints', body={'endpoint': ref}, expected_status=400)
 
+    def test_create_endpoint_bad_url(self):
+        """Call ``POST /endpoints`` with bad URL."""
+        ref = self.new_endpoint_ref(service_id=self.service_id)
+        ref["url"] = '000'
+        self.post('/endpoints', body={'endpoint': ref}, expected_status=400)
+
     def test_get_endpoint(self):
         """Call ``GET /endpoints/{endpoint_id}``."""
         r = self.get(
@@ -553,7 +559,7 @@ class TestCatalogAPISQL(tests.TestCase):
             'description': uuid.uuid4().hex,
             'interface': uuid.uuid4().hex[:8],
             'service_id': service_id,
-            'url': uuid.uuid4().hex,
+            'url': 'http://localhost/%s' % uuid.uuid4().hex,
             'region': uuid.uuid4().hex,
         }
 
