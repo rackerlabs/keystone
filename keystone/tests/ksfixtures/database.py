@@ -13,14 +13,11 @@
 
 import functools
 import os
-import shutil
 
 import fixtures
 from oslo.db import options as db_options
-from oslo.db.sqlalchemy import migration
 
 from keystone.common import sql
-from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone import tests
 
@@ -40,23 +37,6 @@ def run_once(f):
             wrapper.already_ran = True
     wrapper.already_ran = False
     return wrapper
-
-
-def _setup_database(extensions=None):
-    if CONF.database.connection != tests.IN_MEM_DB_CONN_STRING:
-        db = tests.dirs.tmp('test.db')
-        pristine = tests.dirs.tmp('test.db.pristine')
-
-        if os.path.exists(db):
-            os.unlink(db)
-        if not os.path.exists(pristine):
-            migration.db_sync(sql.get_engine(),
-                              migration_helpers.find_migrate_repo())
-            for extension in (extensions or []):
-                migration_helpers.sync_database_to_version(extension=extension)
-            shutil.copyfile(db, pristine)
-        else:
-            shutil.copyfile(pristine, db)
 
 
 # NOTE(I159): Every execution all the options will be cleared. The method must
@@ -117,7 +97,6 @@ class Database(fixtures.Fixture):
 
     def setUp(self):
         super(Database, self).setUp()
-        _setup_database(extensions=self._extensions)
 
         self.engine = sql.get_engine()
         sql.ModelBase.metadata.create_all(bind=self.engine)
