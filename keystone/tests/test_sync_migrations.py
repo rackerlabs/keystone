@@ -23,7 +23,6 @@ import six
 
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
-from keystone import exception
 
 
 class RealBackends(object):
@@ -43,21 +42,22 @@ class RealBackends(object):
     backends = (test_base.PostgreSQLOpportunisticTestCase,
                 test_base.MySQLOpportunisticTestCase)
     modules = (
-        'trust',
-        'identity',
-        'contrib.oauth1',
-        'contrib.federation',
-        'contrib.endpoint_filter',
-        'token',
         'assignment',
+        'catalog',
+        'contrib.endpoint_filter',
+        'contrib.federation',
+        'contrib.oauth1',
+        'contrib.revoke',
         'credential',
+        'identity',
         'policy',
-        'catalog')
+        'token',
+        'trust')
 
     def __new__(cls, name, bases, attrs):
         """Push all created modules to a global modules namespace
 
-        Uses all real backends for all modules containing sqlalchemy models.
+        Uses Postgresql and MySQL for all modules containing Sqlalchemy models.
         The class itself does not contain any tests.
         """
         for bc in cls.backends:
@@ -75,7 +75,8 @@ class RealBackends(object):
 
 class ModelsMigrationsComparer(test_base.DbTestCase):
 
-    """Mixin intended to override ModelsMigrationsSync methods."""
+    """Mixin intended to override test_migrations.ModelsMigrationsSync methods.
+    """
 
     module = None
     models_path = 'backends.sql'
@@ -87,16 +88,15 @@ class ModelsMigrationsComparer(test_base.DbTestCase):
             '.'.join((self.module, self.models_path)))
 
     def db_sync(self, engine):
+        # NOTE (I159): the migrations are applied for further comparaison with
+        # the models.
         migration.db_sync(engine=engine,
                           abs_path=migration_helpers.find_migrate_repo(),
                           init_version=sql.migrate_repo.DB_INIT_VERSION)
-        try:
-            abs_path = migration_helpers.find_migrate_repo(
-                importlib.import_module(self.module))
-            migration.db_version_control(engine, abs_path)
-            migration.db_sync(engine, abs_path)
-        except exception.MigrationNotProvided:
-            pass
+        abs_path = migration_helpers.find_migrate_repo(
+            importlib.import_module(self.module))
+        migration.db_version_control(engine, abs_path)
+        migration.db_sync(engine, abs_path)
 
     def include_object(self, object_, name, type_, reflected, compare_to):
         models = [m.__tablename__
