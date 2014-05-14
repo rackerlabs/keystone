@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_43783f2b",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-14T18:20:57Z",
+      "side": 1,
+      "message": "nit/opinion: i think we normally list out all the args, instead of using the * operator.\n\n  self.assertRaises(exception.ValidationError,\n  app.ensure_attribute, resp.body, \u0027a\u0027)\n\nif someone else raises it, then change, but otherwise, it\u0027s cool",
+      "revId": "e2e0ab2e956339b730c0b710935dcc90ea50751e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
