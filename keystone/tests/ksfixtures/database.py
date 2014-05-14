@@ -13,15 +13,12 @@
 
 import functools
 import os
-import shutil
 
 import fixtures
 
 from keystone.common import sql
-from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone.openstack.common.db import options as db_options
-from keystone.openstack.common.db.sqlalchemy import migration
 from keystone import tests
 
 
@@ -40,25 +37,6 @@ def run_once(f):
             wrapper.already_ran = True
     wrapper.already_ran = False
     return wrapper
-
-
-def _setup_database(engine, extensions=None):
-    if CONF.database.connection != tests.IN_MEM_DB_CONN_STRING:
-        db = tests.dirs.tmp('test.db')
-        pristine = tests.dirs.tmp('test.db.pristine')
-
-        if os.path.exists(db):
-            os.unlink(db)
-        if not os.path.exists(pristine):
-            migration.db_sync(sql.get_engine(),
-                              migration_helpers.find_migrate_repo())
-            for extension in (extensions or []):
-                migration_helpers.sync_database_to_version(extension=extension)
-            shutil.copyfile(db, pristine)
-        else:
-            shutil.copyfile(pristine, db)
-    else:
-        sql.ModelBase.metadata.create_all(bind=engine)
 
 
 @run_once
@@ -119,6 +97,6 @@ class Database(fixtures.Fixture):
         super(Database, self).setUp()
 
         self.engine = sql.get_engine()
-        _setup_database(self.engine, extensions=self._extensions)
+        sql.ModelBase.metadata.create_all(bind=self.engine)
         self.addCleanup(sql.cleanup)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
