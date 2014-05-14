@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_68a0ba9f",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-14T18:33:31Z",
+      "side": 1,
+      "message": "nit: just put trustor_name and password into get_unscoped_token?",
+      "revId": "e2e20fd6d40cdf3de1724c79d3794523e8f6dd24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0388f7e5",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-14T18:33:31Z",
+      "side": 1,
+      "message": "no reason for expires_at?",
+      "revId": "e2e20fd6d40cdf3de1724c79d3794523e8f6dd24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
