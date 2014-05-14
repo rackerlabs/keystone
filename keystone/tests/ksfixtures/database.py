@@ -42,7 +42,7 @@ def run_once(f):
     return wrapper
 
 
-def _setup_database(extensions=None):
+def _setup_database(engine, extensions=None):
     if CONF.database.connection != tests.IN_MEM_DB_CONN_STRING:
         db = tests.dirs.tmp('test.db')
         pristine = tests.dirs.tmp('test.db.pristine')
@@ -57,6 +57,8 @@ def _setup_database(extensions=None):
             shutil.copyfile(db, pristine)
         else:
             shutil.copyfile(pristine, db)
+    else:
+        sql.ModelBase.metadata.create_all(bind=engine)
 
 
 @run_once
@@ -115,9 +117,8 @@ class Database(fixtures.Fixture):
 
     def setUp(self):
         super(Database, self).setUp()
-        _setup_database(extensions=self._extensions)
 
         self.engine = sql.get_engine()
-        sql.ModelBase.metadata.create_all(bind=self.engine)
+        _setup_database(self.engine, extensions=self._extensions)
         self.addCleanup(sql.cleanup)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
