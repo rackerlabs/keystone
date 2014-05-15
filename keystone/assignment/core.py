@@ -240,6 +240,7 @@ class Manager(manager.Manager):
 
         """
         self.resource_api.get_project(tenant_id)
+        self.identity_api.get_user(user_id)
         try:
             self.role_api.get_role(CONF.member_role_id)
             self.driver.add_role_to_user_and_project(
@@ -265,6 +266,7 @@ class Manager(manager.Manager):
                 CONF.member_role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+        self.identity_api.get_user(user_id)
         self.resource_api.get_project(tenant_id)
         self.role_api.get_role(role_id)
         self.driver.add_role_to_user_and_project(user_id, tenant_id, role_id)
