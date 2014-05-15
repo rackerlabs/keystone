@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_d1425667",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9608
+      },
+      "writtenOn": "2014-05-15T05:05:27Z",
+      "side": 1,
+      "message": "-1 for this one. The convention is to have the change-id as the last line of the commit. This is probably because a change id was generated after you made changes, since this is your first commit. Will be ok from next time. Please change the commit message,, putting this line at the very end, and resubmit. \ndescription: https://git.eclipse.org/r/Documentation/user-changeid.html#_description",
+      "revId": "3ba80b28937e26fa44ff55a64f5efdb3a0d7575f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_717c22b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 9608
+      },
+      "writtenOn": "2014-05-15T05:05:27Z",
+      "side": 1,
+      "message": "Not sure if you should mention the partial bug here, this commit does not address that. But it is probably ok, Im not -1 ing for this.",
+      "revId": "3ba80b28937e26fa44ff55a64f5efdb3a0d7575f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
