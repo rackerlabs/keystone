@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_b11f8a6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9608
+      },
+      "writtenOn": "2014-05-15T05:17:52Z",
+      "side": 1,
+      "message": "Sorry, seems like I was wrong. We need change-id to be in the footer, as it is here, so removing the -1.",
+      "parentUuid": "7adec928_d1425667",
+      "revId": "3ba80b28937e26fa44ff55a64f5efdb3a0d7575f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_717c22b6",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
