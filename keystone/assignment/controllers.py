@@ -122,7 +122,8 @@ class Role(controller.V2Controller):
         return {'roles': self.role_api.list_roles()}
 
 
-@dependency.requires('assignment_api', 'resource_api', 'role_api')
+@dependency.requires('assignment_api', 'identity_api', 'resource_api',
+                     'role_api')
 class RoleAssignmentV2(controller.V2Controller):
     """The V2 Role APIs that are processing assignments."""
 
@@ -153,6 +154,8 @@ class RoleAssignmentV2(controller.V2Controller):
         if tenant_id is None:
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant_id required')
+        # Just to check that the user exists
+        self.identity_api.get_user(user_id)
 
         self.assignment_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
@@ -379,6 +382,10 @@ class GrantAssignmentV3(controller.V3Controller):
         """Grants a role to a user or group on either a domain or project."""
         self._require_domain_xor_project(domain_id, project_id)
         self._require_user_xor_group(user_id, group_id)
+        if user_id:
+            self.identity_api.get_user(user_id)
+        else:
+            self.identity_api.get_group(group_id)
 
         self.assignment_api.create_grant(
             role_id, user_id, group_id, domain_id, project_id,
