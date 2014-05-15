@@ -1132,6 +1132,11 @@ class IdentityTests(AssignmentTestHelperMixin):
                           uuid.uuid4().hex)
 
     def test_add_role_to_user_and_project_returns_not_found(self):
+        self.assertRaises(exception.UserNotFound,
+                          self.assignment_api.add_role_to_user_and_project,
+                          uuid.uuid4().hex,
+                          self.tenant_bar['id'],
+                          self.role_admin['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.add_role_to_user_and_project,
                           self.user_foo['id'],
@@ -1143,13 +1148,6 @@ class IdentityTests(AssignmentTestHelperMixin):
                           self.user_foo['id'],
                           self.tenant_bar['id'],
                           uuid.uuid4().hex)
-
-    def test_add_role_to_user_and_project_no_user(self):
-        # If add_role_to_user_and_project and the user doesn't exist, then
-        # no error.
-        user_id_not_exist = uuid.uuid4().hex
-        self.assignment_api.add_role_to_user_and_project(
-            user_id_not_exist, self.tenant_bar['id'], self.role_admin['id'])
 
     def test_remove_role_from_user_and_project(self):
         self.assignment_api.add_role_to_user_and_project(
@@ -2094,12 +2092,10 @@ class IdentityTests(AssignmentTestHelperMixin):
                           uuid.uuid4().hex,
                           self.user_foo['id'])
 
-    def test_add_user_to_project_no_user(self):
-        # If add_user_to_project and the user doesn't exist, then
-        # no error.
-        user_id_not_exist = uuid.uuid4().hex
-        self.assignment_api.add_user_to_project(self.tenant_bar['id'],
-                                                user_id_not_exist)
+        self.assertRaises(exception.UserNotFound,
+                          self.assignment_api.add_user_to_project,
+                          self.tenant_bar['id'],
+                          uuid.uuid4().hex)
 
     def test_remove_user_from_project(self):
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
