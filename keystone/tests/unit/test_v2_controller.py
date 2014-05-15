@@ -12,7 +12,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-
 import copy
 import uuid
 
@@ -45,32 +44,26 @@ class TenantTestCase(unit.TestCase):
             assignment_controllers.RoleAssignmentV2())
 
     def test_get_project_users_no_user(self):
-        """get_project_users when user doesn't exist.
+        """get_project_users when user doesn't exist, raises UserNotFound.
 
         When a user that's not known to `identity` has a role on a project,
-        then `get_project_users` just skips that user.
+        then `get_project_users` raises
+        :class:`keystone.exception.UserNotFound`.
 
         """
-        project_id = self.tenant_bar['id']
-
-        orig_project_users = (
-            self.assignment_tenant_controller.get_project_users(_ADMIN_CONTEXT,
-                                                                project_id))
-
         # Assign a role to a user that doesn't exist to the `bar` project.
 
+        project_id = self.tenant_bar['id']
         user_id = uuid.uuid4().hex
-        self.assignment_role_controller.add_role_to_user(
-            _ADMIN_CONTEXT, user_id, self.role_other['id'], project_id)
+        self.assignment_api.driver.add_role_to_user_and_project(
+            user_id, project_id, self.role_other['id'])
 
-        new_project_users = (
-            self.assignment_tenant_controller.get_project_users(_ADMIN_CONTEXT,
-                                                                project_id))
-
-        # The new user isn't included in the result, so no change.
-        # asserting that the expected values appear in the list,
-        # without asserting the order of the results
-        self.assertEqual(sorted(orig_project_users), sorted(new_project_users))
+        self.assertRaisesRegexp(
+            exception.UserNotFound,
+            'Could not find user: %s' % user_id,
+            self.assignment_tenant_controller.get_project_users,
+            _ADMIN_CONTEXT,
+            project_id)
 
     def test_list_projects_default_domain(self):
         """Test that list projects only returns those in the default domain."""

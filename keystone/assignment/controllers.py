@@ -68,16 +68,8 @@ class TenantAssignment(controller.V2Controller):
         user_refs = []
         user_ids = self.assignment_api.list_user_ids_for_project(tenant_id)
         for user_id in user_ids:
-            try:
-                user_ref = self.identity_api.get_user(user_id)
-            except exception.UserNotFound:
-                # Log that user is missing and continue on.
-                message = ("User %(user_id)s in project %(project_id)s "
-                           "doesn't exist.")
-                LOG.debug(message,
-                          {'user_id': user_id, 'project_id': tenant_id})
-            else:
-                user_refs.append(self.v3_to_v2_user(user_ref))
+            user_ref = self.identity_api.get_user(user_id)
+            user_refs.append(self.v3_to_v2_user(user_ref))
         return {'users': user_refs}
 
 
