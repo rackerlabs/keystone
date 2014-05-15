@@ -123,7 +123,8 @@ class Role(controller.V2Controller):
         return {'roles': self.role_api.list_roles()}
 
 
-@dependency.requires('assignment_api', 'resource_api', 'role_api')
+@dependency.requires('assignment_api', 'identity_api', 'resource_api',
+                     'role_api')
 class RoleAssignmentV2(controller.V2Controller):
     """The V2 Role APIs that are processing assignments."""
 
