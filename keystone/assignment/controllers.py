@@ -183,7 +183,7 @@ class Tenant(controller.V2Controller):
         return o
 
 
-@dependency.requires('assignment_api')
+@dependency.requires('assignment_api', 'identity_api')
 class Role(controller.V2Controller):
 
     # COMPAT(essex-3)
@@ -244,9 +244,12 @@ class Role(controller.V2Controller):
 
         """
         self.assert_admin(context)
+
         if tenant_id is None:
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant_id required')
+        # Just to check that the user exist
+        self.identity_api.get_user(user_id)
 
         self.assignment_api.add_role_to_user_and_project(
             user_id, tenant_id, role_id)
