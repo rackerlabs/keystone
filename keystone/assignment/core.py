@@ -237,6 +237,7 @@ class Manager(manager.Manager):
 
         """
         self.resource_api.get_project(tenant_id)
+        self.identity_api.get_user(user_id)
         try:
             self.role_api.get_role(CONF.member_role_id)
             self.driver.add_role_to_user_and_project(
@@ -272,6 +273,8 @@ class Manager(manager.Manager):
         # create_grant so that the notifications.role_assignment decorator
         # will work.
 
+        if user_id:
+            self.identity_api.get_user(user_id)
         self.resource_api.get_project(project_id)
         self.role_api.get_role(role_id)
         self.driver.add_role_to_user_and_project(user_id, project_id, role_id)

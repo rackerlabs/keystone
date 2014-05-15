@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-
+import mock
 import uuid
 
 from keystone.assignment import controllers as assignment_controllers
@@ -56,10 +56,12 @@ class TenantTestCase(tests.TestCase):
                                                                 project_id))
 
         # Assign a role to a user that doesn't exist to the `bar` project.
-
-        user_id = uuid.uuid4().hex
-        self.assignment_role_controller.add_role_to_user(
-            _ADMIN_CONTEXT, user_id, self.role_other['id'], project_id)
+        def fake_get_user(user_id):
+            return {'default_project_id': project_id}
+        with mock.patch.object(self.identity_api, 'get_user', fake_get_user):
+            user_id = uuid.uuid4().hex
+            self.assignment_role_controller.add_role_to_user(
+                _ADMIN_CONTEXT, user_id, self.role_other['id'], project_id)
 
         new_project_users = (
             self.assignment_tenant_controller.get_project_users(_ADMIN_CONTEXT,
