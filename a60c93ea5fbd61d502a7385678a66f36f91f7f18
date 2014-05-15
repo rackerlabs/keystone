@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_771b32ca",
+        "filename": "test-requirements.txt",
+        "patchSetId": 46
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-05-15T08:46:56Z",
+      "side": 1,
+      "message": "we already have these dependencies in the oslo.db so I see no big sense to keep them here also",
+      "revId": "a60c93ea5fbd61d502a7385678a66f36f91f7f18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
