@@ -14,7 +14,7 @@
 # under the License.
 
 
-class Hints(list):
+class Hints(object):
     """Encapsulate driver hints for listing entities.
 
     Hints are modifiers that affect the return of entities from a
@@ -32,13 +32,19 @@ class Hints(list):
     return filters.
 
     """
+    def __init__(self):
+        self._limit = None
+        self._filters = list()
+
     def add_filter(self, name, value, comparator='equals',
                    case_sensitive=False):
-        self.append({'name': name, 'value': value, 'comparator': comparator,
-                     'case_sensitive': case_sensitive, 'type': 'filter'})
+        self._filters.append({'name': name, 'value': value,
+                             'comparator': comparator,
+                             'case_sensitive': case_sensitive,
+                             'type': 'filter'})
 
     def filters(self):
-        """Iterate over all unsatisfied filters.
+        """Return all unsatisfied filters.
 
         Each filter term consists of:
 
@@ -51,30 +57,28 @@ class Hints(list):
         * ``type``: will always be 'filter'
 
         """
-        return [x for x in self if x['type'] == 'filter']
+        return self._filters
 
     def get_exact_filter_by_name(self, name):
         """Return a filter key and value if exact filter exists for name."""
-        for entry in self:
+        for entry in self._filters:
             if (entry['type'] == 'filter' and entry['name'] == name and
                     entry['comparator'] == 'equals'):
                 return entry
+
+    def remove(self, _filter):
+        """Removes a filter from the filters list.
+        It will throw an exception if the filter is not in the list.
+
+        """
+        self._filters.remove(_filter)
 
     def set_limit(self, limit, truncated=False):
         """Set a limit to indicate the list should be truncated."""
         # We only allow one limit entry in the list, so if it already exists
         # we overwrite the old one
-        for x in self:
-            if x['type'] == 'limit':
-                x['limit'] = limit
-                x['truncated'] = truncated
-                break
-        else:
-            self.append({'limit': limit, 'type': 'limit',
-                         'truncated': truncated})
+        self._limit = {'limit': limit, 'type': 'limit', 'truncated': truncated}
 
     def get_limit(self):
         """Get the limit to which the list should be truncated."""
-        for x in self:
-            if x['type'] == 'limit':
-                return x
+        return self._limit
