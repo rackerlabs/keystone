@@ -129,6 +129,13 @@ class Auth(controller.V2Controller):
 
         (token_id, token_data) = self.token_provider_api.issue_v2_token(
             auth_token_data, roles_ref=roles_ref, catalog_ref=catalog_ref)
+
+        # TODO(nkinder) emit a CADF notification in addition to logging
+        # successful token issuance.  We should probably emit a notification
+        # for failed authentication as well.
+        msg = _('Issued token for user %(u_id)s')
+        msg = msg % {'u_id': user_ref['id']}
+        LOG.info(msg)
         return token_data
 
     def _authenticate_token(self, context, auth):

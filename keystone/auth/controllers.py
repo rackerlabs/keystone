@@ -433,6 +433,13 @@ class Auth(controller.V3Controller):
             msg = _('User not found')
             raise exception.Unauthorized(msg)
 
+        # TODO(nkinder) emit a CADF notification in addition to logging
+        # successful token issuance.  We should probably emit a notification
+        # for failed authentication as well.
+        msg = _('Issued token for user %(u_id)s')
+        msg = msg % {'u_id': auth_context['user_id']}
+        LOG.info(msg)
+
     @controller.protected()
     def check_token(self, context):
         token_id = context.get('subject_token_id')
