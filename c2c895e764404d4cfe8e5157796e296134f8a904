@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_1cc2fc58",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-05-16T15:02:20Z",
+      "side": 1,
+      "message": "Relate this with bug https://bugs.launchpad.net/keystone/+bug/1320128",
+      "revId": "c2c895e764404d4cfe8e5157796e296134f8a904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_1c903c49",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2014-05-16T15:02:20Z",
+      "side": 1,
+      "message": "s/not to enforce/to avoid/ sounds better?",
+      "revId": "c2c895e764404d4cfe8e5157796e296134f8a904",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
