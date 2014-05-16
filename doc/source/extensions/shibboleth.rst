@@ -151,6 +151,10 @@ environment)::
 
     </SPConfig>
 
+In order not to enforce external authentication, make sure Shibboleth doesn't set
+REMOTE_USER environment variable. To do so, scan through the ``/etc/shibboleth/shibboleth2.xml``
+configuration file and remove ``REMOTE_USER`` directives.
+
 Examine your attributes map file ``/etc/shibboleth/attributes-map.xml`` and adjust
 your requirements if needed. For more information see
 `attributes documentation <https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPAddAttribute>`_
