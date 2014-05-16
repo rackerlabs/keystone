@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_59ec968f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-05-16T14:35:47Z",
+      "side": 0,
+      "message": "these options should not be removed from config",
+      "revId": "3ca5ce43773549eed2d2ad3863966a1a95cdf3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
