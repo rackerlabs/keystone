@@ -16,6 +16,24 @@
       "revId": "3ca5ce43773549eed2d2ad3863966a1a95cdf3b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_b7e5a139",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-05-16T15:31:13Z",
+      "side": 0,
+      "message": "Any recommendations to use tools/config/generate_sample.sh ?",
+      "parentUuid": "7adec928_59ec968f",
+      "revId": "3ca5ce43773549eed2d2ad3863966a1a95cdf3b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
