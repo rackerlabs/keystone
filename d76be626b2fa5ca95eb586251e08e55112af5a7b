@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_c621964e",
+        "filename": "keystone/validation/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-17T15:33:57Z",
+      "side": 1,
+      "message": "One note on the factory thing mentioned above. After discussing at the summit this could be an optimization that could be done later, mainly so that we don\u0027t have a bunch of validator objects laying around when we could try and reuse them. \n\nThis all depends on how we want to validate. Right now, with the current implementation, we are validating a resource operation, which *should* be descriptive enough to only need one validator object per resource action (e.g. we will always only have one schema to validate project creation requests, we will need a separate validator object to validate project update requests). If for some reason the implementation changes, such that we need a validator for resource attributes (having a validator specifically for valid email formats) then I could see where it would be useful to cache that validator since it would be required in multiple resource operations (user create and user update could use the same email validator instead of creating new validator objects for each).",
+      "parentUuid": "9ad9bd40_c19f305e",
+      "revId": "d76be626b2fa5ca95eb586251e08e55112af5a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_2d6453b8",
         "filename": "keystone/validation/common_parameter_types.py",
         "patchSetId": 3
