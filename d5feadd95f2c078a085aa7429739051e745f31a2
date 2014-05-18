@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_9c035e41",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:36:56Z",
+      "side": 1,
+      "message": "Suggest change \"that is\" to \"that is used as\"\n\nCould change \"LDAP attribute\" to \"attribute\" since the doc already used LDAP attribute.",
+      "revId": "d5feadd95f2c078a085aa7429739051e745f31a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fc8d42d4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:36:56Z",
+      "side": 1,
+      "message": "suggest change \"distinguished name\" to \"user entry\u0027s distinguished name\"\n\nor even \"user entry\" since what else would the RDN be for?",
+      "revId": "d5feadd95f2c078a085aa7429739051e745f31a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_bc873ab4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:36:56Z",
+      "side": 1,
+      "message": "Is this just saying that this configuration option is ignored if query_scope is sub?",
+      "revId": "d5feadd95f2c078a085aa7429739051e745f31a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_7cb93278",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:36:56Z",
+      "side": 1,
+      "message": "suggest change this line to\n\n displaying the user\u0027s id as the user entry\u0027s left-most RDN value.",
+      "revId": "d5feadd95f2c078a085aa7429739051e745f31a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
