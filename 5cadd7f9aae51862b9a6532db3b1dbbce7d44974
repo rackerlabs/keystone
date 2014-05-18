@@ -2,6 +2,244 @@
   "comments": [
     {
       "key": {
+        "uuid": "7adec928_dc17a6ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "If the entry\u0027s objectclass requires the attribute to be present then adding the entry will now fail.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9ce8bee3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "If the entry\u0027s objectclass requires the attribute to be present then the mod will fail.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fceb82d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "How does the server know what the client expects to be present?",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_1cbcaedb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "Remove this since it\u0027s implied.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_bccc9a8a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "If someone sends in an empty string for domain_id the server shouldn\u0027t change it to the default domain id.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dcc5e65c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "revert this change. We can\u0027t change the default since this could cause a problem for an existing deployment. Also, this isn\u0027t mentioned in the commit message, and I don\u0027t see how it\u0027s required to fix the problem.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fcc2a251",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "This is repeating what the next couple of lines do. The comment should explain why instead.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5ca9d68e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "log guidelines say don\u0027t translate debug logs. Remove _()",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_7cae9299",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "since continued could unindent the next lines rather than use else here. Alternatively, use elif at line 880 for consistency.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fc99c279",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "There should be a check right after the \"attribute value has not changed\" check - \"if utils.is_empty(v) and utils.is_empty(old_obj.get(k)): continue\". Otherwise a non-change could get caught by the \"changing an immutable\" check at line 990.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9c96fe4a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "log guidelines say don\u0027t translate debug logs. Remove _()",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5c80f6f6",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "it\u0027s inefficient to count the entire length of something if all we need to know is if it\u0027s empty or not. Is there a more efficient way to do this?",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fc70e241",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "capitalize LDAP",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9ca43ea7",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 1,
+      "message": "I thought this was only changing the behavior of the LDAP backend, so why do we need to change tests for all backends?",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_3fac7ced",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 18

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_7cb772f5",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T15:36:36Z",
+      "side": 0,
+      "message": "I wonder why the server was handling this one.",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
