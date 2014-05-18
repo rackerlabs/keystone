@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_9cf99e82",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:03:48Z",
+      "side": 1,
+      "message": "This should be a comment in the code not the commit message.",
+      "revId": "5ad6ab3094d99eb3119d0ffd6000f15063752bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_7c38523d",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:03:48Z",
+      "side": 1,
+      "message": "The new name doesn\u0027t make this any clearer to me. assert_attribute would make it clear that it fails if the attribute isn\u0027t present.\n\nAlso, did you consider using a matcher instead?",
+      "revId": "5ad6ab3094d99eb3119d0ffd6000f15063752bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dc1de6bf",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:03:48Z",
+      "side": 1,
+      "message": "could remove this line if changed name to assert_attribute_in_body.",
+      "revId": "5ad6ab3094d99eb3119d0ffd6000f15063752bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fc4382ac",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:03:48Z",
+      "side": 1,
+      "message": "why change the name of the function? The new name doesn\u0027t make it any clearer to me.",
+      "revId": "5ad6ab3094d99eb3119d0ffd6000f15063752bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fc1aa2c4",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:03:48Z",
+      "side": 1,
+      "message": "(unrelated, but this should be using assertIn, or assertThat(matchers.In))",
+      "revId": "5ad6ab3094d99eb3119d0ffd6000f15063752bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_bc6bba1c",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:03:48Z",
+      "side": 1,
+      "message": "should be able to use \"else: self.fail()\" or whatever to get rid of the exception_thrown variable.",
+      "revId": "5ad6ab3094d99eb3119d0ffd6000f15063752bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
