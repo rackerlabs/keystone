@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_5c58f689",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:19:39Z",
+      "side": 1,
+      "message": "A docstring would be nice.",
+      "revId": "635d6b2cb2332c12a20918fc03079badd7bf291d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dc4b26af",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:19:39Z",
+      "side": 1,
+      "message": "since foo2 is the default password for get_unscoped_token this can be removed.",
+      "revId": "635d6b2cb2332c12a20918fc03079badd7bf291d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_1cc90e26",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:19:39Z",
+      "side": 1,
+      "message": "are these lines short enough that they can be squashed onto one line?",
+      "revId": "635d6b2cb2332c12a20918fc03079badd7bf291d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_3cceca2e",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T16:19:39Z",
+      "side": 1,
+      "message": "seems like we could have a method create_sample_trust so don\u0027t have to copy-paste \"self.sample_data, self.trustor[\u0027name\u0027]\" everywhere.",
+      "revId": "635d6b2cb2332c12a20918fc03079badd7bf291d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
