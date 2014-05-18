@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_2f892a75",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T17:20:34Z",
+      "side": 1,
+      "message": "add a comment why it\u0027s correct to return no roles rather than raise an exception if the project subtree entry doesn\u0027t exist.\n\nAlso, add a debug log.",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_8fb07e44",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T17:20:34Z",
+      "side": 1,
+      "message": "(nit) change \"an\" to \"a\"",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_afad3aeb",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T17:20:34Z",
+      "side": 1,
+      "message": "(nit) change \"The\" to \"the\" (lowercase), also change \"tenant\" to \"project\"",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0feb8e13",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T17:20:34Z",
+      "side": 1,
+      "message": "suggest use HasLength matcher",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_cf8d267e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T17:20:34Z",
+      "side": 1,
+      "message": "suggest use HasLength matcher",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_af945a8b",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-18T17:20:34Z",
+      "side": 1,
+      "message": "suggest use HasLength matcher",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
