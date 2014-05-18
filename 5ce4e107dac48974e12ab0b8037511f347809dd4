@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_bc93ba59",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-18T15:28:21Z",
+      "side": 1,
+      "message": "Neither, this change arose while talking to dstanek.",
+      "parentUuid": "7adec928_a6a2ca48",
+      "revId": "5ce4e107dac48974e12ab0b8037511f347809dd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_e68772b3",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_dc9c066d",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-18T15:28:21Z",
+      "side": 1,
+      "message": "This was the way it was, but I can change it, no problem",
+      "parentUuid": "7adec928_46be6666",
+      "revId": "5ce4e107dac48974e12ab0b8037511f347809dd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_866b0ef0",
         "filename": "keystone/common/driver_hints.py",
         "patchSetId": 2
@@ -64,6 +100,24 @@
       "writtenOn": "2014-05-17T17:15:35Z",
       "side": 1,
       "message": "We might not need these get methods. \n\nConsidering that the two are the same. \n\n    hints_obj \u003d Hints()\n    filters \u003d hints_obj.filters() # using the get method in the module \n    filters \u003d hints_obj._filters # accessing the _filters attribute \n\nThe second way would be less lines of code and we could just make the _filters attribute public, removing the prefixed \u0027_\u0027 if we go about it that way. Thoughts?",
+      "revId": "5ce4e107dac48974e12ab0b8037511f347809dd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_1c8aee1a",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-18T15:28:21Z",
+      "side": 1,
+      "message": "could be done, sure.",
+      "parentUuid": "7adec928_866b0ef0",
       "revId": "5ce4e107dac48974e12ab0b8037511f347809dd4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
