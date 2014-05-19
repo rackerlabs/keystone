@@ -34,6 +34,40 @@
       "revId": "3676688409a4c331e5147ce44cfe93e03fffe7d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_40be03af",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:38:42Z",
+      "side": 1,
+      "message": "docstrings would be nice.",
+      "revId": "3676688409a4c331e5147ce44cfe93e03fffe7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_40ec43bb",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:38:42Z",
+      "side": 1,
+      "message": "what is this testing? that assert_attribute works as expected? Why test the test code? This is less clear than it was before.",
+      "revId": "3676688409a4c331e5147ce44cfe93e03fffe7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
