@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_3f8f5f76",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-19T19:09:07Z",
+      "side": 1,
+      "message": "If we do this I think it should be done for v2 and v3 consistently. Also, I think this is something that can be done with the cadf notifications framework: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L228-L232",
+      "revId": "1fc9311cc0a729b3ff35c5c3ee3bc02bd2e687f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
