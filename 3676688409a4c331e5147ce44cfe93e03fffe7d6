@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_aa59738f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-19T15:28:37Z",
+      "side": 1,
+      "message": "Couldn\u0027t these two be combined now? The method signatures are the same and they execute the same logic (with the exception of either calling _require_attributes or _require_attribute). We could detect the type and call accordingly. \n\nif a list is passed in be sure to call _require_attributes and if not then just call _require_attribute\n\n    if isinstance(attr, list): \n        self._require_attributes(body_dict, attr)\n    elif isinstance(attr, str): \n        self._require_attribute(body_dict,  attr)\n    else: \n        # fix attrs you\u0027re passing in\n\n\nor something along those lines?",
+      "revId": "3676688409a4c331e5147ce44cfe93e03fffe7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
