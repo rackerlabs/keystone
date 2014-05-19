@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_40b3634c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:20:12Z",
+      "side": 1,
+      "message": "This isn\u0027t related to the refactoring so should be in a separate commit.",
+      "revId": "eb2b028adbe5f137e8cb0d4f855a95c1fc7ef277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a0a42708",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:20:12Z",
+      "side": 1,
+      "message": "Should be \"Closes-Bug: #1316128\"",
+      "revId": "eb2b028adbe5f137e8cb0d4f855a95c1fc7ef277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_603a1f9a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1098,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:20:12Z",
+      "side": 1,
+      "message": "v should be escaped for the filter. -- ldap.filter.escape_filter_chars(v)",
+      "revId": "eb2b028adbe5f137e8cb0d4f855a95c1fc7ef277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_80d64b4d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:20:12Z",
+      "side": 1,
+      "message": "OpenStack policy is now to not translate debug, so remove _().",
+      "revId": "eb2b028adbe5f137e8cb0d4f855a95c1fc7ef277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_406603bc",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:20:12Z",
+      "side": 1,
+      "message": "this comment doesn\u0027t make sense -- nodes that don\u0027t exist couldn\u0027t be removed either way.",
+      "revId": "eb2b028adbe5f137e8cb0d4f855a95c1fc7ef277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_800babd4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:20:12Z",
+      "side": 1,
+      "message": "this needs more context -- \"When deleting entries for %(search_base)s, could not delete nonexistent entries %(entries)s\"\n\nAlso, let\u0027s limit it to some number of DNs (3 seems good enough to me, and add ... if there\u0027s more), I\u0027m worried it could fill the log if there\u0027s too many.",
+      "revId": "eb2b028adbe5f137e8cb0d4f855a95c1fc7ef277",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
