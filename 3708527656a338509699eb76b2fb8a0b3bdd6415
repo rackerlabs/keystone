@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "7adec928_67887971",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8005
+      },
+      "writtenOn": "2014-05-19T21:02:21Z",
+      "side": 1,
+      "message": "You could avoid the copying with:\n\n`pecan.state.response \u003d resp`\n\nI should make it so that you can just return an explicit webob.Response manually, though.",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//zTU\u003d",
         "filename": "keystone/api/v3/root.py",
         "patchSetId": 19
