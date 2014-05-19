@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_c4a4ee09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-19T18:37:55Z",
+      "side": 1,
+      "message": "I think we already have a keystone hacking check for this; \n\nhttps://github.com/openstack/keystone/blob/master/keystone/hacking/checks.py#L89",
+      "revId": "1ffa1e5836b2f88b081e0a72250913579a1036f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
