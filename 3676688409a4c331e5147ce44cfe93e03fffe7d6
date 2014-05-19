@@ -16,6 +16,24 @@
       "revId": "3676688409a4c331e5147ce44cfe93e03fffe7d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9e8eb92c",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-19T17:34:27Z",
+      "side": 1,
+      "message": "to be honest I would prefer to put a decorator that does the jsonutils.loads(body), and passes the result to the function, but but dividing by class type is not something I am keen for. Would you prefer that?",
+      "parentUuid": "7adec928_aa59738f",
+      "revId": "3676688409a4c331e5147ce44cfe93e03fffe7d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
