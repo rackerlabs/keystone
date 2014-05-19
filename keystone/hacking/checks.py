@@ -24,6 +24,9 @@ please see pep8.py.
 """
 
 import ast
+import re
+
+import pep8
 
 
 class BaseASTChecker(ast.NodeVisitor):
@@ -151,8 +154,24 @@ def no_translate_debug_logs(logical_line, filename):
         yield(0, "K005 Don't translate debug level logs")
 
 
+log_translation = re.compile(
+    r"(.)*LOG\.(audit|error|info|warn|warning|critical|exception)\(\s*('|\")")
+
+
+def validate_log_translations(logical_line, physical_line, filename):
+    # Translations are not required in the test directory
+    if "keystone/tests" in filename:
+        return
+    if pep8.noqa(physical_line):
+        return
+    msg = "K006 Log messages require translations!"
+    if log_translation.match(logical_line):
+        yield (0, msg)
+
+
 def factory(register):
     register(CheckForMutableDefaultArgs)
     register(block_comments_begin_with_a_space)
     register(CheckForAssertingNoneEquality)
     register(no_translate_debug_logs)
+    register(validate_log_translations)

@@ -208,7 +208,7 @@ def upgrade(migrate_engine):
         try:
             table.create()
         except Exception:
-            LOG.exception('Exception while creating table: %r', table)
+            LOG.exception(_('Exception while creating table: %r'), table)
             raise
 
     # Unique Constraints

@@ -176,7 +176,7 @@ def _get_notifier():
             transport = messaging.get_transport(CONF)
             _notifier = messaging.Notifier(transport, "identity.%s" % host)
         except Exception:
-            LOG.exception("Failed to construct notifier")
+            LOG.exception(_("Failed to construct notifier"))
             _notifier = False
 
     return _notifier

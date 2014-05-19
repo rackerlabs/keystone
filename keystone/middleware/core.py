@@ -163,7 +163,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
                 request.body = jsonutils.dumps(
                     serializer.from_xml(request.body))
             except Exception:
-                LOG.exception('Serializer failed')
+                LOG.exception(_('Serializer failed'))
                 e = exception.ValidationError(attribute='valid XML',
                                               target='request body')
                 return wsgi.render_exception(e, request=request)
@@ -177,7 +177,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
                 body_obj = jsonutils.loads(response.body)
                 response.body = serializer.to_xml(body_obj, xmlns=self.xmlns)
             except Exception:
-                LOG.exception('Serializer failed')
+                LOG.exception(_('Serializer failed'))
                 raise exception.Error(message=response.body)
         return response
 

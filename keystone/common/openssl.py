@@ -66,15 +66,15 @@ class BaseCertificateConfigure(object):
             if "OpenSSL 0." in openssl_ver:
                 self.ssl_dictionary['default_md'] = 'sha1'
         except OSError:
-            LOG.warn('Failed to invoke ``openssl version``, '
-                     'assuming is v1.0 or newer')
+            LOG.warn(_('Failed to invoke ``openssl version``,'
+                       'assuming is v1.0 or newer'))
         self.ssl_dictionary.update(kwargs)
 
     def exec_command(self, command):
         to_exec = []
         for cmd_part in command:
             to_exec.append(cmd_part % self.ssl_dictionary)
-        LOG.info(' '.join(to_exec))
+        LOG.info(' '.join(to_exec))  # noqa
         environment.subprocess.check_call(to_exec)
 
     def build_ssl_config_file(self):
