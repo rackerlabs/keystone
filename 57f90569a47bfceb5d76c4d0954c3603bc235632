@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_9c525a65",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-19T07:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_2f892a75",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_8fb07e44",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-18T17:20:34Z",
       "side": 1,
       "message": "(nit) change \"an\" to \"a\"",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5c5d3278",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-19T07:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_8fb07e44",
       "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_3c5a2683",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-19T07:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_afad3aeb",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_0feb8e13",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-05-18T17:20:34Z",
       "side": 1,
       "message": "suggest use HasLength matcher",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dcdf82d4",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-19T07:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_0feb8e13",
       "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_1cf56a56",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-19T07:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_cf8d267e",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_af945a8b",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2014-05-18T17:20:34Z",
       "side": 1,
       "message": "suggest use HasLength matcher",
+      "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5ceb7277",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-19T07:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_af945a8b",
       "revId": "57f90569a47bfceb5d76c4d0954c3603bc235632",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
