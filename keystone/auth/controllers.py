@@ -116,6 +116,10 @@ class AuthInfo(object):
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
+        # ensure the project domain is enabled
+        domain_ref = self.assignment_api.get_domain(project_ref['domain_id'])
+        self._assert_domain_is_enabled(domain_ref)
+
     def _assert_domain_is_enabled(self, domain_ref):
         if not domain_ref.get('enabled'):
             msg = _('Domain is disabled: %s') % (domain_ref['id'])
