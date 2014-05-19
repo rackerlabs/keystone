@@ -158,10 +158,14 @@ class AuthInfo(object):
                     project_name, domain_ref['id'])
             else:
                 project_ref = self.assignment_api.get_project(project_id)
-        except exception.ProjectNotFound as e:
+                # ensure the project domain is enabled
+                domain_ref = self.assignment_api.get_domain(
+                    project_ref['domain_id'])
+        except (exception.ProjectNotFound, exception.DomainNotFound) as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
         self._assert_project_is_enabled(project_ref)
+        self._assert_domain_is_enabled(domain_ref)
         return project_ref
 
     def _lookup_trust(self, trust_info):
