@@ -16,6 +16,24 @@
       "revId": "5626a3e49522915320278a3abfdcd14152341072",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_408d23d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-19T23:50:59Z",
+      "side": 1,
+      "message": "actually should be \"Closes-Bug: #1172106\" -- see https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "parentUuid": "9ad9bd40_8afb1cc0",
+      "revId": "5626a3e49522915320278a3abfdcd14152341072",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
