@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_1eb52dd0",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T16:04:54Z",
+      "side": 1,
+      "message": "So, maybe we should add a note here saying that we should also handle this with cadf notifications? I think that sending a formal notification following the cadf convention here would be useful. http://www.dmtf.org/standards/cadf\n\nIn both cases, when authentication fails and when it\u0027s successful, that could be important auditing information.",
+      "revId": "e8b17192ec88fd55e8014723affec401bf17887e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
