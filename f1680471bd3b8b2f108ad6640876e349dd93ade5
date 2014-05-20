@@ -16,6 +16,23 @@
       "revId": "f1680471bd3b8b2f108ad6640876e349dd93ade5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_d8cbeb6f",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T03:07:48Z",
+      "side": 1,
+      "message": "LDAP seems like a very specific implementation.  We were looking into Facebook support, and I suspect that is going to look very different, but we can probably start with this and then move on.",
+      "revId": "f1680471bd3b8b2f108ad6640876e349dd93ade5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
