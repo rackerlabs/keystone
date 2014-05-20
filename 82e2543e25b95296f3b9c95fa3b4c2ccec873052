@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_619e9009",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "This config option name is too long.  legacy_entity_ids?",
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c184c4b3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "id-\u003e identity  or idenitifier",
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_81d55cbb",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "Where is this called?  If it is from outside this file it should not be private.",
+      "range": {
+        "startLine": 517,
+        "startChar": 7,
+        "endLine": 517,
+        "endChar": 39
+      },
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_81e1dc00",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_id_mapping.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "Iwould prefer doing the mapping in an extension.  It will both prevent us from conflicting on migrations,. and allof for an eeventually \"no-persist\" approach.",
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_81b8fce6",
+        "filename": "keystone/common/sql/migrate_repo/versions/041_add_id_mapping.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "We need a type field to distinguish between users and groups.  Many LDAP systems give a every user a group with the same name.",
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_6143f06c",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "Drop this and move to extension",
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_4167d425",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T18:20:01Z",
+      "side": 1,
+      "message": "Need type: user or group",
+      "revId": "82e2543e25b95296f3b9c95fa3b4c2ccec873052",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
