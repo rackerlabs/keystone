@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7adec928_a4c7c943",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T16:39:46Z",
+      "side": 1,
+      "message": "this could be refactored from \u0027tenant_id\u0027 to \u0027project_id\u0027 at some point, probably not in this patch, but I\u0027m noticing it now compared to _get_roles_for_group_and_project",
+      "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_01ba2c0a",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 1
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "The patch with the DN comparison function has not landed yet:\n\n  https://review.openstack.org/#/c/88517\n\nWe could mark this as a TODO if we don\u0027t want to gate on the other patch.",
       "parentUuid": "7adec928_01ba2c0a",
+      "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_84a56da3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T16:39:46Z",
+      "side": 1,
+      "message": "(NIT): suggest having this like the roles.append below, just for consistency: \n\n     roles.append(self.role._dn_to_id(assignment.role_dn)\n     return roles\n\nWas there something specific to doing it this way in _get_roles_for_just_user_and_project versus the way it is done in _get_roles_for_group_and_project?",
+      "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a4234903",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T16:39:46Z",
+      "side": 1,
+      "message": "There isn\u0027t much different between these two methods, it would be nice to see them combined since they are pretty similar. Not sure the best way to do that yet though.",
       "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
