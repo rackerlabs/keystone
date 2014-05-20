@@ -85,6 +85,23 @@
       "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_d263b4db",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-20T19:10:37Z",
+      "side": 1,
+      "message": "I thought all IDs are supposed to be globally unique. Do we allow that at the API level?",
+      "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
