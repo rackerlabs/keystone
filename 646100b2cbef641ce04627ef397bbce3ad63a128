@@ -16,6 +16,24 @@
       "revId": "646100b2cbef641ce04627ef397bbce3ad63a128",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5b851858",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-20T00:11:25Z",
+      "side": 1,
+      "message": "yeah, there was a mailing list discussion about it - *some* projects doc links didn\u0027t work, so the direction was to just unify everyone to point to docs.openstack.org",
+      "parentUuid": "7adec928_ef78be2d",
+      "revId": "646100b2cbef641ce04627ef397bbce3ad63a128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
