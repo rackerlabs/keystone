@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_0466bd29",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T15:45:53Z",
+      "side": 1,
+      "message": "Looking at this it could probably be refactored from \u0027tenant_id\u0027 to \u0027project_id\u0027 like _get_roles_for_group_and_project below. Doesn\u0027t have to be done now, just noticing it.",
+      "revId": "a41bf2098895a4a3ec98f7ca45f10fea8df48b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_e47ab1b8",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T15:45:53Z",
+      "side": 1,
+      "message": "Could make this like the one below for consistency. \n\n    roles.append(self.role._dn_to_id(assignment.role_dn))",
+      "revId": "a41bf2098895a4a3ec98f7ca45f10fea8df48b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c4569529",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-20T15:45:53Z",
+      "side": 1,
+      "message": "These two methods are pretty similar but not sure what would be the best way to combine them it we did. It would be cool to have one method that handed the logic for both cases.",
+      "revId": "a41bf2098895a4a3ec98f7ca45f10fea8df48b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
