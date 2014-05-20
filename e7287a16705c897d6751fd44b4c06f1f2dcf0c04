@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_bba7fc09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "should be \"Closes-Bug: #1299012\"",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_1b8f1076",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "suggest remove \"effectively\" -- what does it mean here?",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dbb12848",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "suggest change \"lowest\" to \"earliest\"",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_fbac24ef",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "suggest put these in alphabetical order.\n\nAuthContext will contain extras, method_names, and bind -- should these also be in the list? (or should AuthContext not allow these to be set?)",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_7b881471",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "use self[key] since checked key is in self on previous line",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5bec382a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "suggest change \"shortest\" to \"earliest\"",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_db9848c2",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "suggest change \"smallest\" to \"earliest\"",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9bb32009",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "seems like AuthContext() should set these automatically (in __init__())",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dbdf6867",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "these changes should be done in a separate commit.",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9b0ec0e3",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T00:37:04Z",
+      "side": 1,
+      "message": "change \"failed\" to \"fails\"",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
