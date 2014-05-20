@@ -16,6 +16,24 @@
       "revId": "820e4f153aa12f9686a98fcae309636216666909",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_87b80ce7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 0,
+      "message": "This was from commit fafdf072f5a34ee12ffe9d7651551c83459759bb by Adam.  Adam, I\u0027m assuming this was added because adding an empty or None description was causing failures.",
+      "parentUuid": "7adec928_7cb772f5",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

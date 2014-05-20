@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_f26a7080",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 1,
+      "message": "\"now fail\", as opposed to how it is currently handled?\nWhat about when Keystone is used with an SQL backend, with columns which use the SQL NOT NULL constraint?  How is an attempt to add an entry/row handled, when there is a property missing which corresponds to a NOT NULL column?",
+      "parentUuid": "7adec928_dc17a6ec",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_9ce8bee3",
         "filename": "/COMMIT_MSG",
         "patchSetId": 18
@@ -47,6 +65,24 @@
       "writtenOn": "2014-05-18T15:36:36Z",
       "side": 1,
       "message": "How does the server know what the client expects to be present?",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_12c43c5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 1,
+      "message": "This is the list of properties/attributes specified in attribute_options_names or in the config in $object_additional_attribute_mapping.  For example, in ProjectApi.attribute_options_names this is name, description, enabled, domain_id",
+      "parentUuid": "7adec928_fceb82d9",
       "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_6798606b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 1,
+      "message": "What about a value of None?  When using the DB (as opposed to LDAP) backend, what is stored for an empty or None domain_id?\nOr, is this a value that is not stored?",
+      "parentUuid": "7adec928_bccc9a8a",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_dcc5e65c",
         "filename": "keystone/common/config.py",
         "patchSetId": 18
@@ -98,6 +152,24 @@
       "writtenOn": "2014-05-18T15:36:36Z",
       "side": 1,
       "message": "revert this change. We can\u0027t change the default since this could cause a problem for an existing deployment. Also, this isn\u0027t mentioned in the commit message, and I don\u0027t see how it\u0027s required to fix the problem.",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c7ccd464",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 1,
+      "message": "Description is used elsewhere in the code as a property of user objects, but is not explicitly specified in UserApi.attribute_options_names.  It is the list of properties in attribute_options_names that is used to determine which properties to fill in with None as the value if the corresponding attribute is not present in the LDAP entry.\nSomewhere among one of the comments for the 17 other reviews, a commenter suggested that I could not add description to UserApi.attribute_options_names, and that instead I should add it to user_additional_attribute_mapping.  I\u0027m not sure how to easily search through all of these reviews to find that comment.",
+      "parentUuid": "7adec928_dcc5e65c",
       "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +278,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_e704701a",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 1,
+      "message": "Looks like I can use this: if v is None or  (hasattr(v, \u0027__contains__\u0027) and not v): - this looks like the pep8 way to do it http://legacy.python.org/dev/peps/pep-0008/#programming-recommendations - presumably the pep8 recommended way to do this will also be the most efficient",
+      "parentUuid": "7adec928_5c80f6f6",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_fc70e241",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 18
@@ -234,6 +324,24 @@
       "writtenOn": "2014-05-18T15:36:36Z",
       "side": 1,
       "message": "I thought this was only changing the behavior of the LDAP backend, so why do we need to change tests for all backends?",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_b2db887c",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-05-20T17:54:53Z",
+      "side": 1,
+      "message": "I will see if I can figure out a way to override these tests in the LDAP backend subclass BaseLDAPIdentity without too much code duplication.",
+      "parentUuid": "7adec928_9ca43ea7",
       "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
