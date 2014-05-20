@@ -16,6 +16,23 @@
       "revId": "31a7e8d72517f5a3a7d9ad7fffa463d5ffc90c75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_b80a8925",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-20T19:29:30Z",
+      "side": 1,
+      "message": "The claim the values in an AVA should match with case sensitivity is not correct. I realize it\u0027s very hard to find the RFC\u0027s which specify this, I know because I\u0027ve written DN utilities in the past and spent a long time researching this. Here is a short abbreviated summary:\n\nYou need to apply the distinguishedMatchRule [1]\n\nYou need to compare individual AVA\u0027s (for now I\u0027ll ignore the fact you don\u0027t check for multiple AVA\u0027s in a single RDN). An AVA is composed of an attribute type and an attribute value. Because attribute types when expressed as a string alias [2] map to a numeric OID it\u0027s obvious a string representation of an OID alias needs to ignore case when comparing (ignoring for the moment it\u0027s legitimate to specify the attributeType as a numeric OID instead of an alias). Except for some corner cases you\u0027re correct, the attributeType comparison is case insensitive.\n\nThe RFC 4517 goes on to say \" Two AVAs with the same attribute type are the same if their values are equal according to the equality matching rule of the attribute type.\"\n\nThis means you have have to determine the matching rule for the attribute type in each AVA in order to perform the comparison. Does that mean we need a lookup table? Yuck! Fortunately no, If we research all the defined attribute types that can appear in an AVA [3] we\u0027ll discover virtually all derive their syntax from the \u0027name\u0027 atribute type (OID 2.5.4.41) whose EQUALITY MATCH RULE is caseIgnoreMatch. [4].\n\nTherefore the value comparison also must be case insensitive. [5].\n\nDoes that mean we don\u0027t have to parse the DN string with str2dn and just do a straight case insensitive match on the whole DN string? No, we still must decompose the DN into it\u0027s constituent parts. Why? Because RFC 4514 permits multiple escaping rules and formats which can map to the same canonical value. The str2dn function normalizes the different representations into one canonical form. (the str2dn decomposition would also allow one to properly handle mutli-valued RDN\u0027s which you currently ignore).\n\nI think for the near term if you just lower case the value components as well the function will be fine. I have written a Python class for DN\u0027s which permits comparisons,  indexing, slices, concatenation, construction, escaping, etc. on DN\u0027s for another Python project that heavily used LDAP (e.g. IPA). At some pont we need to get that class into OpenStack, we learned the hard way in IPA that DN\u0027s are anything but simple strings and got burned on a lot of corner cases, it really helps to have a DN object which is \"smart\".\n\n[1] http://www.ietf.org/rfc/rfc4517.txt, section 4.2.15\n\n[2] http://www.ietf.org/rfc/rfc4514.txt, end of section 3 (actually these aliases are defined in several different RFC\u0027s)\n\n[3] http://tools.ietf.org/html/rfc4519\n\n[4] With some exceptions such as DC whose matching rule is caseIgnoreIA5Match, hence is also case insensitive.\n\n[5] Assuming only predefined attribute types are used, which is a reasonable assumption.",
+      "revId": "31a7e8d72517f5a3a7d9ad7fffa463d5ffc90c75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
