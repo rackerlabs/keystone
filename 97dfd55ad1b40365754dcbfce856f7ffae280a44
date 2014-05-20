@@ -16,6 +16,24 @@
       "revId": "97dfd55ad1b40365754dcbfce856f7ffae280a44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_99814cfe",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-20T22:53:51Z",
+      "side": 1,
+      "message": "The test that\u0027s in test_backend needs to overridden for ldap because this patch doesn\u0027t have the fix.",
+      "parentUuid": "7adec928_fed95623",
+      "revId": "97dfd55ad1b40365754dcbfce856f7ffae280a44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
