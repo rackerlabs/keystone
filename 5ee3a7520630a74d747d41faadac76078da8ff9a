@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_88fd7871",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-20T20:51:26Z",
+      "side": 1,
+      "message": "might have to default auth to None.",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a8395443",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-20T20:51:26Z",
+      "side": 1,
+      "message": "I am thinking of making this change in a different patch.",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_084888cb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-20T20:51:26Z",
+      "side": 1,
+      "message": "this is really a bug in the old regex handler part of the mapping engine",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
