@@ -16,6 +16,24 @@
       "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_01a6ac53",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-20T16:33:18Z",
+      "side": 1,
+      "message": "The patch with the DN comparison function has not landed yet:\n\n  https://review.openstack.org/#/c/88517\n\nWe could mark this as a TODO if we don\u0027t want to gate on the other patch.",
+      "parentUuid": "7adec928_01ba2c0a",
+      "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
