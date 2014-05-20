@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_07d5eae3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-05-20T09:03:51Z",
+      "side": 1,
+      "message": "these option was moved to the \"database\" group, and the new version of oslo.db was not uploaded to pypi, unfortunately. Please, use oslo.db code from master for now.",
+      "revId": "82085bad4142c83f560589137338628279866ede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
