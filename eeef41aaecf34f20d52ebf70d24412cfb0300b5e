@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_33813a4e",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-20T19:34:44Z",
+      "side": 1,
+      "message": "We really should be using a common subroutine or class for DN comparisons. Correctly operating on DN\u0027s is non-trival despite their superficial simplicity. I\u0027d like to see this wait until the utility from  https://review.openstack.org/#/c/88517 is merged. Note I have added some extensive comments in that review.",
+      "parentUuid": "7adec928_01a6ac53",
+      "revId": "eeef41aaecf34f20d52ebf70d24412cfb0300b5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_d82035b3",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 1
