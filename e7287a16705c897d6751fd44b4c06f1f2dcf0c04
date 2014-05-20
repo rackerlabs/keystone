@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_8102bc6d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-20T16:40:40Z",
+      "side": 1,
+      "message": "those attributes are additive and outside of our concern. The ones that we care about has to be consistent among the auth plugins.",
+      "parentUuid": "7adec928_fbac24ef",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_7b881471",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 10
@@ -138,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_610bf07d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-20T16:40:40Z",
+      "side": 1,
+      "message": "AuthContext is a generic dict. I am not seeing any advantage of setting them in __init__(). I prefer to do it here.",
+      "parentUuid": "7adec928_9bb32009",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_dbdf6867",
         "filename": "keystone/auth/core.py",
         "patchSetId": 10
@@ -149,6 +185,24 @@
       "writtenOn": "2014-05-20T00:37:04Z",
       "side": 1,
       "message": "these changes should be done in a separate commit.",
+      "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_011cecc0",
+        "filename": "keystone/auth/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-20T16:40:40Z",
+      "side": 1,
+      "message": "they are easy enough to fix here. Don\u0027t like filing another bug just for that simple fix.",
+      "parentUuid": "7adec928_dbdf6867",
       "revId": "e7287a16705c897d6751fd44b4c06f1f2dcf0c04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
