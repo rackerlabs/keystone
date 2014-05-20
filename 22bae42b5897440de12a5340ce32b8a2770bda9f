@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_e7d9d023",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-20T17:33:12Z",
+      "side": 1,
+      "message": "really should change \"in addition to \"  to \"in place of\"  as logging is not the right approach for audit.",
+      "revId": "22bae42b5897440de12a5340ce32b8a2770bda9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
