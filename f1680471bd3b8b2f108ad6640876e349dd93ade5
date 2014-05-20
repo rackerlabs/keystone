@@ -33,6 +33,24 @@
       "revId": "f1680471bd3b8b2f108ad6640876e349dd93ade5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_dbce8559",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-20T05:07:46Z",
+      "side": 1,
+      "message": "You\u0027re totally right.\n\nOn the last day at the summit, I was actually walking dstanek through the code, and realized that I was only doing this because the mapping I was using was flawed. \n\nIn the mapping that I was using, I was looking for just the dn. But, if I had created the mapping correctly (using the fully qualified cn), then I could handle the returned data as if it\u0027s just a list of unique groupIDs. \n\nI\u0027ll update the code soon.",
+      "parentUuid": "7adec928_d8cbeb6f",
+      "revId": "f1680471bd3b8b2f108ad6640876e349dd93ade5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
