@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_e508cc93",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-21T15:36:32Z",
+      "side": 1,
+      "message": "White space folding for case ignore matching is defined in RFC 2252, not RFC 4518, right?",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c5ed9090",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-21T15:36:32Z",
+      "side": 1,
+      "message": "RFC 2252 says:\n\nWhen performing the caseIgnoreMatch, caseIgnoreListMatch,\ntelephoneNumberMatch, caseExactIA5Match and caseIgnoreIA5Match,\nmultiple adjoining whitespace characters are treated the same as an\nindividual space, and leading and trailing whitespace is ignored.\n\nSo wouldn\u0027t this be clearer if it were value.strip().lower() instead of  \u0027 \u0027 + value.lower() + \u0027 \u0027\n\nYour code has the correct semantic result but it seems to suggest there should be a leading and trailing space.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_48951787",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-21T15:36:32Z",
+      "side": 1,
+      "message": "is_ava_equal is a misleading name, it suggests it is comparing both the type and the value when in fact it\u0027s comparing only the value from the ava. How about if it were called is_ava_value_equal instead?",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_486c3737",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-21T15:36:32Z",
+      "side": 1,
+      "message": "This function must accept only parameters which are in the form returned by str2dn(), a list of list of 3-tuples, a somewhat obscure format. I\u0027m afraid someone seeing a function named is_dn_equal() might think they could pass strings as the 2 DN\u0027s. I suggest doing a isinstance(dn1, list) check before comparing the lengths and adding a :param: doc that clearly states the requirement. Note if someone does pass strings and the strings do not have equal length no exeception will be raised. Note, it\u0027s entirely possible for the 2 string representations to have unequal lengths but for the DN\u0027s compare as equal due to factors such as escaping, white space folding, etc.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_a84a1baa",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-21T15:36:32Z",
+      "side": 1,
+      "message": "Better doc needed, say what it does, not what the code does.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_e8c0a3e2",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-05-21T15:36:32Z",
+      "side": 1,
+      "message": "Same issues as is_dn_equal, you need to clarify the parameters are list of list of 3-tuples, not strings. Shouldn\u0027t there be a version of this that accepts strings?\n\nJust a nit, not sure it matters, but I might have called this dn_startswith.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
