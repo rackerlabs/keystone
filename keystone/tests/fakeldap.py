@@ -62,6 +62,11 @@ def _internal_attr(attr_name, value_or_values):
         if dn == 'cn=Doe\\5c, John,ou=Users,cn=example,cn=com':
             return 'CN=Doe\\, John,OU=Users,CN=example,CN=com'
 
+        # NOTE(blk-u): Another special case for this tested value. When a
+        # roleOccupant has an escaped comma, it gets converted to \2C.
+        if dn == 'cn=Doe\\, John,ou=Users,cn=example,cn=com':
+            return 'cn=Doe\\2C John,ou=Users,cn=example,cn=com'
+
         dn = ldap.dn.str2dn(core.utf8_encode(dn))
         norm = []
         for part in dn:
