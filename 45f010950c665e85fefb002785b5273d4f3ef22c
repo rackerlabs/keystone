@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_0ed6acc5",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T22:31:43Z",
+      "side": 1,
+      "message": "will change these to if and only if.",
+      "parentUuid": "7adec928_4ee35405",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_0ee22c03",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 4
@@ -81,6 +99,24 @@
       "writtenOn": "2014-05-21T22:28:46Z",
       "side": 1,
       "message": "Why -2 here?  This seems unrelated, and I thought that all negative values mean no limit.",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_aec69814",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T22:31:43Z",
+      "side": 1,
+      "message": "It is unrelated.",
+      "parentUuid": "7adec928_ae1138b1",
       "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
