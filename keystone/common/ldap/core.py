@@ -14,6 +14,7 @@
 
 import abc
 import os.path
+import re
 
 import codecs
 import ldap
@@ -139,6 +140,107 @@ def ldap_scope(scope):
             _('Invalid LDAP scope: %(scope)s. Choose one of: %(options)s') % {
                 'scope': scope,
                 'options': ', '.join(LDAP_SCOPES.keys())})
+
+
+def prep_case_insensitive(value):
+    """Prepare a string for case-insensitive comparison.
+
+    This is defined in RFC4518. For simplicity, all this function does is
+    lowercase all the characters and compress series of spaces.
+    """
+    value = re.sub(r'\s+', ' ', ' ' + value.lower() + ' ')
+    return value
+
+
+def is_ava_equal(attribute_type, val1, val2):
+    """Returns True iff the AVAs are equal.
+
+    When comparing AVAs, the equality matching rule for the attribute type
+    should be taken into consideration. For simplicity, this implementation
+    does a case-insensitive comparison.
+
+    Note that this function uses prep_case_insenstive so the limitations of
+    that function apply here.
+
+    """
+
+    return prep_case_insensitive(val1) == prep_case_insensitive(val2)
+
+
+def is_rdn_equal(rdn1, rdn2):
+    """Returns True iff the RDNs are equal.
+
+    * RDNs must have the same number of AVAs.
+    * Each AVA of the RDNs must be the equal for the same attribute type. The
+      order isn't significant. Note that an attribute type will only be in one
+      AVA in an RDN, otherwise the DN wouldn't be valid.
+    * Attribute types aren't case sensitive. Note that attribute type
+      comparison is more complicated than implemented. This function only
+      compares case-insentive. The code should handle multiple names for an
+      attribute type (e.g., cn, commonName, and 2.5.4.3 are the same).
+
+    Note that this function uses is_ava_equal to compare AVAs so the
+    limitations of that function apply here.
+
+    """
+
+    if len(rdn1) != len(rdn2):
+        return False
+
+    for attr_type_1, val1, dummy in rdn1:
+        found = False
+        for attr_type_2, val2, dummy in rdn2:
+            if attr_type_1.lower() != attr_type_2.lower():
+                continue
+
+            found = True
+            if not is_ava_equal(attr_type_1, val1, val2):
+                return False
+            break
+        if not found:
+            return False
+
+    return True
+
+
+def is_dn_equal(dn1, dn2):
+    """Returns True iff the DNs are equal.
+
+    Two DNs are equal if they've got the same number of RDNs and if the RDNs
+    are the same at each position. See RFC4517.
+
+    Note that this function uses is_rdn_equal to compare RDNs so the
+    limitations of that function apply here.
+
+    """
+
+    if len(dn1) != len(dn2):
+        return False
+
+    for rdn1, rdn2 in zip(dn1, dn2):
+        if not is_rdn_equal(rdn1, rdn2):
+            return False
+    return True
+
+
+def is_dn_str_equal(dn_str_1, dn_str_2):
+    """Returns True iff the DNs are equal.
+
+    Note that this function uses is_dn_equal to compare DNs so the
+    limitations of that function apply here.
+
+    """
+
+    return is_dn_equal(ldap.dn.str2dn(dn_str_1), ldap.dn.str2dn(dn_str_2))
+
+
+def is_dn_under(descendant_dn, dn):
+    """Returns True iff the descendant_dn is under the dn."""
+
+    if len(descendant_dn) <= len(dn):
+        return False
+
+    return is_dn_equal(descendant_dn[len(dn):], dn)
 
 
 @six.add_metaclass(abc.ABCMeta)
