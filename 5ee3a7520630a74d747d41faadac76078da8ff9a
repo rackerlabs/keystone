@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_8cd74523",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-21T03:09:36Z",
+      "side": 1,
+      "message": "i suspect it\u0027s an artifact from running tox -e sample_config",
+      "parentUuid": "7adec928_2c8f1177",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_0cd97583",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-21T02:52:48Z",
       "side": 1,
       "message": "oidc doesn\u0027t seem intuitive",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0ce33506",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-21T03:09:36Z",
+      "side": 1,
+      "message": "[openidconnect] ?",
+      "parentUuid": "7adec928_0cd97583",
       "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_6cb919ec",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-21T03:09:36Z",
+      "side": 1,
+      "message": "Yes, it would be a new API. But, it wouldn\u0027t do much.\nPort 5000 because that\u0027s what keystone listens on by default? \n\nI\u0027m still not 100% clear on what purpose the redirect has (aside from the OpenID Connect spec requiring it).",
+      "parentUuid": "7adec928_0c92559f",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_ac7b217a",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 14
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_cce14d00",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-21T03:09:36Z",
+      "side": 1,
+      "message": "I never actually intended to change this. i suspect it\u0027s an artifact from running tox -e sample_config",
+      "parentUuid": "7adec928_ac7b217a",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_cca94de1",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 14
@@ -81,6 +153,24 @@
       "writtenOn": "2014-05-21T02:52:48Z",
       "side": 1,
       "message": "is there a spec change for this new API?",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_ccb86de8",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-21T03:09:36Z",
+      "side": 1,
+      "message": "I can add this, but it might be easier if I added it to the OS-FEDERATION extension instead. Rather than mucking around with a core API",
+      "parentUuid": "7adec928_cca94de1",
       "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
