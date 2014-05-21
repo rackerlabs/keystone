@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_eb1c1d7a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T19:45:36Z",
+      "side": 1,
+      "message": "RFC 2252 is obsolete according to http://tools.ietf.org/html/rfc2252\n\nRFC 4518 describes folding in http://tools.ietf.org/html/rfc4518#section-2.6.1",
+      "parentUuid": "7adec928_e508cc93",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_c5ed9090",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-21T15:36:32Z",
       "side": 1,
       "message": "RFC 2252 says:\n\nWhen performing the caseIgnoreMatch, caseIgnoreListMatch,\ntelephoneNumberMatch, caseExactIA5Match and caseIgnoreIA5Match,\nmultiple adjoining whitespace characters are treated the same as an\nindividual space, and leading and trailing whitespace is ignored.\n\nSo wouldn\u0027t this be clearer if it were value.strip().lower() instead of  \u0027 \u0027 + value.lower() + \u0027 \u0027\n\nYour code has the correct semantic result but it seems to suggest there should be a leading and trailing space.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_760f142f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T19:45:36Z",
+      "side": 1,
+      "message": "I\u0027ll implement it this way instead since it should wind up being the same. Plus I didn\u0027t even do it right since it says a single space should turn into 2 spaces.",
+      "parentUuid": "7adec928_c5ed9090",
       "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_914aea53",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T19:45:36Z",
+      "side": 1,
+      "message": "Done. Changed the name to is_ava_value_equal.",
+      "parentUuid": "7adec928_48951787",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_486c3737",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2014-05-21T15:36:32Z",
       "side": 1,
       "message": "This function must accept only parameters which are in the form returned by str2dn(), a list of list of 3-tuples, a somewhat obscure format. I\u0027m afraid someone seeing a function named is_dn_equal() might think they could pass strings as the 2 DN\u0027s. I suggest doing a isinstance(dn1, list) check before comparing the lengths and adding a :param: doc that clearly states the requirement. Note if someone does pass strings and the strings do not have equal length no exeception will be raised. Note, it\u0027s entirely possible for the 2 string representations to have unequal lengths but for the DN\u0027s compare as equal due to factors such as escaping, white space folding, etc.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_ff169454",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T19:45:36Z",
+      "side": 1,
+      "message": "Good idea. I changed it to convert a non-list (str) DN to a parsed DN.",
+      "parentUuid": "7adec928_486c3737",
       "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_49e35605",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T19:45:36Z",
+      "side": 1,
+      "message": "I got rid of this function since is_dn_equal handles both cases.",
+      "parentUuid": "7adec928_a84a1baa",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_e8c0a3e2",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2014-05-21T15:36:32Z",
       "side": 1,
       "message": "Same issues as is_dn_equal, you need to clarify the parameters are list of list of 3-tuples, not strings. Shouldn\u0027t there be a version of this that accepts strings?\n\nJust a nit, not sure it matters, but I might have called this dn_startswith.",
+      "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_42640be5",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T19:45:36Z",
+      "side": 1,
+      "message": "Done. Changed this to accept string or parsed DN, and changed the name.",
+      "parentUuid": "7adec928_e8c0a3e2",
       "revId": "4ee9093b0431e4dcdc40bcd5f65475722dac3a95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
