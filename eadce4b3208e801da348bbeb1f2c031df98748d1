@@ -16,6 +16,24 @@
       "revId": "eadce4b3208e801da348bbeb1f2c031df98748d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_17d16acd",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-21T17:43:13Z",
+      "side": 1,
+      "message": "unfortunately, we get back all the DNs that have a role assignment. The DN can be the DN for a user or a group. get_role_assignments isn\u0027t smart enough to get only user DNs and it sticks all of them in user_dn. Here\u0027s an example run: http://paste.openstack.org/show/81018/\n\n (Pdb) pp [x.user_dn for x in assignments]\n [u\u0027cn\u003d0ddcdc2ee75246999f662a1b09853086,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027,\n  u\u0027cn\u003d0ddcdc2ee75246999f662a1b09853086,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027,\n  u\u0027cn\u003d73114eaf976e4f6480776c3d49213289,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027,\n  u\u0027cn\u003dsuspectid,ou\u003dUserGroups,dc\u003dopenstack,dc\u003dorg\u0027,\n  u\u0027cn\u003d0ddcdc2ee75246999f662a1b09853086,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg\u0027]\n\nSo you can see cn\u003dsuspectid,ou\u003dUserGroups,dc\u003dopenstack,dc\u003dorg (which is obviously a group) is in the list of user_dns.\n\nThe issue that\u0027s being fixed here is that a user and group have the same ID. So there could be a user with ID suspectid (cn\u003dsuspectid,ou\u003dUsers,dc\u003dopenstack,dc\u003dorg) also.\n\nSo just checking the ID at line 100 isn\u0027t good enough, because the user ID might be a group ID instead.",
+      "parentUuid": "7adec928_5c53196c",
+      "revId": "eadce4b3208e801da348bbeb1f2c031df98748d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
