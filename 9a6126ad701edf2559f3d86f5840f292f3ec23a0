@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_09b94ee9",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1468,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-21T18:02:00Z",
+      "side": 1,
+      "message": "these tests look perfect to me - but they should run just fine against the KVS or SQL backends as well -- can you move them into the base test class so they get executed against all 3 backends?",
+      "revId": "9a6126ad701edf2559f3d86f5840f292f3ec23a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
