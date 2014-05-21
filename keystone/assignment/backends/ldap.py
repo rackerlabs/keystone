@@ -450,9 +450,8 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
         if not role_dn:
             # Get users who have default tenant mapping
             for user_dn in tenant[1].get(self.member_attribute, []):
-                if self.use_dumb_member and user_dn == self.dumb_member:
-                    continue
-                res.add(user_dn)
+                if not self._is_dumb_member(user_dn):
+                    res.add(user_dn)
 
         # Get users who are explicitly mapped via a tenant
         for rolegrant in rolegrants:
@@ -552,12 +551,11 @@ class RoleApi(common_ldap.BaseLdap):
             except KeyError:
                 continue
             for user_dn in user_dns:
-                if self.use_dumb_member and user_dn == self.dumb_member:
-                    continue
-                res.append(UserRoleAssociation(
-                    user_dn=user_dn,
-                    role_dn=role_dn,
-                    tenant_dn=tenant_dn))
+                if not self._is_dumb_member(user_dn):
+                    res.append(UserRoleAssociation(
+                        user_dn=user_dn,
+                        role_dn=role_dn,
+                        tenant_dn=tenant_dn))
 
         return res
 
@@ -647,18 +645,9 @@ class RoleApi(common_ldap.BaseLdap):
             # object.
             tenant_dn = ldap.dn.dn2str(tenant)
             for user_dn in role[self.member_attribute]:
-                # NOTE(nkinder): Ideally, this comparison would be aware of the
-                # Distinguished Name LDAP syntax. Since Keystone is responsible
-                # for setting the dumb member DN, we are relatively sure that
-                # it is returned in the same form. We still need to do a case
-                # insensitive comparison since attribute names will be upper
-                # case for AD. We already do this elsewhere in the LDAP
-                # driver, so it's OK until we decide to become syntax aware.
-                if (self.use_dumb_member and
-                        user_dn.lower() == self.dumb_member.lower()):
-                    continue
-                res.append(UserRoleAssociation(
-                           user_dn=user_dn,
-                           role_dn=role_dn,
-                           tenant_dn=tenant_dn))
+                if not self._is_dumb_member(user_dn):
+                    res.append(UserRoleAssociation(
+                               user_dn=user_dn,
+                               role_dn=role_dn,
+                               tenant_dn=tenant_dn))
         return res
