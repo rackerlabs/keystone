@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "7adec928_2c8f1177",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 793,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-21T02:52:48Z",
+      "side": 1,
+      "message": "what is this change for?",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0cd97583",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-21T02:52:48Z",
+      "side": 1,
+      "message": "oidc doesn\u0027t seem intuitive",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0c92559f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-21T02:52:48Z",
+      "side": 1,
+      "message": "that a new API? Why port 5000?",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_ac7b217a",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-21T02:52:48Z",
+      "side": 1,
+      "message": "why change to keystone? for https, cn has the match the host IP/FQHN. Will this change break devstack? Unless we have an DNS entry for keystone somewhere.",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_cca94de1",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-05-21T02:52:48Z",
+      "side": 1,
+      "message": "is there a spec change for this new API?",
+      "revId": "5ee3a7520630a74d747d41faadac76078da8ff9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_88fd7871",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 14
