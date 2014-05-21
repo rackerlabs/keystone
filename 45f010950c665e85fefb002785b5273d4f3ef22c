@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_4ee35405",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-21T22:28:46Z",
+      "side": 1,
+      "message": "iff \u003e if",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0ee22c03",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-21T22:28:46Z",
+      "side": 1,
+      "message": "iff \u003e if",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_eedc2049",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-21T22:28:46Z",
+      "side": 1,
+      "message": "iff \u003e if",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0e5dcce9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-21T22:28:46Z",
+      "side": 1,
+      "message": "iff \u003e if",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_ae1138b1",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-21T22:28:46Z",
+      "side": 1,
+      "message": "Why -2 here?  This seems unrelated, and I thought that all negative values mean no limit.",
+      "revId": "45f010950c665e85fefb002785b5273d4f3ef22c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
