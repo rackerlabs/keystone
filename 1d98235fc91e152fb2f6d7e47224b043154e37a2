@@ -16,6 +16,24 @@
       "revId": "1d98235fc91e152fb2f6d7e47224b043154e37a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_bc7dfdb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-05-21T17:17:12Z",
+      "side": 1,
+      "message": "git cherry-pick -x is recommended in https://wiki.openstack.org/wiki/StableBranch#Proposing_Fixes as a redundancy for people missing to observe https://wiki.openstack.org/wiki/StableBranch#Change-Ids\nI actually prefer same changeid, much nicer to look up in Gerrit and commit message is cleaner.",
+      "parentUuid": "AAAAWH/9ZmY\u003d",
+      "revId": "1d98235fc91e152fb2f6d7e47224b043154e37a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
