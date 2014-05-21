@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_5c53196c",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-05-21T17:13:17Z",
+      "side": 1,
+      "message": "I think that we are guaranteed that assignment_id will be the id of a user and not a group here (given that we\u0027re using \u0027assignment.user_dn\u0027 to lookup the id).\n\nSince we compare this with the passed in \u0027user_id\u0027, I\u0027m not so sure that we need to perform the DN comparison that was added below.",
+      "revId": "eadce4b3208e801da348bbeb1f2c031df98748d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
