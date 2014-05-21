@@ -357,9 +357,8 @@ class GroupApi(common_ldap.BaseLdap):
         for dn, member in attrs:
             user_dns = member.get(self.member_attribute, [])
             for user_dn in user_dns:
-                if self.use_dumb_member and user_dn == self.dumb_member:
-                    continue
-                users.append(user_dn)
+                if not self._is_dumb_member(user_dn):
+                    users.append(user_dn)
         return users
 
     def get_filtered(self, group_id):
