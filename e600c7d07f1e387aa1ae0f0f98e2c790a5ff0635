@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_f82e838b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-22T22:25:25Z",
+      "side": 1,
+      "message": "should be Closes-Bug: #1322187 (see https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references )",
+      "revId": "e600c7d07f1e387aa1ae0f0f98e2c790a5ff0635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_98673fea",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-22T22:25:25Z",
+      "side": 1,
+      "message": "assertEqual ? expected is always going to be true unless it\u0027s an empty string.",
+      "revId": "e600c7d07f1e387aa1ae0f0f98e2c790a5ff0635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_f85cc31b",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-22T22:25:25Z",
+      "side": 1,
+      "message": "assertEqual ? self.exc_str is always going to be true unless it\u0027s an empty string.",
+      "revId": "e600c7d07f1e387aa1ae0f0f98e2c790a5ff0635",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
