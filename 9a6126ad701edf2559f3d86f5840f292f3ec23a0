@@ -69,6 +69,24 @@
       "revId": "9a6126ad701edf2559f3d86f5840f292f3ec23a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0d1befca",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1468,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-22T22:07:13Z",
+      "side": 1,
+      "message": "that should be, returns the \u0027extra\u0027 field on update but not on create or get... WEIRD!",
+      "parentUuid": "7adec928_2a1251b4",
+      "revId": "9a6126ad701edf2559f3d86f5840f292f3ec23a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
