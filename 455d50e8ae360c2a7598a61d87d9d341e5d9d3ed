@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_02549f52",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-22T19:53:54Z",
+      "side": 0,
+      "message": "++",
+      "revId": "455d50e8ae360c2a7598a61d87d9d341e5d9d3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
