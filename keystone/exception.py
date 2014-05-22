@@ -123,6 +123,7 @@ class SecurityError(Error):
     def _build_message(self, message, **kwargs):
         """Only returns detailed messages in debug mode."""
         if CONF.debug:
+            amendment = _('Disable debug mode to suppress these details.')
             return message or self.message_format % kwargs
         else:
             return self.message_format % kwargs
