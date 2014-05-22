@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_e5dc2877",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-22T14:23:11Z",
+      "side": 1,
+      "message": "this needs to be validated for the v3 API here -- if user, then check user, else if group, check group",
+      "revId": "773032d3444590156aae788804dd2b1172c64bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
