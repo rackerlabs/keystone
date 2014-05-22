@@ -16,6 +16,24 @@
       "revId": "9a6126ad701edf2559f3d86f5840f292f3ec23a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_ea7de5b2",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1468,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-05-22T06:18:36Z",
+      "side": 1,
+      "message": "It\u0027s good idea! Thanks, but when I tried to move tests to the base class, I got five test fails in different backends. That\u0027s why I think it\u0027s be better to move these tests in to the base class in separate patch (with fixing problem with fails)",
+      "parentUuid": "7adec928_09b94ee9",
+      "revId": "9a6126ad701edf2559f3d86f5840f292f3ec23a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
