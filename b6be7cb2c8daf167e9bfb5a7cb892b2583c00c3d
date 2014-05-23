@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_d7eedf8a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1032,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-23T15:57:41Z",
+      "side": 1,
+      "message": "(nit) This makes it sounds like most LDAP servers don\u0027t support tree_delete_control, but the commit message makes me think the opposite. Should this be \u0027A few\u0027? or \u0027Most LDAP servers do not\u0027?\n\n(nit) Should this be LDAP instead of ldap?",
+      "revId": "b6be7cb2c8daf167e9bfb5a7cb892b2583c00c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5a95963e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-23T15:57:41Z",
+      "side": 1,
+      "message": "Does this work as intended? Brant had a comment and guang-yee has a solution in patchset 3, but I don\u0027t see a response to those. It may be as simple as:\n\n  for dn in reversed(sorted(e[0] for e in entries, key\u003dlen))",
+      "revId": "b6be7cb2c8daf167e9bfb5a7cb892b2583c00c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_b7a5d348",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-23T15:57:41Z",
+      "side": 1,
+      "message": "Debug messages should not be translated.",
+      "revId": "b6be7cb2c8daf167e9bfb5a7cb892b2583c00c3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
