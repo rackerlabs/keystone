@@ -22,3 +22,5 @@ dogpile.cache>=0.5.3
 jsonschema>=2.0.0,<3.0.0
 pycadf>=0.4.1
 posix_ipc
+ldappool
+-f https://pypi.python.org/packages/source/l/ldappool/ldappool-1.0.tar.gz#egg=ldappool-1.0

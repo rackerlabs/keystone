@@ -129,7 +129,7 @@
 #allowed_rpc_exception_modules=oslo.messaging.exceptions,nova.exception,cinder.exception,exceptions
 
 # Qpid broker hostname. (string value)
-#qpid_hostname=keystone
+#qpid_hostname=localhost
 
 # Qpid broker port. (integer value)
 #qpid_port=5672
@@ -186,7 +186,7 @@
 
 # The RabbitMQ broker address where a single node is used.
 # (string value)
-#rabbit_host=keystone
+#rabbit_host=localhost
 
 # The RabbitMQ broker port where a single node is used.
 # (integer value)
@@ -1064,6 +1064,31 @@
 # Valid options for tls_req_cert are demand, never, and allow.
 # (string value)
 #tls_req_cert=demand
+
+
+[ldappool]
+
+#
+# Options defined in keystone
+#
+
+# Enable ldap connection pooling. (boolean value)
+#use_pool=false
+
+# Pool size. Default size is 10 (integer value)
+#pool_size=10
+
+# Maximum count of reconnect trials. Default is 3 (integer
+# value)
+#retry_max=3
+
+# Time span in seconds to wait between two reconnect trials.
+# Default is 0.1 (floating point value)
+#retry_delay=0.1
+
+# Connector timeout in seconds. Default is -1 which indicates
+# indefinite wait for response (integer value)
+#timeout=-1
 
 
 [matchmaker_ring]
