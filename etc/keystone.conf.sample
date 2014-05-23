@@ -1066,6 +1066,35 @@
 #tls_req_cert=demand
 
 
+[ldappool]
+
+#
+# Options defined in keystone
+#
+
+# Enable ldap connection pooling. (boolean value)
+#use_pool=false
+
+# Pool size. Default size is 10 (integer value)
+#pool_size=10
+
+# Maximum count of reconnect trials. Default is 3 (integer
+# value)
+#retry_max=3
+
+# Time span in seconds to wait between two reconnect trials.
+# Default is 0.1 (floating point value)
+#retry_delay=0.1
+
+# Connector timeout in seconds. Default is -1 which indicates
+# indefinite wait for response (integer value)
+#timeout=-1
+
+# Connection lifetime in seconds. Default is 600 seconds
+# (integer value)
+#connection_lifetime=600
+
+
 [matchmaker_ring]
 
 #
@@ -1176,10 +1205,7 @@
 # (string value)
 #token_format=<None>
 
-# Path of the certfile for token signing. For non-production
-# environments, you may be interested in using `keystone-
-# manage pki_setup` to generate self-signed certificates.
-# (string value)
+# Path of the certfile for token signing. (string value)
 #certfile=/etc/keystone/ssl/certs/signing_cert.pem
 
 # Path of the keyfile for token signing. (string value)
@@ -1214,10 +1240,7 @@
 # (boolean value)
 #enable=false
 
-# Path of the certfile for SSL. For non-production
-# environments, you may be interested in using `keystone-
-# manage ssl_setup` to generate self-signed certificates.
-# (string value)
+# Path of the certfile for SSL. (string value)
 #certfile=/etc/keystone/ssl/certs/keystone.pem
 
 # Path of the keyfile for SSL. (string value)
