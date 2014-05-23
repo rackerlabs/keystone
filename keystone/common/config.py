@@ -672,6 +672,20 @@ FILE_OPTIONS = {
         cfg.StrOpt('tls_req_cert', default='demand',
                    help='Valid options for tls_req_cert are demand, never, '
                         'and allow.'),
+        cfg.BoolOpt('use_pool', default=False,
+                    help='Enable ldap connection pooling.'),
+        cfg.IntOpt('pool_size', default=10,
+                   help='Connection pool size.'),
+        cfg.IntOpt('pool_retry_max', default=3,
+                   help='Maximum count of reconnect trials.'),
+        cfg.FloatOpt('pool_retry_delay', default=0.1,
+                     help='Time span in seconds to wait between two '
+                          'reconnect trials.'),
+        cfg.IntOpt('pool_connection_timeout', default=-1,
+                   help='Connector timeout in seconds. Value -1 indicates '
+                        'indefinite wait for response.'),
+        cfg.IntOpt('pool_connection_lifetime', default=600,
+                   help='Connection lifetime in seconds.'),
     ],
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,
