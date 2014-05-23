@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_abfe47ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-23T19:45:54Z",
+      "side": 1,
+      "message": "change \"again\" to \"against\"\n\nchange \"values are\" to \"value is\"",
+      "revId": "713ddcf0b38a4460368a8c523260b4a48bd98ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
