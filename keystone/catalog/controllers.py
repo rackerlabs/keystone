@@ -164,6 +164,9 @@ class RegionV3(controller.V3Controller):
 
         if 'id' not in ref:
             ref = self._assign_unique_id(ref)
+        if ref['id'] == '':
+            raise exception.ValidationError(
+                _('region ID must not be empty'))
 
         ref = self.catalog_api.create_region(ref)
         return wsgi.render_response(
