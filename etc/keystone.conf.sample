@@ -1074,6 +1074,35 @@
 #tls_req_cert=demand
 
 
+[ldappool]
+
+#
+# Options defined in keystone
+#
+
+# Enable ldap connection pooling. (boolean value)
+#use_pool=false
+
+# Pool size. Default size is 10 (integer value)
+#pool_size=10
+
+# Maximum count of reconnect trials. Default is 3 (integer
+# value)
+#retry_max=3
+
+# Time span in seconds to wait between two reconnect trials.
+# Default is 0.1 (floating point value)
+#retry_delay=0.1
+
+# Connector timeout in seconds. Default is -1 which indicates
+# indefinite wait for response (integer value)
+#timeout=-1
+
+# Connection lifetime in seconds. Default is 600 seconds
+# (integer value)
+#connection_lifetime=600
+
+
 [matchmaker_ring]
 
 #

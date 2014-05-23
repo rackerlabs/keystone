@@ -1513,3 +1513,44 @@ section::
   user_allow_create = False
   user_allow_update = False
   user_allow_delete = False
+
+Connection Pooling
+------------------
+
+Various LDAP backends in keystone uses a common ldap module to interact with
+ldap data. By default, a new connection is established for ldap operations.
+This can become highly expensive when TLS support is enabled which is a
+likely configuraton in enterprise setup. Re-using of connectors from a
+connection pool drastically reduces overhead of initiating a new connection
+for every ldap operation.
+
+Keystone now provides connection pool support via configuration. This change
+will keep ldap connectors alive and re-use for subsequent ldap operations. A
+connection lifespan is going to be configurable with other pooling specific
+attributes. The change is made in LDAP handler layer logic which is primarily
+responsible for ldap connection and shared common operations.
+
+Connection pool configuration is specified in ``[ldappool]`` configuration
+section::
+
+  [ldappool]
+  # Enable ldap connection pooling. (boolean value)
+  use_pool=false
+  
+  # Pool size. Default size is 10 (integer value)
+  pool_size=10
+  
+  # Maximum count of reconnect trials. Default is 3 (integer value)
+  retry_max=3
+  
+  # Time span in seconds to wait between two reconnect trials.
+  # Default is 0.1 (floating point value)
+  retry_delay=0.1
+
+  # Connector timeout in seconds. Default is -1 which indicates
+  # indefinite wait for response (integer value)
+  timeout=-1
+  
+  # Connection lifetime in seconds. Default is 600 seconds
+  # (integer value)
+  connection_lifetime=600
