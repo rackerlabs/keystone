@@ -692,7 +692,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'password': self.getUniqueString(),
             'domain_id': CONF.identity.default_domain_id,
         }
-        user = self.identity_api.driver.create_user(user_id, user)
+        user = self.identity_api.create_user(user)
 
         # Now we'll use the manager to discover it, which will create a
         # Public ID for it.
@@ -711,7 +711,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'description': self.getUniqueString(),
             'domain_id': CONF.identity.default_domain_id,
         }
-        group = self.identity_api.driver.create_group(group_id, group)
+        group = self.identity_api.create_group(group)
         # Now we'll use the manager to discover it, which will create a
         # Public ID for it.
         ref_list = self.identity_api.list_groups()
@@ -746,7 +746,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'password': self.getUniqueString(),
             'domain_id': CONF.identity.default_domain_id,
         }
-        self.identity_api.driver.create_user(user_id, user)
+        self.identity_api.create_user(user)
 
         # Now we'll use the manager to discover it, which will create a
         # Public ID for it.
@@ -1274,17 +1274,22 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_user_mixed_case_attribute(self, mock_ldap_get):
         # Mock the search results to return attribute names
         # with unexpected case.
+
+        # email as default. For ldap live test, its mail
+        attr = CONF.ldap.user_mail_attribute
+        mixed_attr = ''.join(x.upper() if i % 2 == 0 else x.lower() for i, x
+                             in enumerate(attr))  # EmAiL
         mock_ldap_get.return_value = (
             'cn=junk,dc=example,dc=com',
             {
                 'sN': [uuid.uuid4().hex],
-                'eMaIl': [uuid.uuid4().hex]
+                mixed_attr: [uuid.uuid4().hex]
             }
         )
         user = self.identity_api.get_user('junk')
         self.assertEqual(mock_ldap_get.return_value[1]['sN'][0],
                          user['name'])
-        self.assertEqual(mock_ldap_get.return_value[1]['eMaIl'][0],
+        self.assertEqual(mock_ldap_get.return_value[1][mixed_attr][0],
                          user['email'])
 
     def test_parse_extra_attribute_mapping(self):

@@ -200,7 +200,10 @@ class FakeLdap(core.LDAPHandler):
 
     def connect(self, url, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
-                tls_req_cert='demand', chase_referrals=None, debug_level=None):
+                tls_req_cert='demand', chase_referrals=None, debug_level=None,
+                use_pool=None, pool_size=None, pool_retry_max=None,
+                pool_retry_delay=None, pool_conn_timeout=None,
+                pool_conn_lifetime=None):
         if url.startswith('fake://memory'):
             if url not in FakeShelves:
                 FakeShelves[url] = FakeShelve()
@@ -228,6 +231,13 @@ class FakeLdap(core.LDAPHandler):
             self.set_option(ldap.OPT_DEREF, alias_dereferencing)
         self.page_size = page_size
 
+        self.use_pool = use_pool
+        self.pool_size = pool_size
+        self.pool_retry_max = pool_retry_max
+        self.pool_retry_delay = pool_retry_delay
+        self.pool_conn_timeout = pool_conn_timeout
+        self.pool_conn_lifetime = pool_conn_lifetime
+
     def dn(self, dn):
         return core.utf8_decode(dn)
 
@@ -239,7 +249,8 @@ class FakeLdap(core.LDAPHandler):
         """This method is ignored, but provided for compatibility."""
         if server_fail:
             raise ldap.SERVER_DOWN
-        if who == 'cn=Admin' and cred == 'password':
+        whos = ['cn=Admin', 'cn=Manager,dc=openstack,dc=org']
+        if who in whos and cred in ['password', 'test']:
             return
 
         try:
@@ -465,3 +476,43 @@ class FakeLdap(core.LDAPHandler):
     def result3(self, msgid=ldap.RES_ANY, all=1, timeout=None,
                 resp_ctrl_classes=None):
         raise exception.NotImplemented()
+
+
+class FakeLdapPool(FakeLdap):
+    '''Emulate the python-ldap API with pooled connections using existing
+    FakeLdap logic.
+
+    This class is used as connector class in PooledLDAPHandler.
+    '''
+
+    def __init__(self, uri, retry_max=None, retry_delay=None, conn=None):
+        super(FakeLdapPool, self).__init__(conn=conn)
+        self.url = uri
+        self.connected = None
+        self.conn = self
+        self._connection_time = 5  # any number greater than 0
+
+    def get_lifetime(self):
+        return self._connection_time
+
+    def simple_bind_s(self, who=None, cred=None,
+                      serverctrls=None, clientctrls=None):
+        if self.url.startswith('fakepool://memory'):
+            if self.url not in FakeShelves:
+                FakeShelves[self.url] = FakeShelve()
+            self.db = FakeShelves[self.url]
+        else:
+            self.db = shelve.open(self.url[11:])
+
+        if not who:
+            who = 'cn=Admin'
+        if not cred:
+            cred = 'password'
+
+        super(FakeLdapPool, self).simple_bind_s(who=who, cred=cred,
+                                                serverctrls=serverctrls,
+                                                clientctrls=clientctrls)
+
+    def unbind_ext_s(self):
+        '''Added to extend FakeLdap as connector class.'''
+        pass
