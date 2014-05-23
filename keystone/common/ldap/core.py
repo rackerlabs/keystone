@@ -19,14 +19,17 @@ import re
 import codecs
 import ldap
 import ldap.filter
+import ldappool
 import six
 
+from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 
 LOG = log.getLogger(__name__)
 
+CONF = config.CONF
 
 LDAP_VALUES = {'TRUE': True, 'FALSE': False}
 CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
@@ -43,6 +46,8 @@ LDAP_TLS_CERTS = {'never': ldap.OPT_X_TLS_NEVER,
 
 
 _utf8_encoder = codecs.getencoder('utf-8')
+
+CONNECTION_POOLS = {}
 
 
 def utf8_encode(value):
@@ -473,53 +478,15 @@ class PythonLDAPHandler(LDAPHandler):
     def connect(self, url, page_size=0, alias_dereferencing=None,
                 use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
                 tls_req_cert='demand', chase_referrals=None, debug_level=None):
-        LOG.debug("LDAP init: url=%s", url)
-        LOG.debug('LDAP init: use_tls=%s tls_cacertfile=%s tls_cacertdir=%s '
-                  'tls_req_cert=%s tls_avail=%s',
-                  use_tls, tls_cacertfile, tls_cacertdir,
-                  tls_req_cert, ldap.TLS_AVAIL)
 
-        if debug_level is not None:
-            ldap.set_option(ldap.OPT_DEBUG_LEVEL, debug_level)
-
-        using_ldaps = url.lower().startswith("ldaps")
-
-        if use_tls and using_ldaps:
-            raise AssertionError(_('Invalid TLS / LDAPS combination'))
-
-        if use_tls:
-            if not ldap.TLS_AVAIL:
-                raise ValueError(_('Invalid LDAP TLS_AVAIL option: %s. TLS '
-                                   'not available') % ldap.TLS_AVAIL)
-            if tls_cacertfile:
-                # NOTE(topol)
-                # python ldap TLS does not verify CACERTFILE or CACERTDIR
-                # so we add some extra simple sanity check verification
-                # Also, setting these values globally (i.e. on the ldap object)
-                # works but these values are ignored when setting them on the
-                # connection
-                if not os.path.isfile(tls_cacertfile):
-                    raise IOError(_("tls_cacertfile %s not found "
-                                    "or is not a file") %
-                                  tls_cacertfile)
-                ldap.set_option(ldap.OPT_X_TLS_CACERTFILE, tls_cacertfile)
-            elif tls_cacertdir:
-                # NOTE(topol)
-                # python ldap TLS does not verify CACERTFILE or CACERTDIR
-                # so we add some extra simple sanity check verification
-                # Also, setting these values globally (i.e. on the ldap object)
-                # works but these values are ignored when setting them on the
-                # connection
-                if not os.path.isdir(tls_cacertdir):
-                    raise IOError(_("tls_cacertdir %s not found "
-                                    "or is not a directory") %
-                                  tls_cacertdir)
-                ldap.set_option(ldap.OPT_X_TLS_CACERTDIR, tls_cacertdir)
-            if tls_req_cert in LDAP_TLS_CERTS.values():
-                ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, tls_req_cert)
-            else:
-                LOG.debug(_("LDAP TLS: invalid TLS_REQUIRE_CERT Option=%s"),
-                          tls_req_cert)
+        _common_ldap_initialization(url=url, page_size=page_size,
+                                    alias_dereferencing=alias_dereferencing,
+                                    use_tls=use_tls,
+                                    tls_cacertfile=tls_cacertfile,
+                                    tls_cacertdir=tls_cacertdir,
+                                    tls_req_cert=tls_req_cert,
+                                    chase_referrals=chase_referrals,
+                                    debug_level=debug_level)
 
         self.conn = ldap.initialize(url)
         self.conn.protocol_version = ldap.VERSION3
@@ -579,6 +546,197 @@ class PythonLDAPHandler(LDAPHandler):
 
     def delete_ext_s(self, dn, serverctrls=None, clientctrls=None):
         return self.conn.delete_ext_s(dn, serverctrls, clientctrls)
+
+
+def _common_ldap_initialization(url, page_size=0,
+                                alias_dereferencing=None, use_tls=False,
+                                tls_cacertfile=None, tls_cacertdir=None,
+                                tls_req_cert=None,
+                                chase_referrals=None, debug_level=None):
+    '''Method for common ldap initialization between PythonLDAPHandler and
+    PooledLDAPHandler.
+    '''
+
+    LOG.debug("LDAP init: url=%s", url)
+    LOG.debug('LDAP init: use_tls=%s tls_cacertfile=%s tls_cacertdir=%s '
+              'tls_req_cert=%s tls_avail=%s',
+              use_tls, tls_cacertfile, tls_cacertdir,
+              tls_req_cert, ldap.TLS_AVAIL)
+
+    if debug_level is not None:
+        ldap.set_option(ldap.OPT_DEBUG_LEVEL, debug_level)
+
+    using_ldaps = url.lower().startswith("ldaps")
+
+    if use_tls and using_ldaps:
+        raise AssertionError(_('Invalid TLS / LDAPS combination'))
+
+    if use_tls:
+        if not ldap.TLS_AVAIL:
+            raise ValueError(_('Invalid LDAP TLS_AVAIL option: %s. TLS '
+                               'not available') % ldap.TLS_AVAIL)
+        if tls_cacertfile:
+            # NOTE(topol)
+            # python ldap TLS does not verify CACERTFILE or CACERTDIR
+            # so we add some extra simple sanity check verification
+            # Also, setting these values globally (i.e. on the ldap object)
+            # works but these values are ignored when setting them on the
+            # connection
+            if not os.path.isfile(tls_cacertfile):
+                raise IOError(_("tls_cacertfile %s not found "
+                                "or is not a file") %
+                              tls_cacertfile)
+            ldap.set_option(ldap.OPT_X_TLS_CACERTFILE, tls_cacertfile)
+        elif tls_cacertdir:
+            # NOTE(topol)
+            # python ldap TLS does not verify CACERTFILE or CACERTDIR
+            # so we add some extra simple sanity check verification
+            # Also, setting these values globally (i.e. on the ldap object)
+            # works but these values are ignored when setting them on the
+            # connection
+            if not os.path.isdir(tls_cacertdir):
+                raise IOError(_("tls_cacertdir %s not found "
+                                "or is not a directory") %
+                              tls_cacertdir)
+            ldap.set_option(ldap.OPT_X_TLS_CACERTDIR, tls_cacertdir)
+        if tls_req_cert in LDAP_TLS_CERTS.values():
+            ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, tls_req_cert)
+        else:
+            LOG.debug(_("LDAP TLS: invalid TLS_REQUIRE_CERT Option=%s"),
+                      tls_req_cert)
+
+
+class PooledLDAPHandler(LDAPHandler):
+    '''Implementation of the LDAPHandler interface which uses pooled
+    connection manager.
+
+    Pool specific configuration is defined in [ldap] section.
+    All other ldap configuration is still used from [ldap] section
+
+    Note, the python-ldap API requires all string values to be UTF-8
+    encoded. The KeystoneLDAPHandler enforces this prior to invoking
+    the methods in this class.
+    '''
+
+    # Added here to allow override for testing
+    CONNECTOR_CLS = ldappool.StateConnector
+
+    def __init__(self, conn=None):
+        super(PooledLDAPHandler, self).__init__(conn=conn)
+        self.who = ''
+        self.cred = ''
+        self.conn_options = {}  # connection specific options
+
+    def connect(self, url, page_size=0, alias_dereferencing=None,
+                use_tls=False, tls_cacertfile=None, tls_cacertdir=None,
+                tls_req_cert='demand', chase_referrals=None, debug_level=None):
+
+        _common_ldap_initialization(url=url, page_size=page_size,
+                                    alias_dereferencing=alias_dereferencing,
+                                    use_tls=use_tls,
+                                    tls_cacertfile=tls_cacertfile,
+                                    tls_cacertdir=tls_cacertdir,
+                                    tls_req_cert=tls_req_cert,
+                                    chase_referrals=chase_referrals,
+                                    debug_level=debug_level)
+
+        self.url = url
+        self.page_size = page_size
+
+        # Following two options are not added in common initialization as they
+        # need to follow a sequence in PythonLDAPHandler code.
+        if alias_dereferencing is not None:
+            self.set_option(ldap.OPT_DEREF, alias_dereferencing)
+        if chase_referrals is not None:
+            self.set_option(ldap.OPT_REFERRALS, int(chase_referrals))
+
+        global CONNECTION_POOLS
+
+        if url not in CONNECTION_POOLS:
+            CONNECTION_POOLS[url] = ldappool.ConnectionManager(
+                url,
+                size=CONF.ldap.pool_size,
+                retry_max=CONF.ldap.pool_retry_max,
+                retry_delay=CONF.ldap.pool_retry_delay,
+                timeout=CONF.ldap.pool_connection_timeout,
+                connector_cls=PooledLDAPHandler.CONNECTOR_CLS,
+                use_pool=CONF.ldap.use_pool,
+                use_tls=use_tls,
+                max_lifetime=CONF.ldap.pool_connection_lifetime)
+
+    def set_option(self, option, invalue):
+        self.conn_options[option] = invalue
+
+    def get_option(self, option):
+        return self.conn_options.get(option)
+
+    def _apply_options(self, conn):
+        for option, invalue in six.iteritems(self.conn_options):
+            conn.set_option(option, invalue)
+
+    def simple_bind_s(self, who='', cred='',
+                      serverctrls=None, clientctrls=None):
+        with CONNECTION_POOLS[self.url].connection(who, cred) as conn:
+            self._apply_options(conn)
+        # if everything is cool, lets save the creds for the the rest
+        # of the operations
+        self.user = who
+        self.password = cred
+
+    def unbind_s(self):
+        # this is a no op as connection exit would do an unbind anyway
+        pass
+
+    def add_s(self, dn, modlist):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.add_s(dn, modlist)
+
+    def search_s(self, base, scope,
+                 filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.search_s(base, scope, filterstr, attrlist,
+                                 attrsonly)
+
+    def search_ext(self, base, scope,
+                   filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                   serverctrls=None, clientctrls=None,
+                   timeout=-1, sizelimit=0):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.search_ext(base, scope,
+                                   filterstr, attrlist, attrsonly,
+                                   serverctrls, clientctrls,
+                                   timeout, sizelimit)
+
+    def result3(self, msgid=ldap.RES_ANY, all=1, timeout=None,
+                resp_ctrl_classes=None):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.result3(msgid, all, timeout)
+
+    def modify_s(self, dn, modlist):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.modify_s(dn, modlist)
+
+    def delete_s(self, dn):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.conn.delete_s(dn)
+
+    def delete_ext_s(self, dn, serverctrls=None, clientctrls=None):
+        with CONNECTION_POOLS[self.url].connection(
+                self.who, self.cred) as conn:
+            self._apply_options(conn)
+            return conn.delete_ext_s(dn, serverctrls, clientctrls)
 
 
 class KeystoneLDAPHandler(LDAPHandler):
@@ -803,7 +961,10 @@ def _get_connection(conn_url):
         if conn_url.startswith(prefix):
             return handler()
 
-    return PythonLDAPHandler()
+    if CONF.ldap.use_pool:
+        return PooledLDAPHandler()
+    else:
+        return PythonLDAPHandler()
 
 
 def filter_entity(entity_ref):
