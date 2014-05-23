@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_bc376faf",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-23T21:23:02Z",
+      "side": 1,
+      "message": "Also I agree with Lance\u0027s point, but I have a different change in mind. If I were writing this from scratch I would only have one method \u0027assert_attributes(ref, *attrs)\u0027 and then always calls \u0027self._require_attributes(json.loads(body), attrs)\u0027\n\nNot saying that you have to change it to do this, but food for thought.",
+      "revId": "a9a92bd19b14abca764d4156f879b51eed90844a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_9c46334e",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-23T21:23:02Z",
+      "side": 1,
+      "message": "Why not just decode the JSON inline and then you can get rid of the decorator and save some code?\n\n  self._require_attribute(json.loads(body), attr)",
+      "revId": "a9a92bd19b14abca764d4156f879b51eed90844a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_5c358bd9",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-23T21:23:02Z",
+      "side": 1,
+      "message": "You can actually just do something like this to make this test more concise:\n\n  ex \u003d self.assertRaises(exception.ValidationError, resp.body, [...])\n  self.assertThat(ex.message, matchers.Contains(...))",
+      "revId": "a9a92bd19b14abca764d4156f879b51eed90844a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
