@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5adbc538_2c371bb2",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-24T11:12:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "7adec928_0462d3ac",
+      "revId": "d0b29b8e548f7c572c840ba091af398f2e2d1252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_64f9d7c7",
         "filename": "keystone/common/sql/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-23T14:53:58Z",
       "side": 1,
       "message": "I\u0027d rather not check type if we can help it. Is there anything wrong with:\n\n  if not hasattr(hints, \u0027limit\u0027):",
+      "revId": "d0b29b8e548f7c572c840ba091af398f2e2d1252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_ecbd3304",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-24T11:12:38Z",
+      "side": 1,
+      "message": "Well, thinking about it, I think it might even be redundant to check for type or get limit, perhaps we could just check if hints is not None and if hints.limit is not None",
+      "parentUuid": "7adec928_64f9d7c7",
       "revId": "d0b29b8e548f7c572c840ba091af398f2e2d1252",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
