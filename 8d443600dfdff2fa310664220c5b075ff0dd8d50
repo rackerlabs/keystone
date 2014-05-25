@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_72357e45",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-25T04:12:15Z",
+      "side": 1,
+      "message": "This is going against the work that we did to decouple the identity and assignment backends",
+      "revId": "8d443600dfdff2fa310664220c5b075ff0dd8d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_9203ea72",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-25T04:12:15Z",
+      "side": 1,
+      "message": "unnecessary additional white space",
+      "revId": "8d443600dfdff2fa310664220c5b075ff0dd8d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
