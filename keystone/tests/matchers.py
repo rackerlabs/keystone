@@ -45,6 +45,7 @@ class XMLEquals(object):
 
         expected = canonical_xml(self.expected)
         other = canonical_xml(other)
+
         if expected == other:
             return
         return XMLMismatch(expected, other)
@@ -57,4 +58,11 @@ class XMLMismatch(matchers.Mismatch):
         self.other = other
 
     def describe(self):
-        return 'expected = %s\nactual = %s' % (self.expected, self.other)
+        loc = None
+        for i, c in enumerate(self.expected):
+            if c != self.other[i]:
+                loc = i
+                break
+        return 'expected = %s\nactual = %s\ndiff at %s: `%s` != `%s`\n' % (
+            self.expected, self.other, loc,
+            self.other[loc - 5:loc + 5], self.expected[loc - 5:loc + 5])

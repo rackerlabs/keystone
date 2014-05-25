@@ -47,6 +47,10 @@ class TestXMLEquals(tests.BaseTestCase, helpers.TestMatchersInterface):
         actual = <test xmlns="http://docs.openstack.org/identity/api/v2.0">
           <nope_it_fails/>
         </test>
+
+        diff at 62: `>
+          <nope_` != `>
+          <succe`
     """).lstrip()
 
     matches_matcher = matchers.XMLEquals(matches_xml)

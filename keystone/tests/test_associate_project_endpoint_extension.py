@@ -489,3 +489,20 @@ class AssociateProjectEndpointFilterTokenRequestTestCase(TestExtensionCase):
         endpoints = r.result['token']['catalog'][0]['endpoints']
         endpoint_ids = [ep['id'] for ep in endpoints]
         self.assertEqual([self.endpoint_id], endpoint_ids)
+
+    def test_version_response(self):
+        resp = self.get('/')
+
+        is_endpoint_filter_ext = lambda x: x.get('alias') == 'OS-EP-FILTER'
+        ext_data = filter(is_endpoint_filter_ext,
+                          resp.json['version']['links'])[0]
+
+        exp_data = {
+            'alias': 'OS-EP-FILTER',
+            'description': 'OpenStack Keystone Endpoint Filter API.',
+            'href': 'http://localhost/v3/OS-EP-FILTER/',
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'updated': '2013-07-23T12:00:0-00:00',
+            'version': '1.0',
+        }
+        self.assertEqual(exp_data, ext_data)

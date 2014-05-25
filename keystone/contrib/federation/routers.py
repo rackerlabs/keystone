@@ -10,12 +10,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import config
 from keystone.common import wsgi
 from keystone.contrib import federation
 from keystone.contrib.federation import controllers
 
 
-class FederationExtension(wsgi.ExtensionRouter):
+CONF = config.CONF
+
+
+class FederationExtension(wsgi.V3ExtensionRouter):
     """API Endpoints for the Federation extension.
 
     The API looks like::
@@ -187,3 +191,19 @@ class FederationExtension(wsgi.ExtensionRouter):
             controller=auth_controller,
             action='federated_authentication',
             conditions=dict(method=['GET', 'POST']))
+
+    def _get_version_data(self, request):
+        url = CONF.public_endpoint
+        if url:
+            url = (url % CONF).rstrip('/') + '/v3'
+        else:
+            url = request.path_url.rstrip('/')
+
+        return {
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'href': '%s/OS-FEDERATION/' % url,
+            'alias': federation.EXTENSION_DATA['alias'],
+            'description': federation.EXTENSION_DATA['description'],
+            'version': '1.0',
+            'updated': federation.EXTENSION_DATA['updated'],
+        }

@@ -10,11 +10,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+
 from keystone.common import wsgi
+from keystone import config
 from keystone.contrib.revoke import controllers
+from keystone.contrib.revoke import core
 
 
-class RevokeExtension(wsgi.ExtensionRouter):
+CONF = config.CONF
+
+
+class RevokeExtension(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-REVOKE'
 
@@ -24,3 +30,19 @@ class RevokeExtension(wsgi.ExtensionRouter):
                        controller=revoke_controller,
                        action='list_revoke_events',
                        conditions=dict(method=['GET']))
+
+    def _get_version_data(self, request):
+        url = CONF.public_endpoint
+        if url:
+            url = (url % CONF).rstrip('/') + '/v3'
+        else:
+            url = request.path_url.rstrip('/')
+
+        return {
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'href': '%s%s/' % (url, self.PATH_PREFIX),
+            'alias': core.EXTENSION_DATA['alias'],
+            'description': core.EXTENSION_DATA['description'],
+            'version': '1.0',
+            'updated': core.EXTENSION_DATA['updated'],
+        }

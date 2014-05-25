@@ -12,11 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import config
 from keystone.common import wsgi
 from keystone.contrib.endpoint_filter import controllers
+from keystone.contrib.endpoint_filter import core
 
 
-class EndpointFilterExtension(wsgi.ExtensionRouter):
+CONF = config.CONF
+
+
+class EndpointFilterExtension(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-EP-FILTER'
     PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
@@ -43,3 +48,19 @@ class EndpointFilterExtension(wsgi.ExtensionRouter):
                        controller=endpoint_filter_controller,
                        action='remove_endpoint_from_project',
                        conditions=dict(method=['DELETE']))
+
+    def _get_version_data(self, request):
+        url = CONF.public_endpoint
+        if url:
+            url = (url % CONF).rstrip('/') + '/v3'
+        else:
+            url = request.path_url.rstrip('/')
+
+        return {
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'href': '%s%s/' % (url, self.PATH_PREFIX),
+            'alias': core.extension_data['alias'],
+            'description': core.extension_data['description'],
+            'version': '1.0',
+            'updated': core.extension_data['updated'],
+        }

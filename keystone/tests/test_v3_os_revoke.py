@@ -122,3 +122,20 @@ class OSRevokeTests(test_v3.RestfulTestCase):
         resp = self.get('/OS-REVOKE/events?since=%s' % _future_time_string())
         events = resp.json_body['events']
         self.assertEqual([], events)
+
+    def test_versions(self):
+        resp = self.get('/')
+
+        is_federation_ext = lambda x: x.get('alias') == 'OS-REVOKE'
+        ext_data = filter(is_federation_ext,
+                          resp.json['version']['links'])[0]
+
+        exp_data = {
+            'alias': 'OS-REVOKE',
+            'description': 'OpenStack revoked token reporting mechanism.',
+            'href': 'http://localhost/v3/OS-REVOKE/',
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'updated': '2014-02-24T20:51:0-00:00',
+            'version': '1.0',
+        }
+        self.assertEqual(exp_data, ext_data)

@@ -12,8 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import config
 from keystone.common import wsgi
 from keystone.contrib.ec2 import controllers
+from keystone.contrib.ec2 import core
+
+
+CONF = config.CONF
 
 
 class Ec2Extension(wsgi.ExtensionRouter):
@@ -49,7 +54,7 @@ class Ec2Extension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
-class Ec2ExtensionV3(wsgi.ExtensionRouter):
+class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
 
     def add_routes(self, mapper):
         ec2_controller = controllers.Ec2ControllerV3()
@@ -81,3 +86,19 @@ class Ec2ExtensionV3(wsgi.ExtensionRouter):
             controller=ec2_controller,
             action='ec2_delete_credential',
             conditions=dict(method=['DELETE']))
+
+    def _get_version_data(self, request):
+        url = CONF.public_endpoint
+        if url:
+            url = (url % CONF).rstrip('/') + '/v3'
+        else:
+            url = request.path_url.rstrip('/')
+
+        return {
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'href': '%s/%s/' % (url, 'ec2tokens'),
+            'alias': core.EXTENSION_DATA['alias'],
+            'description': core.EXTENSION_DATA['description'],
+            'version': '1.0',
+            'updated': core.EXTENSION_DATA['updated'],
+        }

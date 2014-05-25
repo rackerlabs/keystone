@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import copy
 import random
 
 import mock
@@ -88,8 +89,28 @@ v3_EXPECTED_RESPONSE = {
     "media-types": v3_MEDIA_TYPES
 }
 
+v3_DIRECT_RESPONSE = copy.deepcopy(v3_EXPECTED_RESPONSE)
+v3_DIRECT_RESPONSE['links'].extend([
+    {
+        'alias': 'OS-SIMPLE-CERT',
+        'description': 'OpenStack simple certificate retrieval extension',
+        'href': '',  # Will get filled in after initialization
+        'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+        'updated': '2014-01-20T12:00:0-00:00',
+        'version': '1.0',
+    },
+    {
+        'alias': 'OS-EC2',
+        'description': 'OpenStack EC2 Credentials backend.',
+        'href': '',  # Will get filled in after initialization
+        'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+        'updated': '2013-07-07T12:00:0-00:00',
+        'version': '1.0'
+    },
+])
+
 v3_VERSION_RESPONSE = {
-    "version": v3_EXPECTED_RESPONSE
+    "version": v3_DIRECT_RESPONSE
 }
 
 VERSIONS_RESPONSE = {
@@ -100,6 +121,8 @@ VERSIONS_RESPONSE = {
         ]
     }
 }
+
+EXTENSION_REL = 'http://docs.openstack.org/identity/rel/v3/extension'
 
 
 class VersionTestCase(tests.TestCase):
@@ -118,10 +141,11 @@ class VersionTestCase(tests.TestCase):
         port = random.randint(10000, 30000)
         self.config_fixture.config(public_port=port, admin_port=port)
 
-    def _paste_in_port(self, response, port):
+    def _paste_in_port(self, response, port, rel='self', alias=None):
         for link in response['links']:
-            if link['rel'] == 'self':
-                link['href'] = port
+            if (link['rel'] == rel and (
+               alias is None or link['alias'] == alias)):
+                    link['href'] = port
 
     def test_public_versions(self):
         client = self.client(self.public_app)
@@ -211,6 +235,13 @@ class VersionTestCase(tests.TestCase):
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v3/' % CONF.public_port)
+        ec2tokens_port = 'http://localhost:%s/v3/ec2tokens/' % CONF.public_port
+        self._paste_in_port(expected['version'], ec2tokens_port,
+                            rel=EXTENSION_REL, alias='OS-EC2')
+        simple_cert_port = (
+            'http://localhost:%s/v3/OS-SIMPLE-CERT/' % CONF.public_port)
+        self._paste_in_port(expected['version'], simple_cert_port,
+                            rel=EXTENSION_REL, alias='OS-SIMPLE-CERT')
         self.assertEqual(data, expected)
 
     def test_admin_version_v3(self):
@@ -221,6 +252,13 @@ class VersionTestCase(tests.TestCase):
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v3/' % CONF.admin_port)
+        ec2tokens_port = 'http://localhost:%s/v3/ec2tokens/' % CONF.admin_port
+        self._paste_in_port(expected['version'], ec2tokens_port,
+                            rel=EXTENSION_REL, alias='OS-EC2')
+        simple_cert_port = (
+            'http://localhost:%s/v3/OS-SIMPLE-CERT/' % CONF.admin_port)
+        self._paste_in_port(expected['version'], simple_cert_port,
+                            rel=EXTENSION_REL, alias='OS-SIMPLE-CERT')
         self.assertEqual(data, expected)
 
     def test_use_site_url_if_endpoint_unset_v3(self):
@@ -232,6 +270,12 @@ class VersionTestCase(tests.TestCase):
             data = jsonutils.loads(resp.body)
             expected = v3_VERSION_RESPONSE
             self._paste_in_port(expected['version'], 'http://localhost/v3/')
+            ec2tokens_port = 'http://localhost/v3/ec2tokens/'
+            self._paste_in_port(expected['version'], ec2tokens_port,
+                                rel=EXTENSION_REL, alias='OS-EC2')
+            simple_cert_port = 'http://localhost/v3/OS-SIMPLE-CERT/'
+            self._paste_in_port(expected['version'], simple_cert_port,
+                                rel=EXTENSION_REL, alias='OS-SIMPLE-CERT')
             self.assertEqual(data, expected)
 
     @mock.patch.object(controllers, '_VERSIONS', ['v3'])
@@ -248,6 +292,13 @@ class VersionTestCase(tests.TestCase):
         expected = v3_VERSION_RESPONSE
         self._paste_in_port(expected['version'],
                             'http://localhost:%s/v3/' % CONF.public_port)
+        ec2tokens_port = 'http://localhost:%s/v3/ec2tokens/' % CONF.public_port
+        self._paste_in_port(expected['version'], ec2tokens_port,
+                            rel=EXTENSION_REL, alias='OS-EC2')
+        simple_cert_port = (
+            'http://localhost:%s/v3/OS-SIMPLE-CERT/' % CONF.public_port)
+        self._paste_in_port(expected['version'], simple_cert_port,
+                            rel=EXTENSION_REL, alias='OS-SIMPLE-CERT')
         self.assertEqual(data, expected)
 
         # only v3 information should be displayed by requests to /
@@ -343,7 +394,34 @@ vnd.openstack.identity-v3+xml"/>
 </version>
 """
 
-    v3_VERSION_RESPONSE = ((DOC_INTRO + v3_VERSION_DATA) %
+    v3_DIRECT_VERSION_DATA = """
+<version %(v3_namespace)s status="stable" updated="2013-03-06T00:00:00Z"
+         id="v3.0">
+  <media-types>
+    <media-type base="application/json" type="application/\
+vnd.openstack.identity-v3+json"/>
+    <media-type base="application/xml" type="application/\
+vnd.openstack.identity-v3+xml"/>
+  </media-types>
+  <links>
+    <link href="http://localhost:%%(port)s/v3/" rel="self"/>
+    <link alias="OS-SIMPLE-CERT" \
+href="http://localhost:%%(port)s/v3/OS-SIMPLE-CERT/" \
+rel="http://docs.openstack.org/identity/rel/v3/extension" \
+updated="2014-01-20T12:00:0-00:00" version="1.0">
+      <description>OpenStack simple certificate retrieval extension\
+</description>
+    </link>
+    <link alias="OS-EC2" href="http://localhost:%%(port)s/v3/ec2tokens/" \
+rel="http://docs.openstack.org/identity/rel/v3/extension" \
+updated="2013-07-07T12:00:0-00:00" version="1.0">
+      <description>OpenStack EC2 Credentials backend.</description>
+    </link>
+  </links>
+</version>
+"""
+
+    v3_VERSION_RESPONSE = ((DOC_INTRO + v3_DIRECT_VERSION_DATA) %
                            dict(v3_namespace=XML_NAMESPACE_V3))
 
     VERSIONS_RESPONSE = ((DOC_INTRO + """

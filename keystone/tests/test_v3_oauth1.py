@@ -692,3 +692,22 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         url, headers, body = self._get_oauth_token(self.consumer,
                                                    self.access_token)
         self.post(url, headers=headers, body=body, expected_status=401)
+
+
+class VersionTests(OAuth1Tests):
+    def test_versions(self):
+        resp = self.get('/')
+
+        is_federation_ext = lambda x: x.get('alias') == 'OS-OAUTH1'
+        ext_data = filter(is_federation_ext,
+                          resp.json['version']['links'])[0]
+
+        exp_data = {
+            'alias': 'OS-OAUTH1',
+            'description': 'OpenStack OAuth 1.0a Delegated Auth Mechanism.',
+            'href': 'http://localhost/v3/OS-OAUTH1/',
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'updated': '2013-07-07T12:00:0-00:00',
+            'version': '1.0',
+        }
+        self.assertEqual(exp_data, ext_data)

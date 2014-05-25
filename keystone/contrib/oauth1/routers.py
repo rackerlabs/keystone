@@ -12,12 +12,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import config
 from keystone.common import wsgi
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 
 
-class OAuth1Extension(wsgi.ExtensionRouter):
+CONF = config.CONF
+
+
+class OAuth1Extension(wsgi.V3ExtensionRouter):
     """API Endpoints for the OAuth1 extension.
 
     The goal of this extension is to allow third-party service providers
@@ -129,3 +133,19 @@ class OAuth1Extension(wsgi.ExtensionRouter):
             controller=oauth_controller,
             action='authorize_request_token',
             conditions=dict(method=['PUT']))
+
+    def _get_version_data(self, request):
+        url = CONF.public_endpoint
+        if url:
+            url = (url % CONF).rstrip('/') + '/v3'
+        else:
+            url = request.path_url.rstrip('/')
+
+        return {
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'href': '%s/OS-OAUTH1/' % url,
+            'alias': oauth1.EXTENSION_DATA['alias'],
+            'description': oauth1.EXTENSION_DATA['description'],
+            'version': '1.0',
+            'updated': oauth1.EXTENSION_DATA['updated'],
+        }

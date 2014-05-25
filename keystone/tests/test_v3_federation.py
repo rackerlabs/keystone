@@ -1560,3 +1560,22 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class VersionTests(FederationTests):
+    def test_versions(self):
+        resp = self.get('/')
+
+        is_federation_ext = lambda x: x.get('alias') == 'OS-FEDERATION'
+        ext_data = filter(is_federation_ext,
+                          resp.json['version']['links'])[0]
+
+        exp_data = {
+            'alias': 'OS-FEDERATION',
+            'description': 'OpenStack Identity Providers Mechanism.',
+            'href': 'http://localhost/v3/OS-FEDERATION/',
+            'rel': 'http://docs.openstack.org/identity/rel/v3/extension',
+            'updated': '2013-12-17T12:00:0-00:00',
+            'version': '1.0',
+        }
+        self.assertEqual(exp_data, ext_data)

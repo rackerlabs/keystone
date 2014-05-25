@@ -598,6 +598,37 @@ class ExtensionRouter(Router):
         return _factory
 
 
+class V3ExtensionRouter(ExtensionRouter):
+    """A router for V3 extensions."""
+
+    def _get_version_data(self, request):
+        """Get data for the versions response.
+
+        Extensions must override this to return the data to provide
+        in the GET /v3 response.
+
+        """
+
+    @webob.dec.wsgify()
+    def __call__(self, request):
+
+        if request.path_info != '/':
+            # Not a request for version info so forward to super.
+            return super(V3ExtensionRouter, self).__call__(request)
+
+        response = request.get_response(self.application)
+
+        if response.status_code != 200:
+            # The request failed, so don't update the response.
+            return response
+
+        body_obj = jsonutils.loads(response.body)
+        extension_version_data = self._get_version_data(request)
+        body_obj['version']['links'].append(extension_version_data)
+        response.body = jsonutils.dumps(body_obj)
+        return response
+
+
 def render_response(body=None, status=None, headers=None):
     """Forms a WSGI response."""
     headers = headers or []
