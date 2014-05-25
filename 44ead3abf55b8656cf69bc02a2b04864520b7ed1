@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_32821653",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-25T01:30:21Z",
+      "side": 1,
+      "message": "the comment is rather obvious and can be removed",
+      "revId": "44ead3abf55b8656cf69bc02a2b04864520b7ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_5287a261",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-25T01:30:21Z",
+      "side": 1,
+      "message": "try to maximize the number of characters per line. \n\ncan do this in 2 lines instead of 4.",
+      "revId": "44ead3abf55b8656cf69bc02a2b04864520b7ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
