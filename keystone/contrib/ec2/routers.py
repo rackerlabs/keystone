@@ -12,8 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import webob.dec
+
 from keystone.common import wsgi
 from keystone.contrib.ec2 import controllers
+from keystone.openstack.common import jsonutils
 
 
 class Ec2Extension(wsgi.ExtensionRouter):
@@ -81,3 +84,35 @@ class Ec2ExtensionV3(wsgi.ExtensionRouter):
             controller=ec2_controller,
             action='ec2_delete_credential',
             conditions=dict(method=['DELETE']))
+
+    @webob.dec.wsgify()
+    def __call__(self, request):
+
+        if request.path_info != '/':
+            # Not a request for version info so call super impl.
+            return super(Ec2ExtensionV3, self).__call__(request)
+
+        response = request.get_response(self.application)
+
+        if response.status_code != 200:
+            # The request failed, so don't update the response.
+            return response
+
+        if request.path_info != '/':
+            # Ignore this since it's not a version request
+            return response
+
+        ALIAS = 'OS-EC2'
+        PATH = 'ec2tokens'
+
+        body_obj = jsonutils.loads(response.body)
+
+        body_obj['version']['links'].append(
+            {
+                'alias': ALIAS,
+                'href': '%s/%s/' % (request.path_url.rstrip('/'), PATH),
+                'rel': 'extension',
+            }
+        )
+        response.body = jsonutils.dumps(body_obj)
+        return response
