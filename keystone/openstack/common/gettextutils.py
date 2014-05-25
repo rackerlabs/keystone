@@ -19,7 +19,7 @@ gettext for openstack-common modules.
 
 Usual usage in an openstack.common module:
 
-    from keystone.openstack.common.gettextutils import _
+    from openstack.common.gettextutils import _
 """
 
 import copy
@@ -34,7 +34,7 @@ import six
 
 _AVAILABLE_LANGUAGES = {}
 
-# FIXME(dhellmann): Remove this when moving to keystone.i18n.
+# FIXME(dhellmann): Remove this when moving to oslo.i18n.
 USE_LAZY = False
 
 
@@ -116,11 +116,11 @@ class TranslatorFactory(object):
 
 
 # NOTE(dhellmann): When this module moves out of the incubator into
-# keystone.i18n, these global variables can be moved to an integration
+# oslo.i18n, these global variables can be moved to an integration
 # module within each application.
 
 # Create the global translation functions.
-_translators = TranslatorFactory('keystone')
+_translators = TranslatorFactory('oslo')
 
 # The primary translation function using the well-known name "_"
 _ = _translators.primary
@@ -147,10 +147,10 @@ def enable_lazy():
     your project is importing _ directly instead of using the
     gettextutils.install() way of importing the _ function.
     """
-    # FIXME(dhellmann): This function will be removed in keystone.i18n,
+    # FIXME(dhellmann): This function will be removed in oslo.i18n,
     # because the TranslatorFactory makes it superfluous.
     global _, _LI, _LW, _LE, _LC, USE_LAZY
-    tf = TranslatorFactory('keystone', lazy=True)
+    tf = TranslatorFactory('oslo', lazy=True)
     _ = tf.primary
     _LI = tf.log_info
     _LW = tf.log_warning
@@ -201,7 +201,7 @@ class Message(six.text_type):
     """
 
     def __new__(cls, msgid, msgtext=None, params=None,
-                domain='keystone', *args):
+                domain='oslo', *args):
         """Create a new Message object.
 
         In order for translation to work gettext requires a message ID, this
