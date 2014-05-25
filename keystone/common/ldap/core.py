@@ -23,6 +23,7 @@ import six
 
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
+from keystone.openstack.common.gettextutils import _LW  # noqa
 from keystone.openstack.common import log
 
 LOG = log.getLogger(__name__)
@@ -687,9 +688,9 @@ class KeystoneLDAPHandler(LDAPHandler):
                     # Exit condition no more data on server
                     break
             else:
-                LOG.warning(_('LDAP Server does not support paging. '
-                              'Disable paging in keystone.conf to '
-                              'avoid this message.'))
+                LOG.warning(_LW('LDAP Server does not support paging. '
+                                'Disable paging in keystone.conf to '
+                                'avoid this message.'))
                 self._disable_paging()
                 break
         return res
@@ -867,7 +868,7 @@ class BaseLdap(object):
             try:
                 ldap_attr, attr_map = item.split(':')
             except Exception:
-                LOG.warn(_(
+                LOG.warn(_LW(
                     'Invalid additional attribute mapping: "%s". '
                     'Format must be <ldap_attribute>:<keystone_attribute>'),
                     item)

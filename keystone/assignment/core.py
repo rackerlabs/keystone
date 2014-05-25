@@ -27,6 +27,7 @@ from keystone import config
 from keystone import exception
 from keystone import notifications
 from keystone.openstack.common.gettextutils import _
+from keystone.openstack.common.gettextutils import _LI  # noqa
 from keystone.openstack.common import log
 
 
@@ -239,8 +240,8 @@ class Manager(manager.Manager):
                 tenant_id,
                 config.CONF.member_role_id)
         except exception.RoleNotFound:
-            LOG.info(_("Creating the default role %s "
-                       "because it does not exist."),
+            LOG.info(_LI("Creating the default role %s "
+                         "because it does not exist."),
                      config.CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}

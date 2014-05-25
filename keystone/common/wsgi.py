@@ -29,6 +29,8 @@ from keystone.common import utils
 from keystone import exception
 from keystone.openstack.common import gettextutils
 from keystone.openstack.common.gettextutils import _
+from keystone.openstack.common.gettextutils import _LI  # noqa
+from keystone.openstack.common.gettextutils import _LW  # noqa
 from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
@@ -64,33 +66,34 @@ def validate_token_bind(context, token_ref):
             # no bind provided and none required
             return
         else:
-            LOG.info(_("No bind information present in token"))
+            LOG.info(_LI("No bind information present in token"))
             raise exception.Unauthorized()
 
     if name and name not in bind:
-        LOG.info(_("Named bind mode %s not in bind information"), name)
+        LOG.info(_LI("Named bind mode %s not in bind information"), name)
         raise exception.Unauthorized()
 
     for bind_type, identifier in six.iteritems(bind):
         if bind_type == 'kerberos':
             if not (context['environment'].get('AUTH_TYPE', '').lower()
                     == 'negotiate'):
-                LOG.info(_("Kerberos credentials required and not present"))
+                LOG.info(_LI("Kerberos credentials required and not present"))
                 raise exception.Unauthorized()
 
             if not context['environment'].get('REMOTE_USER') == identifier:
-                LOG.info(_("Kerberos credentials do not match those in bind"))
+                LOG.info(_LI("Kerberos credentials do not match "
+                             "those in bind"))
                 raise exception.Unauthorized()
 
-            LOG.info(_("Kerberos bind authentication successful"))
+            LOG.info(_LI("Kerberos bind authentication successful"))
 
         elif bind_mode == 'permissive':
             LOG.debug(_("Ignoring unknown bind for permissive mode: "
                         "{%(bind_type)s: %(identifier)s}"),
                       {'bind_type': bind_type, 'identifier': identifier})
         else:
-            LOG.info(_("Couldn't verify unknown bind: "
-                       "{%(bind_type)s: %(identifier)s}"),
+            LOG.info(_LI("Couldn't verify unknown bind: "
+                         "{%(bind_type)s: %(identifier)s}"),
                      {'bind_type': bind_type, 'identifier': identifier})
             raise exception.Unauthorized()
 
@@ -207,7 +210,8 @@ class Application(BaseApplication):
             result = method(context, **params)
         except exception.Unauthorized as e:
             LOG.warning(
-                _('Authorization failed. %(exception)s from %(remote_addr)s'),
+                _LW("Authorization failed. %(exception)s from "
+                    "%(remote_addr)s"),
                 {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
             return render_exception(e, context=context,
                                     user_locale=best_match_language(req))
@@ -323,7 +327,7 @@ class Application(BaseApplication):
         try:
             token_ref = self.token_api.get_token(context['token_id'])
         except exception.TokenNotFound:
-            LOG.warning(_('Invalid token in _get_trust_id_for_request'))
+            LOG.warning(_LW('Invalid token in _get_trust_id_for_request'))
             raise exception.Unauthorized()
 
         return token_ref.get('trust_id')
