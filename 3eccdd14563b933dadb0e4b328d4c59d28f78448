@@ -51,6 +51,24 @@
       "revId": "3eccdd14563b933dadb0e4b328d4c59d28f78448",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_a174fafd",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-26T16:57:01Z",
+      "side": 1,
+      "message": "@Brad, I\u0027ve made a new patch for spelling mistakes: https://review.openstack.org/#/c/95564/",
+      "parentUuid": "9ad9bd40_70def56e",
+      "revId": "3eccdd14563b933dadb0e4b328d4c59d28f78448",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
