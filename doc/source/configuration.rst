@@ -611,8 +611,9 @@ Configuration
 ^^^^^^^^^^^^^
 
 To enable SSL modify the etc/keystone.conf file accordingly
-under the [ssl] section.  SSL configuration example using the included sample
-certificates::
+under the [ssl] section and remember to configure the endpoint of the identity
+service to listen on the corresponding secure port e.g. HTTPS instead HTTP.
+SSL configuration example using the included sample certificates::
 
     [ssl]
     enable = True
@@ -628,12 +629,25 @@ certificates::
 * ``ca_certs``:  Path to CA trust chain.
 * ``cert_required``:  Requires client certificate.  Defaults to False.
 
-When generating SSL certificates the following values are read
+When generating SSL certificates the following values are read::
+
+* ``valid_days``: How long the certificate is valid for. Defaults to 3650 days
+  (10  years).
+* ``cert_subject``: The subject to set in the certificate. Defaults to
+  ``/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost``. When setting the subject,
+  it is important to set CN to be the address of the server so client validation
+  will succeed. This generally means having the subject be at least
+  ``/CN=<keystone ip>``.
+
+Additionally the following values are used when creating the certificates. They
+can be removed from keystone.conf after generating the certificates::
 
 * ``key_size``: Key size to create. Defaults to 1024.
-* ``valid_days``: How long the certificate is valid for. Defaults to 3650 (10 years).
-* ``ca_key``: The private key for the CA. Defaults to ``/etc/keystone/ssl/certs/cakey.pem``.
-* ``cert_subject``: The subject to set in the certificate. Defaults to /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost. When setting the subject it is important to set CN to be the address of the server so client validation will succeed. This generally means having the subject be at least /CN=<keystone ip>
+* ``ca_key``: The private key for the CA. Defaults to
+  ``/etc/keystone/ssl/certs/cakey.pem``.
+
+Remember to configure the endpoint of the identity service to listen on the
+corresponding secure port (for example, HTTPS instead HTTP). 
 
 Generating SSL certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -938,7 +952,8 @@ empty list from your new database)::
     We're providing the default OS_SERVICE_TOKEN and OS_SERVICE_ENDPOINT values
     from ``keystone.conf`` to connect to the Keystone service. If you changed
     those values, or deployed Keystone to a different endpoint, you will need
-    to change the provided command accordingly.
+    to change the provided command accordingly. If Keystone is configured for SSL use
+    HTTPS instead of HTTP.
 
 Initializing Keystone
 =====================
@@ -1018,19 +1033,27 @@ provide additional (often optional) information. For example, the command
 ``user-list`` and ``tenant-create`` can be invoked as follows::
 
     # Using token auth env variables
+    # remember to use HTTPS instead of HTTP when using SSL
     export OS_SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
     export OS_SERVICE_TOKEN=secrete_token
     keystone user-list
     keystone tenant-create --name=demo
 
+    # If you have configured SSL with certificates not signed by an official CA,
+    # you can use --insecure argument. This should NOT be used in a real environment
+    keystone --insecure user-list
+    keystone --insecure tenant-create --name=demo
+
     # Using token auth flags
     keystone --os-token=secrete --os-endpoint=http://127.0.0.1:35357/v2.0/ user-list
     keystone --os-token=secrete --os-endpoint=http://127.0.0.1:35357/v2.0/ tenant-create --name=demo
 
-    # Using user + password + tenant_name env variables
+    # Using user + password + tenant_name + cacert env variables
     export OS_USERNAME=admin
     export OS_PASSWORD=secrete
     export OS_TENANT_NAME=admin
+    export OS_CACERT=/path/to/certificate.pem
+
     keystone user-list
     keystone tenant-create --name=demo
 
