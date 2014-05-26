@@ -148,14 +148,14 @@ Keystone.
 
 The use of a hash will ensure that if the public ID needs to be regenerated
 then the same public ID will be created.  This is useful if you are running
-multiple keystones and want to ensure the same ID would be generated whichever
+multiple Keystones and want to ensure the same ID would be generated whichever
 server you hit.
 
 While Keystone will dynamically maintain the identity mapping, including
 removing entries when entities are deleted via the Keystone, for those
 entities in backends that are managed outside of Keystone (e.g. a Read Only
 LDAP), Keystone will not know if entities have been deleted and hence will
-continue to carry stale identity mappings in its table.  While benign, keystone
+continue to carry stale identity mappings in its table.  While benign, Keystone
 provides an ability for operators to purge the mapping table of such stale
 entries using the keystone-manage command, for example:
 
@@ -375,7 +375,7 @@ behavior is that subsystem caching is enabled, but the global toggle is set to d
     e.g.: ``backend_argument = host:localhost``
 * ``proxies`` - comma delimited list of `ProxyBackends`_ e.g. ``my.example.Proxy, my.example.Proxy2``
 
-Current keystone systems that have caching capabilities:
+Current Keystone systems that have caching capabilities:
     * ``token``
         The token system has a separate ``cache_time`` configuration option, that
         can be set to a value above or below the global ``expiration_time`` default,
@@ -542,8 +542,8 @@ Copy the above to your certificate directory. For example::
 
 **Make sure the certificate directory is root-protected.**
 
-If your certificate directory path is different from the default ``/etc/keystone/ssl/certs``, make sure it is reflected in the ``[signing]`` section of the
-configuration file.
+If your certificate directory path is different from the default ``/etc/keystone/ssl/certs``,
+make sure it is reflected in the ``[signing]`` section of the configuration file.
 
 
 Service Catalog
@@ -688,8 +688,9 @@ Configuration
 ^^^^^^^^^^^^^
 
 To enable SSL modify the etc/keystone.conf file accordingly
-under the [ssl] section.  SSL configuration example using the included sample
-certificates::
+under the [ssl] section and remember to configure the endpoint of the identity
+service to listen on the corresponding secure port e.g. HTTPS instead HTTP.
+SSL configuration example using the included sample certificates::
 
     [ssl]
     enable = True
@@ -701,16 +702,29 @@ certificates::
 
 * ``enable``:  True enables SSL.  Defaults to False.
 * ``certfile``:  Path to Keystone public certificate file.
-* ``keyfile``:  Path to Keystone private certificate file.  If the private key is included in the certfile, the keyfile maybe omitted.
+* ``keyfile``:  Path to Keystone private certificate file.  If the private key
+  is included in the certfile, the keyfile maybe omitted.
 * ``ca_certs``:  Path to CA trust chain.
 * ``cert_required``:  Requires client certificate.  Defaults to False.
 
 When generating SSL certificates the following values are read
 
+* ``valid_days``: How long the certificate is valid. Defaults to 3650 days.
+* ``cert_subject``: The subject to set in the certificate. Defaults to
+  ``/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost``. When setting the subject,
+  it is important to set CN to be the address of the server so client validation
+  will succeed. This generally means having the subject be at least
+  ``/CN=<keystone ip>``.
+
+Additionally the following values are used when creating the certificates. They
+can be removed from keystone.conf after generating the certificates
+
 * ``key_size``: Key size to create. Defaults to 1024.
-* ``valid_days``: How long the certificate is valid for. Defaults to 3650 (10 years).
-* ``ca_key``: The private key for the CA. Defaults to ``/etc/keystone/ssl/certs/cakey.pem``.
-* ``cert_subject``: The subject to set in the certificate. Defaults to /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost. When setting the subject it is important to set CN to be the address of the server so client validation will succeed. This generally means having the subject be at least /CN=<keystone ip>
+* ``ca_key``: The private key for the CA. Defaults to
+  ``/etc/keystone/ssl/certs/cakey.pem``.
+
+Remember to configure the endpoint of the identity service to listen on the
+corresponding secure port (for example, HTTPS instead HTTP).
 
 Generating SSL certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -724,9 +738,13 @@ used to encrypt communications with keystone. In the event that a Certificate
 Authority is not given a testing one will be created.
 
 It is likely in a production environment that these certificates will be
-created and provided externally. Note that ``ssl_setup`` is a development tool
-and is only recommended for developments environment. We do not recommend using
-``ssl_setup`` for production environments.
+created and provided externally. 
+
+.. NOTE::
+
+    ``ssl_setup`` is a development tool and is only recommended for
+    developments environment. We do not recommend using ``ssl_setup`` for
+    production environments.
 
 
 User CRUD
@@ -757,9 +775,10 @@ deleted (if the backend used is SQL)
 Inherited Role Assignment Extension
 -----------------------------------
 
-Keystone provides an optional extension that adds the capability to assign roles to a domain that, rather than
-affect the domain itself, are instead inherited to all projects owned by that domain.  This extension is disabled by
-default, but can be enabled by including the following in ``keystone.conf``::
+Keystone provides an optional extension that adds the capability to assign roles
+to a domain that, rather than affect the domain itself, are instead inherited
+to all projects owned by theat domain.  This extension is disabled by default,
+but can be enabled by including the following in ``keystone.conf``::
 
     [os_inherit]
     enabled = True
@@ -1017,7 +1036,8 @@ empty list from your new database)::
     We're providing the default OS_SERVICE_TOKEN and OS_SERVICE_ENDPOINT values
     from ``keystone.conf`` to connect to the Keystone service. If you changed
     those values, or deployed Keystone to a different endpoint, you will need
-    to change the provided command accordingly.
+    to change the provided command accordingly. If Keystone is configured for SSL use
+    HTTPS instead of HTTP.
 
 Initializing Keystone
 =====================
@@ -1100,10 +1120,16 @@ provide additional (often optional) information. For example, the command
 .. code-block:: bash
 
     # Using token auth env variables
+    # remember to use HTTPS instead of HTTP when using SSL
     $ export OS_SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
     $ export OS_SERVICE_TOKEN=secrete_token
     $ keystone user-list
     $ keystone tenant-create --name=demo
+
+    # If you have configured SSL with certificates not signed by an official CA,
+    # you can use --insecure argument. This should NOT be used in a real environment
+    keystone --insecure user-list
+    keystone --insecure tenant-create --name=demo
 
     # Using token auth flags
     $ keystone --os-token=secrete --os-endpoint=http://127.0.0.1:35357/v2.0/ user-list
@@ -1113,6 +1139,7 @@ provide additional (often optional) information. For example, the command
     $ export OS_USERNAME=admin
     $ export OS_PASSWORD=secrete
     $ export OS_TENANT_NAME=admin
+    $ export OS_CACERT=/path/to/certificate.pem
     $ keystone user-list
     $ keystone tenant-create --name=demo
 
@@ -1513,6 +1540,7 @@ Debugging LDAP
 For additional information on LDAP connections, performance (such as slow
 response time), or field mappings, setting ``debug_level`` in the [ldap]
 section is used to enable debugging::
+=======
 
   debug_level = 4095
 
