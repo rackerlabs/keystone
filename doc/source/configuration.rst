@@ -597,8 +597,9 @@ Configuration
 ^^^^^^^^^^^^^
 
 To enable SSL modify the etc/keystone.conf file accordingly
-under the [ssl] section.  SSL configuration example using the included sample
-certificates::
+under the [ssl] section and remember to configure the endpoint to listen on the 
+corresponding secure port e.g. HTTPS instead HTTP.
+SSL configuration example using the included sample certificates::
 
     [ssl]
     enable = True
@@ -924,7 +925,8 @@ empty list from your new database)::
     We're providing the default OS_SERVICE_TOKEN and OS_SERVICE_ENDPOINT values
     from ``keystone.conf`` to connect to the Keystone service. If you changed
     those values, or deployed Keystone to a different endpoint, you will need
-    to change the provided command accordingly.
+    to change the provided command accordingly. If you configured SSL then use
+    HTTPS instead of HTTP.
 
 Initializing Keystone
 =====================
@@ -1004,6 +1006,7 @@ provide additional (often optional) information. For example, the command
 ``user-list`` and ``tenant-create`` can be invoked as follows::
 
     # Using token auth env variables
+    # remember to use HTTPS instead of HTTP when using SSL
     export OS_SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
     export OS_SERVICE_TOKEN=secrete_token
     keystone user-list
