@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_f41ddc74",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-27T21:47:56Z",
+      "side": 1,
+      "message": "This should only be done if the user\u0027s domain !\u003d the project domain.  If the user domain and project domain are the same this is a superfluous check (and round trip) to the backend.",
+      "revId": "211018243ff46e81e96c6e4b1fecc496fe76dbb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
