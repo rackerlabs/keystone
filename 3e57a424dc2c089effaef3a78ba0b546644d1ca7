@@ -16,6 +16,23 @@
       "revId": "3e57a424dc2c089effaef3a78ba0b546644d1ca7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_9476583d",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-27T21:26:45Z",
+      "side": 1,
+      "message": "Suggest adding a little more info as to what \"enforcing external authentication\" is. Just the quick blurb why REMOTE_USER being set breaks shib/saml auth (I know why, but context here will make a difference to someone setting this up the first time).",
+      "revId": "3e57a424dc2c089effaef3a78ba0b546644d1ca7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
