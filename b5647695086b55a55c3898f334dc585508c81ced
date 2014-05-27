@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_9fc9375d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3031,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:44:08Z",
+      "side": 1,
+      "message": "This should be assertIs(False, updated_project_ref[\u0027enabled\u0027]) -- that way it also asserts that the value is a boolean and not an empty string or something.",
+      "revId": "b5647695086b55a55c3898f334dc585508c81ced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_bfc6f347",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3054,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:44:08Z",
+      "side": 1,
+      "message": "This should be assertIs(False, ... -- that way it also asserts that the value is a boolean and not an empty string or something.",
+      "revId": "b5647695086b55a55c3898f334dc585508c81ced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
