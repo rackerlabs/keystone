@@ -781,6 +781,7 @@ class BaseLdap(object):
     model = None
     attribute_options_names = {}
     immutable_attrs = []
+    not_empty_attrs = []
     attribute_ignore = []
     tree_dn = None
 
@@ -1000,6 +1001,8 @@ class BaseLdap(object):
         attrs = [('objectClass', object_classes)]
         for k, v in six.iteritems(values):
             if k == 'id' or k in self.attribute_ignore:
+                continue
+            if v == '' and k in self.not_empty_attrs:
                 continue
             if v is not None:
                 attr_type = self.attribute_mapping.get(k, k)

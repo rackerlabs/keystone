@@ -195,6 +195,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                                'enabled': 'enabled',
                                'default_project_id': 'default_project_id'}
     immutable_attrs = ['id']
+    not_empty_attrs = ['description']
 
     model = models.User
 

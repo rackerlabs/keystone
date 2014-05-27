@@ -1069,6 +1069,25 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         new_user = [u for u in res if u['id'] == user['id']][0]
         self.assertThat(new_user['description'], matchers.Equals(description))
 
+    def test_user_extra_attribute_mapping_description_is_empty(self):
+        # Description couldn't be empty in LDAP.
+
+        self.config_fixture.config(
+            group='ldap',
+            user_additional_attribute_mapping=['description:description'])
+        self.load_backends()
+
+        user = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': '',
+            'password': uuid.uuid4().hex,
+            'domain_id': CONF.identity.default_domain_id
+        }
+        self.identity_api.create_user(user['id'], user)
+        user_ref = self.identity_api.get_user(user['id'])
+        self.assertNotIn('description', user_ref)
+
     @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
         # Mock the search results to return attribute names
