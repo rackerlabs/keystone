@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_342664b8",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-27T21:05:31Z",
+      "side": 1,
+      "message": "++ Please be surgical about deleting files specifically that must be removed to make this work.",
+      "parentUuid": "AAAAXH//TRk\u003d",
+      "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_0bf4d059",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 1
@@ -47,6 +65,23 @@
       "writtenOn": "2014-05-09T14:05:19Z",
       "side": 1,
       "message": "Hmmm...should not do this, as it will leave you in an unstable state if you try to install and don\u0027t succeed in generating the new files.  Why does overwriting not work?",
+      "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_f42b1c80",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-27T21:05:31Z",
+      "side": 1,
+      "message": "Instead of forcing a cleanup, suggest warning that a cleanup is needed and instead require an explicit \"cleanup\" command \"ssl_cleanup\" from keystone-manage to do the deletion.",
       "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
