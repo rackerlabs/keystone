@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_b1ca989f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-27T12:44:28Z",
+      "side": 1,
+      "message": "Any other suggestions? I can imagine any use case were there needs to be interaction with the User entity will require the function to know whether the user exists or not. And thus, will need functionality like this.",
+      "parentUuid": "5adbc538_72357e45",
+      "revId": "8d443600dfdff2fa310664220c5b075ff0dd8d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5adbc538_9203ea72",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
