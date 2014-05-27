@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_e5338cf4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae8d1ca_3c659145",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_9c01453c",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-27T00:02:22Z",
       "side": 1,
       "message": "I\u0027d prefer it if the name stayed the same as it was before. The new name is more confusing.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_8573a8b0",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "IMO, trunc_password name cannot cover the main functionality. In this method, verification is conducted prior to truncation. After that, truncation is performed due to user\u0027s preference.",
+      "parentUuid": "3ae8d1ca_9c01453c",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_05b6b83d",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "Is it a must? The message string here is straightforward and validation error is also appropriate for the situation, right?",
+      "parentUuid": "3ae8d1ca_fc540923",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_9c53056c",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2014-05-27T00:02:22Z",
       "side": 1,
       "message": "Either keep the behavior the same as it was before (log at warning level) or mention the change in the commit message. If this is going to change, it should be in a separate commit anyways.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_45a0c0f4",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae8d1ca_9c53056c",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_055f980f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "max_length is exactly the integer.",
+      "parentUuid": "3ae8d1ca_7cd639c7",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_9c76a5d7",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 16
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_82171e51",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae8d1ca_9c76a5d7",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_fca6c952",
         "filename": "keystone/tests/test_utils.py",
         "patchSetId": 16
@@ -115,6 +223,24 @@
       "writtenOn": "2014-05-27T00:02:22Z",
       "side": 1,
       "message": "suggest use invalid_password[:max_length] so that it\u0027s obvious that this is part of invalid_password and not some new value, and the length is the max_password_length.\n\nAlso (nitpicking), the order of arguments to assertEqual is expected, observed ( https://github.com/testing-cabal/testtools/blob/master/testtools/testcase.py#L330 ), so change the order of the arguments so we get a more comprehensible message if it fails.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_a20b3a2a",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T02:30:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae8d1ca_fca6c952",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
