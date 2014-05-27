@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_83cc6e37",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T15:18:42Z",
+      "side": 1,
+      "message": "I checked RFC definition once again. I just noticed that 400 usually means inappropriate syntax is used in the request. Maybe 403 is better then.\nWhat do you think of it?",
+      "parentUuid": "3ae8d1ca_c8b055f7",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_9c53056c",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -172,6 +190,24 @@
       "side": 1,
       "message": "This was actually a change requested by Morgan in patchset 8.",
       "parentUuid": "3ae8d1ca_45a0c0f4",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_e34a9226",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-27T15:18:42Z",
+      "side": 1,
+      "message": "Sorry, almost forgot it. As operator chooses which method to use, the message logged to info is OK then.",
+      "parentUuid": "3ae8d1ca_08cebd5a",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
