@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_c8b055f7",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-27T14:53:21Z",
+      "side": 1,
+      "message": "This is a tough one because I think this method is actually used both for logging in (which would be nice to 403) and for storing a new password (which should get a validation error). To me this hints at the level of abstraction being wrong.",
+      "parentUuid": "3ae8d1ca_05b6b83d",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_9c53056c",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "3ae8d1ca_9c53056c",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_08cebd5a",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-27T14:53:21Z",
+      "side": 1,
+      "message": "This was actually a change requested by Morgan in patchset 8.",
+      "parentUuid": "3ae8d1ca_45a0c0f4",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
