@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_318f7225",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-05-27T06:50:26Z",
+      "side": 1,
+      "message": "I think would be good explain if the change of the protocol is only for Identity service or for all services on the keystone database.",
+      "revId": "33eb64ccdc84a6e9139d64fa42929746b91a6bbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
