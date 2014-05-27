@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_bf78b32c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:39:45Z",
+      "side": 1,
+      "message": "Since this change is fixing a bug, that in some cases the \"dumb\" member was being returned, a bug should be filed and this should be marked Closes-Bug: #",
+      "revId": "6d5d7a8ec46bf5feab0406d32f113f1048b7830a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
