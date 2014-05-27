@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_3c659145",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "this should say for what operations. For example, it should say that it\u0027s for creating a user, updating a user to change the password, and changing a user\u0027s password.\n\nAlso, suggest change \"HTTP status 400 will be raised.\" to \"the operation will fail with a 403 Forbidden error.\"\n\nThe server should respond with a 403 error. 400 Bad Request indicates \"The request could not be understood by the server due to malformed syntax.\"  ( http://tools.ietf.org/html/rfc2616#section-10.4.1 ). In this case, the server understands the request and is refusing to do it ( http://tools.ietf.org/html/rfc2616#section-10.4.4 ).",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_9c01453c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if the name stayed the same as it was before. The new name is more confusing.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_fc540923",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "This should be an exception that results in a 403 Forbidden. Create a new exception then the string doesn\u0027t have to be here.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_9c53056c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "Either keep the behavior the same as it was before (log at warning level) or mention the change in the commit message. If this is going to change, it should be in a separate commit anyways.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_7cd639c7",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "Why did this need to change? Leave it as %s.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_9c76a5d7",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "a random value should be used for the password -- uuid.uuid4().hex.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_fca6c952",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T00:02:22Z",
+      "side": 1,
+      "message": "suggest use invalid_password[:max_length] so that it\u0027s obvious that this is part of invalid_password and not some new value, and the length is the max_password_length.\n\nAlso (nitpicking), the order of arguments to assertEqual is expected, observed ( https://github.com/testing-cabal/testtools/blob/master/testtools/testcase.py#L330 ), so change the order of the arguments so we get a more comprehensible message if it fails.",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
