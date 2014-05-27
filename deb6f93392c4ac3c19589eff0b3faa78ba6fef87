@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_54ce9084",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1131,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-27T21:28:22Z",
+      "side": 1,
+      "message": "Logging should never to the string interpolation in the logging call. Instead pass in the values to the logger function. In short, replace the \u0027%\u0027 with a \u0027,\u0027 and pass the dictionary as the second argument to LOG.warn().",
+      "revId": "deb6f93392c4ac3c19589eff0b3faa78ba6fef87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
