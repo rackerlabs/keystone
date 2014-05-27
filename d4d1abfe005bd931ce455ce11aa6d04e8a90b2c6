@@ -16,6 +16,23 @@
       "revId": "d4d1abfe005bd931ce455ce11aa6d04e8a90b2c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_945578c8",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-27T21:14:21Z",
+      "side": 1,
+      "message": "Suggest using a non-static password. This can be done via a method to reduce duplication of code in the test (every test does basically the same thing), perhaps an instance property of the [\u0027Authorization\u0027] header.",
+      "revId": "d4d1abfe005bd931ce455ce11aa6d04e8a90b2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
