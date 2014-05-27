@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_ab7ea0e2",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-27T16:22:21Z",
+      "side": 1,
+      "message": "Since I think resp is a webob Response object it wouldn\u0027t be too tough to add the status code checks here too, for example:\n\n    self.assertEqual(resp.status_code, \u0027400\u0027)",
+      "revId": "ad1f3287df42eb6c70aff0089068e5f240876d6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
