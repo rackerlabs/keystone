@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_4b77dc02",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T16:26:14Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it be verify_length_and_trunc_password? Putting _length at the end doesn\u0027t mean anything to me... truncating a string obviously involves its length so it\u0027s redundant.",
+      "parentUuid": "3ae8d1ca_8573a8b0",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_fc540923",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -214,6 +232,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_6b4bb8b0",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T16:26:14Z",
+      "side": 1,
+      "message": "I\u0027m ok with the change, but mention it in the commit message. Sometimes reviewers ask for a change that\u0027s not related to the fix. Unrelated changes should be done in a separate review. See https://wiki.openstack.org/wiki/GitCommitMessages#Things_to_avoid_when_creating_commits",
+      "parentUuid": "3ae8d1ca_e34a9226",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_7cd639c7",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -243,6 +279,24 @@
       "side": 1,
       "message": "max_length is exactly the integer.",
       "parentUuid": "3ae8d1ca_7cd639c7",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_6be2d8a0",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-27T16:26:14Z",
+      "side": 1,
+      "message": "We\u0027ve been running with this code for a long time and nobody has ever complained about it, so I don\u0027t see why it should change.",
+      "parentUuid": "3ae8d1ca_055f980f",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
