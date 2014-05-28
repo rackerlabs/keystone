@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_6c0d5990",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-28T21:53:57Z",
+      "side": 1,
+      "message": "personal preference, replace \u0026 with and.",
+      "revId": "3502864cd2e121054e8332dbe48a064124190a32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_6cb1d9e0",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-28T21:53:57Z",
+      "side": 1,
+      "message": "you have a funny number system going on here",
+      "revId": "3502864cd2e121054e8332dbe48a064124190a32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
