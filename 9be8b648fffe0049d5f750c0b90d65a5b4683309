@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_2ae33806",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-28T19:36:23Z",
+      "side": 1,
+      "message": "This is the one part of the spec that I\u0027m unclear about:\n\nThere is more detail here: http://openid.net/specs/openid-connect-implicit-1_0.html#AuthenticationRequest\n\nAnd the OpenID Connect provider I am using, I have to give it a value for redirect.\n\nIt\u0027s part of the request on line 129 in keystone/auth/plugins/oidc.py \n\nI\u0027ve defaulted it to http://localhost:5000/v3/OS-FEDERATION/redirect",
+      "parentUuid": "3ae8d1ca_2f47ca1e",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_6f68f287",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-28T19:11:26Z",
       "side": 1,
       "message": "This this method name still correct? _handle_saml2_tokens?",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_cacbb4a3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-28T19:36:23Z",
+      "side": 1,
+      "message": "yep, i\u0027m re-using that function, since it\u0027s the same process (scoped to unscoped tokens)\n\nwe should probably rename it to handle_federation_tokens or something like that, if we plan on handling different federation protocols the same way.",
+      "parentUuid": "3ae8d1ca_6f68f287",
       "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
