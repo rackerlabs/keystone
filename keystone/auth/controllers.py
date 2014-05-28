@@ -453,8 +453,11 @@ class Auth(controller.V3Controller):
 
         # user has been authenticated externally
         if 'REMOTE_USER' in context['environment']:
-            external = get_auth_method('external')
-            external.authenticate(context, auth_info, auth_context)
+            try:
+                external = get_auth_method('external')
+                external.authenticate(context, auth_info, auth_context)
+            except exception.AuthMethodNotSupported():
+                pass
 
         # need to aggregate the results in case two or more methods
         # are specified
