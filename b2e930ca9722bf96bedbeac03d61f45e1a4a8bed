@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_5b923858",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-28T02:38:57Z",
+      "side": 1,
+      "message": "Doc is sourced externally and needs to be fixed in incubator (and/or synced from incubator) or left in as an exclusion.",
+      "revId": "b2e930ca9722bf96bedbeac03d61f45e1a4a8bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
