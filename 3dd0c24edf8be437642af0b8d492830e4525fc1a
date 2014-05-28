@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_12f4035a",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-28T12:06:45Z",
+      "side": 1,
+      "message": "Nicely done.",
+      "revId": "3dd0c24edf8be437642af0b8d492830e4525fc1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
