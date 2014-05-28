@@ -451,10 +451,17 @@ class Auth(controller.V3Controller):
     def authenticate(self, context, auth_info, auth_context):
         """Authenticate user."""
 
-        # user has been authenticated externally
+        # THe 'external' method allows any 'REMOTE_USER' based authentication
         if 'REMOTE_USER' in context['environment']:
-            external = get_auth_method('external')
-            external.authenticate(context, auth_info, auth_context)
+            try:
+                external = get_auth_method('external')
+                external.authenticate(context, auth_info, auth_context)
+            except exception.AuthMethodNotSupported:
+                # This will happen i 'extermnal' is not set, but the container
+                # is performing authentication.  The 'kerberos'  and 'saml'
+                # methods will be used this way, as it will prevent double
+                # checking the identity backend.
+                pass
 
         # need to aggregate the results in case two or more methods
         # are specified
