@@ -78,10 +78,13 @@ def load_auth_methods():
     AUTH_PLUGINS_LOADED = True
 
 
-def get_auth_method(method_name):
+def get_auth_method(method_name, should_raise=True):
     global AUTH_METHODS
     if method_name not in AUTH_METHODS:
-        raise exception.AuthMethodNotSupported()
+        if should_raise:
+            raise exception.AuthMethodNotSupported()
+        else:
+            return None
     return AUTH_METHODS[method_name]
 
 
@@ -414,8 +417,9 @@ class Auth(controller.V3Controller):
 
         # user has been authenticated externally
         if 'REMOTE_USER' in context['environment']:
-            external = get_auth_method('external')
-            external.authenticate(context, auth_info, auth_context)
+            external = get_auth_method('external', should_raise=False)
+            if external is not None:
+                external.authenticate(context, auth_info, auth_context)
 
         # need to aggregate the results in case two or more methods
         # are specified
