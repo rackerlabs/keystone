@@ -16,6 +16,24 @@
       "revId": "ad1f3287df42eb6c70aff0089068e5f240876d6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_350ad48a",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-28T12:11:26Z",
+      "side": 1,
+      "message": "I don\u0027t see how, since this only raises the exception, it doesn\u0027t really add or change any status codes, can you please elaborate?",
+      "parentUuid": "3ae8d1ca_ab7ea0e2",
+      "revId": "ad1f3287df42eb6c70aff0089068e5f240876d6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
