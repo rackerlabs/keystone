@@ -96,6 +96,12 @@ class Domain(Base):
         return user_ref
 
 
+@dependency.requires('assignment_api', 'identity_api')
+class KerberosDomain(Domain):
+    """Allows `kerberos` as a method."""
+    method = 'kerberos'
+
+
 class ExternalDefault(DefaultDomain):
     """Deprecated. Please use keystone.auth.external.DefaultDomain instead."""
 
