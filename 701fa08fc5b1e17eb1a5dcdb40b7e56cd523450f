@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_296d0d99",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-28T16:51:13Z",
+      "side": 1,
+      "message": "this should probably go in test-requirements if it\u0027s optional",
+      "revId": "701fa08fc5b1e17eb1a5dcdb40b7e56cd523450f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
