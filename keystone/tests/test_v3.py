@@ -194,7 +194,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         # Region doesn't have name or enabled.
         del ref['name']
         del ref['enabled']
-        ref['parent_region_id'] = None
+        ref['parent_region_id'] = ''
         return ref
 
     def new_service_ref(self):

@@ -13,6 +13,7 @@
 import uuid
 
 from keystone.assignment import schema as assignment_schema
+from keystone.catalog import schema as catalog_schema
 from keystone.common.validation import parameter_types
 from keystone.common.validation import validators
 from keystone import exception
@@ -335,4 +336,250 @@ class RoleValidationTestCase(BaseValidationTestCase):
         request_to_validate = {'name': 24}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_role_validator.validate,
+                          request_to_validate)
+
+
+class RegionValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Region API validation."""
+
+    def setUp(self):
+        super(RegionValidationTestCase, self).setUp()
+
+        self.region_name = 'My Region'
+
+        create = catalog_schema.region_create
+        update = catalog_schema.region_update
+        self.create_region_validator = validators.SchemaValidator(create)
+        self.update_region_validator = validators.SchemaValidator(update)
+
+    def test_validate_region_request(self):
+        """Test that we validate a basic region request."""
+        # Create_region doesn't take an parameters in the request so let's
+        # make sure we cover that case.
+        request_to_validate = {}
+        self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_create_request_with_parameters(self):
+        """Test that we validate a region request with parameters."""
+        request_to_validate = {'id': 'us-east',
+                               'description': 'US East Region',
+                               'parent_region_id': 'US Region'}
+        self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_create_with_uuid(self):
+        """Test that we validate a region request with a UUID as the id."""
+        request_to_validate = {'id': uuid.uuid4().hex,
+                               'description': 'US East Region',
+                               'parent_region_id': uuid.uuid4().hex}
+        self.create_region_validator.validate(request_to_validate)
+
+    def test_validate_region_fails_with_extra_parameters(self):
+        """Test that we raise an exception with validating a create region
+           request when passing extra values.
+        """
+        request_to_validate = {'bogus_attr': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_region_validator.validate,
+                          request_to_validate)
+
+    def test_validate_region_update(self):
+        """Test that we validate a region update request."""
+        request_to_validate = {'id': 'us-west',
+                               'description': 'US West Region',
+                               'parent_region_id': 'us-region'}
+        self.update_region_validator.validate(request_to_validate)
+
+    def test_validate_region_update_fails_with_extra_parameters(self):
+        """Test that an exception is raised when passing extra attributes in
+           the region update request.
+        """
+        request_to_validate = {'bogus_attr': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_region_validator.validate,
+                          request_to_validate)
+
+    def test_validate_region_update_fails_with_no_parameters(self):
+        """Test that an exception is raised when passing no parameters in the
+           region update request.
+        """
+        # An update request should consist of at least one value to update
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_region_validator.validate,
+                          request_to_validate)
+
+    def test_validate_region_update_fails_with_too_many_parameters(self):
+        """Test that an exception is raised when passing in too many
+           parameters in the region update request.
+        """
+        request_to_validate = {'id': 'us-northwest',
+                               'description': 'US Northwest Region',
+                               'parent_region_id': 'us-region',
+                               'bogus': 'not allowed'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_region_validator.validate,
+                          request_to_validate)
+
+
+class ServiceValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Service API validation."""
+
+    def setUp(self):
+        super(ServiceValidationTestCase, self).setUp()
+
+        create = catalog_schema.service_create
+        update = catalog_schema.service_update
+        self.create_service_validator = validators.SchemaValidator(create)
+        self.update_service_validator = validators.SchemaValidator(update)
+
+    def test_validate_service_create_request(self):
+        """Test that we validate a service create request."""
+        request_to_validate = {'name': 'Nova',
+                               'description': 'OpenStack Compute Service',
+                               'enabled': True,
+                               'type': 'compute'}
+        self.create_service_validator.validate(request_to_validate)
+
+    def test_validate_service_create_request_with_required_parameters(self):
+        """Test that we validate a service create request with only the
+           required parameters.
+        """
+        # The only parameter type required for service creation is 'type'
+        request_to_validate = {'type': 'compute'}
+        self.create_service_validator.validate(request_to_validate)
+
+    def test_validate_service_create_request_fails_without_type(self):
+        """Test that an exception is raised when trying to create a service
+           without 'type'.
+        """
+        request_to_validate = {'name': 'Nova'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_service_validator.validate,
+                          request_to_validate)
+
+    def test_validate_service_create_fails_with_extra_parameters(self):
+        """Test that extra parameters fail validation on create service."""
+        request_to_validate = {'bogus': 'not allowed'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_service_validator.validate,
+                          request_to_validate)
+
+    def test_validate_service_update_request(self):
+        """Test that we validate a service update request."""
+        request_to_validate = {'name': 'Cinder',
+                               'type': 'volume',
+                               'description': 'OpenStack Block Storage',
+                               'enabled': False}
+        self.update_service_validator.validate(request_to_validate)
+
+    def test_validate_service_update_fails_with_no_parameters(self):
+        """Test that an exception is raised when updating a service without
+           values in the request.
+        """
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_service_validator.validate,
+                          request_to_validate)
+
+    def test_validate_service_update_fails_with_extra_parameters(self):
+        """Test that an exception is raised when updating a service with
+           unallowed parameters.
+        """
+        request_to_validate = {'bogus': 'not allowed'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_service_validator.validate,
+                          request_to_validate)
+
+
+class EndpointValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Endpoint API validation."""
+
+    def setUp(self):
+        super(EndpointValidationTestCase, self).setUp()
+
+        create = catalog_schema.endpoint_create
+        update = catalog_schema.endpoint_update
+        self.create_endpoint_validator = validators.SchemaValidator(create)
+        self.update_endpoint_validator = validators.SchemaValidator(update)
+
+    def test_validate_endpoint_request(self):
+        """Test that we validate an endpoint request."""
+        request_to_validate = {'enabled': True,
+                               'interface': 'admin',
+                               'region_id': uuid.uuid4().hex,
+                               'service_id': uuid.uuid4().hex,
+                               'url': 'https://service.example.com:5000/'}
+        self.create_endpoint_validator.validate(request_to_validate)
+
+    def test_validate_endpoint_with_required_parameters(self):
+        """Test that we validate an endpoint request with only the required
+           parameters.
+        """
+        # According to the Identity V3 API endpoint creation requires
+        # 'service_id', 'interface', and 'url'
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'interface': 'public',
+                               'url': 'https://service.example.com:5000/'}
+        self.create_endpoint_validator.validate(request_to_validate)
+
+    def test_validate_endpoint_create_fails_with_extra_parameters(self):
+        """Test that extra parameters fail validation on create endpoint."""
+        request_to_validate = {'bogus': 'not allowed'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_endpoint_validator.validate,
+                          request_to_validate)
+
+    def test_validate_endpoint_create_fails_without_service_id(self):
+        """Test that an exception is raised when require endpoint parameters
+           are not included in the request.
+        """
+        request_to_validate = {'interface': 'public',
+                               'url': 'https://service.example.com:5000/'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_endpoint_validator.validate,
+                          request_to_validate)
+
+    def test_validate_endpoint_create_fails_without_interface(self):
+        """Test that an exception is raised when require endpoint parameters
+           are not included in the request.
+        """
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'url': 'https://service.example.com:5000/'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_endpoint_validator.validate,
+                          request_to_validate)
+
+    def test_validate_endpoint_create_fails_without_url(self):
+        """Test that an exception is raised when require endpoint parameters
+           are not included in the request.
+        """
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'interface': 'public'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_endpoint_validator.validate,
+                          request_to_validate)
+
+    def test_validate_endpoint_update_request(self):
+        """Test that we validate an endpoint update request."""
+        request_to_validate = {'enabled': True,
+                               'interface': 'admin',
+                               'region_id': uuid.uuid4().hex,
+                               'service_id': uuid.uuid4().hex,
+                               'url': 'https://service.example.com:5000/'}
+        self.update_endpoint_validator.validate(request_to_validate)
+
+    def test_validate_endpoint_update_fails_with_no_parameters(self):
+        """Test that an exception is raised when updating a endpoint without
+           values in the request.
+        """
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_endpoint_validator.validate,
+                          request_to_validate)
+
+    def test_validate_endpoint_update_fails_with_extra_parameters(self):
+        """Test that extra parameters fail validation on update endpoint."""
+        request_to_validate = {'bogus': 'not allowed'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_endpoint_validator.validate,
                           request_to_validate)
