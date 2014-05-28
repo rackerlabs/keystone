@@ -202,12 +202,15 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         ref['type'] = uuid.uuid4().hex
         return ref
 
-    def new_endpoint_ref(self, service_id, **kwargs):
+    def new_endpoint_ref(self, service_id, interface=None, **kwargs):
         ref = self.new_ref()
         del ref['enabled']  # enabled is optional
-        ref['interface'] = uuid.uuid4().hex[:8]
+        if interface in ['public', 'internal', 'admin']:
+            ref['interface'] = interface
+        else:
+            ref['interface'] = 'public'
         ref['service_id'] = service_id
-        ref['url'] = uuid.uuid4().hex
+        ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
         ref['region'] = uuid.uuid4().hex
         ref.update(kwargs)
         return ref
