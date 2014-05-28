@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_f199636f",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-28T05:59:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae8d1ca_4b77dc02",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_fc540923",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -250,6 +268,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_7282b250",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-28T05:59:57Z",
+      "side": 1,
+      "message": "OK.",
+      "parentUuid": "3ae8d1ca_6b4bb8b0",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_7cd639c7",
         "filename": "keystone/common/utils.py",
         "patchSetId": 16
@@ -297,6 +333,24 @@
       "side": 1,
       "message": "We\u0027ve been running with this code for a long time and nobody has ever complained about it, so I don\u0027t see why it should change.",
       "parentUuid": "3ae8d1ca_055f980f",
+      "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_9173bf4c",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-05-28T05:59:57Z",
+      "side": 1,
+      "message": "Someone requested to change it to %d before. I\u0027m OK to change it back..",
+      "parentUuid": "3ae8d1ca_6be2d8a0",
       "revId": "037af8305f7cc6412b95cae8835cde1a12997110",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
