@@ -17,8 +17,10 @@ import uuid
 
 import six
 
+from keystone.catalog import schema
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import validation
 from keystone.common import wsgi
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
@@ -159,6 +161,7 @@ class RegionV3(controller.V3Controller):
         return self.create_region(context, region)
 
     @controller.protected()
+    @validation.schema(schema.region_create, 'region')
     def create_region(self, context, region):
         ref = self._normalize_dict(region)
 
@@ -181,6 +184,7 @@ class RegionV3(controller.V3Controller):
         return RegionV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.region_update, 'region')
     def update_region(self, context, region_id, region):
         self._require_matching_id(region_id, region)
 
@@ -207,11 +211,11 @@ class ServiceV3(controller.V3Controller):
             raise exception.ValidationError(message=msg)
 
     @controller.protected()
+    @validation.schema(schema.service_create, 'service')
     def create_service(self, context, service):
         self._validate_service(service)
 
         ref = self._assign_unique_id(self._normalize_dict(service))
-        self._require_attribute(ref, 'type')
 
         ref = self.catalog_api.create_service(ref['id'], ref)
         return ServiceV3.wrap_member(context, ref)
@@ -228,6 +232,7 @@ class ServiceV3(controller.V3Controller):
         return ServiceV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.service_update, 'service')
     def update_service(self, context, service_id, service):
         self._require_matching_id(service_id, service)
         self._validate_service(service)
@@ -266,6 +271,7 @@ class EndpointV3(controller.V3Controller):
             raise exception.ValidationError(message=msg)
 
     @controller.protected()
+    @validation.schema(schema.endpoint_create, 'endpoint')
     def create_endpoint(self, context, endpoint):
         self._validate_endpoint(endpoint)
 
@@ -290,6 +296,7 @@ class EndpointV3(controller.V3Controller):
         return EndpointV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.schema(schema.endpoint_update, 'endpoint')
     def update_endpoint(self, context, endpoint_id, endpoint):
         self._require_matching_id(endpoint_id, endpoint)
         self._validate_endpoint(endpoint)
