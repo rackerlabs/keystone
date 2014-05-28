@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_2f47ca1e",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-28T19:11:26Z",
+      "side": 1,
+      "message": "What uses this?",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_6f68f287",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-28T19:11:26Z",
+      "side": 1,
+      "message": "This this method name still correct? _handle_saml2_tokens?",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
