@@ -34,6 +34,41 @@
       "revId": "ad1f3287df42eb6c70aff0089068e5f240876d6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_6d956c3f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-28T12:25:23Z",
+      "side": 1,
+      "message": "I don\u0027t think that\u0027s necessary for this patch, but I don\u0027t think it\u0027s a bad idea overall for another patch. All responses in this file could be checked.",
+      "parentUuid": "3ae8d1ca_350ad48a",
+      "revId": "ad1f3287df42eb6c70aff0089068e5f240876d6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_0dbce8ba",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-28T12:25:23Z",
+      "side": 1,
+      "message": "This test isn\u0027t as strict as the old version. The older version looked for \u0027missing_attribute\u0027 in the exception message.",
+      "revId": "ad1f3287df42eb6c70aff0089068e5f240876d6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
