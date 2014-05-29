@@ -50,6 +50,23 @@
       "revId": "62278b52718c1a284e9f13846d664fa6cc9680c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e1762206",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-05-29T21:53:32Z",
+      "side": 1,
+      "message": "This is broken:  get_auth_method throws an exception.  Instead, it needs to continue on.",
+      "revId": "62278b52718c1a284e9f13846d664fa6cc9680c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
