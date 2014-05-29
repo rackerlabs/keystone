@@ -116,6 +116,39 @@ INITIAL_TABLE_STRUCTURE = {
 }
 
 
+INITIAL_EXTENSION_TABLE_STRUCTURE = {
+    'revocation_event': [
+        'id', 'domain_id', 'project_id', 'user_id', 'role_id',
+        'trust_id', 'consumer_id', 'access_token_id',
+        'issued_before', 'expires_at', 'revoked_at',
+    ],
+    'identity_provider': [
+        'id', 'enabled', 'description',
+    ],
+    'federation_protocol': [
+        'id', 'idp_id', 'mapping_id',
+    ],
+    'mapping': [
+        'id', 'rules',
+    ],
+    'consumer': [
+        'id', 'description', 'secret', 'extra',
+    ],
+    'request_token': [
+        'id', 'request_secret', 'verifier', 'authorizing_user_id',
+        'requested_project_id', 'role_ids', 'consumer_id',
+        'expires_at',
+    ],
+    'access_token': [
+        'id', 'access_secret', 'authorizing_user_id', 'project_id',
+        'role_ids', 'consumer_id', 'expires_at',
+    ],
+    'project_endpoint': [
+        'endpoint_id', 'project_id',
+    ],
+}
+
+
 class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
     def initialize_sql(self):
         self.metadata = sqlalchemy.MetaData()
@@ -1387,3 +1420,16 @@ class VersionTests(SqlMigrateBase):
         self.assertRaises(exception.MigrationNotProvided,
                           migration_helpers.get_db_version,
                           extension='access')
+
+    def test_initial_with_extension_version_None(self):
+        """When performing a default migration, also migrate extensions."""
+        migration_helpers.sync_database_to_version(None, None)
+        for table in INITIAL_EXTENSION_TABLE_STRUCTURE:
+            self.assertTableColumns(table,
+                                    INITIAL_EXTENSION_TABLE_STRUCTURE[table])
+
+    def test_initial_with_extension_version_max(self):
+        """When migrating to max version, do not migrate extensions."""
+        migration_helpers.sync_database_to_version(None, self.max_version)
+        for table in INITIAL_EXTENSION_TABLE_STRUCTURE:
+            self.assertTableDoesNotExist(table)
