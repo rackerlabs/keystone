@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+1: guang-yee <guang.yee@hp.com>
+Code-Review+1: Morgan Fainberg <m@metacloud.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 29 May 2014 23:37:34 +0000
+Reviewed-on: https://review.openstack.org/94251
+Project: openstack/keystone
+Branch: refs/heads/master
