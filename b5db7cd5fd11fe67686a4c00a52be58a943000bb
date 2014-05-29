@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_86ac39a2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T05:26:25Z",
+      "side": 1,
+      "message": "This reads funny.. I think you are trying to say that when configuring an endpoint, use HTTPS instead of HTTP.\n\nBut it sounds like you\u0027re telling the reader that HTTPS is a port \u003d\\\n\nSuggest re-wording it to:\n\nTo enable SSL modify the etc/keystone.conf file accordingly under the [ssl] section. When configuring the endpoint of the identity service, remember to use HTTPS instead of HTTP.\n\nalso, some white space",
+      "revId": "b5db7cd5fd11fe67686a4c00a52be58a943000bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_86b199e3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 602,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T05:26:25Z",
+      "side": 1,
+      "message": "personal preference - avoid the use of \"you\".\n\nWhen registering other endpoints configure the endpoints of the services with ...",
+      "revId": "b5db7cd5fd11fe67686a4c00a52be58a943000bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_c6d1e1fc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T05:26:25Z",
+      "side": 1,
+      "message": "grammatically, when using e.g. try to wrap it in commas.\n\nfor example: \n\nWhen registering other endpoints configure the endpoints of the services with the correct protocol, e.g., running the image service listening on SSL will result in registering the endpoint for the image service within the identity service with HTTPS.\n\nor something like that.",
+      "revId": "b5db7cd5fd11fe67686a4c00a52be58a943000bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_c6f8017f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T05:26:25Z",
+      "side": 1,
+      "message": "white space",
+      "revId": "b5db7cd5fd11fe67686a4c00a52be58a943000bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_8636f950",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T05:26:25Z",
+      "side": 1,
+      "message": "personal preference - try to avoid \u0027you\u0027, I realize it\u0027s used 2 lines up :(\n\nIf SSL is configured then use HTTPS instead of HTTP.",
+      "revId": "b5db7cd5fd11fe67686a4c00a52be58a943000bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_06f3c99e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T05:26:25Z",
+      "side": 1,
+      "message": "capital R for Remember",
+      "revId": "b5db7cd5fd11fe67686a4c00a52be58a943000bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
