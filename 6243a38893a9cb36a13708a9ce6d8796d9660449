@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_6d21b7b3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T17:20:50Z",
+      "side": 1,
+      "message": "run tox -e sample_config to update etc/sample_confg",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_ad7d7fb3",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T17:20:50Z",
+      "side": 1,
+      "message": "Keystone Compressed Token Provider?",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_adf81f4a",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T17:20:50Z",
+      "side": 1,
+      "message": "use jsonutils from keystone.openstack.common",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_4db15b8e",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T17:20:50Z",
+      "side": 1,
+      "message": "save \u0027Unable to sign token in a var\u0027 since you wrote it twice?\n\nWon\u0027t logging happen if an exception is raised anyway? Do we need LOG.exception(...)",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
