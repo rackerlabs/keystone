@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_64cf1380",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T16:08:57Z",
+      "side": 1,
+      "message": "if project_name was specified \u003e lookup_domain already calls assert_domain_is_enabled.\n\nso this line should only go in the else block.\n\nBut I suggest adding a comment or todo explaining why it\u0027s only needed there.",
+      "revId": "943e26516e60740bac346e655da42096095f4261",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
