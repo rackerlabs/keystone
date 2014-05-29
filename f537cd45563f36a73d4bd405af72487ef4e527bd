@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_63babfc1",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T04:42:34Z",
+      "side": 1,
+      "message": "nit: might want to elaborate on this, and give an example:\n\nif it were:\n  publicURL\u003d\"http://localhost:8774/v1.1/34a82e\"\nthen\n  interface \u003d \"public\" (after stripping off URL)\n  url \u003d \"http://localhost:8774/v1.1/34a82e\"\n  region -\u003e grabbed before\n\nor mention that the only expected values that should end in URL are publicURL, internalURL and adminURL.",
+      "revId": "f537cd45563f36a73d4bd405af72487ef4e527bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
