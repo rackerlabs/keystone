@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_3328f333",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "Is this right?",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_73cb5b53",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "v2.0?",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_d3c0af2c",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "v2.0?",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_13305755",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "v2.0?",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_933b8737",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "v2.0?",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_33eab375",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "Should we link to the published docs instead of github?",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_4e46b824",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T15:16:30Z",
+      "side": 1,
+      "message": "``id``\u003d``default``\n\nrenders as:\n\nid``\u003d``default\n\nwhich look weird.",
+      "revId": "1faa00430e36411df4fdd0141d39292aa6e359aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
