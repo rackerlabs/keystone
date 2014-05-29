@@ -85,6 +85,24 @@
       "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_c35e3345",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T04:55:13Z",
+      "side": 1,
+      "message": "ssl_setup should be able to take options no? (we take options for db_sync) So couldn\u0027t an option be --cleanup",
+      "parentUuid": "3ae8d1ca_f42b1c80",
+      "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
