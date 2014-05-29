@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_e3ab2f1c",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T04:51:54Z",
+      "side": 1,
+      "message": "just a thought... \n  self.assertTrue(\"valid JSON dictionary\" in resp.json[\u0027error\u0027][\u0027message\u0027])\n\nSince quite a few functions in middleware have a chance at throwing up a 400.",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
