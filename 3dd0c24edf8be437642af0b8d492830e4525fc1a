@@ -16,6 +16,40 @@
       "revId": "3dd0c24edf8be437642af0b8d492830e4525fc1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9e5db94b",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-29T21:40:12Z",
+      "side": 1,
+      "message": "seems like if we\u0027re going to describe the filter dicts we should also describe the limit dict.",
+      "revId": "3dd0c24edf8be437642af0b8d492830e4525fc1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1ebc496c",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-29T21:40:12Z",
+      "side": 1,
+      "message": "the check for entry[\u0027type\u0027] \u003d\u003d \u0027filter\u0027 can be removed.",
+      "revId": "3dd0c24edf8be437642af0b8d492830e4525fc1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
