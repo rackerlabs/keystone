@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_041a3c6e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-05-29T22:05:46Z",
+      "side": 1,
+      "message": "change \"dictionary\" to \"object\". See http://www.json.org/",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_e3ab2f1c",
         "filename": "keystone/tests/test_middleware.py",
         "patchSetId": 1
