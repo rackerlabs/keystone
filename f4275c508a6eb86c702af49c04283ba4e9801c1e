@@ -16,6 +16,24 @@
       "revId": "f4275c508a6eb86c702af49c04283ba4e9801c1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_87142c45",
+        "filename": "keystone/openstack/common/log.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 9656
+      },
+      "writtenOn": "2014-05-29T11:39:37Z",
+      "side": 1,
+      "message": "It\u0027s a sync from incubator. The fix belongs there, not to keystone.",
+      "parentUuid": "3ae8d1ca_1e50825d",
+      "revId": "f4275c508a6eb86c702af49c04283ba4e9801c1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
