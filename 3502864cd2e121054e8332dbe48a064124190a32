@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_33f553ee",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-29T14:52:50Z",
+      "side": 1,
+      "message": "there were like 3 \"ands\" in this sentence, but that\u0027s just my terrible writing. i\u0027ll break up the sentence and replace this one with an \"and\"",
+      "parentUuid": "3ae8d1ca_6c0d5990",
+      "revId": "3502864cd2e121054e8332dbe48a064124190a32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_6cb1d9e0",
         "filename": "doc/source/http-api.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-28T21:53:57Z",
       "side": 1,
       "message": "you have a funny number system going on here",
+      "revId": "3502864cd2e121054e8332dbe48a064124190a32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_7397db90",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-05-29T14:52:50Z",
+      "side": 1,
+      "message": "always using #1 makes maintenance easier (you can resort things, etc, without renumbering the whole list), and it\u0027s always rendered out with the correct numbering sequence (1 to 3, here).\n\nthat said, taking a second look at this, there\u0027s no reason it should be a numbered list instead of just a bulleted list (the numbering isn\u0027t useful).",
+      "parentUuid": "3ae8d1ca_6cb1d9e0",
       "revId": "3502864cd2e121054e8332dbe48a064124190a32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
