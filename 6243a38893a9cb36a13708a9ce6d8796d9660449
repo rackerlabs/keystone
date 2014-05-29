@@ -67,6 +67,24 @@
       "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_1085a6cf",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-05-29T17:43:09Z",
+      "side": 1,
+      "message": "@Steve, I don\u0027t think the stacktrace will be logged. IIUC to gets handled here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/wsgi.py#n214",
+      "parentUuid": "3ae8d1ca_4db15b8e",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
