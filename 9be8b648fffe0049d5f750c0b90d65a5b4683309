@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_b8ff82a9",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T16:28:06Z",
+      "side": 1,
+      "message": "I can add more detail",
+      "parentUuid": "3ae8d1ca_fcfcac40",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_1c8f98cd",
         "filename": "keystone/auth/plugins/oidc.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-29T07:49:49Z",
       "side": 1,
       "message": "So what credentials should be sent here? My Google ones? I don\u0027t really think it\u0027s a good idea to send my Google credentials to any service other than Google...\nI think in classic openid such credentials are sent only between a client and openid server (provider).",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_981ba61a",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T16:28:06Z",
+      "side": 1,
+      "message": "I remember reading somewhere that this was OK to do if you\u0027re doing implicit authorization... let me dig it up. Can\u0027t find it in the spec atm.",
+      "parentUuid": "3ae8d1ca_1c8f98cd",
       "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3ae8d1ca_f8a58ab5",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T16:28:06Z",
+      "side": 1,
+      "message": "Yeah, I\u0027m re-reading the spec now and it says that the auth method used is out of the scope of the spec. So I\u0027m wondering what about other auth methods (session cookie or token)...",
+      "parentUuid": "3ae8d1ca_fcf2ec98",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_77f435f2",
         "filename": "keystone/auth/plugins/oidc.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2014-05-29T07:49:49Z",
       "side": 1,
       "message": "openid requires to send the critical data over TLS and not veryfing ssl certificates doesn\u0027t meet the openid requirements?",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_3881b24a",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-05-29T16:28:06Z",
+      "side": 1,
+      "message": "you\u0027re right, it must be checked.\n\nI had it set to false for my own purposes.",
+      "parentUuid": "3ae8d1ca_77f435f2",
       "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
