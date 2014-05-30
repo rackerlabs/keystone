@@ -14,6 +14,7 @@
 
 """Keystone PKI Token Provider"""
 
+import copy
 import json
 
 from keystoneclient.common import cms
@@ -33,12 +34,18 @@ LOG = log.getLogger(__name__)
 
 class Provider(common.BaseProvider):
     def _get_token_id(self, token_data):
+        payload = copy.deepcopy(token_data)
+        if 'access' in payload:
+            payload['access']['serviceCatalog'] = []
+        if 'catalog' in payload:
+            payload['catalog'] = {}
+
         try:
             # force conversion to a string as the keystone client cms code
             # produces unicode.  This can be removed if the client returns
             # str()
             # TODO(ayoung): Make to a byte_str for Python3
-            token_id = str(cms.cms_sign_token(json.dumps(token_data),
+            token_id = str(cms.cms_sign_token(json.dumps(payload),
                                               CONF.signing.certfile,
                                               CONF.signing.keyfile))
             return token_id
