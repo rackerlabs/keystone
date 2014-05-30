@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_0d5b3355",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-30T08:57:00Z",
+      "side": 1,
+      "message": "Please, do. I think it\u0027s extremely important to clarify on this.\nOtherwise we will get tons of compaints from security teams.\n\nAlso, since openid itself doesn\u0027t specify that user should authenticate via http basicauth I can easily imagine an idp enforcing x509 authn.",
+      "parentUuid": "3ae8d1ca_981ba61a",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_fcf2ec98",
         "filename": "keystone/auth/plugins/oidc.py",
         "patchSetId": 16
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_9052f811",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-30T08:57:00Z",
+      "side": 1,
+      "message": "I suspect the story is just like in SAML world - it\u0027s up to IdP (or however you call it in openid) admins how their users will authenticate - it can be basicauth, x509 certificate, and almost everything. I think what we should do is to let Keystone use many authn methods, by creating a pluggable mechanism. This is how I want to make it work for SAML in python-keystoneclient (and I strongly believe this part for openid should also be moved to keystoneclient).",
+      "parentUuid": "3ae8d1ca_f8a58ab5",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_77f435f2",
         "filename": "keystone/auth/plugins/oidc.py",
         "patchSetId": 16
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "you\u0027re right, it must be checked.\n\nI had it set to false for my own purposes.",
       "parentUuid": "3ae8d1ca_77f435f2",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f067bce8",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-30T08:57:00Z",
+      "side": 1,
+      "message": "understood, just wanted to keep the heads up that it should not be merged in this shape. We can leave it for *now*, but maybe some NOTE(), FIXME() could be added?",
+      "parentUuid": "3ae8d1ca_3881b24a",
       "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
