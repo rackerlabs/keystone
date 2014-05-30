@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_b6044716",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-30T12:54:35Z",
+      "side": 1,
+      "message": "suggest using: \n\n    bp external-auth-federation-mapping\n\nso it will link to the launchpad blueprint.",
+      "revId": "7d020a86a11a60f31271e4cdda5e949c6a502025",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_76b63f3f",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-30T12:54:35Z",
+      "side": 1,
+      "message": "nit: move this up to line 19 with the other import for six",
+      "revId": "7d020a86a11a60f31271e4cdda5e949c6a502025",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1696db94",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-30T12:54:35Z",
+      "side": 1,
+      "message": "nit: group these with the rest of the keystone imports",
+      "revId": "7d020a86a11a60f31271e4cdda5e949c6a502025",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_36be7c00",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 2
