@@ -19,6 +19,234 @@ API Examples using Curl
 =======================
 
 -------------------------------
+v3 API Examples Using Curl
+-------------------------------
+
+Tokens
+======
+
+Unscoped
+--------
+
+Get an unscoped token::
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "admin",
+              "domain": { "id": "default" },
+              "password": "adminpwd"
+            }
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+Project-scoped
+--------------
+
+Get a project-scoped token::
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "admin",
+              "domain": { "id": "default" },
+              "password": "adminpwd"
+            }
+          }
+        },
+        "scope": {
+          "project": {
+            "name": "demo",
+            "domain": { "id": "default" }
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+Domain-Scoped
+-------------
+
+Get a domain-scoped token (Note that you're going to need a role on the domain
+first!)::
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "admin",
+              "domain": { "id": "default" },
+              "password": "adminpwd"
+            }
+          }
+        },
+        "scope": {
+          "domain": {
+            "id": "default"
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+Re-scoping
+----------
+
+Get a token from a token::
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["token"],
+          "token": {
+            "id": "'$TOKEN'"
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+
+DELETE /v3/auth/tokens
+----------------------
+
+Revoke a token::
+
+    curl -i -X DELETE -H "X-Auth-Token: $TOKEN" -H "X-Subject-Token: $TOKEN" \
+      http://localhost:5000/v3/auth/tokens
+
+
+Projects
+========
+
+GET /v3/projects
+----------------
+
+List projects::
+
+    curl \
+     -H "X-Auth-Token: $TOKEN" \
+     http://localhost:5000/v3/projects | python -mjson.tool
+
+PATCH /v3/projects/{id}
+-----------------------
+
+Disable a project::
+
+    curl -X PATCH \
+      -H "X-Auth-Token: $TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '
+    {
+      "project": {
+          "enabled": false
+        }
+    }'\
+      http://localhost:5000/v3/projects/$PROJECT_ID
+
+
+GET /v3/services
+================
+
+List the services::
+
+    curl -i \
+      -H "X-Auth-Token: $TOKEN" \
+      http://localhost:5000/v3/services
+
+
+GET /v3/endpoints
+=================
+
+List the endpoints::
+
+    curl \
+     -H "X-Auth-Token: $TOKEN" \
+     http://localhost:5000/v3/endpoints | python -mjson.tool
+
+
+GET /v3/users
+=============
+
+List users::
+
+    curl \
+     -H "X-Auth-Token: $TOKEN" \
+     http://localhost:5000/v3/users | python -mjson.tool
+
+
+POST /v3/users/{user_id}/password
+=================================
+
+Change password::
+
+    USER_ID=b7793000f8d84c79af4e215e9da78654
+    ORIG_PASS=adminpwd
+    NEW_PASS=newadminpwd
+    
+    curl -i \
+     -H "X-Auth-Token: $TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{ "user": {"password": "'$NEW_PASS'", "original_password": "'$ORIG_PASS'"} }' \
+     http://localhost:5000/v3/users/$USER_ID/password
+
+
+PUT /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+===============================================================
+
+Create group role assignment on project::
+
+    curl -i -X PUT \
+     -H "X-Auth-Token: $TOKEN" \
+     http://localhost:5000/v3/projects/$PROJECT_ID/groups/$GROUP_ID/roles/$ROLE_ID
+
+
+POST /v3/OS-TRUST/trusts
+========================
+
+Create a trust::
+
+    PROJECT_ID=ce4a76fa779a4f66b6e10e201fe00f11
+    DEMO_USER_ID=60ec1f87a2624ca593695a0851f10db2
+    ADMIN_USER_ID=97625786c6ef4976958c0fb5e8b17023
+    
+    curl \
+     -H "X-Auth-Token: $TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '
+    { "trust": {
+        "expires_at": "2014-12-30T23:59:59.999999Z",
+        "impersonation": true,
+        "project_id": "'$PROJECT_ID'",
+        "roles": [
+            { "name": "admin" }
+          ],
+        "trustee_user_id": "'$DEMO_USER_ID'",
+        "trustor_user_id": "'$ADMIN_USER_ID'"
+    }}'\
+     http://localhost:5000/v3/OS-TRUST/trusts
+
+
+-------------------------------
 Service API Examples Using Curl
 -------------------------------
 
@@ -428,3 +656,19 @@ Returns::
             }
         ]
     }
+
+GET /tokens/revoked
+===================
+
+Get the revocation list::
+
+    curl -s -H "X-Auth-Token: adminpwd" \
+      http://localhost:35357/v2.0/tokens/revoked |
+     jq -r .signed |
+     openssl cms -verify \
+      -certfile /etc/keystone/ssl/certs/signing_cert.pem \
+      -CAfile /etc/keystone/ssl/certs/ca.pem \
+      -inform PEM \
+      -nosmimecap -nodetach -nocerts -noattr 2>/dev/null |
+     python -m json.tool
+    
