@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_3076843f",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-05-30T09:02:39Z",
+      "side": 1,
+      "message": "I am guessing this is a list of groups the user is a member of, created from the openid claim. Why should we assume that such claim will contain a list of groups?",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_fcfcac40",
         "filename": "keystone/auth/plugins/oidc.py",
         "patchSetId": 16
