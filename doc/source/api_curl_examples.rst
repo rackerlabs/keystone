@@ -18,6 +18,412 @@
 API Examples using Curl
 =======================
 
+--------------------------
+v3 API Examples Using Curl
+--------------------------
+
+Tokens
+======
+
+Unscoped
+--------
+
+Get an unscoped token:
+
+.. code-block:: bash
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "admin",
+              "domain": { "id": "default" },
+              "password": "adminpwd"
+            }
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+Project-scoped
+--------------
+
+Get a project-scoped token:
+
+.. code-block:: bash
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "admin",
+              "domain": { "id": "default" },
+              "password": "adminpwd"
+            }
+          }
+        },
+        "scope": {
+          "project": {
+            "name": "demo",
+            "domain": { "id": "default" }
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+Domain-Scoped
+-------------
+
+Get a domain-scoped token (Note that you're going to need a role-assignment on
+the domain first!):
+
+.. code-block:: bash
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["password"],
+          "password": {
+            "user": {
+              "name": "admin",
+              "domain": { "id": "default" },
+              "password": "adminpwd"
+            }
+          }
+        },
+        "scope": {
+          "domain": {
+            "id": "default"
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+Getting a token from a token
+----------------------------
+
+Get a token from a token:
+
+.. code-block:: bash
+
+    curl -i \
+      -H "Content-Type: application/json" \
+      -d '
+    { "auth": {
+        "identity": {
+          "methods": ["token"],
+          "token": {
+            "id": "'$OS_TOKEN'"
+          }
+        }
+      }
+    }' \
+      http://localhost:5000/v3/auth/tokens ; echo
+
+
+.. note::
+
+    If a scope was included in the request body then this would get a token
+    with the new scope.
+
+
+DELETE /v3/auth/tokens
+----------------------
+
+Revoke a token:
+
+.. code-block:: bash
+
+    curl -i -X DELETE \
+      -H "X-Auth-Token: $OS_TOKEN" \
+      -H "X-Subject-Token: $OS_TOKEN" \
+      http://localhost:5000/v3/auth/tokens
+
+
+Domains
+=======
+
+GET /v3/domains
+---------------
+
+List domains:
+
+.. code-block:: bash
+
+    curl -s \
+      -H "X-Auth-Token: $OS_TOKEN" \
+      http://localhost:5000/v3/domains | python -mjson.tool
+
+Example response:
+
+.. code-block:: javascript
+
+    {
+        "domains": [
+            {
+                "description": "Owns users and tenants (i.e. projects) available on Identity API v2.",
+                "enabled": true,
+                "id": "default",
+                "links": {
+                    "self": "http://identity-server:5000/v3/domains/default"
+                },
+                "name": "Default"
+            }
+        ],
+        "links": {
+            "next": null,
+            "previous": null,
+            "self": "http://identity-server:5000/v3/domains"
+        }
+    }
+
+
+POST /v3/domains
+----------------
+
+Create a domain:
+
+.. code-block:: bash
+
+    curl -s \
+      -H "X-Auth-Token: $OS_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{ "domain": { "name": "newdomain"}}' \
+      http://localhost:5000/v3/domains | python -mjson.tool
+
+Example response:
+
+.. code-block:: javascript
+
+    {
+        "domain": {
+            "enabled": true,
+            "id": "3a5140aecd974bf08041328b53a62458",
+            "links": {
+                "self": "http://identity-server:5000/v3/domains/3a5140aecd974bf08041328b53a62458"
+            },
+            "name": "newdomain"
+        }
+    }
+
+
+Projects
+========
+
+GET /v3/projects
+----------------
+
+List projects:
+
+.. code-block:: bash
+
+    curl -s \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     http://localhost:5000/v3/projects | python -mjson.tool
+
+PATCH /v3/projects/{id}
+-----------------------
+
+Disable a project:
+
+.. code-block:: bash
+
+    curl -s -X PATCH \
+      -H "X-Auth-Token: $OS_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '
+    {
+      "project": {
+          "enabled": false
+        }
+    }'\
+      http://localhost:5000/v3/projects/$PROJECT_ID  | python -mjson.tool
+
+
+GET /v3/services
+================
+
+List the services:
+
+.. code-block:: bash
+
+    curl -s \
+      -H "X-Auth-Token: $OS_TOKEN" \
+      http://localhost:5000/v3/services | python -mjson.tool
+
+
+GET /v3/endpoints
+=================
+
+List the endpoints:
+
+.. code-block:: bash
+
+    curl -s \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     http://localhost:5000/v3/endpoints | python -mjson.tool
+
+
+Users
+=====
+
+GET /v3/users
+-------------
+
+List users:
+
+.. code-block:: bash
+
+    curl -s \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     http://localhost:5000/v3/users | python -mjson.tool
+
+POST /v3/users
+--------------
+
+Create a user:
+
+.. code-block:: bash
+
+    curl -s \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"user": {"name": "newuser", "password": "changeme"}}' \
+     http://localhost:5000/v3/users | python -mjson.tool
+
+Example response:
+
+.. code-block:: javascript
+
+    {
+        "user": {
+            "domain_id": "default",
+            "enabled": true,
+            "id": "ec8fc20605354edd91873f2d66bf4fc4",
+            "links": {
+                "self": "http://identity-server:5000/v3/users/ec8fc20605354edd91873f2d66bf4fc4"
+            },
+            "name": "newuser"
+        }
+    }
+
+GET /v3/users/{user_id}
+-----------------------
+
+Show details for a user:
+
+.. code-block: bash
+
+    USER_ID=ec8fc20605354edd91873f2d66bf4fc4
+    
+    curl -s \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     http://localhost:5000/v3/users/$USER_ID | python -mjson.tool
+
+Example response:
+
+.. code-block: javascript
+
+    {
+        "user": {
+            "domain_id": "default",
+            "enabled": true,
+            "id": "ec8fc20605354edd91873f2d66bf4fc4",
+            "links": {
+                "self": "http://192.168.122.176:5000/v3/users/ec8fc20605354edd91873f2d66bf4fc4"
+            },
+            "name": "newuser"
+        }
+    }
+
+POST /v3/users/{user_id}/password
+---------------------------------
+
+Change password (using the default policy, this can be done as the user):
+
+.. code-block:: bash
+
+    USER_ID=b7793000f8d84c79af4e215e9da78654
+    ORIG_PASS=userpwd
+    NEW_PASS=newuserpwd
+
+    curl \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{ "user": {"password": "'$NEW_PASS'", "original_password": "'$ORIG_PASS'"} }' \
+     http://localhost:5000/v3/users/$USER_ID/password
+
+.. note::
+
+    This command doesn't print anything if the request was successful.
+
+PATCH /v3/users/{user_id}
+-------------------------
+
+Reset password (using the default policy, this requires admin):
+
+.. code-block:: bash
+
+    USER_ID=b7793000f8d84c79af4e215e9da78654
+    NEW_PASS=newuserpwd
+
+    curl -s -X PATCH \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{ "user": {"password": "'$NEW_PASS'"} }' \
+     http://localhost:5000/v3/users/$USER_ID | python -mjson.tool
+
+
+PUT /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}
+===============================================================
+
+Create group role assignment on project:
+
+.. code-block:: bash
+
+    curl -s -X PUT \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     http://localhost:5000/v3/projects/$PROJECT_ID/groups/$GROUP_ID/roles/$ROLE_ID |
+       python -mjson.tool
+
+
+POST /v3/OS-TRUST/trusts
+========================
+
+Create a trust:
+
+.. code-block:: bash
+
+    curl -s \
+     -H "X-Auth-Token: $OS_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '
+    { "trust": {
+        "expires_at": "2014-12-30T23:59:59.999999Z",
+        "impersonation": false,
+        "project_id": "'$PROJECT_ID'",
+        "roles": [
+            { "name": "admin" }
+          ],
+        "trustee_user_id": "'$DEMO_USER_ID'",
+        "trustor_user_id": "'$ADMIN_USER_ID'"
+    }}'\
+     http://localhost:5000/v3/OS-TRUST/trusts | python -mjson.tool
+
+
 -------------------------------
 Service API Examples Using Curl
 -------------------------------
@@ -480,3 +886,20 @@ Returns:
             }
         ]
     }
+
+GET /tokens/revoked
+===================
+
+Get the revocation list:
+
+.. code-block:: bash
+
+    curl -s -H "X-Auth-Token: $OS_TOKEN" \
+      http://localhost:35357/v2.0/tokens/revoked |
+     jq -r .signed |
+     openssl cms -verify \
+      -certfile /etc/keystone/ssl/certs/signing_cert.pem \
+      -CAfile /etc/keystone/ssl/certs/ca.pem \
+      -inform PEM \
+      -nosmimecap -nodetach -nocerts -noattr 2>/dev/null |
+     python -m json.tool
