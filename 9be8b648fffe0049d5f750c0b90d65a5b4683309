@@ -213,6 +213,23 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_4c2ff4a1",
+        "filename": "keystone/auth/plugins/oidc.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-05-30T14:04:06Z",
+      "side": 1,
+      "message": "Did you have to do something specific to use history here?  \n\nI\u0027m trying this locally but I don\u0027t seem to have any of the previous responses.",
+      "revId": "9be8b648fffe0049d5f750c0b90d65a5b4683309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_2f47ca1e",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 16
