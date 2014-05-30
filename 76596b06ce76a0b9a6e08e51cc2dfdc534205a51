@@ -16,6 +16,23 @@
       "revId": "76596b06ce76a0b9a6e08e51cc2dfdc534205a51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_699aec15",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-05-30T08:17:57Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better if this part was in the documentation of the class?",
+      "revId": "76596b06ce76a0b9a6e08e51cc2dfdc534205a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
