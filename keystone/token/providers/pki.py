@@ -33,12 +33,23 @@ LOG = log.getLogger(__name__)
 
 class Provider(common.BaseProvider):
     def _get_token_id(self, token_data):
+        payload = dict()
+        if 'token' in token_data:
+            payload['token'] = token_data['token']
+        if 'access' in token_data:
+            access = token_data['access']
+            if 'token' in access and 'user' in access:
+                payload['access'] = {
+                        'token': access['token'],
+                        'user': access['user']
+                    }
+
         try:
             # force conversion to a string as the keystone client cms code
             # produces unicode.  This can be removed if the client returns
             # str()
             # TODO(ayoung): Make to a byte_str for Python3
-            token_id = str(cms.cms_sign_token(json.dumps(token_data),
+            token_id = str(cms.cms_sign_token(json.dumps(payload),
                                               CONF.signing.certfile,
                                               CONF.signing.keyfile))
             return token_id
