@@ -16,10 +16,20 @@
 # See blueprint reserved-db-migrations-icehouse and the related discussion:
 # http://lists.openstack.org/pipermail/openstack-dev/2013-March/006827.html
 
+import sqlalchemy
+
 
 def upgrade(migrate_engine):
-    pass
+    meta = sqlalchemy.MetaData()
+    meta.bind = migrate_engine
+    trust_table = sqlalchemy.Table('trust', meta, autoload=True)
+    trust_table.create_column(sqlalchemy.Column('lock',
+                              sqlalchemy.String(32),
+                              nullable=True))
 
 
-def downgrade(migration_engine):
-    pass
+def downgrade(migrate_engine):
+    meta = sqlalchemy.MetaData()
+    meta.bind = migrate_engine
+    trust_table = sqlalchemy.Table('trust', meta, autoload=True)
+    trust_table.drop_column('lock')
