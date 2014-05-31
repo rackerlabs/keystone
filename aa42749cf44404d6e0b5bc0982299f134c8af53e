@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a4adcd8a",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-31T22:42:32Z",
+      "side": 1,
+      "message": "This needs to be the inverse, remaining_uses must not be None",
+      "revId": "aa42749cf44404d6e0b5bc0982299f134c8af53e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c4aad96f",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-05-31T22:42:32Z",
+      "side": 1,
+      "message": "This needs to be the inverse, remaining_uses must not be None",
+      "revId": "aa42749cf44404d6e0b5bc0982299f134c8af53e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
