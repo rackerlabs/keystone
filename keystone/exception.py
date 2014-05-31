@@ -347,3 +347,12 @@ class MigrationNotProvided(Exception):
             "%(mod_name)s doesn't provide database migrations. The migration"
             " repository path at %(path)s doesn't exist or isn't a directory."
         ) % {'mod_name': mod_name, 'path': path})
+
+
+class TrustLocked(Error):
+    message_format = _("Trust '%(trust_id)s' is locked with "
+                       "'%(actual_lock)s'. Expected lock '%(expected_lock)s'. "
+                       "Try again later.")
+
+    code = 503
+    title = 'Service Temporarily Unavailable'
