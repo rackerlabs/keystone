@@ -234,6 +234,11 @@ class SqlUpgradeTests(SqlMigrateBase):
 
     _initial_db_version = migrate_repo.DB_INIT_VERSION
 
+    def _get_new_metadata(self):
+        meta = sqlalchemy.MetaData()
+        meta.bind = self.engine
+        return meta
+
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
 
@@ -1164,15 +1169,10 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.insert_dict(session, 'region', region, table=table)
             return region_uuid
 
-        def get_metadata():
-            meta = sqlalchemy.MetaData()
-            meta.bind = self.engine
-            return meta
-
         # Migrate to version 42
         self.upgrade(42)
         region_table = sqlalchemy.Table('region',
-                                        get_metadata(),
+                                        self._get_new_metadata(),
                                         autoload=True)
         # create the unique constraint and load the new version of the
         # reflection cache
@@ -1181,7 +1181,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         idx.create(self.engine)
 
         region_unique_table = sqlalchemy.Table('region',
-                                               get_metadata(),
+                                               self._get_new_metadata(),
                                                autoload=True)
         add_region(region_unique_table)
         self.assertEqual(1, session.query(region_unique_table).count())
@@ -1195,13 +1195,54 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         # reload the region table from the schema
         region_nonunique = sqlalchemy.Table('region',
-                                            get_metadata(),
+                                            self._get_new_metadata(),
                                             autoload=True)
         self.assertEqual(1, session.query(region_nonunique).count())
 
         # Write a second region to the database with the same description
         add_region(region_nonunique)
         self.assertEqual(2, session.query(region_nonunique).count())
+
+    def test_trust_row_locking_upgrade(self):
+        self.upgrade(44)
+        # 'lock' column should not exist yet
+        trust_table = sqlalchemy.Table('trust',
+                                       self._get_new_metadata(),
+                                       autoload=True)
+        self.assertNotIn('lock', trust_table.columns)
+        self.upgrade(45)
+        # 'lock' column should now exist
+        trust_table = sqlalchemy.Table('trust',
+                                       self._get_new_metadata(),
+                                       autoload=True)
+        self.assertIn('lock', trust_table.columns)
+        # upgrade to 51 should be successful even if lock column exists
+        self.upgrade(51)
+        self.downgrade(50)
+        # downgrade to 50 does not remove 'lock' column
+        trust_table = sqlalchemy.Table('trust',
+                                       self._get_new_metadata(),
+                                       autoload=True)
+        self.assertIn('lock', trust_table.columns)
+
+        # drop 'lock' column from schema, upgrade to 51 should recreate it
+        trust_table.drop_column('lock')
+        trust_table = sqlalchemy.Table('trust',
+                                       self._get_new_metadata(),
+                                       autoload=True)
+        self.assertNotIn('lock', trust_table.columns)
+        self.upgrade(51)
+        trust_table = sqlalchemy.Table('trust',
+                                       self._get_new_metadata(),
+                                       autoload=True)
+        self.assertIn('lock', trust_table.columns)
+
+        # downgrade to 44 should remove the lock column
+        self.downgrade(44)
+        trust_table = sqlalchemy.Table('trust',
+                                       self._get_new_metadata(),
+                                       autoload=True)
+        self.assertNotIn('lock', trust_table.columns)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
