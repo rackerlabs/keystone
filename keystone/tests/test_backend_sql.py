@@ -29,6 +29,7 @@ from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
 from keystone.tests import test_backend
 from keystone.token.backends import sql as token_sql
+from keystone.trust.backends import sql as trust_sql
 
 
 CONF = config.CONF
@@ -322,7 +323,92 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
 
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
-    pass
+    def _get_direct_sql_model_of_trust(self, trust_id):
+            session = sql.get_session()
+            return (session.query(trust_sql.TrustModel).
+                    filter_by(id=trust_id).first())
+
+    def test_trust_row_locking_context_manager(self):
+        trust_id = uuid.uuid4().hex
+        trust = self.create_sample_trust(trust_id, remaining_uses=1)
+
+        # Ensure the lock value is not in the trust_ref
+        self.assertNotIn('lock', trust)
+
+        # Check that the context manager's lock_id matches the SQL model
+        with trust_sql._lock_trust_record(trust_id,
+                                          use_row_lock=True) as lock_id:
+            sql_model = self._get_direct_sql_model_of_trust(trust_id)
+            self.assertEqual(lock_id, sql_model.lock)
+
+        # Check that the context manager properly cleans up after itself.
+        sql_model = self._get_direct_sql_model_of_trust(trust_id)
+        self.assertIsNone(sql_model.lock)
+
+    def test_trust_row_locking_lock_trust_already_locked(self):
+        # Create the replacement _lock_trust_record function to ensure we
+        # get a lock_id back even if MySQL is not the dialect
+        mocked = mock.MagicMock()
+        mocked.__exit__ = mock.Mock(return_value=uuid.uuid4().hex)
+        mocked.__enter__ = mock.Mock(return_value=False)
+
+        trust_id = uuid.uuid4().hex
+        self.create_sample_trust(trust_id, remaining_uses=1)
+        # trust_api.consume_trust should raise TrustLocked if the trust is
+        # already locked.
+        with trust_sql._lock_trust_record(trust_id,
+                                          use_row_lock=True) as lock_id:
+            self.assertIsNotNone(lock_id)
+            with mock.patch.object(trust_sql, '_lock_trust_record', mocked):
+                self.assertRaises(exception.TrustLocked,
+                                  self.trust_api.consume_use,
+                                  trust_id)
+
+    def test_trust_row_locking_yields_none_when_not_using_row_lock(self):
+        trust_id = uuid.uuid4().hex
+        self.create_sample_trust(trust_id, remaining_uses=1)
+        # Context manager should yield None if not using row locking.
+        with trust_sql._lock_trust_record(trust_id,
+                                          use_row_lock=False) as lock_id:
+            self.assertIsNone(lock_id)
+
+    def test_trust_row_locking_trust_deleted_during_context(self):
+        trust_id = uuid.uuid4().hex
+        self.create_sample_trust(trust_id, remaining_uses=1)
+        # Make sure the context manager does not raise an exception if the
+        # trust is deleted while within the lock context.
+        with trust_sql._lock_trust_record(trust_id,
+                                          use_row_lock=True) as lock_id:
+            self.assertIsNotNone(lock_id)
+            self.trust_api.delete_trust(trust_id)
+
+    def test_trust_row_locking_trust_not_found(self):
+        # Context manager should not error and yield a uuid even if the trust
+        # does not exist
+        with trust_sql._lock_trust_record(uuid.uuid4().hex,
+                                          use_row_lock=True) as lock_id:
+            self.assertIsNotNone(lock_id)
+
+    def test_trust_row_locking_trust_unlimited_use_no_locking(self):
+        trust_id = uuid.uuid4().hex
+        self.create_sample_trust(trust_id)
+
+        # Ensure unlimited trusts do not get locked
+        with trust_sql._lock_trust_record(trust_id,
+                                          use_row_lock=True) as lock_id:
+            self.assertIsNotNone(lock_id)
+            sql_model = self._get_direct_sql_model_of_trust(trust_id)
+            self.assertIsNone(sql_model.lock)
+
+    def test_get_trust_lock_value_not_included(self):
+        trust_id = uuid.uuid4().hex
+        self.create_sample_trust(trust_id, remaining_uses=1)
+        # Make sure the 'lock' value is not returned from .get_trust
+        with trust_sql._lock_trust_record(trust_id,
+                                          use_row_lock=True) as lock_id:
+            self.assertIsNotNone(lock_id)
+            trust_ref = self.trust_api.get_trust(trust_id)
+            self.assertNotIn('lock', trust_ref)
 
 
 class SqlToken(SqlTests, test_backend.TokenTests):

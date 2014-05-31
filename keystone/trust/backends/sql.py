@@ -12,17 +12,24 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import contextlib
+import uuid
+
 from keystone.common import sql
 from keystone import exception
+from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
 from keystone import trust
+
+
+LOG = log.getLogger(__name__)
 
 
 class TrustModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'trust'
     attributes = ['id', 'trustor_user_id', 'trustee_user_id',
                   'project_id', 'impersonation', 'expires_at',
-                  'remaining_uses']
+                  'remaining_uses', 'lock']
     id = sql.Column(sql.String(64), primary_key=True)
     # user id of owner
     trustor_user_id = sql.Column(sql.String(64), nullable=False,)
@@ -33,7 +40,14 @@ class TrustModel(sql.ModelBase, sql.DictBase):
     deleted_at = sql.Column(sql.DateTime)
     expires_at = sql.Column(sql.DateTime)
     remaining_uses = sql.Column(sql.Integer, nullable=True)
+    lock = sql.Column(sql.String(32), nullable=True)
     extra = sql.Column(sql.JsonBlob())
+
+    def to_dict(self, include_extra_dict=False):
+        data = super(TrustModel, self).to_dict(
+            include_extra_dict=include_extra_dict)
+        del data['lock']
+        return data
 
 
 class TrustRole(sql.ModelBase):
@@ -43,9 +57,78 @@ class TrustRole(sql.ModelBase):
     role_id = sql.Column(sql.String(64), primary_key=True, nullable=False)
 
 
+@contextlib.contextmanager
+def _lock_trust_record(trust_id, use_row_lock=None):
+    """Lock a specific trust record in the DB.
+
+    This method should be used to lock a specific row in the DB with a
+    unique identifier. This is a workaround for the known issue with
+    MySQL+Galera and the 'SELECT ... FOR UPDATE' issues.
+
+    Locking will only occur if the engine is MySQL, the trust is limited
+    use, the trust is not deleted, and the trust is currently not locked.
+
+    This context manager will yield a uuid lock_id if the dialect is MySQL,
+    otherwise it will yield NoneType.
+
+    :param trust_id: The Trust Identifier
+    :param: use_row_lock: Override to always use a row lock (regardless of
+                          dialect). If True, row lock will always be used,
+                          if False, row lock will never be used.
+    :return: None
+    """
+
+    session = sql.get_session()
+    lock_info = None
+
+    if (use_row_lock or (session.bind.dialect.name == 'mysql' and
+                         use_row_lock is not False)):
+        try:
+            # NOTE(morganfainberg): Only need this if we are under mysql.
+            lock_info = uuid.uuid4().hex
+
+            with sql.transaction() as session:
+                (session.query(TrustModel).
+                 filter_by(deleted_at=None).
+                 filter_by(id=trust_id).
+                 filter(TrustModel.remaining_uses.isnot(None)).
+                 filter_by(lock=None).update({'lock': lock_info}))
+        except sql.NotFound:
+            # NOTE(morganfainberg): Either the trust is gone or already
+            # locked. It is the responsibility of the method using the context
+            # to figure out if the trust is locked or gone.
+            pass
+
+    # NOTE(morganfainberg): The lock_info should be used externally to
+    # check that the context still holds the lock before performing any
+    # updates.
+    yield lock_info
+
+    if lock_info:
+        try:
+            with sql.transaction() as session:
+                (session.query(TrustModel).
+                 filter_by(deleted_at=None).
+                 filter_by(id=trust_id).
+                 filter(TrustModel.remaining_uses.isnot(None)).
+                 filter_by(lock=lock_info).update({'lock': None}))
+        except sql.NotFound:
+            # NOTE(morganfainberg): If we can't find the record to unlock
+            # there is no reason we should be raising an error, the record
+            # may have been deleted or the lock got mangled up.
+            LOG.debug('Unable to find locked trust with id %(trust_id)s and '
+                      'lock %(lock_id)s',
+                      {'trust_id': trust_id, 'lock_id': lock_info})
+            pass
+
+
 class Trust(trust.Driver):
     @sql.handle_conflicts(conflict_type='trust')
     def create_trust(self, trust_id, trust, roles):
+        # NOTE(morganfainberg): Do not allow setting of the lock value in
+        # the DB. Lock should only ever be used internally to this driver.
+        trust.pop('lock', None)
+
         with sql.transaction() as session:
             ref = TrustModel.from_dict(trust)
             ref['id'] = trust_id
@@ -71,20 +154,34 @@ class Trust(trust.Driver):
 
     @sql.handle_conflicts(conflict_type='trust')
     def consume_use(self, trust_id):
-        with sql.transaction() as session:
-            ref = (session.query(TrustModel).
-                   with_lockmode('update').
-                   filter_by(deleted_at=None).
-                   filter_by(id=trust_id).first())
-            if ref is None:
-                raise exception.TrustNotFound(trust_id=trust_id)
-            if ref.remaining_uses is None:
-                # unlimited uses, do nothing
-                pass
-            elif ref.remaining_uses > 0:
-                ref.remaining_uses -= 1
-            else:
-                raise exception.TrustUseLimitReached(trust_id=trust_id)
+        with _lock_trust_record(trust_id) as lock_id:
+            with sql.transaction() as session:
+                if lock_id is None:
+                    # NOTE(morganfainberg): lock_id will be None if the dialect
+                    # is not mysql, meaning we can use `with_lockmode`.
+                    ref = (session.query(TrustModel).
+                           with_lockmode('update').
+                           filter_by(deleted_at=None).
+                           filter_by(id=trust_id).first())
+                else:
+                    ref = (session.query(TrustModel).
+                           filter_by(deleted_at=None).
+                           filter_by(id=trust_id).first())
+
+                if ref is None:
+                    raise exception.TrustNotFound(trust_id=trust_id)
+
+                if ref.remaining_uses is None:
+                    # unlimited uses, do nothing
+                    pass
+                elif lock_id is not None and ref.lock != lock_id:
+                    raise exception.TrustLocked(trust_id=trust_id,
+                                                expected_lock=lock_id,
+                                                actual_lock=ref.lock)
+                elif ref.remaining_uses > 0:
+                    ref.remaining_uses -= 1
+                else:
+                    raise exception.TrustUseLimitReached(trust_id=trust_id)
 
     def get_trust(self, trust_id):
         session = sql.get_session()
