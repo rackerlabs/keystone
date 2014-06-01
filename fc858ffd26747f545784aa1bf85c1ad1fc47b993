@@ -16,6 +16,24 @@
       "revId": "fc858ffd26747f545784aa1bf85c1ad1fc47b993",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_87a52eb7",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-01T15:04:11Z",
+      "side": 1,
+      "message": "curl does a POST operation if -d is used, so -X POST would be redundant here. As the man page says for -X \"Normally you don\u0027t need this option.\"",
+      "parentUuid": "1ae5cdf2_85e7f811",
+      "revId": "fc858ffd26747f545784aa1bf85c1ad1fc47b993",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
