@@ -1228,6 +1228,12 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # just skip this time.
         self.skipTest('Domains are read-only against LDAP')
 
+    def test_domain_rename_invalidates_get_domain_by_name_cache(self):
+        self.skipTest('Domains are read-only against LDAP')
+
+    def test_project_rename_invalidates_get_project_by_name_cache(self):
+        self.skipTest('Project renames not supported against LDAP.')
+
     def test_project_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
         #              updating of a project name so this method override
