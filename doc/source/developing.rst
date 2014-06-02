@@ -70,6 +70,14 @@ place::
 
 .. _`python-keystoneclient`: https://github.com/openstack/python-keystoneclient
 
+If you encounter errors when running the above commands, and if you have
+installed and run versions of keystone previously, it is possible that out of
+date compiled python bytecode files (i.e., .pyc files) in the keystone
+directory tree are causing problems.  These can be easily removed by running a
+command like the following from the keystone directory::
+
+    $ sudo find . -name "*.pyc" -exec rm -rf {}
+
 Database Schema Migrations
 --------------------------
 
