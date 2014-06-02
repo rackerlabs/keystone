@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1250755d",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T05:18:00Z",
+      "side": 1,
+      "message": "Not sure why, but the code block above has this syntax in green and blue. But this just comes out in black. Just thought I\u0027d mention it.",
+      "revId": "33be91e24d282c5a56b90a729504d884e68e5a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d25e0d76",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T05:18:00Z",
+      "side": 1,
+      "message": "This part it\u0027s rendering in the code block, is that what your intention is? If not, decrease indent.",
+      "revId": "33be91e24d282c5a56b90a729504d884e68e5a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
