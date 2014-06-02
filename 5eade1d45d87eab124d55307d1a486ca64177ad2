@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_03680df4",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T21:48:00Z",
+      "side": 1,
+      "message": "capitalize Keystone.",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_83733de6",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T21:48:00Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_7721944c",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_23b8a975",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T21:48:00Z",
+      "side": 1,
+      "message": "I think the first one is probably best, but it shouldn\u0027t matter as the command is recursive.\n\nbut agree with Lance\u0027s comment, write this as \"Keystone root project directory\"",
+      "parentUuid": "1ae5cdf2_7721944c",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_b704fcc0",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -30,6 +82,24 @@
       "writtenOn": "2014-06-02T16:35:11Z",
       "side": 1,
       "message": "suggest \n\n    $ find . -name \"*.pyc\" -delete",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_630d513e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T21:48:00Z",
+      "side": 1,
+      "message": "++ didn\u0027t know this worked.\n\nagree with dropping the sudo and using -delete instead",
+      "parentUuid": "1ae5cdf2_b704fcc0",
       "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
