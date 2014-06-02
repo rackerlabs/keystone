@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e0007703",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T20:28:36Z",
+      "side": 1,
+      "message": "Could this be added as a link? \n\nhttp://sphinx-doc.org/rest.html#hyperlinks\n\n    using the `DMTF Cloud Auditing Data Federation (CADF) Open Standard` _\n\n\n    .. _ `DMTF Cloud Auditing Data Federation (CADF) Open Standard`: http://docs.openstack.org/developer/pycadf/ \n\nor something like that, I think?",
+      "revId": "628463fddbfeaee08c30c73d73371cfdfa4662c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
