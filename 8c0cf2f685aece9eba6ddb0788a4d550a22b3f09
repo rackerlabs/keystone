@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f13cd9c1",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T13:28:18Z",
+      "side": 1,
+      "message": "Can a test be added for this case here? Maybe somewhere in this test case: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3_identity.py#L81",
+      "revId": "8c0cf2f685aece9eba6ddb0788a4d550a22b3f09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
