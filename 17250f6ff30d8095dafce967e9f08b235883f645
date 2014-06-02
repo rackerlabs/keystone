@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7130c99e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T14:19:28Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "17250f6ff30d8095dafce967e9f08b235883f645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b12a512a",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T14:19:28Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "17250f6ff30d8095dafce967e9f08b235883f645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b113310c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T14:19:28Z",
+      "side": 1,
+      "message": "remove trailing whitespace.",
+      "revId": "17250f6ff30d8095dafce967e9f08b235883f645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_04a0259e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T14:19:28Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "17250f6ff30d8095dafce967e9f08b235883f645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_275e0313",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T14:19:28Z",
+      "side": 1,
+      "message": "nit: exception_to_raise param doc string",
+      "revId": "17250f6ff30d8095dafce967e9f08b235883f645",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
