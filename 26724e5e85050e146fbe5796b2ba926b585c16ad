@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6b2b6d30",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T18:35:39Z",
+      "side": 1,
+      "message": "Suggest combining this with line 164 to be something like:\n\n    if not ref.get(\u0027id\u0027):\n\nThis will catch situations where id is None, etc.",
+      "revId": "26724e5e85050e146fbe5796b2ba926b585c16ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
