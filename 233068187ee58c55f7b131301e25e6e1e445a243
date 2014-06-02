@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a04aefc2",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2793,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T20:55:35Z",
+      "side": 1,
+      "message": "Why have this line: \n\n     self.assignment_api.get_domain(domain_id)\n\nwhen you have the same call just storing the return value next? \n\n     domain_ref \u003d self.assignment_api.get_domain(domain_id)",
+      "revId": "233068187ee58c55f7b131301e25e6e1e445a243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
