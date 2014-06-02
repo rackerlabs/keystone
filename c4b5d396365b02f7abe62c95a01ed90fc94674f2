@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_19379a4f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-02T22:53:52Z",
+      "side": 1,
+      "message": "I get the original bug and the solution provided here fixes that issue. \n\nJust curious why the cached value is not updated (via refresh) instead of being invalidated. I see in create project, the logic is to set the value if cache is enabled, so possibly value can be updated similarly in cache.\n\nSimilar behavior is there for update_domain.",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
