@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_eca6b352",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T20:16:55Z",
+      "side": 1,
+      "message": "HTTPS instead of HTTP.*",
+      "revId": "5e8dda08778724bc2d975727860fee39748d5abc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_acacab36",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T20:16:55Z",
+      "side": 1,
+      "message": "remove trailing whitespace",
+      "revId": "5e8dda08778724bc2d975727860fee39748d5abc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
