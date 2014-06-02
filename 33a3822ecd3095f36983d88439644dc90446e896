@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7187dc0f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T19:31:40Z",
+      "side": 1,
+      "message": "Suggest using something other than _ as we use that for translation(s) (see line 29) - not that it\u0027s breaking anything in this method at this time.",
+      "revId": "33a3822ecd3095f36983d88439644dc90446e896",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
