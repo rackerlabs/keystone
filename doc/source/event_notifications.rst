@@ -80,3 +80,12 @@ This is an example of a notification sent for a newly created user::
         "publisher_id": "identity.host1234",
         "timestamp": "2013-08-29 19:03:45.960280"
     }
+
+Cloud Audit Notification Support
+================================
+
+Keystone has begun to add audit notification support for operations like
+authentication using the DMTF Cloud Auditing Data Federation (CADF) Open
+Standard.  For more details on this please see:
+
+- http://docs.openstack.org/developer/pycadf/
