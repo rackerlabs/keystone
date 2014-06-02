@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 2014.2.dev296.gfa7812e\n"
+"Project-Id-Version: keystone 2014.2.dev317.g1ca4156\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-05-28 06:00+0000\n"
+"POT-Creation-Date: 2014-06-02 06:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -437,13 +437,13 @@ msgstr ""
 
 #: keystone/assignment/backends/ldap.py:202
 #: keystone/assignment/backends/ldap.py:246 keystone/catalog/core.py:78
-#: keystone/common/ldap/core.py:993 keystone/identity/backends/kvs.py:117
+#: keystone/common/ldap/core.py:1001 keystone/identity/backends/kvs.py:117
 #: keystone/identity/backends/kvs.py:224
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr ""
 
-#: keystone/assignment/backends/ldap.py:210 keystone/common/ldap/core.py:983
+#: keystone/assignment/backends/ldap.py:210 keystone/common/ldap/core.py:991
 #: keystone/identity/backends/kvs.py:125 keystone/identity/backends/kvs.py:152
 #: keystone/identity/backends/kvs.py:231 keystone/identity/backends/kvs.py:259
 #, python-format
@@ -527,40 +527,40 @@ msgstr ""
 msgid "Domain is disabled: %s"
 msgstr ""
 
-#: keystone/auth/controllers.py:284
+#: keystone/auth/controllers.py:288
 msgid "Scoping to both domain and project is not allowed"
 msgstr ""
 
-#: keystone/auth/controllers.py:287
+#: keystone/auth/controllers.py:291
 msgid "Scoping to both domain and trust is not allowed"
 msgstr ""
 
-#: keystone/auth/controllers.py:290
+#: keystone/auth/controllers.py:294
 msgid "Scoping to both project and trust is not allowed"
 msgstr ""
 
-#: keystone/auth/controllers.py:386
+#: keystone/auth/controllers.py:390
 #, python-format
 msgid ""
 "User %(user_id)s doesn't have access to default project %(project_id)s. "
 "The token will be unscoped rather than scoped to the project."
 msgstr ""
 
-#: keystone/auth/controllers.py:393
+#: keystone/auth/controllers.py:397
 #, python-format
 msgid ""
 "User %(user_id)s's default project %(project_id)s is disabled. The token "
 "will be unscoped rather than scoped to the project."
 msgstr ""
 
-#: keystone/auth/controllers.py:402
+#: keystone/auth/controllers.py:406
 #, python-format
 msgid ""
 "User %(user_id)s's default project %(project_id)s not found. The token "
 "will be unscoped rather than scoped to the project."
 msgstr ""
 
-#: keystone/auth/controllers.py:433
+#: keystone/auth/controllers.py:437
 msgid "User not found"
 msgstr ""
 
@@ -687,12 +687,12 @@ msgid "RBAC: Invalid token"
 msgstr ""
 
 #: keystone/common/controller.py:104 keystone/common/controller.py:195
-#: keystone/common/controller.py:598
+#: keystone/common/controller.py:597
 msgid "RBAC: Bypassing authorization"
 msgstr ""
 
 #: keystone/common/controller.py:151 keystone/common/controller.py:193
-#: keystone/common/controller.py:616
+#: keystone/common/controller.py:615
 msgid "RBAC: Authorization granted"
 msgstr ""
 
@@ -701,11 +701,11 @@ msgstr ""
 msgid "RBAC: Adding query filter params (%s)"
 msgstr ""
 
-#: keystone/common/controller.py:545
+#: keystone/common/controller.py:544
 msgid "Cannot change Domain ID"
 msgstr ""
 
-#: keystone/common/controller.py:569
+#: keystone/common/controller.py:568
 msgid "Invalid token in _get_domain_id_for_request"
 msgstr ""
 
@@ -835,7 +835,7 @@ msgstr ""
 msgid "Invalid token in _get_trust_id_for_request"
 msgstr ""
 
-#: keystone/common/wsgi.py:522 keystone/tests/test_wsgi.py:332
+#: keystone/common/wsgi.py:522 keystone/tests/test_wsgi.py:328
 msgid "The resource could not be found."
 msgstr ""
 
@@ -1111,27 +1111,27 @@ msgid ""
 "<ldap_attribute>:<keystone_attribute>"
 msgstr ""
 
-#: keystone/common/ldap/core.py:962
+#: keystone/common/ldap/core.py:970
 #, python-format
 msgid "LDAP %s create"
 msgstr ""
 
-#: keystone/common/ldap/core.py:967
+#: keystone/common/ldap/core.py:975
 #, python-format
 msgid "LDAP %s update"
 msgstr ""
 
-#: keystone/common/ldap/core.py:972
+#: keystone/common/ldap/core.py:980
 #, python-format
 msgid "LDAP %s delete"
 msgstr ""
 
-#: keystone/common/ldap/core.py:1115
+#: keystone/common/ldap/core.py:1123
 #, python-format
 msgid "Cannot change %(option_name)s %(attr)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:1182
+#: keystone/common/ldap/core.py:1190
 #, python-format
 msgid "Member %(member)s is already a member of group %(group)s"
 msgstr ""
@@ -1186,7 +1186,7 @@ msgid "Cannot change consumer secret"
 msgstr ""
 
 #: keystone/contrib/oauth1/controllers.py:153
-#: keystone/contrib/oauth1/backends/sql.py:279
+#: keystone/contrib/oauth1/backends/sql.py:267
 msgid "User IDs do not match"
 msgstr ""
 
@@ -1235,11 +1235,11 @@ msgstr ""
 msgid "Consumer not found"
 msgstr ""
 
-#: keystone/contrib/oauth1/backends/sql.py:192
+#: keystone/contrib/oauth1/backends/sql.py:183
 msgid "Request token not found"
 msgstr ""
 
-#: keystone/contrib/oauth1/backends/sql.py:259
+#: keystone/contrib/oauth1/backends/sql.py:247
 msgid "Access token not found"
 msgstr ""
 
@@ -1375,25 +1375,25 @@ msgstr ""
 msgid "syslog facility must be one of: %s"
 msgstr ""
 
-#: keystone/openstack/common/log.py:716
+#: keystone/openstack/common/log.py:722
 #, python-format
 msgid "Fatal call to deprecated config: %(msg)s"
 msgstr ""
 
 #: keystone/openstack/common/policy.py:96
-msgid "JSON file containing policy"
+msgid "The JSON file that defines policies."
 msgstr ""
 
 #: keystone/openstack/common/policy.py:99
-msgid "Rule enforced when requested rule is not found"
+msgid "Default rule. Enforced when a requested rule is not found."
 msgstr ""
 
-#: keystone/openstack/common/policy.py:113
+#: keystone/openstack/common/policy.py:114
 #, python-format
 msgid "Policy doesn't allow %s to be performed."
 msgstr ""
 
-#: keystone/openstack/common/policy.py:207
+#: keystone/openstack/common/policy.py:208
 #, python-format
 msgid "Rules must be an instance of dict or Rules, got %s instead"
 msgstr ""
