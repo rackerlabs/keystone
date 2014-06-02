@@ -34,6 +34,24 @@
       "revId": "8c0cf2f685aece9eba6ddb0788a4d550a22b3f09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0477453b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 9450
+      },
+      "writtenOn": "2014-06-02T14:01:13Z",
+      "side": 1,
+      "message": "Sorry was @Dolph who suggest the change.",
+      "parentUuid": "1ae5cdf2_041bc51b",
+      "revId": "8c0cf2f685aece9eba6ddb0788a4d550a22b3f09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
