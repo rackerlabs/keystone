@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b7dcfc13",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T16:41:43Z",
+      "side": 0,
+      "message": "The commit message only says this is fixing a pep8. It should be updated to reflect that copyrights are being removed too, or pull the copyright removal into it\u0027s own commit.",
+      "revId": "8b83737363abb1dc8fc0e05500e9fc30a8567843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
