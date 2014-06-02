@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7721944c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T16:35:11Z",
+      "side": 1,
+      "message": "Keystone root project dir? \n\n    /opt/stack/keystone/\n\nor: \n\n    /opt/stack/keystone/keystone \n\n?",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b704fcc0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-02T16:35:11Z",
+      "side": 1,
+      "message": "suggest \n\n    $ find . -name \"*.pyc\" -delete",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
