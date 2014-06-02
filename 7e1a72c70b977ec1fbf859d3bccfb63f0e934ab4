@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_808a58bd",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1203,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T18:26:35Z",
+      "side": 1,
+      "message": "Please use \u0027,\u0027 instead of %, LOG is smart enough to handle that.\n\n    LOG.debug(\"No entries in LDAP subtree %s\", dn)",
+      "revId": "7e1a72c70b977ec1fbf859d3bccfb63f0e934ab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
