@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fa64a923",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1404,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T17:20:40Z",
+      "side": 1,
+      "message": "What kind of performance issues will this help with (suggest expanding on what is meant by \"performance\" here)?\n\nSuggest minor rewording, avoid the \"if you\u0027re having\", and describe it as a method to get extra informaiton about the LDAP backend. This is because there are cases besides \"having issues\" that someone might want to enable the debug level output. \n\nWording might be changed to start the sentence with:\n\n    For additional information on LDAP connections ...",
+      "revId": "3d673ce8b08d93dab950085936f9e4c36bc33f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9afe4537",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T17:20:40Z",
+      "side": 1,
+      "message": "Suggest including that this setting is done in the [ldap] section of the keystone config. It is implied, but there are a lot of sections to the keystone file, so better to be specific.",
+      "revId": "3d673ce8b08d93dab950085936f9e4c36bc33f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5a5f5d72",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1411,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T17:20:40Z",
+      "side": 1,
+      "message": "Suggest adding a link (if there is a good one) for the documentation on OpenLDAP for the bitmask.",
+      "revId": "3d673ce8b08d93dab950085936f9e4c36bc33f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
