@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_316394b2",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "i\u0027d suggest the rst thing for code blocks, something like:\n\n  .. code-block: bash ::",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_91270812",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "role-assignment",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_117bf8f5",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "this is called \"re-scoping\" but there\u0027s no scope specified",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_916e282e",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "$OS_TOKEN on all these?",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_715fdc72",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "pipe all these to json.tool?",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b1fec436",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "should definitely document a password \"reset\" right next to this, and note the difference",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_71a43c57",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-02T19:34:36Z",
+      "side": 1,
+      "message": "don\u0027t advocate impersonation by default! default to false here",
+      "revId": "4e32b84c0a83302a594a0f9c7187542d8a1b0afb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
