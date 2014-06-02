@@ -34,6 +34,24 @@
       "revId": "8b83737363abb1dc8fc0e05500e9fc30a8567843",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_71143cf5",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-02T19:19:05Z",
+      "side": 0,
+      "message": "While I am a fan of eliminating the copyrights in the headers, we need to leave them unless there is a mandate to remove them across the board.",
+      "parentUuid": "1ae5cdf2_daed2df1",
+      "revId": "8b83737363abb1dc8fc0e05500e9fc30a8567843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
