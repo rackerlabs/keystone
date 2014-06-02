@@ -16,6 +16,24 @@
       "revId": "8b83737363abb1dc8fc0e05500e9fc30a8567843",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_daed2df1",
+        "filename": "keystone/tests/test_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-02T17:05:09Z",
+      "side": 0,
+      "message": "the copyright should probably stay",
+      "parentUuid": "1ae5cdf2_b7dcfc13",
+      "revId": "8b83737363abb1dc8fc0e05500e9fc30a8567843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
