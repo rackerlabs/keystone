@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_39dfd26a",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T20:41:00Z",
+      "side": 1,
+      "message": "Rewrite title as \"Keystone Compressed Token Provider\"",
+      "revId": "0496aeccac033dfd92dbea6d7d897fb9458e6ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d9d7ce49",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T20:41:00Z",
+      "side": 1,
+      "message": "from keystone.openstack.common import jsonutils as json",
+      "revId": "0496aeccac033dfd92dbea6d7d897fb9458e6ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_59c3be88",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T20:41:00Z",
+      "side": 1,
+      "message": "save message as local var, there\u0027s already a different between the two messages (missing period).\n\n  msg \u003d \u0027Unable to sign token.\u0027\n  LOG.exception(_(msg))\n  raise exception.UnexpectedError(_(msg))",
+      "revId": "0496aeccac033dfd92dbea6d7d897fb9458e6ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
