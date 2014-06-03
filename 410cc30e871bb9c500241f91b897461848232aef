@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fdff3165",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:55:49Z",
+      "side": 1,
+      "message": "nit: validating *a* request body",
+      "revId": "410cc30e871bb9c500241f91b897461848232aef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9dee2db3",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:55:49Z",
+      "side": 1,
+      "message": "nit: i would write NOTE(lbragstad): so we know who to blame ... err.. contact\n\nbunch of spots in this file",
+      "revId": "410cc30e871bb9c500241f91b897461848232aef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dd16f5a6",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:55:49Z",
+      "side": 1,
+      "message": "can you add a docstring here, i\u0027m not super clear as to why this is needed",
+      "revId": "410cc30e871bb9c500241f91b897461848232aef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
