@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_595d7e46",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "use \"\"\" for docstrings so that it\u0027s consistent with the existing convention.\n\nAlso, there\u0027s an extra space after \"Encode\"",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_193f76d7",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "this should also say the condition under which a TypeError is raised, otherwise it looks like it\u0027s always raised.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9d6a917f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "There should be a test calling this function with a binary type.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dd07b9c8",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "There should be a test calling this function where it raises this exception.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d91fce6a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f9100a5b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "the parameter is called \"value\"",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7904fa17",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "I assume that this can raise something if the value doesn\u0027t contain valid utf-8?",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3d133d0e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "there should be a test where this is called with a non-binary type.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7d122558",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "change \"rerpresentation\" to \"representation\"",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9d01b1b1",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "according to the coverage report this function isn\u0027t called.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fd3395a8",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "This function isn\u0027t called either according to the coverage report.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bd158de6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "According to the coverage report none of this is called. Add a unit test.",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7d3945d6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-03T21:34:29Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "e14be61dabd90dc67b3c1da3567edf995b2b2214",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
