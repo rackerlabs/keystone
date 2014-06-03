@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_a8fe32ac",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T18:07:54Z",
+      "side": 1,
+      "message": "i suspect that setting a default here completely breaks our backwards compatibility for token_format config?",
+      "parentUuid": "3ae8d1ca_6d21b7b3",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2813020e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T18:07:54Z",
+      "side": 1,
+      "message": "update the help text",
+      "revId": "6243a38893a9cb36a13708a9ce6d8796d9660449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_ad7d7fb3",
         "filename": "keystone/token/providers/pkiz.py",
         "patchSetId": 3
