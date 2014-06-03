@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bd53cd37",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-03T22:03:32Z",
+      "side": 0,
+      "message": "this is still applicable right, if say kvs backend is configured?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/catalog/backends/kvs.py#L143\n\nNot that anybody would use kvs backend in production but nevertheless we still need to support it.",
+      "revId": "6ed054951e5d78ce803b4f2932d576dcc9210d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
