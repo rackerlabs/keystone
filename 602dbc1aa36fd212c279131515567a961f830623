@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fd83b101",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:49:49Z",
+      "side": 1,
+      "message": "white space!",
+      "revId": "602dbc1aa36fd212c279131515567a961f830623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dd93554d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:49:49Z",
+      "side": 1,
+      "message": "I made the json blob a bit easier on the eyes:\n\n{\n    \"typeURI\": \"http: //schemas.dmtf.org/cloud/audit/1.0/event\",\n    \"initiator\": {\n        \"typeURI\": \"service/security/account/user\",\n        \"host\": {\n            \"agent\": \"curl/7.22.0(x86_64-pc-linux-gnu)\",\n            \"address\": \"127.0.0.1\"\n        },\n        \"id\": \"openstack: 5ee22124-6f41-4d23-a9f7-862c13a53a66\",\n        \"name\": \"joeuser\"\n    },\n    \"target\": {\n        \"typeURI\": \"service/security/account/user\",\n        \"id\": \"openstack: 1c2fc591-facb-4479-a327-520dade1ea15\"\n    },\n    \"observer\": {\n        \"typeURI\": \"service/security\",\n        \"id\": \"openstack: 3d4a50a9-2b59-438b-bf19-c231f9c7625a\"\n    },\n    \"eventType\": \"activity\",\n    \"eventTime\": \"2014-02-14T01: 20: 47.932842+0000\",\n    \"action\": \"authenticate\",\n    \"outcome\": \"failure\",\n    \"id\": \"openstack: f5352d7b-bee6-4c22-8213-450e7b646e9f\"\n}",
+      "revId": "602dbc1aa36fd212c279131515567a961f830623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5d78252b",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:49:49Z",
+      "side": 1,
+      "message": "indent this in a bit more",
+      "revId": "602dbc1aa36fd212c279131515567a961f830623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bd892928",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T06:49:49Z",
+      "side": 1,
+      "message": "some funky backticks going on here",
+      "revId": "602dbc1aa36fd212c279131515567a961f830623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
