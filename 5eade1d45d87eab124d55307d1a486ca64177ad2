@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_49c5cf8c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-03T05:45:16Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_03680df4",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_83733de6",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-02T21:48:00Z",
       "side": 1,
       "message": "same here.",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_69c0cb7c",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-03T05:45:16Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_83733de6",
       "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_89bfd7fa",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-03T05:45:16Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_23b8a975",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_b704fcc0",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "++ didn\u0027t know this worked.\n\nagree with dropping the sudo and using -delete instead",
       "parentUuid": "1ae5cdf2_b704fcc0",
+      "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e93bfb99",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-03T05:45:16Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_630d513e",
       "revId": "5eade1d45d87eab124d55307d1a486ca64177ad2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
