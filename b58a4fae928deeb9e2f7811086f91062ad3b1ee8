@@ -16,6 +16,40 @@
       "revId": "b58a4fae928deeb9e2f7811086f91062ad3b1ee8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4f179451",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T00:54:22Z",
+      "side": 1,
+      "message": "suggest to use something different than \u0027token1\u0027, like \u0027token_to_be_revoked\"\n\nand just regular \u0027token\u0027 for the one that\u0027s actually used in the header.",
+      "revId": "b58a4fae928deeb9e2f7811086f91062ad3b1ee8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ca19d27a",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1282,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T00:54:22Z",
+      "side": 1,
+      "message": "are we using assertThat (in combination with matchers.Equals) now instead of assertEqual?",
+      "revId": "b58a4fae928deeb9e2f7811086f91062ad3b1ee8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
