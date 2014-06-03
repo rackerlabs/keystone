@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cc4bad85",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T04:58:12Z",
+      "side": 1,
+      "message": "nit: double space.",
+      "revId": "3b6ddcdf19a5eb9efee34af53a727b9876cd0339",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
