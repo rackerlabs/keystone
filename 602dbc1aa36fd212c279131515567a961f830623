@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_233fa5d7",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T19:26:05Z",
+      "side": 1,
+      "message": "\"Cloud Audit\" is just half of the CADF acronym, which I feel like you should use instead... perhaps:\n\n  Auditing with CADF\n  \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\n?",
+      "revId": "602dbc1aa36fd212c279131515567a961f830623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_fd83b101",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 2
@@ -47,6 +64,24 @@
       "writtenOn": "2014-06-03T06:49:49Z",
       "side": 1,
       "message": "indent this in a bit more",
+      "revId": "602dbc1aa36fd212c279131515567a961f830623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_832dd9aa",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T19:26:05Z",
+      "side": 1,
+      "message": "prefix the json blob with\n\n  .. code-block: json\n\n      {and then put json here}",
+      "parentUuid": "1ae5cdf2_5d78252b",
       "revId": "602dbc1aa36fd212c279131515567a961f830623",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
