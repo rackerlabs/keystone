@@ -16,6 +16,24 @@
       "revId": "26724e5e85050e146fbe5796b2ba926b585c16ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_78fdef39",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 11425
+      },
+      "writtenOn": "2014-06-03T07:57:34Z",
+      "side": 1,
+      "message": "In the second case, id is explicitly set to an empty value, so we can think it\u0027s desired.\nShould we assign a new id, or return an error ?",
+      "parentUuid": "1ae5cdf2_6b2b6d30",
+      "revId": "26724e5e85050e146fbe5796b2ba926b585c16ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
