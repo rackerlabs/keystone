@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_57daafe8",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-03T16:23:13Z",
+      "side": 1,
+      "message": "A support matrix might be nice here, or if we could reference one that would be cool.",
+      "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_17bae76d",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-03T16:23:13Z",
+      "side": 1,
+      "message": "If we have (or get in the future) a good number of people leveraging Keystone with non-Python client then a standards page might be helpful. Or do\u0027s and don\u0027ts?",
+      "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b79773eb",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-03T16:23:13Z",
+      "side": 1,
+      "message": "Keystone*",
+      "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
