@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6f47eb1d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T05:23:24Z",
+      "side": 1,
+      "message": "this looks weird to me, but if jenkins is happy, then so am i.",
+      "revId": "2508cecaa7139ef1a0052528f2087466bf501c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
