@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1e867c13",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T20:03:44Z",
+      "side": 1,
+      "message": "Keystone Compressed Token Provider?",
+      "revId": "0a6f333cf309ee5eed77a0f3124209e35efc498d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3e7ed819",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T20:03:44Z",
+      "side": 1,
+      "message": "use jsonutils from keystone.openstack.common",
+      "revId": "0a6f333cf309ee5eed77a0f3124209e35efc498d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5e7ba427",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-03T20:03:44Z",
+      "side": 1,
+      "message": "save \u0027Unable to sign token in a var\u0027 since you wrote it twice?",
+      "revId": "0a6f333cf309ee5eed77a0f3124209e35efc498d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
