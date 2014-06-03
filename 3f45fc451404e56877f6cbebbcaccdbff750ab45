@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ca89b676",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T16:28:38Z",
+      "side": 1,
+      "message": "a support matrix of what exactly?\n\n- stable/havana v2: check\n- stable/havana v3: check\n- stable/icehouse v2: check\n- stable/icehouse v3: check\n- master v2: check\n- master v3: check\n\nit\u0027s check marks all the way down :)",
+      "parentUuid": "1ae5cdf2_57daafe8",
+      "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_17bae76d",
         "filename": "doc/source/http-api.rst",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_0aa9dede",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T16:28:38Z",
+      "side": 1,
+      "message": "i\u0027d generally put that burden on the openstacksdk efforts, but i\u0027m not sure what you\u0027re asking for regarding do\u0027s and don\u0027ts? best practices of... something?",
+      "parentUuid": "1ae5cdf2_17bae76d",
+      "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_b79773eb",
         "filename": "doc/source/http-api.rst",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2014-06-03T16:23:13Z",
       "side": 1,
       "message": "Keystone*",
+      "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aa28ea86",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-03T16:28:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_b79773eb",
       "revId": "3f45fc451404e56877f6cbebbcaccdbff750ab45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
