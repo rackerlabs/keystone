@@ -16,6 +16,23 @@
       "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8bf87ec4",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-04T05:51:10Z",
+      "side": 1,
+      "message": "Where is domain_id used  in this method?",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
