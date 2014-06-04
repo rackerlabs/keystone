@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ed8adebd",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-04T18:22:41Z",
+      "side": 1,
+      "message": "Suggest changing this to:\n\n    .. NOTE::\n    \n        ``saml2`` may be different in your deployment. Do not use a wildcard value.\n\nSuggest expanding on why saml2 might be different and why wildcard values are bad.",
+      "revId": "2287eef0f62b7a60cb567526cd26b9c43f7883da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
