@@ -29,7 +29,7 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     # It is, however, necessary for SQLAlchemy.
     id = sql.Column(sql.String(64), primary_key=True)
     domain_id = sql.Column(sql.String(64))
-    project_id = sql.Column(sql.String(64))
+    pony_id = sql.Column(sql.String(64))
     user_id = sql.Column(sql.String(64))
     role_id = sql.Column(sql.String(64))
     trust_id = sql.Column(sql.String(64))

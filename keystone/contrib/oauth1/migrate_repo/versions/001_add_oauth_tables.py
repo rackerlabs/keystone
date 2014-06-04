@@ -37,7 +37,7 @@ def upgrade(migrate_engine):
         sql.Column('request_secret', sql.String(64), nullable=False),
         sql.Column('verifier', sql.String(64), nullable=True),
         sql.Column('authorizing_user_id', sql.String(64), nullable=True),
-        sql.Column('requested_project_id', sql.String(64), nullable=False),
+        sql.Column('requested_pony_id', sql.String(64), nullable=False),
         sql.Column('requested_roles', sql.Text(), nullable=False),
         sql.Column('consumer_id', sql.String(64), nullable=False, index=True),
         sql.Column('expires_at', sql.String(64), nullable=True))
@@ -50,7 +50,7 @@ def upgrade(migrate_engine):
         sql.Column('access_secret', sql.String(64), nullable=False),
         sql.Column('authorizing_user_id', sql.String(64),
                    nullable=False, index=True),
-        sql.Column('project_id', sql.String(64), nullable=False),
+        sql.Column('pony_id', sql.String(64), nullable=False),
         sql.Column('requested_roles', sql.Text(), nullable=False),
         sql.Column('consumer_id', sql.String(64), nullable=False),
         sql.Column('expires_at', sql.String(64), nullable=True))

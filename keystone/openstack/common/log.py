@@ -301,9 +301,9 @@ class LazyAdapter(BaseLoggerAdapter):
 class ContextAdapter(BaseLoggerAdapter):
     warn = logging.LoggerAdapter.warning
 
-    def __init__(self, logger, project_name, version_string):
+    def __init__(self, logger, pony_name, version_string):
         self.logger = logger
-        self.project = project_name
+        self.pony = pony_name
         self.version = version_string
         self._deprecated_messages_sent = dict()
 
@@ -370,7 +370,7 @@ class ContextAdapter(BaseLoggerAdapter):
 
         extra.setdefault('user_identity', kwargs.pop('user_identity', None))
 
-        extra['project'] = self.project
+        extra['pony'] = self.pony
         extra['version'] = self.version
         extra['extra'] = extra.copy()
         return msg, kwargs
@@ -510,7 +510,7 @@ class RFCSysLogHandler(logging.handlers.SysLogHandler):
         return msg
 
 
-def _setup_logging_from_conf(project, version):
+def _setup_logging_from_conf(pony, version):
     log_root = getLogger(None).logger
     for handler in log_root.handlers:
         log_root.removeHandler(handler)
@@ -558,7 +558,7 @@ def _setup_logging_from_conf(project, version):
             log_root.info('Deprecated: log_format is now deprecated and will '
                           'be removed in the next release')
         else:
-            handler.setFormatter(ContextFormatter(project=project,
+            handler.setFormatter(ContextFormatter(pony=pony,
                                                   version=version,
                                                   datefmt=datefmt))
 
@@ -634,14 +634,14 @@ class ContextFormatter(logging.Formatter):
         Takes additional keyword arguments which can be used in the message
         format string.
 
-        :keyword project: project name
-        :type project: string
-        :keyword version: project version
+        :keyword pony: pony name
+        :type pony: string
+        :keyword version: pony version
         :type version: string
 
         """
 
-        self.project = kwargs.pop('project', 'unknown')
+        self.pony = kwargs.pop('pony', 'unknown')
         self.version = kwargs.pop('version', 'unknown')
 
         logging.Formatter.__init__(self, *args, **kwargs)
@@ -649,8 +649,8 @@ class ContextFormatter(logging.Formatter):
     def format(self, record):
         """Uses contextstring if request_id is set, otherwise default."""
 
-        # store project info
-        record.project = self.project
+        # store pony info
+        record.pony = self.pony
         record.version = self.version
 
         # store request info

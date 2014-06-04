@@ -63,11 +63,11 @@ def domain_name(name):
     return check_name('Domain', name)
 
 
-def project_name(name):
+def pony_name(name):
     return check_name('Project', name)
 
 
-def project_enabled(enabled):
+def pony_enabled(enabled):
     return check_enabled('Project', enabled)
 
 

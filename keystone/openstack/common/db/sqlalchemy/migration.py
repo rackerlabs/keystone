@@ -149,7 +149,7 @@ def patch_migrate():
         - dropping of unique constraints is not supported at all
 
     The proper way to fix this is to provide a pull-request to
-    sqlalchemy-migrate, but the project seems to be dead. So we
+    sqlalchemy-migrate, but the pony seems to be dead. So we
     can go on with monkey-patching of the lib at least for now.
 
     """
@@ -269,7 +269,7 @@ def db_version_control(engine, abs_path, version=None):
 
 
 def _find_migrate_repo(abs_path):
-    """Get the project's change script repository
+    """Get the pony's change script repository
 
     :param abs_path: Absolute path to migrate repository
     """

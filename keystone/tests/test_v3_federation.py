@@ -827,14 +827,14 @@ class FederatedTokenTests(FederationTests):
             }
         }
 
-    def _project(self, project):
-        return (project['id'], project['name'])
+    def _pony(self, pony):
+        return (pony['id'], pony['name'])
 
     def _roles(self, roles):
         return set([(r['id'], r['name']) for r in roles])
 
-    def _check_projects_and_roles(self, token, roles, projects):
-        """Check whether the projects and the roles match."""
+    def _check_ponies_and_roles(self, token, roles, ponies):
+        """Check whether the ponies and the roles match."""
         token_roles = token.get('roles')
         if token_roles is None:
             raise AssertionError('Roles not found in the token')
@@ -842,24 +842,24 @@ class FederatedTokenTests(FederationTests):
         roles_ref = self._roles(roles)
         self.assertEqual(token_roles, roles_ref)
 
-        token_projects = token.get('project')
-        if token_projects is None:
+        token_ponies = token.get('pony')
+        if token_ponies is None:
             raise AssertionError('Projects not found in the token')
-        token_projects = self._project(token_projects)
-        projects_ref = self._project(projects)
-        self.assertEqual(token_projects, projects_ref)
+        token_ponies = self._pony(token_ponies)
+        ponies_ref = self._pony(ponies)
+        self.assertEqual(token_ponies, ponies_ref)
 
     def _check_scoped_token_attributes(self, token):
-        def xor_project_domain(iterable):
-            return sum(('project' in iterable, 'domain' in iterable)) % 2
+        def xor_pony_domain(iterable):
+            return sum(('pony' in iterable, 'domain' in iterable)) % 2
 
         for obj in ('user', 'catalog', 'expires_at', 'issued_at',
                     'methods', 'roles'):
             self.assertIn(obj, token)
-        # Check for either project or domain
-        if not xor_project_domain(token.keys()):
+        # Check for either pony or domain
+        if not xor_pony_domain(token.keys()):
             raise AssertionError("You must specify either"
-                                 "project or domain.")
+                                 "pony or domain.")
 
     def _issue_unscoped_token(self, assertion='EMPLOYEE_ASSERTION'):
         api = federation_controllers.Auth()
@@ -916,43 +916,43 @@ class FederatedTokenTests(FederationTests):
         r = api.authenticate_for_token(context, self.UNSCOPED_V3_SAML2_REQ)
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
-    def test_scope_to_project_once(self):
+    def test_scope_to_pony_once(self):
         r = self.post(self.AUTH_URL,
                       body=self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
         token_resp = r.result['token']
-        project_id = token_resp['project']['id']
-        self.assertEqual(project_id, self.proj_employees['id'])
+        pony_id = token_resp['pony']['id']
+        self.assertEqual(pony_id, self.proj_employees['id'])
         self._check_scoped_token_attributes(token_resp)
         roles_ref = [self.role_employee]
-        projects_ref = self.proj_employees
-        self._check_projects_and_roles(token_resp, roles_ref, projects_ref)
+        ponies_ref = self.proj_employees
+        self._check_ponies_and_roles(token_resp, roles_ref, ponies_ref)
 
-    def test_scope_to_bad_project(self):
-        """Scope unscoped token with a project we don't have access to."""
+    def test_scope_to_bad_pony(self):
+        """Scope unscoped token with a pony we don't have access to."""
 
         self.post(self.AUTH_URL,
                   body=self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER,
                   expected_status=401)
 
-    def test_scope_to_project_multiple_times(self):
+    def test_scope_to_pony_multiple_times(self):
         """Try to scope the unscoped token multiple times.
 
         The new tokens should be scoped to:
 
-        * Customers' project
-        * Employees' project
+        * Customers' pony
+        * Employees' pony
 
         """
 
         bodies = (self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_ADMIN,
                   self.TOKEN_SCOPE_PROJECT_CUSTOMER_FROM_ADMIN)
-        project_ids = (self.proj_employees['id'],
+        pony_ids = (self.proj_employees['id'],
                        self.proj_customers['id'])
-        for body, project_id_ref in zip(bodies, project_ids):
+        for body, pony_id_ref in zip(bodies, pony_ids):
             r = self.post(self.AUTH_URL, body=body)
             token_resp = r.result['token']
-            project_id = token_resp['project']['id']
-            self.assertEqual(project_id, project_id_ref)
+            pony_id = token_resp['pony']['id']
+            self.assertEqual(pony_id, pony_id_ref)
             self._check_scoped_token_attributes(token_resp)
 
     def test_scope_token_from_nonexistent_unscoped_token(self):
@@ -1012,25 +1012,25 @@ class FederatedTokenTests(FederationTests):
             self.assertEqual(domain_id, domain_id_ref)
             self._check_scoped_token_attributes(token_resp)
 
-    def test_list_projects(self):
-        url = '/OS-FEDERATION/projects'
+    def test_list_ponies(self):
+        url = '/OS-FEDERATION/ponies'
 
         token = (self.tokens['CUSTOMER_ASSERTION'],
                  self.tokens['EMPLOYEE_ASSERTION'],
                  self.tokens['ADMIN_ASSERTION'])
 
-        projects_refs = (set([self.proj_customers['id']]),
+        ponies_refs = (set([self.proj_customers['id']]),
                          set([self.proj_employees['id'],
-                              self.project_all['id']]),
+                              self.pony_all['id']]),
                          set([self.proj_employees['id'],
-                              self.project_all['id'],
+                              self.pony_all['id'],
                               self.proj_customers['id']]))
 
-        for token, projects_ref in zip(token, projects_refs):
+        for token, ponies_ref in zip(token, ponies_refs):
             r = self.get(url, token=token)
-            projects_resp = r.result['projects']
-            projects = set(p['id'] for p in projects_resp)
-            self.assertEqual(projects, projects_ref)
+            ponies_resp = r.result['ponies']
+            ponies = set(p['id'] for p in ponies_resp)
+            self.assertEqual(ponies, ponies_ref)
 
     def test_list_domains(self):
         url = '/OS-FEDERATION/domains'
@@ -1056,26 +1056,26 @@ class FederatedTokenTests(FederationTests):
         """Test 'standard' workflow for granting access tokens.
 
         * Issue unscoped token
-        * List available projects based on groups
-        * Scope token to a one of available projects
+        * List available ponies based on groups
+        * Scope token to a one of available ponies
 
         """
 
         r = self._issue_unscoped_token()
         employee_unscoped_token_id = r.headers.get('X-Subject-Token')
-        r = self.get('/OS-FEDERATION/projects',
+        r = self.get('/OS-FEDERATION/ponies',
                      token=employee_unscoped_token_id)
-        projects = r.result['projects']
-        random_project = random.randint(0, len(projects)) - 1
-        project = projects[random_project]
+        ponies = r.result['ponies']
+        random_pony = random.randint(0, len(ponies)) - 1
+        pony = ponies[random_pony]
 
         v3_scope_request = self._scope_request(employee_unscoped_token_id,
-                                               'project', project['id'])
+                                               'pony', pony['id'])
 
         r = self.post(self.AUTH_URL, body=v3_scope_request)
         token_resp = r.result['token']
-        project_id = token_resp['project']['id']
-        self.assertEqual(project_id, project['id'])
+        pony_id = token_resp['pony']['id']
+        self.assertEqual(pony_id, pony['id'])
         self._check_scoped_token_attributes(token_resp)
 
     def test_workflow_with_groups_deletion(self):
@@ -1083,11 +1083,11 @@ class FederatedTokenTests(FederationTests):
 
         The test scenario is as follows:
          - Create group ``group``
-         - Create and assign roles to ``group`` and ``project_all``
+         - Create and assign roles to ``group`` and ``pony_all``
          - Patch mapping rules for existing IdP so it issues group id
          - Issue unscoped token with ``group``'s id
          - Delete group ``group``
-         - Scope token to ``project_all``
+         - Scope token to ``pony_all``
          - Expect HTTP 500 response
 
         """
@@ -1100,10 +1100,10 @@ class FederatedTokenTests(FederationTests):
         self.assignment_api.create_role(role['id'],
                                         role)
 
-        # assign role to group and project_admins
+        # assign role to group and pony_admins
         self.assignment_api.create_grant(role['id'],
                                          group_id=group['id'],
-                                         project_id=self.project_all['id'])
+                                         pony_id=self.pony_all['id'])
 
         rules = {
             'rules': [
@@ -1143,10 +1143,10 @@ class FederatedTokenTests(FederationTests):
         # delete group
         self.identity_api.delete_group(group['id'])
 
-        # scope token to project_all, expect HTTP 500
+        # scope token to pony_all, expect HTTP 500
         scoped_token = self._scope_request(
-            token_id, 'project',
-            self.project_all['id'])
+            token_id, 'pony',
+            self.pony_all['id'])
 
         self.post(self.AUTH_URL,
                   body=scoped_token,
@@ -1199,20 +1199,20 @@ class FederatedTokenTests(FederationTests):
         self.assignment_api.create_domain(self.domainC['id'],
                                           self.domainC)
 
-        # Create and add projects
-        self.proj_employees = self.new_project_ref(
+        # Create and add ponies
+        self.proj_employees = self.new_pony_ref(
             domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.proj_employees['id'],
+        self.assignment_api.create_pony(self.proj_employees['id'],
                                            self.proj_employees)
-        self.proj_customers = self.new_project_ref(
+        self.proj_customers = self.new_pony_ref(
             domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.proj_customers['id'],
+        self.assignment_api.create_pony(self.proj_customers['id'],
                                            self.proj_customers)
 
-        self.project_all = self.new_project_ref(
+        self.pony_all = self.new_pony_ref(
             domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.project_all['id'],
-                                           self.project_all)
+        self.assignment_api.create_pony(self.pony_all['id'],
+                                           self.pony_all)
 
         # Create and add groups
         self.group_employees = self.new_group_ref(
@@ -1244,32 +1244,32 @@ class FederatedTokenTests(FederationTests):
 
         # Employees can access
         # * proj_employees
-        # * project_all
+        # * pony_all
         self.assignment_api.create_grant(self.role_employee['id'],
                                          group_id=self.group_employees['id'],
-                                         project_id=self.proj_employees['id'])
+                                         pony_id=self.proj_employees['id'])
         self.assignment_api.create_grant(self.role_employee['id'],
                                          group_id=self.group_employees['id'],
-                                         project_id=self.project_all['id'])
+                                         pony_id=self.pony_all['id'])
         # Customers can access
         # * proj_customers
         self.assignment_api.create_grant(self.role_customer['id'],
                                          group_id=self.group_customers['id'],
-                                         project_id=self.proj_customers['id'])
+                                         pony_id=self.proj_customers['id'])
 
         # Admins can access:
         # * proj_customers
         # * proj_employees
-        # * project_all
+        # * pony_all
         self.assignment_api.create_grant(self.role_admin['id'],
                                          group_id=self.group_admins['id'],
-                                         project_id=self.proj_customers['id'])
+                                         pony_id=self.proj_customers['id'])
         self.assignment_api.create_grant(self.role_admin['id'],
                                          group_id=self.group_admins['id'],
-                                         project_id=self.proj_employees['id'])
+                                         pony_id=self.proj_employees['id'])
         self.assignment_api.create_grant(self.role_admin['id'],
                                          group_id=self.group_admins['id'],
-                                         project_id=self.project_all['id'])
+                                         pony_id=self.pony_all['id'])
 
         self.assignment_api.create_grant(self.role_customer['id'],
                                          group_id=self.group_customers['id'],
@@ -1520,22 +1520,22 @@ class FederatedTokenTests(FederationTests):
             self.tokens[variant] = r.headers.get('X-Subject-Token')
 
         self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN = self._scope_request(
-            uuid.uuid4().hex, 'project', self.proj_customers['id'])
+            uuid.uuid4().hex, 'pony', self.proj_customers['id'])
 
         self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE = self._scope_request(
-            self.tokens['EMPLOYEE_ASSERTION'], 'project',
+            self.tokens['EMPLOYEE_ASSERTION'], 'pony',
             self.proj_employees['id'])
 
         self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'project',
+            self.tokens['ADMIN_ASSERTION'], 'pony',
             self.proj_employees['id'])
 
         self.TOKEN_SCOPE_PROJECT_CUSTOMER_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'project',
+            self.tokens['ADMIN_ASSERTION'], 'pony',
             self.proj_customers['id'])
 
         self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER = self._scope_request(
-            self.tokens['CUSTOMER_ASSERTION'], 'project',
+            self.tokens['CUSTOMER_ASSERTION'], 'pony',
             self.proj_employees['id'])
 
         self.TOKEN_SCOPE_DOMAIN_A_FROM_CUSTOMER = self._scope_request(

@@ -71,4 +71,4 @@ class OAuth(auth.AuthMethodHandler):
             raise exception.Unauthorized(msg)
         auth_context['user_id'] = acc_token['authorizing_user_id']
         auth_context['access_token_id'] = access_token_id
-        auth_context['project_id'] = acc_token['project_id']
+        auth_context['pony_id'] = acc_token['pony_id']

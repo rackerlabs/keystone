@@ -33,7 +33,7 @@ class CredentialBaseTestCase(test_v3.RestfulTestCase):
         credential_id = hashlib.sha256(blob['access']).hexdigest()
         credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         credential['id'] = credential_id
 
         # Store the blob as a dict *not* JSON ref bug #1259584
@@ -58,16 +58,16 @@ class CredentialTestCase(CredentialBaseTestCase):
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
             self.credential_id,
             self.credential)
 
-    def test_credential_api_delete_credentials_for_project(self):
-        self.credential_api.delete_credentials_for_project(self.project_id)
+    def test_credential_api_delete_credentials_for_pony(self):
+        self.credential_api.delete_credentials_for_pony(self.pony_id)
         # Test that the credential that we created in .setUp no longer exists
-        # once we delete all credentials for self.project_id
+        # once we delete all credentials for self.pony_id
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           credential_id=self.credential_id)
@@ -109,7 +109,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         """Call ``PATCH /credentials/{credential_id}``."""
         ref = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         del ref['id']
         r = self.patch(
             '/credentials/%(credential_id)s' % {
@@ -224,7 +224,7 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -309,7 +309,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         """Test signature validation with a v3 ec2 credential."""
         ref = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
@@ -339,14 +339,14 @@ class TestCredentialEc2(CredentialBaseTestCase):
 
     def _get_ec2_cred(self):
         uri = self._get_ec2_cred_uri()
-        r = self.post(uri, body={'tenant_id': self.project_id})
+        r = self.post(uri, body={'tenant_id': self.pony_id})
         return r.result['credential']
 
     def test_ec2_create_credential(self):
         """Test ec2 credential creation."""
         ec2_cred = self._get_ec2_cred()
         self.assertEqual(self.user_id, ec2_cred['user_id'])
-        self.assertEqual(self.project_id, ec2_cred['tenant_id'])
+        self.assertEqual(self.pony_id, ec2_cred['tenant_id'])
         self.assertIsNone(ec2_cred['trust_id'])
         self._validate_signature(access=ec2_cred['access'],
                                  secret=ec2_cred['secret'])

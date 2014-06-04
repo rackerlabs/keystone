@@ -38,7 +38,7 @@ def response_truncated(f):
     any limits set in the config file are ignored.  This allows internal use
     of such wrapped methods where the entire data set is needed as input for
     the calculations of some other API (e.g. get role assignments for a given
-    project).
+    pony).
 
     """
     @functools.wraps(f)

@@ -275,22 +275,22 @@ class DomainV3(controller.V3Controller):
 
 @dependency.requires('assignment_api')
 class ProjectV3(controller.V3Controller):
-    collection_name = 'projects'
-    member_name = 'project'
+    collection_name = 'ponies'
+    member_name = 'pony'
 
     def __init__(self):
         super(ProjectV3, self).__init__()
-        self.get_member_from_driver = self.assignment_api.get_project
+        self.get_member_from_driver = self.assignment_api.get_pony
 
     @controller.protected()
-    def list_projects_for_groups(self, context):
-        """List all projects available to an authenticated user's groups.
+    def list_ponies_for_groups(self, context):
+        """List all ponies available to an authenticated user's groups.
 
         :param context: request context
-        :returns: list of accessible projects
+        :returns: list of accessible ponies
 
         """
         auth_context = context['environment'][authorization.AUTH_CONTEXT_ENV]
-        projects = self.assignment_api.list_projects_for_groups(
+        ponies = self.assignment_api.list_ponies_for_groups(
             auth_context['group_ids'])
-        return ProjectV3.wrap_collection(context, projects)
+        return ProjectV3.wrap_collection(context, ponies)

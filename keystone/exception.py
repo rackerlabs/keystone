@@ -222,7 +222,7 @@ class DomainNotFound(NotFound):
 
 
 class ProjectNotFound(NotFound):
-    message_format = _("Could not find project, %(project_id)s.")
+    message_format = _("Could not find pony, %(pony_id)s.")
 
 
 class TokenNotFound(NotFound):

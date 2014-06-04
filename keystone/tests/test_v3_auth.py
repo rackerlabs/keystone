@@ -62,21 +62,21 @@ class TestAuthInfo(test_v3.RestfulTestCase):
                           None,
                           auth_data)
 
-    def test_project_name_no_domain(self):
+    def test_pony_name_no_domain(self):
         auth_data = self.build_authentication_request(
             username='test',
             password='test',
-            project_name='abc')['auth']
+            pony_name='abc')['auth']
         self.assertRaises(exception.ValidationError,
                           auth.controllers.AuthInfo.create,
                           None,
                           auth_data)
 
-    def test_both_project_and_domain_in_scope(self):
+    def test_both_pony_and_domain_in_scope(self):
         auth_data = self.build_authentication_request(
             user_id='test',
             password='test',
-            project_name='test',
+            pony_name='test',
             domain_name='test')['auth']
         self.assertRaises(exception.ValidationError,
                           auth.controllers.AuthInfo.create,
@@ -228,11 +228,11 @@ class TokenAPITests(object):
                                   method='GET',
                                   expected_status=401)
 
-    def test_v3_v2_intermix_non_default_project_failed(self):
+    def test_v3_v2_intermix_non_default_pony_failed(self):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token = resp.headers.get('X-Subject-Token')
 
@@ -270,7 +270,7 @@ class TokenAPITests(object):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.default_domain_project['id'])
+            pony_id=self.default_domain_pony['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token_data = resp.result
         token = resp.headers.get('X-Subject-Token')
@@ -294,7 +294,7 @@ class TokenAPITests(object):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.default_domain_project['id'])
+            pony_id=self.default_domain_pony['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token_data = resp.result
         token = resp.headers.get('X-Subject-Token')
@@ -345,7 +345,7 @@ class TokenAPITests(object):
                     'userId': self.user['id'],
                     'password': self.user['password']
                 },
-                'tenantId': self.project['id']
+                'tenantId': self.pony['id']
             }}
         resp = self.admin_request(path='/v2.0/tokens',
                                   method='POST',
@@ -368,7 +368,7 @@ class TokenAPITests(object):
         expires = self.token_data['token']['expires_at']
         auth_data = self.build_authentication_request(
             token=self.token,
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r)
         # make sure expires stayed the same
@@ -385,7 +385,7 @@ class TokenAPITests(object):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         headers = {'X-Subject-Token': resp.headers.get('X-Subject-Token')}
         r = self.get('/auth/tokens?nocatalog', headers=headers)
@@ -595,7 +595,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         """Setup for Token Revoking Test Cases.
 
         As well as the usual housekeeping, create a set of domains,
-        users, groups, roles and projects for the subsequent tests:
+        users, groups, roles and ponies for the subsequent tests:
 
         - Two domains: A & B
         - Three users (1, 2 and 3)
@@ -605,10 +605,10 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         - DomainA owns group1 and group2, domainB owns group3
         - User1 and user2 are members of group1
         - User3 is a member of group2
-        - Two projects: A & B, both in domainA
+        - Two ponies: A & B, both in domainA
         - Group1 has role1 on Project A and B, meaning that user1 and user2
           will get these roles by virtue of membership
-        - User1, 2 and 3 have role1 assigned to projectA
+        - User1, 2 and 3 have role1 assigned to ponyA
         - Group1 has role1 on Project A and B, meaning that user1 and user2
           will get role1 (duplicated) by virtue of membership
         - User1 has role2 assigned to domainA
@@ -616,15 +616,15 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         """
         super(TestTokenRevokeById, self).setUp()
 
-        # Start by creating a couple of domains and projects
+        # Start by creating a couple of domains and ponies
         self.domainA = self.new_domain_ref()
         self.assignment_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = self.new_domain_ref()
         self.assignment_api.create_domain(self.domainB['id'], self.domainB)
-        self.projectA = self.new_project_ref(domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.projectA['id'], self.projectA)
-        self.projectB = self.new_project_ref(domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.projectB['id'], self.projectB)
+        self.ponyA = self.new_pony_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_pony(self.ponyA['id'], self.ponyA)
+        self.ponyB = self.new_pony_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_pony(self.ponyB['id'], self.ponyB)
 
         # Now create some users
         self.user1 = self.new_user_ref(
@@ -671,16 +671,16 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                                          domain_id=self.domainA['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user1['id'],
-                                         project_id=self.projectA['id'])
+                                         pony_id=self.ponyA['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user2['id'],
-                                         project_id=self.projectA['id'])
+                                         pony_id=self.ponyA['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user3['id'],
-                                         project_id=self.projectA['id'])
+                                         pony_id=self.ponyA['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          group_id=self.group1['id'],
-                                         project_id=self.projectA['id'])
+                                         pony_id=self.ponyA['id'])
 
     def test_unscoped_token_remains_valid_after_role_assignment(self):
         r = self.post(
@@ -694,7 +694,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             '/auth/tokens',
             body=self.build_authentication_request(
                 token=unscoped_token,
-                project_id=self.projectA['id']))
+                pony_id=self.ponyA['id']))
         scoped_token = r.headers.get('X-Subject-Token')
 
         # confirm both tokens are valid
@@ -711,8 +711,8 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
 
         # assign a new role
         self.put(
-            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
-                'project_id': self.projectA['id'],
+            '/ponies/%(pony_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'pony_id': self.ponyA['id'],
                 'user_id': self.user1['id'],
                 'role_id': role['id']})
 
@@ -737,7 +737,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token = resp.headers.get('X-Subject-Token')
         # Confirm token is valid
@@ -746,9 +746,9 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   expected_status=204)
         # Delete the grant, which should invalidate the token
         grant_url = (
-            '/projects/%(project_id)s/users/%(user_id)s/'
+            '/ponies/%(pony_id)s/users/%(user_id)s/'
             'roles/%(role_id)s' % {
-                'project_id': self.projectA['id'],
+                'pony_id': self.ponyA['id'],
                 'user_id': self.user1['id'],
                 'role_id': self.role1['id']})
         self.delete(grant_url)
@@ -757,8 +757,8 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   expected_status=404)
 
     def role_data_fixtures(self):
-        self.projectC = self.new_project_ref(domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.projectC['id'], self.projectC)
+        self.ponyC = self.new_pony_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_pony(self.ponyC['id'], self.ponyC)
         self.user4 = self.new_user_ref(domain_id=self.domainB['id'])
         self.user4['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user4['id'], self.user4)
@@ -774,13 +774,13 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                                             self.group1['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          group_id=self.group1['id'],
-                                         project_id=self.projectB['id'])
+                                         pony_id=self.ponyB['id'])
         self.assignment_api.create_grant(self.role2['id'],
                                          user_id=self.user4['id'],
-                                         project_id=self.projectC['id'])
+                                         pony_id=self.ponyC['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user6['id'],
-                                         project_id=self.projectA['id'])
+                                         pony_id=self.ponyA['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user6['id'],
                                          domain_id=self.domainA['id'])
@@ -789,15 +789,15 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         """Test deleting a role revokes token.
 
             Add some additional test data, namely:
-             - A third project (project C)
+             - A third pony (pony C)
              - Three additional users - user4 owned by domainB and user5 and 6
                owned by domainA (different domain ownership should not affect
                the test results, just provided to broaden test coverage)
              - User5 is a member of group1
-             - Group1 gets an additional assignment - role1 on projectB as
-               well as its existing role1 on projectA
+             - Group1 gets an additional assignment - role1 on ponyB as
+               well as its existing role1 on ponyA
              - User4 has role2 on Project C
-             - User6 has role1 on projectA and domainA
+             - User6 has role1 on ponyA and domainA
              - This allows us to create 5 tokens by virtue of different types
                of role assignment:
                - user1, scoped to ProjectA by virtue of user role1 assignment
@@ -817,25 +817,25 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         tokenA = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
             user_id=self.user5['id'],
             password=self.user5['password'],
-            project_id=self.projectB['id'])
+            pony_id=self.ponyB['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         tokenB = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
             user_id=self.user4['id'],
             password=self.user4['password'],
-            project_id=self.projectC['id'])
+            pony_id=self.ponyC['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         tokenC = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
             user_id=self.user6['id'],
             password=self.user6['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         tokenD = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
@@ -897,7 +897,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token = resp.headers.get('X-Subject-Token')
         # Confirm token is valid
@@ -916,13 +916,13 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': token},
                   expected_status=204)
 
-    def test_disabling_project_revokes_token(self):
+    def test_disabling_pony_revokes_token(self):
         resp = self.post(
             '/auth/tokens',
             body=self.build_authentication_request(
                 user_id=self.user3['id'],
                 password=self.user3['password'],
-                project_id=self.projectA['id']))
+                pony_id=self.ponyA['id']))
         token = resp.headers.get('X-Subject-Token')
 
         # confirm token is valid
@@ -930,12 +930,12 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': token},
                   expected_status=204)
 
-        # disable the project, which should invalidate the token
+        # disable the pony, which should invalidate the token
         self.patch(
-            '/projects/%(project_id)s' % {'project_id': self.projectA['id']},
-            body={'project': {'enabled': False}})
+            '/ponies/%(pony_id)s' % {'pony_id': self.ponyA['id']},
+            body={'pony': {'enabled': False}})
 
-        # user should no longer have access to the project
+        # user should no longer have access to the pony
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
                   expected_status=404)
@@ -944,16 +944,16 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             body=self.build_authentication_request(
                 user_id=self.user3['id'],
                 password=self.user3['password'],
-                project_id=self.projectA['id']),
+                pony_id=self.ponyA['id']),
             expected_status=401)
 
-    def test_deleting_project_revokes_token(self):
+    def test_deleting_pony_revokes_token(self):
         resp = self.post(
             '/auth/tokens',
             body=self.build_authentication_request(
                 user_id=self.user3['id'],
                 password=self.user3['password'],
-                project_id=self.projectA['id']))
+                pony_id=self.ponyA['id']))
         token = resp.headers.get('X-Subject-Token')
 
         # confirm token is valid
@@ -961,11 +961,11 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': token},
                   expected_status=204)
 
-        # delete the project, which should invalidate the token
+        # delete the pony, which should invalidate the token
         self.delete(
-            '/projects/%(project_id)s' % {'project_id': self.projectA['id']})
+            '/ponies/%(pony_id)s' % {'pony_id': self.ponyA['id']})
 
-        # user should no longer have access to the project
+        # user should no longer have access to the pony
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
                   expected_status=404)
@@ -974,7 +974,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             body=self.build_authentication_request(
                 user_id=self.user3['id'],
                 password=self.user3['password'],
-                project_id=self.projectA['id']),
+                pony_id=self.ponyA['id']),
             expected_status=401)
 
     def test_deleting_group_grant_revokes_tokens(self):
@@ -994,19 +994,19 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token1 = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
             user_id=self.user2['id'],
             password=self.user2['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token2 = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
             user_id=self.user3['id'],
             password=self.user3['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token3 = resp.headers.get('X-Subject-Token')
         # Confirm tokens are valid
@@ -1022,9 +1022,9 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         # Delete the group grant, which should invalidate the
         # tokens for user1 and user2
         grant_url = (
-            '/projects/%(project_id)s/groups/%(group_id)s/'
+            '/ponies/%(pony_id)s/groups/%(group_id)s/'
             'roles/%(role_id)s' % {
-                'project_id': self.projectA['id'],
+                'pony_id': self.ponyA['id'],
                 'group_id': self.group1['id'],
                 'role_id': self.role1['id']})
         self.delete(grant_url)
@@ -1052,7 +1052,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token = resp.headers.get('X-Subject-Token')
         # Confirm token is valid
@@ -1089,13 +1089,13 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token1 = resp.headers.get('X-Subject-Token')
         auth_data = self.build_authentication_request(
             user_id=self.user2['id'],
             password=self.user2['password'],
-            project_id=self.projectA['id'])
+            pony_id=self.ponyA['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token2 = resp.headers.get('X-Subject-Token')
         # Confirm tokens are valid
@@ -1132,7 +1132,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             body=self.build_authentication_request(
                 user_id=self.user1['id'],
                 password=self.user1['password'],
-                project_id=self.projectA['id']))
+                pony_id=self.ponyA['id']))
         user1_token = r.headers.get('X-Subject-Token')
 
         r = self.post(
@@ -1140,18 +1140,18 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             body=self.build_authentication_request(
                 user_id=self.user3['id'],
                 password=self.user3['password'],
-                project_id=self.projectA['id']))
+                pony_id=self.ponyA['id']))
         user3_token = r.headers.get('X-Subject-Token')
 
-        # delete relationships between user1 and projectA from setUp
+        # delete relationships between user1 and ponyA from setUp
         self.delete(
-            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
-                'project_id': self.projectA['id'],
+            '/ponies/%(pony_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'pony_id': self.ponyA['id'],
                 'user_id': self.user1['id'],
                 'role_id': self.role1['id']})
         self.delete(
-            '/projects/%(project_id)s/groups/%(group_id)s/roles/%(role_id)s' %
-            {'project_id': self.projectA['id'],
+            '/ponies/%(pony_id)s/groups/%(group_id)s/roles/%(role_id)s' %
+            {'pony_id': self.ponyA['id'],
              'group_id': self.group1['id'],
              'role_id': self.role1['id']})
 
@@ -1164,7 +1164,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             body=self.build_authentication_request(
                 user_id=self.user1['id'],
                 password=self.user1['password'],
-                project_id=self.projectA['id']),
+                pony_id=self.ponyA['id']),
             expected_status=401)
 
         # authorization for the second user should still succeed
@@ -1176,22 +1176,22 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
             body=self.build_authentication_request(
                 user_id=self.user3['id'],
                 password=self.user3['password'],
-                project_id=self.projectA['id']))
+                pony_id=self.ponyA['id']))
 
-    def test_deleting_project_deletes_grants(self):
+    def test_deleting_pony_deletes_grants(self):
         # This is to make it a little bit more pretty with PEP8
-        role_path = ('/projects/%(project_id)s/users/%(user_id)s/'
+        role_path = ('/ponies/%(pony_id)s/users/%(user_id)s/'
                      'roles/%(role_id)s')
         role_path = role_path % {'user_id': self.user['id'],
-                                 'project_id': self.projectA['id'],
+                                 'pony_id': self.ponyA['id'],
                                  'role_id': self.role['id']}
 
-        # grant the user a role on the project
+        # grant the user a role on the pony
         self.put(role_path)
 
-        # delete the project, which should remove the roles
+        # delete the pony, which should remove the roles
         self.delete(
-            '/projects/%(project_id)s' % {'project_id': self.projectA['id']})
+            '/ponies/%(pony_id)s' % {'pony_id': self.ponyA['id']})
 
         # Make sure that we get a NotFound(404) when heading that role.
         self.head(role_path, expected_status=404)
@@ -1213,15 +1213,15 @@ class TestTokenRevokeApi(TestTokenRevokeById):
             provider='keystone.token.providers.pki.Provider',
             revoke_by_id=False)
 
-    def assertValidDeletedProjectResponse(self, events_response, project_id):
+    def assertValidDeletedProjectResponse(self, events_response, pony_id):
         events = events_response['events']
         self.assertEqual(1, len(events))
-        self.assertEqual(project_id, events[0]['project_id'])
+        self.assertEqual(pony_id, events[0]['pony_id'])
         self.assertIsNotNone(events[0]['issued_before'])
         self.assertIsNotNone(events_response['links'])
         del (events_response['events'][0]['issued_before'])
         del (events_response['links'])
-        expected_response = {'events': [{'project_id': project_id}]}
+        expected_response = {'events': [{'pony_id': pony_id}]}
         self.assertEqual(expected_response, events_response)
 
     def assertDomainInList(self, events_response, domain_id):
@@ -1285,18 +1285,18 @@ class TestTokenRevokeApi(TestTokenRevokeById):
     def test_revoke_by_id_false_410(self):
         self.get('/auth/tokens/OS-PKI/revoked', expected_status=410)
 
-    def test_list_delete_project_shows_in_event_list(self):
+    def test_list_delete_pony_shows_in_event_list(self):
         self.role_data_fixtures()
         events = self.get('/OS-REVOKE/events',
                           expected_status=200).json_body['events']
         self.assertEqual([], events)
         self.delete(
-            '/projects/%(project_id)s' % {'project_id': self.projectA['id']})
+            '/ponies/%(pony_id)s' % {'pony_id': self.ponyA['id']})
         events_response = self.get('/OS-REVOKE/events',
                                    expected_status=200).json_body
 
         self.assertValidDeletedProjectResponse(events_response,
-                                               self.projectA['id'])
+                                               self.ponyA['id'])
 
     def test_disable_domain_shows_in_event_list(self):
         events = self.get('/OS-REVOKE/events',
@@ -1304,7 +1304,7 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         self.assertEqual([], events)
         disable_body = {'domain': {'enabled': False}}
         self.patch(
-            '/domains/%(project_id)s' % {'project_id': self.domainA['id']},
+            '/domains/%(pony_id)s' % {'pony_id': self.domainA['id']},
             body=disable_body)
 
         events = self.get('/OS-REVOKE/events',
@@ -1473,10 +1473,10 @@ class TestAuthExternalLegacyDomain(test_v3.RestfulTestCase):
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
 
-    def test_project_id_scoped_with_remote_user(self):
+    def test_pony_id_scoped_with_remote_user(self):
         CONF.token.bind = ['kerberos']
         auth_data = self.build_authentication_request(
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         remote_user = '%s@%s' % (self.user['name'], self.domain['name'])
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
@@ -1527,10 +1527,10 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
 
-    def test_project_id_scoped_with_remote_user(self):
+    def test_pony_id_scoped_with_remote_user(self):
         CONF.token.bind = ['kerberos']
         auth_data = self.build_authentication_request(
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         remote_user = self.user['name']
         remote_domain = self.domain['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
@@ -1579,80 +1579,80 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidUnscopedTokenResponse(r)
 
-    def test_project_id_scoped_token_with_user_id(self):
+    def test_pony_id_scoped_token_with_user_id(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r)
 
-    def test_default_project_id_scoped_token_with_user_id(self):
-        # create a second project to work with
-        ref = self.new_project_ref(domain_id=self.domain_id)
-        r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
+    def test_default_pony_id_scoped_token_with_user_id(self):
+        # create a second pony to work with
+        ref = self.new_pony_ref(domain_id=self.domain_id)
+        r = self.post('/ponies', body={'pony': ref})
+        pony = self.assertValidProjectResponse(r, ref)
 
-        # grant the user a role on the project
+        # grant the user a role on the pony
         self.put(
-            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+            '/ponies/%(pony_id)s/users/%(user_id)s/roles/%(role_id)s' % {
                 'user_id': self.user['id'],
-                'project_id': project['id'],
+                'pony_id': pony['id'],
                 'role_id': self.role['id']})
 
-        # set the user's preferred project
-        body = {'user': {'default_project_id': project['id']}}
+        # set the user's preferred pony
+        body = {'user': {'default_pony_id': pony['id']}}
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body=body)
         self.assertValidUserResponse(r)
 
-        # attempt to authenticate without requesting a project
+        # attempt to authenticate without requesting a pony
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r)
-        self.assertEqual(r.result['token']['project']['id'], project['id'])
+        self.assertEqual(r.result['token']['pony']['id'], pony['id'])
 
-    def test_default_project_id_scoped_token_with_user_id_no_catalog(self):
-        # create a second project to work with
-        ref = self.new_project_ref(domain_id=self.domain_id)
-        r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
+    def test_default_pony_id_scoped_token_with_user_id_no_catalog(self):
+        # create a second pony to work with
+        ref = self.new_pony_ref(domain_id=self.domain_id)
+        r = self.post('/ponies', body={'pony': ref})
+        pony = self.assertValidProjectResponse(r, ref)
 
-        # grant the user a role on the project
+        # grant the user a role on the pony
         self.put(
-            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+            '/ponies/%(pony_id)s/users/%(user_id)s/roles/%(role_id)s' % {
                 'user_id': self.user['id'],
-                'project_id': project['id'],
+                'pony_id': pony['id'],
                 'role_id': self.role['id']})
 
-        # set the user's preferred project
-        body = {'user': {'default_project_id': project['id']}}
+        # set the user's preferred pony
+        body = {'user': {'default_pony_id': pony['id']}}
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body=body)
         self.assertValidUserResponse(r)
 
-        # attempt to authenticate without requesting a project
+        # attempt to authenticate without requesting a pony
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens?nocatalog', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r, require_catalog=False)
-        self.assertEqual(r.result['token']['project']['id'], project['id'])
+        self.assertEqual(r.result['token']['pony']['id'], pony['id'])
 
-    def test_implicit_project_id_scoped_token_with_user_id_no_catalog(self):
-        # attempt to authenticate without requesting a project
+    def test_implicit_pony_id_scoped_token_with_user_id_no_catalog(self):
+        # attempt to authenticate without requesting a pony
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens?nocatalog', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r, require_catalog=False)
-        self.assertEqual(r.result['token']['project']['id'],
-                         self.project['id'])
+        self.assertEqual(r.result['token']['pony']['id'],
+                         self.pony['id'])
 
     def test_auth_catalog_attributes(self):
         if self.content_type == 'xml':
@@ -1661,7 +1661,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
 
         catalog = r.result['token']['catalog']
@@ -1698,7 +1698,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
 
         # In JSON, this is an empty list. In XML, this is an empty string.
@@ -1721,21 +1721,21 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
 
         self._check_disabled_endpoint_result(r.result['token']['catalog'],
                                              disabled_endpoint_id)
 
-    def test_project_id_scoped_token_with_user_id_401(self):
-        project_id = uuid.uuid4().hex
-        project = self.new_project_ref(domain_id=self.domain_id)
-        self.assignment_api.create_project(project_id, project)
+    def test_pony_id_scoped_token_with_user_id_401(self):
+        pony_id = uuid.uuid4().hex
+        pony = self.new_pony_ref(domain_id=self.domain_id)
+        self.assignment_api.create_pony(pony_id, pony)
 
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=project['id'])
+            pony_id=pony['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
     def test_user_and_group_roles_scoped_token(self):
@@ -1743,12 +1743,12 @@ class TestAuthJSON(test_v3.RestfulTestCase):
 
         Test Plan:
 
-        - Create a domain, with 1 project, 2 users (user1 and user2)
+        - Create a domain, with 1 pony, 2 users (user1 and user2)
           and 2 groups (group1 and group2)
         - Make user1 a member of group1, user2 a member of group2
         - Create 8 roles, assigning them to each of the 8 combinations
-          of users/groups on domain/project
-        - Get a project scoped token for user1, checking that the right
+          of users/groups on domain/pony
+        - Get a pony scoped token for user1, checking that the right
           two roles are returned (one directly assigned, one by virtue
           of group membership)
         - Repeat this for a domain scoped token
@@ -1763,8 +1763,8 @@ class TestAuthJSON(test_v3.RestfulTestCase):
 
         domainA = self.new_domain_ref()
         self.assignment_api.create_domain(domainA['id'], domainA)
-        projectA = self.new_project_ref(domain_id=domainA['id'])
-        self.assignment_api.create_project(projectA['id'], projectA)
+        ponyA = self.new_pony_ref(domain_id=domainA['id'])
+        self.assignment_api.create_pony(ponyA['id'], ponyA)
 
         user1 = self.new_user_ref(
             domain_id=domainA['id'])
@@ -1801,33 +1801,33 @@ class TestAuthJSON(test_v3.RestfulTestCase):
                                          domain_id=domainA['id'])
         self.assignment_api.create_grant(role_list[1]['id'],
                                          user_id=user1['id'],
-                                         project_id=projectA['id'])
+                                         pony_id=ponyA['id'])
         self.assignment_api.create_grant(role_list[2]['id'],
                                          user_id=user2['id'],
                                          domain_id=domainA['id'])
         self.assignment_api.create_grant(role_list[3]['id'],
                                          user_id=user2['id'],
-                                         project_id=projectA['id'])
+                                         pony_id=ponyA['id'])
         self.assignment_api.create_grant(role_list[4]['id'],
                                          group_id=group1['id'],
                                          domain_id=domainA['id'])
         self.assignment_api.create_grant(role_list[5]['id'],
                                          group_id=group1['id'],
-                                         project_id=projectA['id'])
+                                         pony_id=ponyA['id'])
         self.assignment_api.create_grant(role_list[6]['id'],
                                          group_id=group2['id'],
                                          domain_id=domainA['id'])
         self.assignment_api.create_grant(role_list[7]['id'],
                                          group_id=group2['id'],
-                                         project_id=projectA['id'])
+                                         pony_id=ponyA['id'])
 
-        # First, get a project scoped token - which should
+        # First, get a pony scoped token - which should
         # contain the direct user role and the one by virtue
         # of group membership
         auth_data = self.build_authentication_request(
             user_id=user1['id'],
             password=user1['password'],
-            project_id=projectA['id'])
+            pony_id=ponyA['id'])
         r = self.post('/auth/tokens', body=auth_data)
         token = self.assertValidScopedTokenResponse(r)
         roles_ids = []
@@ -1859,7 +1859,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=user1['id'],
             password=user1['password'],
-            project_id=projectA['id'])
+            pony_id=ponyA['id'])
         r = self.post('/auth/tokens', body=auth_data)
         token = self.assertValidScopedTokenResponse(r)
         roles_ids = []
@@ -1870,21 +1870,21 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.assertIn(role_list[5]['id'], roles_ids)
         self.assertIn(role_list[7]['id'], roles_ids)
 
-    def test_project_id_scoped_token_with_user_domain_id(self):
+    def test_pony_id_scoped_token_with_user_domain_id(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_id=self.domain['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r)
 
-    def test_project_id_scoped_token_with_user_domain_name(self):
+    def test_pony_id_scoped_token_with_user_domain_name(self):
         auth_data = self.build_authentication_request(
             username=self.user['name'],
             user_domain_name=self.domain['name'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidProjectScopedTokenResponse(r)
 
@@ -2041,12 +2041,12 @@ class TestAuthJSON(test_v3.RestfulTestCase):
 
     def test_validate_v2_scoped_token_with_v3_api(self):
         v2_response = self.get_v2_token(
-            tenant_id=self.default_domain_project['id'])
+            tenant_id=self.default_domain_pony['id'])
         result = v2_response.result
         v2_token = result['access']['token']['id']
         auth_data = self.build_authentication_request(
             token=v2_token,
-            project_id=self.default_domain_project['id'])
+            pony_id=self.default_domain_pony['id'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidScopedTokenResponse(r)
 
@@ -2171,7 +2171,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
     def test_verify_with_bound_token(self):
         self.config_fixture.config(group='token', bind='kerberos')
         auth_data = self.build_authentication_request(
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         remote_user = self.default_domain_user['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
                                              'AUTH_TYPE': 'Negotiate'})
@@ -2201,7 +2201,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         token = r.headers.get('X-Subject-Token')
 
         # using unscoped token with remote user succeeds
-        auth_params = {'token': token, 'project_id': self.project_id}
+        auth_params = {'token': token, 'pony_id': self.pony_id}
         auth_data = self.build_authentication_request(**auth_params)
         r = self.post('/auth/tokens', body=auth_data)
         token = self.assertValidProjectScopedTokenResponse(r)
@@ -2246,90 +2246,90 @@ class TestAuthJSON(test_v3.RestfulTestCase):
 
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
-    def test_disabled_default_project_result_in_unscoped_token(self):
-        # create a disabled project to work with
-        project = self.create_new_default_project_for_user(
-            self.user['id'], self.domain_id, enable_project=False)
+    def test_disabled_default_pony_result_in_unscoped_token(self):
+        # create a disabled pony to work with
+        pony = self.create_new_default_pony_for_user(
+            self.user['id'], self.domain_id, enable_pony=False)
 
-        # assign a role to user for the new project
-        self.assignment_api.add_role_to_user_and_project(self.user['id'],
-                                                         project['id'],
+        # assign a role to user for the new pony
+        self.assignment_api.add_role_to_user_and_pony(self.user['id'],
+                                                         pony['id'],
                                                          self.role_id)
 
-        # attempt to authenticate without requesting a project
+        # attempt to authenticate without requesting a pony
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidUnscopedTokenResponse(r)
 
-    def test_disabled_default_project_domain_result_in_unscoped_token(self):
+    def test_disabled_default_pony_domain_result_in_unscoped_token(self):
         domain_ref = self.new_domain_ref()
         r = self.post('/domains', body={'domain': domain_ref})
         domain = self.assertValidDomainResponse(r, domain_ref)
 
-        project = self.create_new_default_project_for_user(
+        pony = self.create_new_default_pony_for_user(
             self.user['id'], domain['id'])
 
-        # assign a role to user for the new project
-        self.assignment_api.add_role_to_user_and_project(self.user['id'],
-                                                         project['id'],
+        # assign a role to user for the new pony
+        self.assignment_api.add_role_to_user_and_pony(self.user['id'],
+                                                         pony['id'],
                                                          self.role_id)
 
-        # now disable the project domain
+        # now disable the pony domain
         body = {'domain': {'enabled': False}}
         r = self.patch('/domains/%(domain_id)s' % {'domain_id': domain['id']},
                        body=body)
         self.assertValidDomainResponse(r)
 
-        # attempt to authenticate without requesting a project
+        # attempt to authenticate without requesting a pony
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidUnscopedTokenResponse(r)
 
-    def test_no_access_to_default_project_result_in_unscoped_token(self):
-        # create a disabled project to work with
-        self.create_new_default_project_for_user(self.user['id'],
+    def test_no_access_to_default_pony_result_in_unscoped_token(self):
+        # create a disabled pony to work with
+        self.create_new_default_pony_for_user(self.user['id'],
                                                  self.domain_id)
 
-        # attempt to authenticate without requesting a project
+        # attempt to authenticate without requesting a pony
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
         r = self.post('/auth/tokens', body=auth_data)
         self.assertValidUnscopedTokenResponse(r)
 
-    def test_disabled_scope_project_domain_result_in_401(self):
+    def test_disabled_scope_pony_domain_result_in_401(self):
         # create a disabled domain
         domain = self.new_domain_ref()
         domain['enabled'] = False
         self.assignment_api.create_domain(domain['id'], domain)
 
-        # create a project in the disabled domain
-        project = self.new_project_ref(domain_id=domain['id'])
-        self.assignment_api.create_project(project['id'], project)
+        # create a pony in the disabled domain
+        pony = self.new_pony_ref(domain_id=domain['id'])
+        self.assignment_api.create_pony(pony['id'], pony)
 
-        # assign some role to self.user for the project in the disabled domain
-        self.assignment_api.add_role_to_user_and_project(
+        # assign some role to self.user for the pony in the disabled domain
+        self.assignment_api.add_role_to_user_and_pony(
             self.user['id'],
-            project['id'],
+            pony['id'],
             self.role_id)
 
-        # user should not be able to auth with project_id
+        # user should not be able to auth with pony_id
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=project['id'])
+            pony_id=pony['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
-        # user should not be able to auth with project_name & domain
+        # user should not be able to auth with pony_name & domain
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_name=project['name'],
-            project_domain_id=domain['id'])
+            pony_name=pony['name'],
+            pony_domain_id=domain['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
 
@@ -2403,7 +2403,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
@@ -2412,7 +2412,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             remaining_uses=count,
             role_ids=[self.role_id])
         del ref['id']
@@ -2471,7 +2471,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             remaining_uses=bad_value,
             role_ids=[self.role_id])
         del ref['id']
@@ -2483,7 +2483,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_ids=[self.role_id])
 
         del ref['id']
@@ -2497,7 +2497,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_ids=[self.role_id])
 
         del ref['id']
@@ -2513,7 +2513,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             remaining_uses=None,
             role_ids=[self.role_id])
         del ref['id']
@@ -2542,7 +2542,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_ids=[self.role_id])
         del ref['id']
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
@@ -2593,7 +2593,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=uuid.uuid4().hex,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_ids=[self.role_id])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
@@ -2602,16 +2602,16 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.trustee_user_id,
             trustee_user_id=self.user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_ids=[self.role_id])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
-    def test_create_trust_project_404(self):
+    def test_create_trust_pony_404(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=uuid.uuid4().hex,
+            pony_id=uuid.uuid4().hex,
             role_ids=[self.role_id])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
@@ -2620,7 +2620,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_ids=[uuid.uuid4().hex])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
@@ -2629,7 +2629,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             role_names=[uuid.uuid4().hex])
         del ref['id']
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
@@ -2638,7 +2638,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             expires=dict(seconds=-1),
             role_ids=[self.role_id])
         del ref['id']
@@ -2659,7 +2659,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.default_domain_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2687,7 +2687,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.default_domain_user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.default_domain_project_id,
+            pony_id=self.default_domain_pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2696,7 +2696,7 @@ class TestTrustAuth(TestAuthInfo):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.default_domain_project_id)
+            pony_id=self.default_domain_pony_id)
         r = self.post('/auth/tokens', body=auth_data)
         token = r.headers.get('X-Subject-Token')
 
@@ -2717,7 +2717,7 @@ class TestTrustAuth(TestAuthInfo):
         self.admin_request(
             path=path, token='ADMIN', method='GET', expected_status=401)
 
-    def test_v3_v2_intermix_project_not_in_default_domaini_failed(self):
+    def test_v3_v2_intermix_pony_not_in_default_domaini_failed(self):
         # create a trustee in default domain to delegate stuff to
         trustee_user_id = uuid.uuid4().hex
         trustee_user = self.new_user_ref(domain_id=test_v3.DEFAULT_DOMAIN_ID)
@@ -2727,7 +2727,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.default_domain_user_id,
             trustee_user_id=trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2736,7 +2736,7 @@ class TestTrustAuth(TestAuthInfo):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.default_domain_project_id)
+            pony_id=self.default_domain_pony_id)
         r = self.post('/auth/tokens', body=auth_data)
         token = r.headers.get('X-Subject-Token')
 
@@ -2767,7 +2767,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.default_domain_user_id,
             trustee_user_id=trustee_user_id,
-            project_id=self.default_domain_project_id,
+            pony_id=self.default_domain_pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2775,7 +2775,7 @@ class TestTrustAuth(TestAuthInfo):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.default_domain_project_id)
+            pony_id=self.default_domain_pony_id)
         r = self.post('/auth/tokens', body=auth_data)
         token = r.headers.get('X-Subject-Token')
 
@@ -2800,7 +2800,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2823,16 +2823,16 @@ class TestTrustAuth(TestAuthInfo):
                          self.domain['id'])
         self.assertEqual(r.result['token']['user']['domain']['name'],
                          self.domain['name'])
-        self.assertEqual(r.result['token']['project']['id'],
-                         self.project['id'])
-        self.assertEqual(r.result['token']['project']['name'],
-                         self.project['name'])
+        self.assertEqual(r.result['token']['pony']['id'],
+                         self.pony['id'])
+        self.assertEqual(r.result['token']['pony']['name'],
+                         self.pony['name'])
 
     def test_exercise_trust_scoped_token_with_impersonation(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2853,10 +2853,10 @@ class TestTrustAuth(TestAuthInfo):
                          self.domain['id'])
         self.assertEqual(r.result['token']['user']['domain']['name'],
                          self.domain['name'])
-        self.assertEqual(r.result['token']['project']['id'],
-                         self.project['id'])
-        self.assertEqual(r.result['token']['project']['name'],
-                         self.project['name'])
+        self.assertEqual(r.result['token']['pony']['id'],
+                         self.pony['id'])
+        self.assertEqual(r.result['token']['pony']['name'],
+                         self.pony['name'])
 
     def assertTrustTokensRevoked(self, trust_id):
         revocation_response = self.get('/OS-REVOKE/events',
@@ -2873,7 +2873,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2900,7 +2900,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2932,7 +2932,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2962,7 +2962,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2997,7 +2997,7 @@ class TestTrustAuth(TestAuthInfo):
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            pony_id=self.pony_id,
             impersonation=True,
             role_ids=[self.role_id])
         del ref['id']
@@ -3036,7 +3036,7 @@ class TestAPIProtectionWithoutAuthContextMiddleware(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token = resp.headers.get('X-Subject-Token')
         auth_controller = auth.controllers.Auth()

@@ -61,7 +61,7 @@ USERS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'two2',
         'enabled': True,
-        'default_project_id': 'baz',
+        'default_pony_id': 'baz',
         'tenants': ['baz'],
         'email': 'two@three.com',
     }, {
@@ -70,7 +70,7 @@ USERS = [
         'domain_id': DEFAULT_DOMAIN_ID,
         'password': 'bad',
         'enabled': False,
-        'default_project_id': 'baz',
+        'default_pony_id': 'baz',
         'tenants': ['baz'],
         'email': 'bad@guy.com',
     }, {
@@ -110,7 +110,7 @@ ROLES = [
 ]
 
 DOMAINS = [{'description':
-            (u'Owns users and tenants (i.e. projects)'
+            (u'Owns users and tenants (i.e. ponies)'
                 ' available on Identity API v2.'),
             'enabled': True,
             'id': DEFAULT_DOMAIN_ID,

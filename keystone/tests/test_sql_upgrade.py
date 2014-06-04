@@ -60,7 +60,7 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 # { <DB_TABLE_NAME>: [<COLUMN>, <COLUMN>, ...], ... }
 INITIAL_TABLE_STRUCTURE = {
     'credential': [
-        'id', 'user_id', 'project_id', 'blob', 'type', 'extra',
+        'id', 'user_id', 'pony_id', 'blob', 'type', 'extra',
     ],
     'domain': [
         'id', 'name', 'enabled', 'extra',
@@ -75,13 +75,13 @@ INITIAL_TABLE_STRUCTURE = {
     'group_domain_metadata': [
         'group_id', 'domain_id', 'data',
     ],
-    'group_project_metadata': [
-        'group_id', 'project_id', 'data',
+    'group_pony_metadata': [
+        'group_id', 'pony_id', 'data',
     ],
     'policy': [
         'id', 'type', 'blob', 'extra',
     ],
-    'project': [
+    'pony': [
         'id', 'name', 'extra', 'description', 'enabled', 'domain_id',
     ],
     'role': [
@@ -94,7 +94,7 @@ INITIAL_TABLE_STRUCTURE = {
         'id', 'expires', 'extra', 'valid', 'trust_id', 'user_id',
     ],
     'trust': [
-        'id', 'trustor_user_id', 'trustee_user_id', 'project_id',
+        'id', 'trustor_user_id', 'trustee_user_id', 'pony_id',
         'impersonation', 'deleted_at', 'expires_at', 'extra',
     ],
     'trust_role': [
@@ -102,7 +102,7 @@ INITIAL_TABLE_STRUCTURE = {
     ],
     'user': [
         'id', 'name', 'extra', 'password', 'enabled', 'domain_id',
-        'default_project_id',
+        'default_pony_id',
     ],
     'user_domain_metadata': [
         'user_id', 'domain_id', 'data',
@@ -110,8 +110,8 @@ INITIAL_TABLE_STRUCTURE = {
     'user_group_membership': [
         'user_id', 'group_id',
     ],
-    'user_project_metadata': [
-        'user_id', 'project_id', 'data',
+    'user_pony_metadata': [
+        'user_id', 'pony_id', 'data',
     ],
 }
 
@@ -358,8 +358,8 @@ class SqlUpgradeTests(SqlMigrateBase):
             group_table = sqlalchemy.Table('group', self.metadata,
                                            autoload=True)
             role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
-            project_table = sqlalchemy.Table(
-                'project', self.metadata, autoload=True)
+            pony_table = sqlalchemy.Table(
+                'pony', self.metadata, autoload=True)
 
             base_data = {}
             # Create a Domain
@@ -375,20 +375,20 @@ class SqlUpgradeTests(SqlMigrateBase):
             session.execute(domain_table.insert().values(base_data['domain2']))
 
             # Create a Project
-            base_data['project'] = {'id': uuid.uuid4().hex,
+            base_data['pony'] = {'id': uuid.uuid4().hex,
                                     'name': uuid.uuid4().hex,
                                     'domain_id': base_data['domain']['id'],
                                     'extra': "{}"}
             session.execute(
-                project_table.insert().values(base_data['project']))
+                pony_table.insert().values(base_data['pony']))
 
             # Create another Project
-            base_data['project2'] = {'id': uuid.uuid4().hex,
+            base_data['pony2'] = {'id': uuid.uuid4().hex,
                                      'name': uuid.uuid4().hex,
                                      'domain_id': base_data['domain']['id'],
                                      'extra': "{}"}
             session.execute(
-                project_table.insert().values(base_data['project2']))
+                pony_table.insert().values(base_data['pony2']))
 
             # Create a User
             base_data['user'] = {'id': uuid.uuid4().hex,
@@ -417,44 +417,44 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         def populate_grants(session, base_data):
 
-            user_project_table = sqlalchemy.Table(
-                'user_project_metadata', self.metadata, autoload=True)
+            user_pony_table = sqlalchemy.Table(
+                'user_pony_metadata', self.metadata, autoload=True)
             user_domain_table = sqlalchemy.Table(
                 'user_domain_metadata', self.metadata, autoload=True)
-            group_project_table = sqlalchemy.Table(
-                'group_project_metadata', self.metadata, autoload=True)
+            group_pony_table = sqlalchemy.Table(
+                'group_pony_metadata', self.metadata, autoload=True)
             group_domain_table = sqlalchemy.Table(
                 'group_domain_metadata', self.metadata, autoload=True)
 
-            # Grant a role to user on project
+            # Grant a role to user on pony
             grant = {'user_id': base_data['user']['id'],
-                     'project_id': base_data['project']['id'],
+                     'pony_id': base_data['pony']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][0]['id']}]})}
-            session.execute(user_project_table.insert().values(grant))
+            session.execute(user_pony_table.insert().values(grant))
 
-            # Grant two roles to user on project2
+            # Grant two roles to user on pony2
             grant = {'user_id': base_data['user']['id'],
-                     'project_id': base_data['project2']['id'],
+                     'pony_id': base_data['pony2']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][1]['id']},
                                     {'id': base_data['roles'][2]['id']}]})}
-            session.execute(user_project_table.insert().values(grant))
+            session.execute(user_pony_table.insert().values(grant))
 
-            # Grant role to group on project
+            # Grant role to group on pony
             grant = {'group_id': base_data['group']['id'],
-                     'project_id': base_data['project']['id'],
+                     'pony_id': base_data['pony']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][3]['id']}]})}
-            session.execute(group_project_table.insert().values(grant))
+            session.execute(group_pony_table.insert().values(grant))
 
-            # Grant two roles to group on project2
+            # Grant two roles to group on pony2
             grant = {'group_id': base_data['group']['id'],
-                     'project_id': base_data['project2']['id'],
+                     'pony_id': base_data['pony2']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][4]['id']},
                                     {'id': base_data['roles'][5]['id']}]})}
-            session.execute(group_project_table.insert().values(grant))
+            session.execute(group_pony_table.insert().values(grant))
 
             # Grant two roles to group on domain, one inherited, one not
             grant = {'group_id': base_data['group']['id'],
@@ -462,7 +462,7 @@ class SqlUpgradeTests(SqlMigrateBase):
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][6]['id']},
                                     {'id': base_data['roles'][7]['id'],
-                                     'inherited_to': 'projects'}]})}
+                                     'inherited_to': 'ponies'}]})}
             session.execute(group_domain_table.insert().values(grant))
 
             # Grant inherited role to user on domain
@@ -470,7 +470,7 @@ class SqlUpgradeTests(SqlMigrateBase):
                      'domain_id': base_data['domain']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][8]['id'],
-                                     'inherited_to': 'projects'}]})}
+                                     'inherited_to': 'ponies'}]})}
             session.execute(user_domain_table.insert().values(grant))
 
             # Grant two non-inherited roles to user on domain2, using roles
@@ -485,47 +485,47 @@ class SqlUpgradeTests(SqlMigrateBase):
             session.commit()
 
         def check_grants(session, base_data):
-            user_project_table = sqlalchemy.Table(
-                'user_project_metadata', self.metadata, autoload=True)
+            user_pony_table = sqlalchemy.Table(
+                'user_pony_metadata', self.metadata, autoload=True)
             user_domain_table = sqlalchemy.Table(
                 'user_domain_metadata', self.metadata, autoload=True)
-            group_project_table = sqlalchemy.Table(
-                'group_project_metadata', self.metadata, autoload=True)
+            group_pony_table = sqlalchemy.Table(
+                'group_pony_metadata', self.metadata, autoload=True)
             group_domain_table = sqlalchemy.Table(
                 'group_domain_metadata', self.metadata, autoload=True)
 
-            s = sqlalchemy.select([user_project_table.c.data]).where(
-                (user_project_table.c.user_id == base_data['user']['id']) &
-                (user_project_table.c.project_id ==
-                 base_data['project']['id']))
+            s = sqlalchemy.select([user_pony_table.c.data]).where(
+                (user_pony_table.c.user_id == base_data['user']['id']) &
+                (user_pony_table.c.pony_id ==
+                 base_data['pony']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 1)
             self.assertIn({'id': base_data['roles'][0]['id']}, data['roles'])
 
-            s = sqlalchemy.select([user_project_table.c.data]).where(
-                (user_project_table.c.user_id == base_data['user']['id']) &
-                (user_project_table.c.project_id ==
-                 base_data['project2']['id']))
+            s = sqlalchemy.select([user_pony_table.c.data]).where(
+                (user_pony_table.c.user_id == base_data['user']['id']) &
+                (user_pony_table.c.pony_id ==
+                 base_data['pony2']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 2)
             self.assertIn({'id': base_data['roles'][1]['id']}, data['roles'])
             self.assertIn({'id': base_data['roles'][2]['id']}, data['roles'])
 
-            s = sqlalchemy.select([group_project_table.c.data]).where(
-                (group_project_table.c.group_id == base_data['group']['id']) &
-                (group_project_table.c.project_id ==
-                 base_data['project']['id']))
+            s = sqlalchemy.select([group_pony_table.c.data]).where(
+                (group_pony_table.c.group_id == base_data['group']['id']) &
+                (group_pony_table.c.pony_id ==
+                 base_data['pony']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 1)
             self.assertIn({'id': base_data['roles'][3]['id']}, data['roles'])
 
-            s = sqlalchemy.select([group_project_table.c.data]).where(
-                (group_project_table.c.group_id == base_data['group']['id']) &
-                (group_project_table.c.project_id ==
-                 base_data['project2']['id']))
+            s = sqlalchemy.select([group_pony_table.c.data]).where(
+                (group_pony_table.c.group_id == base_data['group']['id']) &
+                (group_pony_table.c.pony_id ==
+                 base_data['pony2']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 2)
@@ -540,7 +540,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertEqual(len(data['roles']), 2)
             self.assertIn({'id': base_data['roles'][6]['id']}, data['roles'])
             self.assertIn({'id': base_data['roles'][7]['id'],
-                           'inherited_to': 'projects'}, data['roles'])
+                           'inherited_to': 'ponies'}, data['roles'])
 
             s = sqlalchemy.select([user_domain_table.c.data]).where(
                 (user_domain_table.c.user_id == base_data['user']['id']) &
@@ -549,7 +549,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 1)
             self.assertIn({'id': base_data['roles'][8]['id'],
-                           'inherited_to': 'projects'}, data['roles'])
+                           'inherited_to': 'ponies'}, data['roles'])
 
             s = sqlalchemy.select([user_domain_table.c.data]).where(
                 (user_domain_table.c.user_id == base_data['user']['id']) &
@@ -574,7 +574,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['user']['id'])
-            q = q.filter_by(target_id=base_data['project']['id'])
+            q = q.filter_by(target_id=base_data['pony']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 1)
             self.assertEqual(refs[0].role_id, base_data['roles'][0]['id'])
@@ -584,7 +584,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['user']['id'])
-            q = q.filter_by(target_id=base_data['project2']['id'])
+            q = q.filter_by(target_id=base_data['pony2']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 2)
             role_ids = [base_data['roles'][1]['id'],
@@ -598,7 +598,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['group']['id'])
-            q = q.filter_by(target_id=base_data['project']['id'])
+            q = q.filter_by(target_id=base_data['pony']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 1)
             self.assertEqual(refs[0].role_id, base_data['roles'][3]['id'])
@@ -608,7 +608,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['group']['id'])
-            q = q.filter_by(target_id=base_data['project2']['id'])
+            q = q.filter_by(target_id=base_data['pony2']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 2)
             role_ids = [base_data['roles'][4]['id'],
@@ -673,8 +673,8 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(40)
         session = self.Session()
         self.assertTableExists('assignment')
-        self.assertTableDoesNotExist('user_project_metadata')
-        self.assertTableDoesNotExist('group_project_metadata')
+        self.assertTableDoesNotExist('user_pony_metadata')
+        self.assertTableDoesNotExist('group_pony_metadata')
         self.assertTableDoesNotExist('user_domain_metadata')
         self.assertTableDoesNotExist('group_domain_metadata')
         check_assignments(session, base_data)
@@ -691,7 +691,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableColumns('trust',
                                 ['id', 'trustor_user_id',
                                  'trustee_user_id',
-                                 'project_id', 'impersonation',
+                                 'pony_id', 'impersonation',
                                  'deleted_at',
                                  'expires_at', 'extra',
                                  'remaining_uses'])
@@ -703,7 +703,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableColumns('trust',
                                 ['id', 'trustor_user_id',
                                  'trustee_user_id',
-                                 'project_id', 'impersonation',
+                                 'pony_id', 'impersonation',
                                  'deleted_at',
                                  'expires_at', 'extra'])
 
@@ -716,7 +716,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             'id': uuid.uuid4().hex,
             'trustor_user_id': uuid.uuid4().hex,
             'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'pony_id': uuid.uuid4().hex,
             'impersonation': True,
             'remaining_uses': 5
         }
@@ -724,7 +724,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             'id': uuid.uuid4().hex,
             'trustor_user_id': uuid.uuid4().hex,
             'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'pony_id': uuid.uuid4().hex,
             'impersonation': True,
             'remaining_uses': 0
         }
@@ -732,7 +732,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             'id': uuid.uuid4().hex,
             'trustor_user_id': uuid.uuid4().hex,
             'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'pony_id': uuid.uuid4().hex,
             'impersonation': True,
             'remaining_uses': None
         }
@@ -1251,16 +1251,16 @@ class SqlUpgradeTests(SqlMigrateBase):
     def populate_tenant_table(self, with_desc_enab=False,
                               with_desc_enab_domain=False):
         # Populate the appropriate fields in the tenant or
-        # project table, depending on the parameters
+        # pony table, depending on the parameters
         #
         # Default: id, name, extra
         # desc_enab: Add description, enabled as well
         # desc_enab_domain: Add description, enabled and domain as well,
-        #                   plus use project instead of tenant
+        #                   plus use pony instead of tenant
         #
         if with_desc_enab_domain:
-            # By this time tenants are now projects
-            this_table = sqlalchemy.Table("project",
+            # By this time tenants are now ponies
+            this_table = sqlalchemy.Table("pony",
                                           self.metadata,
                                           autoload=True)
         else:

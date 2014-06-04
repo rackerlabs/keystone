@@ -18,8 +18,8 @@ import sqlalchemy as sql
 
 from keystone.assignment.backends import sql as assignment_sql
 
-USER_PROJECT_TABLE = 'user_project_metadata'
-GROUP_PROJECT_TABLE = 'group_project_metadata'
+USER_PROJECT_TABLE = 'user_pony_metadata'
+GROUP_PROJECT_TABLE = 'group_pony_metadata'
 USER_DOMAIN_TABLE = 'user_domain_metadata'
 GROUP_DOMAIN_TABLE = 'group_domain_metadata'
 
@@ -35,11 +35,11 @@ def migrate_grant_table(meta, migrate_engine, session, table_name):
         if table_name == USER_PROJECT_TABLE:
             return {'type': assignment_sql.AssignmentType.USER_PROJECT,
                     'actor_id': composite_grant.user_id,
-                    'target_id': composite_grant.project_id}
+                    'target_id': composite_grant.pony_id}
         elif table_name == GROUP_PROJECT_TABLE:
             return {'type': assignment_sql.AssignmentType.GROUP_PROJECT,
                     'actor_id': composite_grant.group_id,
-                    'target_id': composite_grant.project_id}
+                    'target_id': composite_grant.pony_id}
         elif table_name == USER_DOMAIN_TABLE:
             return {'type': assignment_sql.AssignmentType.USER_DOMAIN,
                     'actor_id': composite_grant.user_id,
@@ -61,7 +61,7 @@ def migrate_grant_table(meta, migrate_engine, session, table_name):
                 grant = extract_actor_and_target(table_name, composite_grant)
                 grant['role_id'] = x.get('id')
                 grant['inherited'] = False
-                if x.get('inherited_to') == 'projects':
+                if x.get('inherited_to') == 'ponies':
                     grant['inherited'] = True
                 role_dict_list.append(grant)
         return role_dict_list
@@ -101,7 +101,7 @@ def downgrade_assignment_table(meta, migrate_engine):
                 assignment_sql.AssignmentType.USER_DOMAIN or
                 assignment_row.type ==
                 assignment_sql.AssignmentType.GROUP_DOMAIN):
-            new_entry['inherited_to'] = 'projects'
+            new_entry['inherited_to'] = 'ponies'
 
         if metadata is not None:
             json_metadata = json.loads(metadata)
@@ -114,38 +114,38 @@ def downgrade_assignment_table(meta, migrate_engine):
         json_metadata['roles'].append(new_entry)
         return json.dumps(json_metadata)
 
-    def build_user_project_entry(meta, session, row):
+    def build_user_pony_entry(meta, session, row):
         update_table = sql.Table(USER_PROJECT_TABLE, meta, autoload=True)
         q = session.query(update_table)
         q = q.filter_by(user_id=row.actor_id)
-        q = q.filter_by(project_id=row.target_id)
+        q = q.filter_by(pony_id=row.target_id)
         ref = q.first()
         if ref is not None:
             values = {'data': add_to_dict_list(ref.data, row)}
             update = update_table.update().where(
                 update_table.c.user_id == ref.user_id).where(
-                    update_table.c.project_id == ref.project_id).values(values)
+                    update_table.c.pony_id == ref.pony_id).values(values)
         else:
             values = {'user_id': row.actor_id,
-                      'project_id': row.target_id,
+                      'pony_id': row.target_id,
                       'data': add_to_dict_list(None, row)}
             update = update_table.insert().values(values)
         return update
 
-    def build_group_project_entry(meta, session, row):
+    def build_group_pony_entry(meta, session, row):
         update_table = sql.Table(GROUP_PROJECT_TABLE, meta, autoload=True)
         q = session.query(update_table)
         q = q.filter_by(group_id=row.actor_id)
-        q = q.filter_by(project_id=row.target_id)
+        q = q.filter_by(pony_id=row.target_id)
         ref = q.first()
         if ref is not None:
             values = {'data': add_to_dict_list(ref.data, row)}
             update = update_table.update().where(
                 update_table.c.group_id == ref.group_id).where(
-                    update_table.c.project_id == ref.project_id).values(values)
+                    update_table.c.pony_id == ref.pony_id).values(values)
         else:
             values = {'group_id': row.actor_id,
-                      'project_id': row.target_id,
+                      'pony_id': row.target_id,
                       'data': add_to_dict_list(None, row)}
             update = update_table.insert().values(values)
         return update
@@ -189,9 +189,9 @@ def downgrade_assignment_table(meta, migrate_engine):
     def build_update(meta, session, row):
         """Build an update or an insert to the correct metadata table."""
         if row.type == assignment_sql.AssignmentType.USER_PROJECT:
-            return build_user_project_entry(meta, session, row)
+            return build_user_pony_entry(meta, session, row)
         elif row.type == assignment_sql.AssignmentType.GROUP_PROJECT:
-            return build_group_project_entry(meta, session, row)
+            return build_group_pony_entry(meta, session, row)
         elif row.type == assignment_sql.AssignmentType.USER_DOMAIN:
             return build_user_domain_entry(meta, session, row)
         elif row.type == assignment_sql.AssignmentType.GROUP_DOMAIN:

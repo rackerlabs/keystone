@@ -40,7 +40,7 @@ EXPIRATION_TIME = lambda: CONF.assignment.cache_time
 
 def calc_default_domain():
     return {'description':
-            (u'Owns users and tenants (i.e. projects)'
+            (u'Owns users and tenants (i.e. ponies)'
                 ' available on Identity API v2.'),
             'enabled': True,
             'id': CONF.identity.default_domain_id,
@@ -59,7 +59,7 @@ class Manager(manager.Manager):
     The late import works around this.  The if block prevents creation of the
     api object by both managers.
     """
-    _PROJECT = 'project'
+    _PROJECT = 'pony'
 
     def __init__(self):
         assignment_driver = CONF.assignment.driver
@@ -71,54 +71,54 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(assignment_driver)
 
     @notifications.created(_PROJECT)
-    def create_project(self, tenant_id, tenant):
+    def create_pony(self, tenant_id, tenant):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant['enabled'] = clean.pony_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
-        ret = self.driver.create_project(tenant_id, tenant)
+        ret = self.driver.create_pony(tenant_id, tenant)
         if SHOULD_CACHE(ret):
-            self.get_project.set(ret, self, tenant_id)
-            self.get_project_by_name.set(ret, self, ret['name'],
+            self.get_pony.set(ret, self, tenant_id)
+            self.get_pony_by_name.set(ret, self, ret['name'],
                                          ret['domain_id'])
         return ret
 
     @notifications.disabled(_PROJECT, public=False)
-    def _disable_project(self, tenant_id):
+    def _disable_pony(self, tenant_id):
         return self.token_api.delete_tokens_for_users(
-            self.list_user_ids_for_project(tenant_id),
-            project_id=tenant_id)
+            self.list_user_ids_for_pony(tenant_id),
+            pony_id=tenant_id)
 
     @notifications.updated(_PROJECT)
-    def update_project(self, tenant_id, tenant):
+    def update_pony(self, tenant_id, tenant):
         tenant = tenant.copy()
         if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+            tenant['enabled'] = clean.pony_enabled(tenant['enabled'])
         if not tenant.get('enabled', True):
-            self._disable_project(tenant_id)
-        ret = self.driver.update_project(tenant_id, tenant)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, ret['name'],
+            self._disable_pony(tenant_id)
+        ret = self.driver.update_pony(tenant_id, tenant)
+        self.get_pony.invalidate(self, tenant_id)
+        self.get_pony_by_name.invalidate(self, ret['name'],
                                             ret['domain_id'])
         return ret
 
     @notifications.deleted(_PROJECT)
-    def delete_project(self, tenant_id):
-        project = self.driver.get_project(tenant_id)
-        user_ids = self.list_user_ids_for_project(tenant_id)
-        self.token_api.delete_tokens_for_users(user_ids, project_id=tenant_id)
-        ret = self.driver.delete_project(tenant_id)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
-        self.credential_api.delete_credentials_for_project(tenant_id)
+    def delete_pony(self, tenant_id):
+        pony = self.driver.get_pony(tenant_id)
+        user_ids = self.list_user_ids_for_pony(tenant_id)
+        self.token_api.delete_tokens_for_users(user_ids, pony_id=tenant_id)
+        ret = self.driver.delete_pony(tenant_id)
+        self.get_pony.invalidate(self, tenant_id)
+        self.get_pony_by_name.invalidate(self, pony['name'],
+                                            pony['domain_id'])
+        self.credential_api.delete_credentials_for_pony(tenant_id)
         return ret
 
-    def get_roles_for_user_and_project(self, user_id, tenant_id):
-        """Get the roles associated with a user within given project.
+    def get_roles_for_user_and_pony(self, user_id, tenant_id):
+        """Get the roles associated with a user within given pony.
 
         This includes roles directly assigned to the user on the
-        project, as well as those by virtue of group membership. If
+        pony, as well as those by virtue of group membership. If
         the OS-INHERIT extension is enabled, then this will also
         include roles inherited from the domain.
 
@@ -127,13 +127,13 @@ class Manager(manager.Manager):
                  keystone.exception.ProjectNotFound
 
         """
-        def _get_group_project_roles(user_id, project_ref):
+        def _get_group_pony_roles(user_id, pony_ref):
             role_list = []
             group_refs = self.identity_api.list_groups_for_user(user_id)
             for x in group_refs:
                 try:
                     metadata_ref = self._get_metadata(
-                        group_id=x['id'], tenant_id=project_ref['id'])
+                        group_id=x['id'], tenant_id=pony_ref['id'])
                     role_list += self._roles_from_role_dicts(
                         metadata_ref.get('roles', {}), False)
                 except exception.MetadataNotFound:
@@ -145,7 +145,7 @@ class Manager(manager.Manager):
                     try:
                         metadata_ref = self._get_metadata(
                             group_id=x['id'],
-                            domain_id=project_ref['domain_id'])
+                            domain_id=pony_ref['domain_id'])
                         role_list += self._roles_from_role_dicts(
                             metadata_ref.get('roles', {}), True)
                     except (exception.MetadataNotFound,
@@ -154,11 +154,11 @@ class Manager(manager.Manager):
 
             return role_list
 
-        def _get_user_project_roles(user_id, project_ref):
+        def _get_user_pony_roles(user_id, pony_ref):
             role_list = []
             try:
                 metadata_ref = self._get_metadata(user_id=user_id,
-                                                  tenant_id=project_ref['id'])
+                                                  tenant_id=pony_ref['id'])
                 role_list = self._roles_from_role_dicts(
                     metadata_ref.get('roles', {}), False)
             except exception.MetadataNotFound:
@@ -168,7 +168,7 @@ class Manager(manager.Manager):
                 # Now get any inherited roles for the owning domain
                 try:
                     metadata_ref = self._get_metadata(
-                        user_id=user_id, domain_id=project_ref['domain_id'])
+                        user_id=user_id, domain_id=pony_ref['domain_id'])
                     role_list += self._roles_from_role_dicts(
                         metadata_ref.get('roles', {}), True)
                 except (exception.MetadataNotFound, exception.NotImplemented):
@@ -176,9 +176,9 @@ class Manager(manager.Manager):
 
             return role_list
 
-        project_ref = self.get_project(tenant_id)
-        user_role_list = _get_user_project_roles(user_id, project_ref)
-        group_role_list = _get_group_project_roles(user_id, project_ref)
+        pony_ref = self.get_pony(tenant_id)
+        user_role_list = _get_user_pony_roles(user_id, pony_ref)
+        group_role_list = _get_group_pony_roles(user_id, pony_ref)
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 
@@ -226,7 +226,7 @@ class Manager(manager.Manager):
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 
-    def add_user_to_project(self, tenant_id, user_id):
+    def add_user_to_pony(self, tenant_id, user_id):
         """Add user to a tenant by creating a default role relationship.
 
         :raises: keystone.exception.ProjectNotFound,
@@ -234,7 +234,7 @@ class Manager(manager.Manager):
 
         """
         try:
-            self.driver.add_role_to_user_and_project(
+            self.driver.add_role_to_user_and_pony(
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
@@ -246,29 +246,29 @@ class Manager(manager.Manager):
                     'name': CONF.member_role_name}
             self.driver.create_role(config.CONF.member_role_id, role)
             # now that default role exists, the add should succeed
-            self.driver.add_role_to_user_and_project(
+            self.driver.add_role_to_user_and_pony(
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
 
-    def remove_user_from_project(self, tenant_id, user_id):
+    def remove_user_from_pony(self, tenant_id, user_id):
         """Remove user from a tenant
 
         :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.UserNotFound
 
         """
-        roles = self.get_roles_for_user_and_project(user_id, tenant_id)
+        roles = self.get_roles_for_user_and_pony(user_id, tenant_id)
         if not roles:
             raise exception.NotFound(tenant_id)
         for role_id in roles:
             try:
-                self.driver.remove_role_from_user_and_project(user_id,
+                self.driver.remove_role_from_user_and_pony(user_id,
                                                               tenant_id,
                                                               role_id)
                 if self.revoke_api:
                     self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
-                                                    project_id=tenant_id)
+                                                    pony_id=tenant_id)
 
             except exception.RoleNotFound:
                 LOG.debug(_("Removing role %s failed because it does not "
@@ -277,17 +277,17 @@ class Manager(manager.Manager):
 
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
-    def list_projects_for_user(self, user_id, hints=None):
-        # NOTE(henry-nash): In order to get a complete list of user projects,
+    def list_ponies_for_user(self, user_id, hints=None):
+        # NOTE(henry-nash): In order to get a complete list of user ponies,
         # the driver will need to look at group assignments.  To avoid cross
         # calling between the assignment and identity driver we get the group
         # list here and pass it in. The rest of the detailed logic of listing
-        # projects for a user is pushed down into the driver to enable
+        # ponies for a user is pushed down into the driver to enable
         # optimization with the various backend technologies (SQL, LDAP etc.).
 
         group_ids = [x['id'] for
                      x in self.identity_api.list_groups_for_user(user_id)]
-        return self.driver.list_projects_for_user(
+        return self.driver.list_ponies_for_user(
             user_id, group_ids, hints or driver_hints.Hints())
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
@@ -319,7 +319,7 @@ class Manager(manager.Manager):
     @notifications.updated('domain')
     def update_domain(self, domain_id, domain):
         ret = self.driver.update_domain(domain_id, domain)
-        # disable owned users & projects when the API user specifically set
+        # disable owned users & ponies when the API user specifically set
         #     enabled=False
         if not domain.get('enabled', True):
             self._disable_domain(domain_id)
@@ -372,19 +372,19 @@ class Manager(manager.Manager):
 
         """
         user_refs = self.identity_api.list_users()
-        proj_refs = self.list_projects()
+        proj_refs = self.list_ponies()
         group_refs = self.identity_api.list_groups()
 
-        # First delete the projects themselves
-        for project in proj_refs:
-            if project['domain_id'] == domain_id:
+        # First delete the ponies themselves
+        for pony in proj_refs:
+            if pony['domain_id'] == domain_id:
                 try:
-                    self.delete_project(project['id'])
+                    self.delete_pony(pony['id'])
                 except exception.ProjectNotFound:
-                    LOG.debug(_('Project %(projectid)s not found when '
+                    LOG.debug(_('Project %(ponyid)s not found when '
                                 'deleting domain contents for %(domainid)s, '
                                 'continuing with cleanup.'),
-                              {'projectid': project['id'],
+                              {'ponyid': pony['id'],
                                'domainid': domain_id})
 
         for group in group_refs:
@@ -413,28 +413,28 @@ class Manager(manager.Manager):
                                'domainid': domain_id})
 
     @manager.response_truncated
-    def list_projects(self, hints=None):
-        return self.driver.list_projects(hints or driver_hints.Hints())
+    def list_ponies(self, hints=None):
+        return self.driver.list_ponies(hints or driver_hints.Hints())
 
-    # NOTE(henry-nash): list_projects_in_domain is actually an internal method
+    # NOTE(henry-nash): list_ponies_in_domain is actually an internal method
     # and not exposed via the API.  Therefore there is no need to support
     # driver hints for it.
-    def list_projects_in_domain(self, domain_id):
-        return self.driver.list_projects_in_domain(domain_id)
+    def list_ponies_in_domain(self, domain_id):
+        return self.driver.list_ponies_in_domain(domain_id)
 
-    def list_user_projects(self, user_id, hints=None):
-        return self.driver.list_user_projects(
+    def list_user_ponies(self, user_id, hints=None):
+        return self.driver.list_user_ponies(
             user_id, hints or driver_hints.Hints())
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
-    def get_project(self, project_id):
-        return self.driver.get_project(project_id)
+    def get_pony(self, pony_id):
+        return self.driver.get_pony(pony_id)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_pony_by_name(self, tenant_name, domain_id):
+        return self.driver.get_pony_by_name(tenant_name, domain_id)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
@@ -486,25 +486,25 @@ class Manager(manager.Manager):
         return [r for r in self.driver.list_role_assignments()
                 if r['role_id'] == role_id]
 
-    def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
-        self.driver.remove_role_from_user_and_project(user_id, tenant_id,
+    def remove_role_from_user_and_pony(self, user_id, tenant_id, role_id):
+        self.driver.remove_role_from_user_and_pony(user_id, tenant_id,
                                                       role_id)
         if CONF.token.revoke_by_id:
             self.token_api.delete_tokens_for_user(user_id)
         if self.revoke_api:
             self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
-                                            project_id=tenant_id)
+                                            pony_id=tenant_id)
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     domain_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         user_ids = []
         if group_id is None:
             if self.revoke_api:
                 self.revoke_api.revoke_by_grant(user_id=user_id,
                                                 role_id=role_id,
                                                 domain_id=domain_id,
-                                                project_id=project_id)
+                                                pony_id=pony_id)
         else:
             try:
                 # NOTE(morganfainberg): The user ids are the important part
@@ -516,13 +516,13 @@ class Manager(manager.Manager):
                         if self.revoke_api:
                             self.revoke_api.revoke_by_grant(
                                 user_id=user['id'], role_id=role_id,
-                                domain_id=domain_id, project_id=project_id)
+                                domain_id=domain_id, pony_id=pony_id)
             except exception.GroupNotFound:
                 LOG.debug(_('Group %s not found, no tokens to invalidate.'),
                           group_id)
 
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
-                                 project_id, inherited_to_projects)
+                                 pony_id, inherited_to_ponies)
         if user_id is not None:
             user_ids.append(user_id)
         self.token_api.delete_tokens_for_users(user_ids)
@@ -531,20 +531,20 @@ class Manager(manager.Manager):
         assignments = self.list_role_assignments_for_role(role_id=role_id)
 
         # Iterate over the assignments for this role and build the list of
-        # user or user+project IDs for the tokens we need to delete
+        # user or user+pony IDs for the tokens we need to delete
         user_ids = set()
-        user_and_project_ids = list()
+        user_and_pony_ids = list()
         for assignment in assignments:
-            # If we have a project assignment, then record both the user and
-            # project IDs so we can target the right token to delete. If it is
+            # If we have a pony assignment, then record both the user and
+            # pony IDs so we can target the right token to delete. If it is
             # a domain assignment, we might as well kill all the tokens for
             # the user, since in the vast majority of cases all the tokens
             # for a user will be within one domain anyway, so not worth
-            # trying to delete tokens for each project in the domain.
+            # trying to delete tokens for each pony in the domain.
             if 'user_id' in assignment:
-                if 'project_id' in assignment:
-                    user_and_project_ids.append(
-                        (assignment['user_id'], assignment['project_id']))
+                if 'pony_id' in assignment:
+                    user_and_pony_ids.append(
+                        (assignment['user_id'], assignment['pony_id']))
                 elif 'domain_id' in assignment:
                     user_ids.add(assignment['user_id'])
             elif 'group_id' in assignment:
@@ -555,8 +555,8 @@ class Manager(manager.Manager):
                         assignment['group_id'])
                 except exception.GroupNotFound:
                     # Ignore it, but log a debug message
-                    if 'project_id' in assignment:
-                        target = _('Project (%s)') % assignment['project_id']
+                    if 'pony_id' in assignment:
+                        target = _('Project (%s)') % assignment['pony_id']
                     elif 'domain_id' in assignment:
                         target = _('Domain (%s)') % assignment['domain_id']
                     else:
@@ -567,26 +567,26 @@ class Manager(manager.Manager):
                                     'target': target})
                     continue
 
-                if 'project_id' in assignment:
+                if 'pony_id' in assignment:
                     for user in users:
-                        user_and_project_ids.append(
-                            (user['id'], assignment['project_id']))
+                        user_and_pony_ids.append(
+                            (user['id'], assignment['pony_id']))
                 elif 'domain_id' in assignment:
                     for user in users:
                         user_ids.add(user['id'])
 
         # Now process the built up lists.  Before issuing calls to delete any
         # tokens, let's try and minimize the number of calls by pruning out
-        # any user+project deletions where a general token deletion for that
+        # any user+pony deletions where a general token deletion for that
         # same user is also planned.
-        user_and_project_ids_to_action = []
-        for user_and_project_id in user_and_project_ids:
-            if user_and_project_id[0] not in user_ids:
-                user_and_project_ids_to_action.append(user_and_project_id)
+        user_and_pony_ids_to_action = []
+        for user_and_pony_id in user_and_pony_ids:
+            if user_and_pony_id[0] not in user_ids:
+                user_and_pony_ids_to_action.append(user_and_pony_id)
 
         self.token_api.delete_tokens_for_users(user_ids)
-        for user_id, project_id in user_and_project_ids_to_action:
-            self.token_api.delete_tokens_for_user(user_id, project_id)
+        for user_id, pony_id in user_and_pony_ids_to_action:
+            self.token_api.delete_tokens_for_user(user_id, pony_id)
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -595,14 +595,14 @@ class Driver(object):
     def _role_to_dict(self, role_id, inherited):
         role_dict = {'id': role_id}
         if inherited:
-            role_dict['inherited_to'] = 'projects'
+            role_dict['inherited_to'] = 'ponies'
         return role_dict
 
     def _roles_from_role_dicts(self, dict_list, inherited):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+               (d.get('inherited_to') == 'ponies' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
@@ -630,7 +630,7 @@ class Driver(object):
         return CONF.assignment.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_pony_by_name(self, tenant_name, domain_id):
         """Get a tenant by name.
 
         :returns: tenant_ref
@@ -640,8 +640,8 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_user_ids_for_project(self, tenant_id):
-        """Lists all user IDs with a role assignment in the specified project.
+    def list_user_ids_for_pony(self, tenant_id):
+        """Lists all user IDs with a role assignment in the specified pony.
 
         :returns: a list of user_ids or an empty set.
         :raises: keystone.exception.ProjectNotFound
@@ -650,7 +650,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+    def add_role_to_user_and_pony(self, user_id, tenant_id, role_id):
         """Add a role to a user within given tenant.
 
         :raises: keystone.exception.UserNotFound,
@@ -660,7 +660,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
+    def remove_role_from_user_and_pony(self, user_id, tenant_id, role_id):
         """Remove a role from a user within given tenant.
 
         :raises: keystone.exception.UserNotFound,
@@ -674,12 +674,12 @@ class Driver(object):
 
     @abc.abstractmethod
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     domain_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         """Creates a new assignment/grant.
 
         If the assignment is to a domain, then optionally it may be
-        specified as inherited to owned projects (this requires
+        specified as inherited to owned ponies (this requires
         the OS-INHERIT extension to be enabled).
 
         :raises: keystone.exception.DomainNotFound,
@@ -691,8 +691,8 @@ class Driver(object):
 
     @abc.abstractmethod
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
-                    inherited_to_projects=False):
+                    domain_id=None, pony_id=None,
+                    inherited_to_ponies=False):
         """Lists assignments/grants.
 
         :raises: keystone.exception.UserNotFound,
@@ -706,8 +706,8 @@ class Driver(object):
 
     @abc.abstractmethod
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
-                  inherited_to_projects=False):
+                  domain_id=None, pony_id=None,
+                  inherited_to_ponies=False):
         """Lists assignments/grants.
 
         :raises: keystone.exception.UserNotFound,
@@ -721,8 +721,8 @@ class Driver(object):
 
     @abc.abstractmethod
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     domain_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         """Deletes assignments/grants.
 
         :raises: keystone.exception.ProjectNotFound,
@@ -798,10 +798,10 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
-    # project crud
+    # pony crud
     @abc.abstractmethod
-    def create_project(self, project_id, project):
-        """Creates a new project.
+    def create_pony(self, pony_id, pony):
+        """Creates a new pony.
 
         :raises: keystone.exception.Conflict
 
@@ -809,32 +809,32 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_projects(self, hints):
-        """List projects in the system.
+    def list_ponies(self, hints):
+        """List ponies in the system.
 
         :param hints: filter hints which the driver should
                       implement if at all possible.
 
-        :returns: a list of project_refs or an empty list.
+        :returns: a list of pony_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_projects_in_domain(self, domain_id):
-        """List projects in the domain.
+    def list_ponies_in_domain(self, domain_id):
+        """List ponies in the domain.
 
-        :param domain_id: the driver MUST only return projects
+        :param domain_id: the driver MUST only return ponies
                           within this domain.
 
-        :returns: a list of project_refs or an empty list.
+        :returns: a list of pony_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_projects_for_user(self, user_id, group_ids, hints):
-        """List all projects associated with a given user.
+    def list_ponies_for_user(self, user_id, group_ids, hints):
+        """List all ponies associated with a given user.
 
         :param user_id: the user in question
         :param group_ids: the groups this user is a member of.  This list is
@@ -843,38 +843,38 @@ class Driver(object):
         :param hints: filter hints which the driver should
                       implement if at all possible.
 
-        :returns: a list of project_refs or an empty list.
+        :returns: a list of pony_refs or an empty list.
 
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+    def get_roles_for_groups(self, group_ids, pony_id=None, domain_id=None):
         """List all the roles assigned to groups on either domain or
-        project.
+        pony.
 
-        If the project_id is not None, this value will be used, no matter what
+        If the pony_id is not None, this value will be used, no matter what
         was specified in the domain_id.
 
         :param group_ids: iterable with group ids
-        :param project_id: id of the project
+        :param pony_id: id of the pony
         :param domain_id: id of the domain
 
-        :raises: AttributeError: In case both project_id and domain_id are set
+        :raises: AttributeError: In case both pony_id and domain_id are set
                                  to None
 
         :returns: a list of Role entities matching groups and
-                  project_id or domain_id
+                  pony_id or domain_id
 
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_projects_for_groups(self, group_ids):
-        """List projects accessible to specified groups.
+    def list_ponies_for_groups(self, group_ids):
+        """List ponies accessible to specified groups.
 
         :param group_ids: List of group ids.
-        :returns: List of projects accessible to specified groups.
+        :returns: List of ponies accessible to specified groups.
 
         """
         raise exception.NotImplemented()
@@ -890,18 +890,18 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def get_project(self, project_id):
-        """Get a project by ID.
+    def get_pony(self, pony_id):
+        """Get a pony by ID.
 
-        :returns: project_ref
+        :returns: pony_ref
         :raises: keystone.exception.ProjectNotFound
 
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def update_project(self, project_id, project):
-        """Updates an existing project.
+    def update_pony(self, pony_id, pony):
+        """Updates an existing pony.
 
         :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.Conflict
@@ -910,8 +910,8 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def delete_project(self, project_id):
-        """Deletes an existing project.
+    def delete_pony(self, pony_id):
+        """Deletes an existing pony.
 
         :raises: keystone.exception.ProjectNotFound
 

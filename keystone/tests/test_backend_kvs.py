@@ -46,7 +46,7 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
         user_ref = driver._get_user(self.user_foo['id'])
         self.assertNotEqual(user_ref['password'], self.user_foo['password'])
 
-    def test_list_projects_for_user_with_grants(self):
+    def test_list_ponies_for_user_with_grants(self):
         self.skipTest('kvs backend is now deprecated')
 
     def test_create_duplicate_group_name_in_different_domains(self):
@@ -55,7 +55,7 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Blocked by bug 1119770')
 
-    def test_create_duplicate_project_name_in_different_domains(self):
+    def test_create_duplicate_pony_name_in_different_domains(self):
         self.skipTest('Blocked by bug 1119770')
 
     def test_move_user_between_domains(self):
@@ -70,10 +70,10 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
     def test_move_group_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1119770')
 
-    def test_move_project_between_domains(self):
+    def test_move_pony_between_domains(self):
         self.skipTest('Blocked by bug 1119770')
 
-    def test_move_project_between_domains_with_clashing_names_fails(self):
+    def test_move_pony_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1119770')
 
 
@@ -218,7 +218,7 @@ class KvsCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_get_catalog_endpoint_disabled(self):
         # This test doesn't apply to KVS because with the KVS backend the
         # application creates the catalog (including the endpoints) for each
-        # user and project. Whether endpoints are enabled or disabled isn't
+        # user and pony. Whether endpoints are enabled or disabled isn't
         # a consideration.
         f = super(KvsCatalog, self).test_get_catalog_endpoint_disabled
         self.assertRaises(exception.NotFound, f)

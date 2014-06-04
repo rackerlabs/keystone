@@ -76,7 +76,7 @@ class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
                                  'request_secret',
                                  'verifier',
                                  'authorizing_user_id',
-                                 'requested_project_id',
+                                 'requested_pony_id',
                                  'requested_roles',
                                  'consumer_id',
                                  'expires_at'])
@@ -84,7 +84,7 @@ class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
                                 ['id',
                                  'access_secret',
                                  'authorizing_user_id',
-                                 'project_id',
+                                 'pony_id',
                                  'requested_roles',
                                  'consumer_id',
                                  'expires_at'])
@@ -101,7 +101,7 @@ class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
                                  'request_secret',
                                  'verifier',
                                  'authorizing_user_id',
-                                 'requested_project_id',
+                                 'requested_pony_id',
                                  'requested_roles',
                                  'consumer_id',
                                  'expires_at'])
@@ -109,7 +109,7 @@ class SqlUpgradeOAuth1Extension(test_sql_upgrade.SqlMigrateBase):
                                 ['id',
                                  'access_secret',
                                  'authorizing_user_id',
-                                 'project_id',
+                                 'pony_id',
                                  'requested_roles',
                                  'consumer_id',
                                  'expires_at'])
@@ -124,17 +124,17 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
         return endpoint_filter
 
     def test_upgrade(self):
-        self.assertTableDoesNotExist('project_endpoint')
+        self.assertTableDoesNotExist('pony_endpoint')
         self.upgrade(1, repository=self.repo_path)
-        self.assertTableColumns('project_endpoint',
-                                ['endpoint_id', 'project_id'])
+        self.assertTableColumns('pony_endpoint',
+                                ['endpoint_id', 'pony_id'])
 
     def test_downgrade(self):
         self.upgrade(1, repository=self.repo_path)
-        self.assertTableColumns('project_endpoint',
-                                ['endpoint_id', 'project_id'])
+        self.assertTableColumns('pony_endpoint',
+                                ['endpoint_id', 'pony_id'])
         self.downgrade(0, repository=self.repo_path)
-        self.assertTableDoesNotExist('project_endpoint')
+        self.assertTableDoesNotExist('pony_endpoint')
 
 
 class FederationExtension(test_sql_upgrade.SqlMigrateBase):
@@ -201,7 +201,7 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableDoesNotExist(self.mapping)
 
 
-_REVOKE_COLUMN_NAMES = ['id', 'domain_id', 'project_id', 'user_id', 'role_id',
+_REVOKE_COLUMN_NAMES = ['id', 'domain_id', 'pony_id', 'user_id', 'role_id',
                         'trust_id', 'consumer_id', 'access_token_id',
                         'issued_before', 'expires_at', 'revoked_at']
 

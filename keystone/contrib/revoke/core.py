@@ -85,10 +85,10 @@ class Manager(manager.Manager):
         self.revoke(
             model.RevokeEvent(role_id=payload['resource_info']))
 
-    def _project_callback(self, service, resource_type, operation,
+    def _pony_callback(self, service, resource_type, operation,
                           payload):
         self.revoke(
-            model.RevokeEvent(project_id=payload['resource_info']))
+            model.RevokeEvent(pony_id=payload['resource_info']))
 
     def _domain_callback(self, service, resource_type, operation,
                          payload):
@@ -119,8 +119,8 @@ class Manager(manager.Manager):
             ['deleted', 'role', self._role_callback],
             ['deleted', 'user', self._user_callback],
             ['disabled', 'user', self._user_callback],
-            ['deleted', 'project', self._project_callback],
-            ['disabled', 'project', self._project_callback],
+            ['deleted', 'pony', self._pony_callback],
+            ['disabled', 'pony', self._pony_callback],
             ['disabled', 'domain', self._domain_callback]]
         for cb in callbacks:
             notifications.register_event_callback(*cb)
@@ -134,19 +134,19 @@ class Manager(manager.Manager):
                               expires_at=expires_at))
 
     def revoke_by_grant(self, role_id, user_id=None,
-                        domain_id=None, project_id=None):
+                        domain_id=None, pony_id=None):
         self.revoke(
             model.RevokeEvent(user_id=user_id,
                               role_id=role_id,
                               domain_id=domain_id,
-                              project_id=project_id))
+                              pony_id=pony_id))
 
-    def revoke_by_user_and_project(self, user_id, project_id):
+    def revoke_by_user_and_pony(self, user_id, pony_id):
         self.revoke(
-            model.RevokeEvent(project_id=project_id, user_id=user_id))
+            model.RevokeEvent(pony_id=pony_id, user_id=user_id))
 
-    def revoke_by_project_role_assignment(self, project_id, role_id):
-        self.revoke(model.RevokeEvent(project_id=project_id, role_id=role_id))
+    def revoke_by_pony_role_assignment(self, pony_id, role_id):
+        self.revoke(model.RevokeEvent(pony_id=pony_id, role_id=role_id))
 
     def revoke_by_domain_role_assignment(self, domain_id, role_id):
         self.revoke(model.RevokeEvent(domain_id=domain_id, role_id=role_id))

@@ -186,7 +186,7 @@ class CoreApiTests(object):
             expected_status=404)
 
     def test_validate_token_service_role(self):
-        self.md_foobar = self.assignment_api.add_role_to_user_and_project(
+        self.md_foobar = self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_service['id'],
             self.role_service['id'])
@@ -198,7 +198,7 @@ class CoreApiTests(object):
         self.assertValidAuthenticationResponse(r)
 
     def test_remove_role_revokes_token(self):
-        self.md_foobar = self.assignment_api.add_role_to_user_and_project(
+        self.md_foobar = self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_service['id'],
             self.role_service['id'])
@@ -209,7 +209,7 @@ class CoreApiTests(object):
             token=token)
         self.assertValidAuthenticationResponse(r)
 
-        self.assignment_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_pony(
             self.user_foo['id'],
             self.tenant_service['id'],
             self.role_service['id'])
@@ -431,8 +431,8 @@ class CoreApiTests(object):
         """
         raise NotImplementedError()
 
-    def _get_project_id(self, r):
-        """Helper method to return project ID from a response.
+    def _get_pony_id(self, r):
+        """Helper method to return pony ID from a response.
 
         This needs to be overridden by child classes
         based on their content type.
@@ -471,8 +471,8 @@ class CoreApiTests(object):
 
         # Check if member_role is in tenant_bar
         r = self.admin_request(
-            path='/v2.0/tenants/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.tenant_bar['id'],
+            path='/v2.0/tenants/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': self.tenant_bar['id'],
                 'user_id': user_id
             },
             token=token,
@@ -493,7 +493,7 @@ class CoreApiTests(object):
             token=token,
             expected_status=200)
 
-        project_id = self._get_project_id(r.result)
+        pony_id = self._get_pony_id(r.result)
 
         # Update user's tenant
         r = self.admin_request(
@@ -503,7 +503,7 @@ class CoreApiTests(object):
             },
             body={
                 'user': {
-                    'tenantId': project_id,
+                    'tenantId': pony_id,
                 },
             },
             token=token,
@@ -511,8 +511,8 @@ class CoreApiTests(object):
 
         # 'member_role' should be in new_tenant
         r = self.admin_request(
-            path='/v2.0/tenants/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': project_id,
+            path='/v2.0/tenants/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': pony_id,
                 'user_id': user_id
             },
             token=token,
@@ -521,8 +521,8 @@ class CoreApiTests(object):
 
         # 'member_role' should not be in tenant_bar any more
         r = self.admin_request(
-            path='/v2.0/tenants/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.tenant_bar['id'],
+            path='/v2.0/tenants/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': self.tenant_bar['id'],
                 'user_id': user_id
             },
             token=token,
@@ -616,8 +616,8 @@ class CoreApiTests(object):
 
         # Check if member_role is in tenant_bar
         r = self.admin_request(
-            path='/v2.0/tenants/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.tenant_bar['id'],
+            path='/v2.0/tenants/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': self.tenant_bar['id'],
                 'user_id': user_id
             },
             token=token,
@@ -640,8 +640,8 @@ class CoreApiTests(object):
 
         # 'member_role' should still be in tenant_bar
         r = self.admin_request(
-            path='/v2.0/tenants/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.tenant_bar['id'],
+            path='/v2.0/tenants/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': self.tenant_bar['id'],
                 'user_id': user_id
             },
             token=token,
@@ -978,7 +978,7 @@ class RestfulTestCase(rest.RestfulTestCase):
 
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_admin['id'])
@@ -996,7 +996,7 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
     def _get_role_id(self, r):
         return r['roles'][0]['id']
 
-    def _get_project_id(self, r):
+    def _get_pony_id(self, r):
         return r['tenant']['id']
 
     def _get_token_id(self, r):
@@ -1034,7 +1034,7 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
 
     def assertValidUser(self, user):
         super(JsonTestCase, self).assertValidUser(user)
-        self.assertNotIn('default_project_id', user)
+        self.assertNotIn('default_pony_id', user)
         if 'tenantId' in user:
             # NOTE(morganfainberg): tenantId should never be "None", it gets
             # filtered out of the object if it is there. This is suspenders
@@ -1405,7 +1405,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
     def _get_role_id(self, r):
         return r[0].get('id')
 
-    def _get_project_id(self, r):
+    def _get_pony_id(self, r):
         return r.get('id')
 
     def assertNoRoles(self, r):
@@ -1642,7 +1642,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
         self.assertValidTenant(r.result['tenant'])
         self.assertEqual("", r.result['tenant'].get('description'))
 
-    def test_create_project_invalid_enabled_type_string(self):
+    def test_create_pony_invalid_enabled_type_string(self):
         # Forbidden usage of string for 'enabled' field in JSON and XML
         token = self.get_scoped_token()
 
@@ -1660,7 +1660,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             expected_status=400)
         self.assertValidErrorResponse(r)
 
-    def test_update_project_invalid_enabled_type_string(self):
+    def test_update_pony_invalid_enabled_type_string(self):
         # Forbidden usage of string for 'enabled' field in JSON and XML
         token = self.get_scoped_token()
 
@@ -1729,7 +1729,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             convert=False)
 
     def test_remove_role_revokes_token(self):
-        self.md_foobar = self.assignment_api.add_role_to_user_and_project(
+        self.md_foobar = self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_service['id'],
             self.role_service['id'])
@@ -1740,7 +1740,7 @@ class XmlTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
             token=token)
         self.assertValidAuthenticationResponse(r)
 
-        self.assignment_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_pony(
             self.user_foo['id'],
             self.tenant_service['id'],
             self.role_service['id'])

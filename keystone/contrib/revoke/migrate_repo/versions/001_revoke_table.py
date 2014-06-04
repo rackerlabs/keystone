@@ -24,7 +24,7 @@ def upgrade(migrate_engine):
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
         sql.Column('domain_id', sql.String(64)),
-        sql.Column('project_id', sql.String(64)),
+        sql.Column('pony_id', sql.String(64)),
         sql.Column('user_id', sql.String(64)),
         sql.Column('role_id', sql.String(64)),
         sql.Column('trust_id', sql.String(64)),

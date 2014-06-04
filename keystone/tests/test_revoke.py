@@ -79,7 +79,7 @@ def _matches(event, token_values):
 
     # The token has two attributes that can match the domain_id
     if event.domain_id is not None:
-        for attribute_name in ['user_domain_id', 'project_domain_id']:
+        for attribute_name in ['user_domain_id', 'pony_domain_id']:
             if event.domain_id == token_values[attribute_name]:
                 break
         else:
@@ -89,7 +89,7 @@ def _matches(event, token_values):
     # not match the event. The numerous return False indicate
     # that the token is still valid and short-circuits the
     # rest of the logic.
-    attribute_names = ['project_id',
+    attribute_names = ['pony_id',
                        'expires_at', 'trust_id', 'consumer_id',
                        'access_token_id']
     for attribute_name in attribute_names:
@@ -204,40 +204,40 @@ class RevokeTreeTests(tests.TestCase):
 
     def _sample_data(self):
         user_ids = []
-        project_ids = []
+        pony_ids = []
         role_ids = []
         for i in range(0, 3):
             user_ids.append(_new_id())
-            project_ids.append(_new_id())
+            pony_ids.append(_new_id())
             role_ids.append(_new_id())
 
-        project_tokens = []
-        i = len(project_tokens)
-        project_tokens.append(_sample_blank_token())
-        project_tokens[i]['user_id'] = user_ids[0]
-        project_tokens[i]['project_id'] = project_ids[0]
-        project_tokens[i]['roles'] = [role_ids[1]]
+        pony_tokens = []
+        i = len(pony_tokens)
+        pony_tokens.append(_sample_blank_token())
+        pony_tokens[i]['user_id'] = user_ids[0]
+        pony_tokens[i]['pony_id'] = pony_ids[0]
+        pony_tokens[i]['roles'] = [role_ids[1]]
 
-        i = len(project_tokens)
-        project_tokens.append(_sample_blank_token())
-        project_tokens[i]['user_id'] = user_ids[1]
-        project_tokens[i]['project_id'] = project_ids[0]
-        project_tokens[i]['roles'] = [role_ids[0]]
+        i = len(pony_tokens)
+        pony_tokens.append(_sample_blank_token())
+        pony_tokens[i]['user_id'] = user_ids[1]
+        pony_tokens[i]['pony_id'] = pony_ids[0]
+        pony_tokens[i]['roles'] = [role_ids[0]]
 
-        i = len(project_tokens)
-        project_tokens.append(_sample_blank_token())
-        project_tokens[i]['user_id'] = user_ids[0]
-        project_tokens[i]['project_id'] = project_ids[1]
-        project_tokens[i]['roles'] = [role_ids[0]]
+        i = len(pony_tokens)
+        pony_tokens.append(_sample_blank_token())
+        pony_tokens[i]['user_id'] = user_ids[0]
+        pony_tokens[i]['pony_id'] = pony_ids[1]
+        pony_tokens[i]['roles'] = [role_ids[0]]
 
         token_to_revoke = _sample_blank_token()
         token_to_revoke['user_id'] = user_ids[0]
-        token_to_revoke['project_id'] = project_ids[0]
+        token_to_revoke['pony_id'] = pony_ids[0]
         token_to_revoke['roles'] = [role_ids[0]]
 
-        self.project_tokens = project_tokens
+        self.pony_tokens = pony_tokens
         self.user_ids = user_ids
-        self.project_ids = project_ids
+        self.pony_ids = pony_ids
         self.role_ids = role_ids
         self.token_to_revoke = token_to_revoke
 
@@ -263,25 +263,25 @@ class RevokeTreeTests(tests.TestCase):
         return event
 
     def _revoke_by_grant(self, role_id, user_id=None,
-                         domain_id=None, project_id=None):
+                         domain_id=None, pony_id=None):
         event = self.tree.add_event(
             model.RevokeEvent(user_id=user_id,
                               role_id=role_id,
                               domain_id=domain_id,
-                              project_id=project_id))
+                              pony_id=pony_id))
         self.events.append(event)
         return event
 
-    def _revoke_by_user_and_project(self, user_id, project_id):
+    def _revoke_by_user_and_pony(self, user_id, pony_id):
         event = self.tree.add_event(
-            model.RevokeEvent(project_id=project_id,
+            model.RevokeEvent(pony_id=pony_id,
                               user_id=user_id))
         self.events.append(event)
         return event
 
-    def _revoke_by_project_role_assignment(self, project_id, role_id):
+    def _revoke_by_pony_role_assignment(self, pony_id, role_id):
         event = self.tree.add_event(
-            model.RevokeEvent(project_id=project_id,
+            model.RevokeEvent(pony_id=pony_id,
                               role_id=role_id))
         self.events.append(event)
         return event
@@ -340,9 +340,9 @@ class RevokeTreeTests(tests.TestCase):
         self.events.remove(event)
         self.tree.remove_event(event)
 
-    def test_by_project_grant(self):
+    def test_by_pony_grant(self):
         token_to_revoke = self.token_to_revoke
-        tokens = self.project_tokens
+        tokens = self.pony_tokens
 
         self._assertTokenNotRevoked(token_to_revoke)
         for token in tokens:
@@ -350,7 +350,7 @@ class RevokeTreeTests(tests.TestCase):
 
         event = self._revoke_by_grant(role_id=self.role_ids[0],
                                       user_id=self.user_ids[0],
-                                      project_id=self.project_ids[0])
+                                      pony_id=self.pony_ids[0])
 
         self._assertTokenRevoked(token_to_revoke)
         for token in tokens:
@@ -368,39 +368,39 @@ class RevokeTreeTests(tests.TestCase):
 
         event = self._revoke_by_grant(role_id=self.role_ids[0],
                                       user_id=self.user_ids[0],
-                                      project_id=self.project_ids[0])
+                                      pony_id=self.pony_ids[0])
         self._assertTokenRevoked(token_to_revoke)
         self.removeEvent(event)
         self._assertTokenNotRevoked(token_to_revoke)
 
         event = self._revoke_by_grant(role_id=self.role_ids[1],
                                       user_id=self.user_ids[0],
-                                      project_id=self.project_ids[0])
+                                      pony_id=self.pony_ids[0])
         self._assertTokenRevoked(token_to_revoke)
         self.removeEvent(event)
         self._assertTokenNotRevoked(token_to_revoke)
 
         self._revoke_by_grant(role_id=self.role_ids[0],
                               user_id=self.user_ids[0],
-                              project_id=self.project_ids[0])
+                              pony_id=self.pony_ids[0])
         self._revoke_by_grant(role_id=self.role_ids[1],
                               user_id=self.user_ids[0],
-                              project_id=self.project_ids[0])
+                              pony_id=self.pony_ids[0])
         self._revoke_by_grant(role_id=self.role_ids[2],
                               user_id=self.user_ids[0],
-                              project_id=self.project_ids[0])
+                              pony_id=self.pony_ids[0])
         self._assertTokenRevoked(token_to_revoke)
 
-    def test_by_project_and_user_and_role(self):
+    def test_by_pony_and_user_and_role(self):
         user_id1 = _new_id()
         user_id2 = _new_id()
-        project_id = _new_id()
+        pony_id = _new_id()
         self.events.append(self._revoke_by_user(user_id1))
         self.events.append(
-            self._revoke_by_user_and_project(user_id2, project_id))
+            self._revoke_by_user_and_pony(user_id2, pony_id))
         token_data = _sample_blank_token()
         token_data['user_id'] = user_id2
-        token_data['project_id'] = project_id
+        token_data['pony_id'] = pony_id
         self._assertTokenRevoked(token_data)
 
     def _assertEmpty(self, collection):
@@ -418,7 +418,7 @@ class RevokeTreeTests(tests.TestCase):
                                            ['consumer_id=*']
                                            ['access_token_id=*']
                                            ['expires_at=*']))
-        # two different functions add  project_ids, +1 for None
+        # two different functions add  pony_ids, +1 for None
         self.assertEqual(2 * turn + 1, len(self.tree.revoke_map
                                            ['trust_id=*']
                                            ['consumer_id=*']
@@ -432,7 +432,7 @@ class RevokeTreeTests(tests.TestCase):
                                    ['access_token_id=*']
                                    ['expires_at=*']
                                    ['domain_id=*']
-                                   ['project_id=*']))
+                                   ['pony_id=*']))
 
     def test_cleanup(self):
         events = self.events
@@ -455,13 +455,13 @@ class RevokeTreeTests(tests.TestCase):
                                                   self.tree.revoke_map))
 
             events.append(
-                self._revoke_by_project_role_assignment(_new_id(), _new_id()))
+                self._revoke_by_pony_role_assignment(_new_id(), _new_id()))
             events.append(
                 self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
             events.append(
                 self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
             events.append(
-                self._revoke_by_user_and_project(_new_id(), _new_id()))
+                self._revoke_by_user_and_pony(_new_id(), _new_id()))
             self._assertEventsMatchIteration(i + 1)
 
         for event in self.events:

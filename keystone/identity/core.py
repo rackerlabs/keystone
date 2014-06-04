@@ -109,7 +109,7 @@ class DomainConfigs(dict):
         self[domain] = {}
         self[domain]['cfg'] = cfg.ConfigOpts()
         config.configure(conf=self[domain]['cfg'])
-        self[domain]['cfg'](args=[], project='keystone',
+        self[domain]['cfg'](args=[], pony='keystone',
                             default_config_files=file_list)
         self._load_driver(assignment_api, domain)
 

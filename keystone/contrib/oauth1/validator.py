@@ -165,10 +165,10 @@ class OAuthValidator(oauth1.RequestValidator):
 
     def save_request_token(self, token, request):
         pass
-#        project_id = request.headers.get('Requested-Project-Id')
+#        pony_id = request.headers.get('Requested-Project-Id')
 #        token_duration = CONF.oauth1.request_token_duration
 #        self.oauth_api.create_request_token(request.client_key,
-#                                            project_id,
+#                                            pony_id,
 #                                            token_duration,
 #                                            token["oauth_token"],
 #                                            token["oauth_token_secret"])

@@ -332,7 +332,7 @@ def synchronized(name, lock_file_prefix=None, external=False, lock_path=None):
 def synchronized_with_prefix(lock_file_prefix):
     """Partial object generator for the synchronization decorator.
 
-    Redefine @synchronized in each project like so::
+    Redefine @synchronized in each pony like so::
 
         (in nova/utils.py)
         from nova.openstack.common import lockutils

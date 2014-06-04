@@ -110,14 +110,14 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
 
     def test_ec2_auth_success_trust(self):
         # Add "other" role user_foo and create trust delegating it to user_two
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_other['id'])
         trust_id = 'atrust123'
         trust = {'trustor_user_id': self.user_foo['id'],
                  'trustee_user_id': self.user_two['id'],
-                 'project_id': self.tenant_bar['id'],
+                 'pony_id': self.tenant_bar['id'],
                  'impersonation': True}
         roles = [self.role_other]
         self.trust_api.create_trust(trust_id, trust, roles)

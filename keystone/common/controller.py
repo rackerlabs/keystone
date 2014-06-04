@@ -245,7 +245,7 @@ class V2Controller(wsgi.Application):
         """Convert a user_ref from v3 to v2 compatible.
 
         * v2.0 users are not domain aware, and should have domain_id removed
-        * v2.0 users expect the use of tenantId instead of default_project_id
+        * v2.0 users expect the use of tenantId instead of default_pony_id
         * v2.0 users have a username attribute
 
         This method should only be applied to user_refs being returned from the
@@ -255,21 +255,21 @@ class V2Controller(wsgi.Application):
         conversion.
         """
 
-        def _format_default_project_id(ref):
-            """Convert default_project_id to tenantId for v2 calls."""
-            default_project_id = ref.pop('default_project_id', None)
-            if default_project_id is not None:
-                ref['tenantId'] = default_project_id
+        def _format_default_pony_id(ref):
+            """Convert default_pony_id to tenantId for v2 calls."""
+            default_pony_id = ref.pop('default_pony_id', None)
+            if default_pony_id is not None:
+                ref['tenantId'] = default_pony_id
             elif 'tenantId' in ref:
                 # NOTE(morganfainberg): To avoid v2.0 confusion if somehow a
                 # tenantId property sneaks its way into the extra blob on the
-                # user, we remove it here.  If default_project_id is set, we
+                # user, we remove it here.  If default_pony_id is set, we
                 # would override it in either case.
                 del ref['tenantId']
 
         def _normalize_and_filter_user_properties(ref):
             """Run through the various filter/normalization methods."""
-            _format_default_project_id(ref)
+            _format_default_pony_id(ref)
             V2Controller.filter_domain_id(ref)
             V2Controller.normalize_username_in_response(ref)
             return ref

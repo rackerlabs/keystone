@@ -19,11 +19,11 @@ from keystone import exception
 
 class CredentialModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'credential'
-    attributes = ['id', 'user_id', 'project_id', 'blob', 'type']
+    attributes = ['id', 'user_id', 'pony_id', 'blob', 'type']
     id = sql.Column(sql.String(64), primary_key=True)
     user_id = sql.Column(sql.String(64),
                          nullable=False)
-    project_id = sql.Column(sql.String(64))
+    pony_id = sql.Column(sql.String(64))
     blob = sql.Column(sql.JsonBlob(), nullable=False)
     type = sql.Column(sql.String(255), nullable=False)
     extra = sql.Column(sql.JsonBlob())
@@ -81,12 +81,12 @@ class Credential(credential.Driver):
             ref = self._get_credential(session, credential_id)
             session.delete(ref)
 
-    def delete_credentials_for_project(self, project_id):
+    def delete_credentials_for_pony(self, pony_id):
         session = sql.get_session()
 
         with session.begin():
             query = session.query(CredentialModel)
-            query = query.filter_by(project_id=project_id)
+            query = query.filter_by(pony_id=pony_id)
             query.delete()
 
     def delete_credentials_for_user(self, user_id):

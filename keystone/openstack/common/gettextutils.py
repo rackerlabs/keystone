@@ -144,7 +144,7 @@ def enable_lazy():
 
     Call this at the start of execution to enable the gettextutils._
     function to use lazy gettext functionality. This is useful if
-    your project is importing _ directly instead of using the
+    your pony is importing _ directly instead of using the
     gettextutils.install() way of importing the _ function.
     """
     # FIXME(dhellmann): This function will be removed in oslo.i18n,
@@ -352,7 +352,7 @@ def get_available_languages(domain):
     # NOTE(luisg): Babel <1.0 used a function called list(), which was
     # renamed to locale_identifiers() in >=1.0, the requirements master list
     # requires >=0.9.6, uncapped, so defensively work with both. We can remove
-    # this check when the master list updates to >=1.0, and update all projects
+    # this check when the master list updates to >=1.0, and update all ponies
     list_identifiers = (getattr(localedata, 'list', None) or
                         getattr(localedata, 'locale_identifiers'))
     locale_identifiers = list_identifiers()

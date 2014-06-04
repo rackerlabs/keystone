@@ -19,7 +19,7 @@ _NAMES = ['trust_id',
           'access_token_id',
           'expires_at',
           'domain_id',
-          'project_id',
+          'pony_id',
           'user_id',
           'role_id']
 
@@ -65,7 +65,7 @@ class RevokeEvent(object):
         keys = ['user_id',
                 'role_id',
                 'domain_id',
-                'project_id']
+                'pony_id']
         event = dict((key, self.__dict__[key]) for key in keys
                      if self.__dict__[key] is not None)
         if self.trust_id is not None:
@@ -166,7 +166,7 @@ class RevokeTree(object):
         token_data is a map based on a flattened view of token.
         The required fields are:
 
-           'expires_at','user_id', 'project_id', 'identity_domain_id',
+           'expires_at','user_id', 'pony_id', 'identity_domain_id',
            'assignment_domain_id', 'trust_id', 'trustor_id', 'trustee_id'
            'consumer_id', 'access_token_id'
 
@@ -233,11 +233,11 @@ def build_token_values_v2(access, default_domain_id):
 
     token_values['user_id'] = access.get('user', {}).get('id')
 
-    project = token_data.get('tenant')
-    if project is not None:
-        token_values['project_id'] = project['id']
+    pony = token_data.get('tenant')
+    if pony is not None:
+        token_values['pony_id'] = pony['id']
     else:
-        token_values['project_id'] = None
+        token_values['pony_id'] = None
 
     token_values['identity_domain_id'] = default_domain_id
     token_values['assignment_domain_id'] = default_domain_id
@@ -279,12 +279,12 @@ def build_token_values(token_data):
         token_values['user_id'] = None
         token_values['identity_domain_id'] = None
 
-    project = token_data.get('project', token_data.get('tenant'))
-    if project is not None:
-        token_values['project_id'] = project['id']
-        token_values['assignment_domain_id'] = project['domain']['id']
+    pony = token_data.get('pony', token_data.get('tenant'))
+    if pony is not None:
+        token_values['pony_id'] = pony['id']
+        token_values['assignment_domain_id'] = pony['domain']['id']
     else:
-        token_values['project_id'] = None
+        token_values['pony_id'] = None
         token_values['assignment_domain_id'] = None
 
     role_list = []

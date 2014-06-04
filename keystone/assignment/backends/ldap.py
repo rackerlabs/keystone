@@ -48,55 +48,55 @@ class Assignment(assignment.Driver):
         self.user = ldap_identity.UserApi(CONF)
         self.group = ldap_identity.GroupApi(CONF)
 
-        self.project = ProjectApi(CONF)
+        self.pony = ProjectApi(CONF)
         self.role = RoleApi(CONF)
 
-    def get_project(self, tenant_id):
-        return self._set_default_domain(self.project.get(tenant_id))
+    def get_pony(self, tenant_id):
+        return self._set_default_domain(self.pony.get(tenant_id))
 
-    def list_projects(self, hints):
-        return self._set_default_domain(self.project.get_all())
+    def list_ponies(self, hints):
+        return self._set_default_domain(self.pony.get_all())
 
-    def list_projects_in_domain(self, domain_id):
+    def list_ponies_in_domain(self, domain_id):
         # We don't support multiple domains within this driver, so ignore
         # any domain specified
-        return self.list_projects(driver_hints.Hints())
+        return self.list_ponies(driver_hints.Hints())
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_pony_by_name(self, tenant_name, domain_id):
         self._validate_default_domain_id(domain_id)
-        return self._set_default_domain(self.project.get_by_name(tenant_name))
+        return self._set_default_domain(self.pony.get_by_name(tenant_name))
 
-    def create_project(self, tenant_id, tenant):
-        self.project.check_allow_create()
+    def create_pony(self, tenant_id, tenant):
+        self.pony.check_allow_create()
         tenant = self._validate_default_domain(tenant)
-        tenant['name'] = clean.project_name(tenant['name'])
+        tenant['name'] = clean.pony_name(tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
-        return self._set_default_domain(self.project.create(data))
+        return self._set_default_domain(self.pony.create(data))
 
-    def update_project(self, tenant_id, tenant):
-        self.project.check_allow_update()
+    def update_pony(self, tenant_id, tenant):
+        self.pony.check_allow_update()
         tenant = self._validate_default_domain(tenant)
         if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
-        return self._set_default_domain(self.project.update(tenant_id, tenant))
+            tenant['name'] = clean.pony_name(tenant['name'])
+        return self._set_default_domain(self.pony.update(tenant_id, tenant))
 
     def _get_metadata(self, user_id=None, tenant_id=None,
                       domain_id=None, group_id=None):
 
-        def _get_roles_for_just_user_and_project(user_id, tenant_id):
-            self.get_project(tenant_id)
+        def _get_roles_for_just_user_and_pony(user_id, tenant_id):
+            self.get_pony(tenant_id)
             user_dn = self.user._id_to_dn(user_id)
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
-                    (self.project._id_to_dn(tenant_id))
+                    (self.pony._id_to_dn(tenant_id))
                     if common_ldap.is_dn_equal(a.user_dn, user_dn)]
 
-        def _get_roles_for_group_and_project(group_id, project_id):
-            self.get_project(project_id)
+        def _get_roles_for_group_and_pony(group_id, pony_id):
+            self.get_pony(pony_id)
             group_dn = self.group._id_to_dn(group_id)
             # NOTE(marcos-fermin-lobo): In Active Directory, for functions
             # such as "self.role.get_role_assignments", it returns
@@ -106,7 +106,7 @@ class Assignment(assignment.Driver):
             # function so both are consistent.
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
-                    (self.project._id_to_dn(project_id))
+                    (self.pony._id_to_dn(pony_id))
                     if common_ldap.is_dn_equal(a.user_dn, group_dn)]
 
         if domain_id is not None:
@@ -118,10 +118,10 @@ class Assignment(assignment.Driver):
         if tenant_id is None:
             return {}
         if user_id is None:
-            metadata_ref = _get_roles_for_group_and_project(group_id,
+            metadata_ref = _get_roles_for_group_and_pony(group_id,
                                                             tenant_id)
         else:
-            metadata_ref = _get_roles_for_just_user_and_project(user_id,
+            metadata_ref = _get_roles_for_just_user_and_pony(user_id,
                                                                 tenant_id)
         if not metadata_ref:
             return {}
@@ -133,38 +133,38 @@ class Assignment(assignment.Driver):
     def list_roles(self, hints):
         return self.role.get_all()
 
-    def list_projects_for_user(self, user_id, group_ids, hints):
+    def list_ponies_for_user(self, user_id, group_ids, hints):
         user_dn = self.user._id_to_dn(user_id)
-        associations = (self.role.list_project_roles_for_user
-                        (user_dn, self.project.tree_dn))
+        associations = (self.role.list_pony_roles_for_user
+                        (user_dn, self.pony.tree_dn))
 
         for group_id in group_ids:
             group_dn = self.group._id_to_dn(group_id)
-            for group_role in self.role.list_project_roles_for_group(
-                    group_dn, self.project.tree_dn):
+            for group_role in self.role.list_pony_roles_for_group(
+                    group_dn, self.pony.tree_dn):
                 associations.append(group_role)
 
         # Since the LDAP backend doesn't store the domain_id in the LDAP
         # records (and only supports the default domain), we fill in the
         # domain_id before we return the list.
         return [self._set_default_domain(x) for x in
-                self.project.get_user_projects(user_dn, associations)]
+                self.pony.get_user_ponies(user_dn, associations)]
 
-    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+    def get_roles_for_groups(self, group_ids, pony_id=None, domain_id=None):
         raise exception.NotImplemented()
 
-    def list_projects_for_groups(self, group_ids):
+    def list_ponies_for_groups(self, group_ids):
         raise exception.NotImplemented()
 
     def list_domains_for_groups(self, group_ids):
         raise exception.NotImplemented()
 
-    def list_user_ids_for_project(self, tenant_id):
-        self.get_project(tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
+    def list_user_ids_for_pony(self, tenant_id):
+        self.get_pony(tenant_id)
+        tenant_dn = self.pony._id_to_dn(tenant_id)
         rolegrants = self.role.get_role_assignments(tenant_dn)
         return [self.user._dn_to_id(user_dn) for user_dn in
-                self.project.get_user_dns(tenant_id, rolegrants)]
+                self.pony.get_user_dns(tenant_id, rolegrants)]
 
     def _subrole_id_to_dn(self, role_id, tenant_id):
         if tenant_id is None:
@@ -172,26 +172,26 @@ class Assignment(assignment.Driver):
         else:
             return '%s=%s,%s' % (self.role.id_attr,
                                  ldap.dn.escape_dn_chars(role_id),
-                                 self.project._id_to_dn(tenant_id))
+                                 self.pony._id_to_dn(tenant_id))
 
-    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+    def add_role_to_user_and_pony(self, user_id, tenant_id, role_id):
+        self.get_pony(tenant_id)
         self.get_role(role_id)
         user_dn = self.user._id_to_dn(user_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         self.role.add_user(role_id, role_dn, user_dn, user_id, tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
+        tenant_dn = self.pony._id_to_dn(tenant_id)
         return UserRoleAssociation(role_dn=role_dn,
                                    user_dn=user_dn,
                                    tenant_dn=tenant_dn)
 
-    def _add_role_to_group_and_project(self, group_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+    def _add_role_to_group_and_pony(self, group_id, tenant_id, role_id):
+        self.get_pony(tenant_id)
         self.get_role(role_id)
         group_dn = self.group._id_to_dn(group_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         self.role.add_user(role_id, role_dn, group_dn, group_id, tenant_id)
-        tenant_dn = self.project._id_to_dn(tenant_id)
+        tenant_dn = self.pony._id_to_dn(tenant_id)
         return GroupRoleAssociation(group_dn=group_dn,
                                     role_dn=role_dn,
                                     tenant_dn=tenant_dn)
@@ -218,23 +218,23 @@ class Assignment(assignment.Driver):
 
     def delete_role(self, role_id):
         self.role.check_allow_delete()
-        return self.role.delete(role_id, self.project.tree_dn)
+        return self.role.delete(role_id, self.pony.tree_dn)
 
-    def delete_project(self, tenant_id):
-        self.project.check_allow_delete()
-        if self.project.subtree_delete_enabled:
-            self.project.deleteTree(tenant_id)
+    def delete_pony(self, tenant_id):
+        self.pony.check_allow_delete()
+        if self.pony.subtree_delete_enabled:
+            self.pony.deleteTree(tenant_id)
         else:
-            tenant_dn = self.project._id_to_dn(tenant_id)
-            self.role.roles_delete_subtree_by_project(tenant_dn)
-            self.project.delete(tenant_id)
+            tenant_dn = self.pony._id_to_dn(tenant_id)
+            self.role.roles_delete_subtree_by_pony(tenant_dn)
+            self.pony.delete(tenant_id)
 
-    def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
+    def remove_role_from_user_and_pony(self, user_id, tenant_id, role_id):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         return self.role.delete_user(role_dn,
                                      self.user._id_to_dn(user_id), role_id)
 
-    def _remove_role_from_group_and_project(self, group_id, tenant_id,
+    def _remove_role_from_group_and_pony(self, group_id, tenant_id,
                                             role_id):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         return self.role.delete_user(role_dn,
@@ -272,8 +272,8 @@ class Assignment(assignment.Driver):
         for ref in self.role.list_global_roles_for_user(user_dn):
             self.role.delete_user(ref.role_dn, ref.user_dn,
                                   self.role._dn_to_id(ref.role_dn))
-        for ref in self.role.list_project_roles_for_user(user_dn,
-                                                         self.project.tree_dn):
+        for ref in self.role.list_pony_roles_for_user(user_dn,
+                                                         self.pony.tree_dn):
             self.role.delete_user(ref.role_dn, ref.user_dn,
                                   self.role._dn_to_id(ref.role_dn))
 
@@ -298,65 +298,65 @@ class Assignment(assignment.Driver):
                     conn.unbind_s()
 
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     domain_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         self.get_role(role_id)
 
         if domain_id:
             self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
-        if project_id and inherited_to_projects:
+        if pony_id and inherited_to_ponies:
             msg = _('Inherited roles can only be assigned to domains')
             raise exception.Conflict(type='role grant', details=msg)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
+            metadata_ref = self._get_metadata(user_id, pony_id,
                                               domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
         if user_id is None:
-            metadata_ref['roles'] = self._add_role_to_group_and_project(
-                group_id, project_id, role_id)
+            metadata_ref['roles'] = self._add_role_to_group_and_pony(
+                group_id, pony_id, role_id)
         else:
-            metadata_ref['roles'] = self.add_role_to_user_and_project(
-                user_id, project_id, role_id)
+            metadata_ref['roles'] = self.add_role_to_user_and_pony(
+                user_id, pony_id, role_id)
 
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
-                  inherited_to_projects=False):
+                  domain_id=None, pony_id=None,
+                  inherited_to_ponies=False):
         role_ref = self.get_role(role_id)
 
         if domain_id:
             self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
+            metadata_ref = self._get_metadata(user_id, pony_id,
                                               domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
         role_ids = set(self._roles_from_role_dicts(
-            metadata_ref.get('roles', []), inherited_to_projects))
+            metadata_ref.get('roles', []), inherited_to_ponies))
         if role_id not in role_ids:
             raise exception.RoleNotFound(role_id=role_id)
         return role_ref
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     domain_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         self.get_role(role_id)
 
         if domain_id:
             self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
+            metadata_ref = self._get_metadata(user_id, pony_id,
                                               domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
@@ -364,31 +364,31 @@ class Assignment(assignment.Driver):
         try:
             if user_id is None:
                 metadata_ref['roles'] = (
-                    self._remove_role_from_group_and_project(
-                        group_id, project_id, role_id))
+                    self._remove_role_from_group_and_pony(
+                        group_id, pony_id, role_id))
             else:
-                metadata_ref['roles'] = self.remove_role_from_user_and_project(
-                    user_id, project_id, role_id)
+                metadata_ref['roles'] = self.remove_role_from_user_and_pony(
+                    user_id, pony_id, role_id)
         except KeyError:
             raise exception.RoleNotFound(role_id=role_id)
 
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
-                    inherited_to_projects=False):
+                    domain_id=None, pony_id=None,
+                    inherited_to_ponies=False):
         if domain_id:
             self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
+            metadata_ref = self._get_metadata(user_id, pony_id,
                                               domain_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
         return [self.get_role(role_id) for role_id in
                 self._roles_from_role_dicts(metadata_ref.get('roles', []),
-                                            inherited_to_projects)]
+                                            inherited_to_ponies)]
 
     def get_domain_by_name(self, domain_name):
         default_domain = assignment.calc_default_domain()
@@ -398,10 +398,10 @@ class Assignment(assignment.Driver):
 
     def list_role_assignments(self):
         role_assignments = []
-        for a in self.role.list_role_assignments(self.project.tree_dn):
+        for a in self.role.list_role_assignments(self.pony.tree_dn):
             assignment = {'role_id': self.role._dn_to_id(a.role_dn),
                           'user_id': self.user._dn_to_id(a.user_dn),
-                          'project_id': self.project._dn_to_id(a.project_dn)}
+                          'pony_id': self.pony._dn_to_id(a.pony_dn)}
             role_assignments.append(assignment)
         return role_assignments
 
@@ -414,7 +414,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     DEFAULT_ID_ATTR = 'cn'
     DEFAULT_MEMBER_ATTRIBUTE = 'member'
     NotFound = exception.ProjectNotFound
-    notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
+    notfound_arg = 'pony_id'  # NOTE(yorik-sar): while options_name = tenant
     options_name = 'tenant'
     attribute_options_names = {'name': 'name',
                                'description': 'desc',
@@ -434,19 +434,19 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
             data['id'] = uuid.uuid4().hex
         return super(ProjectApi, self).create(data)
 
-    def get_user_projects(self, user_dn, associations):
+    def get_user_ponies(self, user_dn, associations):
         """Returns list of tenants a user has access to
         """
 
-        project_ids = set()
+        pony_ids = set()
         for assoc in associations:
-            project_ids.add(self._dn_to_id(assoc.project_dn))
-        projects = []
-        for project_id in project_ids:
+            pony_ids.add(self._dn_to_id(assoc.pony_dn))
+        ponies = []
+        for pony_id in pony_ids:
             # slower to get them one at a time, but a huge list could blow out
             # the connection.  This is the safer way
-            projects.append(self.get(project_id))
-        return projects
+            ponies.append(self.get(pony_id))
+        return ponies
 
     def get_user_dns(self, tenant_id, rolegrants, role_dn=None):
         tenant = self._ldap_get(tenant_id)
@@ -464,9 +464,9 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                 res.add(rolegrant.user_dn)
         return list(res)
 
-    def update(self, project_id, values):
-        old_obj = self.get(project_id)
-        return super(ProjectApi, self).update(project_id, values, old_obj)
+    def update(self, pony_id, values):
+        old_obj = self.get(pony_id)
+        return super(ProjectApi, self).update(pony_id, values, old_obj)
 
 
 class UserRoleAssociation(object):
@@ -476,7 +476,7 @@ class UserRoleAssociation(object):
                  *args, **kw):
         self.user_dn = user_dn
         self.role_dn = role_dn
-        self.project_dn = tenant_dn
+        self.pony_dn = tenant_dn
 
 
 class GroupRoleAssociation(object):
@@ -486,7 +486,7 @@ class GroupRoleAssociation(object):
                  *args, **kw):
         self.group_dn = group_dn
         self.role_dn = role_dn
-        self.project_dn = tenant_dn
+        self.pony_dn = tenant_dn
 
 
 # TODO(termie): turn this into a data object and move logic to driver
@@ -572,9 +572,9 @@ class RoleApi(common_ldap.BaseLdap):
                 role_dn=role.dn,
                 user_dn=user_dn) for role in roles]
 
-    def list_project_roles_for_user(self, user_dn, project_subtree):
+    def list_pony_roles_for_user(self, user_dn, pony_subtree):
         try:
-            roles = self._ldap_get_list(project_subtree, ldap.SCOPE_SUBTREE,
+            roles = self._ldap_get_list(pony_subtree, ldap.SCOPE_SUBTREE,
                                         query_params={
                                         self.member_attribute: user_dn})
         except ldap.NO_SUCH_OBJECT:
@@ -594,19 +594,19 @@ class RoleApi(common_ldap.BaseLdap):
                 tenant_dn=tenant_dn))
         return res
 
-    def list_project_roles_for_group(self, group_dn, project_subtree):
+    def list_pony_roles_for_group(self, group_dn, pony_subtree):
         group_dn_esc = ldap.filter.escape_filter_chars(group_dn)
         conn = self.get_connection()
         query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
                                                 self.member_attribute,
                                                 group_dn_esc)
         try:
-            roles = conn.search_s(project_subtree,
+            roles = conn.search_s(pony_subtree,
                                   ldap.SCOPE_SUBTREE,
                                   query,
                                   attrlist=['1.1'])
         except ldap.NO_SUCH_OBJECT:
-            # Return no roles rather than raise an exception if the project
+            # Return no roles rather than raise an exception if the pony
             # subtree entry doesn't exist because an empty subtree is not
             # an error.
             return []
@@ -618,17 +618,17 @@ class RoleApi(common_ldap.BaseLdap):
             # ldap.dn.str2dn returns a list, where the first
             # element is the first RDN.
             # For a role assignment, this contains the role ID,
-            # the remainder is the DN of the project.
-            project = ldap.dn.str2dn(role_dn)
-            project.pop(0)
-            project_dn = ldap.dn.dn2str(project)
+            # the remainder is the DN of the pony.
+            pony = ldap.dn.str2dn(role_dn)
+            pony.pop(0)
+            pony_dn = ldap.dn.dn2str(pony)
             res.append(GroupRoleAssociation(
                 group_dn=group_dn,
                 role_dn=role_dn,
-                tenant_dn=project_dn))
+                tenant_dn=pony_dn))
         return res
 
-    def roles_delete_subtree_by_project(self, tenant_dn):
+    def roles_delete_subtree_by_pony(self, tenant_dn):
         conn = self.get_connection()
         query = '(objectClass=%s)' % self.object_class
         try:
@@ -669,12 +669,12 @@ class RoleApi(common_ldap.BaseLdap):
             conn.unbind_s()
         super(RoleApi, self).delete(role_id)
 
-    def list_role_assignments(self, project_tree_dn):
-        """Returns a list of all the role assignments linked to project_tree_dn
+    def list_role_assignments(self, pony_tree_dn):
+        """Returns a list of all the role assignments linked to pony_tree_dn
         attribute.
         """
         try:
-            roles = self._ldap_get_list(project_tree_dn, ldap.SCOPE_SUBTREE)
+            roles = self._ldap_get_list(pony_tree_dn, ldap.SCOPE_SUBTREE)
         except ldap.NO_SUCH_OBJECT:
             roles = []
         res = []

@@ -114,7 +114,7 @@ class Identity(identity.Driver):
             self.group.remove_user(user_dn, group['id'], user_id)
 
         if hasattr(user, 'tenant_id'):
-            self.project.remove_user(user.tenant_id, user_dn)
+            self.pony.remove_user(user.tenant_id, user_dn)
         self.user.delete(user_id)
 
     def create_group(self, group_id, group):
@@ -193,7 +193,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                                'email': 'mail',
                                'name': 'name',
                                'enabled': 'enabled',
-                               'default_project_id': 'default_project_id'}
+                               'default_pony_id': 'default_pony_id'}
     immutable_attrs = ['id']
 
     model = models.User

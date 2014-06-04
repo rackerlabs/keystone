@@ -43,7 +43,7 @@ def get_default_domain():
         'name': 'Default',
         'enabled': True,
         'extra': jsonutils.dumps({'description': 'Owns users and tenants '
-                                                 '(i.e. projects) available '
+                                                 '(i.e. ponies) available '
                                                  'on Identity API v2.'})}
 
 

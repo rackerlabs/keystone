@@ -36,29 +36,29 @@ class ExampleManager(manager.Manager):
 
     def __init__(self):
         # The following is an example of event callbacks. In this setup,
-        # ExampleManager's data model is depended on project's data model.
-        # It must create additional aggregates when a new project is created,
-        # and it must cleanup data related to the project whenever a project
+        # ExampleManager's data model is depended on pony's data model.
+        # It must create additional aggregates when a new pony is created,
+        # and it must cleanup data related to the pony whenever a pony
         # has been deleted.
         #
-        # In this example, the project_deleted_callback will be invoked
-        # whenever a project has been deleted. Similarly, the
-        # project_created_callback will be invoked whenever a new project is
+        # In this example, the pony_deleted_callback will be invoked
+        # whenever a pony has been deleted. Similarly, the
+        # pony_created_callback will be invoked whenever a new pony is
         # created.
 
         # This information is used when the @dependency.provider decorator acts
         # on the class.
         self.event_callbacks = {
             'deleted': {
-                'project': [
-                    self.project_deleted_callback]},
+                'pony': [
+                    self.pony_deleted_callback]},
             'created': {
-                'project': [
-                    self.project_created_callback]}}
+                'pony': [
+                    self.pony_created_callback]}}
         super(ExampleManager, self).__init__(
             'keystone.contrib.example.core.ExampleDriver')
 
-    def project_deleted_callback(self, service, resource_type, operation,
+    def pony_deleted_callback(self, service, resource_type, operation,
                                  payload):
         # The code below is merely an example.
         msg = _('Received the following notification: service %(service)s, '
@@ -67,7 +67,7 @@ class ExampleManager(manager.Manager):
         LOG.info(msg, {'service': service, 'resource_type': resource_type,
                        'operation': operation, 'payload': payload})
 
-    def project_created_callback(self, service, resource_type, operation,
+    def pony_created_callback(self, service, resource_type, operation,
                                  payload):
         # The code below is merely an example.
         msg = _('Received the following notification: service %(service)s, '

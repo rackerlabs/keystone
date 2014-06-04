@@ -93,12 +93,12 @@ class User(Model):
         description
         email
         enabled (bool, default True)
-        default_project_id
+        default_pony_id
     """
 
     required_keys = ('id', 'name', 'domain_id')
     optional_keys = ('password', 'description', 'email', 'enabled',
-                     'default_project_id')
+                     'default_pony_id')
 
 
 class Group(Model):
@@ -157,10 +157,10 @@ class Trust(Model):
         id
         trustor_user_id
         trustee_user_id
-        project_id
+        pony_id
     """
 
-    required_keys = ('id', 'trustor_user_id', 'trustee_user_id', 'project_id')
+    required_keys = ('id', 'trustor_user_id', 'trustee_user_id', 'pony_id')
     optional_keys = ('expires_at',)
 
 

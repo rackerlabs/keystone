@@ -203,12 +203,12 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
             user_enabled_attribute='employeeType')
         super(LiveLDAPIdentity, self).test_user_enable_attribute_mask()
 
-    def test_create_project_case_sensitivity(self):
+    def test_create_pony_case_sensitivity(self):
         # The attribute used for the live LDAP tests is case insensitive.
 
         def call_super():
             super(LiveLDAPIdentity, self).\
-                test_create_project_case_sensitivity()
+                test_create_pony_case_sensitivity()
 
         self.assertRaises(exception.Conflict, call_super)
 
@@ -220,11 +220,11 @@ class LiveLDAPIdentity(test_backend_ldap.LDAPIdentity):
 
         self.assertRaises(exception.Conflict, call_super)
 
-    def test_project_update_missing_attrs_with_a_falsey_value(self):
+    def test_pony_update_missing_attrs_with_a_falsey_value(self):
         # The description attribute doesn't allow an empty value.
 
         def call_super():
             super(LiveLDAPIdentity, self).\
-                test_project_update_missing_attrs_with_a_falsey_value()
+                test_pony_update_missing_attrs_with_a_falsey_value()
 
         self.assertRaises(ldap.INVALID_SYNTAX, call_super)

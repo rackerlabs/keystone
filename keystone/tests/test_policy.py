@@ -74,7 +74,7 @@ class PolicyTestCase(tests.TestCase):
             "example:denied": [["false:false"]],
             "example:get_http": [["http:http://www.example.com"]],
             "example:my_file": [["role:compute_admin"],
-                                ["project_id:%(project_id)s"]],
+                                ["pony_id:%(pony_id)s"]],
             "example:early_and_fail": [["false:false", "rule:true"]],
             "example:early_or_success": [["rule:true"], ["false:false"]],
             "example:lowercase_admin": [["role:admin"], ["role:sysadmin"]],
@@ -129,9 +129,9 @@ class PolicyTestCase(tests.TestCase):
                               self.credentials, action, target)
 
     def test_templatized_enforcement(self):
-        target_mine = {'project_id': 'fake'}
-        target_not_mine = {'project_id': 'another'}
-        credentials = {'project_id': 'fake', 'roles': []}
+        target_mine = {'pony_id': 'fake'}
+        target_not_mine = {'pony_id': 'another'}
+        credentials = {'pony_id': 'fake', 'roles': []}
         action = "example:my_file"
         rules.enforce(credentials, action, target_mine)
         self.assertRaises(exception.ForbiddenAction, rules.enforce,

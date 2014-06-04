@@ -18,56 +18,56 @@ from keystone.openstack.common.gettextutils import _
 
 
 class ProjectEndpoint(sql.ModelBase, sql.DictBase):
-    """project-endpoint relationship table."""
-    __tablename__ = 'project_endpoint'
-    attributes = ['endpoint_id', 'project_id']
+    """pony-endpoint relationship table."""
+    __tablename__ = 'pony_endpoint'
+    attributes = ['endpoint_id', 'pony_id']
     endpoint_id = sql.Column(sql.String(64),
                              primary_key=True,
                              nullable=False)
-    project_id = sql.Column(sql.String(64),
+    pony_id = sql.Column(sql.String(64),
                             primary_key=True,
                             nullable=False)
 
 
 class EndpointFilter(object):
 
-    @sql.handle_conflicts(conflict_type='project_endpoint')
-    def add_endpoint_to_project(self, endpoint_id, project_id):
+    @sql.handle_conflicts(conflict_type='pony_endpoint')
+    def add_endpoint_to_pony(self, endpoint_id, pony_id):
         session = sql.get_session()
         with session.begin():
             endpoint_filter_ref = ProjectEndpoint(endpoint_id=endpoint_id,
-                                                  project_id=project_id)
+                                                  pony_id=pony_id)
             session.add(endpoint_filter_ref)
 
-    def _get_project_endpoint_ref(self, session, endpoint_id, project_id):
+    def _get_pony_endpoint_ref(self, session, endpoint_id, pony_id):
         endpoint_filter_ref = session.query(ProjectEndpoint).get(
-            (endpoint_id, project_id))
+            (endpoint_id, pony_id))
         if endpoint_filter_ref is None:
-            msg = _('Endpoint %(endpoint_id)s not found in project '
-                    '%(project_id)s') % {'endpoint_id': endpoint_id,
-                                         'project_id': project_id}
+            msg = _('Endpoint %(endpoint_id)s not found in pony '
+                    '%(pony_id)s') % {'endpoint_id': endpoint_id,
+                                         'pony_id': pony_id}
             raise exception.NotFound(msg)
         return endpoint_filter_ref
 
-    def check_endpoint_in_project(self, endpoint_id, project_id):
+    def check_endpoint_in_pony(self, endpoint_id, pony_id):
         session = sql.get_session()
-        self._get_project_endpoint_ref(session, endpoint_id, project_id)
+        self._get_pony_endpoint_ref(session, endpoint_id, pony_id)
 
-    def remove_endpoint_from_project(self, endpoint_id, project_id):
+    def remove_endpoint_from_pony(self, endpoint_id, pony_id):
         session = sql.get_session()
-        endpoint_filter_ref = self._get_project_endpoint_ref(
-            session, endpoint_id, project_id)
+        endpoint_filter_ref = self._get_pony_endpoint_ref(
+            session, endpoint_id, pony_id)
         with session.begin():
             session.delete(endpoint_filter_ref)
 
-    def list_endpoints_for_project(self, project_id):
+    def list_endpoints_for_pony(self, pony_id):
         session = sql.get_session()
         query = session.query(ProjectEndpoint)
-        query = query.filter_by(project_id=project_id)
+        query = query.filter_by(pony_id=pony_id)
         endpoint_filter_refs = query.all()
         return endpoint_filter_refs
 
-    def list_projects_for_endpoint(self, endpoint_id):
+    def list_ponies_for_endpoint(self, endpoint_id):
         session = sql.get_session()
         query = session.query(ProjectEndpoint)
         query = query.filter_by(endpoint_id=endpoint_id)

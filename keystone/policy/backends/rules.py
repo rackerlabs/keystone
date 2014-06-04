@@ -75,7 +75,7 @@ def enforce(credentials, action, target, do_raise=True):
        :param target: dictionary representing the object of the action
                       for object creation this should be a dictionary
                       representing the location of the object e.g.
-                      {'project_id': object.project_id}
+                      {'pony_id': object.pony_id}
        :raises: `exception.Forbidden` if verification fails.
 
        Actions should be colon separated for clarity. For example:

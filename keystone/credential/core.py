@@ -96,9 +96,9 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def delete_credentials_for_project(self, project_id):
-        """Deletes all credentials for a project."""
-        self._delete_credentials(lambda cr: cr['project_id'] == project_id)
+    def delete_credentials_for_pony(self, pony_id):
+        """Deletes all credentials for a pony."""
+        self._delete_credentials(lambda cr: cr['pony_id'] == pony_id)
 
     @abc.abstractmethod
     def delete_credentials_for_user(self, user_id):

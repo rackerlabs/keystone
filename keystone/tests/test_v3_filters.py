@@ -50,7 +50,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         """Create sample data for these tests.
 
         As well as the usual housekeeping, create a set of domains,
-        users, roles and projects for the subsequent tests:
+        users, roles and ponies for the subsequent tests:
 
         - Three domains: A,B & C.  C is disabled.
         - DomainA has user1, DomainB has user2 and user3
@@ -312,12 +312,12 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
 
         self._set_policy({"identity:list_users": [],
                           "identity:list_groups": [],
-                          "identity:list_projects": [],
+                          "identity:list_ponies": [],
                           "identity:list_services": [],
                           "identity:list_policies": []})
 
         # Create 10 entries for each of the entities we are going to test
-        self.ENTITY_TYPES = ['user', 'group', 'project']
+        self.ENTITY_TYPES = ['user', 'group', 'pony']
         self.entity_lists = {}
         for entity in self.ENTITY_TYPES:
             self.entity_lists[entity] = self._create_test_data(entity, 10)
@@ -394,8 +394,8 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
     def test_groups_list_limit(self):
         self._test_entity_list_limit('group', 'identity')
 
-    def test_projects_list_limit(self):
-        self._test_entity_list_limit('project', 'assignment')
+    def test_ponies_list_limit(self):
+        self._test_entity_list_limit('pony', 'assignment')
 
     def test_services_list_limit(self):
         self._test_entity_list_limit('service', 'catalog')

@@ -72,11 +72,11 @@ class User(controller.V2Controller):
             msg = _('Enabled field must be a boolean')
             raise exception.ValidationError(message=msg)
 
-        default_project_id = user.pop('tenantId', None)
-        if default_project_id is not None:
-            # Check to see if the project is valid before moving on.
-            self.assignment_api.get_project(default_project_id)
-            user['default_project_id'] = default_project_id
+        default_pony_id = user.pop('tenantId', None)
+        if default_pony_id is not None:
+            # Check to see if the pony is valid before moving on.
+            self.assignment_api.get_pony(default_pony_id)
+            user['default_pony_id'] = default_pony_id
 
         user_id = uuid.uuid4().hex
         user_ref = self._normalize_domain_id(context, user.copy())
@@ -84,8 +84,8 @@ class User(controller.V2Controller):
         new_user_ref = self.v3_to_v2_user(
             self.identity_api.create_user(user_id, user_ref))
 
-        if default_project_id is not None:
-            self.assignment_api.add_user_to_project(default_project_id,
+        if default_pony_id is not None:
+            self.assignment_api.add_user_to_pony(default_pony_id,
                                                     user_id)
         return {'user': new_user_ref}
 
@@ -99,9 +99,9 @@ class User(controller.V2Controller):
             msg = _('Enabled field should be a boolean')
             raise exception.ValidationError(message=msg)
 
-        default_project_id = user.pop('tenantId', None)
-        if default_project_id is not None:
-            user['default_project_id'] = default_project_id
+        default_pony_id = user.pop('tenantId', None)
+        if default_pony_id is not None:
+            user['default_pony_id'] = default_pony_id
 
         old_user_ref = self.v3_to_v2_user(
             self.identity_api.get_user(user_id))
@@ -111,32 +111,32 @@ class User(controller.V2Controller):
         # where a user previously had no tenant but a tenant is now being
         # added for the user.
         if (('tenantId' in old_user_ref and
-                old_user_ref['tenantId'] != default_project_id and
-                default_project_id is not None) or
+                old_user_ref['tenantId'] != default_pony_id and
+                default_pony_id is not None) or
             ('tenantId' not in old_user_ref and
-                default_project_id is not None)):
-            # Make sure the new project actually exists before we perform the
+                default_pony_id is not None)):
+            # Make sure the new pony actually exists before we perform the
             # user update.
-            self.assignment_api.get_project(default_project_id)
+            self.assignment_api.get_pony(default_pony_id)
 
         user_ref = self.v3_to_v2_user(
             self.identity_api.update_user(user_id, user))
 
         # If 'tenantId' is in either ref, we might need to add or remove the
-        # user from a project.
+        # user from a pony.
         if 'tenantId' in user_ref or 'tenantId' in old_user_ref:
             if user_ref['tenantId'] != old_user_ref.get('tenantId'):
                 if old_user_ref.get('tenantId'):
                     try:
                         member_role_id = config.CONF.member_role_id
-                        self.assignment_api.remove_role_from_user_and_project(
+                        self.assignment_api.remove_role_from_user_and_pony(
                             user_id, old_user_ref['tenantId'], member_role_id)
                     except exception.NotFound:
                         # NOTE(morganfainberg): This is not a critical error it
                         # just means that the user cannot be removed from the
                         # old tenant.  This could occur if roles aren't found
-                        # or if the project is invalid or if there are no roles
-                        # for the user on that project.
+                        # or if the pony is invalid or if there are no roles
+                        # for the user on that pony.
                         msg = _('Unable to remove user %(user)s from '
                                 '%(tenant)s.')
                         LOG.warning(msg, {'user': user_id,
@@ -144,7 +144,7 @@ class User(controller.V2Controller):
 
                 if user_ref['tenantId']:
                     try:
-                        self.assignment_api.add_user_to_project(
+                        self.assignment_api.add_user_to_pony(
                             user_ref['tenantId'], user_id)
                     except exception.Conflict:
                         # We are already a member of that tenant
@@ -153,7 +153,7 @@ class User(controller.V2Controller):
                         # NOTE(morganfainberg): Log this and move on. This is
                         # not the end of the world if we can't add the user to
                         # the appropriate tenant. Most of the time this means
-                        # that the project is invalid or roles are some how
+                        # that the pony is invalid or roles are some how
                         # incorrect.  This shouldn't prevent the return of the
                         # new ref.
                         msg = _('Unable to add user %(user)s to %(tenant)s.')

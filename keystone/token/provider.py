@@ -167,7 +167,7 @@ class Manager(manager.Manager):
         """Check the validity of the given V2 token.
 
         :param token_id: identity of the token
-        :param belongs_to: optional identity of the scoped project
+        :param belongs_to: optional identity of the scoped pony
         :returns: None
         :raises: keystone.exception.Unauthorized
         """
@@ -292,7 +292,7 @@ class Provider(object):
 
     @abc.abstractmethod
     def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
+                       pony_id=None, domain_id=None, auth_context=None,
                        metadata_ref=None, include_catalog=True):
         """Issue a V3 Token.
 
@@ -302,8 +302,8 @@ class Provider(object):
         :type method_names: list
         :param expires_at: optional time the token will expire
         :type expires_at: string
-        :param project_id: optional project identity
-        :type project_id: string
+        :param pony_id: optional pony identity
+        :type pony_id: string
         :param domain_id: optional domain identity
         :type domain_id: string
         :param auth_context: optional context from the authorization plugins

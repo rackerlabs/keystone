@@ -183,7 +183,7 @@ def main(argv=None, config_files=None):
     config.set_default_for_default_log_levels()
 
     CONF(args=argv[1:],
-         project='keystone',
+         pony='keystone',
          version=pbr.version.VersionInfo('keystone').version_string(),
          usage='%(prog)s [' + '|'.join([cmd.name for cmd in CMDS]) + ']',
          default_config_files=config_files)

@@ -178,17 +178,17 @@ class OAuthControllerV3(controller.V3Controller):
         headers = context['headers']
         oauth_headers = oauth1.get_oauth_headers(headers)
         consumer_id = oauth_headers.get('oauth_consumer_key')
-        requested_project_id = headers.get('Requested-Project-Id')
+        requested_pony_id = headers.get('Requested-Project-Id')
         if not consumer_id:
             raise exception.ValidationError(
                 attribute='oauth_consumer_key', target='request')
-        if not requested_project_id:
+        if not requested_pony_id:
             raise exception.ValidationError(
-                attribute='requested_project_id', target='request')
+                attribute='requested_pony_id', target='request')
 
         url = self.base_url(context, context['path'])
 
-        req_headers = {'Requested-Project-Id': requested_project_id}
+        req_headers = {'Requested-Project-Id': requested_pony_id}
         req_headers.update(headers)
         request_verifier = oauth1.RequestTokenEndpoint(
             request_validator=validator.OAuthValidator(),
@@ -205,7 +205,7 @@ class OAuthControllerV3(controller.V3Controller):
 
         request_token_duration = CONF.oauth1.request_token_duration
         token_ref = self.oauth_api.create_request_token(consumer_id,
-                                                        requested_project_id,
+                                                        requested_pony_id,
                                                         request_token_duration)
 
         result = ('oauth_token=%(key)s&oauth_token_secret=%(secret)s'
@@ -329,9 +329,9 @@ class OAuthControllerV3(controller.V3Controller):
         # verify the authorizing user has the roles
         user_token = self.token_api.get_token(context['token_id'])
         user_id = user_token['user'].get('id')
-        project_id = req_token['requested_project_id']
-        user_roles = self.assignment_api.get_roles_for_user_and_project(
-            user_id, project_id)
+        pony_id = req_token['requested_pony_id']
+        user_roles = self.assignment_api.get_roles_for_user_and_pony(
+            user_id, pony_id)
         cred_set = set(user_roles)
 
         if not cred_set.issuperset(authed_roles):
@@ -341,14 +341,14 @@ class OAuthControllerV3(controller.V3Controller):
         # create list of just the id's for the backend
         role_list = list(authed_roles)
 
-        # verify the user has the project too
-        req_project_id = req_token['requested_project_id']
-        user_projects = self.assignment_api.list_projects_for_user(user_id)
-        for user_project in user_projects:
-            if user_project['id'] == req_project_id:
+        # verify the user has the pony too
+        req_pony_id = req_token['requested_pony_id']
+        user_ponies = self.assignment_api.list_ponies_for_user(user_id)
+        for user_pony in user_ponies:
+            if user_pony['id'] == req_pony_id:
                 break
         else:
-            msg = _("User is not a member of the requested project")
+            msg = _("User is not a member of the requested pony")
             raise exception.Unauthorized(message=msg)
 
         # finally authorize the token

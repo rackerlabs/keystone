@@ -39,14 +39,14 @@ LOG = log.getLogger(__name__)
 class Tenant(controller.V2Controller):
 
     @controller.v2_deprecated
-    def get_all_projects(self, context, **kw):
+    def get_all_ponies(self, context, **kw):
         """Gets a list of all tenants for an admin user."""
         if 'name' in context['query_string']:
-            return self.get_project_by_name(
+            return self.get_pony_by_name(
                 context, context['query_string'].get('name'))
 
         self.assert_admin(context)
-        tenant_refs = self.assignment_api.list_projects_in_domain(
+        tenant_refs = self.assignment_api.list_ponies_in_domain(
             CONF.identity.default_domain_id)
         for tenant_ref in tenant_refs:
             tenant_ref = self.filter_domain_id(tenant_ref)
@@ -54,10 +54,10 @@ class Tenant(controller.V2Controller):
             'limit': context['query_string'].get('limit'),
             'marker': context['query_string'].get('marker'),
         }
-        return self._format_project_list(tenant_refs, **params)
+        return self._format_pony_list(tenant_refs, **params)
 
     @controller.v2_deprecated
-    def get_projects_for_token(self, context, **kw):
+    def get_ponies_for_token(self, context, **kw):
         """Get valid tenants for token based on token used to authenticate.
 
         Pulls the token from the context, validates it and gets the valid
@@ -74,32 +74,32 @@ class Tenant(controller.V2Controller):
 
         user_ref = token_ref['user']
         tenant_refs = (
-            self.assignment_api.list_projects_for_user(user_ref['id']))
+            self.assignment_api.list_ponies_for_user(user_ref['id']))
         tenant_refs = [self.filter_domain_id(ref) for ref in tenant_refs
                        if ref['domain_id'] == CONF.identity.default_domain_id]
         params = {
             'limit': context['query_string'].get('limit'),
             'marker': context['query_string'].get('marker'),
         }
-        return self._format_project_list(tenant_refs, **params)
+        return self._format_pony_list(tenant_refs, **params)
 
     @controller.v2_deprecated
-    def get_project(self, context, tenant_id):
+    def get_pony(self, context, tenant_id):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
-        ref = self.assignment_api.get_project(tenant_id)
+        ref = self.assignment_api.get_pony(tenant_id)
         return {'tenant': self.filter_domain_id(ref)}
 
     @controller.v2_deprecated
-    def get_project_by_name(self, context, tenant_name):
+    def get_pony_by_name(self, context, tenant_name):
         self.assert_admin(context)
-        ref = self.assignment_api.get_project_by_name(
+        ref = self.assignment_api.get_pony_by_name(
             tenant_name, CONF.identity.default_domain_id)
         return {'tenant': self.filter_domain_id(ref)}
 
     # CRUD Extension
     @controller.v2_deprecated
-    def create_project(self, context, tenant):
+    def create_pony(self, context, tenant):
         tenant_ref = self._normalize_dict(tenant)
 
         if 'name' not in tenant_ref or not tenant_ref['name']:
@@ -108,47 +108,47 @@ class Tenant(controller.V2Controller):
 
         self.assert_admin(context)
         tenant_ref['id'] = tenant_ref.get('id', uuid.uuid4().hex)
-        tenant = self.assignment_api.create_project(
+        tenant = self.assignment_api.create_pony(
             tenant_ref['id'],
             self._normalize_domain_id(context, tenant_ref))
         return {'tenant': self.filter_domain_id(tenant)}
 
     @controller.v2_deprecated
-    def update_project(self, context, tenant_id, tenant):
+    def update_pony(self, context, tenant_id, tenant):
         self.assert_admin(context)
         # Remove domain_id if specified - a v2 api caller should not
         # be specifying that
         clean_tenant = tenant.copy()
         clean_tenant.pop('domain_id', None)
 
-        tenant_ref = self.assignment_api.update_project(
+        tenant_ref = self.assignment_api.update_pony(
             tenant_id, clean_tenant)
         return {'tenant': tenant_ref}
 
     @controller.v2_deprecated
-    def delete_project(self, context, tenant_id):
+    def delete_pony(self, context, tenant_id):
         self.assert_admin(context)
-        self.assignment_api.delete_project(tenant_id)
+        self.assignment_api.delete_pony(tenant_id)
 
     @controller.v2_deprecated
-    def get_project_users(self, context, tenant_id, **kw):
+    def get_pony_users(self, context, tenant_id, **kw):
         self.assert_admin(context)
         user_refs = []
-        user_ids = self.assignment_api.list_user_ids_for_project(tenant_id)
+        user_ids = self.assignment_api.list_user_ids_for_pony(tenant_id)
         for user_id in user_ids:
             try:
                 user_ref = self.identity_api.get_user(user_id)
             except exception.UserNotFound:
                 # Log that user is missing and continue on.
-                message = _("User %(user_id)s in project %(project_id)s "
+                message = _("User %(user_id)s in pony %(pony_id)s "
                             "doesn't exist.")
                 LOG.debug(message,
-                          {'user_id': user_id, 'project_id': tenant_id})
+                          {'user_id': user_id, 'pony_id': tenant_id})
             else:
                 user_refs.append(self.v3_to_v2_user(user_ref))
         return {'users': user_refs}
 
-    def _format_project_list(self, tenant_refs, **kwargs):
+    def _format_pony_list(self, tenant_refs, **kwargs):
         marker = kwargs.get('marker')
         first_index = 0
         if marker is not None:
@@ -200,7 +200,7 @@ class Role(controller.V2Controller):
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant ID required')
 
-        roles = self.assignment_api.get_roles_for_user_and_project(
+        roles = self.assignment_api.get_roles_for_user_and_pony(
             user_id, tenant_id)
         return {'roles': [self.assignment_api.get_role(x)
                           for x in roles]}
@@ -248,7 +248,7 @@ class Role(controller.V2Controller):
             raise exception.NotImplemented(message='User roles not supported: '
                                                    'tenant_id required')
 
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id, tenant_id, role_id)
 
         role_ref = self.assignment_api.get_role(role_id)
@@ -269,7 +269,7 @@ class Role(controller.V2Controller):
 
         # This still has the weird legacy semantics that adding a role to
         # a user also adds them to a tenant, so we must follow up on that
-        self.assignment_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_pony(
             user_id, tenant_id, role_id)
 
     # COMPAT(diablo): CRUD extension
@@ -284,14 +284,14 @@ class Role(controller.V2Controller):
 
         """
         self.assert_admin(context)
-        tenants = self.assignment_api.list_projects_for_user(user_id)
+        tenants = self.assignment_api.list_ponies_for_user(user_id)
         o = []
         for tenant in tenants:
-            # As a v2 call, we should limit the response to those projects in
+            # As a v2 call, we should limit the response to those ponies in
             # the default domain.
             if tenant['domain_id'] != CONF.identity.default_domain_id:
                 continue
-            role_ids = self.assignment_api.get_roles_for_user_and_project(
+            role_ids = self.assignment_api.get_roles_for_user_and_pony(
                 user_id, tenant['id'])
             for role_id in role_ids:
                 ref = {'roleId': role_id,
@@ -314,7 +314,7 @@ class Role(controller.V2Controller):
         # TODO(termie): for now we're ignoring the actual role
         tenant_id = role.get('tenantId')
         role_id = role.get('roleId')
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id, tenant_id, role_id)
 
         role_ref = self.assignment_api.get_role(role_id)
@@ -338,7 +338,7 @@ class Role(controller.V2Controller):
         role_ref_ref = urllib.parse.parse_qs(role_ref_id)
         tenant_id = role_ref_ref.get('tenantId')[0]
         role_id = role_ref_ref.get('roleId')[0]
-        self.assignment_api.remove_role_from_user_and_project(
+        self.assignment_api.remove_role_from_user_and_pony(
             user_id, tenant_id, role_id)
 
 
@@ -383,51 +383,51 @@ class DomainV3(controller.V3Controller):
 
 @dependency.requires('assignment_api')
 class ProjectV3(controller.V3Controller):
-    collection_name = 'projects'
-    member_name = 'project'
+    collection_name = 'ponies'
+    member_name = 'pony'
 
     def __init__(self):
         super(ProjectV3, self).__init__()
-        self.get_member_from_driver = self.assignment_api.get_project
+        self.get_member_from_driver = self.assignment_api.get_pony
 
     @controller.protected()
-    def create_project(self, context, project):
-        self._require_attribute(project, 'name')
+    def create_pony(self, context, pony):
+        self._require_attribute(pony, 'name')
 
-        ref = self._assign_unique_id(self._normalize_dict(project))
+        ref = self._assign_unique_id(self._normalize_dict(pony))
         ref = self._normalize_domain_id(context, ref)
-        ref = self.assignment_api.create_project(ref['id'], ref)
+        ref = self.assignment_api.create_pony(ref['id'], ref)
         return ProjectV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
-    def list_projects(self, context, filters):
+    def list_ponies(self, context, filters):
         hints = ProjectV3.build_driver_hints(context, filters)
-        refs = self.assignment_api.list_projects(hints=hints)
+        refs = self.assignment_api.list_ponies(hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
 
     @controller.filterprotected('enabled', 'name')
-    def list_user_projects(self, context, filters, user_id):
+    def list_user_ponies(self, context, filters, user_id):
         hints = ProjectV3.build_driver_hints(context, filters)
-        refs = self.assignment_api.list_projects_for_user(user_id,
+        refs = self.assignment_api.list_ponies_for_user(user_id,
                                                           hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
-    def get_project(self, context, project_id):
-        ref = self.assignment_api.get_project(project_id)
+    def get_pony(self, context, pony_id):
+        ref = self.assignment_api.get_pony(pony_id)
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
-    def update_project(self, context, project_id, project):
-        self._require_matching_id(project_id, project)
+    def update_pony(self, context, pony_id, pony):
+        self._require_matching_id(pony_id, pony)
         self._require_matching_domain_id(
-            project_id, project, self.assignment_api.get_project)
-        ref = self.assignment_api.update_project(project_id, project)
+            pony_id, pony, self.assignment_api.get_pony)
+        ref = self.assignment_api.update_pony(pony_id, pony)
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
-    def delete_project(self, context, project_id):
-        return self.assignment_api.delete_project(project_id)
+    def delete_pony(self, context, pony_id):
+        return self.assignment_api.delete_pony(pony_id)
 
 
 @dependency.requires('assignment_api', 'identity_api')
@@ -470,9 +470,9 @@ class RoleV3(controller.V3Controller):
     def delete_role(self, context, role_id):
         self.assignment_api.delete_role(role_id)
 
-    def _require_domain_xor_project(self, domain_id, project_id):
-        if (domain_id and project_id) or (not domain_id and not project_id):
-            msg = _('Specify a domain or project, not both')
+    def _require_domain_xor_pony(self, domain_id, pony_id):
+        if (domain_id and pony_id) or (not domain_id and not pony_id):
+            msg = _('Specify a domain or pony, not both')
             raise exception.ValidationError(msg)
 
     def _require_user_xor_group(self, user_id, group_id):
@@ -483,11 +483,11 @@ class RoleV3(controller.V3Controller):
     def _check_if_inherited(self, context):
         return (CONF.os_inherit.enabled and
                 context['path'].startswith('/OS-INHERIT') and
-                context['path'].endswith('/inherited_to_projects'))
+                context['path'].endswith('/inherited_to_ponies'))
 
     def _check_grant_protection(self, context, protection, role_id=None,
                                 user_id=None, group_id=None,
-                                domain_id=None, project_id=None):
+                                domain_id=None, pony_id=None):
         """Check protection for role grant APIs.
 
         The policy rule might want to inspect attributes of any of the entities
@@ -506,53 +506,53 @@ class RoleV3(controller.V3Controller):
         if domain_id:
             ref['domain'] = self.assignment_api.get_domain(domain_id)
         else:
-            ref['project'] = self.assignment_api.get_project(project_id)
+            ref['pony'] = self.assignment_api.get_pony(pony_id)
 
         self.check_protection(context, protection, ref)
 
     @controller.protected(callback=_check_grant_protection)
     def create_grant(self, context, role_id, user_id=None,
-                     group_id=None, domain_id=None, project_id=None):
-        """Grants a role to a user or group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+                     group_id=None, domain_id=None, pony_id=None):
+        """Grants a role to a user or group on either a domain or pony."""
+        self._require_domain_xor_pony(domain_id, pony_id)
         self._require_user_xor_group(user_id, group_id)
 
         self.assignment_api.create_grant(
-            role_id, user_id, group_id, domain_id, project_id,
+            role_id, user_id, group_id, domain_id, pony_id,
             self._check_if_inherited(context))
 
     @controller.protected(callback=_check_grant_protection)
     def list_grants(self, context, user_id=None,
-                    group_id=None, domain_id=None, project_id=None):
-        """Lists roles granted to user/group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+                    group_id=None, domain_id=None, pony_id=None):
+        """Lists roles granted to user/group on either a domain or pony."""
+        self._require_domain_xor_pony(domain_id, pony_id)
         self._require_user_xor_group(user_id, group_id)
 
         refs = self.assignment_api.list_grants(
-            user_id, group_id, domain_id, project_id,
+            user_id, group_id, domain_id, pony_id,
             self._check_if_inherited(context))
         return RoleV3.wrap_collection(context, refs)
 
     @controller.protected(callback=_check_grant_protection)
     def check_grant(self, context, role_id, user_id=None,
-                    group_id=None, domain_id=None, project_id=None):
-        """Checks if a role has been granted on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+                    group_id=None, domain_id=None, pony_id=None):
+        """Checks if a role has been granted on either a domain or pony."""
+        self._require_domain_xor_pony(domain_id, pony_id)
         self._require_user_xor_group(user_id, group_id)
 
         self.assignment_api.get_grant(
-            role_id, user_id, group_id, domain_id, project_id,
+            role_id, user_id, group_id, domain_id, pony_id,
             self._check_if_inherited(context))
 
     @controller.protected(callback=_check_grant_protection)
     def revoke_grant(self, context, role_id, user_id=None,
-                     group_id=None, domain_id=None, project_id=None):
-        """Revokes a role from user/group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
+                     group_id=None, domain_id=None, pony_id=None):
+        """Revokes a role from user/group on either a domain or pony."""
+        self._require_domain_xor_pony(domain_id, pony_id)
         self._require_user_xor_group(user_id, group_id)
 
         self.assignment_api.delete_grant(
-            role_id, user_id, group_id, domain_id, project_id,
+            role_id, user_id, group_id, domain_id, pony_id,
             self._check_if_inherited(context))
 
 
@@ -578,11 +578,11 @@ class RoleAssignmentV3(controller.V3Controller):
         """Format an assignment entity for API response.
 
         The driver layer returns entities as dicts containing the ids of the
-        actor (e.g. user or group), target (e.g. domain or project) and role.
+        actor (e.g. user or group), target (e.g. domain or pony) and role.
         If it is an inherited role, then this is also indicated. Examples:
 
         {'user_id': user_id,
-         'project_id': domain_id,
+         'pony_id': domain_id,
          'role_id': role_id}
 
         or, for an inherited role:
@@ -590,7 +590,7 @@ class RoleAssignmentV3(controller.V3Controller):
         {'user_id': user_id,
          'domain_id': domain_id,
          'role_id': role_id,
-         'inherited_to_projects': true}
+         'inherited_to_ponies': true}
 
         This function maps this into the format to be returned via the API,
         e.g. for the second example above:
@@ -603,14 +603,14 @@ class RoleAssignmentV3(controller.V3Controller):
                 'domain': {
                     {'id': domain_id}
                 },
-                'OS-INHERIT:inherited_to': 'projects
+                'OS-INHERIT:inherited_to': 'ponies
             },
             'role': {
                 {'id': role_id}
             },
             'links': {
                 'assignment': '/domains/domain_id/users/user_id/roles/'
-                              'role_id/inherited_to_projects'
+                              'role_id/inherited_to_ponies'
             }
         }
 
@@ -626,18 +626,18 @@ class RoleAssignmentV3(controller.V3Controller):
             actor_link = 'groups/%s' % entity['group_id']
         if 'role_id' in entity:
             formatted_entity['role'] = {'id': entity['role_id']}
-        if 'project_id' in entity:
+        if 'pony_id' in entity:
             formatted_entity['scope'] = (
-                {'project': {'id': entity['project_id']}})
-            target_link = '/projects/%s' % entity['project_id']
+                {'pony': {'id': entity['pony_id']}})
+            target_link = '/ponies/%s' % entity['pony_id']
         if 'domain_id' in entity:
             formatted_entity['scope'] = (
                 {'domain': {'id': entity['domain_id']}})
-            if 'inherited_to_projects' in entity:
+            if 'inherited_to_ponies' in entity:
                 formatted_entity['scope']['OS-INHERIT:inherited_to'] = (
-                    'projects')
+                    'ponies')
                 target_link = '/OS-INHERIT/domains/%s' % entity['domain_id']
-                suffix = '/inherited_to_projects'
+                suffix = '/inherited_to_ponies'
             else:
                 target_link = '/domains/%s' % entity['domain_id']
         formatted_entity.setdefault('links', {})
@@ -659,7 +659,7 @@ class RoleAssignmentV3(controller.V3Controller):
         assignment entity itself from the list.
 
         If the OS-INHERIT extension is enabled, then honor any inherited
-        roles on the domain by creating the equivalent on all projects
+        roles on the domain by creating the equivalent on all ponies
         owned by the domain.
 
         For any new entity created by virtue of group membership, add in an
@@ -684,10 +684,10 @@ class RoleAssignmentV3(controller.V3Controller):
                 # log a warning
                 if 'domain' in ref:
                     target = 'Domain: %s' % ref['domain'].get('domain_id')
-                elif 'project' in ref:
-                    target = 'Project: %s' % ref['project'].get('project_id')
+                elif 'pony' in ref:
+                    target = 'Project: %s' % ref['pony'].get('pony_id')
                 else:
-                    # Should always be a domain or project, but since to get
+                    # Should always be a domain or pony, but since to get
                     # here things have gone astray, let's be cautious.
                     target = 'Unknown'
                 LOG.warning(
@@ -715,55 +715,55 @@ class RoleAssignmentV3(controller.V3Controller):
                               (group_id, user['id'])))
             return user_entry
 
-        def _build_project_equivalent_of_user_domain_role(
-                project_id, domain_id, template):
-            """Create a user project assignment equivalent to the domain one.
+        def _build_pony_equivalent_of_user_domain_role(
+                pony_id, domain_id, template):
+            """Create a user pony assignment equivalent to the domain one.
 
             The template has had the 'domain' entity removed, so
-            substitute a 'project' one, modifying the 'assignment' link
+            substitute a 'pony' one, modifying the 'assignment' link
             to match.
 
             """
-            project_entry = copy.deepcopy(template)
-            project_entry['scope']['project'] = {'id': project_id}
-            project_entry['links']['assignment'] = (
+            pony_entry = copy.deepcopy(template)
+            pony_entry['scope']['pony'] = {'id': pony_id}
+            pony_entry['links']['assignment'] = (
                 self.base_url(
                     context,
                     '/OS-INHERIT/domains/%s/users/%s/roles/%s'
-                    '/inherited_to_projects' % (
-                        domain_id, project_entry['user']['id'],
-                        project_entry['role']['id'])))
-            return project_entry
+                    '/inherited_to_ponies' % (
+                        domain_id, pony_entry['user']['id'],
+                        pony_entry['role']['id'])))
+            return pony_entry
 
-        def _build_project_equivalent_of_group_domain_role(
-                user_id, group_id, project_id, domain_id, template):
-            """Create a user project equivalent to the domain group one.
+        def _build_pony_equivalent_of_group_domain_role(
+                user_id, group_id, pony_id, domain_id, template):
+            """Create a user pony equivalent to the domain group one.
 
             The template has had the 'domain' and 'group' entities removed, so
-            substitute a 'user-project' one, modifying the 'assignment' link
+            substitute a 'user-pony' one, modifying the 'assignment' link
             to match.
 
             """
-            project_entry = copy.deepcopy(template)
-            project_entry['user'] = {'id': user_id}
-            project_entry['scope']['project'] = {'id': project_id}
-            project_entry['links']['assignment'] = (
+            pony_entry = copy.deepcopy(template)
+            pony_entry['user'] = {'id': user_id}
+            pony_entry['scope']['pony'] = {'id': pony_id}
+            pony_entry['links']['assignment'] = (
                 self.base_url(context,
                               '/OS-INHERIT/domains/%s/groups/%s/roles/%s'
-                              '/inherited_to_projects' % (
+                              '/inherited_to_ponies' % (
                                   domain_id, group_id,
-                                  project_entry['role']['id'])))
-            project_entry['links']['membership'] = (
+                                  pony_entry['role']['id'])))
+            pony_entry['links']['membership'] = (
                 self.base_url(context, '/groups/%s/users/%s' %
                               (group_id, user_id)))
-            return project_entry
+            return pony_entry
 
         # Scan the list of entities for any assignments that need to be
         # expanded.
         #
         # If the OS-INERIT extension is enabled, the refs lists may
-        # contain roles to be inherited from domain to project, so expand
-        # these as well into project equivalents
+        # contain roles to be inherited from domain to pony, so expand
+        # these as well into pony equivalents
         #
         # For any regular group entries, expand these into user entries based
         # on membership of that group.
@@ -775,18 +775,18 @@ class RoleAssignmentV3(controller.V3Controller):
         new_refs = []
         for r in refs:
             if 'OS-INHERIT:inherited_to' in r['scope']:
-                # It's an inherited domain role - so get the list of projects
+                # It's an inherited domain role - so get the list of ponies
                 # owned by this domain. A domain scope is guaranteed since we
                 # checked this when we built the refs list
-                project_ids = (
+                pony_ids = (
                     [x['id'] for x in
-                        self.assignment_api.list_projects_in_domain(
+                        self.assignment_api.list_ponies_in_domain(
                             r['scope']['domain']['id'])])
                 base_entry = copy.deepcopy(r)
                 domain_id = base_entry['scope']['domain']['id']
                 base_entry['scope'].pop('domain')
-                # For each project, create an equivalent role assignment
-                for p in project_ids:
+                # For each pony, create an equivalent role assignment
+                for p in pony_ids:
                     # If it's a group assignment, then create equivalent user
                     # roles based on membership of the group
                     if 'group' in base_entry:
@@ -796,13 +796,13 @@ class RoleAssignmentV3(controller.V3Controller):
                         sub_entry.pop('group')
                         for m in members:
                             new_entry = (
-                                _build_project_equivalent_of_group_domain_role(
+                                _build_pony_equivalent_of_group_domain_role(
                                     m['id'], group_id, p,
                                     domain_id, sub_entry))
                             new_refs.append(new_entry)
                     else:
                         new_entry = (
-                            _build_project_equivalent_of_user_domain_role(
+                            _build_pony_equivalent_of_user_domain_role(
                                 p, domain_id, base_entry))
                         new_refs.append(new_entry)
             elif 'group' in r:
@@ -845,14 +845,14 @@ class RoleAssignmentV3(controller.V3Controller):
         return val
 
     def _filter_inherited(self, entry):
-        if ('inherited_to_projects' in entry and
+        if ('inherited_to_ponies' in entry and
                 not CONF.os_inherit.enabled):
                     return False
         else:
             return True
 
     @controller.filterprotected('group.id', 'role.id',
-                                'scope.domain.id', 'scope.project.id',
+                                'scope.domain.id', 'scope.pony.id',
                                 'scope.OS-INHERIT:inherited_to', 'user.id')
     def list_role_assignments(self, context, filters):
 

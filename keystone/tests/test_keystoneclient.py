@@ -51,7 +51,7 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
 
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_admin['id'])
@@ -933,8 +933,8 @@ class KeystoneClientTests(object):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
                       'domain_id': DEFAULT_DOMAIN_ID}
-            self.assignment_api.create_project(tenant_id, tenant)
-            self.assignment_api.add_user_to_project(tenant_id,
+            self.assignment_api.create_pony(tenant_id, tenant)
+            self.assignment_api.add_user_to_pony(tenant_id,
                                                     self.user_foo['id'])
 
         tenants = client.tenants.list()
@@ -960,8 +960,8 @@ class KeystoneClientTests(object):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
                       'domain_id': DEFAULT_DOMAIN_ID}
-            self.assignment_api.create_project(tenant_id, tenant)
-            self.assignment_api.add_user_to_project(tenant_id,
+            self.assignment_api.create_pony(tenant_id, tenant)
+            self.assignment_api.add_user_to_pony(tenant_id,
                                                     self.user_foo['id'])
 
         tenants = client.tenants.list()

@@ -152,29 +152,29 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           self.identity_api.get_user,
                           self.user_foo['id'])
 
-    def test_remove_role_grant_from_user_and_project(self):
+    def test_remove_role_grant_from_user_and_pony(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
-            project_id=self.tenant_baz['id'])
+            pony_id=self.tenant_baz['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
-            project_id=self.tenant_baz['id'])
+            pony_id=self.tenant_baz['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           user_id=self.user_foo['id'],
-                          project_id=self.tenant_baz['id'],
+                          pony_id=self.tenant_baz['id'],
                           role_id='member')
 
-    def test_get_and_remove_role_grant_by_group_and_project(self):
+    def test_get_and_remove_role_grant_by_group_and_pony(self):
         new_domain = self._get_domain_fixture()
         new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
                      'name': uuid.uuid4().hex}
@@ -188,30 +188,30 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'])
+            pony_id=self.tenant_bar['id'])
         self.assertEqual([], roles_ref)
         self.assertEqual(0, len(roles_ref))
 
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'])
+            pony_id=self.tenant_bar['id'])
         self.assertNotEmpty(roles_ref)
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'])
+            pony_id=self.tenant_bar['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           group_id=new_group['id'],
-                          project_id=self.tenant_bar['id'],
+                          pony_id=self.tenant_bar['id'],
                           role_id='member')
 
     def test_delete_user_grant_no_user(self):
@@ -235,45 +235,45 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
-    def test_role_grant_by_group_and_cross_domain_project(self):
+    def test_role_grant_by_group_and_cross_domain_pony(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
-    def test_role_grant_by_user_and_cross_domain_project(self):
+    def test_role_grant_by_user_and_cross_domain_pony(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
+    def test_multi_role_grant_by_user_group_on_pony_domain(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
     def test_delete_role_with_user_and_group_grants(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_delete_user_with_group_project_domain_links(self):
+    def test_delete_user_with_group_pony_domain_links(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
-    def test_delete_group_with_user_project_domain_links(self):
+    def test_delete_group_with_user_pony_domain_links(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
-    def test_list_projects_for_user(self):
+    def test_list_ponies_for_user(self):
         domain = self._get_domain_fixture()
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                  'password': uuid.uuid4().hex, 'domain_id': domain['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(0))
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(0))
 
         # new grant(user1, role_member, tenant_bar)
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         # new grant(user1, role_member, tenant_baz)
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id=self.role_member['id'])
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(2))
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(2))
 
-        # Now, check number of projects through groups
+        # Now, check number of ponies through groups
         user2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                  'password': uuid.uuid4().hex, 'domain_id': domain['id'],
                  'enabled': True}
@@ -287,23 +287,23 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         # new grant(group1(user2), role_member, tenant_bar)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         # new grant(group1(user2), role_member, tenant_baz)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id=self.role_member['id'])
-        user_projects = self.assignment_api.list_projects_for_user(user2['id'])
-        self.assertThat(user_projects, matchers.HasLength(2))
+        user_ponies = self.assignment_api.list_ponies_for_user(user2['id'])
+        self.assertThat(user_ponies, matchers.HasLength(2))
 
         # new grant(group1(user2), role_other, tenant_bar)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_other['id'])
-        user_projects = self.assignment_api.list_projects_for_user(user2['id'])
-        self.assertThat(user_projects, matchers.HasLength(2))
+        user_ponies = self.assignment_api.list_ponies_for_user(user2['id'])
+        self.assertThat(user_ponies, matchers.HasLength(2))
 
-    def test_list_projects_for_user_and_groups(self):
+    def test_list_ponies_for_user_and_groups(self):
         domain = self._get_domain_fixture()
         # Create user1
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -321,27 +321,27 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         # Now, add grant to user1 and group1 in tenant_bar
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
 
-        # The result is user1 has only one project granted
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(1))
+        # The result is user1 has only one pony granted
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(1))
 
         # Now, delete user1 grant into tenant_bar and check
         self.assignment_api.delete_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
 
-        # The result is user1 has only one project granted.
+        # The result is user1 has only one pony granted.
         # Granted through group1.
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(1))
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(1))
 
-    def test_list_projects_for_user_with_grants(self):
+    def test_list_ponies_for_user_with_grants(self):
         domain = self._get_domain_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
@@ -355,12 +355,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                   'domain_id': domain['id']}
         self.identity_api.create_group(group2['id'], group2)
 
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain['id']}
-        self.assignment_api.create_project(project1['id'], project1)
-        project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': domain['id']}
-        self.assignment_api.create_project(project2['id'], project2)
+        self.assignment_api.create_pony(pony2['id'], pony2)
 
         self.identity_api.add_user_to_group(new_user['id'],
                                             group1['id'])
@@ -368,23 +368,23 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                                             group2['id'])
 
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=project1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=self.role_admin['id'])
         self.assignment_api.create_grant(group_id=group2['id'],
-                                         project_id=project2['id'],
+                                         pony_id=pony2['id'],
                                          role_id=self.role_admin['id'])
 
-        user_projects = self.assignment_api.list_projects_for_user(
+        user_ponies = self.assignment_api.list_ponies_for_user(
             new_user['id'])
-        self.assertEqual(3, len(user_projects))
+        self.assertEqual(3, len(user_ponies))
 
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_create_duplicate_project_name_in_different_domains(self):
+    def test_create_duplicate_pony_name_in_different_domains(self):
         self.skipTest('Blocked by bug 1101276')
 
     def test_create_duplicate_group_name_in_different_domains(self):
@@ -404,10 +404,10 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_move_group_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_project_between_domains(self):
+    def test_move_pony_between_domains(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_project_between_domains_with_clashing_names_fails(self):
+    def test_move_pony_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
     def test_get_roles_for_user_and_domain(self):
@@ -423,19 +423,19 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
-        new_project = {'id': uuid.uuid4().hex,
+        new_pony = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
                        'domain_id': new_domain['id']}
-        self.assignment_api.create_project(new_project['id'], new_project)
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
 
         # First check how many role grant already exist
         existing_assignments = len(self.assignment_api.list_role_assignments())
 
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='other')
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=new_project['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='admin')
 
         # Read back the list of assignments - check it is gone up by 2
@@ -454,12 +454,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                     'domain_id': new_domain['id']}
         self.identity_api.create_user(new_user['id'],
                                       new_user)
-        new_project = {'id': uuid.uuid4().hex,
+        new_pony = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
                        'domain_id': new_domain['id']}
-        self.assignment_api.create_project(new_project['id'], new_project)
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='other')
 
         # Read back the list of assignments and ensure
@@ -469,7 +469,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         dumb_id = common_ldap.BaseLdap._dn_to_id(CONF.ldap.dumb_member)
         self.assertNotIn(dumb_id, assignment_ids)
 
-    def test_list_user_ids_for_project_dumb_member(self):
+    def test_list_user_ids_for_pony_dumb_member(self):
         self.config_fixture.config(group='ldap', use_dumb_member=True)
         self.clear_database()
         self.load_backends()
@@ -480,9 +480,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                 'domain_id': test_backend.DEFAULT_DOMAIN_ID}
 
         self.identity_api.create_user(user['id'], user)
-        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_pony(self.tenant_baz['id'],
                                                 user['id'])
-        user_ids = self.assignment_api.list_user_ids_for_project(
+        user_ids = self.assignment_api.list_user_ids_for_pony(
             self.tenant_baz['id'])
 
         self.assertIn(user['id'], user_ids)
@@ -493,7 +493,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_role_assignments_bad_role(self):
         self.skipTest('Blocked by bug 1221805')
 
-    def test_multi_group_grants_on_project_domain(self):
+    def test_multi_group_grants_on_pony_domain(self):
         self.skipTest('Blocked by bug 1101287')
 
     def test_list_group_members_missing_entry(self):
@@ -604,7 +604,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'enabled': True,
         }
         self.identity_api.create_user(user['id'], user)
-        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_pony(self.tenant_baz['id'],
                                                 user['id'])
         driver = self.identity_api._select_identity_driver(
             user['domain_id'])
@@ -654,7 +654,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                 'name': u'fäké1',
                 'password': u'fäképass1',
                 'domain_id': CONF.identity.default_domain_id,
-                'default_project_id': 'maps_to_none',
+                'default_pony_id': 'maps_to_none',
                 }
 
         # If this doesn't raise, then the test is successful.
@@ -727,16 +727,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         }
         self.identity_api.create_user(user_id, user)
 
-        # Grant the user a role on a project.
+        # Grant the user a role on a pony.
 
         role_id = 'member'
-        project_id = self.tenant_baz['id']
+        pony_id = self.tenant_baz['id']
 
         self.assignment_api.create_grant(role_id, user_id=user_id,
-                                         project_id=project_id)
+                                         pony_id=pony_id)
 
         role_ref = self.assignment_api.get_grant(role_id, user_id=user_id,
-                                                 project_id=project_id)
+                                                 pony_id=pony_id)
 
         self.assertEqual(role_id, role_ref['id'])
 
@@ -750,27 +750,27 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.useFixture(database.Database())
         super(LDAPIdentity, self).setUp()
 
-    def test_configurable_allowed_project_actions(self):
+    def test_configurable_allowed_pony_actions(self):
         tenant = {'id': u'fäké1', 'name': u'fäké1', 'enabled': True}
-        self.assignment_api.create_project(u'fäké1', tenant)
-        tenant_ref = self.assignment_api.get_project(u'fäké1')
+        self.assignment_api.create_pony(u'fäké1', tenant)
+        tenant_ref = self.assignment_api.get_pony(u'fäké1')
         self.assertEqual(u'fäké1', tenant_ref['id'])
 
         tenant['enabled'] = False
-        self.assignment_api.update_project(u'fäké1', tenant)
+        self.assignment_api.update_pony(u'fäké1', tenant)
 
-        self.assignment_api.delete_project(u'fäké1')
+        self.assignment_api.delete_pony(u'fäké1')
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.assignment_api.get_pony,
                           u'fäké1')
 
     def test_configurable_subtree_delete(self):
         self.config_fixture.config(group='ldap', allow_subtree_delete=True)
         self.load_backends()
 
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': CONF.identity.default_domain_id}
-        self.assignment_api.create_project(project1['id'], project1)
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
@@ -781,24 +781,24 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
 
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id=user1['id'],
-            tenant_id=project1['id'],
+            tenant_id=pony1['id'],
             role_id=role1['id'])
 
-        self.assignment_api.delete_project(project1['id'])
+        self.assignment_api.delete_pony(pony1['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project1['id'])
+                          self.assignment_api.get_pony,
+                          pony1['id'])
 
-        self.assignment_api.create_project(project1['id'], project1)
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
-        list = self.assignment_api.get_roles_for_user_and_project(
+        list = self.assignment_api.get_roles_for_user_and_pony(
             user1['id'],
-            project1['id'])
+            pony1['id'])
         self.assertEqual(0, len(list))
 
-    def test_configurable_forbidden_project_actions(self):
+    def test_configurable_forbidden_pony_actions(self):
         self.config_fixture.config(
             group='ldap', tenant_allow_create=False, tenant_allow_update=False,
             tenant_allow_delete=False)
@@ -806,17 +806,17 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
         tenant = {'id': u'fäké1', 'name': u'fäké1'}
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.create_project,
+                          self.assignment_api.create_pony,
                           u'fäké1',
                           tenant)
 
         self.tenant_bar['enabled'] = False
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.update_project,
+                          self.assignment_api.update_pony,
                           self.tenant_bar['id'],
                           self.tenant_bar)
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.delete_project,
+                          self.assignment_api.delete_pony,
                           self.tenant_bar['id'])
 
     def test_configurable_allowed_role_actions(self):
@@ -855,8 +855,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.delete_role,
                           self.role_member['id'])
 
-    def test_project_filter(self):
-        tenant_ref = self.assignment_api.get_project(self.tenant_bar['id'])
+    def test_pony_filter(self):
+        tenant_ref = self.assignment_api.get_pony(self.tenant_bar['id'])
         self.assertDictEqual(tenant_ref, self.tenant_bar)
 
         self.config_fixture.config(group='ldap',
@@ -871,10 +871,10 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assignment_api.get_role.invalidate(self.assignment_api,
                                                 self.role_member['id'])
         self.assignment_api.get_role(self.role_member['id'])
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_bar['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.assignment_api.get_pony,
                           self.tenant_bar['id'])
 
     def test_role_filter(self):
@@ -906,7 +906,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.identity_api.get_user,
                           dumb_id)
 
-    def test_project_attribute_mapping(self):
+    def test_pony_attribute_mapping(self):
         self.config_fixture.config(
             group='ldap', tenant_name_attribute='ou',
             tenant_desc_attribute='description',
@@ -922,9 +922,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_baz['id'])
-        tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
+        tenant_ref = self.assignment_api.get_pony(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertEqual(self.tenant_baz['name'], tenant_ref['name'])
         self.assertEqual(
@@ -944,15 +944,15 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_baz['id'])
-        tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
+        tenant_ref = self.assignment_api.get_pony(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertEqual(self.tenant_baz['description'], tenant_ref['name'])
         self.assertEqual(self.tenant_baz['name'], tenant_ref['description'])
         self.assertEqual(self.tenant_baz['enabled'], tenant_ref['enabled'])
 
-    def test_project_attribute_ignore(self):
+    def test_pony_attribute_ignore(self):
         self.config_fixture.config(
             group='ldap',
             tenant_attribute_ignore=['name', 'description', 'enabled'])
@@ -965,9 +965,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # that could affect what the drivers would return up to the manager.
         # This solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_baz['id'])
-        tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
+        tenant_ref = self.assignment_api.get_pony(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertNotIn('name', tenant_ref)
         self.assertNotIn('description', tenant_ref)
@@ -1299,84 +1299,84 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # just skip this time.
         self.skipTest('Domains are read-only against LDAP')
 
-    def test_project_crud(self):
+    def test_pony_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
-        #              updating of a project name so this method override
+        #              updating of a pony name so this method override
         #              provides a different update test
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                    'domain_id': CONF.identity.default_domain_id,
                    'description': uuid.uuid4().hex, 'enabled': True
                    }
-        self.assignment_api.create_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
 
-        self.assertDictEqual(project_ref, project)
+        self.assertDictEqual(pony_ref, pony)
 
-        project['description'] = uuid.uuid4().hex
-        self.assignment_api.update_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        pony['description'] = uuid.uuid4().hex
+        self.assignment_api.update_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
+        self.assertDictEqual(pony_ref, pony)
 
-        self.assignment_api.delete_project(project['id'])
+        self.assignment_api.delete_pony(pony['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
     @tests.skip_if_cache_disabled('assignment')
-    def test_cache_layer_project_crud(self):
+    def test_cache_layer_pony_crud(self):
         # NOTE(morganfainberg): LDAP implementation does not currently support
-        # updating project names.  This method override provides a different
+        # updating pony names.  This method override provides a different
         # update test.
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                    'domain_id': CONF.identity.default_domain_id,
                    'description': uuid.uuid4().hex}
-        project_id = project['id']
-        # Create a project
-        self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
-        updated_project = copy.deepcopy(project)
-        updated_project['description'] = uuid.uuid4().hex
-        # Update project, bypassing assignment_api manager
-        self.assignment_api.driver.update_project(project_id,
-                                                  updated_project)
-        # Verify get_project still returns the original project_ref
+        pony_id = pony['id']
+        # Create a pony
+        self.assignment_api.create_pony(pony_id, pony)
+        self.assignment_api.get_pony(pony_id)
+        updated_pony = copy.deepcopy(pony)
+        updated_pony['description'] = uuid.uuid4().hex
+        # Update pony, bypassing assignment_api manager
+        self.assignment_api.driver.update_pony(pony_id,
+                                                  updated_pony)
+        # Verify get_pony still returns the original pony_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
+            pony, self.assignment_api.get_pony(pony_id))
         # Invalidate cache
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   project_id)
-        # Verify get_project now returns the new project
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
+                                                   pony_id)
+        # Verify get_pony now returns the new pony
         self.assertDictContainsSubset(
-            updated_project,
-            self.assignment_api.get_project(project_id))
-        # Update project using the assignment_api manager back to original
-        self.assignment_api.update_project(project['id'], project)
-        # Verify get_project returns the original project_ref
+            updated_pony,
+            self.assignment_api.get_pony(pony_id))
+        # Update pony using the assignment_api manager back to original
+        self.assignment_api.update_pony(pony['id'], pony)
+        # Verify get_pony returns the original pony_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
-        # Delete project bypassing assignment_api
-        self.assignment_api.driver.delete_project(project_id)
-        # Verify get_project still returns the project_ref
+            pony, self.assignment_api.get_pony(pony_id))
+        # Delete pony bypassing assignment_api
+        self.assignment_api.driver.delete_pony(pony_id)
+        # Verify get_pony still returns the pony_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
+            pony, self.assignment_api.get_pony(pony_id))
         # Invalidate cache
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   project_id)
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
+                                                   pony_id)
         # Verify ProjectNotFound now raised
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project_id)
-        # recreate project
-        self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
-        # delete project
-        self.assignment_api.delete_project(project_id)
+                          self.assignment_api.get_pony,
+                          pony_id)
+        # recreate pony
+        self.assignment_api.create_pony(pony_id, pony)
+        self.assignment_api.get_pony(pony_id)
+        # delete pony
+        self.assignment_api.delete_pony(pony_id)
         # Verify ProjectNotFound is raised
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project_id)
+                          self.assignment_api.get_pony,
+                          pony_id)
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
+    def test_multi_role_grant_by_user_group_on_pony_domain(self):
         # This is a partial implementation of the standard test that
         # is defined in test_backend.py.  It omits both domain and
         # group grants. since neither of these are yet supported by
@@ -1393,17 +1393,17 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                  'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'domain_id': CONF.identity.default_domain_id}
-        self.assignment_api.create_project(project1['id'], project1)
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id=user1['id'],
-            tenant_id=project1['id'],
+            tenant_id=pony1['id'],
             role_id=role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id=user1['id'],
-            tenant_id=project1['id'],
+            tenant_id=pony1['id'],
             role_id=role_list[1]['id'])
 
         # Although list_grants are not yet supported, we can test the
@@ -1411,9 +1411,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # and group roles are combined.  Only directly assigned user
         # roles are available, since group grants are not yet supported
 
-        combined_list = self.assignment_api.get_roles_for_user_and_project(
+        combined_list = self.assignment_api.get_roles_for_user_and_pony(
             user1['id'],
-            project1['id'])
+            pony1['id'])
         self.assertEqual(2, len(combined_list))
         self.assertIn(role_list[0]['id'], combined_list)
         self.assertIn(role_list[1]['id'], combined_list)
@@ -1426,7 +1426,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             user1['id'], CONF.identity.default_domain_id)
         self.assertEqual(0, len(combined_role_list))
 
-    def test_list_projects_for_alternate_domain(self):
+    def test_list_ponies_for_alternate_domain(self):
         self.skipTest(
             'N/A: LDAP does not support multiple domains')
 
@@ -1544,34 +1544,34 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                                    user_enabled_emulation=True,
                                    tenant_enabled_emulation=True)
 
-    def test_project_crud(self):
+    def test_pony_crud(self):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
-        #              enabled key in the project dictionary so this
+        #              enabled key in the pony dictionary so this
         #              method override handles this side-effect
-        project = {
+        pony = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'description': uuid.uuid4().hex}
 
-        self.assignment_api.create_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
 
-        # self.assignment_api.create_project adds an enabled
+        # self.assignment_api.create_pony adds an enabled
         # key with a value of True when LDAPIdentityEnabledEmulation
-        # is used so we now add this expected key to the project dictionary
-        project['enabled'] = True
-        self.assertDictEqual(project_ref, project)
+        # is used so we now add this expected key to the pony dictionary
+        pony['enabled'] = True
+        self.assertDictEqual(pony_ref, pony)
 
-        project['description'] = uuid.uuid4().hex
-        self.assignment_api.update_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        pony['description'] = uuid.uuid4().hex
+        self.assignment_api.update_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
+        self.assertDictEqual(pony_ref, pony)
 
-        self.assignment_api.delete_project(project['id'])
+        self.assignment_api.delete_pony(pony['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
     def test_user_crud(self):
         user = {
@@ -1659,7 +1659,7 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
 
         self.assertEqual(orig_default_domain_id, domains[0]['id'])
 
-    def test_project_filter(self):
+    def test_pony_filter(self):
         self.skipTest(
             'N/A: Not part of SQL backend')
 
@@ -1667,13 +1667,13 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
         self.skipTest(
             'N/A: Not part of SQL backend')
 
-    def test_add_role_grant_to_user_and_project_404(self):
+    def test_add_role_grant_to_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_role_grants_for_user_and_project_404(self):
+    def test_get_role_grants_for_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_list_projects_for_user_with_grants(self):
+    def test_list_ponies_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')
 
 
@@ -1897,11 +1897,11 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         # ..and make sure a domain-specific options is also set
         self.assertEqual('fake://memory1', conf.ldap.url)
 
-    def test_add_role_grant_to_user_and_project_404(self):
+    def test_add_role_grant_to_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_role_grants_for_user_and_project_404(self):
+    def test_get_role_grants_for_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_list_projects_for_user_with_grants(self):
+    def test_list_ponies_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')

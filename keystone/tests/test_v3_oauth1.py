@@ -49,13 +49,13 @@ class OAuth1Tests(test_v3.RestfulTestCase):
             body={'consumer': ref})
         return resp.result['consumer']
 
-    def _create_request_token(self, consumer, project_id):
+    def _create_request_token(self, consumer, pony_id):
         endpoint = '/OS-OAUTH1/request_token'
         client = oauth1.Client(consumer['key'],
                                client_secret=consumer['secret'],
                                signature_method=oauth1.SIG_HMAC,
                                callback_uri="oob")
-        headers = {'requested_project_id': project_id}
+        headers = {'requested_pony_id': pony_id}
         url, headers, body = client.sign(self.base_url + endpoint,
                                          http_method='POST',
                                          headers=headers)
@@ -245,7 +245,7 @@ class OAuthFlowTests(OAuth1Tests):
         self.assertIsNotNone(self.consumer['secret'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.pony_id)
         content = self.post(url, headers=headers)
         credentials = urllib.parse.parse_qs(content.result)
         request_key = credentials['oauth_token'][0]
@@ -436,7 +436,7 @@ class AuthTokenTests(OAuthFlowTests):
         self.admin_request(path='/auth/tokens', headers=headers,
                            method='GET', expected_status=404)
 
-    def test_deleting_project_also_invalidates_tokens(self):
+    def test_deleting_pony_also_invalidates_tokens(self):
         self.test_oauth_flow()
 
         # delegated keystone token exists
@@ -445,8 +445,8 @@ class AuthTokenTests(OAuthFlowTests):
         r = self.get('/auth/tokens', headers=headers)
         self.assertValidTokenResponse(r, self.user)
 
-        r = self.delete('/projects/%(project_id)s' % {
-            'project_id': self.project_id})
+        r = self.delete('/ponies/%(pony_id)s' % {
+            'pony_id': self.pony_id})
 
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
@@ -483,7 +483,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
         consumer = {'key': consumer_id, 'secret': uuid.uuid4().hex}
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.pony_id)
         self.post(url, headers=headers, expected_status=401)
 
     def test_bad_request_token_key(self):
@@ -491,7 +491,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_id = consumer['id']
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.pony_id)
         self.post(url, headers=headers)
         url = self._authorize_request_token(uuid.uuid4().hex)
         body = {'roles': [{'id': self.role_id}]}
@@ -503,7 +503,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
 
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.pony_id)
         content = self.post(url, headers=headers)
         credentials = urllib.parse.parse_qs(content.result)
         request_key = credentials['oauth_token'][0]
@@ -526,13 +526,13 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
 
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.pony_id)
         content = self.post(url, headers=headers)
         credentials = urllib.parse.parse_qs(content.result)
         request_key = credentials['oauth_token'][0]
 
-        self.assignment_api.remove_role_from_user_and_project(
-            self.user_id, self.project_id, self.role_id)
+        self.assignment_api.remove_role_from_user_and_pony(
+            self.user_id, self.pony_id, self.role_id)
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
         self.admin_request(path=url, method='PUT',
@@ -548,7 +548,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         self.assertIsNotNone(self.consumer['key'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.pony_id)
         content = self.post(url, headers=headers)
         credentials = urllib.parse.parse_qs(content.result)
         request_key = credentials['oauth_token'][0]
@@ -569,7 +569,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         self.assertIsNotNone(self.consumer['key'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.pony_id)
         content = self.post(url, headers=headers)
         credentials = urllib.parse.parse_qs(content.result)
         request_key = credentials['oauth_token'][0]

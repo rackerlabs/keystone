@@ -65,13 +65,13 @@ class Driver(object):
     """Interface description for an Endpoint Filter driver."""
 
     @abc.abstractmethod
-    def add_endpoint_to_project(self, endpoint_id, project_id):
-        """Creates an endpoint to project association.
+    def add_endpoint_to_pony(self, endpoint_id, pony_id):
+        """Creates an endpoint to pony association.
 
         :param endpoint_id: identity of endpoint to associate
         :type endpoint_id: string
-        :param project_id: identity of the project to be associated with
-        :type project_id: string
+        :param pony_id: identity of the pony to be associated with
+        :type pony_id: string
         :raises: keystone.exception.Conflict,
         :returns: None.
 
@@ -79,13 +79,13 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def remove_endpoint_from_project(self, endpoint_id, project_id):
-        """Removes an endpoint to project association.
+    def remove_endpoint_from_pony(self, endpoint_id, pony_id):
+        """Removes an endpoint to pony association.
 
         :param endpoint_id: identity of endpoint to remove
         :type endpoint_id: string
-        :param project_id: identity of the project associated with
-        :type project_id: string
+        :param pony_id: identity of the pony associated with
+        :type pony_id: string
         :raises: exception.NotFound
         :returns: None.
 
@@ -93,13 +93,13 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def check_endpoint_in_project(self, endpoint_id, project_id):
-        """Checks if an endpoint is associated with a project.
+    def check_endpoint_in_pony(self, endpoint_id, pony_id):
+        """Checks if an endpoint is associated with a pony.
 
         :param endpoint_id: identity of endpoint to check
         :type endpoint_id: string
-        :param project_id: identity of the project associated with
-        :type project_id: string
+        :param pony_id: identity of the pony associated with
+        :type pony_id: string
         :raises: exception.NotFound
         :returns: None.
 
@@ -107,23 +107,23 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_endpoints_for_project(self, project_id):
-        """List all endpoints associated with a project.
+    def list_endpoints_for_pony(self, pony_id):
+        """List all endpoints associated with a pony.
 
-        :param project_id: identity of the project to check
-        :type project_id: string
+        :param pony_id: identity of the pony to check
+        :type pony_id: string
         :returns: a list of identity endpoint ids or an empty list.
 
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_projects_for_endpoint(self, endpoint_id):
-        """List all projects associated with an endpoint.
+    def list_ponies_for_endpoint(self, endpoint_id):
+        """List all ponies associated with an endpoint.
 
         :param endpoint_id: identity of endpoint to check
         :type endpoint_id: string
-        :returns: a list of projects or an empty list.
+        :returns: a list of ponies or an empty list.
 
         """
         raise exception.NotImplemented()

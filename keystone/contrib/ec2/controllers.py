@@ -18,9 +18,9 @@ This service allows the creation of access/secret credentials used for
 the ec2 interop layer of OpenStack.
 
 A user can create as many access/secret pairs, each of which map to a
-specific project.  This is required because OpenStack supports a user
-belonging to multiple projects, whereas the signatures created on ec2-style
-requests don't allow specification of which project the user wishes to act
+specific pony.  This is required because OpenStack supports a user
+belonging to multiple ponies, whereas the signatures created on ec2-style
+requests don't allow specification of which pony the user wishes to act
 upon.
 
 To complete the cycle, we provide a method that OpenStack services can
@@ -112,11 +112,11 @@ class Ec2ControllerCommon(object):
 
         # TODO(termie): don't create new tokens every time
         # TODO(termie): this is copied from TokenController.authenticate
-        tenant_ref = self.assignment_api.get_project(creds_ref['tenant_id'])
+        tenant_ref = self.assignment_api.get_pony(creds_ref['tenant_id'])
         user_ref = self.identity_api.get_user(creds_ref['user_id'])
         metadata_ref = {}
         metadata_ref['roles'] = (
-            self.assignment_api.get_roles_for_user_and_project(
+            self.assignment_api.get_roles_for_user_and_pony(
                 user_ref['id'], tenant_ref['id']))
 
         trust_id = creds_ref.get('trust_id')
@@ -151,14 +151,14 @@ class Ec2ControllerCommon(object):
         """
 
         self.identity_api.get_user(user_id)
-        self.assignment_api.get_project(tenant_id)
+        self.assignment_api.get_pony(tenant_id)
         trust_id = self._get_trust_id_for_request(context)
         blob = {'access': uuid.uuid4().hex,
                 'secret': uuid.uuid4().hex,
                 'trust_id': trust_id}
         credential_id = utils.hash_access_key(blob['access'])
         cred_ref = {'user_id': user_id,
-                    'project_id': tenant_id,
+                    'pony_id': tenant_id,
                     'blob': jsonutils.dumps(blob),
                     'id': credential_id,
                     'type': 'ec2'}
@@ -218,7 +218,7 @@ class Ec2ControllerCommon(object):
         except TypeError:
             blob = credential['blob']
         return {'user_id': credential.get('user_id'),
-                'tenant_id': credential.get('project_id'),
+                'tenant_id': credential.get('pony_id'),
                 'access': blob.get('access'),
                 'secret': blob.get('secret'),
                 'trust_id': blob.get('trust_id')}
@@ -336,7 +336,7 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
 @dependency.requires('policy_api', 'token_provider_api')
 class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
 
-    member_name = 'project'
+    member_name = 'pony'
 
     def __init__(self):
         super(Ec2ControllerV3, self).__init__()
@@ -359,14 +359,14 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
         self.check_protection(context, prep_info, ref)
 
     def authenticate(self, context, credentials=None, ec2Credentials=None):
-        (user_ref, project_ref, metadata_ref, roles_ref,
+        (user_ref, pony_ref, metadata_ref, roles_ref,
          catalog_ref) = self._authenticate(credentials=credentials,
                                            ec2credentials=ec2Credentials)
 
         method_names = ['ec2credential']
 
         token_id, token_data = self.token_provider_api.issue_v3_token(
-            user_ref['id'], method_names, project_id=project_ref['id'],
+            user_ref['id'], method_names, pony_id=pony_ref['id'],
             metadata_ref=metadata_ref)
         return render_token_data_response(token_id, token_data)
 

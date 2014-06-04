@@ -419,7 +419,7 @@ class TestCase(BaseTestCase):
         self.addCleanup(self.clear_auth_plugin_registry)
 
     def config(self, config_files):
-        CONF(args=[], project='keystone', default_config_files=config_files)
+        CONF(args=[], pony='keystone', default_config_files=config_files)
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
@@ -472,10 +472,10 @@ class TestCase(BaseTestCase):
 
             for tenant in fixtures.TENANTS:
                 try:
-                    rv = self.assignment_api.create_project(
+                    rv = self.assignment_api.create_pony(
                         tenant['id'], tenant)
                 except exception.Conflict:
-                    rv = self.assignment_api.get_project(tenant['id'])
+                    rv = self.assignment_api.get_pony(tenant['id'])
                 attrname = 'tenant_%s' % tenant['id']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
@@ -498,7 +498,7 @@ class TestCase(BaseTestCase):
                     pass
                 for tenant_id in tenants:
                     try:
-                        self.assignment_api.add_user_to_project(tenant_id,
+                        self.assignment_api.add_user_to_pony(tenant_id,
                                                                 user['id'])
                     except exception.Conflict:
                         pass

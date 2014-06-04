@@ -173,10 +173,10 @@ class Manager(manager.Manager):
         return self.driver.delete_access_token(user_id, access_token_id)
 
     @notifications.created(_REQUEST_TOKEN, resource_id_arg_index=2)
-    def create_request_token(self, consumer_id, requested_project,
+    def create_request_token(self, consumer_id, requested_pony,
                              request_token_duration):
         return self.driver.create_request_token(
-            consumer_id, requested_project, request_token_duration)
+            consumer_id, requested_pony, request_token_duration)
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -279,14 +279,14 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def create_request_token(self, consumer_id, requested_project,
+    def create_request_token(self, consumer_id, requested_pony,
                              request_token_duration):
         """Create request token.
 
         :param consumer_id: the id of the consumer
         :type consumer_id: string
-        :param requested_project_id: requested project id
-        :type requested_project_id: string
+        :param requested_pony_id: requested pony id
+        :type requested_pony_id: string
         :param request_token_duration: duration of request token
         :type request_token_duration: string
         :returns: request_token_ref

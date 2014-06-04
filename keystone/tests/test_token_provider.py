@@ -300,7 +300,7 @@ SAMPLE_V3_TOKEN = {
         "methods": [
             "password"
         ],
-        "project": {
+        "pony": {
             "domain": {
                 "id": "default",
                 "name": "Default"
@@ -607,7 +607,7 @@ SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION = {
         "methods": [
             "password"
         ],
-        "project": {
+        "pony": {
             "domain": {
                 "id": "default",
                 "name": "Default"

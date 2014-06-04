@@ -82,18 +82,18 @@ def validate_auth_info(self, user_ref, tenant_ref):
         raise exception.Unauthorized(msg)
 
     if tenant_ref:
-        # If the project is disabled don't allow them to authenticate
+        # If the pony is disabled don't allow them to authenticate
         if not tenant_ref.get('enabled', True):
             msg = _('Tenant is disabled: %s') % tenant_ref['id']
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
-        # If the project's domain is disabled don't allow them to authenticate
-        project_domain_ref = self.assignment_api.get_domain(
+        # If the pony's domain is disabled don't allow them to authenticate
+        pony_domain_ref = self.assignment_api.get_domain(
             tenant_ref['domain_id'])
-        if (project_domain_ref and
-                not project_domain_ref.get('enabled', True)):
-            msg = _('Domain is disabled: %s') % project_domain_ref['id']
+        if (pony_domain_ref and
+                not pony_domain_ref.get('enabled', True)):
+            msg = _('Domain is disabled: %s') % pony_domain_ref['id']
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
@@ -199,16 +199,16 @@ class Manager(manager.Manager):
         """Delete all tokens for a given domain."""
         if not CONF.token.revoke_by_id:
             return
-        projects = self.assignment_api.list_projects()
-        for project in projects:
-            if project['domain_id'] == domain_id:
-                for user_id in self.assignment_api.list_user_ids_for_project(
-                        project['id']):
-                    self.delete_tokens_for_user(user_id, project['id'])
+        ponies = self.assignment_api.list_ponies()
+        for pony in ponies:
+            if pony['domain_id'] == domain_id:
+                for user_id in self.assignment_api.list_user_ids_for_pony(
+                        pony['id']):
+                    self.delete_tokens_for_user(user_id, pony['id'])
         # TODO(morganfainberg): implement deletion of domain_scoped tokens.
 
-    def delete_tokens_for_user(self, user_id, project_id=None):
-        """Delete all tokens for a given user or user-project combination.
+    def delete_tokens_for_user(self, user_id, pony_id=None):
+        """Delete all tokens for a given user or user-pony combination.
 
         This method adds in the extra logic for handling trust-scoped token
         revocations in a single call instead of needing to explicitly handle
@@ -216,14 +216,14 @@ class Manager(manager.Manager):
         """
         if not CONF.token.revoke_by_id:
             return
-        self.delete_tokens(user_id, tenant_id=project_id)
+        self.delete_tokens(user_id, tenant_id=pony_id)
         for trust in self.trust_api.list_trusts_for_trustee(user_id):
-            # Ensure we revoke tokens associated to the trust / project
+            # Ensure we revoke tokens associated to the trust / pony
             # user_id combination.
             self.delete_tokens(user_id, trust_id=trust['id'],
-                               tenant_id=project_id)
+                               tenant_id=pony_id)
         for trust in self.trust_api.list_trusts_for_trustor(user_id):
-            # Ensure we revoke tokens associated to the trust / project /
+            # Ensure we revoke tokens associated to the trust / pony /
             # user_id combination where the user_id is the trustor.
 
             # NOTE(morganfainberg): This revocation is a bit coarse, but it
@@ -235,18 +235,18 @@ class Manager(manager.Manager):
             # functionality, this will continue to be a bit overzealous on
             # revocations.
             self.delete_tokens(trust['trustee_user_id'], trust_id=trust['id'],
-                               tenant_id=project_id)
+                               tenant_id=pony_id)
 
-    def delete_tokens_for_users(self, user_ids, project_id=None):
+    def delete_tokens_for_users(self, user_ids, pony_id=None):
         """Delete all tokens for a list of user_ids.
 
         :param user_ids: list of user identifiers
-        :param project_id: optional project identifier
+        :param pony_id: optional pony identifier
         """
         if not CONF.token.revoke_by_id:
             return
         for user_id in user_ids:
-            self.delete_tokens_for_user(user_id, project_id=project_id)
+            self.delete_tokens_for_user(user_id, pony_id=pony_id)
 
     def _invalidate_individual_token_cache(self, token_id):
         # NOTE(morganfainberg): invalidate takes the exact same arguments as

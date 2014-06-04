@@ -19,27 +19,27 @@ from keystone.contrib.endpoint_filter import controllers
 class EndpointFilterExtension(wsgi.ExtensionRouter):
 
     PATH_PREFIX = '/OS-EP-FILTER'
-    PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
+    PATH_PROJECT_ENDPOINT = '/ponies/{pony_id}/endpoints/{endpoint_id}'
 
     def add_routes(self, mapper):
         endpoint_filter_controller = controllers.EndpointFilterV3Controller()
-        mapper.connect(self.PATH_PREFIX + '/endpoints/{endpoint_id}/projects',
+        mapper.connect(self.PATH_PREFIX + '/endpoints/{endpoint_id}/ponies',
                        controller=endpoint_filter_controller,
-                       action='list_projects_for_endpoint',
+                       action='list_ponies_for_endpoint',
                        conditions=dict(method=['GET']))
         mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
                        controller=endpoint_filter_controller,
-                       action='add_endpoint_to_project',
+                       action='add_endpoint_to_pony',
                        conditions=dict(method=['PUT']))
         mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
                        controller=endpoint_filter_controller,
-                       action='check_endpoint_in_project',
+                       action='check_endpoint_in_pony',
                        conditions=dict(method=['HEAD']))
-        mapper.connect(self.PATH_PREFIX + '/projects/{project_id}/endpoints',
+        mapper.connect(self.PATH_PREFIX + '/ponies/{pony_id}/endpoints',
                        controller=endpoint_filter_controller,
-                       action='list_endpoints_for_project',
+                       action='list_endpoints_for_pony',
                        conditions=dict(method=['GET']))
         mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
                        controller=endpoint_filter_controller,
-                       action='remove_endpoint_from_project',
+                       action='remove_endpoint_from_pony',
                        conditions=dict(method=['DELETE']))

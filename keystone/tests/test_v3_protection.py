@@ -35,7 +35,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         """Setup for Identity Protection Test Cases.
 
         As well as the usual housekeeping, create a set of domains,
-        users, roles and projects for the subsequent tests:
+        users, roles and ponies for the subsequent tests:
 
         - Three domains: A,B & C.  C is disabled.
         - DomainA has user1, DomainB has user2 and user3
@@ -346,13 +346,13 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         The following data is created:
 
         - Three domains: domainA, domainB and admin_domain
-        - One project, which name is 'project'
-        - domainA has three users: domain_admin_user, project_admin_user and
+        - One pony, which name is 'pony'
+        - domainA has three users: domain_admin_user, pony_admin_user and
           just_a_user:
 
           - domain_admin_user has role 'admin' on domainA,
-          - project_admin_user has role 'admin' on the project,
-          - just_a_user has a non-admin role on both domainA and the project.
+          - pony_admin_user has role 'admin' on the pony,
+          - just_a_user has a non-admin role on both domainA and the pony.
         - admin_domain has user cloud_admin_user, with an 'admin' role
           on admin_domain.
 
@@ -396,11 +396,11 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.domain_admin_user['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.domain_admin_user['id'],
                                       self.domain_admin_user)
-        self.project_admin_user = self.new_user_ref(
+        self.pony_admin_user = self.new_user_ref(
             domain_id=self.domainA['id'])
-        self.project_admin_user['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.project_admin_user['id'],
-                                      self.project_admin_user)
+        self.pony_admin_user['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.pony_admin_user['id'],
+                                      self.pony_admin_user)
 
         # The admin role and another plain role
         self.admin_role = {'id': uuid.uuid4().hex, 'name': 'admin'}
@@ -421,15 +421,15 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
                                          user_id=self.just_a_user['id'],
                                          domain_id=self.domainA['id'])
 
-        # Create a assign roles to the project
-        self.project = self.new_project_ref(domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.project['id'], self.project)
+        # Create a assign roles to the pony
+        self.pony = self.new_pony_ref(domain_id=self.domainA['id'])
+        self.assignment_api.create_pony(self.pony['id'], self.pony)
         self.assignment_api.create_grant(self.admin_role['id'],
-                                         user_id=self.project_admin_user['id'],
-                                         project_id=self.project['id'])
+                                         user_id=self.pony_admin_user['id'],
+                                         pony_id=self.pony['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
-                                         project_id=self.project['id'])
+                                         pony_id=self.pony['id'])
 
     def _stati(self, expected_status):
         # Return the expected return codes for APIs with and without data
@@ -458,23 +458,23 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.post('/users', auth=self.auth, body={'user': user_ref},
                   expected_status=status_created)
 
-    def _test_project_management(self, domain_id, expected=None):
+    def _test_pony_management(self, domain_id, expected=None):
         status_OK, status_created, status_no_data = self._stati(expected)
-        entity_url = '/projects/%s' % self.project['id']
-        list_url = '/projects?domain_id=%s' % domain_id
+        entity_url = '/ponies/%s' % self.pony['id']
+        list_url = '/ponies?domain_id=%s' % domain_id
 
         self.get(entity_url, auth=self.auth,
                  expected_status=status_OK)
         self.get(list_url, auth=self.auth,
                  expected_status=status_OK)
-        project = {'description': 'Updated'}
-        self.patch(entity_url, auth=self.auth, body={'project': project},
+        pony = {'description': 'Updated'}
+        self.patch(entity_url, auth=self.auth, body={'pony': pony},
                    expected_status=status_OK)
         self.delete(entity_url, auth=self.auth,
                     expected_status=status_no_data)
 
-        proj_ref = self.new_project_ref(domain_id=domain_id)
-        self.post('/projects', auth=self.auth, body={'project': proj_ref},
+        proj_ref = self.new_pony_ref(domain_id=domain_id)
+        self.post('/ponies', auth=self.auth, body={'pony': proj_ref},
                   expected_status=status_created)
 
     def _test_domain_management(self, expected=None):
@@ -548,20 +548,20 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         self._test_user_management(self.domainA['id'])
 
-    def test_project_management(self):
-        # First, authenticate with a user that does not have the project
+    def test_pony_management(self):
+        # First, authenticate with a user that does not have the pony
         # admin role - shouldn't be able to do much.
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
             domain_id=self.domainA['id'])
 
-        self._test_project_management(
+        self._test_pony_management(
             self.domainA['id'], expected=exception.ForbiddenAction.code)
 
-        # ...but should still be able to list projects of which they are
+        # ...but should still be able to list ponies of which they are
         # a member
-        url = '/users/%s/projects' % self.just_a_user['id']
+        url = '/users/%s/ponies' % self.just_a_user['id']
         self.get(url, auth=self.auth)
 
         # Now, authenticate with a user that does have the domain admin role
@@ -570,7 +570,7 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
             password=self.domain_admin_user['password'],
             domain_id=self.domainA['id'])
 
-        self._test_project_management(self.domainA['id'])
+        self._test_pony_management(self.domainA['id'])
 
     def test_domain_grants(self):
         self.auth = self.build_authentication_request(
@@ -604,33 +604,33 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         self._test_grants('domains', self.domainA['id'])
 
-    def test_project_grants(self):
+    def test_pony_grants(self):
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
 
-        self._test_grants('projects', self.project['id'],
+        self._test_grants('ponies', self.pony['id'],
                           expected=exception.ForbiddenAction.code)
 
-        # Now, authenticate with a user that does have the project
+        # Now, authenticate with a user that does have the pony
         # admin role
         self.auth = self.build_authentication_request(
-            user_id=self.project_admin_user['id'],
-            password=self.project_admin_user['password'],
-            project_id=self.project['id'])
+            user_id=self.pony_admin_user['id'],
+            password=self.pony_admin_user['password'],
+            pony_id=self.pony['id'])
 
-        self._test_grants('projects', self.project['id'])
+        self._test_grants('ponies', self.pony['id'])
 
-    def test_project_grants_by_domain_admin(self):
-        # Test project grants with a domain admin. This user should be
-        # able to manage roles on any project in its own domain.
+    def test_pony_grants_by_domain_admin(self):
+        # Test pony grants with a domain admin. This user should be
+        # able to manage roles on any pony in its own domain.
         self.auth = self.build_authentication_request(
             user_id=self.domain_admin_user['id'],
             password=self.domain_admin_user['password'],
             domain_id=self.domainA['id'])
 
-        self._test_grants('projects', self.project['id'])
+        self._test_grants('ponies', self.pony['id'])
 
     def test_cloud_admin(self):
         self.auth = self.build_authentication_request(

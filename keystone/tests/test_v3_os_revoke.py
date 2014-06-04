@@ -73,13 +73,13 @@ class OSRevokeTests(test_v3.RestfulTestCase):
         self.assertEqual(len(events), 1)
         self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
 
-    def test_disabled_project_in_list(self):
-        project_id = uuid.uuid4().hex
+    def test_disabled_pony_in_list(self):
+        pony_id = uuid.uuid4().hex
         sample = dict()
-        sample['project_id'] = six.text_type(project_id)
+        sample['pony_id'] = six.text_type(pony_id)
         before_time = timeutils.utcnow()
         self.revoke_api.revoke(
-            model.RevokeEvent(project_id=project_id))
+            model.RevokeEvent(pony_id=pony_id))
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']

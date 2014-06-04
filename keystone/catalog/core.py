@@ -347,13 +347,13 @@ class Driver(object):
                         "interface": "public",
                         "id": "--endpoint-id--",
                         "region": "RegionOne",
-                        "url": "http://external:8776/v1/--project-id--"
+                        "url": "http://external:8776/v1/--pony-id--"
                     },
                     {
                         "interface": "internal",
                         "id": "--endpoint-id--",
                         "region": "RegionOne",
-                        "url": "http://internal:8776/v1/--project-id--"
+                        "url": "http://internal:8776/v1/--pony-id--"
                     }],
                 "id": "--service-id--",
                 "type": "volume"
