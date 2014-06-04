@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7d7126a7",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-04T14:35:02Z",
+      "side": 1,
+      "message": "remove Keystone since it\u0027s redundant.",
+      "revId": "063070f21ffc3345e2b25904ff4a1ae89f539c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3dbddeb7",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-04T14:35:02Z",
+      "side": 1,
+      "message": "suggest change this to something more obvious -- \"The subprocess command to compress and sign the token failed.\"",
+      "revId": "063070f21ffc3345e2b25904ff4a1ae89f539c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7d23e6a6",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-04T14:35:02Z",
+      "side": 1,
+      "message": "the exception is raised, does it have to be logged, too?",
+      "revId": "063070f21ffc3345e2b25904ff4a1ae89f539c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
