@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bf6ad87e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-04T02:55:36Z",
+      "side": 1,
+      "message": "performed by an external module and an eventual ...",
+      "revId": "746dd7dd34659990cb238ba97401eda3913dae18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9fc35c88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-04T02:55:36Z",
+      "side": 1,
+      "message": "SecurityImpact",
+      "revId": "746dd7dd34659990cb238ba97401eda3913dae18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9ff8bcc4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-04T02:55:36Z",
+      "side": 1,
+      "message": "not sure if I understand this change, why would the \u0027external\u0027 method missing? How does this related to Kerberos method?",
+      "revId": "746dd7dd34659990cb238ba97401eda3913dae18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
