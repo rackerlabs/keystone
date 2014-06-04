@@ -68,6 +68,24 @@
       "revId": "063070f21ffc3345e2b25904ff4a1ae89f539c32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_44a81620",
+        "filename": "keystone/token/providers/pkiz.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-04T14:54:25Z",
+      "side": 1,
+      "message": "Just seems unnecessary to log anything here if it\u0027s going to be logged in wsgi. If this happens you\u0027re probably in a world of hurt anyways so maybe should just start logging all over.",
+      "parentUuid": "1ae5cdf2_046fee2b",
+      "revId": "063070f21ffc3345e2b25904ff4a1ae89f539c32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
