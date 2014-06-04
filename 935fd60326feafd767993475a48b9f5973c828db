@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6084155e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-04T18:33:29Z",
+      "side": 1,
+      "message": "The unicode literals are duplicated throughout the test code. It might be worth refactoring to make the unicode literals global in scope and add an associated comment mentioning the use of non-ascii values to expand unicode coverage.",
+      "revId": "935fd60326feafd767993475a48b9f5973c828db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
