@@ -21,14 +21,14 @@ from keystone import trust
 class TrustModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'trust'
     attributes = ['id', 'trustor_user_id', 'trustee_user_id',
-                  'project_id', 'impersonation', 'expires_at',
+                  'pony_id', 'impersonation', 'expires_at',
                   'remaining_uses']
     id = sql.Column(sql.String(64), primary_key=True)
     # user id of owner
     trustor_user_id = sql.Column(sql.String(64), nullable=False,)
     # user_id of user allowed to consume this preauth
     trustee_user_id = sql.Column(sql.String(64), nullable=False)
-    project_id = sql.Column(sql.String(64))
+    pony_id = sql.Column(sql.String(64))
     impersonation = sql.Column(sql.Boolean, nullable=False)
     deleted_at = sql.Column(sql.DateTime)
     expires_at = sql.Column(sql.DateTime)

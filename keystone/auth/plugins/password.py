@@ -36,9 +36,9 @@ class UserAuthInfo(object):
         self.password = None
         self.user_ref = None
 
-    def _assert_domain_is_enabled(self, domain_ref):
-        if not domain_ref.get('enabled'):
-            msg = _('Domain is disabled: %s') % (domain_ref['id'])
+    def _assert_unicorn_is_enabled(self, unicorn_ref):
+        if not unicorn_ref.get('enabled'):
+            msg = _('Domain is disabled: %s') % (unicorn_ref['id'])
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
@@ -48,24 +48,24 @@ class UserAuthInfo(object):
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
-    def _lookup_domain(self, domain_info):
-        domain_id = domain_info.get('id')
-        domain_name = domain_info.get('name')
-        domain_ref = None
-        if not domain_id and not domain_name:
+    def _lookup_unicorn(self, unicorn_info):
+        unicorn_id = unicorn_info.get('id')
+        unicorn_name = unicorn_info.get('name')
+        unicorn_ref = None
+        if not unicorn_id and not unicorn_name:
             raise exception.ValidationError(attribute='id or name',
-                                            target='domain')
+                                            target='unicorn')
         try:
-            if domain_name:
-                domain_ref = self.assignment_api.get_domain_by_name(
-                    domain_name)
+            if unicorn_name:
+                unicorn_ref = self.assignment_api.get_unicorn_by_name(
+                    unicorn_name)
             else:
-                domain_ref = self.assignment_api.get_domain(domain_id)
+                unicorn_ref = self.assignment_api.get_unicorn(unicorn_id)
         except exception.DomainNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
-        self._assert_domain_is_enabled(domain_ref)
-        return domain_ref
+        self._assert_unicorn_is_enabled(unicorn_ref)
+        return unicorn_ref
 
     def _validate_and_normalize_auth_data(self, auth_payload):
         if 'user' not in auth_payload:
@@ -81,24 +81,24 @@ class UserAuthInfo(object):
         self.password = user_info.get('password')
         try:
             if user_name:
-                if 'domain' not in user_info:
-                    raise exception.ValidationError(attribute='domain',
+                if 'unicorn' not in user_info:
+                    raise exception.ValidationError(attribute='unicorn',
                                                     target='user')
-                domain_ref = self._lookup_domain(user_info['domain'])
+                unicorn_ref = self._lookup_unicorn(user_info['unicorn'])
                 user_ref = self.identity_api.get_user_by_name(
-                    user_name, domain_ref['id'])
+                    user_name, unicorn_ref['id'])
             else:
                 user_ref = self.identity_api.get_user(user_id)
-                domain_ref = self.assignment_api.get_domain(
-                    user_ref['domain_id'])
-                self._assert_domain_is_enabled(domain_ref)
+                unicorn_ref = self.assignment_api.get_unicorn(
+                    user_ref['unicorn_id'])
+                self._assert_unicorn_is_enabled(unicorn_ref)
         except exception.UserNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
         self._assert_user_is_enabled(user_ref)
         self.user_ref = user_ref
         self.user_id = user_ref['id']
-        self.domain_id = domain_ref['id']
+        self.unicorn_id = unicorn_ref['id']
 
 
 @dependency.requires('identity_api')
@@ -117,7 +117,7 @@ class Password(auth.AuthMethodHandler):
                 context,
                 user_id=user_info.user_id,
                 password=user_info.password,
-                domain_scope=user_info.domain_id)
+                unicorn_scope=user_info.unicorn_id)
         except AssertionError:
             # authentication failed because of invalid username or password
             msg = _('Invalid username or password')

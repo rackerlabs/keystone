@@ -26,39 +26,39 @@ from keystone.assignment.backends import sql as assignment_sql  # noqa
 
 class User(sql.ModelBase, sql.DictBase):
     __tablename__ = 'user'
-    attributes = ['id', 'name', 'domain_id', 'password', 'enabled',
-                  'default_project_id']
+    attributes = ['id', 'name', 'unicorn_id', 'password', 'enabled',
+                  'default_pony_id']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(255), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
+    unicorn_id = sql.Column(sql.String(64), sql.ForeignKey('unicorn.id'),
                            nullable=False)
     password = sql.Column(sql.String(128))
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
-    default_project_id = sql.Column(sql.String(64))
+    default_pony_id = sql.Column(sql.String(64))
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
+    __table_args__ = (sql.UniqueConstraint('unicorn_id', 'name'), {})
 
     def to_dict(self, include_extra_dict=False):
         d = super(User, self).to_dict(include_extra_dict=include_extra_dict)
-        if 'default_project_id' in d and d['default_project_id'] is None:
-            del d['default_project_id']
+        if 'default_pony_id' in d and d['default_pony_id'] is None:
+            del d['default_pony_id']
         return d
 
 
 class Group(sql.ModelBase, sql.DictBase):
     __tablename__ = 'group'
-    attributes = ['id', 'name', 'domain_id', 'description']
+    attributes = ['id', 'name', 'unicorn_id', 'description']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
+    unicorn_id = sql.Column(sql.String(64), sql.ForeignKey('unicorn.id'),
                            nullable=False)
     description = sql.Column(sql.Text())
     extra = sql.Column(sql.JsonBlob())
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
+    __table_args__ = (sql.UniqueConstraint('unicorn_id', 'name'), {})
 
 
 class UserGroupMembership(sql.ModelBase, sql.DictBase):
@@ -91,7 +91,7 @@ class Identity(identity.Driver):
         """
         return utils.check_password(password, user_ref.password)
 
-    def is_domain_aware(self):
+    def is_unicorn_aware(self):
         return True
 
     # Identity interface
@@ -134,11 +134,11 @@ class Identity(identity.Driver):
         session = sql.get_session()
         return identity.filter_user(self._get_user(session, user_id).to_dict())
 
-    def get_user_by_name(self, user_name, domain_id):
+    def get_user_by_name(self, user_name, unicorn_id):
         session = sql.get_session()
         query = session.query(User)
         query = query.filter_by(name=user_name)
-        query = query.filter_by(domain_id=domain_id)
+        query = query.filter_by(unicorn_id=unicorn_id)
         try:
             user_ref = query.one()
         except sql.NotFound:

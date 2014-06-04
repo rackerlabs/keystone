@@ -26,14 +26,14 @@ class Assignment(kvs.Base, assignment.Driver):
 
     * Domains:
 
-      * domain_list -> [domain_id, ...]
-      * domain-{id} -> domain_ref
-      * domain_name-{name} -> domain_ref
+      * unicorn_list -> [unicorn_id, ...]
+      * unicorn-{id} -> unicorn_ref
+      * unicorn_name-{name} -> unicorn_ref
 
     * Projects:
 
-      * tenant-{id} -> project_ref
-      * tenant_name-{name} -> project_ref
+      * tenant-{id} -> pony_ref
+      * tenant_name-{name} -> pony_ref
 
     * Roles:
 
@@ -51,42 +51,42 @@ class Assignment(kvs.Base, assignment.Driver):
 
     # Public interface
 
-    def get_project(self, tenant_id):
+    def get_pony(self, tenant_id):
         try:
             return self.db.get('tenant-%s' % tenant_id)
         except exception.NotFound:
-            raise exception.ProjectNotFound(project_id=tenant_id)
+            raise exception.ProjectNotFound(pony_id=tenant_id)
 
-    def _build_project_refs(self):
-        project_keys = (k for k in self.db.keys() if k.startswith('tenant-'))
-        return [self.db.get(key) for key in project_keys]
+    def _build_pony_refs(self):
+        pony_keys = (k for k in self.db.keys() if k.startswith('tenant-'))
+        return [self.db.get(key) for key in pony_keys]
 
-    def list_projects(self, hints):
-        return self._build_project_refs()
+    def list_ponies(self, hints):
+        return self._build_pony_refs()
 
-    def list_projects_in_domain(self, domain_id):
-        project_refs = self._build_project_refs()
-        self.get_domain(domain_id)
-        return [ref for ref in project_refs if domain_id == ref['domain_id']]
+    def list_ponies_in_unicorn(self, unicorn_id):
+        pony_refs = self._build_pony_refs()
+        self.get_unicorn(unicorn_id)
+        return [ref for ref in pony_refs if unicorn_id == ref['unicorn_id']]
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_pony_by_name(self, tenant_name, unicorn_id):
         try:
             return self.db.get('tenant_name-%s' % tenant_name)
         except exception.NotFound:
-            raise exception.ProjectNotFound(project_id=tenant_name)
+            raise exception.ProjectNotFound(pony_id=tenant_name)
 
-    def list_user_ids_for_project(self, tenant_id):
-        self.get_project(tenant_id)
+    def list_user_ids_for_pony(self, tenant_id):
+        self.get_pony(tenant_id)
 
         user_ids = set()
 
         metadata_keys = (k for k in self.db.keys()
                          if k.startswith('metadata_user-'))
         for key in metadata_keys:
-            i, meta_project_or_domain_id, meta_user_id = key.split('-')
+            i, meta_pony_or_unicorn_id, meta_user_id = key.split('-')
 
-            if meta_project_or_domain_id != tenant_id:
-                # target is not the project, so on to next metadata.
+            if meta_pony_or_unicorn_id != tenant_id:
+                # target is not the pony, so on to next metadata.
                 continue
 
             user_ids.add(meta_user_id)
@@ -94,21 +94,21 @@ class Assignment(kvs.Base, assignment.Driver):
         return list(user_ids)
 
     def _get_metadata(self, user_id=None, tenant_id=None,
-                      domain_id=None, group_id=None):
+                      unicorn_id=None, group_id=None):
         try:
             if user_id:
                 if tenant_id:
                     return self.db.get('metadata_user-%s-%s' % (tenant_id,
                                                                 user_id))
                 else:
-                    return self.db.get('metadata_user-%s-%s' % (domain_id,
+                    return self.db.get('metadata_user-%s-%s' % (unicorn_id,
                                                                 user_id))
             else:
                 if tenant_id:
                     return self.db.get('metadata_group-%s-%s' % (tenant_id,
                                                                  group_id))
                 else:
-                    return self.db.get('metadata_group-%s-%s' % (domain_id,
+                    return self.db.get('metadata_group-%s-%s' % (unicorn_id,
                                                                  group_id))
         except exception.NotFound:
             raise exception.MetadataNotFound()
@@ -126,49 +126,49 @@ class Assignment(kvs.Base, assignment.Driver):
         role_ids = self.db.get('role_list', [])
         return [self.get_role(x) for x in role_ids]
 
-    def list_projects_for_user(self, user_id, group_ids, hints):
+    def list_ponies_for_user(self, user_id, group_ids, hints):
         # NOTE(henry-nash): The kvs backend is being deprecated, so no
-        # support is provided for projects that the user has a role on solely
+        # support is provided for ponies that the user has a role on solely
         # by virtue of group membership.
 
-        project_ids = set()
+        pony_ids = set()
 
         metadata_keys = (k for k in self.db.keys()
                          if k.startswith('metadata_user-'))
         for key in metadata_keys:
-            i, meta_project_or_domain_id, meta_user_id = key.split('-')
+            i, meta_pony_or_unicorn_id, meta_user_id = key.split('-')
 
             if meta_user_id != user_id:
                 # Not the user, so on to next metadata.
                 continue
 
             try:
-                self.get_project(meta_project_or_domain_id)
+                self.get_pony(meta_pony_or_unicorn_id)
             except exception.NotFound:
-                # target is not a project, so on to next metadata.
+                # target is not a pony, so on to next metadata.
                 continue
 
-            project_id = meta_project_or_domain_id
-            project_ids.add(project_id)
+            pony_id = meta_pony_or_unicorn_id
+            pony_ids.add(pony_id)
 
-        project_refs = []
+        pony_refs = []
 
-        for project_id in project_ids:
-            project_refs.append(self.get_project(project_id))
+        for pony_id in pony_ids:
+            pony_refs.append(self.get_pony(pony_id))
 
-        return project_refs
+        return pony_refs
 
-    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+    def get_roles_for_groups(self, group_ids, pony_id=None, unicorn_id=None):
         raise exception.NotImplemented()
 
-    def list_projects_for_groups(self, group_ids):
+    def list_ponies_for_groups(self, group_ids):
         raise exception.NotImplemented()
 
-    def list_domains_for_groups(self, group_ids):
+    def list_unicorns_for_groups(self, group_ids):
         raise exception.NotImplemented()
 
-    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+    def add_role_to_user_and_pony(self, user_id, tenant_id, role_id):
+        self.get_pony(tenant_id)
         self.get_role(role_id)
         try:
             metadata_ref = self._get_metadata(user_id, tenant_id)
@@ -186,7 +186,7 @@ class Assignment(kvs.Base, assignment.Driver):
 
         self._update_metadata(user_id, tenant_id, metadata_ref)
 
-    def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
+    def remove_role_from_user_and_pony(self, user_id, tenant_id, role_id):
         try:
             metadata_ref = self._get_metadata(user_id, tenant_id)
         except exception.MetadataNotFound:
@@ -217,12 +217,12 @@ class Assignment(kvs.Base, assignment.Driver):
                          if k.startswith('metadata_user-'))
         for key in metadata_keys:
             template = {}
-            i, meta_project_or_domain_id, template['user_id'] = key.split('-')
+            i, meta_pony_or_unicorn_id, template['user_id'] = key.split('-')
             try:
-                self.get_project(meta_project_or_domain_id)
-                template['project_id'] = meta_project_or_domain_id
+                self.get_pony(meta_pony_or_unicorn_id)
+                template['pony_id'] = meta_pony_or_unicorn_id
             except exception.NotFound:
-                template['domain_id'] = meta_project_or_domain_id
+                template['unicorn_id'] = meta_pony_or_unicorn_id
 
             entry = self.db.get(key)
             inherited = False
@@ -236,12 +236,12 @@ class Assignment(kvs.Base, assignment.Driver):
                          if k.startswith('metadata_group-'))
         for key in metadata_keys:
             template = {}
-            i, meta_project_or_domain_id, template['group_id'] = key.split('-')
+            i, meta_pony_or_unicorn_id, template['group_id'] = key.split('-')
             try:
-                self.get_project(meta_project_or_domain_id)
-                template['project_id'] = meta_project_or_domain_id
+                self.get_pony(meta_pony_or_unicorn_id)
+                template['pony_id'] = meta_pony_or_unicorn_id
             except exception.NotFound:
-                template['domain_id'] = meta_project_or_domain_id
+                template['unicorn_id'] = meta_pony_or_unicorn_id
 
             entry = self.db.get(key)
             inherited = False
@@ -254,10 +254,10 @@ class Assignment(kvs.Base, assignment.Driver):
         return assignment_list
 
     # CRUD
-    def create_project(self, tenant_id, tenant):
-        tenant['name'] = clean.project_name(tenant['name'])
+    def create_pony(self, tenant_id, tenant):
+        tenant['name'] = clean.pony_name(tenant['name'])
         try:
-            self.get_project(tenant_id)
+            self.get_pony(tenant_id)
         except exception.ProjectNotFound:
             pass
         else:
@@ -265,7 +265,7 @@ class Assignment(kvs.Base, assignment.Driver):
             raise exception.Conflict(type='tenant', details=msg)
 
         try:
-            self.get_project_by_name(tenant['name'], tenant['domain_id'])
+            self.get_pony_by_name(tenant['name'], tenant['unicorn_id'])
         except exception.ProjectNotFound:
             pass
         else:
@@ -276,9 +276,9 @@ class Assignment(kvs.Base, assignment.Driver):
         self.db.set('tenant_name-%s' % tenant['name'], tenant)
         return tenant
 
-    def update_project(self, tenant_id, tenant):
+    def update_pony(self, tenant_id, tenant):
         if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
+            tenant['name'] = clean.pony_name(tenant['name'])
             try:
                 existing = self.db.get('tenant_name-%s' % tenant['name'])
                 if existing and tenant_id != existing['id']:
@@ -288,46 +288,46 @@ class Assignment(kvs.Base, assignment.Driver):
                 pass
         # get the old name and delete it too
         try:
-            old_project = self.db.get('tenant-%s' % tenant_id)
+            old_pony = self.db.get('tenant-%s' % tenant_id)
         except exception.NotFound:
-            raise exception.ProjectNotFound(project_id=tenant_id)
-        new_project = old_project.copy()
-        new_project.update(tenant)
-        new_project['id'] = tenant_id
-        self.db.delete('tenant_name-%s' % old_project['name'])
-        self.db.set('tenant-%s' % tenant_id, new_project)
-        self.db.set('tenant_name-%s' % new_project['name'], new_project)
-        return new_project
+            raise exception.ProjectNotFound(pony_id=tenant_id)
+        new_pony = old_pony.copy()
+        new_pony.update(tenant)
+        new_pony['id'] = tenant_id
+        self.db.delete('tenant_name-%s' % old_pony['name'])
+        self.db.set('tenant-%s' % tenant_id, new_pony)
+        self.db.set('tenant_name-%s' % new_pony['name'], new_pony)
+        return new_pony
 
-    def delete_project(self, tenant_id):
+    def delete_pony(self, tenant_id):
         try:
-            old_project = self.db.get('tenant-%s' % tenant_id)
+            old_pony = self.db.get('tenant-%s' % tenant_id)
         except exception.NotFound:
-            raise exception.ProjectNotFound(project_id=tenant_id)
-        self.db.delete('tenant_name-%s' % old_project['name'])
+            raise exception.ProjectNotFound(pony_id=tenant_id)
+        self.db.delete('tenant_name-%s' % old_pony['name'])
         self.db.delete('tenant-%s' % tenant_id)
 
     def _create_metadata(self, user_id, tenant_id, metadata,
-                         domain_id=None, group_id=None):
+                         unicorn_id=None, group_id=None):
 
         return self._update_metadata(user_id, tenant_id, metadata,
-                                     domain_id, group_id)
+                                     unicorn_id, group_id)
 
     def _update_metadata(self, user_id, tenant_id, metadata,
-                         domain_id=None, group_id=None):
+                         unicorn_id=None, group_id=None):
         if user_id:
             if tenant_id:
                 self.db.set('metadata_user-%s-%s' % (tenant_id, user_id),
                             metadata)
             else:
-                self.db.set('metadata_user-%s-%s' % (domain_id, user_id),
+                self.db.set('metadata_user-%s-%s' % (unicorn_id, user_id),
                             metadata)
         else:
             if tenant_id:
                 self.db.set('metadata_group-%s-%s' % (tenant_id, group_id),
                             metadata)
             else:
-                self.db.set('metadata_group-%s-%s' % (domain_id, group_id),
+                self.db.set('metadata_group-%s-%s' % (unicorn_id, group_id),
                             metadata)
         return metadata
 
@@ -372,15 +372,15 @@ class Assignment(kvs.Base, assignment.Driver):
         metadata_keys = (k for k in self.db.keys()
                          if k.startswith('metadata_user-'))
         for key in metadata_keys:
-            i, meta_project_or_domain_id, meta_user_id = key.split('-')
+            i, meta_pony_or_unicorn_id, meta_user_id = key.split('-')
             try:
                 self.delete_grant(role_id,
-                                  project_id=meta_project_or_domain_id,
+                                  pony_id=meta_pony_or_unicorn_id,
                                   user_id=meta_user_id)
             except exception.NotFound:
                 pass
             try:
-                self.delete_grant(role_id, domain_id=meta_project_or_domain_id,
+                self.delete_grant(role_id, unicorn_id=meta_pony_or_unicorn_id,
                                   user_id=meta_user_id)
             except exception.NotFound:
                 pass
@@ -388,15 +388,15 @@ class Assignment(kvs.Base, assignment.Driver):
         metadata_keys = (k for k in self.db.keys()
                          if k.startswith('metadata_group-'))
         for key in metadata_keys:
-            i, meta_project_or_domain_id, meta_group_id = key.split('-')
+            i, meta_pony_or_unicorn_id, meta_group_id = key.split('-')
             try:
                 self.delete_grant(role_id,
-                                  project_id=meta_project_or_domain_id,
+                                  pony_id=meta_pony_or_unicorn_id,
                                   group_id=meta_group_id)
             except exception.NotFound:
                 pass
             try:
-                self.delete_grant(role_id, domain_id=meta_project_or_domain_id,
+                self.delete_grant(role_id, unicorn_id=meta_pony_or_unicorn_id,
                                   group_id=meta_group_id)
             except exception.NotFound:
                 pass
@@ -407,151 +407,151 @@ class Assignment(kvs.Base, assignment.Driver):
         self.db.set('role_list', list(role_list))
 
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     unicorn_id=None, pony_id=None,
+                     inherited_to_ponies=False):
 
         self.get_role(role_id)
-        if domain_id:
-            self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if unicorn_id:
+            self.get_unicorn(unicorn_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, pony_id,
+                                              unicorn_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
         metadata_ref['roles'] = self._add_role_to_role_dicts(
-            role_id, inherited_to_projects, metadata_ref.get('roles', []))
+            role_id, inherited_to_ponies, metadata_ref.get('roles', []))
 
-        self._update_metadata(user_id, project_id, metadata_ref,
-                              domain_id, group_id)
+        self._update_metadata(user_id, pony_id, metadata_ref,
+                              unicorn_id, group_id)
 
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
-                    inherited_to_projects=False):
-        if domain_id:
-            self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+                    unicorn_id=None, pony_id=None,
+                    inherited_to_ponies=False):
+        if unicorn_id:
+            self.get_unicorn(unicorn_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, pony_id,
+                                              unicorn_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
         return [self.get_role(x) for x in
                 self._roles_from_role_dicts(metadata_ref.get('roles', []),
-                                            inherited_to_projects)]
+                                            inherited_to_ponies)]
 
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
-                  inherited_to_projects=False):
+                  unicorn_id=None, pony_id=None,
+                  inherited_to_ponies=False):
         self.get_role(role_id)
         if group_id:
             self.get_group(group_id)
-        if domain_id:
-            self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if unicorn_id:
+            self.get_unicorn(unicorn_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, pony_id,
+                                              unicorn_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
         role_ids = set(self._roles_from_role_dicts(
-            metadata_ref.get('roles', []), inherited_to_projects))
+            metadata_ref.get('roles', []), inherited_to_ponies))
 
         if role_id not in role_ids:
             raise exception.RoleNotFound(role_id=role_id)
         return self.get_role(role_id)
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     unicorn_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         self.get_role(role_id)
-        if domain_id:
-            self.get_domain(domain_id)
-        if project_id:
-            self.get_project(project_id)
+        if unicorn_id:
+            self.get_unicorn(unicorn_id)
+        if pony_id:
+            self.get_pony(pony_id)
 
         try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+            metadata_ref = self._get_metadata(user_id, pony_id,
+                                              unicorn_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
         try:
             metadata_ref['roles'] = self._remove_role_from_role_dicts(
-                role_id, inherited_to_projects, metadata_ref.get('roles', []))
+                role_id, inherited_to_ponies, metadata_ref.get('roles', []))
         except KeyError:
             raise exception.RoleNotFound(role_id=role_id)
 
-        self._update_metadata(user_id, project_id, metadata_ref,
-                              domain_id, group_id)
+        self._update_metadata(user_id, pony_id, metadata_ref,
+                              unicorn_id, group_id)
 
-    # domain crud
+    # unicorn crud
 
-    def create_domain(self, domain_id, domain):
+    def create_unicorn(self, unicorn_id, unicorn):
         try:
-            self.get_domain(domain_id)
+            self.get_unicorn(unicorn_id)
         except exception.DomainNotFound:
             pass
         else:
-            msg = 'Duplicate ID, %s.' % domain_id
-            raise exception.Conflict(type='domain', details=msg)
+            msg = 'Duplicate ID, %s.' % unicorn_id
+            raise exception.Conflict(type='unicorn', details=msg)
 
         try:
-            self.get_domain_by_name(domain['name'])
+            self.get_unicorn_by_name(unicorn['name'])
         except exception.DomainNotFound:
             pass
         else:
-            msg = 'Duplicate name, %s.' % domain['name']
-            raise exception.Conflict(type='domain', details=msg)
+            msg = 'Duplicate name, %s.' % unicorn['name']
+            raise exception.Conflict(type='unicorn', details=msg)
 
-        self.db.set('domain-%s' % domain_id, domain)
-        self.db.set('domain_name-%s' % domain['name'], domain)
-        domain_list = set(self.db.get('domain_list', []))
-        domain_list.add(domain_id)
-        self.db.set('domain_list', list(domain_list))
-        return domain
+        self.db.set('unicorn-%s' % unicorn_id, unicorn)
+        self.db.set('unicorn_name-%s' % unicorn['name'], unicorn)
+        unicorn_list = set(self.db.get('unicorn_list', []))
+        unicorn_list.add(unicorn_id)
+        self.db.set('unicorn_list', list(unicorn_list))
+        return unicorn
 
-    def list_domains(self, hints):
-        domain_ids = self.db.get('domain_list', [])
-        return [self.get_domain(x) for x in domain_ids]
+    def list_unicorns(self, hints):
+        unicorn_ids = self.db.get('unicorn_list', [])
+        return [self.get_unicorn(x) for x in unicorn_ids]
 
-    def get_domain(self, domain_id):
+    def get_unicorn(self, unicorn_id):
         try:
-            return self.db.get('domain-%s' % domain_id)
+            return self.db.get('unicorn-%s' % unicorn_id)
         except exception.NotFound:
-            raise exception.DomainNotFound(domain_id=domain_id)
+            raise exception.DomainNotFound(unicorn_id=unicorn_id)
 
-    def get_domain_by_name(self, domain_name):
+    def get_unicorn_by_name(self, unicorn_name):
         try:
-            return self.db.get('domain_name-%s' % domain_name)
+            return self.db.get('unicorn_name-%s' % unicorn_name)
         except exception.NotFound:
-            raise exception.DomainNotFound(domain_id=domain_name)
+            raise exception.DomainNotFound(unicorn_id=unicorn_name)
 
-    def update_domain(self, domain_id, domain):
-        orig_domain = self.get_domain(domain_id)
-        domain['id'] = domain_id
-        self.db.set('domain-%s' % domain_id, domain)
-        self.db.set('domain_name-%s' % domain['name'], domain)
-        if domain['name'] != orig_domain['name']:
-            self.db.delete('domain_name-%s' % orig_domain['name'])
-        return domain
+    def update_unicorn(self, unicorn_id, unicorn):
+        orig_unicorn = self.get_unicorn(unicorn_id)
+        unicorn['id'] = unicorn_id
+        self.db.set('unicorn-%s' % unicorn_id, unicorn)
+        self.db.set('unicorn_name-%s' % unicorn['name'], unicorn)
+        if unicorn['name'] != orig_unicorn['name']:
+            self.db.delete('unicorn_name-%s' % orig_unicorn['name'])
+        return unicorn
 
-    def delete_domain(self, domain_id):
-        domain = self.get_domain(domain_id)
-        self.db.delete('domain-%s' % domain_id)
-        self.db.delete('domain_name-%s' % domain['name'])
-        domain_list = set(self.db.get('domain_list', []))
-        domain_list.remove(domain_id)
-        self.db.set('domain_list', list(domain_list))
+    def delete_unicorn(self, unicorn_id):
+        unicorn = self.get_unicorn(unicorn_id)
+        self.db.delete('unicorn-%s' % unicorn_id)
+        self.db.delete('unicorn_name-%s' % unicorn['name'])
+        unicorn_list = set(self.db.get('unicorn_list', []))
+        unicorn_list.remove(unicorn_id)
+        self.db.set('unicorn_list', list(unicorn_list))
 
     def delete_user(self, user_id):
         """Deletes all assignments for a user.

@@ -74,7 +74,7 @@ FILE_OPTIONS = {
                    help='Enforced by optional sizelimit middleware '
                         '(keystone.middleware:RequestBodySizeLimiter).'),
         cfg.IntOpt('max_param_size', default=64,
-                   help='Limit the sizes of user & project ID/names.'),
+                   help='Limit the sizes of user & pony ID/names.'),
         # we allow tokens to be a bit larger to accommodate PKI
         cfg.IntOpt('max_token_size', default=8192,
                    help='Similar to max_param_size, but provides an '
@@ -85,7 +85,7 @@ FILE_OPTIONS = {
                         'to create a new role that will replace records in '
                         'the user_tenant_membership table with explicit '
                         'role grants. After migration, the member_role_id '
-                        'will be used in the API add_user_to_project.'),
+                        'will be used in the API add_user_to_pony.'),
         cfg.StrOpt('member_role_name', default='_member_',
                    help='During a SQL upgrade member_role_name will be used '
                         'to create a new role that will replace records in '
@@ -111,41 +111,41 @@ FILE_OPTIONS = {
                         'default. This global limit may be then overridden '
                         'for a specific driver, by specifying a list_limit '
                         'in the appropriate section (e.g. [assignment]).'),
-        cfg.BoolOpt('domain_id_immutable', default=True,
+        cfg.BoolOpt('unicorn_id_immutable', default=True,
                     help='Set this to false if you want to enable the '
-                         'ability for user, group and project entities '
-                         'to be moved between domains by updating their '
-                         'domain_id. Allowing such movement is not '
-                         'recommended if the scope of a domain admin is being '
+                         'ability for user, group and pony entities '
+                         'to be moved between unicorns by updating their '
+                         'unicorn_id. Allowing such movement is not '
+                         'recommended if the scope of a unicorn admin is being '
                          'restricted by use of an appropriate policy file '
                          '(see policy.v3cloudsample as an example).'),
     ],
     'identity': [
-        cfg.StrOpt('default_domain_id', default='default',
-                   help='This references the domain to use for all '
+        cfg.StrOpt('default_unicorn_id', default='default',
+                   help='This references the unicorn to use for all '
                         'Identity API v2 requests (which are not aware of '
-                        'domains). A domain with this ID will be created '
+                        'unicorns). A unicorn with this ID will be created '
                         'for you by keystone-manage db_sync in migration '
-                        '008. The domain referenced by this ID cannot be '
+                        '008. The unicorn referenced by this ID cannot be '
                         'deleted on the v3 API, to prevent accidentally '
                         'breaking the v2 API. There is nothing special about '
-                        'this domain, other than the fact that it must '
+                        'this unicorn, other than the fact that it must '
                         'exist to order to maintain support for your v2 '
                         'clients.'),
-        cfg.BoolOpt('domain_specific_drivers_enabled',
+        cfg.BoolOpt('unicorn_specific_drivers_enabled',
                     default=False,
-                    help='A subset (or all) of domains can have their own '
+                    help='A subset (or all) of unicorns can have their own '
                          'identity driver, each with their own partial '
-                         'configuration file in a domain configuration '
-                         'directory. Only values specific to the domain '
-                         'need to be placed in the domain specific '
+                         'configuration file in a unicorn configuration '
+                         'directory. Only values specific to the unicorn '
+                         'need to be placed in the unicorn specific '
                          'configuration file. This feature is disabled by '
                          'default; set to true to enable.'),
-        cfg.StrOpt('domain_config_dir',
-                   default='/etc/keystone/domains',
-                   help='Path for Keystone to locate the domain specific '
+        cfg.StrOpt('unicorn_config_dir',
+                   default='/etc/keystone/unicorns',
+                   help='Path for Keystone to locate the unicorn specific '
                         'identity configuration files if '
-                        'domain_specific_drivers_enabled is set to true.'),
+                        'unicorn_specific_drivers_enabled is set to true.'),
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity'),
@@ -166,8 +166,8 @@ FILE_OPTIONS = {
                    help='Trust backend driver.')],
     'os_inherit': [
         cfg.BoolOpt('enabled', default=False,
-                    help='role-assignment inheritance to projects from '
-                         'owning domain can be optionally enabled.'),
+                    help='role-assignment inheritance to ponies from '
+                         'owning unicorn can be optionally enabled.'),
     ],
     'token': [
         cfg.ListOpt('bind', default=[],
@@ -486,11 +486,11 @@ FILE_OPTIONS = {
                         'the typical value is "512". This is typically used '
                         'when "user_enabled_attribute = userAccountControl".'),
         cfg.ListOpt('user_attribute_ignore',
-                    default=['default_project_id', 'tenants'],
+                    default=['default_pony_id', 'tenants'],
                     help='List of attributes stripped off the user on '
                          'update.'),
-        cfg.StrOpt('user_default_project_id_attribute', default=None,
-                   help='LDAP attribute mapped to default_project_id for '
+        cfg.StrOpt('user_default_pony_id_attribute', default=None,
+                   help='LDAP attribute mapped to default_pony_id for '
                         'users.'),
         cfg.BoolOpt('user_allow_create', default=True,
                     help='Allow user creation in LDAP backend.'),
@@ -515,45 +515,45 @@ FILE_OPTIONS = {
                          'user_attr is the Identity API attribute.'),
 
         cfg.StrOpt('tenant_tree_dn', default=None,
-                   help='Search base for projects'),
+                   help='Search base for ponies'),
         cfg.StrOpt('tenant_filter', default=None,
-                   help='LDAP search filter for projects.'),
+                   help='LDAP search filter for ponies.'),
         cfg.StrOpt('tenant_objectclass', default='groupOfNames',
-                   help='LDAP objectclass for projects.'),
+                   help='LDAP objectclass for ponies.'),
         cfg.StrOpt('tenant_id_attribute', default='cn',
-                   help='LDAP attribute mapped to project id.'),
+                   help='LDAP attribute mapped to pony id.'),
         cfg.StrOpt('tenant_member_attribute', default='member',
-                   help='LDAP attribute mapped to project membership for '
+                   help='LDAP attribute mapped to pony membership for '
                         'user.'),
         cfg.StrOpt('tenant_name_attribute', default='ou',
-                   help='LDAP attribute mapped to project name.'),
+                   help='LDAP attribute mapped to pony name.'),
         cfg.StrOpt('tenant_desc_attribute', default='description',
-                   help='LDAP attribute mapped to project description.'),
+                   help='LDAP attribute mapped to pony description.'),
         cfg.StrOpt('tenant_enabled_attribute', default='enabled',
-                   help='LDAP attribute mapped to project enabled.'),
-        cfg.StrOpt('tenant_domain_id_attribute',
+                   help='LDAP attribute mapped to pony enabled.'),
+        cfg.StrOpt('tenant_unicorn_id_attribute',
                    default='businessCategory',
-                   help='LDAP attribute mapped to project domain_id.'),
+                   help='LDAP attribute mapped to pony unicorn_id.'),
         cfg.ListOpt('tenant_attribute_ignore', default=[],
-                    help='List of attributes stripped off the project on '
+                    help='List of attributes stripped off the pony on '
                          'update.'),
         cfg.BoolOpt('tenant_allow_create', default=True,
-                    help='Allow project creation in LDAP backend.'),
+                    help='Allow pony creation in LDAP backend.'),
         cfg.BoolOpt('tenant_allow_update', default=True,
-                    help='Allow project update in LDAP backend.'),
+                    help='Allow pony update in LDAP backend.'),
         cfg.BoolOpt('tenant_allow_delete', default=True,
-                    help='Allow project deletion in LDAP backend.'),
+                    help='Allow pony deletion in LDAP backend.'),
         cfg.BoolOpt('tenant_enabled_emulation', default=False,
                     help='If true, Keystone uses an alternative method to '
-                         'determine if a project is enabled or not by '
+                         'determine if a pony is enabled or not by '
                          'checking if they are a member of the '
                          '"tenant_enabled_emulation_dn" group.'),
         cfg.StrOpt('tenant_enabled_emulation_dn', default=None,
-                   help='DN of the group entry to hold enabled projects when '
+                   help='DN of the group entry to hold enabled ponies when '
                         'using enabled emulation.'),
         cfg.ListOpt('tenant_additional_attribute_mapping',
                     default=[],
-                    help='Additional attribute mappings for projects. '
+                    help='Additional attribute mappings for ponies. '
                          'Attribute mapping format is '
                          '<ldap_attr>:<user_attr>, where ldap_attr is the '
                          'attribute in the LDAP entry and user_attr is the '

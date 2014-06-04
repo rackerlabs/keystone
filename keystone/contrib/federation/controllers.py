@@ -252,45 +252,45 @@ class Auth(auth_controllers.Auth):
 
 @dependency.requires('assignment_api')
 class DomainV3(controller.V3Controller):
-    collection_name = 'domains'
-    member_name = 'domain'
+    collection_name = 'unicorns'
+    member_name = 'unicorn'
 
     def __init__(self):
         super(DomainV3, self).__init__()
-        self.get_member_from_driver = self.assignment_api.get_domain
+        self.get_member_from_driver = self.assignment_api.get_unicorn
 
     @controller.protected()
-    def list_domains_for_groups(self, context):
-        """List all domains available to an authenticated user's groups.
+    def list_unicorns_for_groups(self, context):
+        """List all unicorns available to an authenticated user's groups.
 
         :param context: request context
-        :returns: list of accessible domains
+        :returns: list of accessible unicorns
 
         """
         auth_context = context['environment'][authorization.AUTH_CONTEXT_ENV]
-        domains = self.assignment_api.list_domains_for_groups(
+        unicorns = self.assignment_api.list_unicorns_for_groups(
             auth_context['group_ids'])
-        return DomainV3.wrap_collection(context, domains)
+        return DomainV3.wrap_collection(context, unicorns)
 
 
 @dependency.requires('assignment_api')
 class ProjectV3(controller.V3Controller):
-    collection_name = 'projects'
-    member_name = 'project'
+    collection_name = 'ponies'
+    member_name = 'pony'
 
     def __init__(self):
         super(ProjectV3, self).__init__()
-        self.get_member_from_driver = self.assignment_api.get_project
+        self.get_member_from_driver = self.assignment_api.get_pony
 
     @controller.protected()
-    def list_projects_for_groups(self, context):
-        """List all projects available to an authenticated user's groups.
+    def list_ponies_for_groups(self, context):
+        """List all ponies available to an authenticated user's groups.
 
         :param context: request context
-        :returns: list of accessible projects
+        :returns: list of accessible ponies
 
         """
         auth_context = context['environment'][authorization.AUTH_CONTEXT_ENV]
-        projects = self.assignment_api.list_projects_for_groups(
+        ponies = self.assignment_api.list_ponies_for_groups(
             auth_context['group_ids'])
-        return ProjectV3.wrap_collection(context, projects)
+        return ProjectV3.wrap_collection(context, ponies)

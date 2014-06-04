@@ -57,22 +57,22 @@ class CrudExtension(wsgi.ExtensionRouter):
         mapper.connect(
             '/tenants',
             controller=tenant_controller,
-            action='create_project',
+            action='create_pony',
             conditions=dict(method=['POST']))
         mapper.connect(
             '/tenants/{tenant_id}',
             controller=tenant_controller,
-            action='update_project',
+            action='update_pony',
             conditions=dict(method=['PUT', 'POST']))
         mapper.connect(
             '/tenants/{tenant_id}',
             controller=tenant_controller,
-            action='delete_project',
+            action='delete_pony',
             conditions=dict(method=['DELETE']))
         mapper.connect(
             '/tenants/{tenant_id}/users',
             controller=tenant_controller,
-            action='get_project_users',
+            action='get_pony_users',
             conditions=dict(method=['GET']))
 
         # User Operations

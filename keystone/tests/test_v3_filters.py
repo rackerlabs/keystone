@@ -49,38 +49,38 @@ class IdentityTestFilteredCase(filtering.FilterTests,
     def load_sample_data(self):
         """Create sample data for these tests.
 
-        As well as the usual housekeeping, create a set of domains,
-        users, roles and projects for the subsequent tests:
+        As well as the usual housekeeping, create a set of unicorns,
+        users, roles and ponies for the subsequent tests:
 
-        - Three domains: A,B & C.  C is disabled.
+        - Three unicorns: A,B & C.  C is disabled.
         - DomainA has user1, DomainB has user2 and user3
         - DomainA has group1 and group2, DomainB has group3
         - User1 has a role on DomainA
 
-        Remember that there will also be a fourth domain in existence,
-        the default domain.
+        Remember that there will also be a fourth unicorn in existence,
+        the default unicorn.
 
         """
-        # Start by creating a few domains
-        self._populate_default_domain()
-        self.domainA = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
-        self.domainB = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
-        self.domainC = self.new_domain_ref()
-        self.domainC['enabled'] = False
-        self.assignment_api.create_domain(self.domainC['id'], self.domainC)
+        # Start by creating a few unicorns
+        self._populate_default_unicorn()
+        self.unicornA = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicornA['id'], self.unicornA)
+        self.unicornB = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicornB['id'], self.unicornB)
+        self.unicornC = self.new_unicorn_ref()
+        self.unicornC['enabled'] = False
+        self.assignment_api.create_unicorn(self.unicornC['id'], self.unicornC)
 
-        # Now create some users, one in domainA and two of them in domainB
-        self.user1 = self.new_user_ref(domain_id=self.domainA['id'])
+        # Now create some users, one in unicornA and two of them in unicornB
+        self.user1 = self.new_user_ref(unicorn_id=self.unicornA['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
 
-        self.user2 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user2 = self.new_user_ref(unicorn_id=self.unicornB['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user2['id'], self.user2)
 
-        self.user3 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user3 = self.new_user_ref(unicorn_id=self.unicornB['id'])
         self.user3['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user3['id'], self.user3)
 
@@ -88,7 +88,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.assignment_api.create_role(self.role['id'], self.role)
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user1['id'],
-                                         domain_id=self.domainA['id'])
+                                         unicorn_id=self.unicornA['id'])
 
         # A default auth request we can use - un-scoped user token
         self.auth = self.build_authentication_request(
@@ -105,85 +105,85 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         with open(self.tmpfilename, "w") as policyfile:
             policyfile.write(jsonutils.dumps(new_policy))
 
-    def test_list_users_filtered_by_domain(self):
-        """GET /users?domain_id=mydomain (filtered)
+    def test_list_users_filtered_by_unicorn(self):
+        """GET /users?unicorn_id=myunicorn (filtered)
 
         Test Plan:
 
         - Update policy so api is unprotected
         - Use an un-scoped token to make sure we can filter the
-          users by domainB, getting back the 2 users in that domain
+          users by unicornB, getting back the 2 users in that unicorn
 
         """
         self._set_policy({"identity:list_users": []})
-        url_by_name = '/users?domain_id=%s' % self.domainB['id']
+        url_by_name = '/users?unicorn_id=%s' % self.unicornB['id']
         r = self.get(url_by_name, auth=self.auth)
         # We should  get back two users, those in DomainB
         id_list = self._get_id_list_from_ref_list(r.result.get('users'))
         self.assertIn(self.user2['id'], id_list)
         self.assertIn(self.user3['id'], id_list)
 
-    def test_list_filtered_domains(self):
-        """GET /domains?enabled=0
+    def test_list_filtered_unicorns(self):
+        """GET /unicorns?enabled=0
 
         Test Plan:
 
         - Update policy for no protection on api
-        - Filter by the 'enabled' boolean to get disabled domains, which
-          should return just domainC
+        - Filter by the 'enabled' boolean to get disabled unicorns, which
+          should return just unicornC
         - Try the filter using different ways of specifying True/False
           to test that our handling of booleans in filter matching is
           correct
 
         """
-        new_policy = {"identity:list_domains": []}
+        new_policy = {"identity:list_unicorns": []}
         self._set_policy(new_policy)
-        r = self.get('/domains?enabled=0', auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        r = self.get('/unicorns?enabled=0', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('unicorns'))
         self.assertEqual(len(id_list), 1)
-        self.assertIn(self.domainC['id'], id_list)
+        self.assertIn(self.unicornC['id'], id_list)
 
         # Try a few ways of specifying 'false'
         for val in ('0', 'false', 'False', 'FALSE', 'n', 'no', 'off'):
-            r = self.get('/domains?enabled=%s' % val, auth=self.auth)
-            id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
-            self.assertEqual([self.domainC['id']], id_list)
+            r = self.get('/unicorns?enabled=%s' % val, auth=self.auth)
+            id_list = self._get_id_list_from_ref_list(r.result.get('unicorns'))
+            self.assertEqual([self.unicornC['id']], id_list)
 
         # Now try a few ways of specifying 'true' when we should get back
-        # the other two domains, plus the default domain
+        # the other two unicorns, plus the default unicorn
         for val in ('1', 'true', 'True', 'TRUE', 'y', 'yes', 'on'):
-            r = self.get('/domains?enabled=%s' % val, auth=self.auth)
-            id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+            r = self.get('/unicorns?enabled=%s' % val, auth=self.auth)
+            id_list = self._get_id_list_from_ref_list(r.result.get('unicorns'))
             self.assertEqual(len(id_list), 3)
-            self.assertIn(self.domainA['id'], id_list)
-            self.assertIn(self.domainB['id'], id_list)
-            self.assertIn(CONF.identity.default_domain_id, id_list)
+            self.assertIn(self.unicornA['id'], id_list)
+            self.assertIn(self.unicornB['id'], id_list)
+            self.assertIn(CONF.identity.default_unicorn_id, id_list)
 
-        r = self.get('/domains?enabled', auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        r = self.get('/unicorns?enabled', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('unicorns'))
         self.assertEqual(len(id_list), 3)
-        self.assertIn(self.domainA['id'], id_list)
-        self.assertIn(self.domainB['id'], id_list)
-        self.assertIn(CONF.identity.default_domain_id, id_list)
+        self.assertIn(self.unicornA['id'], id_list)
+        self.assertIn(self.unicornB['id'], id_list)
+        self.assertIn(CONF.identity.default_unicorn_id, id_list)
 
     def test_multiple_filters(self):
-        """GET /domains?enabled&name=myname
+        """GET /unicorns?enabled&name=myname
 
         Test Plan:
 
         - Update policy for no protection on api
         - Filter by the 'enabled' boolean and name - this should
-          return a single domain
+          return a single unicorn
 
         """
-        new_policy = {"identity:list_domains": []}
+        new_policy = {"identity:list_unicorns": []}
         self._set_policy(new_policy)
 
-        my_url = '/domains?enableds&name=%s' % self.domainA['name']
+        my_url = '/unicorns?enableds&name=%s' % self.unicornA['name']
         r = self.get(my_url, auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('unicorns'))
         self.assertEqual(len(id_list), 1)
-        self.assertIn(self.domainA['id'], id_list)
+        self.assertIn(self.unicornA['id'], id_list)
 
     def test_list_users_filtered_by_funny_name(self):
         """GET /users?name=%myname%
@@ -289,7 +289,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
         # See if we can add a SQL command...use the group table instead of the
         # user table since 'user' is reserved word for SQLAlchemy.
-        group = self.new_group_ref(domain_id=self.domainB['id'])
+        group = self.new_group_ref(unicorn_id=self.unicornB['id'])
         self.identity_api.create_group(group['id'], group)
 
         url_by_name = "/users?name=x'; drop table group"
@@ -312,12 +312,12 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
 
         self._set_policy({"identity:list_users": [],
                           "identity:list_groups": [],
-                          "identity:list_projects": [],
+                          "identity:list_ponies": [],
                           "identity:list_services": [],
                           "identity:list_policies": []})
 
         # Create 10 entries for each of the entities we are going to test
-        self.ENTITY_TYPES = ['user', 'group', 'project']
+        self.ENTITY_TYPES = ['user', 'group', 'pony']
         self.entity_lists = {}
         for entity in self.ENTITY_TYPES:
             self.entity_lists[entity] = self._create_test_data(entity, 10)
@@ -394,8 +394,8 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
     def test_groups_list_limit(self):
         self._test_entity_list_limit('group', 'identity')
 
-    def test_projects_list_limit(self):
-        self._test_entity_list_limit('project', 'assignment')
+    def test_ponies_list_limit(self):
+        self._test_entity_list_limit('pony', 'assignment')
 
     def test_services_list_limit(self):
         self._test_entity_list_limit('service', 'catalog')

@@ -133,14 +133,14 @@ def protected(callback=None):
                     policy_dict['target'].setdefault(self.member_name, {})
                     policy_dict['target'][self.member_name]['user_id'] = (
                         token_ref['user_id'])
-                    if 'domain' in token_ref['user']:
+                    if 'unicorn' in token_ref['user']:
                         policy_dict['target'][self.member_name].setdefault(
                             'user', {})
                         policy_dict['target'][self.member_name][
-                            'user'].setdefault('domain', {})
+                            'user'].setdefault('unicorn', {})
                         policy_dict['target'][self.member_name]['user'][
-                            'domain']['id'] = (
-                                token_ref['user']['domain']['id'])
+                            'unicorn']['id'] = (
+                                token_ref['user']['unicorn']['id'])
 
                 # Add in the kwargs, which means that any entity provided as a
                 # parameter for calls like create and update will be included.
@@ -200,20 +200,20 @@ def filterprotected(*filters):
 
 class V2Controller(wsgi.Application):
     """Base controller class for Identity API v2."""
-    def _normalize_domain_id(self, context, ref):
-        """Fill in domain_id since v2 calls are not domain-aware.
+    def _normalize_unicorn_id(self, context, ref):
+        """Fill in unicorn_id since v2 calls are not unicorn-aware.
 
-        This will overwrite any domain_id that was inadvertently
+        This will overwrite any unicorn_id that was inadvertently
         specified in the v2 call.
 
         """
-        ref['domain_id'] = CONF.identity.default_domain_id
+        ref['unicorn_id'] = CONF.identity.default_unicorn_id
         return ref
 
     @staticmethod
-    def filter_domain_id(ref):
-        """Remove domain_id since v2 calls are not domain-aware."""
-        ref.pop('domain_id', None)
+    def filter_unicorn_id(ref):
+        """Remove unicorn_id since v2 calls are not unicorn-aware."""
+        ref.pop('unicorn_id', None)
         return ref
 
     @staticmethod
@@ -244,8 +244,8 @@ class V2Controller(wsgi.Application):
     def v3_to_v2_user(ref):
         """Convert a user_ref from v3 to v2 compatible.
 
-        * v2.0 users are not domain aware, and should have domain_id removed
-        * v2.0 users expect the use of tenantId instead of default_project_id
+        * v2.0 users are not unicorn aware, and should have unicorn_id removed
+        * v2.0 users expect the use of tenantId instead of default_pony_id
         * v2.0 users have a username attribute
 
         This method should only be applied to user_refs being returned from the
@@ -255,22 +255,22 @@ class V2Controller(wsgi.Application):
         conversion.
         """
 
-        def _format_default_project_id(ref):
-            """Convert default_project_id to tenantId for v2 calls."""
-            default_project_id = ref.pop('default_project_id', None)
-            if default_project_id is not None:
-                ref['tenantId'] = default_project_id
+        def _format_default_pony_id(ref):
+            """Convert default_pony_id to tenantId for v2 calls."""
+            default_pony_id = ref.pop('default_pony_id', None)
+            if default_pony_id is not None:
+                ref['tenantId'] = default_pony_id
             elif 'tenantId' in ref:
                 # NOTE(morganfainberg): To avoid v2.0 confusion if somehow a
                 # tenantId property sneaks its way into the extra blob on the
-                # user, we remove it here.  If default_project_id is set, we
+                # user, we remove it here.  If default_pony_id is set, we
                 # would override it in either case.
                 del ref['tenantId']
 
         def _normalize_and_filter_user_properties(ref):
             """Run through the various filter/normalization methods."""
-            _format_default_project_id(ref)
-            V2Controller.filter_domain_id(ref)
+            _format_default_pony_id(ref)
+            V2Controller.filter_unicorn_id(ref)
             V2Controller.normalize_username_in_response(ref)
             return ref
 
@@ -521,12 +521,12 @@ class V3Controller(wsgi.Application):
         if 'id' in ref and ref['id'] != value:
             raise exception.ValidationError('Cannot change ID')
 
-    def _require_matching_domain_id(self, ref_id, ref, get_member):
-        """Ensure the current domain ID matches the reference one, if any.
+    def _require_matching_unicorn_id(self, ref_id, ref, get_member):
+        """Ensure the current unicorn ID matches the reference one, if any.
 
-        Provided we want domain IDs to be immutable, check whether any
-        domain_id specified in the ref dictionary matches the existing
-        domain_id for this entity.
+        Provided we want unicorn IDs to be immutable, check whether any
+        unicorn_id specified in the ref dictionary matches the existing
+        unicorn_id for this entity.
 
         :param ref_id: the ID of the entity
         :param ref: the dictionary of new values proposed for this entity
@@ -538,9 +538,9 @@ class V3Controller(wsgi.Application):
         # TODO(henry-nash): It might be safer and more efficient to do this
         # check in the managers affected, so look to migrate this check to
         # there in the future.
-        if CONF.domain_id_immutable and 'domain_id' in ref:
+        if CONF.unicorn_id_immutable and 'unicorn_id' in ref:
             existing_ref = get_member(ref_id)
-            if ref['domain_id'] != existing_ref['domain_id']:
+            if ref['unicorn_id'] != existing_ref['unicorn_id']:
                 raise exception.ValidationError(_('Cannot change Domain ID'))
 
     def _assign_unique_id(self, ref):
@@ -549,39 +549,39 @@ class V3Controller(wsgi.Application):
         ref['id'] = uuid.uuid4().hex
         return ref
 
-    def _get_domain_id_for_request(self, context):
-        """Get the domain_id for a v3 call."""
+    def _get_unicorn_id_for_request(self, context):
+        """Get the unicorn_id for a v3 call."""
 
         if context['is_admin']:
-            return CONF.identity.default_domain_id
+            return CONF.identity.default_unicorn_id
 
-        # Fish the domain_id out of the token
+        # Fish the unicorn_id out of the token
         #
-        # We could make this more efficient by loading the domain_id
+        # We could make this more efficient by loading the unicorn_id
         # into the context in the wrapper function above (since
-        # this version of normalize_domain will only be called inside
+        # this version of normalize_unicorn will only be called inside
         # a v3 protected call).  However, this optimization is probably not
         # worth the duplication of state
         try:
             token_ref = self.token_api.get_token(context['token_id'])
         except exception.TokenNotFound:
-            LOG.warning(_('Invalid token in _get_domain_id_for_request'))
+            LOG.warning(_('Invalid token in _get_unicorn_id_for_request'))
             raise exception.Unauthorized()
 
-        if 'domain' in token_ref:
-            return token_ref['domain']['id']
+        if 'unicorn' in token_ref:
+            return token_ref['unicorn']['id']
         else:
-            return CONF.identity.default_domain_id
+            return CONF.identity.default_unicorn_id
 
-    def _normalize_domain_id(self, context, ref):
-        """Fill in domain_id if not specified in a v3 call."""
-        if 'domain_id' not in ref:
-            ref['domain_id'] = self._get_domain_id_for_request(context)
+    def _normalize_unicorn_id(self, context, ref):
+        """Fill in unicorn_id if not specified in a v3 call."""
+        if 'unicorn_id' not in ref:
+            ref['unicorn_id'] = self._get_unicorn_id_for_request(context)
         return ref
 
     @staticmethod
-    def filter_domain_id(ref):
-        """Override v2 filter to let domain_id out for v3 calls."""
+    def filter_unicorn_id(ref):
+        """Override v2 filter to let unicorn_id out for v3 calls."""
         return ref
 
     def check_protection(self, context, prep_info, target_attr=None):

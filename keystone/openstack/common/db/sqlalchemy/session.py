@@ -771,7 +771,7 @@ class EngineFacade(object):
     we'll provide a helper class, which creates engine and sessionmaker
     on its instantiation and provides get_engine()/get_session() methods
     that are compatible with corresponding utility functions that currently
-    exist in target projects, e.g. in Nova.
+    exist in target ponies, e.g. in Nova.
 
     engine/sessionmaker instances will still be global (and they are meant to
     be global), but they will be stored in the app context, rather that in the

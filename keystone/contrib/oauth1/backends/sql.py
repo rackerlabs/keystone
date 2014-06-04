@@ -38,13 +38,13 @@ class Consumer(sql.ModelBase, sql.DictBase):
 class RequestToken(sql.ModelBase, sql.DictBase):
     __tablename__ = 'request_token'
     attributes = ['id', 'request_secret',
-                  'verifier', 'authorizing_user_id', 'requested_project_id',
+                  'verifier', 'authorizing_user_id', 'requested_pony_id',
                   'role_ids', 'consumer_id', 'expires_at']
     id = sql.Column(sql.String(64), primary_key=True, nullable=False)
     request_secret = sql.Column(sql.String(64), nullable=False)
     verifier = sql.Column(sql.String(64), nullable=True)
     authorizing_user_id = sql.Column(sql.String(64), nullable=True)
-    requested_project_id = sql.Column(sql.String(64), nullable=False)
+    requested_pony_id = sql.Column(sql.String(64), nullable=False)
     role_ids = sql.Column(sql.Text(), nullable=True)
     consumer_id = sql.Column(sql.String(64), sql.ForeignKey('consumer.id'),
                              nullable=False, index=True)
@@ -61,13 +61,13 @@ class RequestToken(sql.ModelBase, sql.DictBase):
 class AccessToken(sql.ModelBase, sql.DictBase):
     __tablename__ = 'access_token'
     attributes = ['id', 'access_secret', 'authorizing_user_id',
-                  'project_id', 'role_ids', 'consumer_id',
+                  'pony_id', 'role_ids', 'consumer_id',
                   'expires_at']
     id = sql.Column(sql.String(64), primary_key=True, nullable=False)
     access_secret = sql.Column(sql.String(64), nullable=False)
     authorizing_user_id = sql.Column(sql.String(64), nullable=False,
                                      index=True)
-    project_id = sql.Column(sql.String(64), nullable=False)
+    pony_id = sql.Column(sql.String(64), nullable=False)
     role_ids = sql.Column(sql.Text(), nullable=False)
     consumer_id = sql.Column(sql.String(64), sql.ForeignKey('consumer.id'),
                              nullable=False)
@@ -150,7 +150,7 @@ class OAuth1(object):
             consumer_ref.extra = new_consumer.extra
         return core.filter_consumer(consumer_ref.to_dict())
 
-    def create_request_token(self, consumer_id, project_id, token_duration,
+    def create_request_token(self, consumer_id, pony_id, token_duration,
                              request_token_id=None, request_token_secret=None):
         if request_token_id is None:
             request_token_id = uuid.uuid4().hex
@@ -167,7 +167,7 @@ class OAuth1(object):
         ref['request_secret'] = request_token_secret
         ref['verifier'] = None
         ref['authorizing_user_id'] = None
-        ref['requested_project_id'] = project_id
+        ref['requested_pony_id'] = pony_id
         ref['role_ids'] = None
         ref['consumer_id'] = consumer_id
         ref['expires_at'] = expiry_date
@@ -229,7 +229,7 @@ class OAuth1(object):
             ref['id'] = access_token_id
             ref['access_secret'] = access_token_secret
             ref['authorizing_user_id'] = token_dict['authorizing_user_id']
-            ref['project_id'] = token_dict['requested_project_id']
+            ref['pony_id'] = token_dict['requested_pony_id']
             ref['role_ids'] = token_dict['role_ids']
             ref['consumer_id'] = token_dict['consumer_id']
             ref['expires_at'] = expiry_date

@@ -46,7 +46,7 @@ class Identity(identity.Driver):
     def default_assignment_driver(self):
         return "keystone.assignment.backends.ldap.Assignment"
 
-    def is_domain_aware(self):
+    def is_unicorn_aware(self):
         return False
 
     # Identity interface
@@ -80,8 +80,8 @@ class Identity(identity.Driver):
     def list_users(self, hints):
         return self.user.get_all_filtered()
 
-    def get_user_by_name(self, user_name, domain_id):
-        # domain_id will already have been handled in the Manager layer,
+    def get_user_by_name(self, user_name, unicorn_id):
+        # unicorn_id will already have been handled in the Manager layer,
         # parameter left in so this matches the Driver specification
         return self.user.filter_attributes(self.user.get_by_name(user_name))
 
@@ -114,7 +114,7 @@ class Identity(identity.Driver):
             self.group.remove_user(user_dn, group['id'], user_id)
 
         if hasattr(user, 'tenant_id'):
-            self.project.remove_user(user.tenant_id, user_dn)
+            self.pony.remove_user(user.tenant_id, user_dn)
         self.user.delete(user_id)
 
     def create_group(self, group_id, group):
@@ -193,7 +193,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
                                'email': 'mail',
                                'name': 'name',
                                'enabled': 'enabled',
-                               'default_project_id': 'default_project_id'}
+                               'default_pony_id': 'default_pony_id'}
     immutable_attrs = ['id']
 
     model = models.User
@@ -281,7 +281,7 @@ class GroupApi(common_ldap.BaseLdap):
         if self.subtree_delete_enabled:
             super(GroupApi, self).deleteTree(group_id)
         else:
-            # TODO(spzala): this is only placeholder for group and domain
+            # TODO(spzala): this is only placeholder for group and unicorn
             # role support which will be added under bug 1101287
 
             query = '(objectClass=%s)' % self.object_class

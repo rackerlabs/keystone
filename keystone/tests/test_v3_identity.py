@@ -27,154 +27,154 @@ CONF = cfg.CONF
 
 
 def _build_role_assignment_url_and_entity(
-        role_id, user_id=None, group_id=None, domain_id=None,
-        project_id=None, inherited_to_projects=False,
+        role_id, user_id=None, group_id=None, unicorn_id=None,
+        pony_id=None, inherited_to_ponies=False,
         effective=False):
 
-    if user_id and domain_id:
-        url = ('/domains/%(domain_id)s/users/%(user_id)s'
+    if user_id and unicorn_id:
+        url = ('/unicorns/%(unicorn_id)s/users/%(user_id)s'
                '/roles/%(role_id)s' % {
-                   'domain_id': domain_id,
+                   'unicorn_id': unicorn_id,
                    'user_id': user_id,
                    'role_id': role_id})
         entity = {'role': {'id': role_id},
                   'user': {'id': user_id},
-                  'scope': {'domain': {'id': domain_id}}}
-        if inherited_to_projects:
-            url = '/OS-INHERIT%s/inherited_to_projects' % url
+                  'scope': {'unicorn': {'id': unicorn_id}}}
+        if inherited_to_ponies:
+            url = '/OS-INHERIT%s/inherited_to_ponies' % url
             if not effective:
-                entity['OS-INHERIT:inherited_to'] = 'projects'
-    elif user_id and project_id:
-        url = ('/projects/%(project_id)s/users/%(user_id)s'
+                entity['OS-INHERIT:inherited_to'] = 'ponies'
+    elif user_id and pony_id:
+        url = ('/ponies/%(pony_id)s/users/%(user_id)s'
                '/roles/%(role_id)s' % {
-                   'project_id': project_id,
+                   'pony_id': pony_id,
                    'user_id': user_id,
                    'role_id': role_id})
         entity = {'role': {'id': role_id},
                   'user': {'id': user_id},
-                  'scope': {'project': {'id': project_id}}}
-    if group_id and domain_id:
-        url = ('/domains/%(domain_id)s/groups/%(group_id)s'
+                  'scope': {'pony': {'id': pony_id}}}
+    if group_id and unicorn_id:
+        url = ('/unicorns/%(unicorn_id)s/groups/%(group_id)s'
                '/roles/%(role_id)s' % {
-                   'domain_id': domain_id,
+                   'unicorn_id': unicorn_id,
                    'group_id': group_id,
                    'role_id': role_id})
         entity = {'role': {'id': role_id},
                   'group': {'id': group_id},
-                  'scope': {'domain': {'id': domain_id}}}
-        if inherited_to_projects:
-            url = '/OS-INHERIT%s/inherited_to_projects' % url
+                  'scope': {'unicorn': {'id': unicorn_id}}}
+        if inherited_to_ponies:
+            url = '/OS-INHERIT%s/inherited_to_ponies' % url
             if not effective:
-                entity['OS-INHERIT:inherited_to'] = 'projects'
-    elif group_id and project_id:
-        url = ('/projects/%(project_id)s/groups/%(group_id)s'
+                entity['OS-INHERIT:inherited_to'] = 'ponies'
+    elif group_id and pony_id:
+        url = ('/ponies/%(pony_id)s/groups/%(group_id)s'
                '/roles/%(role_id)s' % {
-                   'project_id': project_id,
+                   'pony_id': pony_id,
                    'group_id': group_id,
                    'role_id': role_id})
         entity = {'role': {'id': role_id},
                   'group': {'id': group_id},
-                  'scope': {'project': {'id': project_id}}}
+                  'scope': {'pony': {'id': pony_id}}}
     return (url, entity)
 
 
 class IdentityTestCase(test_v3.RestfulTestCase):
-    """Test domains, projects, users, groups, & role CRUD."""
+    """Test unicorns, ponies, users, groups, & role CRUD."""
 
     def setUp(self):
         super(IdentityTestCase, self).setUp()
 
         self.group_id = uuid.uuid4().hex
         self.group = self.new_group_ref(
-            domain_id=self.domain_id)
+            unicorn_id=self.unicorn_id)
         self.group['id'] = self.group_id
         self.identity_api.create_group(self.group_id, self.group)
 
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            pony_id=self.pony_id)
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
             self.credential_id,
             self.credential)
 
-    # domain crud tests
+    # unicorn crud tests
 
-    def test_create_domain(self):
-        """Call ``POST /domains``."""
-        ref = self.new_domain_ref()
+    def test_create_unicorn(self):
+        """Call ``POST /unicorns``."""
+        ref = self.new_unicorn_ref()
         r = self.post(
-            '/domains',
-            body={'domain': ref})
+            '/unicorns',
+            body={'unicorn': ref})
         return self.assertValidDomainResponse(r, ref)
 
-    def test_create_domain_case_sensitivity(self):
-        """Call `POST /domains`` twice with upper() and lower() cased name."""
-        ref = self.new_domain_ref()
+    def test_create_unicorn_case_sensitivity(self):
+        """Call `POST /unicorns`` twice with upper() and lower() cased name."""
+        ref = self.new_unicorn_ref()
 
         # ensure the name is lowercase
         ref['name'] = ref['name'].lower()
         r = self.post(
-            '/domains',
-            body={'domain': ref})
+            '/unicorns',
+            body={'unicorn': ref})
         self.assertValidDomainResponse(r, ref)
 
         # ensure the name is uppercase
         ref['name'] = ref['name'].upper()
         r = self.post(
-            '/domains',
-            body={'domain': ref})
+            '/unicorns',
+            body={'unicorn': ref})
         self.assertValidDomainResponse(r, ref)
 
-    def test_create_domain_400(self):
-        """Call ``POST /domains``."""
-        self.post('/domains', body={'domain': {}}, expected_status=400)
+    def test_create_unicorn_400(self):
+        """Call ``POST /unicorns``."""
+        self.post('/unicorns', body={'unicorn': {}}, expected_status=400)
 
-    def test_list_domains(self):
-        """Call ``GET /domains``."""
-        r = self.get('/domains')
-        self.assertValidDomainListResponse(r, ref=self.domain)
+    def test_list_unicorns(self):
+        """Call ``GET /unicorns``."""
+        r = self.get('/unicorns')
+        self.assertValidDomainListResponse(r, ref=self.unicorn)
 
-    def test_list_domains_xml(self):
-        """Call ``GET /domains (xml data)``."""
-        r = self.get('/domains', content_type='xml')
-        self.assertValidDomainListResponse(r, ref=self.domain)
+    def test_list_unicorns_xml(self):
+        """Call ``GET /unicorns (xml data)``."""
+        r = self.get('/unicorns', content_type='xml')
+        self.assertValidDomainListResponse(r, ref=self.unicorn)
 
-    def test_get_domain(self):
-        """Call ``GET /domains/{domain_id}``."""
-        r = self.get('/domains/%(domain_id)s' % {
-            'domain_id': self.domain_id})
-        self.assertValidDomainResponse(r, self.domain)
+    def test_get_unicorn(self):
+        """Call ``GET /unicorns/{unicorn_id}``."""
+        r = self.get('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': self.unicorn_id})
+        self.assertValidDomainResponse(r, self.unicorn)
 
-    def test_update_domain(self):
-        """Call ``PATCH /domains/{domain_id}``."""
-        ref = self.new_domain_ref()
+    def test_update_unicorn(self):
+        """Call ``PATCH /unicorns/{unicorn_id}``."""
+        ref = self.new_unicorn_ref()
         del ref['id']
-        r = self.patch('/domains/%(domain_id)s' % {
-            'domain_id': self.domain_id},
-            body={'domain': ref})
+        r = self.patch('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': self.unicorn_id},
+            body={'unicorn': ref})
         self.assertValidDomainResponse(r, ref)
 
-    def test_disable_domain(self):
-        """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
-        # Create a 2nd set of entities in a 2nd domain
-        self.domain2 = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domain2['id'], self.domain2)
+    def test_disable_unicorn(self):
+        """Call ``PATCH /unicorns/{unicorn_id}`` (set enabled=False)."""
+        # Create a 2nd set of entities in a 2nd unicorn
+        self.unicorn2 = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicorn2['id'], self.unicorn2)
 
-        self.project2 = self.new_project_ref(
-            domain_id=self.domain2['id'])
-        self.assignment_api.create_project(self.project2['id'], self.project2)
+        self.pony2 = self.new_pony_ref(
+            unicorn_id=self.unicorn2['id'])
+        self.assignment_api.create_pony(self.pony2['id'], self.pony2)
 
         self.user2 = self.new_user_ref(
-            domain_id=self.domain2['id'],
-            project_id=self.project2['id'])
+            unicorn_id=self.unicorn2['id'],
+            pony_id=self.pony2['id'])
         self.identity_api.create_user(self.user2['id'], self.user2)
 
-        self.assignment_api.add_user_to_project(self.project2['id'],
+        self.assignment_api.add_user_to_pony(self.pony2['id'],
                                                 self.user2['id'])
 
-        # First check a user in that domain can authenticate, via
+        # First check a user in that unicorn can authenticate, via
         # Both v2 and v3
         body = {
             'auth': {
@@ -182,7 +182,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                     'userId': self.user2['id'],
                     'password': self.user2['password']
                 },
-                'tenantId': self.project2['id']
+                'tenantId': self.pony2['id']
             }
         }
         self.admin_request(path='/v2.0/tokens', method='POST', body=body)
@@ -190,15 +190,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user2['id'],
             password=self.user2['password'],
-            project_id=self.project2['id'])
+            pony_id=self.pony2['id'])
         self.post('/auth/tokens', body=auth_data)
 
-        # Now disable the domain
-        self.domain2['enabled'] = False
-        r = self.patch('/domains/%(domain_id)s' % {
-            'domain_id': self.domain2['id']},
-            body={'domain': {'enabled': False}})
-        self.assertValidDomainResponse(r, self.domain2)
+        # Now disable the unicorn
+        self.unicorn2['enabled'] = False
+        r = self.patch('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': self.unicorn2['id']},
+            body={'unicorn': {'enabled': False}})
+        self.assertValidDomainResponse(r, self.unicorn2)
 
         # Make sure the user can no longer authenticate, via
         # either API
@@ -208,7 +208,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                     'userId': self.user2['id'],
                     'password': self.user2['password']
                 },
-                'tenantId': self.project2['id']
+                'tenantId': self.pony2['id']
             }
         }
         self.admin_request(
@@ -218,85 +218,85 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user2['id'],
             password=self.user2['password'],
-            project_id=self.project2['id'])
+            pony_id=self.pony2['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
         auth_data = self.build_authentication_request(
             username=self.user2['name'],
-            user_domain_id=self.domain2['id'],
+            user_unicorn_id=self.unicorn2['id'],
             password=self.user2['password'],
-            project_id=self.project2['id'])
+            pony_id=self.pony2['id'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
 
-    def test_delete_enabled_domain_fails(self):
-        """Call ``DELETE /domains/{domain_id}`` (when domain enabled)."""
+    def test_delete_enabled_unicorn_fails(self):
+        """Call ``DELETE /unicorns/{unicorn_id}`` (when unicorn enabled)."""
 
-        # Try deleting an enabled domain, which should fail
-        self.delete('/domains/%(domain_id)s' % {
-            'domain_id': self.domain['id']},
+        # Try deleting an enabled unicorn, which should fail
+        self.delete('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': self.unicorn['id']},
             expected_status=exception.ForbiddenAction.code)
 
-    def test_delete_domain(self):
-        """Call ``DELETE /domains/{domain_id}``.
+    def test_delete_unicorn(self):
+        """Call ``DELETE /unicorns/{unicorn_id}``.
 
-        The sample data set up already has a user, group, project
-        and credential that is part of self.domain. Since the user
-        we will authenticate with is in this domain, we create a
-        another set of entities in a second domain.  Deleting this
-        second domain should delete all these new entities. In addition,
-        all the entities in the regular self.domain should be unaffected
+        The sample data set up already has a user, group, pony
+        and credential that is part of self.unicorn. Since the user
+        we will authenticate with is in this unicorn, we create a
+        another set of entities in a second unicorn.  Deleting this
+        second unicorn should delete all these new entities. In addition,
+        all the entities in the regular self.unicorn should be unaffected
         by the delete.
 
         Test Plan:
 
-        - Create domain2 and a 2nd set of entities
-        - Disable domain2
-        - Delete domain2
-        - Check entities in domain2 have been deleted
-        - Check entities in self.domain are unaffected
+        - Create unicorn2 and a 2nd set of entities
+        - Disable unicorn2
+        - Delete unicorn2
+        - Check entities in unicorn2 have been deleted
+        - Check entities in self.unicorn are unaffected
 
         """
 
-        # Create a 2nd set of entities in a 2nd domain
-        self.domain2 = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domain2['id'], self.domain2)
+        # Create a 2nd set of entities in a 2nd unicorn
+        self.unicorn2 = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicorn2['id'], self.unicorn2)
 
-        self.project2 = self.new_project_ref(
-            domain_id=self.domain2['id'])
-        self.assignment_api.create_project(self.project2['id'], self.project2)
+        self.pony2 = self.new_pony_ref(
+            unicorn_id=self.unicorn2['id'])
+        self.assignment_api.create_pony(self.pony2['id'], self.pony2)
 
         self.user2 = self.new_user_ref(
-            domain_id=self.domain2['id'],
-            project_id=self.project2['id'])
+            unicorn_id=self.unicorn2['id'],
+            pony_id=self.pony2['id'])
         self.identity_api.create_user(self.user2['id'], self.user2)
 
         self.group2 = self.new_group_ref(
-            domain_id=self.domain2['id'])
+            unicorn_id=self.unicorn2['id'])
         self.identity_api.create_group(self.group2['id'], self.group2)
 
         self.credential2 = self.new_credential_ref(
             user_id=self.user2['id'],
-            project_id=self.project2['id'])
+            pony_id=self.pony2['id'])
         self.credential_api.create_credential(
             self.credential2['id'],
             self.credential2)
 
-        # Now disable the new domain and delete it
-        self.domain2['enabled'] = False
-        r = self.patch('/domains/%(domain_id)s' % {
-            'domain_id': self.domain2['id']},
-            body={'domain': {'enabled': False}})
-        self.assertValidDomainResponse(r, self.domain2)
-        self.delete('/domains/%(domain_id)s' % {
-            'domain_id': self.domain2['id']})
+        # Now disable the new unicorn and delete it
+        self.unicorn2['enabled'] = False
+        r = self.patch('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': self.unicorn2['id']},
+            body={'unicorn': {'enabled': False}})
+        self.assertValidDomainResponse(r, self.unicorn2)
+        self.delete('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': self.unicorn2['id']})
 
-        # Check all the domain2 relevant entities are gone
+        # Check all the unicorn2 relevant entities are gone
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          self.domain2['id'])
+                          self.assignment_api.get_unicorn,
+                          self.unicorn2['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          self.project2['id'])
+                          self.assignment_api.get_pony,
+                          self.pony2['id'])
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.get_group,
                           self.group2['id'])
@@ -307,11 +307,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                           self.credential_api.get_credential,
                           self.credential2['id'])
 
-        # ...and that all self.domain entities are still here
-        r = self.assignment_api.get_domain(self.domain['id'])
-        self.assertDictEqual(r, self.domain)
-        r = self.assignment_api.get_project(self.project['id'])
-        self.assertDictEqual(r, self.project)
+        # ...and that all self.unicorn entities are still here
+        r = self.assignment_api.get_unicorn(self.unicorn['id'])
+        self.assertDictEqual(r, self.unicorn)
+        r = self.assignment_api.get_pony(self.pony['id'])
+        self.assertDictEqual(r, self.pony)
         r = self.identity_api.get_group(self.group['id'])
         self.assertDictEqual(r, self.group)
         r = self.identity_api.get_user(self.user['id'])
@@ -320,156 +320,156 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(r, self.credential)
 
-    def test_delete_default_domain_fails(self):
-        # Attempting to delete the default domain results in 403 Forbidden.
+    def test_delete_default_unicorn_fails(self):
+        # Attempting to delete the default unicorn results in 403 Forbidden.
 
         # Need to disable it first.
-        self.patch('/domains/%(domain_id)s' % {
-            'domain_id': CONF.identity.default_domain_id},
-            body={'domain': {'enabled': False}})
+        self.patch('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': CONF.identity.default_unicorn_id},
+            body={'unicorn': {'enabled': False}})
 
-        self.delete('/domains/%(domain_id)s' % {
-            'domain_id': CONF.identity.default_domain_id},
+        self.delete('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': CONF.identity.default_unicorn_id},
             expected_status=exception.ForbiddenAction.code)
 
-    def test_delete_new_default_domain_fails(self):
-        # If change the default domain ID, deleting the new default domain
+    def test_delete_new_default_unicorn_fails(self):
+        # If change the default unicorn ID, deleting the new default unicorn
         # results in a 403 Forbidden.
 
-        # Create a new domain that's not the default
-        new_domain = self.new_domain_ref()
-        new_domain_id = new_domain['id']
-        self.assignment_api.create_domain(new_domain_id, new_domain)
+        # Create a new unicorn that's not the default
+        new_unicorn = self.new_unicorn_ref()
+        new_unicorn_id = new_unicorn['id']
+        self.assignment_api.create_unicorn(new_unicorn_id, new_unicorn)
 
-        # Disable the new domain so can delete it later.
-        self.patch('/domains/%(domain_id)s' % {
-            'domain_id': new_domain_id},
-            body={'domain': {'enabled': False}})
+        # Disable the new unicorn so can delete it later.
+        self.patch('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': new_unicorn_id},
+            body={'unicorn': {'enabled': False}})
 
-        # Change the default domain
+        # Change the default unicorn
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_unicorn_id=new_unicorn_id)
 
-        # Attempt to delete the new domain
+        # Attempt to delete the new unicorn
 
-        self.delete('/domains/%(domain_id)s' % {'domain_id': new_domain_id},
+        self.delete('/unicorns/%(unicorn_id)s' % {'unicorn_id': new_unicorn_id},
                     expected_status=exception.ForbiddenAction.code)
 
-    def test_delete_old_default_domain(self):
-        # If change the default domain ID, deleting the old default domain
+    def test_delete_old_default_unicorn(self):
+        # If change the default unicorn ID, deleting the old default unicorn
         # works.
 
-        # Create a new domain that's not the default
-        new_domain = self.new_domain_ref()
-        new_domain_id = new_domain['id']
-        self.assignment_api.create_domain(new_domain_id, new_domain)
+        # Create a new unicorn that's not the default
+        new_unicorn = self.new_unicorn_ref()
+        new_unicorn_id = new_unicorn['id']
+        self.assignment_api.create_unicorn(new_unicorn_id, new_unicorn)
 
-        old_default_domain_id = CONF.identity.default_domain_id
+        old_default_unicorn_id = CONF.identity.default_unicorn_id
 
-        # Disable the default domain so we can delete it later.
-        self.patch('/domains/%(domain_id)s' % {
-            'domain_id': old_default_domain_id},
-            body={'domain': {'enabled': False}})
+        # Disable the default unicorn so we can delete it later.
+        self.patch('/unicorns/%(unicorn_id)s' % {
+            'unicorn_id': old_default_unicorn_id},
+            body={'unicorn': {'enabled': False}})
 
-        # Change the default domain
+        # Change the default unicorn
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_unicorn_id=new_unicorn_id)
 
-        # Delete the old default domain
+        # Delete the old default unicorn
 
         self.delete(
-            '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
+            '/unicorns/%(unicorn_id)s' % {'unicorn_id': old_default_unicorn_id})
 
-    # project crud tests
+    # pony crud tests
 
-    def test_list_projects(self):
-        """Call ``GET /projects``."""
-        r = self.get('/projects')
-        self.assertValidProjectListResponse(r, ref=self.project)
+    def test_list_ponies(self):
+        """Call ``GET /ponies``."""
+        r = self.get('/ponies')
+        self.assertValidProjectListResponse(r, ref=self.pony)
 
-    def test_list_projects_xml(self):
-        """Call ``GET /projects`` (xml data)."""
-        r = self.get('/projects', content_type='xml')
-        self.assertValidProjectListResponse(r, ref=self.project)
+    def test_list_ponies_xml(self):
+        """Call ``GET /ponies`` (xml data)."""
+        r = self.get('/ponies', content_type='xml')
+        self.assertValidProjectListResponse(r, ref=self.pony)
 
-    def test_create_project(self):
-        """Call ``POST /projects``."""
-        ref = self.new_project_ref(domain_id=self.domain_id)
+    def test_create_pony(self):
+        """Call ``POST /ponies``."""
+        ref = self.new_pony_ref(unicorn_id=self.unicorn_id)
         r = self.post(
-            '/projects',
-            body={'project': ref})
+            '/ponies',
+            body={'pony': ref})
         self.assertValidProjectResponse(r, ref)
 
-    def test_create_project_400(self):
-        """Call ``POST /projects``."""
-        self.post('/projects', body={'project': {}}, expected_status=400)
+    def test_create_pony_400(self):
+        """Call ``POST /ponies``."""
+        self.post('/ponies', body={'pony': {}}, expected_status=400)
 
-    def test_get_project(self):
-        """Call ``GET /projects/{project_id}``."""
+    def test_get_pony(self):
+        """Call ``GET /ponies/{pony_id}``."""
         r = self.get(
-            '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
-        self.assertValidProjectResponse(r, self.project)
+            '/ponies/%(pony_id)s' % {
+                'pony_id': self.pony_id})
+        self.assertValidProjectResponse(r, self.pony)
 
-    def test_update_project(self):
-        """Call ``PATCH /projects/{project_id}``."""
-        ref = self.new_project_ref(domain_id=self.domain_id)
+    def test_update_pony(self):
+        """Call ``PATCH /ponies/{pony_id}``."""
+        ref = self.new_pony_ref(unicorn_id=self.unicorn_id)
         del ref['id']
         r = self.patch(
-            '/projects/%(project_id)s' % {
-                'project_id': self.project_id},
-            body={'project': ref})
+            '/ponies/%(pony_id)s' % {
+                'pony_id': self.pony_id},
+            body={'pony': ref})
         self.assertValidProjectResponse(r, ref)
 
-    def test_update_project_domain_id(self):
-        """Call ``PATCH /projects/{project_id}`` with domain_id."""
-        project = self.new_project_ref(domain_id=self.domain['id'])
-        self.assignment_api.create_project(project['id'], project)
-        project['domain_id'] = CONF.identity.default_domain_id
-        r = self.patch('/projects/%(project_id)s' % {
-            'project_id': project['id']},
-            body={'project': project},
+    def test_update_pony_unicorn_id(self):
+        """Call ``PATCH /ponies/{pony_id}`` with unicorn_id."""
+        pony = self.new_pony_ref(unicorn_id=self.unicorn['id'])
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony['unicorn_id'] = CONF.identity.default_unicorn_id
+        r = self.patch('/ponies/%(pony_id)s' % {
+            'pony_id': pony['id']},
+            body={'pony': pony},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        project['domain_id'] = self.domain['id']
-        r = self.patch('/projects/%(project_id)s' % {
-            'project_id': project['id']},
-            body={'project': project})
-        self.assertValidProjectResponse(r, project)
+        self.config_fixture.config(unicorn_id_immutable=False)
+        pony['unicorn_id'] = self.unicorn['id']
+        r = self.patch('/ponies/%(pony_id)s' % {
+            'pony_id': pony['id']},
+            body={'pony': pony})
+        self.assertValidProjectResponse(r, pony)
 
-    def test_delete_project(self):
-        """Call ``DELETE /projects/{project_id}``
+    def test_delete_pony(self):
+        """Call ``DELETE /ponies/{pony_id}``
 
         As well as making sure the delete succeeds, we ensure
-        that any credentials that reference this projects are
+        that any credentials that reference this ponies are
         also deleted, while other credentials are unaffected.
 
         """
-        # First check the credential for this project is present
+        # First check the credential for this pony is present
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(r, self.credential)
-        # Create a second credential with a different project
-        self.project2 = self.new_project_ref(
-            domain_id=self.domain['id'])
-        self.assignment_api.create_project(self.project2['id'], self.project2)
+        # Create a second credential with a different pony
+        self.pony2 = self.new_pony_ref(
+            unicorn_id=self.unicorn['id'])
+        self.assignment_api.create_pony(self.pony2['id'], self.pony2)
         self.credential2 = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project2['id'])
+            pony_id=self.pony2['id'])
         self.credential_api.create_credential(
             self.credential2['id'],
             self.credential2)
 
-        # Now delete the project
+        # Now delete the pony
         self.delete(
-            '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+            '/ponies/%(pony_id)s' % {
+                'pony_id': self.pony_id})
 
-        # Deleting the project should have deleted any credentials
-        # that reference this project
+        # Deleting the pony should have deleted any credentials
+        # that reference this pony
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           credential_id=self.credential['id'])
-        # But the credential for project2 is unaffected
+        # But the credential for pony2 is unaffected
         r = self.credential_api.get_credential(self.credential2['id'])
         self.assertDictEqual(r, self.credential2)
 
@@ -477,7 +477,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_create_user(self):
         """Call ``POST /users``."""
-        ref = self.new_user_ref(domain_id=self.domain_id)
+        ref = self.new_user_ref(unicorn_id=self.unicorn_id)
         r = self.post(
             '/users',
             body={'user': ref})
@@ -492,9 +492,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         r = self.get('/users')
         self.assertValidUserListResponse(r, ref=self.user)
 
-    def test_list_users_no_default_project(self):
-        """Call ``GET /users`` making sure no default_project_id."""
-        user = self.new_user_ref(self.domain_id)
+    def test_list_users_no_default_pony(self):
+        """Call ``GET /users`` making sure no default_pony_id."""
+        user = self.new_user_ref(self.unicorn_id)
         self.identity_api.create_user(self.user_id, user)
         r = self.get('/users')
         self.assertValidUserListResponse(r, ref=user)
@@ -510,10 +510,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'user_id': self.user['id']})
         self.assertValidUserResponse(r, self.user)
 
-    def test_get_user_with_default_project(self):
-        """Call ``GET /users/{user_id}`` making sure of default_project_id."""
-        user = self.new_user_ref(domain_id=self.domain_id,
-                                 project_id=self.project_id)
+    def test_get_user_with_default_pony(self):
+        """Call ``GET /users/{user_id}`` making sure of default_pony_id."""
+        user = self.new_user_ref(unicorn_id=self.unicorn_id,
+                                 pony_id=self.pony_id)
         self.identity_api.create_user(self.user_id, user)
         r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
         self.assertValidUserResponse(r, user)
@@ -527,11 +527,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``GET /users/{user_id}/groups``."""
 
         self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
         self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user2)
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
@@ -586,24 +586,24 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_update_user(self):
         """Call ``PATCH /users/{user_id}``."""
-        user = self.new_user_ref(domain_id=self.domain_id)
+        user = self.new_user_ref(unicorn_id=self.unicorn_id)
         del user['id']
         r = self.patch('/users/%(user_id)s' % {
             'user_id': self.user['id']},
             body={'user': user})
         self.assertValidUserResponse(r, user)
 
-    def test_update_user_domain_id(self):
-        """Call ``PATCH /users/{user_id}`` with domain_id."""
-        user = self.new_user_ref(domain_id=self.domain['id'])
+    def test_update_user_unicorn_id(self):
+        """Call ``PATCH /users/{user_id}`` with unicorn_id."""
+        user = self.new_user_ref(unicorn_id=self.unicorn['id'])
         self.identity_api.create_user(user['id'], user)
-        user['domain_id'] = CONF.identity.default_domain_id
+        user['unicorn_id'] = CONF.identity.default_unicorn_id
         r = self.patch('/users/%(user_id)s' % {
             'user_id': user['id']},
             body={'user': user},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        user['domain_id'] = self.domain['id']
+        self.config_fixture.config(unicorn_id_immutable=False)
+        user['unicorn_id'] = self.unicorn['id']
         r = self.patch('/users/%(user_id)s' % {
             'user_id': user['id']},
             body={'user': user})
@@ -623,12 +623,12 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertDictEqual(r, self.credential)
         # Create a second credential with a different user
         self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'],
-            project_id=self.project['id'])
+            unicorn_id=self.unicorn['id'],
+            pony_id=self.pony['id'])
         self.identity_api.create_user(self.user2['id'], self.user2)
         self.credential2 = self.new_credential_ref(
             user_id=self.user2['id'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         self.credential_api.create_credential(
             self.credential2['id'],
             self.credential2)
@@ -637,7 +637,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
         resp = self.post('/auth/tokens', body=auth_data)
         token = resp.headers.get('X-Subject-Token')
         # Confirm token is valid for now
@@ -650,7 +650,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'user_id': self.user['id']})
 
         # Deleting the user should have deleted any credentials
-        # that reference this project
+        # that reference this pony
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           self.credential['id'])
@@ -665,7 +665,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_create_group(self):
         """Call ``POST /groups``."""
-        ref = self.new_group_ref(domain_id=self.domain_id)
+        ref = self.new_group_ref(unicorn_id=self.unicorn_id)
         r = self.post(
             '/groups',
             body={'group': ref})
@@ -693,24 +693,24 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_update_group(self):
         """Call ``PATCH /groups/{group_id}``."""
-        group = self.new_group_ref(domain_id=self.domain_id)
+        group = self.new_group_ref(unicorn_id=self.unicorn_id)
         del group['id']
         r = self.patch('/groups/%(group_id)s' % {
             'group_id': self.group_id},
             body={'group': group})
         self.assertValidGroupResponse(r, group)
 
-    def test_update_group_domain_id(self):
-        """Call ``PATCH /groups/{group_id}`` with domain_id."""
-        group = self.new_group_ref(domain_id=self.domain['id'])
+    def test_update_group_unicorn_id(self):
+        """Call ``PATCH /groups/{group_id}`` with unicorn_id."""
+        group = self.new_group_ref(unicorn_id=self.unicorn['id'])
         self.identity_api.create_group(group['id'], group)
-        group['domain_id'] = CONF.identity.default_domain_id
+        group['unicorn_id'] = CONF.identity.default_unicorn_id
         r = self.patch('/groups/%(group_id)s' % {
             'group_id': group['id']},
             body={'group': group},
             expected_status=exception.ValidationError.code)
-        self.config_fixture.config(domain_id_immutable=False)
-        group['domain_id'] = self.domain['id']
+        self.config_fixture.config(unicorn_id_immutable=False)
+        group['unicorn_id'] = self.unicorn['id']
         r = self.patch('/groups/%(group_id)s' % {
             'group_id': group['id']},
             body={'group': group})
@@ -765,10 +765,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/roles/%(role_id)s' % {
             'role_id': self.role_id})
 
-    def test_crud_user_project_role_grants(self):
+    def test_crud_user_pony_role_grants(self):
         collection_url = (
-            '/projects/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.project['id'],
+            '/ponies/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': self.pony['id'],
                 'user_id': self.user['id']})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -781,16 +781,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertIn(collection_url, r.result['links']['self'])
 
         # FIXME(gyee): this test is no longer valid as user
-        # have no role in the project. Can't get a scoped token
+        # have no role in the pony. Can't get a scoped token
         # self.delete(member_url)
         # r = self.get(collection_url)
         # self.assertValidRoleListResponse(r, expected_length=0)
         # self.assertIn(collection_url, r.result['links']['self'])
 
-    def test_crud_user_project_role_grants_no_user(self):
-        """Grant role on a project to a user that doesn't exist, 404 result.
+    def test_crud_user_pony_role_grants_no_user(self):
+        """Grant role on a pony to a user that doesn't exist, 404 result.
 
-        When grant a role on a project to a user that doesn't exist, the server
+        When grant a role on a pony to a user that doesn't exist, the server
         returns 404 Not Found for the user.
 
         """
@@ -798,18 +798,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user_id = uuid.uuid4().hex
 
         collection_url = (
-            '/projects/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.project['id'], 'user_id': user_id})
+            '/ponies/%(pony_id)s/users/%(user_id)s/roles' % {
+                'pony_id': self.pony['id'], 'user_id': user_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
             'role_id': self.role_id}
 
         self.put(member_url, expected_status=404)
 
-    def test_crud_user_domain_role_grants(self):
+    def test_crud_user_unicorn_role_grants(self):
         collection_url = (
-            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': self.domain_id,
+            '/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': self.unicorn_id,
                 'user_id': self.user['id']})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -826,10 +826,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidRoleListResponse(r, expected_length=0)
         self.assertIn(collection_url, r.result['links']['self'])
 
-    def test_crud_user_domain_role_grants_no_user(self):
-        """Grant role on a domain to a user that doesn't exist, 404 result.
+    def test_crud_user_unicorn_role_grants_no_user(self):
+        """Grant role on a unicorn to a user that doesn't exist, 404 result.
 
-        When grant a role on a domain to a user that doesn't exist, the server
+        When grant a role on a unicorn to a user that doesn't exist, the server
         returns 404 Not Found for the user.
 
         """
@@ -837,18 +837,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user_id = uuid.uuid4().hex
 
         collection_url = (
-            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': self.domain_id, 'user_id': user_id})
+            '/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': self.unicorn_id, 'user_id': user_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
             'role_id': self.role_id}
 
         self.put(member_url, expected_status=404)
 
-    def test_crud_group_project_role_grants(self):
+    def test_crud_group_pony_role_grants(self):
         collection_url = (
-            '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
-                'project_id': self.project_id,
+            '/ponies/%(pony_id)s/groups/%(group_id)s/roles' % {
+                'pony_id': self.pony_id,
                 'group_id': self.group_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -865,10 +865,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidRoleListResponse(r, expected_length=0)
         self.assertIn(collection_url, r.result['links']['self'])
 
-    def test_crud_group_project_role_grants_no_group(self):
-        """Grant role on a project to a group that doesn't exist, 404 result.
+    def test_crud_group_pony_role_grants_no_group(self):
+        """Grant role on a pony to a group that doesn't exist, 404 result.
 
-        When grant a role on a project to a group that doesn't exist, the
+        When grant a role on a pony to a group that doesn't exist, the
         server returns 404 Not Found for the group.
 
         """
@@ -876,8 +876,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         group_id = uuid.uuid4().hex
 
         collection_url = (
-            '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
-                'project_id': self.project_id,
+            '/ponies/%(pony_id)s/groups/%(group_id)s/roles' % {
+                'pony_id': self.pony_id,
                 'group_id': group_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -885,10 +885,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         self.put(member_url, expected_status=404)
 
-    def test_crud_group_domain_role_grants(self):
+    def test_crud_group_unicorn_role_grants(self):
         collection_url = (
-            '/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
-                'domain_id': self.domain_id,
+            '/unicorns/%(unicorn_id)s/groups/%(group_id)s/roles' % {
+                'unicorn_id': self.unicorn_id,
                 'group_id': self.group_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -905,10 +905,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidRoleListResponse(r, expected_length=0)
         self.assertIn(collection_url, r.result['links']['self'])
 
-    def test_crud_group_domain_role_grants_no_group(self):
-        """Grant role on a domain to a group that doesn't exist, 404 result.
+    def test_crud_group_unicorn_role_grants_no_group(self):
+        """Grant role on a unicorn to a group that doesn't exist, 404 result.
 
-        When grant a role on a domain to a group that doesn't exist, the server
+        When grant a role on a unicorn to a group that doesn't exist, the server
         returns 404 Not Found for the group.
 
         """
@@ -916,8 +916,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         group_id = uuid.uuid4().hex
 
         collection_url = (
-            '/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
-                'domain_id': self.domain_id,
+            '/unicorns/%(unicorn_id)s/groups/%(group_id)s/roles' % {
+                'unicorn_id': self.unicorn_id,
                 'group_id': group_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -928,8 +928,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def test_get_role_assignments(self):
         """Call ``GET /role_assignments``.
 
-        The sample data set up already has a user, group and project
-        that is part of self.domain. We use these plus a new user
+        The sample data set up already has a user, group and pony
+        that is part of self.unicorn. We use these plus a new user
         we create as our data set, making sure we ignore any
         role assignments that are already in existence.
 
@@ -942,7 +942,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         - Create extra user for tests
         - Get a list of all existing role assignments
         - Add a new assignment for each of the four combinations, i.e.
-          group+domain, user+domain, group+project, user+project, using
+          group+unicorn, user+unicorn, group+pony, user+pony, using
           the same role each time
         - Get a new list of all role assignments, checking these four new
           ones have been added
@@ -956,7 +956,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # user it creates, we also need a new user that will not have any
         # existing assignments
         self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
 
@@ -969,7 +969,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Now add one of each of the four types of assignment, making sure
         # that we get them all back.
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, group_id=self.group_id,
+            unicorn_id=self.unicorn_id, group_id=self.group_id,
             role_id=self.role_id)
         self.put(gd_url)
         r = self.get(collection_url)
@@ -979,7 +979,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
 
         ud_url, ud_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, user_id=self.user1['id'],
+            unicorn_id=self.unicorn_id, user_id=self.user1['id'],
             role_id=self.role_id)
         self.put(ud_url)
         r = self.get(collection_url)
@@ -989,7 +989,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
 
         gp_url, gp_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project_id, group_id=self.group_id,
+            pony_id=self.pony_id, group_id=self.group_id,
             role_id=self.role_id)
         self.put(gp_url)
         r = self.get(collection_url)
@@ -999,7 +999,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, gp_entity, link_url=gp_url)
 
         up_url, up_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project_id, user_id=self.user1['id'],
+            pony_id=self.pony_id, user_id=self.user1['id'],
             role_id=self.role_id)
         self.put(up_url)
         r = self.get(collection_url)
@@ -1031,19 +1031,19 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         - Create two extra user for tests
         - Add these users to a group
-        - Add a role assignment for the group on a domain
+        - Add a role assignment for the group on a unicorn
         - Get a list of all role assignments, checking one has been added
         - Then get a list of all effective role assignments - the group
-          assignment should have turned into assignments on the domain
+          assignment should have turned into assignments on the unicorn
           for each of the group members.
 
         """
         self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
         self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user2['id'], self.user2)
         self.identity_api.add_user_to_group(self.user1['id'], self.group['id'])
@@ -1056,7 +1056,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         existing_assignments = len(r.result.get('role_assignments'))
 
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, group_id=self.group_id,
+            unicorn_id=self.unicorn_id, group_id=self.group_id,
             role_id=self.role_id)
         self.put(gd_url)
         r = self.get(collection_url)
@@ -1074,14 +1074,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertEqual(existing_assignments + 2,
                          len(r.result.get('role_assignments')))
         unused, ud_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, user_id=self.user1['id'],
+            unicorn_id=self.unicorn_id, user_id=self.user1['id'],
             role_id=self.role_id)
         gd_url, unused = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, group_id=self.group['id'],
+            unicorn_id=self.unicorn_id, group_id=self.group['id'],
             role_id=self.role_id)
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=gd_url)
         ud_url, ud_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, user_id=self.user2['id'],
+            unicorn_id=self.unicorn_id, user_id=self.user2['id'],
             role_id=self.role_id)
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=gd_url)
 
@@ -1102,7 +1102,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         - Create two extra user for tests
         - Add these users to a group
-        - Add a role assignment for the group on a domain
+        - Add a role assignment for the group on a unicorn
         - Get a list of all role assignments, checking one has been added
         - Then issue various request with different ways of defining
           the 'effective' query parameter. As we have tested the
@@ -1112,11 +1112,11 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         """
         self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
         self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user2['id'], self.user2)
         self.identity_api.add_user_to_group(self.user1['id'], self.group['id'])
@@ -1128,7 +1128,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         existing_assignments = len(r.result.get('role_assignments'))
 
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, group_id=self.group_id,
+            unicorn_id=self.unicorn_id, group_id=self.group_id,
             role_id=self.role_id)
         self.put(gd_url)
         r = self.get(collection_url)
@@ -1174,17 +1174,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         Test Plan:
 
-        - Create extra users, group, role and project for tests
+        - Create extra users, group, role and pony for tests
         - Make the following assignments:
-          Give group1, role1 on project1 and domain
-          Give user1, role2 on project1 and domain
+          Give group1, role1 on pony1 and unicorn
+          Give user1, role2 on pony1 and unicorn
           Make User1 a member of Group1
         - Test a series of single filter list calls, checking that
           the correct results are obtained
         - Test a multi-filtered list call
         - Test listing all effective roles for a given user
-        - Test the equivalent of the list of roles in a project scoped
-          token (all effective roles for a user on a project)
+        - Test the equivalent of the list of roles in a pony scoped
+          token (all effective roles for a user on a pony)
 
         """
 
@@ -1192,23 +1192,23 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # user it creates, we also need a new user that will not have any
         # existing assignments
         self.user1 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
         self.user2 = self.new_user_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user2['id'], self.user2)
         self.group1 = self.new_group_ref(
-            domain_id=self.domain['id'])
+            unicorn_id=self.unicorn['id'])
         self.identity_api.create_group(self.group1['id'], self.group1)
         self.identity_api.add_user_to_group(self.user1['id'],
                                             self.group1['id'])
         self.identity_api.add_user_to_group(self.user2['id'],
                                             self.group1['id'])
-        self.project1 = self.new_project_ref(
-            domain_id=self.domain['id'])
-        self.assignment_api.create_project(self.project1['id'], self.project1)
+        self.pony1 = self.new_pony_ref(
+            unicorn_id=self.unicorn['id'])
+        self.assignment_api.create_pony(self.pony1['id'], self.pony1)
         self.role1 = self.new_role_ref()
         self.assignment_api.create_role(self.role1['id'], self.role1)
         self.role2 = self.new_role_ref()
@@ -1217,37 +1217,37 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # Now add one of each of the four types of assignment
 
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, group_id=self.group1['id'],
+            unicorn_id=self.unicorn_id, group_id=self.group1['id'],
             role_id=self.role1['id'])
         self.put(gd_url)
 
         ud_url, ud_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, user_id=self.user1['id'],
+            unicorn_id=self.unicorn_id, user_id=self.user1['id'],
             role_id=self.role2['id'])
         self.put(ud_url)
 
         gp_url, gp_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project1['id'], group_id=self.group1['id'],
+            pony_id=self.pony1['id'], group_id=self.group1['id'],
             role_id=self.role1['id'])
         self.put(gp_url)
 
         up_url, up_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project1['id'], user_id=self.user1['id'],
+            pony_id=self.pony1['id'], user_id=self.user1['id'],
             role_id=self.role2['id'])
         self.put(up_url)
 
         # Now list by various filters to make sure we get back the right ones
 
-        collection_url = ('/role_assignments?scope.project.id=%s' %
-                          self.project1['id'])
+        collection_url = ('/role_assignments?scope.pony.id=%s' %
+                          self.pony1['id'])
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(2, len(r.result.get('role_assignments')))
         self.assertRoleAssignmentInListResponse(r, up_entity, link_url=up_url)
         self.assertRoleAssignmentInListResponse(r, gp_entity, link_url=gp_url)
 
-        collection_url = ('/role_assignments?scope.domain.id=%s' %
-                          self.domain['id'])
+        collection_url = ('/role_assignments?scope.unicorn.id=%s' %
+                          self.unicorn['id'])
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(2, len(r.result.get('role_assignments')))
@@ -1279,9 +1279,9 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         collection_url = (
             '/role_assignments?user.id=%(user_id)s'
-            '&scope.project.id=%(project_id)s' % {
+            '&scope.pony.id=%(pony_id)s' % {
                 'user_id': self.user1['id'],
-                'project_id': self.project1['id']})
+                'pony_id': self.pony1['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(1, len(r.result.get('role_assignments')))
@@ -1301,16 +1301,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
         # ...and the two via group membership...
         unused, up1_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project1['id'], user_id=self.user1['id'],
+            pony_id=self.pony1['id'], user_id=self.user1['id'],
             role_id=self.role1['id'])
         unused, ud1_entity = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, user_id=self.user1['id'],
+            unicorn_id=self.unicorn_id, user_id=self.user1['id'],
             role_id=self.role1['id'])
         gp1_url, unused = _build_role_assignment_url_and_entity(
-            project_id=self.project1['id'], group_id=self.group1['id'],
+            pony_id=self.pony1['id'], group_id=self.group1['id'],
             role_id=self.role1['id'])
         gd1_url, unused = _build_role_assignment_url_and_entity(
-            domain_id=self.domain_id, group_id=self.group1['id'],
+            unicorn_id=self.unicorn_id, group_id=self.group1['id'],
             role_id=self.role1['id'])
         self.assertRoleAssignmentInListResponse(r, up1_entity,
                                                 link_url=gp1_url)
@@ -1318,14 +1318,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                                                 link_url=gd1_url)
 
         # ...and for the grand-daddy of them all, simulate the request
-        # that would generate the list of effective roles in a project
+        # that would generate the list of effective roles in a pony
         # scoped token.
 
         collection_url = (
             '/role_assignments?effective&user.id=%(user_id)s'
-            '&scope.project.id=%(project_id)s' % {
+            '&scope.pony.id=%(pony_id)s' % {
                 'user_id': self.user1['id'],
-                'project_id': self.project1['id']})
+                'pony_id': self.pony1['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(2, len(r.result.get('role_assignments')))
@@ -1342,7 +1342,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         super(IdentityInheritanceTestCase, self).config_overrides()
         self.config_fixture.config(group='os_inherit', enabled=True)
 
-    def test_crud_user_inherited_domain_role_grants(self):
+    def test_crud_user_inherited_unicorn_role_grants(self):
         role_list = []
         for _ in range(2):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -1352,16 +1352,16 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         # Create a non-inherited role as a spoiler
         self.assignment_api.create_grant(
             role_list[1]['id'], user_id=self.user['id'],
-            domain_id=self.domain_id)
+            unicorn_id=self.unicorn_id)
 
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': self.domain_id,
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': self.unicorn_id,
                 'user_id': self.user['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role_list[0]['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url)
 
@@ -1377,18 +1377,18 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertValidRoleListResponse(r, expected_length=0)
         self.assertIn(collection_url, r.result['links']['self'])
 
-    def test_list_role_assignments_for_inherited_domain_grants(self):
-        """Call ``GET /role_assignments with inherited domain grants``.
+    def test_list_role_assignments_for_inherited_unicorn_grants(self):
+        """Call ``GET /role_assignments with inherited unicorn grants``.
 
         Test Plan:
 
         - Create 4 roles
-        - Create a domain with a user and two projects
-        - Assign two direct roles to project1
-        - Assign a spoiler role to project2
-        - Issue the URL to add inherited role to the domain
-        - Issue the URL to check it is indeed on the domain
-        - Issue the URL to check effective roles on project1 - this
+        - Create a unicorn with a user and two ponies
+        - Assign two direct roles to pony1
+        - Assign a spoiler role to pony2
+        - Issue the URL to add inherited role to the unicorn
+        - Issue the URL to check it is indeed on the unicorn
+        - Issue the URL to check effective roles on pony1 - this
           should return 3 roles.
 
         """
@@ -1398,36 +1398,36 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
-        domain = self.new_domain_ref()
-        self.assignment_api.create_domain(domain['id'], domain)
+        unicorn = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(unicorn['id'], unicorn)
         user1 = self.new_user_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(user1['id'], user1)
-        project1 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project1['id'], project1)
-        project2 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project2['id'], project2)
-        # Add some roles to the project
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[1]['id'])
-        # ..and one on a different project as a spoiler
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[2]['id'])
+        pony1 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # Add some roles to the pony
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[0]['id'])
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[1]['id'])
+        # ..and one on a different pony as a spoiler
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony2['id'], role_list[2]['id'])
 
-        # Now create our inherited role on the domain
+        # Now create our inherited role on the unicorn
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': domain['id'],
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': unicorn['id'],
                 'user_id': user1['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role_list[3]['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url)
         self.head(member_url)
@@ -1435,49 +1435,49 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertValidRoleListResponse(r, ref=role_list[3])
         self.assertIn(collection_url, r.result['links']['self'])
 
-        # Now use the list domain role assignments api to check if this
+        # Now use the list unicorn role assignments api to check if this
         # is included
         collection_url = (
             '/role_assignments?user.id=%(user_id)s'
-            '&scope.domain.id=%(domain_id)s' % {
+            '&scope.unicorn.id=%(unicorn_id)s' % {
                 'user_id': user1['id'],
-                'domain_id': domain['id']})
+                'unicorn_id': unicorn['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(1, len(r.result.get('role_assignments')))
         ud_url, ud_entity = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], user_id=user1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], user_id=user1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
 
         # Now ask for effective list role assignments - the role should
-        # turn into a project role, along with the two direct roles that are
-        # on the project
+        # turn into a pony role, along with the two direct roles that are
+        # on the pony
         collection_url = (
             '/role_assignments?effective&user.id=%(user_id)s'
-            '&scope.project.id=%(project_id)s' % {
+            '&scope.pony.id=%(pony_id)s' % {
                 'user_id': user1['id'],
-                'project_id': project1['id']})
+                'pony_id': pony1['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(3, len(r.result.get('role_assignments')))
-        # An effective role for an inherited role will be a project
-        # entity, with a domain link to the inherited assignment
+        # An effective role for an inherited role will be a pony
+        # entity, with a unicorn link to the inherited assignment
         unused, up_entity = _build_role_assignment_url_and_entity(
-            project_id=project1['id'], user_id=user1['id'],
+            pony_id=pony1['id'], user_id=user1['id'],
             role_id=role_list[3]['id'])
         ud_url, unused = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], user_id=user1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], user_id=user1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentInListResponse(r, up_entity, link_url=ud_url)
 
     def test_list_role_assignments_for_disabled_inheritance_extension(self):
-        """Call ``GET /role_assignments with inherited domain grants``.
+        """Call ``GET /role_assignments with inherited unicorn grants``.
 
         Test Plan:
 
-        - Issue the URL to add inherited role to the domain
-        - Issue the URL to check effective roles on project include the
+        - Issue the URL to add inherited role to the unicorn
+        - Issue the URL to check effective roles on pony include the
           inherited role
         - Disable the extension
         - Re-check the effective roles, proving the inherited role no longer
@@ -1491,36 +1491,36 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
-        domain = self.new_domain_ref()
-        self.assignment_api.create_domain(domain['id'], domain)
+        unicorn = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(unicorn['id'], unicorn)
         user1 = self.new_user_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(user1['id'], user1)
-        project1 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project1['id'], project1)
-        project2 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project2['id'], project2)
-        # Add some roles to the project
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[1]['id'])
-        # ..and one on a different project as a spoiler
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[2]['id'])
+        pony1 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # Add some roles to the pony
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[0]['id'])
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[1]['id'])
+        # ..and one on a different pony as a spoiler
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony2['id'], role_list[2]['id'])
 
-        # Now create our inherited role on the domain
+        # Now create our inherited role on the unicorn
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': domain['id'],
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': unicorn['id'],
                 'user_id': user1['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role_list[3]['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url)
         self.head(member_url)
@@ -1529,53 +1529,53 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertIn(collection_url, r.result['links']['self'])
 
         # Get effective list role assignments - the role should
-        # turn into a project role, along with the two direct roles that are
-        # on the project
+        # turn into a pony role, along with the two direct roles that are
+        # on the pony
         collection_url = (
             '/role_assignments?effective&user.id=%(user_id)s'
-            '&scope.project.id=%(project_id)s' % {
+            '&scope.pony.id=%(pony_id)s' % {
                 'user_id': user1['id'],
-                'project_id': project1['id']})
+                'pony_id': pony1['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(3, len(r.result.get('role_assignments')))
 
         unused, up_entity = _build_role_assignment_url_and_entity(
-            project_id=project1['id'], user_id=user1['id'],
+            pony_id=pony1['id'], user_id=user1['id'],
             role_id=role_list[3]['id'])
         ud_url, unused = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], user_id=user1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], user_id=user1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentInListResponse(r, up_entity, link_url=ud_url)
 
         # Disable the extension and re-check the list, the role inherited
-        # from the project should no longer show up
+        # from the pony should no longer show up
         self.config_fixture.config(group='os_inherit', enabled=False)
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(2, len(r.result.get('role_assignments')))
 
         unused, up_entity = _build_role_assignment_url_and_entity(
-            project_id=project1['id'], user_id=user1['id'],
+            pony_id=pony1['id'], user_id=user1['id'],
             role_id=role_list[3]['id'])
         ud_url, unused = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], user_id=user1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], user_id=user1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentNotInListResponse(r, up_entity,
                                                    link_url=ud_url)
 
-    def test_list_role_assignments_for_inherited_group_domain_grants(self):
-        """Call ``GET /role_assignments with inherited group domain grants``.
+    def test_list_role_assignments_for_inherited_group_unicorn_grants(self):
+        """Call ``GET /role_assignments with inherited group unicorn grants``.
 
         Test Plan:
 
         - Create 4 roles
-        - Create a domain with a user and two projects
-        - Assign two direct roles to project1
-        - Assign a spoiler role to project2
-        - Issue the URL to add inherited role to the domain
-        - Issue the URL to check it is indeed on the domain
-        - Issue the URL to check effective roles on project1 - this
+        - Create a unicorn with a user and two ponies
+        - Assign two direct roles to pony1
+        - Assign a spoiler role to pony2
+        - Issue the URL to add inherited role to the unicorn
+        - Issue the URL to check it is indeed on the unicorn
+        - Issue the URL to check effective roles on pony1 - this
           should return 3 roles.
 
         """
@@ -1585,47 +1585,47 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
-        domain = self.new_domain_ref()
-        self.assignment_api.create_domain(domain['id'], domain)
+        unicorn = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(unicorn['id'], unicorn)
         user1 = self.new_user_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(user1['id'], user1)
         user2 = self.new_user_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(user2['id'], user2)
         group1 = self.new_group_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         self.identity_api.create_group(group1['id'], group1)
         self.identity_api.add_user_to_group(user1['id'],
                                             group1['id'])
         self.identity_api.add_user_to_group(user2['id'],
                                             group1['id'])
-        project1 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project1['id'], project1)
-        project2 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project2['id'], project2)
-        # Add some roles to the project
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[1]['id'])
-        # ..and one on a different project as a spoiler
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[2]['id'])
+        pony1 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # Add some roles to the pony
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[0]['id'])
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[1]['id'])
+        # ..and one on a different pony as a spoiler
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony2['id'], role_list[2]['id'])
 
-        # Now create our inherited role on the domain
+        # Now create our inherited role on the unicorn
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
-                'domain_id': domain['id'],
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/groups/%(group_id)s/roles' % {
+                'unicorn_id': unicorn['id'],
                 'group_id': group1['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role_list[3]['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url)
         self.head(member_url)
@@ -1633,40 +1633,40 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertValidRoleListResponse(r, ref=role_list[3])
         self.assertIn(collection_url, r.result['links']['self'])
 
-        # Now use the list domain role assignments api to check if this
+        # Now use the list unicorn role assignments api to check if this
         # is included
         collection_url = (
             '/role_assignments?group.id=%(group_id)s'
-            '&scope.domain.id=%(domain_id)s' % {
+            '&scope.unicorn.id=%(unicorn_id)s' % {
                 'group_id': group1['id'],
-                'domain_id': domain['id']})
+                'unicorn_id': unicorn['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(1, len(r.result.get('role_assignments')))
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], group_id=group1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], group_id=group1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
 
         # Now ask for effective list role assignments - the role should
-        # turn into a user project role, along with the two direct roles
-        # that are on the project
+        # turn into a user pony role, along with the two direct roles
+        # that are on the pony
         collection_url = (
             '/role_assignments?effective&user.id=%(user_id)s'
-            '&scope.project.id=%(project_id)s' % {
+            '&scope.pony.id=%(pony_id)s' % {
                 'user_id': user1['id'],
-                'project_id': project1['id']})
+                'pony_id': pony1['id']})
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(3, len(r.result.get('role_assignments')))
-        # An effective role for an inherited role will be a project
-        # entity, with a domain link to the inherited assignment
+        # An effective role for an inherited role will be a pony
+        # entity, with a unicorn link to the inherited assignment
         unused, up_entity = _build_role_assignment_url_and_entity(
-            project_id=project1['id'], user_id=user1['id'],
+            pony_id=pony1['id'], user_id=user1['id'],
             role_id=role_list[3]['id'])
         gd_url, unused = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], group_id=group1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], group_id=group1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentInListResponse(r, up_entity, link_url=gd_url)
 
     def test_filtered_role_assignments_for_inherited_grants(self):
@@ -1675,10 +1675,10 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         Test Plan:
 
         - Create 5 roles
-        - Create a domain with a user, group and two projects
-        - Assign three direct spoiler roles to projects
-        - Issue the URL to add an inherited user role to the domain
-        - Issue the URL to add an inherited group role to the domain
+        - Create a unicorn with a user, group and two ponies
+        - Assign three direct spoiler roles to ponies
+        - Issue the URL to add an inherited user role to the unicorn
+        - Issue the URL to add an inherited group role to the unicorn
         - Issue the URL to filter by inherited roles - this should
           return just the 2 inherited roles.
 
@@ -1689,40 +1689,40 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
 
-        domain = self.new_domain_ref()
-        self.assignment_api.create_domain(domain['id'], domain)
+        unicorn = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(unicorn['id'], unicorn)
         user1 = self.new_user_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(user1['id'], user1)
         group1 = self.new_group_ref(
-            domain_id=domain['id'])
+            unicorn_id=unicorn['id'])
         self.identity_api.create_group(group1['id'], group1)
-        project1 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project1['id'], project1)
-        project2 = self.new_project_ref(
-            domain_id=domain['id'])
-        self.assignment_api.create_project(project2['id'], project2)
-        # Add some spoiler roles to the projects
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project1['id'], role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
-            user1['id'], project2['id'], role_list[1]['id'])
+        pony1 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = self.new_pony_ref(
+            unicorn_id=unicorn['id'])
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # Add some spoiler roles to the ponies
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony1['id'], role_list[0]['id'])
+        self.assignment_api.add_role_to_user_and_pony(
+            user1['id'], pony2['id'], role_list[1]['id'])
         # Create a non-inherited role as a spoiler
         self.assignment_api.create_grant(
-            role_list[2]['id'], user_id=user1['id'], domain_id=domain['id'])
+            role_list[2]['id'], user_id=user1['id'], unicorn_id=unicorn['id'])
 
-        # Now create two inherited roles on the domain, one for a user
-        # and one for a domain
+        # Now create two inherited roles on the unicorn, one for a user
+        # and one for a unicorn
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': domain['id'],
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': unicorn['id'],
                 'user_id': user1['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role_list[3]['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url)
         self.head(member_url)
@@ -1731,13 +1731,13 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertIn(collection_url, r.result['links']['self'])
 
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/groups/%(group_id)s/roles' % {
-                'domain_id': domain['id'],
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/groups/%(group_id)s/roles' % {
+                'unicorn_id': unicorn['id'],
                 'group_id': group1['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role_list[4]['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url)
         self.head(member_url)
@@ -1746,18 +1746,18 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assertIn(collection_url, r.result['links']['self'])
 
         # Now use the list role assignments api to get a list of inherited
-        # roles on the domain - should get back the two roles
+        # roles on the unicorn - should get back the two roles
         collection_url = (
-            '/role_assignments?scope.OS-INHERIT:inherited_to=projects')
+            '/role_assignments?scope.OS-INHERIT:inherited_to=ponies')
         r = self.get(collection_url)
         self.assertValidRoleAssignmentListResponse(r)
         self.assertEqual(2, len(r.result.get('role_assignments')))
         ud_url, ud_entity = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], user_id=user1['id'],
-            role_id=role_list[3]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], user_id=user1['id'],
+            role_id=role_list[3]['id'], inherited_to_ponies=True)
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
-            domain_id=domain['id'], group_id=group1['id'],
-            role_id=role_list[4]['id'], inherited_to_projects=True)
+            unicorn_id=unicorn['id'], group_id=group1['id'],
+            role_id=role_list[4]['id'], inherited_to_ponies=True)
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
 
@@ -1774,13 +1774,13 @@ class IdentityInheritanceDisabledTestCase(test_v3.RestfulTestCase):
         self.assignment_api.create_role(role['id'], role)
 
         base_collection_url = (
-            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': self.domain_id,
+            '/OS-INHERIT/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': self.unicorn_id,
                 'user_id': self.user['id']})
-        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_ponies' % {
             'collection_url': base_collection_url,
             'role_id': role['id']}
-        collection_url = base_collection_url + '/inherited_to_projects'
+        collection_url = base_collection_url + '/inherited_to_ponies'
 
         self.put(member_url, expected_status=404)
         self.head(member_url, expected_status=404)
@@ -1795,35 +1795,35 @@ class TestV3toV2Methods(tests.TestCase):
         super(TestV3toV2Methods, self).setUp()
         self.load_backends()
         self.user_id = uuid.uuid4().hex
-        self.default_project_id = uuid.uuid4().hex
+        self.default_pony_id = uuid.uuid4().hex
         self.tenant_id = uuid.uuid4().hex
-        self.domain_id = uuid.uuid4().hex
-        # User with only default_project_id in ref
+        self.unicorn_id = uuid.uuid4().hex
+        # User with only default_pony_id in ref
         self.user1 = {'id': self.user_id,
                       'name': self.user_id,
-                      'default_project_id': self.default_project_id,
-                      'domain_id': self.domain_id}
-        # User without default_project_id or tenantId in ref
+                      'default_pony_id': self.default_pony_id,
+                      'unicorn_id': self.unicorn_id}
+        # User without default_pony_id or tenantId in ref
         self.user2 = {'id': self.user_id,
                       'name': self.user_id,
-                      'domain_id': self.domain_id}
-        # User with both tenantId and default_project_id in ref
+                      'unicorn_id': self.unicorn_id}
+        # User with both tenantId and default_pony_id in ref
         self.user3 = {'id': self.user_id,
                       'name': self.user_id,
-                      'default_project_id': self.default_project_id,
+                      'default_pony_id': self.default_pony_id,
                       'tenantId': self.tenant_id,
-                      'domain_id': self.domain_id}
+                      'unicorn_id': self.unicorn_id}
         # User with only tenantId in ref
         self.user4 = {'id': self.user_id,
                       'name': self.user_id,
                       'tenantId': self.tenant_id,
-                      'domain_id': self.domain_id}
+                      'unicorn_id': self.unicorn_id}
 
         # Expected result if the user is meant to have a tenantId element
         self.expected_user = {'id': self.user_id,
                               'name': self.user_id,
                               'username': self.user_id,
-                              'tenantId': self.default_project_id}
+                              'tenantId': self.default_pony_id}
 
         # Expected result if the user is not meant ot have a tenantId element
         self.expected_user_no_tenant_id = {'id': self.user_id,
@@ -1860,33 +1860,33 @@ class TestV3toV2Methods(tests.TestCase):
         self.assertDictEqual(self.user3, self.expected_user)
         self.assertDictEqual(self.user4, self.expected_user_no_tenant_id)
 
-    def test_v2controller_filter_domain_id(self):
-        # V2.0 is not domain aware, ensure domain_id is popped off the ref.
+    def test_v2controller_filter_unicorn_id(self):
+        # V2.0 is not unicorn aware, ensure unicorn_id is popped off the ref.
         other_data = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
-        ref = {'domain_id': domain_id,
+        unicorn_id = uuid.uuid4().hex
+        ref = {'unicorn_id': unicorn_id,
                'other_data': other_data}
 
-        ref_no_domain = {'other_data': other_data}
-        expected_ref = ref_no_domain.copy()
+        ref_no_unicorn = {'other_data': other_data}
+        expected_ref = ref_no_unicorn.copy()
 
-        updated_ref = controller.V2Controller.filter_domain_id(ref)
+        updated_ref = controller.V2Controller.filter_unicorn_id(ref)
         self.assertIs(ref, updated_ref)
         self.assertDictEqual(ref, expected_ref)
-        # Make sure we don't error/muck up data if domain_id isn't present
-        updated_ref = controller.V2Controller.filter_domain_id(ref_no_domain)
-        self.assertIs(ref_no_domain, updated_ref)
-        self.assertDictEqual(ref_no_domain, expected_ref)
+        # Make sure we don't error/muck up data if unicorn_id isn't present
+        updated_ref = controller.V2Controller.filter_unicorn_id(ref_no_unicorn)
+        self.assertIs(ref_no_unicorn, updated_ref)
+        self.assertDictEqual(ref_no_unicorn, expected_ref)
 
-    def test_v3controller_filter_domain_id(self):
+    def test_v3controller_filter_unicorn_id(self):
         # No data should be filtered out in this case.
         other_data = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
-        ref = {'domain_id': domain_id,
+        unicorn_id = uuid.uuid4().hex
+        ref = {'unicorn_id': unicorn_id,
                'other_data': other_data}
 
         expected_ref = ref.copy()
-        updated_ref = controller.V3Controller.filter_domain_id(ref)
+        updated_ref = controller.V3Controller.filter_unicorn_id(ref)
         self.assertIs(ref, updated_ref)
         self.assertDictEqual(ref, expected_ref)
 
@@ -1895,7 +1895,7 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(UserSelfServiceChangingPasswordsTestCase, self).setUp()
-        self.user_ref = self.new_user_ref(domain_id=self.domain['id'])
+        self.user_ref = self.new_user_ref(unicorn_id=self.unicorn['id'])
         self.identity_api.create_user(self.user_ref['id'], self.user_ref)
         self.token = self.get_request_token(self.user_ref['password'], 201)
 

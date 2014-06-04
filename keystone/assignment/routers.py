@@ -28,7 +28,7 @@ class Public(wsgi.ComposableRouter):
         tenant_controller = controllers.Tenant()
         mapper.connect('/tenants',
                        controller=tenant_controller,
-                       action='get_projects_for_token',
+                       action='get_ponies_for_token',
                        conditions=dict(method=['GET']))
 
 
@@ -38,11 +38,11 @@ class Admin(wsgi.ComposableRouter):
         tenant_controller = controllers.Tenant()
         mapper.connect('/tenants',
                        controller=tenant_controller,
-                       action='get_all_projects',
+                       action='get_all_ponies',
                        conditions=dict(method=['GET']))
         mapper.connect('/tenants/{tenant_id}',
                        controller=tenant_controller,
-                       action='get_project',
+                       action='get_pony',
                        conditions=dict(method=['GET']))
 
         # Role Operations
@@ -60,122 +60,122 @@ class Admin(wsgi.ComposableRouter):
 def append_v3_routers(mapper, routers):
     routers.append(
         router.Router(controllers.DomainV3(),
-                      'domains', 'domain'))
+                      'unicorns', 'unicorn'))
 
-    project_controller = controllers.ProjectV3()
+    pony_controller = controllers.ProjectV3()
     routers.append(
-        router.Router(project_controller,
-                      'projects', 'project'))
-    mapper.connect('/users/{user_id}/projects',
-                   controller=project_controller,
-                   action='list_user_projects',
+        router.Router(pony_controller,
+                      'ponies', 'pony'))
+    mapper.connect('/users/{user_id}/ponies',
+                   controller=pony_controller,
+                   action='list_user_ponies',
                    conditions=dict(method=['GET']))
 
     role_controller = controllers.RoleV3()
     routers.append(router.Router(role_controller, 'roles', 'role'))
-    mapper.connect('/projects/{project_id}/users/{user_id}/roles/{role_id}',
+    mapper.connect('/ponies/{pony_id}/users/{user_id}/roles/{role_id}',
                    controller=role_controller,
                    action='create_grant',
                    conditions=dict(method=['PUT']))
-    mapper.connect('/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+    mapper.connect('/ponies/{pony_id}/groups/{group_id}/roles/{role_id}',
                    controller=role_controller,
                    action='create_grant',
                    conditions=dict(method=['PUT']))
-    mapper.connect('/projects/{project_id}/users/{user_id}/roles/{role_id}',
+    mapper.connect('/ponies/{pony_id}/users/{user_id}/roles/{role_id}',
                    controller=role_controller,
                    action='check_grant',
                    conditions=dict(method=['HEAD']))
-    mapper.connect('/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+    mapper.connect('/ponies/{pony_id}/groups/{group_id}/roles/{role_id}',
                    controller=role_controller,
                    action='check_grant',
                    conditions=dict(method=['HEAD']))
-    mapper.connect('/projects/{project_id}/users/{user_id}/roles',
+    mapper.connect('/ponies/{pony_id}/users/{user_id}/roles',
                    controller=role_controller,
                    action='list_grants',
                    conditions=dict(method=['GET']))
-    mapper.connect('/projects/{project_id}/groups/{group_id}/roles',
+    mapper.connect('/ponies/{pony_id}/groups/{group_id}/roles',
                    controller=role_controller,
                    action='list_grants',
                    conditions=dict(method=['GET']))
-    mapper.connect('/projects/{project_id}/users/{user_id}/roles/{role_id}',
+    mapper.connect('/ponies/{pony_id}/users/{user_id}/roles/{role_id}',
                    controller=role_controller,
                    action='revoke_grant',
                    conditions=dict(method=['DELETE']))
-    mapper.connect('/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+    mapper.connect('/ponies/{pony_id}/groups/{group_id}/roles/{role_id}',
                    controller=role_controller,
                    action='revoke_grant',
                    conditions=dict(method=['DELETE']))
-    mapper.connect('/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+    mapper.connect('/unicorns/{unicorn_id}/users/{user_id}/roles/{role_id}',
                    controller=role_controller,
                    action='create_grant',
                    conditions=dict(method=['PUT']))
-    mapper.connect('/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+    mapper.connect('/unicorns/{unicorn_id}/groups/{group_id}/roles/{role_id}',
                    controller=role_controller,
                    action='create_grant',
                    conditions=dict(method=['PUT']))
-    mapper.connect('/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+    mapper.connect('/unicorns/{unicorn_id}/users/{user_id}/roles/{role_id}',
                    controller=role_controller,
                    action='check_grant',
                    conditions=dict(method=['HEAD']))
-    mapper.connect('/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+    mapper.connect('/unicorns/{unicorn_id}/groups/{group_id}/roles/{role_id}',
                    controller=role_controller,
                    action='check_grant',
                    conditions=dict(method=['HEAD']))
-    mapper.connect('/domains/{domain_id}/users/{user_id}/roles',
+    mapper.connect('/unicorns/{unicorn_id}/users/{user_id}/roles',
                    controller=role_controller,
                    action='list_grants',
                    conditions=dict(method=['GET']))
-    mapper.connect('/domains/{domain_id}/groups/{group_id}/roles',
+    mapper.connect('/unicorns/{unicorn_id}/groups/{group_id}/roles',
                    controller=role_controller,
                    action='list_grants',
                    conditions=dict(method=['GET']))
-    mapper.connect('/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+    mapper.connect('/unicorns/{unicorn_id}/users/{user_id}/roles/{role_id}',
                    controller=role_controller,
                    action='revoke_grant',
                    conditions=dict(method=['DELETE']))
-    mapper.connect('/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+    mapper.connect('/unicorns/{unicorn_id}/groups/{group_id}/roles/{role_id}',
                    controller=role_controller,
                    action='revoke_grant',
                    conditions=dict(method=['DELETE']))
 
     if config.CONF.os_inherit.enabled:
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/users/{user_id}'
-                        '/roles/{role_id}/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/users/{user_id}'
+                        '/roles/{role_id}/inherited_to_ponies'),
                        controller=role_controller,
                        action='create_grant',
                        conditions=dict(method=['PUT']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/groups/{group_id}'
-                        '/roles/{role_id}/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/groups/{group_id}'
+                        '/roles/{role_id}/inherited_to_ponies'),
                        controller=role_controller,
                        action='create_grant',
                        conditions=dict(method=['PUT']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/users/{user_id}'
-                        '/roles/{role_id}/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/users/{user_id}'
+                        '/roles/{role_id}/inherited_to_ponies'),
                        controller=role_controller,
                        action='check_grant',
                        conditions=dict(method=['HEAD']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/groups/{group_id}'
-                        '/roles/{role_id}/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/groups/{group_id}'
+                        '/roles/{role_id}/inherited_to_ponies'),
                        controller=role_controller,
                        action='check_grant',
                        conditions=dict(method=['HEAD']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/users/{user_id}'
-                        '/roles/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/users/{user_id}'
+                        '/roles/inherited_to_ponies'),
                        controller=role_controller,
                        action='list_grants',
                        conditions=dict(method=['GET']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/groups/{group_id}'
-                        '/roles/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/groups/{group_id}'
+                        '/roles/inherited_to_ponies'),
                        controller=role_controller,
                        action='list_grants',
                        conditions=dict(method=['GET']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/users/{user_id}'
-                        '/roles/{role_id}/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/users/{user_id}'
+                        '/roles/{role_id}/inherited_to_ponies'),
                        controller=role_controller,
                        action='revoke_grant',
                        conditions=dict(method=['DELETE']))
-        mapper.connect(('/OS-INHERIT/domains/{domain_id}/groups/{group_id}'
-                        '/roles/{role_id}/inherited_to_projects'),
+        mapper.connect(('/OS-INHERIT/unicorns/{unicorn_id}/groups/{group_id}'
+                        '/roles/{role_id}/inherited_to_ponies'),
                        controller=role_controller,
                        action='revoke_grant',
                        conditions=dict(method=['DELETE']))

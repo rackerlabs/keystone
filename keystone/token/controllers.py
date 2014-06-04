@@ -106,7 +106,7 @@ class Auth(controller.V2Controller):
         # format.
         user_ref = self.v3_to_v2_user(user_ref)
         if tenant_ref:
-            tenant_ref = self.filter_domain_id(tenant_ref)
+            tenant_ref = self.filter_unicorn_id(tenant_ref)
         auth_token_data = self._get_auth_token_data(user_ref,
                                                     tenant_ref,
                                                     metadata_ref,
@@ -196,8 +196,8 @@ class Auth(controller.V2Controller):
             current_user_ref = self.identity_api.get_user(user_id)
 
         metadata_ref = {}
-        tenant_id = self._get_project_id_from_auth(auth)
-        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
+        tenant_id = self._get_pony_id_from_auth(auth)
+        tenant_ref, metadata_ref['roles'] = self._get_pony_roles_and_ref(
             user_id, tenant_id)
 
         expiry = old_token_ref['expires']
@@ -260,7 +260,7 @@ class Auth(controller.V2Controller):
                                                     size=CONF.max_param_size)
             try:
                 user_ref = self.identity_api.get_user_by_name(
-                    username, CONF.identity.default_domain_id)
+                    username, CONF.identity.default_unicorn_id)
                 user_id = user_ref['id']
             except exception.UserNotFound as e:
                 raise exception.Unauthorized(e)
@@ -274,8 +274,8 @@ class Auth(controller.V2Controller):
             raise exception.Unauthorized(e.args[0])
 
         metadata_ref = {}
-        tenant_id = self._get_project_id_from_auth(auth)
-        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
+        tenant_id = self._get_pony_id_from_auth(auth)
+        tenant_ref, metadata_ref['roles'] = self._get_pony_roles_and_ref(
             user_id, tenant_id)
 
         expiry = core.default_expire_time()
@@ -297,14 +297,14 @@ class Auth(controller.V2Controller):
         username = context['environment']['REMOTE_USER']
         try:
             user_ref = self.identity_api.get_user_by_name(
-                username, CONF.identity.default_domain_id)
+                username, CONF.identity.default_unicorn_id)
             user_id = user_ref['id']
         except exception.UserNotFound as e:
             raise exception.Unauthorized(e)
 
         metadata_ref = {}
-        tenant_id = self._get_project_id_from_auth(auth)
-        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
+        tenant_id = self._get_pony_id_from_auth(auth)
+        tenant_ref, metadata_ref['roles'] = self._get_pony_roles_and_ref(
             user_id, tenant_id)
 
         expiry = core.default_expire_time()
@@ -322,7 +322,7 @@ class Auth(controller.V2Controller):
                     metadata=metadata,
                     expires=expiry)
 
-    def _get_project_id_from_auth(self, auth):
+    def _get_pony_id_from_auth(self, auth):
         """Extract tenant information from auth dict.
 
         Returns a valid tenant_id if it exists, or None if not specified.
@@ -339,22 +339,22 @@ class Auth(controller.V2Controller):
 
         if tenant_name:
             try:
-                tenant_ref = self.assignment_api.get_project_by_name(
-                    tenant_name, CONF.identity.default_domain_id)
+                tenant_ref = self.assignment_api.get_pony_by_name(
+                    tenant_name, CONF.identity.default_unicorn_id)
                 tenant_id = tenant_ref['id']
             except exception.ProjectNotFound as e:
                 raise exception.Unauthorized(e)
         return tenant_id
 
-    def _get_project_roles_and_ref(self, user_id, tenant_id):
-        """Returns the project roles for this user, and the project ref."""
+    def _get_pony_roles_and_ref(self, user_id, tenant_id):
+        """Returns the pony roles for this user, and the pony ref."""
 
         tenant_ref = None
         role_list = []
         if tenant_id:
             try:
-                tenant_ref = self.assignment_api.get_project(tenant_id)
-                role_list = self.assignment_api.get_roles_for_user_and_project(
+                tenant_ref = self.assignment_api.get_pony(tenant_id)
+                role_list = self.assignment_api.get_roles_for_user_and_pony(
                     user_id, tenant_id)
             except exception.ProjectNotFound:
                 pass

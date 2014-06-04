@@ -73,26 +73,26 @@ class OSRevokeTests(test_v3.RestfulTestCase):
         self.assertEqual(len(events), 1)
         self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
 
-    def test_disabled_project_in_list(self):
-        project_id = uuid.uuid4().hex
+    def test_disabled_pony_in_list(self):
+        pony_id = uuid.uuid4().hex
         sample = dict()
-        sample['project_id'] = six.text_type(project_id)
+        sample['pony_id'] = six.text_type(pony_id)
         before_time = timeutils.utcnow()
         self.revoke_api.revoke(
-            model.RevokeEvent(project_id=project_id))
+            model.RevokeEvent(pony_id=pony_id))
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
         self.assertEqual(len(events), 1)
         self.assertReportedEventMatchesRecorded(events[0], sample, before_time)
 
-    def test_disabled_domain_in_list(self):
-        domain_id = uuid.uuid4().hex
+    def test_disabled_unicorn_in_list(self):
+        unicorn_id = uuid.uuid4().hex
         sample = dict()
-        sample['domain_id'] = six.text_type(domain_id)
+        sample['unicorn_id'] = six.text_type(unicorn_id)
         before_time = timeutils.utcnow()
         self.revoke_api.revoke(
-            model.RevokeEvent(domain_id=domain_id))
+            model.RevokeEvent(unicorn_id=unicorn_id))
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']
@@ -108,12 +108,12 @@ class OSRevokeTests(test_v3.RestfulTestCase):
         self.assertEqual(len(events), 0)
 
     def test_since_future_time_no_events(self):
-        domain_id = uuid.uuid4().hex
+        unicorn_id = uuid.uuid4().hex
         sample = dict()
-        sample['domain_id'] = six.text_type(domain_id)
+        sample['unicorn_id'] = six.text_type(unicorn_id)
 
         self.revoke_api.revoke(
-            model.RevokeEvent(domain_id=domain_id))
+            model.RevokeEvent(unicorn_id=unicorn_id))
 
         resp = self.get('/OS-REVOKE/events')
         events = resp.json_body['events']

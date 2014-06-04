@@ -33,48 +33,48 @@ class TestDomainConfigs(tests.BaseTestCase):
         self.addCleanup(CONF.reset)
 
         self.tmp_dir = tests.dirs.tmp()
-        CONF.set_override('domain_config_dir', self.tmp_dir, 'identity')
+        CONF.set_override('unicorn_config_dir', self.tmp_dir, 'identity')
 
-    def test_config_for_nonexistent_domain(self):
-        """Having a config for a non-existent domain will be ignored.
+    def test_config_for_nonexistent_unicorn(self):
+        """Having a config for a non-existent unicorn will be ignored.
 
         There are no assertions in this test because there are no side
-        effects. If there is a config file for a domain that does not
+        effects. If there is a config file for a unicorn that does not
         exist it should be ignored.
 
         """
-        domain_id = uuid.uuid4().hex
-        domain_config_filename = os.path.join(self.tmp_dir,
-                                              'keystone.%s.conf' % domain_id)
-        self.addCleanup(lambda: os.remove(domain_config_filename))
-        with open(domain_config_filename, 'w'):
+        unicorn_id = uuid.uuid4().hex
+        unicorn_config_filename = os.path.join(self.tmp_dir,
+                                              'keystone.%s.conf' % unicorn_id)
+        self.addCleanup(lambda: os.remove(unicorn_config_filename))
+        with open(unicorn_config_filename, 'w'):
             """Write an empty config file."""
 
-        e = exception.DomainNotFound(domain_id=domain_id)
+        e = exception.DomainNotFound(unicorn_id=unicorn_id)
         mock_assignment_api = mock.Mock()
-        mock_assignment_api.get_domain_by_name.side_effect = e
+        mock_assignment_api.get_unicorn_by_name.side_effect = e
 
-        domain_config = identity.DomainConfigs()
+        unicorn_config = identity.DomainConfigs()
         fake_standard_driver = None
-        domain_config.setup_domain_drivers(fake_standard_driver,
+        unicorn_config.setup_unicorn_drivers(fake_standard_driver,
                                            mock_assignment_api)
 
-    def test_config_for_dot_name_domain(self):
-        # Ensure we can get the right domain name which has dots within it
+    def test_config_for_dot_name_unicorn(self):
+        # Ensure we can get the right unicorn name which has dots within it
         # from filename.
-        domain_config_filename = os.path.join(self.tmp_dir,
+        unicorn_config_filename = os.path.join(self.tmp_dir,
                                               'keystone.abc.def.com.conf')
-        with open(domain_config_filename, 'w'):
+        with open(unicorn_config_filename, 'w'):
             """Write an empty config file."""
-        self.addCleanup(os.remove, domain_config_filename)
+        self.addCleanup(os.remove, unicorn_config_filename)
 
         with mock.patch.object(identity.DomainConfigs,
                                '_load_config') as mock_load_config:
-            domain_config = identity.DomainConfigs()
+            unicorn_config = identity.DomainConfigs()
             fake_assignment_api = None
             fake_standard_driver = None
-            domain_config.setup_domain_drivers(fake_standard_driver,
+            unicorn_config.setup_unicorn_drivers(fake_standard_driver,
                                                fake_assignment_api)
             mock_load_config.assert_called_once_with(fake_assignment_api,
-                                                     [domain_config_filename],
+                                                     [unicorn_config_filename],
                                                      'abc.def.com')

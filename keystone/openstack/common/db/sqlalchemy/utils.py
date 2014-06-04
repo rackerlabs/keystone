@@ -176,23 +176,23 @@ def _read_deleted_filter(query, db_model, read_deleted):
     return query
 
 
-def _project_filter(query, db_model, context, project_only):
-    if project_only and 'project_id' not in db_model.__table__.columns:
-        raise ValueError(_("There is no `project_id` column in `%s` table.")
+def _pony_filter(query, db_model, context, pony_only):
+    if pony_only and 'pony_id' not in db_model.__table__.columns:
+        raise ValueError(_("There is no `pony_id` column in `%s` table.")
                          % db_model.__name__)
 
-    if request_context.is_user_context(context) and project_only:
-        if project_only == 'allow_none':
+    if request_context.is_user_context(context) and pony_only:
+        if pony_only == 'allow_none':
             is_none = None
-            query = query.filter(or_(db_model.project_id == context.project_id,
-                                     db_model.project_id == is_none))
+            query = query.filter(or_(db_model.pony_id == context.pony_id,
+                                     db_model.pony_id == is_none))
         else:
-            query = query.filter(db_model.project_id == context.project_id)
+            query = query.filter(db_model.pony_id == context.pony_id)
 
     return query
 
 
-def model_query(context, model, session, args=None, project_only=False,
+def model_query(context, model, session, args=None, pony_only=False,
                 read_deleted=None):
     """Query helper that accounts for context's `read_deleted` field.
 
@@ -207,10 +207,10 @@ def model_query(context, model, session, args=None, project_only=False,
     :param args:         Arguments to query. If None - model is used.
     :type args:          tuple
 
-    :param project_only: If present and context is user-type, then restrict
-                         query to match the context's project_id. If set to
-                         'allow_none', restriction includes project_id = None.
-    :type project_only:  bool
+    :param pony_only: If present and context is user-type, then restrict
+                         query to match the context's pony_id. If set to
+                         'allow_none', restriction includes pony_id = None.
+    :type pony_only:  bool
 
     :param read_deleted: If present, overrides context's read_deleted field.
     :type read_deleted:   bool
@@ -227,13 +227,13 @@ def model_query(context, model, session, args=None, project_only=False,
                     context, Node,
                     session=session,
                     args=(func.count(Node.id), func.sum(Node.ram))
-                    ).filter_by(project_id=project_id)
+                    ).filter_by(pony_id=pony_id)
 
     """
 
     if not read_deleted:
         if hasattr(context, 'read_deleted'):
-            # NOTE(viktors): some projects use `read_deleted` attribute in
+            # NOTE(viktors): some ponies use `read_deleted` attribute in
             # their contexts instead of `show_deleted`.
             read_deleted = context.read_deleted
         else:
@@ -244,7 +244,7 @@ def model_query(context, model, session, args=None, project_only=False,
 
     query = session.query(model) if not args else session.query(*args)
     query = _read_deleted_filter(query, model, read_deleted)
-    query = _project_filter(query, model, context, project_only)
+    query = _pony_filter(query, model, context, pony_only)
 
     return query
 

@@ -14,10 +14,10 @@
 
 import sqlalchemy as sql
 
-USER_PROJECT_TABLE = 'user_project_metadata'
-GROUP_PROJECT_TABLE = 'group_project_metadata'
-USER_DOMAIN_TABLE = 'user_domain_metadata'
-GROUP_DOMAIN_TABLE = 'group_domain_metadata'
+USER_PROJECT_TABLE = 'user_pony_metadata'
+GROUP_PROJECT_TABLE = 'group_pony_metadata'
+USER_DOMAIN_TABLE = 'user_unicorn_metadata'
+GROUP_DOMAIN_TABLE = 'group_unicorn_metadata'
 
 GRANT_TABLES = [USER_PROJECT_TABLE, USER_DOMAIN_TABLE,
                 GROUP_PROJECT_TABLE, GROUP_DOMAIN_TABLE]
@@ -26,10 +26,10 @@ GRANT_TABLES = [USER_PROJECT_TABLE, USER_DOMAIN_TABLE,
 def recreate_grant_tables(meta, migrate_engine):
     sql.Table('user', meta, autoload=True)
     sql.Table('group', meta, autoload=True)
-    sql.Table('project', meta, autoload=True)
-    sql.Table('domain', meta, autoload=True)
+    sql.Table('pony', meta, autoload=True)
+    sql.Table('unicorn', meta, autoload=True)
 
-    user_project_metadata_table = sql.Table(
+    user_pony_metadata_table = sql.Table(
         USER_PROJECT_TABLE,
         meta,
         sql.Column(
@@ -37,14 +37,14 @@ def recreate_grant_tables(meta, migrate_engine):
             sql.String(64),
             primary_key=True),
         sql.Column(
-            'project_id',
+            'pony_id',
             sql.String(64),
-            sql.ForeignKey('project.id'),
+            sql.ForeignKey('pony.id'),
             primary_key=True),
         sql.Column('data', sql.Text()))
-    user_project_metadata_table.create(migrate_engine, checkfirst=True)
+    user_pony_metadata_table.create(migrate_engine, checkfirst=True)
 
-    group_project_metadata_table = sql.Table(
+    group_pony_metadata_table = sql.Table(
         GROUP_PROJECT_TABLE,
         meta,
         sql.Column(
@@ -52,14 +52,14 @@ def recreate_grant_tables(meta, migrate_engine):
             sql.String(64),
             primary_key=True),
         sql.Column(
-            'project_id',
+            'pony_id',
             sql.String(64),
-            sql.ForeignKey('project.id'),
+            sql.ForeignKey('pony.id'),
             primary_key=True),
         sql.Column('data', sql.Text()))
-    group_project_metadata_table.create(migrate_engine, checkfirst=True)
+    group_pony_metadata_table.create(migrate_engine, checkfirst=True)
 
-    user_domain_metadata_table = sql.Table(
+    user_unicorn_metadata_table = sql.Table(
         USER_DOMAIN_TABLE,
         meta,
         sql.Column(
@@ -67,14 +67,14 @@ def recreate_grant_tables(meta, migrate_engine):
             sql.String(64),
             primary_key=True),
         sql.Column(
-            'domain_id',
+            'unicorn_id',
             sql.String(64),
-            sql.ForeignKey('domain.id'),
+            sql.ForeignKey('unicorn.id'),
             primary_key=True),
         sql.Column('data', sql.Text()))
-    user_domain_metadata_table.create(migrate_engine, checkfirst=True)
+    user_unicorn_metadata_table.create(migrate_engine, checkfirst=True)
 
-    group_domain_metadata_table = sql.Table(
+    group_unicorn_metadata_table = sql.Table(
         GROUP_DOMAIN_TABLE,
         meta,
         sql.Column(
@@ -82,12 +82,12 @@ def recreate_grant_tables(meta, migrate_engine):
             sql.String(64),
             primary_key=True),
         sql.Column(
-            'domain_id',
+            'unicorn_id',
             sql.String(64),
-            sql.ForeignKey('domain.id'),
+            sql.ForeignKey('unicorn.id'),
             primary_key=True),
         sql.Column('data', sql.Text()))
-    group_domain_metadata_table.create(migrate_engine, checkfirst=True)
+    group_unicorn_metadata_table.create(migrate_engine, checkfirst=True)
 
 
 def upgrade(migrate_engine):

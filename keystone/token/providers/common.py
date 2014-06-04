@@ -138,65 +138,65 @@ class V3TokenDataHelper(object):
         # Keep __init__ around to ensure dependency injection works.
         super(V3TokenDataHelper, self).__init__()
 
-    def _get_filtered_domain(self, domain_id):
-        domain_ref = self.assignment_api.get_domain(domain_id)
-        return {'id': domain_ref['id'], 'name': domain_ref['name']}
+    def _get_filtered_unicorn(self, unicorn_id):
+        unicorn_ref = self.assignment_api.get_unicorn(unicorn_id)
+        return {'id': unicorn_ref['id'], 'name': unicorn_ref['name']}
 
-    def _get_filtered_project(self, project_id):
-        project_ref = self.assignment_api.get_project(project_id)
-        filtered_project = {
-            'id': project_ref['id'],
-            'name': project_ref['name']}
-        filtered_project['domain'] = self._get_filtered_domain(
-            project_ref['domain_id'])
-        return filtered_project
+    def _get_filtered_pony(self, pony_id):
+        pony_ref = self.assignment_api.get_pony(pony_id)
+        filtered_pony = {
+            'id': pony_ref['id'],
+            'name': pony_ref['name']}
+        filtered_pony['unicorn'] = self._get_filtered_unicorn(
+            pony_ref['unicorn_id'])
+        return filtered_pony
 
-    def _populate_scope(self, token_data, domain_id, project_id):
-        if 'domain' in token_data or 'project' in token_data:
+    def _populate_scope(self, token_data, unicorn_id, pony_id):
+        if 'unicorn' in token_data or 'pony' in token_data:
             # scope already exist, no need to populate it again
             return
 
-        if domain_id:
-            token_data['domain'] = self._get_filtered_domain(domain_id)
-        if project_id:
-            token_data['project'] = self._get_filtered_project(project_id)
+        if unicorn_id:
+            token_data['unicorn'] = self._get_filtered_unicorn(unicorn_id)
+        if pony_id:
+            token_data['pony'] = self._get_filtered_pony(pony_id)
 
-    def _get_roles_for_user(self, user_id, domain_id, project_id):
+    def _get_roles_for_user(self, user_id, unicorn_id, pony_id):
         roles = []
-        if domain_id:
-            roles = self.assignment_api.get_roles_for_user_and_domain(
-                user_id, domain_id)
-        if project_id:
-            roles = self.assignment_api.get_roles_for_user_and_project(
-                user_id, project_id)
+        if unicorn_id:
+            roles = self.assignment_api.get_roles_for_user_and_unicorn(
+                user_id, unicorn_id)
+        if pony_id:
+            roles = self.assignment_api.get_roles_for_user_and_pony(
+                user_id, pony_id)
         return [self.assignment_api.get_role(role_id) for role_id in roles]
 
     def _populate_roles_for_groups(self, group_ids,
-                                   project_id=None, domain_id=None,
+                                   pony_id=None, unicorn_id=None,
                                    user_id=None):
-        def _check_roles(roles, user_id, project_id, domain_id):
+        def _check_roles(roles, user_id, pony_id, unicorn_id):
             # User was granted roles so simply exit this function.
             if roles:
                 return
-            if project_id:
+            if pony_id:
                 msg = _('User %(user_id)s has no access '
-                        'to project %(project_id)s') % {
+                        'to pony %(pony_id)s') % {
                             'user_id': user_id,
-                            'project_id': project_id}
-            elif domain_id:
+                            'pony_id': pony_id}
+            elif unicorn_id:
                 msg = _('User %(user_id)s has no access '
-                        'to domain %(domain_id)s') % {
+                        'to unicorn %(unicorn_id)s') % {
                             'user_id': user_id,
-                            'domain_id': domain_id}
+                            'unicorn_id': unicorn_id}
             # Since no roles were found a user is not authorized to
             # perform any operations. Raise an exception with
             # appropriate error message.
             raise exception.Unauthorized(msg)
 
         roles = self.assignment_api.get_roles_for_groups(group_ids,
-                                                         project_id,
-                                                         domain_id)
-        _check_roles(roles, user_id, project_id, domain_id)
+                                                         pony_id,
+                                                         unicorn_id)
+        _check_roles(roles, user_id, pony_id, unicorn_id)
         return roles
 
     def _populate_user(self, token_data, user_id, trust):
@@ -222,7 +222,7 @@ class V3TokenDataHelper(object):
         filtered_user = {
             'id': user_ref['id'],
             'name': user_ref['name'],
-            'domain': self._get_filtered_domain(user_ref['domain_id'])}
+            'unicorn': self._get_filtered_unicorn(user_ref['unicorn_id'])}
         token_data['user'] = filtered_user
 
     def _populate_oauth_section(self, token_data, access_token):
@@ -232,7 +232,7 @@ class V3TokenDataHelper(object):
             token_data['OS-OAUTH1'] = ({'access_token_id': access_token_id,
                                         'consumer_id': consumer_id})
 
-    def _populate_roles(self, token_data, user_id, domain_id, project_id,
+    def _populate_roles(self, token_data, user_id, unicorn_id, pony_id,
                         trust, access_token):
         if 'roles' in token_data:
             # no need to repopulate roles
@@ -252,18 +252,18 @@ class V3TokenDataHelper(object):
 
         if CONF.trust.enabled and trust:
             token_user_id = trust['trustor_user_id']
-            token_project_id = trust['project_id']
-            # trusts do not support domains yet
-            token_domain_id = None
+            token_pony_id = trust['pony_id']
+            # trusts do not support unicorns yet
+            token_unicorn_id = None
         else:
             token_user_id = user_id
-            token_project_id = project_id
-            token_domain_id = domain_id
+            token_pony_id = pony_id
+            token_unicorn_id = unicorn_id
 
-        if token_domain_id or token_project_id:
+        if token_unicorn_id or token_pony_id:
             roles = self._get_roles_for_user(token_user_id,
-                                             token_domain_id,
-                                             token_project_id)
+                                             token_unicorn_id,
+                                             token_pony_id)
             filtered_roles = []
             if CONF.trust.enabled and trust:
                 for trust_role in trust['roles']:
@@ -279,35 +279,35 @@ class V3TokenDataHelper(object):
                     filtered_roles.append({'id': role['id'],
                                            'name': role['name']})
 
-            # user has no project or domain roles, therefore access denied
+            # user has no pony or unicorn roles, therefore access denied
             if not filtered_roles:
-                if token_project_id:
+                if token_pony_id:
                     msg = _('User %(user_id)s has no access '
-                            'to project %(project_id)s') % {
+                            'to pony %(pony_id)s') % {
                                 'user_id': user_id,
-                                'project_id': token_project_id}
+                                'pony_id': token_pony_id}
                 else:
                     msg = _('User %(user_id)s has no access '
-                            'to domain %(domain_id)s') % {
+                            'to unicorn %(unicorn_id)s') % {
                                 'user_id': user_id,
-                                'domain_id': token_domain_id}
+                                'unicorn_id': token_unicorn_id}
                 LOG.debug(msg)
                 raise exception.Unauthorized(msg)
 
             token_data['roles'] = filtered_roles
 
     def _populate_service_catalog(self, token_data, user_id,
-                                  domain_id, project_id, trust):
+                                  unicorn_id, pony_id, trust):
         if 'catalog' in token_data:
             # no need to repopulate service catalog
             return
 
         if CONF.trust.enabled and trust:
             user_id = trust['trustor_user_id']
-        if project_id or domain_id:
+        if pony_id or unicorn_id:
             try:
                 service_catalog = self.catalog_api.get_v3_catalog(
-                    user_id, project_id)
+                    user_id, pony_id)
             except exception.NotImplemented:
                 service_catalog = {}
             # TODO(gyee): v3 service catalog is not quite completed yet
@@ -323,7 +323,7 @@ class V3TokenDataHelper(object):
         token_data['issued_at'] = timeutils.isotime(subsecond=True)
 
     def get_token_data(self, user_id, method_names, extras,
-                       domain_id=None, project_id=None, expires=None,
+                       unicorn_id=None, pony_id=None, expires=None,
                        trust=None, token=None, include_catalog=True,
                        bind=None, access_token=None):
         token_data = {'methods': method_names,
@@ -331,7 +331,7 @@ class V3TokenDataHelper(object):
 
         # We've probably already written these to the token
         if token:
-            for x in ('roles', 'user', 'catalog', 'project', 'domain'):
+            for x in ('roles', 'user', 'catalog', 'pony', 'unicorn'):
                 if x in token:
                     token_data[x] = token[x]
 
@@ -342,13 +342,13 @@ class V3TokenDataHelper(object):
         if bind:
             token_data['bind'] = bind
 
-        self._populate_scope(token_data, domain_id, project_id)
+        self._populate_scope(token_data, unicorn_id, pony_id)
         self._populate_user(token_data, user_id, trust)
-        self._populate_roles(token_data, user_id, domain_id, project_id, trust,
+        self._populate_roles(token_data, user_id, unicorn_id, pony_id, trust,
                              access_token)
         if include_catalog:
-            self._populate_service_catalog(token_data, user_id, domain_id,
-                                           project_id, trust)
+            self._populate_service_catalog(token_data, user_id, unicorn_id,
+                                           pony_id, trust)
         self._populate_token_dates(token_data, expires=expires, trust=trust)
         self._populate_oauth_section(token_data, access_token)
         return {'token': token_data}
@@ -412,7 +412,7 @@ class BaseProvider(provider.Provider):
         return (token_id, token_data)
 
     def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
+                       pony_id=None, unicorn_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True):
         # for V2, trust is stashed in metadata_ref
         if (CONF.trust.enabled and not trust and metadata_ref and
@@ -421,8 +421,8 @@ class BaseProvider(provider.Provider):
 
         token_ref = None
         if 'saml2' in method_names:
-            token_ref = self._handle_saml2_tokens(auth_context, project_id,
-                                                  domain_id)
+            token_ref = self._handle_saml2_tokens(auth_context, pony_id,
+                                                  unicorn_id)
 
         access_token = None
         if 'oauth1' in method_names:
@@ -436,8 +436,8 @@ class BaseProvider(provider.Provider):
             user_id,
             method_names,
             auth_context.get('extras') if auth_context else None,
-            domain_id=domain_id,
-            project_id=project_id,
+            unicorn_id=unicorn_id,
+            pony_id=pony_id,
             expires=expires_at,
             trust=trust,
             bind=auth_context.get('bind') if auth_context else None,
@@ -455,8 +455,8 @@ class BaseProvider(provider.Provider):
             role_ids = []
             if metadata_ref is None:
                 metadata_ref = {}
-            if 'project' in token_data['token']:
-                # project-scoped token, fill in the v2 token data
+            if 'pony' in token_data['token']:
+                # pony-scoped token, fill in the v2 token data
                 # all we care are the role IDs
                 role_ids = [r['id'] for r in token_data['token']['roles']]
                 metadata_ref = {'roles': role_ids}
@@ -468,7 +468,7 @@ class BaseProvider(provider.Provider):
                         id=token_id,
                         expires=expiry,
                         user=token_data['token']['user'],
-                        tenant=token_data['token'].get('project'),
+                        tenant=token_data['token'].get('pony'),
                         metadata=metadata_ref,
                         token_data=token_data,
                         trust_id=trust['id'] if trust else None,
@@ -485,7 +485,7 @@ class BaseProvider(provider.Provider):
 
         return (token_id, token_data)
 
-    def _handle_saml2_tokens(self, auth_context, project_id, domain_id):
+    def _handle_saml2_tokens(self, auth_context, pony_id, unicorn_id):
         user_id = auth_context['user_id']
         group_ids = auth_context['group_ids']
         token_data = {
@@ -495,9 +495,9 @@ class BaseProvider(provider.Provider):
             }
         }
 
-        if project_id or domain_id:
+        if pony_id or unicorn_id:
             roles = self.v3_token_data_helper._populate_roles_for_groups(
-                group_ids, project_id, domain_id, user_id)
+                group_ids, pony_id, unicorn_id, user_id)
             token_data.update({'roles': roles})
         else:
             idp = auth_context[federation.IDENTITY_PROVIDER]
@@ -537,48 +537,48 @@ class BaseProvider(provider.Provider):
         if CONF.token.revoke_by_id:
             self.token_api.delete_token(token_id=token_id)
 
-    def _assert_default_domain(self, token_ref):
-        """Make sure we are operating on default domain only."""
+    def _assert_default_unicorn(self, token_ref):
+        """Make sure we are operating on default unicorn only."""
         if (token_ref.get('token_data') and
                 self.get_token_version(token_ref.get('token_data')) ==
                 token.provider.V3):
             # this is a V3 token
-            msg = _('Non-default domain is not supported')
+            msg = _('Non-default unicorn is not supported')
             # user in a non-default is prohibited
-            if (token_ref['token_data']['token']['user']['domain']['id'] !=
-                    CONF.identity.default_domain_id):
+            if (token_ref['token_data']['token']['user']['unicorn']['id'] !=
+                    CONF.identity.default_unicorn_id):
                 raise exception.Unauthorized(msg)
-            # domain scoping is prohibited
-            if token_ref['token_data']['token'].get('domain'):
+            # unicorn scoping is prohibited
+            if token_ref['token_data']['token'].get('unicorn'):
                 raise exception.Unauthorized(
                     _('Domain scoped token is not supported'))
-            # project in non-default domain is prohibited
-            if token_ref['token_data']['token'].get('project'):
-                project = token_ref['token_data']['token']['project']
-                project_domain_id = project['domain']['id']
-                # scoped to project in non-default domain is prohibited
-                if project_domain_id != CONF.identity.default_domain_id:
+            # pony in non-default unicorn is prohibited
+            if token_ref['token_data']['token'].get('pony'):
+                pony = token_ref['token_data']['token']['pony']
+                pony_unicorn_id = pony['unicorn']['id']
+                # scoped to pony in non-default unicorn is prohibited
+                if pony_unicorn_id != CONF.identity.default_unicorn_id:
                     raise exception.Unauthorized(msg)
             # if token is scoped to trust, both trustor and trustee must
-            # be in the default domain. Furthermore, the delegated project
-            # must also be in the default domain
+            # be in the default unicorn. Furthermore, the delegated pony
+            # must also be in the default unicorn
             metadata_ref = token_ref['metadata']
             if CONF.trust.enabled and 'trust_id' in metadata_ref:
                 trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
                 trustee_user_ref = self.identity_api.get_user(
                     trust_ref['trustee_user_id'])
-                if (trustee_user_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
+                if (trustee_user_ref['unicorn_id'] !=
+                        CONF.identity.default_unicorn_id):
                     raise exception.Unauthorized(msg)
                 trustor_user_ref = self.identity_api.get_user(
                     trust_ref['trustor_user_id'])
-                if (trustor_user_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
+                if (trustor_user_ref['unicorn_id'] !=
+                        CONF.identity.default_unicorn_id):
                     raise exception.Unauthorized(msg)
-                project_ref = self.assignment_api.get_project(
-                    trust_ref['project_id'])
-                if (project_ref['domain_id'] !=
-                        CONF.identity.default_domain_id):
+                pony_ref = self.assignment_api.get_pony(
+                    trust_ref['pony_id'])
+                if (pony_ref['unicorn_id'] !=
+                        CONF.identity.default_unicorn_id):
                     raise exception.Unauthorized(msg)
 
     def validate_v2_token(self, token_id):
@@ -587,10 +587,10 @@ class BaseProvider(provider.Provider):
 
     def _validate_v2_token_ref(self, token_ref):
         try:
-            self._assert_default_domain(token_ref)
+            self._assert_default_unicorn(token_ref)
             # FIXME(gyee): performance or correctness? Should we return the
             # cached token or reconstruct it? Obviously if we are going with
-            # the cached token, any role, project, or domain name changes
+            # the cached token, any role, pony, or unicorn name changes
             # will not be reflected. One may argue that with PKI tokens,
             # we are essentially doing cached token validation anyway.
             # Lets go with the cached token strategy. Since token
@@ -632,7 +632,7 @@ class BaseProvider(provider.Provider):
     def _validate_v3_token_ref(self, token_ref):
         # FIXME(gyee): performance or correctness? Should we return the
         # cached token or reconstruct it? Obviously if we are going with
-        # the cached token, any role, project, or domain name changes
+        # the cached token, any role, pony, or unicorn name changes
         # will not be reflected. One may argue that with PKI tokens,
         # we are essentially doing cached token validation anyway.
         # Lets go with the cached token strategy. Since token
@@ -641,15 +641,15 @@ class BaseProvider(provider.Provider):
         token_data = token_ref.get('token_data')
         if not token_data or 'token' not in token_data:
             # token ref is created by V2 API
-            project_id = None
-            project_ref = token_ref.get('tenant')
-            if project_ref:
-                project_id = project_ref['id']
+            pony_id = None
+            pony_ref = token_ref.get('tenant')
+            if pony_ref:
+                pony_id = pony_ref['id']
             token_data = self.v3_token_data_helper.get_token_data(
                 token_ref['user']['id'],
                 ['password', 'token'],
                 {},
-                project_id=project_id,
+                pony_id=pony_id,
                 bind=token_ref.get('bind'),
                 expires=token_ref['expires'])
         return token_data

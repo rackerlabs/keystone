@@ -51,20 +51,20 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         self.addCleanup(common_ldap_core._HANDLERS.clear)
 
-    def _get_domain_fixture(self):
+    def _get_unicorn_fixture(self):
         """Domains in LDAP are read-only, so just return the static one."""
-        return self.assignment_api.get_domain(CONF.identity.default_domain_id)
+        return self.assignment_api.get_unicorn(CONF.identity.default_unicorn_id)
 
     def clear_database(self):
         for shelf in fakeldap.FakeShelves:
             fakeldap.FakeShelves[shelf].clear()
 
-    def reload_backends(self, domain_id):
-        # Only one backend unless we are using separate domain backends
+    def reload_backends(self, unicorn_id):
+        # Only one backend unless we are using separate unicorn backends
         self.load_backends()
 
-    def get_config(self, domain_id):
-        # Only one conf structure unless we are using separate domain backends
+    def get_config(self, unicorn_id):
+        # Only one conf structure unless we are using separate unicorn backends
         return CONF
 
     def config_overrides(self):
@@ -89,7 +89,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         user = {'id': u'fäké1',
                 'name': u'fäké1',
                 'password': u'fäképass1',
-                'domain_id': CONF.identity.default_domain_id,
+                'unicorn_id': CONF.identity.default_unicorn_id,
                 'tenants': ['bar']}
         self.identity_api.create_user(u'fäké1', user)
         user_ref = self.identity_api.get_user(u'fäké1')
@@ -104,16 +104,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           u'fäké1')
 
     def test_configurable_forbidden_user_actions(self):
-        conf = self.get_config(CONF.identity.default_domain_id)
+        conf = self.get_config(CONF.identity.default_unicorn_id)
         conf.ldap.user_allow_create = False
         conf.ldap.user_allow_update = False
         conf.ldap.user_allow_delete = False
-        self.reload_backends(CONF.identity.default_domain_id)
+        self.reload_backends(CONF.identity.default_unicorn_id)
 
         user = {'id': u'fäké1',
                 'name': u'fäké1',
                 'password': u'fäképass1',
-                'domain_id': CONF.identity.default_domain_id,
+                'unicorn_id': CONF.identity.default_unicorn_id,
                 'tenants': ['bar']}
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
@@ -131,9 +131,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           self.user_foo['id'])
 
     def test_configurable_forbidden_create_existing_user(self):
-        conf = self.get_config(CONF.identity.default_domain_id)
+        conf = self.get_config(CONF.identity.default_unicorn_id)
         conf.ldap.user_allow_create = False
-        self.reload_backends(CONF.identity.default_domain_id)
+        self.reload_backends(CONF.identity.default_unicorn_id)
 
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
@@ -145,73 +145,73 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
 
-        conf = self.get_config(user_ref['domain_id'])
+        conf = self.get_config(user_ref['unicorn_id'])
         conf.ldap.user_filter = '(CN=DOES_NOT_MATCH)'
-        self.reload_backends(user_ref['domain_id'])
+        self.reload_backends(user_ref['unicorn_id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           self.user_foo['id'])
 
-    def test_remove_role_grant_from_user_and_project(self):
+    def test_remove_role_grant_from_user_and_pony(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
-            project_id=self.tenant_baz['id'])
+            pony_id=self.tenant_baz['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
-            project_id=self.tenant_baz['id'])
+            pony_id=self.tenant_baz['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           user_id=self.user_foo['id'],
-                          project_id=self.tenant_baz['id'],
+                          pony_id=self.tenant_baz['id'],
                           role_id='member')
 
-    def test_get_and_remove_role_grant_by_group_and_project(self):
-        new_domain = self._get_domain_fixture()
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+    def test_get_and_remove_role_grant_by_group_and_pony(self):
+        new_unicorn = self._get_unicorn_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'unicorn_id': new_unicorn['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'unicorn_id': new_unicorn['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'])
+            pony_id=self.tenant_bar['id'])
         self.assertEqual([], roles_ref)
         self.assertEqual(0, len(roles_ref))
 
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'])
+            pony_id=self.tenant_bar['id'])
         self.assertNotEmpty(roles_ref)
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'])
+            pony_id=self.tenant_bar['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           group_id=new_group['id'],
-                          project_id=self.tenant_bar['id'],
+                          pony_id=self.tenant_bar['id'],
                           role_id='member')
 
     def test_delete_user_grant_no_user(self):
@@ -220,100 +220,100 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_delete_group_grant_no_group(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_and_remove_role_grant_by_group_and_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_group_and_unicorn(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_get_and_remove_role_grant_by_user_and_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_user_and_unicorn(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_group_and_cross_unicorn(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_user_and_cross_unicorn(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_role_grant_by_group_and_cross_domain_project(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_role_grant_by_group_and_cross_unicorn_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_role_grant_by_user_and_cross_domain_project(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_role_grant_by_user_and_cross_unicorn_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_multi_role_grant_by_user_group_on_pony_unicorn(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
     def test_delete_role_with_user_and_group_grants(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_delete_user_with_group_project_domain_links(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_delete_user_with_group_pony_unicorn_links(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_delete_group_with_user_project_domain_links(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_delete_group_with_user_pony_unicorn_links(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
-    def test_list_projects_for_user(self):
-        domain = self._get_domain_fixture()
+    def test_list_ponies_for_user(self):
+        unicorn = self._get_unicorn_fixture()
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'unicorn_id': unicorn['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(0))
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(0))
 
         # new grant(user1, role_member, tenant_bar)
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         # new grant(user1, role_member, tenant_baz)
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id=self.role_member['id'])
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(2))
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(2))
 
-        # Now, check number of projects through groups
+        # Now, check number of ponies through groups
         user2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'unicorn_id': unicorn['id'],
                  'enabled': True}
         self.identity_api.create_user(user2['id'], user2)
 
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'unicorn_id': unicorn['id']}
         self.identity_api.create_group(group1['id'], group1)
 
         self.identity_api.add_user_to_group(user2['id'], group1['id'])
 
         # new grant(group1(user2), role_member, tenant_bar)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         # new grant(group1(user2), role_member, tenant_baz)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_baz['id'],
+                                         pony_id=self.tenant_baz['id'],
                                          role_id=self.role_member['id'])
-        user_projects = self.assignment_api.list_projects_for_user(user2['id'])
-        self.assertThat(user_projects, matchers.HasLength(2))
+        user_ponies = self.assignment_api.list_ponies_for_user(user2['id'])
+        self.assertThat(user_ponies, matchers.HasLength(2))
 
         # new grant(group1(user2), role_other, tenant_bar)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_other['id'])
-        user_projects = self.assignment_api.list_projects_for_user(user2['id'])
-        self.assertThat(user_projects, matchers.HasLength(2))
+        user_ponies = self.assignment_api.list_ponies_for_user(user2['id'])
+        self.assertThat(user_ponies, matchers.HasLength(2))
 
-    def test_list_projects_for_user_and_groups(self):
-        domain = self._get_domain_fixture()
+    def test_list_ponies_for_user_and_groups(self):
+        unicorn = self._get_unicorn_fixture()
         # Create user1
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'unicorn_id': unicorn['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
 
         # Create new group for user1
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'unicorn_id': unicorn['id']}
         self.identity_api.create_group(group1['id'], group1)
 
         # Add user1 to group1
@@ -321,46 +321,46 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         # Now, add grant to user1 and group1 in tenant_bar
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
 
-        # The result is user1 has only one project granted
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(1))
+        # The result is user1 has only one pony granted
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(1))
 
         # Now, delete user1 grant into tenant_bar and check
         self.assignment_api.delete_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
 
-        # The result is user1 has only one project granted.
+        # The result is user1 has only one pony granted.
         # Granted through group1.
-        user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertThat(user_projects, matchers.HasLength(1))
+        user_ponies = self.assignment_api.list_ponies_for_user(user1['id'])
+        self.assertThat(user_ponies, matchers.HasLength(1))
 
-    def test_list_projects_for_user_with_grants(self):
-        domain = self._get_domain_fixture()
+    def test_list_ponies_for_user_with_grants(self):
+        unicorn = self._get_unicorn_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'unicorn_id': unicorn['id']}
         self.identity_api.create_user(new_user['id'], new_user)
 
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'unicorn_id': unicorn['id']}
         self.identity_api.create_group(group1['id'], group1)
         group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'unicorn_id': unicorn['id']}
         self.identity_api.create_group(group2['id'], group2)
 
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
-        self.assignment_api.create_project(project1['id'], project1)
-        project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
-        self.assignment_api.create_project(project2['id'], project2)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'unicorn_id': unicorn['id']}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'unicorn_id': unicorn['id']}
+        self.assignment_api.create_pony(pony2['id'], pony2)
 
         self.identity_api.add_user_to_group(new_user['id'],
                                             group1['id'])
@@ -368,74 +368,74 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                                             group2['id'])
 
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=self.tenant_bar['id'],
+                                         pony_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=project1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=self.role_admin['id'])
         self.assignment_api.create_grant(group_id=group2['id'],
-                                         project_id=project2['id'],
+                                         pony_id=pony2['id'],
                                          role_id=self.role_admin['id'])
 
-        user_projects = self.assignment_api.list_projects_for_user(
+        user_ponies = self.assignment_api.list_ponies_for_user(
             new_user['id'])
-        self.assertEqual(3, len(user_projects))
+        self.assertEqual(3, len(user_ponies))
 
-    def test_create_duplicate_user_name_in_different_domains(self):
+    def test_create_duplicate_user_name_in_different_unicorns(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_create_duplicate_project_name_in_different_domains(self):
+    def test_create_duplicate_pony_name_in_different_unicorns(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_create_duplicate_group_name_in_different_domains(self):
+    def test_create_duplicate_group_name_in_different_unicorns(self):
         self.skipTest(
-            'N/A: LDAP does not support multiple domains')
+            'N/A: LDAP does not support multiple unicorns')
 
-    def test_move_user_between_domains(self):
+    def test_move_user_between_unicorns(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_user_between_domains_with_clashing_names_fails(self):
+    def test_move_user_between_unicorns_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_group_between_domains(self):
+    def test_move_group_between_unicorns(self):
         self.skipTest(
-            'N/A: LDAP does not support multiple domains')
+            'N/A: LDAP does not support multiple unicorns')
 
-    def test_move_group_between_domains_with_clashing_names_fails(self):
+    def test_move_group_between_unicorns_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_project_between_domains(self):
+    def test_move_pony_between_unicorns(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_project_between_domains_with_clashing_names_fails(self):
+    def test_move_pony_between_unicorns_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_get_roles_for_user_and_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_roles_for_user_and_unicorn(self):
+        self.skipTest('N/A: LDAP does not support multiple unicorns')
 
     def test_list_role_assignments_unfiltered(self):
-        new_domain = self._get_domain_fixture()
+        new_unicorn = self._get_unicorn_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'unicorn_id': new_unicorn['id']}
         self.identity_api.create_user(new_user['id'],
                                       new_user)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_group = {'id': uuid.uuid4().hex, 'unicorn_id': new_unicorn['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
-        new_project = {'id': uuid.uuid4().hex,
+        new_pony = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
-        self.assignment_api.create_project(new_project['id'], new_project)
+                       'unicorn_id': new_unicorn['id']}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
 
         # First check how many role grant already exist
         existing_assignments = len(self.assignment_api.list_role_assignments())
 
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='other')
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=new_project['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='admin')
 
         # Read back the list of assignments - check it is gone up by 2
@@ -448,18 +448,18 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        new_domain = self._get_domain_fixture()
+        new_unicorn = self._get_unicorn_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'unicorn_id': new_unicorn['id']}
         self.identity_api.create_user(new_user['id'],
                                       new_user)
-        new_project = {'id': uuid.uuid4().hex,
+        new_pony = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
-        self.assignment_api.create_project(new_project['id'], new_project)
+                       'unicorn_id': new_unicorn['id']}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='other')
 
         # Read back the list of assignments and ensure
@@ -469,7 +469,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         dumb_id = common_ldap.BaseLdap._dn_to_id(CONF.ldap.dumb_member)
         self.assertNotIn(dumb_id, assignment_ids)
 
-    def test_list_user_ids_for_project_dumb_member(self):
+    def test_list_user_ids_for_pony_dumb_member(self):
         self.config_fixture.config(group='ldap', use_dumb_member=True)
         self.clear_database()
         self.load_backends()
@@ -477,12 +477,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                 'password': uuid.uuid4().hex, 'enabled': True,
-                'domain_id': test_backend.DEFAULT_DOMAIN_ID}
+                'unicorn_id': test_backend.DEFAULT_DOMAIN_ID}
 
         self.identity_api.create_user(user['id'], user)
-        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_pony(self.tenant_baz['id'],
                                                 user['id'])
-        user_ids = self.assignment_api.list_user_ids_for_project(
+        user_ids = self.assignment_api.list_user_ids_for_pony(
             self.tenant_baz['id'])
 
         self.assertIn(user['id'], user_ids)
@@ -493,7 +493,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_role_assignments_bad_role(self):
         self.skipTest('Blocked by bug 1221805')
 
-    def test_multi_group_grants_on_project_domain(self):
+    def test_multi_group_grants_on_pony_unicorn(self):
         self.skipTest('Blocked by bug 1101287')
 
     def test_list_group_members_missing_entry(self):
@@ -507,20 +507,20 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # Create a group
         group_id = None
         group = dict(name=uuid.uuid4().hex,
-                     domain_id=CONF.identity.default_domain_id)
+                     unicorn_id=CONF.identity.default_unicorn_id)
         group_id = self.identity_api.create_group(group_id, group)['id']
 
         # Create a couple of users and add them to the group.
         user_id = None
         user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
-                    domain_id=CONF.identity.default_domain_id)
+                    unicorn_id=CONF.identity.default_unicorn_id)
         user_1_id = self.identity_api.create_user(user_id, user)['id']
 
         self.identity_api.add_user_to_group(user_1_id, group_id)
 
         user_id = None
         user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
-                    domain_id=CONF.identity.default_domain_id)
+                    unicorn_id=CONF.identity.default_unicorn_id)
         user_2_id = self.identity_api.create_user(user_id, user)['id']
 
         self.identity_api.add_user_to_group(user_2_id, group_id)
@@ -529,7 +529,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # NOTE(blk-u): need to go directly to user interface to keep from
         # updating the group.
         driver = self.identity_api._select_identity_driver(
-            user['domain_id'])
+            user['unicorn_id'])
         driver.user.delete(user_2_id)
 
         # List group users and verify only user 1.
@@ -543,7 +543,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # No exception should be raised.
         group = {
             'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
@@ -560,13 +560,13 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # Create a group
         group_id = None
         group = dict(name=uuid.uuid4().hex,
-                     domain_id=CONF.identity.default_domain_id)
+                     unicorn_id=CONF.identity.default_unicorn_id)
         group_id = self.identity_api.create_group(group_id, group)['id']
 
         # Create a user
         user_id = None
         user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
-                    domain_id=CONF.identity.default_domain_id)
+                    unicorn_id=CONF.identity.default_unicorn_id)
         user_id = self.identity_api.create_user(user_id, user)['id']
 
         # Add user to the group
@@ -577,37 +577,37 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         self.assertNotIn(dumb_id, user_ids)
 
-    def test_list_domains(self):
-        domains = self.assignment_api.list_domains()
+    def test_list_unicorns(self):
+        unicorns = self.assignment_api.list_unicorns()
         self.assertEqual(
-            [assignment.calc_default_domain()],
-            domains)
+            [assignment.calc_default_unicorn()],
+            unicorns)
 
-    def test_list_domains_non_default_domain_id(self):
-        # If change the default_domain_id, the ID of the default domain
-        # returned by list_domains changes is the new default_domain_id.
+    def test_list_unicorns_non_default_unicorn_id(self):
+        # If change the default_unicorn_id, the ID of the default unicorn
+        # returned by list_unicorns changes is the new default_unicorn_id.
 
-        new_domain_id = uuid.uuid4().hex
+        new_unicorn_id = uuid.uuid4().hex
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_unicorn_id=new_unicorn_id)
 
-        domains = self.assignment_api.list_domains()
+        unicorns = self.assignment_api.list_unicorns()
 
-        self.assertEqual(new_domain_id, domains[0]['id'])
+        self.assertEqual(new_unicorn_id, unicorns[0]['id'])
 
     def test_authenticate_requires_simple_bind(self):
         user = {
             'id': 'no_meta',
             'name': 'NO_META',
-            'domain_id': test_backend.DEFAULT_DOMAIN_ID,
+            'unicorn_id': test_backend.DEFAULT_DOMAIN_ID,
             'password': 'no_meta2',
             'enabled': True,
         }
         self.identity_api.create_user(user['id'], user)
-        self.assignment_api.add_user_to_project(self.tenant_baz['id'],
+        self.assignment_api.add_user_to_pony(self.tenant_baz['id'],
                                                 user['id'])
         driver = self.identity_api._select_identity_driver(
-            user['domain_id'])
+            user['unicorn_id'])
         driver.user.LDAP_USER = None
         driver.user.LDAP_PASSWORD = None
 
@@ -616,17 +616,17 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           context={},
                           user_id=user['id'],
                           password=None,
-                          domain_scope=user['domain_id'])
+                          unicorn_scope=user['unicorn_id'])
 
-    # (spzala)The group and domain crud tests below override the standard ones
+    # (spzala)The group and unicorn crud tests below override the standard ones
     # in test_backend.py so that we can exclude the update name test, since we
-    # do not yet support the update of either group or domain names with LDAP.
+    # do not yet support the update of either group or unicorn names with LDAP.
     # In the tests below, the update is demonstrated by updating description.
     # Refer to bug 1136403 for more detail.
     def test_group_crud(self):
         group = {
             'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
@@ -645,16 +645,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_create_user_none_mapping(self):
         # When create a user where an attribute maps to None, the entry is
         # created without that attribute and it doesn't fail with a TypeError.
-        conf = self.get_config(CONF.identity.default_domain_id)
+        conf = self.get_config(CONF.identity.default_unicorn_id)
         conf.ldap.user_attribute_ignore = ['enabled', 'email',
                                            'tenants', 'tenantId']
-        self.reload_backends(CONF.identity.default_domain_id)
+        self.reload_backends(CONF.identity.default_unicorn_id)
 
         user = {'id': u'fäké1',
                 'name': u'fäké1',
                 'password': u'fäképass1',
-                'domain_id': CONF.identity.default_domain_id,
-                'default_project_id': 'maps_to_none',
+                'unicorn_id': CONF.identity.default_unicorn_id,
+                'default_pony_id': 'maps_to_none',
                 }
 
         # If this doesn't raise, then the test is successful.
@@ -690,7 +690,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'id': user_id,
             'name': self.getUniqueString(),
             'password': self.getUniqueString(),
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
         }
         self.identity_api.create_user(user_id, user)
 
@@ -700,7 +700,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'id': group_id,
             'name': self.getUniqueString(prefix='tuidc'),
             'description': self.getUniqueString(),
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
         }
         self.identity_api.create_group(group_id, group)
 
@@ -723,20 +723,20 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'id': user_id,
             'name': self.getUniqueString(),
             'password': self.getUniqueString(),
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
         }
         self.identity_api.create_user(user_id, user)
 
-        # Grant the user a role on a project.
+        # Grant the user a role on a pony.
 
         role_id = 'member'
-        project_id = self.tenant_baz['id']
+        pony_id = self.tenant_baz['id']
 
         self.assignment_api.create_grant(role_id, user_id=user_id,
-                                         project_id=project_id)
+                                         pony_id=pony_id)
 
         role_ref = self.assignment_api.get_grant(role_id, user_id=user_id,
-                                                 project_id=project_id)
+                                                 pony_id=pony_id)
 
         self.assertEqual(role_id, role_ref['id'])
 
@@ -750,55 +750,55 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.useFixture(database.Database())
         super(LDAPIdentity, self).setUp()
 
-    def test_configurable_allowed_project_actions(self):
+    def test_configurable_allowed_pony_actions(self):
         tenant = {'id': u'fäké1', 'name': u'fäké1', 'enabled': True}
-        self.assignment_api.create_project(u'fäké1', tenant)
-        tenant_ref = self.assignment_api.get_project(u'fäké1')
+        self.assignment_api.create_pony(u'fäké1', tenant)
+        tenant_ref = self.assignment_api.get_pony(u'fäké1')
         self.assertEqual(u'fäké1', tenant_ref['id'])
 
         tenant['enabled'] = False
-        self.assignment_api.update_project(u'fäké1', tenant)
+        self.assignment_api.update_pony(u'fäké1', tenant)
 
-        self.assignment_api.delete_project(u'fäké1')
+        self.assignment_api.delete_pony(u'fäké1')
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.assignment_api.get_pony,
                           u'fäké1')
 
     def test_configurable_subtree_delete(self):
         self.config_fixture.config(group='ldap', allow_subtree_delete=True)
         self.load_backends()
 
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': CONF.identity.default_domain_id}
-        self.assignment_api.create_project(project1['id'], project1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'unicorn_id': CONF.identity.default_unicorn_id}
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
 
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': CONF.identity.default_domain_id,
+                 'unicorn_id': CONF.identity.default_unicorn_id,
                  'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
 
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id=user1['id'],
-            tenant_id=project1['id'],
+            tenant_id=pony1['id'],
             role_id=role1['id'])
 
-        self.assignment_api.delete_project(project1['id'])
+        self.assignment_api.delete_pony(pony1['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project1['id'])
+                          self.assignment_api.get_pony,
+                          pony1['id'])
 
-        self.assignment_api.create_project(project1['id'], project1)
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
-        list = self.assignment_api.get_roles_for_user_and_project(
+        list = self.assignment_api.get_roles_for_user_and_pony(
             user1['id'],
-            project1['id'])
+            pony1['id'])
         self.assertEqual(0, len(list))
 
-    def test_configurable_forbidden_project_actions(self):
+    def test_configurable_forbidden_pony_actions(self):
         self.config_fixture.config(
             group='ldap', tenant_allow_create=False, tenant_allow_update=False,
             tenant_allow_delete=False)
@@ -806,17 +806,17 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
         tenant = {'id': u'fäké1', 'name': u'fäké1'}
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.create_project,
+                          self.assignment_api.create_pony,
                           u'fäké1',
                           tenant)
 
         self.tenant_bar['enabled'] = False
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.update_project,
+                          self.assignment_api.update_pony,
                           self.tenant_bar['id'],
                           self.tenant_bar)
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.delete_project,
+                          self.assignment_api.delete_pony,
                           self.tenant_bar['id'])
 
     def test_configurable_allowed_role_actions(self):
@@ -855,8 +855,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.delete_role,
                           self.role_member['id'])
 
-    def test_project_filter(self):
-        tenant_ref = self.assignment_api.get_project(self.tenant_bar['id'])
+    def test_pony_filter(self):
+        tenant_ref = self.assignment_api.get_pony(self.tenant_bar['id'])
         self.assertDictEqual(tenant_ref, self.tenant_bar)
 
         self.config_fixture.config(group='ldap',
@@ -871,10 +871,10 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assignment_api.get_role.invalidate(self.assignment_api,
                                                 self.role_member['id'])
         self.assignment_api.get_role(self.role_member['id'])
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_bar['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.assignment_api.get_pony,
                           self.tenant_bar['id'])
 
     def test_role_filter(self):
@@ -906,7 +906,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.identity_api.get_user,
                           dumb_id)
 
-    def test_project_attribute_mapping(self):
+    def test_pony_attribute_mapping(self):
         self.config_fixture.config(
             group='ldap', tenant_name_attribute='ou',
             tenant_desc_attribute='description',
@@ -922,9 +922,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_baz['id'])
-        tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
+        tenant_ref = self.assignment_api.get_pony(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertEqual(self.tenant_baz['name'], tenant_ref['name'])
         self.assertEqual(
@@ -944,15 +944,15 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_baz['id'])
-        tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
+        tenant_ref = self.assignment_api.get_pony(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertEqual(self.tenant_baz['description'], tenant_ref['name'])
         self.assertEqual(self.tenant_baz['name'], tenant_ref['description'])
         self.assertEqual(self.tenant_baz['enabled'], tenant_ref['enabled'])
 
-    def test_project_attribute_ignore(self):
+    def test_pony_attribute_ignore(self):
         self.config_fixture.config(
             group='ldap',
             tenant_attribute_ignore=['name', 'description', 'enabled'])
@@ -965,9 +965,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # that could affect what the drivers would return up to the manager.
         # This solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
                                                    self.tenant_baz['id'])
-        tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
+        tenant_ref = self.assignment_api.get_pony(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertNotIn('name', tenant_ref)
         self.assertNotIn('description', tenant_ref)
@@ -1041,7 +1041,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             return res[0][1][enabled_attr_name]
 
         user = {'id': u'fäké1', 'name': u'fäké1', 'enabled': True,
-                'domain_id': CONF.identity.default_domain_id}
+                'unicorn_id': CONF.identity.default_unicorn_id}
 
         user_ref = self.identity_api.create_user(u'fäké1', user)
 
@@ -1188,7 +1188,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'id': 'extra_attributes',
             'name': 'EXTRA_ATTRIBUTES',
             'password': 'extra',
-            'domain_id': CONF.identity.default_domain_id
+            'unicorn_id': CONF.identity.default_unicorn_id
         }
         self.identity_api.create_user(user['id'], user)
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
@@ -1209,7 +1209,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'name': uuid.uuid4().hex,
             'description': description,
             'password': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id
+            'unicorn_id': CONF.identity.default_unicorn_id
         }
         self.identity_api.create_user(user['id'], user)
         res = self.identity_api.driver.user.get_all()
@@ -1246,139 +1246,139 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 # TODO(henry-nash): These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
 
-    def test_domain_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+    def test_unicorn_crud(self):
+        unicorn = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.create_domain,
-                          domain['id'],
-                          domain)
+                          self.assignment_api.create_unicorn,
+                          unicorn['id'],
+                          unicorn)
         self.assertRaises(exception.Conflict,
-                          self.assignment_api.create_domain,
-                          CONF.identity.default_domain_id,
-                          domain)
+                          self.assignment_api.create_unicorn,
+                          CONF.identity.default_unicorn_id,
+                          unicorn)
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_unicorn,
+                          unicorn['id'])
 
-        domain['description'] = uuid.uuid4().hex
+        unicorn['description'] = uuid.uuid4().hex
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.update_domain,
-                          domain['id'],
-                          domain)
+                          self.assignment_api.update_unicorn,
+                          unicorn['id'],
+                          unicorn)
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.update_domain,
-                          CONF.identity.default_domain_id,
-                          domain)
+                          self.assignment_api.update_unicorn,
+                          CONF.identity.default_unicorn_id,
+                          unicorn)
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_unicorn,
+                          unicorn['id'])
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.delete_domain,
-                          domain['id'])
+                          self.assignment_api.delete_unicorn,
+                          unicorn['id'])
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.delete_domain,
-                          CONF.identity.default_domain_id)
+                          self.assignment_api.delete_unicorn,
+                          CONF.identity.default_unicorn_id)
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_unicorn,
+                          unicorn['id'])
 
-    def test_create_domain_case_sensitivity(self):
-        # domains are read-only, so case sensitivity isn't an issue
+    def test_create_unicorn_case_sensitivity(self):
+        # unicorns are read-only, so case sensitivity isn't an issue
         ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex}
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.create_domain,
+                          self.assignment_api.create_unicorn,
                           ref['id'],
                           ref)
 
-    def test_cache_layer_domain_crud(self):
+    def test_cache_layer_unicorn_crud(self):
         # TODO(morganfainberg): This also needs to be removed when full LDAP
         # implementation is submitted.  No need to duplicate the above test,
         # just skip this time.
         self.skipTest('Domains are read-only against LDAP')
 
-    def test_project_crud(self):
+    def test_pony_crud(self):
         # NOTE(topol): LDAP implementation does not currently support the
-        #              updating of a project name so this method override
+        #              updating of a pony name so this method override
         #              provides a different update test
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': CONF.identity.default_domain_id,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'unicorn_id': CONF.identity.default_unicorn_id,
                    'description': uuid.uuid4().hex, 'enabled': True
                    }
-        self.assignment_api.create_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
 
-        self.assertDictEqual(project_ref, project)
+        self.assertDictEqual(pony_ref, pony)
 
-        project['description'] = uuid.uuid4().hex
-        self.assignment_api.update_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        pony['description'] = uuid.uuid4().hex
+        self.assignment_api.update_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
+        self.assertDictEqual(pony_ref, pony)
 
-        self.assignment_api.delete_project(project['id'])
+        self.assignment_api.delete_pony(pony['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
     @tests.skip_if_cache_disabled('assignment')
-    def test_cache_layer_project_crud(self):
+    def test_cache_layer_pony_crud(self):
         # NOTE(morganfainberg): LDAP implementation does not currently support
-        # updating project names.  This method override provides a different
+        # updating pony names.  This method override provides a different
         # update test.
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': CONF.identity.default_domain_id,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'unicorn_id': CONF.identity.default_unicorn_id,
                    'description': uuid.uuid4().hex}
-        project_id = project['id']
-        # Create a project
-        self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
-        updated_project = copy.deepcopy(project)
-        updated_project['description'] = uuid.uuid4().hex
-        # Update project, bypassing assignment_api manager
-        self.assignment_api.driver.update_project(project_id,
-                                                  updated_project)
-        # Verify get_project still returns the original project_ref
+        pony_id = pony['id']
+        # Create a pony
+        self.assignment_api.create_pony(pony_id, pony)
+        self.assignment_api.get_pony(pony_id)
+        updated_pony = copy.deepcopy(pony)
+        updated_pony['description'] = uuid.uuid4().hex
+        # Update pony, bypassing assignment_api manager
+        self.assignment_api.driver.update_pony(pony_id,
+                                                  updated_pony)
+        # Verify get_pony still returns the original pony_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
+            pony, self.assignment_api.get_pony(pony_id))
         # Invalidate cache
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   project_id)
-        # Verify get_project now returns the new project
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
+                                                   pony_id)
+        # Verify get_pony now returns the new pony
         self.assertDictContainsSubset(
-            updated_project,
-            self.assignment_api.get_project(project_id))
-        # Update project using the assignment_api manager back to original
-        self.assignment_api.update_project(project['id'], project)
-        # Verify get_project returns the original project_ref
+            updated_pony,
+            self.assignment_api.get_pony(pony_id))
+        # Update pony using the assignment_api manager back to original
+        self.assignment_api.update_pony(pony['id'], pony)
+        # Verify get_pony returns the original pony_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
-        # Delete project bypassing assignment_api
-        self.assignment_api.driver.delete_project(project_id)
-        # Verify get_project still returns the project_ref
+            pony, self.assignment_api.get_pony(pony_id))
+        # Delete pony bypassing assignment_api
+        self.assignment_api.driver.delete_pony(pony_id)
+        # Verify get_pony still returns the pony_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
+            pony, self.assignment_api.get_pony(pony_id))
         # Invalidate cache
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   project_id)
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
+                                                   pony_id)
         # Verify ProjectNotFound now raised
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project_id)
-        # recreate project
-        self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
-        # delete project
-        self.assignment_api.delete_project(project_id)
+                          self.assignment_api.get_pony,
+                          pony_id)
+        # recreate pony
+        self.assignment_api.create_pony(pony_id, pony)
+        self.assignment_api.get_pony(pony_id)
+        # delete pony
+        self.assignment_api.delete_pony(pony_id)
         # Verify ProjectNotFound is raised
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project_id)
+                          self.assignment_api.get_pony,
+                          pony_id)
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
+    def test_multi_role_grant_by_user_group_on_pony_unicorn(self):
         # This is a partial implementation of the standard test that
-        # is defined in test_backend.py.  It omits both domain and
+        # is defined in test_backend.py.  It omits both unicorn and
         # group grants. since neither of these are yet supported by
         # the ldap backend.
 
@@ -1389,21 +1389,21 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             role_list.append(role)
 
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': CONF.identity.default_domain_id,
+                 'unicorn_id': CONF.identity.default_unicorn_id,
                  'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': CONF.identity.default_domain_id}
-        self.assignment_api.create_project(project1['id'], project1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'unicorn_id': CONF.identity.default_unicorn_id}
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id=user1['id'],
-            tenant_id=project1['id'],
+            tenant_id=pony1['id'],
             role_id=role_list[0]['id'])
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user_id=user1['id'],
-            tenant_id=project1['id'],
+            tenant_id=pony1['id'],
             role_id=role_list[1]['id'])
 
         # Although list_grants are not yet supported, we can test the
@@ -1411,24 +1411,24 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # and group roles are combined.  Only directly assigned user
         # roles are available, since group grants are not yet supported
 
-        combined_list = self.assignment_api.get_roles_for_user_and_project(
+        combined_list = self.assignment_api.get_roles_for_user_and_pony(
             user1['id'],
-            project1['id'])
+            pony1['id'])
         self.assertEqual(2, len(combined_list))
         self.assertIn(role_list[0]['id'], combined_list)
         self.assertIn(role_list[1]['id'], combined_list)
 
-        # Finally, although domain roles are not implemented, check we can
+        # Finally, although unicorn roles are not implemented, check we can
         # issue the combined get roles call with benign results, since thus is
         # used in token generation
 
-        combined_role_list = self.assignment_api.get_roles_for_user_and_domain(
-            user1['id'], CONF.identity.default_domain_id)
+        combined_role_list = self.assignment_api.get_roles_for_user_and_unicorn(
+            user1['id'], CONF.identity.default_unicorn_id)
         self.assertEqual(0, len(combined_role_list))
 
-    def test_list_projects_for_alternate_domain(self):
+    def test_list_ponies_for_alternate_unicorn(self):
         self.skipTest(
-            'N/A: LDAP does not support multiple domains')
+            'N/A: LDAP does not support multiple unicorns')
 
     def test_create_grant_no_user(self):
         self.skipTest('Blocked by bug 1101287')
@@ -1436,11 +1436,11 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_create_grant_no_group(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_default_domain_by_name(self):
-        domain = self._get_domain_fixture()
+    def test_get_default_unicorn_by_name(self):
+        unicorn = self._get_unicorn_fixture()
 
-        domain_ref = self.assignment_api.get_domain_by_name(domain['name'])
-        self.assertEqual(domain_ref, domain)
+        unicorn_ref = self.assignment_api.get_unicorn_by_name(unicorn['name'])
+        self.assertEqual(unicorn_ref, unicorn)
 
     def test_base_ldap_connection_deref_option(self):
         def get_conn(deref_name):
@@ -1480,12 +1480,12 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
     def test_list_groups_no_dn(self):
         # Create some test groups.
-        domain = self._get_domain_fixture()
+        unicorn = self._get_unicorn_fixture()
         expected_group_ids = []
         numgroups = 3
         for _ in range(numgroups):
             group = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                     'domain_id': domain['id']}
+                     'unicorn_id': unicorn['id']}
             self.identity_api.create_group(group['id'], group)
             expected_group_ids.append(group['id'])
         # Fetch the test groups and ensure that they don't contain a dn.
@@ -1499,17 +1499,17 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_list_groups_for_user_no_dn(self):
         # Create a test user.
         user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                'domain_id': CONF.identity.default_domain_id,
+                'unicorn_id': CONF.identity.default_unicorn_id,
                 'password': uuid.uuid4().hex,
                 'enabled': True}
         self.identity_api.create_user(user['id'], user)
         # Create some test groups and add the test user as a member.
-        domain = self._get_domain_fixture()
+        unicorn = self._get_unicorn_fixture()
         expected_group_ids = []
         numgroups = 3
         for _ in range(numgroups):
             group = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                     'domain_id': domain['id']}
+                     'unicorn_id': unicorn['id']}
             self.identity_api.create_group(group['id'], group)
             expected_group_ids.append(group['id'])
             self.identity_api.add_user_to_group(user['id'], group['id'])
@@ -1544,39 +1544,39 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
                                    user_enabled_emulation=True,
                                    tenant_enabled_emulation=True)
 
-    def test_project_crud(self):
+    def test_pony_crud(self):
         # NOTE(topol): LDAPIdentityEnabledEmulation will create an
-        #              enabled key in the project dictionary so this
+        #              enabled key in the pony dictionary so this
         #              method override handles this side-effect
-        project = {
+        pony = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
             'description': uuid.uuid4().hex}
 
-        self.assignment_api.create_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
 
-        # self.assignment_api.create_project adds an enabled
+        # self.assignment_api.create_pony adds an enabled
         # key with a value of True when LDAPIdentityEnabledEmulation
-        # is used so we now add this expected key to the project dictionary
-        project['enabled'] = True
-        self.assertDictEqual(project_ref, project)
+        # is used so we now add this expected key to the pony dictionary
+        pony['enabled'] = True
+        self.assertDictEqual(pony_ref, pony)
 
-        project['description'] = uuid.uuid4().hex
-        self.assignment_api.update_project(project['id'], project)
-        project_ref = self.assignment_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        pony['description'] = uuid.uuid4().hex
+        self.assignment_api.update_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
+        self.assertDictEqual(pony_ref, pony)
 
-        self.assignment_api.delete_project(project['id'])
+        self.assignment_api.delete_pony(pony['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
-                          project['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
     def test_user_crud(self):
         user = {
             'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'unicorn_id': CONF.identity.default_unicorn_id,
             'name': uuid.uuid4().hex,
             'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
@@ -1636,30 +1636,30 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
 
-    def test_domain_crud(self):
+    def test_unicorn_crud(self):
         pass
 
-    def test_list_domains(self):
-        domains = self.assignment_api.list_domains()
-        self.assertEqual([assignment.calc_default_domain()], domains)
+    def test_list_unicorns(self):
+        unicorns = self.assignment_api.list_unicorns()
+        self.assertEqual([assignment.calc_default_unicorn()], unicorns)
 
-    def test_list_domains_non_default_domain_id(self):
-        # If change the default_domain_id, the ID of the default domain
-        # returned by list_domains doesn't change because the SQL identity
+    def test_list_unicorns_non_default_unicorn_id(self):
+        # If change the default_unicorn_id, the ID of the default unicorn
+        # returned by list_unicorns doesn't change because the SQL identity
         # backend reads it from the database, which doesn't get updated by
         # config change.
 
-        orig_default_domain_id = CONF.identity.default_domain_id
+        orig_default_unicorn_id = CONF.identity.default_unicorn_id
 
-        new_domain_id = uuid.uuid4().hex
+        new_unicorn_id = uuid.uuid4().hex
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_unicorn_id=new_unicorn_id)
 
-        domains = self.assignment_api.list_domains()
+        unicorns = self.assignment_api.list_unicorns()
 
-        self.assertEqual(orig_default_domain_id, domains[0]['id'])
+        self.assertEqual(orig_default_unicorn_id, unicorns[0]['id'])
 
-    def test_project_filter(self):
+    def test_pony_filter(self):
         self.skipTest(
             'N/A: Not part of SQL backend')
 
@@ -1667,13 +1667,13 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
         self.skipTest(
             'N/A: Not part of SQL backend')
 
-    def test_add_role_grant_to_user_and_project_404(self):
+    def test_add_role_grant_to_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_role_grants_for_user_and_project_404(self):
+    def test_get_role_grants_for_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_list_projects_for_user_with_grants(self):
+    def test_list_ponies_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')
 
 
@@ -1681,19 +1681,19 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                               tests.TestCase):
     """Class to test common SQL plus individual LDAP backends.
 
-    We define a set of domains and domain-specific backends:
+    We define a set of unicorns and unicorn-specific backends:
 
-    - A separate LDAP backend for the default domain
-    - A separate LDAP backend for domain1
-    - domain2 shares the same LDAP as domain1, but uses a different
+    - A separate LDAP backend for the default unicorn
+    - A separate LDAP backend for unicorn1
+    - unicorn2 shares the same LDAP as unicorn1, but uses a different
       tree attach point
-    - An SQL backend for all other domains (which will include domain3
-      and domain4)
+    - An SQL backend for all other unicorns (which will include unicorn3
+      and unicorn4)
 
-    Normally one would expect that the default domain would be handled as
-    part of the "other domains" - however the above provides better
+    Normally one would expect that the default unicorn would be handled as
+    part of the "other unicorns" - however the above provides better
     test coverage since most of the existing backend tests use the default
-    domain.
+    unicorn.
 
     """
     def setUp(self):
@@ -1708,16 +1708,16 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
 
-        self._setup_domain_test_data()
+        self._setup_unicorn_test_data()
 
-        # All initial domain data setup complete, time to switch on support
-        # for separate backends per domain.
+        # All initial unicorn data setup complete, time to switch on support
+        # for separate backends per unicorn.
 
         self.config_fixture.config(group='identity',
-                                   domain_specific_drivers_enabled=True,
-                                   domain_config_dir=tests.TESTSDIR)
+                                   unicorn_specific_drivers_enabled=True,
+                                   unicorn_config_dir=tests.TESTSDIR)
 
-        self._set_domain_configs()
+        self._set_unicorn_configs()
         self.clear_database()
         self.load_fixtures(default_fixtures)
 
@@ -1732,118 +1732,118 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
 
-    def _setup_domain_test_data(self):
+    def _setup_unicorn_test_data(self):
 
-        def create_domain(domain):
+        def create_unicorn(unicorn):
             try:
-                ref = self.assignment_api.create_domain(
-                    domain['id'], domain)
+                ref = self.assignment_api.create_unicorn(
+                    unicorn['id'], unicorn)
             except exception.Conflict:
                 ref = (
-                    self.assignment_api.get_domain_by_name(domain['name']))
+                    self.assignment_api.get_unicorn_by_name(unicorn['name']))
             return ref
 
-        self.domain_default = create_domain(assignment.calc_default_domain())
-        self.domain1 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain1'})
-        self.domain2 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain2'})
-        self.domain3 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain3'})
-        self.domain4 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain4'})
+        self.unicorn_default = create_unicorn(assignment.calc_default_unicorn())
+        self.unicorn1 = create_unicorn(
+            {'id': uuid.uuid4().hex, 'name': 'unicorn1'})
+        self.unicorn2 = create_unicorn(
+            {'id': uuid.uuid4().hex, 'name': 'unicorn2'})
+        self.unicorn3 = create_unicorn(
+            {'id': uuid.uuid4().hex, 'name': 'unicorn3'})
+        self.unicorn4 = create_unicorn(
+            {'id': uuid.uuid4().hex, 'name': 'unicorn4'})
 
-    def _set_domain_configs(self):
-        # We need to load the domain configs explicitly to ensure the
+    def _set_unicorn_configs(self):
+        # We need to load the unicorn configs explicitly to ensure the
         # test overrides are included.
-        self.identity_api.domain_configs._load_config(
+        self.identity_api.unicorn_configs._load_config(
             self.identity_api.assignment_api,
             [tests.dirs.tests_conf('keystone.Default.conf')],
             'Default')
-        self.identity_api.domain_configs._load_config(
+        self.identity_api.unicorn_configs._load_config(
             self.identity_api.assignment_api,
-            [tests.dirs.tests_conf('keystone.domain1.conf')],
-            'domain1')
-        self.identity_api.domain_configs._load_config(
+            [tests.dirs.tests_conf('keystone.unicorn1.conf')],
+            'unicorn1')
+        self.identity_api.unicorn_configs._load_config(
             self.identity_api.assignment_api,
-            [tests.dirs.tests_conf('keystone.domain2.conf')],
-            'domain2')
+            [tests.dirs.tests_conf('keystone.unicorn2.conf')],
+            'unicorn2')
 
-    def reload_backends(self, domain_id):
-        # Just reload the driver for this domain - which will pickup
+    def reload_backends(self, unicorn_id):
+        # Just reload the driver for this unicorn - which will pickup
         # any updated cfg
-        self.identity_api.domain_configs.reload_domain_driver(
-            self.identity_api.assignment_api, domain_id)
+        self.identity_api.unicorn_configs.reload_unicorn_driver(
+            self.identity_api.assignment_api, unicorn_id)
 
-    def get_config(self, domain_id):
-        # Get the config for this domain, will return CONF
-        # if no specific config defined for this domain
-        return self.identity_api.domain_configs.get_domain_conf(domain_id)
+    def get_config(self, unicorn_id):
+        # Get the config for this unicorn, will return CONF
+        # if no specific config defined for this unicorn
+        return self.identity_api.unicorn_configs.get_unicorn_conf(unicorn_id)
 
-    def test_list_domains(self):
+    def test_list_unicorns(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
 
-    def test_list_domains_non_default_domain_id(self):
+    def test_list_unicorns_non_default_unicorn_id(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
 
-    def test_domain_segregation(self):
-        """Test that separate configs have segregated the domain.
+    def test_unicorn_segregation(self):
+        """Test that separate configs have segregated the unicorn.
 
         Test Plan:
 
-        - Create a user in each of the domains
+        - Create a user in each of the unicorns
         - Make sure that you can only find a given user in its
-          relevant domain
-        - Make sure that for a backend that supports multiple domains
-          you can get the users via any of the domain scopes
+          relevant unicorn
+        - Make sure that for a backend that supports multiple unicorns
+          you can get the users via any of the unicorn scopes
 
         """
-        def create_user(domain_id):
+        def create_user(unicorn_id):
             user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain_id,
+                    'unicorn_id': unicorn_id,
                     'password': uuid.uuid4().hex,
                     'enabled': True}
             self.identity_api.create_user(user['id'], user)
             return user
 
-        userd = create_user(CONF.identity.default_domain_id)
-        user1 = create_user(self.domain1['id'])
-        user2 = create_user(self.domain2['id'])
-        user3 = create_user(self.domain3['id'])
-        user4 = create_user(self.domain4['id'])
+        userd = create_user(CONF.identity.default_unicorn_id)
+        user1 = create_user(self.unicorn1['id'])
+        user2 = create_user(self.unicorn2['id'])
+        user3 = create_user(self.unicorn3['id'])
+        user4 = create_user(self.unicorn4['id'])
 
-        # Now check that I can read user1 with the appropriate domain
+        # Now check that I can read user1 with the appropriate unicorn
         # scope, but won't find it if the wrong scope is used
 
         ref = self.identity_api.get_user(
-            userd['id'], domain_scope=CONF.identity.default_domain_id)
+            userd['id'], unicorn_scope=CONF.identity.default_unicorn_id)
         del userd['password']
         self.assertDictEqual(ref, userd)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain1['id'])
+                          unicorn_scope=self.unicorn1['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain2['id'])
+                          unicorn_scope=self.unicorn2['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain3['id'])
+                          unicorn_scope=self.unicorn3['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain4['id'])
+                          unicorn_scope=self.unicorn4['id'])
 
         ref = self.identity_api.get_user(
-            user1['id'], domain_scope=self.domain1['id'])
+            user1['id'], unicorn_scope=self.unicorn1['id'])
         del user1['password']
         self.assertDictEqual(ref, user1)
         ref = self.identity_api.get_user(
-            user2['id'], domain_scope=self.domain2['id'])
+            user2['id'], unicorn_scope=self.unicorn2['id'])
         del user2['password']
         self.assertDictEqual(ref, user2)
 
@@ -1851,57 +1851,57 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         # able to see user3 and 4 from either
 
         ref = self.identity_api.get_user(
-            user3['id'], domain_scope=self.domain3['id'])
+            user3['id'], unicorn_scope=self.unicorn3['id'])
         del user3['password']
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
-            user4['id'], domain_scope=self.domain4['id'])
+            user4['id'], unicorn_scope=self.unicorn4['id'])
         del user4['password']
         self.assertDictEqual(ref, user4)
         ref = self.identity_api.get_user(
-            user3['id'], domain_scope=self.domain4['id'])
+            user3['id'], unicorn_scope=self.unicorn4['id'])
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
-            user4['id'], domain_scope=self.domain3['id'])
+            user4['id'], unicorn_scope=self.unicorn3['id'])
         self.assertDictEqual(ref, user4)
 
     def test_scanning_of_config_dir(self):
         """Test the Manager class scans the config directory.
 
-        The setup for the main tests above load the domain configs directly
+        The setup for the main tests above load the unicorn configs directly
         so that the test overrides can be included. This test just makes sure
         that the standard config directory scanning does pick up the relevant
-        domain config files.
+        unicorn config files.
 
         """
         # Confirm that config has drivers_enabled as True, which we will
         # check has been set to False later in this test
-        self.assertTrue(config.CONF.identity.domain_specific_drivers_enabled)
+        self.assertTrue(config.CONF.identity.unicorn_specific_drivers_enabled)
         self.load_backends()
-        # Execute any command to trigger the lazy loading of domain configs
-        self.identity_api.list_users(domain_scope=self.domain1['id'])
-        # ...and now check the domain configs have been set up
-        self.assertIn('default', self.identity_api.domain_configs)
-        self.assertIn(self.domain1['id'], self.identity_api.domain_configs)
-        self.assertIn(self.domain2['id'], self.identity_api.domain_configs)
-        self.assertNotIn(self.domain3['id'], self.identity_api.domain_configs)
-        self.assertNotIn(self.domain4['id'], self.identity_api.domain_configs)
+        # Execute any command to trigger the lazy loading of unicorn configs
+        self.identity_api.list_users(unicorn_scope=self.unicorn1['id'])
+        # ...and now check the unicorn configs have been set up
+        self.assertIn('default', self.identity_api.unicorn_configs)
+        self.assertIn(self.unicorn1['id'], self.identity_api.unicorn_configs)
+        self.assertIn(self.unicorn2['id'], self.identity_api.unicorn_configs)
+        self.assertNotIn(self.unicorn3['id'], self.identity_api.unicorn_configs)
+        self.assertNotIn(self.unicorn4['id'], self.identity_api.unicorn_configs)
 
-        # Finally check that a domain specific config contains items from both
-        # the primary config and the domain specific config
-        conf = self.identity_api.domain_configs.get_domain_conf(
-            self.domain1['id'])
+        # Finally check that a unicorn specific config contains items from both
+        # the primary config and the unicorn specific config
+        conf = self.identity_api.unicorn_configs.get_unicorn_conf(
+            self.unicorn1['id'])
         # This should now be false, as is the default, since this is not
         # set in the standard primary config file
-        self.assertFalse(conf.identity.domain_specific_drivers_enabled)
-        # ..and make sure a domain-specific options is also set
+        self.assertFalse(conf.identity.unicorn_specific_drivers_enabled)
+        # ..and make sure a unicorn-specific options is also set
         self.assertEqual('fake://memory1', conf.ldap.url)
 
-    def test_add_role_grant_to_user_and_project_404(self):
+    def test_add_role_grant_to_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_role_grants_for_user_and_project_404(self):
+    def test_get_role_grants_for_user_and_pony_404(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_list_projects_for_user_with_grants(self):
+    def test_list_ponies_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')

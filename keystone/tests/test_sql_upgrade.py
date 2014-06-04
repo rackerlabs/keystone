@@ -53,16 +53,16 @@ from keystone.tests.ksfixtures import database
 
 
 CONF = config.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_unicorn_id
 
 # NOTE(morganfainberg): This should be updated when each DB migration collapse
 # is done to mirror the expected structure of the DB in the format of
 # { <DB_TABLE_NAME>: [<COLUMN>, <COLUMN>, ...], ... }
 INITIAL_TABLE_STRUCTURE = {
     'credential': [
-        'id', 'user_id', 'project_id', 'blob', 'type', 'extra',
+        'id', 'user_id', 'pony_id', 'blob', 'type', 'extra',
     ],
-    'domain': [
+    'unicorn': [
         'id', 'name', 'enabled', 'extra',
     ],
     'endpoint': [
@@ -70,19 +70,19 @@ INITIAL_TABLE_STRUCTURE = {
         'extra',
     ],
     'group': [
-        'id', 'domain_id', 'name', 'description', 'extra',
+        'id', 'unicorn_id', 'name', 'description', 'extra',
     ],
-    'group_domain_metadata': [
-        'group_id', 'domain_id', 'data',
+    'group_unicorn_metadata': [
+        'group_id', 'unicorn_id', 'data',
     ],
-    'group_project_metadata': [
-        'group_id', 'project_id', 'data',
+    'group_pony_metadata': [
+        'group_id', 'pony_id', 'data',
     ],
     'policy': [
         'id', 'type', 'blob', 'extra',
     ],
-    'project': [
-        'id', 'name', 'extra', 'description', 'enabled', 'domain_id',
+    'pony': [
+        'id', 'name', 'extra', 'description', 'enabled', 'unicorn_id',
     ],
     'role': [
         'id', 'name', 'extra',
@@ -94,24 +94,24 @@ INITIAL_TABLE_STRUCTURE = {
         'id', 'expires', 'extra', 'valid', 'trust_id', 'user_id',
     ],
     'trust': [
-        'id', 'trustor_user_id', 'trustee_user_id', 'project_id',
+        'id', 'trustor_user_id', 'trustee_user_id', 'pony_id',
         'impersonation', 'deleted_at', 'expires_at', 'extra',
     ],
     'trust_role': [
         'trust_id', 'role_id',
     ],
     'user': [
-        'id', 'name', 'extra', 'password', 'enabled', 'domain_id',
-        'default_project_id',
+        'id', 'name', 'extra', 'password', 'enabled', 'unicorn_id',
+        'default_pony_id',
     ],
-    'user_domain_metadata': [
-        'user_id', 'domain_id', 'data',
+    'user_unicorn_metadata': [
+        'user_id', 'unicorn_id', 'data',
     ],
     'user_group_membership': [
         'user_id', 'group_id',
     ],
-    'user_project_metadata': [
-        'user_id', 'project_id', 'data',
+    'user_pony_metadata': [
+        'user_id', 'pony_id', 'data',
     ],
 }
 
@@ -289,21 +289,21 @@ class SqlUpgradeTests(SqlMigrateBase):
         for table in INITIAL_TABLE_STRUCTURE:
             self.assertTableColumns(table, INITIAL_TABLE_STRUCTURE[table])
 
-        # Ensure the default domain was properly created.
-        default_domain = migration_helpers.get_default_domain()
+        # Ensure the default unicorn was properly created.
+        default_unicorn = migration_helpers.get_default_unicorn()
 
         meta = sqlalchemy.MetaData()
         meta.bind = self.engine
 
-        domain_table = sqlalchemy.Table('domain', meta, autoload=True)
+        unicorn_table = sqlalchemy.Table('unicorn', meta, autoload=True)
 
         session = self.Session()
-        q = session.query(domain_table)
+        q = session.query(unicorn_table)
         refs = q.all()
 
         self.assertEqual(1, len(refs))
-        for k in default_domain.keys():
-            self.assertEqual(default_domain[k], getattr(refs[0], k))
+        for k in default_unicorn.keys():
+            self.assertEqual(default_unicorn[k], getattr(refs[0], k))
 
     def test_downgrade_to_db_init_version(self):
         self.upgrade(self.max_version)
@@ -352,48 +352,48 @@ class SqlUpgradeTests(SqlMigrateBase):
     def test_assignment_table_migration(self):
 
         def create_base_data(session):
-            domain_table = sqlalchemy.Table('domain', self.metadata,
+            unicorn_table = sqlalchemy.Table('unicorn', self.metadata,
                                             autoload=True)
             user_table = sqlalchemy.Table('user', self.metadata, autoload=True)
             group_table = sqlalchemy.Table('group', self.metadata,
                                            autoload=True)
             role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
-            project_table = sqlalchemy.Table(
-                'project', self.metadata, autoload=True)
+            pony_table = sqlalchemy.Table(
+                'pony', self.metadata, autoload=True)
 
             base_data = {}
             # Create a Domain
-            base_data['domain'] = {'id': uuid.uuid4().hex,
+            base_data['unicorn'] = {'id': uuid.uuid4().hex,
                                    'name': uuid.uuid4().hex,
                                    'enabled': True}
-            session.execute(domain_table.insert().values(base_data['domain']))
+            session.execute(unicorn_table.insert().values(base_data['unicorn']))
 
             # Create another Domain
-            base_data['domain2'] = {'id': uuid.uuid4().hex,
+            base_data['unicorn2'] = {'id': uuid.uuid4().hex,
                                     'name': uuid.uuid4().hex,
                                     'enabled': True}
-            session.execute(domain_table.insert().values(base_data['domain2']))
+            session.execute(unicorn_table.insert().values(base_data['unicorn2']))
 
             # Create a Project
-            base_data['project'] = {'id': uuid.uuid4().hex,
+            base_data['pony'] = {'id': uuid.uuid4().hex,
                                     'name': uuid.uuid4().hex,
-                                    'domain_id': base_data['domain']['id'],
+                                    'unicorn_id': base_data['unicorn']['id'],
                                     'extra': "{}"}
             session.execute(
-                project_table.insert().values(base_data['project']))
+                pony_table.insert().values(base_data['pony']))
 
             # Create another Project
-            base_data['project2'] = {'id': uuid.uuid4().hex,
+            base_data['pony2'] = {'id': uuid.uuid4().hex,
                                      'name': uuid.uuid4().hex,
-                                     'domain_id': base_data['domain']['id'],
+                                     'unicorn_id': base_data['unicorn']['id'],
                                      'extra': "{}"}
             session.execute(
-                project_table.insert().values(base_data['project2']))
+                pony_table.insert().values(base_data['pony2']))
 
             # Create a User
             base_data['user'] = {'id': uuid.uuid4().hex,
                                  'name': uuid.uuid4().hex,
-                                 'domain_id': base_data['domain']['id'],
+                                 'unicorn_id': base_data['unicorn']['id'],
                                  'password': uuid.uuid4().hex,
                                  'enabled': True,
                                  'extra': "{}"}
@@ -402,7 +402,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             # Create a Group
             base_data['group'] = {'id': uuid.uuid4().hex,
                                   'name': uuid.uuid4().hex,
-                                  'domain_id': base_data['domain']['id'],
+                                  'unicorn_id': base_data['unicorn']['id'],
                                   'extra': "{}"}
             session.execute(group_table.insert().values(base_data['group']))
 
@@ -417,143 +417,143 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         def populate_grants(session, base_data):
 
-            user_project_table = sqlalchemy.Table(
-                'user_project_metadata', self.metadata, autoload=True)
-            user_domain_table = sqlalchemy.Table(
-                'user_domain_metadata', self.metadata, autoload=True)
-            group_project_table = sqlalchemy.Table(
-                'group_project_metadata', self.metadata, autoload=True)
-            group_domain_table = sqlalchemy.Table(
-                'group_domain_metadata', self.metadata, autoload=True)
+            user_pony_table = sqlalchemy.Table(
+                'user_pony_metadata', self.metadata, autoload=True)
+            user_unicorn_table = sqlalchemy.Table(
+                'user_unicorn_metadata', self.metadata, autoload=True)
+            group_pony_table = sqlalchemy.Table(
+                'group_pony_metadata', self.metadata, autoload=True)
+            group_unicorn_table = sqlalchemy.Table(
+                'group_unicorn_metadata', self.metadata, autoload=True)
 
-            # Grant a role to user on project
+            # Grant a role to user on pony
             grant = {'user_id': base_data['user']['id'],
-                     'project_id': base_data['project']['id'],
+                     'pony_id': base_data['pony']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][0]['id']}]})}
-            session.execute(user_project_table.insert().values(grant))
+            session.execute(user_pony_table.insert().values(grant))
 
-            # Grant two roles to user on project2
+            # Grant two roles to user on pony2
             grant = {'user_id': base_data['user']['id'],
-                     'project_id': base_data['project2']['id'],
+                     'pony_id': base_data['pony2']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][1]['id']},
                                     {'id': base_data['roles'][2]['id']}]})}
-            session.execute(user_project_table.insert().values(grant))
+            session.execute(user_pony_table.insert().values(grant))
 
-            # Grant role to group on project
+            # Grant role to group on pony
             grant = {'group_id': base_data['group']['id'],
-                     'project_id': base_data['project']['id'],
+                     'pony_id': base_data['pony']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][3]['id']}]})}
-            session.execute(group_project_table.insert().values(grant))
+            session.execute(group_pony_table.insert().values(grant))
 
-            # Grant two roles to group on project2
+            # Grant two roles to group on pony2
             grant = {'group_id': base_data['group']['id'],
-                     'project_id': base_data['project2']['id'],
+                     'pony_id': base_data['pony2']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][4]['id']},
                                     {'id': base_data['roles'][5]['id']}]})}
-            session.execute(group_project_table.insert().values(grant))
+            session.execute(group_pony_table.insert().values(grant))
 
-            # Grant two roles to group on domain, one inherited, one not
+            # Grant two roles to group on unicorn, one inherited, one not
             grant = {'group_id': base_data['group']['id'],
-                     'domain_id': base_data['domain']['id'],
+                     'unicorn_id': base_data['unicorn']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][6]['id']},
                                     {'id': base_data['roles'][7]['id'],
-                                     'inherited_to': 'projects'}]})}
-            session.execute(group_domain_table.insert().values(grant))
+                                     'inherited_to': 'ponies'}]})}
+            session.execute(group_unicorn_table.insert().values(grant))
 
-            # Grant inherited role to user on domain
+            # Grant inherited role to user on unicorn
             grant = {'user_id': base_data['user']['id'],
-                     'domain_id': base_data['domain']['id'],
+                     'unicorn_id': base_data['unicorn']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][8]['id'],
-                                     'inherited_to': 'projects'}]})}
-            session.execute(user_domain_table.insert().values(grant))
+                                     'inherited_to': 'ponies'}]})}
+            session.execute(user_unicorn_table.insert().values(grant))
 
-            # Grant two non-inherited roles to user on domain2, using roles
+            # Grant two non-inherited roles to user on unicorn2, using roles
             # that are also assigned to other actors/targets
             grant = {'user_id': base_data['user']['id'],
-                     'domain_id': base_data['domain2']['id'],
+                     'unicorn_id': base_data['unicorn2']['id'],
                      'data': json.dumps(
                          {'roles': [{'id': base_data['roles'][6]['id']},
                                     {'id': base_data['roles'][7]['id']}]})}
-            session.execute(user_domain_table.insert().values(grant))
+            session.execute(user_unicorn_table.insert().values(grant))
 
             session.commit()
 
         def check_grants(session, base_data):
-            user_project_table = sqlalchemy.Table(
-                'user_project_metadata', self.metadata, autoload=True)
-            user_domain_table = sqlalchemy.Table(
-                'user_domain_metadata', self.metadata, autoload=True)
-            group_project_table = sqlalchemy.Table(
-                'group_project_metadata', self.metadata, autoload=True)
-            group_domain_table = sqlalchemy.Table(
-                'group_domain_metadata', self.metadata, autoload=True)
+            user_pony_table = sqlalchemy.Table(
+                'user_pony_metadata', self.metadata, autoload=True)
+            user_unicorn_table = sqlalchemy.Table(
+                'user_unicorn_metadata', self.metadata, autoload=True)
+            group_pony_table = sqlalchemy.Table(
+                'group_pony_metadata', self.metadata, autoload=True)
+            group_unicorn_table = sqlalchemy.Table(
+                'group_unicorn_metadata', self.metadata, autoload=True)
 
-            s = sqlalchemy.select([user_project_table.c.data]).where(
-                (user_project_table.c.user_id == base_data['user']['id']) &
-                (user_project_table.c.project_id ==
-                 base_data['project']['id']))
+            s = sqlalchemy.select([user_pony_table.c.data]).where(
+                (user_pony_table.c.user_id == base_data['user']['id']) &
+                (user_pony_table.c.pony_id ==
+                 base_data['pony']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 1)
             self.assertIn({'id': base_data['roles'][0]['id']}, data['roles'])
 
-            s = sqlalchemy.select([user_project_table.c.data]).where(
-                (user_project_table.c.user_id == base_data['user']['id']) &
-                (user_project_table.c.project_id ==
-                 base_data['project2']['id']))
+            s = sqlalchemy.select([user_pony_table.c.data]).where(
+                (user_pony_table.c.user_id == base_data['user']['id']) &
+                (user_pony_table.c.pony_id ==
+                 base_data['pony2']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 2)
             self.assertIn({'id': base_data['roles'][1]['id']}, data['roles'])
             self.assertIn({'id': base_data['roles'][2]['id']}, data['roles'])
 
-            s = sqlalchemy.select([group_project_table.c.data]).where(
-                (group_project_table.c.group_id == base_data['group']['id']) &
-                (group_project_table.c.project_id ==
-                 base_data['project']['id']))
+            s = sqlalchemy.select([group_pony_table.c.data]).where(
+                (group_pony_table.c.group_id == base_data['group']['id']) &
+                (group_pony_table.c.pony_id ==
+                 base_data['pony']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 1)
             self.assertIn({'id': base_data['roles'][3]['id']}, data['roles'])
 
-            s = sqlalchemy.select([group_project_table.c.data]).where(
-                (group_project_table.c.group_id == base_data['group']['id']) &
-                (group_project_table.c.project_id ==
-                 base_data['project2']['id']))
+            s = sqlalchemy.select([group_pony_table.c.data]).where(
+                (group_pony_table.c.group_id == base_data['group']['id']) &
+                (group_pony_table.c.pony_id ==
+                 base_data['pony2']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 2)
             self.assertIn({'id': base_data['roles'][4]['id']}, data['roles'])
             self.assertIn({'id': base_data['roles'][5]['id']}, data['roles'])
 
-            s = sqlalchemy.select([group_domain_table.c.data]).where(
-                (group_domain_table.c.group_id == base_data['group']['id']) &
-                (group_domain_table.c.domain_id == base_data['domain']['id']))
+            s = sqlalchemy.select([group_unicorn_table.c.data]).where(
+                (group_unicorn_table.c.group_id == base_data['group']['id']) &
+                (group_unicorn_table.c.unicorn_id == base_data['unicorn']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 2)
             self.assertIn({'id': base_data['roles'][6]['id']}, data['roles'])
             self.assertIn({'id': base_data['roles'][7]['id'],
-                           'inherited_to': 'projects'}, data['roles'])
+                           'inherited_to': 'ponies'}, data['roles'])
 
-            s = sqlalchemy.select([user_domain_table.c.data]).where(
-                (user_domain_table.c.user_id == base_data['user']['id']) &
-                (user_domain_table.c.domain_id == base_data['domain']['id']))
+            s = sqlalchemy.select([user_unicorn_table.c.data]).where(
+                (user_unicorn_table.c.user_id == base_data['user']['id']) &
+                (user_unicorn_table.c.unicorn_id == base_data['unicorn']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 1)
             self.assertIn({'id': base_data['roles'][8]['id'],
-                           'inherited_to': 'projects'}, data['roles'])
+                           'inherited_to': 'ponies'}, data['roles'])
 
-            s = sqlalchemy.select([user_domain_table.c.data]).where(
-                (user_domain_table.c.user_id == base_data['user']['id']) &
-                (user_domain_table.c.domain_id == base_data['domain2']['id']))
+            s = sqlalchemy.select([user_unicorn_table.c.data]).where(
+                (user_unicorn_table.c.user_id == base_data['user']['id']) &
+                (user_unicorn_table.c.unicorn_id == base_data['unicorn2']['id']))
             r = session.execute(s)
             data = json.loads(r.fetchone()['data'])
             self.assertEqual(len(data['roles']), 2)
@@ -574,7 +574,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['user']['id'])
-            q = q.filter_by(target_id=base_data['project']['id'])
+            q = q.filter_by(target_id=base_data['pony']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 1)
             self.assertEqual(refs[0].role_id, base_data['roles'][0]['id'])
@@ -584,7 +584,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['user']['id'])
-            q = q.filter_by(target_id=base_data['project2']['id'])
+            q = q.filter_by(target_id=base_data['pony2']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 2)
             role_ids = [base_data['roles'][1]['id'],
@@ -598,7 +598,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['group']['id'])
-            q = q.filter_by(target_id=base_data['project']['id'])
+            q = q.filter_by(target_id=base_data['pony']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 1)
             self.assertEqual(refs[0].role_id, base_data['roles'][3]['id'])
@@ -608,7 +608,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['group']['id'])
-            q = q.filter_by(target_id=base_data['project2']['id'])
+            q = q.filter_by(target_id=base_data['pony2']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 2)
             role_ids = [base_data['roles'][4]['id'],
@@ -622,7 +622,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['group']['id'])
-            q = q.filter_by(target_id=base_data['domain']['id'])
+            q = q.filter_by(target_id=base_data['unicorn']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 2)
             role_ids = [base_data['roles'][6]['id'],
@@ -640,7 +640,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['user']['id'])
-            q = q.filter_by(target_id=base_data['domain']['id'])
+            q = q.filter_by(target_id=base_data['unicorn']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 1)
             self.assertEqual(refs[0].role_id, base_data['roles'][8]['id'])
@@ -650,7 +650,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             q = session.query(assignment_table)
             q = q.filter_by(actor_id=base_data['user']['id'])
-            q = q.filter_by(target_id=base_data['domain2']['id'])
+            q = q.filter_by(target_id=base_data['unicorn2']['id'])
             refs = q.all()
             self.assertEqual(len(refs), 2)
             role_ids = [base_data['roles'][6]['id'],
@@ -673,10 +673,10 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(40)
         session = self.Session()
         self.assertTableExists('assignment')
-        self.assertTableDoesNotExist('user_project_metadata')
-        self.assertTableDoesNotExist('group_project_metadata')
-        self.assertTableDoesNotExist('user_domain_metadata')
-        self.assertTableDoesNotExist('group_domain_metadata')
+        self.assertTableDoesNotExist('user_pony_metadata')
+        self.assertTableDoesNotExist('group_pony_metadata')
+        self.assertTableDoesNotExist('user_unicorn_metadata')
+        self.assertTableDoesNotExist('group_unicorn_metadata')
         check_assignments(session, base_data)
         session.close()
         self.downgrade(37)
@@ -691,7 +691,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableColumns('trust',
                                 ['id', 'trustor_user_id',
                                  'trustee_user_id',
-                                 'project_id', 'impersonation',
+                                 'pony_id', 'impersonation',
                                  'deleted_at',
                                  'expires_at', 'extra',
                                  'remaining_uses'])
@@ -703,7 +703,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableColumns('trust',
                                 ['id', 'trustor_user_id',
                                  'trustee_user_id',
-                                 'project_id', 'impersonation',
+                                 'pony_id', 'impersonation',
                                  'deleted_at',
                                  'expires_at', 'extra'])
 
@@ -716,7 +716,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             'id': uuid.uuid4().hex,
             'trustor_user_id': uuid.uuid4().hex,
             'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'pony_id': uuid.uuid4().hex,
             'impersonation': True,
             'remaining_uses': 5
         }
@@ -724,7 +724,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             'id': uuid.uuid4().hex,
             'trustor_user_id': uuid.uuid4().hex,
             'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'pony_id': uuid.uuid4().hex,
             'impersonation': True,
             'remaining_uses': 0
         }
@@ -732,7 +732,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             'id': uuid.uuid4().hex,
             'trustor_user_id': uuid.uuid4().hex,
             'trustee_user_id': uuid.uuid4().hex,
-            'project_id': uuid.uuid4().hex,
+            'pony_id': uuid.uuid4().hex,
             'impersonation': True,
             'remaining_uses': None
         }
@@ -1204,13 +1204,13 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertEqual(2, session.query(region_nonunique).count())
 
     def populate_user_table(self, with_pass_enab=False,
-                            with_pass_enab_domain=False):
+                            with_pass_enab_unicorn=False):
         # Populate the appropriate fields in the user
         # table, depending on the parameters:
         #
         # Default: id, name, extra
         # pass_enab: Add password, enabled as well
-        # pass_enab_domain: Add password, enabled and domain as well
+        # pass_enab_unicorn: Add password, enabled and unicorn as well
         #
         this_table = sqlalchemy.Table("user",
                                       self.metadata,
@@ -1230,14 +1230,14 @@ class SqlUpgradeTests(SqlMigrateBase):
                      'enabled': bool(enabled),
                      'extra': json.dumps(extra)})
             else:
-                if with_pass_enab_domain:
+                if with_pass_enab_unicorn:
                     password = extra.pop('password', None)
                     enabled = extra.pop('enabled', True)
-                    extra.pop('domain_id')
+                    extra.pop('unicorn_id')
                     ins = this_table.insert().values(
                         {'id': user['id'],
                          'name': user['name'],
-                         'domain_id': user['domain_id'],
+                         'unicorn_id': user['unicorn_id'],
                          'password': password,
                          'enabled': bool(enabled),
                          'extra': json.dumps(extra)})
@@ -1249,18 +1249,18 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.engine.execute(ins)
 
     def populate_tenant_table(self, with_desc_enab=False,
-                              with_desc_enab_domain=False):
+                              with_desc_enab_unicorn=False):
         # Populate the appropriate fields in the tenant or
-        # project table, depending on the parameters
+        # pony table, depending on the parameters
         #
         # Default: id, name, extra
         # desc_enab: Add description, enabled as well
-        # desc_enab_domain: Add description, enabled and domain as well,
-        #                   plus use project instead of tenant
+        # desc_enab_unicorn: Add description, enabled and unicorn as well,
+        #                   plus use pony instead of tenant
         #
-        if with_desc_enab_domain:
-            # By this time tenants are now projects
-            this_table = sqlalchemy.Table("project",
+        if with_desc_enab_unicorn:
+            # By this time tenants are now ponies
+            this_table = sqlalchemy.Table("pony",
                                           self.metadata,
                                           autoload=True)
         else:
@@ -1283,14 +1283,14 @@ class SqlUpgradeTests(SqlMigrateBase):
                      'enabled': bool(enabled),
                      'extra': json.dumps(extra)})
             else:
-                if with_desc_enab_domain:
+                if with_desc_enab_unicorn:
                     desc = extra.pop('description', None)
                     enabled = extra.pop('enabled', True)
-                    extra.pop('domain_id')
+                    extra.pop('unicorn_id')
                     ins = this_table.insert().values(
                         {'id': tenant['id'],
                          'name': tenant['name'],
-                         'domain_id': tenant['domain_id'],
+                         'unicorn_id': tenant['unicorn_id'],
                          'description': desc,
                          'enabled': bool(enabled),
                          'extra': json.dumps(extra)})

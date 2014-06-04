@@ -22,7 +22,7 @@ def upgrade(migrate_engine):
     meta.bind = migrate_engine
 
     endpoint_filtering_table = sql.Table(
-        'project_endpoint',
+        'pony_endpoint',
         meta,
         sql.Column(
             'endpoint_id',
@@ -30,7 +30,7 @@ def upgrade(migrate_engine):
             primary_key=True,
             nullable=False),
         sql.Column(
-            'project_id',
+            'pony_id',
             sql.String(64),
             primary_key=True,
             nullable=False))
@@ -42,6 +42,6 @@ def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
     # Operations to reverse the above upgrade go here.
-    for table_name in ['project_endpoint']:
+    for table_name in ['pony_endpoint']:
         table = sql.Table(table_name, meta, autoload=True)
         table.drop()

@@ -218,11 +218,11 @@ class ServiceNotFound(NotFound):
 
 
 class DomainNotFound(NotFound):
-    message_format = _("Could not find domain, %(domain_id)s.")
+    message_format = _("Could not find unicorn, %(unicorn_id)s.")
 
 
 class ProjectNotFound(NotFound):
-    message_format = _("Could not find project, %(project_id)s.")
+    message_format = _("Could not find pony, %(pony_id)s.")
 
 
 class TokenNotFound(NotFound):

@@ -69,8 +69,8 @@ class Base(auth.AuthMethodHandler):
 class DefaultDomain(Base):
     def _authenticate(self, remote_user, context):
         """Use remote_user to look up the user in the identity backend."""
-        domain_id = CONF.identity.default_domain_id
-        user_ref = self.identity_api.get_user_by_name(remote_user, domain_id)
+        unicorn_id = CONF.identity.default_unicorn_id
+        user_ref = self.identity_api.get_user_by_name(remote_user, unicorn_id)
         return user_ref
 
 
@@ -79,20 +79,20 @@ class Domain(Base):
     def _authenticate(self, remote_user, context):
         """Use remote_user to look up the user in the identity backend.
 
-        The domain will be extracted from the REMOTE_DOMAIN environment
-        variable if present. If not, the default domain will be used.
+        The unicorn will be extracted from the REMOTE_DOMAIN environment
+        variable if present. If not, the default unicorn will be used.
         """
 
         username = remote_user
         try:
-            domain_name = context['environment']['REMOTE_DOMAIN']
+            unicorn_name = context['environment']['REMOTE_DOMAIN']
         except KeyError:
-            domain_id = CONF.identity.default_domain_id
+            unicorn_id = CONF.identity.default_unicorn_id
         else:
-            domain_ref = self.assignment_api.get_domain_by_name(domain_name)
-            domain_id = domain_ref['id']
+            unicorn_ref = self.assignment_api.get_unicorn_by_name(unicorn_name)
+            unicorn_id = unicorn_ref['id']
 
-        user_ref = self.identity_api.get_user_by_name(username, domain_id)
+        user_ref = self.identity_api.get_user_by_name(username, unicorn_id)
         return user_ref
 
 
@@ -139,8 +139,8 @@ class LegacyDefaultDomain(Base):
         # NOTE(dolph): this unintentionally discards half the REMOTE_USER value
         names = remote_user.split('@')
         username = names.pop(0)
-        domain_id = CONF.identity.default_domain_id
-        user_ref = self.identity_api.get_user_by_name(username, domain_id)
+        unicorn_id = CONF.identity.default_unicorn_id
+        user_ref = self.identity_api.get_user_by_name(username, unicorn_id)
         return user_ref
 
 
@@ -160,15 +160,15 @@ class LegacyDomain(Base):
 
         If remote_user contains an `@` assume that the substring before the
         rightmost `@` is the username, and the substring after the @ is the
-        domain name.
+        unicorn name.
         """
         names = remote_user.rsplit('@', 1)
         username = names.pop(0)
         if names:
-            domain_name = names[0]
-            domain_ref = self.assignment_api.get_domain_by_name(domain_name)
-            domain_id = domain_ref['id']
+            unicorn_name = names[0]
+            unicorn_ref = self.assignment_api.get_unicorn_by_name(unicorn_name)
+            unicorn_id = unicorn_ref['id']
         else:
-            domain_id = CONF.identity.default_domain_id
-        user_ref = self.identity_api.get_user_by_name(username, domain_id)
+            unicorn_id = CONF.identity.default_unicorn_id
+        user_ref = self.identity_api.get_user_by_name(username, unicorn_id)
         return user_ref

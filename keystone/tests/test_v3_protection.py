@@ -25,7 +25,7 @@ from keystone.tests import test_v3
 
 
 CONF = config.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_unicorn_id
 
 
 class IdentityTestProtectedCase(test_v3.RestfulTestCase):
@@ -34,17 +34,17 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
     def setUp(self):
         """Setup for Identity Protection Test Cases.
 
-        As well as the usual housekeeping, create a set of domains,
-        users, roles and projects for the subsequent tests:
+        As well as the usual housekeeping, create a set of unicorns,
+        users, roles and ponies for the subsequent tests:
 
-        - Three domains: A,B & C.  C is disabled.
+        - Three unicorns: A,B & C.  C is disabled.
         - DomainA has user1, DomainB has user2 and user3
         - DomainA has group1 and group2, DomainB has group3
         - User1 has two roles on DomainA
         - User2 has one role on DomainA
 
-        Remember that there will also be a fourth domain in existence,
-        the default domain.
+        Remember that there will also be a fourth unicorn in existence,
+        the default unicorn.
 
         """
         # Ensure that test_v3.RestfulTestCase doesn't load its own
@@ -65,36 +65,36 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
             password=self.user1['password'])
 
     def load_sample_data(self):
-        self._populate_default_domain()
-        # Start by creating a couple of domains
-        self.domainA = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
-        self.domainB = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
-        self.domainC = self.new_domain_ref()
-        self.domainC['enabled'] = False
-        self.assignment_api.create_domain(self.domainC['id'], self.domainC)
+        self._populate_default_unicorn()
+        # Start by creating a couple of unicorns
+        self.unicornA = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicornA['id'], self.unicornA)
+        self.unicornB = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicornB['id'], self.unicornB)
+        self.unicornC = self.new_unicorn_ref()
+        self.unicornC['enabled'] = False
+        self.assignment_api.create_unicorn(self.unicornC['id'], self.unicornC)
 
-        # Now create some users, one in domainA and two of them in domainB
-        self.user1 = self.new_user_ref(domain_id=self.domainA['id'])
+        # Now create some users, one in unicornA and two of them in unicornB
+        self.user1 = self.new_user_ref(unicorn_id=self.unicornA['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
 
-        self.user2 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user2 = self.new_user_ref(unicorn_id=self.unicornB['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user2['id'], self.user2)
 
-        self.user3 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user3 = self.new_user_ref(unicorn_id=self.unicornB['id'])
         self.user3['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user3['id'], self.user3)
 
-        self.group1 = self.new_group_ref(domain_id=self.domainA['id'])
+        self.group1 = self.new_group_ref(unicorn_id=self.unicornA['id'])
         self.identity_api.create_group(self.group1['id'], self.group1)
 
-        self.group2 = self.new_group_ref(domain_id=self.domainA['id'])
+        self.group2 = self.new_group_ref(unicorn_id=self.unicornA['id'])
         self.identity_api.create_group(self.group2['id'], self.group2)
 
-        self.group3 = self.new_group_ref(domain_id=self.domainB['id'])
+        self.group3 = self.new_group_ref(unicorn_id=self.unicornB['id'])
         self.identity_api.create_group(self.group3['id'], self.group3)
 
         self.role = self.new_role_ref()
@@ -103,13 +103,13 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assignment_api.create_role(self.role1['id'], self.role1)
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user1['id'],
-                                         domain_id=self.domainA['id'])
+                                         unicorn_id=self.unicornA['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user2['id'],
-                                         domain_id=self.domainA['id'])
+                                         unicorn_id=self.unicornA['id'])
         self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user1['id'],
-                                         domain_id=self.domainA['id'])
+                                         unicorn_id=self.unicornA['id'])
 
     def _get_id_list_from_ref_list(self, ref_list):
         result_list = []
@@ -128,7 +128,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
         - Update policy so api is unprotected
         - Use an un-scoped token to make sure we can get back all
-          the users independent of domain
+          the users independent of unicorn
 
         """
         self._set_policy({"identity:list_users": []})
@@ -138,18 +138,18 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assertIn(self.user2['id'], id_list)
         self.assertIn(self.user3['id'], id_list)
 
-    def test_list_users_filtered_by_domain(self):
-        """GET /users?domain_id=mydomain (filtered)
+    def test_list_users_filtered_by_unicorn(self):
+        """GET /users?unicorn_id=myunicorn (filtered)
 
         Test Plan:
 
         - Update policy so api is unprotected
         - Use an un-scoped token to make sure we can filter the
-          users by domainB, getting back the 2 users in that domain
+          users by unicornB, getting back the 2 users in that unicorn
 
         """
         self._set_policy({"identity:list_users": []})
-        url_by_name = '/users?domain_id=%s' % self.domainB['id']
+        url_by_name = '/users?unicorn_id=%s' % self.unicornB['id']
         r = self.get(url_by_name, auth=self.auth)
         # We should  get back two users, those in DomainB
         id_list = self._get_id_list_from_ref_list(r.result.get('users'))
@@ -181,7 +181,7 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
         Test Plan:
 
-        - Update policy to protect api by domain_id
+        - Update policy to protect api by unicorn_id
         - Try and read a user who is in DomainB with a token scoped
           to Domain A - this should fail
         - Retry this for a user who is in Domain A, which should succeed.
@@ -190,12 +190,12 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
 
         """
         new_policy = {'identity:get_user':
-                      [["domain_id:%(target.user.domain_id)s"]]}
+                      [["unicorn_id:%(target.user.unicorn_id)s"]]}
         self._set_policy(new_policy)
         self.auth = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            domain_id=self.domainA['id'])
+            unicorn_id=self.unicornA['id'])
         url_by_name = '/users/%s' % self.user2['id']
         r = self.get(url_by_name, auth=self.auth,
                      expected_status=exception.ForbiddenAction.code)
@@ -209,23 +209,23 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
                      expected_status=exception.UserNotFound.code)
 
     def test_revoke_grant_protected_match_target(self):
-        """DELETE /domains/{id}/users/{id}/roles/{id} (match target)
+        """DELETE /unicorns/{id}/users/{id}/roles/{id} (match target)
 
         Test Plan:
 
-        - Update policy to protect api by domain_id of entities in
+        - Update policy to protect api by unicorn_id of entities in
           the grant
         - Try and delete the existing grant that has a user who is
-          from a different domain - this should fail.
+          from a different unicorn - this should fail.
         - Retry this for a user who is in Domain A, which should succeed.
 
         """
         new_policy = {'identity:revoke_grant':
-                      [["domain_id:%(target.user.domain_id)s"]]}
+                      [["unicorn_id:%(target.user.unicorn_id)s"]]}
         self._set_policy(new_policy)
         collection_url = (
-            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': self.domainA['id'],
+            '/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': self.unicornA['id'],
                 'user_id': self.user2['id']})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -234,69 +234,69 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.auth = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            domain_id=self.domainA['id'])
+            unicorn_id=self.unicornA['id'])
         self.delete(member_url, auth=self.auth,
                     expected_status=exception.ForbiddenAction.code)
 
         collection_url = (
-            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
-                'domain_id': self.domainA['id'],
+            '/unicorns/%(unicorn_id)s/users/%(user_id)s/roles' % {
+                'unicorn_id': self.unicornA['id'],
                 'user_id': self.user1['id']})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
             'role_id': self.role1['id']}
         self.delete(member_url, auth=self.auth)
 
-    def test_list_users_protected_by_domain(self):
-        """GET /users?domain_id=mydomain (protected)
+    def test_list_users_protected_by_unicorn(self):
+        """GET /users?unicorn_id=myunicorn (protected)
 
         Test Plan:
 
-        - Update policy to protect api by domain_id
-        - List groups using a token scoped to domainA with a filter
-          specifying domainA - we should only get back the one user
-          that is in domainA.
-        - Try and read the users from domainB - this should fail since
-          we don't have a token scoped for domainB
+        - Update policy to protect api by unicorn_id
+        - List groups using a token scoped to unicornA with a filter
+          specifying unicornA - we should only get back the one user
+          that is in unicornA.
+        - Try and read the users from unicornB - this should fail since
+          we don't have a token scoped for unicornB
 
         """
-        new_policy = {"identity:list_users": ["domain_id:%(domain_id)s"]}
+        new_policy = {"identity:list_users": ["unicorn_id:%(unicorn_id)s"]}
         self._set_policy(new_policy)
         self.auth = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            domain_id=self.domainA['id'])
-        url_by_name = '/users?domain_id=%s' % self.domainA['id']
+            unicorn_id=self.unicornA['id'])
+        url_by_name = '/users?unicorn_id=%s' % self.unicornA['id']
         r = self.get(url_by_name, auth=self.auth)
         # We should only get back one user, the one in DomainA
         id_list = self._get_id_list_from_ref_list(r.result.get('users'))
         self.assertEqual(1, len(id_list))
         self.assertIn(self.user1['id'], id_list)
 
-        # Now try for domainB, which should fail
-        url_by_name = '/users?domain_id=%s' % self.domainB['id']
+        # Now try for unicornB, which should fail
+        url_by_name = '/users?unicorn_id=%s' % self.unicornB['id']
         r = self.get(url_by_name, auth=self.auth,
                      expected_status=exception.ForbiddenAction.code)
 
-    def test_list_groups_protected_by_domain(self):
-        """GET /groups?domain_id=mydomain (protected)
+    def test_list_groups_protected_by_unicorn(self):
+        """GET /groups?unicorn_id=myunicorn (protected)
 
         Test Plan:
 
-        - Update policy to protect api by domain_id
-        - List groups using a token scoped to domainA and make sure
-          we only get back the two groups that are in domainA
-        - Try and read the groups from domainB - this should fail since
-          we don't have a token scoped for domainB
+        - Update policy to protect api by unicorn_id
+        - List groups using a token scoped to unicornA and make sure
+          we only get back the two groups that are in unicornA
+        - Try and read the groups from unicornB - this should fail since
+          we don't have a token scoped for unicornB
 
         """
-        new_policy = {"identity:list_groups": ["domain_id:%(domain_id)s"]}
+        new_policy = {"identity:list_groups": ["unicorn_id:%(unicorn_id)s"]}
         self._set_policy(new_policy)
         self.auth = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            domain_id=self.domainA['id'])
-        url_by_name = '/groups?domain_id=%s' % self.domainA['id']
+            unicorn_id=self.unicornA['id'])
+        url_by_name = '/groups?unicorn_id=%s' % self.unicornA['id']
         r = self.get(url_by_name, auth=self.auth)
         # We should only get back two groups, the ones in DomainA
         id_list = self._get_id_list_from_ref_list(r.result.get('groups'))
@@ -304,31 +304,31 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assertIn(self.group1['id'], id_list)
         self.assertIn(self.group2['id'], id_list)
 
-        # Now try for domainB, which should fail
-        url_by_name = '/groups?domain_id=%s' % self.domainB['id']
+        # Now try for unicornB, which should fail
+        url_by_name = '/groups?unicorn_id=%s' % self.unicornB['id']
         r = self.get(url_by_name, auth=self.auth,
                      expected_status=exception.ForbiddenAction.code)
 
-    def test_list_groups_protected_by_domain_and_filtered(self):
-        """GET /groups?domain_id=mydomain&name=myname (protected)
+    def test_list_groups_protected_by_unicorn_and_filtered(self):
+        """GET /groups?unicorn_id=myunicorn&name=myname (protected)
 
         Test Plan:
 
-        - Update policy to protect api by domain_id
-        - List groups using a token scoped to domainA with a filter
-          specifying both domainA and the name of group.
-        - We should only get back the group in domainA that matches
+        - Update policy to protect api by unicorn_id
+        - List groups using a token scoped to unicornA with a filter
+          specifying both unicornA and the name of group.
+        - We should only get back the group in unicornA that matches
           the name
 
         """
-        new_policy = {"identity:list_groups": ["domain_id:%(domain_id)s"]}
+        new_policy = {"identity:list_groups": ["unicorn_id:%(unicorn_id)s"]}
         self._set_policy(new_policy)
         self.auth = self.build_authentication_request(
             user_id=self.user1['id'],
             password=self.user1['password'],
-            domain_id=self.domainA['id'])
-        url_by_name = '/groups?domain_id=%s&name=%s' % (
-            self.domainA['id'], self.group2['name'])
+            unicorn_id=self.unicornA['id'])
+        url_by_name = '/groups?unicorn_id=%s&name=%s' % (
+            self.unicornA['id'], self.group2['name'])
         r = self.get(url_by_name, auth=self.auth)
         # We should only get back one user, the one in DomainA that matches
         # the name supplied
@@ -345,16 +345,16 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         The following data is created:
 
-        - Three domains: domainA, domainB and admin_domain
-        - One project, which name is 'project'
-        - domainA has three users: domain_admin_user, project_admin_user and
+        - Three unicorns: unicornA, unicornB and admin_unicorn
+        - One pony, which name is 'pony'
+        - unicornA has three users: unicorn_admin_user, pony_admin_user and
           just_a_user:
 
-          - domain_admin_user has role 'admin' on domainA,
-          - project_admin_user has role 'admin' on the project,
-          - just_a_user has a non-admin role on both domainA and the project.
-        - admin_domain has user cloud_admin_user, with an 'admin' role
-          on admin_domain.
+          - unicorn_admin_user has role 'admin' on unicornA,
+          - pony_admin_user has role 'admin' on the pony,
+          - just_a_user has a non-admin role on both unicornA and the pony.
+        - admin_unicorn has user cloud_admin_user, with an 'admin' role
+          on admin_unicorn.
 
         We test various api protection rules from the cloud sample policy
         file to make sure the sample is valid and that we correctly enforce it.
@@ -372,35 +372,35 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
             policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
 
     def load_sample_data(self):
-        # Start by creating a couple of domains
-        self._populate_default_domain()
-        self.domainA = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
-        self.domainB = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
-        self.admin_domain = {'id': 'admin_domain_id', 'name': 'Admin_domain'}
-        self.assignment_api.create_domain(self.admin_domain['id'],
-                                          self.admin_domain)
+        # Start by creating a couple of unicorns
+        self._populate_default_unicorn()
+        self.unicornA = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicornA['id'], self.unicornA)
+        self.unicornB = self.new_unicorn_ref()
+        self.assignment_api.create_unicorn(self.unicornB['id'], self.unicornB)
+        self.admin_unicorn = {'id': 'admin_unicorn_id', 'name': 'Admin_unicorn'}
+        self.assignment_api.create_unicorn(self.admin_unicorn['id'],
+                                          self.admin_unicorn)
 
         # And our users
         self.cloud_admin_user = self.new_user_ref(
-            domain_id=self.admin_domain['id'])
+            unicorn_id=self.admin_unicorn['id'])
         self.cloud_admin_user['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.cloud_admin_user['id'],
                                       self.cloud_admin_user)
-        self.just_a_user = self.new_user_ref(domain_id=self.domainA['id'])
+        self.just_a_user = self.new_user_ref(unicorn_id=self.unicornA['id'])
         self.just_a_user['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.just_a_user['id'], self.just_a_user)
-        self.domain_admin_user = self.new_user_ref(
-            domain_id=self.domainA['id'])
-        self.domain_admin_user['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.domain_admin_user['id'],
-                                      self.domain_admin_user)
-        self.project_admin_user = self.new_user_ref(
-            domain_id=self.domainA['id'])
-        self.project_admin_user['password'] = uuid.uuid4().hex
-        self.identity_api.create_user(self.project_admin_user['id'],
-                                      self.project_admin_user)
+        self.unicorn_admin_user = self.new_user_ref(
+            unicorn_id=self.unicornA['id'])
+        self.unicorn_admin_user['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.unicorn_admin_user['id'],
+                                      self.unicorn_admin_user)
+        self.pony_admin_user = self.new_user_ref(
+            unicorn_id=self.unicornA['id'])
+        self.pony_admin_user['password'] = uuid.uuid4().hex
+        self.identity_api.create_user(self.pony_admin_user['id'],
+                                      self.pony_admin_user)
 
         # The admin role and another plain role
         self.admin_role = {'id': uuid.uuid4().hex, 'name': 'admin'}
@@ -411,25 +411,25 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         # The cloud admin just gets the admin role
         self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.cloud_admin_user['id'],
-                                         domain_id=self.admin_domain['id'])
+                                         unicorn_id=self.admin_unicorn['id'])
 
-        # Assign roles to the domain
+        # Assign roles to the unicorn
         self.assignment_api.create_grant(self.admin_role['id'],
-                                         user_id=self.domain_admin_user['id'],
-                                         domain_id=self.domainA['id'])
+                                         user_id=self.unicorn_admin_user['id'],
+                                         unicorn_id=self.unicornA['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
-                                         domain_id=self.domainA['id'])
+                                         unicorn_id=self.unicornA['id'])
 
-        # Create a assign roles to the project
-        self.project = self.new_project_ref(domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.project['id'], self.project)
+        # Create a assign roles to the pony
+        self.pony = self.new_pony_ref(unicorn_id=self.unicornA['id'])
+        self.assignment_api.create_pony(self.pony['id'], self.pony)
         self.assignment_api.create_grant(self.admin_role['id'],
-                                         user_id=self.project_admin_user['id'],
-                                         project_id=self.project['id'])
+                                         user_id=self.pony_admin_user['id'],
+                                         pony_id=self.pony['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
-                                         project_id=self.project['id'])
+                                         pony_id=self.pony['id'])
 
     def _stati(self, expected_status):
         # Return the expected return codes for APIs with and without data
@@ -439,10 +439,10 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         else:
             return (expected_status, expected_status, expected_status)
 
-    def _test_user_management(self, domain_id, expected=None):
+    def _test_user_management(self, unicorn_id, expected=None):
         status_OK, status_created, status_no_data = self._stati(expected)
         entity_url = '/users/%s' % self.just_a_user['id']
-        list_url = '/users?domain_id=%s' % domain_id
+        list_url = '/users?unicorn_id=%s' % unicorn_id
 
         self.get(entity_url, auth=self.auth,
                  expected_status=status_OK)
@@ -454,46 +454,46 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.delete(entity_url, auth=self.auth,
                     expected_status=status_no_data)
 
-        user_ref = self.new_user_ref(domain_id=domain_id)
+        user_ref = self.new_user_ref(unicorn_id=unicorn_id)
         self.post('/users', auth=self.auth, body={'user': user_ref},
                   expected_status=status_created)
 
-    def _test_project_management(self, domain_id, expected=None):
+    def _test_pony_management(self, unicorn_id, expected=None):
         status_OK, status_created, status_no_data = self._stati(expected)
-        entity_url = '/projects/%s' % self.project['id']
-        list_url = '/projects?domain_id=%s' % domain_id
+        entity_url = '/ponies/%s' % self.pony['id']
+        list_url = '/ponies?unicorn_id=%s' % unicorn_id
 
         self.get(entity_url, auth=self.auth,
                  expected_status=status_OK)
         self.get(list_url, auth=self.auth,
                  expected_status=status_OK)
-        project = {'description': 'Updated'}
-        self.patch(entity_url, auth=self.auth, body={'project': project},
+        pony = {'description': 'Updated'}
+        self.patch(entity_url, auth=self.auth, body={'pony': pony},
                    expected_status=status_OK)
         self.delete(entity_url, auth=self.auth,
                     expected_status=status_no_data)
 
-        proj_ref = self.new_project_ref(domain_id=domain_id)
-        self.post('/projects', auth=self.auth, body={'project': proj_ref},
+        proj_ref = self.new_pony_ref(unicorn_id=unicorn_id)
+        self.post('/ponies', auth=self.auth, body={'pony': proj_ref},
                   expected_status=status_created)
 
-    def _test_domain_management(self, expected=None):
+    def _test_unicorn_management(self, expected=None):
         status_OK, status_created, status_no_data = self._stati(expected)
-        entity_url = '/domains/%s' % self.domainB['id']
-        list_url = '/domains'
+        entity_url = '/unicorns/%s' % self.unicornB['id']
+        list_url = '/unicorns'
 
         self.get(entity_url, auth=self.auth,
                  expected_status=status_OK)
         self.get(list_url, auth=self.auth,
                  expected_status=status_OK)
-        domain = {'description': 'Updated', 'enabled': False}
-        self.patch(entity_url, auth=self.auth, body={'domain': domain},
+        unicorn = {'description': 'Updated', 'enabled': False}
+        self.patch(entity_url, auth=self.auth, body={'unicorn': unicorn},
                    expected_status=status_OK)
         self.delete(entity_url, auth=self.auth,
                     expected_status=status_no_data)
 
-        domain_ref = self.new_domain_ref()
-        self.post('/domains', auth=self.auth, body={'domain': domain_ref},
+        unicorn_ref = self.new_unicorn_ref()
+        self.post('/unicorns', auth=self.auth, body={'unicorn': unicorn_ref},
                   expected_status=status_created)
 
     def _test_grants(self, target, entity_id, expected=None):
@@ -520,130 +520,130 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
                     expected_status=status_no_data)
 
     def test_user_management(self):
-        # First, authenticate with a user that does not have the domain
+        # First, authenticate with a user that does not have the unicorn
         # admin role - shouldn't be able to do much.
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            unicorn_id=self.unicornA['id'])
 
         self._test_user_management(
-            self.domainA['id'], expected=exception.ForbiddenAction.code)
+            self.unicornA['id'], expected=exception.ForbiddenAction.code)
 
-        # Now, authenticate with a user that does have the domain admin role
+        # Now, authenticate with a user that does have the unicorn admin role
         self.auth = self.build_authentication_request(
-            user_id=self.domain_admin_user['id'],
-            password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            user_id=self.unicorn_admin_user['id'],
+            password=self.unicorn_admin_user['password'],
+            unicorn_id=self.unicornA['id'])
 
-        self._test_user_management(self.domainA['id'])
+        self._test_user_management(self.unicornA['id'])
 
     def test_user_management_by_cloud_admin(self):
         # Test users management with a cloud admin. This user should
-        # be able to manage users in any domain.
+        # be able to manage users in any unicorn.
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            unicorn_id=self.admin_unicorn['id'])
 
-        self._test_user_management(self.domainA['id'])
+        self._test_user_management(self.unicornA['id'])
 
-    def test_project_management(self):
-        # First, authenticate with a user that does not have the project
+    def test_pony_management(self):
+        # First, authenticate with a user that does not have the pony
         # admin role - shouldn't be able to do much.
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            unicorn_id=self.unicornA['id'])
 
-        self._test_project_management(
-            self.domainA['id'], expected=exception.ForbiddenAction.code)
+        self._test_pony_management(
+            self.unicornA['id'], expected=exception.ForbiddenAction.code)
 
-        # ...but should still be able to list projects of which they are
+        # ...but should still be able to list ponies of which they are
         # a member
-        url = '/users/%s/projects' % self.just_a_user['id']
+        url = '/users/%s/ponies' % self.just_a_user['id']
         self.get(url, auth=self.auth)
 
-        # Now, authenticate with a user that does have the domain admin role
+        # Now, authenticate with a user that does have the unicorn admin role
         self.auth = self.build_authentication_request(
-            user_id=self.domain_admin_user['id'],
-            password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            user_id=self.unicorn_admin_user['id'],
+            password=self.unicorn_admin_user['password'],
+            unicorn_id=self.unicornA['id'])
 
-        self._test_project_management(self.domainA['id'])
+        self._test_pony_management(self.unicornA['id'])
 
-    def test_domain_grants(self):
+    def test_unicorn_grants(self):
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            domain_id=self.domainA['id'])
+            unicorn_id=self.unicornA['id'])
 
-        self._test_grants('domains', self.domainA['id'],
+        self._test_grants('unicorns', self.unicornA['id'],
                           expected=exception.ForbiddenAction.code)
 
-        # Now, authenticate with a user that does have the domain admin role
+        # Now, authenticate with a user that does have the unicorn admin role
         self.auth = self.build_authentication_request(
-            user_id=self.domain_admin_user['id'],
-            password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            user_id=self.unicorn_admin_user['id'],
+            password=self.unicorn_admin_user['password'],
+            unicorn_id=self.unicornA['id'])
 
-        self._test_grants('domains', self.domainA['id'])
+        self._test_grants('unicorns', self.unicornA['id'])
 
         # Check that with such a token we cannot modify grants on a
-        # different domain
-        self._test_grants('domains', self.domainB['id'],
+        # different unicorn
+        self._test_grants('unicorns', self.unicornB['id'],
                           expected=exception.ForbiddenAction.code)
 
-    def test_domain_grants_by_cloud_admin(self):
-        # Test domain grants with a cloud admin. This user should be
-        # able to manage roles on any domain.
+    def test_unicorn_grants_by_cloud_admin(self):
+        # Test unicorn grants with a cloud admin. This user should be
+        # able to manage roles on any unicorn.
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            unicorn_id=self.admin_unicorn['id'])
 
-        self._test_grants('domains', self.domainA['id'])
+        self._test_grants('unicorns', self.unicornA['id'])
 
-    def test_project_grants(self):
+    def test_pony_grants(self):
         self.auth = self.build_authentication_request(
             user_id=self.just_a_user['id'],
             password=self.just_a_user['password'],
-            project_id=self.project['id'])
+            pony_id=self.pony['id'])
 
-        self._test_grants('projects', self.project['id'],
+        self._test_grants('ponies', self.pony['id'],
                           expected=exception.ForbiddenAction.code)
 
-        # Now, authenticate with a user that does have the project
+        # Now, authenticate with a user that does have the pony
         # admin role
         self.auth = self.build_authentication_request(
-            user_id=self.project_admin_user['id'],
-            password=self.project_admin_user['password'],
-            project_id=self.project['id'])
+            user_id=self.pony_admin_user['id'],
+            password=self.pony_admin_user['password'],
+            pony_id=self.pony['id'])
 
-        self._test_grants('projects', self.project['id'])
+        self._test_grants('ponies', self.pony['id'])
 
-    def test_project_grants_by_domain_admin(self):
-        # Test project grants with a domain admin. This user should be
-        # able to manage roles on any project in its own domain.
+    def test_pony_grants_by_unicorn_admin(self):
+        # Test pony grants with a unicorn admin. This user should be
+        # able to manage roles on any pony in its own unicorn.
         self.auth = self.build_authentication_request(
-            user_id=self.domain_admin_user['id'],
-            password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            user_id=self.unicorn_admin_user['id'],
+            password=self.unicorn_admin_user['password'],
+            unicorn_id=self.unicornA['id'])
 
-        self._test_grants('projects', self.project['id'])
+        self._test_grants('ponies', self.pony['id'])
 
     def test_cloud_admin(self):
         self.auth = self.build_authentication_request(
-            user_id=self.domain_admin_user['id'],
-            password=self.domain_admin_user['password'],
-            domain_id=self.domainA['id'])
+            user_id=self.unicorn_admin_user['id'],
+            password=self.unicorn_admin_user['password'],
+            unicorn_id=self.unicornA['id'])
 
-        self._test_domain_management(
+        self._test_unicorn_management(
             expected=exception.ForbiddenAction.code)
 
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],
-            domain_id=self.admin_domain['id'])
+            unicorn_id=self.admin_unicorn['id'])
 
-        self._test_domain_management()
+        self._test_unicorn_management()

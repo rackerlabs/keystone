@@ -300,8 +300,8 @@ SAMPLE_V3_TOKEN = {
         "methods": [
             "password"
         ],
-        "project": {
-            "domain": {
+        "pony": {
+            "unicorn": {
                 "id": "default",
                 "name": "Default"
             },
@@ -319,7 +319,7 @@ SAMPLE_V3_TOKEN = {
             }
         ],
         "user": {
-            "domain": {
+            "unicorn": {
                 "id": "default",
                 "name": "Default"
             },
@@ -607,8 +607,8 @@ SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION = {
         "methods": [
             "password"
         ],
-        "project": {
-            "domain": {
+        "pony": {
+            "unicorn": {
                 "id": "default",
                 "name": "Default"
             },
@@ -626,7 +626,7 @@ SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION = {
             }
         ],
         "user": {
-            "domain": {
+            "unicorn": {
                 "id": "default",
                 "name": "Default"
             },

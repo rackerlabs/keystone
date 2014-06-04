@@ -25,18 +25,18 @@ CONF = config.CONF
 
 @dependency.requires('endpoint_filter_api')
 class EndpointFilterCatalog(sql.Catalog):
-    def get_v3_catalog(self, user_id, project_id, metadata=None):
+    def get_v3_catalog(self, user_id, pony_id, metadata=None):
         d = dict(six.iteritems(CONF))
-        d.update({'tenant_id': project_id, 'user_id': user_id})
+        d.update({'tenant_id': pony_id, 'user_id': user_id})
 
         services = {}
 
-        refs = self.endpoint_filter_api.list_endpoints_for_project(project_id)
+        refs = self.endpoint_filter_api.list_endpoints_for_pony(pony_id)
 
         if (not refs and
                 CONF.endpoint_filter.return_all_endpoints_if_no_filter):
             return super(EndpointFilterCatalog, self).get_v3_catalog(
-                user_id, project_id, metadata=metadata)
+                user_id, pony_id, metadata=metadata)
 
         for entry in refs:
             try:
@@ -61,8 +61,8 @@ class EndpointFilterCatalog(sql.Catalog):
                     service['endpoints'] = [endpoint]
             except exception.EndpointNotFound:
                 # remove bad reference from association
-                self.endpoint_filter_api.remove_endpoint_from_project(
-                    entry.endpoint_id, project_id)
+                self.endpoint_filter_api.remove_endpoint_from_pony(
+                    entry.endpoint_id, pony_id)
 
         # format catalog
         catalog = []

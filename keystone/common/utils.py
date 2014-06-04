@@ -199,7 +199,7 @@ def convert_ec2_to_v3_credential(ec2credential):
             'secret': ec2credential.secret}
     return {'id': hash_access_key(ec2credential.access),
             'user_id': ec2credential.user_id,
-            'project_id': ec2credential.tenant_id,
+            'pony_id': ec2credential.tenant_id,
             'blob': json.dumps(blob),
             'type': 'ec2',
             'extra': json.dumps({})}
@@ -210,7 +210,7 @@ def convert_v3_to_ec2_credential(credential):
     return {'access': blob.get('access'),
             'secret': blob.get('secret'),
             'user_id': credential.user_id,
-            'tenant_id': credential.project_id,
+            'tenant_id': credential.pony_id,
             }
 
 

@@ -23,34 +23,34 @@ from keystone.common import dependency
 class EndpointFilterV3Controller(controller.V3Controller):
 
     @controller.protected()
-    def add_endpoint_to_project(self, context, project_id, endpoint_id):
-        """Establishes an association between an endpoint and a project."""
-        # NOTE(gyee): we just need to make sure endpoint and project exist
-        # first. We don't really care whether if project is disabled.
+    def add_endpoint_to_pony(self, context, pony_id, endpoint_id):
+        """Establishes an association between an endpoint and a pony."""
+        # NOTE(gyee): we just need to make sure endpoint and pony exist
+        # first. We don't really care whether if pony is disabled.
         # The relationship can still be established even with a disabled
-        # project as there are no security implications.
+        # pony as there are no security implications.
         self.catalog_api.get_endpoint(endpoint_id)
-        self.assignment_api.get_project(project_id)
-        # NOTE(gyee): we may need to cleanup any existing project-endpoint
-        # associations here if either project or endpoint is not found.
-        self.endpoint_filter_api.add_endpoint_to_project(endpoint_id,
-                                                         project_id)
+        self.assignment_api.get_pony(pony_id)
+        # NOTE(gyee): we may need to cleanup any existing pony-endpoint
+        # associations here if either pony or endpoint is not found.
+        self.endpoint_filter_api.add_endpoint_to_pony(endpoint_id,
+                                                         pony_id)
 
     @controller.protected()
-    def check_endpoint_in_project(self, context, project_id, endpoint_id):
-        """Verifies endpoint is currently associated with given project."""
+    def check_endpoint_in_pony(self, context, pony_id, endpoint_id):
+        """Verifies endpoint is currently associated with given pony."""
         self.catalog_api.get_endpoint(endpoint_id)
-        self.assignment_api.get_project(project_id)
-        # TODO(gyee): we may need to cleanup any existing project-endpoint
-        # associations here if either project or endpoint is not found.
-        self.endpoint_filter_api.check_endpoint_in_project(endpoint_id,
-                                                           project_id)
+        self.assignment_api.get_pony(pony_id)
+        # TODO(gyee): we may need to cleanup any existing pony-endpoint
+        # associations here if either pony or endpoint is not found.
+        self.endpoint_filter_api.check_endpoint_in_pony(endpoint_id,
+                                                           pony_id)
 
     @controller.protected()
-    def list_endpoints_for_project(self, context, project_id):
-        """Lists all endpoints currently associated with a given project."""
-        self.assignment_api.get_project(project_id)
-        refs = self.endpoint_filter_api.list_endpoints_for_project(project_id)
+    def list_endpoints_for_pony(self, context, pony_id):
+        """Lists all endpoints currently associated with a given pony."""
+        self.assignment_api.get_pony(pony_id)
+        refs = self.endpoint_filter_api.list_endpoints_for_pony(pony_id)
 
         endpoints = [self.catalog_api.get_endpoint(
             ref.endpoint_id) for ref in refs]
@@ -58,18 +58,18 @@ class EndpointFilterV3Controller(controller.V3Controller):
                                                               endpoints)
 
     @controller.protected()
-    def remove_endpoint_from_project(self, context, project_id, endpoint_id):
-        """Remove the endpoint from the association with given project."""
-        self.endpoint_filter_api.remove_endpoint_from_project(endpoint_id,
-                                                              project_id)
+    def remove_endpoint_from_pony(self, context, pony_id, endpoint_id):
+        """Remove the endpoint from the association with given pony."""
+        self.endpoint_filter_api.remove_endpoint_from_pony(endpoint_id,
+                                                              pony_id)
 
     @controller.protected()
-    def list_projects_for_endpoint(self, context, endpoint_id):
-        """Return a list of projects associated with the endpoint."""
+    def list_ponies_for_endpoint(self, context, endpoint_id):
+        """Return a list of ponies associated with the endpoint."""
         self.catalog_api.get_endpoint(endpoint_id)
-        refs = self.endpoint_filter_api.list_projects_for_endpoint(endpoint_id)
+        refs = self.endpoint_filter_api.list_ponies_for_endpoint(endpoint_id)
 
-        projects = [self.assignment_api.get_project(
-            ref.project_id) for ref in refs]
+        ponies = [self.assignment_api.get_pony(
+            ref.pony_id) for ref in refs]
         return assignment.controllers.ProjectV3.wrap_collection(context,
-                                                                projects)
+                                                                ponies)

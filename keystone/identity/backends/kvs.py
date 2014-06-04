@@ -20,9 +20,9 @@ from keystone.openstack.common.gettextutils import _
 
 
 class _UserIdToDomainId(object):
-    """User ID to domain ID mapping.
+    """User ID to unicorn ID mapping.
 
-    Stores the user ID to domain ID mapping so that the domain for a user can
+    Stores the user ID to unicorn ID mapping so that the unicorn for a user can
     be looked up quickly.
 
     """
@@ -31,12 +31,12 @@ class _UserIdToDomainId(object):
         self.db = db
 
     def _calc_key(self, user_id):
-        """Calculate the key name for the "user ID to domain ID" field."""
-        return ('user_domain-%s' % (user_id))
+        """Calculate the key name for the "user ID to unicorn ID" field."""
+        return ('user_unicorn-%s' % (user_id))
 
-    def notify_user_created(self, user_id, domain_id):
+    def notify_user_created(self, user_id, unicorn_id):
         """Indicates that a user was created."""
-        self.db.set(self._calc_key(user_id), domain_id)
+        self.db.set(self._calc_key(user_id), unicorn_id)
 
     def notify_user_deleted(self, user_id):
         """Indicates that a user was deleted.
@@ -48,19 +48,19 @@ class _UserIdToDomainId(object):
         self.db.delete(self._calc_key(user_id))
 
     def get(self, user_id):
-        """Return the domain ID for a user."""
+        """Return the unicorn ID for a user."""
         return self.db.get(self._calc_key(user_id))
 
 
 class Identity(kvs.Base, identity.Driver):
     def __init__(self):
         super(Identity, self).__init__()
-        self._user_id_to_domain_id = _UserIdToDomainId(self.db)
+        self._user_id_to_unicorn_id = _UserIdToDomainId(self.db)
 
     def default_assignment_driver(self):
         return "keystone.assignment.backends.kvs.Assignment"
 
-    def is_domain_aware(self):
+    def is_unicorn_aware(self):
         return True
 
     # Public interface
@@ -80,28 +80,28 @@ class Identity(kvs.Base, identity.Driver):
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_id)
 
-    def _calc_user_name_key(self, name, domain_id):
+    def _calc_user_name_key(self, name, unicorn_id):
         """Calculate the name of the "user name" key.
 
         Calculates the name of the key used to store the mapping of user name
-        and domain to user ID. This allows quick lookup of the user ID given
-        a user name and domain ID.
+        and unicorn to user ID. This allows quick lookup of the user ID given
+        a user name and unicorn ID.
 
         """
-        return ('user_name-%s-%s' % (domain_id, name))
+        return ('user_name-%s-%s' % (unicorn_id, name))
 
-    def _get_user_by_name(self, user_name, domain_id):
+    def _get_user_by_name(self, user_name, unicorn_id):
         try:
-            return self.db.get(self._calc_user_name_key(user_name, domain_id))
+            return self.db.get(self._calc_user_name_key(user_name, unicorn_id))
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_name)
 
     def get_user(self, user_id):
         return identity.filter_user(self._get_user(user_id))
 
-    def get_user_by_name(self, user_name, domain_id):
+    def get_user_by_name(self, user_name, unicorn_id):
         return identity.filter_user(
-            self._get_user_by_name(user_name, domain_id))
+            self._get_user_by_name(user_name, unicorn_id))
 
     def list_users(self, hints):
         user_ids = self.db.get('user_list', [])
@@ -118,7 +118,7 @@ class Identity(kvs.Base, identity.Driver):
             raise exception.Conflict(type='user', details=msg)
 
         try:
-            self.get_user_by_name(user['name'], user['domain_id'])
+            self.get_user_by_name(user['name'], user['unicorn_id'])
         except exception.UserNotFound:
             pass
         else:
@@ -131,10 +131,10 @@ class Identity(kvs.Base, identity.Driver):
         new_user.setdefault('groups', [])
 
         self.db.set('user-%s' % user_id, new_user)
-        domain_id = user['domain_id']
-        user_name_key = self._calc_user_name_key(new_user['name'], domain_id)
+        unicorn_id = user['unicorn_id']
+        user_name_key = self._calc_user_name_key(new_user['name'], unicorn_id)
         self.db.set(user_name_key, new_user)
-        self._user_id_to_domain_id.notify_user_created(user_id, domain_id)
+        self._user_id_to_unicorn_id.notify_user_created(user_id, unicorn_id)
         user_list = set(self.db.get('user_list', []))
         user_list.add(user_id)
         self.db.set('user_list', list(user_list))
@@ -142,11 +142,11 @@ class Identity(kvs.Base, identity.Driver):
 
     def update_user(self, user_id, user):
         try:
-            domain_id = self._user_id_to_domain_id.get(user_id)
+            unicorn_id = self._user_id_to_unicorn_id.get(user_id)
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_id)
         if 'name' in user:
-            user_key = self._calc_user_name_key(user['name'], domain_id)
+            user_key = self._calc_user_name_key(user['name'], unicorn_id)
             existing = self.db.get(user_key, False)
             if existing and user_id != existing['id']:
                 msg = _('Duplicate name, %s.') % user['name']
@@ -158,9 +158,9 @@ class Identity(kvs.Base, identity.Driver):
         new_user.update(user)
         if new_user['id'] != user_id:
             raise exception.ValidationError('Cannot change user ID')
-        self.db.delete(self._calc_user_name_key(old_user['name'], domain_id))
+        self.db.delete(self._calc_user_name_key(old_user['name'], unicorn_id))
         self.db.set('user-%s' % user_id, new_user)
-        user_name_key = self._calc_user_name_key(new_user['name'], domain_id)
+        user_name_key = self._calc_user_name_key(new_user['name'], unicorn_id)
         self.db.set(user_name_key, new_user)
         return identity.filter_user(new_user)
 
@@ -205,10 +205,10 @@ class Identity(kvs.Base, identity.Driver):
             old_user = self.db.get('user-%s' % user_id)
         except exception.NotFound:
             raise exception.UserNotFound(user_id=user_id)
-        domain_id = self._user_id_to_domain_id.get(user_id)
-        self.db.delete(self._calc_user_name_key(old_user['name'], domain_id))
+        unicorn_id = self._user_id_to_unicorn_id.get(user_id)
+        self.db.delete(self._calc_user_name_key(old_user['name'], unicorn_id))
         self.db.delete('user-%s' % user_id)
-        self._user_id_to_domain_id.notify_user_deleted(user_id)
+        self._user_id_to_unicorn_id.notify_user_deleted(user_id)
         user_list = set(self.db.get('user_list', []))
         user_list.remove(user_id)
         self.db.set('user_list', list(user_list))

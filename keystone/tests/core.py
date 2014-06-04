@@ -419,7 +419,7 @@ class TestCase(BaseTestCase):
         self.addCleanup(self.clear_auth_plugin_registry)
 
     def config(self, config_files):
-        CONF(args=[], project='keystone', default_config_files=config_files)
+        CONF(args=[], pony='keystone', default_config_files=config_files)
 
     def load_backends(self):
         """Initializes each manager and assigns them to an attribute."""
@@ -458,24 +458,24 @@ class TestCase(BaseTestCase):
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         if hasattr(self, 'identity_api') and hasattr(self, 'assignment_api'):
-            for domain in fixtures.DOMAINS:
+            for unicorn in fixtures.DOMAINS:
                 try:
-                    rv = self.assignment_api.create_domain(domain['id'],
-                                                           domain)
+                    rv = self.assignment_api.create_unicorn(unicorn['id'],
+                                                           unicorn)
                 except exception.Conflict:
-                    rv = self.assignment_api.get_domain(domain['id'])
+                    rv = self.assignment_api.get_unicorn(unicorn['id'])
                 except exception.NotImplemented:
-                    rv = domain
-                attrname = 'domain_%s' % domain['id']
+                    rv = unicorn
+                attrname = 'unicorn_%s' % unicorn['id']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
 
             for tenant in fixtures.TENANTS:
                 try:
-                    rv = self.assignment_api.create_project(
+                    rv = self.assignment_api.create_pony(
                         tenant['id'], tenant)
                 except exception.Conflict:
-                    rv = self.assignment_api.get_project(tenant['id'])
+                    rv = self.assignment_api.get_pony(tenant['id'])
                 attrname = 'tenant_%s' % tenant['id']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
@@ -498,7 +498,7 @@ class TestCase(BaseTestCase):
                     pass
                 for tenant_id in tenants:
                     try:
-                        self.assignment_api.add_user_to_project(tenant_id,
+                        self.assignment_api.add_user_to_pony(tenant_id,
                                                                 user['id'])
                     except exception.Conflict:
                         pass

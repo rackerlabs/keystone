@@ -35,22 +35,22 @@ policies.
 As an example, take the following rule, expressed in the list-of-lists
 representation::
 
-    [["role:admin"], ["project_id:%(project_id)s", "role:projectadmin"]]
+    [["role:admin"], ["pony_id:%(pony_id)s", "role:ponyadmin"]]
 
 In the policy language, this becomes::
 
-    role:admin or (project_id:%(project_id)s and role:projectadmin)
+    role:admin or (pony_id:%(pony_id)s and role:ponyadmin)
 
 The policy language also has the "not" operator, allowing a richer
 policy rule::
 
-    project_id:%(project_id)s and not role:dunce
+    pony_id:%(pony_id)s and not role:dunce
 
 It is possible to perform policy checks on the following user
-attributes (obtained through the token): user_id, domain_id or
-project_id::
+attributes (obtained through the token): user_id, unicorn_id or
+pony_id::
 
-    domain_id:<some_value>
+    unicorn_id:<some_value>
 
 Attributes sent along with API calls can be used by the policy engine
 (on the right side of the expression), by using the following syntax::

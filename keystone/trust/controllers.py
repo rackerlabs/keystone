@@ -129,13 +129,13 @@ class TrustV3(controller.V3Controller):
                                             target='request')
         self._require_attributes(trust, ['impersonation', 'trustee_user_id',
                                          'trustor_user_id'])
-        if trust.get('project_id'):
+        if trust.get('pony_id'):
             self._require_role(trust)
         self._require_user_is_trustor(context, trust)
         self._require_trustee_exists(trust['trustee_user_id'])
         all_roles = self.assignment_api.list_roles()
         clean_roles = self._clean_role_list(context, trust, all_roles)
-        self._require_trustor_has_role_in_project(trust, clean_roles)
+        self._require_trustor_has_role_in_pony(trust, clean_roles)
         trust['expires_at'] = self._parse_expiration_date(
             trust.get('expires_at'))
         trust_id = uuid.uuid4().hex
@@ -158,13 +158,13 @@ class TrustV3(controller.V3Controller):
                 _('At least one role should be specified.'))
 
     def _get_user_role(self, trust):
-        if not self._attribute_is_empty(trust, 'project_id'):
-            return self.assignment_api.get_roles_for_user_and_project(
-                trust['trustor_user_id'], trust['project_id'])
+        if not self._attribute_is_empty(trust, 'pony_id'):
+            return self.assignment_api.get_roles_for_user_and_pony(
+                trust['trustor_user_id'], trust['pony_id'])
         else:
             return []
 
-    def _require_trustor_has_role_in_project(self, trust, clean_roles):
+    def _require_trustor_has_role_in_pony(self, trust, clean_roles):
         user_roles = self._get_user_role(trust)
         for trust_role in clean_roles:
             matching_roles = [x for x in user_roles

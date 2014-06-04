@@ -18,8 +18,8 @@ _NAMES = ['trust_id',
           'consumer_id',
           'access_token_id',
           'expires_at',
-          'domain_id',
-          'project_id',
+          'unicorn_id',
+          'pony_id',
           'user_id',
           'role_id']
 
@@ -30,8 +30,8 @@ _EVENT_ARGS = ['issued_before', 'revoked_at']
 # Values that will be in the token data but not in the event.
 # These will compared with event values that have different names.
 # For example: both trustor_id and trustee_id are compared against user_id
-_TOKEN_KEYS = ['identity_domain_id',
-               'assignment_domain_id',
+_TOKEN_KEYS = ['identity_unicorn_id',
+               'assignment_unicorn_id',
                'issued_at',
                'trustor_id',
                'trustee_id']
@@ -64,8 +64,8 @@ class RevokeEvent(object):
     def to_dict(self):
         keys = ['user_id',
                 'role_id',
-                'domain_id',
-                'project_id']
+                'unicorn_id',
+                'pony_id']
         event = dict((key, self.__dict__[key]) for key in keys
                      if self.__dict__[key] is not None)
         if self.trust_id is not None:
@@ -166,8 +166,8 @@ class RevokeTree(object):
         token_data is a map based on a flattened view of token.
         The required fields are:
 
-           'expires_at','user_id', 'project_id', 'identity_domain_id',
-           'assignment_domain_id', 'trust_id', 'trustor_id', 'trustee_id'
+           'expires_at','user_id', 'pony_id', 'identity_unicorn_id',
+           'assignment_unicorn_id', 'trust_id', 'trustor_id', 'trustee_id'
            'consumer_id', 'access_token_id'
 
         """
@@ -175,7 +175,7 @@ class RevokeTree(object):
         # revoke tree.
         alternatives = {
             'user_id': ['user_id', 'trustor_id', 'trustee_id'],
-            'domain_id': ['identity_domain_id', 'assignment_domain_id'],
+            'unicorn_id': ['identity_unicorn_id', 'assignment_unicorn_id'],
         }
         # Contains current forest (collection of trees) to be checked.
         partial_matches = [self.revoke_map]
@@ -223,7 +223,7 @@ class RevokeTree(object):
         return False
 
 
-def build_token_values_v2(access, default_domain_id):
+def build_token_values_v2(access, default_unicorn_id):
     token_data = access['token']
     token_values = {
         'expires_at': timeutils.normalize_time(
@@ -233,14 +233,14 @@ def build_token_values_v2(access, default_domain_id):
 
     token_values['user_id'] = access.get('user', {}).get('id')
 
-    project = token_data.get('tenant')
-    if project is not None:
-        token_values['project_id'] = project['id']
+    pony = token_data.get('tenant')
+    if pony is not None:
+        token_values['pony_id'] = pony['id']
     else:
-        token_values['project_id'] = None
+        token_values['pony_id'] = None
 
-    token_values['identity_domain_id'] = default_domain_id
-    token_values['assignment_domain_id'] = default_domain_id
+    token_values['identity_unicorn_id'] = default_unicorn_id
+    token_values['assignment_unicorn_id'] = default_unicorn_id
 
     trust = token_data.get('trust')
     if trust is None:
@@ -274,18 +274,18 @@ def build_token_values(token_data):
     user = token_data.get('user')
     if user is not None:
         token_values['user_id'] = user['id']
-        token_values['identity_domain_id'] = user['domain']['id']
+        token_values['identity_unicorn_id'] = user['unicorn']['id']
     else:
         token_values['user_id'] = None
-        token_values['identity_domain_id'] = None
+        token_values['identity_unicorn_id'] = None
 
-    project = token_data.get('project', token_data.get('tenant'))
-    if project is not None:
-        token_values['project_id'] = project['id']
-        token_values['assignment_domain_id'] = project['domain']['id']
+    pony = token_data.get('pony', token_data.get('tenant'))
+    if pony is not None:
+        token_values['pony_id'] = pony['id']
+        token_values['assignment_unicorn_id'] = pony['unicorn']['id']
     else:
-        token_values['project_id'] = None
-        token_values['assignment_domain_id'] = None
+        token_values['pony_id'] = None
+        token_values['assignment_unicorn_id'] = None
 
     role_list = []
     roles = token_data.get('roles')

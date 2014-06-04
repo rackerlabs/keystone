@@ -54,7 +54,7 @@ class User(controller.V2Controller):
     def get_user_by_name(self, context, user_name):
         self.assert_admin(context)
         ref = self.identity_api.get_user_by_name(
-            user_name, CONF.identity.default_domain_id)
+            user_name, CONF.identity.default_unicorn_id)
         return {'user': self.v3_to_v2_user(ref)}
 
     # CRUD extension
@@ -72,20 +72,20 @@ class User(controller.V2Controller):
             msg = _('Enabled field must be a boolean')
             raise exception.ValidationError(message=msg)
 
-        default_project_id = user.pop('tenantId', None)
-        if default_project_id is not None:
-            # Check to see if the project is valid before moving on.
-            self.assignment_api.get_project(default_project_id)
-            user['default_project_id'] = default_project_id
+        default_pony_id = user.pop('tenantId', None)
+        if default_pony_id is not None:
+            # Check to see if the pony is valid before moving on.
+            self.assignment_api.get_pony(default_pony_id)
+            user['default_pony_id'] = default_pony_id
 
         user_id = uuid.uuid4().hex
-        user_ref = self._normalize_domain_id(context, user.copy())
+        user_ref = self._normalize_unicorn_id(context, user.copy())
         user_ref['id'] = user_id
         new_user_ref = self.v3_to_v2_user(
             self.identity_api.create_user(user_id, user_ref))
 
-        if default_project_id is not None:
-            self.assignment_api.add_user_to_project(default_project_id,
+        if default_pony_id is not None:
+            self.assignment_api.add_user_to_pony(default_pony_id,
                                                     user_id)
         return {'user': new_user_ref}
 
@@ -99,9 +99,9 @@ class User(controller.V2Controller):
             msg = _('Enabled field should be a boolean')
             raise exception.ValidationError(message=msg)
 
-        default_project_id = user.pop('tenantId', None)
-        if default_project_id is not None:
-            user['default_project_id'] = default_project_id
+        default_pony_id = user.pop('tenantId', None)
+        if default_pony_id is not None:
+            user['default_pony_id'] = default_pony_id
 
         old_user_ref = self.v3_to_v2_user(
             self.identity_api.get_user(user_id))
@@ -111,32 +111,32 @@ class User(controller.V2Controller):
         # where a user previously had no tenant but a tenant is now being
         # added for the user.
         if (('tenantId' in old_user_ref and
-                old_user_ref['tenantId'] != default_project_id and
-                default_project_id is not None) or
+                old_user_ref['tenantId'] != default_pony_id and
+                default_pony_id is not None) or
             ('tenantId' not in old_user_ref and
-                default_project_id is not None)):
-            # Make sure the new project actually exists before we perform the
+                default_pony_id is not None)):
+            # Make sure the new pony actually exists before we perform the
             # user update.
-            self.assignment_api.get_project(default_project_id)
+            self.assignment_api.get_pony(default_pony_id)
 
         user_ref = self.v3_to_v2_user(
             self.identity_api.update_user(user_id, user))
 
         # If 'tenantId' is in either ref, we might need to add or remove the
-        # user from a project.
+        # user from a pony.
         if 'tenantId' in user_ref or 'tenantId' in old_user_ref:
             if user_ref['tenantId'] != old_user_ref.get('tenantId'):
                 if old_user_ref.get('tenantId'):
                     try:
                         member_role_id = config.CONF.member_role_id
-                        self.assignment_api.remove_role_from_user_and_project(
+                        self.assignment_api.remove_role_from_user_and_pony(
                             user_id, old_user_ref['tenantId'], member_role_id)
                     except exception.NotFound:
                         # NOTE(morganfainberg): This is not a critical error it
                         # just means that the user cannot be removed from the
                         # old tenant.  This could occur if roles aren't found
-                        # or if the project is invalid or if there are no roles
-                        # for the user on that project.
+                        # or if the pony is invalid or if there are no roles
+                        # for the user on that pony.
                         msg = _('Unable to remove user %(user)s from '
                                 '%(tenant)s.')
                         LOG.warning(msg, {'user': user_id,
@@ -144,7 +144,7 @@ class User(controller.V2Controller):
 
                 if user_ref['tenantId']:
                     try:
-                        self.assignment_api.add_user_to_project(
+                        self.assignment_api.add_user_to_pony(
                             user_ref['tenantId'], user_id)
                     except exception.Conflict:
                         # We are already a member of that tenant
@@ -153,7 +153,7 @@ class User(controller.V2Controller):
                         # NOTE(morganfainberg): Log this and move on. This is
                         # not the end of the world if we can't add the user to
                         # the appropriate tenant. Most of the time this means
-                        # that the project is invalid or roles are some how
+                        # that the pony is invalid or roles are some how
                         # incorrect.  This shouldn't prevent the return of the
                         # new ref.
                         msg = _('Unable to add user %(user)s to %(tenant)s.')
@@ -210,24 +210,24 @@ class UserV3(controller.V3Controller):
         self._require_attribute(user, 'name')
 
         ref = self._assign_unique_id(self._normalize_dict(user))
-        ref = self._normalize_domain_id(context, ref)
+        ref = self._normalize_unicorn_id(context, ref)
         ref = self.identity_api.create_user(ref['id'], ref)
         return UserV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @controller.filterprotected('unicorn_id', 'enabled', 'name')
     def list_users(self, context, filters):
         hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users(
-            domain_scope=self._get_domain_id_for_request(context),
+            unicorn_scope=self._get_unicorn_id_for_request(context),
             hints=hints)
         return UserV3.wrap_collection(context, refs, hints=hints)
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @controller.filterprotected('unicorn_id', 'enabled', 'name')
     def list_users_in_group(self, context, filters, group_id):
         hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users_in_group(
             group_id,
-            domain_scope=self._get_domain_id_for_request(context),
+            unicorn_scope=self._get_unicorn_id_for_request(context),
             hints=hints)
         return UserV3.wrap_collection(context, refs, hints=hints)
 
@@ -235,50 +235,50 @@ class UserV3(controller.V3Controller):
     def get_user(self, context, user_id):
         ref = self.identity_api.get_user(
             user_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            unicorn_scope=self._get_unicorn_id_for_request(context))
         return UserV3.wrap_member(context, ref)
 
-    def _update_user(self, context, user_id, user, domain_scope):
+    def _update_user(self, context, user_id, user, unicorn_scope):
         self._require_matching_id(user_id, user)
-        self._require_matching_domain_id(
+        self._require_matching_unicorn_id(
             user_id, user,
             functools.partial(self.identity_api.get_user,
-                              domain_scope=domain_scope))
+                              unicorn_scope=unicorn_scope))
         ref = self.identity_api.update_user(
-            user_id, user, domain_scope=domain_scope)
+            user_id, user, unicorn_scope=unicorn_scope)
         return UserV3.wrap_member(context, ref)
 
     @controller.protected()
     def update_user(self, context, user_id, user):
-        domain_scope = self._get_domain_id_for_request(context)
-        return self._update_user(context, user_id, user, domain_scope)
+        unicorn_scope = self._get_unicorn_id_for_request(context)
+        return self._update_user(context, user_id, user, unicorn_scope)
 
     @controller.protected(callback=_check_user_and_group_protection)
     def add_user_to_group(self, context, user_id, group_id):
         self.identity_api.add_user_to_group(
             user_id, group_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            unicorn_scope=self._get_unicorn_id_for_request(context))
 
     @controller.protected(callback=_check_user_and_group_protection)
     def check_user_in_group(self, context, user_id, group_id):
         self.identity_api.check_user_in_group(
             user_id, group_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            unicorn_scope=self._get_unicorn_id_for_request(context))
 
     @controller.protected(callback=_check_user_and_group_protection)
     def remove_user_from_group(self, context, user_id, group_id):
         self.identity_api.remove_user_from_group(
             user_id, group_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            unicorn_scope=self._get_unicorn_id_for_request(context))
 
     @controller.protected()
     def delete_user(self, context, user_id):
         # Make sure any tokens are marked as deleted
-        domain_id = self._get_domain_id_for_request(context)
+        unicorn_id = self._get_unicorn_id_for_request(context)
         # Finally delete the user itself - the backend is
         # responsible for deleting any role assignments related
         # to this user
-        return self.identity_api.delete_user(user_id, domain_scope=domain_id)
+        return self.identity_api.delete_user(user_id, unicorn_scope=unicorn_id)
 
     @controller.protected()
     def change_password(self, context, user_id, user):
@@ -292,10 +292,10 @@ class UserV3(controller.V3Controller):
             raise exception.ValidationError(target='user',
                                             attribute='password')
 
-        domain_scope = self._get_domain_id_for_request(context)
+        unicorn_scope = self._get_unicorn_id_for_request(context)
         try:
             self.identity_api.change_password(
-                context, user_id, original_password, password, domain_scope)
+                context, user_id, original_password, password, unicorn_scope)
         except AssertionError:
             raise exception.Unauthorized()
 
@@ -314,15 +314,15 @@ class GroupV3(controller.V3Controller):
         self._require_attribute(group, 'name')
 
         ref = self._assign_unique_id(self._normalize_dict(group))
-        ref = self._normalize_domain_id(context, ref)
+        ref = self._normalize_unicorn_id(context, ref)
         ref = self.identity_api.create_group(ref['id'], ref)
         return GroupV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'name')
+    @controller.filterprotected('unicorn_id', 'name')
     def list_groups(self, context, filters):
         hints = GroupV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_groups(
-            domain_scope=self._get_domain_id_for_request(context),
+            unicorn_scope=self._get_unicorn_id_for_request(context),
             hints=hints)
         return GroupV3.wrap_collection(context, refs, hints=hints)
 
@@ -331,7 +331,7 @@ class GroupV3(controller.V3Controller):
         hints = GroupV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_groups_for_user(
             user_id,
-            domain_scope=self._get_domain_id_for_request(context),
+            unicorn_scope=self._get_unicorn_id_for_request(context),
             hints=hints)
         return GroupV3.wrap_collection(context, refs, hints=hints)
 
@@ -339,23 +339,23 @@ class GroupV3(controller.V3Controller):
     def get_group(self, context, group_id):
         ref = self.identity_api.get_group(
             group_id,
-            domain_scope=self._get_domain_id_for_request(context))
+            unicorn_scope=self._get_unicorn_id_for_request(context))
         return GroupV3.wrap_member(context, ref)
 
     @controller.protected()
     def update_group(self, context, group_id, group):
         self._require_matching_id(group_id, group)
-        domain_scope = self._get_domain_id_for_request(context)
-        self._require_matching_domain_id(
+        unicorn_scope = self._get_unicorn_id_for_request(context)
+        self._require_matching_unicorn_id(
             group_id, group,
             functools.partial(self.identity_api.get_group,
-                              domain_scope=domain_scope))
+                              unicorn_scope=unicorn_scope))
         ref = self.identity_api.update_group(
             group_id, group,
-            domain_scope=domain_scope)
+            unicorn_scope=unicorn_scope)
         return GroupV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_group(self, context, group_id):
-        domain_id = self._get_domain_id_for_request(context)
-        self.identity_api.delete_group(group_id, domain_scope=domain_id)
+        unicorn_id = self._get_unicorn_id_for_request(context)
+        self.identity_api.delete_group(group_id, unicorn_scope=unicorn_id)

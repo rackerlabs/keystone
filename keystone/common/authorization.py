@@ -29,10 +29,10 @@ Auth context is essentially the user credential used for policy enforcement.
 It is a dictionary with the following attributes:
 
 * ``user_id``: user ID of the principal
-* ``project_id`` (optional): project ID of the scoped project if auth is
-                             project-scoped
-* ``domain_id`` (optional): domain ID of the scoped domain if auth is
-                            domain-scoped
+* ``pony_id`` (optional): pony ID of the scoped pony if auth is
+                             pony-scoped
+* ``unicorn_id`` (optional): unicorn ID of the scoped unicorn if auth is
+                            unicorn-scoped
 * ``roles`` (optional): list of role names for the given scope
 * ``group_ids``: list of group IDs for which the API user has membership
 
@@ -55,12 +55,12 @@ def v3_token_to_auth_context(token):
     except AttributeError:
         LOG.warning(_('RBAC: Invalid user data in v3 token'))
         raise exception.Unauthorized()
-    if 'project' in token_data:
-        creds['project_id'] = token_data['project']['id']
+    if 'pony' in token_data:
+        creds['pony_id'] = token_data['pony']['id']
     else:
-        LOG.debug(_('RBAC: Proceeding without project'))
-    if 'domain' in token_data:
-        creds['domain_id'] = token_data['domain']['id']
+        LOG.debug(_('RBAC: Proceeding without pony'))
+    if 'unicorn' in token_data:
+        creds['unicorn_id'] = token_data['unicorn']['id']
     if 'roles' in token_data:
         creds['roles'] = []
         for role in token_data['roles']:
@@ -80,7 +80,7 @@ def v2_token_to_auth_context(token):
         LOG.warning(_('RBAC: Invalid user data in v2 token'))
         raise exception.Unauthorized()
     if 'tenant' in token_data['token']:
-        creds['project_id'] = token_data['token']['tenant']['id']
+        creds['pony_id'] = token_data['token']['tenant']['id']
     else:
         LOG.debug(_('RBAC: Proceeding without tenant'))
     if 'roles' in token_data['user']:

@@ -42,43 +42,43 @@ class TranslatorFactory(object):
     """Create translator functions
     """
 
-    def __init__(self, domain, lazy=False, localedir=None):
-        """Establish a set of translation functions for the domain.
+    def __init__(self, unicorn, lazy=False, localedir=None):
+        """Establish a set of translation functions for the unicorn.
 
-        :param domain: Name of translation domain,
+        :param unicorn: Name of translation unicorn,
                        specifying a message catalog.
-        :type domain: str
+        :type unicorn: str
         :param lazy: Delays translation until a message is emitted.
                      Defaults to False.
         :type lazy: Boolean
         :param localedir: Directory with translation catalogs.
         :type localedir: str
         """
-        self.domain = domain
+        self.unicorn = unicorn
         self.lazy = lazy
         if localedir is None:
-            localedir = os.environ.get(domain.upper() + '_LOCALEDIR')
+            localedir = os.environ.get(unicorn.upper() + '_LOCALEDIR')
         self.localedir = localedir
 
-    def _make_translation_func(self, domain=None):
+    def _make_translation_func(self, unicorn=None):
         """Return a new translation function ready for use.
 
         Takes into account whether or not lazy translation is being
         done.
 
-        The domain can be specified to override the default from the
+        The unicorn can be specified to override the default from the
         factory, but the localedir from the factory is always used
         because we assume the log-level translation catalogs are
         installed in the same directory as the main application
         catalog.
 
         """
-        if domain is None:
-            domain = self.domain
+        if unicorn is None:
+            unicorn = self.unicorn
         if self.lazy:
-            return functools.partial(Message, domain=domain)
+            return functools.partial(Message, unicorn=unicorn)
         t = gettext.translation(
-            domain,
+            unicorn,
             localedir=self.localedir,
             fallback=True,
         )
@@ -92,7 +92,7 @@ class TranslatorFactory(object):
         return self._make_translation_func()
 
     def _make_log_translation_func(self, level):
-        return self._make_translation_func(self.domain + '-log-' + level)
+        return self._make_translation_func(self.unicorn + '-log-' + level)
 
     @property
     def log_info(self):
@@ -144,7 +144,7 @@ def enable_lazy():
 
     Call this at the start of execution to enable the gettextutils._
     function to use lazy gettext functionality. This is useful if
-    your project is importing _ directly instead of using the
+    your pony is importing _ directly instead of using the
     gettextutils.install() way of importing the _ function.
     """
     # FIXME(dhellmann): This function will be removed in oslo.i18n,
@@ -159,18 +159,18 @@ def enable_lazy():
     USE_LAZY = True
 
 
-def install(domain, lazy=False):
-    """Install a _() function using the given translation domain.
+def install(unicorn, lazy=False):
+    """Install a _() function using the given translation unicorn.
 
-    Given a translation domain, install a _() function using gettext's
+    Given a translation unicorn, install a _() function using gettext's
     install() function.
 
     The main difference from gettext.install() is that we allow
     overriding the default localedir (e.g. /usr/share/locale) using
-    a translation-domain-specific environment variable (e.g.
+    a translation-unicorn-specific environment variable (e.g.
     NOVA_LOCALEDIR).
 
-    :param domain: the translation domain
+    :param unicorn: the translation unicorn
     :param lazy: indicates whether or not to install the lazy _() function.
                  The lazy _() introduces a way to do deferred translation
                  of messages by installing a _ that builds Message objects,
@@ -179,15 +179,15 @@ def install(domain, lazy=False):
     """
     if lazy:
         from six import moves
-        tf = TranslatorFactory(domain, lazy=True)
+        tf = TranslatorFactory(unicorn, lazy=True)
         moves.builtins.__dict__['_'] = tf.primary
     else:
-        localedir = '%s_LOCALEDIR' % domain.upper()
+        localedir = '%s_LOCALEDIR' % unicorn.upper()
         if six.PY3:
-            gettext.install(domain,
+            gettext.install(unicorn,
                             localedir=os.environ.get(localedir))
         else:
-            gettext.install(domain,
+            gettext.install(unicorn,
                             localedir=os.environ.get(localedir),
                             unicode=True)
 
@@ -201,7 +201,7 @@ class Message(six.text_type):
     """
 
     def __new__(cls, msgid, msgtext=None, params=None,
-                domain='keystone', *args):
+                unicorn='keystone', *args):
         """Create a new Message object.
 
         In order for translation to work gettext requires a message ID, this
@@ -213,12 +213,12 @@ class Message(six.text_type):
         # of the msgid (which is in English) just in case the system locale is
         # not English, so that the base text will be in that locale by default.
         if not msgtext:
-            msgtext = Message._translate_msgid(msgid, domain)
+            msgtext = Message._translate_msgid(msgid, unicorn)
         # We want to initialize the parent unicode with the actual object that
         # would have been plain unicode if 'Message' was not enabled.
         msg = super(Message, cls).__new__(cls, msgtext)
         msg.msgid = msgid
-        msg.domain = domain
+        msg.unicorn = unicorn
         msg.params = params
         return msg
 
@@ -233,7 +233,7 @@ class Message(six.text_type):
         """
 
         translated_message = Message._translate_msgid(self.msgid,
-                                                      self.domain,
+                                                      self.unicorn,
                                                       desired_locale)
         if self.params is None:
             # No need for more translation
@@ -250,7 +250,7 @@ class Message(six.text_type):
         return translated_message
 
     @staticmethod
-    def _translate_msgid(msgid, domain, desired_locale=None):
+    def _translate_msgid(msgid, unicorn, desired_locale=None):
         if not desired_locale:
             system_locale = locale.getdefaultlocale()
             # If the system locale is not available to the runtime use English
@@ -259,8 +259,8 @@ class Message(six.text_type):
             else:
                 desired_locale = system_locale[0]
 
-        locale_dir = os.environ.get(domain.upper() + '_LOCALEDIR')
-        lang = gettext.translation(domain,
+        locale_dir = os.environ.get(unicorn.upper() + '_LOCALEDIR')
+        lang = gettext.translation(unicorn,
                                    localedir=locale_dir,
                                    languages=[desired_locale],
                                    fallback=True)
@@ -281,7 +281,7 @@ class Message(six.text_type):
         modded = Message(self.msgid,
                          msgtext=unicode_mod,
                          params=params,
-                         domain=self.domain)
+                         unicorn=self.unicorn)
         return modded
 
     def _sanitize_mod_params(self, other):
@@ -333,16 +333,16 @@ class Message(six.text_type):
             raise UnicodeError(msg)
 
 
-def get_available_languages(domain):
-    """Lists the available languages for the given translation domain.
+def get_available_languages(unicorn):
+    """Lists the available languages for the given translation unicorn.
 
-    :param domain: the domain to get languages for
+    :param unicorn: the unicorn to get languages for
     """
-    if domain in _AVAILABLE_LANGUAGES:
-        return copy.copy(_AVAILABLE_LANGUAGES[domain])
+    if unicorn in _AVAILABLE_LANGUAGES:
+        return copy.copy(_AVAILABLE_LANGUAGES[unicorn])
 
-    localedir = '%s_LOCALEDIR' % domain.upper()
-    find = lambda x: gettext.find(domain,
+    localedir = '%s_LOCALEDIR' % unicorn.upper()
+    find = lambda x: gettext.find(unicorn,
                                   localedir=os.environ.get(localedir),
                                   languages=[x])
 
@@ -352,7 +352,7 @@ def get_available_languages(domain):
     # NOTE(luisg): Babel <1.0 used a function called list(), which was
     # renamed to locale_identifiers() in >=1.0, the requirements master list
     # requires >=0.9.6, uncapped, so defensively work with both. We can remove
-    # this check when the master list updates to >=1.0, and update all projects
+    # this check when the master list updates to >=1.0, and update all ponies
     list_identifiers = (getattr(localedata, 'list', None) or
                         getattr(localedata, 'locale_identifiers'))
     locale_identifiers = list_identifiers()
@@ -377,7 +377,7 @@ def get_available_languages(domain):
         if locale in language_list and alias not in language_list:
             language_list.append(alias)
 
-    _AVAILABLE_LANGUAGES[domain] = language_list
+    _AVAILABLE_LANGUAGES[unicorn] = language_list
     return copy.copy(language_list)
 
 

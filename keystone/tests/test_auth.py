@@ -34,7 +34,7 @@ from keystone import trust
 
 CONF = config.CONF
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_unicorn_id
 
 HOST_URL = 'http://keystone:5001'
 
@@ -220,7 +220,7 @@ class AuthWithToken(AuthTest):
             self.controller.authenticate,
             {}, body_dict)
 
-    def test_auth_unscoped_token_no_project(self):
+    def test_auth_unscoped_token_no_pony(self):
         """Verify getting an unscoped token with an unscoped token."""
         body_dict = _build_user_auth(
             username='FOO',
@@ -233,10 +233,10 @@ class AuthWithToken(AuthTest):
 
         self.assertEqualTokens(unscoped_token, unscoped_token_2)
 
-    def test_auth_unscoped_token_project(self):
+    def test_auth_unscoped_token_pony(self):
         """Verify getting a token in a tenant with an unscoped token."""
         # Add a role in so we can check we get this back
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_member['id'])
@@ -256,24 +256,24 @@ class AuthWithToken(AuthTest):
         self.assertEqual(self.tenant_bar['id'], tenant["id"])
         self.assertEqual(self.role_member['id'], roles[0])
 
-    def test_auth_token_project_group_role(self):
+    def test_auth_token_pony_group_role(self):
         """Verify getting a token in a tenant with group roles."""
         # Add a v2 style role in so we can check we get this back
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             self.user_foo['id'],
             self.tenant_bar['id'],
             self.role_member['id'])
         # Now create a group role for this user as well
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
+        unicorn1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_unicorn(unicorn1['id'], unicorn1)
+        new_group = {'id': uuid.uuid4().hex, 'unicorn_id': unicorn1['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
         self.assignment_api.create_grant(
             group_id=new_group['id'],
-            project_id=self.tenant_bar['id'],
+            pony_id=self.tenant_bar['id'],
             role_id=self.role_admin['id'])
 
         # Get a scoped token for the tenant
@@ -290,60 +290,60 @@ class AuthWithToken(AuthTest):
         self.assertIn(self.role_member['id'], roles)
         self.assertIn(self.role_admin['id'], roles)
 
-    def test_auth_token_cross_domain_group_and_project(self):
-        """Verify getting a token in cross domain group/project roles."""
-        # create domain, project and group and grant roles to user
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
-        self.assignment_api.create_project(project1['id'], project1)
-        role_foo_domain1 = {'id': uuid.uuid4().hex,
+    def test_auth_token_cross_unicorn_group_and_pony(self):
+        """Verify getting a token in cross unicorn group/pony roles."""
+        # create unicorn, pony and group and grant roles to user
+        unicorn1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_unicorn(unicorn1['id'], unicorn1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'unicorn_id': unicorn1['id']}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        role_foo_unicorn1 = {'id': uuid.uuid4().hex,
                             'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(role_foo_domain1['id'],
-                                        role_foo_domain1)
-        role_group_domain1 = {'id': uuid.uuid4().hex,
+        self.assignment_api.create_role(role_foo_unicorn1['id'],
+                                        role_foo_unicorn1)
+        role_group_unicorn1 = {'id': uuid.uuid4().hex,
                               'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(role_group_domain1['id'],
-                                        role_group_domain1)
-        self.assignment_api.add_user_to_project(project1['id'],
+        self.assignment_api.create_role(role_group_unicorn1['id'],
+                                        role_group_unicorn1)
+        self.assignment_api.add_user_to_pony(pony1['id'],
                                                 self.user_foo['id'])
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
+        new_group = {'id': uuid.uuid4().hex, 'unicorn_id': unicorn1['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
         self.assignment_api.create_grant(
             user_id=self.user_foo['id'],
-            project_id=project1['id'],
+            pony_id=pony1['id'],
             role_id=self.role_member['id'])
         self.assignment_api.create_grant(
             group_id=new_group['id'],
-            project_id=project1['id'],
+            pony_id=pony1['id'],
             role_id=self.role_admin['id'])
         self.assignment_api.create_grant(
             user_id=self.user_foo['id'],
-            domain_id=domain1['id'],
-            role_id=role_foo_domain1['id'])
+            unicorn_id=unicorn1['id'],
+            role_id=role_foo_unicorn1['id'])
         self.assignment_api.create_grant(
             group_id=new_group['id'],
-            domain_id=domain1['id'],
-            role_id=role_group_domain1['id'])
+            unicorn_id=unicorn1['id'],
+            role_id=role_group_unicorn1['id'])
 
         # Get a scoped token for the tenant
         body_dict = _build_user_auth(
             username=self.user_foo['name'],
             password=self.user_foo['password'],
-            tenant_name=project1['name'])
+            tenant_name=pony1['name'])
 
         scoped_token = self.controller.authenticate({}, body_dict)
         tenant = scoped_token["access"]["token"]["tenant"]
         roles = scoped_token["access"]["metadata"]["roles"]
-        self.assertEqual(project1['id'], tenant["id"])
+        self.assertEqual(pony1['id'], tenant["id"])
         self.assertIn(self.role_member['id'], roles)
         self.assertIn(self.role_admin['id'], roles)
-        self.assertNotIn(role_foo_domain1['id'], roles)
-        self.assertNotIn(role_group_domain1['id'], roles)
+        self.assertNotIn(role_foo_unicorn1['id'], roles)
+        self.assertNotIn(role_group_unicorn1['id'], roles)
 
     def test_belongs_to_no_tenant(self):
         r = self.controller.authenticate(
@@ -412,20 +412,20 @@ class AuthWithToken(AuthTest):
 
     def test_deleting_role_revokes_token(self):
         role_controller = assignment.controllers.Role()
-        project1 = {'id': 'Project1', 'name': uuid.uuid4().hex,
-                    'domain_id': DEFAULT_DOMAIN_ID}
-        self.assignment_api.create_project(project1['id'], project1)
+        pony1 = {'id': 'Project1', 'name': uuid.uuid4().hex,
+                    'unicorn_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         role_one = {'id': 'role_one', 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role_one['id'], role_one)
-        self.assignment_api.add_role_to_user_and_project(
-            self.user_foo['id'], project1['id'], role_one['id'])
+        self.assignment_api.add_role_to_user_and_pony(
+            self.user_foo['id'], pony1['id'], role_one['id'])
         no_context = {}
 
         # Get a scoped token for the tenant
         body_dict = _build_user_auth(
             username=self.user_foo['name'],
             password=self.user_foo['password'],
-            tenant_name=project1['name'])
+            tenant_name=pony1['name'])
         token = self.controller.authenticate(no_context, body_dict)
         # Ensure it is valid
         token_id = token['access']['token']['id']
@@ -506,41 +506,41 @@ class AuthWithPasswordCredentials(AuthTest):
         token = self.controller.authenticate({}, body_dict)
         self.assertNotIn('bind', token['access']['token'])
 
-    def test_change_default_domain_id(self):
-        # If the default_domain_id config option is not the default then the
-        # user in auth data is from the new default domain.
+    def test_change_default_unicorn_id(self):
+        # If the default_unicorn_id config option is not the default then the
+        # user in auth data is from the new default unicorn.
 
-        # 1) Create a new domain.
-        new_domain_id = uuid.uuid4().hex
-        new_domain = {
+        # 1) Create a new unicorn.
+        new_unicorn_id = uuid.uuid4().hex
+        new_unicorn = {
             'description': uuid.uuid4().hex,
             'enabled': True,
-            'id': new_domain_id,
+            'id': new_unicorn_id,
             'name': uuid.uuid4().hex,
         }
 
-        self.assignment_api.create_domain(new_domain_id, new_domain)
+        self.assignment_api.create_unicorn(new_unicorn_id, new_unicorn)
 
-        # 2) Create user "foo" in new domain with different password than
-        #    default-domain foo.
+        # 2) Create user "foo" in new unicorn with different password than
+        #    default-unicorn foo.
         new_user_id = uuid.uuid4().hex
         new_user_password = uuid.uuid4().hex
         new_user = {
             'id': new_user_id,
             'name': self.user_foo['name'],
-            'domain_id': new_domain_id,
+            'unicorn_id': new_unicorn_id,
             'password': new_user_password,
             'email': 'foo@bar2.com',
         }
 
         self.identity_api.create_user(new_user_id, new_user)
 
-        # 3) Update the default_domain_id config option to the new domain
+        # 3) Update the default_unicorn_id config option to the new unicorn
 
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_unicorn_id=new_unicorn_id)
 
-        # 4) Authenticate as "foo" using the password in the new domain.
+        # 4) Authenticate as "foo" using the password in the new unicorn.
 
         body_dict = _build_user_auth(
             username=self.user_foo['name'],
@@ -639,12 +639,12 @@ class AuthWithTrust(AuthTest):
         self.assigned_roles = [self.role_member['id'],
                                self.role_browser['id']]
         for assigned_role in self.assigned_roles:
-            self.assignment_api.add_role_to_user_and_project(
+            self.assignment_api.add_role_to_user_and_pony(
                 self.trustor['id'], self.tenant_bar['id'], assigned_role)
 
         self.sample_data = {'trustor_user_id': self.trustor['id'],
                             'trustee_user_id': self.trustee['id'],
-                            'project_id': self.tenant_bar['id'],
+                            'pony_id': self.tenant_bar['id'],
                             'impersonation': True,
                             'roles': [{'id': self.role_browser['id']},
                                       {'name': self.role_member['name']}]}
@@ -692,7 +692,7 @@ class AuthWithTrust(AuthTest):
         context = self._create_auth_context(
             unscoped_token['access']['token']['id'])
         bad_sample_data = {'trustor_user_id': self.trustor['id'],
-                           'project_id': self.tenant_bar['id'],
+                           'pony_id': self.tenant_bar['id'],
                            'roles': [{'id': self.role_browser['id']}]}
 
         self.assertRaises(exception.ValidationError,
@@ -737,14 +737,14 @@ class AuthWithTrust(AuthTest):
                           self.create_trust, self.sample_data,
                           self.trustor['name'], expires_at="Z")
 
-    def test_create_trust_without_project_id(self):
-        """Verify that trust can be created without project id and
+    def test_create_trust_without_pony_id(self):
+        """Verify that trust can be created without pony id and
         token can be generated with that trust.
         """
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
         context = self._create_auth_context(
             unscoped_token['access']['token']['id'])
-        self.sample_data['project_id'] = None
+        self.sample_data['pony_id'] = None
         self.sample_data['roles'] = []
         new_trust = self.trust_controller.create_trust(
             context, trust=self.sample_data)['trust']
@@ -813,7 +813,7 @@ class AuthWithTrust(AuthTest):
                 }
             },
             'scope': {
-                'project': {
+                'pony': {
                     'id': self.tenant_baz['id']
                 }
             }
@@ -919,7 +919,7 @@ class AuthWithTrust(AuthTest):
     def test_token_from_trust_with_no_role_fails(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
         for assigned_role in self.assigned_roles:
-            self.assignment_api.remove_role_from_user_and_project(
+            self.assignment_api.remove_role_from_user_and_pony(
                 self.trustor['id'], self.tenant_bar['id'], assigned_role)
         request_body = self.build_v2_token_request('TWO', 'two2', new_trust)
         self.assertRaises(
@@ -937,12 +937,12 @@ class AuthWithTrust(AuthTest):
 
     def test_token_from_trust_with_wrong_role_fails(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'])
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             self.trustor['id'],
             self.tenant_bar['id'],
             self.role_other['id'])
         for assigned_role in self.assigned_roles:
-            self.assignment_api.remove_role_from_user_and_project(
+            self.assignment_api.remove_role_from_user_and_pony(
                 self.trustor['id'], self.tenant_bar['id'], assigned_role)
 
         request_body = self.build_v2_token_request('TWO', 'two2', new_trust)

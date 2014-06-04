@@ -21,13 +21,13 @@ TENANTS = [
     {
         'id': 'bar',
         'name': 'BAR',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'unicorn_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
         'enabled': True,
     }, {
         'id': 'baz',
         'name': 'BAZ',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'unicorn_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
         'enabled': True,
     }, {
@@ -35,13 +35,13 @@ TENANTS = [
         'name': 'MTU',
         'description': 'description',
         'enabled': True,
-        'domain_id': DEFAULT_DOMAIN_ID
+        'unicorn_id': DEFAULT_DOMAIN_ID
     }, {
         'id': 'service',
         'name': 'service',
         'description': 'description',
         'enabled': True,
-        'domain_id': DEFAULT_DOMAIN_ID
+        'unicorn_id': DEFAULT_DOMAIN_ID
     }
 ]
 
@@ -50,7 +50,7 @@ USERS = [
     {
         'id': 'foo',
         'name': 'FOO',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'unicorn_id': DEFAULT_DOMAIN_ID,
         'password': 'foo2',
         'tenants': ['bar'],
         'enabled': True,
@@ -58,25 +58,25 @@ USERS = [
     }, {
         'id': 'two',
         'name': 'TWO',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'unicorn_id': DEFAULT_DOMAIN_ID,
         'password': 'two2',
         'enabled': True,
-        'default_project_id': 'baz',
+        'default_pony_id': 'baz',
         'tenants': ['baz'],
         'email': 'two@three.com',
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'unicorn_id': DEFAULT_DOMAIN_ID,
         'password': 'bad',
         'enabled': False,
-        'default_project_id': 'baz',
+        'default_pony_id': 'baz',
         'tenants': ['baz'],
         'email': 'bad@guy.com',
     }, {
         'id': 'sna',
         'name': 'SNA',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'unicorn_id': DEFAULT_DOMAIN_ID,
         'password': 'snafu',
         'enabled': True,
         'tenants': ['bar'],
@@ -110,7 +110,7 @@ ROLES = [
 ]
 
 DOMAINS = [{'description':
-            (u'Owns users and tenants (i.e. projects)'
+            (u'Owns users and tenants (i.e. ponies)'
                 ' available on Identity API v2.'),
             'enabled': True,
             'id': DEFAULT_DOMAIN_ID,

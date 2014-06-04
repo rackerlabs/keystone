@@ -35,30 +35,30 @@ class AssignmentType:
 
 class Assignment(assignment.Driver):
 
-    def _get_project(self, session, project_id):
-        project_ref = session.query(Project).get(project_id)
-        if project_ref is None:
-            raise exception.ProjectNotFound(project_id=project_id)
-        return project_ref
+    def _get_pony(self, session, pony_id):
+        pony_ref = session.query(Project).get(pony_id)
+        if pony_ref is None:
+            raise exception.ProjectNotFound(pony_id=pony_id)
+        return pony_ref
 
-    def get_project(self, tenant_id):
+    def get_pony(self, tenant_id):
         with sql.transaction() as session:
-            return self._get_project(session, tenant_id).to_dict()
+            return self._get_pony(session, tenant_id).to_dict()
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_pony_by_name(self, tenant_name, unicorn_id):
         with sql.transaction() as session:
             query = session.query(Project)
             query = query.filter_by(name=tenant_name)
-            query = query.filter_by(domain_id=domain_id)
+            query = query.filter_by(unicorn_id=unicorn_id)
             try:
-                project_ref = query.one()
+                pony_ref = query.one()
             except sql.NotFound:
-                raise exception.ProjectNotFound(project_id=tenant_name)
-            return project_ref.to_dict()
+                raise exception.ProjectNotFound(pony_id=tenant_name)
+            return pony_ref.to_dict()
 
-    def list_user_ids_for_project(self, tenant_id):
+    def list_user_ids_for_pony(self, tenant_id):
         with sql.transaction() as session:
-            self._get_project(session, tenant_id)
+            self._get_pony(session, tenant_id)
             query = session.query(RoleAssignment.actor_id)
             query = query.filter_by(type=AssignmentType.USER_PROJECT)
             query = query.filter_by(target_id=tenant_id)
@@ -67,7 +67,7 @@ class Assignment(assignment.Driver):
             return [assignment.actor_id for assignment in assignments]
 
     def _get_metadata(self, user_id=None, tenant_id=None,
-                      domain_id=None, group_id=None, session=None):
+                      unicorn_id=None, group_id=None, session=None):
         # TODO(henry-nash): This method represents the last vestiges of the old
         # metadata concept in this driver.  Although we no longer need it here,
         # since the Manager layer uses the metadata concept across all
@@ -95,7 +95,7 @@ class Assignment(assignment.Driver):
 
         q = q.filter_by(type=_calc_assignment_type())
         q = q.filter_by(actor_id=user_id or group_id)
-        q = q.filter_by(target_id=tenant_id or domain_id)
+        q = q.filter_by(target_id=tenant_id or unicorn_id)
         refs = q.all()
         if not refs:
             raise exception.MetadataNotFound()
@@ -108,27 +108,27 @@ class Assignment(assignment.Driver):
             if assignment.inherited and (
                     assignment.type == AssignmentType.USER_DOMAIN or
                     assignment.type == AssignmentType.GROUP_DOMAIN):
-                role_ref['inherited_to'] = 'projects'
+                role_ref['inherited_to'] = 'ponies'
             metadata_ref['roles'].append(role_ref)
 
         return metadata_ref
 
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     unicorn_id=None, pony_id=None,
+                     inherited_to_ponies=False):
 
-        def calculate_type(user_id, group_id, project_id, domain_id):
-            if user_id and project_id:
+        def calculate_type(user_id, group_id, pony_id, unicorn_id):
+            if user_id and pony_id:
                 return AssignmentType.USER_PROJECT
-            elif user_id and domain_id:
+            elif user_id and unicorn_id:
                 return AssignmentType.USER_DOMAIN
-            elif group_id and project_id:
+            elif group_id and pony_id:
                 return AssignmentType.GROUP_PROJECT
-            elif group_id and domain_id:
+            elif group_id and unicorn_id:
                 return AssignmentType.GROUP_DOMAIN
             else:
                 message_data = ', '.join(
-                    [user_id, group_id, project_id, domain_id])
+                    [user_id, group_id, pony_id, unicorn_id])
                 raise exception.Error(message=_(
                     'Unexpected combination of grant attributes - '
                     'User, Group, Project, Domain: %s') % message_data)
@@ -136,67 +136,67 @@ class Assignment(assignment.Driver):
         with sql.transaction() as session:
             self._get_role(session, role_id)
 
-            if domain_id:
-                self._get_domain(session, domain_id)
-            if project_id:
-                self._get_project(session, project_id)
+            if unicorn_id:
+                self._get_unicorn(session, unicorn_id)
+            if pony_id:
+                self._get_pony(session, pony_id)
 
-            if project_id and inherited_to_projects:
-                msg = _('Inherited roles can only be assigned to domains')
+            if pony_id and inherited_to_ponies:
+                msg = _('Inherited roles can only be assigned to unicorns')
                 raise exception.Conflict(type='role grant', details=msg)
 
-        type = calculate_type(user_id, group_id, project_id, domain_id)
+        type = calculate_type(user_id, group_id, pony_id, unicorn_id)
         try:
             with sql.transaction() as session:
                 session.add(RoleAssignment(
                     type=type,
                     actor_id=user_id or group_id,
-                    target_id=project_id or domain_id,
+                    target_id=pony_id or unicorn_id,
                     role_id=role_id,
-                    inherited=inherited_to_projects))
+                    inherited=inherited_to_ponies))
         except sql.DBDuplicateEntry:
             # The v3 grant APIs are silent if the assignment already exists
             pass
 
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
-                    inherited_to_projects=False):
+                    unicorn_id=None, pony_id=None,
+                    inherited_to_ponies=False):
         with sql.transaction() as session:
-            if domain_id:
-                self._get_domain(session, domain_id)
-            if project_id:
-                self._get_project(session, project_id)
+            if unicorn_id:
+                self._get_unicorn(session, unicorn_id)
+            if pony_id:
+                self._get_pony(session, pony_id)
 
             q = session.query(Role).join(RoleAssignment)
             q = q.filter(RoleAssignment.actor_id == (user_id or group_id))
-            q = q.filter(RoleAssignment.target_id == (project_id or domain_id))
-            q = q.filter(RoleAssignment.inherited == inherited_to_projects)
+            q = q.filter(RoleAssignment.target_id == (pony_id or unicorn_id))
+            q = q.filter(RoleAssignment.inherited == inherited_to_ponies)
             q = q.filter(Role.id == RoleAssignment.role_id)
             return [x.to_dict() for x in q.all()]
 
     def _build_grant_filter(self, session, role_id, user_id, group_id,
-                            domain_id, project_id, inherited_to_projects):
+                            unicorn_id, pony_id, inherited_to_ponies):
         q = session.query(RoleAssignment)
         q = q.filter_by(actor_id=user_id or group_id)
-        q = q.filter_by(target_id=project_id or domain_id)
+        q = q.filter_by(target_id=pony_id or unicorn_id)
         q = q.filter_by(role_id=role_id)
-        q = q.filter_by(inherited=inherited_to_projects)
+        q = q.filter_by(inherited=inherited_to_ponies)
         return q
 
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
-                  inherited_to_projects=False):
+                  unicorn_id=None, pony_id=None,
+                  inherited_to_ponies=False):
         with sql.transaction() as session:
             role_ref = self._get_role(session, role_id)
-            if domain_id:
-                self._get_domain(session, domain_id)
-            if project_id:
-                self._get_project(session, project_id)
+            if unicorn_id:
+                self._get_unicorn(session, unicorn_id)
+            if pony_id:
+                self._get_pony(session, pony_id)
 
             try:
                 q = self._build_grant_filter(
-                    session, role_id, user_id, group_id, domain_id, project_id,
-                    inherited_to_projects)
+                    session, role_id, user_id, group_id, unicorn_id, pony_id,
+                    inherited_to_ponies)
                 q.one()
             except sql.NotFound:
                 raise exception.RoleNotFound(role_id=role_id)
@@ -204,50 +204,50 @@ class Assignment(assignment.Driver):
             return role_ref.to_dict()
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
-                     inherited_to_projects=False):
+                     unicorn_id=None, pony_id=None,
+                     inherited_to_ponies=False):
         with sql.transaction() as session:
             self._get_role(session, role_id)
-            if domain_id:
-                self._get_domain(session, domain_id)
-            if project_id:
-                self._get_project(session, project_id)
+            if unicorn_id:
+                self._get_unicorn(session, unicorn_id)
+            if pony_id:
+                self._get_pony(session, pony_id)
 
             q = self._build_grant_filter(
-                session, role_id, user_id, group_id, domain_id, project_id,
-                inherited_to_projects)
+                session, role_id, user_id, group_id, unicorn_id, pony_id,
+                inherited_to_ponies)
             if not q.delete(False):
                 raise exception.RoleNotFound(role_id=role_id)
 
     @sql.truncated
-    def list_projects(self, hints):
+    def list_ponies(self, hints):
         with sql.transaction() as session:
             query = session.query(Project)
-            project_refs = sql.filter_limit_query(Project, query, hints)
-            return [project_ref.to_dict() for project_ref in project_refs]
+            pony_refs = sql.filter_limit_query(Project, query, hints)
+            return [pony_ref.to_dict() for pony_ref in pony_refs]
 
-    def list_projects_in_domain(self, domain_id):
+    def list_ponies_in_unicorn(self, unicorn_id):
         with sql.transaction() as session:
-            self._get_domain(session, domain_id)
+            self._get_unicorn(session, unicorn_id)
             query = session.query(Project)
-            project_refs = query.filter_by(domain_id=domain_id)
-            return [project_ref.to_dict() for project_ref in project_refs]
+            pony_refs = query.filter_by(unicorn_id=unicorn_id)
+            return [pony_ref.to_dict() for pony_ref in pony_refs]
 
-    def list_projects_for_user(self, user_id, group_ids, hints):
+    def list_ponies_for_user(self, user_id, group_ids, hints):
         # TODO(henry-nash): Now that we have a single assignment table, we
         # should be able to honor the hints list that is provided.
 
-        def _project_ids_to_dicts(session, ids):
+        def _pony_ids_to_dicts(session, ids):
             if not ids:
                 return []
             else:
                 query = session.query(Project)
                 query = query.filter(Project.id.in_(ids))
-                project_refs = query.all()
-                return [project_ref.to_dict() for project_ref in project_refs]
+                pony_refs = query.all()
+                return [pony_ref.to_dict() for pony_ref in pony_refs]
 
         with sql.transaction() as session:
-            # First get a list of the projects and domains for which the user
+            # First get a list of the ponies and unicorns for which the user
             # has any kind of role assigned
 
             actor_list = [user_id]
@@ -258,47 +258,47 @@ class Assignment(assignment.Driver):
             query = query.filter(RoleAssignment.actor_id.in_(actor_list))
             assignments = query.all()
 
-            project_ids = set()
+            pony_ids = set()
             for assignment in assignments:
                 if (assignment.type == AssignmentType.USER_PROJECT or
                         assignment.type == AssignmentType.GROUP_PROJECT):
-                    project_ids.add(assignment.target_id)
+                    pony_ids.add(assignment.target_id)
 
             if not CONF.os_inherit.enabled:
-                return _project_ids_to_dicts(session, project_ids)
+                return _pony_ids_to_dicts(session, pony_ids)
 
             # Inherited roles are enabled, so check to see if this user has any
-            # such roles (direct or group) on any domain, in which case we must
-            # add in all the projects in that domain.
+            # such roles (direct or group) on any unicorn, in which case we must
+            # add in all the ponies in that unicorn.
 
-            domain_ids = set()
+            unicorn_ids = set()
             for assignment in assignments:
                 if ((assignment.type == AssignmentType.USER_DOMAIN or
                     assignment.type == AssignmentType.GROUP_DOMAIN) and
                         assignment.inherited):
-                    domain_ids.add(assignment.target_id)
+                    unicorn_ids.add(assignment.target_id)
 
-            # Get the projects that are owned by all of these domains and
-            # add them in to the project id list
+            # Get the ponies that are owned by all of these unicorns and
+            # add them in to the pony id list
 
-            if domain_ids:
+            if unicorn_ids:
                 query = session.query(Project.id)
-                query = query.filter(Project.domain_id.in_(domain_ids))
-                for project_ref in query.all():
-                    project_ids.add(project_ref.id)
+                query = query.filter(Project.unicorn_id.in_(unicorn_ids))
+                for pony_ref in query.all():
+                    pony_ids.add(pony_ref.id)
 
-            return _project_ids_to_dicts(session, project_ids)
+            return _pony_ids_to_dicts(session, pony_ids)
 
-    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+    def get_roles_for_groups(self, group_ids, pony_id=None, unicorn_id=None):
 
-        if project_id is not None:
+        if pony_id is not None:
             assignment_type = AssignmentType.GROUP_PROJECT
-            target_id = project_id
-        elif domain_id is not None:
+            target_id = pony_id
+        elif unicorn_id is not None:
             assignment_type = AssignmentType.GROUP_DOMAIN
-            target_id = domain_id
+            target_id = unicorn_id
         else:
-            raise AttributeError(_("Must specify either domain or project"))
+            raise AttributeError(_("Must specify either unicorn or pony"))
 
         sql_constraints = sqlalchemy.and_(
             RoleAssignment.type == assignment_type,
@@ -329,15 +329,15 @@ class Assignment(assignment.Driver):
                 group_sql_conditions)
         return [x.to_dict() for x in query.all()]
 
-    def list_projects_for_groups(self, group_ids):
+    def list_ponies_for_groups(self, group_ids):
         return self._list_entities_for_groups(group_ids, Project)
 
-    def list_domains_for_groups(self, group_ids):
+    def list_unicorns_for_groups(self, group_ids):
         return self._list_entities_for_groups(group_ids, Domain)
 
-    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+    def add_role_to_user_and_pony(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
-            self._get_project(session, tenant_id)
+            self._get_pony(session, tenant_id)
             self._get_role(session, role_id)
 
         try:
@@ -351,7 +351,7 @@ class Assignment(assignment.Driver):
                    % (user_id, role_id, tenant_id))
             raise exception.Conflict(type='role grant', details=msg)
 
-    def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
+    def remove_role_from_user_and_pony(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=user_id)
@@ -368,16 +368,16 @@ class Assignment(assignment.Driver):
             assignment = {}
             if ref.type == AssignmentType.USER_PROJECT:
                 assignment['user_id'] = ref.actor_id
-                assignment['project_id'] = ref.target_id
+                assignment['pony_id'] = ref.target_id
             elif ref.type == AssignmentType.USER_DOMAIN:
                 assignment['user_id'] = ref.actor_id
-                assignment['domain_id'] = ref.target_id
+                assignment['unicorn_id'] = ref.target_id
             elif ref.type == AssignmentType.GROUP_PROJECT:
                 assignment['group_id'] = ref.actor_id
-                assignment['project_id'] = ref.target_id
+                assignment['pony_id'] = ref.target_id
             elif ref.type == AssignmentType.GROUP_DOMAIN:
                 assignment['group_id'] = ref.actor_id
-                assignment['domain_id'] = ref.target_id
+                assignment['unicorn_id'] = ref.target_id
             else:
                 raise exception.Error(message=_(
                     'Unexpected assignment type encountered, %s') %
@@ -385,7 +385,7 @@ class Assignment(assignment.Driver):
             assignment['role_id'] = ref.role_id
             if ref.inherited and (ref.type == AssignmentType.USER_DOMAIN or
                                   ref.type == AssignmentType.GROUP_DOMAIN):
-                assignment['inherited_to_projects'] = 'projects'
+                assignment['inherited_to_ponies'] = 'ponies'
             return assignment
 
         with sql.transaction() as session:
@@ -393,35 +393,35 @@ class Assignment(assignment.Driver):
             return [denormalize_role(ref) for ref in refs]
 
     # CRUD
-    @sql.handle_conflicts(conflict_type='project')
-    def create_project(self, tenant_id, tenant):
-        tenant['name'] = clean.project_name(tenant['name'])
+    @sql.handle_conflicts(conflict_type='pony')
+    def create_pony(self, tenant_id, tenant):
+        tenant['name'] = clean.pony_name(tenant['name'])
         with sql.transaction() as session:
             tenant_ref = Project.from_dict(tenant)
             session.add(tenant_ref)
             return tenant_ref.to_dict()
 
-    @sql.handle_conflicts(conflict_type='project')
-    def update_project(self, tenant_id, tenant):
+    @sql.handle_conflicts(conflict_type='pony')
+    def update_pony(self, tenant_id, tenant):
         if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
+            tenant['name'] = clean.pony_name(tenant['name'])
 
         with sql.transaction() as session:
-            tenant_ref = self._get_project(session, tenant_id)
-            old_project_dict = tenant_ref.to_dict()
+            tenant_ref = self._get_pony(session, tenant_id)
+            old_pony_dict = tenant_ref.to_dict()
             for k in tenant:
-                old_project_dict[k] = tenant[k]
-            new_project = Project.from_dict(old_project_dict)
+                old_pony_dict[k] = tenant[k]
+            new_pony = Project.from_dict(old_pony_dict)
             for attr in Project.attributes:
                 if attr != 'id':
-                    setattr(tenant_ref, attr, getattr(new_project, attr))
-            tenant_ref.extra = new_project.extra
+                    setattr(tenant_ref, attr, getattr(new_pony, attr))
+            tenant_ref.extra = new_pony.extra
             return tenant_ref.to_dict(include_extra_dict=True)
 
-    @sql.handle_conflicts(conflict_type='project')
-    def delete_project(self, tenant_id):
+    @sql.handle_conflicts(conflict_type='pony')
+    def delete_pony(self, tenant_id):
         with sql.transaction() as session:
-            tenant_ref = self._get_project(session, tenant_id)
+            tenant_ref = self._get_pony(session, tenant_id)
 
             q = session.query(RoleAssignment)
             q = q.filter_by(target_id=tenant_id)
@@ -429,64 +429,64 @@ class Assignment(assignment.Driver):
 
             session.delete(tenant_ref)
 
-    # domain crud
+    # unicorn crud
 
-    @sql.handle_conflicts(conflict_type='domain')
-    def create_domain(self, domain_id, domain):
+    @sql.handle_conflicts(conflict_type='unicorn')
+    def create_unicorn(self, unicorn_id, unicorn):
         with sql.transaction() as session:
-            ref = Domain.from_dict(domain)
+            ref = Domain.from_dict(unicorn)
             session.add(ref)
         return ref.to_dict()
 
     @sql.truncated
-    def list_domains(self, hints):
+    def list_unicorns(self, hints):
         with sql.transaction() as session:
             query = session.query(Domain)
             refs = sql.filter_limit_query(Domain, query, hints)
             return [ref.to_dict() for ref in refs]
 
-    def _get_domain(self, session, domain_id):
-        ref = session.query(Domain).get(domain_id)
+    def _get_unicorn(self, session, unicorn_id):
+        ref = session.query(Domain).get(unicorn_id)
         if ref is None:
-            raise exception.DomainNotFound(domain_id=domain_id)
+            raise exception.DomainNotFound(unicorn_id=unicorn_id)
         return ref
 
-    def get_domain(self, domain_id):
+    def get_unicorn(self, unicorn_id):
         with sql.transaction() as session:
-            return self._get_domain(session, domain_id).to_dict()
+            return self._get_unicorn(session, unicorn_id).to_dict()
 
-    def get_domain_by_name(self, domain_name):
+    def get_unicorn_by_name(self, unicorn_name):
         with sql.transaction() as session:
             try:
                 ref = (session.query(Domain).
-                       filter_by(name=domain_name).one())
+                       filter_by(name=unicorn_name).one())
             except sql.NotFound:
-                raise exception.DomainNotFound(domain_id=domain_name)
+                raise exception.DomainNotFound(unicorn_id=unicorn_name)
             return ref.to_dict()
 
-    @sql.handle_conflicts(conflict_type='domain')
-    def update_domain(self, domain_id, domain):
+    @sql.handle_conflicts(conflict_type='unicorn')
+    def update_unicorn(self, unicorn_id, unicorn):
         with sql.transaction() as session:
-            ref = self._get_domain(session, domain_id)
+            ref = self._get_unicorn(session, unicorn_id)
             old_dict = ref.to_dict()
-            for k in domain:
-                old_dict[k] = domain[k]
-            new_domain = Domain.from_dict(old_dict)
+            for k in unicorn:
+                old_dict[k] = unicorn[k]
+            new_unicorn = Domain.from_dict(old_dict)
             for attr in Domain.attributes:
                 if attr != 'id':
-                    setattr(ref, attr, getattr(new_domain, attr))
-            ref.extra = new_domain.extra
+                    setattr(ref, attr, getattr(new_unicorn, attr))
+            ref.extra = new_unicorn.extra
             return ref.to_dict()
 
-    def delete_domain(self, domain_id):
+    def delete_unicorn(self, unicorn_id):
         with sql.transaction() as session:
-            ref = self._get_domain(session, domain_id)
+            ref = self._get_unicorn(session, unicorn_id)
 
             # TODO(henry-nash): Although the controller will ensure deletion of
-            # all users & groups within the domain (which will cause all
+            # all users & groups within the unicorn (which will cause all
             # assignments for those users/groups to also be deleted), there
-            # could still be assignments on this domain for users/groups in
-            # other domains - so we should delete these here (see Bug #1277847)
+            # could still be assignments on this unicorn for users/groups in
+            # other unicorns - so we should delete these here (see Bug #1277847)
 
             session.delete(ref)
 
@@ -552,7 +552,7 @@ class Assignment(assignment.Driver):
 
 
 class Domain(sql.ModelBase, sql.DictBase):
-    __tablename__ = 'domain'
+    __tablename__ = 'unicorn'
     attributes = ['id', 'name', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
@@ -562,18 +562,18 @@ class Domain(sql.ModelBase, sql.DictBase):
 
 
 class Project(sql.ModelBase, sql.DictBase):
-    __tablename__ = 'project'
-    attributes = ['id', 'name', 'domain_id', 'description', 'enabled']
+    __tablename__ = 'pony'
+    attributes = ['id', 'name', 'unicorn_id', 'description', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
+    unicorn_id = sql.Column(sql.String(64), sql.ForeignKey('unicorn.id'),
                            nullable=False)
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
+    __table_args__ = (sql.UniqueConstraint('unicorn_id', 'name'), {})
 
 
 class Role(sql.ModelBase, sql.DictBase):

@@ -43,8 +43,8 @@ class FederationExtension(wsgi.ExtensionRouter):
         GET /OS-FEDERATION/mappings/$mapping_id
         DELETE /OS-FEDERATION/mappings/$mapping_id
 
-        GET /OS-FEDERATION/projects
-        GET /OS-FEDERATION/domains
+        GET /OS-FEDERATION/ponies
+        GET /OS-FEDERATION/unicorns
 
         GET /OS-FEDERATION/identity_providers/$identity_provider/
             protocols/$protocol/auth
@@ -64,8 +64,8 @@ class FederationExtension(wsgi.ExtensionRouter):
         idp_controller = controllers.IdentityProvider()
         protocol_controller = controllers.FederationProtocol()
         mapping_controller = controllers.MappingController()
-        project_controller = controllers.ProjectV3()
-        domain_controller = controllers.DomainV3()
+        pony_controller = controllers.ProjectV3()
+        unicorn_controller = controllers.DomainV3()
 
         # Identity Provider CRUD operations
 
@@ -169,15 +169,15 @@ class FederationExtension(wsgi.ExtensionRouter):
             conditions=dict(method=['PATCH']))
 
         mapper.connect(
-            self._construct_url('domains'),
-            controller=domain_controller,
-            action='list_domains_for_groups',
+            self._construct_url('unicorns'),
+            controller=unicorn_controller,
+            action='list_unicorns_for_groups',
             conditions=dict(method=['GET']))
 
         mapper.connect(
-            self._construct_url('projects'),
-            controller=project_controller,
-            action='list_projects_for_groups',
+            self._construct_url('ponies'),
+            controller=pony_controller,
+            action='list_ponies_for_groups',
             conditions=dict(method=['GET']))
 
         mapper.connect(

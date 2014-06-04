@@ -32,7 +32,7 @@ from keystone.token.backends import sql as token_sql
 
 
 CONF = config.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_unicorn_id
 
 
 class SqlTests(tests.SQLDriverOverrides, tests.TestCase):
@@ -73,7 +73,7 @@ class SqlModels(SqlTests):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 255),
                 ('password', sql.String, 128),
-                ('domain_id', sql.String, 64),
+                ('unicorn_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('user', cols)
@@ -82,24 +82,24 @@ class SqlModels(SqlTests):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
                 ('description', sql.Text, None),
-                ('domain_id', sql.String, 64),
+                ('unicorn_id', sql.String, 64),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('group', cols)
 
-    def test_domain_model(self):
+    def test_unicorn_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
                 ('enabled', sql.Boolean, None))
-        self.assertExpectedSchema('domain', cols)
+        self.assertExpectedSchema('unicorn', cols)
 
-    def test_project_model(self):
+    def test_pony_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
                 ('description', sql.Text, None),
-                ('domain_id', sql.String, 64),
+                ('unicorn_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None))
-        self.assertExpectedSchema('project', cols)
+        self.assertExpectedSchema('pony', cols)
 
     def test_role_model(self):
         cols = (('id', sql.String, 64),
@@ -126,23 +126,23 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
         self.assertNotEqual(user_ref['password'], self.user_foo['password'])
 
-    def test_delete_user_with_project_association(self):
+    def test_delete_user_with_pony_association(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'unicorn_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
-        self.assignment_api.add_user_to_project(self.tenant_bar['id'],
+        self.assignment_api.add_user_to_pony(self.tenant_bar['id'],
                                                 user['id'])
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.assignment_api.list_projects_for_user,
+                          self.assignment_api.list_ponies_for_user,
                           user['id'])
 
     def test_create_null_user_name(self):
         user = {'id': uuid.uuid4().hex,
                 'name': None,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'unicorn_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
@@ -156,19 +156,19 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           user['name'],
                           DEFAULT_DOMAIN_ID)
 
-    def test_create_null_project_name(self):
+    def test_create_null_pony_name(self):
         tenant = {'id': uuid.uuid4().hex,
                   'name': None,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'unicorn_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
-                          self.assignment_api.create_project,
+                          self.assignment_api.create_pony,
                           tenant['id'],
                           tenant)
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.assignment_api.get_pony,
                           tenant['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project_by_name,
+                          self.assignment_api.get_pony_by_name,
                           tenant['name'],
                           DEFAULT_DOMAIN_ID)
 
@@ -183,16 +183,16 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           self.assignment_api.get_role,
                           role['id'])
 
-    def test_delete_project_with_user_association(self):
+    def test_delete_pony_with_user_association(self):
         user = {'id': 'fake',
                 'name': 'fakeuser',
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'unicorn_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
-        self.assignment_api.add_user_to_project(self.tenant_bar['id'],
+        self.assignment_api.add_user_to_pony(self.tenant_bar['id'],
                                                 user['id'])
-        self.assignment_api.delete_project(self.tenant_bar['id'])
-        tenants = self.assignment_api.list_projects_for_user(user['id'])
+        self.assignment_api.delete_pony(self.tenant_bar['id'])
+        tenants = self.assignment_api.list_ponies_for_user(user['id'])
         self.assertEqual([], tenants)
 
     def test_metadata_removed_on_delete_user(self):
@@ -200,13 +200,13 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # or roles is correctly updated when a user is deleted
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'unicorn_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user(user['id'], user)
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role['id'], role)
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user['id'],
             self.tenant_bar['id'],
             role['id'])
@@ -219,22 +219,22 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           user['id'],
                           self.tenant_bar['id'])
 
-    def test_metadata_removed_on_delete_project(self):
+    def test_metadata_removed_on_delete_pony(self):
         # A test to check that the internal representation
-        # or roles is correctly updated when a project is deleted
+        # or roles is correctly updated when a pony is deleted
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'unicorn_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user(user['id'], user)
         role = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role['id'], role)
-        self.assignment_api.add_role_to_user_and_project(
+        self.assignment_api.add_role_to_user_and_pony(
             user['id'],
             self.tenant_bar['id'],
             role['id'])
-        self.assignment_api.delete_project(self.tenant_bar['id'])
+        self.assignment_api.delete_pony(self.tenant_bar['id'])
 
         # Now check whether the internal representation of roles
         # has been deleted
@@ -243,7 +243,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           user['id'],
                           self.tenant_bar['id'])
 
-    def test_update_project_returns_extra(self):
+    def test_update_pony_returns_extra(self):
         """This tests for backwards-compatibility with an essex/folsom bug.
 
         Non-indexed attributes were returned in an 'extra' attribute, instead
@@ -259,14 +259,14 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         tenant = {
             'id': tenant_id,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'unicorn_id': DEFAULT_DOMAIN_ID,
             arbitrary_key: arbitrary_value}
-        ref = self.assignment_api.create_project(tenant_id, tenant)
+        ref = self.assignment_api.create_pony(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
         tenant['name'] = uuid.uuid4().hex
-        ref = self.assignment_api.update_project(tenant_id, tenant)
+        ref = self.assignment_api.update_pony(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
@@ -286,7 +286,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'unicorn_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex,
             arbitrary_key: arbitrary_value}
         ref = self.identity_api.create_user(user_id, user)
@@ -302,12 +302,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
-    def test_sql_user_to_dict_null_default_project_id(self):
+    def test_sql_user_to_dict_null_default_pony_id(self):
         user_id = uuid.uuid4().hex
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'unicorn_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex}
 
         self.identity_api.create_user(user_id, user)
@@ -315,9 +315,9 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         query = session.query(identity_sql.User)
         query = query.filter_by(id=user_id)
         raw_user_ref = query.one()
-        self.assertIsNone(raw_user_ref.default_project_id)
+        self.assertIsNone(raw_user_ref.default_pony_id)
         user_ref = raw_user_ref.to_dict()
-        self.assertNotIn('default_project_id', user_ref)
+        self.assertNotIn('default_pony_id', user_ref)
         session.close()
 
 

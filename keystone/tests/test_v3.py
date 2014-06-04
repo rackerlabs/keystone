@@ -95,54 +95,54 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def load_fixtures(self, fixtures):
         self.load_sample_data()
 
-    def _populate_default_domain(self):
+    def _populate_default_unicorn(self):
         if CONF.database.connection == tests.IN_MEM_DB_CONN_STRING:
             # NOTE(morganfainberg): If an in-memory db is being used, be sure
-            # to populate the default domain, this is typically done by
+            # to populate the default unicorn, this is typically done by
             # a migration, but the in-mem db uses model definitions  to create
             # the schema (no migrations are run).
             try:
-                self.assignment_api.get_domain(DEFAULT_DOMAIN_ID)
+                self.assignment_api.get_unicorn(DEFAULT_DOMAIN_ID)
             except exception.DomainNotFound:
-                domain = {'description': (u'Owns users and tenants (i.e. '
-                                          u'projects) available on Identity '
+                unicorn = {'description': (u'Owns users and tenants (i.e. '
+                                          u'ponies) available on Identity '
                                           u'API v2.'),
                           'enabled': True,
                           'id': DEFAULT_DOMAIN_ID,
                           'name': u'Default'}
-                self.assignment_api.create_domain(DEFAULT_DOMAIN_ID, domain)
+                self.assignment_api.create_unicorn(DEFAULT_DOMAIN_ID, unicorn)
 
     def load_sample_data(self):
-        self._populate_default_domain()
-        self.domain_id = uuid.uuid4().hex
-        self.domain = self.new_domain_ref()
-        self.domain['id'] = self.domain_id
-        self.assignment_api.create_domain(self.domain_id, self.domain)
+        self._populate_default_unicorn()
+        self.unicorn_id = uuid.uuid4().hex
+        self.unicorn = self.new_unicorn_ref()
+        self.unicorn['id'] = self.unicorn_id
+        self.assignment_api.create_unicorn(self.unicorn_id, self.unicorn)
 
-        self.project_id = uuid.uuid4().hex
-        self.project = self.new_project_ref(
-            domain_id=self.domain_id)
-        self.project['id'] = self.project_id
-        self.assignment_api.create_project(self.project_id, self.project)
+        self.pony_id = uuid.uuid4().hex
+        self.pony = self.new_pony_ref(
+            unicorn_id=self.unicorn_id)
+        self.pony['id'] = self.pony_id
+        self.assignment_api.create_pony(self.pony_id, self.pony)
 
         self.user_id = uuid.uuid4().hex
-        self.user = self.new_user_ref(domain_id=self.domain_id)
+        self.user = self.new_user_ref(unicorn_id=self.unicorn_id)
         self.user['id'] = self.user_id
         self.identity_api.create_user(self.user_id, self.user)
 
-        self.default_domain_project_id = uuid.uuid4().hex
-        self.default_domain_project = self.new_project_ref(
-            domain_id=DEFAULT_DOMAIN_ID)
-        self.default_domain_project['id'] = self.default_domain_project_id
-        self.assignment_api.create_project(self.default_domain_project_id,
-                                           self.default_domain_project)
+        self.default_unicorn_pony_id = uuid.uuid4().hex
+        self.default_unicorn_pony = self.new_pony_ref(
+            unicorn_id=DEFAULT_DOMAIN_ID)
+        self.default_unicorn_pony['id'] = self.default_unicorn_pony_id
+        self.assignment_api.create_pony(self.default_unicorn_pony_id,
+                                           self.default_unicorn_pony)
 
-        self.default_domain_user_id = uuid.uuid4().hex
-        self.default_domain_user = self.new_user_ref(
-            domain_id=DEFAULT_DOMAIN_ID)
-        self.default_domain_user['id'] = self.default_domain_user_id
-        self.identity_api.create_user(self.default_domain_user_id,
-                                      self.default_domain_user)
+        self.default_unicorn_user_id = uuid.uuid4().hex
+        self.default_unicorn_user = self.new_user_ref(
+            unicorn_id=DEFAULT_DOMAIN_ID)
+        self.default_unicorn_user['id'] = self.default_unicorn_user_id
+        self.identity_api.create_user(self.default_unicorn_user_id,
+                                      self.default_unicorn_user)
 
         # create & grant policy.json's default role for admin_required
         self.role_id = uuid.uuid4().hex
@@ -150,13 +150,13 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         self.role['id'] = self.role_id
         self.role['name'] = 'admin'
         self.assignment_api.create_role(self.role_id, self.role)
-        self.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, self.role_id)
-        self.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id, self.default_domain_project_id,
+        self.assignment_api.add_role_to_user_and_pony(
+            self.user_id, self.pony_id, self.role_id)
+        self.assignment_api.add_role_to_user_and_pony(
+            self.default_unicorn_user_id, self.default_unicorn_pony_id,
             self.role_id)
-        self.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id, self.project_id,
+        self.assignment_api.add_role_to_user_and_pony(
+            self.default_unicorn_user_id, self.pony_id,
             self.role_id)
 
         self.region_id = uuid.uuid4().hex
@@ -212,36 +212,36 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         ref.update(kwargs)
         return ref
 
-    def new_domain_ref(self):
+    def new_unicorn_ref(self):
         ref = self.new_ref()
         return ref
 
-    def new_project_ref(self, domain_id):
+    def new_pony_ref(self, unicorn_id):
         ref = self.new_ref()
-        ref['domain_id'] = domain_id
+        ref['unicorn_id'] = unicorn_id
         return ref
 
-    def new_user_ref(self, domain_id, project_id=None):
+    def new_user_ref(self, unicorn_id, pony_id=None):
         ref = self.new_ref()
-        ref['domain_id'] = domain_id
+        ref['unicorn_id'] = unicorn_id
         ref['email'] = uuid.uuid4().hex
         ref['password'] = uuid.uuid4().hex
-        if project_id:
-            ref['default_project_id'] = project_id
+        if pony_id:
+            ref['default_pony_id'] = pony_id
         return ref
 
-    def new_group_ref(self, domain_id):
+    def new_group_ref(self, unicorn_id):
         ref = self.new_ref()
-        ref['domain_id'] = domain_id
+        ref['unicorn_id'] = unicorn_id
         return ref
 
-    def new_credential_ref(self, user_id, project_id=None):
+    def new_credential_ref(self, user_id, pony_id=None):
         ref = self.new_ref()
         ref['user_id'] = user_id
         ref['blob'] = uuid.uuid4().hex
         ref['type'] = uuid.uuid4().hex
-        if project_id:
-            ref['project_id'] = project_id
+        if pony_id:
+            ref['pony_id'] = pony_id
         return ref
 
     def new_role_ref(self):
@@ -254,7 +254,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         ref['type'] = uuid.uuid4().hex
         return ref
 
-    def new_trust_ref(self, trustor_user_id, trustee_user_id, project_id=None,
+    def new_trust_ref(self, trustor_user_id, trustee_user_id, pony_id=None,
                       impersonation=None, expires=None, role_ids=None,
                       role_names=None, remaining_uses=None):
         ref = self.new_ref()
@@ -262,7 +262,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         ref['trustor_user_id'] = trustor_user_id
         ref['trustee_user_id'] = trustee_user_id
         ref['impersonation'] = impersonation or False
-        ref['project_id'] = project_id
+        ref['pony_id'] = pony_id
         ref['remaining_uses'] = remaining_uses
 
         if isinstance(expires, six.string_types):
@@ -287,20 +287,20 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
 
         return ref
 
-    def create_new_default_project_for_user(self, user_id, domain_id,
-                                            enable_project=True):
-        ref = self.new_project_ref(domain_id=domain_id)
-        ref['enabled'] = enable_project
-        r = self.post('/projects', body={'project': ref})
-        project = self.assertValidProjectResponse(r, ref)
-        # set the user's preferred project
-        body = {'user': {'default_project_id': project['id']}}
+    def create_new_default_pony_for_user(self, user_id, unicorn_id,
+                                            enable_pony=True):
+        ref = self.new_pony_ref(unicorn_id=unicorn_id)
+        ref['enabled'] = enable_pony
+        r = self.post('/ponies', body={'pony': ref})
+        pony = self.assertValidProjectResponse(r, ref)
+        # set the user's preferred pony
+        body = {'user': {'default_pony_id': pony['id']}}
         r = self.patch('/users/%(user_id)s' % {
             'user_id': user_id},
             body=body)
         self.assertValidUserResponse(r)
 
-        return project
+        return pony
 
     def admin_request(self, *args, **kwargs):
         """Translates XML responses to dicts.
@@ -326,15 +326,15 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
                             'user': {
                                 'name': self.user['name'],
                                 'password': self.user['password'],
-                                'domain': {
-                                    'id': self.user['domain_id']
+                                'unicorn': {
+                                    'id': self.user['unicorn_id']
                                 }
                             }
                         }
                     },
                     'scope': {
-                        'project': {
-                            'id': self.project['id'],
+                        'pony': {
+                            'id': self.pony['id'],
                         }
                     }
                 }
@@ -520,13 +520,13 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         self.assertIn('user', token)
         self.assertIn('id', token['user'])
         self.assertIn('name', token['user'])
-        self.assertIn('domain', token['user'])
-        self.assertIn('id', token['user']['domain'])
+        self.assertIn('unicorn', token['user'])
+        self.assertIn('id', token['user']['unicorn'])
 
         if user is not None:
             self.assertEqual(user['id'], token['user']['id'])
             self.assertEqual(user['name'], token['user']['name'])
-            self.assertEqual(user['domain_id'], token['user']['domain']['id'])
+            self.assertEqual(user['unicorn_id'], token['user']['unicorn']['id'])
 
         return token
 
@@ -535,8 +535,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
 
         self.assertNotIn('roles', token)
         self.assertNotIn('catalog', token)
-        self.assertNotIn('project', token)
-        self.assertNotIn('domain', token)
+        self.assertNotIn('pony', token)
+        self.assertNotIn('unicorn', token)
 
         return token
 
@@ -576,12 +576,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def assertValidProjectScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('project', token)
-        self.assertIn('id', token['project'])
-        self.assertIn('name', token['project'])
-        self.assertIn('domain', token['project'])
-        self.assertIn('id', token['project']['domain'])
-        self.assertIn('name', token['project']['domain'])
+        self.assertIn('pony', token)
+        self.assertIn('id', token['pony'])
+        self.assertIn('name', token['pony'])
+        self.assertIn('unicorn', token['pony'])
+        self.assertIn('id', token['pony']['unicorn'])
+        self.assertIn('name', token['pony']['unicorn'])
 
         self.assertEqual(self.role_id, token['roles'][0]['id'])
 
@@ -602,9 +602,9 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def assertValidDomainScopedTokenResponse(self, r, *args, **kwargs):
         token = self.assertValidScopedTokenResponse(r, *args, **kwargs)
 
-        self.assertIn('domain', token)
-        self.assertIn('id', token['domain'])
-        self.assertIn('name', token['domain'])
+        self.assertIn('unicorn', token)
+        self.assertIn('id', token['unicorn'])
+        self.assertIn('name', token['unicorn'])
 
         return token
 
@@ -723,12 +723,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             self.assertEqual(ref['service_id'], entity['service_id'])
         return entity
 
-    # domain validation
+    # unicorn validation
 
     def assertValidDomainListResponse(self, resp, *args, **kwargs):
         return self.assertValidListResponse(
             resp,
-            'domains',
+            'unicorns',
             self.assertValidDomain,
             *args,
             **kwargs)
@@ -736,7 +736,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def assertValidDomainResponse(self, resp, *args, **kwargs):
         return self.assertValidResponse(
             resp,
-            'domain',
+            'unicorn',
             self.assertValidDomain,
             *args,
             **kwargs)
@@ -746,12 +746,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             pass
         return entity
 
-    # project validation
+    # pony validation
 
     def assertValidProjectListResponse(self, resp, *args, **kwargs):
         return self.assertValidListResponse(
             resp,
-            'projects',
+            'ponies',
             self.assertValidProject,
             *args,
             **kwargs)
@@ -759,15 +759,15 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def assertValidProjectResponse(self, resp, *args, **kwargs):
         return self.assertValidResponse(
             resp,
-            'project',
+            'pony',
             self.assertValidProject,
             *args,
             **kwargs)
 
     def assertValidProject(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('domain_id'))
+        self.assertIsNotNone(entity.get('unicorn_id'))
         if ref:
-            self.assertEqual(ref['domain_id'], entity['domain_id'])
+            self.assertEqual(ref['unicorn_id'], entity['unicorn_id'])
         return entity
 
     # user validation
@@ -789,17 +789,17 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             **kwargs)
 
     def assertValidUser(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('domain_id'))
+        self.assertIsNotNone(entity.get('unicorn_id'))
         self.assertIsNotNone(entity.get('email'))
         self.assertIsNone(entity.get('password'))
         self.assertNotIn('tenantId', entity)
         if ref:
-            self.assertEqual(ref['domain_id'], entity['domain_id'])
+            self.assertEqual(ref['unicorn_id'], entity['unicorn_id'])
             self.assertEqual(ref['email'], entity['email'])
-            if 'default_project_id' in ref:
-                self.assertIsNotNone(ref['default_project_id'])
-                self.assertEqual(ref['default_project_id'],
-                                 entity['default_project_id'])
+            if 'default_pony_id' in ref:
+                self.assertIsNotNone(ref['default_pony_id'])
+                self.assertEqual(ref['default_pony_id'],
+                                 entity['default_pony_id'])
         return entity
 
     # group validation
@@ -852,7 +852,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             self.assertEqual(ref['user_id'], entity['user_id'])
             self.assertEqual(ref['blob'], entity['blob'])
             self.assertEqual(ref['type'], entity['type'])
-            self.assertEqual(ref.get('project_id'), entity.get('project_id'))
+            self.assertEqual(ref.get('pony_id'), entity.get('pony_id'))
         return entity
 
     # role validation
@@ -912,16 +912,16 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         self.assertIsNone(entity.get('user') and
                           entity.get('group'))
 
-        # Only one of domain or project should be present
-        self.assertIsNotNone(entity['scope'].get('project') or
-                             entity['scope'].get('domain'))
-        self.assertIsNone(entity['scope'].get('project') and
-                          entity['scope'].get('domain'))
+        # Only one of unicorn or pony should be present
+        self.assertIsNotNone(entity['scope'].get('pony') or
+                             entity['scope'].get('unicorn'))
+        self.assertIsNone(entity['scope'].get('pony') and
+                          entity['scope'].get('unicorn'))
 
-        if entity['scope'].get('project'):
-            self.assertIsNotNone(entity['scope']['project'].get('id'))
+        if entity['scope'].get('pony'):
+            self.assertIsNotNone(entity['scope']['pony'].get('id'))
         else:
-            self.assertIsNotNone(entity['scope']['domain'].get('id'))
+            self.assertIsNotNone(entity['scope']['unicorn'].get('id'))
         self.assertIsNotNone(entity.get('links'))
         self.assertIsNotNone(entity['links'].get('assignment'))
 
@@ -932,12 +932,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
                 self.assertEqual(ref['group']['id'], entity['group']['id'])
             if ref.get('role'):
                 self.assertEqual(ref['role']['id'], entity['role']['id'])
-            if ref['scope'].get('project'):
-                self.assertEqual(ref['scope']['project']['id'],
-                                 entity['scope']['project']['id'])
-            if ref['scope'].get('domain'):
-                self.assertEqual(ref['scope']['domain']['id'],
-                                 entity['scope']['domain']['id'])
+            if ref['scope'].get('pony'):
+                self.assertEqual(ref['scope']['pony']['id'],
+                                 entity['scope']['pony']['id'])
+            if ref['scope'].get('unicorn'):
+                self.assertEqual(ref['scope']['unicorn']['id'],
+                                 entity['scope']['unicorn']['id'])
         if url:
             self.assertIn(url, entity['links']['assignment'])
 
@@ -1022,7 +1022,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             # Trust list contains no roles, but getting a specific
             # trust by ID provides the detailed response containing roles
             self.assertNotIn('roles', entity)
-            self.assertIn('project_id', entity)
+            self.assertIn('pony_id', entity)
         else:
             for role in entity['roles']:
                 self.assertIsNotNone(role)
@@ -1031,15 +1031,15 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
 
             self.assertValidListLinks(entity.get('roles_links'))
 
-            # always disallow role xor project_id (neither or both is allowed)
+            # always disallow role xor pony_id (neither or both is allowed)
             has_roles = bool(entity.get('roles'))
-            has_project = bool(entity.get('project_id'))
-            self.assertFalse(has_roles ^ has_project)
+            has_pony = bool(entity.get('pony_id'))
+            self.assertFalse(has_roles ^ has_pony)
 
         if ref:
             self.assertEqual(ref['trustor_user_id'], entity['trustor_user_id'])
             self.assertEqual(ref['trustee_user_id'], entity['trustee_user_id'])
-            self.assertEqual(ref['project_id'], entity['project_id'])
+            self.assertEqual(ref['pony_id'], entity['pony_id'])
             if entity.get('expires_at') or ref.get('expires_at'):
                 entity_exp = self.assertValidISO8601ExtendedFormatDatetime(
                     entity['expires_at'])
@@ -1052,48 +1052,48 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
 
         return entity
 
-    def build_auth_scope(self, project_id=None, project_name=None,
-                         project_domain_id=None, project_domain_name=None,
-                         domain_id=None, domain_name=None, trust_id=None):
+    def build_auth_scope(self, pony_id=None, pony_name=None,
+                         pony_unicorn_id=None, pony_unicorn_name=None,
+                         unicorn_id=None, unicorn_name=None, trust_id=None):
         scope_data = {}
-        if project_id or project_name:
-            scope_data['project'] = {}
-            if project_id:
-                scope_data['project']['id'] = project_id
+        if pony_id or pony_name:
+            scope_data['pony'] = {}
+            if pony_id:
+                scope_data['pony']['id'] = pony_id
             else:
-                scope_data['project']['name'] = project_name
-                if project_domain_id or project_domain_name:
-                    project_domain_json = {}
-                    if project_domain_id:
-                        project_domain_json['id'] = project_domain_id
+                scope_data['pony']['name'] = pony_name
+                if pony_unicorn_id or pony_unicorn_name:
+                    pony_unicorn_json = {}
+                    if pony_unicorn_id:
+                        pony_unicorn_json['id'] = pony_unicorn_id
                     else:
-                        project_domain_json['name'] = project_domain_name
-                    scope_data['project']['domain'] = project_domain_json
-        if domain_id or domain_name:
-            scope_data['domain'] = {}
-            if domain_id:
-                scope_data['domain']['id'] = domain_id
+                        pony_unicorn_json['name'] = pony_unicorn_name
+                    scope_data['pony']['unicorn'] = pony_unicorn_json
+        if unicorn_id or unicorn_name:
+            scope_data['unicorn'] = {}
+            if unicorn_id:
+                scope_data['unicorn']['id'] = unicorn_id
             else:
-                scope_data['domain']['name'] = domain_name
+                scope_data['unicorn']['name'] = unicorn_name
         if trust_id:
             scope_data['OS-TRUST:trust'] = {}
             scope_data['OS-TRUST:trust']['id'] = trust_id
         return scope_data
 
     def build_password_auth(self, user_id=None, username=None,
-                            user_domain_id=None, user_domain_name=None,
+                            user_unicorn_id=None, user_unicorn_name=None,
                             password=None):
         password_data = {'user': {}}
         if user_id:
             password_data['user']['id'] = user_id
         else:
             password_data['user']['name'] = username
-            if user_domain_id or user_domain_name:
-                password_data['user']['domain'] = {}
-                if user_domain_id:
-                    password_data['user']['domain']['id'] = user_domain_id
+            if user_unicorn_id or user_unicorn_name:
+                password_data['user']['unicorn'] = {}
+                if user_unicorn_id:
+                    password_data['user']['unicorn']['id'] = user_unicorn_id
                 else:
-                    password_data['user']['domain']['name'] = user_domain_name
+                    password_data['user']['unicorn']['name'] = user_unicorn_name
         password_data['user']['password'] = password
         return password_data
 
@@ -1101,8 +1101,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         return {'id': token}
 
     def build_authentication_request(self, token=None, user_id=None,
-                                     username=None, user_domain_id=None,
-                                     user_domain_name=None, password=None,
+                                     username=None, user_unicorn_id=None,
+                                     user_unicorn_name=None, password=None,
                                      **kwargs):
         """Build auth dictionary.
 
@@ -1117,16 +1117,16 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         if user_id or username:
             auth_data['identity']['methods'].append('password')
             auth_data['identity']['password'] = self.build_password_auth(
-                user_id, username, user_domain_id, user_domain_name, password)
+                user_id, username, user_unicorn_id, user_unicorn_name, password)
         if kwargs:
             auth_data['scope'] = self.build_auth_scope(**kwargs)
         return {'auth': auth_data}
 
     def build_external_auth_request(self, remote_user,
-                                    remote_domain=None, auth_data=None):
+                                    remote_unicorn=None, auth_data=None):
         context = {'environment': {'REMOTE_USER': remote_user}}
-        if remote_domain:
-            context['environment']['REMOTE_DOMAIN'] = remote_domain
+        if remote_unicorn:
+            context['environment']['REMOTE_DOMAIN'] = remote_unicorn
         if not auth_data:
             auth_data = self.build_authentication_request()['auth']
         no_context = None

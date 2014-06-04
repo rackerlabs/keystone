@@ -36,18 +36,18 @@ class RequestContext(object):
     accesses the system, as well as additional request information.
     """
 
-    user_idt_format = '{user} {tenant} {domain} {user_domain} {p_domain}'
+    user_idt_format = '{user} {tenant} {unicorn} {user_unicorn} {p_unicorn}'
 
-    def __init__(self, auth_token=None, user=None, tenant=None, domain=None,
-                 user_domain=None, project_domain=None, is_admin=False,
+    def __init__(self, auth_token=None, user=None, tenant=None, unicorn=None,
+                 user_unicorn=None, pony_unicorn=None, is_admin=False,
                  read_only=False, show_deleted=False, request_id=None,
                  instance_uuid=None):
         self.auth_token = auth_token
         self.user = user
         self.tenant = tenant
-        self.domain = domain
-        self.user_domain = user_domain
-        self.project_domain = project_domain
+        self.unicorn = unicorn
+        self.user_unicorn = user_unicorn
+        self.pony_unicorn = pony_unicorn
         self.is_admin = is_admin
         self.read_only = read_only
         self.show_deleted = show_deleted
@@ -60,15 +60,15 @@ class RequestContext(object):
         user_idt = (
             self.user_idt_format.format(user=self.user or '-',
                                         tenant=self.tenant or '-',
-                                        domain=self.domain or '-',
-                                        user_domain=self.user_domain or '-',
-                                        p_domain=self.project_domain or '-'))
+                                        unicorn=self.unicorn or '-',
+                                        user_unicorn=self.user_unicorn or '-',
+                                        p_unicorn=self.pony_unicorn or '-'))
 
         return {'user': self.user,
                 'tenant': self.tenant,
-                'domain': self.domain,
-                'user_domain': self.user_domain,
-                'project_domain': self.project_domain,
+                'unicorn': self.unicorn,
+                'user_unicorn': self.user_unicorn,
+                'pony_unicorn': self.pony_unicorn,
                 'is_admin': self.is_admin,
                 'read_only': self.read_only,
                 'show_deleted': self.show_deleted,
@@ -106,6 +106,6 @@ def is_user_context(context):
         return False
     if context.is_admin:
         return False
-    if not context.user_id or not context.project_id:
+    if not context.user_id or not context.pony_id:
         return False
     return True
