@@ -16,6 +16,24 @@
       "revId": "935fd60326feafd767993475a48b9f5973c828db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_54c99724",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-06-04T20:50:51Z",
+      "side": 1,
+      "message": "Please note this is a stable backport, refactoring should be done in master first.",
+      "parentUuid": "1ae5cdf2_6084155e",
+      "revId": "935fd60326feafd767993475a48b9f5973c828db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
