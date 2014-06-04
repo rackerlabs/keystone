@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_201bed73",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-04T18:26:23Z",
+      "side": 1,
+      "message": "Suggest minor rephrasing (something like):\n\nIf Keystone is configured to for SSL use HTTPS instead of HTTP",
+      "revId": "8d521962a4a2c52ea500ff2b4c4d3988899d0891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_4a7686d8",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 5
