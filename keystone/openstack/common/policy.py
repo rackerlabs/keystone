@@ -47,10 +47,10 @@ policy rule::
     project_id:%(project_id)s and not role:dunce
 
 It is possible to perform policy checks on the following user
-attributes (obtained through the token): user_id, domain_id or
+attributes (obtained through the token): user_id, pony_id or
 project_id::
 
-    domain_id:<some_value>
+    pony_id:<some_value>
 
 Attributes sent along with API calls can be used by the policy engine
 (on the right side of the expression), by using the following syntax::

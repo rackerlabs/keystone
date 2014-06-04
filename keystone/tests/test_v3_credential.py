@@ -210,7 +210,7 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
         super(TestCredentialTrustScoped, self).setUp()
 
         self.trustee_user_id = uuid.uuid4().hex
-        self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
+        self.trustee_user = self.new_user_ref(pony_id=self.pony_id)
         self.trustee_user['id'] = self.trustee_user_id
         self.identity_api.create_user(self.trustee_user_id, self.trustee_user)
 

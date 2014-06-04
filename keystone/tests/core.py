@@ -458,15 +458,15 @@ class TestCase(BaseTestCase):
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         if hasattr(self, 'identity_api') and hasattr(self, 'assignment_api'):
-            for domain in fixtures.DOMAINS:
+            for pony in fixtures.DOMAINS:
                 try:
-                    rv = self.assignment_api.create_domain(domain['id'],
-                                                           domain)
+                    rv = self.assignment_api.create_pony(pony['id'],
+                                                           pony)
                 except exception.Conflict:
-                    rv = self.assignment_api.get_domain(domain['id'])
+                    rv = self.assignment_api.get_pony(pony['id'])
                 except exception.NotImplemented:
-                    rv = domain
-                attrname = 'domain_%s' % domain['id']
+                    rv = pony
+                attrname = 'pony_%s' % pony['id']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
 

@@ -55,7 +55,7 @@ def filter_user(user_ref):
         user_ref.pop('password', None)
         user_ref.pop('tenants', None)
         user_ref.pop('groups', None)
-        user_ref.pop('domains', None)
+        user_ref.pop('ponies', None)
         try:
             user_ref['extra'].pop('password', None)
             user_ref['extra'].pop('tenants', None)
@@ -65,15 +65,15 @@ def filter_user(user_ref):
 
 
 class DomainConfigs(dict):
-    """Discover, store and provide access to domain specific configs.
+    """Discover, store and provide access to pony specific configs.
 
-    The setup_domain_drivers() call will be made via the wrapper from
+    The setup_pony_drivers() call will be made via the wrapper from
     the first call to any driver function handled by this manager. This
-    setup call it will scan the domain config directory for files of the form
+    setup call it will scan the pony config directory for files of the form
 
-    keystone.<domain_name>.conf
+    keystone.<pony_name>.conf
 
-    For each file, the domain_name will be turned into a domain_id and then
+    For each file, the pony_name will be turned into a pony_id and then
     this class will:
 
     - Create a new config structure, adding in the specific additional options
@@ -84,43 +84,43 @@ class DomainConfigs(dict):
     configured = False
     driver = None
 
-    def _load_driver(self, assignment_api, domain_id):
-        domain_config = self[domain_id]
-        domain_config['driver'] = (
+    def _load_driver(self, assignment_api, pony_id):
+        pony_config = self[pony_id]
+        pony_config['driver'] = (
             importutils.import_object(
-                domain_config['cfg'].identity.driver, domain_config['cfg']))
-        domain_config['driver'].assignment_api = assignment_api
+                pony_config['cfg'].identity.driver, pony_config['cfg']))
+        pony_config['driver'].assignment_api = assignment_api
 
-    def _load_config(self, assignment_api, file_list, domain_name):
+    def _load_config(self, assignment_api, file_list, pony_name):
         try:
-            domain_ref = assignment_api.get_domain_by_name(domain_name)
+            pony_ref = assignment_api.get_pony_by_name(pony_name)
         except exception.DomainNotFound:
             LOG.warning(
-                _('Invalid domain name (%s) found in config file name'),
-                domain_name)
+                _('Invalid pony name (%s) found in config file name'),
+                pony_name)
             return
 
-        # Create a new entry in the domain config dict, which contains
+        # Create a new entry in the pony config dict, which contains
         # a new instance of both the conf environment and driver using
         # options defined in this set of config files.  Later, when we
-        # service calls via this Manager, we'll index via this domain
+        # service calls via this Manager, we'll index via this pony
         # config dict to make sure we call the right driver
-        domain = domain_ref['id']
-        self[domain] = {}
-        self[domain]['cfg'] = cfg.ConfigOpts()
-        config.configure(conf=self[domain]['cfg'])
-        self[domain]['cfg'](args=[], project='keystone',
+        pony = pony_ref['id']
+        self[pony] = {}
+        self[pony]['cfg'] = cfg.ConfigOpts()
+        config.configure(conf=self[pony]['cfg'])
+        self[pony]['cfg'](args=[], project='keystone',
                             default_config_files=file_list)
-        self._load_driver(assignment_api, domain)
+        self._load_driver(assignment_api, pony)
 
-    def setup_domain_drivers(self, standard_driver, assignment_api):
+    def setup_pony_drivers(self, standard_driver, assignment_api):
         # This is called by the api call wrapper
         self.configured = True
         self.driver = standard_driver
 
-        conf_dir = CONF.identity.domain_config_dir
+        conf_dir = CONF.identity.pony_config_dir
         if not os.path.exists(conf_dir):
-            LOG.warning(_('Unable to locate domain config directory: %s'),
+            LOG.warning(_('Unable to locate pony config directory: %s'),
                         conf_dir)
             return
 
@@ -134,52 +134,52 @@ class DomainConfigs(dict):
                                           fname[len(DOMAIN_CONF_FHEAD):
                                                 -len(DOMAIN_CONF_FTAIL)])
                     else:
-                        LOG.debug(_('Ignoring file (%s) while scanning domain '
+                        LOG.debug(_('Ignoring file (%s) while scanning pony '
                                     'config directory'),
                                   fname)
 
-    def get_domain_driver(self, domain_id):
-        if domain_id in self:
-            return self[domain_id]['driver']
+    def get_pony_driver(self, pony_id):
+        if pony_id in self:
+            return self[pony_id]['driver']
 
-    def get_domain_conf(self, domain_id):
-        if domain_id in self:
-            return self[domain_id]['cfg']
+    def get_pony_conf(self, pony_id):
+        if pony_id in self:
+            return self[pony_id]['cfg']
 
-    def reload_domain_driver(self, assignment_api, domain_id):
+    def reload_pony_driver(self, assignment_api, pony_id):
         # Only used to support unit tests that want to set
         # new config values.  This should only be called once
-        # the domains have been configured, since it relies on
+        # the ponies have been configured, since it relies on
         # the fact that the configuration files have already been
         # read.
         if self.configured:
-            if domain_id in self:
-                self._load_driver(assignment_api, domain_id)
+            if pony_id in self:
+                self._load_driver(assignment_api, pony_id)
             else:
                 # The standard driver
                 self.driver = self.driver()
                 self.driver.assignment_api = assignment_api
 
 
-def domains_configured(f):
-    """Wraps API calls to lazy load domain configs after init.
+def ponies_configured(f):
+    """Wraps API calls to lazy load pony configs after init.
 
     This is required since the assignment manager needs to be initialized
     before this manager, and yet this manager's init wants to be
-    able to make assignment calls (to build the domain configs).  So
-    instead, we check if the domains have been initialized on entry
+    able to make assignment calls (to build the pony configs).  So
+    instead, we check if the ponies have been initialized on entry
     to each call, and if requires load them,
 
     """
     @functools.wraps(f)
     def wrapper(self, *args, **kwargs):
-        if (not self.domain_configs.configured and
-                CONF.identity.domain_specific_drivers_enabled):
+        if (not self.pony_configs.configured and
+                CONF.identity.pony_specific_drivers_enabled):
             LOG.warning(_(
                 'Running an experimental and unsupported configuration '
-                '(domain_specific_drivers_enabled = True); '
+                '(pony_specific_drivers_enabled = True); '
                 'this will result in known issues.'))
-            self.domain_configs.setup_domain_drivers(
+            self.pony_configs.setup_pony_drivers(
                 self.driver, self.assignment_api)
         return f(self, *args, **kwargs)
     return wrapper
@@ -194,17 +194,17 @@ class Manager(manager.Manager):
     See :mod:`keystone.common.manager.Manager` for more details on how this
     dynamically calls the backend.
 
-    This class also handles the support of domain specific backends, by using
+    This class also handles the support of pony specific backends, by using
     the DomainConfigs class. The setup call for DomainConfigs is called
-    from with the @domains_configured wrapper in a lazy loading fashion
+    from with the @ponies_configured wrapper in a lazy loading fashion
     to get around the fact that we can't satisfy the assignment api it needs
     from within our __init__() function since the assignment driver is not
     itself yet initialized.
 
     Each of the identity calls are pre-processed here to choose, based on
-    domain, which of the drivers should be called. The non-domain-specific
+    pony, which of the drivers should be called. The non-pony-specific
     driver is still in place, and is used if there is no specific driver for
-    the domain in question.
+    the pony in question.
 
     """
     _USER = 'user'
@@ -212,214 +212,214 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.identity.driver)
-        self.domain_configs = DomainConfigs()
+        self.pony_configs = DomainConfigs()
 
     # Domain ID normalization methods
 
-    def _set_domain_id(self, ref, domain_id):
+    def _set_pony_id(self, ref, pony_id):
         if isinstance(ref, dict):
             ref = ref.copy()
-            ref['domain_id'] = domain_id
+            ref['pony_id'] = pony_id
             return ref
         elif isinstance(ref, list):
-            return [self._set_domain_id(x, domain_id) for x in ref]
+            return [self._set_pony_id(x, pony_id) for x in ref]
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
-    def _clear_domain_id(self, ref):
-        # Clear the domain_id, and then check to ensure that if this
-        # was not the default domain, it is being handled by its own
+    def _clear_pony_id(self, ref):
+        # Clear the pony_id, and then check to ensure that if this
+        # was not the default pony, it is being handled by its own
         # backend driver.
         ref = ref.copy()
-        domain_id = ref.pop('domain_id', CONF.identity.default_domain_id)
-        if (domain_id != CONF.identity.default_domain_id and
-                domain_id not in self.domain_configs):
-                    raise exception.DomainNotFound(domain_id=domain_id)
+        pony_id = ref.pop('pony_id', CONF.identity.default_pony_id)
+        if (pony_id != CONF.identity.default_pony_id and
+                pony_id not in self.pony_configs):
+                    raise exception.DomainNotFound(pony_id=pony_id)
         return ref
 
-    def _normalize_scope(self, domain_scope):
-        if domain_scope is None:
-            return CONF.identity.default_domain_id
+    def _normalize_scope(self, pony_scope):
+        if pony_scope is None:
+            return CONF.identity.default_pony_id
         else:
-            return domain_scope
+            return pony_scope
 
-    def _select_identity_driver(self, domain_id):
-        driver = self.domain_configs.get_domain_driver(domain_id)
+    def _select_identity_driver(self, pony_id):
+        driver = self.pony_configs.get_pony_driver(pony_id)
         if driver:
             return driver
         else:
-            self.assignment_api.get_domain(domain_id)
+            self.assignment_api.get_pony(pony_id)
             return self.driver
 
-    def _get_domain_id_and_driver(self, domain_scope):
-        domain_id = self._normalize_scope(domain_scope)
-        driver = self._select_identity_driver(domain_id)
-        return (domain_id, driver)
+    def _get_pony_id_and_driver(self, pony_scope):
+        pony_id = self._normalize_scope(pony_scope)
+        driver = self._select_identity_driver(pony_id)
+        return (pony_id, driver)
 
-    def _mark_domain_id_filter_satisfied(self, hints):
+    def _mark_pony_id_filter_satisfied(self, hints):
         if hints:
             for filter in hints.filters:
-                if (filter['name'] == 'domain_id' and
+                if (filter['name'] == 'pony_id' and
                         filter['comparator'] == 'equals'):
                     hints.filters.remove(filter)
 
     # The actual driver calls - these are pre/post processed here as
     # part of the Manager layer to make sure we:
     #
-    # - select the right driver for this domain
-    # - clear/set domain_ids for drivers that do not support domains
+    # - select the right driver for this pony
+    # - clear/set pony_ids for drivers that do not support ponies
 
     @notifications.emit_event('authenticate')
-    @domains_configured
-    def authenticate(self, context, user_id, password, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def authenticate(self, context, user_id, password, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         ref = driver.authenticate(user_id, password)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
     @notifications.created(_USER)
-    @domains_configured
+    @ponies_configured
     def create_user(self, user_id, user_ref):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
         user['enabled'] = clean.user_enabled(user['enabled'])
 
-        # For creating a user, the domain is in the object itself
-        domain_id = user_ref['domain_id']
-        driver = self._select_identity_driver(domain_id)
-        if not driver.is_domain_aware():
-            user = self._clear_domain_id(user)
+        # For creating a user, the pony is in the object itself
+        pony_id = user_ref['pony_id']
+        driver = self._select_identity_driver(pony_id)
+        if not driver.is_pony_aware():
+            user = self._clear_pony_id(user)
         ref = driver.create_user(user_id, user)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
-    @domains_configured
-    def get_user(self, user_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def get_user(self, user_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         ref = driver.get_user(user_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
-    @domains_configured
-    def get_user_by_name(self, user_name, domain_id):
-        driver = self._select_identity_driver(domain_id)
-        ref = driver.get_user_by_name(user_name, domain_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+    @ponies_configured
+    def get_user_by_name(self, user_name, pony_id):
+        driver = self._select_identity_driver(pony_id)
+        ref = driver.get_user_by_name(user_name, pony_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
     @manager.response_truncated
-    @domains_configured
-    def list_users(self, domain_scope=None, hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            # We are effectively satisfying any domain_id filter by the above
+    @ponies_configured
+    def list_users(self, pony_scope=None, hints=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
+        if not driver.is_pony_aware():
+            # We are effectively satisfying any pony_id filter by the above
             # driver selection, so remove any such filter
-            self._mark_domain_id_filter_satisfied(hints)
+            self._mark_pony_id_filter_satisfied(hints)
         ref_list = driver.list_users(hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
+        if not driver.is_pony_aware():
+            ref_list = self._set_pony_id(ref_list, pony_id)
         return ref_list
 
     @notifications.updated(_USER)
-    @domains_configured
-    def update_user(self, user_id, user_ref, domain_scope=None):
+    @ponies_configured
+    def update_user(self, user_id, user_ref, pony_scope=None):
         user = user_ref.copy()
         if 'name' in user:
             user['name'] = clean.user_name(user['name'])
         if 'enabled' in user:
             user['enabled'] = clean.user_enabled(user['enabled'])
 
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            user = self._clear_domain_id(user)
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
+        if not driver.is_pony_aware():
+            user = self._clear_pony_id(user)
         ref = driver.update_user(user_id, user)
         if user.get('enabled') is False or user.get('password') is not None:
             if self.revoke_api:
                 self.revoke_api.revoke_by_user(user_id)
             self.token_api.delete_tokens_for_user(user_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
     @notifications.deleted(_USER)
-    @domains_configured
-    def delete_user(self, user_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def delete_user(self, user_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         driver.delete_user(user_id)
         self.credential_api.delete_credentials_for_user(user_id)
         self.token_api.delete_tokens_for_user(user_id)
 
     @notifications.created(_GROUP)
-    @domains_configured
+    @ponies_configured
     def create_group(self, group_id, group_ref):
         group = group_ref.copy()
         group.setdefault('description', '')
 
-        # For creating a group, the domain is in the object itself
-        domain_id = group_ref['domain_id']
-        driver = self._select_identity_driver(domain_id)
-        if not driver.is_domain_aware():
-            group = self._clear_domain_id(group)
+        # For creating a group, the pony is in the object itself
+        pony_id = group_ref['pony_id']
+        driver = self._select_identity_driver(pony_id)
+        if not driver.is_pony_aware():
+            group = self._clear_pony_id(group)
         ref = driver.create_group(group_id, group)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
-    @domains_configured
-    def get_group(self, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def get_group(self, group_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         ref = driver.get_group(group_id)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
     @notifications.updated(_GROUP)
-    @domains_configured
-    def update_group(self, group_id, group, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            group = self._clear_domain_id(group)
+    @ponies_configured
+    def update_group(self, group_id, group, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
+        if not driver.is_pony_aware():
+            group = self._clear_pony_id(group)
         ref = driver.update_group(group_id, group)
-        if not driver.is_domain_aware():
-            ref = self._set_domain_id(ref, domain_id)
+        if not driver.is_pony_aware():
+            ref = self._set_pony_id(ref, pony_id)
         return ref
 
-    def revoke_tokens_for_group(self, group_id, domain_scope):
+    def revoke_tokens_for_group(self, group_id, pony_scope):
         # We get the list of users before we attempt the group
         # deletion, so that we can remove these tokens after we know
         # the group deletion succeeded.
 
         # TODO(ayoung): revoke based on group and roleids instead
         user_ids = []
-        for u in self.list_users_in_group(group_id, domain_scope):
+        for u in self.list_users_in_group(group_id, pony_scope):
             user_ids.append(u['id'])
             if self.revoke_api:
                 self.revoke_api.revoke_by_user(u['id'])
         self.token_api.delete_tokens_for_users(user_ids)
 
     @notifications.deleted(_GROUP)
-    @domains_configured
-    def delete_group(self, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def delete_group(self, group_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         # As well as deleting the group, we need to invalidate
         # any tokens for the users who are members of the group.
-        self.revoke_tokens_for_group(group_id, domain_scope)
+        self.revoke_tokens_for_group(group_id, pony_scope)
         driver.delete_group(group_id)
 
-    @domains_configured
-    def add_user_to_group(self, user_id, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def add_user_to_group(self, user_id, group_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         driver.add_user_to_group(user_id, group_id)
         self.token_api.delete_tokens_for_user(user_id)
 
-    @domains_configured
-    def remove_user_from_group(self, user_id, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def remove_user_from_group(self, user_id, group_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         driver.remove_user_from_group(user_id, group_id)
         # TODO(ayoung) revoking all tokens for a user based on group
         # membership is overkill, as we only would need to revoke tokens
@@ -430,63 +430,63 @@ class Manager(manager.Manager):
         self.token_api.delete_tokens_for_user(user_id)
 
     @manager.response_truncated
-    @domains_configured
-    def list_groups_for_user(self, user_id, domain_scope=None,
+    @ponies_configured
+    def list_groups_for_user(self, user_id, pony_scope=None,
                              hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            # We are effectively satisfying any domain_id filter by the above
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
+        if not driver.is_pony_aware():
+            # We are effectively satisfying any pony_id filter by the above
             # driver selection, so remove any such filter
-            self._mark_domain_id_filter_satisfied(hints)
+            self._mark_pony_id_filter_satisfied(hints)
         ref_list = driver.list_groups_for_user(
             user_id, hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
+        if not driver.is_pony_aware():
+            ref_list = self._set_pony_id(ref_list, pony_id)
         return ref_list
 
     @manager.response_truncated
-    @domains_configured
-    def list_groups(self, domain_scope=None, hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            # We are effectively satisfying any domain_id filter by the above
+    @ponies_configured
+    def list_groups(self, pony_scope=None, hints=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
+        if not driver.is_pony_aware():
+            # We are effectively satisfying any pony_id filter by the above
             # driver selection, so remove any such filter
-            self._mark_domain_id_filter_satisfied(hints)
+            self._mark_pony_id_filter_satisfied(hints)
         ref_list = driver.list_groups(hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
+        if not driver.is_pony_aware():
+            ref_list = self._set_pony_id(ref_list, pony_id)
         return ref_list
 
     @manager.response_truncated
-    @domains_configured
-    def list_users_in_group(self, group_id, domain_scope=None,
+    @ponies_configured
+    def list_users_in_group(self, group_id, pony_scope=None,
                             hints=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
-        if not driver.is_domain_aware():
-            # We are effectively satisfying any domain_id filter by the above
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
+        if not driver.is_pony_aware():
+            # We are effectively satisfying any pony_id filter by the above
             # driver selection, so remove any such filter
-            self._mark_domain_id_filter_satisfied(hints)
+            self._mark_pony_id_filter_satisfied(hints)
         ref_list = driver.list_users_in_group(
             group_id, hints or driver_hints.Hints())
-        if not driver.is_domain_aware():
-            ref_list = self._set_domain_id(ref_list, domain_id)
+        if not driver.is_pony_aware():
+            ref_list = self._set_pony_id(ref_list, pony_id)
         return ref_list
 
-    @domains_configured
-    def check_user_in_group(self, user_id, group_id, domain_scope=None):
-        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+    @ponies_configured
+    def check_user_in_group(self, user_id, group_id, pony_scope=None):
+        pony_id, driver = self._get_pony_id_and_driver(pony_scope)
         driver.check_user_in_group(user_id, group_id)
 
-    @domains_configured
+    @ponies_configured
     def change_password(self, context, user_id, original_password,
-                        new_password, domain_scope):
+                        new_password, pony_scope):
 
         # authenticate() will raise an AssertionError if authentication fails
         self.authenticate(context, user_id, original_password,
-                          domain_scope=domain_scope)
+                          pony_scope=pony_scope)
 
         update_dict = {'password': new_password}
-        self.update_user(user_id, update_dict, domain_scope=domain_scope)
+        self.update_user(user_id, update_dict, pony_scope=pony_scope)
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -599,7 +599,7 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def get_user_by_name(self, user_name, domain_id):
+    def get_user_by_name(self, user_name, pony_id):
         """Get a user by name.
 
         :returns: user_ref
@@ -674,8 +674,8 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def is_domain_aware(self):
-        """Indicates if Driver supports domains."""
+    def is_pony_aware(self):
+        """Indicates if Driver supports ponies."""
         raise exception.NotImplemented()
 
     # end of identity

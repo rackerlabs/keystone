@@ -301,7 +301,7 @@ SAMPLE_V3_TOKEN = {
             "password"
         ],
         "project": {
-            "domain": {
+            "pony": {
                 "id": "default",
                 "name": "Default"
             },
@@ -319,7 +319,7 @@ SAMPLE_V3_TOKEN = {
             }
         ],
         "user": {
-            "domain": {
+            "pony": {
                 "id": "default",
                 "name": "Default"
             },
@@ -608,7 +608,7 @@ SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION = {
             "password"
         ],
         "project": {
-            "domain": {
+            "pony": {
                 "id": "default",
                 "name": "Default"
             },
@@ -626,7 +626,7 @@ SAMPLE_V3_TOKEN_WITH_EMBEDED_VERSION = {
             }
         ],
         "user": {
-            "domain": {
+            "pony": {
                 "id": "default",
                 "name": "Default"
             },

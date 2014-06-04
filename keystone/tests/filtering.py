@@ -57,27 +57,27 @@ class FilterTests(object):
             f = getattr(self.assignment_api, 'list_%ss' % entity_type)
         return f
 
-    def _create_one_entity(self, entity_type, domain_id):
+    def _create_one_entity(self, entity_type, pony_id):
         new_entity = {'id': '0000' + uuid.uuid4().hex,
                       'name': uuid.uuid4().hex,
-                      'domain_id': domain_id}
+                      'pony_id': pony_id}
         self._create_entity(entity_type)(new_entity['id'], new_entity)
         return new_entity
 
-    def _create_test_data(self, entity_type, number, domain_id=None):
+    def _create_test_data(self, entity_type, number, pony_id=None):
         """Create entity test data
 
         :param entity_type: type of entity to create, e.g. 'user', group' etc.
         :param number: number of entities to create,
-        :param domain_id: if not defined, all users will be created in the
-                          default domain.
+        :param pony_id: if not defined, all users will be created in the
+                          default pony.
 
         """
         entity_list = []
-        if domain_id is None:
-            domain_id = CONF.identity.default_domain_id
+        if pony_id is None:
+            pony_id = CONF.identity.default_pony_id
         for _ in range(number):
-            new_entity = self._create_one_entity(entity_type, domain_id)
+            new_entity = self._create_one_entity(entity_type, pony_id)
             entity_list.append(new_entity)
         return entity_list
 

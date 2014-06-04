@@ -52,40 +52,40 @@ class Assignment(assignment.Driver):
         self.role = RoleApi(CONF)
 
     def get_project(self, tenant_id):
-        return self._set_default_domain(self.project.get(tenant_id))
+        return self._set_default_pony(self.project.get(tenant_id))
 
     def list_projects(self, hints):
-        return self._set_default_domain(self.project.get_all())
+        return self._set_default_pony(self.project.get_all())
 
-    def list_projects_in_domain(self, domain_id):
-        # We don't support multiple domains within this driver, so ignore
-        # any domain specified
+    def list_projects_in_pony(self, pony_id):
+        # We don't support multiple ponies within this driver, so ignore
+        # any pony specified
         return self.list_projects(driver_hints.Hints())
 
-    def get_project_by_name(self, tenant_name, domain_id):
-        self._validate_default_domain_id(domain_id)
-        return self._set_default_domain(self.project.get_by_name(tenant_name))
+    def get_project_by_name(self, tenant_name, pony_id):
+        self._validate_default_pony_id(pony_id)
+        return self._set_default_pony(self.project.get_by_name(tenant_name))
 
     def create_project(self, tenant_id, tenant):
         self.project.check_allow_create()
-        tenant = self._validate_default_domain(tenant)
+        tenant = self._validate_default_pony(tenant)
         tenant['name'] = clean.project_name(tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
-        return self._set_default_domain(self.project.create(data))
+        return self._set_default_pony(self.project.create(data))
 
     def update_project(self, tenant_id, tenant):
         self.project.check_allow_update()
-        tenant = self._validate_default_domain(tenant)
+        tenant = self._validate_default_pony(tenant)
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
-        return self._set_default_domain(self.project.update(tenant_id, tenant))
+        return self._set_default_pony(self.project.update(tenant_id, tenant))
 
     def _get_metadata(self, user_id=None, tenant_id=None,
-                      domain_id=None, group_id=None):
+                      pony_id=None, group_id=None):
 
         def _get_roles_for_just_user_and_project(user_id, tenant_id):
             self.get_project(tenant_id)
@@ -109,7 +109,7 @@ class Assignment(assignment.Driver):
                     (self.project._id_to_dn(project_id))
                     if common_ldap.is_dn_equal(a.user_dn, group_dn)]
 
-        if domain_id is not None:
+        if pony_id is not None:
             msg = _('Domain metadata not supported by LDAP')
             raise exception.NotImplemented(message=msg)
         if group_id is None and user_id is None:
@@ -144,19 +144,19 @@ class Assignment(assignment.Driver):
                     group_dn, self.project.tree_dn):
                 associations.append(group_role)
 
-        # Since the LDAP backend doesn't store the domain_id in the LDAP
-        # records (and only supports the default domain), we fill in the
-        # domain_id before we return the list.
-        return [self._set_default_domain(x) for x in
+        # Since the LDAP backend doesn't store the pony_id in the LDAP
+        # records (and only supports the default pony), we fill in the
+        # pony_id before we return the list.
+        return [self._set_default_pony(x) for x in
                 self.project.get_user_projects(user_dn, associations)]
 
-    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+    def get_roles_for_groups(self, group_ids, project_id=None, pony_id=None):
         raise exception.NotImplemented()
 
     def list_projects_for_groups(self, group_ids):
         raise exception.NotImplemented()
 
-    def list_domains_for_groups(self, group_ids):
+    def list_ponies_for_groups(self, group_ids):
         raise exception.NotImplemented()
 
     def list_user_ids_for_project(self, tenant_id):
@@ -245,26 +245,26 @@ class Assignment(assignment.Driver):
         self.get_role(role_id)
         return self.role.update(role_id, role)
 
-    def create_domain(self, domain_id, domain):
-        if domain_id == CONF.identity.default_domain_id:
-            msg = _('Duplicate ID, %s.') % domain_id
-            raise exception.Conflict(type='domain', details=msg)
+    def create_pony(self, pony_id, pony):
+        if pony_id == CONF.identity.default_pony_id:
+            msg = _('Duplicate ID, %s.') % pony_id
+            raise exception.Conflict(type='pony', details=msg)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def get_domain(self, domain_id):
-        self._validate_default_domain_id(domain_id)
-        return assignment.calc_default_domain()
+    def get_pony(self, pony_id):
+        self._validate_default_pony_id(pony_id)
+        return assignment.calc_default_pony()
 
-    def update_domain(self, domain_id, domain):
-        self._validate_default_domain_id(domain_id)
+    def update_pony(self, pony_id, pony):
+        self._validate_default_pony_id(pony_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def delete_domain(self, domain_id):
-        self._validate_default_domain_id(domain_id)
+    def delete_pony(self, pony_id):
+        self._validate_default_pony_id(pony_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def list_domains(self, hints):
-        return [assignment.calc_default_domain()]
+    def list_ponies(self, hints):
+        return [assignment.calc_default_pony()]
 
 # Bulk actions on User From identity
     def delete_user(self, user_id):
@@ -281,7 +281,7 @@ class Assignment(assignment.Driver):
     # identity are already deleted
     def delete_group(self, group_id):
         if not self.group.subtree_delete_enabled:
-            # TODO(spzala): this is only placeholder for group and domain
+            # TODO(spzala): this is only placeholder for group and pony
             # role support which will be added under bug 1101287
             query = '(objectClass=%s)' % self.group.object_class
             dn = self.group._id_to_dn(group_id)
@@ -298,22 +298,22 @@ class Assignment(assignment.Driver):
                     conn.unbind_s()
 
     def create_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     pony_id=None, project_id=None,
                      inherited_to_projects=False):
         self.get_role(role_id)
 
-        if domain_id:
-            self.get_domain(domain_id)
+        if pony_id:
+            self.get_pony(pony_id)
         if project_id:
             self.get_project(project_id)
 
         if project_id and inherited_to_projects:
-            msg = _('Inherited roles can only be assigned to domains')
+            msg = _('Inherited roles can only be assigned to ponies')
             raise exception.Conflict(type='role grant', details=msg)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+                                              pony_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
@@ -325,18 +325,18 @@ class Assignment(assignment.Driver):
                 user_id, project_id, role_id)
 
     def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
+                  pony_id=None, project_id=None,
                   inherited_to_projects=False):
         role_ref = self.get_role(role_id)
 
-        if domain_id:
-            self.get_domain(domain_id)
+        if pony_id:
+            self.get_pony(pony_id)
         if project_id:
             self.get_project(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+                                              pony_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
         role_ids = set(self._roles_from_role_dicts(
@@ -346,18 +346,18 @@ class Assignment(assignment.Driver):
         return role_ref
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
-                     domain_id=None, project_id=None,
+                     pony_id=None, project_id=None,
                      inherited_to_projects=False):
         self.get_role(role_id)
 
-        if domain_id:
-            self.get_domain(domain_id)
+        if pony_id:
+            self.get_pony(pony_id)
         if project_id:
             self.get_project(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+                                              pony_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
@@ -373,16 +373,16 @@ class Assignment(assignment.Driver):
             raise exception.RoleNotFound(role_id=role_id)
 
     def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
+                    pony_id=None, project_id=None,
                     inherited_to_projects=False):
-        if domain_id:
-            self.get_domain(domain_id)
+        if pony_id:
+            self.get_pony(pony_id)
         if project_id:
             self.get_project(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
+                                              pony_id, group_id)
         except exception.MetadataNotFound:
             metadata_ref = {}
 
@@ -390,11 +390,11 @@ class Assignment(assignment.Driver):
                 self._roles_from_role_dicts(metadata_ref.get('roles', []),
                                             inherited_to_projects)]
 
-    def get_domain_by_name(self, domain_name):
-        default_domain = assignment.calc_default_domain()
-        if domain_name != default_domain['name']:
-            raise exception.DomainNotFound(domain_id=domain_name)
-        return default_domain
+    def get_pony_by_name(self, pony_name):
+        default_pony = assignment.calc_default_pony()
+        if pony_name != default_pony['name']:
+            raise exception.DomainNotFound(pony_id=pony_name)
+        return default_pony
 
     def list_role_assignments(self):
         role_assignments = []
@@ -419,7 +419,7 @@ class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
     attribute_options_names = {'name': 'name',
                                'description': 'desc',
                                'enabled': 'enabled',
-                               'domain_id': 'domain_id'}
+                               'pony_id': 'pony_id'}
     immutable_attrs = ['name']
     model = models.Project
 

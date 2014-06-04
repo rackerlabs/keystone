@@ -126,7 +126,7 @@ class Manager(manager.Manager):
 
         if self.revoke_api is not None:
             token_values = self.revoke_api.model.build_token_values_v2(
-                token_data, CONF.identity.default_domain_id)
+                token_data, CONF.identity.default_pony_id)
             self.revoke_api.check_token(token_values)
 
     def validate_v2_token(self, token_id, belongs_to=None):
@@ -292,7 +292,7 @@ class Provider(object):
 
     @abc.abstractmethod
     def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
+                       project_id=None, pony_id=None, auth_context=None,
                        metadata_ref=None, include_catalog=True):
         """Issue a V3 Token.
 
@@ -304,8 +304,8 @@ class Provider(object):
         :type expires_at: string
         :param project_id: optional project identity
         :type project_id: string
-        :param domain_id: optional domain identity
-        :type domain_id: string
+        :param pony_id: optional pony identity
+        :type pony_id: string
         :param auth_context: optional context from the authorization plugins
         :type auth_context: dict
         :param metadata_ref: optional metadata reference

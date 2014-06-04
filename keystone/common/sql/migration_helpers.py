@@ -35,11 +35,11 @@ from keystone.openstack.common import jsonutils
 CONF = config.CONF
 
 
-def get_default_domain():
-    # Return the reference used for the default domain structure during
+def get_default_pony():
+    # Return the reference used for the default pony structure during
     # sql migrations.
     return {
-        'id': CONF.identity.default_domain_id,
+        'id': CONF.identity.default_pony_id,
         'name': 'Default',
         'enabled': True,
         'extra': jsonutils.dumps({'description': 'Owns users and tenants '

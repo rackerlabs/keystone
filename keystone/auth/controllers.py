@@ -103,9 +103,9 @@ class AuthInfo(object):
         self.context = context
         self.auth = auth
         self._scope_data = (None, None, None)
-        # self._scope_data is (domain_id, project_id, trust_ref)
+        # self._scope_data is (pony_id, project_id, trust_ref)
         # project scope: (None, project_id, None)
-        # domain scope: (domain_id, None, None)
+        # pony scope: (pony_id, None, None)
         # trust scope: (None, None, trust_ref)
         # unscoped: (None, None, None)
 
@@ -116,30 +116,30 @@ class AuthInfo(object):
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
-    def _assert_domain_is_enabled(self, domain_ref):
-        if not domain_ref.get('enabled'):
-            msg = _('Domain is disabled: %s') % (domain_ref['id'])
+    def _assert_pony_is_enabled(self, pony_ref):
+        if not pony_ref.get('enabled'):
+            msg = _('Domain is disabled: %s') % (pony_ref['id'])
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
-    def _lookup_domain(self, domain_info):
-        domain_id = domain_info.get('id')
-        domain_name = domain_info.get('name')
-        domain_ref = None
-        if not domain_id and not domain_name:
+    def _lookup_pony(self, pony_info):
+        pony_id = pony_info.get('id')
+        pony_name = pony_info.get('name')
+        pony_ref = None
+        if not pony_id and not pony_name:
             raise exception.ValidationError(attribute='id or name',
-                                            target='domain')
+                                            target='pony')
         try:
-            if domain_name:
-                domain_ref = self.assignment_api.get_domain_by_name(
-                    domain_name)
+            if pony_name:
+                pony_ref = self.assignment_api.get_pony_by_name(
+                    pony_name)
             else:
-                domain_ref = self.assignment_api.get_domain(domain_id)
+                pony_ref = self.assignment_api.get_pony(pony_id)
         except exception.DomainNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
-        self._assert_domain_is_enabled(domain_ref)
-        return domain_ref
+        self._assert_pony_is_enabled(pony_ref)
+        return pony_ref
 
     def _lookup_project(self, project_info):
         project_id = project_info.get('id')
@@ -150,18 +150,18 @@ class AuthInfo(object):
                                             target='project')
         try:
             if project_name:
-                if 'domain' not in project_info:
-                    raise exception.ValidationError(attribute='domain',
+                if 'pony' not in project_info:
+                    raise exception.ValidationError(attribute='pony',
                                                     target='project')
-                domain_ref = self._lookup_domain(project_info['domain'])
+                pony_ref = self._lookup_pony(project_info['pony'])
                 project_ref = self.assignment_api.get_project_by_name(
-                    project_name, domain_ref['id'])
+                    project_name, pony_ref['id'])
             else:
                 project_ref = self.assignment_api.get_project(project_id)
-                # NOTE(morganfainberg): The _lookup_domain method will raise
-                # exception.Unauthorized if the domain isn't found or is
+                # NOTE(morganfainberg): The _lookup_pony method will raise
+                # exception.Unauthorized if the pony isn't found or is
                 # disabled.
-                self._lookup_domain({'id': project_ref['domain_id']})
+                self._lookup_pony({'id': project_ref['pony_id']})
         except exception.ProjectNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
@@ -183,24 +183,24 @@ class AuthInfo(object):
         if 'scope' not in self.auth:
             return
         if sum(['project' in self.auth['scope'],
-                'domain' in self.auth['scope'],
+                'pony' in self.auth['scope'],
                 'OS-TRUST:trust' in self.auth['scope']]) != 1:
             raise exception.ValidationError(
-                attribute='project, domain, or OS-TRUST:trust',
+                attribute='project, pony, or OS-TRUST:trust',
                 target='scope')
 
         if 'project' in self.auth['scope']:
             project_ref = self._lookup_project(self.auth['scope']['project'])
             self._scope_data = (None, project_ref['id'], None)
-        elif 'domain' in self.auth['scope']:
-            domain_ref = self._lookup_domain(self.auth['scope']['domain'])
-            self._scope_data = (domain_ref['id'], None, None)
+        elif 'pony' in self.auth['scope']:
+            pony_ref = self._lookup_pony(self.auth['scope']['pony'])
+            self._scope_data = (pony_ref['id'], None, None)
         elif 'OS-TRUST:trust' in self.auth['scope']:
             if not CONF.trust.enabled:
                 raise exception.Forbidden('Trusts are disabled.')
             trust_ref = self._lookup_trust(
                 self.auth['scope']['OS-TRUST:trust'])
-            # TODO(ayoung): when trusts support domains, fill in domain data
+            # TODO(ayoung): when trusts support ponies, fill in pony data
             if trust_ref.get('project_id') is not None:
                 project_ref = self._lookup_project(
                     {'id': trust_ref['project_id']})
@@ -269,10 +269,10 @@ class AuthInfo(object):
 
         Verify and return the scoping information.
 
-        :returns: (domain_id, project_id, trust_ref).
+        :returns: (pony_id, project_id, trust_ref).
                    If scope to a project, (None, project_id, None)
                    will be returned.
-                   If scoped to a domain, (domain_id, None, None)
+                   If scoped to a pony, (pony_id, None, None)
                    will be returned.
                    If scoped to a trust, (None, project_id, trust_ref),
                    Will be returned, where the project_id comes from the
@@ -282,18 +282,18 @@ class AuthInfo(object):
         """
         return self._scope_data
 
-    def set_scope(self, domain_id=None, project_id=None, trust=None):
+    def set_scope(self, pony_id=None, project_id=None, trust=None):
         """Set scope information."""
-        if domain_id and project_id:
-            msg = _('Scoping to both domain and project is not allowed')
+        if pony_id and project_id:
+            msg = _('Scoping to both pony and project is not allowed')
             raise ValueError(msg)
-        if domain_id and trust:
-            msg = _('Scoping to both domain and trust is not allowed')
+        if pony_id and trust:
+            msg = _('Scoping to both pony and trust is not allowed')
             raise ValueError(msg)
         if project_id and trust:
             msg = _('Scoping to both project and trust is not allowed')
             raise ValueError(msg)
-        self._scope_data = (domain_id, project_id, trust)
+        self._scope_data = (pony_id, project_id, trust)
 
 
 @dependency.requires('assignment_api', 'identity_api', 'token_api',
@@ -328,7 +328,7 @@ class Auth(controller.V3Controller):
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
             self._check_and_set_default_scoping(auth_info, auth_context)
-            (domain_id, project_id, trust) = auth_info.get_scope()
+            (pony_id, project_id, trust) = auth_info.get_scope()
 
             if trust:
                 self.trust_api.consume_use(trust['id'])
@@ -344,7 +344,7 @@ class Auth(controller.V3Controller):
 
             (token_id, token_data) = self.token_provider_api.issue_v3_token(
                 auth_context['user_id'], method_names, expires_at, project_id,
-                domain_id, auth_context, trust, metadata_ref, include_catalog)
+                pony_id, auth_context, trust, metadata_ref, include_catalog)
 
             return render_token_data_response(token_id, token_data,
                                               created=True)
@@ -352,10 +352,10 @@ class Auth(controller.V3Controller):
             raise exception.Unauthorized(e)
 
     def _check_and_set_default_scoping(self, auth_info, auth_context):
-        (domain_id, project_id, trust) = auth_info.get_scope()
+        (pony_id, project_id, trust) = auth_info.get_scope()
         if trust:
             project_id = trust['project_id']
-        if domain_id or project_id or trust:
+        if pony_id or project_id or trust:
             # scope is specified
             return
 
@@ -379,10 +379,10 @@ class Auth(controller.V3Controller):
         try:
             default_project_ref = self.assignment_api.get_project(
                 default_project_id)
-            default_project_domain_ref = self.assignment_api.get_domain(
-                default_project_ref['domain_id'])
+            default_project_pony_ref = self.assignment_api.get_pony(
+                default_project_ref['pony_id'])
             if (default_project_ref.get('enabled', True) and
-                    default_project_domain_ref.get('enabled', True)):
+                    default_project_pony_ref.get('enabled', True)):
                 if self.assignment_api.get_roles_for_user_and_project(
                         user_ref['id'], default_project_id):
                     auth_info.set_scope(project_id=default_project_id)
@@ -401,7 +401,7 @@ class Auth(controller.V3Controller):
                             {'user_id': user_ref['id'],
                              'project_id': default_project_id})
         except (exception.ProjectNotFound, exception.DomainNotFound):
-            # default project or default project domain doesn't exist,
+            # default project or default project pony doesn't exist,
             # will issue unscoped token instead
             msg = _("User %(user_id)s's default project %(project_id)s not"
                     " found. The token will be unscoped rather than"

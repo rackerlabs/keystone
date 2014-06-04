@@ -201,7 +201,7 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableDoesNotExist(self.mapping)
 
 
-_REVOKE_COLUMN_NAMES = ['id', 'domain_id', 'project_id', 'user_id', 'role_id',
+_REVOKE_COLUMN_NAMES = ['id', 'pony_id', 'project_id', 'user_id', 'role_id',
                         'trust_id', 'consumer_id', 'access_token_id',
                         'issued_before', 'expires_at', 'revoked_at']
 

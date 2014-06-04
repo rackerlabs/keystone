@@ -49,38 +49,38 @@ class IdentityTestFilteredCase(filtering.FilterTests,
     def load_sample_data(self):
         """Create sample data for these tests.
 
-        As well as the usual housekeeping, create a set of domains,
+        As well as the usual housekeeping, create a set of ponies,
         users, roles and projects for the subsequent tests:
 
-        - Three domains: A,B & C.  C is disabled.
+        - Three ponies: A,B & C.  C is disabled.
         - DomainA has user1, DomainB has user2 and user3
         - DomainA has group1 and group2, DomainB has group3
         - User1 has a role on DomainA
 
-        Remember that there will also be a fourth domain in existence,
-        the default domain.
+        Remember that there will also be a fourth pony in existence,
+        the default pony.
 
         """
-        # Start by creating a few domains
-        self._populate_default_domain()
-        self.domainA = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainA['id'], self.domainA)
-        self.domainB = self.new_domain_ref()
-        self.assignment_api.create_domain(self.domainB['id'], self.domainB)
-        self.domainC = self.new_domain_ref()
-        self.domainC['enabled'] = False
-        self.assignment_api.create_domain(self.domainC['id'], self.domainC)
+        # Start by creating a few ponies
+        self._populate_default_pony()
+        self.ponyA = self.new_pony_ref()
+        self.assignment_api.create_pony(self.ponyA['id'], self.ponyA)
+        self.ponyB = self.new_pony_ref()
+        self.assignment_api.create_pony(self.ponyB['id'], self.ponyB)
+        self.ponyC = self.new_pony_ref()
+        self.ponyC['enabled'] = False
+        self.assignment_api.create_pony(self.ponyC['id'], self.ponyC)
 
-        # Now create some users, one in domainA and two of them in domainB
-        self.user1 = self.new_user_ref(domain_id=self.domainA['id'])
+        # Now create some users, one in ponyA and two of them in ponyB
+        self.user1 = self.new_user_ref(pony_id=self.ponyA['id'])
         self.user1['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user1['id'], self.user1)
 
-        self.user2 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user2 = self.new_user_ref(pony_id=self.ponyB['id'])
         self.user2['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user2['id'], self.user2)
 
-        self.user3 = self.new_user_ref(domain_id=self.domainB['id'])
+        self.user3 = self.new_user_ref(pony_id=self.ponyB['id'])
         self.user3['password'] = uuid.uuid4().hex
         self.identity_api.create_user(self.user3['id'], self.user3)
 
@@ -88,7 +88,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.assignment_api.create_role(self.role['id'], self.role)
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user1['id'],
-                                         domain_id=self.domainA['id'])
+                                         pony_id=self.ponyA['id'])
 
         # A default auth request we can use - un-scoped user token
         self.auth = self.build_authentication_request(
@@ -105,85 +105,85 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         with open(self.tmpfilename, "w") as policyfile:
             policyfile.write(jsonutils.dumps(new_policy))
 
-    def test_list_users_filtered_by_domain(self):
-        """GET /users?domain_id=mydomain (filtered)
+    def test_list_users_filtered_by_pony(self):
+        """GET /users?pony_id=mypony (filtered)
 
         Test Plan:
 
         - Update policy so api is unprotected
         - Use an un-scoped token to make sure we can filter the
-          users by domainB, getting back the 2 users in that domain
+          users by ponyB, getting back the 2 users in that pony
 
         """
         self._set_policy({"identity:list_users": []})
-        url_by_name = '/users?domain_id=%s' % self.domainB['id']
+        url_by_name = '/users?pony_id=%s' % self.ponyB['id']
         r = self.get(url_by_name, auth=self.auth)
         # We should  get back two users, those in DomainB
         id_list = self._get_id_list_from_ref_list(r.result.get('users'))
         self.assertIn(self.user2['id'], id_list)
         self.assertIn(self.user3['id'], id_list)
 
-    def test_list_filtered_domains(self):
-        """GET /domains?enabled=0
+    def test_list_filtered_ponies(self):
+        """GET /ponies?enabled=0
 
         Test Plan:
 
         - Update policy for no protection on api
-        - Filter by the 'enabled' boolean to get disabled domains, which
-          should return just domainC
+        - Filter by the 'enabled' boolean to get disabled ponies, which
+          should return just ponyC
         - Try the filter using different ways of specifying True/False
           to test that our handling of booleans in filter matching is
           correct
 
         """
-        new_policy = {"identity:list_domains": []}
+        new_policy = {"identity:list_ponies": []}
         self._set_policy(new_policy)
-        r = self.get('/domains?enabled=0', auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        r = self.get('/ponies?enabled=0', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('ponies'))
         self.assertEqual(len(id_list), 1)
-        self.assertIn(self.domainC['id'], id_list)
+        self.assertIn(self.ponyC['id'], id_list)
 
         # Try a few ways of specifying 'false'
         for val in ('0', 'false', 'False', 'FALSE', 'n', 'no', 'off'):
-            r = self.get('/domains?enabled=%s' % val, auth=self.auth)
-            id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
-            self.assertEqual([self.domainC['id']], id_list)
+            r = self.get('/ponies?enabled=%s' % val, auth=self.auth)
+            id_list = self._get_id_list_from_ref_list(r.result.get('ponies'))
+            self.assertEqual([self.ponyC['id']], id_list)
 
         # Now try a few ways of specifying 'true' when we should get back
-        # the other two domains, plus the default domain
+        # the other two ponies, plus the default pony
         for val in ('1', 'true', 'True', 'TRUE', 'y', 'yes', 'on'):
-            r = self.get('/domains?enabled=%s' % val, auth=self.auth)
-            id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+            r = self.get('/ponies?enabled=%s' % val, auth=self.auth)
+            id_list = self._get_id_list_from_ref_list(r.result.get('ponies'))
             self.assertEqual(len(id_list), 3)
-            self.assertIn(self.domainA['id'], id_list)
-            self.assertIn(self.domainB['id'], id_list)
-            self.assertIn(CONF.identity.default_domain_id, id_list)
+            self.assertIn(self.ponyA['id'], id_list)
+            self.assertIn(self.ponyB['id'], id_list)
+            self.assertIn(CONF.identity.default_pony_id, id_list)
 
-        r = self.get('/domains?enabled', auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        r = self.get('/ponies?enabled', auth=self.auth)
+        id_list = self._get_id_list_from_ref_list(r.result.get('ponies'))
         self.assertEqual(len(id_list), 3)
-        self.assertIn(self.domainA['id'], id_list)
-        self.assertIn(self.domainB['id'], id_list)
-        self.assertIn(CONF.identity.default_domain_id, id_list)
+        self.assertIn(self.ponyA['id'], id_list)
+        self.assertIn(self.ponyB['id'], id_list)
+        self.assertIn(CONF.identity.default_pony_id, id_list)
 
     def test_multiple_filters(self):
-        """GET /domains?enabled&name=myname
+        """GET /ponies?enabled&name=myname
 
         Test Plan:
 
         - Update policy for no protection on api
         - Filter by the 'enabled' boolean and name - this should
-          return a single domain
+          return a single pony
 
         """
-        new_policy = {"identity:list_domains": []}
+        new_policy = {"identity:list_ponies": []}
         self._set_policy(new_policy)
 
-        my_url = '/domains?enableds&name=%s' % self.domainA['name']
+        my_url = '/ponies?enableds&name=%s' % self.ponyA['name']
         r = self.get(my_url, auth=self.auth)
-        id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
+        id_list = self._get_id_list_from_ref_list(r.result.get('ponies'))
         self.assertEqual(len(id_list), 1)
-        self.assertIn(self.domainA['id'], id_list)
+        self.assertIn(self.ponyA['id'], id_list)
 
     def test_list_users_filtered_by_funny_name(self):
         """GET /users?name=%myname%
@@ -289,7 +289,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
 
         # See if we can add a SQL command...use the group table instead of the
         # user table since 'user' is reserved word for SQLAlchemy.
-        group = self.new_group_ref(domain_id=self.domainB['id'])
+        group = self.new_group_ref(pony_id=self.ponyB['id'])
         self.identity_api.create_group(group['id'], group)
 
         url_by_name = "/users?name=x'; drop table group"

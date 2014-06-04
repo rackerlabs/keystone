@@ -47,8 +47,8 @@ def upgrade(migrate_engine):
         mysql_engine='InnoDB',
         mysql_charset='utf8')
 
-    domain = sql.Table(
-        'domain', meta,
+    pony = sql.Table(
+        'pony', meta,
         sql.Column('id', sql.String(length=64), primary_key=True),
         sql.Column('name', sql.String(length=64), nullable=False),
         sql.Column('enabled', sql.Boolean, default=True, nullable=False),
@@ -71,17 +71,17 @@ def upgrade(migrate_engine):
     group = sql.Table(
         'group', meta,
         sql.Column('id', sql.String(length=64), primary_key=True),
-        sql.Column('domain_id', sql.String(length=64), nullable=False),
+        sql.Column('pony_id', sql.String(length=64), nullable=False),
         sql.Column('name', sql.String(length=64), nullable=False),
         sql.Column('description', sql.Text),
         sql.Column('extra', ks_sql.JsonBlob.impl),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
 
-    group_domain_metadata = sql.Table(
-        'group_domain_metadata', meta,
+    group_pony_metadata = sql.Table(
+        'group_pony_metadata', meta,
         sql.Column('group_id', sql.String(length=64), primary_key=True),
-        sql.Column('domain_id', sql.String(length=64), primary_key=True),
+        sql.Column('pony_id', sql.String(length=64), primary_key=True),
         sql.Column('data', ks_sql.JsonBlob.impl),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
@@ -110,7 +110,7 @@ def upgrade(migrate_engine):
         sql.Column('extra', ks_sql.JsonBlob.impl),
         sql.Column('description', sql.Text),
         sql.Column('enabled', sql.Boolean),
-        sql.Column('domain_id', sql.String(length=64), nullable=False),
+        sql.Column('pony_id', sql.String(length=64), nullable=False),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
 
@@ -170,15 +170,15 @@ def upgrade(migrate_engine):
         sql.Column('extra', ks_sql.JsonBlob.impl),
         sql.Column('password', sql.String(length=128)),
         sql.Column('enabled', sql.Boolean),
-        sql.Column('domain_id', sql.String(length=64), nullable=False),
+        sql.Column('pony_id', sql.String(length=64), nullable=False),
         sql.Column('default_project_id', sql.String(length=64)),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
 
-    user_domain_metadata = sql.Table(
-        'user_domain_metadata', meta,
+    user_pony_metadata = sql.Table(
+        'user_pony_metadata', meta,
         sql.Column('user_id', sql.String(length=64), primary_key=True),
-        sql.Column('domain_id', sql.String(length=64), primary_key=True),
+        sql.Column('pony_id', sql.String(length=64), primary_key=True),
         sql.Column('data', ks_sql.JsonBlob.impl),
         mysql_engine='InnoDB',
         mysql_charset='utf8')
@@ -199,9 +199,9 @@ def upgrade(migrate_engine):
         mysql_charset='utf8')
 
     # create all tables
-    tables = [credential, domain, endpoint, group, group_domain_metadata,
+    tables = [credential, pony, endpoint, group, group_pony_metadata,
               group_project_metadata, policy, project, role, service,
-              token, trust, trust_role, user, user_domain_metadata,
+              token, trust, trust_role, user, user_pony_metadata,
               user_group_membership, user_project_metadata]
 
     for table in tables:
@@ -212,19 +212,19 @@ def upgrade(migrate_engine):
             raise
 
     # Unique Constraints
-    migrate.UniqueConstraint(user.c.domain_id,
+    migrate.UniqueConstraint(user.c.pony_id,
                              user.c.name,
-                             name='ixu_user_name_domain_id').create()
-    migrate.UniqueConstraint(group.c.domain_id,
+                             name='ixu_user_name_pony_id').create()
+    migrate.UniqueConstraint(group.c.pony_id,
                              group.c.name,
-                             name='ixu_group_name_domain_id').create()
+                             name='ixu_group_name_pony_id').create()
     migrate.UniqueConstraint(role.c.name,
                              name='ixu_role_name').create()
-    migrate.UniqueConstraint(project.c.domain_id,
+    migrate.UniqueConstraint(project.c.pony_id,
                              project.c.name,
-                             name='ixu_project_name_domain_id').create()
-    migrate.UniqueConstraint(domain.c.name,
-                             name='ixu_domain_name').create()
+                             name='ixu_project_name_pony_id').create()
+    migrate.UniqueConstraint(pony.c.name,
+                             name='ixu_pony_name').create()
 
     # Indexes
     sql.Index('ix_token_expires', token.c.expires).create()
@@ -236,17 +236,17 @@ def upgrade(migrate_engine):
          'references': [project.c.id],
          'name': 'fk_user_project_metadata_project_id'},
 
-        {'columns': [user_domain_metadata.c.domain_id],
-         'references': [domain.c.id],
-         'name': 'fk_user_domain_metadata_domain_id'},
+        {'columns': [user_pony_metadata.c.pony_id],
+         'references': [pony.c.id],
+         'name': 'fk_user_pony_metadata_pony_id'},
 
         {'columns': [group_project_metadata.c.project_id],
          'references': [project.c.id],
          'name': 'fk_group_project_metadata_project_id'},
 
-        {'columns': [group_domain_metadata.c.domain_id],
-         'references': [domain.c.id],
-         'name': 'fk_group_domain_metadata_domain_id'},
+        {'columns': [group_pony_metadata.c.pony_id],
+         'references': [pony.c.id],
+         'name': 'fk_group_pony_metadata_pony_id'},
 
         {'columns': [endpoint.c.service_id],
          'references': [service.c.id]},
@@ -259,17 +259,17 @@ def upgrade(migrate_engine):
          'references':[user.c.id],
          'name': 'fk_user_group_membership_user_id'},
 
-        {'columns': [user.c.domain_id],
-         'references': [domain.c.id],
-         'name': 'fk_user_domain_id'},
+        {'columns': [user.c.pony_id],
+         'references': [pony.c.id],
+         'name': 'fk_user_pony_id'},
 
-        {'columns': [group.c.domain_id],
-         'references': [domain.c.id],
-         'name': 'fk_group_domain_id'},
+        {'columns': [group.c.pony_id],
+         'references': [pony.c.id],
+         'name': 'fk_group_pony_id'},
 
-        {'columns': [project.c.domain_id],
-         'references': [domain.c.id],
-         'name': 'fk_project_domain_id'}
+        {'columns': [project.c.pony_id],
+         'references': [pony.c.id],
+         'name': 'fk_project_pony_id'}
     ]
 
     for fkey in fkeys:
@@ -277,9 +277,9 @@ def upgrade(migrate_engine):
                                      refcolumns=fkey['references'],
                                      name=fkey.get('name')).create()
 
-    # Create the default domain.
+    # Create the default pony.
     session = orm.sessionmaker(bind=migrate_engine)()
-    domain.insert(migration_helpers.get_default_domain()).execute()
+    pony.insert(migration_helpers.get_default_pony()).execute()
     session.commit()
 
 

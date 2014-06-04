@@ -34,7 +34,7 @@ from keystone import trust
 
 CONF = config.CONF
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_pony_id
 
 HOST_URL = 'http://keystone:5001'
 
@@ -264,9 +264,9 @@ class AuthWithToken(AuthTest):
             self.tenant_bar['id'],
             self.role_member['id'])
         # Now create a group role for this user as well
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony1['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
@@ -290,25 +290,25 @@ class AuthWithToken(AuthTest):
         self.assertIn(self.role_member['id'], roles)
         self.assertIn(self.role_admin['id'], roles)
 
-    def test_auth_token_cross_domain_group_and_project(self):
-        """Verify getting a token in cross domain group/project roles."""
-        # create domain, project and group and grant roles to user
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+    def test_auth_token_cross_pony_group_and_project(self):
+        """Verify getting a token in cross pony group/project roles."""
+        # create pony, project and group and grant roles to user
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
-        role_foo_domain1 = {'id': uuid.uuid4().hex,
+        role_foo_pony1 = {'id': uuid.uuid4().hex,
                             'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(role_foo_domain1['id'],
-                                        role_foo_domain1)
-        role_group_domain1 = {'id': uuid.uuid4().hex,
+        self.assignment_api.create_role(role_foo_pony1['id'],
+                                        role_foo_pony1)
+        role_group_pony1 = {'id': uuid.uuid4().hex,
                               'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(role_group_domain1['id'],
-                                        role_group_domain1)
+        self.assignment_api.create_role(role_group_pony1['id'],
+                                        role_group_pony1)
         self.assignment_api.add_user_to_project(project1['id'],
                                                 self.user_foo['id'])
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony1['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         self.identity_api.add_user_to_group(self.user_foo['id'],
@@ -323,12 +323,12 @@ class AuthWithToken(AuthTest):
             role_id=self.role_admin['id'])
         self.assignment_api.create_grant(
             user_id=self.user_foo['id'],
-            domain_id=domain1['id'],
-            role_id=role_foo_domain1['id'])
+            pony_id=pony1['id'],
+            role_id=role_foo_pony1['id'])
         self.assignment_api.create_grant(
             group_id=new_group['id'],
-            domain_id=domain1['id'],
-            role_id=role_group_domain1['id'])
+            pony_id=pony1['id'],
+            role_id=role_group_pony1['id'])
 
         # Get a scoped token for the tenant
         body_dict = _build_user_auth(
@@ -342,8 +342,8 @@ class AuthWithToken(AuthTest):
         self.assertEqual(project1['id'], tenant["id"])
         self.assertIn(self.role_member['id'], roles)
         self.assertIn(self.role_admin['id'], roles)
-        self.assertNotIn(role_foo_domain1['id'], roles)
-        self.assertNotIn(role_group_domain1['id'], roles)
+        self.assertNotIn(role_foo_pony1['id'], roles)
+        self.assertNotIn(role_group_pony1['id'], roles)
 
     def test_belongs_to_no_tenant(self):
         r = self.controller.authenticate(
@@ -413,7 +413,7 @@ class AuthWithToken(AuthTest):
     def test_deleting_role_revokes_token(self):
         role_controller = assignment.controllers.Role()
         project1 = {'id': 'Project1', 'name': uuid.uuid4().hex,
-                    'domain_id': DEFAULT_DOMAIN_ID}
+                    'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(project1['id'], project1)
         role_one = {'id': 'role_one', 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role_one['id'], role_one)
@@ -506,41 +506,41 @@ class AuthWithPasswordCredentials(AuthTest):
         token = self.controller.authenticate({}, body_dict)
         self.assertNotIn('bind', token['access']['token'])
 
-    def test_change_default_domain_id(self):
-        # If the default_domain_id config option is not the default then the
-        # user in auth data is from the new default domain.
+    def test_change_default_pony_id(self):
+        # If the default_pony_id config option is not the default then the
+        # user in auth data is from the new default pony.
 
-        # 1) Create a new domain.
-        new_domain_id = uuid.uuid4().hex
-        new_domain = {
+        # 1) Create a new pony.
+        new_pony_id = uuid.uuid4().hex
+        new_pony = {
             'description': uuid.uuid4().hex,
             'enabled': True,
-            'id': new_domain_id,
+            'id': new_pony_id,
             'name': uuid.uuid4().hex,
         }
 
-        self.assignment_api.create_domain(new_domain_id, new_domain)
+        self.assignment_api.create_pony(new_pony_id, new_pony)
 
-        # 2) Create user "foo" in new domain with different password than
-        #    default-domain foo.
+        # 2) Create user "foo" in new pony with different password than
+        #    default-pony foo.
         new_user_id = uuid.uuid4().hex
         new_user_password = uuid.uuid4().hex
         new_user = {
             'id': new_user_id,
             'name': self.user_foo['name'],
-            'domain_id': new_domain_id,
+            'pony_id': new_pony_id,
             'password': new_user_password,
             'email': 'foo@bar2.com',
         }
 
         self.identity_api.create_user(new_user_id, new_user)
 
-        # 3) Update the default_domain_id config option to the new domain
+        # 3) Update the default_pony_id config option to the new pony
 
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_pony_id=new_pony_id)
 
-        # 4) Authenticate as "foo" using the password in the new domain.
+        # 4) Authenticate as "foo" using the password in the new pony.
 
         body_dict = _build_user_auth(
             username=self.user_foo['name'],

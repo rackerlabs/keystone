@@ -111,41 +111,41 @@ FILE_OPTIONS = {
                         'default. This global limit may be then overridden '
                         'for a specific driver, by specifying a list_limit '
                         'in the appropriate section (e.g. [assignment]).'),
-        cfg.BoolOpt('domain_id_immutable', default=True,
+        cfg.BoolOpt('pony_id_immutable', default=True,
                     help='Set this to false if you want to enable the '
                          'ability for user, group and project entities '
-                         'to be moved between domains by updating their '
-                         'domain_id. Allowing such movement is not '
-                         'recommended if the scope of a domain admin is being '
+                         'to be moved between ponies by updating their '
+                         'pony_id. Allowing such movement is not '
+                         'recommended if the scope of a pony admin is being '
                          'restricted by use of an appropriate policy file '
                          '(see policy.v3cloudsample as an example).'),
     ],
     'identity': [
-        cfg.StrOpt('default_domain_id', default='default',
-                   help='This references the domain to use for all '
+        cfg.StrOpt('default_pony_id', default='default',
+                   help='This references the pony to use for all '
                         'Identity API v2 requests (which are not aware of '
-                        'domains). A domain with this ID will be created '
+                        'ponies). A pony with this ID will be created '
                         'for you by keystone-manage db_sync in migration '
-                        '008. The domain referenced by this ID cannot be '
+                        '008. The pony referenced by this ID cannot be '
                         'deleted on the v3 API, to prevent accidentally '
                         'breaking the v2 API. There is nothing special about '
-                        'this domain, other than the fact that it must '
+                        'this pony, other than the fact that it must '
                         'exist to order to maintain support for your v2 '
                         'clients.'),
-        cfg.BoolOpt('domain_specific_drivers_enabled',
+        cfg.BoolOpt('pony_specific_drivers_enabled',
                     default=False,
-                    help='A subset (or all) of domains can have their own '
+                    help='A subset (or all) of ponies can have their own '
                          'identity driver, each with their own partial '
-                         'configuration file in a domain configuration '
-                         'directory. Only values specific to the domain '
-                         'need to be placed in the domain specific '
+                         'configuration file in a pony configuration '
+                         'directory. Only values specific to the pony '
+                         'need to be placed in the pony specific '
                          'configuration file. This feature is disabled by '
                          'default; set to true to enable.'),
-        cfg.StrOpt('domain_config_dir',
-                   default='/etc/keystone/domains',
-                   help='Path for Keystone to locate the domain specific '
+        cfg.StrOpt('pony_config_dir',
+                   default='/etc/keystone/ponies',
+                   help='Path for Keystone to locate the pony specific '
                         'identity configuration files if '
-                        'domain_specific_drivers_enabled is set to true.'),
+                        'pony_specific_drivers_enabled is set to true.'),
         cfg.StrOpt('driver',
                    default=('keystone.identity.backends'
                             '.sql.Identity'),
@@ -167,7 +167,7 @@ FILE_OPTIONS = {
     'os_inherit': [
         cfg.BoolOpt('enabled', default=False,
                     help='role-assignment inheritance to projects from '
-                         'owning domain can be optionally enabled.'),
+                         'owning pony can be optionally enabled.'),
     ],
     'token': [
         cfg.ListOpt('bind', default=[],
@@ -531,9 +531,9 @@ FILE_OPTIONS = {
                    help='LDAP attribute mapped to project description.'),
         cfg.StrOpt('tenant_enabled_attribute', default='enabled',
                    help='LDAP attribute mapped to project enabled.'),
-        cfg.StrOpt('tenant_domain_id_attribute',
+        cfg.StrOpt('tenant_pony_id_attribute',
                    default='businessCategory',
-                   help='LDAP attribute mapped to project domain_id.'),
+                   help='LDAP attribute mapped to project pony_id.'),
         cfg.ListOpt('tenant_attribute_ignore', default=[],
                     help='List of attributes stripped off the project on '
                          'update.'),

@@ -29,7 +29,7 @@ from keystone.tests.ksfixtures import database
 
 
 CONF = config.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_pony_id
 OPENSTACK_REPO = 'https://review.openstack.org/p/openstack'
 KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
 
@@ -932,7 +932,7 @@ class KeystoneClientTests(object):
         for i in range(2):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
-                      'domain_id': DEFAULT_DOMAIN_ID}
+                      'pony_id': DEFAULT_DOMAIN_ID}
             self.assignment_api.create_project(tenant_id, tenant)
             self.assignment_api.add_user_to_project(tenant_id,
                                                     self.user_foo['id'])
@@ -959,7 +959,7 @@ class KeystoneClientTests(object):
         for i in range(2):
             tenant_id = uuid.uuid4().hex
             tenant = {'name': 'tenant-%s' % tenant_id, 'id': tenant_id,
-                      'domain_id': DEFAULT_DOMAIN_ID}
+                      'pony_id': DEFAULT_DOMAIN_ID}
             self.assignment_api.create_project(tenant_id, tenant)
             self.assignment_api.add_user_to_project(tenant_id,
                                                     self.user_foo['id'])

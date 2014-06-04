@@ -51,20 +51,20 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         self.addCleanup(common_ldap_core._HANDLERS.clear)
 
-    def _get_domain_fixture(self):
+    def _get_pony_fixture(self):
         """Domains in LDAP are read-only, so just return the static one."""
-        return self.assignment_api.get_domain(CONF.identity.default_domain_id)
+        return self.assignment_api.get_pony(CONF.identity.default_pony_id)
 
     def clear_database(self):
         for shelf in fakeldap.FakeShelves:
             fakeldap.FakeShelves[shelf].clear()
 
-    def reload_backends(self, domain_id):
-        # Only one backend unless we are using separate domain backends
+    def reload_backends(self, pony_id):
+        # Only one backend unless we are using separate pony backends
         self.load_backends()
 
-    def get_config(self, domain_id):
-        # Only one conf structure unless we are using separate domain backends
+    def get_config(self, pony_id):
+        # Only one conf structure unless we are using separate pony backends
         return CONF
 
     def config_overrides(self):
@@ -89,7 +89,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         user = {'id': u'fäké1',
                 'name': u'fäké1',
                 'password': u'fäképass1',
-                'domain_id': CONF.identity.default_domain_id,
+                'pony_id': CONF.identity.default_pony_id,
                 'tenants': ['bar']}
         self.identity_api.create_user(u'fäké1', user)
         user_ref = self.identity_api.get_user(u'fäké1')
@@ -104,16 +104,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           u'fäké1')
 
     def test_configurable_forbidden_user_actions(self):
-        conf = self.get_config(CONF.identity.default_domain_id)
+        conf = self.get_config(CONF.identity.default_pony_id)
         conf.ldap.user_allow_create = False
         conf.ldap.user_allow_update = False
         conf.ldap.user_allow_delete = False
-        self.reload_backends(CONF.identity.default_domain_id)
+        self.reload_backends(CONF.identity.default_pony_id)
 
         user = {'id': u'fäké1',
                 'name': u'fäké1',
                 'password': u'fäképass1',
-                'domain_id': CONF.identity.default_domain_id,
+                'pony_id': CONF.identity.default_pony_id,
                 'tenants': ['bar']}
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
@@ -131,9 +131,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           self.user_foo['id'])
 
     def test_configurable_forbidden_create_existing_user(self):
-        conf = self.get_config(CONF.identity.default_domain_id)
+        conf = self.get_config(CONF.identity.default_pony_id)
         conf.ldap.user_allow_create = False
-        self.reload_backends(CONF.identity.default_domain_id)
+        self.reload_backends(CONF.identity.default_pony_id)
 
         self.assertRaises(exception.ForbiddenAction,
                           self.identity_api.create_user,
@@ -145,9 +145,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.user_foo.pop('password')
         self.assertDictEqual(user_ref, self.user_foo)
 
-        conf = self.get_config(user_ref['domain_id'])
+        conf = self.get_config(user_ref['pony_id'])
         conf.ldap.user_filter = '(CN=DOES_NOT_MATCH)'
-        self.reload_backends(user_ref['domain_id'])
+        self.reload_backends(user_ref['pony_id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           self.user_foo['id'])
@@ -175,13 +175,13 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           role_id='member')
 
     def test_get_and_remove_role_grant_by_group_and_project(self):
-        new_domain = self._get_domain_fixture()
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_pony = self._get_pony_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -220,43 +220,43 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_delete_group_grant_no_group(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_and_remove_role_grant_by_group_and_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_group_and_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
-    def test_get_and_remove_role_grant_by_user_and_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_user_and_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_group_and_cross_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
-    def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_and_remove_role_grant_by_user_and_cross_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
-    def test_role_grant_by_group_and_cross_domain_project(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_role_grant_by_group_and_cross_pony_project(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
-    def test_role_grant_by_user_and_cross_domain_project(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_role_grant_by_user_and_cross_pony_project(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_multi_role_grant_by_user_group_on_project_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
     def test_delete_role_with_user_and_group_grants(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_delete_user_with_group_project_domain_links(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_delete_user_with_group_project_pony_links(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
-    def test_delete_group_with_user_project_domain_links(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_delete_group_with_user_project_pony_links(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
     def test_list_projects_for_user(self):
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
@@ -275,12 +275,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         # Now, check number of projects through groups
         user2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user2['id'], user2)
 
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group1['id'], group1)
 
         self.identity_api.add_user_to_group(user2['id'], group1['id'])
@@ -304,16 +304,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertThat(user_projects, matchers.HasLength(2))
 
     def test_list_projects_for_user_and_groups(self):
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         # Create user1
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
 
         # Create new group for user1
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group1['id'], group1)
 
         # Add user1 to group1
@@ -342,24 +342,24 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertThat(user_projects, matchers.HasLength(1))
 
     def test_list_projects_for_user_with_grants(self):
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
 
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group1['id'], group1)
         group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group2['id'], group2)
 
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project1['id'], project1)
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project2['id'], project2)
 
         self.identity_api.add_user_to_group(new_user['id'],
@@ -381,51 +381,51 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             new_user['id'])
         self.assertEqual(3, len(user_projects))
 
-    def test_create_duplicate_user_name_in_different_domains(self):
+    def test_create_duplicate_user_name_in_different_ponies(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_create_duplicate_project_name_in_different_domains(self):
+    def test_create_duplicate_project_name_in_different_ponies(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_create_duplicate_group_name_in_different_domains(self):
+    def test_create_duplicate_group_name_in_different_ponies(self):
         self.skipTest(
-            'N/A: LDAP does not support multiple domains')
+            'N/A: LDAP does not support multiple ponies')
 
-    def test_move_user_between_domains(self):
+    def test_move_user_between_ponies(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_user_between_domains_with_clashing_names_fails(self):
+    def test_move_user_between_ponies_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_group_between_domains(self):
+    def test_move_group_between_ponies(self):
         self.skipTest(
-            'N/A: LDAP does not support multiple domains')
+            'N/A: LDAP does not support multiple ponies')
 
-    def test_move_group_between_domains_with_clashing_names_fails(self):
+    def test_move_group_between_ponies_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_project_between_domains(self):
+    def test_move_project_between_ponies(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_move_project_between_domains_with_clashing_names_fails(self):
+    def test_move_project_between_ponies_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1101276')
 
-    def test_get_roles_for_user_and_domain(self):
-        self.skipTest('N/A: LDAP does not support multiple domains')
+    def test_get_roles_for_user_and_pony(self):
+        self.skipTest('N/A: LDAP does not support multiple ponies')
 
     def test_list_role_assignments_unfiltered(self):
-        new_domain = self._get_domain_fixture()
+        new_pony = self._get_pony_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'],
                                       new_user)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_project = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
+                       'pony_id': new_pony['id']}
         self.assignment_api.create_project(new_project['id'], new_project)
 
         # First check how many role grant already exist
@@ -448,15 +448,15 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        new_domain = self._get_domain_fixture()
+        new_pony = self._get_pony_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'],
                                       new_user)
         new_project = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
+                       'pony_id': new_pony['id']}
         self.assignment_api.create_project(new_project['id'], new_project)
         self.assignment_api.create_grant(user_id=new_user['id'],
                                          project_id=new_project['id'],
@@ -477,7 +477,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                 'password': uuid.uuid4().hex, 'enabled': True,
-                'domain_id': test_backend.DEFAULT_DOMAIN_ID}
+                'pony_id': test_backend.DEFAULT_DOMAIN_ID}
 
         self.identity_api.create_user(user['id'], user)
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
@@ -493,7 +493,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_role_assignments_bad_role(self):
         self.skipTest('Blocked by bug 1221805')
 
-    def test_multi_group_grants_on_project_domain(self):
+    def test_multi_group_grants_on_project_pony(self):
         self.skipTest('Blocked by bug 1101287')
 
     def test_list_group_members_missing_entry(self):
@@ -507,20 +507,20 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # Create a group
         group_id = None
         group = dict(name=uuid.uuid4().hex,
-                     domain_id=CONF.identity.default_domain_id)
+                     pony_id=CONF.identity.default_pony_id)
         group_id = self.identity_api.create_group(group_id, group)['id']
 
         # Create a couple of users and add them to the group.
         user_id = None
         user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
-                    domain_id=CONF.identity.default_domain_id)
+                    pony_id=CONF.identity.default_pony_id)
         user_1_id = self.identity_api.create_user(user_id, user)['id']
 
         self.identity_api.add_user_to_group(user_1_id, group_id)
 
         user_id = None
         user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
-                    domain_id=CONF.identity.default_domain_id)
+                    pony_id=CONF.identity.default_pony_id)
         user_2_id = self.identity_api.create_user(user_id, user)['id']
 
         self.identity_api.add_user_to_group(user_2_id, group_id)
@@ -529,7 +529,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # NOTE(blk-u): need to go directly to user interface to keep from
         # updating the group.
         driver = self.identity_api._select_identity_driver(
-            user['domain_id'])
+            user['pony_id'])
         driver.user.delete(user_2_id)
 
         # List group users and verify only user 1.
@@ -543,7 +543,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # No exception should be raised.
         group = {
             'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
@@ -560,13 +560,13 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # Create a group
         group_id = None
         group = dict(name=uuid.uuid4().hex,
-                     domain_id=CONF.identity.default_domain_id)
+                     pony_id=CONF.identity.default_pony_id)
         group_id = self.identity_api.create_group(group_id, group)['id']
 
         # Create a user
         user_id = None
         user = dict(name=uuid.uuid4().hex, id=uuid.uuid4().hex,
-                    domain_id=CONF.identity.default_domain_id)
+                    pony_id=CONF.identity.default_pony_id)
         user_id = self.identity_api.create_user(user_id, user)['id']
 
         # Add user to the group
@@ -577,29 +577,29 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         self.assertNotIn(dumb_id, user_ids)
 
-    def test_list_domains(self):
-        domains = self.assignment_api.list_domains()
+    def test_list_ponies(self):
+        ponies = self.assignment_api.list_ponies()
         self.assertEqual(
-            [assignment.calc_default_domain()],
-            domains)
+            [assignment.calc_default_pony()],
+            ponies)
 
-    def test_list_domains_non_default_domain_id(self):
-        # If change the default_domain_id, the ID of the default domain
-        # returned by list_domains changes is the new default_domain_id.
+    def test_list_ponies_non_default_pony_id(self):
+        # If change the default_pony_id, the ID of the default pony
+        # returned by list_ponies changes is the new default_pony_id.
 
-        new_domain_id = uuid.uuid4().hex
+        new_pony_id = uuid.uuid4().hex
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_pony_id=new_pony_id)
 
-        domains = self.assignment_api.list_domains()
+        ponies = self.assignment_api.list_ponies()
 
-        self.assertEqual(new_domain_id, domains[0]['id'])
+        self.assertEqual(new_pony_id, ponies[0]['id'])
 
     def test_authenticate_requires_simple_bind(self):
         user = {
             'id': 'no_meta',
             'name': 'NO_META',
-            'domain_id': test_backend.DEFAULT_DOMAIN_ID,
+            'pony_id': test_backend.DEFAULT_DOMAIN_ID,
             'password': 'no_meta2',
             'enabled': True,
         }
@@ -607,7 +607,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assignment_api.add_user_to_project(self.tenant_baz['id'],
                                                 user['id'])
         driver = self.identity_api._select_identity_driver(
-            user['domain_id'])
+            user['pony_id'])
         driver.user.LDAP_USER = None
         driver.user.LDAP_PASSWORD = None
 
@@ -616,17 +616,17 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           context={},
                           user_id=user['id'],
                           password=None,
-                          domain_scope=user['domain_id'])
+                          pony_scope=user['pony_id'])
 
-    # (spzala)The group and domain crud tests below override the standard ones
+    # (spzala)The group and pony crud tests below override the standard ones
     # in test_backend.py so that we can exclude the update name test, since we
-    # do not yet support the update of either group or domain names with LDAP.
+    # do not yet support the update of either group or pony names with LDAP.
     # In the tests below, the update is demonstrated by updating description.
     # Refer to bug 1136403 for more detail.
     def test_group_crud(self):
         group = {
             'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
@@ -645,15 +645,15 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_create_user_none_mapping(self):
         # When create a user where an attribute maps to None, the entry is
         # created without that attribute and it doesn't fail with a TypeError.
-        conf = self.get_config(CONF.identity.default_domain_id)
+        conf = self.get_config(CONF.identity.default_pony_id)
         conf.ldap.user_attribute_ignore = ['enabled', 'email',
                                            'tenants', 'tenantId']
-        self.reload_backends(CONF.identity.default_domain_id)
+        self.reload_backends(CONF.identity.default_pony_id)
 
         user = {'id': u'fäké1',
                 'name': u'fäké1',
                 'password': u'fäképass1',
-                'domain_id': CONF.identity.default_domain_id,
+                'pony_id': CONF.identity.default_pony_id,
                 'default_project_id': 'maps_to_none',
                 }
 
@@ -690,7 +690,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'id': user_id,
             'name': self.getUniqueString(),
             'password': self.getUniqueString(),
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
         }
         self.identity_api.create_user(user_id, user)
 
@@ -700,7 +700,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'id': group_id,
             'name': self.getUniqueString(prefix='tuidc'),
             'description': self.getUniqueString(),
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
         }
         self.identity_api.create_group(group_id, group)
 
@@ -723,7 +723,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             'id': user_id,
             'name': self.getUniqueString(),
             'password': self.getUniqueString(),
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
         }
         self.identity_api.create_user(user_id, user)
 
@@ -769,14 +769,14 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.load_backends()
 
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': CONF.identity.default_domain_id}
+                    'pony_id': CONF.identity.default_pony_id}
         self.assignment_api.create_project(project1['id'], project1)
 
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
 
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': CONF.identity.default_domain_id,
+                 'pony_id': CONF.identity.default_pony_id,
                  'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
@@ -1041,7 +1041,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             return res[0][1][enabled_attr_name]
 
         user = {'id': u'fäké1', 'name': u'fäké1', 'enabled': True,
-                'domain_id': CONF.identity.default_domain_id}
+                'pony_id': CONF.identity.default_pony_id}
 
         user_ref = self.identity_api.create_user(u'fäké1', user)
 
@@ -1188,7 +1188,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'id': 'extra_attributes',
             'name': 'EXTRA_ATTRIBUTES',
             'password': 'extra',
-            'domain_id': CONF.identity.default_domain_id
+            'pony_id': CONF.identity.default_pony_id
         }
         self.identity_api.create_user(user['id'], user)
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
@@ -1209,7 +1209,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'name': uuid.uuid4().hex,
             'description': description,
             'password': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id
+            'pony_id': CONF.identity.default_pony_id
         }
         self.identity_api.create_user(user['id'], user)
         res = self.identity_api.driver.user.get_all()
@@ -1246,54 +1246,54 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 # TODO(henry-nash): These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
 
-    def test_domain_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+    def test_pony_crud(self):
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.create_domain,
-                          domain['id'],
-                          domain)
+                          self.assignment_api.create_pony,
+                          pony['id'],
+                          pony)
         self.assertRaises(exception.Conflict,
-                          self.assignment_api.create_domain,
-                          CONF.identity.default_domain_id,
-                          domain)
+                          self.assignment_api.create_pony,
+                          CONF.identity.default_pony_id,
+                          pony)
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
-        domain['description'] = uuid.uuid4().hex
+        pony['description'] = uuid.uuid4().hex
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.update_domain,
-                          domain['id'],
-                          domain)
+                          self.assignment_api.update_pony,
+                          pony['id'],
+                          pony)
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.update_domain,
-                          CONF.identity.default_domain_id,
-                          domain)
+                          self.assignment_api.update_pony,
+                          CONF.identity.default_pony_id,
+                          pony)
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.delete_domain,
-                          domain['id'])
+                          self.assignment_api.delete_pony,
+                          pony['id'])
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.delete_domain,
-                          CONF.identity.default_domain_id)
+                          self.assignment_api.delete_pony,
+                          CONF.identity.default_pony_id)
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
-    def test_create_domain_case_sensitivity(self):
-        # domains are read-only, so case sensitivity isn't an issue
+    def test_create_pony_case_sensitivity(self):
+        # ponies are read-only, so case sensitivity isn't an issue
         ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex}
         self.assertRaises(exception.Forbidden,
-                          self.assignment_api.create_domain,
+                          self.assignment_api.create_pony,
                           ref['id'],
                           ref)
 
-    def test_cache_layer_domain_crud(self):
+    def test_cache_layer_pony_crud(self):
         # TODO(morganfainberg): This also needs to be removed when full LDAP
         # implementation is submitted.  No need to duplicate the above test,
         # just skip this time.
@@ -1304,7 +1304,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         #              updating of a project name so this method override
         #              provides a different update test
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': CONF.identity.default_domain_id,
+                   'pony_id': CONF.identity.default_pony_id,
                    'description': uuid.uuid4().hex, 'enabled': True
                    }
         self.assignment_api.create_project(project['id'], project)
@@ -1328,7 +1328,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # updating project names.  This method override provides a different
         # update test.
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': CONF.identity.default_domain_id,
+                   'pony_id': CONF.identity.default_pony_id,
                    'description': uuid.uuid4().hex}
         project_id = project['id']
         # Create a project
@@ -1376,9 +1376,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.get_project,
                           project_id)
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
+    def test_multi_role_grant_by_user_group_on_project_pony(self):
         # This is a partial implementation of the standard test that
-        # is defined in test_backend.py.  It omits both domain and
+        # is defined in test_backend.py.  It omits both pony and
         # group grants. since neither of these are yet supported by
         # the ldap backend.
 
@@ -1389,12 +1389,12 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             role_list.append(role)
 
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': CONF.identity.default_domain_id,
+                 'pony_id': CONF.identity.default_pony_id,
                  'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': CONF.identity.default_domain_id}
+                    'pony_id': CONF.identity.default_pony_id}
         self.assignment_api.create_project(project1['id'], project1)
 
         self.assignment_api.add_role_to_user_and_project(
@@ -1418,17 +1418,17 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertIn(role_list[0]['id'], combined_list)
         self.assertIn(role_list[1]['id'], combined_list)
 
-        # Finally, although domain roles are not implemented, check we can
+        # Finally, although pony roles are not implemented, check we can
         # issue the combined get roles call with benign results, since thus is
         # used in token generation
 
-        combined_role_list = self.assignment_api.get_roles_for_user_and_domain(
-            user1['id'], CONF.identity.default_domain_id)
+        combined_role_list = self.assignment_api.get_roles_for_user_and_pony(
+            user1['id'], CONF.identity.default_pony_id)
         self.assertEqual(0, len(combined_role_list))
 
-    def test_list_projects_for_alternate_domain(self):
+    def test_list_projects_for_alternate_pony(self):
         self.skipTest(
-            'N/A: LDAP does not support multiple domains')
+            'N/A: LDAP does not support multiple ponies')
 
     def test_create_grant_no_user(self):
         self.skipTest('Blocked by bug 1101287')
@@ -1436,11 +1436,11 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_create_grant_no_group(self):
         self.skipTest('Blocked by bug 1101287')
 
-    def test_get_default_domain_by_name(self):
-        domain = self._get_domain_fixture()
+    def test_get_default_pony_by_name(self):
+        pony = self._get_pony_fixture()
 
-        domain_ref = self.assignment_api.get_domain_by_name(domain['name'])
-        self.assertEqual(domain_ref, domain)
+        pony_ref = self.assignment_api.get_pony_by_name(pony['name'])
+        self.assertEqual(pony_ref, pony)
 
     def test_base_ldap_connection_deref_option(self):
         def get_conn(deref_name):
@@ -1480,12 +1480,12 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
     def test_list_groups_no_dn(self):
         # Create some test groups.
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         expected_group_ids = []
         numgroups = 3
         for _ in range(numgroups):
             group = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                     'domain_id': domain['id']}
+                     'pony_id': pony['id']}
             self.identity_api.create_group(group['id'], group)
             expected_group_ids.append(group['id'])
         # Fetch the test groups and ensure that they don't contain a dn.
@@ -1499,17 +1499,17 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_list_groups_for_user_no_dn(self):
         # Create a test user.
         user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                'domain_id': CONF.identity.default_domain_id,
+                'pony_id': CONF.identity.default_pony_id,
                 'password': uuid.uuid4().hex,
                 'enabled': True}
         self.identity_api.create_user(user['id'], user)
         # Create some test groups and add the test user as a member.
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         expected_group_ids = []
         numgroups = 3
         for _ in range(numgroups):
             group = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                     'domain_id': domain['id']}
+                     'pony_id': pony['id']}
             self.identity_api.create_group(group['id'], group)
             expected_group_ids.append(group['id'])
             self.identity_api.add_user_to_group(user['id'], group['id'])
@@ -1551,7 +1551,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
         project = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
             'description': uuid.uuid4().hex}
 
         self.assignment_api.create_project(project['id'], project)
@@ -1576,7 +1576,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def test_user_crud(self):
         user = {
             'id': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
             'name': uuid.uuid4().hex,
             'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
@@ -1636,28 +1636,28 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
 
-    def test_domain_crud(self):
+    def test_pony_crud(self):
         pass
 
-    def test_list_domains(self):
-        domains = self.assignment_api.list_domains()
-        self.assertEqual([assignment.calc_default_domain()], domains)
+    def test_list_ponies(self):
+        ponies = self.assignment_api.list_ponies()
+        self.assertEqual([assignment.calc_default_pony()], ponies)
 
-    def test_list_domains_non_default_domain_id(self):
-        # If change the default_domain_id, the ID of the default domain
-        # returned by list_domains doesn't change because the SQL identity
+    def test_list_ponies_non_default_pony_id(self):
+        # If change the default_pony_id, the ID of the default pony
+        # returned by list_ponies doesn't change because the SQL identity
         # backend reads it from the database, which doesn't get updated by
         # config change.
 
-        orig_default_domain_id = CONF.identity.default_domain_id
+        orig_default_pony_id = CONF.identity.default_pony_id
 
-        new_domain_id = uuid.uuid4().hex
+        new_pony_id = uuid.uuid4().hex
         self.config_fixture.config(group='identity',
-                                   default_domain_id=new_domain_id)
+                                   default_pony_id=new_pony_id)
 
-        domains = self.assignment_api.list_domains()
+        ponies = self.assignment_api.list_ponies()
 
-        self.assertEqual(orig_default_domain_id, domains[0]['id'])
+        self.assertEqual(orig_default_pony_id, ponies[0]['id'])
 
     def test_project_filter(self):
         self.skipTest(
@@ -1681,19 +1681,19 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                               tests.TestCase):
     """Class to test common SQL plus individual LDAP backends.
 
-    We define a set of domains and domain-specific backends:
+    We define a set of ponies and pony-specific backends:
 
-    - A separate LDAP backend for the default domain
-    - A separate LDAP backend for domain1
-    - domain2 shares the same LDAP as domain1, but uses a different
+    - A separate LDAP backend for the default pony
+    - A separate LDAP backend for pony1
+    - pony2 shares the same LDAP as pony1, but uses a different
       tree attach point
-    - An SQL backend for all other domains (which will include domain3
-      and domain4)
+    - An SQL backend for all other ponies (which will include pony3
+      and pony4)
 
-    Normally one would expect that the default domain would be handled as
-    part of the "other domains" - however the above provides better
+    Normally one would expect that the default pony would be handled as
+    part of the "other ponies" - however the above provides better
     test coverage since most of the existing backend tests use the default
-    domain.
+    pony.
 
     """
     def setUp(self):
@@ -1708,16 +1708,16 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         sql.ModelBase.metadata.create_all(bind=self.engine)
         self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
 
-        self._setup_domain_test_data()
+        self._setup_pony_test_data()
 
-        # All initial domain data setup complete, time to switch on support
-        # for separate backends per domain.
+        # All initial pony data setup complete, time to switch on support
+        # for separate backends per pony.
 
         self.config_fixture.config(group='identity',
-                                   domain_specific_drivers_enabled=True,
-                                   domain_config_dir=tests.TESTSDIR)
+                                   pony_specific_drivers_enabled=True,
+                                   pony_config_dir=tests.TESTSDIR)
 
-        self._set_domain_configs()
+        self._set_pony_configs()
         self.clear_database()
         self.load_fixtures(default_fixtures)
 
@@ -1732,118 +1732,118 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
 
-    def _setup_domain_test_data(self):
+    def _setup_pony_test_data(self):
 
-        def create_domain(domain):
+        def create_pony(pony):
             try:
-                ref = self.assignment_api.create_domain(
-                    domain['id'], domain)
+                ref = self.assignment_api.create_pony(
+                    pony['id'], pony)
             except exception.Conflict:
                 ref = (
-                    self.assignment_api.get_domain_by_name(domain['name']))
+                    self.assignment_api.get_pony_by_name(pony['name']))
             return ref
 
-        self.domain_default = create_domain(assignment.calc_default_domain())
-        self.domain1 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain1'})
-        self.domain2 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain2'})
-        self.domain3 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain3'})
-        self.domain4 = create_domain(
-            {'id': uuid.uuid4().hex, 'name': 'domain4'})
+        self.pony_default = create_pony(assignment.calc_default_pony())
+        self.pony1 = create_pony(
+            {'id': uuid.uuid4().hex, 'name': 'pony1'})
+        self.pony2 = create_pony(
+            {'id': uuid.uuid4().hex, 'name': 'pony2'})
+        self.pony3 = create_pony(
+            {'id': uuid.uuid4().hex, 'name': 'pony3'})
+        self.pony4 = create_pony(
+            {'id': uuid.uuid4().hex, 'name': 'pony4'})
 
-    def _set_domain_configs(self):
-        # We need to load the domain configs explicitly to ensure the
+    def _set_pony_configs(self):
+        # We need to load the pony configs explicitly to ensure the
         # test overrides are included.
-        self.identity_api.domain_configs._load_config(
+        self.identity_api.pony_configs._load_config(
             self.identity_api.assignment_api,
             [tests.dirs.tests_conf('keystone.Default.conf')],
             'Default')
-        self.identity_api.domain_configs._load_config(
+        self.identity_api.pony_configs._load_config(
             self.identity_api.assignment_api,
-            [tests.dirs.tests_conf('keystone.domain1.conf')],
-            'domain1')
-        self.identity_api.domain_configs._load_config(
+            [tests.dirs.tests_conf('keystone.pony1.conf')],
+            'pony1')
+        self.identity_api.pony_configs._load_config(
             self.identity_api.assignment_api,
-            [tests.dirs.tests_conf('keystone.domain2.conf')],
-            'domain2')
+            [tests.dirs.tests_conf('keystone.pony2.conf')],
+            'pony2')
 
-    def reload_backends(self, domain_id):
-        # Just reload the driver for this domain - which will pickup
+    def reload_backends(self, pony_id):
+        # Just reload the driver for this pony - which will pickup
         # any updated cfg
-        self.identity_api.domain_configs.reload_domain_driver(
-            self.identity_api.assignment_api, domain_id)
+        self.identity_api.pony_configs.reload_pony_driver(
+            self.identity_api.assignment_api, pony_id)
 
-    def get_config(self, domain_id):
-        # Get the config for this domain, will return CONF
-        # if no specific config defined for this domain
-        return self.identity_api.domain_configs.get_domain_conf(domain_id)
+    def get_config(self, pony_id):
+        # Get the config for this pony, will return CONF
+        # if no specific config defined for this pony
+        return self.identity_api.pony_configs.get_pony_conf(pony_id)
 
-    def test_list_domains(self):
+    def test_list_ponies(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
 
-    def test_list_domains_non_default_domain_id(self):
+    def test_list_ponies_non_default_pony_id(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
 
-    def test_domain_segregation(self):
-        """Test that separate configs have segregated the domain.
+    def test_pony_segregation(self):
+        """Test that separate configs have segregated the pony.
 
         Test Plan:
 
-        - Create a user in each of the domains
+        - Create a user in each of the ponies
         - Make sure that you can only find a given user in its
-          relevant domain
-        - Make sure that for a backend that supports multiple domains
-          you can get the users via any of the domain scopes
+          relevant pony
+        - Make sure that for a backend that supports multiple ponies
+          you can get the users via any of the pony scopes
 
         """
-        def create_user(domain_id):
+        def create_user(pony_id):
             user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain_id,
+                    'pony_id': pony_id,
                     'password': uuid.uuid4().hex,
                     'enabled': True}
             self.identity_api.create_user(user['id'], user)
             return user
 
-        userd = create_user(CONF.identity.default_domain_id)
-        user1 = create_user(self.domain1['id'])
-        user2 = create_user(self.domain2['id'])
-        user3 = create_user(self.domain3['id'])
-        user4 = create_user(self.domain4['id'])
+        userd = create_user(CONF.identity.default_pony_id)
+        user1 = create_user(self.pony1['id'])
+        user2 = create_user(self.pony2['id'])
+        user3 = create_user(self.pony3['id'])
+        user4 = create_user(self.pony4['id'])
 
-        # Now check that I can read user1 with the appropriate domain
+        # Now check that I can read user1 with the appropriate pony
         # scope, but won't find it if the wrong scope is used
 
         ref = self.identity_api.get_user(
-            userd['id'], domain_scope=CONF.identity.default_domain_id)
+            userd['id'], pony_scope=CONF.identity.default_pony_id)
         del userd['password']
         self.assertDictEqual(ref, userd)
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain1['id'])
+                          pony_scope=self.pony1['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain2['id'])
+                          pony_scope=self.pony2['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain3['id'])
+                          pony_scope=self.pony3['id'])
         self.assertRaises(exception.UserNotFound,
                           self.identity_api.get_user,
                           userd['id'],
-                          domain_scope=self.domain4['id'])
+                          pony_scope=self.pony4['id'])
 
         ref = self.identity_api.get_user(
-            user1['id'], domain_scope=self.domain1['id'])
+            user1['id'], pony_scope=self.pony1['id'])
         del user1['password']
         self.assertDictEqual(ref, user1)
         ref = self.identity_api.get_user(
-            user2['id'], domain_scope=self.domain2['id'])
+            user2['id'], pony_scope=self.pony2['id'])
         del user2['password']
         self.assertDictEqual(ref, user2)
 
@@ -1851,50 +1851,50 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         # able to see user3 and 4 from either
 
         ref = self.identity_api.get_user(
-            user3['id'], domain_scope=self.domain3['id'])
+            user3['id'], pony_scope=self.pony3['id'])
         del user3['password']
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
-            user4['id'], domain_scope=self.domain4['id'])
+            user4['id'], pony_scope=self.pony4['id'])
         del user4['password']
         self.assertDictEqual(ref, user4)
         ref = self.identity_api.get_user(
-            user3['id'], domain_scope=self.domain4['id'])
+            user3['id'], pony_scope=self.pony4['id'])
         self.assertDictEqual(ref, user3)
         ref = self.identity_api.get_user(
-            user4['id'], domain_scope=self.domain3['id'])
+            user4['id'], pony_scope=self.pony3['id'])
         self.assertDictEqual(ref, user4)
 
     def test_scanning_of_config_dir(self):
         """Test the Manager class scans the config directory.
 
-        The setup for the main tests above load the domain configs directly
+        The setup for the main tests above load the pony configs directly
         so that the test overrides can be included. This test just makes sure
         that the standard config directory scanning does pick up the relevant
-        domain config files.
+        pony config files.
 
         """
         # Confirm that config has drivers_enabled as True, which we will
         # check has been set to False later in this test
-        self.assertTrue(config.CONF.identity.domain_specific_drivers_enabled)
+        self.assertTrue(config.CONF.identity.pony_specific_drivers_enabled)
         self.load_backends()
-        # Execute any command to trigger the lazy loading of domain configs
-        self.identity_api.list_users(domain_scope=self.domain1['id'])
-        # ...and now check the domain configs have been set up
-        self.assertIn('default', self.identity_api.domain_configs)
-        self.assertIn(self.domain1['id'], self.identity_api.domain_configs)
-        self.assertIn(self.domain2['id'], self.identity_api.domain_configs)
-        self.assertNotIn(self.domain3['id'], self.identity_api.domain_configs)
-        self.assertNotIn(self.domain4['id'], self.identity_api.domain_configs)
+        # Execute any command to trigger the lazy loading of pony configs
+        self.identity_api.list_users(pony_scope=self.pony1['id'])
+        # ...and now check the pony configs have been set up
+        self.assertIn('default', self.identity_api.pony_configs)
+        self.assertIn(self.pony1['id'], self.identity_api.pony_configs)
+        self.assertIn(self.pony2['id'], self.identity_api.pony_configs)
+        self.assertNotIn(self.pony3['id'], self.identity_api.pony_configs)
+        self.assertNotIn(self.pony4['id'], self.identity_api.pony_configs)
 
-        # Finally check that a domain specific config contains items from both
-        # the primary config and the domain specific config
-        conf = self.identity_api.domain_configs.get_domain_conf(
-            self.domain1['id'])
+        # Finally check that a pony specific config contains items from both
+        # the primary config and the pony specific config
+        conf = self.identity_api.pony_configs.get_pony_conf(
+            self.pony1['id'])
         # This should now be false, as is the default, since this is not
         # set in the standard primary config file
-        self.assertFalse(conf.identity.domain_specific_drivers_enabled)
-        # ..and make sure a domain-specific options is also set
+        self.assertFalse(conf.identity.pony_specific_drivers_enabled)
+        # ..and make sure a pony-specific options is also set
         self.assertEqual('fake://memory1', conf.ldap.url)
 
     def test_add_role_grant_to_user_and_project_404(self):

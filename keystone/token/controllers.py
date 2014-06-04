@@ -106,7 +106,7 @@ class Auth(controller.V2Controller):
         # format.
         user_ref = self.v3_to_v2_user(user_ref)
         if tenant_ref:
-            tenant_ref = self.filter_domain_id(tenant_ref)
+            tenant_ref = self.filter_pony_id(tenant_ref)
         auth_token_data = self._get_auth_token_data(user_ref,
                                                     tenant_ref,
                                                     metadata_ref,
@@ -260,7 +260,7 @@ class Auth(controller.V2Controller):
                                                     size=CONF.max_param_size)
             try:
                 user_ref = self.identity_api.get_user_by_name(
-                    username, CONF.identity.default_domain_id)
+                    username, CONF.identity.default_pony_id)
                 user_id = user_ref['id']
             except exception.UserNotFound as e:
                 raise exception.Unauthorized(e)
@@ -297,7 +297,7 @@ class Auth(controller.V2Controller):
         username = context['environment']['REMOTE_USER']
         try:
             user_ref = self.identity_api.get_user_by_name(
-                username, CONF.identity.default_domain_id)
+                username, CONF.identity.default_pony_id)
             user_id = user_ref['id']
         except exception.UserNotFound as e:
             raise exception.Unauthorized(e)
@@ -340,7 +340,7 @@ class Auth(controller.V2Controller):
         if tenant_name:
             try:
                 tenant_ref = self.assignment_api.get_project_by_name(
-                    tenant_name, CONF.identity.default_domain_id)
+                    tenant_name, CONF.identity.default_pony_id)
                 tenant_id = tenant_ref['id']
             except exception.ProjectNotFound as e:
                 raise exception.Unauthorized(e)

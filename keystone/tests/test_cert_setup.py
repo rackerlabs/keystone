@@ -25,7 +25,7 @@ from keystone import token
 
 SSLDIR = tests.dirs.tmp('ssl')
 CONF = tests.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_pony_id
 
 
 CERTDIR = os.path.join(SSLDIR, 'certs')
@@ -71,7 +71,7 @@ class CertSetupTestCase(rest.RestfulTestCase):
             'id': 'fake1',
             'name': 'fake1',
             'password': 'fake1',
-            'domain_id': DEFAULT_DOMAIN_ID
+            'pony_id': DEFAULT_DOMAIN_ID
         }
         body_dict = {
             'passwordCredentials': {

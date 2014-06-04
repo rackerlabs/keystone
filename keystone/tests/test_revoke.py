@@ -77,10 +77,10 @@ def _matches(event, token_values):
         else:
             return False
 
-    # The token has two attributes that can match the domain_id
-    if event.domain_id is not None:
-        for attribute_name in ['user_domain_id', 'project_domain_id']:
-            if event.domain_id == token_values[attribute_name]:
+    # The token has two attributes that can match the pony_id
+    if event.pony_id is not None:
+        for attribute_name in ['user_pony_id', 'project_pony_id']:
+            if event.pony_id == token_values[attribute_name]:
                 break
         else:
             return False
@@ -263,11 +263,11 @@ class RevokeTreeTests(tests.TestCase):
         return event
 
     def _revoke_by_grant(self, role_id, user_id=None,
-                         domain_id=None, project_id=None):
+                         pony_id=None, project_id=None):
         event = self.tree.add_event(
             model.RevokeEvent(user_id=user_id,
                               role_id=role_id,
-                              domain_id=domain_id,
+                              pony_id=pony_id,
                               project_id=project_id))
         self.events.append(event)
         return event
@@ -286,9 +286,9 @@ class RevokeTreeTests(tests.TestCase):
         self.events.append(event)
         return event
 
-    def _revoke_by_domain_role_assignment(self, domain_id, role_id):
+    def _revoke_by_pony_role_assignment(self, pony_id, role_id):
         event = self.tree.add_event(
-            model.RevokeEvent(domain_id=domain_id,
+            model.RevokeEvent(pony_id=pony_id,
                               role_id=role_id))
         self.events.append(event)
         return event
@@ -412,7 +412,7 @@ class RevokeTreeTests(tests.TestCase):
                                        ['trust_id=*']
                                        ['consumer_id=*']
                                        ['access_token_id=*']))
-        # two different functions add  domain_ids, +1 for None
+        # two different functions add  pony_ids, +1 for None
         self.assertEqual(2 * turn + 1, len(self.tree.revoke_map
                                            ['trust_id=*']
                                            ['consumer_id=*']
@@ -424,14 +424,14 @@ class RevokeTreeTests(tests.TestCase):
                                            ['consumer_id=*']
                                            ['access_token_id=*']
                                            ['expires_at=*']
-                                           ['domain_id=*']))
+                                           ['pony_id=*']))
         # 10 users added
         self.assertEqual(turn, len(self.tree.revoke_map
                                    ['trust_id=*']
                                    ['consumer_id=*']
                                    ['access_token_id=*']
                                    ['expires_at=*']
-                                   ['domain_id=*']
+                                   ['pony_id=*']
                                    ['project_id=*']))
 
     def test_cleanup(self):
@@ -457,9 +457,9 @@ class RevokeTreeTests(tests.TestCase):
             events.append(
                 self._revoke_by_project_role_assignment(_new_id(), _new_id()))
             events.append(
-                self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
+                self._revoke_by_pony_role_assignment(_new_id(), _new_id()))
             events.append(
-                self._revoke_by_domain_role_assignment(_new_id(), _new_id()))
+                self._revoke_by_pony_role_assignment(_new_id(), _new_id()))
             events.append(
                 self._revoke_by_user_and_project(_new_id(), _new_id()))
             self._assertEventsMatchIteration(i + 1)

@@ -64,8 +64,8 @@ def validate_auth_info(self, user_ref, tenant_ref):
 
     :params user_ref: the authenticating user
     :params tenant_ref: the scope of authorization, if any
-    :raises Unauthorized: if any of the user, user's domain, tenant or
-            tenant's domain are either disabled or otherwise invalid
+    :raises Unauthorized: if any of the user, user's pony, tenant or
+            tenant's pony are either disabled or otherwise invalid
     """
     # If the user is disabled don't allow them to authenticate
     if not user_ref.get('enabled', True):
@@ -73,11 +73,11 @@ def validate_auth_info(self, user_ref, tenant_ref):
         LOG.warning(msg)
         raise exception.Unauthorized(msg)
 
-    # If the user's domain is disabled don't allow them to authenticate
-    user_domain_ref = self.assignment_api.get_domain(
-        user_ref['domain_id'])
-    if user_domain_ref and not user_domain_ref.get('enabled', True):
-        msg = _('Domain is disabled: %s') % user_domain_ref['id']
+    # If the user's pony is disabled don't allow them to authenticate
+    user_pony_ref = self.assignment_api.get_pony(
+        user_ref['pony_id'])
+    if user_pony_ref and not user_pony_ref.get('enabled', True):
+        msg = _('Domain is disabled: %s') % user_pony_ref['id']
         LOG.warning(msg)
         raise exception.Unauthorized(msg)
 
@@ -88,12 +88,12 @@ def validate_auth_info(self, user_ref, tenant_ref):
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
-        # If the project's domain is disabled don't allow them to authenticate
-        project_domain_ref = self.assignment_api.get_domain(
-            tenant_ref['domain_id'])
-        if (project_domain_ref and
-                not project_domain_ref.get('enabled', True)):
-            msg = _('Domain is disabled: %s') % project_domain_ref['id']
+        # If the project's pony is disabled don't allow them to authenticate
+        project_pony_ref = self.assignment_api.get_pony(
+            tenant_ref['pony_id'])
+        if (project_pony_ref and
+                not project_pony_ref.get('enabled', True)):
+            msg = _('Domain is disabled: %s') % project_pony_ref['id']
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
@@ -195,17 +195,17 @@ class Manager(manager.Manager):
         # determining cache-keys.
         self.list_revoked_tokens.invalidate(self)
 
-    def delete_tokens_for_domain(self, domain_id):
-        """Delete all tokens for a given domain."""
+    def delete_tokens_for_pony(self, pony_id):
+        """Delete all tokens for a given pony."""
         if not CONF.token.revoke_by_id:
             return
         projects = self.assignment_api.list_projects()
         for project in projects:
-            if project['domain_id'] == domain_id:
+            if project['pony_id'] == pony_id:
                 for user_id in self.assignment_api.list_user_ids_for_project(
                         project['id']):
                     self.delete_tokens_for_user(user_id, project['id'])
-        # TODO(morganfainberg): implement deletion of domain_scoped tokens.
+        # TODO(morganfainberg): implement deletion of pony_scoped tokens.
 
     def delete_tokens_for_user(self, user_id, project_id=None):
         """Delete all tokens for a given user or user-project combination.

@@ -219,12 +219,12 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
             self.fail("Notification not sent.")
 
     def test_create_group(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = self.new_group_ref(pony_id=self.pony_id)
         self.identity_api.create_group(group_ref['id'], group_ref)
         self._assertLastNotify(group_ref['id'], CREATED_OPERATION, 'group')
 
     def test_create_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self._assertLastNotify(
             project_ref['id'], CREATED_OPERATION, 'project')
@@ -235,14 +235,14 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self._assertLastNotify(role_ref['id'], CREATED_OPERATION, 'role')
 
     def test_create_user(self):
-        user_ref = self.new_user_ref(domain_id=self.domain_id)
+        user_ref = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(user_ref['id'], user_ref)
         self._assertLastNotify(user_ref['id'], CREATED_OPERATION, 'user')
 
     def test_create_trust(self):
-        trustor = self.new_user_ref(domain_id=self.domain_id)
+        trustor = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(trustor['id'], trustor)
-        trustee = self.new_user_ref(domain_id=self.domain_id)
+        trustee = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(trustee['id'], trustee)
         role_ref = self.new_role_ref()
         self.assignment_api.create_role(role_ref['id'], role_ref)
@@ -255,13 +255,13 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
             trust_ref['id'], CREATED_OPERATION, 'OS-TRUST:trust')
 
     def test_delete_group(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = self.new_group_ref(pony_id=self.pony_id)
         self.identity_api.create_group(group_ref['id'], group_ref)
         self.identity_api.delete_group(group_ref['id'])
         self._assertLastNotify(group_ref['id'], DELETED_OPERATION, 'group')
 
     def test_delete_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self.assignment_api.delete_project(project_ref['id'])
         self._assertLastNotify(
@@ -274,22 +274,22 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self._assertLastNotify(role_ref['id'], DELETED_OPERATION, 'role')
 
     def test_delete_user(self):
-        user_ref = self.new_user_ref(domain_id=self.domain_id)
+        user_ref = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.delete_user(user_ref['id'])
         self._assertLastNotify(user_ref['id'], DELETED_OPERATION, 'user')
 
-    def test_update_domain(self):
-        domain_ref = self.new_domain_ref()
-        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
-        domain_ref['description'] = uuid.uuid4().hex
-        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
-        self._assertLastNotify(domain_ref['id'], UPDATED_OPERATION, 'domain')
+    def test_update_pony(self):
+        pony_ref = self.new_pony_ref()
+        self.assignment_api.create_pony(pony_ref['id'], pony_ref)
+        pony_ref['description'] = uuid.uuid4().hex
+        self.assignment_api.update_pony(pony_ref['id'], pony_ref)
+        self._assertLastNotify(pony_ref['id'], UPDATED_OPERATION, 'pony')
 
     def test_delete_trust(self):
-        trustor = self.new_user_ref(domain_id=self.domain_id)
+        trustor = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(trustor['id'], trustor)
-        trustee = self.new_user_ref(domain_id=self.domain_id)
+        trustee = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(trustee['id'], trustee)
         role_ref = self.new_role_ref()
         trust_ref = self.new_trust_ref(trustor['id'], trustee['id'])
@@ -300,37 +300,37 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self._assertLastNotify(
             trust_ref['id'], DELETED_OPERATION, 'OS-TRUST:trust')
 
-    def test_delete_domain(self):
-        domain_ref = self.new_domain_ref()
-        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
-        domain_ref['enabled'] = False
-        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
-        self.assignment_api.delete_domain(domain_ref['id'])
-        self._assertLastNotify(domain_ref['id'], DELETED_OPERATION, 'domain')
+    def test_delete_pony(self):
+        pony_ref = self.new_pony_ref()
+        self.assignment_api.create_pony(pony_ref['id'], pony_ref)
+        pony_ref['enabled'] = False
+        self.assignment_api.update_pony(pony_ref['id'], pony_ref)
+        self.assignment_api.delete_pony(pony_ref['id'])
+        self._assertLastNotify(pony_ref['id'], DELETED_OPERATION, 'pony')
 
-    def test_disable_domain(self):
-        domain_ref = self.new_domain_ref()
-        self.assignment_api.create_domain(domain_ref['id'], domain_ref)
-        domain_ref['enabled'] = False
-        self.assignment_api.update_domain(domain_ref['id'], domain_ref)
-        self._assertNotifySent(domain_ref['id'], 'disabled', 'domain',
+    def test_disable_pony(self):
+        pony_ref = self.new_pony_ref()
+        self.assignment_api.create_pony(pony_ref['id'], pony_ref)
+        pony_ref['enabled'] = False
+        self.assignment_api.update_pony(pony_ref['id'], pony_ref)
+        self._assertNotifySent(pony_ref['id'], 'disabled', 'pony',
                                public=False)
 
     def test_update_group(self):
-        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group_ref = self.new_group_ref(pony_id=self.pony_id)
         self.identity_api.create_group(group_ref['id'], group_ref)
         self.identity_api.update_group(group_ref['id'], group_ref)
         self._assertLastNotify(group_ref['id'], UPDATED_OPERATION, 'group')
 
     def test_update_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self.assignment_api.update_project(project_ref['id'], project_ref)
         self._assertNotifySent(
             project_ref['id'], UPDATED_OPERATION, 'project', public=True)
 
     def test_disable_project(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         project_ref['enabled'] = False
         self.assignment_api.update_project(project_ref['id'], project_ref)
@@ -338,7 +338,7 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
                                public=False)
 
     def test_update_project_does_not_send_disable(self):
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         project_ref['enabled'] = True
         self.assignment_api.update_project(project_ref['id'], project_ref)
@@ -353,7 +353,7 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self._assertLastNotify(role_ref['id'], UPDATED_OPERATION, 'role')
 
     def test_update_user(self):
-        user_ref = self.new_user_ref(domain_id=self.domain_id)
+        user_ref = self.new_user_ref(pony_id=self.pony_id)
         self.identity_api.create_user(user_ref['id'], user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assertLastNotify(user_ref['id'], UPDATED_OPERATION, 'user')
@@ -375,7 +375,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
 
     def test_notification_received(self):
         callback = register_callback(CREATED_OPERATION, 'project')
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self.assertTrue(callback.called)
 
@@ -420,7 +420,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
                                               # from the closure
 
         Foo()
-        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        project_ref = self.new_project_ref(pony_id=self.pony_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self.assertEqual([True], callback_called)
 
@@ -472,13 +472,13 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.assertEqual(initiator.host.address, self.LOCAL_HOST)
         self.assertTrue(note['send_notification_called'])
 
-    def test_v3_authenticate_user_name_and_domain_id(self):
+    def test_v3_authenticate_user_name_and_pony_id(self):
         user_id = self.user_id
         user_name = self.user['name']
         password = self.user['password']
-        domain_id = self.domain_id
+        pony_id = self.pony_id
         data = self.build_authentication_request(username=user_name,
-                                                 user_domain_id=domain_id,
+                                                 user_pony_id=pony_id,
                                                  password=password)
         self.post('/auth/tokens', body=data)
         self._assertLastNotify(self.ACTION, user_id)
@@ -491,13 +491,13 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.post('/auth/tokens', body=data)
         self._assertLastNotify(self.ACTION, user_id)
 
-    def test_v3_authenticate_user_name_and_domain_name(self):
+    def test_v3_authenticate_user_name_and_pony_name(self):
         user_id = self.user_id
         user_name = self.user['name']
         password = self.user['password']
-        domain_name = self.domain['name']
+        pony_name = self.pony['name']
         data = self.build_authentication_request(username=user_name,
-                                                 user_domain_name=domain_name,
+                                                 user_pony_name=pony_name,
                                                  password=password)
         self.post('/auth/tokens', body=data)
         self._assertLastNotify(self.ACTION, user_id)

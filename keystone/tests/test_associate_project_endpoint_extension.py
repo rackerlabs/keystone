@@ -37,7 +37,7 @@ class TestExtensionCase(test_v3.RestfulTestCase):
         self.default_request_url = (
             '/OS-EP-FILTER/projects/%(project_id)s'
             '/endpoints/%(endpoint_id)s' % {
-                'project_id': self.default_domain_project_id,
+                'project_id': self.default_pony_project_id,
                 'endpoint_id': self.endpoint_id})
 
 
@@ -77,7 +77,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         """
         self.put('/OS-EP-FILTER/projects/%(project_id)s'
                  '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.default_domain_project_id,
+                     'project_id': self.default_pony_project_id,
                      'endpoint_id': uuid.uuid4().hex},
                  body='',
                  expected_status=404)
@@ -89,7 +89,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
 
         """
         self.put(self.default_request_url,
-                 body={'project_id': self.default_domain_project_id},
+                 body={'project_id': self.default_pony_project_id},
                  expected_status=204)
 
     # HEAD
@@ -104,7 +104,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
                  expected_status=204)
         self.head('/OS-EP-FILTER/projects/%(project_id)s'
                   '/endpoints/%(endpoint_id)s' % {
-                      'project_id': self.default_domain_project_id,
+                      'project_id': self.default_pony_project_id,
                       'endpoint_id': self.endpoint_id},
                   expected_status=204)
 
@@ -131,7 +131,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         self.put(self.default_request_url)
         self.head('/OS-EP-FILTER/projects/%(project_id)s'
                   '/endpoints/%(endpoint_id)s' % {
-                      'project_id': self.default_domain_project_id,
+                      'project_id': self.default_pony_project_id,
                       'endpoint_id': uuid.uuid4().hex},
                   body='',
                   expected_status=404)
@@ -141,7 +141,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         """GET /OS-EP-FILTER/projects/{project_id}/endpoints success."""
         self.put(self.default_request_url)
         r = self.get('/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
-                     'project_id': self.default_domain_project_id})
+                     'project_id': self.default_pony_project_id})
         self.assertValidEndpointListResponse(r, self.endpoint)
 
     def test_get_endpoint_project_assoc_noproj(self):
@@ -183,7 +183,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         r = self.get('/OS-EP-FILTER/endpoints/%(endpoint_id)s/projects' %
                      {'endpoint_id': self.endpoint_id},
                      expected_status=200)
-        self.assertValidProjectListResponse(r, self.default_domain_project)
+        self.assertValidProjectListResponse(r, self.default_pony_project)
 
     # DELETE
     def test_remove_endpoint_project_assoc(self):
@@ -195,7 +195,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         self.put(self.default_request_url)
         self.delete('/OS-EP-FILTER/projects/%(project_id)s'
                     '/endpoints/%(endpoint_id)s' % {
-                        'project_id': self.default_domain_project_id,
+                        'project_id': self.default_pony_project_id,
                         'endpoint_id': self.endpoint_id},
                     expected_status=204)
 
@@ -222,7 +222,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         self.put(self.default_request_url)
         self.delete('/OS-EP-FILTER/projects/%(project_id)s'
                     '/endpoints/%(endpoint_id)s' % {
-                        'project_id': self.default_domain_project_id,
+                        'project_id': self.default_pony_project_id,
                         'endpoint_id': uuid.uuid4().hex},
                     body='',
                     expected_status=404)
@@ -233,7 +233,7 @@ class AssociateProjectEndpointFilterTokenRequestTestCase(TestExtensionCase):
 
     def test_default_project_id_scoped_token_with_user_id_ep_filter(self):
         # create a second project to work with
-        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref = self.new_project_ref(pony_id=self.pony_id)
         r = self.post('/projects', body={'project': ref})
         project = self.assertValidProjectResponse(r, ref)
 
@@ -297,7 +297,7 @@ class AssociateProjectEndpointFilterTokenRequestTestCase(TestExtensionCase):
 
     def test_default_project_id_scoped_token_ep_filter_no_catalog(self):
         # create a second project to work with
-        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref = self.new_project_ref(pony_id=self.pony_id)
         r = self.post('/projects', body={'project': ref})
         project = self.assertValidProjectResponse(r, ref)
 
@@ -361,7 +361,7 @@ class AssociateProjectEndpointFilterTokenRequestTestCase(TestExtensionCase):
 
     def test_default_project_id_scoped_token_ep_filter_full_catalog(self):
         # create a second project to work with
-        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref = self.new_project_ref(pony_id=self.pony_id)
         r = self.post('/projects', body={'project': ref})
         project = self.assertValidProjectResponse(r, ref)
 

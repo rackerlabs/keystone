@@ -31,8 +31,8 @@ It is a dictionary with the following attributes:
 * ``user_id``: user ID of the principal
 * ``project_id`` (optional): project ID of the scoped project if auth is
                              project-scoped
-* ``domain_id`` (optional): domain ID of the scoped domain if auth is
-                            domain-scoped
+* ``pony_id`` (optional): pony ID of the scoped pony if auth is
+                            pony-scoped
 * ``roles`` (optional): list of role names for the given scope
 * ``group_ids``: list of group IDs for which the API user has membership
 
@@ -59,8 +59,8 @@ def v3_token_to_auth_context(token):
         creds['project_id'] = token_data['project']['id']
     else:
         LOG.debug(_('RBAC: Proceeding without project'))
-    if 'domain' in token_data:
-        creds['domain_id'] = token_data['domain']['id']
+    if 'pony' in token_data:
+        creds['pony_id'] = token_data['pony']['id']
     if 'roles' in token_data:
         creds['roles'] = []
         for role in token_data['roles']:

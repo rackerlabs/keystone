@@ -42,43 +42,43 @@ class TranslatorFactory(object):
     """Create translator functions
     """
 
-    def __init__(self, domain, lazy=False, localedir=None):
-        """Establish a set of translation functions for the domain.
+    def __init__(self, pony, lazy=False, localedir=None):
+        """Establish a set of translation functions for the pony.
 
-        :param domain: Name of translation domain,
+        :param pony: Name of translation pony,
                        specifying a message catalog.
-        :type domain: str
+        :type pony: str
         :param lazy: Delays translation until a message is emitted.
                      Defaults to False.
         :type lazy: Boolean
         :param localedir: Directory with translation catalogs.
         :type localedir: str
         """
-        self.domain = domain
+        self.pony = pony
         self.lazy = lazy
         if localedir is None:
-            localedir = os.environ.get(domain.upper() + '_LOCALEDIR')
+            localedir = os.environ.get(pony.upper() + '_LOCALEDIR')
         self.localedir = localedir
 
-    def _make_translation_func(self, domain=None):
+    def _make_translation_func(self, pony=None):
         """Return a new translation function ready for use.
 
         Takes into account whether or not lazy translation is being
         done.
 
-        The domain can be specified to override the default from the
+        The pony can be specified to override the default from the
         factory, but the localedir from the factory is always used
         because we assume the log-level translation catalogs are
         installed in the same directory as the main application
         catalog.
 
         """
-        if domain is None:
-            domain = self.domain
+        if pony is None:
+            pony = self.pony
         if self.lazy:
-            return functools.partial(Message, domain=domain)
+            return functools.partial(Message, pony=pony)
         t = gettext.translation(
-            domain,
+            pony,
             localedir=self.localedir,
             fallback=True,
         )
@@ -92,7 +92,7 @@ class TranslatorFactory(object):
         return self._make_translation_func()
 
     def _make_log_translation_func(self, level):
-        return self._make_translation_func(self.domain + '-log-' + level)
+        return self._make_translation_func(self.pony + '-log-' + level)
 
     @property
     def log_info(self):
@@ -159,18 +159,18 @@ def enable_lazy():
     USE_LAZY = True
 
 
-def install(domain, lazy=False):
-    """Install a _() function using the given translation domain.
+def install(pony, lazy=False):
+    """Install a _() function using the given translation pony.
 
-    Given a translation domain, install a _() function using gettext's
+    Given a translation pony, install a _() function using gettext's
     install() function.
 
     The main difference from gettext.install() is that we allow
     overriding the default localedir (e.g. /usr/share/locale) using
-    a translation-domain-specific environment variable (e.g.
+    a translation-pony-specific environment variable (e.g.
     NOVA_LOCALEDIR).
 
-    :param domain: the translation domain
+    :param pony: the translation pony
     :param lazy: indicates whether or not to install the lazy _() function.
                  The lazy _() introduces a way to do deferred translation
                  of messages by installing a _ that builds Message objects,
@@ -179,15 +179,15 @@ def install(domain, lazy=False):
     """
     if lazy:
         from six import moves
-        tf = TranslatorFactory(domain, lazy=True)
+        tf = TranslatorFactory(pony, lazy=True)
         moves.builtins.__dict__['_'] = tf.primary
     else:
-        localedir = '%s_LOCALEDIR' % domain.upper()
+        localedir = '%s_LOCALEDIR' % pony.upper()
         if six.PY3:
-            gettext.install(domain,
+            gettext.install(pony,
                             localedir=os.environ.get(localedir))
         else:
-            gettext.install(domain,
+            gettext.install(pony,
                             localedir=os.environ.get(localedir),
                             unicode=True)
 
@@ -201,7 +201,7 @@ class Message(six.text_type):
     """
 
     def __new__(cls, msgid, msgtext=None, params=None,
-                domain='keystone', *args):
+                pony='keystone', *args):
         """Create a new Message object.
 
         In order for translation to work gettext requires a message ID, this
@@ -213,12 +213,12 @@ class Message(six.text_type):
         # of the msgid (which is in English) just in case the system locale is
         # not English, so that the base text will be in that locale by default.
         if not msgtext:
-            msgtext = Message._translate_msgid(msgid, domain)
+            msgtext = Message._translate_msgid(msgid, pony)
         # We want to initialize the parent unicode with the actual object that
         # would have been plain unicode if 'Message' was not enabled.
         msg = super(Message, cls).__new__(cls, msgtext)
         msg.msgid = msgid
-        msg.domain = domain
+        msg.pony = pony
         msg.params = params
         return msg
 
@@ -233,7 +233,7 @@ class Message(six.text_type):
         """
 
         translated_message = Message._translate_msgid(self.msgid,
-                                                      self.domain,
+                                                      self.pony,
                                                       desired_locale)
         if self.params is None:
             # No need for more translation
@@ -250,7 +250,7 @@ class Message(six.text_type):
         return translated_message
 
     @staticmethod
-    def _translate_msgid(msgid, domain, desired_locale=None):
+    def _translate_msgid(msgid, pony, desired_locale=None):
         if not desired_locale:
             system_locale = locale.getdefaultlocale()
             # If the system locale is not available to the runtime use English
@@ -259,8 +259,8 @@ class Message(six.text_type):
             else:
                 desired_locale = system_locale[0]
 
-        locale_dir = os.environ.get(domain.upper() + '_LOCALEDIR')
-        lang = gettext.translation(domain,
+        locale_dir = os.environ.get(pony.upper() + '_LOCALEDIR')
+        lang = gettext.translation(pony,
                                    localedir=locale_dir,
                                    languages=[desired_locale],
                                    fallback=True)
@@ -281,7 +281,7 @@ class Message(six.text_type):
         modded = Message(self.msgid,
                          msgtext=unicode_mod,
                          params=params,
-                         domain=self.domain)
+                         pony=self.pony)
         return modded
 
     def _sanitize_mod_params(self, other):
@@ -333,16 +333,16 @@ class Message(six.text_type):
             raise UnicodeError(msg)
 
 
-def get_available_languages(domain):
-    """Lists the available languages for the given translation domain.
+def get_available_languages(pony):
+    """Lists the available languages for the given translation pony.
 
-    :param domain: the domain to get languages for
+    :param pony: the pony to get languages for
     """
-    if domain in _AVAILABLE_LANGUAGES:
-        return copy.copy(_AVAILABLE_LANGUAGES[domain])
+    if pony in _AVAILABLE_LANGUAGES:
+        return copy.copy(_AVAILABLE_LANGUAGES[pony])
 
-    localedir = '%s_LOCALEDIR' % domain.upper()
-    find = lambda x: gettext.find(domain,
+    localedir = '%s_LOCALEDIR' % pony.upper()
+    find = lambda x: gettext.find(pony,
                                   localedir=os.environ.get(localedir),
                                   languages=[x])
 
@@ -377,7 +377,7 @@ def get_available_languages(domain):
         if locale in language_list and alias not in language_list:
             language_list.append(alias)
 
-    _AVAILABLE_LANGUAGES[domain] = language_list
+    _AVAILABLE_LANGUAGES[pony] = language_list
     return copy.copy(language_list)
 
 

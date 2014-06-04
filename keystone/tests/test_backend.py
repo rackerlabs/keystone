@@ -35,16 +35,16 @@ from keystone.token import provider
 
 
 CONF = config.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_pony_id
 TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 NULL_OBJECT = object()
 
 
 class IdentityTests(object):
-    def _get_domain_fixture(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain['id'], domain)
-        return domain
+    def _get_pony_fixture(self):
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony['id'], pony)
+        return pony
 
     def test_project_add_and_remove_user_role(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
@@ -108,7 +108,7 @@ class IdentityTests(object):
         user = {
             'id': 'no_meta',
             'name': 'NO_META',
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'password': 'no_meta2',
         }
         self.identity_api.create_user(user['id'], user)
@@ -134,7 +134,7 @@ class IdentityTests(object):
         user = {
             'id': id_,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
         }
         self.identity_api.create_user(user['id'], user)
 
@@ -148,7 +148,7 @@ class IdentityTests(object):
         unicode_name = u'name \u540d\u5b57'
         user = {'id': uuid.uuid4().hex,
                 'name': unicode_name,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         ref = self.identity_api.create_user(user['id'], user)
         self.assertEqual(unicode_name, ref['name'])
@@ -186,7 +186,7 @@ class IdentityTests(object):
         user_ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex,
             'enabled': True}
         self.identity_api.create_user(user_ref['id'], user_ref)
@@ -194,7 +194,7 @@ class IdentityTests(object):
         project_ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID}
+            'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(
             project_ref['id'], project_ref)
         # Create 2 roles and give user each role in project
@@ -286,7 +286,7 @@ class IdentityTests(object):
     def test_create_duplicate_user_id_fails(self):
         user = {'id': 'fake1',
                 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': 'fakepass',
                 'tenants': ['bar']}
         self.identity_api.create_user('fake1', user)
@@ -299,7 +299,7 @@ class IdentityTests(object):
     def test_create_duplicate_user_name_fails(self):
         user = {'id': 'fake1',
                 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': 'fakepass',
                 'tenants': ['bar']}
         self.identity_api.create_user('fake1', user)
@@ -309,54 +309,54 @@ class IdentityTests(object):
                           'fake2',
                           user)
 
-    def test_create_duplicate_user_name_in_different_domains(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
+    def test_create_duplicate_user_name_in_different_ponies(self):
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         user1 = {'id': uuid.uuid4().hex,
                  'name': uuid.uuid4().hex,
-                 'domain_id': DEFAULT_DOMAIN_ID,
+                 'pony_id': DEFAULT_DOMAIN_ID,
                  'password': uuid.uuid4().hex}
         user2 = {'id': uuid.uuid4().hex,
                  'name': user1['name'],
-                 'domain_id': new_domain['id'],
+                 'pony_id': new_pony['id'],
                  'password': uuid.uuid4().hex}
         self.identity_api.create_user(user1['id'], user1)
         self.identity_api.create_user(user2['id'], user2)
 
-    def test_move_user_between_domains(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+    def test_move_user_between_ponies(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': domain1['id'],
+                'pony_id': pony1['id'],
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
-        user['domain_id'] = domain2['id']
+        user['pony_id'] = pony2['id']
         self.identity_api.update_user(user['id'], user)
 
-    def test_move_user_between_domains_with_clashing_names_fails(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
-        # First, create a user in domain1
+    def test_move_user_between_ponies_with_clashing_names_fails(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # First, create a user in pony1
         user1 = {'id': uuid.uuid4().hex,
                  'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'],
+                 'pony_id': pony1['id'],
                  'password': uuid.uuid4().hex}
         self.identity_api.create_user(user1['id'], user1)
-        # Now create a user in domain2 with a potentially clashing
-        # name - which should work since we have domain separation
+        # Now create a user in pony2 with a potentially clashing
+        # name - which should work since we have pony separation
         user2 = {'id': uuid.uuid4().hex,
                  'name': user1['name'],
-                 'domain_id': domain2['id'],
+                 'pony_id': pony2['id'],
                  'password': uuid.uuid4().hex}
         self.identity_api.create_user(user2['id'], user2)
-        # Now try and move user1 into the 2nd domain - which should
+        # Now try and move user1 into the 2nd pony - which should
         # fail since the names clash
-        user1['domain_id'] = domain2['id']
+        user1['pony_id'] = pony2['id']
         self.assertRaises(exception.Conflict,
                           self.identity_api.update_user,
                           user1['id'],
@@ -365,12 +365,12 @@ class IdentityTests(object):
     def test_rename_duplicate_user_name_fails(self):
         user1 = {'id': 'fake1',
                  'name': 'fake1',
-                 'domain_id': DEFAULT_DOMAIN_ID,
+                 'pony_id': DEFAULT_DOMAIN_ID,
                  'password': 'fakepass',
                  'tenants': ['bar']}
         user2 = {'id': 'fake2',
                  'name': 'fake2',
-                 'domain_id': DEFAULT_DOMAIN_ID,
+                 'pony_id': DEFAULT_DOMAIN_ID,
                  'password': 'fakepass',
                  'tenants': ['bar']}
         self.identity_api.create_user('fake1', user1)
@@ -384,7 +384,7 @@ class IdentityTests(object):
     def test_update_user_id_fails(self):
         user = {'id': 'fake1',
                 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': 'fakepass',
                 'tenants': ['bar']}
         self.identity_api.create_user('fake1', user)
@@ -401,7 +401,7 @@ class IdentityTests(object):
 
     def test_create_duplicate_project_id_fails(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant['name'] = 'fake2'
         self.assertRaises(exception.Conflict,
@@ -411,7 +411,7 @@ class IdentityTests(object):
 
     def test_create_duplicate_project_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'fake',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant['id'] = 'fake2'
         self.assertRaises(exception.Conflict,
@@ -419,47 +419,47 @@ class IdentityTests(object):
                           'fake1',
                           tenant)
 
-    def test_create_duplicate_project_name_in_different_domains(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
+    def test_create_duplicate_project_name_in_different_ponies(self):
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         tenant1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': DEFAULT_DOMAIN_ID}
+                   'pony_id': DEFAULT_DOMAIN_ID}
         tenant2 = {'id': uuid.uuid4().hex, 'name': tenant1['name'],
-                   'domain_id': new_domain['id']}
+                   'pony_id': new_pony['id']}
         self.assignment_api.create_project(tenant1['id'], tenant1)
         self.assignment_api.create_project(tenant2['id'], tenant2)
 
-    def test_move_project_between_domains(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+    def test_move_project_between_ponies(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
-                   'domain_id': domain1['id']}
+                   'pony_id': pony1['id']}
         self.assignment_api.create_project(project['id'], project)
-        project['domain_id'] = domain2['id']
+        project['pony_id'] = pony2['id']
         self.assignment_api.update_project(project['id'], project)
 
-    def test_move_project_between_domains_with_clashing_names_fails(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
-        # First, create a project in domain1
+    def test_move_project_between_ponies_with_clashing_names_fails(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # First, create a project in pony1
         project1 = {'id': uuid.uuid4().hex,
                     'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
-        # Now create a project in domain2 with a potentially clashing
-        # name - which should work since we have domain separation
+        # Now create a project in pony2 with a potentially clashing
+        # name - which should work since we have pony separation
         project2 = {'id': uuid.uuid4().hex,
                     'name': project1['name'],
-                    'domain_id': domain2['id']}
+                    'pony_id': pony2['id']}
         self.assignment_api.create_project(project2['id'], project2)
-        # Now try and move project1 into the 2nd domain - which should
+        # Now try and move project1 into the 2nd pony - which should
         # fail since the names clash
-        project1['domain_id'] = domain2['id']
+        project1['pony_id'] = pony2['id']
         self.assertRaises(exception.Conflict,
                           self.assignment_api.update_project,
                           project1['id'],
@@ -467,9 +467,9 @@ class IdentityTests(object):
 
     def test_rename_duplicate_project_name_fails(self):
         tenant1 = {'id': 'fake1', 'name': 'fake1',
-                   'domain_id': DEFAULT_DOMAIN_ID}
+                   'pony_id': DEFAULT_DOMAIN_ID}
         tenant2 = {'id': 'fake2', 'name': 'fake2',
-                   'domain_id': DEFAULT_DOMAIN_ID}
+                   'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant1)
         self.assignment_api.create_project('fake2', tenant2)
         tenant2['name'] = 'fake1'
@@ -480,7 +480,7 @@ class IdentityTests(object):
 
     def test_update_project_id_does_nothing(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant['id'] = 'fake2'
         self.assignment_api.update_project('fake1', tenant)
@@ -495,29 +495,29 @@ class IdentityTests(object):
 
         Test Plan:
 
-        - Create a domain, with a user, group & project
+        - Create a pony, with a user, group & project
         - Find how many role assignments already exist (from default
           fixtures)
-        - Create a grant of each type (user/group on project/domain)
+        - Create a grant of each type (user/group on project/pony)
         - Check the number of assignments has gone up by 4 and that
           the entries we added are in the list returned
         - Check that if we list assignments by role_id, then we get back
           assignments that only contain that role.
 
         """
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'],
                                       new_user)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_project = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
+                       'pony_id': new_pony['id']}
         self.assignment_api.create_project(new_project['id'], new_project)
 
         # First check how many role grants already exist
@@ -528,13 +528,13 @@ class IdentityTests(object):
 
         # Now create the grants (roles are defined in default_fixtures)
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         self.assignment_api.create_grant(user_id=new_user['id'],
                                          project_id=new_project['id'],
                                          role_id='other')
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='admin')
         self.assignment_api.create_grant(group_id=new_group['id'],
                                          project_id=new_project['id'],
@@ -546,7 +546,7 @@ class IdentityTests(object):
 
         # Now check that each of our four new entries are in the list
         self.assertIn(
-            {'user_id': new_user['id'], 'domain_id': new_domain['id'],
+            {'user_id': new_user['id'], 'pony_id': new_pony['id'],
              'role_id': 'member'},
             assignment_list)
         self.assertIn(
@@ -554,7 +554,7 @@ class IdentityTests(object):
              'role_id': 'other'},
             assignment_list)
         self.assertIn(
-            {'group_id': new_group['id'], 'domain_id': new_domain['id'],
+            {'group_id': new_group['id'], 'pony_id': new_pony['id'],
              'role_id': 'admin'},
             assignment_list)
         self.assertIn(
@@ -571,7 +571,7 @@ class IdentityTests(object):
 
         # Now check that each of our two new entries are in the list
         self.assertIn(
-            {'group_id': new_group['id'], 'domain_id': new_domain['id'],
+            {'group_id': new_group['id'], 'pony_id': new_pony['id'],
              'role_id': 'admin'},
             assignment_list)
         self.assertIn(
@@ -608,19 +608,19 @@ class IdentityTests(object):
         """
         user_ref = {'id': uuid.uuid4().hex,
                     'name': uuid.uuid4().hex,
-                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'pony_id': DEFAULT_DOMAIN_ID,
                     'password': uuid.uuid4().hex,
                     'enabled': True}
         self.identity_api.create_user(user_ref['id'], user_ref)
 
         project_ref = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID}
+                       'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(project_ref['id'], project_ref)
 
         group = {'id': uuid.uuid4().hex,
                  'name': uuid.uuid4().hex,
-                 'domain_id': DEFAULT_DOMAIN_ID}
+                 'pony_id': DEFAULT_DOMAIN_ID}
         group_id = self.identity_api.create_group(group['id'], group)['id']
         self.identity_api.add_user_to_group(user_ref['id'], group_id)
 
@@ -660,85 +660,85 @@ class IdentityTests(object):
         self.assertIn(self.role_admin['id'], roles_ref)
         self.assertIn('member', roles_ref)
 
-    def test_get_roles_for_user_and_domain(self):
-        """Test for getting roles for user on a domain.
+    def test_get_roles_for_user_and_pony(self):
+        """Test for getting roles for user on a pony.
 
         Test Plan:
 
-        - Create a domain, with 2 users
+        - Create a pony, with 2 users
         - Check no roles yet exit
-        - Give user1 two roles on the domain, user2 one role
-        - Get roles on user1 and the domain - maybe sure we only
+        - Give user1 two roles on the pony, user2 one role
+        - Get roles on user1 and the pony - maybe sure we only
           get back the 2 roles on user1
         - Delete both roles from user1
-        - Check we get no roles back for user1 on domain
+        - Check we get no roles back for user1 on pony
 
         """
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         new_user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                      'password': uuid.uuid4().hex, 'enabled': True,
-                     'domain_id': new_domain['id']}
+                     'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user1['id'], new_user1)
         new_user2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                      'password': uuid.uuid4().hex, 'enabled': True,
-                     'domain_id': new_domain['id']}
+                     'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user2['id'], new_user2)
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user1['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
         # Now create the grants (roles are defined in default_fixtures)
         self.assignment_api.create_grant(user_id=new_user1['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         self.assignment_api.create_grant(user_id=new_user1['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='other')
         self.assignment_api.create_grant(user_id=new_user2['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='admin')
-        # Read back the roles for user1 on domain
-        roles_ids = self.assignment_api.get_roles_for_user_and_domain(
-            new_user1['id'], new_domain['id'])
+        # Read back the roles for user1 on pony
+        roles_ids = self.assignment_api.get_roles_for_user_and_pony(
+            new_user1['id'], new_pony['id'])
         self.assertEqual(2, len(roles_ids))
         self.assertIn(self.role_member['id'], roles_ids)
         self.assertIn(self.role_other['id'], roles_ids)
 
         # Now delete both grants for user1
         self.assignment_api.delete_grant(user_id=new_user1['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         self.assignment_api.delete_grant(user_id=new_user1['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='other')
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user1['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
 
-    def test_get_roles_for_user_and_domain_404(self):
-        """Test errors raised when getting roles for user on a domain.
+    def test_get_roles_for_user_and_pony_404(self):
+        """Test errors raised when getting roles for user on a pony.
 
         Test Plan:
 
         - Check non-existing user gives UserNotFound
-        - Check non-existing domain gives DomainNotFound
+        - Check non-existing pony gives DomainNotFound
 
         """
-        new_domain = self._get_domain_fixture()
+        new_pony = self._get_pony_fixture()
         new_user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                      'password': uuid.uuid4().hex, 'enabled': True,
-                     'domain_id': new_domain['id']}
+                     'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user1['id'], new_user1)
 
         self.assertRaises(exception.UserNotFound,
-                          self.assignment_api.get_roles_for_user_and_domain,
+                          self.assignment_api.get_roles_for_user_and_pony,
                           uuid.uuid4().hex,
-                          new_domain['id'])
+                          new_pony['id'])
 
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_roles_for_user_and_domain,
+                          self.assignment_api.get_roles_for_user_and_pony,
                           new_user1['id'],
                           uuid.uuid4().hex)
 
@@ -838,14 +838,14 @@ class IdentityTests(object):
                           role_id='member')
 
     def test_get_and_remove_role_grant_by_group_and_project(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': 'secret', 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -874,84 +874,84 @@ class IdentityTests(object):
                           project_id=self.tenant_bar['id'],
                           role_id='member')
 
-    def test_get_and_remove_role_grant_by_group_and_domain(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+    def test_get_and_remove_role_grant_by_group_and_pony(self):
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
 
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           group_id=new_group['id'],
-                          domain_id=new_domain['id'],
+                          pony_id=new_pony['id'],
                           role_id='member')
 
     def test_get_and_remove_correct_role_grant_from_a_mix(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         new_project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
+                       'pony_id': new_pony['id']}
         self.assignment_api.create_project(new_project['id'], new_project)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
-        new_group2 = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        new_group2 = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                       'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group2['id'], new_group2)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         new_user2 = {'id': uuid.uuid4().hex, 'name': 'new_user2',
                      'password': uuid.uuid4().hex, 'enabled': True,
-                     'domain_id': new_domain['id']}
+                     'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user2['id'], new_user2)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
         # First check we have no grants
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
         # Now add the grant we are going to test for, and some others as
         # well just to make sure we get back the right one
         self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
 
         self.assignment_api.create_grant(group_id=new_group2['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id=self.role_admin['id'])
         self.assignment_api.create_grant(user_id=new_user2['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id=self.role_admin['id'])
         self.assignment_api.create_grant(group_id=new_group['id'],
                                          project_id=new_project['id'],
@@ -959,173 +959,173 @@ class IdentityTests(object):
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           group_id=new_group['id'],
-                          domain_id=new_domain['id'],
+                          pony_id=new_pony['id'],
                           role_id='member')
 
-    def test_get_and_remove_role_grant_by_user_and_domain(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
+    def test_get_and_remove_role_grant_by_user_and_pony(self):
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': 'secret', 'enabled': True,
-                    'domain_id': new_domain['id']}
+                    'pony_id': new_pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
         self.assignment_api.create_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
         self.assignment_api.delete_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
+                                         pony_id=new_pony['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user['id'],
-            domain_id=new_domain['id'])
+            pony_id=new_pony['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           user_id=new_user['id'],
-                          domain_id=new_domain['id'],
+                          pony_id=new_pony['id'],
                           role_id='member')
 
-    def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
-        group1_domain1_role = {'id': uuid.uuid4().hex,
+    def test_get_and_remove_role_grant_by_group_and_cross_pony(self):
+        group1_pony1_role = {'id': uuid.uuid4().hex,
                                'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(group1_domain1_role['id'],
-                                        group1_domain1_role)
-        group1_domain2_role = {'id': uuid.uuid4().hex,
+        self.assignment_api.create_role(group1_pony1_role['id'],
+                                        group1_pony1_role)
+        group1_pony2_role = {'id': uuid.uuid4().hex,
                                'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(group1_domain2_role['id'],
-                                        group1_domain2_role)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
-        group1 = {'id': uuid.uuid4().hex, 'domain_id': domain1['id'],
+        self.assignment_api.create_role(group1_pony2_role['id'],
+                                        group1_pony2_role)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        group1 = {'id': uuid.uuid4().hex, 'pony_id': pony1['id'],
                   'name': uuid.uuid4().hex}
         self.identity_api.create_group(group1['id'], group1)
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(0, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain2['id'])
+            pony_id=pony2['id'])
         self.assertEqual(0, len(roles_ref))
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
-                                         role_id=group1_domain1_role['id'])
+                                         pony_id=pony1['id'],
+                                         role_id=group1_pony1_role['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=group1_domain2_role['id'])
+                                         pony_id=pony2['id'],
+                                         role_id=group1_pony2_role['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain1['id'])
-        self.assertDictEqual(roles_ref[0], group1_domain1_role)
+            pony_id=pony1['id'])
+        self.assertDictEqual(roles_ref[0], group1_pony1_role)
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain2['id'])
-        self.assertDictEqual(roles_ref[0], group1_domain2_role)
+            pony_id=pony2['id'])
+        self.assertDictEqual(roles_ref[0], group1_pony2_role)
 
         self.assignment_api.delete_grant(group_id=group1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=group1_domain2_role['id'])
+                                         pony_id=pony2['id'],
+                                         role_id=group1_pony2_role['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain2['id'])
+            pony_id=pony2['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           group_id=group1['id'],
-                          domain_id=domain2['id'],
-                          role_id=group1_domain2_role['id'])
+                          pony_id=pony2['id'],
+                          role_id=group1_pony2_role['id'])
 
-    def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
-        user1_domain1_role = {'id': uuid.uuid4().hex,
+    def test_get_and_remove_role_grant_by_user_and_cross_pony(self):
+        user1_pony1_role = {'id': uuid.uuid4().hex,
                               'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(user1_domain1_role['id'],
-                                        user1_domain1_role)
-        user1_domain2_role = {'id': uuid.uuid4().hex,
+        self.assignment_api.create_role(user1_pony1_role['id'],
+                                        user1_pony1_role)
+        user1_pony2_role = {'id': uuid.uuid4().hex,
                               'name': uuid.uuid4().hex}
-        self.assignment_api.create_role(user1_domain2_role['id'],
-                                        user1_domain2_role)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+        self.assignment_api.create_role(user1_pony2_role['id'],
+                                        user1_pony2_role)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(0, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain2['id'])
+            pony_id=pony2['id'])
         self.assertEqual(0, len(roles_ref))
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
-                                         role_id=user1_domain1_role['id'])
+                                         pony_id=pony1['id'],
+                                         role_id=user1_pony1_role['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=user1_domain2_role['id'])
+                                         pony_id=pony2['id'],
+                                         role_id=user1_pony2_role['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain1['id'])
-        self.assertDictEqual(roles_ref[0], user1_domain1_role)
+            pony_id=pony1['id'])
+        self.assertDictEqual(roles_ref[0], user1_pony1_role)
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain2['id'])
-        self.assertDictEqual(roles_ref[0], user1_domain2_role)
+            pony_id=pony2['id'])
+        self.assertDictEqual(roles_ref[0], user1_pony2_role)
 
         self.assignment_api.delete_grant(user_id=user1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=user1_domain2_role['id'])
+                                         pony_id=pony2['id'],
+                                         role_id=user1_pony2_role['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain2['id'])
+            pony_id=pony2['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
                           user_id=user1['id'],
-                          domain_id=domain2['id'],
-                          role_id=user1_domain2_role['id'])
+                          pony_id=pony2['id'],
+                          role_id=user1_pony2_role['id'])
 
-    def test_role_grant_by_group_and_cross_domain_project(self):
+    def test_role_grant_by_group_and_cross_pony_project(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
         role2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role2['id'], role2)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain2['id']}
+                    'pony_id': pony2['id']}
         self.assignment_api.create_project(project1['id'], project1)
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
@@ -1156,21 +1156,21 @@ class IdentityTests(object):
         self.assertEqual(1, len(roles_ref))
         self.assertDictEqual(roles_ref[0], role2)
 
-    def test_role_grant_by_user_and_cross_domain_project(self):
+    def test_role_grant_by_user_and_cross_pony_project(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
         role2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role2['id'], role2)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain2['id']}
+                    'pony_id': pony2['id']}
         self.assignment_api.create_project(project1['id'], project1)
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
@@ -1229,26 +1229,26 @@ class IdentityTests(object):
         self.assignment_api.delete_grant(role_id, group_id=group_id,
                                          project_id=self.tenant_bar['id'])
 
-    def test_multi_role_grant_by_user_group_on_project_domain(self):
+    def test_multi_role_grant_by_user_group_on_project_pony(self):
         role_list = []
         for _ in range(10):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group2['id'], group2)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
 
         self.identity_api.add_user_to_group(user1['id'],
@@ -1261,16 +1261,16 @@ class IdentityTests(object):
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[0]['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[1]['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[2]['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[3]['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project1['id'],
@@ -1285,12 +1285,12 @@ class IdentityTests(object):
                                          project_id=project1['id'],
                                          role_id=role_list[7]['id'])
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
-                                                    domain_id=domain1['id'])
+                                                    pony_id=pony1['id'])
         self.assertEqual(2, len(roles_ref))
         self.assertIn(role_list[0], roles_ref)
         self.assertIn(role_list[1], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
-                                                    domain_id=domain1['id'])
+                                                    pony_id=pony1['id'])
         self.assertEqual(2, len(roles_ref))
         self.assertIn(role_list[2], roles_ref)
         self.assertIn(role_list[3], roles_ref)
@@ -1316,27 +1316,27 @@ class IdentityTests(object):
         self.assertIn(role_list[6]['id'], combined_list)
         self.assertIn(role_list[7]['id'], combined_list)
 
-        combined_role_list = self.assignment_api.get_roles_for_user_and_domain(
-            user1['id'], domain1['id'])
+        combined_role_list = self.assignment_api.get_roles_for_user_and_pony(
+            user1['id'], pony1['id'])
         self.assertEqual(4, len(combined_role_list))
         self.assertIn(role_list[0]['id'], combined_role_list)
         self.assertIn(role_list[1]['id'], combined_role_list)
         self.assertIn(role_list[2]['id'], combined_role_list)
         self.assertIn(role_list[3]['id'], combined_role_list)
 
-    def test_multi_group_grants_on_project_domain(self):
-        """Test multiple group roles for user on project and domain.
+    def test_multi_group_grants_on_project_pony(self):
+        """Test multiple group roles for user on project and pony.
 
         Test Plan:
 
         - Create 6 roles
-        - Create a domain, with a project, user and two groups
+        - Create a pony, with a project, user and two groups
         - Make the user a member of both groups
         - Check no roles yet exit
         - Assign a role to each user and both groups on both the
-          project and domain
+          project and pony
         - Get a list of effective roles for the user on both the
-          project and domain, checking we get back the correct three
+          project and pony, checking we get back the correct three
           roles
 
         """
@@ -1345,20 +1345,20 @@ class IdentityTests(object):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group2['id'], group2)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
 
         self.identity_api.add_user_to_group(user1['id'],
@@ -1371,13 +1371,13 @@ class IdentityTests(object):
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[0]['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[1]['id'])
         self.assignment_api.create_grant(group_id=group2['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[2]['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project1['id'],
@@ -1390,7 +1390,7 @@ class IdentityTests(object):
                                          role_id=role_list[5]['id'])
 
         # Read by the roles, ensuring we get the correct 3 roles for
-        # both project and domain
+        # both project and pony
         combined_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEqual(3, len(combined_list))
@@ -1398,8 +1398,8 @@ class IdentityTests(object):
         self.assertIn(role_list[4]['id'], combined_list)
         self.assertIn(role_list[5]['id'], combined_list)
 
-        combined_role_list = self.assignment_api.get_roles_for_user_and_domain(
-            user1['id'], domain1['id'])
+        combined_role_list = self.assignment_api.get_roles_for_user_and_pony(
+            user1['id'], pony1['id'])
         self.assertEqual(3, len(combined_role_list))
         self.assertIn(role_list[0]['id'], combined_role_list)
         self.assertIn(role_list[1]['id'], combined_role_list)
@@ -1418,18 +1418,18 @@ class IdentityTests(object):
         user_group_id = uuid.uuid4().hex
 
         user1 = {'id': user_group_id, 'name': uuid.uuid4().hex,
-                 'domain_id': DEFAULT_DOMAIN_ID, }
+                 'pony_id': DEFAULT_DOMAIN_ID, }
         self.identity_api.create_user(user_group_id, user1)
 
         group1 = {'id': user_group_id, 'name': uuid.uuid4().hex,
-                  'domain_id': DEFAULT_DOMAIN_ID, }
+                  'pony_id': DEFAULT_DOMAIN_ID, }
         self.identity_api.create_group(user_group_id, group1)
 
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
 
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': DEFAULT_DOMAIN_ID, }
+                    'pony_id': DEFAULT_DOMAIN_ID, }
         self.assignment_api.create_project(project1['id'], project1)
 
         self.assignment_api.create_grant(role1['id'],
@@ -1445,29 +1445,29 @@ class IdentityTests(object):
     def test_delete_role_with_user_and_group_grants(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role1['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role1['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
@@ -1479,11 +1479,11 @@ class IdentityTests(object):
         self.assertEqual(1, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(1, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(1, len(roles_ref))
         self.assignment_api.delete_role(role1['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1496,33 +1496,33 @@ class IdentityTests(object):
         self.assertEqual(0, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(0, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(0, len(roles_ref))
 
-    def test_delete_user_with_group_project_domain_links(self):
+    def test_delete_user_with_group_project_pony_links(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role1['id'])
         self.identity_api.add_user_to_group(user_id=user1['id'],
                                             group_id=group1['id'])
@@ -1532,7 +1532,7 @@ class IdentityTests(object):
         self.assertEqual(1, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(1, len(roles_ref))
         self.identity_api.check_user_in_group(
             user_id=user1['id'],
@@ -1543,26 +1543,26 @@ class IdentityTests(object):
                           user1['id'],
                           group1['id'])
 
-    def test_delete_group_with_user_project_domain_links(self):
+    def test_delete_group_with_user_project_pony_links(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role1['id'], role1)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         self.assignment_api.create_grant(group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role1['id'])
         self.identity_api.add_user_to_group(user_id=user1['id'],
                                             group_id=group1['id'])
@@ -1572,7 +1572,7 @@ class IdentityTests(object):
         self.assertEqual(1, len(roles_ref))
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
-            domain_id=domain1['id'])
+            pony_id=pony1['id'])
         self.assertEqual(1, len(roles_ref))
         self.identity_api.check_user_in_group(
             user_id=user1['id'],
@@ -1580,7 +1580,7 @@ class IdentityTests(object):
         self.identity_api.delete_group(group1['id'])
         self.identity_api.get_user(user1['id'])
 
-    def test_delete_domain_with_user_group_project_links(self):
+    def test_delete_pony_with_user_group_project_links(self):
         # TODO(chungg):add test case once expected behaviour defined
         pass
 
@@ -1712,12 +1712,12 @@ class IdentityTests(object):
                           self.identity_api.update_user,
                           user_id,
                           {'id': user_id,
-                           'domain_id': DEFAULT_DOMAIN_ID})
+                           'pony_id': DEFAULT_DOMAIN_ID})
 
     def test_delete_user_with_project_association(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
@@ -1730,7 +1730,7 @@ class IdentityTests(object):
     def test_delete_user_with_project_roles(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
         self.assignment_api.add_role_to_user_and_project(
@@ -1757,7 +1757,7 @@ class IdentityTests(object):
         project = {'id': uuid.uuid4().hex,
                    'name': unicode_project_name,
                    'description': uuid.uuid4().hex,
-                   'domain_id': CONF.identity.default_domain_id}
+                   'pony_id': CONF.identity.default_pony_id}
         self.assignment_api.create_project(project['id'], project)
         self.assignment_api.update_project(project['id'], project)
         self.assignment_api.delete_project(project['id'])
@@ -1767,7 +1767,7 @@ class IdentityTests(object):
         ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex.lower(),
-            'domain_id': DEFAULT_DOMAIN_ID}
+            'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(ref['id'], ref)
 
         # assign a new ID with the same name, but this time in uppercase
@@ -1779,7 +1779,7 @@ class IdentityTests(object):
         ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex.lower(),
-            'domain_id': DEFAULT_DOMAIN_ID}
+            'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(ref['id'], ref)
 
         project = self.assignment_api.get_project(ref['id'])
@@ -1787,7 +1787,7 @@ class IdentityTests(object):
 
     def test_create_project_long_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'a' * 65,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.assignment_api.create_project,
                           tenant['id'],
@@ -1795,7 +1795,7 @@ class IdentityTests(object):
 
     def test_create_project_blank_name_fails(self):
         tenant = {'id': 'fake1', 'name': '',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.assignment_api.create_project,
                           tenant['id'],
@@ -1803,13 +1803,13 @@ class IdentityTests(object):
 
     def test_create_project_invalid_name_fails(self):
         tenant = {'id': 'fake1', 'name': None,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.assignment_api.create_project,
                           tenant['id'],
                           tenant)
         tenant = {'id': 'fake1', 'name': 123,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.assignment_api.create_project,
                           tenant['id'],
@@ -1817,7 +1817,7 @@ class IdentityTests(object):
 
     def test_update_project_blank_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant['name'] = ''
         self.assertRaises(exception.ValidationError,
@@ -1827,7 +1827,7 @@ class IdentityTests(object):
 
     def test_update_project_long_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant['name'] = 'a' * 65
         self.assertRaises(exception.ValidationError,
@@ -1837,7 +1837,7 @@ class IdentityTests(object):
 
     def test_update_project_invalid_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant['name'] = None
         self.assertRaises(exception.ValidationError,
@@ -1856,7 +1856,7 @@ class IdentityTests(object):
         ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex.lower(),
-            'domain_id': DEFAULT_DOMAIN_ID}
+            'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user(ref['id'], ref)
 
         # assign a new ID with the same name, but this time in uppercase
@@ -1866,7 +1866,7 @@ class IdentityTests(object):
 
     def test_create_user_long_name_fails(self):
         user = {'id': 'fake1', 'name': 'a' * 256,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           'fake1',
@@ -1874,7 +1874,7 @@ class IdentityTests(object):
 
     def test_create_user_blank_name_fails(self):
         user = {'id': 'fake1', 'name': '',
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           'fake1',
@@ -1882,7 +1882,7 @@ class IdentityTests(object):
 
     def test_create_user_missed_password(self):
         user = {'id': 'fake1', 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
         self.identity_api.get_user('fake1')
         # Make sure  the user is not allowed to login
@@ -1900,7 +1900,7 @@ class IdentityTests(object):
 
     def test_create_user_none_password(self):
         user = {'id': 'fake1', 'name': 'fake1', 'password': None,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
         self.identity_api.get_user('fake1')
         # Make sure  the user is not allowed to login
@@ -1918,14 +1918,14 @@ class IdentityTests(object):
 
     def test_create_user_invalid_name_fails(self):
         user = {'id': 'fake1', 'name': None,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           'fake1',
                           user)
 
         user = {'id': 'fake1', 'name': 123,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
                           'fake1',
@@ -1935,7 +1935,7 @@ class IdentityTests(object):
             project = {'id': uuid.uuid4().hex,
                        'name': uuid.uuid4().hex,
                        'enabled': True,
-                       'domain_id': DEFAULT_DOMAIN_ID}
+                       'pony_id': DEFAULT_DOMAIN_ID}
             self.assignment_api.create_project(project['id'], project)
             project_ref = self.assignment_api.get_project(project['id'])
             self.assertEqual(True, project_ref['enabled'])
@@ -1950,7 +1950,7 @@ class IdentityTests(object):
     def test_create_project_invalid_enabled_type_string(self):
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'pony_id': DEFAULT_DOMAIN_ID,
                    # invalid string value
                    'enabled': "true"}
         self.assertRaises(exception.ValidationError,
@@ -1961,7 +1961,7 @@ class IdentityTests(object):
     def test_create_user_invalid_enabled_type_string(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex,
                 # invalid string value
                 'enabled': "true"}
@@ -1972,7 +1972,7 @@ class IdentityTests(object):
 
     def test_update_user_long_name_fails(self):
         user = {'id': 'fake1', 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
         user['name'] = 'a' * 256
         self.assertRaises(exception.ValidationError,
@@ -1982,7 +1982,7 @@ class IdentityTests(object):
 
     def test_update_user_blank_name_fails(self):
         user = {'id': 'fake1', 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
         user['name'] = ''
         self.assertRaises(exception.ValidationError,
@@ -1992,7 +1992,7 @@ class IdentityTests(object):
 
     def test_update_user_invalid_name_fails(self):
         user = {'id': 'fake1', 'name': 'fake1',
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
 
         user['name'] = None
@@ -2019,11 +2019,11 @@ class IdentityTests(object):
     def test_list_groups(self):
         group1 = {
             'id': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'name': uuid.uuid4().hex}
         group2 = {
             'id': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'name': uuid.uuid4().hex}
         self.identity_api.create_group(group1['id'], group1)
         self.identity_api.create_group(group2['id'], group2)
@@ -2035,19 +2035,19 @@ class IdentityTests(object):
         self.assertIn(group1['id'], group_ids)
         self.assertIn(group2['id'], group_ids)
 
-    def test_list_domains(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        self.assignment_api.create_domain(domain2['id'], domain2)
-        domains = self.assignment_api.list_domains()
-        self.assertEqual(3, len(domains))
-        domain_ids = []
-        for domain in domains:
-            domain_ids.append(domain.get('id'))
-        self.assertIn(DEFAULT_DOMAIN_ID, domain_ids)
-        self.assertIn(domain1['id'], domain_ids)
-        self.assertIn(domain2['id'], domain_ids)
+    def test_list_ponies(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        ponies = self.assignment_api.list_ponies()
+        self.assertEqual(3, len(ponies))
+        pony_ids = []
+        for pony in ponies:
+            pony_ids.append(pony.get('id'))
+        self.assertIn(DEFAULT_DOMAIN_ID, pony_ids)
+        self.assertIn(pony1['id'], pony_ids)
+        self.assertIn(pony2['id'], pony_ids)
 
     def test_list_projects(self):
         projects = self.assignment_api.list_projects()
@@ -2058,9 +2058,9 @@ class IdentityTests(object):
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
 
-    def test_list_projects_for_domain(self):
+    def test_list_projects_for_pony(self):
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects_in_domain(
+                       self.assignment_api.list_projects_in_pony(
                            DEFAULT_DOMAIN_ID)])
         self.assertEqual(4, len(project_ids))
         self.assertIn(self.tenant_bar['id'], project_ids)
@@ -2068,18 +2068,18 @@ class IdentityTests(object):
         self.assertIn(self.tenant_mtu['id'], project_ids)
         self.assertIn(self.tenant_service['id'], project_ids)
 
-    def test_list_projects_for_alternate_domain(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+    def test_list_projects_for_alternate_pony(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project2['id'], project2)
         project_ids = ([x['id'] for x in
-                       self.assignment_api.list_projects_in_domain(
-                           domain1['id'])])
+                       self.assignment_api.list_projects_in_pony(
+                           pony1['id'])])
         self.assertEqual(2, len(project_ids))
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
@@ -2093,7 +2093,7 @@ class IdentityTests(object):
 
     def test_delete_project_with_role_assignments(self):
         tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(tenant['id'], tenant)
         self.assignment_api.add_role_to_user_and_project(
             self.user_foo['id'], tenant['id'], 'member')
@@ -2119,7 +2119,7 @@ class IdentityTests(object):
 
     def test_create_project_doesnt_modify_passed_in_dict(self):
         new_project = {'id': 'tenant_id', 'name': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID}
+                       'pony_id': DEFAULT_DOMAIN_ID}
         original_project = new_project.copy()
         self.assignment_api.create_project('tenant_id', new_project)
         self.assertDictEqual(original_project, new_project)
@@ -2127,14 +2127,14 @@ class IdentityTests(object):
     def test_create_user_doesnt_modify_passed_in_dict(self):
         new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                     'password': uuid.uuid4().hex,
-                    'domain_id': DEFAULT_DOMAIN_ID}
+                    'pony_id': DEFAULT_DOMAIN_ID}
         original_user = new_user.copy()
         self.identity_api.create_user('user_id', new_user)
         self.assertDictEqual(original_user, new_user)
 
     def test_update_user_enable(self):
         user = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(True, user_ref['enabled'])
@@ -2176,7 +2176,7 @@ class IdentityTests(object):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
                 'enabled': True,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user(user['id'], user)
         user_ref = self.identity_api.get_user(user['id'])
         self.assertEqual(user['name'], user_ref['name'])
@@ -2198,7 +2198,7 @@ class IdentityTests(object):
 
     def test_update_user_enable_fails(self):
         user = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
-                'domain_id': DEFAULT_DOMAIN_ID}
+                'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user('fake1', user)
         user_ref = self.identity_api.get_user('fake1')
         self.assertEqual(True, user_ref['enabled'])
@@ -2212,7 +2212,7 @@ class IdentityTests(object):
 
     def test_update_project_enable(self):
         tenant = {'id': 'fake1', 'name': 'fake1', 'enabled': True,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project('fake1', tenant)
         tenant_ref = self.assignment_api.get_project('fake1')
         self.assertEqual(True, tenant_ref['enabled'])
@@ -2239,13 +2239,13 @@ class IdentityTests(object):
         self.assertEqual(True, tenant_ref['enabled'])
 
     def test_add_user_to_group(self):
-        domain = self._get_domain_fixture()
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        pony = self._get_pony_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -2258,17 +2258,17 @@ class IdentityTests(object):
         self.assertTrue(found)
 
     def test_add_user_to_group_404(self):
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.assertRaises(exception.GroupNotFound,
                           self.identity_api.add_user_to_group,
                           new_user['id'],
                           uuid.uuid4().hex)
 
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         self.assertRaises(exception.UserNotFound,
@@ -2282,20 +2282,20 @@ class IdentityTests(object):
                           uuid.uuid4().hex)
 
     def test_check_user_in_group(self):
-        domain = self._get_domain_fixture()
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        pony = self._get_pony_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
         self.identity_api.check_user_in_group(new_user['id'], new_group['id'])
 
-    def test_create_invalid_domain_fails(self):
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': "doesnotexist",
+    def test_create_invalid_pony_fails(self):
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': "doesnotexist",
                      'name': uuid.uuid4().hex}
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.create_group,
@@ -2303,7 +2303,7 @@ class IdentityTests(object):
                           new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': "doesnotexist"}
+                    'pony_id': "doesnotexist"}
         self.assertRaises(exception.DomainNotFound,
                           self.identity_api.create_user,
                           new_user['id'], new_user)
@@ -2311,13 +2311,13 @@ class IdentityTests(object):
     def test_check_user_not_in_group(self):
         new_group = {
             'id': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
 
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': DEFAULT_DOMAIN_ID}
+                    'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user(new_user['id'], new_user)
 
         self.assertRaises(exception.NotFound,
@@ -2328,12 +2328,12 @@ class IdentityTests(object):
     def test_check_user_in_group_404(self):
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': DEFAULT_DOMAIN_ID}
+                    'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_user(new_user['id'], new_user)
 
         new_group = {
             'id': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
 
@@ -2353,8 +2353,8 @@ class IdentityTests(object):
                           uuid.uuid4().hex)
 
     def test_list_users_in_group(self):
-        domain = self._get_domain_fixture()
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        pony = self._get_pony_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         # Make sure we get an empty list back on a new group, not an error.
@@ -2364,7 +2364,7 @@ class IdentityTests(object):
         # to the group.
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -2382,7 +2382,7 @@ class IdentityTests(object):
                           uuid.uuid4().hex)
 
     def test_list_groups_for_user(self):
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         test_groups = []
         test_users = []
         GROUP_COUNT = 3
@@ -2391,7 +2391,7 @@ class IdentityTests(object):
         for x in range(0, USER_COUNT):
             new_user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                         'password': uuid.uuid4().hex, 'enabled': True,
-                        'domain_id': domain['id']}
+                        'pony_id': pony['id']}
             test_users.append(new_user)
             self.identity_api.create_user(new_user['id'], new_user)
         positive_user = test_users[0]
@@ -2406,7 +2406,7 @@ class IdentityTests(object):
             before_count = x
             after_count = x + 1
             new_group = {'id': uuid.uuid4().hex,
-                         'domain_id': domain['id'],
+                         'pony_id': pony['id'],
                          'name': uuid.uuid4().hex}
             self.identity_api.create_group(new_group['id'], new_group)
             test_groups.append(new_group)
@@ -2449,13 +2449,13 @@ class IdentityTests(object):
             self.assertEqual(0, len(group_refs))
 
     def test_remove_user_from_group(self):
-        domain = self._get_domain_fixture()
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        pony = self._get_pony_fixture()
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
         self.identity_api.add_user_to_group(new_user['id'],
                                             new_group['id'])
@@ -2467,12 +2467,12 @@ class IdentityTests(object):
         self.assertNotIn(new_group['id'], [x['id'] for x in groups])
 
     def test_remove_user_from_group_404(self):
-        domain = self._get_domain_fixture()
+        pony = self._get_pony_fixture()
         new_user = {'id': uuid.uuid4().hex, 'name': 'new_user',
                     'password': uuid.uuid4().hex, 'enabled': True,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.identity_api.create_user(new_user['id'], new_user)
-        new_group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        new_group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                      'name': uuid.uuid4().hex}
         self.identity_api.create_group(new_group['id'], new_group)
         self.assertRaises(exception.GroupNotFound,
@@ -2491,9 +2491,9 @@ class IdentityTests(object):
                           uuid.uuid4().hex)
 
     def test_group_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain['id'], domain)
-        group = {'id': uuid.uuid4().hex, 'domain_id': domain['id'],
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony['id'], pony)
+        group = {'id': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'name': uuid.uuid4().hex}
         self.identity_api.create_group(group['id'], group)
         group_ref = self.identity_api.get_group(group['id'])
@@ -2510,67 +2510,67 @@ class IdentityTests(object):
                           group['id'])
 
     def test_create_duplicate_group_name_fails(self):
-        group1 = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+        group1 = {'id': uuid.uuid4().hex, 'pony_id': DEFAULT_DOMAIN_ID,
                   'name': uuid.uuid4().hex}
-        group2 = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+        group2 = {'id': uuid.uuid4().hex, 'pony_id': DEFAULT_DOMAIN_ID,
                   'name': group1['name']}
         self.identity_api.create_group(group1['id'], group1)
         self.assertRaises(exception.Conflict,
                           self.identity_api.create_group,
                           group2['id'], group2)
 
-    def test_create_duplicate_group_name_in_different_domains(self):
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(new_domain['id'], new_domain)
-        group1 = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+    def test_create_duplicate_group_name_in_different_ponies(self):
+        new_pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(new_pony['id'], new_pony)
+        group1 = {'id': uuid.uuid4().hex, 'pony_id': DEFAULT_DOMAIN_ID,
                   'name': uuid.uuid4().hex}
-        group2 = {'id': uuid.uuid4().hex, 'domain_id': new_domain['id'],
+        group2 = {'id': uuid.uuid4().hex, 'pony_id': new_pony['id'],
                   'name': group1['name']}
         self.identity_api.create_group(group1['id'], group1)
         self.identity_api.create_group(group2['id'], group2)
 
-    def test_move_group_between_domains(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+    def test_move_group_between_ponies(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         group = {'id': uuid.uuid4().hex,
                  'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id']}
+                 'pony_id': pony1['id']}
         self.identity_api.create_group(group['id'], group)
-        group['domain_id'] = domain2['id']
+        group['pony_id'] = pony2['id']
         self.identity_api.update_group(group['id'], group)
 
-    def test_move_group_between_domains_with_clashing_names_fails(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
-        # First, create a group in domain1
+    def test_move_group_between_ponies_with_clashing_names_fails(self):
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
+        # First, create a group in pony1
         group1 = {'id': uuid.uuid4().hex,
                   'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id']}
+                  'pony_id': pony1['id']}
         self.identity_api.create_group(group1['id'], group1)
-        # Now create a group in domain2 with a potentially clashing
-        # name - which should work since we have domain separation
+        # Now create a group in pony2 with a potentially clashing
+        # name - which should work since we have pony separation
         group2 = {'id': uuid.uuid4().hex,
                   'name': group1['name'],
-                  'domain_id': domain2['id']}
+                  'pony_id': pony2['id']}
         self.identity_api.create_group(group2['id'], group2)
-        # Now try and move group1 into the 2nd domain - which should
+        # Now try and move group1 into the 2nd pony - which should
         # fail since the names clash
-        group1['domain_id'] = domain2['id']
+        group1['pony_id'] = pony2['id']
         self.assertRaises(exception.Conflict,
                           self.identity_api.update_group,
                           group1['id'],
                           group1)
 
     def test_project_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
-        self.assignment_api.create_domain(domain['id'], domain)
+        self.assignment_api.create_pony(pony['id'], pony)
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': domain['id']}
+                   'pony_id': pony['id']}
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
         self.assertDictContainsSubset(project, project_ref)
@@ -2589,7 +2589,7 @@ class IdentityTests(object):
         # Creating a project with no description attribute.
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'pony_id': DEFAULT_DOMAIN_ID,
                    'enabled': True}
         self.assignment_api.create_project(project['id'], project)
 
@@ -2604,7 +2604,7 @@ class IdentityTests(object):
         # Creating a project with no description attribute.
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'pony_id': DEFAULT_DOMAIN_ID,
                    'enabled': True}
         self.assignment_api.create_project(project['id'], project)
 
@@ -2615,50 +2615,50 @@ class IdentityTests(object):
         project_ref = self.assignment_api.get_project(project['id'])
         self.assertDictEqual(project_ref, project)
 
-    def test_domain_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+    def test_pony_crud(self):
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
-        self.assignment_api.create_domain(domain['id'], domain)
-        domain_ref = self.assignment_api.get_domain(domain['id'])
-        self.assertDictEqual(domain_ref, domain)
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
+        self.assertDictEqual(pony_ref, pony)
 
-        domain['name'] = uuid.uuid4().hex
-        self.assignment_api.update_domain(domain['id'], domain)
-        domain_ref = self.assignment_api.get_domain(domain['id'])
-        self.assertDictEqual(domain_ref, domain)
+        pony['name'] = uuid.uuid4().hex
+        self.assignment_api.update_pony(pony['id'], pony)
+        pony_ref = self.assignment_api.get_pony(pony['id'])
+        self.assertDictEqual(pony_ref, pony)
 
-        # Ensure an 'enabled' domain cannot be deleted
+        # Ensure an 'enabled' pony cannot be deleted
         self.assertRaises(exception.ForbiddenAction,
-                          self.assignment_api.delete_domain,
-                          domain_id=domain['id'])
+                          self.assignment_api.delete_pony,
+                          pony_id=pony['id'])
 
-        # Disable the domain
-        domain['enabled'] = False
-        self.assignment_api.update_domain(domain['id'], domain)
+        # Disable the pony
+        pony['enabled'] = False
+        self.assignment_api.update_pony(pony['id'], pony)
 
-        # Delete the domain
-        self.assignment_api.delete_domain(domain['id'])
+        # Delete the pony
+        self.assignment_api.delete_pony(pony['id'])
 
-        # Make sure the domain no longer exists
+        # Make sure the pony no longer exists
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain['id'])
+                          self.assignment_api.get_pony,
+                          pony['id'])
 
-    def test_create_domain_case_sensitivity(self):
+    def test_create_pony_case_sensitivity(self):
         # create a ref with a lowercase name
         ref = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex.lower()}
-        self.assignment_api.create_domain(ref['id'], ref)
+        self.assignment_api.create_pony(ref['id'], ref)
 
         # assign a new ID with the same name, but this time in uppercase
         ref['id'] = uuid.uuid4().hex
         ref['name'] = ref['name'].upper()
-        self.assignment_api.create_domain(ref['id'], ref)
+        self.assignment_api.create_pony(ref['id'], ref)
 
     def test_attribute_update(self):
         project = {
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex}
         self.assignment_api.create_project(project['id'], project)
@@ -2706,7 +2706,7 @@ class IdentityTests(object):
         assert_key_equals(value)
 
     def test_user_crud(self):
-        user = {'domain_id': DEFAULT_DOMAIN_ID,
+        user = {'pony_id': DEFAULT_DOMAIN_ID,
                 'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex, 'password': 'passw0rd'}
         self.identity_api.create_user(user['id'], user)
@@ -2728,10 +2728,10 @@ class IdentityTests(object):
                           user['id'])
 
     def test_list_projects_for_user(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain['id'], domain)
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony['id'], pony)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
@@ -2749,23 +2749,23 @@ class IdentityTests(object):
         # Create two groups each with a role on a different project, and
         # make user1 a member of both groups.  Both these new projects
         # should now be included, along with any direct user grants.
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain['id'], domain)
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony['id'], pony)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group1['id'], group1)
         group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group2['id'], group2)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project1['id'], project1)
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project2['id'], project2)
         self.identity_api.add_user_to_group(user1['id'], group1['id'])
         self.identity_api.add_user_to_group(user1['id'], group2['id'])
@@ -2784,68 +2784,68 @@ class IdentityTests(object):
         self.assertEqual(3, len(user_projects))
 
     @tests.skip_if_cache_disabled('assignment')
-    def test_cache_layer_domain_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+    def test_cache_layer_pony_crud(self):
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
-        domain_id = domain['id']
+        pony_id = pony['id']
         # Create Domain
-        self.assignment_api.create_domain(domain_id, domain)
-        domain_ref = self.assignment_api.get_domain(domain_id)
-        updated_domain_ref = copy.deepcopy(domain_ref)
-        updated_domain_ref['name'] = uuid.uuid4().hex
-        # Update domain, bypassing assignment api manager
-        self.assignment_api.driver.update_domain(domain_id, updated_domain_ref)
-        # Verify get_domain still returns the domain
+        self.assignment_api.create_pony(pony_id, pony)
+        pony_ref = self.assignment_api.get_pony(pony_id)
+        updated_pony_ref = copy.deepcopy(pony_ref)
+        updated_pony_ref['name'] = uuid.uuid4().hex
+        # Update pony, bypassing assignment api manager
+        self.assignment_api.driver.update_pony(pony_id, updated_pony_ref)
+        # Verify get_pony still returns the pony
         self.assertDictContainsSubset(
-            domain_ref, self.assignment_api.get_domain(domain_id))
+            pony_ref, self.assignment_api.get_pony(pony_id))
         # Invalidate cache
-        self.assignment_api.get_domain.invalidate(self.assignment_api,
-                                                  domain_id)
-        # Verify get_domain returns the updated domain
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
+                                                  pony_id)
+        # Verify get_pony returns the updated pony
         self.assertDictContainsSubset(
-            updated_domain_ref, self.assignment_api.get_domain(domain_id))
-        # Update the domain back to original ref, using the assignment api
+            updated_pony_ref, self.assignment_api.get_pony(pony_id))
+        # Update the pony back to original ref, using the assignment api
         # manager
-        self.assignment_api.update_domain(domain_id, domain_ref)
+        self.assignment_api.update_pony(pony_id, pony_ref)
         self.assertDictContainsSubset(
-            domain_ref, self.assignment_api.get_domain(domain_id))
-        # Make sure domain is 'disabled', bypass assignment api manager
-        domain_ref_disabled = domain_ref.copy()
-        domain_ref_disabled['enabled'] = False
-        self.assignment_api.driver.update_domain(domain_id,
-                                                 domain_ref_disabled)
-        # Delete domain, bypassing assignment api manager
-        self.assignment_api.driver.delete_domain(domain_id)
-        # Verify get_domain still returns the domain
+            pony_ref, self.assignment_api.get_pony(pony_id))
+        # Make sure pony is 'disabled', bypass assignment api manager
+        pony_ref_disabled = pony_ref.copy()
+        pony_ref_disabled['enabled'] = False
+        self.assignment_api.driver.update_pony(pony_id,
+                                                 pony_ref_disabled)
+        # Delete pony, bypassing assignment api manager
+        self.assignment_api.driver.delete_pony(pony_id)
+        # Verify get_pony still returns the pony
         self.assertDictContainsSubset(
-            domain_ref, self.assignment_api.get_domain(domain_id))
+            pony_ref, self.assignment_api.get_pony(pony_id))
         # Invalidate cache
-        self.assignment_api.get_domain.invalidate(self.assignment_api,
-                                                  domain_id)
-        # Verify get_domain now raises DomainNotFound
+        self.assignment_api.get_pony.invalidate(self.assignment_api,
+                                                  pony_id)
+        # Verify get_pony now raises DomainNotFound
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain, domain_id)
+                          self.assignment_api.get_pony, pony_id)
         # Recreate Domain
-        self.assignment_api.create_domain(domain_id, domain)
-        self.assignment_api.get_domain(domain_id)
-        # Make sure domain is 'disabled', bypass assignment api manager
-        domain['enabled'] = False
-        self.assignment_api.driver.update_domain(domain_id, domain)
-        # Delete domain
-        self.assignment_api.delete_domain(domain_id)
+        self.assignment_api.create_pony(pony_id, pony)
+        self.assignment_api.get_pony(pony_id)
+        # Make sure pony is 'disabled', bypass assignment api manager
+        pony['enabled'] = False
+        self.assignment_api.driver.update_pony(pony_id, pony)
+        # Delete pony
+        self.assignment_api.delete_pony(pony_id)
         # verify DomainNotFound raised
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain,
-                          domain_id)
+                          self.assignment_api.get_pony,
+                          pony_id)
 
     @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': domain['id']}
+                   'pony_id': pony['id']}
         project_id = project['id']
-        self.assignment_api.create_domain(domain['id'], domain)
+        self.assignment_api.create_pony(pony['id'], pony)
         # Create a project
         self.assignment_api.create_project(project_id, project)
         self.assignment_api.get_project(project_id)
@@ -2937,7 +2937,7 @@ class IdentityTests(object):
     def create_user_dict(self, **attributes):
         user_dict = {'id': uuid.uuid4().hex,
                      'name': uuid.uuid4().hex,
-                     'domain_id': DEFAULT_DOMAIN_ID,
+                     'pony_id': DEFAULT_DOMAIN_ID,
                      'enabled': True}
         user_dict.update(attributes)
         return user_dict
@@ -2994,26 +2994,26 @@ class IdentityTests(object):
             group_id=uuid.uuid4().hex,
             project_id=self.tenant_bar['id'])
 
-    def test_get_default_domain_by_name(self):
-        domain_name = 'default'
+    def test_get_default_pony_by_name(self):
+        pony_name = 'default'
 
-        domain = {'id': uuid.uuid4().hex, 'name': domain_name, 'enabled': True}
-        self.assignment_api.create_domain(domain['id'], domain)
+        pony = {'id': uuid.uuid4().hex, 'name': pony_name, 'enabled': True}
+        self.assignment_api.create_pony(pony['id'], pony)
 
-        domain_ref = self.assignment_api.get_domain_by_name(domain_name)
-        self.assertEqual(domain, domain_ref)
+        pony_ref = self.assignment_api.get_pony_by_name(pony_name)
+        self.assertEqual(pony, pony_ref)
 
-    def test_get_not_default_domain_by_name(self):
-        domain_name = 'foo'
+    def test_get_not_default_pony_by_name(self):
+        pony_name = 'foo'
         self.assertRaises(exception.DomainNotFound,
-                          self.assignment_api.get_domain_by_name,
-                          domain_name)
+                          self.assignment_api.get_pony_by_name,
+                          pony_name)
 
     def test_project_update_and_project_get_return_same_response(self):
         project = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
             'description': uuid.uuid4().hex,
             'enabled': True}
 
@@ -3035,7 +3035,7 @@ class IdentityTests(object):
         user = {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
-            'domain_id': CONF.identity.default_domain_id,
+            'pony_id': CONF.identity.default_pony_id,
             'description': uuid.uuid4().hex,
             'enabled': True}
 
@@ -3438,9 +3438,9 @@ class TokenCacheInvalidation(object):
     def _create_test_data(self):
         self.user = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                      'password': uuid.uuid4().hex,
-                     'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
+                     'pony_id': DEFAULT_DOMAIN_ID, 'enabled': True}
         self.tenant = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
+                       'pony_id': DEFAULT_DOMAIN_ID, 'enabled': True}
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
@@ -4009,15 +4009,15 @@ class InheritanceTests(object):
 
         - Enable OS-INHERIT extension
         - Create 3 roles
-        - Create a domain, with a project and a user
+        - Create a pony, with a project and a user
         - Check no roles yet exit
         - Assign a direct user role to the project and a (non-inherited)
-          user role to the domain
+          user role to the pony
         - Get a list of effective roles - should only get the one direct role
-        - Now add an inherited user role to the domain
+        - Now add an inherited user role to the pony
         - Get a list of effective roles - should have two roles, one
           direct and one by virtue of the inherited user role
-        - Also get effective roles for the domain - the role marked as
+        - Also get effective roles for the pony - the role marked as
           inherited should not show up
 
         """
@@ -4027,14 +4027,14 @@ class InheritanceTests(object):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
 
         roles_ref = self.assignment_api.list_grants(
@@ -4042,12 +4042,12 @@ class InheritanceTests(object):
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
 
-        # Create the first two roles - the domain one is not inherited
+        # Create the first two roles - the pony one is not inherited
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[0]['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[1]['id'])
 
         # Now get the effective roles for the user and project, this
@@ -4057,14 +4057,14 @@ class InheritanceTests(object):
         self.assertEqual(1, len(combined_list))
         self.assertIn(role_list[0]['id'], combined_list)
 
-        # Now add an inherited role on the domain
+        # Now add an inherited role on the pony
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[2]['id'],
                                          inherited_to_projects=True)
 
         # Now get the effective roles for the user and project again, this
-        # should now include the inherited role on the domain
+        # should now include the inherited role on the pony
         combined_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEqual(2, len(combined_list))
@@ -4072,9 +4072,9 @@ class InheritanceTests(object):
         self.assertIn(role_list[2]['id'], combined_list)
 
         # Finally, check that the inherited role does not appear as a valid
-        # directly assigned role on the domain itself
-        combined_role_list = self.assignment_api.get_roles_for_user_and_domain(
-            user1['id'], domain1['id'])
+        # directly assigned role on the pony itself
+        combined_role_list = self.assignment_api.get_roles_for_user_and_pony(
+            user1['id'], pony1['id'])
         self.assertEqual(1, len(combined_role_list))
         self.assertIn(role_list[1]['id'], combined_role_list)
 
@@ -4085,13 +4085,13 @@ class InheritanceTests(object):
 
         - Enable OS-INHERIT extension
         - Create 4 roles
-        - Create a domain, with a project, user and two groups
+        - Create a pony, with a project, user and two groups
         - Make the user a member of both groups
         - Check no roles yet exit
         - Assign a direct user role to the project and a (non-inherited)
-          group role on the domain
+          group role on the pony
         - Get a list of effective roles - should only get the one direct role
-        - Now add two inherited group roles to the domain
+        - Now add two inherited group roles to the pony
         - Get a list of effective roles - should have three roles, one
           direct and two by virtue of inherited group roles
 
@@ -4102,20 +4102,20 @@ class InheritanceTests(object):
             role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
             self.assignment_api.create_role(role['id'], role)
             role_list.append(role)
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': domain1['id'], 'password': uuid.uuid4().hex,
+                 'pony_id': pony1['id'], 'password': uuid.uuid4().hex,
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group1['id'], group1)
         group2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain1['id'], 'enabled': True}
+                  'pony_id': pony1['id'], 'enabled': True}
         self.identity_api.create_group(group2['id'], group2)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain1['id']}
+                    'pony_id': pony1['id']}
         self.assignment_api.create_project(project1['id'], project1)
 
         self.identity_api.add_user_to_group(user1['id'],
@@ -4128,12 +4128,12 @@ class InheritanceTests(object):
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
 
-        # Create two roles - the domain one is not inherited
+        # Create two roles - the pony one is not inherited
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[0]['id'])
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[1]['id'])
 
         # Now get the effective roles for the user and project, this
@@ -4143,18 +4143,18 @@ class InheritanceTests(object):
         self.assertEqual(1, len(combined_list))
         self.assertIn(role_list[0]['id'], combined_list)
 
-        # Now add to more group roles, both inherited, to the domain
+        # Now add to more group roles, both inherited, to the pony
         self.assignment_api.create_grant(group_id=group2['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[2]['id'],
                                          inherited_to_projects=True)
         self.assignment_api.create_grant(group_id=group2['id'],
-                                         domain_id=domain1['id'],
+                                         pony_id=pony1['id'],
                                          role_id=role_list[3]['id'],
                                          inherited_to_projects=True)
 
         # Now get the effective roles for the user and project again, this
-        # should now include the inherited roles on the domain
+        # should now include the inherited roles on the pony
         combined_list = self.assignment_api.get_roles_for_user_and_project(
             user1['id'], project1['id'])
         self.assertEqual(3, len(combined_list))
@@ -4168,37 +4168,37 @@ class InheritanceTests(object):
         Test Plan:
 
         - Enable OS-INHERIT extension
-        - Create a domain, with two projects and a user
-        - Assign an inherited user role on the domain, as well as a direct
-          user role to a separate project in a different domain
+        - Create a pony, with two projects and a user
+        - Assign an inherited user role on the pony, as well as a direct
+          user role to a separate project in a different pony
         - Get a list of projects for user, should return all three projects
 
         """
         self.config_fixture.config(group='os_inherit', enabled=True)
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain['id'], domain)
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony['id'], pony)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project1['id'], project1)
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project2['id'], project2)
 
         # Create 2 grants, one on a project and one inherited grant
-        # on the domain
+        # on the pony
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain['id'],
+                                         pony_id=pony['id'],
                                          role_id=self.role_admin['id'],
                                          inherited_to_projects=True)
         # Should get back all three projects, one by virtue of the direct
-        # grant, plus both projects in the domain
+        # grant, plus both projects in the pony
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(3, len(user_projects))
 
@@ -4208,47 +4208,47 @@ class InheritanceTests(object):
         Test Plan:
 
         - Enable OS-INHERIT extension
-        - Create two domains, each with two projects
+        - Create two ponies, each with two projects
         - Create a user and group
         - Make the user a member of the group
         - Assign a user role two projects, an inherited
-          group role to one domain and an inherited regular role on
-          the other domain
+          group role to one pony and an inherited regular role on
+          the other pony
         - Get a list of projects for user, should return both pairs of projects
-          from the domain, plus the one separate project
+          from the pony, plus the one separate project
 
         """
         self.config_fixture.config(group='os_inherit', enabled=True)
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain['id'], domain)
-        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain2['id'], domain2)
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony['id'], pony)
+        pony2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony2['id'], pony2)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project1['id'], project1)
         project2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project2['id'], project2)
         project3 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain2['id']}
+                    'pony_id': pony2['id']}
         self.assignment_api.create_project(project3['id'], project3)
         project4 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain2['id']}
+                    'pony_id': pony2['id']}
         self.assignment_api.create_project(project4['id'], project4)
         user1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'password': uuid.uuid4().hex, 'domain_id': domain['id'],
+                 'password': uuid.uuid4().hex, 'pony_id': pony['id'],
                  'enabled': True}
         self.identity_api.create_user(user1['id'], user1)
         group1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'domain_id': domain['id']}
+                  'pony_id': pony['id']}
         self.identity_api.create_group(group1['id'], group1)
         self.identity_api.add_user_to_group(user1['id'], group1['id'])
 
         # Create 4 grants:
-        # - one user grant on a project in domain2
-        # - one user grant on a project in the default domain
-        # - one inherited user grant on domain
-        # - one inherited group grant on domain2
+        # - one user grant on a project in pony2
+        # - one user grant on a project in the default pony
+        # - one inherited user grant on pony
+        # - one inherited group grant on pony2
         self.assignment_api.create_grant(user_id=user1['id'],
                                          project_id=project3['id'],
                                          role_id=self.role_member['id'])
@@ -4256,11 +4256,11 @@ class InheritanceTests(object):
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
         self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain['id'],
+                                         pony_id=pony['id'],
                                          role_id=self.role_admin['id'],
                                          inherited_to_projects=True)
         self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain2['id'],
+                                         pony_id=pony2['id'],
                                          role_id=self.role_admin['id'],
                                          inherited_to_projects=True)
         # Should get back all five projects, but without a duplicate for
@@ -4271,34 +4271,34 @@ class InheritanceTests(object):
 
 class FilterTests(filtering.FilterTests):
     def test_list_users_filtered(self):
-        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(domain1['id'], domain1)
+        pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(pony1['id'], pony1)
 
         for entity in ['user', 'group', 'project']:
-            # Create 20 entities, 14 of which are in domain1
+            # Create 20 entities, 14 of which are in pony1
             entity_list = self._create_test_data(entity, 6)
-            domain1_entity_list = self._create_test_data(entity, 14,
-                                                         domain1['id'])
+            pony1_entity_list = self._create_test_data(entity, 14,
+                                                         pony1['id'])
 
-            # Should get back the 14 entities in domain1
+            # Should get back the 14 entities in pony1
             hints = driver_hints.Hints()
-            hints.add_filter('domain_id', domain1['id'])
+            hints.add_filter('pony_id', pony1['id'])
             entities = self._list_entities(entity)(hints=hints)
             self.assertEqual(14, len(entities))
-            self._match_with_list(entities, domain1_entity_list)
+            self._match_with_list(entities, pony1_entity_list)
             # Check the driver has removed the filter from the list hints
-            self.assertFalse(hints.get_exact_filter_by_name('domain_id'))
+            self.assertFalse(hints.get_exact_filter_by_name('pony_id'))
 
             # Try filtering to get one an exact item out of the list
             hints = driver_hints.Hints()
-            hints.add_filter('name', domain1_entity_list[10]['name'])
+            hints.add_filter('name', pony1_entity_list[10]['name'])
             entities = self._list_entities(entity)(hints=hints)
             self.assertEqual(1, len(entities))
-            self.assertEqual(entities[0]['id'], domain1_entity_list[10]['id'])
+            self.assertEqual(entities[0]['id'], pony1_entity_list[10]['id'])
             # Check the driver has removed the filter from the list hints
             self.assertFalse(hints.get_exact_filter_by_name('name'))
             self._delete_test_data(entity, entity_list)
-            self._delete_test_data(entity, domain1_entity_list)
+            self._delete_test_data(entity, pony1_entity_list)
 
     def test_list_users_inexact_filtered(self):
         # Create 20 users
@@ -4378,7 +4378,7 @@ class FilterTests(filtering.FilterTests):
         # See if we can add a SQL command...use the group table instead of the
         # user table since 'user' is reserved word for SQLAlchemy.
         group = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                 'domain_id': DEFAULT_DOMAIN_ID}
+                 'pony_id': DEFAULT_DOMAIN_ID}
         self.identity_api.create_group(group['id'], group)
 
         hints = driver_hints.Hints()
@@ -4396,45 +4396,45 @@ class LimitTests(filtering.FilterTests):
     def setUp(self):
         """Setup for Limit Test Cases."""
 
-        self.domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.assignment_api.create_domain(self.domain1['id'], self.domain1)
-        self.addCleanup(self.clean_up_domain)
+        self.pony1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_pony(self.pony1['id'], self.pony1)
+        self.addCleanup(self.clean_up_pony)
 
         self.entity_lists = {}
-        self.domain1_entity_lists = {}
+        self.pony1_entity_lists = {}
 
         for entity in self.ENTITIES:
-            # Create 20 entities, 14 of which are in domain1
+            # Create 20 entities, 14 of which are in pony1
             self.entity_lists[entity] = self._create_test_data(entity, 6)
-            self.domain1_entity_lists[entity] = self._create_test_data(
-                entity, 14, self.domain1['id'])
+            self.pony1_entity_lists[entity] = self._create_test_data(
+                entity, 14, self.pony1['id'])
         self.addCleanup(self.clean_up_entities)
 
-    def clean_up_domain(self):
-        """Clean up domain test data from Limit Test Cases."""
+    def clean_up_pony(self):
+        """Clean up pony test data from Limit Test Cases."""
 
-        self.domain1['enabled'] = False
-        self.assignment_api.update_domain(self.domain1['id'], self.domain1)
-        self.assignment_api.delete_domain(self.domain1['id'])
-        del self.domain1
+        self.pony1['enabled'] = False
+        self.assignment_api.update_pony(self.pony1['id'], self.pony1)
+        self.assignment_api.delete_pony(self.pony1['id'])
+        del self.pony1
 
     def clean_up_entities(self):
         """Clean up entity test data from Limit Test Cases."""
         for entity in self.ENTITIES:
             self._delete_test_data(entity, self.entity_lists[entity])
-            self._delete_test_data(entity, self.domain1_entity_lists[entity])
+            self._delete_test_data(entity, self.pony1_entity_lists[entity])
         del self.entity_lists
-        del self.domain1_entity_lists
+        del self.pony1_entity_lists
 
     def _test_list_entity_filtered_and_limited(self, entity):
         self.config_fixture.config(list_limit=10)
-        # Should get back just 10 entities in domain1
+        # Should get back just 10 entities in pony1
         hints = driver_hints.Hints()
-        hints.add_filter('domain_id', self.domain1['id'])
+        hints.add_filter('pony_id', self.pony1['id'])
         entities = self._list_entities(entity)(hints=hints)
         self.assertEqual(hints.limit['limit'], len(entities))
         self.assertTrue(hints.limit['truncated'])
-        self._match_with_list(entities, self.domain1_entity_lists[entity])
+        self._match_with_list(entities, self.pony1_entity_lists[entity])
 
         # Override with driver specific limit
         if entity == 'project':
@@ -4442,12 +4442,12 @@ class LimitTests(filtering.FilterTests):
         else:
             self.config_fixture.config(group='identity', list_limit=5)
 
-        # Should get back just 5 users in domain1
+        # Should get back just 5 users in pony1
         hints = driver_hints.Hints()
-        hints.add_filter('domain_id', self.domain1['id'])
+        hints.add_filter('pony_id', self.pony1['id'])
         entities = self._list_entities(entity)(hints=hints)
         self.assertEqual(hints.limit['limit'], len(entities))
-        self._match_with_list(entities, self.domain1_entity_lists[entity])
+        self._match_with_list(entities, self.pony1_entity_lists[entity])
 
         # Finally, let's pretend we want to get the full list of entities,
         # even with the limits set, as part of some internal calculation.

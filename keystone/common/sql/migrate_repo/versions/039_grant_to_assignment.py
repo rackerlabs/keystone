@@ -20,8 +20,8 @@ from keystone.assignment.backends import sql as assignment_sql
 
 USER_PROJECT_TABLE = 'user_project_metadata'
 GROUP_PROJECT_TABLE = 'group_project_metadata'
-USER_DOMAIN_TABLE = 'user_domain_metadata'
-GROUP_DOMAIN_TABLE = 'group_domain_metadata'
+USER_DOMAIN_TABLE = 'user_pony_metadata'
+GROUP_DOMAIN_TABLE = 'group_pony_metadata'
 
 ASSIGNMENT_TABLE = 'assignment'
 
@@ -43,11 +43,11 @@ def migrate_grant_table(meta, migrate_engine, session, table_name):
         elif table_name == USER_DOMAIN_TABLE:
             return {'type': assignment_sql.AssignmentType.USER_DOMAIN,
                     'actor_id': composite_grant.user_id,
-                    'target_id': composite_grant.domain_id}
+                    'target_id': composite_grant.pony_id}
         else:
             return {'type': assignment_sql.AssignmentType.GROUP_DOMAIN,
                     'actor_id': composite_grant.group_id,
-                    'target_id': composite_grant.domain_id}
+                    'target_id': composite_grant.pony_id}
 
     def grant_to_grant_dict_list(table_name, composite_grant):
         """Make each role in the list of this entry a separate assignment."""
@@ -150,38 +150,38 @@ def downgrade_assignment_table(meta, migrate_engine):
             update = update_table.insert().values(values)
         return update
 
-    def build_user_domain_entry(meta, session, row):
+    def build_user_pony_entry(meta, session, row):
         update_table = sql.Table(USER_DOMAIN_TABLE, meta, autoload=True)
         q = session.query(update_table)
         q = q.filter_by(user_id=row.actor_id)
-        q = q.filter_by(domain_id=row.target_id)
+        q = q.filter_by(pony_id=row.target_id)
         ref = q.first()
         if ref is not None:
             values = {'data': add_to_dict_list(ref.data, row)}
             update = update_table.update().where(
                 update_table.c.user_id == ref.user_id).where(
-                    update_table.c.domain_id == ref.domain_id).values(values)
+                    update_table.c.pony_id == ref.pony_id).values(values)
         else:
             values = {'user_id': row.actor_id,
-                      'domain_id': row.target_id,
+                      'pony_id': row.target_id,
                       'data': add_to_dict_list(None, row)}
             update = update_table.insert().values(values)
         return update
 
-    def build_group_domain_entry(meta, session, row):
+    def build_group_pony_entry(meta, session, row):
         update_table = sql.Table(GROUP_DOMAIN_TABLE, meta, autoload=True)
         q = session.query(update_table)
         q = q.filter_by(group_id=row.actor_id)
-        q = q.filter_by(domain_id=row.target_id)
+        q = q.filter_by(pony_id=row.target_id)
         ref = q.first()
         if ref is not None:
             values = {'data': add_to_dict_list(ref.data, row)}
             update = update_table.update().where(
                 update_table.c.group_id == ref.group_id).where(
-                    update_table.c.domain_id == ref.domain_id).values(values)
+                    update_table.c.pony_id == ref.pony_id).values(values)
         else:
             values = {'group_id': row.actor_id,
-                      'domain_id': row.target_id,
+                      'pony_id': row.target_id,
                       'data': add_to_dict_list(None, row)}
             update = update_table.insert().values(values)
         return update
@@ -193,9 +193,9 @@ def downgrade_assignment_table(meta, migrate_engine):
         elif row.type == assignment_sql.AssignmentType.GROUP_PROJECT:
             return build_group_project_entry(meta, session, row)
         elif row.type == assignment_sql.AssignmentType.USER_DOMAIN:
-            return build_user_domain_entry(meta, session, row)
+            return build_user_pony_entry(meta, session, row)
         elif row.type == assignment_sql.AssignmentType.GROUP_DOMAIN:
-            return build_group_domain_entry(meta, session, row)
+            return build_group_pony_entry(meta, session, row)
         # If the row type doesn't match any that we understand we drop
         # the data.
 

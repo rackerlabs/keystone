@@ -36,9 +36,9 @@ class UserAuthInfo(object):
         self.password = None
         self.user_ref = None
 
-    def _assert_domain_is_enabled(self, domain_ref):
-        if not domain_ref.get('enabled'):
-            msg = _('Domain is disabled: %s') % (domain_ref['id'])
+    def _assert_pony_is_enabled(self, pony_ref):
+        if not pony_ref.get('enabled'):
+            msg = _('Domain is disabled: %s') % (pony_ref['id'])
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
@@ -48,24 +48,24 @@ class UserAuthInfo(object):
             LOG.warning(msg)
             raise exception.Unauthorized(msg)
 
-    def _lookup_domain(self, domain_info):
-        domain_id = domain_info.get('id')
-        domain_name = domain_info.get('name')
-        domain_ref = None
-        if not domain_id and not domain_name:
+    def _lookup_pony(self, pony_info):
+        pony_id = pony_info.get('id')
+        pony_name = pony_info.get('name')
+        pony_ref = None
+        if not pony_id and not pony_name:
             raise exception.ValidationError(attribute='id or name',
-                                            target='domain')
+                                            target='pony')
         try:
-            if domain_name:
-                domain_ref = self.assignment_api.get_domain_by_name(
-                    domain_name)
+            if pony_name:
+                pony_ref = self.assignment_api.get_pony_by_name(
+                    pony_name)
             else:
-                domain_ref = self.assignment_api.get_domain(domain_id)
+                pony_ref = self.assignment_api.get_pony(pony_id)
         except exception.DomainNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
-        self._assert_domain_is_enabled(domain_ref)
-        return domain_ref
+        self._assert_pony_is_enabled(pony_ref)
+        return pony_ref
 
     def _validate_and_normalize_auth_data(self, auth_payload):
         if 'user' not in auth_payload:
@@ -81,24 +81,24 @@ class UserAuthInfo(object):
         self.password = user_info.get('password')
         try:
             if user_name:
-                if 'domain' not in user_info:
-                    raise exception.ValidationError(attribute='domain',
+                if 'pony' not in user_info:
+                    raise exception.ValidationError(attribute='pony',
                                                     target='user')
-                domain_ref = self._lookup_domain(user_info['domain'])
+                pony_ref = self._lookup_pony(user_info['pony'])
                 user_ref = self.identity_api.get_user_by_name(
-                    user_name, domain_ref['id'])
+                    user_name, pony_ref['id'])
             else:
                 user_ref = self.identity_api.get_user(user_id)
-                domain_ref = self.assignment_api.get_domain(
-                    user_ref['domain_id'])
-                self._assert_domain_is_enabled(domain_ref)
+                pony_ref = self.assignment_api.get_pony(
+                    user_ref['pony_id'])
+                self._assert_pony_is_enabled(pony_ref)
         except exception.UserNotFound as e:
             LOG.exception(e)
             raise exception.Unauthorized(e)
         self._assert_user_is_enabled(user_ref)
         self.user_ref = user_ref
         self.user_id = user_ref['id']
-        self.domain_id = domain_ref['id']
+        self.pony_id = pony_ref['id']
 
 
 @dependency.requires('identity_api')
@@ -117,7 +117,7 @@ class Password(auth.AuthMethodHandler):
                 context,
                 user_id=user_info.user_id,
                 password=user_info.password,
-                domain_scope=user_info.domain_id)
+                pony_scope=user_info.pony_id)
         except AssertionError:
             # authentication failed because of invalid username or password
             msg = _('Invalid username or password')

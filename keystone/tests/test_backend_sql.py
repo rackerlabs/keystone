@@ -32,7 +32,7 @@ from keystone.token.backends import sql as token_sql
 
 
 CONF = config.CONF
-DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+DEFAULT_DOMAIN_ID = CONF.identity.default_pony_id
 
 
 class SqlTests(tests.SQLDriverOverrides, tests.TestCase):
@@ -73,7 +73,7 @@ class SqlModels(SqlTests):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 255),
                 ('password', sql.String, 128),
-                ('domain_id', sql.String, 64),
+                ('pony_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('user', cols)
@@ -82,21 +82,21 @@ class SqlModels(SqlTests):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
                 ('description', sql.Text, None),
-                ('domain_id', sql.String, 64),
+                ('pony_id', sql.String, 64),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('group', cols)
 
-    def test_domain_model(self):
+    def test_pony_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
                 ('enabled', sql.Boolean, None))
-        self.assertExpectedSchema('domain', cols)
+        self.assertExpectedSchema('pony', cols)
 
     def test_project_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
                 ('description', sql.Text, None),
-                ('domain_id', sql.String, 64),
+                ('pony_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('project', cols)
@@ -129,7 +129,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_user_with_project_association(self):
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.identity_api.create_user(user['id'], user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
@@ -142,7 +142,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_create_null_user_name(self):
         user = {'id': uuid.uuid4().hex,
                 'name': None,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': uuid.uuid4().hex}
         self.assertRaises(exception.ValidationError,
                           self.identity_api.create_user,
@@ -159,7 +159,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_create_null_project_name(self):
         tenant = {'id': uuid.uuid4().hex,
                   'name': None,
-                  'domain_id': DEFAULT_DOMAIN_ID}
+                  'pony_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
                           self.assignment_api.create_project,
                           tenant['id'],
@@ -186,7 +186,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
     def test_delete_project_with_user_association(self):
         user = {'id': 'fake',
                 'name': 'fakeuser',
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user('fake', user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
@@ -200,7 +200,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # or roles is correctly updated when a user is deleted
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user(user['id'], user)
         role = {'id': uuid.uuid4().hex,
@@ -224,7 +224,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         # or roles is correctly updated when a project is deleted
         user = {'id': uuid.uuid4().hex,
                 'name': uuid.uuid4().hex,
-                'domain_id': DEFAULT_DOMAIN_ID,
+                'pony_id': DEFAULT_DOMAIN_ID,
                 'password': 'passwd'}
         self.identity_api.create_user(user['id'], user)
         role = {'id': uuid.uuid4().hex,
@@ -259,7 +259,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         tenant = {
             'id': tenant_id,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             arbitrary_key: arbitrary_value}
         ref = self.assignment_api.create_project(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
@@ -286,7 +286,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex,
             arbitrary_key: arbitrary_value}
         ref = self.identity_api.create_user(user_id, user)
@@ -307,7 +307,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user = {
             'id': user_id,
             'name': uuid.uuid4().hex,
-            'domain_id': DEFAULT_DOMAIN_ID,
+            'pony_id': DEFAULT_DOMAIN_ID,
             'password': uuid.uuid4().hex}
 
         self.identity_api.create_user(user_id, user)

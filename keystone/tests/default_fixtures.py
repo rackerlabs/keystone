@@ -21,13 +21,13 @@ TENANTS = [
     {
         'id': 'bar',
         'name': 'BAR',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'pony_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
         'enabled': True,
     }, {
         'id': 'baz',
         'name': 'BAZ',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'pony_id': DEFAULT_DOMAIN_ID,
         'description': 'description',
         'enabled': True,
     }, {
@@ -35,13 +35,13 @@ TENANTS = [
         'name': 'MTU',
         'description': 'description',
         'enabled': True,
-        'domain_id': DEFAULT_DOMAIN_ID
+        'pony_id': DEFAULT_DOMAIN_ID
     }, {
         'id': 'service',
         'name': 'service',
         'description': 'description',
         'enabled': True,
-        'domain_id': DEFAULT_DOMAIN_ID
+        'pony_id': DEFAULT_DOMAIN_ID
     }
 ]
 
@@ -50,7 +50,7 @@ USERS = [
     {
         'id': 'foo',
         'name': 'FOO',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'pony_id': DEFAULT_DOMAIN_ID,
         'password': 'foo2',
         'tenants': ['bar'],
         'enabled': True,
@@ -58,7 +58,7 @@ USERS = [
     }, {
         'id': 'two',
         'name': 'TWO',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'pony_id': DEFAULT_DOMAIN_ID,
         'password': 'two2',
         'enabled': True,
         'default_project_id': 'baz',
@@ -67,7 +67,7 @@ USERS = [
     }, {
         'id': 'badguy',
         'name': 'BadGuy',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'pony_id': DEFAULT_DOMAIN_ID,
         'password': 'bad',
         'enabled': False,
         'default_project_id': 'baz',
@@ -76,7 +76,7 @@ USERS = [
     }, {
         'id': 'sna',
         'name': 'SNA',
-        'domain_id': DEFAULT_DOMAIN_ID,
+        'pony_id': DEFAULT_DOMAIN_ID,
         'password': 'snafu',
         'enabled': True,
         'tenants': ['bar'],

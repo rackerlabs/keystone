@@ -62,14 +62,14 @@ class TenantTestCase(tests.TestCase):
         # The new user isn't included in the result, so no change.
         self.assertEqual(orig_project_users, new_project_users)
 
-    def test_list_projects_default_domain(self):
-        """Test that list projects only returns those in the default domain."""
+    def test_list_projects_default_pony(self):
+        """Test that list projects only returns those in the default pony."""
 
-        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        pony = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
-        self.assignment_api.create_domain(domain['id'], domain)
+        self.assignment_api.create_pony(pony['id'], pony)
         project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                    'domain_id': domain['id']}
+                    'pony_id': pony['id']}
         self.assignment_api.create_project(project1['id'], project1)
         # Check the real total number of projects, we should have the above
         # plus those in the default features
@@ -78,10 +78,10 @@ class TenantTestCase(tests.TestCase):
 
         # Now list all projects using the v2 API - we should only get
         # back those in the default features, since only those are in the
-        # default domain.
+        # default pony.
         refs = self.tenant_controller.get_all_projects(_ADMIN_CONTEXT)
         self.assertEqual(len(default_fixtures.TENANTS), len(refs['tenants']))
         for tenant in default_fixtures.TENANTS:
             tenant_copy = tenant.copy()
-            tenant_copy.pop('domain_id')
+            tenant_copy.pop('pony_id')
             self.assertIn(tenant_copy, refs['tenants'])
