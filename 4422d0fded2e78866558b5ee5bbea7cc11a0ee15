@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ba4ca6c9",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-04T04:26:24Z",
+      "side": 1,
+      "message": "If the Authorization header is not correctly constructed and therefore we can\u0027t parse into username and password as designed should we explicitly catch this? For instance, if my Authorization header content (un-encoded) is \"Basic foobar\" I\u0027ll currently get an ugly error along the lines \"ValueError: need more than 1 value to pack\" in the case no colon is specified.",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
