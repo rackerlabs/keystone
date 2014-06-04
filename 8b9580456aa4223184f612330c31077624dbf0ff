@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_820cd33c",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-04T13:23:05Z",
+      "side": 1,
+      "message": "endpoint ID?",
+      "revId": "8b9580456aa4223184f612330c31077624dbf0ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c2497b32",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-04T13:23:05Z",
+      "side": 1,
+      "message": "such as service ID and service name? why not restrict this to:\n\n  if attr in (\u0027id, \u0027name\u0027):\n\nso that it\u0027s self-documenting. is there anything else you\u0027re trying to support?",
+      "revId": "8b9580456aa4223184f612330c31077624dbf0ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_42548bfe",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-04T13:23:05Z",
+      "side": 1,
+      "message": "that\u0027s true for templated, but why shouldn\u0027t you be able to enable \u0026 disable endpoints in a KVS backend?",
+      "revId": "8b9580456aa4223184f612330c31077624dbf0ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
