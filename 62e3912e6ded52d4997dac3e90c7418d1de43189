@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_20604dce",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-04T18:29:15Z",
+      "side": 1,
+      "message": "suggest changing \"attribute\" to \"option\": \u0027this attribute must be set to the attribute that is\u0027 is difficult to read/understand.",
+      "revId": "62e3912e6ded52d4997dac3e90c7418d1de43189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_40b47934",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-04T18:29:15Z",
+      "side": 1,
+      "message": "\"Any\" attribute? Are there any restrictions? Is this option just ignored if query_scope is set to \u0027sub\u0027?",
+      "revId": "62e3912e6ded52d4997dac3e90c7418d1de43189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
