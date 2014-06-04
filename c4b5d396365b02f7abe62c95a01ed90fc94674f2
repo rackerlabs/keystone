@@ -16,6 +16,24 @@
       "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2b9e8a07",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-04T06:08:37Z",
+      "side": 1,
+      "message": "Refresh has extra overhead: it would make the same call a get would make to the DB. This is a case of trying to avoid incurring an extra DB call with no direct reason to.\n\nThere is little reason to pre-seed the cache in this case as the next call to the get method will seed the cache. Updates do not necessitate a subsequent operation, sometimes an update is just an update.",
+      "parentUuid": "1ae5cdf2_19379a4f",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
