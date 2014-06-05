@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_1b52b766",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-05T18:59:44Z",
+      "side": 1,
+      "message": "Yes, not every update needs to be followed by get call. I was trying to follow the pattern where in above create_project logic, the entity is pushed into cache after driver create call. Instead of refresh, other option is to call \u0027set\u0027 as latest data (\u0027ret\u0027) is already read from DB. This can be useful for subsequent gets.",
+      "parentUuid": "1ae5cdf2_2b9e8a07",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_2c9f5a04",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 2
