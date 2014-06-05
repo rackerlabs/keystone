@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_0c0b7e8e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-05T05:26:19Z",
+      "side": 1,
+      "message": "Very straightforward. Just making sure you can get access to the original tenant name later on when doing the cache invalidate.  I like it!",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_19379a4f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "Refresh has extra overhead: it would make the same call a get would make to the DB. This is a case of trying to avoid incurring an extra DB call with no direct reason to.\n\nThere is little reason to pre-seed the cache in this case as the next call to the get method will seed the cache. Updates do not necessitate a subsequent operation, sometimes an update is just an update.",
       "parentUuid": "1ae5cdf2_19379a4f",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2c9f5a04",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2798,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-05T05:26:19Z",
+      "side": 1,
+      "message": "Well that\u0027s a pretty straightforward test case!",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6cb32298",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2872,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-05T05:26:19Z",
+      "side": 1,
+      "message": "Next verse, almost the same as the first! Again very straightforward test case!",
       "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
