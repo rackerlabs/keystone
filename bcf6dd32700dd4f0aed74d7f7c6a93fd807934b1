@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b888fb71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-06-05T10:23:27Z",
+      "side": 1,
+      "message": "Please follow the 80 character line limit for commit message text.",
+      "revId": "bcf6dd32700dd4f0aed74d7f7c6a93fd807934b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
