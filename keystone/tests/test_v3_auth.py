@@ -31,13 +31,7 @@ from keystone.tests import test_v3
 CONF = config.CONF
 
 
-class TestAuthInfo(test_v3.RestfulTestCase):
-    # TODO(henry-nash) These tests are somewhat inefficient, since by
-    # using the test_v3.RestfulTestCase class to gain access to the auth
-    # building helper functions, they cause backend databases and fixtures
-    # to be loaded unnecessarily.  Separating out the helper functions from
-    # this base class would improve efficiency (Bug #1134836)
-
+class TestAuthInfo(test_v3.RestfulTestCaseHelper):
     def test_missing_auth_methods(self):
         auth_data = {'identity': {}}
         auth_data['identity']['token'] = {'id': uuid.uuid4().hex}
@@ -2403,7 +2397,7 @@ class TestTrustOptional(test_v3.RestfulTestCase):
 
 
 @dependency.requires('revoke_api')
-class TestTrustAuth(TestAuthInfo):
+class TestTrustAuth(test_v3.RestfulTestCase):
     EXTENSION_NAME = 'revoke'
     EXTENSION_TO_ADD = 'revoke_extension'
 
