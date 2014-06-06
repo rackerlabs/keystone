@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_9dba166d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-06T19:37:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_9d2a162b",
+      "revId": "ef4687152866d5f46215346746d7c531b237955b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_fa56c029",
         "filename": "keystone/exception.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-06T19:13:46Z",
       "side": 1,
       "message": "nik: enabled",
+      "revId": "ef4687152866d5f46215346746d7c531b237955b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7db54a7d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-06T19:37:30Z",
+      "side": 1,
+      "message": "Done in next patch.",
+      "parentUuid": "1ae5cdf2_fa56c029",
       "revId": "ef4687152866d5f46215346746d7c531b237955b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
