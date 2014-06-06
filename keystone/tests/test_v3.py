@@ -317,11 +317,15 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['domain_id'] = domain_id
         return ref
 
-    def new_credential_ref(self, user_id, project_id=None):
-        ref = self.new_ref()
+    def new_credential_ref(self, user_id, project_id=None, cred_type=None):
+        ref = dict()
         ref['user_id'] = user_id
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
+        if cred_type == 'ec2':
+            ref['type'] = 'ec2'
+            ref['blob'] = {'blah': 'test'}
+        else:
+            ref['type'] = 'cert'
+            ref['blob'] = uuid.uuid4().hex
         if project_id:
             ref['project_id'] = project_id
         return ref
@@ -957,6 +961,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'credentials',
             self.assertValidCredential,
+            keys_to_check=['blob', 'user_id', 'type'],
             *args,
             **kwargs)
 
@@ -965,6 +970,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'credential',
             self.assertValidCredential,
+            keys_to_check=['blob', 'user_id', 'type'],
             *args,
             **kwargs)
 
