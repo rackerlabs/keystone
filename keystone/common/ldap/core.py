@@ -1187,10 +1187,11 @@ class BaseLdap(object):
             mod = (ldap.MOD_ADD, self.member_attribute, member_dn)
             conn.modify_s(member_list_dn, [mod])
         except ldap.TYPE_OR_VALUE_EXISTS:
-            raise exception.Conflict(_('Member %(member)s is already a member'
-                                       ' of group %(group)s') % {
-                                     'member': member_dn,
-                                     'group': member_list_dn})
+            raise exception.Conflict(
+                type='group',
+                details=_('Member %(member)s is already a member of group '
+                          '%(group)s') % {'member': member_dn,
+                                          'group': member_list_dn})
         except ldap.NO_SUCH_OBJECT:
             raise self._not_found(member_list_dn)
         finally:

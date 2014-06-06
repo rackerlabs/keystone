@@ -628,7 +628,9 @@ class RoleApi(common_ldap.BaseLdap):
     def update(self, role_id, role):
         try:
             old_name = self.get_by_name(role['name'])
-            raise exception.Conflict(_('Cannot duplicate name %s') % old_name)
+            raise exception.Conflict(
+                type='role assignment',
+                details=_('Cannot duplicate name %s') % old_name)
         except exception.NotFound:
             pass
         return super(RoleApi, self).update(role_id, role)
