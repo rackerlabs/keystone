@@ -152,6 +152,25 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
             self.exc_str + six.text_type(' ') + translated_amendment,
             six.text_type(e))
 
+    def test_conflict_error_no_debug(self):
+        conflict_type = 'test'
+        self.config_fixture.config(debug=False)
+        e = exception.Conflict(type=conflict_type, details=self.exc_str)
+        msg_conflict = exception.Conflict(self.exc_str)
+        expected = e.message_format % {'type': conflict_type, 'details': ''}
+        self.assertEqual(expected, six.text_type(e))
+        self.assertEqual(self.exc_str, six.text_type(msg_conflict))
+
+    def test_conflict_error_debug(self):
+        conflict_type = 'test'
+        self.config_fixture.config(debug=True)
+        e = exception.Conflict(type=conflict_type, details=self.exc_str)
+        msg_conflict = exception.Conflict(self.exc_str)
+        expected = e.message_format % {'type': conflict_type,
+                                       'details': self.exc_str}
+        self.assertEqual(expected, six.text_type(e))
+        self.assertEqual(self.exc_str, six.text_type(msg_conflict))
+
 
 class SecurityErrorTestCase(ExceptionTestCase):
     """Tests whether security-related info is exposed to the API user."""
