@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_95aa0b83",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-06T05:17:00Z",
+      "side": 1,
+      "message": "Great comment! Very helpful",
+      "revId": "4bd130280229a86b118836695bbbb0e13c818264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7569fff7",
+        "filename": "keystone/tests/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-06T05:17:00Z",
+      "side": 1,
+      "message": "So by setting the configuration value of max_password_length to greater than MAX_PASSWORD_SIZE you are able to simulate the user bug that was reported. Very cool!",
+      "revId": "4bd130280229a86b118836695bbbb0e13c818264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
