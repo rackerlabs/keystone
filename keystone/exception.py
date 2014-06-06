@@ -269,6 +269,15 @@ class FederatedProtocolNotFound(NotFound):
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s."
                        " %(details)s")
+
+    def _build_message(self, message, **kwargs):
+            if not CONF.debug:
+                # NOTE(morganfainberg): Do not expose the details unless debug
+                # is enabled. 'details' could expose the underlying SQL queries
+                # and should not be exposed under normal production operation
+                kwargs['details'] = ''
+            return super(Conflict, self)._build_message(message, **kwargs)
+
     code = 409
     title = 'Conflict'
 
