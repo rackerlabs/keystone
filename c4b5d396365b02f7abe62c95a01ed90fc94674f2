@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_87d009cb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-06T18:08:41Z",
+      "side": 1,
+      "message": "I found that create usually is followed by a get. Updates less so.\n\nAlso, in this case use of .set() would be better than .refresh. refresh would call back to the DB for no reason. The benefit of the pre-seeding of the cache is negligible in most cases and I could argue to remove it from the .create calls for roughly the same reasons as I\u0027m not using it here.\n\nThe first .get will populate the cache and in most cases is sufficient (even under high load) to increase performance noticeably.\n\nIn either case, if we are making a change from .invalidate to .set or .refresh, I\u0027d like it separate from this bug fix.",
+      "parentUuid": "1ae5cdf2_1b52b766",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_2c9f5a04",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 2
