@@ -34,6 +34,24 @@
       "revId": "820e4f153aa12f9686a98fcae309636216666909",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e28632b8",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 9569
+      },
+      "writtenOn": "2014-06-06T07:56:31Z",
+      "side": 0,
+      "message": "Yes, some fields in LDAP (not all) couldn\u0027t be empty or None. This check was added to escape follow unclear exception:\n\n INVALID_SYNTAX: {\u0027info\u0027: \u0027description: value #0 invalid per syntax\u0027, \u0027desc\u0027: \u0027Invalid syntax\u0027}",
+      "parentUuid": "7adec928_87b80ce7",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
