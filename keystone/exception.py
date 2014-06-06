@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import abc
+
 import six
 
 from keystone.common import config
@@ -129,6 +131,35 @@ class SecurityError(Error):
                 'amendment': self.amendment}
         else:
             return self.message_format % kwargs
+
+
+@six.add_metaclass(abc.ABCMeta)
+class SecurityErrorWithDebugMessage(SecurityError):
+    """Avoids exposing details of failures, unless in debug mode."""
+
+    @abc.abstractproperty
+    def debug_message_format(self):
+        raise NotImplemented()
+
+    @abc.abstractproperty
+    def _message_format(self):
+        raise NotImplemented()
+
+    @property
+    def message_format(self):
+        """Return the generic message format string unless debug is enabled."""
+        if CONF.debug:
+            return self.debug_message_format
+        return self._message_format
+
+    def _build_message(self, message, **kwargs):
+        if CONF.debug and 'exception' not in kwargs:
+            # Ensure that exception has a value to be extra defensive for
+            # substitutions and make sure the exception doesn't raise an
+            # exception.
+            kwargs['exception'] = ''
+        return super(SecurityErrorWithDebugMessage, self)._build_message(
+            message, **kwargs)
 
 
 class Unauthorized(SecurityError):
@@ -266,9 +297,12 @@ class FederatedProtocolNotFound(NotFound):
                        " IdentityProvider, %(idp_id)s")
 
 
-class Conflict(Error):
-    message_format = _("Conflict occurred attempting to store %(type)s."
-                       " %(details)s")
+class Conflict(SecurityErrorWithDebugMessage):
+    debug_message_format = _("Conflict occurred attempting to store %(type)s. "
+                             "%(details)s")
+
+    _message_format = _("Conflict occurred attempting to store %(type)s.")
+
     code = 409
     title = 'Conflict'
 
@@ -279,28 +313,12 @@ class RequestTooLarge(Error):
     title = 'Request is too large.'
 
 
-class UnexpectedError(SecurityError):
-    """Avoids exposing details of failures, unless in debug mode."""
+class UnexpectedError(SecurityErrorWithDebugMessage):
     _message_format = _("An unexpected error prevented the server "
                         "from fulfilling your request.")
 
     debug_message_format = _("An unexpected error prevented the server "
                              "from fulfilling your request. %(exception)s")
-
-    @property
-    def message_format(self):
-        """Return the generic message format string unless debug is enabled."""
-        if CONF.debug:
-            return self.debug_message_format
-        return self._message_format
-
-    def _build_message(self, message, **kwargs):
-        if CONF.debug and 'exception' not in kwargs:
-            # Ensure that exception has a value to be extra defensive for
-            # substitutions and make sure the exception doesn't raise an
-            # exception.
-            kwargs['exception'] = ''
-        return super(UnexpectedError, self)._build_message(message, **kwargs)
 
     code = 500
     title = 'Internal Server Error'
