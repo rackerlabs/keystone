@@ -277,6 +277,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.credential2 = self.new_credential_ref(
             user_id=self.user2['id'],
             project_id=self.project2['id'])
+        self.credential2['id'] = uuid.uuid4().hex
         self.credential_api.create_credential(
             self.credential2['id'],
             self.credential2)
@@ -455,6 +456,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.credential2 = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project2['id'])
+        self.credential2['id'] = uuid.uuid4().hex
         self.credential_api.create_credential(
             self.credential2['id'],
             self.credential2)
@@ -629,6 +631,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.credential2 = self.new_credential_ref(
             user_id=self.user2['id'],
             project_id=self.project['id'])
+        self.credential2['id'] = uuid.uuid4().hex
         self.credential_api.create_credential(
             self.credential2['id'],
             self.credential2)
