@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_989ea406",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "Yup -- thanks :-)",
+      "parentUuid": "1ae5cdf2_5064fa48",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_b03d3e2f",
         "filename": "bin/keystone-all",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_f31b4b1a",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "Glance, Nova and the oslo service library we\u0027re using here use \u0027workers\u0027 as an int counter, Swift uses ... worker_count. I think either is probably ok. I\u0027m inclined to leave as is unless you feel that\u0027s unacceptable.",
+      "parentUuid": "1ae5cdf2_b03d3e2f",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_f0f0a693",
         "filename": "bin/keystone-all",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-06-06T17:02:48Z",
       "side": 1,
       "message": "why do we have to do this and can\u0027t just always use launcher.launch_service(self.server, self.workers) ?\n\n(add a comment)",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3854b020",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "I\u0027ll need to take a look. (I\u0027ve just rebased the code as verbatim as possible.)",
+      "parentUuid": "1ae5cdf2_f0f0a693",
       "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_182e14a6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "Can you clarify? Not sure I get what you mean. Thanks.",
+      "parentUuid": "1ae5cdf2_b000de36",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_10f8b248",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
@@ -98,6 +170,24 @@
       "writtenOn": "2014-06-06T17:02:48Z",
       "side": 1,
       "message": "use keyword arguments for keyword params -- key\u003dkey,backlog\u003dbacklog. That way we can change the args easier.",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3802f00b",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "Yup",
+      "parentUuid": "1ae5cdf2_10f8b248",
       "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_53febf06",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "Not sure -- this is a WIP at the moment. If you test and see breakage let me know -- thanks.",
+      "parentUuid": "1ae5cdf2_10a6f253",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_706c9609",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
@@ -132,6 +240,24 @@
       "writtenOn": "2014-06-06T17:02:48Z",
       "side": 1,
       "message": "Add a comment why this exception should be eaten and not even logged.",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3319337a",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "I\u0027m not sure what Peter was thinking at this point -- do you have any idea?",
+      "parentUuid": "1ae5cdf2_706c9609",
       "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +292,24 @@
       "writtenOn": "2014-06-06T17:02:48Z",
       "side": 1,
       "message": "this needs be done twice?",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d33f2fb4",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-06T20:41:21Z",
+      "side": 1,
+      "message": "Nope. I\u0027ll remove one.",
+      "parentUuid": "1ae5cdf2_102b5295",
       "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
