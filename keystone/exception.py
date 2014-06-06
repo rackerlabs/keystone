@@ -134,6 +134,16 @@ class Unauthorized(SecurityError):
     title = 'Unauthorized'
 
 
+class SecurityValidationSizeError(SecurityError):
+    message_format = _("Request attribute %(attribute)s must be"
+                       " less than or equal to %(size)i. The server"
+                       " could not comply with the request because"
+                       " the attribute size is invalid (too large)."
+                       " The client is assumed to be in error.")
+    code = 400
+    title = 'Bad Request'
+
+
 class AuthPluginException(Unauthorized):
     message_format = _("Authentication plugin error.")
 

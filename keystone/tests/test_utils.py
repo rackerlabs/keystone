@@ -32,7 +32,10 @@ import functools
 import os
 import time
 
+import passlib.utils
+
 from keystone.common import utils
+from keystone import exception
 from keystone import service
 from keystone import tests
 
@@ -74,6 +77,15 @@ class UtilsTestCase(tests.TestCase):
         bigboy = '0' * 9999999
         hashed = utils.hash_password(bigboy)
         self.assertTrue(utils.check_password(bigboy, hashed))
+
+    def test_hash_password_longer_than_passlib_max(self):
+        long_password = '0' * 9999999
+        self.config_fixture.config(
+            group='identity',
+            max_password_length=passlib.utils.MAX_PASSWORD_SIZE + 1)
+        self.assertRaises(exception.SecurityValidationSizeError,
+                          utils.hash_password,
+                          long_password)
 
     def _create_test_user(self, password=OPTIONAL):
         user = {"name": "hthtest"}

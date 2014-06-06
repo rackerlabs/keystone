@@ -24,7 +24,9 @@ import json
 import os
 import pwd
 
+import passlib.exc
 import passlib.hash
+import passlib.utils
 import six
 
 from keystone.common import config
@@ -116,8 +118,16 @@ def hash_user_password(user):
 def hash_password(password):
     """Hash a password. Hard."""
     password_utf8 = trunc_password(password).encode('utf-8')
-    return passlib.hash.sha512_crypt.encrypt(
-        password_utf8, rounds=CONF.crypt_strength)
+    try:
+        return passlib.hash.sha512_crypt.encrypt(
+            password_utf8, rounds=CONF.crypt_strength)
+    except passlib.exc.PasswordSizeError:
+        # NOTE(morganfainberg): This case will only occur if the
+        # max_password_length option is set to > what passlib can handle. In
+        # this relatively narrow case, return HTTP 400 (Bad Request)instead of
+        # an HTTP 500 (Internal Server Error).
+        raise exception.SecurityValidationSizeError(
+            attribute='password', size=passlib.utils.MAX_PASSWORD_SIZE)
 
 
 def check_password(password, hashed):
