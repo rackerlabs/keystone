@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_134d17c5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-06T20:45:43Z",
+      "side": 1,
+      "message": "Sorry, I reworked it and then it made no sense... was trying to say:\n\nThis can default to multiple workers since we\u0027ve got some runway.",
+      "parentUuid": "1ae5cdf2_182e14a6",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_10f8b248",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
