@@ -118,16 +118,35 @@ class PKITokenExpected(Error):
 
 
 class SecurityError(Error):
-    """Avoids exposing details of security failures, unless in debug mode."""
+    """Avoids exposing details of security failures, unless in debug mode.
+
+    SecurityError supports sanitizing certain replacement values when not
+    in debug mode. This sanitization is done via the keys stored in the
+    ``self.sanitize_replacement_values`` iterable.
+
+    If ``self.always_use_message_format`` is true, the exception will always
+    use the format message string instead of accepting a custom message as
+    part of the exception initialization.
+    """
     amendment = _('(Disable debug mode to suppress these details.)')
+    sanitize_replacement_values = frozenset()
+    always_use_message_format = False
 
     def _build_message(self, message, **kwargs):
         """Only returns detailed messages in debug mode."""
+        if self.always_use_message_format:
+            # Some cases the SecurityError should never accept a custom message
+            message = self.message_format
+
         if CONF.debug:
             return _('%(message)s %(amendment)s') % {
                 'message': message or self.message_format % kwargs,
                 'amendment': self.amendment}
         else:
+            for key in self.sanitize_replacement_values:
+                # Any values in the 'sanitize_replacement_values' should be
+                # converted to an empty string.
+                kwargs[key] = ''
             return self.message_format % kwargs
 
 
@@ -266,9 +285,12 @@ class FederatedProtocolNotFound(NotFound):
                        " IdentityProvider, %(idp_id)s")
 
 
-class Conflict(Error):
+class Conflict(SecurityError):
     message_format = _("Conflict occurred attempting to store %(type)s."
                        " %(details)s")
+    sanitize_replacement_values = frozenset(['details'])
+    always_use_message_format = True
+
     code = 409
     title = 'Conflict'
 

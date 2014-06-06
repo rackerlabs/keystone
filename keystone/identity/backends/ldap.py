@@ -97,7 +97,8 @@ class Identity(identity.Driver):
             raise exception.ValidationError(_('Cannot change user ID'))
         old_obj = self.user.get(user_id)
         if 'name' in user and old_obj.get('name') != user['name']:
-            raise exception.Conflict(_('Cannot change user name'))
+            raise exception.Conflict(type='user',
+                                     details=_('Cannot change user name'))
 
         if self.user.enabled_mask:
             self.user.mask_enabled_attribute(user)
@@ -300,9 +301,11 @@ class GroupApi(common_ldap.BaseLdap):
         try:
             super(GroupApi, self).add_member(user_dn, group_dn)
         except exception.Conflict:
-            raise exception.Conflict(_(
-                'User %(user_id)s is already a member of group %(group_id)s') %
-                {'user_id': user_id, 'group_id': group_id})
+            raise exception.Conflict(
+                type='group',
+                details=_('User %(user_id)s is already a member of group '
+                          '%(group_id)s') % {'user_id': user_id,
+                                             'group_id': group_id})
 
     def remove_user(self, user_dn, group_id, user_id):
         group_ref = self.get(group_id)

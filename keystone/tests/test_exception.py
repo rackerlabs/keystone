@@ -155,6 +155,7 @@ class UnexpectedExceptionTestCase(ExceptionTestCase):
 
 class SecurityErrorTestCase(ExceptionTestCase):
     """Tests whether security-related info is exposed to the API user."""
+
     def test_unauthorized_exposure(self):
         self.config_fixture.config(debug=False)
 
@@ -221,3 +222,31 @@ class SecurityErrorTestCase(ExceptionTestCase):
         e = exception.Forbidden(message=risky_info)
         self.assertValidJsonRendering(e)
         self.assertNotIn(risky_info, six.text_type(e))
+
+    def test_security_error_sanitize_values(self):
+        self.config_fixture.config(debug=False)
+
+        class TestSecurityError(exception.SecurityError):
+            sanitize_replacement_values = frozenset(['removed'])
+            message_format = ('This is a test message, %(removed)s, '
+                              '%(exists)s')
+
+        removed_value = uuid.uuid4().hex
+        exists_value = uuid.uuid4().hex
+
+        e = TestSecurityError(removed=removed_value,
+                              exists=exists_value)
+
+        self.assertNotIn(removed_value, six.text_type(e))
+        self.assertIn(exists_value, six.text_type(e))
+
+    def test_security_error_ignore_passed_in_message(self):
+        message_format = uuid.uuid4().hex
+
+        class TestSecurityError(exception.SecurityError):
+            always_use_message_format = True
+            message_format = 'Fixed Message Format'
+
+        e = TestSecurityError(uuid.uuid4().hex)
+
+        self.assertEqual(TestSecurityError.message_format, six.text_type(e))
