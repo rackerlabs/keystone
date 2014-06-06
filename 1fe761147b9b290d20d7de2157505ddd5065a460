@@ -16,6 +16,24 @@
       "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fc2df7a8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 1057
+      },
+      "writtenOn": "2014-06-06T06:56:10Z",
+      "side": 1,
+      "message": "The example context is correct, some lines above there is the description \"When using signing certificate issued by an external CA, you do not need to\nspecify ``key_size``, ``valid_days`` and ``ca_key`` as they \nwill be ignored.\" and the SSL configuration you are adressing here says: \"SSL configuration example using the included sample certificates::\" \nSo your mentioned \"ca_key\" is required here.",
+      "parentUuid": "1ae5cdf2_92ecf3bc",
+      "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
