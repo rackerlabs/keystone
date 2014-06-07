@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d9dca449",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T21:58:17Z",
+      "side": 1,
+      "message": "why can\u0027t this whole section simply be written as:\n\nif cred_type \u003d\u003d \u0027ec2\u0027:\n    ref[\u0027type\u0027] \u003d \u0027ec2\n    ref[\u0027blob\u0027] \u003d {\u0027blah\u0027: \u0027test\u0027}\nelse:\n    ref[\u0027type\u0027] \u003d \u0027cert\u0027\t\n    ref[\u0027blob\u0027] \u003d uuid.uuid4().hex",
+      "revId": "7b680605b869f86ba88843c892548fcc0c0f59c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_79ed50ef",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T21:58:17Z",
+      "side": 1,
+      "message": "why did you remove del ref[\u0027id\u0027] a comment?",
+      "revId": "7b680605b869f86ba88843c892548fcc0c0f59c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
