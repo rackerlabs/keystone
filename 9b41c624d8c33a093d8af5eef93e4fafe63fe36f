@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f9b880e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T22:30:17Z",
+      "side": 1,
+      "message": "typo. remove the \u0027a\u0027 before the",
+      "revId": "9b41c624d8c33a093d8af5eef93e4fafe63fe36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b98c3837",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T22:30:17Z",
+      "side": 1,
+      "message": "executing should be execution",
+      "revId": "9b41c624d8c33a093d8af5eef93e4fafe63fe36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b993584e",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T22:30:17Z",
+      "side": 1,
+      "message": "Great NOTE!!!",
+      "revId": "9b41c624d8c33a093d8af5eef93e4fafe63fe36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f986c012",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T22:30:17Z",
+      "side": 1,
+      "message": "Great Note and a neat idea!",
+      "revId": "9b41c624d8c33a093d8af5eef93e4fafe63fe36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5975f430",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T22:30:17Z",
+      "side": 1,
+      "message": "Might rewrite note to be more clear:\n# NOTE: For whole OpenStack message consistency, this error \n# message has been written in a format consistent with WSME.",
+      "revId": "9b41c624d8c33a093d8af5eef93e4fafe63fe36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_79c4705f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-07T22:30:17Z",
+      "side": 1,
+      "message": "Put the following NOTE here so reviewers don\u0027t question why this looks so bland :-) :\n# NOTE: For whole OpenStack message consistency, this error \n# message has been written in a format consistent with WSME.",
+      "revId": "9b41c624d8c33a093d8af5eef93e4fafe63fe36f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
