@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8178ec90",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-06-07T08:42:31Z",
+      "side": 1,
+      "message": "This method may go to the bottom of the class so that the class members can be grouped together.",
+      "revId": "7e6f72ba9d67a0ed5d94d8dbe9dcbd8588294d13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
