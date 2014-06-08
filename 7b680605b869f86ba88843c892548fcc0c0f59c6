@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ccfdc470",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-08T05:02:16Z",
+      "side": 1,
+      "message": "Good point, thanks!",
+      "parentUuid": "1ae5cdf2_d9dca449",
+      "revId": "7b680605b869f86ba88843c892548fcc0c0f59c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_79ed50ef",
         "filename": "keystone/tests/test_v3_credential.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-07T21:58:17Z",
       "side": 1,
       "message": "why did you remove del ref[\u0027id\u0027] a comment?",
+      "revId": "7b680605b869f86ba88843c892548fcc0c0f59c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6cee70b6",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-08T05:02:16Z",
+      "side": 1,
+      "message": "The new_ref() method doesn\u0027t return anything we really need for attributes from a cert perspective: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L184-L190\n\nI removed the call to create a new ref in new_credential_ref() and added the logic that we needed to determine what the attributes should be for the cert request. \n\nThe\n\n    del ref[\u0027id\u0027]\n\nwas clean up from new_ref(), since we didn\u0027t need the \u0027id\u0027 in the request and now that we are building the request from an empty dictionary, deleting an attribute from the dict that doesn\u0027t exist results in a KeyError.",
+      "parentUuid": "1ae5cdf2_79ed50ef",
       "revId": "7b680605b869f86ba88843c892548fcc0c0f59c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
