@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_601671f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "typo haneled should be handled",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a0d79922",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_lock_to_trust_table_idempotent.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "Great comment! very helpful!",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c0dca549",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_lock_to_trust_table_idempotent.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "Great comment! very helpful!",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_00a20d9a",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "I understand how you are verifying how the context manager properly cleans up after itself, but what is the action that  automatically causes the context manager to clean up after itself?",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8087fd11",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "So you confirm unlimited trusts do not get locked by confirming sql_model.lock is none, correct?  Just curiously why is the self.assertIsNotNone(lock_id)  also needed?",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_80b53dd2",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "Great comment!",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_60d751ee",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-08T16:16:31Z",
+      "side": 1,
+      "message": "So,  since this is not the MySQL case you don\u0027t need  to use \u0027lock\u0027 and hence you set it to None, correct?",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
