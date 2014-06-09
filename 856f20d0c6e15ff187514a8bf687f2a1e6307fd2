@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6bb0fbf4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-09T15:24:50Z",
+      "side": 1,
+      "message": "- remove \u0027which\u0027\n- change \u0027cause\u0027 to \u0027causes the\u0027",
+      "revId": "856f20d0c6e15ff187514a8bf687f2a1e6307fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6b5f1b73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-09T15:24:50Z",
+      "side": 1,
+      "message": "Rephrase to:\n\nMoved auth builder helper functions from RestfulTestCase to a new class called RestfulTestCaseHelper.",
+      "revId": "856f20d0c6e15ff187514a8bf687f2a1e6307fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0b95b7e3",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-09T15:24:50Z",
+      "side": 1,
+      "message": "Do we still need this comment?",
+      "revId": "856f20d0c6e15ff187514a8bf687f2a1e6307fd2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
