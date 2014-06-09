@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_70ae23e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-09T16:39:02Z",
+      "side": 1,
+      "message": "Fixed in next patch.",
+      "parentUuid": "1ae5cdf2_601671f3",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_a0d79922",
         "filename": "keystone/common/sql/migrate_repo/versions/051_add_lock_to_trust_table_idempotent.py",
         "patchSetId": 4
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_f025d3ae",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-09T16:39:02Z",
+      "side": 1,
+      "message": "If you look at the context manager, the part up to \u0027yield\u0027 is executed before the block within the \u0027with\u0027 statement, and the part after yield is executed once you\u0027re out of the with statement.\n\nthis could be accomplished with a try/finally (context managers are just nice syntactic sugar)",
+      "parentUuid": "1ae5cdf2_00a20d9a",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_8087fd11",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 4
@@ -81,6 +117,24 @@
       "writtenOn": "2014-06-08T16:16:31Z",
       "side": 1,
       "message": "So you confirm unlimited trusts do not get locked by confirming sql_model.lock is none, correct?  Just curiously why is the self.assertIsNotNone(lock_id)  also needed?",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9d5ae84e",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-09T16:39:02Z",
+      "side": 1,
+      "message": "The isNotNone assert shows that we have a lock_id, the context manager yields (passes the information back in the with statement) the lock_id. \n\nIt\u0027s the responsibility of the external service to know if they hold the lock in a race condition.  The context manager should prevent it from racing, but be safe.",
+      "parentUuid": "1ae5cdf2_8087fd11",
       "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +169,24 @@
       "writtenOn": "2014-06-08T16:16:31Z",
       "side": 1,
       "message": "So,  since this is not the MySQL case you don\u0027t need  to use \u0027lock\u0027 and hence you set it to None, correct?",
+      "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_30573b04",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-09T16:39:02Z",
+      "side": 1,
+      "message": "Correct. If it\u0027s not MySQL, lock_info will be None, there is nothing to do.",
+      "parentUuid": "1ae5cdf2_60d751ee",
       "revId": "73f916900bc13d72f9184a6ec9cf5125ad3df874",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
