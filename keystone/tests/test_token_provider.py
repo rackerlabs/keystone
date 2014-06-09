@@ -750,12 +750,7 @@ class TestTokenProvider(tests.TestCase):
 
     def test_default_token_format(self):
         self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.PKI_PROVIDER)
-
-    def test_uuid_token_format_and_no_provider(self):
-        self.config_fixture.config(group='signing', token_format='UUID')
-        self.assertEqual(token.provider.Manager.get_token_provider(),
-                         token.provider.UUID_PROVIDER)
+                         token.provider.PKIZ_PROVIDER)
 
     def test_default_providers_without_token_format(self):
         self.config_fixture.config(group='token',
@@ -796,7 +791,7 @@ class TestTokenProvider(tests.TestCase):
         self.assertEqual(token.provider.Manager.get_token_provider(),
                          token.provider.PKI_PROVIDER)
 
-        self.config_fixture.config(group='signing', token_format='CUSTOM')
+        self.config_fixture.config(group='signing', token_format=None)
         self.config_fixture.config(group='token',
                                    provider='my.package.MyProvider')
         self.assertEqual(token.provider.Manager.get_token_provider(),
