@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ab9f634f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-09T15:36:51Z",
+      "side": 1,
+      "message": "We could, but I\u0027m inclined to be conservative here and stick with the existing default. \n\nOther services either seem to have \u00271\u0027 or else dynamically set to the number of cpus available (outside the scope of this patch).\n\nIf there\u0027s consensus to increase I\u0027m happy to do so.",
+      "parentUuid": "1ae5cdf2_134d17c5",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_10f8b248",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
@@ -247,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_a6923a9d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-09T15:36:51Z",
+      "side": 1,
+      "message": "I think you\u0027re right -- that I missed a line here. Good spot :-)",
+      "parentUuid": "1ae5cdf2_53febf06",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_706c9609",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
@@ -276,6 +312,24 @@
       "side": 1,
       "message": "I\u0027m not sure what Peter was thinking at this point -- do you have any idea?",
       "parentUuid": "1ae5cdf2_706c9609",
+      "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_46825601",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-09T15:36:51Z",
+      "side": 1,
+      "message": "This is a repeat of the code just above: line 133.\nI think this is for the same reason, ie waiting for all servers to exit.",
+      "parentUuid": "1ae5cdf2_3319337a",
       "revId": "420ea574ebf68f2520f0fe82799bdbc74eef6bad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
