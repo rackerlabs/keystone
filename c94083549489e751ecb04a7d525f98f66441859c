@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_081beb1c",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-09T22:42:41Z",
+      "side": 1,
+      "message": "don\u0027t we have to add other modules here as well? i.e.\n\nthreadgroup\nloopingcall\neventlet_backdoor",
+      "revId": "c94083549489e751ecb04a7d525f98f66441859c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
