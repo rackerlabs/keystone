@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_285c4b25",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-09T03:38:47Z",
+      "side": 1,
+      "message": "can a test be added for this, stubbing out the conn.delete_ext_s() method and raising an ldap.NOT_ALLOWED_ON_NONLEAF error?",
+      "revId": "4d0c50c91ed8f64df733ea9f9f687a260dea178d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
