@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e830a3a0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-09T03:52:03Z",
+      "side": 1,
+      "message": "I believe code  uses PKI as default provider. It is better to add that here",
+      "revId": "ce6e8c87456c06b1bf6871d34267378b4c8cd0f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
