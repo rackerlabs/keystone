@@ -16,6 +16,40 @@
       "revId": "ee6734a0eda25f3f58f5c3f0335b5f25f1279f8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_03364052",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-10T21:14:00Z",
+      "side": 1,
+      "message": "this isn\u0027t rendering properly either",
+      "revId": "ee6734a0eda25f3f58f5c3f0335b5f25f1279f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_834970d2",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-10T21:14:00Z",
+      "side": 1,
+      "message": "add something about using keystoneclient in an unversioned manner, or just link to here: http://docs.openstack.org/developer/python-keystoneclient/using-api-v3.html#authenticating",
+      "revId": "ee6734a0eda25f3f58f5c3f0335b5f25f1279f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
