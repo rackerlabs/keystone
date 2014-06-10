@@ -16,6 +16,7 @@ import os
 import uuid
 
 from keystoneclient.contrib.ec2 import utils as ec2_utils
+from keystoneclient import exceptions as client_exceptions
 
 from keystone import config
 from keystone import tests
@@ -37,8 +38,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         self.addCleanup(self.cleanup_instance('default_client'))
 
     def test_endpoint_crud(self):
-        from keystoneclient import exceptions as client_exceptions
-
         client = self.get_client(admin=True)
 
         service = client.services.create(name=uuid.uuid4().hex,
@@ -146,8 +145,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         # this test..
 
     def test_ec2_auth_failure(self):
-        from keystoneclient import exceptions as client_exceptions
-
         credentials, signature = self._generate_default_user_ec2_credentials()
         credentials['signature'] = uuid.uuid4().hex
         self.assertRaises(client_exceptions.Unauthorized,
@@ -210,7 +207,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         self.assertNotIn(cred_4, creds)
 
     def test_ec2_credentials_create_404(self):
-        from keystoneclient import exceptions as client_exceptions
         self.assertRaises(client_exceptions.NotFound,
                           self.default_client.ec2.create,
                           user_id=uuid.uuid4().hex,
@@ -221,38 +217,28 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
                           tenant_id=uuid.uuid4().hex)
 
     def test_ec2_credentials_delete_404(self):
-        from keystoneclient import exceptions as client_exceptions
-
         self.assertRaises(client_exceptions.NotFound,
                           self.default_client.ec2.delete,
                           user_id=uuid.uuid4().hex,
                           access=uuid.uuid4().hex)
 
     def test_ec2_credentials_get_404(self):
-        from keystoneclient import exceptions as client_exceptions
-
         self.assertRaises(client_exceptions.NotFound,
                           self.default_client.ec2.get,
                           user_id=uuid.uuid4().hex,
                           access=uuid.uuid4().hex)
 
     def test_ec2_credentials_list_404(self):
-        from keystoneclient import exceptions as client_exceptions
-
         self.assertRaises(client_exceptions.NotFound,
                           self.default_client.ec2.list,
                           user_id=uuid.uuid4().hex)
 
     def test_ec2_credentials_list_user_forbidden(self):
-        from keystoneclient import exceptions as client_exceptions
-
         two = self.get_client(self.user_two)
         self.assertRaises(client_exceptions.Forbidden, two.ec2.list,
                           user_id=self.user_foo['id'])
 
     def test_ec2_credentials_get_user_forbidden(self):
-        from keystoneclient import exceptions as client_exceptions
-
         cred = self.default_client.ec2.create(user_id=self.user_foo['id'],
                                               tenant_id=self.tenant_bar['id'])
 
@@ -264,8 +250,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
                                        access=cred.access)
 
     def test_ec2_credentials_delete_user_forbidden(self):
-        from keystoneclient import exceptions as client_exceptions
-
         cred = self.default_client.ec2.create(user_id=self.user_foo['id'],
                                               tenant_id=self.tenant_bar['id'])
 
@@ -277,7 +261,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
                                        access=cred.access)
 
     def test_endpoint_create_404(self):
-        from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
                           client.endpoints.create,
@@ -288,7 +271,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
                           internalurl=uuid.uuid4().hex)
 
     def test_endpoint_delete_404(self):
-        from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
         self.assertRaises(client_exceptions.NotFound,
                           client.endpoints.delete,
@@ -301,7 +283,6 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         #               moved to a test suite running against the v3 api
         self.skipTest('Written prior to v3 client; needs refactor')
 
-        from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
 
         policy_blob = uuid.uuid4().hex
