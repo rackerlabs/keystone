@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2ed34539",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-10T07:02:04Z",
+      "side": 0,
+      "message": "Is PKIZ token also signed prior to compression? For PKIZ token, where does client fetch to signing cert? Can the bug description be a bit more descriptive?",
+      "revId": "bd70417814411b3d19639bde90c5d91f31f2b9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
