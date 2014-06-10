@@ -15,9 +15,9 @@
 import datetime
 import os
 import uuid
-import webob
 
 import mock
+import webob
 
 from keystone import config
 from keystone.openstack.common import jsonutils
