@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d95469cc",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-10T07:07:38Z",
+      "side": 1,
+      "message": "replace \"403 Forbidden\" with \"an HTTP 403 Forbidden\" to be more consistent with the API doc? See\n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md",
+      "revId": "5209a172ebf39877a42c50a8bbf5944de9fa480c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
