@@ -97,6 +97,30 @@ usually both ``[composite:main]`` and ``[composite:admin]``), for example:
     /v3 = api_v3
     ...
 
+Once your pipeline is configured to expose both v2.0 and v3, you need to ensure
+that you've configured your service catalog in Keystone correctly. The
+simplest, and most ideal, configuration would expose one identity with
+unversioned endpoints (note the lack of ``/v2.0/`` or ``/v3/`` in these URLs):
+
+- Service (type: ``identity``)
+  - Endpoint (interface: ``public``, URL: ``http://identity:5000/``)
+  - Endpoint (interface: ``admin``, URL: ``http://identity:35357/``)
+
+If you were to perform a ``GET`` against either of these endpoints, you would
+be greeted by an ``HTTP/1.1 300 Multiple Choices`` response, which newer
+Keystone clients can use to automatically detect available API versions.
+
+.. code-block:: shell
+
+    $ curl -i http://identity:35357/
+    HTTP/1.1 300 Multiple Choices
+    Vary: X-Auth-Token
+    Content-Type: application/json
+    Content-Length: 755
+    Date: Tue, 10 Jun 2014 14:22:26 GMT
+
+    {"versions": {"values": [ ... ]}}
+
 .. _`latest sample configuration`: https://github.com/openstack/keystone/blob/master/etc/keystone-paste.ini
 
 I have a Python client
