@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4e15f199",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-10T07:01:40Z",
+      "side": 1,
+      "message": "DocImpact, I presume there\u0027s a BP for reference",
+      "revId": "6547d910555391c01a7d879732dcd033517e8ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6e838dcc",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-10T07:01:40Z",
+      "side": 1,
+      "message": "I presume we have a corresponding patch for tempest?",
+      "revId": "6547d910555391c01a7d879732dcd033517e8ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
