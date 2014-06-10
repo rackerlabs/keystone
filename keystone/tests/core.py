@@ -16,6 +16,7 @@ from __future__ import absolute_import
 import atexit
 import copy
 import functools
+import logging
 import os
 import re
 import shutil
@@ -25,7 +26,6 @@ import time
 import warnings
 
 import fixtures
-import logging
 import oslotest.base as oslotest
 from oslotest import mockpatch
 from paste import deploy
@@ -33,12 +33,10 @@ import six
 from testtools import testcase
 import webob
 
-from keystone.openstack.common import gettextutils
-
 # NOTE(ayoung)
 # environment.use_eventlet must run before any of the code that will
 # call the eventlet monkeypatching.
-from keystone.common import environment
+from keystone.common import environment  # noqa
 environment.use_eventlet()
 
 from keystone import auth
@@ -51,6 +49,7 @@ from keystone import config
 from keystone import exception
 from keystone import notifications
 from keystone.openstack.common.fixture import config as config_fixture
+from keystone.openstack.common import gettextutils
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.tests import ksfixtures
