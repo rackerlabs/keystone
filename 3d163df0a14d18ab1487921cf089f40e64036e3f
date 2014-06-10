@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_142a017e",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_56b0118b",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -19,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_d4189977",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b41dcd68",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_d64a6182",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -30,6 +81,159 @@
       "writtenOn": "2014-06-10T16:29:25Z",
       "side": 1,
       "message": "More appropriate description would be   \"Rescope the token\"",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_540d6936",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d931b20c",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5925a2c0",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_79209eb0",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1403e10d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d918d286",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f91bce7d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_99064a1f",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7907be1d",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-10T16:54:03Z",
+      "side": 1,
+      "message": "Add an example response to keep this doc consistent.",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
