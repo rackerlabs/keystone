@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_a54bd957",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-10T21:14:54Z",
+      "side": 1,
+      "message": "Should be JSON object here too",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6568f1ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-10T21:14:54Z",
+      "side": 1,
+      "message": "\"but not an object.\"",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_041a3c6e",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 1
@@ -30,6 +64,24 @@
       "writtenOn": "2014-05-29T04:51:54Z",
       "side": 1,
       "message": "just a thought... \n  self.assertTrue(\"valid JSON dictionary\" in resp.json[\u0027error\u0027][\u0027message\u0027])\n\nSince quite a few functions in middleware have a chance at throwing up a 400.",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e5824151",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-10T21:14:54Z",
+      "side": 1,
+      "message": "++ I think this is needed to really validate the correct exception is raised.",
+      "parentUuid": "3ae8d1ca_e3ab2f1c",
       "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
