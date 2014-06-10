@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_56b0118b",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-10T16:29:25Z",
+      "side": 1,
+      "message": "For a domain-scoped token, there is a statement about role-assignment. Don\u0027t we need that for project-scoped? May be everyone already knows about it.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d64a6182",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-10T16:29:25Z",
+      "side": 1,
+      "message": "More appropriate description would be   \"Rescope the token\"",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
