@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0a03ba0d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 11717
+      },
+      "writtenOn": "2014-06-10T17:35:08Z",
+      "side": 1,
+      "message": "\"validates it\"/\"validates it,\"",
+      "revId": "7a440893ce4330015af7119a31ecc78c1a4f5ef2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
