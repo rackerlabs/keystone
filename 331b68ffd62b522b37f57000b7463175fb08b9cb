@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_222fd189",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-06-10T10:51:54Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1ae5cdf2_cec82178",
+      "revId": "331b68ffd62b522b37f57000b7463175fb08b9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9fec8e2b",
         "filename": "keystone/common/config.py",
         "patchSetId": 17
