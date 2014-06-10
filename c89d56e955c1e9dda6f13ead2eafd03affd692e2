@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e5d32136",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-10T18:08:09Z",
+      "side": 1,
+      "message": "i think you want bash here, as shell is coming up as unrecognized",
+      "revId": "c89d56e955c1e9dda6f13ead2eafd03affd692e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_85e25dff",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-10T18:08:09Z",
+      "side": 1,
+      "message": "Show a sample keystoneclient snippet that has version autodetect working?",
+      "revId": "c89d56e955c1e9dda6f13ead2eafd03affd692e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
