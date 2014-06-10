@@ -16,6 +16,24 @@
       "revId": "c94083549489e751ecb04a7d525f98f66441859c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fa882924",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-10T13:17:27Z",
+      "side": 1,
+      "message": "I\u0027m open to correction, but I don\u0027t think so.\n\nI just added this one entry and when I ran \"python update.py ../keystone\" (from oslo-incubator) it auto-detected the full set of files required.\n\n(Similarly keystone/openstack/common/fileutils.py doesn\u0027t have an entry in this file.)",
+      "parentUuid": "1ae5cdf2_081beb1c",
+      "revId": "c94083549489e751ecb04a7d525f98f66441859c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
