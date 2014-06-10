@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_63bf04fd",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_142a017e",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_56b0118b",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-10T16:29:25Z",
       "side": 1,
       "message": "For a domain-scoped token, there is a statement about role-assignment. Don\u0027t we need that for project-scoped? May be everyone already knows about it.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2345fc16",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "I would assume everyone knows in both cases, but devstack sets up project role-assignments but doesn\u0027t add any domain role-assignments, so I thought it was useful to mention it.",
+      "parentUuid": "1ae5cdf2_56b0118b",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_63462423",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_d4189977",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_b41dcd68",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-10T16:54:03Z",
       "side": 1,
       "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a3502cd5",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_b41dcd68",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_a3fe6cac",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "I was asked to change this in patch set 3 since the example isn\u0027t rescoping the token (there\u0027s no scope). So I\u0027m leaving it as is.",
+      "parentUuid": "1ae5cdf2_d64a6182",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_540d6936",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-10T16:54:03Z",
       "side": 1,
       "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_232a5c2c",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_540d6936",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_a39aec6b",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_d931b20c",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_5925a2c0",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -132,6 +258,24 @@
       "writtenOn": "2014-06-10T16:54:03Z",
       "side": 1,
       "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a3710c46",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_5925a2c0",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_e3e074ce",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_79209eb0",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_1403e10d",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -166,6 +328,24 @@
       "writtenOn": "2014-06-10T16:54:03Z",
       "side": 1,
       "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_43d128fa",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_1403e10d",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_e3ca3419",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_d918d286",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_f91bce7d",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -200,6 +398,24 @@
       "writtenOn": "2014-06-10T16:54:03Z",
       "side": 1,
       "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_63d624c5",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_f91bce7d",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_c3bc586f",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_99064a1f",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_7907be1d",
         "filename": "doc/source/api_curl_examples.rst",
         "patchSetId": 5
@@ -234,6 +468,24 @@
       "writtenOn": "2014-06-10T16:54:03Z",
       "side": 1,
       "message": "Add an example response to keep this doc consistent.",
+      "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a3a58c48",
+        "filename": "doc/source/api_curl_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-10T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_7907be1d",
       "revId": "3d163df0a14d18ab1487921cf089f40e64036e3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
