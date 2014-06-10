@@ -110,9 +110,8 @@
 #domain_id_immutable=true
 
 # If set to true, strict password length checking is performed
-# for password manipulation.
-# If a password exceeds the maximum length, the operation will
-# fail with 403 Forbidden Error.
+# for password manipulation. If a password exceeds the maximum 
+# length, the operation will fail with 403 Forbidden error.
 # If set to false, passwords are automatically truncated to
 # the maximum length.
 #strict_password_length=false
