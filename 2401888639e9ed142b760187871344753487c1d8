@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5e3c9bbf",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-10T21:30:08Z",
+      "side": 0,
+      "message": "I still don\u0027t understand why this test is being removed. This test case should pass even with the current changes.",
+      "revId": "2401888639e9ed142b760187871344753487c1d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

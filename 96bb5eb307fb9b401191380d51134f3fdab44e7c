@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fe572700",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-10T21:30:08Z",
+      "side": 1,
+      "message": "s/willnot/will not/",
+      "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
