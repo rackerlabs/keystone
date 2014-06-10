@@ -13,10 +13,10 @@
 # under the License.
 
 import abc
+import codecs
 import os.path
 import re
 
-import codecs
 import ldap
 import ldap.filter
 import six

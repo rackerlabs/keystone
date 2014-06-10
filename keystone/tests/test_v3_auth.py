@@ -15,10 +15,10 @@
 import copy
 import datetime
 import operator
-from testtools import testcase
 import uuid
 
 from keystoneclient.common import cms
+from testtools import testcase
 
 from keystone import auth
 from keystone.common import dependency
