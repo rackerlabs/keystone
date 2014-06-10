@@ -13,9 +13,8 @@
 # under the License.
 
 
-from keystone.tests import core as test
-
 from keystone.common import driver_hints
+from keystone.tests import core as test
 
 
 class ListHintsTests(test.TestCase):
