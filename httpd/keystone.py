@@ -17,7 +17,7 @@ import os
 
 from paste import deploy
 
-from keystone.openstack.common import gettextutils
+from keystone.openstack.common import gettextutils  # noqa
 # NOTE(dstanek): gettextutils.enable_lazy() must be called before
 # gettextutils._() is called to ensure it has the desired lazy lookup
 # behavior. This includes cases, like keystone.exceptions, where

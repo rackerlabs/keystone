@@ -20,9 +20,9 @@ by convention, with a few hardcoded exceptions.
 
 """
 
-from lxml import etree
 import re
 
+from lxml import etree
 import six
 
 from keystone.openstack.common.gettextutils import _

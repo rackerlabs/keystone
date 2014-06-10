@@ -12,9 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import six
-
 from lxml import etree
+import six
 from testtools import matchers
 
 

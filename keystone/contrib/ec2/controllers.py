@@ -35,9 +35,8 @@ Glance to list images needed to perform the requested task.
 import abc
 import uuid
 
-import six
-
 from keystoneclient.contrib.ec2 import utils as ec2_utils
+import six
 
 from keystone.common import controller
 from keystone.common import dependency
