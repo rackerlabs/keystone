@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_71d96ef2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-11T14:51:57Z",
+      "side": 1,
+      "message": "It will be in whatever attribute they have specified in the keystone config",
+      "parentUuid": "1ae5cdf2_fedd6743",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9ec38356",
         "filename": "doc/source/developing.rst",
         "patchSetId": 28
@@ -100,6 +118,24 @@
       "writtenOn": "2014-06-11T14:32:13Z",
       "side": 1,
       "message": "This really isn\u0027t a fixture. This is more of a utility method that belongs",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_715c0e4c",
+        "filename": "keystone/tests/ksfixtures/identity_mapping.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-11T14:51:57Z",
+      "side": 1,
+      "message": "yeah, was abusing the fixtures as a useful place, I agree",
+      "parentUuid": "1ae5cdf2_724b4b59",
       "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
