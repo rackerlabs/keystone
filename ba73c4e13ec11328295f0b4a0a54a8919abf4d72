@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_aed6474d",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T04:19:31Z",
+      "side": 1,
+      "message": "yeah, i wanted to ask ayoung about that - i was going to remove all of the domain_id stuff because the default will be the default id anyway,  but i didn\u0027t know if he had other plans",
+      "parentUuid": "1ae5cdf2_8b197d8a",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_ab1e396e",
         "filename": "keystone/middleware/basic_auth.py",
         "patchSetId": 5
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ae3d6791",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T04:19:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_0b0d6d3e",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_6b00b102",
         "filename": "keystone/tests/test_middleware.py",
         "patchSetId": 5
@@ -81,6 +117,24 @@
       "writtenOn": "2014-06-11T03:56:30Z",
       "side": 1,
       "message": "could use uuid.uuid4.hex instead of \u0027invalid\u0027, as you do it for \u0027bad_user\u0027 test",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4e5223df",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T04:19:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_6b00b102",
       "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
