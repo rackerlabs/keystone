@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_261969d7",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-11T16:08:32Z",
+      "side": 1,
+      "message": "Can you accomplish this somehow by extending SecurityError instead? maybe refactor calls to raise Conflict to just pass the details as the entirety of the message?",
+      "revId": "b9205eeba761279b3c368f6d4fd7f73f12c8be3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a63d792d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-11T16:08:32Z",
+      "side": 1,
+      "message": "bonus indentation?",
+      "revId": "b9205eeba761279b3c368f6d4fd7f73f12c8be3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
