@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0b264dce",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T03:56:30Z",
+      "side": 1,
+      "message": "I\u0027d like to see messages for the exceptions being raised here.",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8b197d8a",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T03:56:30Z",
+      "side": 1,
+      "message": "why fetch domain_id, it\u0027s returned but never used",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ab1e396e",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T03:56:30Z",
+      "side": 1,
+      "message": "no need for domain_id to be returned - you have the user_id which should be unique",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0b0d6d3e",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T03:56:30Z",
+      "side": 1,
+      "message": "nit, useless new line",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6b00b102",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T03:56:30Z",
+      "side": 1,
+      "message": "could use uuid.uuid4.hex instead of \u0027invalid\u0027, as you do it for \u0027bad_user\u0027 test",
+      "revId": "ba73c4e13ec11328295f0b4a0a54a8919abf4d72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
