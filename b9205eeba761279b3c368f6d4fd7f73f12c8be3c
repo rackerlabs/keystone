@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_3f97a83b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T17:37:11Z",
+      "side": 1,
+      "message": "The issue was that some Conflict raises specified a message instead of a \u0027type\u0027 and \u0027details\u0027. I\u0027ll work to make all raises of Conflict consistent instead.\n\nI\u0027ll see if I can make this work more like that. Also, realize securityerror does the inverse.\n\nSecurityError falls back to the fixed message_format if debug !\u003d True, In this case we want to obscure the data in details not require them.",
+      "parentUuid": "1ae5cdf2_261969d7",
+      "revId": "b9205eeba761279b3c368f6d4fd7f73f12c8be3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_a63d792d",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-11T16:08:32Z",
       "side": 1,
       "message": "bonus indentation?",
+      "revId": "b9205eeba761279b3c368f6d4fd7f73f12c8be3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9fa19c96",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T17:37:11Z",
+      "side": 1,
+      "message": "But...\n        I\n            Like\n        indenting\n    things\n\nfixed in next patch.",
+      "parentUuid": "1ae5cdf2_a63d792d",
       "revId": "b9205eeba761279b3c368f6d4fd7f73f12c8be3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
