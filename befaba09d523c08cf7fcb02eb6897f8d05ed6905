@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_0cc811a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "We should try and address this in Juno (before shipping everything)",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_acb8fd11",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "(NIT) Above paragraph should be either a .. NOTE:: or a .. WARNING:: imo",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0ca9f18f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "We should document the default behavior if this isn\u0027t the default. (shoulnd\u0027t sha1 be the default?)",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_fedd6743",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 28
@@ -37,6 +88,40 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ec3765fd",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "If users use the mapped ID to login, this will break that login method.",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cc19c989",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "Suggest removing \"normally\"",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9ec38356",
         "filename": "doc/source/developing.rst",
         "patchSetId": 28
@@ -66,6 +151,57 @@
       "side": 1,
       "message": "This is in-fact true in Icehouse.",
       "parentUuid": "1ae5cdf2_9ec38356",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_573b82d0",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 28
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "Should this be in identity mapping?",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_77387ed3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 28
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "suggest making this sha1.",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_176c9acf",
+        "filename": "keystone/cli.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-11T15:12:15Z",
+      "side": 1,
+      "message": "Suggest adding an \u0027unused\u0027 (e.g. look at assignments and purge anything that has no assignments).",
       "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
