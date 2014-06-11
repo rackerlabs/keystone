@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_21ca4f4f",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T01:48:34Z",
+      "side": 1,
+      "message": "Newline",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_ba4ca6c9",
         "filename": "keystone/middleware/basic_auth.py",
         "patchSetId": 3
@@ -19,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_61e537a7",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T01:48:34Z",
+      "side": 1,
+      "message": "Agreed. Also the first split can fail.",
+      "parentUuid": "1ae5cdf2_ba4ca6c9",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_8bf87ec4",
         "filename": "keystone/middleware/basic_auth.py",
         "patchSetId": 3
@@ -30,6 +65,74 @@
       "writtenOn": "2014-06-04T05:51:10Z",
       "side": 1,
       "message": "Where is domain_id used  in this method?",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_86f7b958",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T01:48:34Z",
+      "side": 1,
+      "message": "Newline here to split off the stdlib modules into their own section.",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_268985ca",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T01:48:34Z",
+      "side": 1,
+      "message": "What are the extra parens for?",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4684d1b0",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T01:48:34Z",
+      "side": 1,
+      "message": "...and here",
+      "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a18f3f22",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T01:48:34Z",
+      "side": 1,
+      "message": "These 4 lines can probably be put in a setUp since they are duplicated.",
       "revId": "4422d0fded2e78866558b5ee5bbea7cc11a0ee15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
