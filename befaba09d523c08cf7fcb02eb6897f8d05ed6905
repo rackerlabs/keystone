@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fedd6743",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T14:32:13Z",
+      "side": 1,
+      "message": "How does the operator get the local ID out of their read-only LDAP?",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9ec38356",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 28
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T14:32:13Z",
+      "side": 1,
+      "message": "Is Icehouse still true?",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d1bb22e3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T14:32:13Z",
+      "side": 1,
+      "message": "Should this just be raise to get the original stack?",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_724b4b59",
+        "filename": "keystone/tests/ksfixtures/identity_mapping.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-11T14:32:13Z",
+      "side": 1,
+      "message": "This really isn\u0027t a fixture. This is more of a utility method that belongs",
+      "revId": "befaba09d523c08cf7fcb02eb6897f8d05ed6905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
