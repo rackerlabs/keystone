@@ -174,7 +174,7 @@ ID is understood by the driver.  This hides, for instance, the LDAP specifics
 of whatever ID is being used.
 
 To ensure backward compatibility, the default configuration of either a
-single SQL or LDAP backends for Identity will not use the mapping table,
+single SQL or LDAP backend for Identity will not use the mapping table,
 meaning that the public facing IDs will be the unchanged. If keeping these IDs
 the same for the default LDAP backend is not required, then setting the
 configuration variable ``backward_compatible_ids`` to ``True`` will enable
