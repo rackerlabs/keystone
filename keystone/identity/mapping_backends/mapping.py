@@ -18,6 +18,7 @@ import uuid
 from keystone import config
 from keystone import exception
 
+
 CONF = config.CONF
 
 
