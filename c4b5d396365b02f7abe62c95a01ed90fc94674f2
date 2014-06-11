@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_720fa239",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-11T21:39:16Z",
+      "side": 1,
+      "message": "(note) now we could check if the project was enabled before and not do _disabled if it didn\u0027t change.",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_19379a4f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -118,6 +135,23 @@
       "writtenOn": "2014-06-05T05:26:19Z",
       "side": 1,
       "message": "Next verse, almost the same as the first! Again very straightforward test case!",
+      "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7554ecfd",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-11T21:39:16Z",
+      "side": 1,
+      "message": "If the LDAP backend changes so that you can change the project name (why can\u0027t you change a project name?), we won\u0027t know to fix this test because it\u0027ll be skipped rather than fail. I\u0027d prefer the test validates the current behavior by calling the super and check that it fails.",
       "revId": "c4b5d396365b02f7abe62c95a01ed90fc94674f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
