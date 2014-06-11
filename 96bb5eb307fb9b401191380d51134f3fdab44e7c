@@ -16,6 +16,74 @@
       "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3c8432b0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T02:23:24Z",
+      "side": 1,
+      "message": "why was any of this changed?",
+      "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dce8ae7e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T02:23:24Z",
+      "side": 1,
+      "message": "this variable was introduced and is not used.",
+      "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bc63e23f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T02:23:24Z",
+      "side": 1,
+      "message": "suggest keeping the old comment or adding a new one, saying that token_format is deprecated.",
+      "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bc98421c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-11T02:23:24Z",
+      "side": 1,
+      "message": "i think you are missing an else block? \nand lines 81-89 should be in it?",
+      "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
