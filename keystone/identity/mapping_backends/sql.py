@@ -14,7 +14,7 @@
 
 from keystone.common import sql
 from keystone import identity
-from keystone.identity.mapping_backends import mapping as map
+from keystone.identity.mapping_backends import mapping as identity_mapping
 
 
 class IDMapping(sql.ModelBase, sql.ModelDictMixin):
@@ -25,7 +25,8 @@ class IDMapping(sql.ModelBase, sql.ModelDictMixin):
     local_id = sql.Column(sql.String(64), nullable=False)
     # NOTE(henry-nash); Postgres requires a name to be defined for an Enum
     type = sql.Column(
-        sql.Enum(map.EntityType.USER, map.EntityType.GROUP,
+        sql.Enum(identity_mapping.EntityType.USER,
+                 identity_mapping.EntityType.GROUP,
                  name='type'),
         nullable=False)
     # Unique constraint to ensure you can't store more than one mapping to the
@@ -60,7 +61,7 @@ class Mapping(identity.MappingDriver):
         session = sql.get_session()
         with session.begin():
             if public_id is None:
-                public_id = map.generate_public_ID(mapping)
+                public_id = identity_mapping.generate_public_ID(mapping)
             mapping['public_id'] = public_id
             mapping_ref = IDMapping.from_dict(mapping)
             session.add(mapping_ref)
