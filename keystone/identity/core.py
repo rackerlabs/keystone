@@ -135,8 +135,8 @@ class DomainConfigs(dict):
                                           fname[len(DOMAIN_CONF_FHEAD):
                                                 -len(DOMAIN_CONF_FTAIL)])
                     else:
-                        LOG.debug(_('Ignoring file (%s) while scanning domain '
-                                    'config directory'),
+                        LOG.debug('Ignoring file (%s) while scanning domain '
+                                    'config directory',
                                   fname)
 
     def get_domain_driver(self, domain_id):
@@ -292,19 +292,19 @@ class Manager(manager.Manager):
             # The default driver that needs no help, e.g. SQL
             return ref
 
-        LOG.debug(_('Identity Mapping & Domain ID Check'))
-        LOG.debug(_('Domain ID: %(domain)s, Default Driver: %(driver)s'),
+        LOG.debug('Identity Mapping & Domain ID Check')
+        LOG.debug('Domain ID: %(domain)s, Default Driver: %(driver)s',
                   {'domain': domain_id, 'driver': (driver == self.driver)})
-        LOG.debug(_('Domain Aware: %(aware)s, Generates UUIDs: %(generate)s'),
+        LOG.debug('Domain Aware: %(aware)s, Generates UUIDs: %(generate)s',
                   {'aware': driver.is_domain_aware(),
                    'generate': driver.generates_uuids()})
-        LOG.debug(_('Specific Drivers Enabled: %(spec)s, '
-                    'Backware Compatible IDs: %(compat)s'),
+        LOG.debug('Specific Drivers Enabled: %(spec)s, '
+                  'Backware Compatible IDs: %(compat)s',
                   {'spec': conf.domain_specific_drivers_enabled,
                    'compat': conf.backward_compatible_ids})
 
         if isinstance(ref, dict):
-            LOG.debug(_('Local ID: %s'), ref['id'])
+            LOG.debug('Local ID: %s', ref['id'])
             # If the driver can't handle domains, then we need to insert the
             # domain_id into the entity being returned.  If the domain_id is
             # None that means we are running in a single backend mode, so to
@@ -329,14 +329,14 @@ class Manager(manager.Manager):
                     ref['domain_id'], ref['id'], entity_type)
                 if pub_id:
                     ref['id'] = pub_id
-                    LOG.debug(_('Found existing mapping to public ID: %s'),
+                    LOG.debug('Found existing mapping to public ID: %s',
                               ref['id'])
                 else:
                     ref['id'] = self.id_mapping_api.create_id_mapping(
                         {'domain_id': ref['domain_id'], 'local_id': ref['id'],
                          'type': entity_type},
                         public_id=public_id)
-                    LOG.debug(_('Created new mapping to public ID: %s'),
+                    LOG.debug('Created new mapping to public ID: %s',
                               ref['id'])
             return ref
         elif isinstance(ref, list):
