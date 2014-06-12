@@ -109,7 +109,7 @@ class JsonBodyMiddleware(wsgi.Middleware):
     """
     def process_request(self, request):
         # Abort early if we don't have any work to do
-        params_json = request.body
+        params_json = request.text
         if not params_json:
             return
 
@@ -165,7 +165,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
         if incoming_xml and request.body:
             request.content_type = 'application/json'
             try:
-                request.body = jsonutils.dumps(
+                request.text = jsonutils.dumps(
                     serializer.from_xml(request.body))
             except Exception:
                 LOG.exception('Serializer failed')
@@ -180,7 +180,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
             response.content_type = 'application/xml'
             try:
                 body_obj = jsonutils.loads(response.body)
-                response.body = serializer.to_xml(body_obj, xmlns=self.xmlns)
+                response.text = serializer.to_xml(body_obj, xmlns=self.xmlns)
             except Exception:
                 LOG.exception('Serializer failed')
                 raise exception.Error(message=response.body)
