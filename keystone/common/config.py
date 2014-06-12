@@ -211,9 +211,9 @@ FILE_OPTIONS = {
                     'backend other than KVS, which stores events in memory.'),
         cfg.StrOpt('hash_algorithm', default='md5',
                    help="The hash algorithm to use for PKI tokens. This can "
-                        "be set to any algorithm that hashlib supports. "
-                        "WARNING: Before changing this value, the auth_token "
-                        "middleware must be configured with the "
+                        "be set to any algorithm that hashlib supports except "
+                        "SHA1. WARNING: Before changing this value, the "
+                        "auth_token middleware must be configured with the "
                         "hash_algorithms, otherwise token revocation will "
                         "not be processed correctly."),
     ],
