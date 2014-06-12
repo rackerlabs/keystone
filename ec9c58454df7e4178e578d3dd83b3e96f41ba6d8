@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2f110c5d",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-12T21:56:49Z",
+      "side": 1,
+      "message": "can you remove these two if you are adding the parent directory?",
+      "revId": "ec9c58454df7e4178e578d3dd83b3e96f41ba6d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
