@@ -34,6 +34,24 @@
       "revId": "2401888639e9ed142b760187871344753487c1d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e6d83855",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-12T17:25:54Z",
+      "side": 0,
+      "message": "Because we are no longer defaulting token.Provider \u003d None.",
+      "parentUuid": "1ae5cdf2_5e3c9bbf",
+      "revId": "2401888639e9ed142b760187871344753487c1d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
