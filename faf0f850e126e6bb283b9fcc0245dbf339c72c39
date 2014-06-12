@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_060b647d",
+        "filename": "keystone/tests/config_files/backend_ldap.conf",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-12T17:39:03Z",
+      "side": 1,
+      "message": "this is now the default, so you shouldn\u0027t need to override it here",
+      "revId": "faf0f850e126e6bb283b9fcc0245dbf339c72c39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
