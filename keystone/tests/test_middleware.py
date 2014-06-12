@@ -68,7 +68,7 @@ class AdminTokenAuthMiddlewareTest(tests.TestCase):
 
 class PostParamsMiddlewareTest(tests.TestCase):
     def test_request_with_params(self):
-        req = make_request(body="arg1=one", method='POST')
+        req = make_request(body=b"arg1=one", method='POST')
         middleware.PostParamsMiddleware(None).process_request(req)
         params = req.environ[middleware.PARAMS_ENV]
         self.assertEqual({"arg1": "one"}, params)
@@ -76,7 +76,7 @@ class PostParamsMiddlewareTest(tests.TestCase):
 
 class JsonBodyMiddlewareTest(tests.TestCase):
     def test_request_with_params(self):
-        req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
+        req = make_request(body=b'{"arg1": "one", "arg2": ["a"]}',
                            content_type='application/json',
                            method='POST')
         middleware.JsonBodyMiddleware(None).process_request(req)
@@ -84,14 +84,14 @@ class JsonBodyMiddlewareTest(tests.TestCase):
         self.assertEqual({"arg1": "one", "arg2": ["a"]}, params)
 
     def test_malformed_json(self):
-        req = make_request(body='{"arg1": "on',
+        req = make_request(body=b'{"arg1": "on',
                            content_type='application/json',
                            method='POST')
         resp = middleware.JsonBodyMiddleware(None).process_request(req)
         self.assertEqual(400, resp.status_int)
 
     def test_not_dict_body(self):
-        req = make_request(body='42',
+        req = make_request(body=b'42',
                            content_type='application/json',
                            method='POST')
         resp = middleware.JsonBodyMiddleware(None).process_request(req)
@@ -99,14 +99,14 @@ class JsonBodyMiddlewareTest(tests.TestCase):
         self.assertTrue('valid JSON object' in resp.json['error']['message'])
 
     def test_no_content_type(self):
-        req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
+        req = make_request(body=b'{"arg1": "one", "arg2": ["a"]}',
                            method='POST')
         middleware.JsonBodyMiddleware(None).process_request(req)
         params = req.environ[middleware.PARAMS_ENV]
         self.assertEqual({"arg1": "one", "arg2": ["a"]}, params)
 
     def test_unrecognized_content_type(self):
-        req = make_request(body='{"arg1": "one", "arg2": ["a"]}',
+        req = make_request(body=b'{"arg1": "one", "arg2": ["a"]}',
                            content_type='text/plain',
                            method='POST')
         resp = middleware.JsonBodyMiddleware(None).process_request(req)
@@ -123,7 +123,7 @@ class JsonBodyMiddlewareTest(tests.TestCase):
 class XmlBodyMiddlewareTest(tests.TestCase):
     def test_client_wants_xml_back(self):
         """Clients requesting XML should get what they ask for."""
-        body = '{"container": {"attribute": "value"}}'
+        body = b'{"container": {"attribute": "value"}}'
         req = make_request(body=body, method='POST', accept='application/xml')
         middleware.XmlBodyMiddleware(None).process_request(req)
         resp = make_response(body=body)
@@ -132,7 +132,7 @@ class XmlBodyMiddlewareTest(tests.TestCase):
 
     def test_client_wants_json_back(self):
         """Clients requesting JSON should definitely not get XML back."""
-        body = '{"container": {"attribute": "value"}}'
+        body = b'{"container": {"attribute": "value"}}'
         req = make_request(body=body, method='POST', accept='application/json')
         middleware.XmlBodyMiddleware(None).process_request(req)
         resp = make_response(body=body)
@@ -141,7 +141,7 @@ class XmlBodyMiddlewareTest(tests.TestCase):
 
     def test_client_fails_to_specify_accept(self):
         """If client does not specify an Accept header, default to JSON."""
-        body = '{"container": {"attribute": "value"}}'
+        body = b'{"container": {"attribute": "value"}}'
         req = make_request(body=body, method='POST')
         middleware.XmlBodyMiddleware(None).process_request(req)
         resp = make_response(body=body)
@@ -151,7 +151,7 @@ class XmlBodyMiddlewareTest(tests.TestCase):
     def test_xml_replaced_by_json(self):
         """XML requests should be replaced by JSON requests."""
         req = make_request(
-            body='<container><element attribute="value" /></container>',
+            body=b'<container><element attribute="value" /></container>',
             content_type='application/xml',
             method='POST')
         middleware.XmlBodyMiddleware(None).process_request(req)
@@ -161,7 +161,7 @@ class XmlBodyMiddlewareTest(tests.TestCase):
     def test_json_unnaffected(self):
         """JSON-only requests should be unaffected by the XML middleware."""
         content_type = 'application/json'
-        body = '{"container": {"attribute": "value"}}'
+        body = b'{"container": {"attribute": "value"}}'
         req = make_request(body=body, content_type=content_type, method='POST')
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(body, req.body)

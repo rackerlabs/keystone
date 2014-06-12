@@ -158,7 +158,9 @@ class XmlDeserializer(object):
                     else:
                         truncated = child['truncated']
             else:
-                values = dict(values.items() + child.items())
+                # NOTE(dstanek): converting the return value of items() to a
+                # list of Python 3 compatibility
+                values = dict(list(values.items()) + list(child.items()))
 
         # set empty and none-list element to None to align with JSON
         if not values:
@@ -206,7 +208,7 @@ class XmlSerializer(object):
                                     'element: %s' % d.keys())
 
         # name the root dom element
-        name = d.keys()[0]
+        name = list(d.keys())[0]
         m = re.search('[^:]+$', name)
         root_name = m.string[m.start():]
         prefix = m.string[0:m.start() - 1]
