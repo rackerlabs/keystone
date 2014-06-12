@@ -16,6 +16,23 @@
       "revId": "effea7fd2e47e7598f503039d723213df8493877",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5d98d3bf",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-12T20:06:41Z",
+      "side": 1,
+      "message": "``.pyc``\n\nalso, the docs folks don\u0027t seem to like \"i.e.\" so spell it out or remote it instead",
+      "revId": "effea7fd2e47e7598f503039d723213df8493877",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
