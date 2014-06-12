@@ -34,6 +34,24 @@
       "revId": "c94083549489e751ecb04a7d525f98f66441859c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a2af0fe2",
+        "filename": "openstack-common.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-12T06:31:52Z",
+      "side": 1,
+      "message": "k, if python update.py is happy I guess we are fine.",
+      "parentUuid": "1ae5cdf2_fa882924",
+      "revId": "c94083549489e751ecb04a7d525f98f66441859c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
