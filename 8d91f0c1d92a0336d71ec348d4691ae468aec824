@@ -16,6 +16,24 @@
       "revId": "8d91f0c1d92a0336d71ec348d4691ae468aec824",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_26114004",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-12T17:23:50Z",
+      "side": 1,
+      "message": "You can also set a passlib max (env var) less than 4096 iirc.",
+      "parentUuid": "1ae5cdf2_46156c3e",
+      "revId": "8d91f0c1d92a0336d71ec348d4691ae468aec824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
