@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_2cdf5f3b",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-12T18:38:39Z",
+      "side": 1,
+      "message": "Shouldn\u0027t matter in either case. If it\u0027s a blocker I can pop it out.",
+      "parentUuid": "1ae5cdf2_a970c108",
+      "revId": "467802c5ca47b829c2e1d4bf87c633b768f83840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_49dd7ddf",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-12T18:18:38Z",
       "side": 1,
       "message": "couldn\u0027t we replace the\n\n    project_ref[\u0027enabled\u0027] \u003d False\n\nwith a note? Since project_ref[\u0027enabled\u0027] doesn\u0027t need to be assigned again?",
+      "revId": "467802c5ca47b829c2e1d4bf87c633b768f83840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ccd51b1d",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-12T18:38:39Z",
+      "side": 1,
+      "message": "Good point. Removed in next patch.",
+      "parentUuid": "1ae5cdf2_49dd7ddf",
       "revId": "467802c5ca47b829c2e1d4bf87c633b768f83840",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
