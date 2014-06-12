@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_3e1321b9",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-12T00:03:35Z",
+      "side": 1,
+      "message": "Done in next patch.",
+      "parentUuid": "1ae5cdf2_eb9ca2c2",
+      "revId": "35dd91e1caf7518aefed29d6fc536c23cdfc459d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_cb29a69c",
         "filename": "keystone/exception.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-11T20:10:14Z",
       "side": 1,
       "message": "? \n\n  if message and self.always_use_message_format:\n    # Some cases the SecurityError should never accept a custom message\n    LOG.warning(_(\u0027custom messages are not allowed here (programmer error)\u0027))",
+      "revId": "35dd91e1caf7518aefed29d6fc536c23cdfc459d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7e092983",
+        "filename": "keystone/exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-12T00:03:35Z",
+      "side": 1,
+      "message": "Works for me. in next patch.",
+      "parentUuid": "1ae5cdf2_cb29a69c",
       "revId": "35dd91e1caf7518aefed29d6fc536c23cdfc459d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
