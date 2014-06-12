@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_fb0c5944",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-12T11:59:09Z",
+      "side": 1,
+      "message": "Ah, I didn\u0027t realise -- thanks!",
+      "parentUuid": "1ae5cdf2_42648bb8",
+      "revId": "91845a3411b6e1ebaa6f20c6e8143484889d9db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_02b8c30f",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_f6139059",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-12T11:59:09Z",
+      "side": 1,
+      "message": "Do you mean a standard as in \u0027what do other projects do\u0027? If so, they typically either pick \u00271\u0027 or else dynamically set to the number of processes (outside the scope of this patch).\n\nIn terms of mileage: this patch defaults to \u00272\u0027 for the functional tests, so we should get mileage there.",
+      "parentUuid": "1ae5cdf2_02b8c30f",
+      "revId": "91845a3411b6e1ebaa6f20c6e8143484889d9db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_c26fbb90",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2014-06-12T06:42:03Z",
       "side": 1,
       "message": "cfg.IntOpt(\u0027public_workers\u0027, default\u003d1,\n                  help\u003d\u0027The number of worker processes to serve the public application\u0027)\n\nsame with the one below",
+      "revId": "91845a3411b6e1ebaa6f20c6e8143484889d9db1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_962c0c9b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 455
+      },
+      "writtenOn": "2014-06-12T11:59:09Z",
+      "side": 1,
+      "message": "Yes - thanks.",
+      "parentUuid": "1ae5cdf2_c26fbb90",
       "revId": "91845a3411b6e1ebaa6f20c6e8143484889d9db1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
