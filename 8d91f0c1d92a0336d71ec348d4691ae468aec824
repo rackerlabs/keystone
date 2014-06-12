@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_46156c3e",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-12T17:14:32Z",
+      "side": 1,
+      "message": "Nice! According to the doc\n\n\"All hashes in Passlib will now throw PasswordSizeError if handed a password that’s larger than 4096 characters.\"\n\nWho the fucg in their right mind would create a password larger than 4096 chars?!",
+      "revId": "8d91f0c1d92a0336d71ec348d4691ae468aec824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
