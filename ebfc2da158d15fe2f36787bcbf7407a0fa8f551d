@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4f5c987d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-12T21:49:03Z",
+      "side": 1,
+      "message": "This function lists access tokens, but the message refers to request tokens.",
+      "revId": "ebfc2da158d15fe2f36787bcbf7407a0fa8f551d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
