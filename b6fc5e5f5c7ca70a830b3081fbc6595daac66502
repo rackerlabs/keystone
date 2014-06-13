@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ffca4e6c",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-13T21:17:24Z",
+      "side": 1,
+      "message": "What is the reason behind moving url \u003d core.format_url(endpoint[\u0027url\u0027], d) couple lines up?",
+      "revId": "b6fc5e5f5c7ca70a830b3081fbc6595daac66502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
