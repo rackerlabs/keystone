@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_50333913",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-13T18:43:23Z",
+      "side": 1,
+      "message": "I have another commit later in this series to deal with None.",
+      "parentUuid": "7adec928_7c3efcb9",
+      "revId": "9e71793c3acca5f0f0df938620f87e7f102290f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_fca04cf6",
         "filename": "keystone/tests/test_backend_templated.py",
         "patchSetId": 4
@@ -48,6 +66,24 @@
       "writtenOn": "2014-05-09T15:41:41Z",
       "side": 1,
       "message": "this should be in base class",
+      "revId": "9e71793c3acca5f0f0df938620f87e7f102290f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b03c7de2",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-13T18:43:23Z",
+      "side": 1,
+      "message": "The setup is too different. Each backend has a method now to do this check.",
+      "parentUuid": "7adec928_fca04cf6",
       "revId": "9e71793c3acca5f0f0df938620f87e7f102290f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
