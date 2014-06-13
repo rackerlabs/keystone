@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3fd4b6e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "nit: JSONSchema",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5f06e286",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "nit: bp:",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9f814ac5",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_succeeds",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ff696e25",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_without_blob_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9f586a8b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_without_user_id_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bf5b6684",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_without_type_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ff508e5f",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_with_types_succeeds",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1f4c5ac7",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_with_extra_parameters_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3f4756a4",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_update_succeeds",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5fc98224",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "rename: test_validate_credential_update_without_parameters_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9fcf8a28",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:29:34Z",
+      "side": 1,
+      "message": "test_validate_credential_update_with_extra_parameters_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
