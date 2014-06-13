@@ -16,6 +16,24 @@
       "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d07d891d",
+        "filename": "rally-scenarios/plugins/plugin_sample.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-06-13T18:23:14Z",
+      "side": 1,
+      "message": "Not sure that I get question...\n\n\nThis will generate load on keystone using keystone client...",
+      "parentUuid": "1ae5cdf2_d021094e",
+      "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
