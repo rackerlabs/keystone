@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_555342e1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-06-13T02:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_222fd189",
+      "revId": "331b68ffd62b522b37f57000b7463175fb08b9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3548762c",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-06-13T02:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_cec82178",
+      "revId": "331b68ffd62b522b37f57000b7463175fb08b9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9fec8e2b",
         "filename": "keystone/common/config.py",
         "patchSetId": 17
@@ -65,6 +101,24 @@
       "writtenOn": "2014-06-10T06:48:19Z",
       "side": 1,
       "message": "I think it\u0027s clear to say -\nVerify and truncate the provided password to the max_password_length.",
+      "revId": "331b68ffd62b522b37f57000b7463175fb08b9cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_356f9693",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7805
+      },
+      "writtenOn": "2014-06-13T02:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_2e2b45ec",
       "revId": "331b68ffd62b522b37f57000b7463175fb08b9cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
