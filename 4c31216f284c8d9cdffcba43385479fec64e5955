@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7ca3a7ff",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-13T23:52:35Z",
+      "side": 1,
+      "message": "Is there any reason you are removing the hints about brackets? Although it really should say parens and not brackets.",
+      "revId": "4c31216f284c8d9cdffcba43385479fec64e5955",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
