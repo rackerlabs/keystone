@@ -16,6 +16,24 @@
       "revId": "b6fc5e5f5c7ca70a830b3081fbc6595daac66502",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bc428f3b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-13T23:49:34Z",
+      "side": 1,
+      "message": "Moving the logic here allows the code to bail before the catalog is modified. If I left it where it was then there could be useless info in the catalog.",
+      "parentUuid": "1ae5cdf2_ffca4e6c",
+      "revId": "b6fc5e5f5c7ca70a830b3081fbc6595daac66502",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
