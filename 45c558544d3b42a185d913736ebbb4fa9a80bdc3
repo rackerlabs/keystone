@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_338cf7d6",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-13T19:31:58Z",
+      "side": 1,
+      "message": "This was just out of date. Fixed in latest.",
+      "parentUuid": "1ae5cdf2_3e56d85c",
+      "revId": "45c558544d3b42a185d913736ebbb4fa9a80bdc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_3eddf8e0",
         "filename": "requirements-py3.txt",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-03T20:19:49Z",
       "side": 1,
       "message": "python2 from requirements.txt has this at 0.9.0",
+      "revId": "45c558544d3b42a185d913736ebbb4fa9a80bdc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_53bee365",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-13T19:31:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_3eddf8e0",
       "revId": "45c558544d3b42a185d913736ebbb4fa9a80bdc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
