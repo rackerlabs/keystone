@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a410bf59",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T21:15:52Z",
+      "side": 1,
+      "message": "Remove \"the\" from: \"facing IDs will be the unchanged\".",
+      "revId": "8c4e00974e6c08bfa192318b286729f0732d672f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
