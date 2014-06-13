@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_892e9341",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1029,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T06:25:10Z",
+      "side": 1,
+      "message": "remember \u003d\u003e Remember",
+      "revId": "4795d101f0f7f4c4fcda467155829607ccd9642d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a9d8af53",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T06:25:10Z",
+      "side": 1,
+      "message": "Perhaps explain --insecure briefly instead of saying \"you should use\".",
+      "revId": "4795d101f0f7f4c4fcda467155829607ccd9642d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_291d7f0f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T06:25:10Z",
+      "side": 1,
+      "message": "Is it worth having a HTTPS example?",
+      "revId": "4795d101f0f7f4c4fcda467155829607ccd9642d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
