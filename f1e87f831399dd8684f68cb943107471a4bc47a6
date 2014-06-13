@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7fe2bed5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-13T21:22:53Z",
+      "side": 1,
+      "message": "Do you mean if the URL template \"was not\" a string?",
+      "revId": "f1e87f831399dd8684f68cb943107471a4bc47a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
