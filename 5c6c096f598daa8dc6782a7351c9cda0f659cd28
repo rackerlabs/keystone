@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_186acfb2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T03:38:27Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f8a6030e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T03:38:27Z",
+      "side": 1,
+      "message": "authentication",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_78b2f349",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T03:38:27Z",
+      "side": 1,
+      "message": "Re-phrase to: using the DMTF Cloud Auditing Data Federation (CADF) standard.",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_184d6f3e",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-13T03:38:27Z",
+      "side": 1,
+      "message": "Do we need \"Open\"?",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
