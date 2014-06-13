@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_38222bb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-13T04:10:42Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_186acfb2",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_f8a6030e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-13T03:38:27Z",
       "side": 1,
       "message": "authentication",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_981a5f7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-13T04:10:42Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_f8a6030e",
       "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_38094b31",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-13T04:10:42Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "1ae5cdf2_78b2f349",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_184d6f3e",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-13T03:38:27Z",
       "side": 1,
       "message": "Do we need \"Open\"?",
+      "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f83c43e3",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-13T04:10:42Z",
+      "side": 1,
+      "message": "Yes :-). Open standards go hand in hand with open source!",
+      "parentUuid": "1ae5cdf2_184d6f3e",
       "revId": "5c6c096f598daa8dc6782a7351c9cda0f659cd28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
