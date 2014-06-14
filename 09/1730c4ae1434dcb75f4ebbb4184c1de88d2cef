@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Haneef Ali <haneef.ali@hp.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 14 Jun 2014 18:52:51 +0000
+Reviewed-on: https://review.openstack.org/99568
+Project: openstack/keystone
+Branch: refs/heads/master
