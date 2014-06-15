@@ -52,6 +52,24 @@
       "revId": "eb9738c7d54a5d3b8c78aeb9349fbfb1f34a1ee7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5156c9ce",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-15T03:04:31Z",
+      "side": 1,
+      "message": "How about I mention both? I\u0027m pretty sure Morgan or you mentioned that KeyErrors could also occur if the .pyc files were not deleted.  In fact I recall dolph also mentioning to try that and see if it fixed the problem",
+      "parentUuid": "1ae5cdf2_31521d13",
+      "revId": "eb9738c7d54a5d3b8c78aeb9349fbfb1f34a1ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
