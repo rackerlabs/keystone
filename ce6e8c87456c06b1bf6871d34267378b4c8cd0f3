@@ -16,6 +16,24 @@
       "revId": "ce6e8c87456c06b1bf6871d34267378b4c8cd0f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_618052f8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-15T21:48:47Z",
+      "side": 1,
+      "message": "This type of change is out of scope for this commit. If that is meant to be changed, it should be handled separately.\n\nThis commit is only removing \u0027default\u003dNone\u0027 as that is the default behavior of oslo.config",
+      "parentUuid": "1ae5cdf2_e830a3a0",
+      "revId": "ce6e8c87456c06b1bf6871d34267378b4c8cd0f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
