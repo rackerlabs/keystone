@@ -34,6 +34,24 @@
       "revId": "eb9738c7d54a5d3b8c78aeb9349fbfb1f34a1ee7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_31521d13",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-15T01:54:46Z",
+      "side": 1,
+      "message": "I think dolphm wanted an exact error message, I managed to find a similar post: http://pastebin.com/w2v9PX88 \n\nI think a key phrase is: \"You can only have one Python script per version\" and it fails on a .pyc file.",
+      "parentUuid": "1ae5cdf2_763c9be1",
+      "revId": "eb9738c7d54a5d3b8c78aeb9349fbfb1f34a1ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
