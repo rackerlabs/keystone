@@ -16,6 +16,24 @@
       "revId": "bd70417814411b3d19639bde90c5d91f31f2b9d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0a15e3e4",
+        "filename": "keystone/contrib/simple_cert/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-16T03:12:54Z",
+      "side": 0,
+      "message": "Bug description has been updated. POKIZ tokens also do signing, prior to compressions.",
+      "parentUuid": "1ae5cdf2_2ed34539",
+      "revId": "bd70417814411b3d19639bde90c5d91f31f2b9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
