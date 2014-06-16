@@ -84,6 +84,24 @@
       "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e694b838",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-16T02:57:59Z",
+      "side": 1,
+      "message": "No.  The configuration no longer defaults to None.  While a user might be able to somehow configure that, it would be bogus, and they would get a startup error.",
+      "parentUuid": "1ae5cdf2_bc98421c",
+      "revId": "96bb5eb307fb9b401191380d51134f3fdab44e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
