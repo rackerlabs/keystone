@@ -22,6 +22,3 @@ class Token(sql.Token):
         what='keystone.token.backends.sql.Token')
     def __init__(self):
         super(Token, self).__init__()
-
-
-TokenModel = sql.TokenModel
