@@ -475,7 +475,10 @@ class BaseProvider(provider.Provider):
 
     def _handle_saml2_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
-        group_ids = auth_context['group_ids']
+        LOG.debug(auth_context)
+        group_ids=[]
+        if 'group_ids' in auth_context:
+            group_ids = auth_context['group_ids']
         token_data = {
             'user': {
                 'id': user_id,
@@ -488,15 +491,16 @@ class BaseProvider(provider.Provider):
                 group_ids, project_id, domain_id, user_id)
             token_data.update({'roles': roles})
         else:
-            idp = auth_context[federation.IDENTITY_PROVIDER]
-            protocol = auth_context[federation.PROTOCOL]
-            token_data['user'].update({
-                federation.FEDERATION: {
-                    'identity_provider': {'id': idp},
-                    'protocol': {'id': protocol},
-                    'groups': [{'id': x} for x in group_ids]
-                },
-            })
+           if federation.IDENTITY_PROVIDER in auth_context:
+                idp = auth_context[federation.IDENTITY_PROVIDER]
+                protocol = auth_context[federation.PROTOCOL]
+                token_data['user'].update({
+                    federation.FEDERATION: {
+                        'identity_provider': {'id': idp},
+                        'protocol': {'id': protocol},
+                        'groups': [{'id': x} for x in group_ids]
+                    },
+                })
         return token_data
 
     def _verify_token(self, token_id):
@@ -575,7 +579,7 @@ class BaseProvider(provider.Provider):
 
     def _validate_v2_token_ref(self, token_ref):
         try:
-            self._assert_default_domain(token_ref)
+            #self._assert_default_domain(token_ref)
             # FIXME(gyee): performance or correctness? Should we return the
             # cached token or reconstruct it? Obviously if we are going with
             # the cached token, any role, project, or domain name changes

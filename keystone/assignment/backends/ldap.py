@@ -145,13 +145,32 @@ class Assignment(assignment.Driver):
                 self.project.get_user_projects(user_dn, associations)]
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
-        raise exception.NotImplemented()
+        associations = []
+        group_ids = ['web-services']
+        project_subtree_dn = self.project.tree_dn
+        if project_id is not None:
+            project_subtree_dn = self.project._id_to_dn(project_id)
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for g in self.role.list_project_roles_for_group(
+                    group_dn, project_subtree_dn):
+                associations.append(self.role._dn_to_id(g.role_dn))
+        return [self.get_role(r) for r in associations]
 
     def list_projects_for_groups(self, group_ids):
-        raise exception.NotImplemented()
+        project_ids = []
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for group_role in self.role.list_project_roles_for_group(
+                    group_dn, self.project.tree_dn):
+                project_ids.append(self.project._dn_to_id(
+                                   group_role.project_dn))
+
+        return [self._set_default_domain(self.get_project(project_id))
+                for project_id in project_ids]
 
     def list_domains_for_groups(self, group_ids):
-        raise exception.NotImplemented()
+        return [assignment.calc_default_domain()]
 
     def list_user_ids_for_project(self, tenant_id):
         self.get_project(tenant_id)
@@ -392,6 +411,123 @@ class Assignment(assignment.Driver):
 
     def list_role_assignments(self):
         role_assignments = []
+        for a in self.role.list_role_assignments(self.project.tree_dn,
+                                                 self.user.tree_dn,
+                                                 self.group.tree_dn):
+            if isinstance(a, UserRoleAssociation):
+                assignment = {'role_id': self.role._dn_to_id(a.role_dn),
+                              'user_id': self.user._dn_to_id(a.user_dn),
+                              'project_id': self.project._dn_to_id(a.project_dn)}
+            else:
+                assignment = {'role_id': self.role._dn_to_id(a.role_dn),
+                              'group_id': self.group._dn_to_id(a.group_dn),
+                              'project_id': self.project._dn_to_id(a.project_dn)}
+            role_assignments.append(assignment)
+        return role_assignments
+
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        self.get_role(role_id)
+
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        if project_id and inherited_to_projects:
+            msg = _('Inherited roles can only be assigned to domains')
+            raise exception.Conflict(type='role grant', details=msg)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+
+        if user_id is None:
+            metadata_ref['roles'] = self._add_role_to_group_and_project(
+                group_id, project_id, role_id)
+        else:
+            metadata_ref['roles'] = self.add_role_to_user_and_project(
+                user_id, project_id, role_id)
+
+    def get_grant(self, role_id, user_id=None, group_id=None,
+                  domain_id=None, project_id=None,
+                  inherited_to_projects=False):
+        role_ref = self.get_role(role_id)
+
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+        role_ids = set(self._roles_from_role_dicts(
+            metadata_ref.get('roles', []), inherited_to_projects))
+        if role_id not in role_ids:
+            raise exception.RoleNotFound(role_id=role_id)
+        return role_ref
+
+    def delete_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        if user_id:
+            self.identity_api.get_user(user_id)
+        if group_id:
+            self.identity_api.get_group(group_id)
+
+        self.get_role(role_id)
+
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+
+        try:
+            if user_id is None:
+                metadata_ref['roles'] = (
+                    self._remove_role_from_group_and_project(
+                        group_id, project_id, role_id))
+            else:
+                metadata_ref['roles'] = self.remove_role_from_user_and_project(
+                    user_id, project_id, role_id)
+        except KeyError:
+            raise exception.RoleNotFound(role_id=role_id)
+
+    def list_grants(self, user_id=None, group_id=None,
+                    domain_id=None, project_id=None,
+                    inherited_to_projects=False):
+        if domain_id:
+            self.get_domain(domain_id)
+        if project_id:
+            self.get_project(project_id)
+
+        try:
+            metadata_ref = self._get_metadata(user_id, project_id,
+                                              domain_id, group_id)
+        except exception.MetadataNotFound:
+            metadata_ref = {}
+
+        return [self.get_role(x) for x in
+                self._roles_from_role_dicts(metadata_ref.get('roles', []),
+                                            inherited_to_projects)]
+
+    def get_domain_by_name(self, domain_name):
+        return assignment.DEFAULT_DOMAIN
+
+    def list_role_assignments(self):
+        role_assignments = []
         for a in self.role.list_role_assignments(self.project.tree_dn):
             assignment = {'role_id': self.role._dn_to_id(a.role_dn),
                           'user_id': self.user._dn_to_id(a.user_dn),
@@ -540,7 +676,9 @@ class RoleApi(common_ldap.BaseLdap):
 
     def get_role_assignments(self, tenant_dn):
         try:
-            roles = self._ldap_get_list(tenant_dn, ldap.SCOPE_ONELEVEL)
+            roles = self._ldap_get_list(tenant_dn,
+                                        ldap.SCOPE_ONELEVEL,
+                                        attrlist=[self.member_attribute])
         except ldap.NO_SUCH_OBJECT:
             roles = []
         res = []
@@ -569,6 +707,7 @@ class RoleApi(common_ldap.BaseLdap):
     def list_project_roles_for_user(self, user_dn, project_subtree):
         try:
             roles = self._ldap_get_list(project_subtree, ldap.SCOPE_SUBTREE,
+                                        attrlist=[self.member_attribute],
                                         query_params={
                                             self.member_attribute: user_dn})
         except ldap.NO_SUCH_OBJECT:
@@ -643,7 +782,9 @@ class RoleApi(common_ldap.BaseLdap):
         attribute.
         """
         try:
-            roles = self._ldap_get_list(project_tree_dn, ldap.SCOPE_SUBTREE)
+            roles = self._ldap_get_list(project_tree_dn,
+                                        ldap.SCOPE_SUBTREE,
+                                        attrlist=[self.member_attribute])
         except ldap.NO_SUCH_OBJECT:
             roles = []
         res = []
@@ -656,8 +797,14 @@ class RoleApi(common_ldap.BaseLdap):
             for user_dn in role[self.member_attribute]:
                 if self._is_dumb_member(user_dn):
                     continue
-                res.append(UserRoleAssociation(
-                           user_dn=user_dn,
-                           role_dn=role_dn,
-                           tenant_dn=tenant_dn))
+                if user_tree_dn in user_dn:
+                    res.append(UserRoleAssociation(
+                               user_dn=user_dn,
+                               role_dn=role_dn,
+                               tenant_dn=tenant_dn))
+                if group_tree_dn in user_dn:
+                    res.append(GroupRoleAssociation(
+                               group_dn=user_dn,
+                               role_dn=role_dn,
+                               tenant_dn=tenant_dn))
         return res
