@@ -16,6 +16,24 @@
       "revId": "e3d52279d75b2c96239a274bb10ad1415f1caa0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1f1a3e18",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-17T13:20:31Z",
+      "side": 0,
+      "message": "Will not match this test.  If that configuration comes across, then the token_format must match the Token Provider.  token Provider will never be \u0027None\u0027.  If it is unset, the token Provider will have the default value of pkiz.Provider",
+      "parentUuid": "1ae5cdf2_3db3940b",
+      "revId": "e3d52279d75b2c96239a274bb10ad1415f1caa0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
