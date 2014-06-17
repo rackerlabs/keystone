@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5db83cc7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-17T19:09:14Z",
+      "side": 1,
+      "message": "This code makes me think we\u0027re doing it wrong. Why do we need to detect and raise an exception on a conflict? Is it _that_ important to do so? I would say we get the same benefit from something simple such as: http://paste.openstack.org/show/84322/\n\nif we also changed the default provider to PKIZ.",
+      "revId": "71f43db07f672bc2a4208a52d5bc373d347ea372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
