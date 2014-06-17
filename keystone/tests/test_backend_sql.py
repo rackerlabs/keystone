@@ -361,8 +361,32 @@ class SqlToken(SqlTests, test_backend.TokenTests):
             tok = token_sql.Token()
             tok.flush_expired_tokens()
 
-        mock_limit = mock_sql.get_session().query().filter().limit
-        mock_limit.assert_called_with(100)
+        mock_offset = mock_sql.get_session().query().filter().offset
+        mock_offset.assert_called_with(100)
+        mock_limit = mock_sql.get_session().query().filter().offset().limit
+        mock_limit.assert_called_with(1)
+
+    def test_flush_expired_tokens_batch_mysql(self):
+        # TODO(dstanek): This test should be rewritten to be less
+        # brittle. The code will likely need to be changed first. I
+        # just copied the spirit of the existing test when I rewrote
+        # mox -> mock. These tests are brittle because they have the
+        # call structure for SQLAlchemy encoded in them.
+
+        # test mysql
+        with mock.patch.object(token_sql, 'sql') as mock_sql:
+            # NOTE(dstanek): this will allow us to break out of the
+            # 'while True' loop
+            mock_sql.get_session().query().filter().delete.return_value = 0
+
+            mock_sql.get_session().bind.dialect.name = 'mysql'
+            tok = token_sql.Token()
+            tok.flush_expired_tokens()
+
+        mock_offset = mock_sql.get_session().query().filter().offset
+        mock_offset.assert_called_with(1000)
+        mock_limit = mock_sql.get_session().query().filter().offset().limit
+        mock_limit.assert_called_with(1)
 
     def test_token_flush_batch_size_default(self):
         tok = token_sql.Token()
@@ -373,6 +397,11 @@ class SqlToken(SqlTests, test_backend.TokenTests):
         tok = token_sql.Token()
         db2_batch = tok.token_flush_batch_size('ibm_db_sa')
         self.assertEqual(100, db2_batch)
+
+    def test_token_flush_batch_size_mysql(self):
+        tok = token_sql.Token()
+        mysql_batch = tok.token_flush_batch_size('mysql')
+        self.assertEqual(1000, mysql_batch)
 
 
 class SqlCatalog(SqlTests, test_backend.CatalogTests):

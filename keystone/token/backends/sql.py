@@ -207,6 +207,16 @@ class Token(token.Driver):
             # impacting the performance of large token purges on
             # systems where the maximum transaction log size has
             # been increased beyond the default.
+        elif dialect == 'mysql':
+	    # This is also needed on MySQL when using Galera.  If token
+	    # expiration doesn't run for some time, then the change set may be
+	    # very large.  When using Galera replication, the maximum write set
+	    # size is fairly low by default and deleting a large number of
+	    # records at once will fail.
+            batch_size = 1000
+	    # We want somewhat more than 100, since Galera replication delay is
+	    # at least RTT*2.  This can be a significant amount of time if
+	    # doing replication across a WAN.
         return batch_size
 
     def flush_expired_tokens(self):
@@ -214,18 +224,33 @@ class Token(token.Driver):
         dialect = session.bind.dialect.name
         batch_size = self.token_flush_batch_size(dialect)
         if batch_size > 0:
-            query = session.query(TokenModel.id)
+	    # If we're deleting in batches then we will get the next row that
+	    # is `batch_size` away from the oldest token.  We'll then delete
+	    # all the tokens up to the time on that token.  This may delete
+	    # slightly more tokens than the batch_size, but that should be ok
+	    # in almost all cases.  We're deleting in batches this way because
+	    # MySQL doesn't support DELETE queries with LIMIT subqueries and
+	    # SQLAlchemy doesn't support DELETE queries with direct LIMIT
+	    # clauses.
+            query = session.query(TokenModel.expires)
             query = query.filter(TokenModel.expires < timeutils.utcnow())
-            query = query.limit(batch_size).subquery()
-            delete_query = (session.query(TokenModel).
-                            filter(TokenModel.id.in_(query)))
+            query = query.offset(batch_size)
+            query = query.limit(1)
             while True:
+                try:
+                    next_expiration = query.one()[0]
+                except sql.NotFound:
+		    # There are less than `batch_size` rows remaining, so fall
+		    # through to the normal delete
+                    break
+                delete_query = session.query(TokenModel)
+                delete_query = delete_query.filter(TokenModel.expires <= next_expiration)
                 rowcount = delete_query.delete(synchronize_session=False)
                 if rowcount == 0:
                     break
-        else:
-            query = session.query(TokenModel)
-            query = query.filter(TokenModel.expires < timeutils.utcnow())
-            query.delete(synchronize_session=False)
+
+        query = session.query(TokenModel)
+        query = query.filter(TokenModel.expires < timeutils.utcnow())
+        rowcount = query.delete(synchronize_session=False)
 
         session.flush()
