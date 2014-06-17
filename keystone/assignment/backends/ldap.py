@@ -157,13 +157,32 @@ class Assignment(assignment.Driver):
                 self.project.get_user_projects(user_dn, associations)]
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
-        raise exception.NotImplemented()
+        associations = []
+        group_ids = ['web-services']
+        project_subtree_dn = self.project.tree_dn
+        if project_id is not None:
+            project_subtree_dn = self.project._id_to_dn(project_id)
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for g in self.role.list_project_roles_for_group(
+                    group_dn, project_subtree_dn):
+                associations.append(self.role._dn_to_id(g.role_dn))
+        return [self.get_role(r) for r in associations]
 
     def list_projects_for_groups(self, group_ids):
-        raise exception.NotImplemented()
+        project_ids = []
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for group_role in self.role.list_project_roles_for_group(
+                    group_dn, self.project.tree_dn):
+                project_ids.append(self.project._dn_to_id(
+                                   group_role.project_dn))
+
+        return [self._set_default_domain(self.get_project(project_id))
+                for project_id in project_ids]
 
     def list_domains_for_groups(self, group_ids):
-        raise exception.NotImplemented()
+        return [assignment.calc_default_domain()]
 
     def list_user_ids_for_project(self, tenant_id):
         self.get_project(tenant_id)
@@ -404,10 +423,19 @@ class Assignment(assignment.Driver):
 
     def list_role_assignments(self):
         role_assignments = []
-        for a in self.role.list_role_assignments(self.project.tree_dn):
-            assignment = {'role_id': self.role._dn_to_id(a.role_dn),
-                          'user_id': self.user._dn_to_id(a.user_dn),
-                          'project_id': self.project._dn_to_id(a.project_dn)}
+        for a in self.role.list_role_assignments(self.project.tree_dn,
+                                                 self.user.tree_dn,
+                                                 self.group.tree_dn):
+            if isinstance(a, UserRoleAssociation):
+                assignment = {'role_id': self.role._dn_to_id(a.role_dn),
+                              'user_id': self.user._dn_to_id(a.user_dn),
+                              'project_id':
+                              self.project._dn_to_id(a.project_dn)}
+            else:
+                assignment = {'role_id': self.role._dn_to_id(a.role_dn),
+                              'group_id': self.group._dn_to_id(a.group_dn),
+                              'project_id':
+                              self.project._dn_to_id(a.project_dn)}
             role_assignments.append(assignment)
         return role_assignments
 
@@ -552,7 +580,9 @@ class RoleApi(common_ldap.BaseLdap):
 
     def get_role_assignments(self, tenant_dn):
         try:
-            roles = self._ldap_get_list(tenant_dn, ldap.SCOPE_ONELEVEL)
+            roles = self._ldap_get_list(tenant_dn,
+                                        ldap.SCOPE_ONELEVEL,
+                                        attrlist=[self.member_attribute])
         except ldap.NO_SUCH_OBJECT:
             roles = []
         res = []
@@ -581,6 +611,7 @@ class RoleApi(common_ldap.BaseLdap):
     def list_project_roles_for_user(self, user_dn, project_subtree):
         try:
             roles = self._ldap_get_list(project_subtree, ldap.SCOPE_SUBTREE,
+                                        attrlist=[self.member_attribute],
                                         query_params={
                                             self.member_attribute: user_dn})
         except ldap.NO_SUCH_OBJECT:
@@ -650,15 +681,19 @@ class RoleApi(common_ldap.BaseLdap):
             self.id_attr: role_id})
         super(RoleApi, self).delete(role_id)
 
-    def list_role_assignments(self, project_tree_dn):
+    def list_role_assignments(self, project_tree_dn, user_tree_dn,
+                              group_tree_dn):
         """Returns a list of all the role assignments linked to project_tree_dn
         attribute.
         """
         try:
-            roles = self._ldap_get_list(project_tree_dn, ldap.SCOPE_SUBTREE)
+            roles = self._ldap_get_list(project_tree_dn,
+                                        ldap.SCOPE_SUBTREE,
+                                        attrlist=[self.member_attribute])
         except ldap.NO_SUCH_OBJECT:
             roles = []
         res = []
+        s = ''
         for role_dn, role in roles:
             tenant = ldap.dn.str2dn(role_dn)
             tenant.pop(0)
@@ -668,8 +703,14 @@ class RoleApi(common_ldap.BaseLdap):
             for user_dn in role[self.member_attribute]:
                 if self._is_dumb_member(user_dn):
                     continue
-                res.append(UserRoleAssociation(
-                           user_dn=user_dn,
-                           role_dn=role_dn,
-                           tenant_dn=tenant_dn))
+                if user_tree_dn.lower() in user_dn.lower():
+                    res.append(UserRoleAssociation(
+                               user_dn=user_dn,
+                               role_dn=role_dn,
+                               tenant_dn=tenant_dn))
+                if group_tree_dn.lower() in user_dn.lower():
+                    res.append(GroupRoleAssociation(
+                               group_dn=user_dn,
+                               role_dn=role_dn,
+                               tenant_dn=tenant_dn))
         return res

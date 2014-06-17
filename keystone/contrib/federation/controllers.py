@@ -12,6 +12,9 @@
 
 """Extensions supporting Federation."""
 
+import webob.dec
+import webob.exc
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import authorization
 from keystone.common import controller
@@ -19,6 +22,7 @@ from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import config
 from keystone.contrib.federation import utils
+from keystone import exception
 
 
 CONF = config.CONF
@@ -248,6 +252,48 @@ class Auth(auth_controllers.Auth):
         }
 
         return self.authenticate_for_token(context, auth=auth)
+
+    def federated_authentication_from_assertion(self, context):
+        protocol = 'saml2'
+        try:
+            identity_prov = context['environment']['Shib-Identity-Provider']
+        except KeyError:
+            raise exception.Unauthorized(('Missing parameter '
+                                          'Shib-Identity-Provider'))
+        res = self.federated_authentication(context, identity_prov, protocol)
+        # BUILD WEBOBJ HTML
+        token_id = res.headers['X-Subject-Token']
+        return self.render_html_response(token_id)
+
+    def render_html_response(self, auth_ref):
+        """Forms a HTML Form with autosubmit."""
+        headers = []
+        body = """\
+<html>
+  <body>
+    <form id="sso" name="sso"
+      action="https://openstacksso.cern.ch/dashboard/auth/sso" method="POST">
+      Please wait...
+      <br/>
+      <input type="hidden" name="token" id="token" value="%s"/>
+      <noscript>
+        <input type="submit" name="toto" id="toto"
+          value="If your Javascript is disabled, please click to continue"/>
+      </noscript>
+    </form>
+    <script>
+      window.onload = function(){
+        document.forms['sso'].submit();
+      }
+    </script>
+  </body>
+</html>
+""" % auth_ref
+        headers.append(('Content-Type', 'text/html'))
+        status = (200, 'OK')
+        return webob.Response(body=body,
+                              status='%s %s' % status,
+                              headerlist=headers)
 
 
 @dependency.requires('assignment_api')
