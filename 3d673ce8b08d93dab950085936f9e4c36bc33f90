@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_826c250a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1404,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-06-17T18:57:11Z",
+      "side": 1,
+      "message": "Performance in this sense means something like \"My keystone seems to be running slow, user-list sure is taking a long time. I wonder if my ldap server is overwhelmed or misconfigured. Or maybe Keystone is doing a ton of look-ups because of my configuration.\"\n \nThat\u0027s what I use this for.",
+      "parentUuid": "1ae5cdf2_fa64a923",
+      "revId": "3d673ce8b08d93dab950085936f9e4c36bc33f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9afe4537",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2014-06-02T17:20:40Z",
       "side": 1,
       "message": "Suggest adding a link (if there is a good one) for the documentation on OpenLDAP for the bitmask.",
+      "revId": "3d673ce8b08d93dab950085936f9e4c36bc33f90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c23d4d2e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1411,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-06-17T18:57:11Z",
+      "side": 1,
+      "message": "Morgan, Ryan and I looked high and low and didn\u0027t find a good one. The best documentation is the C header file for libldap, sadly.",
+      "parentUuid": "1ae5cdf2_5a5f5d72",
       "revId": "3d673ce8b08d93dab950085936f9e4c36bc33f90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
