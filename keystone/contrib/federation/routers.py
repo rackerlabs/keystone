@@ -188,3 +188,8 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             path=self._construct_url('saml2/metadata'),
             get_action='get_metadata',
             rel=build_resource_relation(resource_name='metadata'))
+
+        self._add_resource(
+            mapper, auth_controller,
+            path=self._construct_url('websso'),
+            get_post_action='federated_authentication_from_assertion')
