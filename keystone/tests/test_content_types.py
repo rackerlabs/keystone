@@ -19,7 +19,7 @@ from keystoneclient.common import cms
 import six
 from testtools import matchers
 
-from keystone.common import extension
+from keystone.common import extension as extn
 from keystone import config
 from keystone.tests import rest
 
@@ -111,12 +111,12 @@ class CoreApiTests(object):
     def test_public_extensions(self):
         r = self.public_request(path='/v2.0/extensions')
         self.assertValidExtensionListResponse(r,
-                                              extension.PUBLIC_EXTENSIONS)
+                                              extn.PUBLIC_EXTENSIONS)
 
     def test_admin_extensions(self):
         r = self.admin_request(path='/v2.0/extensions')
         self.assertValidExtensionListResponse(r,
-                                              extension.ADMIN_EXTENSIONS)
+                                              extn.ADMIN_EXTENSIONS)
 
     def test_admin_extensions_404(self):
         self.admin_request(path='/v2.0/extensions/invalid-extension',
@@ -129,7 +129,7 @@ class CoreApiTests(object):
     def test_admin_osksadm_extension(self):
         r = self.admin_request(path='/v2.0/extensions/OS-KSADM')
         self.assertValidExtensionResponse(r,
-                                          extension.ADMIN_EXTENSIONS)
+                                          extn.ADMIN_EXTENSIONS)
 
     def test_authenticate(self):
         r = self.public_request(
