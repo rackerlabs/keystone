@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_90739db3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-17T14:21:09Z",
+      "side": 1,
+      "message": "Please tag this to the compressed-token BP.",
+      "revId": "b5208decea087f031d38885c0cd577d5f0bbdc2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
