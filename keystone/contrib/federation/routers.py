@@ -176,3 +176,7 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             path='/auth' + self._construct_url('saml2'),
             post_action='create_saml_assertion',
             rel=build_resource_relation(resource_name='saml2'))
+        self._add_resource(
+            mapper, auth_controller,
+            path=self._construct_url('websso'),
+            get_post_action='federated_authentication_from_assertion')
