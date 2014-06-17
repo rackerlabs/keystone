@@ -634,6 +634,7 @@ class IdentityTests(object):
                 user_id=user_ref['id'],
                 tenant_id=project_ref['id'],
                 role_id=role_ref['id'])
+        del role_ref
 
         role_list = self.assignment_api.get_roles_for_user_and_project(
             user_id=user_ref['id'],
