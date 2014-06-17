@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 from __future__ import absolute_import
+import struct
 import uuid
 
 import ldap
@@ -313,15 +314,42 @@ class GroupApi(common_ldap.BaseLdap):
         except ldap.NO_SUCH_ATTRIBUTE:
             raise exception.UserNotFound(user_id=user_id)
 
+    def _sid2str(self, sid):
+        srl = ord(sid[0])
+        number_sub_id = ord(sid[1])
+        iav = struct.unpack('!Q', '\x00\x00' + sid[2:8])[0]
+        sub_ids = [struct.unpack('<I', sid[8 + 4 * i:12 + 4 * i])[0]
+                   for i in range(number_sub_id)]
+        return 'S-%d-%d-%s' % (srl,
+                               iav,
+                               '-'.join([str(s) for s in sub_ids]),)
+
     def list_user_groups(self, user_dn):
         """Return a list of groups for which the user is a member."""
 
         user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(&(objectClass=%s)(%s=%s)%s)' % (self.object_class,
-                                                  self.member_attribute,
-                                                  user_dn_esc,
-                                                  self.ldap_filter or '')
-        return self.get_all(query)
+        memberships = []
+        sids = []
+        try:
+            conn = self.get_connection()
+            query = '(objectClass=%s)' % CONF.ldap.user_objectclass
+            sids = conn.search_s(user_dn_esc,
+                                 ldap.SCOPE_BASE,
+                                 query,
+                                 ['tokenGroups'])[0][1]
+            sids = [] if 'tokenGroups' not in sids else sids['tokenGroups']
+        except ldap.NO_SUCH_OBJECT:
+            pass
+        finally:
+            conn.unbind_s()
+        groups_query = ''.join(['(objectSID=%s)'
+                       % self._sid2str(sid) for sid in sids])
+        query = '(&(objectClass=%s)(|%s)%s)' % (self.object_class,
+                                                groups_query,
+                                                self.ldap_filter or '')
+        for m in self.get_all(query):
+            memberships.append(m)
+        return memberships
 
     def list_user_groups_filtered(self, user_dn):
         """Return a filtered list of groups for which the user is a member."""

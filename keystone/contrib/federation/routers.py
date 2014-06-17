@@ -129,3 +129,7 @@ class FederationExtension(_BaseFederationExtension):
             path=self._construct_url('identity_providers/{identity_provider}/'
                                      'protocols/{protocol}/auth'),
             get_post_action='federated_authentication')
+        self._add_resource(
+            mapper, auth_controller,
+            path=self._construct_url('websso'),
+            get_post_action='federated_authentication_from_assertion')
