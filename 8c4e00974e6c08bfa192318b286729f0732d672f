@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_b19b3165",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-17T18:10:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_7fcc7e35",
+      "revId": "8c4e00974e6c08bfa192318b286729f0732d672f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_dfb11290",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_311ac1c6",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-17T18:10:13Z",
+      "side": 1,
+      "message": "the persistent mapping of ID to domain \u0026 local ID is what is built on-the-fly",
+      "parentUuid": "1ae5cdf2_dfb11290",
+      "revId": "8c4e00974e6c08bfa192318b286729f0732d672f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_a410bf59",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-06-13T21:15:52Z",
       "side": 1,
       "message": "Remove \"the\" from: \"facing IDs will be the unchanged\".",
+      "revId": "8c4e00974e6c08bfa192318b286729f0732d672f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_31000102",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-17T18:10:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_a410bf59",
       "revId": "8c4e00974e6c08bfa192318b286729f0732d672f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
