@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_997581ce",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 11381
+      },
+      "writtenOn": "2014-06-17T16:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_041a3c6e",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae8d1ca_e3ab2f1c",
         "filename": "keystone/tests/test_middleware.py",
         "patchSetId": 1
@@ -81,6 +99,42 @@
       "writtenOn": "2014-06-10T21:14:54Z",
       "side": 1,
       "message": "++ I think this is needed to really validate the correct exception is raised.",
+      "parentUuid": "3ae8d1ca_e3ab2f1c",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7946f57c",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 11381
+      },
+      "writtenOn": "2014-06-17T16:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_e5824151",
+      "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5943f96b",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 11381
+      },
+      "writtenOn": "2014-06-17T16:52:33Z",
+      "side": 1,
+      "message": "Good point, thanks!",
       "parentUuid": "3ae8d1ca_e3ab2f1c",
       "revId": "e1cade998ce788db9216001f5b117d0ed1031573",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
