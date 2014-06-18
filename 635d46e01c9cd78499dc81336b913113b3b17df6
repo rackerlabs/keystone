@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_29aec398",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-18T03:07:34Z",
+      "side": 1,
+      "message": "Nit: Make sure every line in commit message (other than first) is wrapped at 72 chars. First line in theory should be wrapped at 50. See: https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "635d46e01c9cd78499dc81336b913113b3b17df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_299c035d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-18T03:07:34Z",
+      "side": 1,
+      "message": "Nit: Missing \u0027.\u0027",
+      "revId": "635d46e01c9cd78499dc81336b913113b3b17df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
