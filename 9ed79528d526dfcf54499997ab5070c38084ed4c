@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ff139762",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-18T13:37:08Z",
+      "side": 1,
+      "message": "i\u0027d much prefer to see a leading underscore, but actually say what the variable is:\n\n  for role_dn, _something in roles:\n\nbut i have no idea what that something is",
+      "revId": "9ed79528d526dfcf54499997ab5070c38084ed4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7ae07526",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-18T13:37:08Z",
+      "side": 1,
+      "message": "because it won\u0027t be immediately obvious to future contributors why you need to delete the role_ref here, i\u0027d rather see this fixed by using a different variable name in the list comprehension below, like \n\n  self.assertEqual(set(role_list), set([r[\u0027id\u0027] for r in role_ref_list]))",
+      "revId": "9ed79528d526dfcf54499997ab5070c38084ed4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
