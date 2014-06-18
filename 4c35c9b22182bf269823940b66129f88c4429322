@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_94519532",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-18T14:46:17Z",
+      "side": 1,
+      "message": "a docstr defining the limited scope of the new class would be appreciated",
+      "revId": "4c35c9b22182bf269823940b66129f88c4429322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
