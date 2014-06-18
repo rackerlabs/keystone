@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7d196121",
+        "filename": "test-requirements-py3.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-18T05:54:09Z",
+      "side": 1,
+      "message": "Looks good. I finally figured out what this syntax meant :-)",
+      "revId": "30938120ce439786aa63e4a860a139e341d2236e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
