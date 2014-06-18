@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_58583357",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-06-18T06:51:24Z",
+      "side": 1,
+      "message": "could you fix this commit message? it exceeded the 80 character limit",
+      "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9800fb03",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-06-18T06:51:24Z",
+      "side": 1,
+      "message": "I would still prefer a full name for this, instead of extn",
+      "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
