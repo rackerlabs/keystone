@@ -34,6 +34,24 @@
       "revId": "b6843ded671ffe859d8cb254acc696a475af73cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_085ad829",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-06-18T08:50:20Z",
+      "side": 0,
+      "message": "But we still pass the global CONF instance, so it shouldn\u0027t be any different, right? There must be an explanation, but unfortunately I can\u0027t give you one right off the top of my head :(",
+      "parentUuid": "1ae5cdf2_d51409a1",
+      "revId": "b6843ded671ffe859d8cb254acc696a475af73cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
