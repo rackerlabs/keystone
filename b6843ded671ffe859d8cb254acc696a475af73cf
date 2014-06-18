@@ -52,6 +52,24 @@
       "revId": "b6843ded671ffe859d8cb254acc696a475af73cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c1760ba3",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-06-18T10:10:05Z",
+      "side": 0,
+      "message": "I\u0027m sorry, I was wrong.\n\nEarlier in oslo.db.options we used oslo.config `set_defaults` https://github.com/vikt0rs/oslo.db/blob/master/oslo/db/options.py#L140 method which has no cleanup mechanism https://github.com/openstack/oslo.config/blob/master/oslo/config/cfg.py#L558. A modern version of oslo.db uses `register_opts` method https://github.com/openstack/oslo.db/blob/master/oslo/db/options.py#L143 which has cleanup mechanism https://github.com/openstack/oslo.config/blob/master/oslo/config/cfg.py#L1729 https://github.com/openstack/oslo.config/blob/master/oslo/config/cfg.py#L1588.\n\nSo every execution all the options will be cleared. And we must set options at every fixture initialization, not just once.",
+      "parentUuid": "1ae5cdf2_085ad829",
+      "revId": "b6843ded671ffe859d8cb254acc696a475af73cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
