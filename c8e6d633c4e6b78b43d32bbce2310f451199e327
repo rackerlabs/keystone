@@ -69,6 +69,24 @@
       "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ab4c7e77",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-06-18T09:40:05Z",
+      "side": 1,
+      "message": "I don\u0027t see that as an issue. For instance, this is valid:\n\nself.assertValidExtensionListResponse(\n    r, keystone_extension.PUBLIC_EXTENSIONS)",
+      "parentUuid": "1ae5cdf2_95a7e1a6",
+      "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
