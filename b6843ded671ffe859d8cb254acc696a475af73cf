@@ -16,6 +16,24 @@
       "revId": "b6843ded671ffe859d8cb254acc696a475af73cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d51409a1",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-06-18T08:39:43Z",
+      "side": 0,
+      "message": "`set_defaults` from oslo.db `options` module takes config instance to set default options in it, not global config object, so `connection` must be set every time when the fixture is initialized, not once. Do we need this clarification in the commit message or comments in the code snippet?",
+      "parentUuid": "1ae5cdf2_14cf78b4",
+      "revId": "b6843ded671ffe859d8cb254acc696a475af73cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
