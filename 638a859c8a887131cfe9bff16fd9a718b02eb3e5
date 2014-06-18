@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c3636118",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-18T16:13:23Z",
+      "side": 1,
+      "message": "something wrong with my split here - should be no changes to this file",
+      "revId": "638a859c8a887131cfe9bff16fd9a718b02eb3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
