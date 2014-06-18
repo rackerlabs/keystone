@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_89051716",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-18T03:51:46Z",
+      "side": 1,
+      "message": "I would re-phrase to make it more general and simply say something like:\n\n\"\nThe LDAP OPT_DEBUG_LEVEL is very useful for debugging LDAP problems with Keystone. To configure add the following property in the [ldap] section of the Keystone configuration file:\n\n    debug_level \u003d x\n\nWhere x is a bit mask (integer). See OpenLDAP manpages for details on commonly used debug levels.\n\"",
+      "revId": "63b76c50ac7f4f90b3596a0b8bba5b95e95621a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8980b78c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1413,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-18T03:51:46Z",
+      "side": 1,
+      "message": "I would re-position and re-phrase the last line and have a new paragraph prefixed with \".. WARNING:: Enabling DEBUG_LEVEL will negatively impact performance.\" to ensure this is not missed. Of course, it\u0027s assumed everyone knows this already but ...",
+      "revId": "63b76c50ac7f4f90b3596a0b8bba5b95e95621a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
