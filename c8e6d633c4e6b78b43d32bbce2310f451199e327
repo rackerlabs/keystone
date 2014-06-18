@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_f55745c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7145
+      },
+      "writtenOn": "2014-06-18T08:36:42Z",
+      "side": 1,
+      "message": "These are straight from flake8, but I can wrap them after the filename and line number.",
+      "parentUuid": "1ae5cdf2_58583357",
+      "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9800fb03",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-18T06:51:24Z",
       "side": 1,
       "message": "I would still prefer a full name for this, instead of extn",
+      "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_95a7e1a6",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7145
+      },
+      "writtenOn": "2014-06-18T08:36:42Z",
+      "side": 1,
+      "message": "What do you suggest? extension is already taken, and keystone_extension will cause some lines to become longer than 79 characters.",
+      "parentUuid": "1ae5cdf2_9800fb03",
       "revId": "c8e6d633c4e6b78b43d32bbce2310f451199e327",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
