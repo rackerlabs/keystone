@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_70687fba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-18T23:16:50Z",
+      "side": 1,
+      "message": "even in debug mode keystone shouldn\u0027t leak SQL statements or LDAP queries.",
+      "revId": "55ea97bb45886c7685811b2e48aa90813016bcd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7096bf95",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-18T23:16:50Z",
+      "side": 1,
+      "message": "If Conflict is a SecurityError then it seems like every exception should be a SecurityError, at which point, why not change Error to work like SecurityError?",
+      "revId": "55ea97bb45886c7685811b2e48aa90813016bcd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_4b4fccbe",
         "filename": "keystone/tests/test_exception.py",
         "patchSetId": 7
