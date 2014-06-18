@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f4875510",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-18T00:08:19Z",
+      "side": 1,
+      "message": "this NOTE is no longer applicable",
+      "revId": "982538a91cf977d20c7e98ca303cd029842612ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1492014b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-18T00:08:19Z",
+      "side": 1,
+      "message": "this LOG statement should be outside of the try:except block",
+      "revId": "982538a91cf977d20c7e98ca303cd029842612ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
