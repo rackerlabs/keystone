@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a08f26cc",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-18T18:00:52Z",
+      "side": 1,
+      "message": "Is this really necessary, or just a vestige from development?",
+      "revId": "7ccf73c07757da09cd80b786fff35565a66b9d1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
