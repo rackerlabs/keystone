@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_43b2ece5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-18T18:05:38Z",
+      "side": 1,
+      "message": "Easier for the tiring eyes if i instead of r.  \n\nEx.  set([i[\u0027id\u0027] for i in role_ref_list])",
+      "revId": "fcc29504b222e1b2777d1e2c230df1ae558ac54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
