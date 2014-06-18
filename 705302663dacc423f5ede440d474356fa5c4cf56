@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_346d2133",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-18T14:50:00Z",
+      "side": 1,
+      "message": "Mismatched quotes.",
+      "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_496cef36",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 7
@@ -30,6 +47,23 @@
       "writtenOn": "2014-06-18T03:10:43Z",
       "side": 1,
       "message": "s/THe/The",
+      "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b74db374",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-18T14:50:00Z",
+      "side": 1,
+      "message": "It\u0027s not clear to my why we are now catching this exception. The code itself doesn\u0027t look like it would change this behavior, so it must be the tests?\n\nThis is a behavior change and should probably have a new test to show why this is happening.",
       "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
