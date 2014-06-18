@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0982e7ff",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-18T02:57:32Z",
+      "side": 1,
+      "message": "This will happen as \"external\" is not set,",
+      "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
