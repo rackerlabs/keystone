@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_c602850b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-18T20:50:47Z",
+      "side": 1,
+      "message": "Nope.   Reread it.  \"we do not want to expose to the client the difference ...\"",
+      "parentUuid": "1ae5cdf2_dd8fb921",
+      "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9d8ff1cc",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -98,6 +116,24 @@
       "writtenOn": "2014-06-18T14:50:00Z",
       "side": 1,
       "message": "It\u0027s not clear to my why we are now catching this exception. The code itself doesn\u0027t look like it would change this behavior, so it must be the tests?\n\nThis is a behavior change and should probably have a new test to show why this is happening.",
+      "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c6f8c54c",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-18T20:50:47Z",
+      "side": 1,
+      "message": "If the method is \u0027kerberos\u0027 and there is no registered \u0027external\u0027 method, then the presense of \u0027REMOTE-USER\u0027 will trigger this excpetion.  For the \u0027kerberos\u0027 case, this is acceptable, and the exception can and should be ignored.  If both \u0027external and \u0027kerberos\u0027 are registered, for a \u0027kerberos\u0027 based authentication, the auth [plugin would be called twice.\n\nUpdated the comment to explain this better (I hope)",
+      "parentUuid": "1ae5cdf2_b74db374",
       "revId": "705302663dacc423f5ede440d474356fa5c4cf56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
