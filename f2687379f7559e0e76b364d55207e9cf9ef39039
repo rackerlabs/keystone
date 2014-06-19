@@ -16,6 +16,24 @@
       "revId": "f2687379f7559e0e76b364d55207e9cf9ef39039",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6d95eee2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-19T15:15:19Z",
+      "side": 1,
+      "message": "The disable wont be emitted if the original tenant is \u0027enabled\u0027 and the update isn\u0027t disabling it.\n\nPreviously we only looked at the update and even if the original tenant was disabled we would re-emit if the update contained \u0027enabled \u003d false\u0027.",
+      "parentUuid": "1ae5cdf2_a97d3d6f",
+      "revId": "f2687379f7559e0e76b364d55207e9cf9ef39039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
