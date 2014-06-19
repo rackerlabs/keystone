@@ -16,6 +16,24 @@
       "revId": "fb09f87f69d31c30ffc35caa4229a1bdf98d1fe4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_74f3f372",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 55
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-06-19T17:15:06Z",
+      "side": 1,
+      "message": "Thanks! I\u0027m sorry, I saw your comment after I uploaded patch set #56.",
+      "parentUuid": "1ae5cdf2_1e51eed8",
+      "revId": "fb09f87f69d31c30ffc35caa4229a1bdf98d1fe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
