@@ -2123,6 +2123,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         self.assertEqual(auth_context['user_id'],
                          self.default_domain_user['id'])
 
+
     def test_remote_user_no_domain(self):
         api = auth.controllers.Auth()
         context, auth_info, auth_context = self.build_external_auth_request(
@@ -2371,6 +2372,24 @@ class TestAuthJSON(test_v3.RestfulTestCase):
             user_id=self.default_domain_user['id'],
             password=self.default_domain_user['password'])
         self.post('/auth/tokens', body=auth_data, expected_status=401)
+
+
+class TestAuthJSONExternal(test_v3.RestfulTestCase):
+    content_type = 'json'
+
+    def config_overrides(self):
+        self.config_fixture.config(group='auth', methods='')
+
+    def test_remote_user_no_method(self):
+        api = auth.controllers.Auth()
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.default_domain_user['name'])
+        self.assertRaises(exception.Unauthorized,
+                          api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
 
 
 class TestAuthXML(TestAuthJSON):
