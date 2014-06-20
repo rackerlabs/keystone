@@ -111,7 +111,7 @@ FILE_OPTIONS = {
                    help='Sets the value of TCP_KEEPIDLE in seconds for each '
                         'server socket. Only applies if tcp_keepalive is '
                         'true. Not supported on OS X.'),
-        cfg.IntOpt('list_limit', default=None,
+        cfg.IntOpt('list_limit',
                    help='The maximum number of entities that will be '
                         'returned in a collection, with no limit set by '
                         'default. This global limit may be then overridden '
@@ -165,7 +165,7 @@ FILE_OPTIONS = {
         cfg.IntOpt('max_password_length', default=4096,
                    help='Maximum supported length for user passwords; '
                         'decrease to improve performance.'),
-        cfg.IntOpt('list_limit', default=None,
+        cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned in '
                         'an identity collection.'),
     ],
@@ -194,7 +194,7 @@ FILE_OPTIONS = {
         cfg.IntOpt('expiration', default=3600,
                    help='Amount of time a token should remain valid '
                         '(in seconds).'),
-        cfg.StrOpt('provider', default=None,
+        cfg.StrOpt('provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
                         '"keystone.token.providers.[pkiz|pki|uuid].'
@@ -210,7 +210,7 @@ FILE_OPTIONS = {
                         'events if revoke extension is enabled (in seconds). '
                         'This has no effect unless global and token '
                         'caching are enabled.'),
-        cfg.IntOpt('cache_time', default=None,
+        cfg.IntOpt('cache_time',
                    help='Time to cache tokens (in seconds). This has no '
                         'effect unless global and token caching are '
                         'enabled.'),
@@ -328,7 +328,7 @@ FILE_OPTIONS = {
                         'certificate).'),
     ],
     'signing': [
-        cfg.StrOpt('token_format', default=None,
+        cfg.StrOpt('token_format',
                    help='Deprecated in favor of provider in the '
                         '[token] section.'),
         cfg.StrOpt('certfile',
@@ -362,15 +362,15 @@ FILE_OPTIONS = {
         # assignment has no default for backward compatibility reasons.
         # If assignment driver is not specified, the identity driver chooses
         # the backend
-        cfg.StrOpt('driver', default=None,
+        cfg.StrOpt('driver',
                    help='Assignment backend driver.'),
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for assignment caching. This has no effect '
                          'unless global caching is enabled.'),
-        cfg.IntOpt('cache_time', default=None,
+        cfg.IntOpt('cache_time',
                    help='TTL (in seconds) to cache assignment data. This has '
                         'no effect unless global caching is enabled.'),
-        cfg.IntOpt('list_limit', default=None,
+        cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in an assignment collection.'),
     ],
@@ -402,7 +402,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy',
                    help='Policy backend driver.'),
-        cfg.IntOpt('list_limit', default=None,
+        cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a policy collection.'),
     ],
@@ -429,9 +429,9 @@ FILE_OPTIONS = {
     'ldap': [
         cfg.StrOpt('url', default='ldap://localhost',
                    help='URL for connecting to the LDAP server.'),
-        cfg.StrOpt('user', default=None,
+        cfg.StrOpt('user',
                    help='User BindDN to query the LDAP server.'),
-        cfg.StrOpt('password', secret=True, default=None,
+        cfg.StrOpt('password', secret=True,
                    help='Password for the BindDN to query the LDAP server.'),
         cfg.StrOpt('suffix', default='cn=example,cn=com',
                    help='LDAP server suffix'),
@@ -459,17 +459,17 @@ FILE_OPTIONS = {
                         '"finding" or "default". The "default" option falls '
                         'back to using default dereferencing configured by '
                         'your ldap.conf.'),
-        cfg.IntOpt('debug_level', default=None,
+        cfg.IntOpt('debug_level',
                    help='Sets the LDAP debugging level for LDAP calls. '
                         'A value of 0 means that debugging is not enabled. '
                         'This value is a bitmask, consult your LDAP '
                         'documentation for possible values.'),
-        cfg.BoolOpt('chase_referrals', default=None,
+        cfg.BoolOpt('chase_referrals',
                     help='Override the system\'s default referral chasing '
                          'behavior for queries.'),
-        cfg.StrOpt('user_tree_dn', default=None,
+        cfg.StrOpt('user_tree_dn',
                    help='Search base for users.'),
-        cfg.StrOpt('user_filter', default=None,
+        cfg.StrOpt('user_filter',
                    help='LDAP search filter for users.'),
         cfg.StrOpt('user_objectclass', default='inetOrgPerson',
                    help='LDAP objectclass for users.'),
@@ -502,7 +502,7 @@ FILE_OPTIONS = {
                     default=['default_project_id', 'tenants'],
                     help='List of attributes stripped off the user on '
                          'update.'),
-        cfg.StrOpt('user_default_project_id_attribute', default=None,
+        cfg.StrOpt('user_default_project_id_attribute',
                    help='LDAP attribute mapped to default_project_id for '
                         'users.'),
         cfg.BoolOpt('user_allow_create', default=True,
@@ -516,7 +516,7 @@ FILE_OPTIONS = {
                          'determine if a user is enabled or not by checking '
                          'if they are a member of the '
                          '"user_enabled_emulation_dn" group.'),
-        cfg.StrOpt('user_enabled_emulation_dn', default=None,
+        cfg.StrOpt('user_enabled_emulation_dn',
                    help='DN of the group entry to hold enabled users when '
                         'using enabled emulation.'),
         cfg.ListOpt('user_additional_attribute_mapping',
@@ -527,9 +527,9 @@ FILE_OPTIONS = {
                          'ldap_attr is the attribute in the LDAP entry and '
                          'user_attr is the Identity API attribute.'),
 
-        cfg.StrOpt('tenant_tree_dn', default=None,
+        cfg.StrOpt('tenant_tree_dn',
                    help='Search base for projects'),
-        cfg.StrOpt('tenant_filter', default=None,
+        cfg.StrOpt('tenant_filter',
                    help='LDAP search filter for projects.'),
         cfg.StrOpt('tenant_objectclass', default='groupOfNames',
                    help='LDAP objectclass for projects.'),
@@ -561,7 +561,7 @@ FILE_OPTIONS = {
                          'determine if a project is enabled or not by '
                          'checking if they are a member of the '
                          '"tenant_enabled_emulation_dn" group.'),
-        cfg.StrOpt('tenant_enabled_emulation_dn', default=None,
+        cfg.StrOpt('tenant_enabled_emulation_dn',
                    help='DN of the group entry to hold enabled projects when '
                         'using enabled emulation.'),
         cfg.ListOpt('tenant_additional_attribute_mapping',
@@ -572,9 +572,9 @@ FILE_OPTIONS = {
                          'attribute in the LDAP entry and user_attr is the '
                          'Identity API attribute.'),
 
-        cfg.StrOpt('role_tree_dn', default=None,
+        cfg.StrOpt('role_tree_dn',
                    help='Search base for roles.'),
-        cfg.StrOpt('role_filter', default=None,
+        cfg.StrOpt('role_filter',
                    help='LDAP search filter for roles.'),
         cfg.StrOpt('role_objectclass', default='organizationalRole',
                    help='LDAP objectclass for roles.'),
@@ -600,9 +600,9 @@ FILE_OPTIONS = {
                          'ldap_attr is the attribute in the LDAP entry and '
                          'user_attr is the Identity API attribute.'),
 
-        cfg.StrOpt('group_tree_dn', default=None,
+        cfg.StrOpt('group_tree_dn',
                    help='Search base for groups.'),
-        cfg.StrOpt('group_filter', default=None,
+        cfg.StrOpt('group_filter',
                    help='LDAP search filter for groups.'),
         cfg.StrOpt('group_objectclass', default='groupOfNames',
                    help='LDAP objectclass for groups.'),
@@ -630,10 +630,10 @@ FILE_OPTIONS = {
                          'ldap_attr is the attribute in the LDAP entry and '
                          'user_attr is the Identity API attribute.'),
 
-        cfg.StrOpt('tls_cacertfile', default=None,
+        cfg.StrOpt('tls_cacertfile',
                    help='CA certificate file path for communicating with '
                         'LDAP servers.'),
-        cfg.StrOpt('tls_cacertdir', default=None,
+        cfg.StrOpt('tls_cacertdir',
                    help='CA certificate directory path for communicating with '
                         'LDAP servers.'),
         cfg.BoolOpt('use_tls', default=False,
@@ -677,7 +677,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    default='keystone.catalog.backends.sql.Catalog',
                    help='Catalog backend driver.'),
-        cfg.IntOpt('list_limit', default=None,
+        cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a catalog collection.'),
     ],
@@ -721,10 +721,10 @@ def configure(conf=None):
         cfg.BoolOpt('standard-threads', default=False,
                     help='Do not monkey-patch threading system modules.'))
     conf.register_cli_opt(
-        cfg.StrOpt('pydev-debug-host', default=None,
+        cfg.StrOpt('pydev-debug-host',
                    help='Host to connect to for remote debugger.'))
     conf.register_cli_opt(
-        cfg.IntOpt('pydev-debug-port', default=None,
+        cfg.IntOpt('pydev-debug-port',
                    help='Port to connect to for remote debugger.'))
 
     for section in FILE_OPTIONS:
