@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e1263e66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-20T18:11:41Z",
+      "side": 1,
+      "message": "This needs an explanation of what this is for.",
+      "revId": "32856002b8d30ddbd0972b05d698c24be64aaf71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
