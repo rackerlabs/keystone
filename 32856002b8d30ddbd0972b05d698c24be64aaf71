@@ -16,6 +16,24 @@
       "revId": "32856002b8d30ddbd0972b05d698c24be64aaf71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dcb4c5f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-20T18:44:08Z",
+      "side": 1,
+      "message": "This actually isn\u0027t even used in the follow-on commit. Move it to just before it\u0027s used.",
+      "parentUuid": "1ae5cdf2_e1263e66",
+      "revId": "32856002b8d30ddbd0972b05d698c24be64aaf71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
