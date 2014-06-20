@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_06741bfc",
+        "filename": "doc/source/community.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-06-20T20:55:55Z",
+      "side": 1,
+      "message": "#openstack-keystone here as well?\n\nOr\n\n\"Logs for the #openstack IRC channels are stored at\"",
+      "revId": "9951a8a6a2a486b0ff8bfb58070057c05af79b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
