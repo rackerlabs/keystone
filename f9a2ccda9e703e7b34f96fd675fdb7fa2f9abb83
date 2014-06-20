@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8a30379f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-20T15:27:38Z",
+      "side": 1,
+      "message": "This is a part of the stdlib and should go in the first group of imports.",
+      "revId": "f9a2ccda9e703e7b34f96fd675fdb7fa2f9abb83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8ae117d2",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-20T15:27:38Z",
+      "side": 1,
+      "message": "I\u0027d love for this comment to read: \n\n  The fixture ID is no longer used as the ID in the database. The fixture ID, however, is still used as part of the attribute name when storing the created object on the test case.  This means that we need to use the fixture ID below to find the actual object so that we can get the ID as stored in the database to compare against.",
+      "revId": "f9a2ccda9e703e7b34f96fd675fdb7fa2f9abb83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
