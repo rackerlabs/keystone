@@ -16,6 +16,24 @@
       "revId": "9f3cd209ce3224609a873f2ec235427a7927e747",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f09e0553",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-20T19:28:36Z",
+      "side": 1,
+      "message": "I kept it separate to clarify pooling attributes from LDAP config section which is already too big. Also, sometimes its easier to search and make changes in a separate section.\n\nLooks like preference is to have within ldap section. I will make that change in next patch.",
+      "parentUuid": "1ae5cdf2_9b1c0779",
+      "revId": "9f3cd209ce3224609a873f2ec235427a7927e747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
