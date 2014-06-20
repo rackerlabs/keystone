@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fc96e192",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-20T18:37:49Z",
+      "side": 1,
+      "message": "This still isn\u0027t used. Move adding to a separate commit after this one.",
+      "revId": "8db9ba790696c5572a8fce3be913f05fa391c491",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
