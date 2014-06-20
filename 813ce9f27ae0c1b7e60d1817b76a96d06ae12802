@@ -16,6 +16,41 @@
       "revId": "813ce9f27ae0c1b7e60d1817b76a96d06ae12802",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1369bb8b",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-20T19:52:29Z",
+      "side": 1,
+      "message": "++ on the improved name",
+      "parentUuid": "1ae5cdf2_fb898bca",
+      "revId": "813ce9f27ae0c1b7e60d1817b76a96d06ae12802",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b3264765",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-20T19:52:29Z",
+      "side": 1,
+      "message": "This still must subsclass rest.RestfulTestCase.  This is now skipping ~600 tests because testr isn\u0027t finding them.",
+      "revId": "813ce9f27ae0c1b7e60d1817b76a96d06ae12802",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
