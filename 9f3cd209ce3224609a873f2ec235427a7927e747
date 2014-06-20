@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9b1c0779",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-06-20T17:29:35Z",
+      "side": 1,
+      "message": "Why aren\u0027t these just under ldap?",
+      "revId": "9f3cd209ce3224609a873f2ec235427a7927e747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
