@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_4e62adad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-22T03:35:21Z",
+      "side": 1,
+      "message": "The issue is that the exception (internal) is what is passed back in, do we want to just squash all exception details in this case? Not a big deal if that is the direction we want to go [eliminate the \u0027details\u0027 of the exception in Conflict cases instead of scrubbing when in non-debug)",
+      "parentUuid": "1ae5cdf2_70687fba",
+      "revId": "55ea97bb45886c7685811b2e48aa90813016bcd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_7096bf95",
         "filename": "keystone/exception.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-18T23:16:50Z",
       "side": 1,
       "message": "If Conflict is a SecurityError then it seems like every exception should be a SecurityError, at which point, why not change Error to work like SecurityError?",
+      "revId": "55ea97bb45886c7685811b2e48aa90813016bcd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8e5835fa",
+        "filename": "keystone/exception.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-22T03:35:21Z",
+      "side": 1,
+      "message": "Fair point. Asked a question re: commit message that could change the implementation here.\n\nI would agree with changing all exceptions to have the Security mechanisms. Would make enforcing less data leakage easier in the future.",
+      "parentUuid": "1ae5cdf2_7096bf95",
       "revId": "55ea97bb45886c7685811b2e48aa90813016bcd8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
