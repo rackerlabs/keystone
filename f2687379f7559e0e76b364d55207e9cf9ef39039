@@ -52,6 +52,24 @@
       "revId": "f2687379f7559e0e76b364d55207e9cf9ef39039",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_986dd634",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-22T16:55:22Z",
+      "side": 1,
+      "message": "The update notification will always be emitted. The disabled (called via self._disable_project), will only be emitted when/if the projects enabled flag is toggled to False. \n\nThis simply prevents extra \u0027disabled\u0027 notifications from going out if the project is already disabled and the update contains \u0027enabled: False\u0027, since there was no change in the enabled flag state.",
+      "parentUuid": "1ae5cdf2_f605397a",
+      "revId": "f2687379f7559e0e76b364d55207e9cf9ef39039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
