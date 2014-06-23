@@ -496,7 +496,7 @@ class AuthTokenTests(OAuthFlowTests):
             user_id=self.user['id'],
             password=self.user['password'],
             trust_id=trust['id'])
-        r = self.post('/auth/tokens', body=auth_data)
+        r = self.v3_auth_token(auth_data)
 
         trust_token = r.headers['X-Subject-Token']
         return trust_token

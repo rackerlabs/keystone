@@ -352,6 +352,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
             body=auth)
         return r.headers.get('X-Subject-Token')
 
+    def v3_auth_token(self, auth_data):
+        return self.admin_request(method='POST',
+                                  path='/v3/auth/tokens',
+                                  body=auth_data)
+
     def v3_noauth_request(self, path, **kwargs):
         # request does not require auth token header
         path = '/v3' + path
