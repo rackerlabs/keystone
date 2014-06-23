@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ca092486",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_662b1f82",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_6636bf04",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Out of curiosity, why do we not validate delete region, delete service, delete endpoint?",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aa285886",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "No region, service, or endpoint reference is passed into delete_ methods. Only the ID is passed in on delete methods.",
+      "parentUuid": "1ae5cdf2_6636bf04",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_2a3b68c9",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_fcf98180",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_6994d036",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Rename function to: test_validate_region_create_...",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ea70a0a6",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_6994d036",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ca6be4b7",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_e99f004e",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_698db030",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Our request that we are testing should include all mandatory fields plus the extra fields.",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cac76497",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "For regions, we don\u0027t require any attributes, but we do accept optional ones: \n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#regions-v3regions\n\nSo, for this case we should be able to execute this test case by testing that we successfully validate an attribute that isn\u0027t included in the schema.",
+      "parentUuid": "1ae5cdf2_698db030",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ea434011",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_49b8f4c7",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_c9f96481",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Rename function to: test_validate_service_create_succeeds_with_required_parameters",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aa6058a5",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_c9f96481",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ea5a60f1",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_29eba8a4",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_c94084a7",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -166,6 +328,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Rename function to: test_validate_service_update_request_succeeds",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4a69948b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_c94084a7",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_8a29dc3c",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Update requests only require that we pass in at least one value to update. Unlike create requests that require certain values to be successful.",
+      "parentUuid": "1ae5cdf2_89b2fc03",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_c927a410",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -200,6 +398,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Rename function to: test_validate_endpoint_request_succeeds",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aa2e9840",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_c927a410",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_4a17d4ee",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_e9e38002",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_29448845",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -234,6 +468,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Comment is generic. We\u0027re testing the missing service id here.",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aabcd8dc",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_29448845",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_cab12403",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_c942443d",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_69521014",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -268,6 +538,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Comment is generic. We\u0027re testing the missing URL here.",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0acb0c74",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_69521014",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_aaa3f8af",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_e922a0ff",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_897afc74",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 10
@@ -302,6 +608,24 @@
       "writtenOn": "2014-06-13T20:19:33Z",
       "side": 1,
       "message": "Modify the test update request to include all mandatory fields plus extra:\n\nrequest_to_validate \u003d {\n                        \u0027enabled\u0027: True,\n                        \u0027interface\u0027: \u0027admin\u0027,\n                        \u0027region_id\u0027: uuid.uuid4().hex,\n                        \u0027service_id\u0027: uuid.uuid4().hex\n\t\t        \u0027url\u0027: \u0027https://service.example.com:5000/\u0027,\n                        \u0027other_attr\u0027: uuid.uuid4().hex}",
+      "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aa14d89f",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:41:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_897afc74",
       "revId": "646aef7e06fd90e10494a6e601fbcf72d6dde264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
