@@ -32,7 +32,9 @@ SAMPLE_V2_TOKEN = {
     "access": {
         "trust": {
             "id": "abc123",
-            "trustee_user_id": "123456"
+            "trustee_user_id": "123456",
+            "trustor_user_id": "333333",
+            "impersonation": False
         },
         "serviceCatalog": [
             {
@@ -339,7 +341,9 @@ SAMPLE_V2_TOKEN_WITH_EMBEDED_VERSION = {
     "access": {
         "trust": {
             "id": "abc123",
-            "trustee_user_id": "123456"
+            "trustee_user_id": "123456",
+            "trustor_user_id": "333333",
+            "impersonation": False
         },
         "serviceCatalog": [
             {

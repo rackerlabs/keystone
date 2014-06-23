@@ -947,6 +947,23 @@ class AuthWithTrust(AuthTest):
             exception.Forbidden,
             self.controller.authenticate, {}, request_body)
 
+    def test_v2_trust_token_contain_trustor_user_id_and_impersonation(self):
+        new_trust = self.create_trust(self.sample_data, self.trustor['name'])
+        auth_response = self.fetch_v2_token_from_trust(new_trust)
+
+        self.assertEqual(new_trust['trustor_user_id'],
+                         auth_response['access']['trust']['trustor_user_id'])
+        self.assertEqual(new_trust['impersonation'],
+                         auth_response['access']['trust']['impersonation'])
+
+        validate_resp = self.controller.validate_token(
+            dict(is_admin=True, query_string={}),
+            token_id=auth_response['access']['token']['id'])
+        self.assertEqual(new_trust['trustor_user_id'],
+                         validate_resp['access']['trust']['trustor_user_id'])
+        self.assertEqual(new_trust['impersonation'],
+                         validate_resp['access']['trust']['impersonation'])
+
 
 class TokenExpirationTest(AuthTest):
 
