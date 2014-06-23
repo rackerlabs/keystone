@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_332cceac",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2014-06-23T14:43:17Z",
+      "side": 1,
+      "message": "so I have a lot of thoughts on this.   I think the specific technique here, considering that we\u0027re targeting MySQL, is the best we can do; that is we have to scan through groups of 1000 rows.   MySQL doesn\u0027t support window functions or a \"row number\" type of function so offset() here is really how we\u0027re getting windows based on a row number, OK.     I would suggest that we add an ORDER BY here, as you can\u0027t assume in all cases that the natural ordering of the table is going to give you what you expect (it might be the case on MySQL and for how this table is populated, but if this code is run against Oracle, who knows):\n\n    query \u003d query.order_by(TokenModel.expires)\n\nBeyond that aspect, if this code were run against Postgresql or another window-function supporting DB, I\u0027d want to use a window to get at the ranges.   Between that, and the way this code \"falls through\" into the \"normal\" delete, i think it would be cleaner if the part of this which grabs batches were factored into an iterator function.   That way, we can swap different iterators based on DB backend, and also this code would be easier to read:\n\n    batch_size \u003d self.token_flush_batch_size(dialect)\n    query \u003d session.query(TokenModel)\n    for expiry_time in self._expiry_range(TokenModel.expires,  \n          timeutils.utcnow, batch_size):\n\t  query.filter(TokenModel.expires \u003c \n                     expiry_time).delete(synchronize_session\u003dFalse)\n\nso that above we only see a single line of code dealing with delete()  and the job of returning the date ranges is handled in a different function.   The iteration and the \"delete\" function can also be tested separately (in the latter case, by patching in a fixed iteration using mock.patch).\n\nnote I\u0027m passing timeutils.utcnow as a callable to the function, so that it can be called repeatedly if necessary in the iteration function; this is assuming that we\u0027re concerned about catching new timestamps entering the result set as time passes.  This can be called up-front if that is not a concern here.\n\nThe iteration function here could later have a version that uses real window functions, based on backend; see https://bitbucket.org/zzzeek/sqlalchemy/wiki/UsageRecipes/WindowedRangeQuery for an example of something similar.",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
