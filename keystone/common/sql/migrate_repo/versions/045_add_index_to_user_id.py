@@ -17,9 +17,24 @@
 # http://lists.openstack.org/pipermail/openstack-dev/2013-March/006827.html
 
 
+"""Adds an index on the `user_id` column for the `token` table."""
+
+import sqlalchemy as sql
+
+
 def upgrade(migrate_engine):
-    pass
+    meta = sql.MetaData()
+    meta.bind = migrate_engine
+
+    token = sql.Table('token', meta, autoload=True)
+
+    sql.Index('ix_token_user_id', token.c.user_id).create()
 
 
-def downgrade(migration_engine):
-    pass
+def downgrade(migrate_engine):
+    meta = sql.MetaData()
+    meta.bind = migrate_engine
+
+    token = sql.Table('token', meta, autoload=True)
+
+    sql.Index('ix_token_user_id', token.c.user_id).drop()
