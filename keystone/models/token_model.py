@@ -227,6 +227,14 @@ class KeystoneToken(dict):
             return self.get('trust', {}).get('trustor_user_id')
 
     @property
+    def trust_impersonation(self):
+        if self.version is V3:
+            return self.get(
+                'OS-TRUST:trust', {}).get('impersonation')
+        else:
+            return self.get('trust', {}).get('impersonation')
+
+    @property
     def oauth_access_token_id(self):
         if self.version is V3:
             return self.get('OS-OAUTH1', {}).get('access_token_id')
