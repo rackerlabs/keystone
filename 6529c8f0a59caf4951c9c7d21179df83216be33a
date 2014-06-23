@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_4faa8672",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "good idea and nice catch, done",
+      "parentUuid": "1ae5cdf2_9ab31899",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_3a50442b",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-21T01:15:28Z",
       "side": 1,
       "message": "Do we need this comment? If there is an exception the test will fail.",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_afdf8a0b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_3a50442b",
       "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_6fd582e4",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_5a643021",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_da7760d2",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 24
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-21T01:15:28Z",
       "side": 1,
       "message": "For consistency I would vote for using \"fails\" instead of \"raises_exception\".",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ef00b268",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_da7760d2",
       "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ef37d24b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_1a7e28af",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_fa597c5b",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 24
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-21T01:15:28Z",
       "side": 1,
       "message": "Do we need this comment? If there is an exception the test will fail automatically.",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4f4606c2",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_fa597c5b",
       "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_cf9cd611",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_9a415865",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_da5e8044",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 24
@@ -132,6 +258,24 @@
       "writtenOn": "2014-06-21T01:15:28Z",
       "side": 1,
       "message": "For consistency I would have string \"_fails\" at the end of the method name.",
+      "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0fadde32",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:24:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_da5e8044",
       "revId": "6529c8f0a59caf4951c9c7d21179df83216be33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
