@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_8ac47c0f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Followed the naming of the Pypi package: \n\nhttps://pypi.python.org/pypi/jsonschema",
+      "parentUuid": "1ae5cdf2_3fd4b6e7",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_5f06e286",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-13T21:29:34Z",
       "side": 1,
       "message": "nit: bp:",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2a67e852",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_5f06e286",
       "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_cae5a4a5",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_9f814ac5",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_ff696e25",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-13T21:29:34Z",
       "side": 1,
       "message": "rename: test_validate_credential_without_blob_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_eaea6073",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_ff696e25",
       "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_2afc483f",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_9f586a8b",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_bf5b6684",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-13T21:29:34Z",
       "side": 1,
       "message": "rename: test_validate_credential_without_type_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4af9944d",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_bf5b6684",
       "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_2a8368aa",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_ff508e5f",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_1f4c5ac7",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 3
@@ -132,6 +258,24 @@
       "writtenOn": "2014-06-13T21:29:34Z",
       "side": 1,
       "message": "rename: test_validate_credential_with_extra_parameters_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cab3e498",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_1f4c5ac7",
       "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_6aa4904b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_3f4756a4",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_5fc98224",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 3
@@ -166,6 +328,24 @@
       "writtenOn": "2014-06-13T21:29:34Z",
       "side": 1,
       "message": "rename: test_validate_credential_update_without_parameters_fails",
+      "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_aa65b81e",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T18:49:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_5fc98224",
       "revId": "25849decce4f8618465afb37bdb3400de1a545f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
