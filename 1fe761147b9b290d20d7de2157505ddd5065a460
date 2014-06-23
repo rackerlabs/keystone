@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_b6336712",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-23T17:02:36Z",
+      "side": 1,
+      "message": "Is this relevant to Keystone configuration?",
+      "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_92ecf3bc",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -49,6 +66,23 @@
       "side": 1,
       "message": "Even for included sample certs you don\u0027t need that. If you look at the code, it is used  by keystone-manage tool which is not part of the keystone server, and it is  an external utility for dev/test. You don\u0027t want to include the configuration for the external utility in keystone.conf\n\nIn other words,  once you have generated the self signed certs, remove cert_key ,key_size from the configuration file  It will work.  Ideally keystone-mange should take the key size as command line arg.\n\nSince keystone has this, other projects such as devstack, tripleo have this in their configuration.",
       "parentUuid": "1ae5cdf2_fc2df7a8",
+      "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_36aaf71a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-23T17:02:36Z",
+      "side": 1,
+      "message": "Why would you do this? Are you assuming the cert is invalid? I don\u0027t think your ever be a recommendation. Maybe a note saying that if a user is not using a real cert this is necessary, but we should stress that they should never be used in a real environment.",
       "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
