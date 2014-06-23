@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5969748b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-23T17:16:51Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of the \u0027%\u0027 operator being used here, but I can live with it.",
+      "revId": "49722668c29e388971e90e13db849f99c1547b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f9116005",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-23T17:16:51Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "49722668c29e388971e90e13db849f99c1547b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
