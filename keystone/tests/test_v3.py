@@ -346,11 +346,14 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
     def get_requested_token(self, auth):
         """Request the specific token we want."""
 
-        r = self.admin_request(
-            method='POST',
-            path='/v3/auth/tokens',
-            body=auth)
+        r = self.v3_authenticate_token(auth=auth)
         return r.headers.get('X-Subject-Token')
+
+    def v3_authenticate_token(self, auth, **kwargs):
+        return self.admin_request(method='POST',
+                                  path='/v3/auth/tokens',
+                                  body=auth,
+                                  **kwargs)
 
     def v3_noauth_request(self, path, **kwargs):
         # request does not require auth token header
@@ -358,9 +361,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase):
         return self.admin_request(path=path, **kwargs)
 
     def v3_request(self, path, **kwargs):
-        # TODO(gyee): need to fix all the v3 auth tests. They should not
-        # require the token header.
-
         # check to see if caller requires token for the API call.
         if kwargs.pop('noauth', None):
             return self.v3_noauth_request(path, **kwargs)

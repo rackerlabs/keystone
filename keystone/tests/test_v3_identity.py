@@ -192,7 +192,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             user_id=self.user2['id'],
             password=self.user2['password'],
             project_id=self.project2['id'])
-        self.post('/auth/tokens', body=auth_data)
+        self.v3_authenticate_token(auth_data)
 
         # Now disable the domain
         self.domain2['enabled'] = False
@@ -220,14 +220,14 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             user_id=self.user2['id'],
             password=self.user2['password'],
             project_id=self.project2['id'])
-        self.post('/auth/tokens', body=auth_data, expected_status=401)
+        self.v3_authenticate_token(auth=auth_data, expected_status=401)
 
         auth_data = self.build_authentication_request(
             username=self.user2['name'],
             user_domain_id=self.domain2['id'],
             password=self.user2['password'],
             project_id=self.project2['id'])
-        self.post('/auth/tokens', body=auth_data, expected_status=401)
+        self.v3_authenticate_token(auth=auth_data, expected_status=401)
 
     def test_delete_enabled_domain_fails(self):
         """Call ``DELETE /domains/{domain_id}`` (when domain enabled)."""
@@ -641,8 +641,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             user_id=self.user['id'],
             password=self.user['password'],
             project_id=self.project['id'])
-        resp = self.post('/auth/tokens', body=auth_data)
-        token = resp.headers.get('X-Subject-Token')
+        token = self.get_requested_token(auth_data)
         # Confirm token is valid for now
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
@@ -1920,7 +1919,8 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
             password=password)
         r = self.post('/auth/tokens',
                       body=auth_data,
-                      expected_status=expected_status)
+                      expected_status=expected_status,
+                      noauth=True)
         return r.headers.get('X-Subject-Token')
 
     def change_password(self, expected_status, **kwargs):
