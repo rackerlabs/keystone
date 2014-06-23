@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_7f31abec",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T20:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_4569878b",
+      "revId": "9c3206e6343d58ea0cd5a9ed4ab239041ddc3115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_c523d756",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-23T19:13:02Z",
       "side": 1,
       "message": "Technically, capital letters are valid for UUIDs, and we might want to specify this as hex uuid, because \"real\" uuids have dashes in them:\n\n    \u003e\u003e\u003e u \u003d uuid.uuid4().hex\n    \u003e\u003e\u003e u.upper()\n    \u0027A19BBDFD869C4EA7AFEE64697FA3AE97\u0027\n    \u003e\u003e\u003e uuid.UUID(u.upper())\n    UUID(\u0027a19bbdfd-869c-4ea7-afee-64697fa3ae97\u0027)",
+      "revId": "9c3206e6343d58ea0cd5a9ed4ab239041ddc3115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9b1a0c7b",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-23T20:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_c523d756",
       "revId": "9c3206e6343d58ea0cd5a9ed4ab239041ddc3115",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
