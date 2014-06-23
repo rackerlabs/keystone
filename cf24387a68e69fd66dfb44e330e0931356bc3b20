@@ -16,6 +16,24 @@
       "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6cbe70b0",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-23T17:54:07Z",
+      "side": 1,
+      "message": "@Michael: putting the logic for dealing with ranges in a separate function is a great idea.",
+      "parentUuid": "1ae5cdf2_332cceac",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
