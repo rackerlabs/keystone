@@ -255,6 +255,14 @@ class KeystoneToken(dict):
         return 'OS-OAUTH1' in self
 
     @property
+    def trust_impersonation(self):
+        if self.version is V3:
+            return self.get(
+                'OS-TRUST:trust', {}).get('impersonation')
+        else:
+            return self.get('trust', {}).get('impersonation')
+
+    @property
     def oauth_access_token_id(self):
         if self.version is V3 and self.oauth_scoped:
             return self['OS-OAUTH1']['access_token_id']
