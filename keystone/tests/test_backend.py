@@ -823,6 +823,48 @@ class IdentityTests(object):
         self.assertIn(self.role_admin['id'], roles_ref_ids)
         self.assertIn('member', roles_ref_ids)
 
+    def test_get_roles_for_groups(self):
+        domain_id = CONF.identity.default_domain_id
+
+        # Create new group
+        new_group = {'name': uuid.uuid4().hex, 'domain_id': domain_id}
+        new_group = self.identity_api.create_group(new_group)
+
+        # Now, add grant to new_group in tenant_bar with role MEMBER
+        self.assignment_api.create_grant(group_id=new_group['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'])
+
+        # The result is new_group has not project using domain_id parameter
+        roles = self.assignment_api.get_roles_for_groups(
+            [new_group['id']], domain_id=domain_id)
+        self.assertThat(roles, matchers.HasLength(0))
+
+        # Different result sending project_id parameter
+        roles = self.assignment_api.get_roles_for_groups(
+            [new_group['id']], project_id=self.tenant_bar['id'])
+        self.assertThat(roles, matchers.HasLength(1))
+        self.assertIn(self.role_member, roles)
+
+        # No results sending a different project_id
+        roles = self.assignment_api.get_roles_for_groups(
+            [new_group['id']], self.tenant_baz['id'])
+        self.assertThat(roles, matchers.HasLength(0))
+
+    def test_list_domains_for_groups(self):
+        domain = self._get_domain_fixture()
+
+        group1 = {'name': uuid.uuid4().hex, 'domain_id': domain['id']}
+        group1 = self.identity_api.create_group(group1)
+
+        group2 = {'name': uuid.uuid4().hex, 'domain_id': domain['id']}
+        group2 = self.identity_api.create_group(group2)
+
+        list_group_ids = [group1['id'], group2['id']]
+        domains = self.assignment_api.list_domains_for_groups(list_group_ids)
+
+        self.assertThat(domains, matchers.HasLength(0))
+
     def test_remove_role_grant_from_user_and_project(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
