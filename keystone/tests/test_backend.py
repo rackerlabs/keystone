@@ -784,6 +784,35 @@ class IdentityTests(object):
         self.assertIn(self.role_admin['id'], roles_ref_ids)
         self.assertIn('member', roles_ref_ids)
 
+    def test_get_roles_for_groups(self):
+        domain_id = CONF.identity.default_domain_id
+
+        # Create new group
+        group1 = {'name': uuid.uuid4().hex, 'domain_id': domain_id}
+        group1 = self.identity_api.create_group(group1)
+
+        # Now, add grant to group1 in tenant_bar with role MEMBER
+        self.assignment_api.create_grant(group_id=group1['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'])
+
+        # The result is group1 has only one project granted
+        roles = self.assignment_api.get_roles_for_groups(
+            [group1['id']], domain_id=domain_id)
+        self.assertThat(roles, matchers.HasLength(1))
+        self.assertIn(self.role_member, roles)
+
+        # Same result sending project_id parameter
+        roles = self.assignment_api.get_roles_for_groups(
+            [group1['id']], self.tenant_bar['id'])
+        self.assertThat(roles, matchers.HasLength(1))
+        self.assertIn(self.role_member, roles)
+
+        # No results sending a different project_id
+        roles = self.assignment_api.get_roles_for_groups(
+            [group1['id']], self.tenant_baz['id'])
+        self.assertThat(roles, matchers.HasLength(0))
+
     def test_remove_role_grant_from_user_and_project(self):
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
