@@ -86,6 +86,24 @@
       "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_53104cab",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-06-24T14:18:21Z",
+      "side": 1,
+      "message": "You are right David, the --insecure argument should be explained in a better way.",
+      "parentUuid": "1ae5cdf2_36aaf71a",
+      "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
