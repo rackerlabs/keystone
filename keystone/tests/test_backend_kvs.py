@@ -67,6 +67,9 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
     def test_move_group_between_domains(self):
         self.skipTest('Blocked by bug 1119770')
 
+    def test_get_roles_for_groups(self):
+        self.skipTest('Skipped on kvs')
+
     def test_move_group_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1119770')
 
@@ -75,6 +78,11 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
 
     def test_move_project_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1119770')
+
+    def test_list_domains_for_groups(self):
+        self.assertRaises(exception.NotImplemented,
+                          self.assignment_api.list_domains_for_groups,
+                          [])
 
 
 class KvsToken(tests.TestCase, test_backend.TokenTests):
