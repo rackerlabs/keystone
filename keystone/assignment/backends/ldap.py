@@ -145,13 +145,29 @@ class Assignment(assignment.Driver):
                 self.project.get_user_projects(user_dn, associations)]
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
-        raise exception.NotImplemented()
+        associations = []
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for g in self.role.list_project_roles_for_group(
+                    group_dn, self.project.tree_dn):
+                associations.append(self.role._dn_to_id(g.role_dn))
+
+        return [self.get_role(r) for r in associations]
 
     def list_projects_for_groups(self, group_ids):
-        raise exception.NotImplemented()
+        project_ids = []
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for group_role in self.role.list_project_roles_for_group(
+                    group_dn, self.project.tree_dn):
+                project_ids.append(self.project._dn_to_id(
+                                   group_role.project_dn))
+
+        return [self._set_default_domain(self.get_project(project_id))
+                for project_id in project_ids]
 
     def list_domains_for_groups(self, group_ids):
-        raise exception.NotImplemented()
+        return [assignment.calc_default_domain()]
 
     def list_user_ids_for_project(self, tenant_id):
         self.get_project(tenant_id)
