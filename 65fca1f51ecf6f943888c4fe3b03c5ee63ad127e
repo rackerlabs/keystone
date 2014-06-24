@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_74d54ab6",
+        "filename": "keystone/credential/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-24T00:24:17Z",
+      "side": 1,
+      "message": "Why its False instead of True? Some other V3 entities like project have \u0027additionalProperties\u0027 as True which allows data model extensibility if operator needs it for some reason. A deployment may want to have additional field like status to indicate credential current status. Those fields can be just pass through to DB without requiring any validation.",
+      "revId": "65fca1f51ecf6f943888c4fe3b03c5ee63ad127e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_94e2d69e",
+        "filename": "keystone/credential/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-24T00:24:17Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "65fca1f51ecf6f943888c4fe3b03c5ee63ad127e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
