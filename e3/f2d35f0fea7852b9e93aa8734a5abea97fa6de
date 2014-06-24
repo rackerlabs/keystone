@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Workflow+1: Alan Pevec <apevec@gmail.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 24 Jun 2014 08:53:20 +0000
+Reviewed-on: https://review.openstack.org/102055
+Project: openstack/keystone
+Branch: refs/heads/stable/icehouse
