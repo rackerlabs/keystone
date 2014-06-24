@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_f66066d2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-06-24T14:27:47Z",
+      "side": 1,
+      "message": "David, I\u0027m agree with you that it is not a main topic for keystone configuration but, in my opinion, it is useful. Maybe we can write it like a note, what do you thing about it?",
+      "parentUuid": "1ae5cdf2_b6336712",
+      "revId": "1fe761147b9b290d20d7de2157505ddd5065a460",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_92ecf3bc",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
