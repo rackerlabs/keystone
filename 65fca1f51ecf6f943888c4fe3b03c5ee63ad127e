@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_2877bd09",
+        "filename": "keystone/credential/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-24T21:37:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_74d54ab6",
+      "revId": "65fca1f51ecf6f943888c4fe3b03c5ee63ad127e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_94e2d69e",
         "filename": "keystone/credential/schema.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-24T00:24:17Z",
       "side": 1,
       "message": "Same comment as above.",
+      "revId": "65fca1f51ecf6f943888c4fe3b03c5ee63ad127e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_487a49f1",
+        "filename": "keystone/credential/schema.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-24T21:37:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_94e2d69e",
       "revId": "65fca1f51ecf6f943888c4fe3b03c5ee63ad127e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
