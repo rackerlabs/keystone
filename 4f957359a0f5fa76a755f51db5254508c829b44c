@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_9342d466",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1631,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-24T15:38:51Z",
+      "side": 1,
+      "message": "Yes, I think they are. The old_json_data seems to be the expected value.",
+      "parentUuid": "AAAAWH/9VMY\u003d",
+      "revId": "4f957359a0f5fa76a755f51db5254508c829b44c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9VMU\u003d",
         "filename": "keystone/tests/test_token_provider.py",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_19a8a31f",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-24T15:38:51Z",
+      "side": 1,
+      "message": "I think so. token.provider.V2 is a constant. Same goes for V3.",
+      "parentUuid": "AAAAWH/9VMU\u003d",
+      "revId": "4f957359a0f5fa76a755f51db5254508c829b44c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_59630b1a",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 2
@@ -64,6 +100,24 @@
       "writtenOn": "2014-06-09T20:22:55Z",
       "side": 1,
       "message": "\"API\u0027s}/\"APIs\"",
+      "revId": "4f957359a0f5fa76a755f51db5254508c829b44c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7fcb4c4a",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-24T15:38:51Z",
+      "side": 1,
+      "message": "That has been fixed here: https://review.openstack.org/#/c/102237/",
+      "parentUuid": "1ae5cdf2_59630b1a",
       "revId": "4f957359a0f5fa76a755f51db5254508c829b44c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
