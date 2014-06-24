@@ -52,6 +52,23 @@
       "revId": "8c0cf2f685aece9eba6ddb0788a4d550a22b3f09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e874ffd1",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 9449
+      },
+      "writtenOn": "2014-06-24T16:49:06Z",
+      "side": 1,
+      "message": "Since this line is repeated in several tests, we should located at the beginning, just one time.",
+      "revId": "8c0cf2f685aece9eba6ddb0788a4d550a22b3f09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
