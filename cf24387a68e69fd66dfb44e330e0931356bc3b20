@@ -51,6 +51,24 @@
       "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1a026372",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-06-24T08:52:18Z",
+      "side": 1,
+      "message": "This is great feedback, I\u0027ll work on getting a new patch set put together.",
+      "parentUuid": "1ae5cdf2_332cceac",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
