@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_123315f8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-24T17:50:28Z",
+      "side": 1,
+      "message": "Is this fixing a bug? Did the explicit get_session cause a problem?",
+      "revId": "fadb1890cc5f4f6bd124af520e9adc73d40720a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
