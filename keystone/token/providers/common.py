@@ -403,7 +403,7 @@ class BaseProvider(provider.Provider):
             try:
                 self.token_api.get_token(token_id)
             except exception.TokenNotFound:
-                raise exc_info[0], exc_info[1], exc_info[2]
+                six.reraise(exc_info)
 
         return (token_id, token_data)
 
@@ -477,7 +477,7 @@ class BaseProvider(provider.Provider):
             try:
                 self.token_api.get_token(token_id)
             except exception.TokenNotFound:
-                raise exc_info[0], exc_info[1], exc_info[2]
+                six.reraise(exc_info)
 
         return (token_id, token_data)
 
