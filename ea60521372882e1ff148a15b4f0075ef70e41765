@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1d5cdd7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-25T16:53:04Z",
+      "side": 1,
+      "message": "Please describe what you are trying to implement in the commit message.  It looks like you are trying to implement couple of unimplemented *_for_groups() functions.",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dd7a75ef",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-25T16:53:04Z",
+      "side": 1,
+      "message": "I thought you want a list of domains associated with the group_ids?  The code looks no different from the generic list_domains() function.",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
