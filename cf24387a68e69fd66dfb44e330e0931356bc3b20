@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_60459142",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-06-25T05:13:01Z",
+      "side": 1,
+      "message": "\"slightly\" might be understating things. If there is a flood of token creation in a single second, we will be deleting as many tokens as could have been created in a single second.",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_332cceac",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
@@ -84,6 +101,24 @@
       "side": 1,
       "message": "@Michael,\n\nThanks for the input here, the separate function is great feedback.",
       "parentUuid": "1ae5cdf2_1a026372",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_45c1872e",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-06-25T05:13:01Z",
+      "side": 1,
+      "message": "There is just no great cross-database solution here. Abstracting away the query seems like a way to help control divergent behavior in databases. It sounds like using window functions is a significant optimization for some databases that would be useful to pursue in subsequent patches.\n\nRegarding the time window, I do not think the target cut-off should change as the program runs. Otherwise the behavior would be non-deterministic given a known data-set. In this case, I think we want an admin to be able to predict what the tool will do. If it were to run too slowly for some reason, it might just run forever.",
+      "parentUuid": "1ae5cdf2_6cbe70b0",
       "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
