@@ -682,3 +682,61 @@ class Driver(object):
         raise exception.NotImplemented()
 
     # end of identity
+
+
+@dependency.provider('id_mapping_api')
+class MappingManager(manager.Manager):
+    """Default pivot point for the ID Mapping backend.
+
+    See :mod:`keystone.common.manager.Manager` for more details on how this
+    dynamically calls the backend.
+
+    """
+    def __init__(self):
+        # TODO(henry-nash): Use a config option to select the mapping driver
+        super(MappingManager, self).__init__(
+            'keystone.identity.mapping_backends.sql.Mapping')
+
+
+@six.add_metaclass(abc.ABCMeta)
+class MappingDriver(object):
+    """Interface description for an ID Mapping driver."""
+
+    @abc.abstractmethod
+    def get_public_id(self, domain_id, local_id, type):
+        """Returns the public ID for the given local_id in its domain.
+
+        :returns: public ID
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_id_mapping(self, public_id):
+        """Returns the local domain and entity ID for the given public_id.
+
+        :returns: mapping_ref
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def create_id_mapping(self, public_id):
+        """Created the local domain and entity ID mapping for the public_id.
+
+        :returns: public ID
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def delete_id_mapping(self, public_id):
+        """Deletes an entry for the given public_id."""
+
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def purge_mapping(self, domain_id=None):
+        """Purge mappings, optionally for a given domain."""
+
+        raise exception.NotImplemented()
