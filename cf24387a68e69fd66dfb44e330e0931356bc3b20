@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_55c71965",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2014-06-25T18:46:55Z",
+      "side": 1,
+      "message": "MySQL\u0027s \"DELETE... LIMIT\" thing is totally non-standard SQL.   I think getting this to work in a chunked style is the best way to go as it can be abstracted out.",
+      "parentUuid": "1ae5cdf2_56f731d4",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_332cceac",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
