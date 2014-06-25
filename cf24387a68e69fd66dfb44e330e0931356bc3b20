@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_0e4adb26",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-06-25T22:04:33Z",
+      "side": 1,
+      "message": "I\u0027m actually a little confused now why the code can\u0027t just be kept as-is with batch size defaulting to 100 for all dbs. ??",
+      "parentUuid": "1ae5cdf2_55c71965",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_332cceac",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
