@@ -312,6 +312,31 @@ class Assignment(keystone_assignment.Driver):
                 sql_constraints).distinct()
         return [role.to_dict() for role in query.all()]
 
+    def get_group_project_roles(self, groups, project_id, project_domain_id):
+        role_list = []
+        for group_id in groups:
+            try:
+                metadata_ref = self._get_metadata(
+                    group_id=group_id, tenant_id=project_id)
+                role_list += self._roles_from_role_dicts(
+                    metadata_ref.get('roles', {}), False)
+            except exception.MetadataNotFound:
+                # no group assignment, skip
+                pass
+            if CONF.os_inherit.enabled:
+                # Now get any inherited group roles for the owning domain
+                try:
+                    metadata_ref = self._get_metadata(
+                        group_id=group_id,
+                        domain_id=project_domain_id)
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), True)
+                except (exception.MetadataNotFound,
+                        exception.NotImplemented):
+                    pass
+
+        return role_list
+
     def _list_entities_for_groups(self, group_ids, entity):
         if entity == Domain:
             assignment_type = AssignmentType.GROUP_DOMAIN
