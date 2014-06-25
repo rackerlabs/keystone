@@ -191,6 +191,11 @@ class ImmutableAttributeError(Forbidden):
                        "'%(attributes)s' in target %(target)s")
 
 
+class CrossBackendNotAllowed(Forbidden):
+    message_format = _("Group membership across backend boundaries is not "
+                       "allowed, member in question is %(public_id)s")
+
+
 class NotFound(Error):
     message_format = _("Could not find, %(target)s.")
     code = 404
@@ -274,6 +279,12 @@ class FederatedProtocolNotFound(NotFound):
                        " IdentityProvider, %(idp_id)s")
 
 
+class PublicIDNotFound(NotFound):
+    # This is used internally and mapped to either User/GroupNotFound or,
+    # Assertion before the exception leaves Keystone.
+    message_format = _("%(id)s")
+
+
 class Conflict(Error):
     message_format = _("Conflict occurred attempting to store %(type)s."
                        " %(details)s")
@@ -347,6 +358,11 @@ class Gone(Error):
 class ConfigFileNotFound(UnexpectedError):
     debug_message_format = _("The Keystone configuration file %(config_file)s "
                              "could not be found.")
+
+
+class UnsupportedMappingGenerator(UnexpectedError):
+    debug_message_format = _("The value for public_id_generator in the "
+                             "Keystone configuration file is not supported.")
 
 
 class MigrationNotProvided(Exception):
