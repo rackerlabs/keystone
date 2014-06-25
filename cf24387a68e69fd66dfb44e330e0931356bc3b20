@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_56f731d4",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-06-25T12:54:30Z",
+      "side": 1,
+      "message": "I\u0027m not dead set on this approach.  I\u0027d be glad to implement another mechanism if it meets the same goals.  I ended up here because I could not find a way to get SQLAlchemy to allow me to do something like \"DELETE FROM token WHERE expire \u003c NOW() LIMIT \u003cbatchsize\u003e\" without reverting to plain SQL.",
+      "parentUuid": "1ae5cdf2_60459142",
+      "revId": "cf24387a68e69fd66dfb44e330e0931356bc3b20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_332cceac",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 4
