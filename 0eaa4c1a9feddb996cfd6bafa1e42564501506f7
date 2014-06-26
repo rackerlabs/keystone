@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_45503e5e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-26T01:53:17Z",
+      "side": 1,
+      "message": "no need for double parentheses here?",
+      "revId": "0eaa4c1a9feddb996cfd6bafa1e42564501506f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_05e9d67e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-26T01:53:17Z",
+      "side": 1,
+      "message": "no need for double parentheses here",
+      "revId": "0eaa4c1a9feddb996cfd6bafa1e42564501506f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a594a2e8",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-26T01:53:17Z",
+      "side": 1,
+      "message": "no need for double parens here?",
+      "revId": "0eaa4c1a9feddb996cfd6bafa1e42564501506f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_658e1ad3",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-26T01:53:17Z",
+      "side": 1,
+      "message": "hmm, these probably shouldn\u0027t be debugs? (i know this is a completely separate topic, just noting this for my own record)",
+      "revId": "0eaa4c1a9feddb996cfd6bafa1e42564501506f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
