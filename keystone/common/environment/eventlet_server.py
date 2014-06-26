@@ -31,6 +31,25 @@ from keystone.openstack.common import log
 LOG = log.getLogger(__name__)
 
 
+class HttpProtocol(eventlet.wsgi.HttpProtocol):
+    def __init__(self, *args, **kwargs):
+        super(HttpProtocol, self).__init__(*args, **kwargs)
+        self._keystone_logger = log.getLogger('eventlet.wsgi.server')
+
+    def handle_one_request(self):
+        try:
+            super(HttpProtocol, self).handle_one_request()
+        except socket.error, e:
+            # NOTE(morganfainberg): handle Broken Pipe quietly. Without this
+            # exception handler, it is possible to spam the logs with 14+
+            # lines of exception data per request if the client disconnects
+            # before Keystone can write data to the FD.
+            if e[0] == 32:
+                self._keystone_logger.debug('Broken Pipe: error writing to '
+                                            'socket.')
+            else:
+                raise
+
 class Server(object):
     """Server class to manage multiple WSGI sockets and applications."""
 
@@ -139,7 +158,8 @@ class Server(object):
         logger = log.getLogger('eventlet.wsgi.server')
         try:
             eventlet.wsgi.server(socket, application, custom_pool=self.pool,
-                                 log=log.WritableLogger(logger), debug=False)
+                                 log=log.WritableLogger(logger), debug=False,
+                                 protocol=HttpProtocol)
         except greenlet.GreenletExit:
             # Wait until all servers have completed running
             pass
