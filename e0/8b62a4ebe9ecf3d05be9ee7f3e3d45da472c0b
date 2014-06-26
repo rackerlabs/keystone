@@ -1,0 +1,17 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Haneef Ali <haneef.ali@hp.com>
+Code-Review+1: Arun Kant <arun.kant@hp.com>
+Code-Review+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Bob Thyne <bob.thyne@hp.com>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 26 Jun 2014 21:06:14 +0000
+Reviewed-on: https://review.openstack.org/101081
+Project: openstack/keystone
+Branch: refs/heads/stable/icehouse
