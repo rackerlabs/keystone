@@ -2514,6 +2514,24 @@ class IdentityTests(object):
                           self.assignment_api.get_domain,
                           domain_id)
 
+    def test_project_rename_invalidates_get_project_by_name_cache(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': domain['id']}
+        project_id = project['id']
+        project_name = project['name']
+        self.assignment_api.create_domain(domain['id'], domain)
+        # Create a project
+        self.assignment_api.create_project(project_id, project)
+        self.assignment_api.get_project_by_name(project_name, domain['id'])
+        project['name'] = uuid.uuid4().hex
+        self.assignment_api.update_project(project_id, project)
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project_by_name,
+                          project_name,
+                          domain['id'])
+
     def test_cache_layer_project_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
@@ -3531,6 +3549,19 @@ class InheritanceTests(object):
         # grant, plus both projects in the domain
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEquals(len(user_projects), 3)
+
+    def test_domain_rename_invalidates_get_domain_by_name_cache(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        domain_id = domain['id']
+        domain_name = domain['name']
+        self.assignment_api.create_domain(domain_id, domain)
+        domain_ref = self.assignment_api.get_domain_by_name(domain_name)
+        domain_ref['name'] = uuid.uuid4().hex
+        self.assignment_api.update_domain(domain_id, domain_ref)
+        self.assertRaises(exception.DomainNotFound,
+                          self.assignment_api.get_domain_by_name,
+                          domain_name)
 
     def test_list_projects_for_user_with_inherited_group_grants(self):
         """Test inherited group roles.
