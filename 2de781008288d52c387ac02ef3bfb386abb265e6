@@ -33,6 +33,24 @@
       "revId": "2de781008288d52c387ac02ef3bfb386abb265e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fec29952",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-26T18:13:21Z",
+      "side": 1,
+      "message": "sql.transaction is just a \"get session, session.begin\" wrapper/context manager. It saves on duplicated code we use all over.",
+      "parentUuid": "1ae5cdf2_fe6619bb",
+      "revId": "2de781008288d52c387ac02ef3bfb386abb265e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
