@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_c09fdcb2",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-26T02:04:08Z",
+      "side": 1,
+      "message": "I don\u0027t think this will work because it\u0027s an old-style class.",
+      "revId": "b9aae01a832a6c91ece7f64cd58b34089c74384c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a04c9077",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-26T02:04:08Z",
+      "side": 1,
+      "message": "I\u0027d rather see this named _eventlet_logger, but wouldn\u0027t hold anything up because of it.\n\nI really like how you\u0027re still using the eventlet logger from here.",
+      "revId": "b9aae01a832a6c91ece7f64cd58b34089c74384c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_85d32600",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 2
@@ -13,6 +47,41 @@
       "writtenOn": "2014-06-26T01:43:07Z",
       "side": 1,
       "message": "Any reason you don\u0027t want to use errno.EPIPE instead of the raw integer?  It would be more readable.",
+      "revId": "b9aae01a832a6c91ece7f64cd58b34089c74384c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c02a7c7d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-26T02:04:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1ae5cdf2_85d32600",
+      "revId": "b9aae01a832a6c91ece7f64cd58b34089c74384c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_20dc0074",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-26T02:04:08Z",
+      "side": 1,
+      "message": "What is the impact of not re-raising? If you re-raise the code to do the original logging will probably be invoked, which is not what we want, but this will make the calling code continue on like nothing has happened.\n\nI\u0027d have to look into it deeper, but it may be more correct to raise a different exception because I think the calling code will log any exception that happens. It\u0027s just the the EPIP (maybe others?) gets a stacktrace too.",
       "revId": "b9aae01a832a6c91ece7f64cd58b34089c74384c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
