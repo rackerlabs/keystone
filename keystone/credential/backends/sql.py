@@ -89,7 +89,7 @@ class Credential(credential.Driver):
             query = query.filter_by(project_id=project_id)
             query.delete()
 
-    def delete_credentials_for_user(self, user_id):
+    def delete_user_notification_callback(self, user_id):
         session = sql.get_session()
 
         with session.begin():

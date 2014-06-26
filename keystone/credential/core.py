@@ -41,7 +41,17 @@ class Manager(manager.Manager):
     """
 
     def __init__(self):
+        self.event_callbacks = {
+            'deleted': {
+                'user': [self._delete_user_callback]
+            }
+        }
+
         super(Manager, self).__init__(CONF.credential.driver)
+
+    def _delete_user_callback(self, service, resource_type,
+                              operation, payload):
+        self.driver.delete_user_notification_callback(payload['resource_info'])
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -101,7 +111,7 @@ class Driver(object):
         self._delete_credentials(lambda cr: cr['project_id'] == project_id)
 
     @abc.abstractmethod
-    def delete_credentials_for_user(self, user_id):
+    def delete_user_notification_callback(self, user_id):
         """Deletes all credentials for a user."""
         self._delete_credentials(lambda cr: cr['user_id'] == user_id)
 

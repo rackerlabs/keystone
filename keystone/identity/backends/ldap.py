@@ -106,15 +106,11 @@ class Identity(identity.Driver):
 
     def delete_user(self, user_id):
         self.user.check_allow_delete()
-        self.assignment_api.delete_user(user_id)
         user = self.user.get(user_id)
         user_dn = user['dn']
         groups = self.group.list_user_groups(user_dn)
         for group in groups:
             self.group.remove_user(user_dn, group['id'], user_id)
-
-        if hasattr(user, 'tenant_id'):
-            self.project.remove_user(user.tenant_id, user_dn)
         self.user.delete(user_id)
 
     def create_group(self, group_id, group):
