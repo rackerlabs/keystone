@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_63cd2d5d",
+        "filename": "keystone/tests/identity_mapping.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-26T06:49:55Z",
+      "side": 1,
+      "message": "Comment to reviewers: This is in a separate file since it will be used by multiple unit tests in the follow-on patch",
+      "revId": "061777fdcc469b2231238c660c0b8df341fb202e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
