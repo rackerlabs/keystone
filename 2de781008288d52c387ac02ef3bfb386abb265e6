@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_debf9dfa",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2014-06-26T18:11:10Z",
+      "side": 1,
+      "message": "it seems like this wont actually block if the lock is taken.",
+      "revId": "2de781008288d52c387ac02ef3bfb386abb265e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fe6619bb",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11816
+      },
+      "writtenOn": "2014-06-26T18:11:10Z",
+      "side": 1,
+      "message": "this part of the code seems like, we are using _lock_trust_record to make a decision about locking, but then we have these two conditional paths anyway.  Can\u0027t we move the \"query(TrustModel).with_lockmode(\u0027update\u0027) part into _lock_trust_record also?  since that is basically the \"other way\" to lock.    Also is it required that _lock_trust_record and consume_use use two distinct transactions?  (im not sure what sql.transaction() does exactly, are these just nested transactions ?)",
+      "revId": "2de781008288d52c387ac02ef3bfb386abb265e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
