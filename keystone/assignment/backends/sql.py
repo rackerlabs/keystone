@@ -538,13 +538,13 @@ class Assignment(keystone_assignment.Driver):
             q.delete(False)
             session.delete(ref)
 
-    def delete_user(self, user_id):
+    def delete_user_notification_callback(self, user_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=user_id)
             q.delete(False)
 
-    def delete_group(self, group_id):
+    def delete_group_notification_callback(self, group_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
             q = q.filter_by(actor_id=group_id)

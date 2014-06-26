@@ -68,7 +68,23 @@ class Manager(manager.Manager):
             identity_driver = dependency.REGISTRY['identity_api'].driver
             assignment_driver = identity_driver.default_assignment_driver()
 
+        self.event_callbacks = {
+            'deleted': {
+                'user': [self._delete_user_callback],
+                'group': [self._delete_group_callback]
+            }
+        }
+
         super(Manager, self).__init__(assignment_driver)
+
+    def _delete_user_callback(self, service, resource_type,
+                              operation, payload):
+        self.driver.delete_user_notification_callback(payload['resource_info'])
+
+    def _delete_group_callback(self, service, resource_type,
+                               operation, payload):
+        self.driver.delete_group_notification_callback(
+            payload['resource_info'])
 
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
@@ -978,8 +994,8 @@ class Driver(object):
 
 # TODO(ayoung): determine what else these two functions raise
     @abc.abstractmethod
-    def delete_user(self, user_id):
-        """Deletes all assignments for a user.
+    def delete_user_notification_callback(self, user_id):
+        """Handles assignment actions on user deletion.
 
         :raises: keystone.exception.RoleNotFound
 
@@ -987,8 +1003,8 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def delete_group(self, group_id):
-        """Deletes all assignments for a group.
+    def delete_group_notification_callback(self, group_id):
+        """Handles assignment actions on group deletion.
 
         :raises: keystone.exception.RoleNotFound
 
