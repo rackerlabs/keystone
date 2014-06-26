@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import io
+
 import six
 
 from lxml import etree
@@ -35,13 +37,13 @@ class XMLEquals(object):
         def canonical_xml(s):
             s = s.strip()
 
-            fp = six.StringIO()
+            fp = io.BytesIO()
             dom = etree.fromstring(s, parser)
             dom.getroottree().write_c14n(fp)
             s = fp.getvalue()
 
             dom = etree.fromstring(s, parser)
-            return etree.tostring(dom, pretty_print=True)
+            return etree.tostring(dom, pretty_print=True).decode('utf-8')
 
         expected = canonical_xml(self.expected)
         other = canonical_xml(other)
