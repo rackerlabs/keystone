@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4cc3f989",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-26T10:52:49Z",
+      "side": 1,
+      "message": "nit: may avoid one lookup if this search is used too frequently\n\nsearch_regex \u003d re.compile(..).search\n...\n...\nm \u003d self.search_regex(msg)",
+      "revId": "2c389b9f389f1a8bb01ffad6489353bc9c23416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
