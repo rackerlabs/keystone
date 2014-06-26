@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3a1c2d13",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-26T00:49:23Z",
+      "side": 1,
+      "message": "Logging could be removed if we don\u0027t care. It might be useful to know in certain debug circumstances.",
+      "revId": "ac31249bd5336e5b15df09a1d6fec35d97b4bde7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
