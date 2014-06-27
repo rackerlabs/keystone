@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9bc7b911",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-27T20:37:19Z",
+      "side": 1,
+      "message": "white spaces",
+      "revId": "af69c8cf31386524c9f6f8a2ba33b964e0c4dec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1b548952",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-27T20:37:19Z",
+      "side": 1,
+      "message": "i don\u0027t think any of these in the default pipeline https://github.com/openstack/keystone/blob/master/etc/keystone-paste.ini",
+      "revId": "af69c8cf31386524c9f6f8a2ba33b964e0c4dec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
