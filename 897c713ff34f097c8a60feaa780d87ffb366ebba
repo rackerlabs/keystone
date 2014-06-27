@@ -16,6 +16,24 @@
       "revId": "897c713ff34f097c8a60feaa780d87ffb366ebba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dea76fba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-27T20:59:44Z",
+      "side": 1,
+      "message": "/it would affect both ._create_token on the provider and .create_token on the token_api.",
+      "parentUuid": "1ae5cdf2_f1dd4315",
+      "revId": "897c713ff34f097c8a60feaa780d87ffb366ebba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
