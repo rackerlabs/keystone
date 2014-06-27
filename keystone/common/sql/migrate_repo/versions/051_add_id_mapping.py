@@ -16,6 +16,7 @@ import sqlalchemy as sql
 
 from keystone.identity.mapping_backends import mapping
 
+
 MAPPING_TABLE = 'id_mapping'
 
 
@@ -23,7 +24,6 @@ def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
 
-    sql.Table('domain', meta, autoload=True)
     mapping_table = sql.Table(
         MAPPING_TABLE,
         meta,

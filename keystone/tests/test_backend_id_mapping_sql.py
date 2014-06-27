@@ -12,8 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from testtools import matchers
 import uuid
+
+from testtools import matchers
 
 from keystone.common import sql
 from keystone.identity.mapping_backends import mapping
