@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f1dd4315",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2014-06-27T18:55:19Z",
+      "side": 1,
+      "message": "If https://review.openstack.org/73768 is merged, should this become ._create_token() as well?",
+      "revId": "897c713ff34f097c8a60feaa780d87ffb366ebba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
