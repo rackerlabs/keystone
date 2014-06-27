@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_1ed1d7fa",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-27T22:01:14Z",
+      "side": 1,
+      "message": "Okay..will address in next patch.",
+      "parentUuid": "1ae5cdf2_96c5d53e",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9b95f9e5",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-27T20:45:47Z",
       "side": 1,
       "message": "The LDAP options being set here are library/process global options. What happens when two different connect calls are made which have different options? You\u0027re going to overwrite the previous options and change behavior with unpredictable results. Note that it is now possible to set TLS options on a connection basis instead of globally.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_64424e3c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-27T22:01:14Z",
+      "side": 1,
+      "message": "Existing ldap core code sets the options similarly which is global/ module level e.g. line #483, # 505 in existing code (left pane)\n\nTLS setting is so far configured at keystone deployment level as per values defined in keystone.conf. Once there are multiple LDAP configurations with different TLS attributes, I think existing code can be enhanced to support that as it stores the connection manager per ldap connect URL.",
+      "parentUuid": "1ae5cdf2_9b95f9e5",
       "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_3b2065af",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-27T22:01:14Z",
+      "side": 1,
+      "message": "I was trying to be explicit here to signify that its a global variable usage. I can address it in next rebase/ patch if its a concern.",
+      "parentUuid": "1ae5cdf2_154b7a2b",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_7ba10d39",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-27T20:45:47Z",
       "side": 1,
       "message": "This seems very inefficient. You\u0027re setting and resetting every connection option on every ldap call.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_64fa4ebb",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-27T22:01:14Z",
+      "side": 1,
+      "message": "I will try to optimize this in next patch. Probably I can verify if option exists and value is same or not before setting it.",
+      "parentUuid": "1ae5cdf2_7ba10d39",
       "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_09e7e312",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-27T22:01:14Z",
+      "side": 1,
+      "message": "When connection is obtained from pool, identify is matched first. https://github.com/mozilla-services/ldappool/blob/master/ldappool/__init__.py#L238\n\nFor unbind: Please see response below for Nathan Kinder comment.",
+      "parentUuid": "1ae5cdf2_5b2b7194",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_98797ffe",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-27T20:04:57Z",
       "side": 1,
       "message": "I am a bit concerned that we don\u0027t have unbind implemented.  I assume that this means that a connection is left bound as the most recently authenticated user.  I don\u0027t like the idea of leaving a connection bound as an end user, as it\u0027s hare to say what that connection will be reused for next.  It would be much better to unbind and assume an anonymous identity.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3e6db399",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-27T22:01:14Z",
+      "side": 1,
+      "message": "Ldappool always does unbind internally as soon as it comes out of with statement (connection generator). Please see https://github.com/mozilla-services/ldappool/blob/master/ldappool/__init__.py#L315\n\nMay be I can improve on the comment clarifying this.",
+      "parentUuid": "1ae5cdf2_98797ffe",
       "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
