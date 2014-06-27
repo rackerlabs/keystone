@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_98797ffe",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-06-27T20:04:57Z",
+      "side": 1,
+      "message": "I am a bit concerned that we don\u0027t have unbind implemented.  I assume that this means that a connection is left bound as the most recently authenticated user.  I don\u0027t like the idea of leaving a connection bound as an end user, as it\u0027s hare to say what that connection will be reused for next.  It would be much better to unbind and assume an anonymous identity.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
