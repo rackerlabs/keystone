@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b8e0fbcc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T20:02:58Z",
+      "side": 1,
+      "message": "i don\u0027t think this should be one sentence. it\u0027s really long and presents two separate ideas that aren\u0027t especially related.",
+      "revId": "36ec5bf29d636f2d6f8b7a048fe865271c6ac498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b8b9dbcc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T20:02:58Z",
+      "side": 1,
+      "message": "doc folks discourage e.g. in favor of spelling out \"for example\"",
+      "revId": "36ec5bf29d636f2d6f8b7a048fe865271c6ac498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d8ace78a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T20:02:58Z",
+      "side": 1,
+      "message": "same",
+      "revId": "36ec5bf29d636f2d6f8b7a048fe865271c6ac498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_18f80f7b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T20:02:58Z",
+      "side": 1,
+      "message": "``double backticks`` on thew new literals",
+      "revId": "36ec5bf29d636f2d6f8b7a048fe865271c6ac498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
