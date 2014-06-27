@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_a72abc7b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-27T02:00:32Z",
+      "side": 1,
+      "message": "This is a habit. I tend to surround adjacent strings in parens so others know it\u0027s intentional and I\u0027m not just missing a comma. If it looks better without I can remove them.",
+      "parentUuid": "1ae5cdf2_45503e5e",
+      "revId": "0eaa4c1a9feddb996cfd6bafa1e42564501506f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_05e9d67e",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
