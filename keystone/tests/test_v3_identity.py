@@ -484,6 +484,52 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'user': ref})
         return self.assertValidUserResponse(r, ref)
 
+    def test_create_user_without_domain(self):
+        """Call ``POST /users`` without specifying domain.
+
+        According to the identity-api specification, if you do not
+        explicitly specific the domain_id in the entity, it should
+        take the domain scope of the token as the domain_id.
+
+        """
+        # Create a user with a role on the domain so we can get a
+        # domain scoped token
+        domain = self.new_domain_ref()
+        self.assignment_api.create_domain(domain['id'], domain)
+        user = self.new_user_ref(domain_id=domain['id'])
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+        self.assignment_api.create_grant(
+            role_id=self.role_id, user_id=user['id'],
+            domain_id=domain['id'])
+
+        ref = self.new_user_ref(domain_id=domain['id'])
+        ref_nd = ref.copy()
+        ref_nd.pop('domain_id')
+        auth = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            domain_id=domain['id'])
+        r = self.post('/users', body={'user': ref_nd}, auth=auth)
+        self.assertValidUserResponse(r, ref)
+
+        # Now try the same thing without a domain token - which should fail
+        ref = self.new_user_ref(domain_id=domain['id'])
+        ref_nd = ref.copy()
+        ref_nd.pop('domain_id')
+        auth = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        r = self.post('/users', body={'user': ref_nd}, auth=auth)
+        # TODO(henry-nash): Due to bug #1283539 we currently automatically
+        # use the default domain_id if there we are not using a domain
+        # scoped token. Change the code below to expect a failure
+        # once this bug is fixed.
+        ref['domain_id'] = CONF.identity.default_domain_id
+        return self.assertValidUserResponse(r, ref)
+
     def test_create_user_400(self):
         """Call ``POST /users``."""
         self.post('/users', body={'user': {}}, expected_status=400)
