@@ -40,9 +40,6 @@ FILE_OPTIONS = {
                                                       group='DEFAULT')],
                    help='The IP address of the network interface for the '
                         'admin service to listen on.'),
-        cfg.IntOpt('compute_port', default=8774,
-                   help='The port which the OpenStack Compute service '
-                        'listens on.'),
         cfg.IntOpt('admin_port', default=35357,
                    help='The port number which the admin service listens '
                         'on.'),
