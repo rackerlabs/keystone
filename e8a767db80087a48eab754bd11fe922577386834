@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_640649cf",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-27T13:29:40Z",
+      "side": 1,
+      "message": "Inconsistent variable names used \"_response\" and then \"_resp\".",
+      "revId": "e8a767db80087a48eab754bd11fe922577386834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
