@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_24922a9f",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-27T01:09:36Z",
+      "side": 1,
+      "message": "Are these no-ops if it\u0027s already set properly? Maybe that doesn\u0027t matter because this will only be called once?",
+      "revId": "ccc0da3b91483f287f780f0f2943a6c7940b707c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_44e2d630",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-27T01:09:36Z",
+      "side": 1,
+      "message": "Can you put a short comment here about why the ValueError is thrown when the old version 37 was applied?",
+      "revId": "ccc0da3b91483f287f780f0f2943a6c7940b707c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
