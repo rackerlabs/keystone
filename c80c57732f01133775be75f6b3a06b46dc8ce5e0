@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_103ba438",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-27T05:24:49Z",
+      "side": 1,
+      "message": "Why do we even need to re raise since we are not doing anything with the exception.  Can\u0027t it just propagate?",
+      "revId": "c80c57732f01133775be75f6b3a06b46dc8ce5e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
