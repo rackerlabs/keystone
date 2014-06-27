@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_7e8adbbc",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T21:13:37Z",
+      "side": 1,
+      "message": "commented on this in the other module... especially confusing because L2 would be a more appropriate name for the actual test here",
+      "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_d021094e",
         "filename": "rally-scenarios/plugins/plugin_sample.py",
         "patchSetId": 3
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "Not sure that I get question...\n\n\nThis will generate load on keystone using keystone client...",
       "parentUuid": "1ae5cdf2_d021094e",
+      "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1e02b73d",
+        "filename": "rally-scenarios/plugins/plugin_sample.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T21:13:37Z",
+      "side": 1,
+      "message": "@example.com \u003c-- that\u0027s what http://example.com/ is for",
+      "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dee4cfa9",
+        "filename": "rally-scenarios/plugins/plugin_sample.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-06-27T21:13:37Z",
+      "side": 1,
+      "message": "can this have a more appropriate name? there\u0027s not much \"mega\" about creating and deleting a user :-/",
       "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
