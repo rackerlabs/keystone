@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_96c5d53e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-27T20:19:05Z",
+      "side": 1,
+      "message": "Looking over the other config options, we don\u0027t specify \"Default\" values. Suggest removing the default specification(s)",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_154b7a2b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-27T20:19:05Z",
+      "side": 1,
+      "message": "(NIT): the global identifier here is probably not needed because you\u0027re not binding the name \u0027CONNECTION_POOLS\u0027 locally, you\u0027re setting values in the dictionary.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_98797ffe",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
