@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Arun Kant <arun.kant@hp.com>
+Code-Review+2: Alan Pevec <apevec@gmail.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 27 Jun 2014 03:22:55 +0000
+Reviewed-on: https://review.openstack.org/101082
+Project: openstack/keystone
+Branch: refs/heads/stable/icehouse
