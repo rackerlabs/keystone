@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_b6e3c89e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-06-27T06:36:12Z",
+      "side": 1,
+      "message": "Just a typo - \u0027an\u0027 unexisting user",
+      "revId": "b5f6b5449b76f39110c1289f4e57ab1f0d1688d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
