@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3726c867",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 33
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-27T13:33:39Z",
+      "side": 1,
+      "message": "Does anyone know why the master version of these have \u0027keystone\u0027, even though the master config has \u0027localhost\u0027 ?",
+      "revId": "000977dc69cbd057f34409bf77587752ec93d971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
