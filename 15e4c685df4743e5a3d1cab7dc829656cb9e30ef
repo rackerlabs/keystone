@@ -85,6 +85,24 @@
       "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_29357fda",
+        "filename": "rally-scenarios/plugins/plugin_sample.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-06-27T21:19:43Z",
+      "side": 1,
+      "message": "This name was chosen majorly to simplify understanding how name is passed to rally config (to be actually run in gates).\n\nI can change it on any name that you would prefer. \n\n(btw there is already similar benchmark in rally source)",
+      "parentUuid": "1ae5cdf2_dee4cfa9",
+      "revId": "15e4c685df4743e5a3d1cab7dc829656cb9e30ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
