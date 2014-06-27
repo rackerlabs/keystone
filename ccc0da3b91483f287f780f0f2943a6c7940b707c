@@ -69,6 +69,23 @@
       "revId": "ccc0da3b91483f287f780f0f2943a6c7940b707c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_00bb3fe5",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-27T17:10:10Z",
+      "side": 1,
+      "message": "Not as pretty as I had hope:)\n\nWhat about retry with a loop around try-except, so that migration.db_sync() at line 180 gets reused.  Utilize a retry counter to keep track of things.",
+      "revId": "ccc0da3b91483f287f780f0f2943a6c7940b707c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
