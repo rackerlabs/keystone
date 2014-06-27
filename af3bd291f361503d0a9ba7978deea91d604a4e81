@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2f3c9fbe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-27T22:28:05Z",
+      "side": 1,
+      "message": "Maybe add SecurityImpact flag?",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_444ab2ad",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-27T22:28:05Z",
+      "side": 1,
+      "message": "Are we purposely changing the hostname from \"keystone\" to \"localhost\" in the sample file?",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_442b9294",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-27T22:28:05Z",
+      "side": 1,
+      "message": "Are we purposely changing the hostname from \"keystone\" to \"localhost\" in the sample file?",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2407661e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-27T22:28:05Z",
+      "side": 1,
+      "message": "Are we purposely changing the hostname from \"keystone\" to \"localhost\" in the sample file?",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4402b20c",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-27T22:28:05Z",
+      "side": 1,
+      "message": "Are we purposely changing the hostname from \"keystone\" to \"localhost\" in the sample file?",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
