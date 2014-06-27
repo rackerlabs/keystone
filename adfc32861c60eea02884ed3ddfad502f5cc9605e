@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_9b95f9e5",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-06-27T20:45:47Z",
+      "side": 1,
+      "message": "The LDAP options being set here are library/process global options. What happens when two different connect calls are made which have different options? You\u0027re going to overwrite the previous options and change behavior with unpredictable results. Note that it is now possible to set TLS options on a connection basis instead of globally.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_154b7a2b",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
@@ -30,6 +47,40 @@
       "writtenOn": "2014-06-27T20:19:05Z",
       "side": 1,
       "message": "(NIT): the global identifier here is probably not needed because you\u0027re not binding the name \u0027CONNECTION_POOLS\u0027 locally, you\u0027re setting values in the dictionary.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7ba10d39",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-06-27T20:45:47Z",
+      "side": 1,
+      "message": "This seems very inefficient. You\u0027re setting and resetting every connection option on every ldap call.",
+      "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5b2b7194",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 8116
+      },
+      "writtenOn": "2014-06-27T20:45:47Z",
+      "side": 1,
+      "message": "A connection should support switching between identities. unbind should be supported and one needs to verify each time the connection is used it\u0027s bound to the expected identity.",
       "revId": "adfc32861c60eea02884ed3ddfad502f5cc9605e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
