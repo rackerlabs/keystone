@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a8d34036",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2527,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-28T12:03:10Z",
+      "side": 1,
+      "message": "shouldn\u0027t you do a get project by name here to make sure that value is in the cache?",
+      "revId": "a2b0c94b121b57c063d33c5a4c0e7da082f61d9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c8d6cc26",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3559,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-28T12:03:10Z",
+      "side": 1,
+      "message": "shouldn\u0027t you do a get domain by name here to make sure that value is in the cache?",
+      "revId": "a2b0c94b121b57c063d33c5a4c0e7da082f61d9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
