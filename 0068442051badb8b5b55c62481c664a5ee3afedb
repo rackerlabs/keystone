@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f278d77f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-28T07:00:53Z",
+      "side": 1,
+      "message": "nit - missing full stop at end of 2nd sentence",
+      "revId": "0068442051badb8b5b55c62481c664a5ee3afedb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d2d3db5c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-28T07:00:53Z",
+      "side": 1,
+      "message": "So re-using a connection from the pool presumably creates a more likely (albeit still small) probability that the connection will expire during the processing of transaction?  Did you consider whether it was worth creating a new connection if the lifetime here was below some threshold?",
+      "revId": "0068442051badb8b5b55c62481c664a5ee3afedb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
