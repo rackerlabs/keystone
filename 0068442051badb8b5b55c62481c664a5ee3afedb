@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_48c55c3b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-28T12:46:07Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "1ae5cdf2_f278d77f",
+      "revId": "0068442051badb8b5b55c62481c664a5ee3afedb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_d2d3db5c",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-28T07:00:53Z",
       "side": 1,
       "message": "So re-using a connection from the pool presumably creates a more likely (albeit still small) probability that the connection will expire during the processing of transaction?  Did you consider whether it was worth creating a new connection if the lifetime here was below some threshold?",
+      "revId": "0068442051badb8b5b55c62481c664a5ee3afedb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c8b96ccc",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-06-28T12:46:07Z",
+      "side": 1,
+      "message": "ldappool internally retries on connection failures or server restarts. https://github.com/mozilla-services/ldappool/blob/master/ldappool/__init__.py#L212\n\nAlso ldappool does connection lifetime check before returning connection. If existing connection is past lifetime, it unbinds and removes that connection from pool and return new one.",
+      "parentUuid": "1ae5cdf2_d2d3db5c",
       "revId": "0068442051badb8b5b55c62481c664a5ee3afedb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
