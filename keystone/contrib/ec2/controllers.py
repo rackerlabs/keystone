@@ -151,7 +151,7 @@ class Ec2ControllerCommon(object):
         """
 
         self.identity_api.get_user(user_id)
-        self.assignment_api.get_project(tenant_id)
+        self.assignment_api.assert_project_exists(tenant_id)
         trust_id = self._get_trust_id_for_request(context)
         blob = {'access': uuid.uuid4().hex,
                 'secret': uuid.uuid4().hex,

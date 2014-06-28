@@ -100,6 +100,7 @@ class Manager(manager.Manager):
             self._disable_project(tenant_id)
         ret = self.driver.update_project(tenant_id, tenant)
         self.get_project.invalidate(self, tenant_id)
+        self.assert_project_exists.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
                                             original_tenant['domain_id'])
         return ret
@@ -111,6 +112,7 @@ class Manager(manager.Manager):
         self.token_api.delete_tokens_for_users(user_ids, project_id=tenant_id)
         ret = self.driver.delete_project(tenant_id)
         self.get_project.invalidate(self, tenant_id)
+        self.assert_project_exists.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
         self.credential_api.delete_credentials_for_project(tenant_id)
@@ -222,7 +224,7 @@ class Manager(manager.Manager):
             return self._roles_from_role_dicts(
                 metadata_ref.get('roles', {}), False)
 
-        self.get_domain(domain_id)
+        self.assert_domain_exists(domain_id)
         user_role_list = _get_user_domain_roles(user_id, domain_id)
         group_role_list = _get_group_domain_roles(user_id, domain_id)
         # Use set() to process the list to remove any duplicates
@@ -299,6 +301,15 @@ class Manager(manager.Manager):
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
+    def assert_domain_exists(self, domain_id):
+        self.driver.assert_domain_exists(domain_id)
+        # NOTE(morganfainberg): return a value that can be cached. The
+        # assert_domain_exists method will raise an exception if the project
+        # does not exist.
+        return True
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
     def get_domain_by_name(self, domain_name):
         return self.driver.get_domain_by_name(domain_name)
 
@@ -332,6 +343,7 @@ class Manager(manager.Manager):
                 not domain.get('enabled', True)):
             self._disable_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
+        self.assert_domain_exists.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, original_domain['name'])
         return ret
 
@@ -358,6 +370,7 @@ class Manager(manager.Manager):
         self._delete_domain_contents(domain_id)
         self.driver.delete_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
+        self.assert_domain_exists.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
 
     def _delete_domain_contents(self, domain_id):
@@ -443,6 +456,15 @@ class Manager(manager.Manager):
                         expiration_time=EXPIRATION_TIME)
     def get_project_by_name(self, tenant_name, domain_id):
         return self.driver.get_project_by_name(tenant_name, domain_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
+    def assert_project_exists(self, project_id):
+        self.driver.assert_project_exists(project_id)
+        # NOTE(morganfainberg): return a value that can be cached. The
+        # assert_project_exists method will raise an exception if the project
+        # does not exist.
+        return True
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
@@ -777,6 +799,15 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def assert_domain_exists(self, domain_id):
+        """Check if a domain exists.
+
+        :returns: None
+        :raises: keystone.exception.DomainNotFound
+
+        """
+        self.get_domain(domain_id)
+
     @abc.abstractmethod
     def get_domain_by_name(self, domain_name):
         """Get a domain by name.
@@ -906,6 +937,15 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    def assert_project_exists(self, project_id):
+        """Check if a project exists.
+
+        :returns: None
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        self.get_project(project_id)
 
     @abc.abstractmethod
     def update_project(self, project_id, project):

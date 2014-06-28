@@ -249,7 +249,7 @@ class Manager(manager.Manager):
         if driver:
             return driver
         else:
-            self.assignment_api.get_domain(domain_id)
+            self.assignment_api.assert_domain_exists(domain_id)
             return self.driver
 
     def _get_domain_id_and_driver(self, domain_scope):

@@ -1344,7 +1344,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         project_id = project['id']
         # Create a project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         updated_project = copy.deepcopy(project)
         updated_project['description'] = uuid.uuid4().hex
         # Update project, bypassing assignment_api manager
@@ -1379,7 +1379,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           project_id)
         # recreate project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         # delete project
         self.assignment_api.delete_project(project_id)
         # Verify ProjectNotFound is raised

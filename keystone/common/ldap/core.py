@@ -1082,6 +1082,28 @@ class BaseLdap(object):
             conn.unbind_s()
         return values
 
+    def _ldap_exists(self, object_id, ldap_filter=None):
+        conn = self.get_connection()
+        query = (u'(&(%(id_attr)s=%(id)s)'
+                 u'%(filter)s'
+                 u'(objectClass=%(object_class)s))'
+                 % {'id_attr': self.id_attr,
+                    'id': ldap.filter.escape_filter_chars(
+                        six.text_type(object_id)),
+                    'filter': (ldap_filter or self.ldap_filter or ''),
+                    'object_class': self.object_class})
+        try:
+            attrs = '1.1'
+            res = conn.search_s(self.tree_dn, self.LDAP_SCOPE, query, attrs)
+        except ldap.NO_SUCH_OBJECT:
+            return None
+        finally:
+            conn.unbind_s()
+        try:
+            return res[0]
+        except IndexError:
+            return None
+
     def _ldap_get(self, object_id, ldap_filter=None):
         conn = self.get_connection()
         query = (u'(&(%(id_attr)s=%(id)s)'
@@ -1139,6 +1161,11 @@ class BaseLdap(object):
             return conn.search_s(search_base, scope, query, attrlist)
         finally:
             conn.unbind_s()
+
+    def exists(self, object_id, ldap_filter=None):
+        res = self._ldap_exists(object_id, ldap_filter)
+        if res is None:
+            raise self._not_found(object_id)
 
     def get(self, object_id, ldap_filter=None):
         res = self._ldap_get(object_id, ldap_filter)

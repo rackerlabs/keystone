@@ -2705,7 +2705,7 @@ class IdentityTests(object):
                           self.assignment_api.get_domain, domain_id)
         # Recreate Domain
         self.assignment_api.create_domain(domain_id, domain)
-        self.assignment_api.get_domain(domain_id)
+        self.assignment_api.assert_domain_exists(domain_id)
         # Make sure domain is 'disabled', bypass assignment api manager
         domain['enabled'] = False
         self.assignment_api.driver.update_domain(domain_id, domain)
@@ -2727,7 +2727,7 @@ class IdentityTests(object):
         self.assignment_api.create_domain(domain['id'], domain)
         # Create a project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         project['name'] = uuid.uuid4().hex
         self.assignment_api.update_project(project_id, project)
         self.assertRaises(exception.ProjectNotFound,
@@ -2745,7 +2745,7 @@ class IdentityTests(object):
         self.assignment_api.create_domain(domain['id'], domain)
         # Create a project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         updated_project = copy.deepcopy(project)
         updated_project['name'] = uuid.uuid4().hex
         # Update project, bypassing assignment_api manager
@@ -2780,7 +2780,7 @@ class IdentityTests(object):
                           project_id)
         # recreate project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         # delete project
         self.assignment_api.delete_project(project_id)
         # Verify ProjectNotFound is raised
