@@ -26,6 +26,7 @@ from oslo.db import exception as db_exception
 from oslo.db import options as db_options
 from oslo.db.sqlalchemy import models
 from oslo.db.sqlalchemy import session as db_session
+import osprofiler.sqlalchemy
 import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
@@ -174,7 +175,9 @@ def _get_engine_facade():
 
     if not _engine_facade:
         _engine_facade = db_session.EngineFacade.from_config(CONF)
-
+        if CONF.profiler.enabled and CONF.profiler.trace_sqlalchemy:
+            osprofiler.sqlalchemy.add_tracing(sql, _engine_facade.get_engine(),
+                                              "db")
     return _engine_facade
 
 
