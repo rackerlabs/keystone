@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_6d686a88",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-06-28T08:56:19Z",
+      "side": 1,
+      "message": "Please note that this method is a classmethod, so we can not use @dependency.requires(\u0027trust_api\u0027) to get trust_api instance. Therefor, we must product a trust_api instance by ourselves. Compare these two solutions, I prefer my solution.",
+      "parentUuid": "1ae5cdf2_3bf06afc",
+      "revId": "e8a767db80087a48eab754bd11fe922577386834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_bb68fa88",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
