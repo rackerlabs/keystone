@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f2a7f7b9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1415,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-28T07:28:55Z",
+      "side": 1,
+      "message": "All looks good, might be better to use the style of:\n\n\n.. WARNING::\n    Enabling ``debug_level`` will negatively impact performance.\n\nfor this line (see examples elsewhere in this file)",
+      "revId": "a7dfdfd31a26315acefdeeb64b19dee5bb3ac41f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
