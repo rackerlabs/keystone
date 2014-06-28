@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d7a4adba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-28T05:09:54Z",
+      "side": 1,
+      "message": "To make it explicit can the name \"client\" be changed  to \"keystoneclient\"",
+      "revId": "fc989d3e897bc3522dc2cbb84b1c6b9cf6ac7e6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_57909d4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-06-28T05:09:54Z",
+      "side": 1,
+      "message": "Can you please  mention that OPENSTACK_REPO is an environment variable?",
+      "revId": "fc989d3e897bc3522dc2cbb84b1c6b9cf6ac7e6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
