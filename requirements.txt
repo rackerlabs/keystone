@@ -23,3 +23,4 @@ dogpile.cache>=0.5.3
 jsonschema>=2.0.0,<3.0.0
 pycadf>=0.5.1
 posix_ipc
+osprofiler>=0.1.1
