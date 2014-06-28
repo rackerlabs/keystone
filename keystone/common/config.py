@@ -793,6 +793,12 @@ FILE_OPTIONS = {
         cfg.IntOpt('default_lock_timeout', default=5,
                    help='Default lock timeout for distributed locking.'),
     ],
+    'profiler': [
+        cfg.BoolOpt("enabled", default=False,
+                    help='If False fully disable profiling feature.'),
+        cfg.BoolOpt("trace_sqlalchemy", default=False,
+                    help="If False doesn't trace SQL requests.")
+    ]
 }
 
 
