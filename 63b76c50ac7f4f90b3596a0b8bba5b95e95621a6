@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_823cb7c0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 11155
+      },
+      "writtenOn": "2014-06-28T01:02:43Z",
+      "side": 1,
+      "message": "The last comments I got actually asked for this to be more specific.  I also found your way of putting this a bit confusing, as the LDAP OPT_DEBUG_LEVEL is the underlying code, but debug_level is what the user is going to see.",
+      "parentUuid": "1ae5cdf2_89051716",
+      "revId": "63b76c50ac7f4f90b3596a0b8bba5b95e95621a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_8980b78c",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-18T03:51:46Z",
       "side": 1,
       "message": "I would re-position and re-phrase the last line and have a new paragraph prefixed with \".. WARNING:: Enabling DEBUG_LEVEL will negatively impact performance.\" to ensure this is not missed. Of course, it\u0027s assumed everyone knows this already but ...",
+      "revId": "63b76c50ac7f4f90b3596a0b8bba5b95e95621a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6135dbd9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1413,
+      "author": {
+        "id": 11155
+      },
+      "writtenOn": "2014-06-28T01:02:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_8980b78c",
       "revId": "63b76c50ac7f4f90b3596a0b8bba5b95e95621a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
