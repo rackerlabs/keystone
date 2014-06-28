@@ -33,6 +33,15 @@ if os.path.exists(os.path.join(possible_topdir,
 from paste import deploy
 import pbr.version
 
+try:
+    # NOTE(boris-42): This will be required unit new version of oslo.messaging
+    #                 with this patch: https://review.openstack.org/#/c/103270/
+    #                 will be released.
+    from oslo.messaging import profiler   # noqa
+except ImportError:
+    profiler = None
+
+from keystone.openstack.common import context
 from keystone.openstack.common import gettextutils
 # NOTE(dstanek): gettextutils.enable_lazy() must be called before
 # gettextutils._() is called to ensure it has the desired lazy lookup
@@ -46,6 +55,7 @@ from keystone.common import environment
 from keystone.common import sql
 from keystone.common import utils
 from keystone import config
+from keystone import notifications
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import service
 from keystone.openstack.common import systemd
@@ -73,9 +83,15 @@ class ServerWrapper(object):
 
 def create_server(conf, name, host, port, workers):
     app = deploy.loadapp('config:%s' % conf, name=name)
+
     server = environment.Server(app, host=host, port=port,
                                 keepalive=CONF.tcp_keepalive,
                                 keepidle=CONF.tcp_keepidle)
+
+    if profiler:
+        profiler.set_notifier(context.get_admin_context().to_dict(),
+                              notifications.get_transport(), "keystone",
+                              name, host)
     if CONF.ssl.enable:
         server.set_ssl(CONF.ssl.certfile, CONF.ssl.keyfile,
                        CONF.ssl.ca_certs, CONF.ssl.cert_required)
