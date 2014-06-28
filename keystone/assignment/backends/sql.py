@@ -41,6 +41,14 @@ class Assignment(keystone_assignment.Driver):
             raise exception.ProjectNotFound(project_id=project_id)
         return project_ref
 
+    def assert_project_exists(self, project_id, session=None):
+        if session is None:
+            session = sql.get_session()
+        try:
+            session.query(Project.id).filter(Project.id == project_id).one()
+        except sql.NotFound:
+            raise exception.ProjectNotFound(project_id=project_id)
+
     def get_project(self, tenant_id):
         with sql.transaction() as session:
             return self._get_project(session, tenant_id).to_dict()
@@ -58,7 +66,7 @@ class Assignment(keystone_assignment.Driver):
 
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
-            self._get_project(session, tenant_id)
+            self.assert_project_exists(tenant_id, session)
             query = session.query(RoleAssignment.actor_id)
             query = query.filter_by(type=AssignmentType.USER_PROJECT)
             query = query.filter_by(target_id=tenant_id)
@@ -137,9 +145,9 @@ class Assignment(keystone_assignment.Driver):
             self._get_role(session, role_id)
 
             if domain_id:
-                self._get_domain(session, domain_id)
+                self.assert_domain_exists(domain_id, session)
             if project_id:
-                self._get_project(session, project_id)
+                self.assert_project_exists(project_id, session)
 
             if project_id and inherited_to_projects:
                 msg = _('Inherited roles can only be assigned to domains')
@@ -163,9 +171,9 @@ class Assignment(keystone_assignment.Driver):
                     inherited_to_projects=False):
         with sql.transaction() as session:
             if domain_id:
-                self._get_domain(session, domain_id)
+                self.assert_domain_exists(domain_id, session)
             if project_id:
-                self._get_project(session, project_id)
+                self.assert_project_exists(project_id, session)
 
             q = session.query(Role).join(RoleAssignment)
             q = q.filter(RoleAssignment.actor_id == (user_id or group_id))
@@ -189,9 +197,9 @@ class Assignment(keystone_assignment.Driver):
         with sql.transaction() as session:
             role_ref = self._get_role(session, role_id)
             if domain_id:
-                self._get_domain(session, domain_id)
+                self.assert_domain_exists(domain_id, session)
             if project_id:
-                self._get_project(session, project_id)
+                self.assert_project_exists(project_id, session)
 
             try:
                 q = self._build_grant_filter(
@@ -209,9 +217,9 @@ class Assignment(keystone_assignment.Driver):
         with sql.transaction() as session:
             self._get_role(session, role_id)
             if domain_id:
-                self._get_domain(session, domain_id)
+                self.assert_domain_exists(domain_id, session)
             if project_id:
-                self._get_project(session, project_id)
+                self.assert_project_exists(project_id, session)
 
             q = self._build_grant_filter(
                 session, role_id, user_id, group_id, domain_id, project_id,
@@ -228,7 +236,7 @@ class Assignment(keystone_assignment.Driver):
 
     def list_projects_in_domain(self, domain_id):
         with sql.transaction() as session:
-            self._get_domain(session, domain_id)
+            self.assert_domain_exists(domain_id, session)
             query = session.query(Project)
             project_refs = query.filter_by(domain_id=domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
@@ -337,7 +345,7 @@ class Assignment(keystone_assignment.Driver):
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
-            self._get_project(session, tenant_id)
+            self.assert_project_exists(tenant_id, session)
             self._get_role(session, role_id)
 
         try:
@@ -454,6 +462,14 @@ class Assignment(keystone_assignment.Driver):
     def get_domain(self, domain_id):
         with sql.transaction() as session:
             return self._get_domain(session, domain_id).to_dict()
+
+    def assert_domain_exists(self, domain_id, session=None):
+        if session is None:
+            session = sql.get_session()
+        try:
+            session.query(Domain.id).filter(Domain.id == domain_id).one()
+        except sql.NotFound:
+            raise exception.DomainNotFound(domain_id=domain_id)
 
     def get_domain_by_name(self, domain_name):
         with sql.transaction() as session:

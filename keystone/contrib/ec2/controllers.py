@@ -150,8 +150,8 @@ class Ec2ControllerCommon(object):
         :returns: credential: dict of ec2 credential
         """
 
-        self.identity_api.get_user(user_id)
-        self.assignment_api.get_project(tenant_id)
+        self.identity_api.assert_user_exists(user_id)
+        self.assignment_api.assert_project_exists(tenant_id)
         trust_id = self._get_trust_id_for_request(context)
         blob = {'access': uuid.uuid4().hex,
                 'secret': uuid.uuid4().hex,
@@ -172,7 +172,7 @@ class Ec2ControllerCommon(object):
         :returns: credentials: list of ec2 credential dicts
         """
 
-        self.identity_api.get_user(user_id)
+        self.identity_api.assert_user_exists(user_id)
         credential_refs = self.credential_api.list_credentials(
             user_id=user_id)
         return {'credentials':
@@ -189,7 +189,7 @@ class Ec2ControllerCommon(object):
         :returns: credential: dict of ec2 credential
         """
 
-        self.identity_api.get_user(user_id)
+        self.identity_api.assert_user_exists(user_id)
         return {'credential': self._get_credentials(credential_id)}
 
     def delete_credential(self, user_id, credential_id):
@@ -202,7 +202,7 @@ class Ec2ControllerCommon(object):
         :returns: bool: success
         """
 
-        self.identity_api.get_user(user_id)
+        self.identity_api.assert_user_exists(user_id)
         self._get_credentials(credential_id)
         ec2_credential_id = utils.hash_access_key(credential_id)
         return self.credential_api.delete_credential(ec2_credential_id)

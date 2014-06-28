@@ -54,6 +54,9 @@ class Assignment(assignment.Driver):
     def get_project(self, tenant_id):
         return self._set_default_domain(self.project.get(tenant_id))
 
+    def assert_project_exists(self, project_id):
+        self.project.exists(project_id)
+
     def list_projects(self, hints):
         return self._set_default_domain(self.project.get_all())
 
@@ -88,7 +91,7 @@ class Assignment(assignment.Driver):
                       domain_id=None, group_id=None):
 
         def _get_roles_for_just_user_and_project(user_id, tenant_id):
-            self.get_project(tenant_id)
+            self.assert_project_exists(tenant_id)
             user_dn = self.user._id_to_dn(user_id)
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
@@ -96,7 +99,7 @@ class Assignment(assignment.Driver):
                     if common_ldap.is_dn_equal(a.user_dn, user_dn)]
 
         def _get_roles_for_group_and_project(group_id, project_id):
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
             group_dn = self.group._id_to_dn(group_id)
             return [self.role._dn_to_id(a.role_dn)
                     for a in self.role.get_role_assignments
@@ -154,7 +157,7 @@ class Assignment(assignment.Driver):
         raise exception.NotImplemented()
 
     def list_user_ids_for_project(self, tenant_id):
-        self.get_project(tenant_id)
+        self.assert_project_exists(tenant_id)
         tenant_dn = self.project._id_to_dn(tenant_id)
         rolegrants = self.role.get_role_assignments(tenant_dn)
         return [self.user._dn_to_id(user_dn) for user_dn in
@@ -169,7 +172,7 @@ class Assignment(assignment.Driver):
                                  self.project._id_to_dn(tenant_id))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+        self.assert_project_exists(tenant_id)
         self.get_role(role_id)
         user_dn = self.user._id_to_dn(user_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
@@ -180,7 +183,7 @@ class Assignment(assignment.Driver):
                                    tenant_dn=tenant_dn)
 
     def _add_role_to_group_and_project(self, group_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+        self.assert_project_exists(tenant_id)
         self.get_role(role_id)
         group_dn = self.group._id_to_dn(group_id)
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
@@ -297,9 +300,9 @@ class Assignment(assignment.Driver):
         self.get_role(role_id)
 
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         if project_id and inherited_to_projects:
             msg = _('Inherited roles can only be assigned to domains')
@@ -324,9 +327,9 @@ class Assignment(assignment.Driver):
         role_ref = self.get_role(role_id)
 
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
@@ -345,9 +348,9 @@ class Assignment(assignment.Driver):
         self.get_role(role_id)
 
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
@@ -370,9 +373,9 @@ class Assignment(assignment.Driver):
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,

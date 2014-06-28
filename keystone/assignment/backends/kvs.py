@@ -66,7 +66,7 @@ class Assignment(kvs.Base, assignment.Driver):
 
     def list_projects_in_domain(self, domain_id):
         project_refs = self._build_project_refs()
-        self.get_domain(domain_id)
+        self.assert_domain_exists(domain_id)
         return [ref for ref in project_refs if domain_id == ref['domain_id']]
 
     def get_project_by_name(self, tenant_name, domain_id):
@@ -76,7 +76,7 @@ class Assignment(kvs.Base, assignment.Driver):
             raise exception.ProjectNotFound(project_id=tenant_name)
 
     def list_user_ids_for_project(self, tenant_id):
-        self.get_project(tenant_id)
+        self.assert_project_exists(tenant_id)
 
         user_ids = set()
 
@@ -143,7 +143,7 @@ class Assignment(kvs.Base, assignment.Driver):
                 continue
 
             try:
-                self.get_project(meta_project_or_domain_id)
+                self.assert_project_exists(meta_project_or_domain_id)
             except exception.NotFound:
                 # target is not a project, so on to next metadata.
                 continue
@@ -168,7 +168,7 @@ class Assignment(kvs.Base, assignment.Driver):
         raise exception.NotImplemented()
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
-        self.get_project(tenant_id)
+        self.assert_project_exists(tenant_id)
         self.get_role(role_id)
         try:
             metadata_ref = self._get_metadata(user_id, tenant_id)
@@ -219,7 +219,7 @@ class Assignment(kvs.Base, assignment.Driver):
             template = {}
             i, meta_project_or_domain_id, template['user_id'] = key.split('-')
             try:
-                self.get_project(meta_project_or_domain_id)
+                self.assert_project_exists(meta_project_or_domain_id)
                 template['project_id'] = meta_project_or_domain_id
             except exception.NotFound:
                 template['domain_id'] = meta_project_or_domain_id
@@ -238,7 +238,7 @@ class Assignment(kvs.Base, assignment.Driver):
             template = {}
             i, meta_project_or_domain_id, template['group_id'] = key.split('-')
             try:
-                self.get_project(meta_project_or_domain_id)
+                self.assert_project_exists(meta_project_or_domain_id)
                 template['project_id'] = meta_project_or_domain_id
             except exception.NotFound:
                 template['domain_id'] = meta_project_or_domain_id
@@ -257,7 +257,7 @@ class Assignment(kvs.Base, assignment.Driver):
     def create_project(self, tenant_id, tenant):
         tenant['name'] = clean.project_name(tenant['name'])
         try:
-            self.get_project(tenant_id)
+            self.assert_project_exists(tenant_id)
         except exception.ProjectNotFound:
             pass
         else:
@@ -412,9 +412,9 @@ class Assignment(kvs.Base, assignment.Driver):
 
         self.get_role(role_id)
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
@@ -432,9 +432,9 @@ class Assignment(kvs.Base, assignment.Driver):
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
@@ -453,9 +453,9 @@ class Assignment(kvs.Base, assignment.Driver):
         if group_id:
             self.get_group(group_id)
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
@@ -475,9 +475,9 @@ class Assignment(kvs.Base, assignment.Driver):
                      inherited_to_projects=False):
         self.get_role(role_id)
         if domain_id:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         if project_id:
-            self.get_project(project_id)
+            self.assert_project_exists(project_id)
 
         try:
             metadata_ref = self._get_metadata(user_id, project_id,
@@ -498,7 +498,7 @@ class Assignment(kvs.Base, assignment.Driver):
 
     def create_domain(self, domain_id, domain):
         try:
-            self.get_domain(domain_id)
+            self.assert_domain_exists(domain_id)
         except exception.DomainNotFound:
             pass
         else:

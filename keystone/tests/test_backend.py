@@ -368,7 +368,7 @@ class IdentityTests(object):
         user_ref = self.identity_api.get_user(original_id)
         self.assertEqual(original_id, user_ref['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           'fake2')
 
     def test_create_duplicate_project_id_fails(self):
@@ -1489,7 +1489,7 @@ class IdentityTests(object):
             user_id=user1['id'],
             group_id=group1['id'])
         self.identity_api.delete_group(group1['id'])
-        self.identity_api.get_user(user1['id'])
+        self.identity_api.assert_user_exists(user1['id'])
 
     def test_delete_domain_with_user_group_project_links(self):
         # TODO(chungg):add test case once expected behaviour defined
@@ -1789,7 +1789,7 @@ class IdentityTests(object):
         user = {'name': 'fake1',
                 'domain_id': DEFAULT_DOMAIN_ID}
         user = self.identity_api.create_user(user)
-        self.identity_api.get_user(user['id'])
+        self.identity_api.assert_user_exists(user['id'])
         # Make sure  the user is not allowed to login
         # with a password that  is empty string or None
         self.assertRaises(AssertionError,
@@ -1807,7 +1807,7 @@ class IdentityTests(object):
         user = {'name': 'fake1', 'password': None,
                 'domain_id': DEFAULT_DOMAIN_ID}
         user = self.identity_api.create_user(user)
-        self.identity_api.get_user(user['id'])
+        self.identity_api.assert_user_exists(user['id'])
         # Make sure  the user is not allowed to login
         # with a password that  is empty string or None
         self.assertRaises(AssertionError,
@@ -2382,7 +2382,7 @@ class IdentityTests(object):
 
         self.identity_api.delete_group(group['id'])
         self.assertRaises(exception.GroupNotFound,
-                          self.identity_api.get_group,
+                          self.identity_api.assert_group_exists,
                           group['id'])
 
     def test_create_duplicate_group_name_fails(self):
@@ -2592,7 +2592,7 @@ class IdentityTests(object):
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           user['id'])
 
     def test_list_projects_for_user(self):
@@ -2705,7 +2705,7 @@ class IdentityTests(object):
                           self.assignment_api.get_domain, domain_id)
         # Recreate Domain
         self.assignment_api.create_domain(domain_id, domain)
-        self.assignment_api.get_domain(domain_id)
+        self.assignment_api.assert_domain_exists(domain_id)
         # Make sure domain is 'disabled', bypass assignment api manager
         domain['enabled'] = False
         self.assignment_api.driver.update_domain(domain_id, domain)
@@ -2727,7 +2727,7 @@ class IdentityTests(object):
         self.assignment_api.create_domain(domain['id'], domain)
         # Create a project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         project['name'] = uuid.uuid4().hex
         self.assignment_api.update_project(project_id, project)
         self.assertRaises(exception.ProjectNotFound,
@@ -2745,7 +2745,7 @@ class IdentityTests(object):
         self.assignment_api.create_domain(domain['id'], domain)
         # Create a project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         updated_project = copy.deepcopy(project)
         updated_project['name'] = uuid.uuid4().hex
         # Update project, bypassing assignment_api manager
@@ -2780,7 +2780,7 @@ class IdentityTests(object):
                           project_id)
         # recreate project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         # delete project
         self.assignment_api.delete_project(project_id)
         # Verify ProjectNotFound is raised

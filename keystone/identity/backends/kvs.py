@@ -110,7 +110,7 @@ class Identity(kvs.Base, identity.Driver):
     # CRUD
     def create_user(self, user_id, user):
         try:
-            self.get_user(user_id)
+            self.assert_user_exists(user_id)
         except exception.UserNotFound:
             pass
         else:
@@ -165,20 +165,20 @@ class Identity(kvs.Base, identity.Driver):
         return identity.filter_user(new_user)
 
     def add_user_to_group(self, user_id, group_id):
-        self.get_group(group_id)
+        self.assert_group_exists(group_id)
         user_ref = self._get_user(user_id)
         groups = set(user_ref.get('groups', []))
         groups.add(group_id)
         self.update_user(user_id, {'groups': list(groups)})
 
     def check_user_in_group(self, user_id, group_id):
-        self.get_group(group_id)
+        self.assert_group_exists(group_id)
         user_ref = self._get_user(user_id)
         if group_id not in set(user_ref.get('groups', [])):
             raise exception.NotFound(_('User not found in group'))
 
     def remove_user_from_group(self, user_id, group_id):
-        self.get_group(group_id)
+        self.assert_group_exists(group_id)
         user_ref = self._get_user(user_id)
         groups = set(user_ref.get('groups', []))
         try:
@@ -188,7 +188,7 @@ class Identity(kvs.Base, identity.Driver):
         self.update_user(user_id, {'groups': list(groups)})
 
     def list_users_in_group(self, group_id, hints):
-        self.get_group(group_id)
+        self.assert_group_exists(group_id)
         user_keys = (k for k in self.db.keys() if k.startswith('user-'))
         user_refs = (self.db.get(key) for key in user_keys)
         user_refs_for_group = (ref for ref in user_refs

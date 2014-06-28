@@ -91,14 +91,14 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                 'domain_id': CONF.identity.default_domain_id,
                 'tenants': ['bar']}
         user = self.identity_api.create_user(user)
-        self.identity_api.get_user(user['id'])
+        self.identity_api.assert_user_exists(user['id'])
 
         user['password'] = u'fäképass2'
         self.identity_api.update_user(user['id'], user)
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           user['id'])
 
     def test_configurable_forbidden_user_actions(self):
@@ -1344,7 +1344,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         project_id = project['id']
         # Create a project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         updated_project = copy.deepcopy(project)
         updated_project['description'] = uuid.uuid4().hex
         # Update project, bypassing assignment_api manager
@@ -1379,7 +1379,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           project_id)
         # recreate project
         self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.assignment_api.assert_project_exists(project_id)
         # delete project
         self.assignment_api.delete_project(project_id)
         # Verify ProjectNotFound is raised
@@ -1603,7 +1603,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
 
         self.identity_api.delete_user(user['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           user['id'])
 
     def test_user_enable_attribute_mask(self):
@@ -1831,19 +1831,19 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         del userd['password']
         self.assertDictEqual(ref, userd)
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           userd['id'],
                           domain_scope=self.domain1['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           userd['id'],
                           domain_scope=self.domain2['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           userd['id'],
                           domain_scope=self.domain3['id'])
         self.assertRaises(exception.UserNotFound,
-                          self.identity_api.get_user,
+                          self.identity_api.assert_user_exists,
                           userd['id'],
                           domain_scope=self.domain4['id'])
 

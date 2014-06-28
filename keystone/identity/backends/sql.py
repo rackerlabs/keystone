@@ -130,6 +130,14 @@ class Identity(identity.Driver):
             raise exception.UserNotFound(user_id=user_id)
         return user_ref
 
+    def assert_user_exists(self, user_id, session=None):
+        if session is None:
+            session = sql.get_session()
+        try:
+            session.query(User.id).filter(User.id == user_id).one()
+        except sql.NotFound:
+            raise exception.UserNotFound(user_id=user_id)
+
     def get_user(self, user_id):
         session = sql.get_session()
         return identity.filter_user(self._get_user(session, user_id).to_dict())
@@ -166,8 +174,8 @@ class Identity(identity.Driver):
 
     def add_user_to_group(self, user_id, group_id):
         session = sql.get_session()
-        self.get_group(group_id)
-        self.get_user(user_id)
+        self.assert_group_exists(group_id)
+        self.assert_user_exists(user_id)
         query = session.query(UserGroupMembership)
         query = query.filter_by(user_id=user_id)
         query = query.filter_by(group_id=group_id)
@@ -181,8 +189,8 @@ class Identity(identity.Driver):
 
     def check_user_in_group(self, user_id, group_id):
         session = sql.get_session()
-        self.get_group(group_id)
-        self.get_user(user_id)
+        self.assert_group_exists(group_id)
+        self.assert_user_exists(user_id)
         query = session.query(UserGroupMembership)
         query = query.filter_by(user_id=user_id)
         query = query.filter_by(group_id=group_id)
@@ -203,8 +211,8 @@ class Identity(identity.Driver):
         if membership_ref is None:
             # Check if the group and user exist to return descriptive
             # exceptions.
-            self.get_group(group_id)
-            self.get_user(user_id)
+            self.assert_group_exists(group_id)
+            self.assert_user_exists(user_id)
             raise exception.NotFound(_("User '%(user_id)s' not found in"
                                        " group '%(group_id)s'") %
                                      {'user_id': user_id,
@@ -219,7 +227,7 @@ class Identity(identity.Driver):
         # here, this is left as future enhancement and until then we leave
         # it for the controller to do for us.
         session = sql.get_session()
-        self.get_user(user_id)
+        self.assert_user_exists(user_id)
         query = session.query(Group).join(UserGroupMembership)
         query = query.filter(UserGroupMembership.user_id == user_id)
         return [g.to_dict() for g in query]
@@ -231,7 +239,7 @@ class Identity(identity.Driver):
         # here, this is left as future enhancement and until then we leave
         # it for the controller to do for us.
         session = sql.get_session()
-        self.get_group(group_id)
+        self.assert_group_exists(group_id)
         query = session.query(User).join(UserGroupMembership)
         query = query.filter(UserGroupMembership.group_id == group_id)
 
@@ -272,6 +280,14 @@ class Identity(identity.Driver):
         if not ref:
             raise exception.GroupNotFound(group_id=group_id)
         return ref
+
+    def assert_group_exists(self, group_id, session=None):
+        if session is None:
+            session = sql.get_session()
+        try:
+            session.query(Group.id).filter(Group.id == group_id).one()
+        except sql.NotFound:
+            raise exception.GroupNotFound(group_id=group_id)
 
     def get_group(self, group_id):
         session = sql.get_session()

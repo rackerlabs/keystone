@@ -77,6 +77,9 @@ class Identity(identity.Driver):
     def get_user(self, user_id):
         return self.user.get_filtered(user_id)
 
+    def assert_user_exists(self, user_id):
+        self.user.exists(user_id)
+
     def list_users(self, hints):
         return self.user.get_all_filtered()
 
@@ -124,6 +127,9 @@ class Identity(identity.Driver):
 
     def get_group(self, group_id):
         return self.group.get_filtered(group_id)
+
+    def assert_group_exists(self, group_id):
+        self.group.exists(group_id)
 
     def update_group(self, group_id, group):
         self.group.check_allow_update()
@@ -174,7 +180,7 @@ class Identity(identity.Driver):
         else:
             # Try to fetch the user to see if it even exists.  This
             # will raise a more accurate exception.
-            self.get_user(user_id)
+            self.assert_user_exists(user_id)
             raise exception.NotFound(_("User '%(user_id)s' not found in"
                                        " group '%(group_id)s'") %
                                      {'user_id': user_id,

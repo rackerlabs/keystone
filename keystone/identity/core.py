@@ -249,7 +249,7 @@ class Manager(manager.Manager):
         if driver:
             return driver
         else:
-            self.assignment_api.get_domain(domain_id)
+            self.assignment_api.assert_domain_exists(domain_id)
             return self.driver
 
     def _get_domain_id_and_driver(self, domain_scope):
@@ -305,6 +305,11 @@ class Manager(manager.Manager):
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
         return ref
+
+    @domains_configured
+    def assert_user_exists(self, user_id, domain_scope=None):
+        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+        driver.assert_user_exists(user_id)
 
     @domains_configured
     def get_user_by_name(self, user_name, domain_id):
@@ -380,6 +385,11 @@ class Manager(manager.Manager):
         if not driver.is_domain_aware():
             ref = self._set_domain_id(ref, domain_id)
         return ref
+
+    @domains_configured
+    def assert_group_exists(self, group_id, domain_scope=None):
+        domain_id, driver = self._get_domain_id_and_driver(domain_scope)
+        driver.assert_group_exists(group_id)
 
     @notifications.updated(_GROUP)
     @domains_configured
@@ -553,6 +563,15 @@ class Driver(object):
         """
         raise exception.NotImplemented()
 
+    def assert_user_exists(self, user_id):
+        """Checks for user existence.
+
+        :returns: None
+        :raises: keystone.exception.UserNotFound
+
+        """
+        self.get_user(user_id)
+
     @abc.abstractmethod
     def update_user(self, user_id, user):
         """Updates an existing user.
@@ -656,6 +675,15 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    def assert_group_exists(self, group_id):
+        """Check for group existence.
+
+        :returns: None
+        :raises: keystone.exception.GroupNotFound
+
+        """
+        self.get_group(group_id)
 
     @abc.abstractmethod
     def update_group(self, group_id, group):

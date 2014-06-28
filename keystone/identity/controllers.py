@@ -74,7 +74,7 @@ class User(controller.V2Controller):
         default_project_id = user.pop('tenantId', None)
         if default_project_id is not None:
             # Check to see if the project is valid before moving on.
-            self.assignment_api.get_project(default_project_id)
+            self.assignment_api.assert_project_exists(default_project_id)
             user['default_project_id'] = default_project_id
 
         # The manager layer will generate the unique ID for users
@@ -115,7 +115,7 @@ class User(controller.V2Controller):
                 default_project_id is not None)):
             # Make sure the new project actually exists before we perform the
             # user update.
-            self.assignment_api.get_project(default_project_id)
+            self.assignment_api.assert_project_exists(default_project_id)
 
         user_ref = self.v3_to_v2_user(
             self.identity_api.update_user(user_id, user))

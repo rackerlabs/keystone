@@ -179,7 +179,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             # a migration, but the in-mem db uses model definitions  to create
             # the schema (no migrations are run).
             try:
-                self.assignment_api.get_domain(DEFAULT_DOMAIN_ID)
+                self.assignment_api.assert_domain_exists(DEFAULT_DOMAIN_ID)
             except exception.DomainNotFound:
                 domain = {'description': (u'Owns users and tenants (i.e. '
                                           u'projects) available on Identity '
