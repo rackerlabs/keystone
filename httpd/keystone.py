@@ -29,6 +29,7 @@ i18n.enable_lazy()
 from keystone import backends
 from keystone.common import dependency
 from keystone.common import environment
+from keystone.common import profiler
 from keystone.common import sql
 from keystone import config
 from keystone.openstack.common import log
@@ -51,6 +52,8 @@ if CONF.debug:
 
 
 drivers = backends.load_backends()
+
+profiler.setup(name, CONF.public_bind_host)
 
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
 # The following is a reference to Python Paste Deploy documentation
