@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_9cf869c6",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-28T18:44:14Z",
+      "side": 1,
+      "message": "same as below",
+      "parentUuid": "1ae5cdf2_a837c0ae",
+      "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_88b5a41a",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-28T11:51:18Z",
       "side": 1,
       "message": "I assume you could call assert_domain_exists() here?",
+      "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_3c0afdd2",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-28T18:44:14Z",
+      "side": 1,
+      "message": "Yep. Missed this one.",
+      "parentUuid": "1ae5cdf2_88b5a41a",
       "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_5c0fb1e1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-28T18:44:14Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "1ae5cdf2_68ba180c",
+      "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_48bf1cfc",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_7c1475f5",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-28T18:44:14Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "1ae5cdf2_48bf1cfc",
+      "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_28c49090",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2014-06-28T11:51:18Z",
       "side": 1,
       "message": "project -\u003e domain",
+      "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_bcf52dcd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-28T18:44:14Z",
+      "side": 1,
+      "message": "yep, thanks!",
+      "parentUuid": "1ae5cdf2_28c49090",
       "revId": "8c9e86121be5a6298aeeb25f165d7e3fcbcca0af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
