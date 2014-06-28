@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_41545f53",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-06-28T02:04:44Z",
+      "side": 1,
+      "message": "*why doesn\u0027t get_requested_token() use this method?\n\n-I will modify.\n\n*why do callers need the raw response?\n\n-Some tests need to check parameters(eg:\u0027expires_at\u0027,\u0027project\u0027) in the response.\n\n\nI will modify the method name too.",
+      "parentUuid": "1ae5cdf2_7eb01b40",
+      "revId": "8388ce776f3c1d3af0a659a651d1105c435ef392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_3e91339a",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-27T20:56:36Z",
       "side": 1,
       "message": "can this comment be removed with this patchset?",
+      "revId": "8388ce776f3c1d3af0a659a651d1105c435ef392",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c1c78f10",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-06-28T02:04:44Z",
+      "side": 1,
+      "message": "OK.",
+      "parentUuid": "1ae5cdf2_3e91339a",
       "revId": "8388ce776f3c1d3af0a659a651d1105c435ef392",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
