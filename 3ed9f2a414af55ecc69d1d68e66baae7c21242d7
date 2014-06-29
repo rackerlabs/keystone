@@ -2,6 +2,380 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab895d6_02622bd8",
+        "filename": "keystone/backends.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "leave these in alphabetical order.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_225f2f10",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "the assignment backend might not be sql, so we can\u0027t have a foreign key from identity to assignment.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_82a55b06",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "this is reference a class not a module.\n\nAlso, do we really need to put this on every manager class? Seems like any time you subclass you need to know how the super works.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_e2ab77d4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "should document what `type` is expected to be.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a2aa5fd2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "I assume this can raise if it\u0027s not found -- does it raise NotFound? GroupNotFound if type is a group and UserNotFound if it\u0027s a user?",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_827c7b74",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "I think we should also pass in the type so that the backend can validate that it\u0027s the expected type.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a2817f4c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "what\u0027s a mapping ref?",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c2959389",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "change \"Created\" to \"Create\"",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_228d6f7c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "it returns the argument?",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_82f39b09",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "Not having looked into this much, but seems like we should pass in the type so that it can be validated that the right type of entry is being removed.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a2f89fe6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "suggest change name to \"purge_mappings\"",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c2dcb377",
+        "filename": "keystone/identity/generator.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "It\u0027s a class not a module, and just remove it this sentence.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_e2d9b784",
+        "filename": "keystone/identity/generator.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "suggest put the type in the param instead:\n\n :param dict mapping: The items to be hashed.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_02e78b41",
+        "filename": "keystone/identity/generator.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "change \"shoule\" to \"should\"",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_429b43c9",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "the assignment backend might not be sql, so we can\u0027t have a foreign key from identity to assignment.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_02030bb9",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use a name other than type so that it doesn\u0027t mask the built-in.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_e2f537cc",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "I don\u0027t think we need a note for this, seems pretty obvious.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_8299db70",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "according to the coverage report this is never called. Add a test.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_422c234b",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "if this leg just returned None then no comment would be necessary.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_021a2b17",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "suggest use transaction context, replace 70-71 with:\n\n with sql.transaction() as session",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_82dd5b45",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "suggest use transaction context, replace 86-7 with:\n\nwith sql.transaction() as session",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c2e67316",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "where did mapping_filter come from? I thought it was a domain?",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_724a07ae",
         "filename": "keystone/tests/identity_mapping.py",
         "patchSetId": 5
@@ -13,6 +387,160 @@
       "writtenOn": "2014-06-28T07:52:08Z",
       "side": 1,
       "message": "Henry\u0027s original comment: \n\nComment to reviewers: This is in a separate file since it will be used by multiple unit tests in the follow-on patch",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_02f14bcd",
+        "filename": "keystone/tests/identity_mapping.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "If a comment is needed for reviewers, then isn\u0027t it also needed for anyone looking at this file later?",
+      "parentUuid": "1ae5cdf2_724a07ae",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a2b97feb",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "seems like the addCleanup could be done right in load_sample_data rather than having it separate.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_02c86b73",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "change \"and the\" to \"and then\"",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a2b09ff5",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use matchers.HasLength for length checks. This should give us a more descriptive message when it fails.",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_628da731",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use matchers.HasLength",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_8282bbfe",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use matchers.HasLength",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a287bf0e",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use matchers.HasLength",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c27bd327",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use matchers.HasLength",
+      "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_e278d72d",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-29T17:03:12Z",
+      "side": 1,
+      "message": "use matchers.HasLength",
       "revId": "3ed9f2a414af55ecc69d1d68e66baae7c21242d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
