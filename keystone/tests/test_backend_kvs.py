@@ -245,4 +245,4 @@ class KvsTokenCacheInvalidation(tests.TestCase,
             driver='keystone.identity.backends.kvs.Identity')
         self.config_fixture.config(
             group='token',
-            driver='keystone.token.backends.kvs.Token')
+            persistence_driver='keystone.token.backends.kvs.Token')

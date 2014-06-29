@@ -110,7 +110,7 @@ class Manager(manager.Manager):
     """
 
     def __init__(self):
-        super(Manager, self).__init__(CONF.token.driver)
+        super(Manager, self).__init__(CONF.token.persistence_driver)
 
     def unique_id(self, token_id):
         """Return a unique ID for a token.
@@ -288,7 +288,7 @@ class Manager(manager.Manager):
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
-    """Interface description for a Token driver."""
+    """Interface description for a Token persistence driver."""
 
     @abc.abstractmethod
     def get_token(self, token_id):

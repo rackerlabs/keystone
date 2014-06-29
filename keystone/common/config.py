@@ -198,9 +198,11 @@ FILE_OPTIONS = {
                         'revocation operations. Core providers are '
                         '"keystone.token.providers.[pkiz|pki|uuid].'
                         'Provider". The default provider is pkiz.'),
-        cfg.StrOpt('driver',
+        cfg.StrOpt('persistence_driver',
+                   deprecated_opts=[cfg.DeprecatedOpt(
+                       'driver', group='token')],
                    default='keystone.token.backends.sql.Token',
-                   help='Token persistence backend driver.'),
+                   help='Token persistence driver.'),
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for token system cacheing. This has no '
                          'effect unless global caching is enabled.'),
