@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_6ee8337d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-06-29T15:42:41Z",
+      "side": 1,
+      "message": "Why this fails??",
+      "revId": "129b3b155f8b3f30f5dac2c7a89ebc04edd815a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
