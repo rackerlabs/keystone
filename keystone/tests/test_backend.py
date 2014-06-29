@@ -3299,10 +3299,6 @@ class TokenTests(object):
         token_id, data = self.create_token_sample_data(user_id=user_id)
         self.token_api.get_token(token_id)
 
-    def test_list_tokens_unicode_user_id(self):
-        user_id = six.text_type(uuid.uuid4().hex)
-        self.token_api.list_tokens(user_id)
-
     def test_token_expire_timezone(self):
 
         @test_utils.timezone
