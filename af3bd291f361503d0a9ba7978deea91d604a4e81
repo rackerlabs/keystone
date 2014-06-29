@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_a2afc42a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-29T04:31:19Z",
+      "side": 1,
+      "message": "Doesn\u0027t really change security in any meaningful way here. Other changes will and will be marked as such",
+      "parentUuid": "1ae5cdf2_2f3c9fbe",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_444ab2ad",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2014-06-27T22:28:05Z",
       "side": 1,
       "message": "Are we purposely changing the hostname from \"keystone\" to \"localhost\" in the sample file?",
+      "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c2acb838",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-29T04:31:19Z",
+      "side": 1,
+      "message": "This is generated automatically by the sample config generator. I make sure the venv is up to date and run the generator. \"localhost\" is probably more accurate than \"keystone\" as localhost would \"work\" and keystone might not. Same applies to all of these comments here.",
+      "parentUuid": "1ae5cdf2_442b9294",
       "revId": "af3bd291f361503d0a9ba7978deea91d604a4e81",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
