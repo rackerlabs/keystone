@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_2d5e45ea",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-06-30T17:14:42Z",
+      "side": 1,
+      "message": "What if an exception is raised here?  Who is responsible for handling it?",
+      "revId": "c714517e7db9a02769e56ff827b7648916eeeda7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b2e63015",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 3
