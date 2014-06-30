@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d29f244f",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-30T16:49:39Z",
+      "side": 1,
+      "message": "++ in next patch.",
+      "parentUuid": "dab895d6_a2497f8d",
+      "revId": "5e133edd6747895ca4e036f42db9b67cf78c7e39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_02586b55",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-29T18:36:15Z",
       "side": 1,
       "message": "you can say:   \n\n   try:\n       remaining_uses \u003d session.query(...).filter_by(..).one()[0]\n   except orm_exc.NoResultFound:\n       raise exception.TrustNotFound(..)\n\none() will throw the exception if no rows returned so it\u0027s safe to call [0] on that result.",
+      "revId": "5e133edd6747895ca4e036f42db9b67cf78c7e39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_328f8025",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-30T16:49:39Z",
+      "side": 1,
+      "message": "Great advice, will switch to it.",
+      "parentUuid": "dab895d6_02586b55",
       "revId": "5e133edd6747895ca4e036f42db9b67cf78c7e39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b2947045",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-30T16:49:39Z",
+      "side": 1,
+      "message": "Done in next patch",
+      "parentUuid": "dab895d6_e25a974f",
+      "revId": "5e133edd6747895ca4e036f42db9b67cf78c7e39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_621da773",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-29T18:36:15Z",
       "side": 1,
       "message": "should there perhaps be some kind of sleep() in between loops here?   doing ten queries in a tight loop might cut out other concurrent attempts, but i don\u0027t know eventlet\u0027s behavior that well here.",
+      "revId": "5e133edd6747895ca4e036f42db9b67cf78c7e39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b27b9028",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-30T16:49:39Z",
+      "side": 1,
+      "message": "A sleep(0) would yield to another task, but Keystone runs mostly single threaded (and we\u0027re working to instead be under apache). A sleep \u003e 0 would be a bad idea.\n\nLet me ask the Keystone folks if they want a yield in here.",
+      "parentUuid": "dab895d6_621da773",
       "revId": "5e133edd6747895ca4e036f42db9b67cf78c7e39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
