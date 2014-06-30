@@ -52,6 +52,24 @@
       "revId": "820e4f153aa12f9686a98fcae309636216666909",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f08896c8",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-06-30T23:35:22Z",
+      "side": 0,
+      "message": "I believe my fix is cleaner - instead of having a special case for this particular attribute at this place in the code, the handling for all LDAP attributes is centralized.",
+      "parentUuid": "1ae5cdf2_e28632b8",
+      "revId": "820e4f153aa12f9686a98fcae309636216666909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

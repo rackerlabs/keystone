@@ -141,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_90c11ae7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-06-30T23:35:22Z",
+      "side": 1,
+      "message": "Please respond - I would like some guidance on this issue.",
+      "parentUuid": "7adec928_6798606b",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_dcc5e65c",
         "filename": "keystone/common/config.py",
         "patchSetId": 18
@@ -170,6 +188,24 @@
       "side": 1,
       "message": "Description is used elsewhere in the code as a property of user objects, but is not explicitly specified in UserApi.attribute_options_names.  It is the list of properties in attribute_options_names that is used to determine which properties to fill in with None as the value if the corresponding attribute is not present in the LDAP entry.\nSomewhere among one of the comments for the 17 other reviews, a commenter suggested that I could not add description to UserApi.attribute_options_names, and that instead I should add it to user_additional_attribute_mapping.  I\u0027m not sure how to easily search through all of these reviews to find that comment.",
       "parentUuid": "7adec928_dcc5e65c",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_904f5a92",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-06-30T23:35:22Z",
+      "side": 1,
+      "message": "Please respond - I would like some guidance on this issue.  Should I use my earlier change, which added description to the default attribute list attribute_options_names in identity.backends.ldap.UserApi ?",
+      "parentUuid": "7adec928_c7ccd464",
       "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
