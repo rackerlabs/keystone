@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_87a56506",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-30T05:53:29Z",
+      "side": 1,
+      "message": "are you are using self.default_domain_user because it wasn\u0027t the trustee, and therefore fails the auth call? \n\nif so, i would prefer you use a random uuid instead, it makes it a bit clearer.",
+      "revId": "020b34ad1449623f91f941443e6c1937e6961ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_8720059d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-06-30T05:53:29Z",
+      "side": 1,
+      "message": "I would stick to checking the auth variable,\n\n  if \u0027trust_id\u0027 in auth: ...",
+      "revId": "020b34ad1449623f91f941443e6c1937e6961ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
