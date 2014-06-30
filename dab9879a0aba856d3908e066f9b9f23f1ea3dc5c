@@ -16,6 +16,24 @@
       "revId": "dab9879a0aba856d3908e066f9b9f23f1ea3dc5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2e90f8eb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1411,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-06-30T20:27:29Z",
+      "side": 1,
+      "message": "it is my understanding that some LDAP servers may not implement all debug levels or debugging at all depending on how they are compiled, is that what you were asking?",
+      "parentUuid": "baada198_0ebed4ff",
+      "revId": "dab9879a0aba856d3908e066f9b9f23f1ea3dc5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
