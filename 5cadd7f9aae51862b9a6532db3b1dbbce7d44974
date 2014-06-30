@@ -314,6 +314,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b06e1ec8",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-06-30T22:59:36Z",
+      "side": 1,
+      "message": "Can you add some tests to show the expected behavior for different types?  I think the \u0027if\u0027 statement from your comment is probably the right way to do this.",
+      "parentUuid": "7adec928_e704701a",
+      "revId": "5cadd7f9aae51862b9a6532db3b1dbbce7d44974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_fc70e241",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 18
