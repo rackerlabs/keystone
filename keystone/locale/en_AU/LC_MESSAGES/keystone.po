@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-06-26 06:00+0000\n"
+"POT-Creation-Date: 2014-06-30 06:00+0000\n"
 "PO-Revision-Date: 2014-04-19 01:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: English (Australia) "
@@ -377,65 +377,65 @@ msgstr ""
 "Group %(group)s not found for role-assignment - %(target)s with Role: "
 "%(role)s"
 
-#: keystone/assignment/core.py:243
+#: keystone/assignment/core.py:244
 #, python-format
 msgid "Creating the default role %s because it does not exist."
 msgstr "Creating the default role %s because it does not exist."
 
-#: keystone/assignment/core.py:275
+#: keystone/assignment/core.py:276
 #, python-format
 msgid "Removing role %s failed because it does not exist."
 msgstr ""
 
-#: keystone/assignment/core.py:342
+#: keystone/assignment/core.py:344
 msgid "delete the default domain"
 msgstr ""
 
-#: keystone/assignment/core.py:353
+#: keystone/assignment/core.py:355
 msgid "cannot delete a domain that is enabled, please disable it first."
 msgstr ""
 
-#: keystone/assignment/core.py:390
+#: keystone/assignment/core.py:392
 #, python-format
 msgid ""
 "Project %(projectid)s not found when deleting domain contents for "
 "%(domainid)s, continuing with cleanup."
 msgstr ""
 
-#: keystone/assignment/core.py:403
+#: keystone/assignment/core.py:405
 #, python-format
 msgid ""
 "Group %(groupid)s not found when deleting domain contents for "
 "%(domainid)s, continuing with cleanup."
 msgstr ""
 
-#: keystone/assignment/core.py:415
+#: keystone/assignment/core.py:417
 #, python-format
 msgid ""
 "User %(userid)s not found when deleting domain contents for %(domainid)s,"
 " continuing with cleanup."
 msgstr ""
 
-#: keystone/assignment/core.py:527
+#: keystone/assignment/core.py:529
 #, python-format
 msgid "Group %s not found, no tokens to invalidate."
 msgstr ""
 
-#: keystone/assignment/core.py:565
+#: keystone/assignment/core.py:567
 #, python-format
 msgid "Project (%s)"
 msgstr "Project (%s)"
 
-#: keystone/assignment/core.py:567
+#: keystone/assignment/core.py:569
 #, python-format
 msgid "Domain (%s)"
 msgstr "Domain (%s)"
 
-#: keystone/assignment/core.py:569
+#: keystone/assignment/core.py:571
 msgid "Unknown Target"
 msgstr "Unknown Target"
 
-#: keystone/assignment/core.py:570
+#: keystone/assignment/core.py:572
 #, python-format
 msgid ""
 "Group (%(group)s), referenced in assignment for %(target)s, not found - "
@@ -444,7 +444,7 @@ msgstr ""
 "Group (%(group)s), referenced in assignment for %(target)s, not found - "
 "ignoring."
 
-#: keystone/assignment/core.py:1011 keystone/common/controller.py:282
+#: keystone/assignment/core.py:1013 keystone/common/controller.py:282
 #: keystone/identity/core.py:228
 #, python-format
 msgid "Expected dict or list: %s"
@@ -462,7 +462,7 @@ msgid "Domain metadata not supported by LDAP"
 msgstr ""
 
 #: keystone/assignment/backends/ldap.py:200
-#: keystone/assignment/backends/ldap.py:244 keystone/catalog/core.py:78
+#: keystone/assignment/backends/ldap.py:244 keystone/catalog/core.py:80
 #: keystone/common/ldap/core.py:1056 keystone/identity/backends/kvs.py:117
 #: keystone/identity/backends/kvs.py:224
 #, python-format
@@ -648,19 +648,24 @@ msgstr ""
 msgid "Enabled field must be a boolean"
 msgstr "Enabled field must be a boolean"
 
-#: keystone/catalog/core.py:42
+#: keystone/catalog/core.py:40
+#, python-format
+msgid "Malformed endpoint - %(url)r is not a string"
+msgstr ""
+
+#: keystone/catalog/core.py:44
 #, python-format
 msgid "Malformed endpoint %(url)s - unknown key %(keyerror)s"
 msgstr "Malformed endpoint %(url)s - unknown key %(keyerror)s"
 
-#: keystone/catalog/core.py:47
+#: keystone/catalog/core.py:49
 #, python-format
 msgid ""
 "Malformed endpoint '%(url)s'. The following type error occurred during "
 "string substitution: %(typeerror)s"
 msgstr ""
 
-#: keystone/catalog/core.py:53
+#: keystone/catalog/core.py:55
 #, python-format
 msgid ""
 "Malformed endpoint %s - incomplete format (are you missing a type "
@@ -994,16 +999,16 @@ msgstr ""
 msgid "Environment configured as: %s"
 msgstr "Environment configured as: %s"
 
-#: keystone/common/environment/eventlet_server.py:70
+#: keystone/common/environment/eventlet_server.py:93
 msgid "Server can only listen once."
 msgstr ""
 
-#: keystone/common/environment/eventlet_server.py:72
+#: keystone/common/environment/eventlet_server.py:95
 #, python-format
 msgid "Starting %(arg0)s on %(host)s:%(port)s"
 msgstr "Starting %(arg0)s on %(host)s:%(port)s"
 
-#: keystone/common/environment/eventlet_server.py:147
+#: keystone/common/environment/eventlet_server.py:171
 msgid "Server error"
 msgstr "Server error"
 
@@ -1207,10 +1212,19 @@ msgid ""
 "entries %(entries)s%(dots)s"
 msgstr ""
 
-#: keystone/common/sql/core.py:217
+#: keystone/common/sql/core.py:219
 msgid ""
 "Cannot truncate a driver call without hints list as first parameter after"
 " self "
+msgstr ""
+
+#: keystone/common/sql/core.py:400
+msgid "Duplicate Entry"
+msgstr ""
+
+#: keystone/common/sql/core.py:416
+#, python-format
+msgid "An unexpected error occurred when trying to store %s"
 msgstr ""
 
 #: keystone/common/sql/migration_helpers.py:145
@@ -1329,7 +1343,7 @@ msgstr ""
 
 #: keystone/contrib/revoke/core.py:173 keystone/token/provider.py:121
 #: keystone/token/provider.py:142 keystone/token/provider.py:220
-#: keystone/token/provider.py:227 keystone/token/providers/common.py:617
+#: keystone/token/provider.py:227 keystone/token/providers/common.py:609
 msgid "Failed to validate token"
 msgstr "Failed to validate token"
 
@@ -1644,15 +1658,15 @@ msgstr "Trustee has no delegated roles."
 msgid "User is not a trustee."
 msgstr "User is not a trustee."
 
-#: keystone/token/providers/common.py:429
+#: keystone/token/providers/common.py:432
 msgid "Oauth is disabled."
 msgstr "Oauth is disabled."
 
-#: keystone/token/providers/common.py:542
+#: keystone/token/providers/common.py:534
 msgid "Non-default domain is not supported"
 msgstr "Non-default domain is not supported"
 
-#: keystone/token/providers/common.py:550
+#: keystone/token/providers/common.py:542
 msgid "Domain scoped token is not supported"
 msgstr "Domain scoped token is not supported"
 
