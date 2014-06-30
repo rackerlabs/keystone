@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d291e453",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-30T16:59:20Z",
+      "side": 1,
+      "message": "nit: remaining*",
+      "revId": "be60955ced36acd5029929e2b3d1eb6bc4307b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f2750833",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-30T16:59:20Z",
+      "side": 1,
+      "message": "nit: We should only consume trust uses when successfully creating a token.",
+      "revId": "be60955ced36acd5029929e2b3d1eb6bc4307b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_12efdcb1",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-30T16:59:20Z",
+      "side": 1,
+      "message": "We could change 3 to trust_data[\u0027remaining_uses\u0027]: \n\n    self.assertEqual(trust_data[\u0027remaining_uses\u0027], trust[\u0027remaining_uses\u0027])",
+      "revId": "be60955ced36acd5029929e2b3d1eb6bc4307b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_121d1cbe",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-30T16:59:20Z",
+      "side": 1,
+      "message": "Same comment as on previous test.",
+      "revId": "be60955ced36acd5029929e2b3d1eb6bc4307b56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
