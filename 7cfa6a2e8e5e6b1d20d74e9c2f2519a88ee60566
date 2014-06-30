@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8e9f4403",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "this is entity_type in the model.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6e7e70e6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "the type of the parameter comes before the name",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_692bca82",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "what does it return if the mapping doesn\u0027t exist for the ID?",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8e83c4cb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "the type of the parameter comes before the name",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_69ee6a24",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "should document what the method is expected to do if the id doesn\u0027t exist.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aed6c8c3",
+        "filename": "keystone/identity/generator.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "I like how this has the type of the parameter before the name.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4e128cb5",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "the assignment backend might not be sql, so we can\u0027t have a foreign key from identity to assignment.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2948f25a",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "the methods in this class should be in the same order as they are in MappingDriver so it\u0027s easier to verify.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0e81748f",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "still seems like the type could be used here to make sure the correct id is removed.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_09e7ae41",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "this docstring is in the superclass, and the rest of the methods don\u0027t copy the docstring, so for consistency remove the docstring here.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_69d58a42",
+        "filename": "keystone/tests/identity_mapping.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-06-30T20:42:25Z",
+      "side": 1,
+      "message": "might as well make this a docstring.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
