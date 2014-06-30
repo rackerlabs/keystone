@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6d4af384",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-30T22:55:37Z",
+      "side": 1,
+      "message": "No Looks like i added \" between the runs, good catch.",
+      "parentUuid": "baada198_e4361fe7",
+      "revId": "7e42e3dd963ebd90549ece4c2ba92ac10eaff0c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_241ad76e",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-30T21:07:32Z",
       "side": 1,
       "message": "when I generate the config file it has keystone.",
+      "revId": "7e42e3dd963ebd90549ece4c2ba92ac10eaff0c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6d31130b",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-06-30T22:55:37Z",
+      "side": 1,
+      "message": "I would argue \"keystone\" is incorrect in this case. The host name by default should be \"Keystone\"? Localhost as a default would make a lot more sense for a hostname. I wonder why we\u0027re getting different results.",
+      "parentUuid": "baada198_241ad76e",
       "revId": "7e42e3dd963ebd90549ece4c2ba92ac10eaff0c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
