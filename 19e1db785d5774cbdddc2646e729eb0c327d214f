@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_56d06553",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-06-30T02:15:15Z",
+      "side": 1,
+      "message": "If a key mangler is not defined, we should log that no key_mangler is provided and we are using the default SHA-1 mangle key.",
+      "revId": "19e1db785d5774cbdddc2646e729eb0c327d214f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
