@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_552bfb81",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-06-30T18:30:34Z",
+      "side": 1,
+      "message": "Are you using type as a variable? Doesn\u0027t that cover up the built-in and is frowned upon? Can you call this something else?",
+      "revId": "7688e26e2b1d7b0816e7ce9d88e94e85363d11e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
