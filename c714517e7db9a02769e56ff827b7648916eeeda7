@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b2e63015",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-30T16:46:42Z",
+      "side": 1,
+      "message": "This will raise information from the original exception, right? Just checking in case there is anything else we can add here to help the user.",
+      "revId": "c714517e7db9a02769e56ff827b7648916eeeda7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
