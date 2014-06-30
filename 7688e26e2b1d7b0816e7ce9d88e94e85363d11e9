@@ -16,6 +16,24 @@
       "revId": "7688e26e2b1d7b0816e7ce9d88e94e85363d11e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7820f69b",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-06-30T18:55:28Z",
+      "side": 1,
+      "message": "Yep, true...OK, fixed.",
+      "parentUuid": "baada198_552bfb81",
+      "revId": "7688e26e2b1d7b0816e7ce9d88e94e85363d11e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
