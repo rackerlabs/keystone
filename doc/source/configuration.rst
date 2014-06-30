@@ -371,7 +371,9 @@ be kept apart from the token signing secret keys so that a compromise of
 a node does not lead to an attacker being able to generate valid signed
 Keystone tokens. This is a low probability attack vector, as compromise of
 a Keystone service machine's filesystem security almost certainly means the
-attacker will be able to gain direct access to the token backend.
+attacker will be able to gain direct access to the token backend. For
+production deployments, the use of ``keystone-manage pki_setup`` is
+discouraged since it is mainly a development tool.
 
 The files need to be in the locations specified by the top level Keystone
 configuration file as specified in the above section.  Additionally, the
@@ -648,7 +650,8 @@ used to encrypt communications with keystone. In the event that a Certificate
 Authority is not given a testing one will be created.
 
 It is likely in a production environment that these certificates will be
-created and provided externally.
+created and provided externally. Note that ``ssl_setup`` is a development tool
+and not intended to be used for production deployments.
 
 
 User CRUD

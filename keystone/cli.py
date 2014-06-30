@@ -121,7 +121,9 @@ class BaseCertificateSetup(BaseApp):
 
 
 class PKISetup(BaseCertificateSetup):
-    """Set up Key pairs and certificates for token signing and verification."""
+    """Set up Key pairs and certificates for token signing and verification.
+       NOT intended for production use, see Keystone Configuration
+       documentation for details."""
 
     name = 'pki_setup'
 
@@ -133,7 +135,9 @@ class PKISetup(BaseCertificateSetup):
 
 
 class SSLSetup(BaseCertificateSetup):
-    """Create key pairs and certificates for HTTPS connections."""
+    """Create key pairs and certificates for HTTPS connections. NOT intended
+       for production use, see Keystone Configuration documentation for
+       details."""
 
     name = 'ssl_setup'
 
