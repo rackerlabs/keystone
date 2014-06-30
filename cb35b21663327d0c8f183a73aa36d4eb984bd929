@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_55a69bc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-06-30T18:38:21Z",
+      "side": 1,
+      "message": "Add a line here saying we will remove in +2 releases, or something along those lines?",
+      "revId": "cb35b21663327d0c8f183a73aa36d4eb984bd929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
