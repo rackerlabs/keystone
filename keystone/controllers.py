@@ -64,8 +64,9 @@ def register_version(version):
 
 class Version(wsgi.Application):
 
-    def __init__(self, version_type):
+    def __init__(self, version_type, v3_resources_sources):
         self.endpoint_url_type = version_type
+        self._v3_resources_sources = v3_resources_sources
 
         super(Version, self).__init__()
 
@@ -144,9 +145,28 @@ class Version(wsgi.Application):
         else:
             raise exception.VersionNotFound(version='v2.0')
 
+    def _get_json_home_v3(self):
+
+        def all_resources():
+            for s in self._v3_resources_sources:
+                for r in s.get_v3_resources():
+                    yield r
+
+        resources = {
+            'resources': dict(all_resources())
+        }
+
+        return resources
+
     def get_version_v3(self, context):
         versions = self._get_versions_list(context)
         if 'v3' in _VERSIONS:
+
+            if context['headers'].get('Accept') == 'application/json-home':
+                return wsgi.render_response(
+                    body=self._get_json_home_v3(),
+                    headers=(('Content-Type', 'application/json-home'),))
+
             return wsgi.render_response(body={
                 'version': versions['v3']
             })

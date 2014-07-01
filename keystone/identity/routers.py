@@ -27,41 +27,61 @@ class Admin(wsgi.ComposableRouter):
                        conditions=dict(method=['GET']))
 
 
-def append_v3_routers(mapper, routers):
-    user_controller = controllers.UserV3()
-    routers.append(
-        router.Router(user_controller,
-                      'users', 'user'))
-    mapper.connect('/users/{user_id}/password',
-                   controller=user_controller,
-                   action='change_password',
-                   conditions=dict(method=['POST']))
+class Routers(wsgi.RoutersBase):
 
-    mapper.connect('/groups/{group_id}/users',
-                   controller=user_controller,
-                   action='list_users_in_group',
-                   conditions=dict(method=['GET']))
+    def append_v3_routers(self, mapper, routers):
+        user_controller = controllers.UserV3()
+        routers.append(
+            router.Router(user_controller,
+                          'users', 'user',
+                          resource_descriptions=self._v3_resources))
 
-    mapper.connect('/groups/{group_id}/users/{user_id}',
-                   controller=user_controller,
-                   action='add_user_to_group',
-                   conditions=dict(method=['PUT']))
+        self._add_resource(
+            mapper, user_controller,
+            'http://docs.openstack.org/identity/rel/v3/user_change_password',
+            path_template='/users/{user_id}/password',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            post_action='change_password')
 
-    mapper.connect('/groups/{group_id}/users/{user_id}',
-                   controller=user_controller,
-                   action='check_user_in_group',
-                   conditions=dict(method=['GET', 'HEAD']))
+        self._add_resource(
+            mapper, user_controller,
+            'http://docs.openstack.org/identity/rel/v3/group_users',
+            path_template='/groups/{group_id}/users',
+            path_vars={
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+            },
+            get_action='list_users_in_group')
 
-    mapper.connect('/groups/{group_id}/users/{user_id}',
-                   controller=user_controller,
-                   action='remove_user_from_group',
-                   conditions=dict(method=['DELETE']))
+        self._add_resource(
+            mapper, user_controller,
+            'http://docs.openstack.org/identity/rel/v3/group_user',
+            path_template='/groups/{group_id}/users/{user_id}',
+            path_vars={
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            put_action='add_user_to_group',
+            get_head_action='check_user_in_group',
+            delete_action='remove_user_from_group')
 
-    group_controller = controllers.GroupV3()
-    routers.append(
-        router.Router(group_controller,
-                      'groups', 'group'))
-    mapper.connect('/users/{user_id}/groups',
-                   controller=group_controller,
-                   action='list_groups_for_user',
-                   conditions=dict(method=['GET']))
+        group_controller = controllers.GroupV3()
+        routers.append(
+            router.Router(group_controller,
+                          'groups', 'group',
+                          resource_descriptions=self._v3_resources))
+
+        self._add_resource(
+            mapper, group_controller,
+            'http://docs.openstack.org/identity/rel/v3/user_groups',
+            path_template='/users/{user_id}/groups',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='list_groups_for_user')

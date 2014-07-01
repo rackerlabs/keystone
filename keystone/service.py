@@ -88,15 +88,22 @@ def admin_version_app_factory(global_conf, **local_conf):
 def v3_app_factory(global_conf, **local_conf):
     controllers.register_version('v3')
     mapper = routes.Mapper()
-    v3routers = []
-    for module in [assignment, auth, catalog, credential, identity, policy]:
-        module.routers.append_v3_routers(mapper, v3routers)
 
+    v3routers = []
+    v3_resources_sources = []
+
+    router_modules = [assignment, auth, catalog, credential, identity, policy]
     if CONF.trust.enabled:
-        trust.routers.append_v3_routers(mapper, v3routers)
+        router_modules.append(trust)
+
+    for module in router_modules:
+        routers_instance = module.routers.Routers()
+        v3_resources_sources.append(routers_instance)
+        routers_instance.append_v3_routers(mapper, v3routers)
 
     # Add in the v3 version api
-    v3routers.append(routers.VersionV3('admin'))
-    v3routers.append(routers.VersionV3('public'))
+
+    v3routers.append(routers.VersionV3('admin', v3_resources_sources))
+    v3routers.append(routers.VersionV3('public', v3_resources_sources))
     # TODO(ayoung): put token routes here
     return wsgi.ComposingRouter(mapper, v3routers)

@@ -15,7 +15,7 @@ from keystone.contrib import federation
 from keystone.contrib.federation import controllers
 
 
-class _BaseFederationExtension(wsgi.ExtensionRouter):
+class _BaseFederationExtension(wsgi.V3ExtensionRouter):
     """Base class for Federation Extension classes.
 
     All generic methods should be stored here so
@@ -76,121 +76,100 @@ class FederationExtension(_BaseFederationExtension):
 
         # Identity Provider CRUD operations
 
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}'),
-            controller=idp_controller,
-            action='create_identity_provider',
-            conditions=dict(method=['PUT']))
-
-        mapper.connect(
-            self._construct_url('identity_providers'),
-            controller=idp_controller,
-            action='list_identity_providers',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}'),
-            controller=idp_controller,
-            action='get_identity_provider',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}'),
-            controller=idp_controller,
-            action='delete_identity_provider',
-            conditions=dict(method=['DELETE']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}'),
-            controller=idp_controller,
-            action='update_identity_provider',
-            conditions=dict(method=['PATCH']))
+        self._add_resource(
+            mapper, idp_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'identity_provider',
+            path_template=self._construct_url('identity_providers/{idp_id}'),
+            path_vars={
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id'
+            },
+            get_action='get_identity_provider',
+            put_action='create_identity_provider',
+            patch_action='update_identity_provider',
+            delete_action='delete_identity_provider')
+        self._add_resource(
+            mapper, idp_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'identity_providers',
+            path=self._construct_url('identity_providers'),
+            get_action='list_identity_providers')
 
         # Protocol CRUD operations
 
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}/'
-                                'protocols/{protocol_id}'),
-            controller=protocol_controller,
-            action='create_protocol',
-            conditions=dict(method=['PUT']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}/'
-                                'protocols/{protocol_id}'),
-            controller=protocol_controller,
-            action='update_protocol',
-            conditions=dict(method=['PATCH']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}/'
-                                'protocols/{protocol_id}'),
-            controller=protocol_controller,
-            action='get_protocol',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}/'
-                                'protocols'),
-            controller=protocol_controller,
-            action='list_protocols',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/{idp_id}/'
-                                'protocols/{protocol_id}'),
-            controller=protocol_controller,
-            action='delete_protocol',
-            conditions=dict(method=['DELETE']))
+        self._add_resource(
+            mapper, protocol_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'identity_provider_protocol',
+            path_template=self._construct_url('identity_providers/{idp_id}/'
+                                              'protocols/{protocol_id}'),
+            path_vars={
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id',
+                'protocol_id': 'http://docs.openstack.org/identity/rel/'
+                'v3/ext/OS-FEDERATION/1.0/param/protocol_id',
+            },
+            get_action='get_protocol',
+            put_action='create_protocol',
+            patch_action='update_protocol',
+            delete_action='delete_protocol')
+        self._add_resource(
+            mapper, protocol_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'identity_provider_protocols',
+            path_template=self._construct_url('identity_providers/{idp_id}/'
+                                              'protocols'),
+            path_vars={
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id',
+            },
+            get_action='list_protocols')
 
         # Mapping CRUD operations
 
-        mapper.connect(
-            self._construct_url('mappings/{mapping_id}'),
-            controller=mapping_controller,
-            action='create_mapping',
-            conditions=dict(method=['PUT']))
-
-        mapper.connect(
-            self._construct_url('mappings'),
-            controller=mapping_controller,
-            action='list_mappings',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('mappings/{mapping_id}'),
-            controller=mapping_controller,
-            action='get_mapping',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('mappings/{mapping_id}'),
-            controller=mapping_controller,
-            action='delete_mapping',
-            conditions=dict(method=['DELETE']))
-
-        mapper.connect(
-            self._construct_url('mappings/{mapping_id}'),
-            controller=mapping_controller,
-            action='update_mapping',
-            conditions=dict(method=['PATCH']))
-
-        mapper.connect(
-            self._construct_url('domains'),
-            controller=domain_controller,
-            action='list_domains_for_groups',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('projects'),
-            controller=project_controller,
-            action='list_projects_for_groups',
-            conditions=dict(method=['GET']))
-
-        mapper.connect(
-            self._construct_url('identity_providers/'
-                                '{identity_provider}/protocols/'
-                                '{protocol}/auth'),
-            controller=auth_controller,
-            action='federated_authentication',
-            conditions=dict(method=['GET', 'POST']))
+        self._add_resource(
+            mapper, mapping_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'mapping',
+            path_template=self._construct_url('mappings/{mapping_id}'),
+            path_vars={
+                'mapping_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/mapping_id',
+            },
+            get_action='get_mapping',
+            put_action='create_mapping',
+            patch_action='update_mapping',
+            delete_action='delete_mapping')
+        self._add_resource(
+            mapper, mapping_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'mappings',
+            path=self._construct_url('mappings'),
+            get_action='list_mappings')
+        self._add_resource(
+            mapper, domain_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'domains',
+            path=self._construct_url('domains'),
+            get_action='list_domains_for_groups')
+        self._add_resource(
+            mapper, project_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'projects',
+            path=self._construct_url('projects'),
+            get_action='list_projects_for_groups')
+        self._add_resource(
+            mapper, auth_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+            'identity_provider_protocol_auth',
+            path_template=self._construct_url('identity_providers/'
+                                              '{identity_provider}/protocols/'
+                                              '{protocol}/auth'),
+            path_vars={
+                'identity_provider': 'http://docs.openstack.org/identity/'
+                'rel/v3/ext/OS-FEDERATION/1.0/param/idp_id',
+                'protocol': 'http://docs.openstack.org/identity/rel/'
+                'v3/ext/OS-FEDERATION/1.0/param/protocol_id',
+            },
+            get_post_action='federated_authentication')

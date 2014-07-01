@@ -15,10 +15,12 @@ from keystone.common import wsgi
 
 
 class Router(wsgi.ComposableRouter):
-    def __init__(self, controller, collection_key, key):
+    def __init__(self, controller, collection_key, key,
+                 resource_descriptions=None):
         self.controller = controller
         self.key = key
         self.collection_key = collection_key
+        self._resource_descriptions = resource_descriptions
 
     def add_routes(self, mapper):
         collection_path = '/%(collection_key)s' % {
@@ -52,3 +54,28 @@ class Router(wsgi.ComposableRouter):
             controller=self.controller,
             action='delete_%s' % self.key,
             conditions=dict(method=['DELETE']))
+
+        if self._resource_descriptions is not None:
+            collection_rel = ('http://docs.openstack.org/identity/rel/v3/%s' %
+                              self.collection_key)
+            self._resource_descriptions.append(
+                (collection_rel,
+                 {
+                     'href': collection_path,
+                 }
+                 ))
+
+            entity_rel = ('http://docs.openstack.org/identity/rel/v3/%s' %
+                          self.key)
+            id_str = '%s_id' % self.key
+            param_rel_fmt = 'http://docs.openstack.org/identity/v3/param/%s_id'
+            id_param_rel = param_rel_fmt % self.key
+            self._resource_descriptions.append(
+                (entity_rel,
+                 {
+                     'href-template': entity_path,
+                     'href-vars': {
+                         id_str: id_param_rel,
+                     },
+                 }
+                 ))

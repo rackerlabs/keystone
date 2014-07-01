@@ -50,18 +50,21 @@ class VersionV2(wsgi.ComposableRouter):
         self.description = description
 
     def add_routes(self, mapper):
-        version_controller = controllers.Version(self.description)
+        version_controller = controllers.Version(self.description,
+                                                 v3_resources_sources=None)
         mapper.connect('/',
                        controller=version_controller,
                        action='get_version_v2')
 
 
 class VersionV3(wsgi.ComposableRouter):
-    def __init__(self, description):
+    def __init__(self, description, v3_resources_sources):
         self.description = description
+        self._v3_resources_sources = v3_resources_sources
 
     def add_routes(self, mapper):
-        version_controller = controllers.Version(self.description)
+        version_controller = controllers.Version(self.description,
+                                                 self._v3_resources_sources)
         mapper.connect('/',
                        controller=version_controller,
                        action='get_version_v3')
@@ -72,7 +75,8 @@ class Versions(wsgi.ComposableRouter):
         self.description = description
 
     def add_routes(self, mapper):
-        version_controller = controllers.Version(self.description)
+        version_controller = controllers.Version(self.description,
+                                                 v3_resources_sources=None)
         mapper.connect('/',
                        controller=version_controller,
                        action='get_versions')

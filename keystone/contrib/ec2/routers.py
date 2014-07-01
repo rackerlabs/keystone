@@ -49,35 +49,42 @@ class Ec2Extension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
-class Ec2ExtensionV3(wsgi.ExtensionRouter):
+class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
 
     def add_routes(self, mapper):
         ec2_controller = controllers.Ec2ControllerV3()
         # validation
-        mapper.connect(
-            '/ec2tokens',
-            controller=ec2_controller,
-            action='authenticate',
-            conditions=dict(method=['POST']))
+        self._add_resource(
+            mapper, ec2_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'ec2tokens',
+            path='/ec2tokens',
+            post_action='authenticate')
 
         # crud
-        mapper.connect(
-            '/users/{user_id}/credentials/OS-EC2',
-            controller=ec2_controller,
-            action='ec2_create_credential',
-            conditions=dict(method=['POST']))
-        mapper.connect(
-            '/users/{user_id}/credentials/OS-EC2',
-            controller=ec2_controller,
-            action='ec2_list_credentials',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/users/{user_id}/credentials/OS-EC2/{credential_id}',
-            controller=ec2_controller,
-            action='ec2_get_credential',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/users/{user_id}/credentials/OS-EC2/{credential_id}',
-            controller=ec2_controller,
-            action='ec2_delete_credential',
-            conditions=dict(method=['DELETE']))
+        self._add_resource(
+            mapper, ec2_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'user-credentials',
+            path_template='/users/{user_id}/credentials/OS-EC2',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='ec2_list_credentials',
+            post_action='ec2_create_credential')
+        self._add_resource(
+            mapper, ec2_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'user-credential',
+            path_template='/users/{user_id}/credentials/OS-EC2/'
+            '{credential_id}',
+            path_vars={
+                'credential_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/'
+                '1.0/param/user-credential',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='ec2_get_credential',
+            delete_action='ec2_delete_credential')

@@ -16,13 +16,16 @@ from keystone.common import wsgi
 from keystone.contrib.example import controllers
 
 
-class ExampleRouter(wsgi.ExtensionRouter):
+class ExampleRouter(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-EXAMPLE'
 
     def add_routes(self, mapper):
         example_controller = controllers.ExampleV3Controller()
-        mapper.connect(self.PATH_PREFIX + '/example',
-                       controller=example_controller,
-                       action='do_something',
-                       conditions=dict(method=['GET']))
+
+        self._add_resource(
+            mapper, example_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EXAMPLE/1.0/'
+            'example',
+            path=self.PATH_PREFIX + '/example',
+            get_action='do_something')

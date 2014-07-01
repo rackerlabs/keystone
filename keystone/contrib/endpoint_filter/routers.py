@@ -16,30 +16,47 @@ from keystone.common import wsgi
 from keystone.contrib.endpoint_filter import controllers
 
 
-class EndpointFilterExtension(wsgi.ExtensionRouter):
+class EndpointFilterExtension(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-EP-FILTER'
     PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
 
     def add_routes(self, mapper):
         endpoint_filter_controller = controllers.EndpointFilterV3Controller()
-        mapper.connect(self.PATH_PREFIX + '/endpoints/{endpoint_id}/projects',
-                       controller=endpoint_filter_controller,
-                       action='list_projects_for_endpoint',
-                       conditions=dict(method=['GET']))
-        mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
-                       controller=endpoint_filter_controller,
-                       action='add_endpoint_to_project',
-                       conditions=dict(method=['PUT']))
-        mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
-                       controller=endpoint_filter_controller,
-                       action='check_endpoint_in_project',
-                       conditions=dict(method=['GET', 'HEAD']))
-        mapper.connect(self.PATH_PREFIX + '/projects/{project_id}/endpoints',
-                       controller=endpoint_filter_controller,
-                       action='list_endpoints_for_project',
-                       conditions=dict(method=['GET']))
-        mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
-                       controller=endpoint_filter_controller,
-                       action='remove_endpoint_from_project',
-                       conditions=dict(method=['DELETE']))
+
+        self._add_resource(
+            mapper, endpoint_filter_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/1.0/'
+            'endpoint_projects',
+            path_template=self.PATH_PREFIX + '/endpoints/{endpoint_id}/'
+            'projects',
+            path_vars={
+                'endpoint_id':
+                'http://docs.openstack.org/identity/v3/param/endpoint_id',
+            },
+            get_action='list_projects_for_endpoint')
+        self._add_resource(
+            mapper, endpoint_filter_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/1.0/'
+            'project_endpoint',
+            path_template=self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
+            path_vars={
+                'endpoint_id':
+                'http://docs.openstack.org/identity/v3/param/endpoint_id',
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+            },
+            get_head_action='check_endpoint_in_project',
+            put_action='add_endpoint_to_project',
+            delete_action='remove_endpoint_from_project')
+        self._add_resource(
+            mapper, endpoint_filter_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/1.0/'
+            'project_endpoints',
+            path_template=self.PATH_PREFIX + '/projects/{project_id}/'
+            'endpoints',
+            path_vars={
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+            },
+            get_action='list_endpoints_for_project')
