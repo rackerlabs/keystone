@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_49026d3f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-01T12:06:21Z",
+      "side": 1,
+      "message": "The first line should be limited to 50 characters and should not end with a period (commit messages over 72 characters will be rejected by the gate).\n\nSuggested reading: https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "78e8c769fb045631cf3792e135d5b959e91804c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
