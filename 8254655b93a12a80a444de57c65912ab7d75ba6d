@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8731db0d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-01T06:47:26Z",
+      "side": 1,
+      "message": "why are we keep changing this between \"localhost\" and \"keystone\". I\u0027ve seen this change in one of Steve\u0027s patches as well. Why can\u0027t we stick to one?",
+      "revId": "8254655b93a12a80a444de57c65912ab7d75ba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
