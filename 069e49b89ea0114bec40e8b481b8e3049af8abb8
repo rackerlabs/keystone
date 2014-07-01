@@ -16,6 +16,24 @@
       "revId": "069e49b89ea0114bec40e8b481b8e3049af8abb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_05ddc370",
+        "filename": "CONTRIBUTING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6763
+      },
+      "writtenOn": "2014-07-01T07:23:40Z",
+      "side": 1,
+      "message": "emmm... maybe safari not support, you can try firefox/chrome/ie",
+      "parentUuid": "baada198_859b93c8",
+      "revId": "069e49b89ea0114bec40e8b481b8e3049af8abb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
