@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_859b93c8",
+        "filename": "CONTRIBUTING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-01T07:20:12Z",
+      "side": 1,
+      "message": "I suppose the page will show the \u0027developer\u0027 section on the top, but it\u0027s not. Maybe I\u0027m using an IPad?",
+      "revId": "069e49b89ea0114bec40e8b481b8e3049af8abb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
