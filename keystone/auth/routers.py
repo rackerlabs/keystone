@@ -42,3 +42,19 @@ def append_v3_routers(mapper, routers):
                    controller=auth_controller,
                    action='revocation_list',
                    conditions=dict(method=['GET']))
+
+
+def get_v3_resources():
+    return (
+        ('http://docs.openstack.org/identity/rel/v3/auth_tokens',
+         {
+             'href': '/auth/tokens',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/ext/OS-PKI/1.0/'
+         'revocations',
+         {
+             'href': '/auth/tokens/OS-PKI/revoked',
+         }
+         ),
+    )
