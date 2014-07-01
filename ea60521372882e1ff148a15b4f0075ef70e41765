@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7a3fe325",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T16:55:40Z",
+      "side": 1,
+      "message": "It LDAP doesn\u0027t actually support this functionality why \"fake\" it here?",
+      "parentUuid": "1ae5cdf2_631c4d14",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ca5f6571",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "I don\u0027t think so Brant, I\u0027ve searched https://github.com/openstack/keystone/search?q\u003dget_roles_for_groups\u0026ref\u003dcmdform and I didn\u0027t find previous tests for get_roles_for_groups function.",
       "parentUuid": "baada198_ca5f6571",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1a0a678a",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1456,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T16:55:40Z",
+      "side": 1,
+      "message": "That\u0027s unfortunate.  Is it possible to repurpose these tests into test_backend so that all backends get tested?",
+      "parentUuid": "baada198_677e87b0",
       "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
