@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_f4031171",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-07-01T13:41:52Z",
+      "side": 1,
+      "message": "spelling correction: components\n\nI\u0027d also just simplify by saying: \n\n\nCorrect exception message format by removing period\n\nException messages format changed to match one used in other components by removing the period at the end of message.",
+      "revId": "78e8c769fb045631cf3792e135d5b959e91804c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_49026d3f",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
