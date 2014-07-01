@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_9b3759e3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-01T18:00:40Z",
+      "side": 1,
+      "message": "keystone was a mis-configuration on the host generating the config. localhost is correct. (see brant\u0027s comment)",
+      "parentUuid": "baada198_8731db0d",
+      "revId": "8254655b93a12a80a444de57c65912ab7d75ba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_34a02990",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
