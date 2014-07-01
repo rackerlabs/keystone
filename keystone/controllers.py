@@ -144,9 +144,30 @@ class Version(wsgi.Application):
         else:
             raise exception.VersionNotFound(version='v2.0')
 
+    def _get_json_home_v3(self):
+        from keystone.assignment import routers as assignment_routers
+        from keystone.identity import routers as identity_routers
+
+        resources = {
+            "resources": {}
+        }
+
+        import itertools
+
+        resources['resources'].update(itertools.chain(
+            assignment_routers.get_v3_resources(),
+            identity_routers.get_v3_resources(),
+        ))
+
+        return resources
+
     def get_version_v3(self, context):
         versions = self._get_versions_list(context)
         if 'v3' in _VERSIONS:
+
+            if context['headers'].get('Accept') == 'application/json-home':
+                return wsgi.render_response(body=self._get_json_home_v3())
+
             return wsgi.render_response(body={
                 'version': versions['v3']
             })

@@ -180,3 +180,254 @@ def append_v3_routers(mapper, routers):
     routers.append(
         router.Router(controllers.RoleAssignmentV3(),
                       'role_assignments', 'role_assignment'))
+
+
+def get_v3_resources():
+    for x in (
+        ('http://docs.openstack.org/identity/rel/v3/domains',
+         {
+             'href': '/domains',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/domain',
+         {
+             'href-template': '/domains/{domain_id}',
+             'href-vars': {
+                 'domain_id':
+                 'http://docs.openstack.org/identity/v3/param/domain_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/projects',
+         {
+             'href': '/projects',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/project',
+         {
+             'href-template': '/projects/{project_id}',
+             'href-vars': {
+                 'project_id':
+                 'http://docs.openstack.org/identity/v3/param/project_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/user-projects',
+         {
+             'href-template': '/users/{user_id}/projects',
+             'href-vars': {
+                 'user_id':
+                 'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/roles',
+         {
+             'href': '/roles',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/role',
+         {
+             'href-template': '/roles/{role_id}',
+             'href-vars': {
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/project_user_role',
+         {
+             'href-template':
+             '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+             'href-vars': {
+                 'project_id':
+                 'http://docs.openstack.org/identity/v3/param/project_id',
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+                 'user_id':
+                 'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/project_group_role',
+         {
+             'href-template':
+             '/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+             'href-vars': {
+                 'group_id':
+                 'http://docs.openstack.org/identity/v3/param/group_id',
+                 'project_id':
+                 'http://docs.openstack.org/identity/v3/param/project_id',
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/project_group_role',
+         {
+             'href-template':
+             '/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+             'href-vars': {
+                 'group_id':
+                 'http://docs.openstack.org/identity/v3/param/group_id',
+                 'project_id':
+                 'http://docs.openstack.org/identity/v3/param/project_id',
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/project_user_roles',
+         {
+             'href-template': '/projects/{project_id}/users/{user_id}/roles',
+             'href-vars': {
+                 'project_id':
+                 'http://docs.openstack.org/identity/v3/param/project_id',
+                 'user_id':
+                 'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/project_group_roles',
+         {
+             'href-template': '/projects/{project_id}/groups/{group_id}/roles',
+             'href-vars': {
+                 'group_id':
+                 'http://docs.openstack.org/identity/v3/param/group_id',
+                 'project_id':
+                 'http://docs.openstack.org/identity/v3/param/project_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/domain_user_role',
+         {
+             'href-template':
+             '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+             'href-vars': {
+                 'domain_id':
+                 'http://docs.openstack.org/identity/v3/param/domain_id',
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+                 'user_id':
+                 'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/domain_group_role',
+         {
+             'href-template':
+             '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+             'href-vars': {
+                 'domain_id':
+                 'http://docs.openstack.org/identity/v3/param/domain_id',
+                 'group_id':
+                 'http://docs.openstack.org/identity/v3/param/group_id',
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/domain_user_roles',
+         {
+             'href-template': '/domains/{domain_id}/users/{user_id}/roles',
+             'href-vars': {
+                 'domain_id':
+                 'http://docs.openstack.org/identity/v3/param/domain_id',
+                 'user_id':
+                 'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/domain_group_roles',
+         {
+             'href-template': '/domains/{domain_id}/groups/{group_id}/roles',
+             'href-vars': {
+                 'domain_id':
+                 'http://docs.openstack.org/identity/v3/param/domain_id',
+                 'group_id':
+                 'http://docs.openstack.org/identity/v3/param/group_id',
+             },
+         }
+         ),
+    ):
+        yield x
+
+    if config.CONF.os_inherit.enabled:
+        for x in (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+             'domain_user_role_inherited_to_projects',
+             {
+                 'href-template': '/OS-INHERIT/domains/{domain_id}/users/'
+                 '{user_id}/roles/{role_id}/inherited_to_projects',
+                 'href-vars': {
+                     'domain_id':
+                     'http://docs.openstack.org/identity/v3/param/domain_id',
+                     'role_id':
+                     'http://docs.openstack.org/identity/v3/param/role_id',
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+             'domain_group_role_inherited_to_projects',
+             {
+                 'href-template': '/OS-INHERIT/domains/{domain_id}/groups/'
+                 '{group_id}/roles/{role_id}/inherited_to_projects',
+                 'href-vars': {
+                     'domain_id':
+                     'http://docs.openstack.org/identity/v3/param/domain_id',
+                     'group_id':
+                     'http://docs.openstack.org/identity/v3/param/group_id',
+                     'role_id':
+                     'http://docs.openstack.org/identity/v3/param/role_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+             'domain_user_roles_inherited_to_projects',
+             {
+                 'href-template': '/OS-INHERIT/domains/{domain_id}/users/'
+                 '{user_id}/roles/inherited_to_projects',
+                 'href-vars': {
+                     'domain_id':
+                     'http://docs.openstack.org/identity/v3/param/domain_id',
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+             'domain_group_roles_inherited_to_projects',
+             {
+                 'href-template': '/OS-INHERIT/domains/{domain_id}/groups/'
+                 '{group_id}/roles/inherited_to_projects',
+                 'href-vars': {
+                     'domain_id':
+                     'http://docs.openstack.org/identity/v3/param/domain_id',
+                     'group_id':
+                     'http://docs.openstack.org/identity/v3/param/group_id',
+                 },
+             }
+             ),
+        ):
+            yield x
+
+    for x in (
+        ('http://docs.openstack.org/identity/rel/v3/role_assignments',
+         {
+             'href': '/role_assignments',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/role_assignment',
+         {
+             'href-template': '/role_assignments/{role_assignment_id}',
+             'href-vars': {
+                 'role_assignment_id':
+                 'http://docs.openstack.org/identity/v3/param/'
+                 'role_assignment_id',
+             },
+         }
+         ),
+    ):
+        yield x
