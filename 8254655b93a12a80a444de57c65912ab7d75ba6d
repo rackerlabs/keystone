@@ -16,6 +16,23 @@
       "revId": "8254655b93a12a80a444de57c65912ab7d75ba6d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_34a02990",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-07-01T13:41:57Z",
+      "side": 1,
+      "message": "typo, relacement should be replacement",
+      "revId": "8254655b93a12a80a444de57c65912ab7d75ba6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
