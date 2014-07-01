@@ -16,7 +16,7 @@ from keystone.common import wsgi
 from keystone.contrib.example import controllers
 
 
-class ExampleRouter(wsgi.ExtensionRouter):
+class ExampleRouter(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-EXAMPLE'
 
@@ -26,3 +26,13 @@ class ExampleRouter(wsgi.ExtensionRouter):
                        controller=example_controller,
                        action='do_something',
                        conditions=dict(method=['GET']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EXAMPLE/1.0/'
+             'example',
+             {
+                 'href': '%s/example' % self.PATH_PREFIX,
+             }
+            ),
+        )

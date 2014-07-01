@@ -15,7 +15,7 @@ from keystone.contrib import federation
 from keystone.contrib.federation import controllers
 
 
-class _BaseFederationExtension(wsgi.ExtensionRouter):
+class _BaseFederationExtension(wsgi.V3ExtensionRouter):
     """Base class for Federation Extension classes.
 
     All generic methods should be stored here so
@@ -194,3 +194,18 @@ class FederationExtension(_BaseFederationExtension):
             controller=auth_controller,
             action='federated_authentication',
             conditions=dict(method=['GET', 'POST']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'identity_provider',
+             {
+                 'href-template':
+                 self._construct_url('identity_providers/{idp_id}'),
+                 'href-vars': {
+                     'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                     'OS-FEDERATION/1.0/param/idp_id'
+                 }
+             },
+            ),
+        )

@@ -604,6 +604,41 @@ class ExtensionRouter(Router):
         return _factory
 
 
+class V3ExtensionRouter(ExtensionRouter):
+
+    def _get_version_data(self):
+        return ()
+
+    def _update_version_response(self, response_data):
+        extension_version_data = self._get_version_data()
+        response_data['resources'].update(extension_version_data)
+
+    @webob.dec.wsgify()
+    def __call__(self, request):
+        if request.path_info != '/':
+            # Not a request for version info so forward to super.
+            return super(V3ExtensionRouter, self).__call__(request)
+
+        response = request.get_response(self.application)
+
+        if response.status_code != 200:
+            # The request failed, so don't update the response.
+            return response
+
+        if response.headers['Content-Type'] != 'application/json-home':
+            # Not a request for JSON Home document, so don't update the
+            # response.
+            return response
+
+        if isinstance(response.body, dict):
+            response_body = response.body
+        else:
+            response_body = jsonutils.loads(response.body)
+        self._update_version_response(response_body)
+        response.body = jsonutils.dumps(response_body)
+        return response
+
+
 def render_response(body=None, status=None, headers=None, method=None):
     """Forms a WSGI response."""
     if headers is None:

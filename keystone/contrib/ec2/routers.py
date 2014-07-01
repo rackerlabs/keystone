@@ -49,7 +49,7 @@ class Ec2Extension(wsgi.ExtensionRouter):
             conditions=dict(method=['DELETE']))
 
 
-class Ec2ExtensionV3(wsgi.ExtensionRouter):
+class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
 
     def add_routes(self, mapper):
         ec2_controller = controllers.Ec2ControllerV3()
@@ -81,3 +81,37 @@ class Ec2ExtensionV3(wsgi.ExtensionRouter):
             controller=ec2_controller,
             action='ec2_delete_credential',
             conditions=dict(method=['DELETE']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+             'ec2tokens',
+             {
+                 'href': '/ec2tokens',
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+             'user-credentials',
+             {
+                 'href-template': '/users/{user_id}/credentials/OS-EC2',
+                 'href-vars': {
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+             'user-credential',
+             {
+                 'href-template': '/users/{user_id}/credentials/OS-EC2/'
+                 '{credential_id}',
+                 'href-vars': {
+                     'credential_id':
+                     'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/'
+                     '1.0/param/user-credential',
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+        )
