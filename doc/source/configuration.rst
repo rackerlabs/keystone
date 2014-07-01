@@ -88,6 +88,8 @@ following sections:
 * ``[endpoint_filter]`` - Endpoint Filtering extension configuration
 * ``[paste_deploy]`` - Pointer to the PasteDeploy configuration file
 * ``[federation]`` - Federation driver configuration
+* ``[x509_ssl_cert_auth]`` - X.509 SSL client certificate external
+                             authentication configuration
 
 The Keystone primary configuration file is expected to be named ``keystone.conf``.
 When starting Keystone, you can specify a different configuration file to

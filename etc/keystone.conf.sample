@@ -1413,3 +1413,38 @@
 #driver=keystone.trust.backends.sql.Trust
 
 
+[x509_ssl_cert_auth]
+
+#
+# Options defined in keystone
+#
+
+# The SSL client certificate attribute where Keystone user_id
+# is conveyed. (string value)
+#user_id_attribute=SSL_CLIENT_S_DN_UID
+
+# The SSL client certificate attribute where Keystone username
+# is conveyed. (string value)
+#username_attribute=SSL_CLIENT_S_DN_CN
+
+# The SSL client certificate attribute where Keystone user
+# domain ID is conveyed. This attribute is only effective if
+# the domain-aware X.509 SSL certificate auth plugin is used.
+# Otherwise, it will be ignored. (string value)
+#user_domain_id_attribute=<None>
+
+# The SSL client certificate attribute where Keystone user
+# domain name is conveyed. This attribute is only effective if
+# the domain-aware X.509 SSL certificate auth plugin is used.
+# Otherwise, it will be ignored. (string value)
+#user_domain_name_attribute=SSL_CLIENT_S_DN_O
+
+# List of acceptable SSL_CLIENT_VERIFY status.
+# SSL_CLIENT_VERIFY is one of the environment variables set by
+# Apache mod_ssl to indicate the manner in which the incoming
+# SSL X.509 client certificate was validated. WARNING: This
+# value have security implications. Do not change it unless
+# you know exactly what you are doing! (list value)
+#accept_ssl_client_verify_status=SUCCESS
+
+

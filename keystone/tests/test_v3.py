@@ -92,7 +92,7 @@ class AuthTestMixin(object):
     def build_authentication_request(self, token=None, user_id=None,
                                      username=None, user_domain_id=None,
                                      user_domain_name=None, password=None,
-                                     kerberos=False, **kwargs):
+                                     external_auth_methods=None, **kwargs):
         """Build auth dictionary.
 
         It will create an auth dictionary based on all the arguments
@@ -100,9 +100,10 @@ class AuthTestMixin(object):
         """
         auth_data = {}
         auth_data['identity'] = {'methods': []}
-        if kerberos:
-            auth_data['identity']['methods'].append('kerberos')
-            auth_data['identity']['kerberos'] = {}
+        if external_auth_methods:
+            for external_method in external_auth_methods:
+                auth_data['identity']['methods'].append(external_method)
+                auth_data['identity'][external_method] = {}
         if token:
             auth_data['identity']['methods'].append('token')
             auth_data['identity']['token'] = self.build_token_auth(token)
@@ -207,6 +208,9 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.user = self.identity_api.create_user(self.user)
         self.user['password'] = password
         self.user_id = self.user['id']
+
+        self.default_domain = self.assignment_api.get_domain(
+            DEFAULT_DOMAIN_ID)
 
         self.default_domain_project_id = uuid.uuid4().hex
         self.default_domain_project = self.new_project_ref(
@@ -1175,14 +1179,14 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def build_external_auth_request(self, remote_user,
                                     remote_domain=None, auth_data=None,
-                                    kerberos=False):
+                                    methods=None):
         context = {'environment': {'REMOTE_USER': remote_user,
                                    'AUTH_TYPE': 'Negotiate'}}
         if remote_domain:
             context['environment']['REMOTE_DOMAIN'] = remote_domain
         if not auth_data:
             auth_data = self.build_authentication_request(
-                kerberos=kerberos)['auth']
+                external_auth_methods=methods)['auth']
         no_context = None
         auth_info = auth.controllers.AuthInfo.create(no_context, auth_data)
         auth_context = {'extras': {}, 'method_names': []}
