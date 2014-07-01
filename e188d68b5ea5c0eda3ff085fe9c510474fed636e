@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_55baf0de",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T17:49:05Z",
+      "side": 1,
+      "message": "Nice. I was thinking None since that is the default of the called method, but this is much better.",
+      "revId": "e188d68b5ea5c0eda3ff085fe9c510474fed636e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_806d2835",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T17:49:05Z",
+      "side": 1,
+      "message": "Since expected_status is a kwarg you should leave this the way it was. This should be fixed in all of the calls.",
+      "revId": "e188d68b5ea5c0eda3ff085fe9c510474fed636e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
