@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1b2c2999",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-01T18:48:34Z",
+      "side": 1,
+      "message": "the \n\n    payload[\u0027resource_info\u0027] \n\nhere would be the project UUID correct? Maybe we can add a small inline comment to specify that?",
+      "revId": "b473969dda1ad243d33499cff894da9c79def2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8d79e031",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-01T18:48:34Z",
+      "side": 1,
+      "message": "Could we do an assertion on a GET here to make sure the endpoint filter returns with a project in it?",
+      "revId": "b473969dda1ad243d33499cff894da9c79def2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ad76a43c",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-01T18:48:34Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "b473969dda1ad243d33499cff894da9c79def2f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
