@@ -48,3 +48,47 @@ def append_v3_routers(mapper, routers):
                    controller=trust_controller,
                    action='get_role_for_trust',
                    conditions=dict(method=['GET', 'HEAD']))
+
+
+def get_v3_resources():
+    return (
+        ('http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/trusts',
+         {
+             'href': '/OS-TRUST/trusts',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/trust',
+         {
+             'href-template': '/OS-TRUST/trusts/{trust_id}',
+             'href-vars': {
+                 'trust_id':
+                 'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/'
+                 '1.0/trust_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+         'trust_roles',
+         {
+             'href-template': '/OS-TRUST/trusts/{trust_id}/roles',
+             'href-vars': {
+                 'trust_id':
+                 'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/'
+                 '1.0/trust_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+         'trust_role',
+         {
+             'href-template': '/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
+             'href-vars': {
+                 'trust_id':
+                 'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/'
+                 '1.0/trust_id',
+                 'role_id':
+                 'http://docs.openstack.org/identity/v3/param/role_id',
+             },
+         }
+         ),
+    )

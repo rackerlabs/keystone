@@ -52,7 +52,7 @@ EXTENSION_DATA = {
 extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 
-class S3Extension(wsgi.ExtensionRouter):
+class S3Extension(wsgi.V3ExtensionRouter):
     def add_routes(self, mapper):
         controller = S3Controller()
         # validation
@@ -60,6 +60,16 @@ class S3Extension(wsgi.ExtensionRouter):
                        controller=controller,
                        action='authenticate',
                        conditions=dict(method=['POST']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/s3tokens/1.0/'
+             's3tokens',
+             {
+                 'href': '/s3tokens',
+             }
+             ),
+        )
 
 
 class S3Controller(controllers.Ec2Controller):
