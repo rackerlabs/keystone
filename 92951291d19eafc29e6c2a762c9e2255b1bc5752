@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "baada198_fca048f6",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T23:26:38Z",
+      "side": 1,
+      "message": "Nit: \"IdentityProvider\" should be two words \"Identity Provider\"",
+      "revId": "92951291d19eafc29e6c2a762c9e2255b1bc5752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fc792894",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T23:26:38Z",
+      "side": 1,
+      "message": "As above: \"IdentityProvider\" should be two words",
+      "revId": "92951291d19eafc29e6c2a762c9e2255b1bc5752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1ba7c9be",
         "filename": "keystone/exception.py",
         "patchSetId": 3
