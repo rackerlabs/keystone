@@ -65,3 +65,60 @@ def append_v3_routers(mapper, routers):
                    controller=group_controller,
                    action='list_groups_for_user',
                    conditions=dict(method=['GET']))
+
+
+def get_v3_resources():
+    return (
+        ('http://docs.openstack.org/identity/rel/v3/users',
+         {
+             'href': '/users',
+         }
+        ),
+        ('http://docs.openstack.org/identity/rel/v3/user',
+         {
+             'href-template': '/users/{user_id}',
+             'href-vars': {
+                 'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }
+        ),
+        ('http://docs.openstack.org/identity/rel/v3/user_change_password',
+         {
+             'href-template': '/users/{user_id}/password',
+             'href-vars': {
+                 'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }),
+        ('http://docs.openstack.org/identity/rel/v3/groups',
+         {
+             'href': '/groups',
+         }),
+        ('http://docs.openstack.org/identity/rel/v3/group',
+         {
+             'href-template': '/group/{group_id}',
+             'href-vars': {
+                 'group_id':
+                     'http://docs.openstack.org/identity/v3/param/group_id',
+             },
+         }),
+        ('http://docs.openstack.org/identity/rel/v3/group-users',
+         {
+             'href-template': '/groups/{group_id}/users',
+             'href-vars': {
+                 'group_id':
+                     'http://docs.openstack.org/identity/v3/param/group_id',
+             },
+         }),
+        ('http://docs.openstack.org/identity/rel/v3/group-user',
+         {
+             'href-template': '/groups/{group_id}/users/{user_id}',
+             'href-vars': {
+                 'group_id':
+                     'http://docs.openstack.org/identity/v3/param/group_id',
+                 'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+             },
+         }),
+    )
