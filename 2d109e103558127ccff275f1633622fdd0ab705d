@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_239aa363",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-07-01T19:41:52Z",
+      "side": 1,
+      "message": "So this comment makes sense when I look at what the code used to be in keystone.conf.sample (driver\u003dkeystone....) but without that context the comment is a little bewildering.  perhaps it should say, \"persistence_driver is now used because [token]/driver has been deprecated\". I realize the deprecated statement is auto-generated. So perhaps the help string could be updated to reflect this more clearly.  So another option would be to have the help say \"Token persistence driver now used instead of driver\".  Or you might just tell me its all auto-generated and I need to get used to how the auto-generate declares one value replacing a deprecated one and to live with it :-)",
+      "revId": "2d109e103558127ccff275f1633622fdd0ab705d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
