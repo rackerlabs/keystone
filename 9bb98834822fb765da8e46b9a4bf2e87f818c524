@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b9a44958",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T01:45:03Z",
+      "side": 1,
+      "message": "Looks like we fix docs and scripts here. We should be explicit in the subject line.",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_791711a4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T01:45:03Z",
+      "side": 1,
+      "message": "How is this line different to the start of the paragraph? Or is it a case of re-iterating that \"keystone-manage pki_setup\" should not be used in production? If this is the case I would propose re-phrasing to use a stronger word than \"discourage\" i.e.\n\n\"\nWe recommend that you do not use \u0027\u0027keystone-manage pki_setup\u0027\u0027 in a production environment.\n\"",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_79cc7136",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T01:45:03Z",
+      "side": 1,
+      "message": "Could we also output a log message that states that \u0027pki_setup\u0027 should not be used in production?",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f9d7a1bd",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T01:45:03Z",
+      "side": 1,
+      "message": "Similar comment as above for \u0027ssl_setup\u0027?",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
