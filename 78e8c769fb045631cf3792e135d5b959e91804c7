@@ -33,6 +33,40 @@
       "revId": "78e8c769fb045631cf3792e135d5b959e91804c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c0dba019",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T17:45:51Z",
+      "side": 1,
+      "message": "Even though the original didn\u0027t have a comma, I think that adding a : would make it more consistent.",
+      "revId": "78e8c769fb045631cf3792e135d5b959e91804c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_002cb801",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T17:45:51Z",
+      "side": 1,
+      "message": "I would probably put a : after %(type)s so that some punctuation separates the values.",
+      "revId": "78e8c769fb045631cf3792e135d5b959e91804c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
