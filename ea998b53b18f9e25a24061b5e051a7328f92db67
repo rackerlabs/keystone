@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9cf2ec98",
+        "filename": "bin/keystone-all",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-07-01T21:22:29Z",
+      "side": 1,
+      "message": "this is going to move to osproifler",
+      "revId": "ea998b53b18f9e25a24061b5e051a7328f92db67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
