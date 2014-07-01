@@ -397,7 +397,8 @@ class ProjectV3(controller.V3Controller):
         ref = self.assignment_api.create_project(ref['id'], ref)
         return ProjectV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @controller.filterprotected('domain_id', 'enabled', 'name',
+                                'parent_project_id')
     def list_projects(self, context, filters):
         hints = ProjectV3.build_driver_hints(context, filters)
         refs = self.assignment_api.list_projects(hints=hints)
@@ -414,6 +415,10 @@ class ProjectV3(controller.V3Controller):
     def get_project(self, context, project_id):
         ref = self.assignment_api.get_project(project_id)
         return ProjectV3.wrap_member(context, ref)
+
+    @controller.protected()
+    def get_project_hierarchy(self, context, project_id):
+        return self.assignment_api.get_project_hierarchy(project_id)
 
     @controller.protected()
     def update_project(self, context, project_id, project):

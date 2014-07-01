@@ -56,6 +56,18 @@ class Assignment(keystone_assignment.Driver):
                 raise exception.ProjectNotFound(project_id=tenant_name)
             return project_ref.to_dict()
 
+    def get_project_hierarchy(self, tenant_id):
+        with sql.transaction() as session:
+            tenant = self._get_project(session, tenant_id).to_dict()
+            hierarchy = tenant['id']
+            while tenant['parent_project_id'] is not None:
+                parent_tenant = self._get_project(session,
+                        tenant['parent_project_id']).to_dict()
+                #NOTE Keep compatible with Vishy's code
+                hierarchy = parent_tenant['id'] + '.' + hierarchy
+                tenant = parent_tenant
+            return hierarchy
+
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
@@ -563,11 +575,13 @@ class Domain(sql.ModelBase, sql.DictBase):
 
 class Project(sql.ModelBase, sql.DictBase):
     __tablename__ = 'project'
-    attributes = ['id', 'name', 'domain_id', 'description', 'enabled']
+    attributes = ['id', 'name', 'domain_id', 'parent_project_id',
+                  'description', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
                            nullable=False)
+    parent_project_id = sql.Column(sql.String(64))
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
