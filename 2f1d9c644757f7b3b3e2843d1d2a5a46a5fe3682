@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7af2959b",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-01T09:48:55Z",
+      "side": 1,
+      "message": "I made a small test: \ndef f(attr):\n    if attr is not None:\n        return attr\n    \np1 \u003d f(\u0027marek\u0027)\np2 \u003d f(None)\nprint p1, p2\n\u003e\u003e marek None\n\nso essentially you\u0027re reimplementing  .get().\nIf you want ring the bells because attribute_name is not present in the environment I\u0027d rather use context[\u0027environment\u0027][key] and KeyError exception.",
+      "revId": "2f1d9c644757f7b3b3e2843d1d2a5a46a5fe3682",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
