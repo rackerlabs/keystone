@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fef5c7cb",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-01T00:19:41Z",
+      "side": 1,
+      "message": "The operator will need to take corrective actions or need to come and bug the ML/IRC about it. The error would be, in this case, outside of migration 37 issue corrected here and would have been raised anyway (if they hadn\u0027t hit the innodb/charset issue going 37-\u003e38)",
+      "parentUuid": "baada198_2d5e45ea",
+      "revId": "c714517e7db9a02769e56ff827b7648916eeeda7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b2e63015",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-30T16:46:42Z",
       "side": 1,
       "message": "This will raise information from the original exception, right? Just checking in case there is anything else we can add here to help the user.",
+      "revId": "c714517e7db9a02769e56ff827b7648916eeeda7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3e69ff8b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-01T00:19:41Z",
+      "side": 1,
+      "message": "This should.",
+      "parentUuid": "baada198_b2e63015",
       "revId": "c714517e7db9a02769e56ff827b7648916eeeda7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
