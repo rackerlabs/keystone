@@ -22,3 +22,22 @@ def append_v3_routers(mapper, routers):
     routers.append(
         router.Router(controllers.CredentialV3(),
                       'credentials', 'credential'))
+
+
+def get_v3_resources():
+    return (
+        ('http://docs.openstack.org/identity/rel/v3/credentials',
+         {
+             'href': '/credentials',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/credential',
+         {
+             'href-template': '/credentials/{credential_id}',
+             'href-vars': {
+                 'credential_id':
+                 'http://docs.openstack.org/identity/v3/param/credential_id',
+             },
+         }
+         ),
+    )

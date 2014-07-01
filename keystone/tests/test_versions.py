@@ -16,6 +16,7 @@
 import random
 
 import mock
+from testtools import matchers as tt_matchers
 
 from keystone import config
 from keystone import controllers
@@ -100,6 +101,295 @@ VERSIONS_RESPONSE = {
         ]
     }
 }
+
+V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
+    'http://docs.openstack.org/identity/rel/v3/auth_tokens': {
+        'href': '/auth/tokens'},
+    'http://docs.openstack.org/identity/rel/v3/credential': {
+        'href-template': '/credentials/{credential_id}',
+        'href-vars': {
+            'credential_id':
+            'http://docs.openstack.org/identity/v3/param/credential_id'}},
+    'http://docs.openstack.org/identity/rel/v3/credentials': {
+        'href': '/credentials'},
+    'http://docs.openstack.org/identity/rel/v3/domain': {
+        'href-template': '/domains/{domain_id}',
+        'href-vars': {
+            'domain_id':
+            'http://docs.openstack.org/identity/v3/param/domain_id'}},
+    'http://docs.openstack.org/identity/rel/v3/domain_group_role': {
+        'href-template':
+        '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+        'href-vars': {
+            'domain_id':
+            'http://docs.openstack.org/identity/v3/param/domain_id',
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id',
+            'role_id':
+            'http://docs.openstack.org/identity/v3/param/role_id'}},
+    'http://docs.openstack.org/identity/rel/v3/domain_group_roles': {
+        'href-template':
+        '/domains/{domain_id}/groups/{group_id}/roles',
+        'href-vars': {
+            'domain_id':
+            'http://docs.openstack.org/identity/v3/param/domain_id',
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id'}},
+    'http://docs.openstack.org/identity/rel/v3/domain_user_role': {
+        'href-template':
+        '/domains/{domain_id}/users/{user_id}/roles/{role_id}',
+        'href-vars': {
+            'domain_id':
+            'http://docs.openstack.org/identity/v3/param/domain_id',
+            'role_id':
+            'http://docs.openstack.org/identity/v3/param/role_id',
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/domain_user_roles': {
+        'href-template': '/domains/{domain_id}/users/{user_id}/roles',
+        'href-vars': {
+            'domain_id':
+            'http://docs.openstack.org/identity/v3/param/domain_id',
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/domains': {
+        'href': '/domains'},
+    'http://docs.openstack.org/identity/rel/v3/endpoint': {
+        'href-template': '/endpoints/{endpoint_id}',
+        'href-vars': {
+            'endpoint_id':
+            'http://docs.openstack.org/identity/v3/param/endpoint_id'}
+    },
+    'http://docs.openstack.org/identity/rel/v3/endpoints': {
+        'href': '/endpoints'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+    'ec2tokens': {'href': '/ec2tokens'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+    'user-credential': {
+        'href-template':
+        '/users/{user_id}/credentials/OS-EC2/{credential_id}',
+        'href-vars': {
+            'credential_id':
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'param/user-credential',
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+    'user-credentials': {
+        'href-template': '/users/{user_id}/credentials/OS-EC2',
+        'href-vars': {
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-PKI/1.0/'
+    'revocations': {'href': '/auth/tokens/OS-PKI/revoked'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-REVOKE/1.0/'
+    'events': {'href': '/OS-REVOKE/events'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/1.0/'
+    'ca_certificate': {'href': '/OS-SIMPLE-CERT/ca'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/1.0/'
+    'certificates': {'href': '/OS-SIMPLE-CERT/certificates'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+    'trust': {
+        'href-template': '/OS-TRUST/trusts/{trust_id}',
+        'href-vars': {
+            'trust_id':
+            'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/'
+            '1.0/trust_id'}},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+    'trust_role': {
+        'href-template': '/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
+        'href-vars': {
+            'role_id':
+            'http://docs.openstack.org/identity/v3/param/role_id',
+            'trust_id':
+            'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/'
+            '1.0/trust_id'}},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+    'trust_roles': {
+        'href-template': '/OS-TRUST/trusts/{trust_id}/roles',
+        'href-vars': {
+            'trust_id': 'http://docs.openstack.org/identity/v3/ext/'
+            'OS-TRUST/param/1.0/trust_id'}},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+    'trusts': {'href': '/OS-TRUST/trusts'},
+    'http://docs.openstack.org/identity/rel/v3/ext/s3tokens/1.0/'
+    's3tokens': {'href': '/s3tokens'},
+    'http://docs.openstack.org/identity/rel/v3/group': {
+        'href-template': '/groups/{group_id}',
+        'href-vars': {
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id'}},
+    'http://docs.openstack.org/identity/rel/v3/group_user': {
+        'href-template': '/groups/{group_id}/users/{user_id}',
+        'href-vars': {
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id',
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/group_users': {
+        'href-template': '/groups/{group_id}/users',
+        'href-vars': {
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id'}},
+    'http://docs.openstack.org/identity/rel/v3/groups': {
+        'href': '/groups'},
+    'http://docs.openstack.org/identity/rel/v3/policies': {
+        'href': '/policies'},
+    'http://docs.openstack.org/identity/rel/v3/policy': {
+        'href-template': '/policies/{policy_id}',
+        'href-vars': {
+            'policy_id':
+            'http://docs.openstack.org/identity/v3/param/policy_id'}},
+    'http://docs.openstack.org/identity/rel/v3/project': {
+        'href-template': '/projects/{project_id}',
+        'href-vars': {
+            'project_id':
+            'http://docs.openstack.org/identity/v3/param/project_id'}},
+    'http://docs.openstack.org/identity/rel/v3/project_group_role': {
+        'href-template':
+        '/projects/{project_id}/groups/{group_id}/roles/{role_id}',
+        'href-vars': {
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id',
+            'project_id':
+            'http://docs.openstack.org/identity/v3/param/project_id',
+            'role_id':
+            'http://docs.openstack.org/identity/v3/param/role_id'}},
+    'http://docs.openstack.org/identity/rel/v3/project_group_roles': {
+        'href-template':
+        '/projects/{project_id}/groups/{group_id}/roles',
+        'href-vars': {
+            'group_id':
+            'http://docs.openstack.org/identity/v3/param/group_id',
+            'project_id':
+            'http://docs.openstack.org/identity/v3/param/project_id'}},
+    'http://docs.openstack.org/identity/rel/v3/project_user_role': {
+        'href-template':
+        '/projects/{project_id}/users/{user_id}/roles/{role_id}',
+        'href-vars': {
+            'project_id':
+            'http://docs.openstack.org/identity/v3/param/project_id',
+            'role_id':
+            'http://docs.openstack.org/identity/v3/param/role_id',
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/project_user_roles': {
+        'href-template':
+        '/projects/{project_id}/users/{user_id}/roles',
+        'href-vars': {
+            'project_id':
+            'http://docs.openstack.org/identity/v3/param/'
+            'project_id',
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/projects': {
+        'href': '/projects'},
+    'http://docs.openstack.org/identity/rel/v3/region': {
+        'href-template': '/regions/{region_id}',
+        'href-vars': {
+            'region_id':
+            'http://docs.openstack.org/identity/v3/param/region_id'}},
+    'http://docs.openstack.org/identity/rel/v3/regions': {
+        'href': '/regions'},
+    'http://docs.openstack.org/identity/rel/v3/role': {
+        'href-template': '/roles/{role_id}',
+        'href-vars': {
+            'role_id':
+            'http://docs.openstack.org/identity/v3/param/role_id'}},
+    'http://docs.openstack.org/identity/rel/v3/role_assignments': {
+        'href': '/role_assignments'},
+    'http://docs.openstack.org/identity/rel/v3/roles': {
+        'href': '/roles'},
+    'http://docs.openstack.org/identity/rel/v3/service': {
+        'href-template': '/services/{service_id}',
+        'href-vars': {
+            'service_id':
+            'http://docs.openstack.org/identity/v3/param/service_id'}},
+    'http://docs.openstack.org/identity/rel/v3/services': {
+        'href': '/services'},
+    'http://docs.openstack.org/identity/rel/v3/user': {
+        'href-template': '/users/{user_id}',
+        'href-vars': {
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/user-projects': {
+        'href-template': '/users/{user_id}/projects',
+        'href-vars': {
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/user_change_password': {
+        'href-template': '/users/{user_id}/password',
+        'href-vars': {
+            'user_id':
+            'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/users': {
+        'href': '/users'},
+    'http://docs.openstack.org/identity/rel/v3/catalog': {
+        'href': '/catalog'},
+}
+
+
+# with os-inherit enabled, there's some more resources.
+V3_JSON_HOME_RESOURCES_INHERIT_ENABLED = dict(
+    V3_JSON_HOME_RESOURCES_INHERIT_DISABLED)
+V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update((
+    ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+     'domain_user_role_inherited_to_projects',
+     {
+         'href-template': '/OS-INHERIT/domains/{domain_id}/users/'
+         '{user_id}/roles/{role_id}/inherited_to_projects',
+         'href-vars': {
+             'domain_id':
+             'http://docs.openstack.org/identity/v3/param/domain_id',
+             'role_id':
+             'http://docs.openstack.org/identity/v3/param/role_id',
+             'user_id':
+             'http://docs.openstack.org/identity/v3/param/user_id',
+         },
+     }
+     ),
+    ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+     'domain_group_role_inherited_to_projects',
+     {
+         'href-template': '/OS-INHERIT/domains/{domain_id}/groups/'
+         '{group_id}/roles/{role_id}/inherited_to_projects',
+         'href-vars': {
+             'domain_id':
+             'http://docs.openstack.org/identity/v3/param/domain_id',
+             'group_id':
+             'http://docs.openstack.org/identity/v3/param/group_id',
+             'role_id':
+             'http://docs.openstack.org/identity/v3/param/role_id',
+         },
+     }
+     ),
+    ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+     'domain_user_roles_inherited_to_projects',
+     {
+         'href-template': '/OS-INHERIT/domains/{domain_id}/users/'
+         '{user_id}/roles/inherited_to_projects',
+         'href-vars': {
+             'domain_id':
+             'http://docs.openstack.org/identity/v3/param/domain_id',
+             'user_id':
+             'http://docs.openstack.org/identity/v3/param/user_id',
+         },
+     }
+     ),
+    ('http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/1.0/'
+     'domain_group_roles_inherited_to_projects',
+     {
+         'href-template': '/OS-INHERIT/domains/{domain_id}/groups/'
+         '{group_id}/roles/inherited_to_projects',
+         'href-vars': {
+             'domain_id':
+             'http://docs.openstack.org/identity/v3/param/domain_id',
+             'group_id':
+             'http://docs.openstack.org/identity/v3/param/group_id',
+         },
+     }
+     ),
+))
 
 
 class VersionTestCase(tests.TestCase):
@@ -295,6 +585,35 @@ class VersionTestCase(tests.TestCase):
         self.assertEqual(resp.status_int, 300)
         data = jsonutils.loads(resp.body)
         self.assertEqual(data, v2_only_response)
+
+    def _test_json_home_v3(self, exp_resource_data):
+        # If the request is /v3 and the Accept header is application/json-home
+        # then the server responds with a JSON Home document.
+
+        client = self.client(self.public_app)
+        resp = client.get('/v3/', headers={'Accept': 'application/json-home'})
+
+        self.assertThat(resp.status, tt_matchers.Equals('200 OK'))
+        self.assertThat(resp.headers['Content-Type'],
+                        tt_matchers.Equals('application/json-home'))
+
+        exp_json_home_data = {'resources': exp_resource_data}
+
+        self.assertThat(jsonutils.loads(resp.body),
+                        tt_matchers.Equals(exp_json_home_data))
+
+    def test_json_home_v3_inherit_disabled(self):
+        # If the request is /v3 and the Accept header is application/json-home
+        # then the server responds with a JSON Home document.
+
+        self._test_json_home_v3(V3_JSON_HOME_RESOURCES_INHERIT_DISABLED)
+
+    def test_json_home_v3_inherit_enabled(self):
+        # Same as test_json_home_v3_inherit_disabled except with os-inherit
+        # enabled.
+
+        self.config_fixture.config(group='os_inherit', enabled=True)
+        self._test_json_home_v3(V3_JSON_HOME_RESOURCES_INHERIT_ENABLED)
 
 
 class XmlVersionTestCase(tests.TestCase):

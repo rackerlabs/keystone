@@ -16,7 +16,7 @@ from keystone.common import wsgi
 from keystone.contrib.endpoint_filter import controllers
 
 
-class EndpointFilterExtension(wsgi.ExtensionRouter):
+class EndpointFilterExtension(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-EP-FILTER'
     PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
@@ -43,3 +43,42 @@ class EndpointFilterExtension(wsgi.ExtensionRouter):
                        controller=endpoint_filter_controller,
                        action='remove_endpoint_from_project',
                        conditions=dict(method=['DELETE']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/1.0/'
+             'endpoint_projects',
+             {
+                 'href-template': '%s/endpoints/{endpoint_id}/projects' %
+                 self.PATH_PREFIX,
+                 'href-vars': {
+                     'endpoint_id':
+                     'http://docs.openstack.org/identity/v3/param/endpoint_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/1.0/'
+             'project_endpoint',
+             {
+                 'href-template': '%s%s' % (self.PATH_PREFIX,
+                                            self.PATH_PROJECT_ENDPOINT),
+                 'href-vars': {
+                     'endpoint_id':
+                     'http://docs.openstack.org/identity/v3/param/endpoint_id',
+                     'project_id':
+                     'http://docs.openstack.org/identity/v3/param/project_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/1.0/'
+             'project_endpoints',
+             {
+                 'href-template': '%s/projects/{project_id}/endpoints' %
+                 self.PATH_PREFIX,
+                 'href-vars': {
+                     'project_id':
+                     'http://docs.openstack.org/identity/v3/param/project_id',
+                 },
+             }
+             ),
+        )
