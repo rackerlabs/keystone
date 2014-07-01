@@ -34,6 +34,24 @@
       "revId": "19e1db785d5774cbdddc2646e729eb0c327d214f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_11f989c8",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-01T04:09:46Z",
+      "side": 1,
+      "message": "Agreed, if we are to log then region plus key_mangler would be useful.",
+      "parentUuid": "baada198_1f77d503",
+      "revId": "19e1db785d5774cbdddc2646e729eb0c327d214f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
