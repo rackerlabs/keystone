@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2ace165b",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T07:07:08Z",
+      "side": 1,
+      "message": "(nit) Since auth is not defined as a kwarg it is best to call it like a positional arg.",
+      "revId": "59035ae0b21a3e45f7835b68422916fa34d3bec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6a172eee",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T07:07:08Z",
+      "side": 1,
+      "message": "Why have **kwargs here? The only kwarg that ever gets passed in is expected_status, so I think we should just explicitly add that kwarg with the proper default.",
+      "revId": "59035ae0b21a3e45f7835b68422916fa34d3bec9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
