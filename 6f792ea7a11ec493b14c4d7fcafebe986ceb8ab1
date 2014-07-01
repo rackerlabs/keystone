@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_80db68ec",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "(nit) should have an extra newline here",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2d0d3491",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "What\u0027s this for?",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_23e9c380",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "params should be param - you can tell from the generated docs that this is off http://docs-draft.openstack.org/30/102430/9/check/gate-keystone-docs/fa5ecc2/doc/build/html/api/keystone.identity.html#keystone.identity.core.MappingDriver\n\nthis applies everywhere",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e3950be5",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "public_id should be listed as a param",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_63b01b8c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "public_id should be documented",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_434a3781",
+        "filename": "keystone/identity/id_generators/sha256.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "Use six.iterkeys so Python3 is happy",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c32c87ae",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:47:20Z",
+      "side": 1,
+      "message": "uuid is stdlib and should be in it\u0027s own section",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
