@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7fa0d1f4",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T02:59:03Z",
+      "side": 1,
+      "message": "Put a newline above this line and dedent it. Also dedent the line below.\nhttp://legacy.python.org/dev/peps/pep-0008/#documentation-strings",
+      "revId": "cb01efc9459f61d084c123f363318274187885a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9fa5a506",
+        "filename": "keystone/cli.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T02:59:03Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "cb01efc9459f61d084c123f363318274187885a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
