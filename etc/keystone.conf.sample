@@ -414,7 +414,7 @@
 #logging_exception_prefix=%(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s
 
 # List of logger=LEVEL pairs. (list value)
-#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN
+#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN
 
 # Enables or disables publication of error events. (boolean
 # value)
@@ -425,11 +425,11 @@
 #fatal_deprecations=false
 
 # The format for an instance that is passed with the log
-# message.  (string value)
+# message. (string value)
 #instance_format="[instance: %(uuid)s] "
 
 # The format for an instance UUID that is passed with the log
-# message.  (string value)
+# message. (string value)
 #instance_uuid_format="[instance: %(uuid)s] "
 
 # The name of a logging configuration file. This file is
@@ -1411,5 +1411,48 @@
 
 # Trust backend driver. (string value)
 #driver=keystone.trust.backends.sql.Trust
+
+
+[x509_ssl_cert_auth]
+
+#
+# Options defined in keystone
+#
+
+# The SSL client certificate attribute where Keystone user_id
+# is conveyed. This is the attribute set by Apache mod_ssl in
+# the request environment after the client certificate is
+# validated. NOTE: this option is only effective when running
+# Keystone in Apache mod_wsgi with mod_ssl enabled. (string
+# value)
+#user_id_attribute=SSL_CLIENT_S_DN_UID
+
+# The SSL client certificate attribute where Keystone username
+# is conveyed. This is the attribute set by Apache mod_ssl in
+# the request environment after the client certificate is
+# validated. NOTE: this option is only effective when running
+# Keystone in Apache mod_wsgi with mod_ssl enabled. (string
+# value)
+#username_attribute=SSL_CLIENT_S_DN_CN
+
+# The SSL client certificate attribute where Keystone user
+# domain ID is conveyed. This attribute is only effective if
+# the domain-aware X.509 SSL certificate auth plugin is used.
+# Otherwise, it will be ignored. This is the attribute set by
+# Apache mod_ssl in the request environment after the client
+# certificate is validated. NOTE: this option is only
+# effective when running Keystone in Apache mod_wsgi with
+# mod_ssl enabled. (string value)
+#user_domain_id_attribute=<None>
+
+# The SSL client certificate attribute where Keystone user
+# domain name is conveyed. This attribute is only effective if
+# the domain-aware X.509 SSL certificate auth plugin is used.
+# Otherwise, it will be ignored. This is the attribute set by
+# Apache mod_ssl in the request environment after the client
+# certificate is validated. NOTE: this option is only
+# effective when running Keystone in Apache mod_wsgi with
+# mod_ssl enabled. (string value)
+#user_domain_name_attribute=SSL_CLIENT_S_DN_O
 
 

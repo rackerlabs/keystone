@@ -721,6 +721,46 @@ FILE_OPTIONS = {
                    default='keystone.auth.plugins.external.DefaultDomain',
                    help='The external (REMOTE_USER) auth plugin module.'),
     ],
+    'x509_ssl_cert_auth': [
+        cfg.StrOpt('user_id_attribute',
+                   default='SSL_CLIENT_S_DN_UID',
+                   help='The SSL client certificate attribute where '
+                        'Keystone user_id is conveyed. This is the attribute '
+                        'set by Apache mod_ssl in the request environment '
+                        'after the client certificate is validated. NOTE: '
+                        'this option is only effective when running Keystone '
+                        'in Apache mod_wsgi with mod_ssl enabled.'),
+        cfg.StrOpt('username_attribute',
+                   default='SSL_CLIENT_S_DN_CN',
+                   help='The SSL client certificate attribute where '
+                        'Keystone username is conveyed. This is the attribute '
+                        'set by Apache mod_ssl in the request environment '
+                        'after the client certificate is validated. NOTE: '
+                        'this option is only effective when running Keystone '
+                        'in Apache mod_wsgi with mod_ssl enabled.'),
+        cfg.StrOpt('user_domain_id_attribute',
+                   default=None,
+                   help='The SSL client certificate attribute where '
+                        'Keystone user domain ID is conveyed. This '
+                        'attribute is only effective if the domain-aware '
+                        'X.509 SSL certificate auth plugin is used. '
+                        'Otherwise, it will be ignored. This is the attribute '
+                        'set by Apache mod_ssl in the request environment '
+                        'after the client certificate is validated. NOTE: '
+                        'this option is only effective when running Keystone '
+                        'in Apache mod_wsgi with mod_ssl enabled.'),
+        cfg.StrOpt('user_domain_name_attribute',
+                   default='SSL_CLIENT_S_DN_O',
+                   help='The SSL client certificate attribute where '
+                        'Keystone user domain name is conveyed. This '
+                        'attribute is only effective if the domain-aware '
+                        'X.509 SSL certificate auth plugin is used. '
+                        'Otherwise, it will be ignored. This is the attribute '
+                        'set by Apache mod_ssl in the request environment '
+                        'after the client certificate is validated. NOTE: '
+                        'this option is only effective when running Keystone '
+                        'in Apache mod_wsgi with mod_ssl enabled.'),
+    ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',
                    help='Name of the paste configuration file that defines '
