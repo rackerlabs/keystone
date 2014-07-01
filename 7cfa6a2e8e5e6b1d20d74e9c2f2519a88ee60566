@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b49524e6",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "excellent catch...thanks.",
+      "parentUuid": "baada198_8e9f4403",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_6e7e70e6",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-30T20:42:25Z",
       "side": 1,
       "message": "the type of the parameter comes before the name",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f40cfc96",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6e7e70e6",
       "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b4c7e411",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_692bca82",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8e83c4cb",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-30T20:42:25Z",
       "side": 1,
       "message": "the type of the parameter comes before the name",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4cc5838",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_8e83c4cb",
       "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_34dbd4ee",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_69ee6a24",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_aed6c8c3",
         "filename": "keystone/identity/generator.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-30T20:42:25Z",
       "side": 1,
       "message": "I like how this has the type of the parameter before the name.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_14bc1069",
+        "filename": "keystone/identity/generator.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "thx",
+      "parentUuid": "baada198_aed6c8c3",
       "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_37f916c9",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4e128cb5",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2948f25a",
         "filename": "keystone/identity/mapping_backends/sql.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2014-06-30T20:42:25Z",
       "side": 1,
       "message": "the methods in this class should be in the same order as they are in MappingDriver so it\u0027s easier to verify.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_74aaac1a",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_2948f25a",
       "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3772f67c",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "So since \u0027type\u0027 is part of the hash, I\u0027m not sure how the wrong ID can be removed.  Are you concerned about (once the full cross-backend ID functionality is implemented) that someone could try and pass a public ID representing a group to delete_user()?  If so, this should fail since delete_user() in the manager should:\n\n1) call get_id_mapping() to get the local entity info.  If this is not a user entity, then return UserNotFound.\n\n2) try and call the backend to delete that local entity\n\n3) assuming 1) and 2) worked, it would then delete the mapping\n\nThis seems the right level to be doing this....but open to other views.",
+      "parentUuid": "baada198_0e81748f",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_09e7ae41",
         "filename": "keystone/identity/mapping_backends/sql.py",
         "patchSetId": 7
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_947e60ad",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_09e7ae41",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_69d58a42",
         "filename": "keystone/tests/identity_mapping.py",
         "patchSetId": 7
@@ -183,6 +363,24 @@
       "writtenOn": "2014-06-30T20:42:25Z",
       "side": 1,
       "message": "might as well make this a docstring.",
+      "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_37203649",
+        "filename": "keystone/tests/identity_mapping.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T09:17:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_69d58a42",
       "revId": "7cfa6a2e8e5e6b1d20d74e9c2f2519a88ee60566",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
