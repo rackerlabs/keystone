@@ -13,6 +13,8 @@
 import random
 import uuid
 
+from testtools import matchers
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
@@ -1560,3 +1562,26 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class JsonHomeTests(FederationTests):
+    def test_get_json_home(self):
+        resp = self.get('/', convert=False,
+                        headers={'Accept': 'application/json-home'})
+        self.assertThat(resp.headers['Content-Type'],
+                        matchers.Equals('application/json-home'))
+        resp_data = jsonutils.loads(resp.body)
+
+        # Check that one of the relationships is present.
+        example_rel = ('http://docs.openstack.org/identity/rel/v3/ext/'
+                       'OS-FEDERATION/1.0/identity_provider')
+        expected_rel_data = {
+            'href-template': '/OS-FEDERATION/identity_providers/{idp_id}',
+            'href-vars': {
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id'
+            },
+        }
+
+        self.assertThat(resp_data['resources'][example_rel],
+                        matchers.Equals(expected_rel_data))

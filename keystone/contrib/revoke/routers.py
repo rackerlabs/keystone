@@ -14,7 +14,7 @@ from keystone.common import wsgi
 from keystone.contrib.revoke import controllers
 
 
-class RevokeExtension(wsgi.ExtensionRouter):
+class RevokeExtension(wsgi.V3ExtensionRouter):
 
     PATH_PREFIX = '/OS-REVOKE'
 
@@ -24,3 +24,13 @@ class RevokeExtension(wsgi.ExtensionRouter):
                        controller=revoke_controller,
                        action='list_revoke_events',
                        conditions=dict(method=['GET']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-REVOKE/1.0/'
+             'events',
+             {
+                 'href': self.PATH_PREFIX + '/events',
+             }
+             ),
+        )

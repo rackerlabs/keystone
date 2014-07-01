@@ -604,6 +604,39 @@ class ExtensionRouter(Router):
         return _factory
 
 
+class V3ExtensionRouter(ExtensionRouter):
+
+    def _get_version_data(self):
+        return ()
+
+    def _update_version_response(self, response_data):
+        extension_version_data = self._get_version_data()
+        response_data['resources'].update(extension_version_data)
+
+    @webob.dec.wsgify()
+    def __call__(self, request):
+        if request.path_info != '/':
+            # Not a request for version info so forward to super.
+            return super(V3ExtensionRouter, self).__call__(request)
+
+        response = request.get_response(self.application)
+
+        if response.status_code != 200:
+            # The request failed, so don't update the response.
+            return response
+
+        if response.headers['Content-Type'] != 'application/json-home':
+            # Not a request for JSON Home document, so don't update the
+            # response.
+            return response
+
+        response_data = jsonutils.loads(response.body)
+        self._update_version_response(response_data)
+        response.body = jsonutils.dumps(response_data,
+                                        cls=utils.SmarterEncoder)
+        return response
+
+
 def render_response(body=None, status=None, headers=None, method=None):
     """Forms a WSGI response."""
     if headers is None:
@@ -621,7 +654,10 @@ def render_response(body=None, status=None, headers=None, method=None):
             content_type = content_types[0]
         else:
             content_type = None
-        if content_type is None or content_type == 'application/json':
+
+        JSON_ENCODE_CONTENT_TYPES = ('application/json',
+                                     'application/json-home',)
+        if content_type is None or content_type in JSON_ENCODE_CONTENT_TYPES:
             body = jsonutils.dumps(body, cls=utils.SmarterEncoder)
             if content_type is None:
                 headers.append(('Content-Type', 'application/json'))

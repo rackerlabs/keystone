@@ -14,7 +14,7 @@ from keystone.common import wsgi
 from keystone.contrib.simple_cert import controllers
 
 
-class SimpleCertExtension(wsgi.ExtensionRouter):
+class SimpleCertExtension(wsgi.V3ExtensionRouter):
 
     PREFIX = 'OS-SIMPLE-CERT'
 
@@ -30,3 +30,19 @@ class SimpleCertExtension(wsgi.ExtensionRouter):
                        controller=controller,
                        action='list_certificates',
                        conditions=dict(method=['GET']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/'
+             '1.0/ca_certificate',
+             {
+                 'href': '/%s/ca' % self.PREFIX,
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/'
+             '1.0/certificates',
+             {
+                 'href': '/%s/certificates' % self.PREFIX,
+             }
+             ),
+        )

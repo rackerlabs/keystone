@@ -18,3 +18,22 @@ from keystone.policy import controllers
 def append_v3_routers(mapper, routers):
     policy_controller = controllers.PolicyV3()
     routers.append(router.Router(policy_controller, 'policies', 'policy'))
+
+
+def get_v3_resources():
+    return (
+        ('http://docs.openstack.org/identity/rel/v3/policies',
+         {
+             'href': '/policies',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/policy',
+         {
+             'href-template': '/policies/{policy_id}',
+             'href-vars': {
+                 'policy_id':
+                 'http://docs.openstack.org/identity/v3/param/policy_id',
+             },
+         }
+         ),
+    )
