@@ -34,6 +34,24 @@
       "revId": "069e49b89ea0114bec40e8b481b8e3049af8abb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f4b4fcf3",
+        "filename": "CONTRIBUTING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-01T08:53:13Z",
+      "side": 1,
+      "message": "On Firefox/Chrome/IE-10 works for me",
+      "parentUuid": "baada198_05ddc370",
+      "revId": "069e49b89ea0114bec40e8b481b8e3049af8abb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
