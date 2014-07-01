@@ -26,6 +26,7 @@ from keystone import config
 from keystone import exception
 from keystone.openstack.common import timeutils
 from keystone import tests
+from keystone.tests import apache_fixtures
 from keystone.tests import test_v3
 
 
@@ -1528,19 +1529,20 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
 
     def config_overrides(self):
         super(TestAuthExternalDomain, self).config_overrides()
-        self.kerberos = False
         self.config_fixture.config(
             group='auth',
             methods=['keystone.auth.plugins.external.Domain',
                      'keystone.auth.plugins.password.Password',
                      'keystone.auth.plugins.token.Token'])
+        self.external_auth_methods = []
 
     def test_remote_user_with_realm(self):
         api = auth.controllers.Auth()
         remote_user = self.user['name']
         remote_domain = self.domain['name']
         context, auth_info, auth_context = self.build_external_auth_request(
-            remote_user, remote_domain=remote_domain, kerberos=self.kerberos)
+            remote_user, remote_domain=remote_domain,
+            methods=self.external_auth_methods)
 
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
@@ -1551,7 +1553,8 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         self.identity_api.update_user(self.user['id'], user)
         remote_user = user['name']
         context, auth_info, auth_context = self.build_external_auth_request(
-            remote_user, remote_domain=remote_domain, kerberos=self.kerberos)
+            remote_user, remote_domain=remote_domain,
+            methods=self.external_auth_methods)
 
         api.authenticate(context, auth_info, auth_context)
         self.assertEqual(auth_context['user_id'], self.user['id'])
@@ -1560,7 +1563,7 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
         CONF.token.bind = ['kerberos']
         auth_data = self.build_authentication_request(
             project_id=self.project['id'],
-            kerberos=self.kerberos)
+            external_auth_methods=self.external_auth_methods)
         remote_user = self.user['name']
         remote_domain = self.domain['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
@@ -1572,7 +1575,8 @@ class TestAuthExternalDomain(test_v3.RestfulTestCase):
 
     def test_unscoped_bind_with_remote_user(self):
         CONF.token.bind = ['kerberos']
-        auth_data = self.build_authentication_request(kerberos=self.kerberos)
+        auth_data = self.build_authentication_request(
+            external_auth_methods=self.external_auth_methods)
         remote_user = self.user['name']
         remote_domain = self.domain['name']
         self.admin_app.extra_environ.update({'REMOTE_USER': remote_user,
@@ -1587,13 +1591,143 @@ class TestAuthKerberos(TestAuthExternalDomain):
 
     def config_overrides(self):
         super(TestAuthKerberos, self).config_overrides()
-        self.kerberos = True
 
         self.config_fixture.config(
             group='auth',
             methods=['keystone.auth.plugins.external.KerberosDomain',
                      'keystone.auth.plugins.password.Password',
                      'keystone.auth.plugins.token.Token'])
+        self.external_auth_methods = ['kerberos']
+
+
+class TestX509SSLCertExternal(test_v3.RestfulTestCase):
+    content_type = 'json'
+
+    def config_overrides(self):
+        super(TestX509SSLCertExternal, self).config_overrides()
+        self.config_fixture.config(
+            group='auth',
+            methods=['keystone.auth.plugins.external.X509SSLCert',
+                     'keystone.auth.plugins.password.Password',
+                     'keystone.auth.plugins.token.Token'])
+
+    def setUp(self, *args, **kwargs):
+        super(TestX509SSLCertExternal, self).setUp(*args, **kwargs)
+        self.auth_api = auth.controllers.Auth()
+        # use default domain user as the auth plugin is not domain-aware
+        self.ssl_user = self.default_domain_user
+        self.ssl_user_domain = self.default_domain
+
+    def _authenticate(self, env):
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.ssl_user['name'], methods=['x509'])
+        context['environment'].update(env)
+        self.auth_api.authenticate(context, auth_info, auth_context)
+        self.assertEqual(auth_context['user_id'], self.ssl_user['id'])
+
+    def test_x509_auth_with_username(self):
+        # make sure the SSL environment variable match our test user
+        ssl_env = apache_fixtures.SSL_ENVIRONMENT.copy()
+        username = self.ssl_user['name']
+        ssl_env[CONF.x509_ssl_cert_auth.username_attribute] = username
+        domain_name = self.ssl_user_domain['name']
+        domain_name_attr = CONF.x509_ssl_cert_auth.user_domain_name_attribute
+        ssl_env[domain_name_attr] = domain_name
+
+        # now authenticate with the Apache mod_ssl populated SSL request
+        # environment, assuming Apache had successfully validated the incoming
+        # SSL client cert
+        self._authenticate(ssl_env)
+
+    def test_x509_auth_with_user_id(self):
+        # make sure the SSL environment variable match our test user
+        ssl_env = apache_fixtures.SSL_ENVIRONMENT.copy()
+        user_id = self.ssl_user['id']
+        ssl_env[CONF.x509_ssl_cert_auth.user_id_attribute] = user_id
+
+        # now authenticate with the Apache mod_ssl populated SSL request
+        # environment, assuming Apache had successfully validated the incoming
+        # SSL client cert
+        self._authenticate(ssl_env)
+
+    def test_x509_auth_failed_with_user_does_not_exist(self):
+        # set a bogus username for the incoming SSL client cert
+        ssl_env = apache_fixtures.SSL_ENVIRONMENT.copy()
+        user_id = uuid.uuid4().hex
+        ssl_env[CONF.x509_ssl_cert_auth.user_id_attribute] = user_id
+
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.ssl_user['name'], methods=['x509'])
+        context['environment'].update(ssl_env)
+        # should fail here as domain user does not exist in default domain
+        self.assertRaises(exception.Unauthorized,
+                          self.auth_api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+    def test_x509_auth_failed_with_wildcard_chars_in_username(self):
+        # per security review, we need to have a negative test case to make
+        # sure we don't allow wildcard char matches
+
+        # make sure the SSL environment variable match our test user
+        ssl_env = apache_fixtures.SSL_ENVIRONMENT.copy()
+        username = self.ssl_user['name']
+        # add wildcard prefix to username so to ensure wildcard match will
+        # fail
+        username = '***' + username
+        ssl_env[CONF.x509_ssl_cert_auth.username_attribute] = username
+        domain_name = self.ssl_user_domain['name']
+        domain_name_attr = CONF.x509_ssl_cert_auth.user_domain_name_attribute
+        ssl_env[domain_name_attr] = domain_name
+
+        context, auth_info, auth_context = self.build_external_auth_request(
+            self.ssl_user['name'], methods=['x509'])
+        context['environment'].update(ssl_env)
+        # should fail here as domain user does not exist in default domain
+        self.assertRaises(exception.Unauthorized,
+                          self.auth_api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+    def test_invalid_client_verify_status(self):
+        # make sure the SSL environment variable match our test user
+        ssl_env = apache_fixtures.SSL_ENVIRONMENT.copy()
+        username = self.ssl_user['name']
+        ssl_env[CONF.x509_ssl_cert_auth.username_attribute] = username
+        domain_name = self.ssl_user_domain['name']
+        domain_name_attr = CONF.x509_ssl_cert_auth.user_domain_name_attribute
+        ssl_env[domain_name_attr] = domain_name
+
+        context, auth_info, auth_context = self.build_external_auth_request(
+            username, methods=['x509'])
+        ssl_env['SSL_CLIENT_VERIFY'] = 'NONE'
+        context['environment'].update(ssl_env)
+        self.assertRaises(exception.Unauthorized,
+                          self.auth_api.authenticate,
+                          context,
+                          auth_info,
+                          auth_context)
+
+
+class TestX509SSLCertDomainExternal(TestX509SSLCertExternal):
+    content_type = 'json'
+
+    def config_overrides(self):
+        super(TestX509SSLCertDomainExternal, self).config_overrides()
+        self.config_fixture.config(
+            group='auth',
+            methods=['keystone.auth.plugins.external.X509SSLCertDomain',
+                     'keystone.auth.plugins.password.Password',
+                     'keystone.auth.plugins.token.Token'])
+
+    def setUp(self, *args, **kwargs):
+        super(TestX509SSLCertDomainExternal, self).setUp(*args, **kwargs)
+        self.auth_api = auth.controllers.Auth()
+        # use domain user as the auth plugin is domain-aware
+        self.ssl_user = self.user
+        self.ssl_user_domain = self.domain
 
 
 class TestAuthJSON(test_v3.RestfulTestCase):

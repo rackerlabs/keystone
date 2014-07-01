@@ -687,6 +687,40 @@ FILE_OPTIONS = {
                    default='keystone.auth.plugins.external.DefaultDomain',
                    help='The external (REMOTE_USER) auth plugin module.'),
     ],
+    'x509_ssl_cert_auth': [
+        cfg.StrOpt('user_id_attribute',
+                   default='SSL_CLIENT_S_DN_UID',
+                   help='The SSL client certificate attribute where '
+                        'Keystone user_id is conveyed.'),
+        cfg.StrOpt('username_attribute',
+                   default='SSL_CLIENT_S_DN_CN',
+                   help='The SSL client certificate attribute where '
+                        'Keystone username is conveyed.'),
+        cfg.StrOpt('user_domain_id_attribute',
+                   default=None,
+                   help='The SSL client certificate attribute where '
+                        'Keystone user domain ID is conveyed. This '
+                        'attribute is only effective if the domain-aware '
+                        'X.509 SSL certificate auth plugin is used. '
+                        'Otherwise, it will be ignored.'),
+        cfg.StrOpt('user_domain_name_attribute',
+                   default='SSL_CLIENT_S_DN_O',
+                   help='The SSL client certificate attribute where '
+                        'Keystone user domain name is conveyed. This '
+                        'attribute is only effective if the domain-aware '
+                        'X.509 SSL certificate auth plugin is used. '
+                        'Otherwise, it will be ignored.'),
+        cfg.ListOpt('accept_ssl_client_verify_status',
+                    default=['SUCCESS'],
+                    help='List of acceptable SSL_CLIENT_VERIFY status. '
+                         'SSL_CLIENT_VERIFY is one of the environment '
+                         'variables set by Apache mod_ssl to indicate the '
+                         'manner in which the incoming SSL X.509 client '
+                         'certificate was validated. '
+                         'WARNING: This value have security implications. Do '
+                         ' not change it unless you know exactly what you are '
+                         'doing!'),
+    ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',
                    help='Name of the paste configuration file that defines '
