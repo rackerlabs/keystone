@@ -16,6 +16,24 @@
       "revId": "c80c57732f01133775be75f6b3a06b46dc8ce5e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a6bec1fd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T19:56:02Z",
+      "side": 1,
+      "message": "No. This line will raise the exception caught on line 399, not the one caught on 405.",
+      "parentUuid": "1ae5cdf2_103ba438",
+      "revId": "c80c57732f01133775be75f6b3a06b46dc8ce5e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
