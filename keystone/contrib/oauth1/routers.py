@@ -17,7 +17,7 @@ from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 
 
-class OAuth1Extension(wsgi.ExtensionRouter):
+class OAuth1Extension(wsgi.V3ExtensionRouter):
     """API Endpoints for the OAuth1 extension.
 
     The goal of this extension is to allow third-party service providers
@@ -59,73 +59,104 @@ class OAuth1Extension(wsgi.ExtensionRouter):
         oauth_controller = controllers.OAuthControllerV3()
 
         # basic admin-only consumer crud
-        mapper.connect(
-            '/OS-OAUTH1/consumers',
-            controller=consumer_controller,
-            action='create_consumer',
-            conditions=dict(method=['POST']))
-        mapper.connect(
-            '/OS-OAUTH1/consumers/{consumer_id}',
-            controller=consumer_controller,
-            action='get_consumer',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/OS-OAUTH1/consumers/{consumer_id}',
-            controller=consumer_controller,
-            action='update_consumer',
-            conditions=dict(method=['PATCH']))
-        mapper.connect(
-            '/OS-OAUTH1/consumers/{consumer_id}',
-            controller=consumer_controller,
-            action='delete_consumer',
-            conditions=dict(method=['DELETE']))
-        mapper.connect(
-            '/OS-OAUTH1/consumers',
-            controller=consumer_controller,
-            action='list_consumers',
-            conditions=dict(method=['GET']))
+        self._add_resource(
+            mapper, consumer_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'consumers',
+            path='/OS-OAUTH1/consumers',
+            get_action='list_consumers',
+            post_action='create_consumer')
+        self._add_resource(
+            mapper, consumer_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'consumer',
+            path_template='/OS-OAUTH1/consumers/{consumer_id}',
+            path_vars={
+                'consumer_id': 'http://docs.openstack.org/identity/rel/'
+                'v3/ext/OS-OAUTH1/1.0/param/consumer_id'
+            },
+            get_action='get_consumer',
+            patch_action='update_consumer',
+            delete_action='delete_consumer')
 
         # user accesss token crud
-        mapper.connect(
-            '/users/{user_id}/OS-OAUTH1/access_tokens',
-            controller=access_token_controller,
-            action='list_access_tokens',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}',
-            controller=access_token_controller,
-            action='get_access_token',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}',
-            controller=access_token_controller,
-            action='delete_access_token',
-            conditions=dict(method=['DELETE']))
-        mapper.connect(
-            '/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/roles',
-            controller=access_token_roles_controller,
-            action='list_access_token_roles',
-            conditions=dict(method=['GET']))
-        mapper.connect(
-            '/users/{user_id}/OS-OAUTH1/access_tokens/'
+        self._add_resource(
+            mapper, access_token_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_tokens',
+            path_template='/users/{user_id}/OS-OAUTH1/access_tokens',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='list_access_tokens')
+        self._add_resource(
+            mapper, access_token_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_token',
+            path_template='/users/{user_id}/OS-OAUTH1/access_tokens/'
+            '{access_token_id}',
+            path_vars={
+                'access_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                '1.0/param/access_token_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='get_access_token',
+            delete_action='delete_access_token')
+        self._add_resource(
+            mapper, access_token_roles_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_token_roles',
+            path_template='/users/{user_id}/OS-OAUTH1/access_tokens/'
+            '{access_token_id}/roles',
+            path_vars={
+                'access_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                '1.0/param/access_token_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='list_access_token_roles')
+        self._add_resource(
+            mapper, access_token_roles_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_token_role',
+            path_template='/users/{user_id}/OS-OAUTH1/access_tokens/'
             '{access_token_id}/roles/{role_id}',
-            controller=access_token_roles_controller,
-            action='get_access_token_role',
-            conditions=dict(method=['GET']))
+            path_vars={
+                'access_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+                'param/access_token_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            },
+            get_action='get_access_token_role')
 
         # oauth flow calls
-        mapper.connect(
-            '/OS-OAUTH1/request_token',
-            controller=oauth_controller,
-            action='create_request_token',
-            conditions=dict(method=['POST']))
-        mapper.connect(
-            '/OS-OAUTH1/access_token',
-            controller=oauth_controller,
-            action='create_access_token',
-            conditions=dict(method=['POST']))
-        mapper.connect(
-            '/OS-OAUTH1/authorize/{request_token_id}',
-            controller=oauth_controller,
-            action='authorize_request_token',
-            conditions=dict(method=['PUT']))
+        self._add_resource(
+            mapper, oauth_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'request_tokens',
+            path='/OS-OAUTH1/request_token',
+            post_action='create_request_token')
+        self._add_resource(
+            mapper, oauth_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'access_tokens',
+            path='/OS-OAUTH1/access_token',
+            post_action='create_access_token')
+        self._add_resource(
+            mapper, oauth_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'authorize_request_token',
+            path_template='/OS-OAUTH1/authorize/{request_token_id}',
+            path_vars={
+                'request_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+                'param/request_token_id',
+            },
+            put_action='authorize_request_token')

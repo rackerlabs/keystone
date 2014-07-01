@@ -11,40 +11,56 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-"""WSGI Routers for the Identity service."""
+"""WSGI Routers for the Trust service."""
 
+from keystone.common import wsgi
 from keystone.trust import controllers
 
 
-def append_v3_routers(mapper, routers):
-    trust_controller = controllers.TrustV3()
+class Routers(wsgi.RoutersBase):
 
-    mapper.connect('/OS-TRUST/trusts',
-                   controller=trust_controller,
-                   action='create_trust',
-                   conditions=dict(method=['POST']))
+    def append_v3_routers(self, mapper, routers):
+        trust_controller = controllers.TrustV3()
 
-    mapper.connect('/OS-TRUST/trusts',
-                   controller=trust_controller,
-                   action='list_trusts',
-                   conditions=dict(method=['GET']))
-
-    mapper.connect('/OS-TRUST/trusts/{trust_id}',
-                   controller=trust_controller,
-                   action='delete_trust',
-                   conditions=dict(method=['DELETE']))
-
-    mapper.connect('/OS-TRUST/trusts/{trust_id}',
-                   controller=trust_controller,
-                   action='get_trust',
-                   conditions=dict(method=['GET']))
-
-    mapper.connect('/OS-TRUST/trusts/{trust_id}/roles',
-                   controller=trust_controller,
-                   action='list_roles_for_trust',
-                   conditions=dict(method=['GET']))
-
-    mapper.connect('/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
-                   controller=trust_controller,
-                   action='get_role_for_trust',
-                   conditions=dict(method=['GET', 'HEAD']))
+        self._add_resource(
+            mapper, trust_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trusts',
+            path='/OS-TRUST/trusts',
+            get_action='list_trusts',
+            post_action='create_trust')
+        self._add_resource(
+            mapper, trust_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/trust',
+            path_template='/OS-TRUST/trusts/{trust_id}',
+            path_vars={
+                'trust_id':
+                'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/1.0/'
+                'trust_id',
+            },
+            get_action='get_trust',
+            delete_action='delete_trust')
+        self._add_resource(
+            mapper, trust_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trust_roles',
+            path_template='/OS-TRUST/trusts/{trust_id}/roles',
+            path_vars={
+                'trust_id':
+                'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/1.0/'
+                'trust_id',
+            },
+            get_action='list_roles_for_trust')
+        self._add_resource(
+            mapper, trust_controller,
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trust_role',
+            path_template='/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
+            path_vars={
+                'trust_id':
+                'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/1.0/'
+                'trust_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+            },
+            get_head_action='get_role_for_trust')

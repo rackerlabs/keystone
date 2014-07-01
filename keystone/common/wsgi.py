@@ -604,6 +604,108 @@ class ExtensionRouter(Router):
         return _factory
 
 
+class RoutersBase(object):
+
+    def __init__(self):
+        self._v3_resources = []
+
+    def _add_resource_description(self, description):
+        self._v3_resources.append(description)
+
+    def _add_resource(self, mapper, controller, rel, path=None,
+                      path_template=None, path_vars=None, get_action=None,
+                      head_action=None, get_head_action=None, put_action=None,
+                      post_action=None, patch_action=None, delete_action=None,
+                      get_post_action=None):
+        if get_head_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=get_head_action,
+                           conditions=dict(method=['GET', 'HEAD']))
+        if get_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=get_action,
+                           conditions=dict(method=['GET']))
+        if head_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=head_action,
+                           conditions=dict(method=['HEAD']))
+        if put_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=put_action,
+                           conditions=dict(method=['PUT']))
+        if post_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=post_action,
+                           conditions=dict(method=['POST']))
+        if patch_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=patch_action,
+                           conditions=dict(method=['PATCH']))
+        if delete_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=delete_action,
+                           conditions=dict(method=['DELETE']))
+        if get_post_action:
+            mapper.connect(path or path_template,
+                           controller=controller,
+                           action=get_post_action,
+                           conditions=dict(method=['GET', 'POST']))
+
+        resource_data = dict()
+
+        if path:
+            resource_data['href'] = path
+        else:
+            resource_data['href-template'] = path_template
+            resource_data['href-vars'] = path_vars
+
+        self._add_resource_description((rel, resource_data))
+
+    def get_v3_resources(self):
+        return self._v3_resources
+
+
+class V3ExtensionRouter(ExtensionRouter, RoutersBase):
+
+    def __init__(self, application, mapper=None):
+        self._v3_resources = list()
+        super(V3ExtensionRouter, self).__init__(application, mapper)
+
+    def _update_version_response(self, response_data):
+        extension_version_data = self.get_v3_resources()
+        response_data['resources'].update(extension_version_data)
+
+    @webob.dec.wsgify()
+    def __call__(self, request):
+        if request.path_info != '/':
+            # Not a request for version info so forward to super.
+            return super(V3ExtensionRouter, self).__call__(request)
+
+        response = request.get_response(self.application)
+
+        if response.status_code != 200:
+            # The request failed, so don't update the response.
+            return response
+
+        if response.headers['Content-Type'] != 'application/json-home':
+            # Not a request for JSON Home document, so don't update the
+            # response.
+            return response
+
+        response_data = jsonutils.loads(response.body)
+        self._update_version_response(response_data)
+        response.body = jsonutils.dumps(response_data,
+                                        cls=utils.SmarterEncoder)
+        return response
+
+
 def render_response(body=None, status=None, headers=None, method=None):
     """Forms a WSGI response."""
     if headers is None:
@@ -621,7 +723,10 @@ def render_response(body=None, status=None, headers=None, method=None):
             content_type = content_types[0]
         else:
             content_type = None
-        if content_type is None or content_type == 'application/json':
+
+        JSON_ENCODE_CONTENT_TYPES = ('application/json',
+                                     'application/json-home',)
+        if content_type is None or content_type in JSON_ENCODE_CONTENT_TYPES:
             body = jsonutils.dumps(body, cls=utils.SmarterEncoder)
             if content_type is None:
                 headers.append(('Content-Type', 'application/json'))
