@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_bbf17dcf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-07-01T18:14:48Z",
+      "side": 1,
+      "message": "exception",
+      "revId": "92951291d19eafc29e6c2a762c9e2255b1bc5752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1ba7c9be",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 9500
+      },
+      "writtenOn": "2014-07-01T18:14:48Z",
+      "side": 1,
+      "message": "This is getting into a nitpick but I\u0027d prefer:\n\n\"Conflict occurred attempting to store %(type)s: %(details)s\")",
+      "revId": "92951291d19eafc29e6c2a762c9e2255b1bc5752",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
