@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3b93bca4",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T12:18:42Z",
+      "side": 1,
+      "message": "I\u0027d have thought \u0027project_id\u0027 would a better term, since the \u0027tenant\u0027 term is being depreciated.  Also relevant for other variables in this method.",
+      "revId": "5225ed21a135720979a797135269469add15576c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bb526c11",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T12:18:42Z",
+      "side": 1,
+      "message": "This needs to be more descriptive - readers won\u0027t know what \"Vishy\u0027s code\" means.  Also, please use the standard note format, i.e.:\n\n#NOTE(author): Keep.....",
+      "revId": "5225ed21a135720979a797135269469add15576c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3b6f3c94",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T12:18:42Z",
+      "side": 1,
+      "message": "should this be a foreign key?",
+      "revId": "5225ed21a135720979a797135269469add15576c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1be7d813",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_parent_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-01T12:18:42Z",
+      "side": 1,
+      "message": "so if we running sqlite, we leave the parent_project_id column in place?",
+      "revId": "5225ed21a135720979a797135269469add15576c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
