@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_f9ac0138",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T01:48:39Z",
+      "side": 1,
+      "message": "This may sound better at the beginning of the paragraph.\n\n\"This is a debug tool (blah, blah). In production an external CA should be used instead (blah, blah)....\"",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_791711a4",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -36,6 +53,40 @@
     },
     {
       "key": {
+        "uuid": "baada198_194e15c2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T01:48:39Z",
+      "side": 1,
+      "message": "I would change this to have much stronger language. It\u0027s not that it\u0027s likely production environments will do this externally, it\u0027s recommended to only use this for development environments.",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b97289e3",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T01:48:39Z",
+      "side": 1,
+      "message": "There should be a blank line above this. Also make this a complete sentence by: This is NOT intended...",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_79cc7136",
         "filename": "keystone/cli.py",
         "patchSetId": 1
@@ -47,6 +98,40 @@
       "writtenOn": "2014-07-01T01:45:03Z",
       "side": 1,
       "message": "Could we also output a log message that states that \u0027pki_setup\u0027 should not be used in production?",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f97321e5",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T01:48:39Z",
+      "side": 1,
+      "message": "The \"\"\" should be on a line by itself",
+      "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_397e79af",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T01:48:39Z",
+      "side": 1,
+      "message": "Same things here as above",
       "revId": "9bb98834822fb765da8e46b9a4bf2e87f818c524",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
