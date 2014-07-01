@@ -38,3 +38,55 @@ def append_v3_routers(mapper, routers):
         controller=controllers.CatalogV3(),
         action='get_catalog',
         conditions=dict(method=['GET']))
+
+
+def get_v3_resources():
+    return (
+        ('http://docs.openstack.org/identity/rel/v3/regions',
+         {
+             'href': '/regions',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/region',
+         {
+             'href-template': '/regions/{region_id}',
+             'href-vars': {
+                 'region_id':
+                 'http://docs.openstack.org/identity/v3/param/region_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/services',
+         {
+             'href': '/services',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/service',
+         {
+             'href-template': '/services/{service_id}',
+             'href-vars': {
+                 'service_id':
+                 'http://docs.openstack.org/identity/v3/param/service_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/endpoints',
+         {
+             'href': '/endpoints',
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/endpoint',
+         {
+             'href-template': '/endpoints/{endpoint_id}',
+             'href-vars': {
+                 'endpoint_id':
+                 'http://docs.openstack.org/identity/v3/param/endpoint_id',
+             },
+         }
+         ),
+        ('http://docs.openstack.org/identity/rel/v3/catalog',
+         {
+             'href': '/catalog',
+         }
+         ),
+    )

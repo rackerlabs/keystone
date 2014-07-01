@@ -17,7 +17,7 @@ from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 
 
-class OAuth1Extension(wsgi.ExtensionRouter):
+class OAuth1Extension(wsgi.V3ExtensionRouter):
     """API Endpoints for the OAuth1 extension.
 
     The goal of this extension is to allow third-party service providers
@@ -129,3 +129,100 @@ class OAuth1Extension(wsgi.ExtensionRouter):
             controller=oauth_controller,
             action='authorize_request_token',
             conditions=dict(method=['PUT']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'consumers',
+             {
+                 'href': '/OS-OAUTH1/consumers',
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'consumer',
+             {
+                 'href-template': '/OS-OAUTH1/consumers/{consumer_id}',
+                 'href-vars': {
+                     'consumer_id': 'http://docs.openstack.org/identity/rel/'
+                     'v3/ext/OS-OAUTH1/1.0/param/consumer_id'
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'user_access_tokens',
+             {
+                 'href-template': '/users/{user_id}/OS-OAUTH1/access_tokens',
+                 'href-vars': {
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'user_access_token',
+             {
+                 'href-template': '/users/{user_id}/OS-OAUTH1/access_tokens/'
+                 '{access_token_id}',
+                 'href-vars': {
+                     'access_token_id':
+                     'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                     '1.0/param/access_token_id',
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'user_access_token_roles',
+             {
+                 'href-template': '/users/{user_id}/OS-OAUTH1/access_tokens/'
+                 '{access_token_id}/roles',
+                 'href-vars': {
+                     'access_token_id':
+                     'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                     '1.0/param/access_token_id',
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'user_access_token_role',
+             {
+                 'href-template': '/users/{user_id}/OS-OAUTH1/access_tokens/'
+                 '{access_token_id}/roles/{role_id}',
+                 'href-vars': {
+                     'access_token_id':
+                     'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                     '1.0/param/access_token_id',
+                     'role_id':
+                     'http://docs.openstack.org/identity/v3/param/role_id',
+                     'user_id':
+                     'http://docs.openstack.org/identity/v3/param/user_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'request_tokens',
+             {
+                 'href': '/OS-OAUTH1/request_token',
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'access_tokens',
+             {
+                 'href': '/OS-OAUTH1/access_token',
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+             'authorize_request_token',
+             {
+                 'href-template': '/OS-OAUTH1/authorize/{request_token_id}',
+                 'href-vars': {
+                     'request_token_id':
+                     'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                     '1.0/param/request_token_id',
+                 },
+             }
+             ),
+        )

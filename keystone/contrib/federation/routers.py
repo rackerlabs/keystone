@@ -15,7 +15,7 @@ from keystone.contrib import federation
 from keystone.contrib.federation import controllers
 
 
-class _BaseFederationExtension(wsgi.ExtensionRouter):
+class _BaseFederationExtension(wsgi.V3ExtensionRouter):
     """Base class for Federation Extension classes.
 
     All generic methods should be stored here so
@@ -194,3 +194,91 @@ class FederationExtension(_BaseFederationExtension):
             controller=auth_controller,
             action='federated_authentication',
             conditions=dict(method=['GET', 'POST']))
+
+    def _get_version_data(self):
+        return (
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'identity_provider',
+             {
+                 'href-template':
+                 self._construct_url('identity_providers/{idp_id}'),
+                 'href-vars': {
+                     'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                     'OS-FEDERATION/1.0/param/idp_id'
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'identity_providers',
+             {
+                 'href': self._construct_url('identity_providers'),
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'identity_provider_protocol',
+             {
+                 'href-template':
+                 self._construct_url('identity_providers/{idp_id}/protocols/'
+                                     '{protocol_id}'),
+                 'href-vars': {
+                     'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                     'OS-FEDERATION/1.0/param/idp_id',
+                     'protocol_id': 'http://docs.openstack.org/identity/rel/'
+                     'v3/ext/OS-FEDERATION/1.0/param/protocol_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'identity_provider_protocols',
+             {
+                 'href-template':
+                 self._construct_url('identity_providers/{idp_id}/protocols'),
+                 'href-vars': {
+                     'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                     'OS-FEDERATION/1.0/param/idp_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'mapping',
+             {
+                 'href-template': self._construct_url('mappings/{mapping_id}'),
+                 'href-vars': {
+                     'mapping_id': 'http://docs.openstack.org/identity/rel/v3/'
+                     'ext/OS-FEDERATION/1.0/param/mapping_id',
+                 },
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'mappings',
+             {
+                 'href': self._construct_url('mappings'),
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'domains',
+             {
+                 'href': self._construct_url('domains'),
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'projects',
+             {
+                 'href': self._construct_url('projects'),
+             }
+             ),
+            ('http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/1.0/'
+             'identity_provider_protocol_auth',
+             {
+                 'href-template':
+                 self._construct_url('identity_providers/{identity_provider}/'
+                                     'protocols/{protocol}/auth'),
+                 'href-vars': {
+                     'identity_provider': 'http://docs.openstack.org/identity/'
+                     'rel/v3/ext/OS-FEDERATION/1.0/param/idp_id',
+                     'protocol': 'http://docs.openstack.org/identity/rel/'
+                     'v3/ext/OS-FEDERATION/1.0/param/protocol_id',
+                 },
+             }
+             ),
+        )
