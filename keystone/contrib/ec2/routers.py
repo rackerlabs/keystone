@@ -36,12 +36,12 @@ class Ec2Extension(wsgi.ExtensionRouter):
             '/users/{user_id}/credentials/OS-EC2',
             controller=ec2_controller,
             action='get_credentials',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/users/{user_id}/credentials/OS-EC2/{credential_id}',
             controller=ec2_controller,
             action='get_credential',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/users/{user_id}/credentials/OS-EC2/{credential_id}',
             controller=ec2_controller,

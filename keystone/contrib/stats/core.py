@@ -80,7 +80,7 @@ class StatsExtension(wsgi.ExtensionRouter):
             '/OS-STATS/stats',
             controller=stats_controller,
             action='get_stats',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/OS-STATS/stats',
             controller=stats_controller,

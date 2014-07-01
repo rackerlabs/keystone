@@ -73,14 +73,14 @@ class CrudExtension(wsgi.ExtensionRouter):
             '/tenants/{tenant_id}/users',
             controller=tenant_controller,
             action='get_project_users',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
 
         # User Operations
         mapper.connect(
             '/users',
             controller=user_controller,
             action='get_users',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/users',
             controller=user_controller,
@@ -151,7 +151,7 @@ class CrudExtension(wsgi.ExtensionRouter):
             '/users/{user_id}/roleRefs',
             controller=role_controller,
             action='get_role_refs',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/users/{user_id}/roleRefs',
             controller=role_controller,
@@ -180,7 +180,7 @@ class CrudExtension(wsgi.ExtensionRouter):
             '/OS-KSADM/services',
             controller=service_controller,
             action='get_services',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/OS-KSADM/services',
             controller=service_controller,
@@ -195,14 +195,14 @@ class CrudExtension(wsgi.ExtensionRouter):
             '/OS-KSADM/services/{service_id}',
             controller=service_controller,
             action='get_service',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
 
         # Endpoint Templates
         mapper.connect(
             '/endpoints',
             controller=endpoint_controller,
             action='get_endpoints',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/endpoints',
             controller=endpoint_controller,
@@ -224,12 +224,12 @@ class CrudExtension(wsgi.ExtensionRouter):
             '/OS-KSADM/roles',
             controller=role_controller,
             action='get_roles',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/OS-KSADM/roles/{role_id}',
             controller=role_controller,
             action='get_role',
-            conditions=dict(method=['GET']))
+            conditions=dict(method=['GET', 'HEAD']))
         mapper.connect(
             '/OS-KSADM/roles/{role_id}',
             controller=role_controller,

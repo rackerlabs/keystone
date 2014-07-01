@@ -30,6 +30,10 @@ class Router(wsgi.ComposableRouter):
                        controller=token_controller,
                        action='validate_token',
                        conditions=dict(method=['GET']))
+        # NOTE(morganfainberg): For policy enforcement reasons, the
+        # ``validate_token_head`` method is still used for HEAD requests.
+        # The controller method makes the same call as the validate_token
+        # call and lets wsgi.render_response remove the body data.
         mapper.connect('/tokens/{token_id}',
                        controller=token_controller,
                        action='validate_token_head',
@@ -52,4 +56,4 @@ class Router(wsgi.ComposableRouter):
         mapper.connect('/certificates/signing',
                        controller=token_controller,
                        action='signing_cert',
-                       conditions=dict(method=['GET']))
+                       conditions=dict(method=['GET', 'HEAD']))

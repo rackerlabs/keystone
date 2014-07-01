@@ -42,14 +42,9 @@ def append_v3_routers(mapper, routers):
     mapper.connect('/OS-TRUST/trusts/{trust_id}/roles',
                    controller=trust_controller,
                    action='list_roles_for_trust',
-                   conditions=dict(method=['GET']))
-
-    mapper.connect('/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
-                   controller=trust_controller,
-                   action='check_role_for_trust',
-                   conditions=dict(method=['HEAD']))
+                   conditions=dict(method=['GET', 'HEAD']))
 
     mapper.connect('/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
                    controller=trust_controller,
                    action='get_role_for_trust',
-                   conditions=dict(method=['GET']))
+                   conditions=dict(method=['GET', 'HEAD']))

@@ -103,10 +103,10 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
                  body='',
                  expected_status=204)
         self.head('/OS-EP-FILTER/projects/%(project_id)s'
-                  '/endpoints/%(endpoint_id)s' % {
-                      'project_id': self.default_domain_project_id,
-                      'endpoint_id': self.endpoint_id},
-                  expected_status=204)
+                      '/endpoints/%(endpoint_id)s' % {
+                          'project_id': self.default_domain_project_id,
+                          'endpoint_id': self.endpoint_id},
+                      expected_status=204)
 
     def test_check_endpoint_project_assoc_noproj(self):
         """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
