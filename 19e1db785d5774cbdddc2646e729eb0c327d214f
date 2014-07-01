@@ -16,6 +16,24 @@
       "revId": "19e1db785d5774cbdddc2646e729eb0c327d214f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1f77d503",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T03:33:33Z",
+      "side": 1,
+      "message": "Why only log that no mangler is defined? If anything I think we could LOG.debug the region and the key_mangler.",
+      "parentUuid": "dab895d6_56d06553",
+      "revId": "19e1db785d5774cbdddc2646e729eb0c327d214f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
