@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_201e1c71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T17:59:32Z",
+      "side": 1,
+      "message": "Closer, but like Marek suggested: https://wiki.openstack.org/wiki/GitCommitMessages\n\nThe first line should be a 50 character summary. After that should be a newline and then you can add paragraph details. The additional lines can be up to 72 characters.",
+      "revId": "b81139afbddc975147d985c45e489cc55c342d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bb1dfd68",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-01T17:59:32Z",
+      "side": 1,
+      "message": "I still think that there should be something between type and details to visually separate the two.",
+      "revId": "b81139afbddc975147d985c45e489cc55c342d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
