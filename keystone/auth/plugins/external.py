@@ -23,10 +23,13 @@ from keystone.common import config
 from keystone.common import dependency
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
+from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
 
 CONF = config.CONF
+
+LOG = log.getLogger(__name__)
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -184,3 +187,106 @@ class LegacyDomain(Base):
             domain_id = CONF.identity.default_domain_id
         user_ref = self.identity_api.get_user_by_name(username, domain_id)
         return user_ref
+
+
+@dependency.requires('assignment_api', 'identity_api')
+class X509SSLCert(auth.AuthMethodHandler):
+    """X.509 SSL client certificate authentication.
+
+    This plugin is not domain-aware.
+
+    This method must be used in conjunction with Apache mod_ssl. This also
+    implies that Keystone must also be running in Apache mod_wsgi.
+
+    In order for Apache mod_ssl to convey the SSL client certifciate
+    information in the request environment, the `SSLOptions` directive must
+    contains `+StdEnvVars` and the `SSLUserName` directive must set to a
+    valid SSL requirement enviroment attribute.
+    For example::
+
+        SSLOptions +StdEnvVars
+        SSLUserName SSL_CLIENT_S_DN_CN
+
+    .. note::
+
+        SSLUserName directive must not be used with +FakeBasicAuth option.
+
+    For more details, please refer to
+    `Apache mod_ssl  <http://httpd.apache.org/docs/2.2/mod/mod_ssl.html>`_
+
+    The auth method accepts the following configurations from the
+    `[x509_ssl_cert_auth]` section in the Keystone configuration file.
+
+    - `user_id_attribute` - the SSL client certificate attribute where
+                            Keystone user_id is conveyed.
+    - `username_attribute` - the SSL client certificate attribute where
+                             Keystone username is conveyed.
+    - `user_domain_id_attribute` - the SSL client certificate attribute
+                                   where Keystone user domain ID is conveyed
+                                   Will be ignored if plugin is not
+                                   domain-aware.
+    - `user_domain_name_attribute` - the SSL client certificate attribute
+                                     where Keystone user domain name is
+                                     conveyed. Will be ignored if plugin is
+                                     not domain-aware.
+    - `accept_ssl_client_verify_status` - list of acceptable SSL_CLIENT_VERIFY
+                                          status. SSL_CLIENT_VERIFY is one of
+                                          the environment variables set by
+                                          Apache mod_ssl to indicate the manner
+                                          in which the incoming SSL X.509
+                                          client certificate was validated.
+
+    The Keystone identity must be established from the above attributes.
+
+    """
+    method = 'x509'
+
+    def _get_domain_attributes(self, context):
+        # use default domain ID as this plugin is not domain-aware
+        return (CONF.identity.default_domain_id, None)
+
+    def _assert_ssl_client_verify(self, context):
+        client_verify = context['environment'].get('SSL_CLIENT_VERIFY')
+        allow_status = CONF.x509_ssl_cert_auth.accept_ssl_client_verify_status
+        if client_verify not in allow_status:
+            msg = _('Unable to verify incoming SSL X.509 client certificate.')
+            raise exception.Unauthorized(msg)
+
+    def authenticate(self, context, auth_info, auth_context):
+        # make sure the incoming client cert is verified by Apache
+        # frontend
+        self._assert_ssl_client_verify(context)
+
+        user_id = context['environment'].get(
+            CONF.x509_ssl_cert_auth.user_id_attribute)
+        username = context['environment'].get(
+            CONF.x509_ssl_cert_auth.username_attribute)
+
+        (user_domain_id, user_domain_name) = self._get_domain_attributes(
+            context)
+
+        try:
+            if user_id:
+                user_ref = self.identity_api.get_user(user_id)
+            elif username and (user_domain_id or user_domain_name):
+                if user_domain_name and not user_domain_id:
+                    user_domain_id = self.assignment_api.get_domain_by_name(
+                        user_domain_name)['id']
+                user_ref = self.identity_api.get_user_by_name(username,
+                                                              user_domain_id)
+            auth_context['user_id'] = user_ref['id']
+        except (exception.UserNotFound, exception.DomainNotFound) as e:
+            LOG.exception(e)
+            raise exception.Unauthorized(e)
+
+
+class X509SSLCertDomain(X509SSLCert):
+    """Domain-aware X.509 SSL client certificate authentication."""
+
+    def _get_domain_attributes(self, context):
+        user_domain_id = context['environment'].get(
+            CONF.x509_ssl_cert_auth.user_domain_id_attribute)
+        user_domain_name = context['environment'].get(
+            CONF.x509_ssl_cert_auth.user_domain_name_attribute)
+
+        return (user_domain_id, user_domain_name)
