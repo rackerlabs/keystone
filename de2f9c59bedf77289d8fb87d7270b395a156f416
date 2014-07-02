@@ -121,6 +121,24 @@
       "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f92f4cf4",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-02T20:31:44Z",
+      "side": 1,
+      "message": "++ or prompt user before removal.",
+      "parentUuid": "baada198_99bf30fb",
+      "revId": "de2f9c59bedf77289d8fb87d7270b395a156f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
