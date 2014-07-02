@@ -19,11 +19,13 @@ import six
 from keystone import assignment
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import validation
 from keystone import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 from keystone.openstack.common import timeutils
+from keystone.trust import schema
 
 
 LOG = log.getLogger(__name__)
@@ -118,6 +120,7 @@ class TrustV3(controller.V3Controller):
         return trust_roles
 
     @controller.protected()
+    @validation.schema(schema.trust_create, 'trust')
     def create_trust(self, context, trust=None):
         """Create a new trust.
 
