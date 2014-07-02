@@ -28,8 +28,8 @@ from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone.i18n import _
 from keystone import notifications
-from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import importutils
 from keystone.openstack.common import log
 
