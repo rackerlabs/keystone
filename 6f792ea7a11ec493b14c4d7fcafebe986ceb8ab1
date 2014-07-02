@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b6d41d48",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_80db68ec",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2d0d3491",
         "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-01T19:47:20Z",
       "side": 1,
       "message": "What\u0027s this for?",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_36c00d7c",
+        "filename": "keystone/common/sql/migrate_repo/versions/051_add_id_mapping.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "oops, sorry, left over from when we set a FK to domain table.  Removed.",
+      "parentUuid": "baada198_2d0d3491",
       "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_f62a152b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_23e9c380",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e3950be5",
         "filename": "keystone/identity/core.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-01T19:47:20Z",
       "side": 1,
       "message": "public_id should be listed as a param",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1621494d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_e3950be5",
       "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_361c8d13",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_63b01b8c",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_434a3781",
         "filename": "keystone/identity/id_generators/sha256.py",
         "patchSetId": 9
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_96d47921",
+        "filename": "keystone/identity/id_generators/sha256.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_434a3781",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c32c87ae",
         "filename": "keystone/tests/test_backend_id_mapping_sql.py",
         "patchSetId": 9
@@ -115,6 +223,24 @@
       "writtenOn": "2014-07-01T19:47:20Z",
       "side": 1,
       "message": "uuid is stdlib and should be in it\u0027s own section",
+      "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_764525b2",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T09:17:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_c32c87ae",
       "revId": "6f792ea7a11ec493b14c4d7fcafebe986ceb8ab1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
