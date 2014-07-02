@@ -17,6 +17,9 @@
 import os
 import sys
 
+from oslo import i18n
+
+
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
 # it will override what happens to be installed in /usr/(local/)lib/python...
 possible_topdir = os.path.normpath(os.path.join(os.path.abspath(sys.argv[0]),
@@ -27,12 +30,12 @@ if os.path.exists(os.path.join(possible_topdir,
                                '__init__.py')):
     sys.path.insert(0, possible_topdir)
 
-from keystone.openstack.common import gettextutils
-# NOTE(dstanek): gettextutils.enable_lazy() must be called before
-# gettextutils._() is called to ensure it has the desired lazy lookup
+# NOTE(dstanek): i18n.enable_lazy() must be called before
+# keystone.i18n._() is called to ensure it has the desired lazy lookup
 # behavior. This includes cases, like keystone.exceptions, where
-# gettextutils._() is called at import time.
-gettextutils.enable_lazy()
+# keystone.i18n._() is called at import time.
+i18n.enable_lazy()
+
 
 from keystone import cli
 from keystone.common import environment
