@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d94b6885",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-02T20:39:28Z",
+      "side": 1,
+      "message": "Could we add this bug to the commit message: \n\nhttps://bugs.launchpad.net/keystone/+bug/1317831\n\nI see there was a discussion in https://review.openstack.org/#/c/93013/ about which review to go with. If we do end up going with this review and adding the hacking check, we should include that bug in the commit message.",
+      "revId": "76baf5b691063e8845b9e9c72d55f416208a34ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
