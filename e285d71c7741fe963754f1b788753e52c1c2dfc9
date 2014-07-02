@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d5ba6e6d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-02T06:29:51Z",
+      "side": 1,
+      "message": "Maybe re-phrase subject line to:\n\nClean-up EP-Filter after project/endpoint delete",
+      "revId": "e285d71c7741fe963754f1b788753e52c1c2dfc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_277381e8",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-02T06:29:51Z",
+      "side": 1,
+      "message": "Why only setup notification for project deletes? What about notifications for endpoint deletes?",
+      "revId": "e285d71c7741fe963754f1b788753e52c1c2dfc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
