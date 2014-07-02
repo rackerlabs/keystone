@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1984000b",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-02T20:27:32Z",
+      "side": 1,
+      "message": "This may be a little verbose, but we could add an assertIn here to make sure the proper default value from new_trust is in auth_response: \n\nhttps://docs.python.org/2/library/unittest.html#unittest.TestCase.assertIn",
+      "revId": "4d8158db7301d84f2b94c3834a3c752955f8c0aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
