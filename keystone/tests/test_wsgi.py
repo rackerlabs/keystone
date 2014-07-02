@@ -18,15 +18,16 @@ import uuid
 
 from babel import localedata
 import mock
+from oslo import i18n
 from oslotest import mockpatch
+import six
 from testtools import matchers
 import webob
 
 from keystone.common import environment
 from keystone.common import wsgi
 from keystone import exception
-from keystone.openstack.common import gettextutils
-from keystone.openstack.common.gettextutils import _
+from keystone.i18n import _
 from keystone.openstack.common import jsonutils
 from keystone import tests
 
@@ -268,8 +269,8 @@ class LocalizedResponseTest(tests.TestCase):
     def setUp(self):
         super(LocalizedResponseTest, self).setUp()
 
-        gettextutils._AVAILABLE_LANGUAGES.clear()
-        self.addCleanup(gettextutils._AVAILABLE_LANGUAGES.clear)
+        i18n._gettextutils._AVAILABLE_LANGUAGES.clear()
+        self.addCleanup(i18n._gettextutils._AVAILABLE_LANGUAGES.clear)
 
     def _set_expected_languages(self, all_locales, avail_locales=None):
         # Override localedata.locale_identifiers to return some locales.
@@ -320,13 +321,17 @@ class LocalizedResponseTest(tests.TestCase):
         # Statically created message strings are Message objects so that they
         # are lazy-translated.
         self.assertIsInstance(exception.Unauthorized.message_format,
-                              gettextutils.Message)
+                              type(_('The resource could not be found.')))
 
     def test_dynamic_translated_string_is_Message(self):
-        # Dynamically created message strings are Message objects so that they
-        # are lazy-translated.
-        self.assertIsInstance(_('The resource could not be found.'),
-                              gettextutils.Message)
+        # Dynamically created message strings are objects not plain strings so
+        # that they can be lazy-translated.
+
+        # The translated message may be derived from six.text_type, but it's
+        # not six.text_type.
+        msg = _('The resource could not be found.')
+        self.assertIsInstance(msg, six.text_type)
+        self.assertNotEqual(type(msg), six.text_type)
 
     def test_get_localized_response(self):
         # If the request has the Accept-Language set to a supported language
