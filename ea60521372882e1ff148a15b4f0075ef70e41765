@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ec6c019f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-02T12:44:10Z",
+      "side": 1,
+      "message": "David Stanek, I think it is a good idea because in other LDAP backend functions, related with \"domains\", we return the same value https://github.com/openstack/keystone/blob/master/keystone/assignment/backends/ldap.py#L261",
+      "parentUuid": "baada198_7a3fe325",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ca5f6571",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "That\u0027s unfortunate.  Is it possible to repurpose these tests into test_backend so that all backends get tested?",
       "parentUuid": "baada198_677e87b0",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6c8471d4",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1456,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-02T12:44:10Z",
+      "side": 1,
+      "message": "David, I think it is, but get_roles_for_groups() function is not implemented yet on KVS https://github.com/openstack/keystone/blob/master/keystone/assignment/backends/kvs.py#L161\n\nSo, if we \"skip\" this test (until KVS implementation is done) on test_backend_kvs.py, I think there are no problems to move these tests to test_backend.py.\n\nAre you agree?",
+      "parentUuid": "baada198_1a0a678a",
       "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
