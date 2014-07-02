@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5022d0a4",
+        "filename": "keystone/exception.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-02T18:12:48Z",
+      "side": 1,
+      "message": "This should be removed as it is no longer used",
+      "revId": "3aa4260930bff38df016ba569aa5f8b5a89eeaf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
