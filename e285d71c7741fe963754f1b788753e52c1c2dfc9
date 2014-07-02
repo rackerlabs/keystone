@@ -33,6 +33,24 @@
       "revId": "e285d71c7741fe963754f1b788753e52c1c2dfc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1dac0c35",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-02T07:36:27Z",
+      "side": 1,
+      "message": "Currently, there is no notifications for endpoint, and I do not think it make much scenes to add notifications for endpoint.",
+      "parentUuid": "baada198_277381e8",
+      "revId": "e285d71c7741fe963754f1b788753e52c1c2dfc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
