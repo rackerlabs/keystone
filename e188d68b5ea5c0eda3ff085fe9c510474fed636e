@@ -33,6 +33,24 @@
       "revId": "e188d68b5ea5c0eda3ff085fe9c510474fed636e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ff9d5a5a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2014-07-03T09:42:03Z",
+      "side": 1,
+      "message": "hi David Stanek, I do think explicitly use the kwargs is better, but could you point out the particular reason for this? thanks for the help",
+      "parentUuid": "baada198_806d2835",
+      "revId": "e188d68b5ea5c0eda3ff085fe9c510474fed636e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
