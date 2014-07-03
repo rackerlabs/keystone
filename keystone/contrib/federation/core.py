@@ -214,3 +214,50 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def create_sp(self, sp_id, sp):
+        """Create an identity provider.
+
+        :returns: sp_ref
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def delete_sp(self, sp_id):
+        """Delete an identity provider.
+
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def list_sps(self):
+        """List all identity providers.
+
+        :returns List of sp_ref objects
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_sp(self, sp_id):
+        """Get an identity provider by ID.
+
+        :returns: sp_ref
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def update_sp(self, sp_id, sp):
+        """Update an identity provider by ID.
+
+        :returns: sp_ref
+        :raises: keystone.exception.IdentityProviderNotFound
+
+        """
+        raise exception.NotImplemented()

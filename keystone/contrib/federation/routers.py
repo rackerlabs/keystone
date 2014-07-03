@@ -62,6 +62,13 @@ class FederationExtension(_BaseFederationExtension):
         POST /OS-FEDERATION/identity_providers/$identity_provider/
             protocols/$protocol/auth
 
+        PUT /OS-FEDERATION/service_providers/$service_provider
+        GET /OS-FEDERATION/service_providers
+        GET /OS-FEDERATION/service_providers/$service_provider
+        DELETE /OS-FEDERATION/service_providers/$service_provider
+        PATCH /OS-FEDERATION/service_providers/$service_provider
+
+
     """
     def add_routes(self, mapper):
         # This is needed for dependency injection
@@ -73,6 +80,7 @@ class FederationExtension(_BaseFederationExtension):
         mapping_controller = controllers.MappingController()
         project_controller = controllers.ProjectV3()
         domain_controller = controllers.DomainV3()
+        sp_controller = controllers.ServiceProvider()
 
         # Identity Provider CRUD operations
 
@@ -194,3 +202,35 @@ class FederationExtension(_BaseFederationExtension):
             controller=auth_controller,
             action='federated_authentication',
             conditions=dict(method=['GET', 'POST']))
+
+        # Service Provider CRUD operations
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='create_service_provider',
+            conditions=dict(method=['PUT']))
+
+        mapper.connect(
+            self._construct_url('service_providers'),
+            controller=sp_controller,
+            action='list_service_providers',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='get_service_provider',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='delete_service_provider',
+            conditions=dict(method=['DELETE']))
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='update_service_provider',
+            conditions=dict(method=['PATCH']))
