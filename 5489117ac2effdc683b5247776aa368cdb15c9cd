@@ -16,6 +16,24 @@
       "revId": "5489117ac2effdc683b5247776aa368cdb15c9cd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_64160557",
+        "filename": "keystone/tests/rest.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-03T20:43:34Z",
+      "side": 1,
+      "message": "content_type isn\u0027t just the request content type, it\u0027s also the default response_content_type.",
+      "parentUuid": "baada198_83f252d0",
+      "revId": "5489117ac2effdc683b5247776aa368cdb15c9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
