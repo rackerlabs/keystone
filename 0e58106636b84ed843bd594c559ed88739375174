@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c97b6ff3",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Not sure , how this will work. If Apache calls  HEAD auth/tokens  where will the control go? check_token or validate_token.?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0320e6aa",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ce60d5a7",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Don\u0027t we need to handle HEAD here? Looks like this code returns exception as body?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8e6a5d7f",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ee0cb9ef",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4efbe5c0",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8e017db1",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aefe41ac",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6e1fc908",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0981e7fa",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Do we need to communicate this change?  if some one is using this api, then it will be breaking ?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_69a2639a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-03T18:26:13Z",
+      "side": 1,
+      "message": "Can we assert the response to make sure that we don\u0027t have response body?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
