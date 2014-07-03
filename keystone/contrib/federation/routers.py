@@ -194,3 +194,54 @@ class FederationExtension(_BaseFederationExtension):
             controller=auth_controller,
             action='federated_authentication',
             conditions=dict(method=['GET', 'POST']))
+
+
+class Keystone2KeystoneExtension(_BaseFederationExtension):
+    """API Endpoints for the Federation extension.
+
+    The API looks like::
+
+        PUT /OS-FEDERATION/service_providers/$service_provider
+        GET /OS-FEDERATION/service_providers
+        GET /OS-FEDERATION/service_providers/$service_provider
+        DELETE /OS-FEDERATION/service_providers/$service_provider
+        PATCH /OS-FEDERATION/service_providers/$service_provider
+
+    """
+    def add_routes(self, mapper):
+        # This is needed for dependency injection
+        # it loads the Federation driver which registers it as a dependency.
+        federation.Manager()
+        sp_controller = controllers.ServiceProvider()
+
+        # Service Provider CRUD operations
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='create_service_provider',
+            conditions=dict(method=['PUT']))
+
+        mapper.connect(
+            self._construct_url('service_providers'),
+            controller=sp_controller,
+            action='list_service_providers',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='get_service_provider',
+            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='delete_service_provider',
+            conditions=dict(method=['DELETE']))
+
+        mapper.connect(
+            self._construct_url('service_providers/{sp_id}'),
+            controller=sp_controller,
+            action='update_service_provider',
+            conditions=dict(method=['PATCH']))

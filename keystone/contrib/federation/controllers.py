@@ -294,3 +294,28 @@ class ProjectV3(controller.V3Controller):
         projects = self.assignment_api.list_projects_for_groups(
             auth_context['group_ids'])
         return ProjectV3.wrap_collection(context, projects)
+
+
+@dependency.requires('federation_api')
+class ServiceProvider(_ControllerBase):
+    """Service Provider presentation."""
+
+    @controller.protected
+    def create_service_providers(self, context, sp_id, service_provider):
+        pass
+
+    @controller.protected
+    def list_service_providers(self, context):
+        pass
+
+    @controller.protected
+    def get_service_provider(self, context):
+        pass
+
+    @controller.protected
+    def delete_service_provider(self, context):
+        pass
+
+    @controller.protected
+    def update_service_provider(self, context, sp_id, service_provider):
+        pass
