@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b7b76d39",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T20:50:29Z",
+      "side": 1,
+      "message": "I\u0027m content to switch this, as long as it\u0027s consistent for matching (defensive, it should always be one way or another anyway)",
+      "parentUuid": "baada198_a453bd69",
+      "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_44b5817c",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_57ce11b5",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T20:50:29Z",
+      "side": 1,
+      "message": "Hm. ok this looks like we should allow it. The fact that render_response does the body strip here, this would be correct to keep.",
+      "parentUuid": "baada198_44b5817c",
+      "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_842799c9",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-03T20:46:19Z",
       "side": 1,
       "message": "seems like an irrelevant change",
+      "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b7bccd07",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T20:50:29Z",
+      "side": 1,
+      "message": "Huh, how did that slip in? weird.\n\nThis iwll be reverted in the next patch.",
+      "parentUuid": "baada198_842799c9",
       "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
