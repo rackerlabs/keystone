@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a453bd69",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-03T20:46:19Z",
+      "side": 1,
+      "message": "tempted to say this should be upper() because convention",
+      "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_44b5817c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-03T20:46:19Z",
+      "side": 1,
+      "message": "not sure i understand the new condition -- it seems a HEAD request could return 204 legitimately",
+      "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_842799c9",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-03T20:46:19Z",
+      "side": 1,
+      "message": "seems like an irrelevant change",
+      "revId": "b5f297c54a3b5f39a7e7d82108e743492912d320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
