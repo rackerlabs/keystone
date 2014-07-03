@@ -1560,3 +1560,102 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class ServiceProviderTests(FederationTests):
+    """A test class for Service Providers."""
+
+    MEMBER_NAME = 'service_provider'
+    COLLECTION_NAME = 'service_providers'
+    SERVICE_PROVIDER_ID = 'ACME'
+    SP_KEYS = ['id', 'enabled', 'description']
+
+    def setUp(self):
+        super(FederationTests, self).setUp()
+        # Add examplous SP
+        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+        self.SP_REF = self.sp_ref()
+        self.SERVICE_PROVIDER = self.put(
+            url, body={'service_provider': self.SP_REF},
+            expected_status=201).result
+
+    def sp_ref(self):
+        ref = {
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        return ref
+
+    def base_url(self, suffix=None):
+        if suffix is not None:
+            return '/OS-FEDERATION/service_providers/' + str(suffix)
+        return '/OS-FEDERATION/service_providers'
+
+    def test_get_service_provider(self):
+        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+        resp = self.get(url, expected_status=200)
+        self.assertValidEntity(resp.result['service_provider'],
+                               keys_to_check=self.SP_KEYS)
+
+    def test_get_service_provider_fail(self):
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        self.get(url, expected_status=404)
+
+    def test_create_service_provider(self):
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        sp = self.sp_ref()
+        resp = self.put(url, body={'service_provider': sp},
+                        expected_status=201)
+        self.assertValidEntity(resp.result['service_provider'],
+                               keys_to_check=self.SP_KEYS)
+
+    def test_create_service_provider_fail(self):
+        """Try adding SP object with unallowed attribute."""
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        sp = self.sp_ref()
+        sp[uuid.uuid4().hex] = uuid.uuid4().hex
+        self.put(url, body={'service_provider': sp},
+                 expected_status=403)
+
+    # TODO(marek-denis)
+    def test_list_service_providers(self):
+        pass
+
+    def test_update_service_provider(self):
+        new_sp_ref = self.sp_ref()
+        new_sp_ref['description'] = uuid.uuid4().hex
+        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+        resp = self.patch(url, body={'service_provider': new_sp_ref},
+                          expected_status=200)
+        patch_result = resp.result
+        self.assertValidEntity(patch_result['service_provider'],
+                               keys_to_check=self.SP_KEYS)
+
+        # TODO(marek-denis): compare parameters' values
+        resp = self.get(url, expected_status=200)
+        get_result = resp.result
+
+        self.assertDictEqual(patch_result['service_provider'],
+                             get_result['service_provider'])
+
+    def test_update_service_provider_fail(self):
+        new_sp_ref = self.sp_ref()
+        new_sp_ref[uuid.uuid4().hex] = uuid.uuid4().hex
+        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+        self.patch(url, body={'service_provider': new_sp_ref},
+                   expected_status=403)
+
+    def test_update_service_provider_404(self):
+        new_sp_ref = self.sp_ref()
+        new_sp_ref['description'] = uuid.uuid4().hex
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        self.patch(url, body={'service_provider': new_sp_ref},
+                   expected_status=404)
+
+    def test_delete_service_provider(self):
+        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+        self.delete(url, expected_status=204)
+
+    def test_delete_service_provider_404(self):
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        self.delete(url, expected_status=404)

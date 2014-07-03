@@ -153,5 +153,11 @@
     "identity:list_projects_for_groups": "",
     "identity:list_domains_for_groups": "",
 
+    "identity:create_service_provider": "rule:admin_required",
+    "identity:list_service_providers": "rule:admin_required",
+    "identity:get_service_providers": "rule:admin_required",
+    "identity:update_service_provider": "rule:admin_required",
+    "identity:delete_service_provider": "rule:admin_required",
+
     "identity:list_revoke_events": ""
 }
