@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f467264b",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-03T19:26:53Z",
+      "side": 1,
+      "message": "The title, is currently Pythonic in nature which is of course great but I\u0027m wondering who the target audience is? For me, a sub-title, like:\n\n``Calling a Function with Keyword Arguments``\n\nWould possibly make quicker sense to Python newbies reading this.",
+      "revId": "99d589fce4fb41f95653152a153896390b1dcb85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b4a5ae48",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-03T19:26:53Z",
+      "side": 1,
+      "message": "A method is an internal/member class function. I personally wouldn\u0027t call it out explicitly here and just use function. Perhaps re-phrase the first two sentences to:\n\n\"\nWhen calling a function that has optional parameters (with default values) use keyword arguments. For example::\n...\n\"",
+      "revId": "99d589fce4fb41f95653152a153896390b1dcb85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
