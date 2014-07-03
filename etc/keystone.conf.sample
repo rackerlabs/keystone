@@ -918,6 +918,15 @@
 # userAccountControl". (string value)
 #user_enabled_default=True
 
+# Invert the meaning of boolean enabled values. Some LDAP
+# servers use a boolean lock attribute where "True" means an
+# account is disabled. Setting this to "True" will allow these
+# lock attributes to be used as the Keystone enable attribute.
+# When this is set to "True", the "user_enabled_default" value
+# should be set to the default value that is desired as stored
+# in the LDAP server.
+#user_enabled_invert=False
+
 # List of attributes stripped off the user on update. (list
 # value)
 #user_attribute_ignore=default_project_id,tenants

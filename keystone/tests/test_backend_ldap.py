@@ -1082,6 +1082,75 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertIs(user_ref['enabled'], True)
         self.assertNotIn('enabled_nomask', user_ref)
 
+    def test_user_enabled_invert(self):
+        self.config_fixture.config(group='ldap', user_enabled_invert=True,
+                                   user_enabled_default=False)
+        self.clear_database()
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+        ldap_ = self.identity_api.driver.user.get_connection()
+
+        def get_enabled_vals(user):
+            user_dn = (
+                self.identity_api.driver.user._id_to_dn_string(user['id']))
+            enabled_attr_name = CONF.ldap.user_enabled_attribute
+
+            res = ldap_.search_s(user_dn,
+                                 ldap.SCOPE_BASE,
+                                 u'(sn=%s)' % user['name'])
+            return res[0][1][enabled_attr_name]
+
+        user1 = {'name': u'fäké1', 'enabled': True,
+                 'domain_id': CONF.identity.default_domain_id}
+
+        user2 = {'name': u'fäké2', 'enabled': False,
+                 'domain_id': CONF.identity.default_domain_id}
+
+        user3 = {'name': u'fäké3',
+                 'domain_id': CONF.identity.default_domain_id}
+
+        # Ensure that the LDAP attribute is False for a newly created
+        # enabled user.
+        user_ref = self.identity_api.create_user(user1)
+        self.assertIs(user_ref['enabled'], True)
+        enabled_vals = get_enabled_vals(user_ref)
+        self.assertEqual([False], enabled_vals)
+        user_ref = self.identity_api.get_user(user_ref['id'])
+        self.assertIs(user_ref['enabled'], True)
+
+        # Ensure that the LDAP attribute is True for a disabled user.
+        user1['enabled'] = False
+        user_ref = self.identity_api.update_user(user_ref['id'], user1)
+        self.assertIs(user_ref['enabled'], False)
+        enabled_vals = get_enabled_vals(user_ref)
+        self.assertEqual([True], enabled_vals)
+
+        # Enable the user and ensure that the LDAP attribute is True again.
+        user1['enabled'] = True
+        user_ref = self.identity_api.update_user(user_ref['id'], user1)
+        self.assertIs(user_ref['enabled'], True)
+        enabled_vals = get_enabled_vals(user_ref)
+        self.assertEqual([False], enabled_vals)
+
+        # Ensure that the LDAP attribute is True for a newly created
+        # disabled user.
+        user_ref = self.identity_api.create_user(user2)
+        self.assertIs(user_ref['enabled'], False)
+        enabled_vals = get_enabled_vals(user_ref)
+        self.assertEqual([True], enabled_vals)
+        user_ref = self.identity_api.get_user(user_ref['id'])
+        self.assertIs(user_ref['enabled'], False)
+
+        # Ensure that the LDAP attribute is inverted for a newly created
+        # user when the user_enabled_default setting is used.
+        user_ref = self.identity_api.create_user(user3)
+        self.assertIs(user_ref['enabled'], True)
+        enabled_vals = get_enabled_vals(user_ref)
+        self.assertEqual([False], enabled_vals)
+        user_ref = self.identity_api.get_user(user_ref['id'])
+        self.assertIs(user_ref['enabled'], True)
+
     @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'simple_bind_s')
     def test_user_api_get_connection_no_user_password(self, mocked_method):
         """Don't bind in case the user and password are blank."""
@@ -1609,6 +1678,10 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def test_user_enable_attribute_mask(self):
         self.skipTest(
             "Enabled emulation conflicts with enabled mask")
+
+    def test_user_enabled_invert(self):
+        self.skipTest(
+            "Enabled emulation conflicts with enabled invert")
 
 
 class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
