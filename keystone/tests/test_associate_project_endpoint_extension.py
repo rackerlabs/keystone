@@ -162,6 +162,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
                      {'endpoint_id': self.endpoint_id},
                      expected_status=200)
         self.assertValidProjectListResponse(r, expected_length=0)
+        self.assertTrue(False)
 
     def test_list_projects_for_endpoint_noendpoint(self):
         """GET /OS-EP-FILTER/endpoints/{endpoint_id}/projects
