@@ -33,3 +33,9 @@ class SqlFederation(test_backend_sql.SqlModels):
                 ('idp_id', sql.String, 64),
                 ('mapping_id', sql.String, 64))
         self.assertExpectedSchema('federation_protocol', cols)
+
+    def test_service_provider(self):
+        cols = (('id', sql.String, 64),
+                ('enabled', sql.Boolean, None),
+                ('description', sql.Text, None))
+        self.assertExpectedSchema('service_provider', cols)

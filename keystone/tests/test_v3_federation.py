@@ -1560,3 +1560,59 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class ServiceProviderTests(FederationTests):
+    """A test class for Service Providers."""
+
+    MEMBER_NAME = 'service_provider'
+    COLLECTION_NAME = 'service_providers'
+    SERVICE_PROVIDER_ID = 'ACME'
+
+    def new_ref(self):
+        ref = {
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        return ref
+
+    def new_ref_enhanced(self, ref):
+        ref.setdefault('id', self.SERVICE_PROVIDER_ID)
+        if 'links' not in ref:
+            links = {
+                "self": self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+            }
+            ref['links'] = links
+
+    def base_url(self, suffix=None):
+        if suffix:
+            return '/OS-FEDERATION/service_providers/' + str(suffix)
+        return '/OS-FEDERATION/service_providers'
+
+# TEST METHODS
+    def test_get_service_provider(self):
+        pass
+
+    def test_get_service_provider_fail(self):
+        pass
+
+    def test_create_service_provider(self):
+        pass
+
+    def test_create_service_provider_fail(self):
+        pass
+
+    def test_list_service_providers(self):
+        pass
+
+    def test_update_service_provider(self):
+        pass
+
+    def test_update_service_provider_fail(self):
+        pass
+
+    def test_delete_service_provider(self):
+        pass
+
+    def test_delete_service_provider_404(self):
+        pass
