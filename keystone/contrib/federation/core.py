@@ -224,3 +224,50 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_sp(self, sp_id, sp):
+        """Create a service provider.
+
+        :returns: sp_ref
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_sp(self, sp_id):
+        """Delete a service provider.
+
+        :raises: keystone.exception.ServiceProviderNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_sps(self):
+        """List all service providers.
+
+        :returns List of sp_ref objects
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_sp(self, sp_id):
+        """Get a service provider.
+
+        :returns: sp_ref
+        :raises: keystone.exception.ServiceProviderNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_sp(self, sp_id, sp):
+        """Update a service provider.
+
+        :returns: sp_ref
+        :raises: keystone.exception.ServiceProviderNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
