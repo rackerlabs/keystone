@@ -369,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e18e87cf",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T20:10:32Z",
+      "side": 1,
+      "message": "That link was for the comment below about head asserting body was empty.",
+      "parentUuid": "baada198_8f56d728",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_69a2639a",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 2
@@ -398,6 +416,24 @@
       "side": 1,
       "message": "The self.head() call already does this (part of this changeset).",
       "parentUuid": "baada198_69a2639a",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_21c4fff3",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T20:10:32Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/104026/2/keystone/tests/test_v3.py",
+      "parentUuid": "baada198_cf336f12",
       "revId": "0e58106636b84ed843bd594c559ed88739375174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
