@@ -36,3 +36,23 @@ AssertEqual argument order
 --------------------------
 
 assertEqual method's arguments should be in ('expected', 'actual') order.
+
+
+Properly Calling Callables
+--------------------------
+
+Methods and functions can specify optional parameters (with default values)
+using Python's keyword arg syntax. When calling a method that uses this
+syntax we prefer that the call also uses keyword arg syntax. For example::
+
+    def f(required, optional=None):
+        pass
+
+    # GOOD
+    f(0, optional=True)
+
+    # BAD
+    f(0, True)
+
+This gives us the flexibility to re-order arguments and more importantly
+to add new required arguments. It's also more explicit and easier to read.
