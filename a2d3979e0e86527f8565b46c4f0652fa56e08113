@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1d34c548",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-03T16:33:40Z",
+      "side": 1,
+      "message": "Do we need a DocImpact tag to retrofit the doc?",
+      "revId": "a2d3979e0e86527f8565b46c4f0652fa56e08113",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
