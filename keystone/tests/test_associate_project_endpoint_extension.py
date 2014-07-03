@@ -52,6 +52,7 @@ class AssociateEndpointProjectFilterCRUDTestCase(TestExtensionCase):
         Valid endpoint and project id test case.
 
         """
+        print 'test'
         self.put(self.default_request_url,
                  body='',
                  expected_status=204)
