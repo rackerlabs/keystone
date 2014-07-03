@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ef9cb311",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "This works but is done in this manner because of policy, see the comment above. We can\u0027t remove this unless we also break policy configuration(s).\n\nI\u0027d prefer to not break policy config for icehouse, we can work on this in Juno and evaluate independent of this change.",
+      "parentUuid": "baada198_c97b6ff3",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0320e6aa",
         "filename": "keystone/auth/routers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-03T18:26:13Z",
       "side": 1,
       "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_afe0fb96",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "This can probably be removed.  I added this due to something bug related during development.",
+      "parentUuid": "baada198_0320e6aa",
       "revId": "0e58106636b84ed843bd594c559ed88739375174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8f9177f3",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "No, the exception changes the status. This is not relevant for HEAD vs BODY.",
+      "parentUuid": "baada198_ce60d5a7",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8e6a5d7f",
         "filename": "keystone/contrib/admin_crud/core.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-03T18:26:13Z",
       "side": 1,
       "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2fba2b6e",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "Can be removed.",
+      "parentUuid": "baada198_8e6a5d7f",
       "revId": "0e58106636b84ed843bd594c559ed88739375174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_4fb2ff94",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "Can be removed.",
+      "parentUuid": "baada198_ee0cb9ef",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_4efbe5c0",
         "filename": "keystone/contrib/admin_crud/core.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-03T18:26:13Z",
       "side": 1,
       "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6fafc32a",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "baada198_4efbe5c0",
       "revId": "0e58106636b84ed843bd594c559ed88739375174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ef6af3ec",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "baada198_8e017db1",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_aefe41ac",
         "filename": "keystone/contrib/admin_crud/core.py",
         "patchSetId": 2
@@ -132,6 +258,41 @@
       "writtenOn": "2014-07-03T18:26:13Z",
       "side": 1,
       "message": "Do we need HEAD here?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2f714be0",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "baada198_aefe41ac",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4f791fc7",
+        "filename": "keystone/contrib/admin_crud/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "same",
       "revId": "0e58106636b84ed843bd594c559ed88739375174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8f7fb7aa",
+        "filename": "keystone/contrib/stats/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "same as before",
+      "parentUuid": "baada198_6e1fc908",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0981e7fa",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 2
@@ -172,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8f56d728",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "This is the point of the bug and the ML topic to cover if we want this and communicating.\n\nhttps://review.openstack.org/#/c/104026/2/keystone/tests/test_v3.py",
+      "parentUuid": "baada198_0981e7fa",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_69a2639a",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 2
@@ -183,6 +380,24 @@
       "writtenOn": "2014-07-03T18:26:13Z",
       "side": 1,
       "message": "Can we assert the response to make sure that we don\u0027t have response body?",
+      "revId": "0e58106636b84ed843bd594c559ed88739375174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cf336f12",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-03T19:45:22Z",
+      "side": 1,
+      "message": "The self.head() call already does this (part of this changeset).",
+      "parentUuid": "baada198_69a2639a",
       "revId": "0e58106636b84ed843bd594c559ed88739375174",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
