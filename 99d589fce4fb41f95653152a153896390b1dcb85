@@ -33,6 +33,23 @@
       "revId": "99d589fce4fb41f95653152a153896390b1dcb85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4481efc1",
+        "filename": "HACKING.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2014-07-04T09:27:24Z",
+      "side": 1,
+      "message": "nit: may be s/arg/argument/, since this is a formal (like) document",
+      "revId": "99d589fce4fb41f95653152a153896390b1dcb85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
