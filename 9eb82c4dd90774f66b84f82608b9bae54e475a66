@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_a411eb53",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-04T08:56:41Z",
+      "side": 1,
+      "message": "representation of course :-)",
+      "parentUuid": "baada198_d7186177",
+      "revId": "9eb82c4dd90774f66b84f82608b9bae54e475a66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f74f2569",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-03T20:46:00Z",
       "side": 1,
       "message": "why have it in it\u0027s own class?",
+      "revId": "9eb82c4dd90774f66b84f82608b9bae54e475a66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_247b1b8d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-04T08:56:41Z",
+      "side": 1,
+      "message": "For some logical split.  Icehouse federation will probably differ from Juno federation.\nAnyway, it\u0027s squeezed into single class now.",
+      "parentUuid": "baada198_f74f2569",
       "revId": "9eb82c4dd90774f66b84f82608b9bae54e475a66",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
