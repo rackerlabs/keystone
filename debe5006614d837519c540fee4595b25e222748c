@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6ba317b2",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cbaee397",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eb96474b",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/IdentityProviderNotFound/ServiceProviderNotFound",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b945b41",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4b9ad36e",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cb850308",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/IdentityProviderNotFound/ServiceProviderNotFound",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6b8a371c",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eb7d671d",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-04T16:04:27Z",
+      "side": 1,
+      "message": "s/IdentityProviderNotFound/ServiceProviderNotFound",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
