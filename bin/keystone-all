@@ -63,7 +63,6 @@ class ServerWrapper(object):
         self.workers = workers
 
     def launch_with(self, launcher):
-        self.server.listen()
         if self.workers > 1:
             # Use multi-process launcher
             launcher.launch_service(self.server, self.workers)
