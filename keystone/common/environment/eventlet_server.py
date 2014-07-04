@@ -58,7 +58,7 @@ class Server(object):
     """Server class to manage multiple WSGI sockets and applications."""
 
     def __init__(self, application, host=None, port=None, threads=1000,
-                 keepalive=False, keepidle=None):
+                 keepalive=False, keepidle=None, backlog=128):
         self.application = application
         self.host = host or '0.0.0.0'
         self.port = port or 0
@@ -71,16 +71,6 @@ class Server(object):
         self.keepidle = keepidle
         self.socket = None
 
-    def start(self, key=None, backlog=128):
-        """Run a WSGI server with the given application."""
-
-        if self.socket is None:
-            self.listen(key=key, backlog=backlog)
-
-        self.greenthread = self.pool.spawn(self._run,
-                                           self.application,
-                                           self.socket)
-
     def listen(self, key=None, backlog=128):
         """Create and start listening on socket.
 
@@ -89,49 +79,71 @@ class Server(object):
         Raises Exception if this has already been called.
         """
 
-        if self.socket is not None:
-            raise Exception(_('Server can only listen once.'))
+        bind_addr = (self.host, self.port)
+        # TODO(dims): eventlet's green dns/socket module does not actually
+        # support IPv6 in getaddrinfo(). We need to get around this in the
+        # future or monitor upstream for a fix.
+        # Please refer below link
+        # (https://bitbucket.org/eventlet/eventlet/
+        # src/e0f578180d7d82d2ed3d8a96d520103503c524ec/eventlet/support/
+        # greendns.py?at=0.12#cl-163)
+        try:
+            info = socket.getaddrinfo(bind_addr[0],
+                                      bind_addr[1],
+                                      socket.AF_UNSPEC,
+                                      socket.SOCK_STREAM)[0]
+        except socket.gaierror:
+            family = socket.AF_INET
+        else:
+            family = info[0]
+            bind_addr = info[-1]
+
+        try:
+            self.socket = eventlet.listen(bind_addr, family, backlog=backlog)
+        except EnvironmentError:
+            LOG.error(_("Could not bind to %(host)s:%(port)s"),
+                      {'host': self.host, 'port': self.port})
+            raise
 
         LOG.info(_('Starting %(arg0)s on %(host)s:%(port)s'),
                  {'arg0': sys.argv[0],
                   'host': self.host,
                   'port': self.port})
 
-        # TODO(dims): eventlet's green dns/socket module does not actually
-        # support IPv6 in getaddrinfo(). We need to get around this in the
-        # future or monitor upstream for a fix
-        info = socket.getaddrinfo(self.host,
-                                  self.port,
-                                  socket.AF_UNSPEC,
-                                  socket.SOCK_STREAM)[0]
-        _socket = eventlet.listen(info[-1],
-                                  family=info[0],
-                                  backlog=backlog)
+    def start(self, key=None, backlog=128):
+        """Run a WSGI server with the given application."""
+
+        if self.socket is None:
+            self.listen(key=key, backlog=backlog)
+
+        dup_socket = self.socket.dup()
         if key:
-            self.socket_info[key] = _socket.getsockname()
+            self.socket_info[key] = self.socket.getsockname()
         # SSL is enabled
         if self.do_ssl:
             if self.cert_required:
                 cert_reqs = ssl.CERT_REQUIRED
             else:
                 cert_reqs = ssl.CERT_NONE
-            sslsocket = eventlet.wrap_ssl(_socket, certfile=self.certfile,
-                                          keyfile=self.keyfile,
-                                          server_side=True,
-                                          cert_reqs=cert_reqs,
-                                          ca_certs=self.ca_certs)
-            _socket = sslsocket
+
+            dup_socket = eventlet.wrap_ssl(dup_socket, certfile=self.certfile,
+                                           keyfile=self.keyfile,
+                                           server_side=True,
+                                           cert_reqs=cert_reqs,
+                                           ca_certs=self.ca_certs)
 
         # Optionally enable keepalive on the wsgi socket.
         if self.keepalive:
-            _socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+            dup_socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
 
             # This option isn't available in the OS X version of eventlet
             if hasattr(socket, 'TCP_KEEPIDLE') and self.keepidle is not None:
-                _socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPIDLE,
-                                   self.keepidle)
+                dup_socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPIDLE,
+                                      self.keepidle)
 
-        self.socket = _socket
+        self.greenthread = self.pool.spawn(self._run,
+                                           self.application,
+                                           dup_socket)
 
     def set_ssl(self, certfile, keyfile=None, ca_certs=None,
                 cert_required=True):
@@ -141,12 +153,9 @@ class Server(object):
         self.cert_required = cert_required
         self.do_ssl = True
 
-    def kill(self):
+    def stop(self):
         if self.greenthread is not None:
             self.greenthread.kill()
-
-    def stop(self):
-        self.kill()
 
     def wait(self):
         """Wait until all servers have completed running."""
@@ -156,6 +165,17 @@ class Server(object):
             pass
         except greenlet.GreenletExit:
             pass
+
+    def reset(self):
+        """Required by the service interface.
+
+        The service interface is used by the launcher when receiving a
+        SIGHUP. The service interface is defined in
+        keystone.openstack.common.service.Service.
+
+        Keystone does not need to do anything here.
+        """
+        pass
 
     def _run(self, application, socket):
         """Start a WSGI server in a new green thread."""
