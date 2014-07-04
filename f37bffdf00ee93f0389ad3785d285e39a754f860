@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_227ef6e4",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-04T03:11:32Z",
+      "side": 1,
+      "message": "Can you elaborate further on why you are not using the notification framework to delete the endpoint association(s)? I don\u0027t currently understand the objection to setting up notification on endpoint similar to project.",
+      "revId": "f37bffdf00ee93f0389ad3785d285e39a754f860",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0af70b5a",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-04T03:11:32Z",
+      "side": 1,
+      "message": "With this change this TODO is redundant and therefore should be removed.",
+      "revId": "f37bffdf00ee93f0389ad3785d285e39a754f860",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eaf9f74e",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-04T03:11:32Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "f37bffdf00ee93f0389ad3785d285e39a754f860",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
