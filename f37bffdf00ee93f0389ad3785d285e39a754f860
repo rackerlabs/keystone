@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c4525fdd",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-04T09:03:10Z",
+      "side": 1,
+      "message": "Sorry, because my mistake, I thought the notification framework will always send public RPC notification. If so, I think endpoint is not important enough to send public RPC notification. But, today I found we have parameter to control whether notification framework sends public notification. As a result, I will use the notification framework to delete the endpoint association too.",
+      "parentUuid": "baada198_227ef6e4",
+      "revId": "f37bffdf00ee93f0389ad3785d285e39a754f860",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0af70b5a",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 7
