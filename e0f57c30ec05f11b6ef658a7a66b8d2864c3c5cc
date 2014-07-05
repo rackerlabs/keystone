@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0ce54e37",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-05T04:39:40Z",
+      "side": 1,
+      "message": "thanks for mentioning this, i was confused as to why we were resetting content length.",
+      "revId": "e0f57c30ec05f11b6ef658a7a66b8d2864c3c5cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
