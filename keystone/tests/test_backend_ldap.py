@@ -1370,7 +1370,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         #              provides a different update test
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                    'domain_id': CONF.identity.default_domain_id,
-                   'description': uuid.uuid4().hex, 'enabled': True
+                   'description': uuid.uuid4().hex, 'enabled': True,
+                   'parent_project_id': None
                    }
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
@@ -1386,6 +1387,54 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.get_project,
                           project['id'])
+
+    def test_hierarchical_projects_crud(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_list_project_parents(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_list_project_children(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_with_invalid_parent(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_check_leaf_projects(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_not_leaf_project_parent_project_id(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_leaf_project_parent_project_id(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_not_valid_parent_project_id(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_none_parent_project_id(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_leaf_project(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_not_leaf_project(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_depth_0(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_depth_3(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_depth_not_allowed(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_project_depth_3(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_project_depth_not_allowed(self):
+        self.skipTest('LDAP does not support hierarchical projects')
 
     @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
@@ -1615,7 +1664,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
-            'description': uuid.uuid4().hex}
+            'description': uuid.uuid4().hex,
+            'parent_project_id': None}
 
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
