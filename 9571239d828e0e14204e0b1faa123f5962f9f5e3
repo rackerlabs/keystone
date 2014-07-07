@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c6bde303",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1923,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-07T05:45:27Z",
+      "side": 1,
+      "message": "what\u0027s going on here?\n\nwhy not just:\n\n  self.v3_authenticate_token(auth_data, expected_status\u003dexpected_status)",
+      "revId": "9571239d828e0e14204e0b1faa123f5962f9f5e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
