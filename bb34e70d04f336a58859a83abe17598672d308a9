@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4b3b9eea",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-07T05:32:25Z",
+      "side": 1,
+      "message": "nit: s/developments/development",
+      "revId": "bb34e70d04f336a58859a83abe17598672d308a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
