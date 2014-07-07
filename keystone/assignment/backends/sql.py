@@ -56,6 +56,24 @@ class Assignment(keystone_assignment.Driver):
                 raise exception.ProjectNotFound(project_id=tenant_name)
             return project_ref.to_dict()
 
+    def get_project_hierarchy(self, tenant_id):
+        with sql.transaction() as session:
+            tenant = self._get_project(session, tenant_id).to_dict()
+            hierarchy = tenant['id']
+            while tenant['parent_project_id'] is not None:
+                parent_tenant = self._get_project(
+                    session, tenant['parent_project_id']).to_dict()
+                hierarchy = parent_tenant['id'] + '.' + hierarchy
+                tenant = parent_tenant
+            return hierarchy
+
+    def is_leaf_project(self, project_id):
+        with sql.transaction() as session:
+            query = session.query(Project)
+            query = query.filter_by(parent_project_id=project_id)
+            project_refs = query.all()
+            return not project_refs
+
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
@@ -420,6 +438,7 @@ class Assignment(keystone_assignment.Driver):
         tenant['name'] = clean.project_name(tenant['name'])
         with sql.transaction() as session:
             tenant_ref = Project.from_dict(tenant)
+            tenant_ref.name = tenant['name']
             session.add(tenant_ref)
             return tenant_ref.to_dict()
 
@@ -585,7 +604,8 @@ class Domain(sql.ModelBase, sql.DictBase):
 
 class Project(sql.ModelBase, sql.DictBase):
     __tablename__ = 'project'
-    attributes = ['id', 'name', 'domain_id', 'description', 'enabled']
+    attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
+                  'parent_project_id']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
@@ -593,6 +613,7 @@ class Project(sql.ModelBase, sql.DictBase):
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
+    parent_project_id = sql.Column(sql.String(64))
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
     __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
