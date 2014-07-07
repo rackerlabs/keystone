@@ -51,6 +51,7 @@ def calc_default_domain():
 @dependency.optional('revoke_api')
 @dependency.requires('credential_api', 'identity_api', 'token_api')
 class Manager(manager.Manager):
+
     """Default pivot point for the Assignment backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -70,12 +71,30 @@ class Manager(manager.Manager):
 
         super(Manager, self).__init__(assignment_driver)
 
+    def _get_hierarchy_depth(self, project_id):
+        return (len(self.driver.list_project_parents(project_id)) + 1)
+
+    def _check_hierarchy_depth(self, project_id):
+        if (self._get_hierarchy_depth(project_id) >=
+                CONF.max_project_tree_depth):
+            raise exception.ForbiddenAction(
+                action=_('max hierarchy depth exceeded for '
+                         '%(project_id)s branch.' %
+                         {'project_id': project_id}))
+
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
+        tenant.setdefault('parent_project_id', None)
+
+        if 'parent_project_id' in tenant:
+            if tenant['parent_project_id'] is not None:
+                self.driver.get_project(tenant['parent_project_id'])
+                self._check_hierarchy_depth(tenant['parent_project_id'])
+
         ret = self.driver.create_project(tenant_id, tenant)
         if SHOULD_CACHE(ret):
             self.get_project.set(ret, self, tenant_id)
@@ -114,6 +133,22 @@ class Manager(manager.Manager):
     def update_project(self, tenant_id, tenant):
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
+
+        parent_project_id = original_tenant['parent_project_id']
+        if ('parent_project_id' in tenant and
+                tenant['parent_project_id'] != parent_project_id):
+            new_parent_project_id = tenant['parent_project_id']
+
+            if self.driver.is_leaf_project(tenant_id):
+                if new_parent_project_id is not None:
+                    self.driver.get_project(new_parent_project_id)
+                    self._check_hierarchy_depth(new_parent_project_id)
+            else:
+                raise exception.ForbiddenAction(
+                    action=_('cannot update parent_project_id from a '
+                             'project that is not a leaf in the '
+                             'hierarchy.'))
+
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         if (original_tenant.get('enabled', True) and
@@ -127,6 +162,11 @@ class Manager(manager.Manager):
 
     @notifications.deleted(_PROJECT)
     def delete_project(self, tenant_id):
+        if not self.driver.is_leaf_project(tenant_id):
+            raise exception.ForbiddenAction(
+                action=_('cannot delete a project that is not a leaf '
+                         'in the hierarchy.'))
+
         project = self.driver.get_project(tenant_id)
         user_ids = self.list_user_ids_for_project(tenant_id)
         self.token_api.delete_tokens_for_users(user_ids, project_id=tenant_id)
@@ -435,6 +475,15 @@ class Manager(manager.Manager):
         return self.driver.list_user_projects(
             user_id, hints or driver_hints.Hints())
 
+    # NOTE(tellesnobrega): list_project_parents is actually an internal
+    # method and not exposed via the API. Therefore there is no need to
+    # support driver hints for it.
+    def list_project_parents(self, project_id):
+        return self.driver.list_project_parents(project_id)
+
+    def list_project_children(self, project_id):
+        return self.driver.list_project_children(project_id)
+
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
     def get_project(self, project_id):
@@ -611,7 +660,7 @@ class Driver(object):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
@@ -858,6 +907,35 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def list_project_parents(self, project_id):
+        """List all parents from a project by its ID.
+
+        :returns: a list of project_refs or an empty list
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def list_project_children(self, project_id):
+        """List all children from a project by its ID.
+
+        :returns: a list of project_refs or an empty list
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def is_leaf_project(self, project_id):
+        """Checks if a project is a leaf in the hierarchy.
+
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """List all the roles assigned to groups on either domain or
         project.
@@ -1016,6 +1094,18 @@ class Driver(object):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
+    def _set_parent_project(self, ref):
+        """If the parent project ID  has not been set, set it to None."""
+        if isinstance(ref, dict):
+            if 'parent_project_id' not in ref:
+                ref = ref.copy()
+                ref['parent_project_id'] = None
+            return ref
+        elif isinstance(ref, list):
+            return [self._set_parent_project(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
+
     # domain management functions for backends that only allow a single
     # domain.  currently, this is only LDAP, but might be used by PAM or other
     # backends as well.  This is used by both identity and assignment drivers.
@@ -1049,3 +1139,22 @@ class Driver(object):
         """
         if domain_id != CONF.identity.default_domain_id:
             raise exception.DomainNotFound(domain_id=domain_id)
+
+    def _validate_root_parent_project(self, ref):
+        """Validate that the root parent project is correctly specified.
+
+        """
+        ref = ref.copy()
+        parent_project_id = ref.pop('parent_project_id', None)
+        self._validate_root_parent_project_id(parent_project_id)
+        return ref
+
+    def _validate_root_parent_project_id(self, parent_project_id):
+        """Validate that the parent project ID specified belongs to the root
+        parent project.
+
+        """
+        # root parent_project_id is None
+        if parent_project_id:
+            raise exception.InvalidRootParentProject(
+                parent_project_id=parent_project_id)
