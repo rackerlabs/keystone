@@ -16,6 +16,40 @@
       "revId": "4d8158db7301d84f2b94c3834a3c752955f8c0aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_26a85f8c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-07T06:03:58Z",
+      "side": 1,
+      "message": "nit: the check should be similar to the v3 check:\n\n  if (CONF.trust.enabled and metadata_ref and \u0027trust_id\u0027 in metadata_ref):",
+      "revId": "4d8158db7301d84f2b94c3834a3c752955f8c0aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a6a1cf95",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-07T06:03:58Z",
+      "side": 1,
+      "message": "the extra call to the trust API seems like it will affect performance when authN via trust... but I don\u0027t see a way around this.",
+      "revId": "4d8158db7301d84f2b94c3834a3c752955f8c0aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
