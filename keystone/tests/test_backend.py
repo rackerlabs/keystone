@@ -2461,12 +2461,222 @@ class IdentityTests(object):
                           self.assignment_api.get_project,
                           project['id'])
 
+    def test_hierarchical_projects_crud(self):
+        root_project1 = {'id': uuid.uuid4().hex,
+                         'name': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': DEFAULT_DOMAIN_ID,
+                         'enabled': True,
+                         'parent_project_id': None}
+        self.assignment_api.create_project(root_project1['id'], root_project1)
+
+        root_project2 = {'id': uuid.uuid4().hex,
+                         'name': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': DEFAULT_DOMAIN_ID,
+                         'enabled': True,
+                         'parent_project_id': None}
+        self.assignment_api.create_project(root_project2['id'], root_project2)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'description': '',
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'enabled': True,
+                        'parent_project_id': root_project1['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+        leaf_project['parent_project_id'] = root_project2['id']
+        self.assignment_api.update_project(leaf_project['id'], leaf_project)
+
+        self.assignment_api.delete_project(leaf_project['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          leaf_project['id'])
+
+        self.assignment_api.delete_project(root_project1['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          root_project1['id'])
+
+        self.assignment_api.delete_project(root_project2['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          root_project2['id'])
+
+    def test_create_project_with_invalid_parent(self):
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'enabled': True,
+                   'parent_project_id': 'fake'}
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.create_project,
+                          project['id'],
+                          project)
+
+    def test_check_leaf_projects(self):
+        root_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'parent_project_id': None}
+        self.assignment_api.create_project(root_project['id'], root_project)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'parent_project_id': root_project['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        self.assertFalse(self.assignment_api.is_leaf_project(
+            root_project['id']))
+        self.assertTrue(self.assignment_api.is_leaf_project(
+            leaf_project['id']))
+
+        # Delete leaf_project
+        self.assignment_api.delete_project(leaf_project['id'])
+
+        # Now, root_project should be leaf
+        self.assertTrue(self.assignment_api.is_leaf_project(
+            root_project['id']))
+
+    def test_delete_hierarchical_leaf_project(self):
+        root_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'parent_project_id': None}
+        self.assignment_api.create_project(root_project['id'], root_project)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'parent_project_id': root_project['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        self.assignment_api.delete_project(leaf_project['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          leaf_project['id'])
+
+        self.assignment_api.delete_project(root_project['id'])
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          root_project['id'])
+
+    def test_delete_hierarchical_not_leaf_project(self):
+        root_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'parent_project_id': None}
+        self.assignment_api.create_project(root_project['id'], root_project)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'parent_project_id': root_project['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        self.assertRaises(exception.ForbiddenAction,
+                          self.assignment_api.delete_project,
+                          root_project['id'])
+
+    def test_update_not_leaf_project_parent_project_id(self):
+        root_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'description': '',
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'enabled': True,
+                        'parent_project_id': None}
+        self.assignment_api.create_project(root_project['id'], root_project)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'description': '',
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'enabled': True,
+                        'parent_project_id': root_project['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        root_project['parent_project_id'] = 'fake'
+        self.assertRaises(exception.ForbiddenAction,
+                          self.assignment_api.update_project,
+                          root_project['id'],
+                          root_project)
+
+    def test_update_leaf_project_parent_project_id(self):
+        root_project1 = {'id': uuid.uuid4().hex,
+                         'name': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': DEFAULT_DOMAIN_ID,
+                         'enabled': True,
+                         'parent_project_id': None}
+        self.assignment_api.create_project(root_project1['id'], root_project1)
+
+        root_project2 = {'id': uuid.uuid4().hex,
+                         'name': uuid.uuid4().hex,
+                         'description': '',
+                         'domain_id': DEFAULT_DOMAIN_ID,
+                         'enabled': True,
+                         'parent_project_id': None}
+        self.assignment_api.create_project(root_project2['id'], root_project2)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'description': '',
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'enabled': True,
+                        'parent_project_id': root_project1['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        leaf_project['parent_project_id'] = root_project2['id']
+        self.assignment_api.update_project(leaf_project['id'], leaf_project)
+        leaf_project_ref = self.assignment_api.get_project(leaf_project['id'])
+        self.assertDictEqual(leaf_project_ref, leaf_project)
+
+    def test_update_not_valid_parent_project_id(self):
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'enabled': True,
+                   'parent_project_id': None}
+        self.assignment_api.create_project(project['id'], project)
+
+        project['parent_project_id'] = 'fake'
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.update_project,
+                          project['id'],
+                          project)
+
+    def test_update_none_parent_project_id(self):
+        root_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'description': '',
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'enabled': True,
+                        'parent_project_id': None}
+        self.assignment_api.create_project(root_project['id'], root_project)
+
+        leaf_project = {'id': uuid.uuid4().hex,
+                        'name': uuid.uuid4().hex,
+                        'description': '',
+                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'enabled': True,
+                        'parent_project_id': root_project['id']}
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        leaf_project['parent_project_id'] = None
+        self.assignment_api.update_project(leaf_project['id'], leaf_project)
+        leaf_project_ref = self.assignment_api.get_project(leaf_project['id'])
+        self.assertDictEqual(leaf_project_ref, leaf_project)
+
     def test_project_update_missing_attrs_with_a_value(self):
         # Creating a project with no description attribute.
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
-                   'enabled': True}
+                   'enabled': True,
+                   'parent_project_id': None}
         self.assignment_api.create_project(project['id'], project)
 
         # Add a description attribute.
@@ -2481,7 +2691,8 @@ class IdentityTests(object):
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
-                   'enabled': True}
+                   'enabled': True,
+                   'parent_project_id': None}
         self.assignment_api.create_project(project['id'], project)
 
         # Add a description attribute.

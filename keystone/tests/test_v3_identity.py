@@ -1805,6 +1805,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.assignment_api.create_project(project1['id'], project1)
         project2 = self.new_project_ref(
             domain_id=domain['id'])
+
         self.assignment_api.create_project(project2['id'], project2)
         # Add some spoiler roles to the projects
         self.assignment_api.add_role_to_user_and_project(
