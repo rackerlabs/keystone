@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a0327ea4",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2014-07-07T17:01:34Z",
+      "side": 1,
+      "message": "Tests should not rely on manipulating private data inside the library. Does the code in these tests need to mock at the gettext level, or can it mock the oslo.i18n function that calls gettext.find()?",
+      "revId": "c5fef58a1471c40438a38875b2d2e31905803ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_604306af",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2014-07-07T17:01:34Z",
+      "side": 1,
+      "message": "If the wrong type of response is returned from _() here this test won\u0027t verify what you want to be testing. If you look at the type of message_format using \u003d\u003d instead of isinstance() you can verify that it is not a unicode instance.\n\n  self.assertNotEqual(type(exception.Unauthorized.message_format), unicode)",
+      "revId": "c5fef58a1471c40438a38875b2d2e31905803ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_60eb06dc",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2014-07-07T17:01:34Z",
+      "side": 1,
+      "message": "This test looks like something that we cover in the i18n library tests. Does it need to be reproduced here?",
+      "revId": "c5fef58a1471c40438a38875b2d2e31905803ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
