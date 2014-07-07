@@ -299,6 +299,13 @@ class Conflict(Error):
     title = 'Conflict'
 
 
+class InvalidRootParentProject(Error):
+    message_format = _("%(parent_project_id)s is not the root project")
+
+    code = 400
+    title = 'Bad Request'
+
+
 class RequestTooLarge(Error):
     message_format = _("Request is too large.")
     code = 413
