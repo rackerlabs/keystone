@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_a7ba5fbe",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T22:04:52Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "baada198_11a2699a",
+      "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_19053514",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-08T21:06:59Z",
       "side": 1,
       "message": "user_ref can be undefined if user_id and username is not provided as part of cert attributes. \n\nIs user_id or username attribute mandatory attribute in cert?",
+      "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_279f2f52",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T22:04:52Z",
+      "side": 1,
+      "message": "good point! lemme add a check",
+      "parentUuid": "baada198_19053514",
       "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
