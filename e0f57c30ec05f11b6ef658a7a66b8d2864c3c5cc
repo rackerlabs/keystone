@@ -16,6 +16,24 @@
       "revId": "e0f57c30ec05f11b6ef658a7a66b8d2864c3c5cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f29d1a67",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-08T02:46:51Z",
+      "side": 1,
+      "message": "Looking at \nhttps://review.openstack.org/#/c/104321/2/keystone/common/wsgi.py\n\nwe might want to pull forward all headers.",
+      "parentUuid": "baada198_0ce54e37",
+      "revId": "e0f57c30ec05f11b6ef658a7a66b8d2864c3c5cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
