@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-06-26 06:01+0000\n"
-"PO-Revision-Date: 2014-06-20 20:10+0000\n"
+"POT-Creation-Date: 2014-07-08 06:00+0000\n"
+"PO-Revision-Date: 2014-07-07 13:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/keystone/language/"
 "fr/)\n"
@@ -37,7 +37,7 @@ msgstr "Eventlet backdoor en écoute sur le port %(port)s for process %(pid)d"
 msgid "Created lock path: %s"
 msgstr "Chemin de verrou créé: %s"
 
-#: keystone/openstack/common/lockutils.py:250
+#: keystone/openstack/common/lockutils.py:251
 #, python-format
 msgid "Failed to remove file %(file)s"
 msgstr "Echec de la suppression du fichier %(file)s"
@@ -80,16 +80,16 @@ msgstr "Enfant %(pid)d arrêté par le signal %(sig)d"
 msgid "Child %(pid)s exited with status %(code)d"
 msgstr "Processus fils %(pid)s terminé avec le status %(code)d"
 
-#: keystone/openstack/common/service.py:396
+#: keystone/openstack/common/service.py:399
 #, python-format
 msgid "Caught %s, stopping children"
 msgstr "%s interceptée, arrêt de l'enfant"
 
-#: keystone/openstack/common/service.py:405
+#: keystone/openstack/common/service.py:408
 msgid "Wait called after thread killed.  Cleaning up."
-msgstr ""
+msgstr "Pause demandée après suppression de thread. Nettoyage."
 
-#: keystone/openstack/common/service.py:416
+#: keystone/openstack/common/service.py:424
 #, python-format
 msgid "Waiting on %d children to exit"
 msgstr "En attente %d enfants pour sortie"
