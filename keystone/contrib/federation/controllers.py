@@ -239,8 +239,8 @@ class Auth(auth_controllers.Auth):
         """
         auth = {
             'identity': {
-                'methods': ['saml2'],
-                'saml2': {
+                'methods': ['federation'],
+                'federation': {
                     'identity_provider': identity_provider,
                     'protocol': protocol
                 }

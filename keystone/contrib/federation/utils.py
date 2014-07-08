@@ -17,6 +17,8 @@ import re
 import jsonschema
 import six
 
+from stevedore import driver
+
 from keystone.common import config
 from keystone import exception
 from keystone.openstack.common.gettextutils import _
@@ -132,6 +134,17 @@ def validate_groups(group_ids, mapping_id, identity_api):
         except exception.GroupNotFound:
             raise exception.MappedGroupNotFound(
                 group_id=group_id, mapping_id=mapping_id)
+
+
+def get_protocol_handler(protocol_name):
+    em = driver.DriverManager('keystone.contrib.federation.protocols',
+                              name=protocol_name)
+    return em.driver
+
+
+def get_assertion_data(context, auth_payload):
+    handler = get_protocol_handler(auth_payload.get("protocol"))
+    return handler.get_assertion_data(context, auth_payload)
 
 
 def get_assertion_params_from_env(context):

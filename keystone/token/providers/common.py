@@ -422,7 +422,10 @@ class BaseProvider(provider.Provider):
         if 'saml2' in method_names:
             token_ref = self._handle_saml2_tokens(auth_context, project_id,
                                                   domain_id)
-
+        if 'federation' in method_names:
+            token_ref = self._handle_federation_tokens(auth_context,
+                                                       project_id,
+                                                       domain_id)
         access_token = None
         if 'oauth1' in method_names:
             if self.oauth_api:
@@ -474,6 +477,32 @@ class BaseProvider(provider.Provider):
         return (token_id, token_data)
 
     def _handle_saml2_tokens(self, auth_context, project_id, domain_id):
+        user_id = auth_context['user_id']
+        group_ids = auth_context['group_ids']
+        token_data = {
+            'user': {
+                'id': user_id,
+                'name': parse.unquote(user_id)
+            }
+        }
+
+        if project_id or domain_id:
+            roles = self.v3_token_data_helper._populate_roles_for_groups(
+                group_ids, project_id, domain_id, user_id)
+            token_data.update({'roles': roles})
+        else:
+            idp = auth_context[federation.IDENTITY_PROVIDER]
+            protocol = auth_context[federation.PROTOCOL]
+            token_data['user'].update({
+                federation.FEDERATION: {
+                    'identity_provider': {'id': idp},
+                    'protocol': {'id': protocol},
+                    'groups': [{'id': x} for x in group_ids]
+                },
+            })
+        return token_data
+
+    def _handle_federation_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
         group_ids = auth_context['group_ids']
         token_data = {

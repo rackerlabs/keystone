@@ -396,6 +396,8 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.ListOpt('protocols', default=['saml2'],
+                    help='Default federation protocols.'),
     ],
     'policy': [
         cfg.StrOpt('driver',

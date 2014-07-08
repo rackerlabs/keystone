@@ -756,7 +756,7 @@ class FederatedTokenTests(FederationTests):
 
     IDP = 'ORG_IDP'
     PROTOCOL = 'saml2'
-    AUTH_METHOD = 'saml2'
+    AUTH_METHOD = 'federation'
     USER = 'user@ORGANIZATION'
     ASSERTION_PREFIX = 'PREFIX_'
 
