@@ -482,6 +482,13 @@
 # (string value)
 #policy_default_rule=default
 
+#
+# Options defined in keystone.middleware.healthcheck
+#
+
+# The file on local disk to check for existence, to determine if the
+# service is disabled. (string value)
+#healthcheck_disable_file=/etc/keystone/disable.txt
 
 [assignment]
 
