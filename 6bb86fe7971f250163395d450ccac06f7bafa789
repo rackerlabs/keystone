@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_21301407",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-07-08T12:34:41Z",
+      "side": 1,
+      "message": "Ideally, these values would be managed by the mapping plugin.  We should look at refactoring LDAP, Kerberos, and X509 to use that, with a way to load the mapping from a config file.",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_414ee897",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1161,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-07-08T12:34:41Z",
+      "side": 1,
+      "message": "We should probably start making kerberos/x509 into some enumeration.",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
