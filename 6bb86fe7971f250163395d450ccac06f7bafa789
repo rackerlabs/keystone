@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_04579327",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T17:25:35Z",
+      "side": 1,
+      "message": "This is for authentication request. The \"method\" in the auth payload dictate which one to use.\n\nPOST /v3/auth/tokens\n\n{\"auth\": {\"identity\": {\n    \"methods\": [\"x509\"]\n...\n\nThe plugin is only called if method is \"x509\".",
+      "parentUuid": "baada198_a9d5e2ba",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_691caa78",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-08T16:30:52Z",
       "side": 1,
       "message": "If the plugin is not domain aware then all the comments regarding domain related attributes should go to DomainAware  Cert class",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8d3027a0",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T17:25:35Z",
+      "side": 1,
+      "message": "k, will do",
+      "parentUuid": "baada198_691caa78",
       "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8dd74723",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T17:25:35Z",
+      "side": 1,
+      "message": "A cert can carry any attributes, however, we can care about these.",
+      "parentUuid": "baada198_c96bf61d",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e40e1f32",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-08T16:30:52Z",
       "side": 1,
       "message": "Move these comments to the domain aware class",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_addc0b48",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T17:25:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_e40e1f32",
       "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_0a479d1e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T17:25:35Z",
+      "side": 1,
+      "message": "I agree. I can help with the refactoring work after this one is done. Doing refactoring work and this one at the same time is a bit too much.",
+      "parentUuid": "baada198_21301407",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_414ee897",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-08T12:34:41Z",
       "side": 1,
       "message": "We should probably start making kerberos/x509 into some enumeration.",
+      "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2dc71b66",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1161,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-08T17:25:35Z",
+      "side": 1,
+      "message": "good idea, lemme give it a shot",
+      "parentUuid": "baada198_414ee897",
       "revId": "6bb86fe7971f250163395d450ccac06f7bafa789",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
