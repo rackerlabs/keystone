@@ -19,6 +19,7 @@ import abc
 
 import six
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -30,6 +31,9 @@ from keystone.openstack.common import log
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
+SHOULD_CACHE = cache.should_cache_fn('catalog')
+
+EXPIRATION_TIME = lambda: CONF.catalog.cache_time
 
 
 def format_url(url, data):
@@ -88,6 +92,8 @@ class Manager(manager.Manager):
             parent_region_id = region_ref.get('parent_region_id')
             raise exception.RegionNotFound(region_id=parent_region_id)
 
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
     def get_region(self, region_id):
         try:
             return self.driver.get_region(region_id)
@@ -104,6 +110,8 @@ class Manager(manager.Manager):
         service_ref.setdefault('enabled', True)
         return self.driver.create_service(service_id, service_ref)
 
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
     def get_service(self, service_id):
         try:
             return self.driver.get_service(service_id)
@@ -133,6 +141,8 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
     def get_endpoint(self, endpoint_id):
         try:
             return self.driver.get_endpoint(endpoint_id)
@@ -143,6 +153,8 @@ class Manager(manager.Manager):
     def list_endpoints(self, hints=None):
         return self.driver.list_endpoints(hints or driver_hints.Hints())
 
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
     def get_catalog(self, user_id, tenant_id, metadata=None):
         try:
             return self.driver.get_catalog(user_id, tenant_id, metadata)
