@@ -33,6 +33,23 @@
       "revId": "fc989d3e897bc3522dc2cbb84b1c6b9cf6ac7e6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0cd31939",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-09T14:29:07Z",
+      "side": 1,
+      "message": "Could mention that the default value when grabbing the environment variable is: \n\n    https://git.openstack.org/openstack",
+      "revId": "fc989d3e897bc3522dc2cbb84b1c6b9cf6ac7e6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
