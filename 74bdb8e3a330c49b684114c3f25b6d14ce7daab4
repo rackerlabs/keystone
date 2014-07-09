@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_97ed82f2",
+        "filename": "keystone/auth/plugins/federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-09T04:18:56Z",
+      "side": 1,
+      "message": "didn\u0027t you propose to change that?",
+      "revId": "74bdb8e3a330c49b684114c3f25b6d14ce7daab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_571cca13",
+        "filename": "keystone/contrib/federation/protocols.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-09T04:18:56Z",
+      "side": 1,
+      "message": "why would you like it to be a class method?",
+      "revId": "74bdb8e3a330c49b684114c3f25b6d14ce7daab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b7d28632",
+        "filename": "keystone/contrib/federation/protocols.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-09T04:18:56Z",
+      "side": 1,
+      "message": "does it need to be a classmethod? Probably not :-)",
+      "revId": "74bdb8e3a330c49b684114c3f25b6d14ce7daab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_371f560b",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-09T04:18:56Z",
+      "side": 1,
+      "message": "this should be wrapped with try/catch",
+      "revId": "74bdb8e3a330c49b684114c3f25b6d14ce7daab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
