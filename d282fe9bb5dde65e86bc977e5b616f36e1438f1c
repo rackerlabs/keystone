@@ -394,6 +394,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_176207ad",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-07-10T20:08:52Z",
+      "side": 1,
+      "message": "nit \nput a comma between \u0027domain\u0027 and \u0027and\u0027 as that changes how this sentence parses;  as written it implies only two values are returned.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_17d4c745",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -592,6 +609,23 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "you dropped the old docstr on this",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d28eddcf",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-07-10T20:08:52Z",
+      "side": 1,
+      "message": "TODO(ayoung):  This pattern needs to be extended to all of the entities",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
