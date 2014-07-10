@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_42af58e3",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T23:05:59Z",
+      "side": 1,
+      "message": "Does this mean that we don\u0027t support international names?",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_824b3058",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T23:05:59Z",
+      "side": 1,
+      "message": "Is it possible to extend jsonschema to use rcf3986? It was recently added to the OpenStack requirements project for Nova.\n\nNot sure if it helps at all, but it would free me from parsing this regex.",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fd580dfc",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T23:05:59Z",
+      "side": 1,
+      "message": "Any reason that this isn\u0027t used anywhere?",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
