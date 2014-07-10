@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_36356ddb",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6ba317b2",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_cbaee397",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-04T16:04:27Z",
       "side": 1,
       "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5634a1dd",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_cbaee397",
       "revId": "debe5006614d837519c540fee4595b25e222748c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_964d5975",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_eb96474b",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0b945b41",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-04T16:04:27Z",
       "side": 1,
       "message": "s/identity provider/service_provider",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d657d100",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_0b945b41",
       "revId": "debe5006614d837519c540fee4595b25e222748c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_f65a1529",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4b9ad36e",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_cb850308",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-04T16:04:27Z",
       "side": 1,
       "message": "s/IdentityProviderNotFound/ServiceProviderNotFound",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_16414939",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_cb850308",
       "revId": "debe5006614d837519c540fee4595b25e222748c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_363c8dbf",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6b8a371c",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_eb7d671d",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 3
@@ -132,6 +258,24 @@
       "writtenOn": "2014-07-04T16:04:27Z",
       "side": 1,
       "message": "s/IdentityProviderNotFound/ServiceProviderNotFound",
+      "revId": "debe5006614d837519c540fee4595b25e222748c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_564bc158",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-10T03:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_eb7d671d",
       "revId": "debe5006614d837519c540fee4595b25e222748c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
