@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6d77f6d4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-10T21:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_edd06655",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_cdb9e216",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 40
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6db0d68b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-10T21:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6d4b762b",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2d597efe",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 40
@@ -82,6 +118,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "WARNING",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ade58ea9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-10T21:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_2d597efe",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -201,6 +255,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "nit: the term \"mapped\" is overloaded here (\"translate_exception\"?); be more specific",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_485b002e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-10T21:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_bc530238",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -615,6 +687,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_886358dc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-10T21:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d2c33d55",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d28eddcf",
         "filename": "keystone/tests/core.py",
         "patchSetId": 40
@@ -643,6 +733,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "youyou fixfix selfself",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a8e73c3f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-10T21:09:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_52bacd6e",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
