@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_38b22c4c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 40
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T19:14:18Z",
+      "side": 1,
+      "message": "change \"it\u0027s\" to \"its\"",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_178cc734",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T19:14:18Z",
+      "side": 1,
+      "message": "should use \"is not\" here since these are objects. I wouldn\u0027t trust the \u003d\u003d operator.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f7883324",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T19:14:18Z",
+      "side": 1,
+      "message": "appropriate to what? suggest change this to UserNotFound / GroupNotFound.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_979e1753",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T19:14:18Z",
+      "side": 1,
+      "message": "this only has the group ID and not the user entity ID... is there some reason the caller doesn\u0027t need to know the user entity ID?",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
