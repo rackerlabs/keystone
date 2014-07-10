@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "baada198_d2edfdb8",
+        "filename": "keystone/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T20:08:04Z",
+      "side": 1,
+      "message": "keep these in alphabetical order.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_92d625c2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T20:08:04Z",
+      "side": 1,
+      "message": "keep these in alphabetical order.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b7587b57",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T20:08:04Z",
+      "side": 1,
+      "message": "use \"is\" when comparing driver references then it\u0027s more obvious that we\u0027re comparing by identity.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_171cc776",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T20:08:04Z",
+      "side": 1,
+      "message": "I\u0027d rather the debugs were on one line.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_17676726",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T20:08:04Z",
+      "side": 1,
+      "message": "use \"is not\" when comparing driver references then it\u0027s more obvious that we\u0027re comparing by identity.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_57babf6e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -81,6 +166,23 @@
       "writtenOn": "2014-07-10T19:14:18Z",
       "side": 1,
       "message": "this only has the group ID and not the user entity ID... is there some reason the caller doesn\u0027t need to know the user entity ID?",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7295113f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-10T20:08:04Z",
+      "side": 1,
+      "message": "why was the line removed?  it was \"self.token_api.delete_tokens_for_user(user_id)\"",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
