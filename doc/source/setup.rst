@@ -43,12 +43,14 @@ And that you have the following tools available on your system:
 - setuptools_
 - pip_
 - msgfmt (part of the gettext package)
+- virtualenv_
 
 **Reminder**: If you're successfully using a different platform, or a
 different version of the above, please document your configuration here!
 
 .. _git: http://git-scm.com/
 .. _setuptools: http://pypi.python.org/pypi/setuptools
+.. _virtualenv: https://pypi.python.org/pypi/virtualenv
 
 Getting the latest code
 =======================
@@ -86,9 +88,9 @@ Ubuntu 12.04::
     $ sudo apt-get install python-dev libxml2-dev libxslt1-dev libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
 
 
-Fedora 15::
+Fedora 19+::
 
-    $ sudo yum install python-sqlite2 python-lxml python-greenlet-devel python-ldap sqlite-devel openldap-devel
+    $ sudo yum install python-sqlite2 python-lxml python-greenlet-devel python-ldap sqlite-devel openldap-devel python-devel libxslt-devel openssl-devel
 
 Mac OS X 10.9 (requires Homebrew_)::
 
