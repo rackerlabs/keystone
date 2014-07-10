@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_dd63493f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Instead of \"is_rebuild\", I would rename it to something more meaningful such as \"rebuild\" or \"rebuild_config_file\"",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1dece18e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Same as my comment above.",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dd98a91d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Instead of \"is_rebuild\", I would rename it to something more meaningful such as \"rebuild\" or \"rebuild_config_file\"",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9d539138",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fd12cd60",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dd3429fd",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3d2525c2",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-10T23:24:41Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "384de463e4784f5d75bf4e0cb452a483cff64692",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
