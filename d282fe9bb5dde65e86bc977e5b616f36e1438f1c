@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_57babf6e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-07-10T19:39:31Z",
+      "side": 1,
+      "message": "Could you change the word \"check\" for \"assert\"? it expresses the logic of this function better.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_178cc734",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
