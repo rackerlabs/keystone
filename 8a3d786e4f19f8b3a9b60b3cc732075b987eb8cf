@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_45d214d3",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T16:02:26Z",
+      "side": 1,
+      "message": "(nit) newline",
+      "revId": "8a3d786e4f19f8b3a9b60b3cc732075b987eb8cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_65ec7890",
+        "filename": "keystone/auth/plugins/kerberos.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T16:02:26Z",
+      "side": 1,
+      "message": "Do you not need to call super here?",
+      "revId": "8a3d786e4f19f8b3a9b60b3cc732075b987eb8cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b0d88c80",
+        "filename": "keystone/exception.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T16:02:26Z",
+      "side": 1,
+      "message": "I believe some tests are failing because they positional args are being passed into Unauthorized(). Is there are reason that you didn\u0027t add *args?\n\n(nit) I may be nice the split the Unauthorized exception refactoring into a separate patch.",
+      "revId": "8a3d786e4f19f8b3a9b60b3cc732075b987eb8cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_257d20e8",
+        "filename": "requirements.txt",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T16:02:26Z",
+      "side": 1,
+      "message": "I didn\u0027t see this in global requirements. Is there a patch to get that in there as well?",
+      "revId": "8a3d786e4f19f8b3a9b60b3cc732075b987eb8cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
