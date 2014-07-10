@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_22cee4b4",
+        "filename": "bin/keystone-all",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-07-10T22:34:10Z",
+      "side": 1,
+      "message": "Definitely yep\u003d)\n\n1) It allows us to trace clouds in production without restarting API services (as this is cross project feature, it means that we will need to restart all api services of all projects) (try to get agreement from customer for that\u003d)\n\n2)  There is nothing scary here. It just sets up osprofiler notifier (and it\u0027s done only one time on start of service + it\u0027s very fast operation). \n\n3) It will allow us to profile OpenStack togehter with benchmarks in rally gate job\n\n\nBut I can make this optional (Like I made in glance) if you would prefer:\n\nhttps://review.openstack.org/#/c/105635/10/glance/cmd/api.py",
+      "parentUuid": "baada198_b75dd417",
+      "revId": "d759f1e9b4de35b112818404f3cb223e5359afb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d7e9681b",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 10
