@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b75dd417",
+        "filename": "bin/keystone-all",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T22:09:46Z",
+      "side": 1,
+      "message": "Do we want this to run by default for anyone running keystone-all?",
+      "revId": "d759f1e9b4de35b112818404f3cb223e5359afb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d7e9681b",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-10T22:09:46Z",
+      "side": 1,
+      "message": "Should this be added to the pipelines by default?",
+      "revId": "d759f1e9b4de35b112818404f3cb223e5359afb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
