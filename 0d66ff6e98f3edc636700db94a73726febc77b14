@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9af7f0d2",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1a33e0ab",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9a24500e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "this isn\u0027t being tested",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3acfc42a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "this isn\u0027t being tested.",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_da29689c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "This isn\u0027t tested. Also, I don\u0027t think it will work since six.reraise takes 2 positional arguments: https://pythonhosted.org/six/#six.reraise",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_550c493b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b53125ef",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-11T19:13:45Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
