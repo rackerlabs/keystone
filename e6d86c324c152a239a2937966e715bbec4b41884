@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0b0c74ec",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1413,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-11T20:16:17Z",
+      "side": 1,
+      "message": "Is there a link that can be provided with this? Is 4095 the most verbose?",
+      "revId": "e6d86c324c152a239a2937966e715bbec4b41884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
