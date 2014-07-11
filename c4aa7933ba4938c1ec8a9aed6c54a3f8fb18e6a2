@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3dcc3389",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_71bfccfc",
+      "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_916c609e",
         "filename": "keystone/common/controller.py",
         "patchSetId": 41
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-10T21:32:37Z",
       "side": 1,
       "message": "this isn\u0027t tested.",
+      "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7e74defd",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:17Z",
+      "side": 1,
+      "message": "If it\u0027s ok, I\u0027ll come back in late and add tests for this corner case.",
+      "parentUuid": "baada198_916c609e",
       "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_de66ca50",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:17Z",
+      "side": 1,
+      "message": "If it\u0027s ok, I\u0027ll come back in late and add tests for this corner case.",
+      "parentUuid": "baada198_d105f8c2",
+      "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_31af1496",
         "filename": "keystone/identity/core.py",
         "patchSetId": 41
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-10T21:32:37Z",
       "side": 1,
       "message": "there should be a test for this\n\nalso, change this to just raise so the stack trace isn\u0027t lost.",
+      "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fe570e58",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:17Z",
+      "side": 1,
+      "message": "Changed it to six.reraise(e). If it\u0027s ok, I\u0027ll come back in late and add tests for this corner case.",
+      "parentUuid": "baada198_31af1496",
       "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_aed01a54",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_919f005f",
+      "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f192fc49",
         "filename": "keystone/identity/core.py",
         "patchSetId": 41
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-10T21:32:37Z",
       "side": 1,
       "message": "this should be tested",
+      "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9e70d241",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:17Z",
+      "side": 1,
+      "message": "Agreed.  In fact this is a pretty small corner case since the only way to get here is if we have a single SQL driver that is specific to one domain (since we don\u0027t yet support multiple SQL drivers).  I\u0027ll raise a defect to ensure I come back in and add some tests.",
+      "parentUuid": "baada198_f192fc49",
       "revId": "c4aa7933ba4938c1ec8a9aed6c54a3f8fb18e6a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
