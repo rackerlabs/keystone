@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_de188ad5",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 40
+      },
+      "lineNbr": 805,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b22089f8",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_92cc6563",
         "filename": "keystone/cli.py",
         "patchSetId": 40
@@ -170,6 +188,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "change the comma to a %",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3e27c613",
+        "filename": "keystone/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_92cc6563",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -193,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_1e8682db",
+        "filename": "keystone/cli.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d2edfdb8",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7ccc0a62",
         "filename": "keystone/common/controller.py",
         "patchSetId": 40
@@ -204,6 +258,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "wishlist: this should be moved into the identity controller",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_def40a5d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "I\u0027ll come back in later and look at this",
+      "parentUuid": "baada198_7ccc0a62",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -227,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c071840d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "baada198_fc63ba3e",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_325b9988",
         "filename": "keystone/exception.py",
         "patchSetId": 40
@@ -238,6 +328,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "Translate from Bavarian using Bing?",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3ea426a5",
+        "filename": "keystone/exception.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_325b9988",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -296,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_2ef96ac8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "I think in this case it really is e.message",
+      "parentUuid": "baada198_3c3ff2d7",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_5c2586c0",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -307,6 +433,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": ".\n  six.reraise(e)",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6ebe0201",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_5c2586c0",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -330,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6e0362b8",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_92d625c2",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d7440fb9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -341,6 +503,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "wishlist: refactor this method to contain two internal functions, one to process lists, and one to process a dict",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e0bda869",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "will come back in and do this...",
+      "parentUuid": "baada198_d7440fb9",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -364,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_aed3ba36",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b7587b57",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_171cc776",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -375,6 +573,24 @@
       "writtenOn": "2014-07-10T20:08:04Z",
       "side": 1,
       "message": "I\u0027d rather the debugs were on one line.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8ea8b678",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_171cc776",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -398,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_29c40491",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d7e08f98",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_17676726",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -409,6 +643,24 @@
       "writtenOn": "2014-07-10T20:08:04Z",
       "side": 1,
       "message": "use \"is not\" when comparing driver references then it\u0027s more obvious that we\u0027re comparing by identity.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2ee7aa13",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_17676726",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -432,6 +684,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6ef1a2cc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b7931bf9",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d7532f37",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -443,6 +713,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "... or self.driver\n\nand then the next two lines can go away",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eeb69289",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d7532f37",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -466,6 +754,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_dd6b37b7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d22fbd86",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_176207ad",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -477,6 +783,24 @@
       "writtenOn": "2014-07-10T20:08:52Z",
       "side": 1,
       "message": "nit \nput a comma between \u0027domain\u0027 and \u0027and\u0027 as that changes how this sentence parses;  as written it implies only two values are returned.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_49aa18d3",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_176207ad",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -500,6 +824,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_1d692fbe",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_17d4c745",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_77afc3e3",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -517,6 +859,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3d66f3ed",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_77afc3e3",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b7c87b75",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -528,6 +888,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "wishlist(ayoung): try to relax this constraint",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a0a7304f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "will consider this for  follow up",
+      "parentUuid": "baada198_b7c87b75",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -568,6 +946,42 @@
     },
     {
       "key": {
+        "uuid": "baada198_40b9f477",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_57babf6e",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ae79fafd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_575c7fed",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_178cc734",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -579,6 +993,24 @@
       "writtenOn": "2014-07-10T19:14:18Z",
       "side": 1,
       "message": "should use \"is not\" here since these are objects. I wouldn\u0027t trust the \u003d\u003d operator.",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5d5f270f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_178cc734",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -602,6 +1034,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ce7c6eee",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_f7883324",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_979e1753",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -613,6 +1063,24 @@
       "writtenOn": "2014-07-10T19:14:18Z",
       "side": 1,
       "message": "this only has the group ID and not the user entity ID... is there some reason the caller doesn\u0027t need to know the user entity ID?",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cef1ce6b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_979e1753",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -636,6 +1104,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_a24914b9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_9790d74f",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b26c099e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 40
@@ -647,6 +1133,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "it\u0027d be nice to label this appropriately instead of \"unused\" (domain_id)\n\n  _domain_id, user_driver, user_entity_id \u003d tuple_to_unpack\n\n_unused -Dr. Redundant",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ce98ee1d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b26c099e",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -722,6 +1226,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e0c84824",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Will do as a follow up",
+      "parentUuid": "baada198_d28eddcf",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_52bacd6e",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 40
@@ -768,6 +1290,24 @@
       "writtenOn": "2014-07-10T20:08:45Z",
       "side": 1,
       "message": "file a Low priority bug to actually fix this test and unskip it?",
+      "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c0dfc4d4",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T15:42:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b22fa9a0",
       "revId": "d282fe9bb5dde65e86bc977e5b616f36e1438f1c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
