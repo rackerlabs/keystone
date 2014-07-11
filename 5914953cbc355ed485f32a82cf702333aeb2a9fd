@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b055b31f",
+        "filename": "doc/source/extensions/endpoint_filter.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-11T20:06:54Z",
+      "side": 1,
+      "message": "Use \u0027For example::\u0027 here too",
+      "revId": "5914953cbc355ed485f32a82cf702333aeb2a9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_705f9b41",
+        "filename": "doc/source/extensions/endpoint_filter.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-11T20:06:54Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "5914953cbc355ed485f32a82cf702333aeb2a9fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
