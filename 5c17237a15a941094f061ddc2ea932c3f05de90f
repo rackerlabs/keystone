@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fa2c779b",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-11T14:34:50Z",
+      "side": 1,
+      "message": "yes, that might help: \n\nhttps://github.com/openstack/requirements/blob/master/global-requirements.txt#L111\n\nI know that jsonschema has a format validator that is based on rfc3987 but I don\u0027t think that we can use it because it is GPL. \n\nhttps://review.openstack.org/#/c/98012/",
+      "parentUuid": "baada198_824b3058",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_fd580dfc",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 23
