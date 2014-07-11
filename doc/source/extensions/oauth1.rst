@@ -36,6 +36,8 @@ To enable the OAuth1 extension:
     [pipeline:api_v3]
     pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension s3_extension oauth1_extension service_v3
 
-4. Create the OAuth1 extension tables if using the provided SQL backend. For example::
+4. Optionally, create the OAuth1 extension tables if using the provided SQL backend. For example::
 
     ./bin/keystone-manage db_sync --extension oauth1
+
+   Note that as of the Juno release this extension is now migrated by default.
