@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_75786dc4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T19:35:17Z",
+      "side": 1,
+      "message": "fixed in terms of not using reraise.",
+      "parentUuid": "baada198_da29689c",
+      "revId": "0d66ff6e98f3edc636700db94a73726febc77b14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_550c493b",
         "filename": "keystone/identity/core.py",
         "patchSetId": 43
