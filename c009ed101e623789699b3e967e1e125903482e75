@@ -16,6 +16,24 @@
       "revId": "c009ed101e623789699b3e967e1e125903482e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_84e952b9",
+        "filename": "etc/policy.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-11T21:22:59Z",
+      "side": 1,
+      "message": "well right, but since we already have \"identity:get_identity_providers\": we should probably keep with plurals here?",
+      "parentUuid": "baada198_840b1223",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
