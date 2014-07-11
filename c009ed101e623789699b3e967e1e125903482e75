@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_840b1223",
+        "filename": "etc/policy.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-11T21:13:32Z",
+      "side": 1,
+      "message": "get_service_provider*? \n\nIs this suppose to be plural?",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
