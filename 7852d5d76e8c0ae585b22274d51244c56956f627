@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1f776ed5",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-11T06:14:13Z",
+      "side": 1,
+      "message": "This will require an additional flag in keystone.common.config for the catalog section for caching (see the [token] section to see how this is done).",
+      "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3f7272e3",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-11T06:14:13Z",
+      "side": 1,
+      "message": "This needs a new config option to be added in keystone.common.config in the catalog section for cache_time. see the [token] section for how this is done.",
+      "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_df125661",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-11T06:14:13Z",
+      "side": 1,
+      "message": "Before the method returns, any endpoint associated with the service will need (after delete is complete, before return) :\n\n    self.get_endpoint.invalidate(self, endpoint_id)\n\nThis also needs to invalidate the service cache (after delete occurs, before return):\n\n    self.get_service.invalidate(self, service_id)",
+      "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fa0c883d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-11T06:14:13Z",
+      "side": 1,
+      "message": "This needs to invalidate the cache (after delete occurs, before return):\n\n    self.get_endpoint.invalidate(self, endpoint_id)",
+      "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7a2f9888",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-11T06:14:13Z",
+      "side": 1,
+      "message": "This is going to be difficult to cache, as any change to the endpoint or the services needs to invalidate the catalog, but the catalog cache has arguments that are unknown to the delete/create calls for both service and endpoint.\n\nI am unsure how to properly invalidate the cache for .get_catlog on delete/create calls.",
+      "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
