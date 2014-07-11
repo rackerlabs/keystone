@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5a855805",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-11T18:55:05Z",
+      "side": 0,
+      "message": "The commit message did not mention about the removal of this function.",
+      "revId": "ed9838c64117ffece5a35ce2bca89507dcf25128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3a97c43b",
+        "filename": "keystone/tests/ksfixtures/database.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-11T18:55:05Z",
+      "side": 0,
+      "message": "Same comment as above",
+      "revId": "ed9838c64117ffece5a35ce2bca89507dcf25128",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
