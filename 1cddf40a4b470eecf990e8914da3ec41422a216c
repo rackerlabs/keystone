@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_643efe8c",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-11T21:13:45Z",
+      "side": 1,
+      "message": "Can\u0027t we start using logging.conf instead of adding module level logs in keystone.conf. Then it is easy to control via test_logging.conf",
+      "revId": "1cddf40a4b470eecf990e8914da3ec41422a216c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
