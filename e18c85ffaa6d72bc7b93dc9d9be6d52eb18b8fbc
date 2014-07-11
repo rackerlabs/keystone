@@ -69,6 +69,23 @@
       "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_89b6d73c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-11T16:39:33Z",
+      "side": 1,
+      "message": "nit: extra whitespace at start of line",
+      "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
