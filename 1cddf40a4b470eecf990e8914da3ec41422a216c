@@ -16,6 +16,24 @@
       "revId": "1cddf40a4b470eecf990e8914da3ec41422a216c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_076624bb",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-11T21:50:51Z",
+      "side": 1,
+      "message": "that\u0027s how i used to do it myself - i don\u0027t even know if it still works :-/",
+      "parentUuid": "baada198_643efe8c",
+      "revId": "1cddf40a4b470eecf990e8914da3ec41422a216c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
