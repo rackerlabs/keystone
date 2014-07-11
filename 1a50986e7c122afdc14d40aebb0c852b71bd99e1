@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a6ef3db0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-07-11T21:03:16Z",
+      "side": 1,
+      "message": "This comment wouldn\u0027t be necessary if you would declare a function for this.\n\n_assert_user_and_group_exist(...)\n\nWould be sufficient to declare the intent.",
+      "revId": "1a50986e7c122afdc14d40aebb0c852b71bd99e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e661353a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 44
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-07-11T21:03:16Z",
+      "side": 1,
+      "message": "I rather have this as\n\nif not hints:\n    driver_hints.Hints()\n\nThis is to have it explicit in the coverage that this is actually being tested.",
+      "revId": "1a50986e7c122afdc14d40aebb0c852b71bd99e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
