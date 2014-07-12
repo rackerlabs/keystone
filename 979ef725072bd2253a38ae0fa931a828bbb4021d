@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_843a27cb",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-12T21:36:59Z",
+      "side": 1,
+      "message": "So we can\u0027t call wrap_member() since it makes the assumption that the entity has an \u0027id\u0027 attribute.  However, that\u0027s no exec use for not having a links section - I\u0027ll add that manually.",
+      "parentUuid": "baada198_2b0a0e8a",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8bf87a7d",
         "filename": "keystone/tests/test_v3_rest_config.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-12T16:31:35Z",
       "side": 1,
       "message": "also some tests for response validity would be awesome (checks for \u0027links\u0027 etc)",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a4372be2",
+        "filename": "keystone/tests/test_v3_rest_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-12T21:36:59Z",
+      "side": 1,
+      "message": "Yep, will do.",
+      "parentUuid": "baada198_8bf87a7d",
       "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
