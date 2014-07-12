@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e4de83d9",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-12T23:12:34Z",
+      "side": 1,
+      "message": "@marek it would be better to use: \n\n    LOG.info(msg, {\u0027u_id\u0027: auth_context[\u0027user_id\u0027]})\n\nHowever, since this doesn\u0027t affect anything but havana, I don\u0027t see a huge win nit-picking this / blocking on this reason.",
+      "parentUuid": "baada198_4d53dd16",
+      "revId": "49722668c29e388971e90e13db849f99c1547b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_f9116005",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Same ;-)",
       "parentUuid": "1ae5cdf2_f9116005",
+      "revId": "49722668c29e388971e90e13db849f99c1547b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_04eff787",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-12T23:12:34Z",
+      "side": 1,
+      "message": "Same. (is there an echo in here? :)",
+      "parentUuid": "baada198_6d5421fe",
       "revId": "49722668c29e388971e90e13db849f99c1547b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
