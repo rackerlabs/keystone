@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_41fba17a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-12T20:26:10Z",
+      "side": 1,
+      "message": "This is only for the revoke extension correct? Maybe add to the commit message that this change only changes the docs for the revoke extension.",
+      "revId": "aa16653bcfc961e57167e732f4433bc0025facb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
