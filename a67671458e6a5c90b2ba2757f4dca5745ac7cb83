@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_41ad6183",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-12T20:22:26Z",
+      "side": 1,
+      "message": "rm will",
+      "revId": "a67671458e6a5c90b2ba2757f4dca5745ac7cb83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_61e985b6",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-12T20:22:26Z",
+      "side": 1,
+      "message": "nit: This should be grouped with line 15 since it is a python standard library.",
+      "revId": "a67671458e6a5c90b2ba2757f4dca5745ac7cb83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
