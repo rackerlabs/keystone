@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2b0a0e8a",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-12T16:31:35Z",
+      "side": 1,
+      "message": "Are you intentionally not wrapping this response with links etc? \n\nMaybe you should add here:\n\nreturn RestConfigV3Controller.wrap_member(context, ref) ?",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8bf87a7d",
+        "filename": "keystone/tests/test_v3_rest_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-12T16:31:35Z",
+      "side": 1,
+      "message": "also some tests for response validity would be awesome (checks for \u0027links\u0027 etc)",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
