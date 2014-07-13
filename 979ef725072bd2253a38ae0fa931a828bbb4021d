@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_f02d5990",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-13T09:57:19Z",
+      "side": 1,
+      "message": "I think you havemissing at least member_name attribute",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2b0a0e8a",
         "filename": "keystone/contrib/rest_config/controllers.py",
         "patchSetId": 2
