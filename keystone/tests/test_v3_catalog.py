@@ -24,6 +24,31 @@ from keystone.tests import test_v3
 class CatalogTestCase(test_v3.RestfulTestCase):
     """Test service & endpoint CRUD."""
 
+    def test_get_catalog(self):
+        """Call ``GET /catalog`` with a scoped token."""
+        r = self.get(
+            '/catalog',
+            expected_status=200)
+        self.assertValidCatalogResponse(r)
+
+    def test_get_catalog_unscoped_token(self):
+        """Call ``GET /catalog`` with an unscoped token."""
+        self.v3_request(
+            '/catalog',
+            method='GET',
+            auth=self.build_authentication_request(
+                user_id=self.default_domain_user['id'],
+                password=self.default_domain_user['password']),
+            expected_status=403)
+
+    def test_get_catalog_no_token(self):
+        """Call ``GET /catalog`` without a token."""
+        self.v3_request(
+            '/catalog',
+            method='GET',
+            noauth=True,
+            expected_status=401)
+
     # region crud tests
 
     def test_create_region_with_id(self):
@@ -357,9 +382,6 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/endpoints',
             body={'endpoint': ref},
             expected_status=400)
-
-    def assertValidErrorResponse(self, response):
-        self.assertIn(response.status_code, [400, 409])
 
     def test_create_endpoint_400(self):
         """Call ``POST /endpoints``."""
