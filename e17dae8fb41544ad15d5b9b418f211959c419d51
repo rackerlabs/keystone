@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ff397ef2",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-14T20:55:45Z",
+      "side": 1,
+      "message": "I believe we have separate event  identity.project.disabled. for disabled case. Update is general purpose event which will be emitted even if  \"description\" is updated",
+      "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
