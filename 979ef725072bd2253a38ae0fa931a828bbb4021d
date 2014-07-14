@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6bd15756",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-14T02:47:31Z",
+      "side": 1,
+      "message": "You are right with \u0027id\u0027, but I think to keep the interface we can simply try override either wrap_member() or even deeper: _add_self_referential_link() class methods so they do what they are supposed to do.",
+      "parentUuid": "baada198_843a27cb",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8bf87a7d",
         "filename": "keystone/tests/test_v3_rest_config.py",
         "patchSetId": 2
