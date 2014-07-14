@@ -90,6 +90,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_e22ba57f",
+        "filename": "keystone/tests/test_v3_rest_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-14T20:59:00Z",
+      "side": 1,
+      "message": "verify all using config?\n\n  from oslo.config import cfg\n  CONF \u003d cfg.CONF\n\n  for group_name in CONF._groups:\n    self.assertIn(group_name, resp.result)\n    for opt_name in sorted(CONF._groups[name]._opts):\n      self.assertIn(opt_name, resp.result[group_name])",
+      "revId": "979ef725072bd2253a38ae0fa931a828bbb4021d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8bf87a7d",
         "filename": "keystone/tests/test_v3_rest_config.py",
         "patchSetId": 2
