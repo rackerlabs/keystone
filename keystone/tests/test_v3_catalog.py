@@ -24,6 +24,14 @@ from keystone.tests import test_v3
 class CatalogTestCase(test_v3.RestfulTestCase):
     """Test service & endpoint CRUD."""
 
+    def test_get_catalog(self):
+        """Call ``GET /catalog``."""
+        r = self.get(
+            '/catalog',
+            expected_status=200)
+        print r.json
+        self.assertValidCatalogResponse(r)
+
     # region crud tests
 
     def test_create_region_with_id(self):

@@ -17,6 +17,7 @@ import uuid
 
 import six
 
+from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
@@ -136,6 +137,32 @@ class Endpoint(controller.V2Controller):
 
         if not deleted_at_least_one:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
+
+
+@dependency.requires('catalog_api')
+class CatalogV3(controller.V3Controller):
+    collection_name = 'catalog'
+    member_name = 'catalog'
+
+    @controller.protected()
+    def get_catalog(self, context):
+        catalog = self.catalog_api.get_v3_catalog(
+            context['environment'][authorization.AUTH_CONTEXT_ENV]['user_id'],
+            context['environment'][authorization.AUTH_CONTEXT_ENV]
+                   ['project_id'])
+
+        # The V3Controller base methods mostly assume that you're returning
+        # either a collection or a single element from a collection, neither of
+        # which apply to the catalog. Because this is a special case, this
+        # re-implements a tiny bit of work done by the base controller (such as
+        # self-referential link building) to avoid overriding or refactoring a
+        # several private methods.
+        return {
+            'catalog': catalog,
+            'links': {
+                'self': CatalogV3.base_url(context),
+                'next': None,
+                'previous': None}}
 
 
 @dependency.requires('catalog_api')
