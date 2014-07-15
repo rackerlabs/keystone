@@ -3548,6 +3548,7 @@ class CatalogTests(object):
         # the endpoint, with None value.
         expected_region = new_region.copy()
         expected_region['parent_region_id'] = None
+        expected_region['url'] = None
         self.assertDictEqual(res, expected_region)
 
         # Test adding another region with the one above
@@ -3558,7 +3559,8 @@ class CatalogTests(object):
         new_region = {
             'id': region_id,
             'description': uuid.uuid4().hex,
-            'parent_region_id': parent_region_id
+            'parent_region_id': parent_region_id,
+            'url': uuid.uuid4().hex
         }
         self.catalog_api.create_region(
             new_region.copy())
