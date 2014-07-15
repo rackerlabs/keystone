@@ -206,6 +206,12 @@ class Manager(manager.Manager):
                     self.delete_tokens_for_user(user_id, project['id'])
         # TODO(morganfainberg): implement deletion of domain_scoped tokens.
 
+        # NOTE(chioleong): deletes tokens for users who are under
+        # the domain.
+        users = self.identity_api.list_users(domain_id)
+        user_ids = (user['id'] for user in users)
+        self.delete_tokens_for_users(user_ids)
+
     def delete_tokens_for_user(self, user_id, project_id=None):
         """Delete all tokens for a given user or user-project combination.
 
