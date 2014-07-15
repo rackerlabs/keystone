@@ -16,6 +16,40 @@
       "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_86bcb2dd",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-15T04:48:43Z",
+      "side": 1,
+      "message": "s/**not**/NOT, simply a matter of personal choice.",
+      "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c6b22a05",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-15T04:48:43Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
