@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_8752e910",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:41:45Z",
+      "side": 1,
+      "message": "_get_group() is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e742c53c",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:41:45Z",
+      "side": 1,
+      "message": "_groups is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_27491d60",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:41:45Z",
+      "side": 1,
+      "message": "_get_opt_info() is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0765f9df",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:41:45Z",
+      "side": 1,
+      "message": "_groups is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_679dd5bb",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:41:45Z",
+      "side": 1,
+      "message": "_opts is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_475b7121",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:41:45Z",
+      "side": 1,
+      "message": "_get_opt_info() is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b2e574dd",
         "filename": "keystone/contrib/rest_config/core.py",
         "patchSetId": 3
