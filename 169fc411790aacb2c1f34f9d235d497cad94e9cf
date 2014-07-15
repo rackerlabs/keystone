@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6da3dd00",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-15T19:11:41Z",
+      "side": 1,
+      "message": "nit: could argue that we don\u0027t need a collection_name for the methods we are going to use...just having member_name would nicely imply we don\u0027t have any collections.",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
