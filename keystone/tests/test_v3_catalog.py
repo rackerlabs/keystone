@@ -203,6 +203,25 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         self.delete('/regions/%(region_id)s' % {
             'region_id': self.region_id})
 
+    def test_create_region_with_url(self):
+        """Call ``POST /regions`` without description in the request body."""
+        ref = self.new_region_ref()
+        ref['url'] = 'http://beta.com:5000/v3'
+
+        r = self.post(
+            '/regions',
+            body={'region': ref},
+            expected_status=201)
+
+        self.assertEqual(ref['url'], r.json['region']['url'])
+        self.assertValidRegionResponse(r, ref)
+
+        r = self.get(
+            '/regions/%(region_id)s' % {
+                'region_id': ref['id']})
+        self.assertEqual(ref['url'], r.json['region']['url'])
+        self.assertValidRegionResponse(r, ref)
+
     # service crud tests
 
     def test_create_service(self):
