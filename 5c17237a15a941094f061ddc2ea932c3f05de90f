@@ -54,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_80df3a0c",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-07-15T03:06:20Z",
+      "side": 1,
+      "message": "what\u0027s the class variable for?",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_fd580dfc",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 23
