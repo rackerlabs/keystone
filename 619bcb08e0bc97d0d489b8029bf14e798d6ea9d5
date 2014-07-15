@@ -16,6 +16,24 @@
       "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_49a38ab1",
+        "filename": "keystone/contrib/rest_config/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-15T07:45:38Z",
+      "side": 1,
+      "message": "Yes...so the first version I wrote did indeed have this (I call that the Newfoundland Edition - since I wrote all this on the plane coming back from the Hackathon and that\u0027s what we were over at the time!).  It ended up just have the single get call in it....and I see that there are other extensions that do their work in the controller as well (e.g. simplecert).  However, if reviewers feel it is better to keep to a \"standard\" model, I\u0027d be happy to re-instate this.",
+      "parentUuid": "baada198_b2e574dd",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
