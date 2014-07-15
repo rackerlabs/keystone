@@ -23,6 +23,7 @@ import six
 
 from keystone.common import cache
 from keystone.common import dependency
+from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import config
 from keystone import exception
@@ -204,7 +205,17 @@ class Manager(manager.Manager):
                 for user_id in self.assignment_api.list_user_ids_for_project(
                         project['id']):
                     self.delete_tokens_for_user(user_id, project['id'])
-        # TODO(morganfainberg): implement deletion of domain_scoped tokens.
+
+	# NOTE(chioleong): finds out all the users who are under the provided
+        # domain and find out all the tokens for each of the users and delete
+        # them.
+        hints = driver_hints.Hints()
+        hints.add_filter('domain_id', domain_id)
+        users = self.identity_api.list_users(domain_id, hints)
+        for user in users:
+            tokens = self._list_tokens(user['id'])
+            for token in tokens:
+                self.delete_token(token)
 
     def delete_tokens_for_user(self, user_id, project_id=None):
         """Delete all tokens for a given user or user-project combination.

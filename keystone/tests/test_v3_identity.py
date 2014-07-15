@@ -381,6 +381,52 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete(
             '/domains/%(domain_id)s' % {'domain_id': old_default_domain_id})
 
+    def test_validate_token_from_disable_domain_fails(self):
+        """Test to validate a valid token previous issued from
+        an enable domain. And this valid token should fail to
+        be validated after the domain becomes disable.
+        """
+        self.domain = self.new_domain_ref()
+        self.assignment_api.create_domain(self.domain['id'], self.domain)
+
+        self.user = self.new_user_ref(domain_id=self.domain['id'])
+        password = self.user['password']
+        self.user = self.identity_api.create_user(self.user)
+        self.user['password'] = password
+
+        # build a request body
+        auth_body = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+
+        # sends a request for the user's token
+        token_resp = self.admin_request(path='/v3/auth/tokens',
+                                        method='POST',
+                                        body=auth_body,
+                                        expected_status=201)
+        subject_token = token_resp.headers.get('x-subject-token')
+
+        # validates the returned token and it should be valid.
+        self.admin_request(path='/v3/auth/tokens',
+                           headers={'x-subject-token': subject_token,
+                                    'x-auth-token': 'ADMIN'},
+                           method='GET', expected_status=200)
+
+        # now disable the domain
+        self.domain['enabled'] = False
+        url = "/v3/domains/%(domain_id)s" % {'domain_id': self.domain['id']}
+        r = self.admin_request(path=url, token='ADMIN', method='PATCH',
+                               body={'domain': {'enabled': False}},
+                               expected_status=200)
+        self.assertValidDomainResponse(r, self.domain)
+
+        # validates the same token again and it should be 'not found'
+        # as the domain has already been disable.
+        self.admin_request(path='/v3/auth/tokens',
+                           headers={'x-subject-token': subject_token,
+                                    'x-auth-token': 'ADMIN'},
+                           method='GET', expected_status=404)
+
     # project crud tests
 
     def test_list_projects(self):
