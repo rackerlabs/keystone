@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_670795ca",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:56:45Z",
+      "side": 1,
+      "message": "Instead:\n\n  attr \u003d CONF[name]\n\nperhaps with\n\n  if not isinstance(attr, CONF.GroupAttr):\n      ...",
+      "parentUuid": "baada198_8752e910",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e742c53c",
         "filename": "keystone/contrib/rest_config/controllers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-15T08:41:45Z",
       "side": 1,
       "message": "_groups is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e721e54d",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:56:45Z",
+      "side": 1,
+      "message": "Instead\n\n  for opt_name in sorted(CONF[attr]):\n      ...",
+      "parentUuid": "baada198_e742c53c",
       "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_a7cfed27",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:56:45Z",
+      "side": 1,
+      "message": "There\u0027s no equivalent to this in the oslo.config API, so you need something new\n\nI could imagine adding a new API for it\n\n  def get_opt(self, opt_name, group\u003dNone):\n      return self._get_opt_info(opt_name, group)[\u0027opt\u0027]\n\nbut I\u0027d be a little wary about how it might be abused\n\nor something like:\n\n  def secret_get(self, key):\n      value \u003d self.__getattr__(key)\n      opt \u003d self._get_opt_info(key)[\u0027opt\u0027]\n      return value if not opt.secret else \u0027*\u0027 * len(str(value))\n\nthat would be on cfg.ConfigOpts and you\u0027d add something similar to GroupAttr to",
+      "parentUuid": "baada198_27491d60",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0765f9df",
         "filename": "keystone/contrib/rest_config/controllers.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-15T08:41:45Z",
       "side": 1,
       "message": "_groups is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a7f1ad02",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:56:45Z",
+      "side": 1,
+      "message": "instead:\n\n  if group in CONF:",
+      "parentUuid": "baada198_0765f9df",
       "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_27e3dda4",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:56:45Z",
+      "side": 1,
+      "message": "instead\n\n  for opt_name in CONF:",
+      "parentUuid": "baada198_679dd5bb",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_475b7121",
         "filename": "keystone/contrib/rest_config/controllers.py",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-15T08:41:45Z",
       "side": 1,
       "message": "_get_opt_info() is private",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_67f07567",
+        "filename": "keystone/contrib/rest_config/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2014-07-15T08:56:45Z",
+      "side": 1,
+      "message": "Same issue here - need get_opt() or secret_get()",
+      "parentUuid": "baada198_475b7121",
       "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
