@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_583187a0",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-15T12:57:08Z",
+      "side": 1,
+      "message": "would this blow up if someone called it with an unscoped token?",
+      "revId": "0d1c97fbd11ac38ad6086b5006d1824f04bf56a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_78f1ebff",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-15T12:57:08Z",
+      "side": 1,
+      "message": "nit: remove \"a\"",
+      "revId": "0d1c97fbd11ac38ad6086b5006d1824f04bf56a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_58d50741",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-15T12:57:08Z",
+      "side": 1,
+      "message": "Would there be \u0027next\u0027 and \u0027previous\u0027?  Or maybe this is more like return a single entity, when you just have \u0027self\u0027.\n\nAs an aside, I had exactly the same issue with OS-CONFIG extension WIP code....whether to override the internal methods or do the work myself....",
+      "revId": "0d1c97fbd11ac38ad6086b5006d1824f04bf56a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
