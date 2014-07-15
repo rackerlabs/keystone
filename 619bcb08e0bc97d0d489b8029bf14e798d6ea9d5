@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b2e574dd",
+        "filename": "keystone/contrib/rest_config/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-15T01:40:23Z",
+      "side": 1,
+      "message": "Not sure if it\u0027s worth it, might should be have a Manager class?\nLike at: https://github.com/openstack/keystone/blob/master/keystone/contrib/oauth1/core.py#L140\n\nI\u0027m not sure if there is any benefit since it\u0027s just a handful of GET calls.\n\nAlso, we might want to have an Abstract Drive class:\nhttps://github.com/openstack/keystone/blob/master/keystone/contrib/oauth1/core.py#L183",
+      "revId": "619bcb08e0bc97d0d489b8029bf14e798d6ea9d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
