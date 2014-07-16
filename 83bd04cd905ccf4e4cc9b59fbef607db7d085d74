@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7961d1a7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-16T03:47:41Z",
+      "side": 1,
+      "message": "If the domain is disabled, the project is disabled. However, disabling a domain does not set \u0027disabled\u0027 on all projects, it would be a lot of extra overhead we can avoid by just checking the domain as needed.",
+      "parentUuid": "baada198_d30f1c87",
+      "revId": "83bd04cd905ccf4e4cc9b59fbef607db7d085d74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_9315a49d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-16T03:14:16Z",
       "side": 1,
       "message": "s/it\u0027s/its",
+      "revId": "83bd04cd905ccf4e4cc9b59fbef607db7d085d74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9956a5cd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-16T03:47:41Z",
+      "side": 1,
+      "message": "Will fix when the next patchset is uploaded if needed.",
+      "parentUuid": "baada198_9315a49d",
       "revId": "83bd04cd905ccf4e4cc9b59fbef607db7d085d74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
