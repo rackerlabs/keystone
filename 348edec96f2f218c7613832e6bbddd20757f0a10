@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_06bbf875",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-16T15:35:26Z",
+      "side": 1,
+      "message": "Good Point! let me fix this here (less change) we can do a cleanup-pass and make it more explicit down the line.",
+      "parentUuid": "baada198_20c8e355",
+      "revId": "348edec96f2f218c7613832e6bbddd20757f0a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e0e50bdd",
         "filename": "keystone/token/backends/kvs.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-16T15:10:39Z",
       "side": 1,
       "message": "e.g. should this be token_provider.default_expire_time() or provider.default_expire_time() like elsewhere in the patch?",
+      "revId": "348edec96f2f218c7613832e6bbddd20757f0a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_466c1009",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-16T15:35:26Z",
+      "side": 1,
+      "message": "++ see above response.",
+      "parentUuid": "baada198_e0e50bdd",
       "revId": "348edec96f2f218c7613832e6bbddd20757f0a10",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
