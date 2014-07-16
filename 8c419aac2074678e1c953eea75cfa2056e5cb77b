@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7c1b581c",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-16T21:04:17Z",
+      "side": 1,
+      "message": "well it\u0027s not really a spoiler (I think you copy and pasted this comment from the backend tests).  In this test this is a role that should only arrive via inheritance.  If you want a spoiler role, add a role4 to project 2 that isn\u0027t inherited.",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
