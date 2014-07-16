@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_80019e06",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-16T22:18:45Z",
+      "side": 1,
+      "message": "Why 4 and not 5?  Please have a meaning definition for 4, so it will be easier for reviewers to understand.",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7c1b581c",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 1
