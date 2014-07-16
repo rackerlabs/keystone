@@ -16,6 +16,24 @@
       "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9c910cf4",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-07-16T21:14:51Z",
+      "side": 1,
+      "message": "Yes, we adapted this test from the one in backends.\nI\u0027m not sure what spoiler here means (since it was approved in the other test we just leave it like this) but role2 are not inherited, it\u0027s only used here to be assigned to project2, I think it\u0027ll be the same as creating a role4 to it.",
+      "parentUuid": "baada198_7c1b581c",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
