@@ -50,6 +50,23 @@
       "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d261ab12",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-16T22:13:51Z",
+      "side": 1,
+      "message": "Should consider calling delete_tokens_for_user().",
+      "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
