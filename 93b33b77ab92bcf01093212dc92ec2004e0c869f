@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_bcd6d0ef",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-16T21:57:59Z",
+      "side": 1,
+      "message": "You don\u0027t need to put it in the hints filter, specifying domain_id should be enough (In fact the manager layer will force it into the hints filter for you)",
+      "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
