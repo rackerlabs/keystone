@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_b2c35756",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-16T22:01:30Z",
+      "side": 1,
+      "message": "Disable domain",
+      "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_bcd6d0ef",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
@@ -13,6 +30,23 @@
       "writtenOn": "2014-07-16T21:57:59Z",
       "side": 1,
       "message": "You don\u0027t need to put it in the hints filter, specifying domain_id should be enough (In fact the manager layer will force it into the hints filter for you)",
+      "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d2b44bd6",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-16T22:01:30Z",
+      "side": 1,
+      "message": "You are better of calling delete_tokens_for_users since it deletes trusts too",
       "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
