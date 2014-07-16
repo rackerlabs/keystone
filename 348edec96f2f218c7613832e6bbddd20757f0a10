@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_20c8e355",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2014-07-16T15:10:39Z",
+      "side": 1,
+      "message": "There is some inconsistency in this import. Everywhere else in the patch this is referred to as provider not token_provider. I think token_provider is more explicit but should we maintain the same imports throughout?",
+      "revId": "348edec96f2f218c7613832e6bbddd20757f0a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e0e50bdd",
+        "filename": "keystone/token/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11589
+      },
+      "writtenOn": "2014-07-16T15:10:39Z",
+      "side": 1,
+      "message": "e.g. should this be token_provider.default_expire_time() or provider.default_expire_time() like elsewhere in the patch?",
+      "revId": "348edec96f2f218c7613832e6bbddd20757f0a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
