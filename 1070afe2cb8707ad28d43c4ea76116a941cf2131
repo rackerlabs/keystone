@@ -16,6 +16,24 @@
       "revId": "1070afe2cb8707ad28d43c4ea76116a941cf2131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_05805145",
+        "filename": "keystone/openstack/common/log.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-16T14:41:55Z",
+      "side": 1,
+      "message": "This means once this becomes oslo.log the \"openstack.common.strutils\" part needs to be cleaned up? mask_password was just moved there instead of being strictly part of oslo.log. *I think*",
+      "parentUuid": "baada198_3494b48b",
+      "revId": "1070afe2cb8707ad28d43c4ea76116a941cf2131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
