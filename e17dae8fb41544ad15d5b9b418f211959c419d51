@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_bcec10f5",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-16T21:05:46Z",
+      "side": 1,
+      "message": "those events should not be emitted from keystone",
+      "parentUuid": "baada198_ff397ef2",
+      "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_86bcb2dd",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-15T04:48:43Z",
       "side": 1,
       "message": "s/**not**/NOT, simply a matter of personal choice.",
+      "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3cb800e5",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-16T21:05:46Z",
+      "side": 1,
+      "message": "if this was only plaintext, i would agree, but that\u0027s what bold is for when we go to render html/pdf",
+      "parentUuid": "baada198_86bcb2dd",
       "revId": "e17dae8fb41544ad15d5b9b418f211959c419d51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
