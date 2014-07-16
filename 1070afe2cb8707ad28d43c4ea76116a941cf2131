@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3494b48b",
+        "filename": "keystone/openstack/common/log.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-16T10:01:17Z",
+      "side": 1,
+      "message": "does this mean we should remove something....not really clear to me.  We have removed the mask_password function from this file...is that what it means?",
+      "revId": "1070afe2cb8707ad28d43c4ea76116a941cf2131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
