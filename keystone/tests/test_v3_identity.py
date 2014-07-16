@@ -1439,6 +1439,64 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         super(IdentityInheritanceTestCase, self).config_overrides()
         self.config_fixture.config(group='os_inherit', enabled=True)
 
+    def test_token_comes_with_user_inherited_domain_roles(self):
+        role_list = []
+        for _ in range(4):
+            role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+            self.assignment_api.create_role(role['id'], role)
+            role_list.append(role)
+
+        domain = self.new_domain_ref()
+        self.assignment_api.create_domain(domain['id'], domain)
+
+        user1 = self.new_user_ref(
+            domain_id=domain['id'])
+        password = user1['password']
+        user1 = self.identity_api.create_user(user1)
+        user1['password'] = password
+
+        project1 = self.new_project_ref(
+            domain_id=domain['id'])
+        self.assignment_api.create_project(project1['id'], project1)
+        project2 = self.new_project_ref(
+            domain_id=domain['id'])
+        self.assignment_api.create_project(project2['id'], project2)
+
+        # Add some roles to the project
+        self.assignment_api.add_role_to_user_and_project(
+            user1['id'], project1['id'], role_list[0]['id'])
+        self.assignment_api.add_role_to_user_and_project(
+            user1['id'], project1['id'], role_list[1]['id'])
+        # ..and one on a different project as a spoiler
+        self.assignment_api.add_role_to_user_and_project(
+            user1['id'], project2['id'], role_list[2]['id'])
+
+        base_collection_url = (
+            '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
+                'domain_id': domain['id'],
+                'user_id': user1['id']})
+        member_url = '%(collection_url)s/%(role_id)s/inherited_to_projects' % {
+            'collection_url': base_collection_url,
+            'role_id': role_list[3]['id']}
+
+        self.put(member_url)
+        self.head(member_url)
+
+        # Get a token for user within project of inherited role
+        auth_data = self.build_authentication_request(
+            user_id=user1['id'],
+            password=user1['password'],
+            user_domain_id=domain['id'],
+            project_id=project1['id'])
+        r = self.post('/auth/tokens',
+                      body=auth_data,
+                      expected_status=201)
+
+        entities = r.result.get('token').get('roles')
+        self.assertEqual(3, len(entities))
+        for entity in entities:
+            self.assertIn(entity, role_list)
+
     def test_crud_user_inherited_domain_role_grants(self):
         role_list = []
         for _ in range(2):
