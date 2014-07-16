@@ -34,6 +34,41 @@
       "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b2ed17ba",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-16T22:06:11Z",
+      "side": 1,
+      "message": "Ah, sorry, yes, I get it (hmm, and I wrote the original test!!!!)...please ignore my comment.",
+      "parentUuid": "baada198_9c910cf4",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f215cf9b",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1498,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-16T22:06:11Z",
+      "side": 1,
+      "message": "If you wanted to be complete you would test that role_list[2] is not in entities",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
