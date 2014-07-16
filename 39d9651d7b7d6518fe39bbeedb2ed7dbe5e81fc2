@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_51ab0175",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-16T06:40:15Z",
+      "side": 1,
+      "message": "Suggest to add , after subject",
+      "revId": "39d9651d7b7d6518fe39bbeedb2ed7dbe5e81fc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_11f6e990",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-16T06:40:15Z",
+      "side": 1,
+      "message": ", after SSL",
+      "revId": "39d9651d7b7d6518fe39bbeedb2ed7dbe5e81fc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
