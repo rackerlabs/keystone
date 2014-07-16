@@ -84,6 +84,24 @@
       "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4b29f05",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-07-16T07:10:05Z",
+      "side": 1,
+      "message": "There are two solutions to this problem.\n1. Create a set of related keys and delete the keys present in the set.\n2. Create a different region for this related set of functions and invalidate the region itself. \n\nIMO the second way is easy and efficient. None of the two is a clean approach though.",
+      "parentUuid": "baada198_7a2f9888",
+      "revId": "7852d5d76e8c0ae585b22274d51244c56956f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
