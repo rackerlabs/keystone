@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_aa2a142d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-16T14:28:03Z",
+      "side": 1,
+      "message": "This is not mentioned in the commit message",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8afe30ad",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-16T14:28:03Z",
+      "side": 1,
+      "message": "This is not mentioned in the commit message",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0a2a202c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-16T14:28:03Z",
+      "side": 1,
+      "message": "This is not mentioned in the commit message",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a1b381c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 1520,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-16T14:28:03Z",
+      "side": 1,
+      "message": "This is not mentioned in the commit message",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
