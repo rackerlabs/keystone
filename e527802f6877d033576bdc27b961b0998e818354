@@ -16,6 +16,24 @@
       "revId": "e527802f6877d033576bdc27b961b0998e818354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_565ac883",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T16:32:16Z",
+      "side": 1,
+      "message": "henry - do you mean that \"from oslo import i18n\" should be at line 21 again?\n\nthe way it is now is more consistent with the import guidelines. stdlib then external lib then internal libs\n\nwhen using oslo-incubator, we couldn\u0027t comply with that guideline since the oslo common files were internal. with the change to oslo.i18n, we can be more compliant.\n\nI\u0027m fine with it either way, so just say it and I\u0027ll change it back.",
+      "parentUuid": "baada198_ab1f416f",
+      "revId": "e527802f6877d033576bdc27b961b0998e818354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
