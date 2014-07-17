@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fb9d9967",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-17T09:49:27Z",
+      "side": 1,
+      "message": "Actually in Python 2 strings *are* byte strings and we have the additional unicode type for text. In Python 3 they switched it. Strings are unicode and they added a new type for byte strings.\n\nThe u prefix (u\u0027\u0027) is gone in Python 3, but the b prefix (b\u0027\u0027) works in all versions. In Python 2 (type(b\u0027\u0027\u0027) is str) and in Python 3 (type(b\u0027\u0027) is bytes).",
+      "parentUuid": "baada198_6af6205f",
+      "revId": "2de82d81de4defd9c3204192c64b340fd21aeb05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8a2b7432",
         "filename": "tox.ini",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-17T05:15:43Z",
       "side": 1,
       "message": "As I see the list of tests supported growing slowly, it reminds me of Karate Kid 2 where Mr. Miyagi continues to karate chop this huge log thinking one day he may actually break it :-)  Keep chopping stanek !!",
+      "revId": "2de82d81de4defd9c3204192c64b340fd21aeb05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3bb551d0",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-17T09:49:27Z",
+      "side": 1,
+      "message": "To me it\u0027s more like Karate Kid 3 where Terry make Daniel bust up his foot kicking 2x4s.",
+      "parentUuid": "baada198_8a2b7432",
       "revId": "2de82d81de4defd9c3204192c64b340fd21aeb05",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
