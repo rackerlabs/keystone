@@ -69,6 +69,70 @@
       "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1975f231",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-17T11:55:47Z",
+      "side": 1,
+      "message": "I think you should specify encoding\u003d\u0027utf-8\u0027 in arguments to be sure to decode proper utf-8. Or you can pass encoding\u003d\u0027unicode\u0027 and let lxml make unicode/str object for you.",
+      "parentUuid": "baada198_c1662655",
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b99b2665",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-17T11:55:47Z",
+      "side": 1,
+      "message": "Why not e.args[0]?",
+      "range": {
+        "startLine": 92,
+        "startChar": 33,
+        "endLine": 92,
+        "endChar": 49
+      },
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d9a1ba96",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-17T11:55:47Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 100,
+        "startChar": 38,
+        "endLine": 100,
+        "endChar": 54
+      },
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
