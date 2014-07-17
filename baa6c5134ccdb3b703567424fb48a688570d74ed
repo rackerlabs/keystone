@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_49f6d15e",
+        "filename": "keystone/identity/mapping_backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T00:43:19Z",
+      "side": 1,
+      "message": "can the column be used on session.query() so that we don\u0027t select the whole row?",
+      "revId": "baa6c5134ccdb3b703567424fb48a688570d74ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
