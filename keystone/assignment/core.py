@@ -63,11 +63,6 @@ class Manager(manager.Manager):
 
     def __init__(self):
         assignment_driver = CONF.assignment.driver
-
-        if assignment_driver is None:
-            identity_driver = dependency.REGISTRY['identity_api'].driver
-            assignment_driver = identity_driver.default_assignment_driver()
-
         super(Manager, self).__init__(assignment_driver)
 
     @notifications.created(_PROJECT)
