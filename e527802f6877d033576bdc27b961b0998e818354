@@ -34,6 +34,24 @@
       "revId": "e527802f6877d033576bdc27b961b0998e818354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_965d404b",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-17T16:41:12Z",
+      "side": 1,
+      "message": "I like this conforming more to import guidelines, but I don\u0027t feel strongly enough to say this comment would affect my view on the patchset.",
+      "parentUuid": "baada198_565ac883",
+      "revId": "e527802f6877d033576bdc27b961b0998e818354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
