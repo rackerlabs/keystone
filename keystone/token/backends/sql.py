@@ -40,7 +40,7 @@ class TokenModel(sql.ModelBase, sql.DictBase):
     )
 
 
-class Token(token.Driver):
+class Token(token.persistence.Driver):
     # Public interface
     def get_token(self, token_id):
         if token_id is None:

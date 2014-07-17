@@ -290,6 +290,7 @@ class Manager(manager.Manager):
         self._validate_v3_token.invalidate(self, token_id)
 
 
+
 @six.add_metaclass(abc.ABCMeta)
 class Provider(object):
     """Interface description for a Token provider."""
