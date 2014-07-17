@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c144661b",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-17T10:46:18Z",
+      "side": 1,
+      "message": "Unfortunately my memories of XML are not so great..",
+      "parentUuid": "baada198_2771c1de",
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_47fb1547",
         "filename": "keystone/tests/matchers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-17T04:50:09Z",
       "side": 1,
       "message": "You know to decode using utf-8 because the XML byte string examples have the encoding attribute set to encoding\u003d\"UTF-8\" like the following:\n\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\"?\u003e\n\nIs my logic is correct or was there some other way to know to use utf-8 to decode?",
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c1662655",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-17T10:46:18Z",
+      "side": 1,
+      "message": "Basically yes.",
+      "parentUuid": "baada198_47fb1547",
       "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
