@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d45a74f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "enabled isn\u0027t expected to be a boolean if user_enabled_mask is not 0, see http://git.openstack.org/cgit/openstack/keystone/tree/etc/keystone.conf.sample#n936",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4119405",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "Might as well use the \"user_enabled_mask\" option. If it\u0027s set to invert then invert the value.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_94bc7cdd",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure the sample config wasn\u0027t rebuilt using \"tox -e sample_config\".",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_34c73066",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "re-use user_enabled_default or user_enabled_mask instead since they can\u0027t be used with this anyways.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4ad149d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "the docs for the enabled_invert config option need to say that this is ignored if enabled_mask is not 0.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d484340d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "the order of arguments is expected and then observed... this is typically done correctly in these changes, so it\u0027s just the `assertIs`s I think.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9491dc48",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1704,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:13:35Z",
+      "side": 1,
+      "message": "rather than skipping show show what the behavior is. this way if the behavior is changed (to fix make it do something instead) then we\u0027ll know that the behavior changed and this test needs to be removed or changed.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
