@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2fbd1d03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:43:13Z",
+      "side": 1,
+      "message": "missing _ after *.",
+      "revId": "bf8dec961493dba58080a07d1400fbbece9ed125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2f543dc9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:43:13Z",
+      "side": 1,
+      "message": "was this cherry-picked from master? If so it should have a cherry-picked from commit line.\n\nIf not there should be an explanation of why it wasn\u0027t cherry-picked from master.",
+      "revId": "bf8dec961493dba58080a07d1400fbbece9ed125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
