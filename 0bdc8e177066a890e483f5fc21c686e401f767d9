@@ -16,6 +16,24 @@
       "revId": "0bdc8e177066a890e483f5fc21c686e401f767d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_02e9f219",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-17T15:09:05Z",
+      "side": 1,
+      "message": "Oops. Nice catch.",
+      "parentUuid": "baada198_9f8f1b2e",
+      "revId": "0bdc8e177066a890e483f5fc21c686e401f767d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
