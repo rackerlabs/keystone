@@ -16,6 +16,75 @@
       "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cfb661f9",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:58:17Z",
+      "side": 1,
+      "message": "I like this suggestion.",
+      "parentUuid": "baada198_6da3dd00",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ef93255a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:58:17Z",
+      "side": 1,
+      "message": "what about a domain scoped token?\n\nmaybe change \"scoped token\" to \"project-scoped token\"\n\nalso, how about return a catalog that\u0027s just the identity server?",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_af984d6b",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:58:17Z",
+      "side": 1,
+      "message": "is this a todo?",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cfb2e1e4",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T01:58:17Z",
+      "side": 1,
+      "message": "what happened to assertValidErrorResponse?",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
