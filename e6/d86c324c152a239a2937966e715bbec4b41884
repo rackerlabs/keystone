@@ -1,0 +1,15 @@
+Verified+2: Jenkins
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Matt Fischer <matt@mattfischer.com>
+Code-Review+1: Bob Thyne <bob.thyne@hp.com>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Code-Review+1: Ryan Oshima <ryan.oshima@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 17 Jul 2014 18:21:55 +0000
+Reviewed-on: https://review.openstack.org/94679
+Project: openstack/keystone
+Branch: refs/heads/master
