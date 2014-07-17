@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_bcc30d37",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-17T14:46:28Z",
+      "side": 1,
+      "message": "Maybe add a comment that the classic case of this is when running with a single SQL driver...",
+      "revId": "80509a2b092bba9e386bb05f41b12dd9c4eb2d21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fcfe6504",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-17T14:46:28Z",
+      "side": 1,
+      "message": "so the default SQL driver is one that doesn\u0027t meet help...maybe a better title would be\n\n\"\"\"Returns whether entity from driver needs domain added or mapping.\"\"\"\n\nor something like that",
+      "revId": "80509a2b092bba9e386bb05f41b12dd9c4eb2d21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9cbe49ff",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-17T14:46:28Z",
+      "side": 1,
+      "message": "Perhaps a better title would be\n\n\"\"\"\"Inserts the domain ID into the ref, if required.\"\"\"\"",
+      "revId": "80509a2b092bba9e386bb05f41b12dd9c4eb2d21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5c291136",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-17T14:46:28Z",
+      "side": 1,
+      "message": "remove the word \"now\"",
+      "revId": "80509a2b092bba9e386bb05f41b12dd9c4eb2d21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
