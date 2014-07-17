@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9f8f1b2e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2014-07-17T14:59:13Z",
+      "side": 1,
+      "message": "This should be `six.reraise(*exc_info)`.",
+      "revId": "0bdc8e177066a890e483f5fc21c686e401f767d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
