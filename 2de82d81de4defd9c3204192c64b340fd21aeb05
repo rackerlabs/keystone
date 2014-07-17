@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6af6205f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-07-17T05:15:43Z",
+      "side": 1,
+      "message": "Ok, So I get that you are making this a byte string so the assertNotIn statements below will work in python 3 where body\u0027s are byte string. My question is (assuming body\u0027s are not byte strings in 2.x ) is why doesn\u0027t this change break stuff when running 2.x",
+      "revId": "2de82d81de4defd9c3204192c64b340fd21aeb05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8a2b7432",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-07-17T05:15:43Z",
+      "side": 1,
+      "message": "As I see the list of tests supported growing slowly, it reminds me of Karate Kid 2 where Mr. Miyagi continues to karate chop this huge log thinking one day he may actually break it :-)  Keep chopping stanek !!",
+      "revId": "2de82d81de4defd9c3204192c64b340fd21aeb05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
