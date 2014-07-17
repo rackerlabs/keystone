@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5ce83816",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-17T12:29:08Z",
+      "side": 1,
+      "message": "This resize doesn\u0027t quite make sense to me. Is pool size changed anywhere? Given that by this time service is already down, I guess, there\u0027s nothing to do here.\n\nOn the second thought, you should just set self.socket to None here so that call to (original) start will recreate it.",
+      "revId": "dd6777dac57dcabed8a8dab5838aaf808a7c649d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bc46b479",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-17T12:29:08Z",
+      "side": 1,
+      "message": "I don\u0027t see why all these mocks are explicitly created here. If you need mock_sock_dup, you can do just\n\n    mock_sock_dup \u003d mock_listen.return_value.dup.return_value\n\nThis would avoid all unnecessary calls to different Mocks.",
+      "revId": "dd6777dac57dcabed8a8dab5838aaf808a7c649d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
