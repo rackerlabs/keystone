@@ -88,6 +88,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_42ae78e8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-17T22:44:33Z",
+      "side": 1,
+      "message": "Consider giving this \"note\" its own little paragraph and note it with\t\".. NOTE::\"",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_6099df78",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 9
