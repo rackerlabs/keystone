@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ab1f416f",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-17T16:16:58Z",
+      "side": 1,
+      "message": "is there a reason this whole block doesn\u0027t stick with the import of i18n ?",
+      "revId": "e527802f6877d033576bdc27b961b0998e818354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
