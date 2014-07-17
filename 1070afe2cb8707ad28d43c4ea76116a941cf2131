@@ -34,6 +34,23 @@
       "revId": "1070afe2cb8707ad28d43c4ea76116a941cf2131",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a943ed6a",
+        "filename": "keystone/openstack/common/log.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-17T00:50:29Z",
+      "side": 1,
+      "message": "seems like something we could use.",
+      "revId": "1070afe2cb8707ad28d43c4ea76116a941cf2131",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
