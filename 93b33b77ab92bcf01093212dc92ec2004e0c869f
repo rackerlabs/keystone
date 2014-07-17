@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_0ff3f9e7",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-17T01:48:47Z",
+      "side": 1,
+      "message": "henry-nash, thanks for the comment.\n\nI actually only passed domain_id to list_users without hints, and it returned me all the other uses who were in different domains. \n\nAnd I just tested with only passing the domain_id again, and it works. I must had done something wrong in the testing before. Thx, I will make the changes.",
+      "parentUuid": "baada198_bcd6d0ef",
+      "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d2b44bd6",
         "filename": "keystone/token/core.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2014-07-16T22:01:30Z",
       "side": 1,
       "message": "You are better of calling delete_tokens_for_users since it deletes trusts too",
+      "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_af25ad5d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-17T01:48:47Z",
+      "side": 1,
+      "message": "thanks guys, thanks for the comments also, I overlooked the other APIs and I will make the changes.",
+      "parentUuid": "baada198_d2b44bd6",
       "revId": "93b33b77ab92bcf01093212dc92ec2004e0c869f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
