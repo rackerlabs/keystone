@@ -71,6 +71,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_31c49740",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-17T08:03:55Z",
+      "side": 1,
+      "message": "maybe try with a domain scoped token to ensure that fails too",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_cfb2e1e4",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 3
