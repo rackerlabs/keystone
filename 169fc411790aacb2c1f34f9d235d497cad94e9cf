@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_4b122563",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-18T13:45:28Z",
+      "side": 1,
+      "message": "+1 i felt weird about including them both in the first place",
+      "parentUuid": "baada198_cfb661f9",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ef93255a",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 3
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_f6175c43",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-18T13:45:28Z",
+      "side": 1,
+      "message": "+1 for the first suggestion\n\nthe second suggestion would be a whole new behavior and i think is worthy of it\u0027s own spec/discussion :) -- i think i agree but i haven\u0027t thought through the implications",
+      "parentUuid": "baada198_ef93255a",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_af984d6b",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 3
@@ -65,6 +101,24 @@
       "writtenOn": "2014-07-17T01:58:17Z",
       "side": 1,
       "message": "is this a todo?",
+      "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_16d3f038",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-18T13:45:28Z",
+      "side": 1,
+      "message": "dammit - yes. will fix.",
+      "parentUuid": "baada198_af984d6b",
       "revId": "169fc411790aacb2c1f34f9d235d497cad94e9cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
