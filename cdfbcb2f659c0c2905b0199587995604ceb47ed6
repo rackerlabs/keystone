@@ -33,6 +33,24 @@
       "revId": "cdfbcb2f659c0c2905b0199587995604ceb47ed6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_75022d3f",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6488
+      },
+      "writtenOn": "2014-07-18T21:14:20Z",
+      "side": 1,
+      "message": "INFO is appropriate when it is intended to record a unit of work:\n\nhttps://wiki.openstack.org/wiki/LoggingStandards#INFO",
+      "parentUuid": "baada198_75722d7d",
+      "revId": "cdfbcb2f659c0c2905b0199587995604ceb47ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
