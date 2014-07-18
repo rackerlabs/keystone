@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_75c4ed91",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-18T21:03:01Z",
+      "side": 1,
+      "message": "I sincerely hope no one is doing keystone token replication across a WAN. But I don\u0027t suppose we shouldn\u0027t guard against breaking things or doing ugly things with this scenario.",
+      "revId": "cdfbcb2f659c0c2905b0199587995604ceb47ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_75722d7d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-18T21:03:01Z",
+      "side": 1,
+      "message": "Suggest converting this to a debug message, however if Info really is appropriate:\n\nLog info should be (afaik) translated. Please add translation here. you\u0027ll need to import _LI from keystone.i18n and do something like:\n\n    LOG.info(_LI(\u0027Total expired tokens removed: %d\u0027), total_removed)\n\n(NIT): Please prefer using single quotes over double quotes.\n\nBoth of these comments apply to line 278 as well and line 212.",
+      "revId": "cdfbcb2f659c0c2905b0199587995604ceb47ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
