@@ -210,6 +210,31 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           project_id=self.tenant_bar['id'],
                           role_id='member')
 
+    def test_grants_not_user(self):
+        new_domain = self._get_domain_fixture()
+        new_user = {'id': uuid.uuid4().hex,
+                    'name': 'new_user',
+                    'enabled': True,
+                    'domain_id': new_domain['id']}
+
+        self.assertRaises(exception.NotFound,
+                          self.assignment_api.create_grant,
+                          user_id=new_user['id'],
+                          project_id=self.tenant_bar['id'],
+                          role_id='member')
+
+    def test_grants_not_group(self):
+        new_domain = self._get_domain_fixture()
+        new_group = {'id': uuid.uuid4().hex,
+                     'name': 'new_group',
+                     'domain_id': new_domain['id']}
+
+        self.assertRaises(exception.NotFound,
+                          self.assignment_api.create_grant,
+                          group_id=new_group['id'],
+                          project_id=self.tenant_bar['id'],
+                          role_id='member')
+
     def test_delete_user_grant_no_user(self):
         self.skipTest('Blocked by bug 1101287')
 
@@ -1738,6 +1763,12 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_list_projects_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')
 
+    def test_grants_not_user(self):
+        self.skipTest('SQL backend does not handle UserApi')
+
+    def test_grants_not_group(self):
+        self.skipTest('SQL backend does not handle GroupApi')
+
 
 class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
     """Class to test mapping of default LDAP backend.
@@ -1795,6 +1826,12 @@ class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
     def test_get_roles_for_user_and_project_user_group_same_id(self):
         self.skipTest('N/A: We never generate the same ID for a user and '
                       'group in our mapping table')
+
+    def test_grants_not_user(self):
+        self.skipTest('SQL backend does not handle UserApi')
+
+    def test_grants_not_group(self):
+        self.skipTest('SQL backend does not handle GroupApi')
 
 
 class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
@@ -2150,3 +2187,9 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_user_id_comma_grants(self):
         self.skipTest('Only valid if it is guaranteed to be taling to '
                       'the fakeldap backend')
+
+    def test_grants_not_user(self):
+        self.skipTest('SQL backend does not handle UserApi')
+
+    def test_grants_not_group(self):
+        self.skipTest('SQL backend does not handle GroupApi')

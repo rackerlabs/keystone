@@ -308,6 +308,10 @@ class Assignment(assignment.Driver):
                      inherited_to_projects=False):
         self.get_role(role_id)
 
+        if user_id:
+            self.user.get(user_id)
+        if group_id:
+            self.group.get(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -335,6 +339,10 @@ class Assignment(assignment.Driver):
                   inherited_to_projects=False):
         role_ref = self.get_role(role_id)
 
+        if user_id:
+            self.user.get(user_id)
+        if group_id:
+            self.group.get(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -356,6 +364,10 @@ class Assignment(assignment.Driver):
                      inherited_to_projects=False):
         self.get_role(role_id)
 
+        if user_id:
+            self.user.get(user_id)
+        if group_id:
+            self.group.get(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
@@ -381,6 +393,10 @@ class Assignment(assignment.Driver):
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
+        if user_id:
+            self.user.get(user_id)
+        if group_id:
+            self.group.get(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:
