@@ -52,6 +52,24 @@
       "revId": "44ff59cb880bd0542e170f01d6c2f42cc29d851a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2b57785b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-18T22:11:19Z",
+      "side": 1,
+      "message": "Agree. This is the first time I heard about breaking custom code.",
+      "parentUuid": "baada198_903eefb6",
+      "revId": "44ff59cb880bd0542e170f01d6c2f42cc29d851a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
