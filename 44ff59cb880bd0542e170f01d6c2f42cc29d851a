@@ -16,6 +16,24 @@
       "revId": "44ff59cb880bd0542e170f01d6c2f42cc29d851a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_903eefb6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-18T21:23:17Z",
+      "side": 1,
+      "message": "We supported them as a public interface to the internal token_provider_api, If someone has written custom code to utilize them I don\u0027t want to break their code without giving them a warning.",
+      "parentUuid": "baada198_d5513931",
+      "revId": "44ff59cb880bd0542e170f01d6c2f42cc29d851a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
