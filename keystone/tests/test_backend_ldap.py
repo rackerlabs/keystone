@@ -210,6 +210,31 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           project_id=self.tenant_bar['id'],
                           role_id='member')
 
+    def test_grants_not_user(self):
+        new_domain = self._get_domain_fixture()
+        new_user = {'id': uuid.uuid4().hex,
+                    'name': 'new_user',
+                    'enabled': True,
+                    'domain_id': new_domain['id']}
+
+        self.assertRaises(exception.NotFound,
+                          self.assignment_api.create_grant,
+                          user_id=new_user['id'],
+                          project_id=self.tenant_bar['id'],
+                          role_id='member')
+
+    def test_grants_not_group(self):
+        new_domain = self._get_domain_fixture()
+        new_group = {'id': uuid.uuid4().hex,
+                     'name': 'new_group',
+                     'domain_id': new_domain['id']}
+
+        self.assertRaises(exception.NotFound,
+                          self.assignment_api.create_grant,
+                          group_id=new_group['id'],
+                          project_id=self.tenant_bar['id'],
+                          role_id='member')
+
     def test_delete_user_grant_no_user(self):
         self.skipTest('Blocked by bug 1101287')
 
