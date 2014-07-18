@@ -27,7 +27,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_get_catalog_project_scoped_token(self):
         """Call ``GET /catalog`` with a project-scoped token."""
         r = self.get(
-            '/catalog',
+            '/auth/catalog',
             expected_status=200)
         self.assertValidCatalogResponse(r)
 
@@ -38,7 +38,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             self.domain['id'], self.user['id'], self.role['id']))
 
         self.get(
-            '/catalog',
+            '/auth/catalog',
             auth=self.build_authentication_request(
                 user_id=self.user['id'],
                 password=self.user['password'],
@@ -48,7 +48,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_get_catalog_unscoped_token(self):
         """Call ``GET /catalog`` with an unscoped token."""
         self.get(
-            '/catalog',
+            '/auth/catalog',
             auth=self.build_authentication_request(
                 user_id=self.default_domain_user['id'],
                 password=self.default_domain_user['password']),
@@ -57,7 +57,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_get_catalog_no_token(self):
         """Call ``GET /catalog`` without a token."""
         self.get(
-            '/catalog',
+            '/auth/catalog',
             noauth=True,
             expected_status=401)
 

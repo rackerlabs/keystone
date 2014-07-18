@@ -34,7 +34,7 @@ def append_v3_routers(mapper, routers):
                                  'endpoints', 'endpoint'))
 
     mapper.connect(
-        '/catalog',
+        '/auth/catalog',
         controller=controllers.CatalogV3(),
-        action='get_catalog',
+        action='get_auth_catalog',
         conditions=dict(method=['GET']))
