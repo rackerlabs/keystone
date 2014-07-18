@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_d93184a3",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-18T14:13:38Z",
+      "side": 1,
+      "message": "After looking at all of the validation reviews I realized that the name \u0027schema\u0027 sounds a little off. The use \u0027@v.shema(shema.something)\u0027 doesn\u0027t read nicely for me. Also the other decorators I\u0027ve seen in our code read more as a declaration of fact: @v2_deprecated, @protected, etc.\n\nIt feels like validated might be a better name.",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_42af58e3",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 23
