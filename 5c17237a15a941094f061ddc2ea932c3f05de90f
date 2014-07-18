@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_04054979",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-18T22:06:06Z",
+      "side": 1,
+      "message": "Sounds good, I can push up another patch to rename it.",
+      "parentUuid": "baada198_d93184a3",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_42af58e3",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 23
@@ -99,6 +117,24 @@
       "writtenOn": "2014-07-10T23:05:59Z",
       "side": 1,
       "message": "Any reason that this isn\u0027t used anywhere?",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_848959cc",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-18T22:06:06Z",
+      "side": 1,
+      "message": "will remove for now, same with the _UPDATE variable above.",
+      "parentUuid": "baada198_fd580dfc",
       "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
