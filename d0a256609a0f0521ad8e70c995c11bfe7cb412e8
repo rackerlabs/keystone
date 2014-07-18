@@ -71,6 +71,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_bf012206",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-18T06:49:17Z",
+      "side": 1,
+      "message": "capitalize",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_16ddb014",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 9
@@ -82,6 +99,23 @@
       "writtenOn": "2014-07-17T16:26:56Z",
       "side": 1,
       "message": "\"keystone\"-\u003e\"Keystone\"",
+      "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ff0b9a21",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-18T06:49:17Z",
+      "side": 1,
+      "message": "capitalize",
       "revId": "d0a256609a0f0521ad8e70c995c11bfe7cb412e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
