@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c19b4371",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-18T18:46:53Z",
+      "side": 1,
+      "message": "What is the reason for keeping this particular attribute check for \"method\"?",
+      "revId": "4ca44c24d0e1b65b89309f9e369abe381dd5becd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_610ef78d",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-18T18:46:53Z",
+      "side": 1,
+      "message": "Similar question.  Why driver.method as oppose to driver?  The answer will help me understand the change.",
+      "revId": "4ca44c24d0e1b65b89309f9e369abe381dd5becd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
