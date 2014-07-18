@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d5513931",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-18T21:19:04Z",
+      "side": 1,
+      "message": "Why do we need deprecate this? This is not called by consumer. This is an internal method. \nConsumer calls check_token which in turn calls check_v3_token. Am I missing something?",
+      "revId": "44ff59cb880bd0542e170f01d6c2f42cc29d851a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
