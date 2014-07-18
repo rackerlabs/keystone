@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f1210a9f",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-18T10:30:58Z",
+      "side": 0,
+      "message": "Why remove this empty line? It\u0027s cool, leave it :)",
+      "revId": "f3dcd05b3d0b0ffc925e8ab29f90465d9488f0b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
