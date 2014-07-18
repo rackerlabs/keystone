@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7aadc730",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T15:23:04Z",
+      "side": 1,
+      "message": "nit: is there a reason not to just issue self.get() here?",
+      "revId": "c3ed95dc814c55a196fe941dcd9b1e237e77b624",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3ad34fd6",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T15:23:04Z",
+      "side": 1,
+      "message": "nit: I think method defaults to \u0027GET\u0027 anyway",
+      "revId": "c3ed95dc814c55a196fe941dcd9b1e237e77b624",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
