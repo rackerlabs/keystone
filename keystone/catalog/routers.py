@@ -38,5 +38,5 @@ class Routers(wsgi.RoutersBase):
 
         self._add_resource(
             mapper, controllers.CatalogV3(),
-            path='/catalog',
-            get_action='get_catalog')
+            path='/auth/catalog',
+            get_action='get_auth_catalog')

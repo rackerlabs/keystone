@@ -28,7 +28,7 @@
     "identity:update_endpoint": "rule:cloud_admin",
     "identity:delete_endpoint": "rule:cloud_admin",
 
-    "identity:get_catalog": "",
+    "identity:get_auth_catalog": "",
 
     "identity:get_domain": "rule:cloud_admin",
     "identity:list_domains": "rule:cloud_admin",

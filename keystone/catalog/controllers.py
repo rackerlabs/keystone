@@ -141,10 +141,10 @@ class Endpoint(controller.V2Controller):
 
 @dependency.requires('catalog_api')
 class CatalogV3(controller.V3Controller):
-    collection_name = 'catalog'
+    collection_name = 'auth/catalog'
 
     @controller.protected()
-    def get_catalog(self, context):
+    def get_auth_catalog(self, context):
         # TODO(dolphm): this method of accessing the auth context is terrible,
         # but context needs to be refactored to always have reasonable values.
         env_context = context.get('environment', {})
