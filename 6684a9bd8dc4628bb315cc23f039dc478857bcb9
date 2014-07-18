@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2b24fcc4",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T05:04:41Z",
+      "side": 1,
+      "message": "Better to have a single title line, then a description, e.g.\n\n\"\"\"Test token from a disabled domain has been invalidated.\n\nTest that a token that was valid for an enabled domain becomes invalid\nonce that domain is disabled.\n\n\"\"\"\"",
+      "revId": "6684a9bd8dc4628bb315cc23f039dc478857bcb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ee569205",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T05:04:41Z",
+      "side": 1,
+      "message": "Don\u0027t need to specify the 201....this is checked by admin_request...and I think you can replace this whole call with:\n\ntoken_resp \u003d self.post(\u0027/auth/tokens\u0027, body\u003dauth_data)",
+      "revId": "6684a9bd8dc4628bb315cc23f039dc478857bcb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6e8fe275",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T05:04:41Z",
+      "side": 1,
+      "message": "...and this one by:\n\n        self.head(\u0027/auth/tokens\u0027,\n                  headers\u003d{\u0027X-Subject-Token\u0027: subject_token},\n                  expected_status\u003d200)",
+      "revId": "6684a9bd8dc4628bb315cc23f039dc478857bcb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0ef666f9",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T05:04:41Z",
+      "side": 1,
+      "message": "as above...",
+      "revId": "6684a9bd8dc4628bb315cc23f039dc478857bcb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eef21205",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T05:04:41Z",
+      "side": 1,
+      "message": "as above....",
+      "revId": "6684a9bd8dc4628bb315cc23f039dc478857bcb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
