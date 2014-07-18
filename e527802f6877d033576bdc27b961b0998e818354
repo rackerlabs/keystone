@@ -52,6 +52,24 @@
       "revId": "e527802f6877d033576bdc27b961b0998e818354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eeb3f207",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-18T05:10:43Z",
+      "side": 1,
+      "message": "Ok, thanks....I think I\u0027m fine with it as you have it.",
+      "parentUuid": "baada198_965d404b",
+      "revId": "e527802f6877d033576bdc27b961b0998e818354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
