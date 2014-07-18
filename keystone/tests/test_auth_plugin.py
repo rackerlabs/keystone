@@ -154,24 +154,3 @@ class TestInvalidAuthMethodRegistration(tests.TestCase):
         self.clear_auth_plugin_registry()
         self.assertRaises(ValueError, auth.controllers.load_auth_methods)
 
-    def test_mismatched_auth_method_and_plugin_attribute(self):
-        test_opt = config.cfg.StrOpt('test')
-
-        def clear_and_unregister_opt():
-            # NOTE(morganfainberg): Reset is required before unregistering
-            # arguments or ArgsAlreadyParsedError is raised.
-            config.CONF.reset()
-            config.CONF.unregister_opt(test_opt, 'auth')
-
-        self.addCleanup(clear_and_unregister_opt)
-
-        # Guarantee we register the option we expect to unregister in cleanup
-        config.CONF.register_opt(test_opt, 'auth')
-
-        self.config_fixture.config(group='auth', methods=['test'])
-        self.config_fixture.config(
-            group='auth',
-            test='keystone.tests.test_auth_plugin.MismatchedAuthPlugin')
-
-        self.clear_auth_plugin_registry()
-        self.assertRaises(ValueError, auth.controllers.load_auth_methods)
