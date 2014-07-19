@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_de3b1136",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-19T09:18:59Z",
+      "side": 1,
+      "message": "nit: these properties should be alphabetically arranged",
+      "revId": "98dfde9f79dfc432143aadcd753aacb7bd4b467a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
