@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8aff9b65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "suggest split the change to add the mysql strategy out from the refactoring.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0a70eb06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "We\u0027re already implementing strategies, so I don\u0027t see why we should change the DB2 strategy that\u0027s been working for it. I think we should have a DB2 strategy that works the way it always has and takes advantage of its support for LIMIT (which is more efficient) and a MySQL strategy that doesn\u0027t.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6a316758",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "why would imit ever be called? Probably meant to be limit.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ca3b5336",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "suggest use testtools\u0027s HashLength matcher it should provide a more useful message if it fails\n\nalso, if this is supposed to be the length of \"[1, 2, 3]\" then it should be more obvious... , e.g., ITERS\u003d[1,2,3] and then make this len(ITERS)",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ca92739e",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "remove the # noqa. Also, use keystone.i18n rather than gettextutils.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6a3de78d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "I think it would make more sense if this were a free function rather than a member. \n\nIt\u0027s unnecessarily complicated to have a function that has access to the members of the class in addition to its arguments used a function pointer... if you\u0027re going to use functools.partial then you can pass in the arguments, and if you\u0027ve got a class method then set instance data. Since you wouldn\u0027t expect to be accessing instance data here make it a free function.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a8d8330",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "same argument here. Make it a free function.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6aefa71d",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "suggest change \"function\" to \"callable\"",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eae2d72e",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "batching isn\u0027t limited to DB2 anymore so this comment should be cleaned up.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cad99384",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "I think it would be more obvious to just return from these legs.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a0ae3d2",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "suggest give a name to \"timeutils.utcnow\" so it\u0027s obvious what it\u0027s used for --\n\n upper_bound_func\u003dtimeutils.utcnow\n\nalso, since the function will always the same don\u0027t pass it in. Use timeutils.utcnow in the function rather than passing it in.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8a831b02",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-19T01:39:30Z",
+      "side": 1,
+      "message": "this could wind up being a lot of output printed really quickly (especially for db2 since we\u0027re only doing 100 rows at a time). I\u0027d suggest debug. Also, I think we\u0027d be better off switching to printing total_removed rather than row_count since it\u0027ll just be the batch size (or should be close to it).",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
