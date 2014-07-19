@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Haneef Ali <haneef.ali@hp.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Workflow+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Harry Rybacki <hrybacki@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 19 Jul 2014 10:42:16 +0000
+Reviewed-on: https://review.openstack.org/107218
+Project: openstack/keystone
+Branch: refs/heads/master
