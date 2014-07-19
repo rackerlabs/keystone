@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_ae0f0c2d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-19T15:11:49Z",
+      "side": 1,
+      "message": "s/remains/remaining/",
+      "revId": "f37bffdf00ee93f0389ad3785d285e39a754f860",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_227ef6e4",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 7
