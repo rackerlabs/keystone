@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_de223100",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-19T09:13:49Z",
+      "side": 1,
+      "message": "minor point, but I\u0027d prefer this comment to be inside the if statement, so that it\u0027s obvious that\u0027s what we mean",
+      "revId": "08c0b0f72a2caf728fae17d47c5395f9330c0af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
