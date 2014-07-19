@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_077aa4b9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "baada198_6b442d47",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ebff5d64",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -30,6 +48,30 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "Unused argument",
+      "range": {
+        "startLine": 551,
+        "startChar": 37,
+        "endLine": 551,
+        "endChar": 46
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c75a6c4f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will remove in next patch.",
+      "parentUuid": "baada198_ebff5d64",
       "range": {
         "startLine": 551,
         "startChar": 37,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_a75d784a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will remove in next patch.",
+      "parentUuid": "baada198_a879eb94",
+      "range": {
+        "startLine": 552,
+        "startChar": 32,
+        "endLine": 552,
+        "endChar": 51
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e86f63c2",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_8745d470",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will remove in next patch.",
+      "parentUuid": "baada198_e86f63c2",
+      "range": {
+        "startLine": 555,
+        "startChar": 32,
+        "endLine": 555,
+        "endChar": 47
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_3a1fe071",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -99,6 +189,30 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "All caps doesn\u0027t fit here. It\u0027s just a class variable. You can name it Connector to represent that it should be a class.",
+      "range": {
+        "startLine": 622,
+        "startChar": 4,
+        "endLine": 622,
+        "endChar": 17
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2731680b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Renaming it to \u0027Connector\u0027 variable in next patch.",
+      "parentUuid": "baada198_3a1fe071",
       "range": {
         "startLine": 622,
         "startChar": 4,
@@ -180,6 +294,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_6737e0fe",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "baada198_1a5dbc48",
+      "range": {
+        "startLine": 660,
+        "startChar": 30,
+        "endLine": 660,
+        "endChar": 47
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0bf9f1c7",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -191,6 +329,30 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "We wouldn\u0027t get here if use_pool would\u0027ve False. This argument is unneeded.",
+      "range": {
+        "startLine": 661,
+        "startChar": 16,
+        "endLine": 661,
+        "endChar": 43
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ca0fd32c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "I agree. Will remove in next patch.",
+      "parentUuid": "baada198_0bf9f1c7",
       "range": {
         "startLine": 661,
         "startChar": 16,
@@ -226,6 +388,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_2a268fba",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "baada198_c8fa9f76",
+      "range": {
+        "startLine": 673,
+        "startChar": 17,
+        "endLine": 674,
+        "endChar": 65
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_77ffaa02",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -237,6 +423,24 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "This won\u0027t work for following scenario:\n\n- user connects, authenticates;\n- user changes password;\n- user connects again using old password.\n\nldappool will reuse existing connection with old credentials then. I guess there should be some guard to force password verification.",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a790392",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "If LDAP connection password needs to be changed, keystone configuration needs to be updated and possibly server needs to restart to make configuration change effective. So pool dynamic reconfig is not needed here and supported elsewhere in keystone.",
+      "parentUuid": "baada198_77ffaa02",
       "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -289,6 +493,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_0a5b8b22",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "baada198_ee0dab90",
+      "range": {
+        "startLine": 726,
+        "startChar": 8,
+        "endLine": 726,
+        "endChar": 15
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_68a6f3ac",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -300,6 +528,30 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "Note that who and cred are encoded here. You should probably do the same.\n\nUPD: Or better use KeystoneLDAPHandler(conn) everywhere so that all these processing steps happens for all methods.",
+      "range": {
+        "startLine": 803,
+        "startChar": 8,
+        "endLine": 804,
+        "endChar": 37
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9a8610b8",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Next line calls same method on self.conn instance with encoded who and cred parameters and that object in case of pooling is PooledLdapHandler. So I think we don\u0027t need to do that again.",
+      "parentUuid": "baada198_68a6f3ac",
       "range": {
         "startLine": 803,
         "startChar": 8,
@@ -329,6 +581,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_aa953f89",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Existing ldap live tests are broken in master. When I run them against local instance of openLdap, there are number of failures. So I am going to add defect against them and also will address them in separate branch.\nThis is one of the needed change, so I can run using these tests.",
+      "parentUuid": "baada198_ef8f9074",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1cdbf5ed",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 13
@@ -340,6 +610,24 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "Are these changes relevant to the pooling patch?",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6e2269ba",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1262,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Existing ldap live tests are broken in master. When I run them against local instance of openLdap, there are number of failures. So I am going to add defect against them and also will address them in separate branch. \n\nThis is one of the needed change, so I can run using these tests.",
+      "parentUuid": "baada198_1cdbf5ed",
       "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -363,6 +651,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8aa6bb0d",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Thanks for the idea. Will address in next patch.",
+      "parentUuid": "baada198_7cf5d14f",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7c7a31bb",
         "filename": "keystone/tests/test_backend_ldap_pool.py",
         "patchSetId": 13
@@ -374,6 +680,24 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "I think you should move this call to setUp (or even setUpClass).",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_57a7f10a",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "baada198_7c7a31bb",
       "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -397,6 +721,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_74e4f60c",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "I can see why this will appear that way.\n\nActually this runs fine in isolation as initial setup loads default fixtures which creates user etc so CONNECTION_POOLS is initialized before entering test method. \n\nI like your earlier idea of adding pool initialization check call (if not there and to highlight pool initialization is already done) in setUp to avoid this confusion.",
+      "parentUuid": "baada198_bc6849f6",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_97743e9d",
         "filename": "keystone/tests/test_ldap_pool_livetest.py",
         "patchSetId": 13
@@ -408,6 +750,24 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "From the looks of it you should inherit from test_backend_ldap_pool.LdapIdentitySqlAssignment or some mixin to avoid code repetition here. Most of the tests are the same as in that class.",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_095487fc",
+        "filename": "keystone/tests/test_ldap_pool_livetest.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Good idea. Will address in next patch.",
+      "parentUuid": "baada198_97743e9d",
       "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -454,6 +814,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_c9744f9e",
+        "filename": "keystone/tests/test_ldap_pool_livetest.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address both in next patch.",
+      "parentUuid": "baada198_1c25b5c1",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7cff9102",
         "filename": "keystone/tests/test_ldap_pool_livetest.py",
         "patchSetId": 13
@@ -465,6 +849,24 @@
       "writtenOn": "2014-07-18T10:30:58Z",
       "side": 1,
       "message": "You should use super() here.",
+      "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_29b22be5",
+        "filename": "keystone/tests/test_ldap_pool_livetest.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-19T01:36:58Z",
+      "side": 1,
+      "message": "Will address in next patch.",
+      "parentUuid": "baada198_7cff9102",
       "revId": "03a7f1820d0972b96513ffe88f93a0eee63e6325",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
