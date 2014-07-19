@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3e124db4",
+        "filename": "keystone/policy/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-19T09:12:45Z",
+      "side": 1,
+      "message": "Are there additional properties here?",
+      "revId": "97703283c1936241eda290cb0dddc5f78b634a03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1e42e9aa",
+        "filename": "keystone/policy/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-19T09:12:45Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "97703283c1936241eda290cb0dddc5f78b634a03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
