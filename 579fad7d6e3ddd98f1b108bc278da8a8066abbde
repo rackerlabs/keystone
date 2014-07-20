@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1048062c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3217
+      },
+      "writtenOn": "2014-07-20T21:02:28Z",
+      "side": 1,
+      "message": "Gerrit can\u0027t find a BP using this link.",
+      "revId": "579fad7d6e3ddd98f1b108bc278da8a8066abbde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
