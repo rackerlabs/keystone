@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_bc401b60",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6a316758",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ca3b5336",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 8
@@ -64,6 +82,24 @@
       "writtenOn": "2014-07-19T01:39:30Z",
       "side": 1,
       "message": "suggest use testtools\u0027s HashLength matcher it should provide a more useful message if it fails\n\nalso, if this is supposed to be the length of \"[1, 2, 3]\" then it should be more obvious... , e.g., ITERS\u003d[1,2,3] and then make this len(ITERS)",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dc45cf6f",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_ca3b5336",
       "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_9c651747",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Apparently keystone.i18n didn\u0027t exist when I initially submitted this, so I was a bit confused.  I\u0027ve rebased and changed this to use keystone.i18n.",
+      "parentUuid": "baada198_ca92739e",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_6a3de78d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 8
@@ -98,6 +152,24 @@
       "writtenOn": "2014-07-19T01:39:30Z",
       "side": 1,
       "message": "I think it would make more sense if this were a free function rather than a member. \n\nIt\u0027s unnecessarily complicated to have a function that has access to the members of the class in addition to its arguments used a function pointer... if you\u0027re going to use functools.partial then you can pass in the arguments, and if you\u0027ve got a class method then set instance data. Since you wouldn\u0027t expect to be accessing instance data here make it a free function.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7c95a3e2",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6a3de78d",
       "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_5cf53f4f",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4a8d8330",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_6aefa71d",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 8
@@ -132,6 +222,24 @@
       "writtenOn": "2014-07-19T01:39:30Z",
       "side": 1,
       "message": "suggest change \"function\" to \"callable\"",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5c70df07",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6aefa71d",
       "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3c732b17",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_eae2d72e",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_cad99384",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 8
@@ -166,6 +292,24 @@
       "writtenOn": "2014-07-19T01:39:30Z",
       "side": 1,
       "message": "I think it would be more obvious to just return from these legs.",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fc6c5338",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Agreed, Done",
+      "parentUuid": "baada198_cad99384",
       "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_bc7f3bde",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4a0ae3d2",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8a831b02",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 8
@@ -200,6 +362,24 @@
       "writtenOn": "2014-07-19T01:39:30Z",
       "side": 1,
       "message": "this could wind up being a lot of output printed really quickly (especially for db2 since we\u0027re only doing 100 rows at a time). I\u0027d suggest debug. Also, I think we\u0027d be better off switching to printing total_removed rather than row_count since it\u0027ll just be the batch size (or should be close to it).",
+      "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9c7ef7e2",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-20T16:07:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_8a831b02",
       "revId": "1a8a567567ffc9ce85bf31c0a5155915e8275c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
