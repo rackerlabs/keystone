@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_351d0374",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-20T04:23:57Z",
+      "side": 1,
+      "message": "Do not consume when create token or get token fails (or both)? Can you please confirm. Thanks.",
+      "revId": "28b865480e493ab6f46e05c39fc5e7d4a8da0344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_799b1873",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 3
