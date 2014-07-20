@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b054bac6",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-20T21:18:44Z",
+      "side": 1,
+      "message": "I don\u0027t think this function actually deletes them, does it?",
+      "revId": "06a652a5f5f41e4700ac647798b7d863c509d1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_10f646d7",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-20T21:18:44Z",
+      "side": 1,
+      "message": "Again, if this function doesn\u0027t actually delete them, then this wording feels a bit odd.",
+      "revId": "06a652a5f5f41e4700ac647798b7d863c509d1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
