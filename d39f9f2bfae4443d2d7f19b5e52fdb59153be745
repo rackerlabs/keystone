@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_055b4e86",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-21T16:34:15Z",
+      "side": 1,
+      "message": "did you mean to delete this one and keep member_name?",
+      "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
