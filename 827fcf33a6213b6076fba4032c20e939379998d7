@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_4288ed21",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-21T15:19:36Z",
+      "side": 1,
+      "message": "I don\u0027t see how it\u0027ll fail there. But anyway I think it\u0027d be a good thing for it to fail as it would clearly show programming error since these attributes should be initialized before ldappool is called.",
+      "parentUuid": "baada198_011289b3",
+      "range": {
+        "startLine": 635,
+        "startChar": 8,
+        "endLine": 636,
+        "endChar": 22
+      },
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7ee3e5d7",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 15
@@ -125,6 +149,24 @@
       "side": 1,
       "message": "That is correct. If I recall, the concern you raised earlier was around password change. Ldap pool does match of existing connection creds and if not found, creates new bind for user cred data.\n\nNow there is no way to know whether user password is changed or is invalid. So in this case, if there is user password is modified, then no existing connection match found, so new bind is established.\n\nThere are unit test around authenticate method which executes in both pool versions..fake ldap and live ldap tests",
       "parentUuid": "baada198_9ee8b9b4",
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a26e29fe",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-21T15:19:36Z",
+      "side": 1,
+      "message": "I can\u0027t find a test that covers scenario I\u0027ve proposed. The problem is not with user that logins with new password but with user that logins with old password. Here\u0027s a pseudocode of what I\u0027m talking about:\n\n    authenticate(\u0027user1\u0027, \u0027password\u0027)\n    # A connection with (\u0027user1\u0027, \u0027password\u0027) is added to pool\n    change_password(\u0027user1\u0027, \u0027password\u0027, \u0027newpassword\u0027)\n    # Old password shouldn\u0027t work anymore\n    authenticate(\u0027user1\u0027, \u0027password\u0027)\n    # Connection with (\u0027user1\u0027, \u0027password\u0027) is found in the pool\n    # and authentication succeeds.",
+      "parentUuid": "baada198_81d059f8",
       "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -272,6 +314,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_a23c69e2",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-21T15:19:36Z",
+      "side": 1,
+      "message": "Oh, right. No need to test for that. Sorry.",
+      "parentUuid": "baada198_4e40305f",
+      "range": {
+        "startLine": 855,
+        "startChar": 7,
+        "endLine": 856,
+        "endChar": 37
+      },
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_febff5a8",
         "filename": "keystone/tests/test_backend_ldap_pool.py",
         "patchSetId": 15
@@ -354,6 +420,30 @@
       "side": 1,
       "message": "If test logic is not executed, then no cleanup is needed in this case. But I will move it to setUp as addCleanup.",
       "parentUuid": "baada198_1ebd89b1",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3058a030",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-21T15:19:36Z",
+      "side": 1,
+      "message": "As you said, some objects are created in setUp and so pool will be initialized.",
+      "parentUuid": "baada198_6121859d",
       "range": {
         "startLine": 130,
         "startChar": 8,
