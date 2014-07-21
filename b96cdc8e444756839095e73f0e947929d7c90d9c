@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_71df6866",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T17:51:20Z",
+      "side": 1,
+      "message": "suggest: \n\n    def clean_up_existing_files():",
+      "revId": "b96cdc8e444756839095e73f0e947929d7c90d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7143e83e",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T17:51:20Z",
+      "side": 1,
+      "message": "what about something like http://paste.openstack.org/show/87450/",
+      "revId": "b96cdc8e444756839095e73f0e947929d7c90d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_31ab30d7",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T17:51:20Z",
+      "side": 1,
+      "message": "from above paste, we could change this to be: \n\n    return_code \u003d self.try_clean_up_exist_files()\n    if return_code !\u003d 0:\n        # The `return_code` in this case would be the number of files the user\n        # is overwriting without passing --rebuild\n        return",
+      "revId": "b96cdc8e444756839095e73f0e947929d7c90d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
