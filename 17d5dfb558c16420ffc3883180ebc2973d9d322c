@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_06befb64",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "only allow actual booleans",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a6ac6f36",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "allow any unicode",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c11a2d6e",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "s/to long/too long/",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_61588131",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "i feel like i\u0027ve looked into this before, and the answer was \u0027no\u0027, but can we get more specific failure messages from jsonschema? (value too long, value too short, doesn\u0027t match regex, etc)",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8142f53b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "extend ValidationError and just override the message_format",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_81c5958f",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "add a test with a unicode name",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c1486d5e",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "simplify!",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0176e5a3",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "simplify!",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_21d5a942",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T15:22:26Z",
+      "side": 1,
+      "message": "use a private address where possible (127.0.0.1, 169.254.x.x), and example.com where you need a valid host",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
