@@ -16,6 +16,24 @@
       "revId": "df29f4acdd14df1c5592b56b034997a4a8c70ff8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_82bbc90d",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T19:53:50Z",
+      "side": 1,
+      "message": "gotcha, done in next patch.",
+      "parentUuid": "baada198_9f7962c7",
+      "revId": "df29f4acdd14df1c5592b56b034997a4a8c70ff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
