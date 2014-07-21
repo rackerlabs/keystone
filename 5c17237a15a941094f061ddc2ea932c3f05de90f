@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_3056d5ce",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T14:24:40Z",
+      "side": 1,
+      "message": "Also going to remove this and make it so that we require a real boolean value instead of \"string-as-boolean\" stuff.",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_42af58e3",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 23
@@ -66,6 +83,24 @@
       "writtenOn": "2014-07-10T23:05:59Z",
       "side": 1,
       "message": "Does this mean that we don\u0027t support international names?",
+      "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d0b67924",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T14:24:40Z",
+      "side": 1,
+      "message": "Good point, I\u0027ll be removing this pattern for the time being. Fixed in the next patch set.",
+      "parentUuid": "baada198_42af58e3",
       "revId": "5c17237a15a941094f061ddc2ea932c3f05de90f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
