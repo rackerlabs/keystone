@@ -16,6 +16,24 @@
       "revId": "edede65a4db3aff3e32a1d47b443322041d6cc8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d8993020",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-21T20:52:43Z",
+      "side": 1,
+      "message": "that\u0027s great! It\u0027s the trick of Python, thx!",
+      "parentUuid": "baada198_3ddcdee3",
+      "revId": "edede65a4db3aff3e32a1d47b443322041d6cc8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
