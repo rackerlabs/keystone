@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_893134ef",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-21T18:38:38Z",
+      "side": 1,
+      "message": "I would say \"Configuration files exist,  use --rebuild option to rebuild.\"",
+      "revId": "b96cdc8e444756839095e73f0e947929d7c90d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7143e83e",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 3
