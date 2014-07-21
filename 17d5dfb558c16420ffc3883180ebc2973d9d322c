@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_dc977243",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_06befb64",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_a6ac6f36",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-21T15:22:26Z",
       "side": 1,
       "message": "allow any unicode",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5cac429f",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_a6ac6f36",
       "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fcb7d6d5",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_c11a2d6e",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_61588131",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-21T15:22:26Z",
       "side": 1,
       "message": "i feel like i\u0027ve looked into this before, and the answer was \u0027no\u0027, but can we get more specific failure messages from jsonschema? (value too long, value too short, doesn\u0027t match regex, etc)",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fc4b5684",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "checking this out.",
+      "parentUuid": "baada198_61588131",
       "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_dcd3f2fe",
+        "filename": "keystone/exception.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_8142f53b",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_81c5958f",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 25
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-21T15:22:26Z",
       "side": 1,
       "message": "add a test with a unicode name",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dcddb2de",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_81c5958f",
       "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_1c09ea94",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_c1486d5e",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0176e5a3",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 25
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7cf9067f",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_0176e5a3",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_21d5a942",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 25
@@ -149,6 +293,24 @@
       "writtenOn": "2014-07-21T15:22:26Z",
       "side": 1,
       "message": "use a private address where possible (127.0.0.1, 169.254.x.x), and example.com where you need a valid host",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dc1852cf",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T15:58:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_21d5a942",
       "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
