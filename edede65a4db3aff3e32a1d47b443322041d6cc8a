@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3ddcdee3",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-21T20:30:31Z",
+      "side": 1,
+      "message": "It is safe to pass an empty list / iterator that results in no value to the delete_tokens_for_users method, suggest eliminating the extra explicit loop on line 211 (something like):\n\n    users \u003d self.identity_api.list_users(domain_id)\n    user_ids \u003d (user[\u0027id\u0027] for user in users)\n    self.delete_tokens_for_users(user_ids)\n\nThat will use a generator and save looping here just to do a similar loop at line 258.",
+      "revId": "edede65a4db3aff3e32a1d47b443322041d6cc8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
