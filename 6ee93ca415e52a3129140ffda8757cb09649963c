@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_dd2a027d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-21T20:17:18Z",
+      "side": 0,
+      "message": "I assume this is not needed anymore? It is an odd removal since it seems un-related to the rest of the patch.",
+      "revId": "6ee93ca415e52a3129140ffda8757cb09649963c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

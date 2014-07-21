@@ -34,6 +34,23 @@
       "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3d977e91",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-21T20:17:18Z",
+      "side": 1,
+      "message": "I am ok with this as is, but...\n\nWe should consider what a catalog for an unscoped token would look like, just a keystone endpoint per region? possibly a different call?\n\nNo need to update this *now*. Just something to consider - in the case we want to update it later, we\u0027d be API incompatible changing the forbidden response",
+      "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
