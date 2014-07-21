@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_784bc4b0",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-21T21:08:25Z",
+      "side": 1,
+      "message": "Agreed. Will log the incoming status.",
+      "parentUuid": "baada198_a6862fb7",
+      "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_217a0988",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-14T15:14:40Z",
       "side": 1,
       "message": "More free-form fields full of complex SSL subject components. Should there be logging to help aid debugging?",
+      "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_932cf994",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-21T21:08:25Z",
+      "side": 1,
+      "message": "Sure I can log the SSL_* properties as debug logs.",
+      "parentUuid": "baada198_217a0988",
       "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
