@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8b9a2b12",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-21T01:15:26Z",
+      "side": 1,
+      "message": "You\u0027re right, this comment needs some work.  I\u0027ll have a new change set in a bit.",
+      "parentUuid": "baada198_b054bac6",
+      "revId": "06a652a5f5f41e4700ac647798b7d863c509d1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_10f646d7",
         "filename": "keystone/token/backends/sql.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-20T21:18:44Z",
       "side": 1,
       "message": "Again, if this function doesn\u0027t actually delete them, then this wording feels a bit odd.",
+      "revId": "06a652a5f5f41e4700ac647798b7d863c509d1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ab9b6f15",
+        "filename": "keystone/token/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-07-21T01:15:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_10f646d7",
       "revId": "06a652a5f5f41e4700ac647798b7d863c509d1f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
