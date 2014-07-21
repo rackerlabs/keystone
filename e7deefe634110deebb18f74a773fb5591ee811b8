@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_cc9c1ac3",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-21T19:03:17Z",
+      "side": 1,
+      "message": "i would think it was better to have these properties in alphabetical - since then reading this against the entity resource definition in the identity-api spec should be easy",
+      "revId": "e7deefe634110deebb18f74a773fb5591ee811b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
