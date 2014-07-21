@@ -16,6 +16,24 @@
       "revId": "f9b5eb6e7b9a1bc9cabb5a82d7e7095b15d1585e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e5065a1b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-21T16:21:34Z",
+      "side": 1,
+      "message": "No...and if it\u0027s missing, we still assign a new id.....",
+      "parentUuid": "baada198_4269bc23",
+      "revId": "f9b5eb6e7b9a1bc9cabb5a82d7e7095b15d1585e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
