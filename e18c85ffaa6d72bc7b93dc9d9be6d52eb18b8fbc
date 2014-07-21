@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_8f35adf8",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 1414,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-21T22:34:10Z",
+      "side": 1,
+      "message": "Remove the extract space between \"Do  not\"",
+      "revId": "e18c85ffaa6d72bc7b93dc9d9be6d52eb18b8fbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_a6862fb7",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 3
