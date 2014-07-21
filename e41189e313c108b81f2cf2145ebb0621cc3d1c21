@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0dd53e42",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T13:59:43Z",
+      "side": 1,
+      "message": "flake8 violation! fix with:\n\n  from keystone.i18n import _",
+      "revId": "e41189e313c108b81f2cf2145ebb0621cc3d1c21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
