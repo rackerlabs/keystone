@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_4c82e652",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-21T07:58:53Z",
+      "side": 1,
+      "message": "Only when create token fails.",
+      "parentUuid": "baada198_351d0374",
+      "revId": "28b865480e493ab6f46e05c39fc5e7d4a8da0344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_799b1873",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 3
