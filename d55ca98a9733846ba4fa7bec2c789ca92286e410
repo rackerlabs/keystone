@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b8c8fc22",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-21T20:51:22Z",
+      "side": 1,
+      "message": "Multiple-line doc strings should, I think have a summary line, then blank line, then the rest of the text, then \"\"\" on a line on its own...see http://legacy.python.org/dev/peps/pep-0257/",
+      "revId": "d55ca98a9733846ba4fa7bec2c789ca92286e410",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
