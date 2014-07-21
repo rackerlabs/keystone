@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_226e882f",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-21T16:22:47Z",
+      "side": 1,
+      "message": "Here we might be able to get some more useful information out of the jsonschema.ValidationError object. I want to say there is some useful information in the exception object somewhere but I\u0027ll play around with it.",
+      "parentUuid": "baada198_fc4b5684",
+      "revId": "17d5dfb558c16420ffc3883180ebc2973d9d322c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8142f53b",
         "filename": "keystone/exception.py",
         "patchSetId": 25
