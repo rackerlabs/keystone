@@ -173,6 +173,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_9619528a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-21T17:39:55Z",
+      "side": 1,
+      "message": "You are right. With recent password change, there can be issue if end_user is passing old password to authenticate and that can pass. On top of my mind, I think two approaches to handle this.\n# 1: Do not use pool for that end_user authentication logic where end user username and password is used for ldap bind to authenticate it.\n# 2: Create a separate pool for end_user auth ldap call which has lower connection lifetime (and may be different size) to handle above password change auth issue.\n\nFor #1: In keystone, authentication is one of frequently used request  so overall pool effectiveness is going to be reduced especially if request happens to be repetitive within a short span.\n\nFor #2: Having separate pool for user_auth allows to have shorter connection lifetime and pool size. This way, a deployer can choose optimum size and connection lifetime. Also it can choose not to use pool for end_user ldap bind if it *always* want to bind via new connection.\n\nTo me #2 seems like a good compromise in security and performance. What do you think?",
+      "parentUuid": "baada198_a26e29fe",
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_bed01df8",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 15
@@ -444,6 +462,30 @@
       "side": 1,
       "message": "As you said, some objects are created in setUp and so pool will be initialized.",
       "parentUuid": "baada198_6121859d",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 130,
+        "endChar": 16
+      },
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9cab3ad5",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-21T17:39:55Z",
+      "side": 1,
+      "message": "cleanup is needed only for changes made in test logic. If there are no changes, then no cleanup is needed as setup is executed for each test method execution so would not make difference without test method execution.",
+      "parentUuid": "baada198_3058a030",
       "range": {
         "startLine": 130,
         "startChar": 8,
