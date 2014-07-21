@@ -51,6 +51,24 @@
       "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7d7e56b0",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T20:35:15Z",
+      "side": 1,
+      "message": "agree; but i didn\u0027t want to add additional use cases that we\u0027re not currently covering with unscoped tokens on the first pass",
+      "parentUuid": "baada198_3d977e91",
+      "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

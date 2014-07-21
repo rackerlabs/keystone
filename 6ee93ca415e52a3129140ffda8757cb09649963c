@@ -16,6 +16,24 @@
       "revId": "6ee93ca415e52a3129140ffda8757cb09649963c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9d27aac6",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T20:35:15Z",
+      "side": 0,
+      "message": "it was never needed :( it was actually reducing test coverage by overriding the parent\u0027s method and skipping a bunch of assertions. thankfully they all still passed after removing the override.\n\ni discovered it because the 403 I raised was not allowed by this method, but it is allowed by the parent implementation",
+      "parentUuid": "baada198_dd2a027d",
+      "revId": "6ee93ca415e52a3129140ffda8757cb09649963c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
