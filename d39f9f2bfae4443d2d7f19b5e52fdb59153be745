@@ -16,6 +16,24 @@
       "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5fca6a6e",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-21T19:37:42Z",
+      "side": 1,
+      "message": "yes, actually. this class is using Catalog.V3.base_url() in L169 which essentially composes the endpoint as \"/v3/%(collection_name)s\" by convention.",
+      "parentUuid": "baada198_055b4e86",
+      "revId": "d39f9f2bfae4443d2d7f19b5e52fdb59153be745",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
