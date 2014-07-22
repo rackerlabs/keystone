@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fe47ab49",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T04:44:49Z",
+      "side": 1,
+      "message": "while that\u0027s true, i\u0027m not sure anyone is actually sending us integers. the integer thing was added in havana, on the basis that booleans are just ints in python. it\u0027s an implementation detail that the api contract does not acknowledge",
+      "parentUuid": "baada198_0c7e00af",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_897f6216",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 29
