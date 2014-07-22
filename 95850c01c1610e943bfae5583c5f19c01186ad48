@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_d40fff37",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T15:03:28Z",
+      "side": 1,
+      "message": "The message attribute on an exception was deprecated in Python 2.6 and removed in Python 3. I think \u0027detail \u003d ex.args[0]\u0027 is what you will want.",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_897f6216",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 29
