@@ -86,6 +86,24 @@
       "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c89e7b69",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-22T17:27:36Z",
+      "side": 1,
+      "message": "henry, thanks for the detailed comment that help a lot for my understanding. I will amend the comment to make it clear to what the current patch does.",
+      "parentUuid": "baada198_1e645420",
+      "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
