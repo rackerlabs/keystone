@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_3efd7fb2",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T14:20:23Z",
+      "side": 1,
+      "message": "In the previous patch there was a \u0027hex_uuid\u0027 defined. Since there are probably a lot of them I think it might make sense to make a \u0027string_id\u0027 type.",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_44a7c4a7",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T14:20:23Z",
+      "side": 1,
+      "message": "If we don\u0027t use it I wouldn\u0027t include it.",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_61a20cfe",
         "filename": "keystone/assignment/schema.py",
         "patchSetId": 33
@@ -13,6 +47,41 @@
       "writtenOn": "2014-07-22T09:04:04Z",
       "side": 1,
       "message": "What about the top level attributes? These should also be alphabetically ordered.",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9e792b85",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T14:20:23Z",
+      "side": 1,
+      "message": "I would vote no to alphabetical ordering here. This is how you would see JSONSchema in their documentation and certain attributes like \u0027type\u0027 will change the what other attributes you\u0027ll find.",
+      "parentUuid": "baada198_61a20cfe",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0476ac3f",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T14:20:23Z",
+      "side": 1,
+      "message": "Where do you see name not being required? According to http://docs.openstack.org/api/openstack-identity-service/3/content/domains-v3domains.html it is.",
       "revId": "533a41f9869328761559216dda8a4b2352dc950d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
