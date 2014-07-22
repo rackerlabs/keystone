@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ca14a8a1",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T21:13:21Z",
+      "side": 1,
+      "message": "this whole call doesn\u0027t exist",
+      "revId": "6d441fd26d430175ab537c7e0f38954539695c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aa2854ef",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T21:13:21Z",
+      "side": 1,
+      "message": "/groups/",
+      "revId": "6d441fd26d430175ab537c7e0f38954539695c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
