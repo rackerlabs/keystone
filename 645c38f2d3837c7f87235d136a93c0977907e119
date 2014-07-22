@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_34458915",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-22T20:05:21Z",
+      "side": 1,
+      "message": "Is 10 actually optimum?  Might be a good idea to make it tweakable via keystone.conf.",
+      "revId": "645c38f2d3837c7f87235d136a93c0977907e119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
