@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_aabce6dc",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T15:16:34Z",
+      "side": 1,
+      "message": "I\u0027m totally fine with pushing this toward a real boolean",
+      "parentUuid": "baada198_beb8af76",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d40fff37",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 29
@@ -66,6 +84,24 @@
       "writtenOn": "2014-07-22T15:03:28Z",
       "side": 1,
       "message": "The message attribute on an exception was deprecated in Python 2.6 and removed in Python 3. I think \u0027detail \u003d ex.args[0]\u0027 is what you will want.",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0a923258",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T15:16:34Z",
+      "side": 1,
+      "message": "There are other things that need to be done to get Py3 tests running. We can do this later.",
+      "parentUuid": "baada198_d40fff37",
       "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -137,6 +173,24 @@
       "side": 1,
       "message": "I set a break point and ran some tests where this is raised: \n\nhttp://paste.openstack.org/show/87619/\n\nThere is some good info in the exception from jsonschema, bknudson made a comment on the output we emit to the user in the spec review too: https://review.openstack.org/#/c/95957/13/specs/juno/keystone-api-validation.rst",
       "parentUuid": "baada198_7ec9b724",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8a8c8230",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T15:16:34Z",
+      "side": 1,
+      "message": "The IRC consensus is that the messaging should be enough.",
+      "parentUuid": "baada198_c4b2f4e4",
       "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
