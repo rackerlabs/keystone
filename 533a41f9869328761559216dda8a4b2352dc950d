@@ -85,6 +85,24 @@
       "revId": "533a41f9869328761559216dda8a4b2352dc950d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c8859b0b",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-22T17:27:36Z",
+      "side": 1,
+      "message": "Yep, you\u0027re right. Not sure what I meant by that. Thanks for catching. New patch on the way.",
+      "parentUuid": "baada198_0476ac3f",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
