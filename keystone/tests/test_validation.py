@@ -27,7 +27,8 @@ _CREATE = {
         'description': parameter_types.description,
         'enabled': parameter_types.boolean,
         'url': parameter_types.url,
-        'email': parameter_types.email
+        'email': parameter_types.email,
+        'uuid': parameter_types.id_string
     },
     'required': ['name'],
     'additionalProperties': True,
@@ -158,3 +159,30 @@ class ValidationTestCase(tests.TestCase):
         self.assertRaises(exception.SchemaValidationError,
                           self.create_schema_validator.validate,
                           request_to_validate)
+
+    def test_create_schema_with_valid_id_strings(self):
+        """Validate acceptable id strings."""
+        self.config_fixture.config(group='validation',
+                                   id_string_regex='^[a-zA-Z0-9-]+$')
+        valid_id_strings = ['699d5241-1233-4876-a9fa-427960cc9cd3',
+                            '0b7ed71f308e4d31bbf9c82496420ef7',
+                            'default']
+        for valid_id in valid_id_strings:
+            request_to_validate = {'name': self.resource_name,
+                                   'uuid': valid_id}
+            self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_schema_with_invalid_id_strings(self):
+        """Exception raised when using invalid id strings."""
+        self.config_fixture.config(group='validation',
+                                   id_string_regex='^[a-zA-Z0-9-]+$')
+        long_string = "A" * 65
+        invalid_id_strings = ['',
+                              long_string,
+                              'this,should,fail']
+        for invalid_id in invalid_id_strings:
+            request_to_validate = {'name': self.resource_name,
+                                   'uuid': invalid_id}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_schema_validator.validate,
+                              request_to_validate)
