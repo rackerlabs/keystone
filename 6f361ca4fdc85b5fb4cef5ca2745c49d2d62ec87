@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d428d887",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-22T16:03:20Z",
+      "side": 1,
+      "message": "how did this get in here?",
+      "revId": "6f361ca4fdc85b5fb4cef5ca2745c49d2d62ec87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
