@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ac3b0dc7",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1350,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T23:48:48Z",
+      "side": 1,
+      "message": "Will revert this in next patch.\n\nI have opened a bug for related livetest failures.\nhttps://bugs.launchpad.net/keystone/+bug/1347262",
+      "parentUuid": "baada198_d4ad2d86",
+      "revId": "de371e1370acdc1f302ff8822c69d68732070210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d4e52da5",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 19
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6c9c955e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T23:48:48Z",
+      "side": 1,
+      "message": "Will revert the changes in next patch.\n\nOpened bug for livetets failures: https://bugs.launchpad.net/keystone/+bug/1347262",
+      "parentUuid": "baada198_d4e52da5",
+      "revId": "de371e1370acdc1f302ff8822c69d68732070210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2fac56ee",
         "filename": "keystone/tests/test_ldap_pool_livetest.py",
         "patchSetId": 19
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-22T20:34:01Z",
       "side": 1,
       "message": "This method should be unified with the (almost) same one from test_backend_ldap_pool.py.",
+      "revId": "de371e1370acdc1f302ff8822c69d68732070210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aac4d40e",
+        "filename": "keystone/tests/test_ldap_pool_livetest.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T23:48:48Z",
+      "side": 1,
+      "message": "This test checks specifically if ldap connection is connected and has active status when in use. This kind of test cannot be done with FakeLdapPool.",
+      "parentUuid": "baada198_2fac56ee",
       "revId": "de371e1370acdc1f302ff8822c69d68732070210",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
