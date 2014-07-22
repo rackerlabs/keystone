@@ -68,6 +68,24 @@
       "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1e645420",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-22T07:33:36Z",
+      "side": 1,
+      "message": "I think Haneef has valid point.  In reality there are three type of token that should be deleted/revoked by this method:\n\n- tokens scoped to projects in this domain (this is already implemented)\n- tokens scoped to this domain (this patch doesn\u0027t fully do this)\n- tokens by users of this domain on any projects/domains (this patch adds this support)\n\nIn reality the only tokens that won\u0027t be deleted after this patch are tokens scoped to this domain by users in another domain...but that is still something we should fix. \n\nWe should either fix the whole issue (which will required adding new backend helper methods I expect), or amend the comment to make the above clear, and, if there isn\u0027t a bug already, then raise one for the missing functionality.",
+      "parentUuid": "baada198_deabc71b",
+      "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
