@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c5d5791c",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T21:29:29Z",
+      "side": 1,
+      "message": "actually this TODO is what the bug is for",
+      "parentUuid": "baada198_456249da",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_de962e3e",
         "filename": "keystone/token/core.py",
         "patchSetId": 11
