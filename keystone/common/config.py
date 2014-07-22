@@ -745,6 +745,11 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a catalog collection.'),
+        cfg.ListOpt('unscoped_catalog_service_types',
+                    default=['identity'],
+                    help='The service type that should be included in the '
+                         'service catalog of an unscoped token. This will be '
+                         'the service_type of your identity endpoints'),
     ],
     'kvs': [
         cfg.ListOpt('backends', default=[],

@@ -304,11 +304,10 @@ class V3TokenDataHelper(object):
 
         if CONF.trust.enabled and trust:
             user_id = trust['trustor_user_id']
-        if project_id or domain_id:
-            service_catalog = self.catalog_api.get_v3_catalog(
-                user_id, project_id)
-            # TODO(ayoung): Enforce Endpoints for trust
-            token_data['catalog'] = service_catalog
+
+        token_data['catalog'] = self.catalog_api.get_v3_catalog(user_id,
+                                                                project_id)
+        # TODO(ayoung): Enforce Endpoints for trust
 
     def _populate_token_dates(self, token_data, expires=None, trust=None):
         if not expires:

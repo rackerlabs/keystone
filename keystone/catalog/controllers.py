@@ -151,11 +151,11 @@ class CatalogV3(controller.V3Controller):
         auth_context = env_context.get(authorization.AUTH_CONTEXT_ENV, {})
         user_id = auth_context.get('user_id')
         project_id = auth_context.get('project_id')
+        domain_id = auth_context.get('domain_id')
 
-        if not user_id or not project_id:
+        if domain_id:
             raise exception.Forbidden(
-                _('A project-scoped token is required to produce a service '
-                  'catalog.'))
+                _('Domain scoped tokens cannot be used to get a catalog'))
 
         # The V3Controller base methods mostly assume that you're returning
         # either a collection or a single element from a collection, neither of

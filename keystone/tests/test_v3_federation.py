@@ -881,12 +881,13 @@ class FederatedTokenTests(FederationTests):
         """
         r = self._issue_unscoped_token()
         token_resp = r.json_body
-        # Remove 'extras' if empty or None,
+        # Remove 'extras' and 'catalog' if empty or None,
         # as JSON and XML (de)serializers treat
         # them differently, making dictionaries
         # comparisons fail.
-        if not token_resp['token'].get('extras'):
-            token_resp['token'].pop('extras')
+        for name in ('extras', 'catalog'):
+            if not token_resp['token'].get(name):
+                token_resp['token'].pop(name)
         self._assertSerializeToXML(token_resp)
 
     def test_issue_unscoped_token_no_groups(self):

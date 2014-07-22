@@ -151,6 +151,27 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.NotFound('Catalog not found for user and tenant')
 
+    def get_v3_catalog(self, user_id, tenant_id, metadata=None):
+        service_hints = driver_hints.Hints()
+        filter_ = None
+
+        if not tenant_id:
+            service_types = CONF.catalog.unscoped_catalog_service_types
+
+            if not service_types:
+                return {}
+
+            filter_ = service_hints.add_filter('type', service_types, 'in')
+
+        catalog = self.driver.get_v3_catalog(user_id,
+                                             tenant_id,
+                                             service_hints=service_hints)
+
+        if filter_ in service_hints.filters:
+            catalog = [svc for svc in catalog if svc['type'] in service_types]
+
+        return catalog
+
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
@@ -336,7 +357,8 @@ class Driver(object):
         """
         raise exception.NotImplemented()  # pragma: no cover
 
-    def get_v3_catalog(self, user_id, tenant_id, metadata=None):
+    def get_v3_catalog(self, user_id, tenant_id, metadata=None,
+                       service_hints=None):
         """Retrieve and format the current V3 service catalog.
 
         The default implementation builds the V3 catalog from the V2 catalog.
@@ -369,8 +391,21 @@ class Driver(object):
         v2_catalog = self.get_catalog(user_id, tenant_id, metadata=metadata)
         v3_catalog = []
 
+        filter_service_types = False
+        service_types = []
+
+        # handles the service_types hint where we filter for specific services.
+        if service_hints:
+            for filter_ in service_hints.filters:
+                if filter_['name'] == 'type' and filter_['comparator'] == 'in':
+                    filter_service_types = True
+                    service_types = filter_['values']
+
         for region_name, region in six.iteritems(v2_catalog):
             for service_type, service in six.iteritems(region):
+                if filter_service_types and service_type not in service_types:
+                    continue
+
                 service_v3 = {
                     'type': service_type,
                     'endpoints': []

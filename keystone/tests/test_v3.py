@@ -597,7 +597,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             raise AssertionError(msg)
         self.assertIsInstance(dt, datetime.datetime)
 
-    def assertValidTokenResponse(self, r, user=None):
+    def assertValidTokenResponse(self, r, user=None, require_catalog=True):
         self.assertTrue(r.headers.get('X-Subject-Token'))
         token = r.result['token']
 
@@ -620,24 +620,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertEqual(user['name'], token['user']['name'])
             self.assertEqual(user['domain_id'], token['user']['domain']['id'])
 
-        return token
-
-    def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
-        token = self.assertValidTokenResponse(r, *args, **kwargs)
-
-        self.assertNotIn('roles', token)
-        self.assertNotIn('catalog', token)
-        self.assertNotIn('project', token)
-        self.assertNotIn('domain', token)
-
-        return token
-
-    def assertValidScopedTokenResponse(self, r, *args, **kwargs):
-        require_catalog = kwargs.pop('require_catalog', True)
-        endpoint_filter = kwargs.pop('endpoint_filter', False)
-        ep_filter_assoc = kwargs.pop('ep_filter_assoc', 0)
-        token = self.assertValidTokenResponse(r, *args, **kwargs)
-
         if require_catalog:
             self.assertIn('catalog', token)
 
@@ -649,13 +631,32 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                         self.assertNotIn('legacy_endpoint_id', endpoint)
                         self.assertNotIn('service_id', endpoint)
 
-            # sub test for the OS-EP-FILTER extension enabled
-            if endpoint_filter:
-                # verify the catalog hs no more than the endpoints
-                # associated in the catalog using the ep filter assoc
-                self.assertTrue(len(token['catalog']) < ep_filter_assoc + 1)
         else:
             self.assertNotIn('catalog', token)
+
+        return token
+
+    def assertValidUnscopedTokenResponse(self, r, *args, **kwargs):
+        token = self.assertValidTokenResponse(r, *args, **kwargs)
+
+        self.assertIn('catalog', token)
+        self.assertNotIn('roles', token)
+        self.assertNotIn('project', token)
+        self.assertNotIn('domain', token)
+
+        return token
+
+    def assertValidScopedTokenResponse(self, r, *args, **kwargs):
+        require_catalog = kwargs.get('require_catalog', True)
+        endpoint_filter = kwargs.pop('endpoint_filter', False)
+        ep_filter_assoc = kwargs.pop('ep_filter_assoc', 0)
+        token = self.assertValidTokenResponse(r, *args, **kwargs)
+
+        # sub test for the OS-EP-FILTER extension enabled
+        if require_catalog and endpoint_filter:
+            # verify the catalog hs no more than the endpoints
+            # associated in the catalog using the ep filter assoc
+            self.assertTrue(len(token['catalog']) < ep_filter_assoc + 1)
 
         self.assertIn('roles', token)
         self.assertTrue(token['roles'])

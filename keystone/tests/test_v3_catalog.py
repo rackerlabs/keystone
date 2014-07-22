@@ -45,14 +45,37 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                 domain_id=self.domain['id']),
             expected_status=403)
 
-    def test_get_catalog_unscoped_token(self):
+    def test_get_catalog_unscoped_token_no_endpoints(self):
         """Call ``GET /catalog`` with an unscoped token."""
-        self.get(
+        r = self.get(
             '/catalog',
             auth=self.build_authentication_request(
                 user_id=self.default_domain_user['id'],
                 password=self.default_domain_user['password']),
-            expected_status=403)
+            expected_status=200)
+
+        self.assertFalse(r.json['catalog'])
+
+    def test_get_catalog_unscoped_token_with_endpoint(self):
+        # the only entry in our endpoint list has a UUID for type so override
+        # config so that it should return that entry.
+        self.config_fixture.config(
+            group='catalog',
+            unscoped_catalog_service_types=[self.service['type']])
+
+        r = self.get(
+            '/catalog',
+            auth=self.build_authentication_request(
+                user_id=self.default_domain_user['id'],
+                password=self.default_domain_user['password']),
+            expected_status=200)
+
+        self.assertValidCatalogResponse(r)
+
+        body = r.json
+
+        self.assertEqual(1, len(body['catalog']))
+        self.assertEqual(self.service_id, body['catalog'][0]['id'])
 
     def test_get_catalog_no_token(self):
         """Call ``GET /catalog`` without a token."""

@@ -282,6 +282,8 @@ def _filter(model, query, hints):
             query_term = column_attr.ilike('%s%%' % filter_['value'])
         elif filter_['comparator'] == 'endswith':
             query_term = column_attr.ilike('%%%s' % filter_['value'])
+        elif filter_['comparator'] == 'in':
+            query_term = column_attr.in_(filter_['value'])
         else:
             # It's a filter we don't understand, so let the caller
             # work out if they need to do something with it.

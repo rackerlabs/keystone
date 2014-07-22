@@ -48,10 +48,13 @@ class Hints(object):
     def add_filter(self, name, value, comparator='equals',
                    case_sensitive=False):
         """Adds a filter to the filters list, which is publicly accessible."""
-        self.filters.append({'name': name, 'value': value,
-                             'comparator': comparator,
-                             'case_sensitive': case_sensitive,
-                             'type': 'filter'})
+        filter_ = {'name': name,
+                   'value': value,
+                   'comparator': comparator,
+                   'case_sensitive': case_sensitive,
+                   'type': 'filter'}
+        self.filters.append(filter_)
+        return filter_
 
     def get_exact_filter_by_name(self, name):
         """Return a filter key and value if exact filter exists for name."""

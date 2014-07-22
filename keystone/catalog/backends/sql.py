@@ -274,16 +274,21 @@ class Catalog(catalog.Driver):
 
         return catalog
 
-    def get_v3_catalog(self, user_id, tenant_id, metadata=None):
+    def get_v3_catalog(self, user_id, tenant_id, metadata=None,
+                       service_hints=None):
         d = dict(six.iteritems(CONF))
         d.update({'tenant_id': tenant_id,
                   'user_id': user_id})
 
         session = sql.get_session()
         t = True  # variable for singleton for PEP8, E712.
-        services = (session.query(Service).filter(Service.enabled == t).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+
+        query = session.query(Service)
+        query = query.filter(Service.enabled == t)
+        query = query.options(sql.joinedload(Service.endpoints))
+        query = sql.filter_limit_query(Service, query, service_hints)
+
+        services = query.all()
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
