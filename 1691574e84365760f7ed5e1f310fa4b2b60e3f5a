@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7e70c240",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T19:24:14Z",
+      "side": 1,
+      "message": "Don\u0027t we need api call specific to domain instead of listing all domains. e.g. self.assignment_api.list_projects_in_domain(domain_id). \n\nI am asking as change is around same functional area.",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3ef2ca9b",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T19:24:14Z",
+      "side": 1,
+      "message": "Will be good to see this resolved as part of this fix or clarified in commit comments. I think henry-nash clarified about missing part in earlier version review comments.",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_de962e3e",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T19:24:14Z",
+      "side": 1,
+      "message": "Code is self-explanatory here.",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
