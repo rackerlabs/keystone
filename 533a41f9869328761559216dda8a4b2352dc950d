@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_61a20cfe",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-22T09:04:04Z",
+      "side": 1,
+      "message": "What about the top level attributes? These should also be alphabetically ordered.",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
