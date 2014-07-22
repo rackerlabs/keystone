@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_38fe9a06",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T04:49:15Z",
+      "side": 1,
+      "message": "It might look better to store this dict in the PooledLdapHandler class.",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1e437f3f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T04:49:15Z",
+      "side": 1,
+      "message": "This is the only argument with ldap_ prefix. You should name it just pool_size.",
+      "range": {
+        "startLine": 673,
+        "startChar": 31,
+        "endLine": 673,
+        "endChar": 45
+      },
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f807c21a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T04:49:15Z",
+      "side": 1,
+      "message": "I think you should store ConnectionManager you\u0027re using for this connection in the self. It won\u0027t change over time anyway. And then we won\u0027t need self.url and self.pool_url anymore.",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_980fa638",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T04:49:15Z",
+      "side": 1,
+      "message": "I don\u0027t like forcing all arguments to be keyword here. How about removing kwargs parsing from use_conn_pool decorator but making this method work without it like this:\n\n    self.who \u003d who\n    self.cred \u003d cred\n    with self._get_pool_connection() as conn:\n        self._apply_options(conn)",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5e51770c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T04:49:15Z",
+      "side": 1,
+      "message": "You should make it depend on use_pool setting:\n\n    self.use_auth_pool \u003d self.use_pool and conf.ldap.use_auth_pool\n\nOr change help text for use_auth_pool option.",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d8775ed2",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T04:49:15Z",
+      "side": 1,
+      "message": "You can just do\n\n  ldap_core.CONNECTION_POOLS.clear()\n\nhere.",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
