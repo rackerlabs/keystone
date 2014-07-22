@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_deabc71b",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-22T05:09:58Z",
+      "side": 1,
+      "message": "Why did you remove the comment?  Does this code remove domain scoped tokens?  I don\u0027t think so",
+      "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
