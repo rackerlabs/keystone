@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_beb8af76",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-22T13:53:37Z",
+      "side": 1,
+      "message": "This might be ok, I am a fan of enforcing this being a proper boolean as long as we aren\u0027t breaking a legitimate use case (i don\u0027t see 0, and 1 as being valid booleans in this case)",
+      "parentUuid": "baada198_fe47ab49",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_897f6216",
         "filename": "keystone/common/validation/validators.py",
         "patchSetId": 29
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "based on david\u0027s link, what happens if you just take detail\u003dunicode(ex) here?",
       "parentUuid": "baada198_897f6216",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7ec9b724",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-22T13:53:37Z",
+      "side": 1,
+      "message": "We might want to put some specific exception handling in the wsgi module to make a schema validation failure a \"validation error + HTTP status\" rather than squashing it here (as pointed out be David) so we have the context up until we emit to the user.",
+      "parentUuid": "baada198_b812aa5e",
       "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
