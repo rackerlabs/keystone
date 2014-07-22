@@ -41,7 +41,8 @@ _entity_properties = {
     'description': validation.nullable(parameter_types.description),
     'enabled': parameter_types.boolean,
     'url': validation.nullable(parameter_types.url),
-    'email': validation.nullable(parameter_types.email)
+    'email': validation.nullable(parameter_types.email),
+    'id_string': validation.nullable(parameter_types.id_string)
 }
 
 entity_create = {
@@ -190,6 +191,37 @@ class EntityValidationTestCase(testtools.TestCase):
                           self.create_schema_validator.validate,
                           request_to_validate)
 
+    def test_create_entity_with_valid_id_strings(self):
+        """Validate acceptable id strings."""
+        valid_id_strings = [str(uuid.uuid4()), uuid.uuid4().hex, 'default']
+        for valid_id in valid_id_strings:
+            request_to_validate = {'name': self.resource_name,
+                                   'id_string': valid_id}
+            self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_entity_with_invalid_id_strings(self):
+        """Exception raised when using invalid id strings."""
+        long_string = 'A' * 65
+        invalid_id_strings = ['', long_string, 'this,should,fail']
+        for invalid_id in invalid_id_strings:
+            request_to_validate = {'name': self.resource_name,
+                                   'id_string': invalid_id}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_schema_validator.validate,
+                              request_to_validate)
+
+    def test_create_entity_with_null_id_string(self):
+        """Validate that None is an acceptable optional string type."""
+        request_to_validate = {'name': self.resource_name,
+                               'id_string': None}
+        self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_entity_with_null_string_succeeds(self):
+        """Exception raised when passing None on required id strings."""
+        request_to_validate = {'name': self.resource_name,
+                               'id_string': None}
+        self.create_schema_validator.validate(request_to_validate)
+
     def test_update_entity_with_no_parameters_fails(self):
         """At least one parameter needs to be present for an update."""
         request_to_validate = {}
@@ -256,7 +288,8 @@ class ProjectValidationTestCase(testtools.TestCase):
 
     def test_validate_project_request(self):
         """Test that we validate a project with `name` in request."""
-        request_to_validate = {'name': self.project_name}
+        request_to_validate = {'name': self.project_name,
+                               'domain_id': uuid.uuid4().hex}
         self.create_project_validator.validate(request_to_validate)
 
     def test_validate_project_request_without_name_fails(self):
@@ -266,10 +299,26 @@ class ProjectValidationTestCase(testtools.TestCase):
                           self.create_project_validator.validate,
                           request_to_validate)
 
+    def test_validate_project_request_without_domain_id_fails(self):
+        """Validate project request fails without domain_id."""
+        request_to_validate = {'name': self.project_name}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_request_with_null_domain_id_fails(self):
+        """Exception is raised when `domain_id` is null."""
+        request_to_validate = {'name': self.project_name,
+                               'domain_id': None}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
     def test_validate_project_request_with_enabled(self):
         """Validate `enabled` as boolean-like values for projects."""
         for valid_enabled in _VALID_ENABLED_FORMATS:
             request_to_validate = {'name': self.project_name,
+                                   'domain_id': uuid.uuid4().hex,
                                    'enabled': valid_enabled}
             self.create_project_validator.validate(request_to_validate)
 
@@ -277,6 +326,7 @@ class ProjectValidationTestCase(testtools.TestCase):
         """Exception is raised when `enabled` isn't a boolean-like value."""
         for invalid_enabled in _INVALID_ENABLED_FORMATS:
             request_to_validate = {'name': self.project_name,
+                                   'domain_id': uuid.uuid4().hex,
                                    'enabled': invalid_enabled}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_project_validator.validate,
@@ -285,12 +335,14 @@ class ProjectValidationTestCase(testtools.TestCase):
     def test_validate_project_request_with_valid_description(self):
         """Test that we validate `description` in create project requests."""
         request_to_validate = {'name': self.project_name,
+                               'domain_id': uuid.uuid4().hex,
                                'description': 'My Project'}
         self.create_project_validator.validate(request_to_validate)
 
     def test_validate_project_request_with_invalid_description_fails(self):
         """Exception is raised when `description` as a non-string value."""
         request_to_validate = {'name': self.project_name,
+                               'domain_id': uuid.uuid4().hex,
                                'description': False}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_project_validator.validate,
@@ -300,6 +352,14 @@ class ProjectValidationTestCase(testtools.TestCase):
         """Test that we validate a project update request."""
         request_to_validate = {'domain_id': uuid.uuid4().hex}
         self.update_project_validator.validate(request_to_validate)
+
+    def test_validate_project_update_request_fails_will_null_domain_id(self):
+        """Exception is raised when `domain_id` is null."""
+        request_to_validate = {'name': self.project_name,
+                               'domain_id': None}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_project_validator.validate,
+                          request_to_validate)
 
     def test_validate_project_update_request_with_no_parameters_fails(self):
         """Exception is raised when updating project without parameters."""
