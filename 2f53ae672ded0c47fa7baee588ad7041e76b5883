@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_942e55aa",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T20:26:09Z",
+      "side": 1,
+      "message": "This works fine because the content of our XML documents is ASCII and I think that it the encoding that lxml uses when none in specified. This is probably a good change to make to future proof this code so I\u0027ll put something in another patch so that I don\u0027t hold up this patchset anymore.",
+      "parentUuid": "baada198_1975f231",
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b99b2665",
         "filename": "keystone/tests/test_exception.py",
         "patchSetId": 5
@@ -107,6 +125,24 @@
         "endLine": 92,
         "endChar": 49
       },
+      "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_63954d87",
+        "filename": "keystone/tests/test_exception.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-22T20:26:09Z",
+      "side": 1,
+      "message": "The string representation of an exception seems cleaner to me.",
+      "parentUuid": "baada198_b99b2665",
       "revId": "2f53ae672ded0c47fa7baee588ad7041e76b5883",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
