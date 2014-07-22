@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3d3e57ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2014-07-22T17:06:43Z",
+      "side": 1,
+      "message": "Suggest changing this line to \"CRUD grant functions don\u0027t check user_id and group_id\"",
+      "revId": "9ceb12aeac9e3dc4188d8630148e980680b863db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bd7fc768",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2014-07-22T17:06:43Z",
+      "side": 1,
+      "message": "I see the functions[1] reference exists in the bug, but the reference isn\u0027t included in this commit message.  I\u0027d suggest removing the [1] in the commit message, since people can look at the bug to get the link.\n\nAlso, the reference to Icehouse should be removed here, as this bug should first be fixed on the master branch (currently Juno).",
+      "revId": "9ceb12aeac9e3dc4188d8630148e980680b863db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bdb7c7f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2014-07-22T17:06:43Z",
+      "side": 1,
+      "message": "Suggest changing this sentence to describe what this change does.  Something like:\n\n\"role_id, domain_id, and project_id are checked, and this change adds checking for user_id and group_id.\"",
+      "revId": "9ceb12aeac9e3dc4188d8630148e980680b863db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
