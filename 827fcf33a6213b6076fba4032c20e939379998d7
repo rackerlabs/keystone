@@ -191,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fd689422",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T03:37:01Z",
+      "side": 1,
+      "message": "As per IRC discussion, I agree with taking option #2 but with pooling either turned off by default or connections\u0027 lifetime made rather short.",
+      "parentUuid": "baada198_9619528a",
+      "revId": "827fcf33a6213b6076fba4032c20e939379998d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_bed01df8",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 15
