@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c56019a7",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T21:26:50Z",
+      "side": 1,
+      "message": "this request is out of scope; i\u0027d also rather not add the extra complexity in the face of token revocation events solving the same problem, and doing so much more efficiently",
+      "parentUuid": "baada198_8a29d09d",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_3ef2ca9b",
         "filename": "keystone/token/core.py",
         "patchSetId": 11
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "that\u0027s right, the code clearly tells what it does. I will take out this comment.",
       "parentUuid": "baada198_de962e3e",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_05f691f9",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T21:26:50Z",
+      "side": 1,
+      "message": "using inline comments to explain \"why\" the code does \"what\" it does (the code already explains the \"what\")",
+      "parentUuid": "baada198_655f4d10",
       "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
