@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Code-Review+1: Harry Rybacki <hrybacki@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 22 Jul 2014 17:05:09 +0000
+Reviewed-on: https://review.openstack.org/108407
+Project: openstack/keystone
+Branch: refs/heads/master
