@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_66291437",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-22T22:24:26Z",
+      "side": 1,
+      "message": "how about hanging the main commit message to something like:\n\nGroup related methods for LDAP backend\n?",
+      "revId": "ea60521372882e1ff148a15b4f0075ef70e41765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_1d5cdd7c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
