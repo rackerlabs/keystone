@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ac394d41",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 7179
+      },
+      "writtenOn": "2014-07-22T23:57:54Z",
+      "side": 1,
+      "message": "Suggest changing the regex to \u0027[a-zA-Z0-9-]+$\u0027 , to keep it consistent with requiring a min length of 1.  The current regex would match an empty string.",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
