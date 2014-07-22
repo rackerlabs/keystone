@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d4ad2d86",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1350,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T20:34:01Z",
+      "side": 1,
+      "message": "I don\u0027t think this is relevant. Please revert this line.",
+      "revId": "de371e1370acdc1f302ff8822c69d68732070210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4e52da5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T20:34:01Z",
+      "side": 1,
+      "message": "Changes in this module seem to be unrelated.",
+      "revId": "de371e1370acdc1f302ff8822c69d68732070210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2fac56ee",
+        "filename": "keystone/tests/test_ldap_pool_livetest.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T20:34:01Z",
+      "side": 1,
+      "message": "This method should be unified with the (almost) same one from test_backend_ldap_pool.py.",
+      "revId": "de371e1370acdc1f302ff8822c69d68732070210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
