@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d40c5fef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-22T14:56:55Z",
+      "side": 1,
+      "message": "Ok, I can mention that it expects a boolean attribute unless the user_enabled_mask option is being used.",
+      "parentUuid": "baada198_d45a74f1",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d4119405",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-17T01:13:35Z",
       "side": 1,
       "message": "Might as well use the \"user_enabled_mask\" option. If it\u0027s set to invert then invert the value.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_146fb794",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-22T14:56:55Z",
+      "side": 1,
+      "message": "I\u0027m not sure I like the approach of overloading the mask option, which is really intended for integer values as used by Active Directory (see my other comment for additional details).",
+      "parentUuid": "baada198_d4119405",
       "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b439aba5",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-22T14:56:55Z",
+      "side": 1,
+      "message": "Are you saying that this will be generated automatically, and that I don\u0027t need to edit this myself?  Am I supposed to run \"tox -e sample_config\" prior to committing my patch?",
+      "parentUuid": "baada198_94bc7cdd",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_34c73066",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-17T01:13:35Z",
       "side": 1,
       "message": "re-use user_enabled_default or user_enabled_mask instead since they can\u0027t be used with this anyways.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f12255a2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-22T14:56:55Z",
+      "side": 1,
+      "message": "Reusing user_enabled_mask would require changing it to a string type since we would need to aloow it to be set to some value such as \"invert\".  It seems messy to overload this config setting.\n\nThe user_enabled_default setting does work with the new user_enabled_invert setting that I proposed.",
+      "parentUuid": "baada198_34c73066",
       "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_113ee9b9",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-22T14:56:55Z",
+      "side": 1,
+      "message": "Ok, I can add that.",
+      "parentUuid": "baada198_d4ad149d",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d484340d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-17T01:13:35Z",
       "side": 1,
       "message": "the order of arguments is expected and then observed... this is typically done correctly in these changes, so it\u0027s just the `assertIs`s I think.",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4545f00",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-22T14:56:55Z",
+      "side": 1,
+      "message": "I\u0027m not sure I understand what you are pointing out.  This test is ensuring that the create call has the expected result for both the resource and model representations of the user.  It then checks that retrieving the user has the expected result in the model as well since that\u0027s a different code path for model creation.",
+      "parentUuid": "baada198_d484340d",
       "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
