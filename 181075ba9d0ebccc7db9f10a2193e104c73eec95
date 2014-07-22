@@ -16,6 +16,24 @@
       "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0697c290",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-22T00:27:18Z",
+      "side": 1,
+      "message": "Domain information is always there regardless. The the non domain-aware, we just always use the default domain. See line 247. Non domain-aware basically means it only works with default domain users.",
+      "parentUuid": "baada198_724bdc86",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
