@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review-1: Yuriy Taraday <yorik.sar@gmail.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 22 Jul 2014 21:42:57 +0000
+Reviewed-on: https://review.openstack.org/102737
+Project: openstack/keystone
+Branch: refs/heads/master
