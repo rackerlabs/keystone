@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8a29d09d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-22T21:22:44Z",
+      "side": 1,
+      "message": "I think this is not this patch related and I would try not to make changes to this \"already working\" code.",
+      "parentUuid": "baada198_7e70c240",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_3ef2ca9b",
         "filename": "keystone/token/core.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_456249da",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-22T21:22:44Z",
+      "side": 1,
+      "message": "I\u0027d like to do this in a seperated patch if it\u0027s ok for everyone and that was one of the options henry-nash suggested.",
+      "parentUuid": "baada198_3ef2ca9b",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_de962e3e",
         "filename": "keystone/token/core.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-22T19:24:14Z",
       "side": 1,
       "message": "Code is self-explanatory here.",
+      "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_655f4d10",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-22T21:22:44Z",
+      "side": 1,
+      "message": "that\u0027s right, the code clearly tells what it does. I will take out this comment.",
+      "parentUuid": "baada198_de962e3e",
       "revId": "1691574e84365760f7ed5e1f310fa4b2b60e3f5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
