@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_44ea880f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 1424,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-22T05:27:33Z",
+      "side": 1,
+      "message": "They are Apache mod_ssl specific, I thought I made it abundantly clear in the spec.\n\nhttps://review.openstack.org/#/c/105913/\n\nBut sure, I can explicitly mention it again here just to make it less confusing.",
+      "parentUuid": "baada198_fe196b7a",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_be41b33a",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_21974646",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-22T05:27:33Z",
+      "side": 1,
+      "message": "I can mention it, but that\u0027s really deployment-specific as some deployer may mandate client validation while some may not.",
+      "parentUuid": "baada198_be41b33a",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_5e86d765",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-22T04:50:50Z",
       "side": 1,
       "message": "You should validate only for SUCCESS state. What will happen if the accept_status in config is FAILED.  Will you allow failed cert?",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2415943c",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-22T05:27:33Z",
+      "side": 1,
+      "message": "I was contemplating whether to hardcode it to allow SUCCESS only or leave some room for other states like GENEROUS. Reason I am leaving it as configurable was I want deployers to have options. But I am OK with it either way.",
+      "parentUuid": "baada198_5e86d765",
       "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +153,24 @@
       "writtenOn": "2014-07-22T04:50:50Z",
       "side": 1,
       "message": "Dangerous code. What if the domain_name doesn\u0027t exist?",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8106521a",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-22T05:27:33Z",
+      "side": 1,
+      "message": "Not sure if I understand. You\u0027ll get DomainNotFound exception if domain doesn\u0027t exist. What\u0027s dangerous?",
+      "parentUuid": "baada198_bedd3372",
       "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
