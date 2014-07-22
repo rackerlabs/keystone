@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_56004f02",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T16:31:21Z",
+      "side": 1,
+      "message": "I added this in module namespace as its quite clear/explicit that connection managers are maintained in global scope i.e. its re-used if matching connection manager is already defined.\n\nAdding it as class/static namespace can sometimes be confusing especially when assigning via instance or class reference.",
+      "parentUuid": "baada198_38fe9a06",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1e437f3f",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 17
@@ -30,6 +48,30 @@
       "writtenOn": "2014-07-22T04:49:15Z",
       "side": 1,
       "message": "This is the only argument with ldap_ prefix. You should name it just pool_size.",
+      "range": {
+        "startLine": 673,
+        "startChar": 31,
+        "endLine": 673,
+        "endChar": 45
+      },
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_00093132",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T16:31:21Z",
+      "side": 1,
+      "message": "Okay. Will address in next patch.",
+      "parentUuid": "baada198_1e437f3f",
       "range": {
         "startLine": 673,
         "startChar": 31,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d42e1842",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T16:31:21Z",
+      "side": 1,
+      "message": "Handlers are instances which are created per api (identity, assignment) call so they would not remain in scope after its use. We need reference to just created connection manager for subsequent re-use. So I think it needs to be in global scope.  We need uri to allow multiple pool with different characteristics.",
+      "parentUuid": "baada198_f807c21a",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_980fa638",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 17
@@ -70,6 +130,24 @@
       "writtenOn": "2014-07-22T04:49:15Z",
       "side": 1,
       "message": "I don\u0027t like forcing all arguments to be keyword here. How about removing kwargs parsing from use_conn_pool decorator but making this method work without it like this:\n\n    self.who \u003d who\n    self.cred \u003d cred\n    with self._get_pool_connection() as conn:\n        self._apply_options(conn)",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_37acb6ee",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T16:31:21Z",
+      "side": 1,
+      "message": "Okay. Will make the change if this is preferred over using common approach.",
+      "parentUuid": "baada198_980fa638",
       "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_54768840",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T16:31:21Z",
+      "side": 1,
+      "message": "Okay will make and condition",
+      "parentUuid": "baada198_5e51770c",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d8775ed2",
         "filename": "keystone/tests/test_backend_ldap_pool.py",
         "patchSetId": 17
@@ -104,6 +200,24 @@
       "writtenOn": "2014-07-22T04:49:15Z",
       "side": 1,
       "message": "You can just do\n\n  ldap_core.CONNECTION_POOLS.clear()\n\nhere.",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f73ebe8a",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-22T16:31:21Z",
+      "side": 1,
+      "message": "Okay. Will make the change.",
+      "parentUuid": "baada198_d8775ed2",
       "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
