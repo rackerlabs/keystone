@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_7b00d402",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-22T19:09:32Z",
+      "side": 1,
+      "message": "No need of an extra line here.",
+      "revId": "1e6a38b913d32ba58af069c1d9a394bdaf03ddb1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_9b4a085a",
         "filename": "keystone/token/core.py",
         "patchSetId": 10
