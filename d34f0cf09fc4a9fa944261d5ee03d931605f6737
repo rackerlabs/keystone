@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_606ea665",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-22T07:33:23Z",
+      "side": 1,
+      "message": "For clarity, I would change the commit message to something like:\n\n\"Fix token revocation impact from disabling domain\n\nFixes a bug whereby disabling a domain only revokes project scoped tokens. Now with this fix, disabling a domain will result in both domain and project scoped tokens being disabled (if any).\n\"",
+      "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_60ea26a1",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-22T07:33:23Z",
+      "side": 1,
+      "message": "What about naming the method:\n\ntest_token_revocation_when_domain_disabled",
+      "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_deabc71b",
         "filename": "keystone/token/core.py",
         "patchSetId": 9
@@ -13,6 +47,24 @@
       "writtenOn": "2014-07-22T05:09:58Z",
       "side": 1,
       "message": "Why did you remove the comment?  Does this code remove domain scoped tokens?  I don\u0027t think so",
+      "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9ef8647d",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-22T07:33:23Z",
+      "side": 1,
+      "message": "My understanding is that when a domain is disabled/deleted then this code will recover all tokens associated with the domain and delete them. Therefore, by definition, it should remove domain scoped tokens, correct? \n\nA related but separate question. Could we have achieved this via the notification framework using revocation events?",
+      "parentUuid": "baada198_deabc71b",
       "revId": "d34f0cf09fc4a9fa944261d5ee03d931605f6737",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
