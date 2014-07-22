@@ -1413,3 +1413,13 @@
 #driver=keystone.trust.backends.sql.Trust
 
 
+[validation]
+
+#
+# Options defined in keystone
+#
+
+# Regex for matching UUID strings (string value)
+#id_string_regex=[a-zA-Z0-9-]*$
+
+
