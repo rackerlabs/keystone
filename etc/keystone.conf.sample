@@ -148,7 +148,7 @@
 #allowed_rpc_exception_modules=oslo.messaging.exceptions,nova.exception,cinder.exception,exceptions
 
 # Qpid broker hostname. (string value)
-#qpid_hostname=localhost
+#qpid_hostname=keystone
 
 # Qpid broker port. (integer value)
 #qpid_port=5672
@@ -205,7 +205,7 @@
 
 # The RabbitMQ broker address where a single node is used.
 # (string value)
-#rabbit_host=localhost
+#rabbit_host=keystone
 
 # The RabbitMQ broker port where a single node is used.
 # (integer value)
@@ -858,7 +858,7 @@
 #
 
 # URL for connecting to the LDAP server. (string value)
-#url=ldap://localhost
+#url=ldap://keystone
 
 # User BindDN to query the LDAP server. (string value)
 #user=<None>
@@ -1326,7 +1326,7 @@
 
 # SSL certificate subject (auto generated certificate).
 # (string value)
-#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=keystone
 
 
 [stats]
@@ -1411,5 +1411,15 @@
 
 # Trust backend driver. (string value)
 #driver=keystone.trust.backends.sql.Trust
+
+
+[validation]
+
+#
+# Options defined in keystone
+#
+
+# Regex for matching UUID strings (string value)
+#id_string_regex=[a-zA-Z0-9-]*$
 
 

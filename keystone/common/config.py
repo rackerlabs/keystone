@@ -763,6 +763,10 @@ FILE_OPTIONS = {
         cfg.IntOpt('default_lock_timeout', default=5,
                    help='Default lock timeout for distributed locking.'),
     ],
+    'validation': [
+        cfg.StrOpt('id_string_regex', default='[a-zA-Z0-9-]*$',
+                   help='Regex for matching UUID strings')
+    ],
 }
 
 

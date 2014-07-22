@@ -11,6 +11,11 @@
 # under the License.
 """Common parameter types for validating a request reference."""
 
+from keystone import config
+
+CONF = config.CONF
+
+
 boolean = {
     'type': 'boolean',
     'enum': [True, False]
@@ -28,11 +33,11 @@ name = {
     'maxLength': 255
 }
 
-hex_uuid = {
+id_string = {
     'type': 'string',
-    'maxLength': 32,
-    'minLength': 32,
-    'pattern': '^[a-fA-F0-9]*$'
+    'minLength': 1,
+    'maxLength': 64,
+    'pattern': CONF.validation.id_string_regex
 }
 
 description = {
