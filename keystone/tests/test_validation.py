@@ -27,7 +27,9 @@ _CREATE = {
         'description': parameter_types.description,
         'enabled': parameter_types.boolean,
         'url': parameter_types.url,
-        'email': parameter_types.email
+        'email': parameter_types.email,
+        'uuid': parameter_types.required_id_string,
+        'user_id': parameter_types.optional_id_string
     },
     'required': ['name'],
     'additionalProperties': True,
@@ -44,6 +46,8 @@ class ValidationTestCase(tests.TestCase):
         self.valid_url = 'http://example.com'
         self.valid_email = 'joe@example.com'
         self.create_schema_validator = validators.SchemaValidator(_CREATE)
+        self.config_fixture.config(group='validation',
+                                   id_string_regex='^[a-zA-Z0-9-]+$')
 
     def test_create_schema_with_all_valid_parameters(self):
         """Validate proper values against test schema."""
@@ -155,6 +159,43 @@ class ValidationTestCase(tests.TestCase):
         """
         request_to_validate = {'name': self.resource_name,
                                'email': 'some invalid email value'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_schema_validator.validate,
+                          request_to_validate)
+
+    def test_create_schema_with_valid_id_strings(self):
+        """Validate acceptable id strings."""
+        valid_id_strings = ['699d5241-1233-4876-a9fa-427960cc9cd3',
+                            '0b7ed71f308e4d31bbf9c82496420ef7',
+                            'default']
+        for valid_id in valid_id_strings:
+            request_to_validate = {'name': self.resource_name,
+                                   'uuid': valid_id}
+            self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_schema_with_invalid_id_strings(self):
+        """Exception raised when using invalid id strings."""
+        long_string = "A" * 65
+        invalid_id_strings = ['',
+                              long_string,
+                              'this,should,fail']
+        for invalid_id in invalid_id_strings:
+            request_to_validate = {'name': self.resource_name,
+                                   'uuid': invalid_id}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_schema_validator.validate,
+                              request_to_validate)
+
+    def test_create_schema_with_null_string_id(self):
+        """Validate that None is an acceptable optional string type."""
+        request_to_validate = {'name': self.resource_name,
+                               'user_id': None}
+        self.create_schema_validator.validate(request_to_validate)
+
+    def test_create_schema_with_null_string_on_required_fails(self):
+        """Exception raised when passing None on required id strings."""
+        request_to_validate = {'name': self.resource_name,
+                               'uuid': None}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_schema_validator.validate,
                           request_to_validate)
