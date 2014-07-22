@@ -16,9 +16,7 @@ from keystone.common.validation import parameter_types
 
 _project_properties = {
     'description': validation.nullable(parameter_types.description),
-    'domain_id': {
-        'type': 'string'
-    },
+    'domain_id': validation.nullable(parameter_types.id_string),
     'enabled': parameter_types.boolean,
     'name': parameter_types.name
 }
