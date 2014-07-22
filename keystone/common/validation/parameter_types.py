@@ -28,6 +28,12 @@ name = {
     'maxLength': 255
 }
 
+id_string = {
+    'type': 'string',
+    'pattern': '^[a-zA-Z0-9-]*$',
+    'maxLength': 64
+}
+
 hex_uuid = {
     'type': 'string',
     'maxLength': 32,
