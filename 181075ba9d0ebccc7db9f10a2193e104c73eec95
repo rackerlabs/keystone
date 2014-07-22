@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_fe196b7a",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 1424,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-22T04:50:50Z",
+      "side": 1,
+      "message": "Are these name universal?  Those are the names defined by Apache for SSL attributes.  How about other webserver or eventlet?  If not please mention they are Apache specific",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_be41b33a",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-22T04:50:50Z",
+      "side": 1,
+      "message": "Also SSLClientVerify should be set to optional",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5e86d765",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-22T04:50:50Z",
+      "side": 1,
+      "message": "You should validate only for SUCCESS state. What will happen if the accept_status in config is FAILED.  Will you allow failed cert?",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_724bdc86",
         "filename": "keystone/auth/plugins/external.py",
         "patchSetId": 4
@@ -31,6 +82,23 @@
       "side": 1,
       "message": "Domain information is always there regardless. The the non domain-aware, we just always use the default domain. See line 247. Non domain-aware basically means it only works with default domain users.",
       "parentUuid": "baada198_724bdc86",
+      "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bedd3372",
+        "filename": "keystone/auth/plugins/external.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-22T04:50:50Z",
+      "side": 1,
+      "message": "Dangerous code. What if the domain_name doesn\u0027t exist?",
       "revId": "181075ba9d0ebccc7db9f10a2193e104c73eec95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
