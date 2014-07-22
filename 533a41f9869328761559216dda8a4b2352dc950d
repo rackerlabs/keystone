@@ -139,6 +139,40 @@
       "revId": "533a41f9869328761559216dda8a4b2352dc950d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_be2dfaff",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-22T19:23:19Z",
+      "side": 1,
+      "message": "Remove the extra vertical space.",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1ecee65b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-22T19:23:19Z",
+      "side": 1,
+      "message": "Remove the extra vertical space.",
+      "revId": "533a41f9869328761559216dda8a4b2352dc950d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
