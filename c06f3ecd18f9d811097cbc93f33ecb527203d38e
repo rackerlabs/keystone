@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_beeb3a11",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T19:16:25Z",
+      "side": 1,
+      "message": "Well, this variable is not meant to be assigned to, only its keys get new values here.",
+      "parentUuid": "baada198_56004f02",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1e437f3f",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 17
@@ -113,6 +131,24 @@
       "side": 1,
       "message": "Handlers are instances which are created per api (identity, assignment) call so they would not remain in scope after its use. We need reference to just created connection manager for subsequent re-use. So I think it needs to be in global scope.  We need uri to allow multiple pool with different characteristics.",
       "parentUuid": "baada198_f807c21a",
+      "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5e005eab",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-22T19:16:25Z",
+      "side": 1,
+      "message": "I mean we don\u0027t need to store url and pool_url. They are not used anywhere but in a form CONNECTION_POOLS[self.pool_url]. And we can do this subscription once here, in connect method instead of doing it in every call. So we can store ConnectionManager in CONNECTION_POOLS, but we should also store it in self._pool, for example, and use that instead of direct call to CONNECTION_POOLS.",
+      "parentUuid": "baada198_d42e1842",
       "revId": "c06f3ecd18f9d811097cbc93f33ecb527203d38e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
