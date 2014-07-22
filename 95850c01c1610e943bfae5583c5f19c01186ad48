@@ -33,6 +33,24 @@
       "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b812aa5e",
+        "filename": "keystone/common/validation/validators.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-22T04:38:03Z",
+      "side": 1,
+      "message": "based on david\u0027s link, what happens if you just take detail\u003dunicode(ex) here?",
+      "parentUuid": "baada198_897f6216",
+      "revId": "95850c01c1610e943bfae5583c5f19c01186ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
