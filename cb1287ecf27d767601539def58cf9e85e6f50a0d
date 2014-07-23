@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_21ce02b8",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T14:40:11Z",
+      "side": 1,
+      "message": "You can move everything but getaddrinfo call to else: branch.",
+      "parentUuid": "baada198_92b1e2e2",
+      "revId": "cb1287ecf27d767601539def58cf9e85e6f50a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0bd5261b",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 2
@@ -78,6 +96,24 @@
       "side": 1,
       "message": "Hi Yuriy,\n\nThank you for pointing this out. Yes, the new requests will be stopped being processed when _run thread is killed.\n\nWe have done this to ensure that server doesn\u0027t accept incoming requests \nafter getting SIGHUP signal. The same was implemented in other Openstack projects like nova, cinder.\n\nPl refer: \nIn nova: https://github.com/openstack/nova/blob/master/nova/wsgi.py#L242\nIn cinder: https://github.com/openstack/cinder/blob/master/cinder/wsgi.py#L252",
       "parentUuid": "baada198_0bd5261b",
+      "revId": "cb1287ecf27d767601539def58cf9e85e6f50a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_21860217",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T14:40:11Z",
+      "side": 1,
+      "message": "How would it accept incoming request when thread that does that is killed? I see it fixed in the last patchset but I just wonder why would it be done this way in other projects.",
+      "parentUuid": "baada198_92de423d",
       "revId": "cb1287ecf27d767601539def58cf9e85e6f50a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
