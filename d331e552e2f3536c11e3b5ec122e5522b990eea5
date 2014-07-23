@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7e97ac3a",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-23T19:09:43Z",
+      "side": 1,
+      "message": "This sentence doesn\u0027t sound smooth. How about this?\n\nIt will delete all the project-scoped tokens for the projects that are owned by the given domain, as well as any tokens issued to users that are owned by this domain.",
+      "revId": "d331e552e2f3536c11e3b5ec122e5522b990eea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
